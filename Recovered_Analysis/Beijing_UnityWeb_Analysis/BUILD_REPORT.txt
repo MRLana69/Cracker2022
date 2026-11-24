@@ -47,4 +47,7 @@ O Cpp2IL registrou 14.475 ocorrências de métodos sem corpo lido e, nas saídas
 
 A build e o projeto exportado não foram abertos, recompilados ou validados no Unity Editor. A exportação do AssetRipper não é um projeto Unity integral reconstituído; o log indica backend de scripts “Unknown” e contém avisos de conversão de áudio. Os scripts auxiliares exportados não recuperam a lógica completa.
 
-Os relatórios e os novos resultados de análise foram publicados em https://github.com/MRLana69/Cracker2022 no branch main. O projeto ativo da raiz está marcado para Unity 2022.3.62f3, mas não foi aberto nem compilado.
+Os relatórios e os novos resultados de análise foram publicados em https://github.com/MRLana69/Cracker2022 no branch main. O projeto ativo da raiz está marcado para Unity 2022.3.62f3.
+
+DIAGNÓSTICO DO LOG CLOUD BUILD ENVIADO EM 2026-11-24
+O log confirma que o Cloud Build executou Unity 2022.3.62f3 e falhou durante compilação C# antes da exportação WebGL. Os erros apontaram três classes-placeholder malformadas geradas pelo AssetRipper: Timeline.deprecated.cs (identificador contém ponto), AnimationPlayableAssetUpgrade.cs (namespace contém “:”) e AssemblyInfo.cs.cs (identificador contém pontos). Os GUIDs dos três .meta foram pesquisados nas cenas, prefabs e assets e não tinham referências. Além disso, uma varredura estática encontrou 12 outros stubs com identificadores de classe contendo pontos, também sem referências GUID. Os 15 stubs e seus .meta foram removidos da árvore ativa. Nenhuma nova compilação foi executada; é necessário enviar o commit atualizado ao Cloud Build e examinar o próximo log para detectar eventuais erros subsequentes.

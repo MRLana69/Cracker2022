@@ -10,6 +10,8 @@ A raiz deste repositório agora usa como projeto ativo a exportação de assets 
 
 **Não compilei nem gerei uma build**, conforme solicitado. Também não posso afirmar que os scripts compilarão sem erros.
 
+O primeiro log do Cloud Build em Unity 2022.3.62f3 encontrou três scripts-placeholder inválidos e sem referências, exportados pelo AssetRipper. Uma varredura estática achou outros 12 stubs com identificadores inválidos e também sem referências. Os 15 foram removidos para corrigir os erros de sintaxe observados e prevenir os mesmos erros nos outros scripts. Ainda é necessário executar uma nova tentativa de build e analisar qualquer erro subsequente; esta limpeza não foi validada por compilação.
+
 ## O que foi recuperado
 
 A exportação contém cenas, prefabs, meshes, animações, materiais, texturas, shaders, áudio, Resources e outros assets. O projeto original indicado nos dados era Subway Surfers 1.94.0, Unity 2019.2.0f1. Os relatórios da exportação estão em `Recovered_Analysis/Beijing_UnityWeb_Analysis/assetripper-export/`.

@@ -35,18 +35,23 @@
   "raw_payload_copies_removed_from_workspace": true,
   "git_history_still_contains_removed_blobs": true,
   "gameplay_logic_recovered_and_validated": false,
-  "project_opened_in_unity_2022": false,
+  "project_opened_in_unity_2022": true,
   "project_compiled": false,
   "webgl_build_generated_from_active_project": false,
+  "last_cloud_build_log_diagnosed": true,
+  "last_cloud_build_failure_cause": "Three AssetRipper-generated dummy C# scripts had illegal identifiers/namespace syntax.",
+  "unreferenced_invalid_dummy_scripts_removed": 15,
+  "post_fix_build_verification_performed": false,
   "notes": [
     "The Unity project folders at repository root were replaced with the AssetRipper export; the previously generated Beijing Runner prototype WebGL archive is not a build of this active project.",
-    "ProjectVersion.txt is set to Unity 2022.3.62f3, but no Unity upgrade/import or compilation was run.",
+    "ProjectVersion.txt is set to Unity 2022.3.62f3. The submitted Cloud Build log confirms batch-mode import/processing with that Editor, but the build failed during script compilation.",
     "AssetRipper exported 1,864 objects into scenes, prefabs, meshes, animations, textures, materials, audio and other assets; recovered scripts are stubs rather than original method logic.",
     "Cpp2IL IL Recovery DLLs were decompiled with ILSpy into reference-only C# sources. The output is approximate, includes many unresolved decompiler markers, and is not imported under Assets.",
-    "No compilation or WebGL build was attempted, as explicitly requested. Compile readiness and runtime fidelity remain unverified.",
+    "The assistant did not run a compilation. The user's submitted Cloud Build attempt did compile scripts but failed before producing a WebGL build; post-fix status remains unverified.",
     "The raw UnityWeb inputs and the identical extracted WASM module were removed from the current tree and local working copies; older Git commits still retain the blobs because history was not rewritten.",
     "Recovered_Assets_Reference, containing a redundant older AssetRipper export copy and TexLow textures, was removed from the current tree at the user's request; the active Unity project folders were not removed.",
     "The existing WABT structured pseudocode was regenerated with WABT 1.0.34 --enable-all and matched byte-for-byte; a named WAT output was also created and compressed.",
-    "WABT wasm2c was attempted but reported a generic limited-feature-set error without naming a specific unsupported feature; see BUILD_REPORT.txt."
+    "WABT wasm2c was attempted but reported a generic limited-feature-set error without naming a specific unsupported feature; see BUILD_REPORT.txt.",
+    "The submitted Cloud Build log confirmed Unity 2022.3.62f3 and reported C# syntax errors in three unreferenced AssetRipper dummy scripts. A static scan found 12 more invalid type identifiers in unreferenced dummy stubs; all 15 files and their .meta files were removed. No post-fix build was run."
   ]
 }
