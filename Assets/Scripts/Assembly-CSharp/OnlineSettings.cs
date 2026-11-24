@@ -1,63 +1,224 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-public class OnlineSettings : MonoBehaviour
+public class OnlineSettings
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private const string URL = "/onlinesettings_android.php";
 
-	1. No dll files were provided to AssetRipper.
+	private const string FILE_SECRET = "pdvshbhkndf92k19zvbckawd92fjk";
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	private const int FILEFORMAT_VERSION = 1;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private static readonly char[] LINEBREAK_CHARS = new char[2] { '\n', '\r' };
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private static OnlineSettings _instance;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private Dictionary<string, string> _settings = new Dictionary<string, string>();
 
-	3. Assembly Reconstruction has not been implemented.
+	private bool _isDownloading;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private GameObject _downloadGameObject;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public static bool isInstanced
+	{
+		get
+		{
+			return _instance != null;
+		}
+	}
 
-	4. This script is unnecessary.
+	public static OnlineSettings instance
+	{
+		get
+		{
+			if (_instance == null)
+			{
+				_instance = new OnlineSettings();
+			}
+			return _instance;
+		}
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public bool isDownloading
+	{
+		get
+		{
+			return _isDownloading;
+		}
+	}
 
-	5. Script Content Level 0
+	private OnlineSettings()
+	{
+		LoadFromFile();
+	}
 
-		AssetRipper was set to not load any script information.
+	public void DownloadNow()
+	{
+		if (!_isDownloading)
+		{
+			if (_downloadGameObject != null)
+			{
+				UnityEngine.Object.Destroy(_downloadGameObject);
+			}
+			_downloadGameObject = new GameObject("OnlineSettingsDownloader");
+			UnityEngine.Object.DontDestroyOnLoad(_downloadGameObject);
+			_downloadGameObject.AddComponent<MonoBehaviour>().StartCoroutine(DownloadCoroutine());
+		}
+		else
+		{
+			Debug.LogWarning("OnlineSettings.DownloadNow(): Already downloading");
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public double GetValue(string key, double defaultValue)
+	{
+		string value;
+		if (_settings.TryGetValue(key, out value))
+		{
+			try
+			{
+				return double.Parse(value);
+			}
+			catch
+			{
+				Debug.LogError(key + " returns the defaultValue because send string was " + value);
+			}
+		}
+		return defaultValue;
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public int GetValue(string key, int defaultValue)
+	{
+		string value;
+		if (_settings.TryGetValue(key, out value))
+		{
+			try
+			{
+				return int.Parse(value);
+			}
+			catch
+			{
+				Debug.LogError(key + " returns the defaultValue because send string was " + value);
+			}
+		}
+		return defaultValue;
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public string GetValue(string key, string defaultValue)
+	{
+		string value;
+		if (_settings.TryGetValue(key, out value))
+		{
+			return value;
+		}
+		return defaultValue;
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public bool TryGetValue(string key, out string valueString)
+	{
+		return _settings.TryGetValue(key, out valueString);
+	}
 
-	*/
+	public bool HasValue(string key)
+	{
+		return _settings.ContainsKey(key);
+	}
+
+	private IEnumerator DownloadCoroutine()
+	{
+		WWW www = new WWW("http://hoodrunner.kiloo.com/onlinesettings_android.php");
+		yield return www;
+		if (www.error != null)
+		{
+			Debug.LogWarning("OnlineSettings download failed: " + www.error);
+		}
+		else
+		{
+			string response = www.text;
+			if (response.Contains("<html"))
+			{
+				Debug.LogError("OnlineSettings download failed: " + response);
+			}
+			else if (ValidateChecksum(response))
+			{
+				_settings = StringUtility.ParseProperties(www.text);
+				SaveToFile();
+			}
+			else
+			{
+				Debug.LogError("OnlineSettings checksum verification failed");
+			}
+		}
+		UnityEngine.Object.Destroy(_downloadGameObject);
+		_downloadGameObject = null;
+		_isDownloading = false;
+	}
+
+	private static bool ValidateChecksum(string response)
+	{
+		int num = response.IndexOfAny(LINEBREAK_CHARS);
+		if (num > 0)
+		{
+			string text = response.Substring(0, num);
+			string data = response.Substring(num + 1).Trim();
+			string checksum = SocialManager.GetChecksum(data);
+			if (string.Compare(text, checksum, true) == 0)
+			{
+				return true;
+			}
+			Debug.LogWarning("OnlineSettings.ValidateChecksum failed: Computed checksum " + checksum + " does not match " + text);
+		}
+		else
+		{
+			Debug.LogWarning("OnlineSettings.ValidateChecksum failed: Unable to find checksum");
+		}
+		return false;
+	}
+
+	private void LoadFromFile()
+	{
+		try
+		{
+			string saveDataPath = GetSaveDataPath();
+			byte[] buffer = FileUtil.Load(saveDataPath, "pdvshbhkndf92k19zvbckawd92fjk");
+			MemoryStream memoryStream = new MemoryStream(buffer);
+			BinaryReader binaryReader = new BinaryReader(memoryStream);
+			int num = binaryReader.ReadInt32();
+			_settings = FileUtil.ReadStringStringDictionary(binaryReader);
+			memoryStream.Close();
+		}
+		catch (FileNotFoundException)
+		{
+		}
+		catch (Exception ex2)
+		{
+			Debug.LogError("OnlineSettings: Failed to load OnlineSettings from file: " + ex2);
+		}
+	}
+
+	private void SaveToFile()
+	{
+		try
+		{
+			MemoryStream memoryStream = new MemoryStream(4096);
+			BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
+			binaryWriter.Write(1);
+			FileUtil.WriteStringStringDictionary(binaryWriter, _settings);
+			string saveDataPath = GetSaveDataPath();
+			FileUtil.Save(saveDataPath, "pdvshbhkndf92k19zvbckawd92fjk", memoryStream.GetBuffer(), 0, (int)memoryStream.Length);
+			memoryStream.Close();
+		}
+		catch (Exception ex)
+		{
+			Debug.LogError("Failed to save OnlineSettings to file: " + ex);
+		}
+	}
+
+	private static string GetSaveDataPath()
+	{
+		return Application.persistentDataPath + "/onlinesettings";
+	}
 }

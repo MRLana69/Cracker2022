@@ -1,63 +1,137 @@
+using System;
 using UnityEngine;
 
-public class PurchaseHandler : MonoBehaviour
+public class PurchaseHandler
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private Action _onUpgradePurchase;
 
-	1. No dll files were provided to AssetRipper.
+	private static PurchaseHandler _instance;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public static PurchaseHandler Instance
+	{
+		get
+		{
+			return _instance ?? (_instance = new PurchaseHandler());
+		}
+	}
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public void AddOnUpgradePurchase(Action handler)
+	{
+		_onUpgradePurchase = (Action)Delegate.Combine(_onUpgradePurchase, handler);
+	}
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public void RemoveOnUpgradePurchase(Action handler)
+	{
+		if (_onUpgradePurchase != null)
+		{
+			_onUpgradePurchase = (Action)Delegate.Remove(_onUpgradePurchase, handler);
+		}
+	}
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public void PurchaseCharacter(Characters.CharacterType characterType, UICharacterBuyButton sender)
+	{
+		Characters.Model model = Characters.characterData[characterType];
+		if (model.unlockType != Characters.UnlockType.coins)
+		{
+			Debug.LogWarning("Cannot buy character with unlocktype: " + model.unlockType);
+			sender.PurchaseFailure();
+			return;
+		}
+		int price = model.Price;
+		if (PlayerInfo.Instance.amountOfCoins >= price)
+		{
+			Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, price);
+			PlayerInfo.Instance.CollectToken(characterType, price);
+			PlayerInfo.Instance.amountOfCoins -= price;
+			sender.PurchaseSuccessful();
+			if (Characters.characterData[characterType].missionTargetKey != Missions.MissionTarget.none)
+			{
+				Missions.Instance.PlayerDidThis(Characters.characterData[characterType].missionTargetKey);
+			}
+		}
+		else
+		{
+			InAppManager.Instance.SetupNativePopup(price, model.modelName);
+			sender.PurchaseFailure();
+		}
+	}
 
-	3. Assembly Reconstruction has not been implemented.
+	public void PurchaseHoverboard(BuyHoverboardButton sender)
+	{
+		int price = Upgrades.upgrades[PowerupType.hoverboard].getPrice(0);
+		if (PlayerInfo.Instance.amountOfCoins >= price)
+		{
+			PlayerInfo.Instance.IncreaseUpgradeAmount(PowerupType.hoverboard);
+			Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, price);
+			PlayerInfo.Instance.amountOfCoins -= price;
+			sender.PurchaseSuccessful();
+			Action onUpgradePurchase = _onUpgradePurchase;
+			if (onUpgradePurchase != null)
+			{
+				onUpgradePurchase();
+			}
+			PlayerInfo.Instance.SaveIfDirty();
+		}
+		else
+		{
+			InAppManager.Instance.SetupNativePopup(price, "Hoverboard");
+			sender.PurchaseFailure();
+		}
+	}
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
-
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
-
-	4. This script is unnecessary.
-
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
-
-	5. Script Content Level 0
-
-		AssetRipper was set to not load any script information.
-
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public void PurchaseUpgrade(PowerupType type, BuyButtonIngame sender)
+	{
+		int num = ((Upgrades.upgrades[type].numberOfTiers != 0) ? Upgrades.upgrades[type].getPrice(PlayerInfo.Instance.GetCurrentTier(type) + 1) : Upgrades.upgrades[type].getPrice(0));
+		if (PlayerInfo.Instance.amountOfCoins >= num)
+		{
+			switch (type)
+			{
+			case PowerupType.hoverboard:
+			case PowerupType.headstart500:
+			case PowerupType.headstart2000:
+				PlayerInfo.Instance.IncreaseUpgradeAmount(type);
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, num);
+				if (type == PowerupType.headstart2000)
+				{
+					Missions.Instance.PlayerDidThis(Missions.MissionTarget.HaveHeadStartLarge);
+				}
+				break;
+			case PowerupType.jetpack:
+			case PowerupType.supersneakers:
+			case PowerupType.coinmagnet:
+			case PowerupType.letters:
+			case PowerupType.doubleMultiplier:
+				PlayerInfo.Instance.IncreasePowerupTier(type);
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, num);
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.HaveUpgrades);
+				break;
+			case PowerupType.mysterybox:
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, num);
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.BuyMysterybox);
+				break;
+			case PowerupType.skipmission1:
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, num);
+				break;
+			case PowerupType.skipmission2:
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, num);
+				break;
+			case PowerupType.skipmission3:
+				Missions.Instance.PlayerDidThis(Missions.MissionTarget.SpendCoin, num);
+				break;
+			}
+			PlayerInfo.Instance.amountOfCoins -= num;
+			sender.PurchaseSuccessful();
+			Action onUpgradePurchase = _onUpgradePurchase;
+			if (onUpgradePurchase != null)
+			{
+				onUpgradePurchase();
+			}
+			PlayerInfo.Instance.SaveIfDirty();
+		}
+		else
+		{
+			InAppManager.Instance.SetupNativePopup(num, Upgrades.upgrades[type].name);
+			sender.PurchaseFailure();
+		}
+	}
 }

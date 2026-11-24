@@ -1,63 +1,91 @@
 using UnityEngine;
 
-public class DeviceInfo : MonoBehaviour
+public static class DeviceInfo
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public enum FormFactor
+	{
+		iPhone = 0,
+		iPad = 1,
+		small = 2,
+		medium = 3,
+		large = 4,
+		iPhone5 = 5,
+		unknown = 6
+	}
 
-	1. No dll files were provided to AssetRipper.
+	public enum PerformanceLevel
+	{
+		Low = 0,
+		Medium = 1,
+		High = 2
+	}
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public static string deviceModel;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public static readonly float dpi;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public static readonly FormFactor formFactor;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public static readonly bool isHighres;
 
-	3. Assembly Reconstruction has not been implemented.
+	public static float cachedHeight;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public static float cachedWidth;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	static DeviceInfo()
+	{
+		cachedHeight = -1f;
+		cachedWidth = -1f;
+		deviceModel = SystemInfo.deviceModel;
+		cachedHeight = Screen.height;
+		cachedWidth = Screen.width;
+		if (Screen.height == 0)
+		{
+			formFactor = FormFactor.unknown;
+		}
+		else if (Screen.height < 500)
+		{
+			formFactor = FormFactor.small;
+			Debug.Log("Form factor small");
+		}
+		else if (Screen.height < 900)
+		{
+			formFactor = FormFactor.medium;
+			Debug.Log("Form factor medium");
+		}
+		else
+		{
+			formFactor = FormFactor.large;
+			Debug.Log("Form factor large");
+		}
+		if (isTablet())
+		{
+			formFactor = FormFactor.iPad;
+			Debug.Log("Form factor tablet");
+		}
+		if ((Screen.height >= 960 && Screen.width >= 640) || formFactor == FormFactor.unknown)
+		{
+			isHighres = true;
+		}
+		else
+		{
+			isHighres = false;
+		}
+		dpi = Screen.dpi;
+		if (dpi <= 0f)
+		{
+			dpi = 300f;
+		}
+		Debug.Log("Dpi: " + dpi);
+		Debug.Log("High res set to: " + isHighres);
+	}
 
-	4. This script is unnecessary.
-
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
-
-	5. Script Content Level 0
-
-		AssetRipper was set to not load any script information.
-
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	private static bool isTablet()
+	{
+		float f = ((!(Screen.dpi > 0f)) ? ((float)Screen.width) : ((float)Screen.width / Screen.dpi));
+		float f2 = ((!(Screen.dpi > 0f)) ? ((float)Screen.height) : ((float)Screen.height / Screen.dpi));
+		double num = Mathf.Sqrt(Mathf.Pow(f, 2f) + Mathf.Pow(f2, 2f));
+		Debug.Log("size of inches: " + num);
+		return num >= 6.0;
+	}
 }

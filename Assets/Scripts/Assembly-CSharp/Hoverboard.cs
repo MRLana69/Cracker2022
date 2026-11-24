@@ -1,63 +1,161 @@
+using System.Collections;
 using UnityEngine;
 
-public class Hoverboard : MonoBehaviour
+public class Hoverboard : CharacterModifier
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public AudioClipInfo powerDownSound;
 
-	1. No dll files were provided to AssetRipper.
+	public float cooldownDstance = 50f;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public float slowMotionDistance = 90f;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public float slowDownToScale = 0.3f;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public bool isAllowed = true;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public GameObject powerupMesh;
 
-	3. Assembly Reconstruction has not been implemented.
+	public float WaitForParticlesDelay;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public float RemoveObstaclesDistance = 250f;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private Game game;
 
-	4. This script is unnecessary.
+	private Character character;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private Track track;
 
-	5. Script Content Level 0
+	private float lastEndActivationTime;
 
-		AssetRipper was set to not load any script information.
+	[HideInInspector]
+	public bool isActive;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public AudioClipInfo CrashSound;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public AudioClipInfo StartSound;
 
-	7. An incorrect path was provided to AssetRipper.
+	public ActivePowerup Powerup;
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	private static Hoverboard instance;
 
-	*/
+	public override bool ShouldPauseInJetpack
+	{
+		get
+		{
+			return true;
+		}
+	}
+
+	public static Hoverboard Instance
+	{
+		get
+		{
+			return instance ?? (instance = Object.FindObjectOfType(typeof(Hoverboard)) as Hoverboard);
+		}
+	}
+
+	public void Awake()
+	{
+		character = Character.Instance;
+		track = Track.Instance;
+	}
+
+	public override void Reset()
+	{
+		character.immuneToCriticalHit = false;
+		character.characterController.enabled = true;
+		character.characterCollider.enabled = true;
+		powerupMesh.active = false;
+		isActive = false;
+		Time.timeScale = 1f;
+		character.hoverboardCrashParticleSystem.gameObject.SetActiveRecursively(false);
+	}
+
+	public override IEnumerator Begin()
+	{
+		float timeSinceLastActivation = Time.time - lastEndActivationTime;
+		if (!isAllowed || timeSinceLastActivation < WaitForParticlesDelay + PlayerInfo.Instance.GetHoverBoardCoolDown())
+		{
+			yield break;
+		}
+		PlayerInfo.Instance.UseUpgrade(PowerupType.hoverboard);
+		Missions.Instance.PlayerDidThis(Missions.MissionTarget.HoverBoard);
+		Paused = false;
+		character.Stumble = false;
+		isActive = true;
+		character.ChangeAnimations();
+		character.characterAnimation.CrossFade("h_skate_on", 0.06f);
+		character.characterAnimation.CrossFadeQueued("h_run", 0.2f);
+		So.Instance.playSound(StartSound);
+		character.CharacterPickupParticleSystem.PickedUpDefaultPowerUp();
+		character.immuneToCriticalHit = true;
+		stop = StopSignal.DONT_STOP;
+		Powerup = GameStats.Instance.TriggerPowerup(PowerupType.hoverboard);
+		powerupMesh.active = true;
+		while (Powerup.timeLeft > 0f && stop == StopSignal.DONT_STOP)
+		{
+			yield return 0;
+		}
+		if (stop == StopSignal.DONT_STOP)
+		{
+			Missions.Instance.PlayerDidThis(Missions.MissionTarget.HoverBoardExpire);
+			So.Instance.playSound(powerDownSound);
+		}
+		powerupMesh.active = false;
+		character.immuneToCriticalHit = false;
+		isActive = false;
+		character.ChangeAnimations();
+		lastEndActivationTime = Time.time;
+		if (stop != StopSignal.STOP)
+		{
+			yield break;
+		}
+		isActive = false;
+		character.immuneToCriticalHit = false;
+		character.hoverboardCrashParticleSystem.gameObject.SetActiveRecursively(true);
+		character.hoverboardCrashParticleSystem.Play();
+		PlayCrashSound();
+		float timeLeft = WaitForParticlesDelay;
+		while (timeLeft > 0f)
+		{
+			timeLeft -= Time.deltaTime;
+			yield return 0;
+		}
+		track.LayEmptyChunks(character.z, RemoveObstaclesDistance * Game.Instance.NormalizedGameSpeed);
+		character.jumping = true;
+		character.falling = false;
+		character.verticalSpeed = character.CalculateJumpVerticalSpeed(10f);
+		character.characterAnimation.CrossFade(character.animations.jump, 0.05f);
+		float newSlowMotionDistance = slowMotionDistance * Game.Instance.NormalizedGameSpeed;
+		float newCoolDownDist = cooldownDstance * Game.Instance.NormalizedGameSpeed;
+		float distanceLeft = newSlowMotionDistance;
+		bool didStopCooldown = false;
+		while (distanceLeft > 0f)
+		{
+			distanceLeft -= Game.Instance.currentLevelSpeed * Time.deltaTime;
+			newCoolDownDist -= Game.Instance.currentLevelSpeed * Time.deltaTime;
+			if (newCoolDownDist < 0f && !didStopCooldown)
+			{
+				character.immuneToCriticalHit = false;
+				didStopCooldown = true;
+			}
+			yield return 0;
+		}
+		character.hoverboardCrashParticleSystem.gameObject.SetActiveRecursively(false);
+	}
+
+	public void PlayCrashSound()
+	{
+		So.Instance.playSound(CrashSound);
+	}
+
+	public override void Pause()
+	{
+		powerupMesh.active = false;
+	}
+
+	public override void Resume()
+	{
+		powerupMesh.active = true;
+	}
 }

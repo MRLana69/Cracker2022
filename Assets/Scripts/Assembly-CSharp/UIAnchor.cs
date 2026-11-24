@@ -1,63 +1,178 @@
 using UnityEngine;
 
+[AddComponentMenu("NGUI/UI/Anchor")]
+[ExecuteInEditMode]
 public class UIAnchor : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public enum Side
+	{
+		BottomLeft = 0,
+		Left = 1,
+		TopLeft = 2,
+		Top = 3,
+		TopRight = 4,
+		Right = 5,
+		BottomRight = 6,
+		Bottom = 7,
+		Center = 8
+	}
 
-	1. No dll files were provided to AssetRipper.
+	private bool mIsWindows;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public Camera uiCamera;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public UIWidget widgetContainer;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public UIPanel panelContainer;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public Side side = Side.Center;
 
-	3. Assembly Reconstruction has not been implemented.
+	public bool halfPixelOffset = true;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public float depthOffset;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public Vector2 relativeOffset = Vector2.zero;
 
-	4. This script is unnecessary.
+	private Animation mAnim;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private UIRoot mRoot;
 
-	5. Script Content Level 0
+	private void Awake()
+	{
+		mAnim = base.GetComponent<Animation>();
+	}
 
-		AssetRipper was set to not load any script information.
+	private void Start()
+	{
+		mRoot = NGUITools.FindInParents<UIRoot>(base.gameObject);
+		mIsWindows = Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer || Application.platform == RuntimePlatform.WindowsEditor;
+		if (uiCamera == null)
+		{
+			uiCamera = NGUITools.FindCameraForLayer(base.gameObject.layer);
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	private void Update()
+	{
+		if (mAnim != null && mAnim.enabled && mAnim.isPlaying)
+		{
+			return;
+		}
+		Rect rect = default(Rect);
+		bool flag = false;
+		if (panelContainer != null)
+		{
+			if (panelContainer.clipping == UIDrawCall.Clipping.None)
+			{
+				float num = ((!(mRoot != null)) ? 0.5f : ((float)(mRoot.manualHeight / Screen.height) * 0.5f));
+				rect.xMin = (float)(-Screen.width) * num;
+				rect.yMin = (float)(-Screen.height) * num;
+				rect.xMax = 0f - rect.xMin;
+				rect.yMax = 0f - rect.yMin;
+			}
+			else
+			{
+				Vector4 clipRange = panelContainer.clipRange;
+				rect.x = clipRange.x - clipRange.z * 0.5f;
+				rect.y = clipRange.y - clipRange.w * 0.5f;
+				rect.width = clipRange.z;
+				rect.height = clipRange.w;
+			}
+		}
+		else if (widgetContainer != null)
+		{
+			Transform cachedTransform = widgetContainer.cachedTransform;
+			Vector3 localScale = cachedTransform.localScale;
+			Vector3 localPosition = cachedTransform.localPosition;
+			Vector3 vector = widgetContainer.relativeSize;
+			Vector3 vector2 = widgetContainer.pivotOffset;
+			vector2.y -= 1f;
+			vector2.x *= widgetContainer.relativeSize.x * localScale.x;
+			vector2.y *= widgetContainer.relativeSize.y * localScale.y;
+			rect.x = localPosition.x + vector2.x;
+			rect.y = localPosition.y + vector2.y;
+			rect.width = vector.x * localScale.x;
+			rect.height = vector.y * localScale.y;
+		}
+		else
+		{
+			if (!(uiCamera != null))
+			{
+				return;
+			}
+			flag = true;
+			rect = uiCamera.pixelRect;
+		}
+		float x = (rect.xMin + rect.xMax) * 0.5f;
+		float y = (rect.yMin + rect.yMax) * 0.5f;
+		Vector3 vector3 = new Vector3(x, y, depthOffset);
+		if (side != Side.Center)
+		{
+			if (side == Side.Right || side == Side.TopRight || side == Side.BottomRight)
+			{
+				vector3.x = rect.xMax;
+			}
+			else if (side == Side.Top || side == Side.Center || side == Side.Bottom)
+			{
+				vector3.x = x;
+			}
+			else
+			{
+				vector3.x = rect.xMin;
+			}
+			if (side == Side.Top || side == Side.TopRight || side == Side.TopLeft)
+			{
+				vector3.y = rect.yMax;
+			}
+			else if (side == Side.Left || side == Side.Center || side == Side.Right)
+			{
+				vector3.y = y;
+			}
+			else
+			{
+				vector3.y = rect.yMin;
+			}
+		}
+		float width = rect.width;
+		float height = rect.height;
+		vector3.x += relativeOffset.x * width;
+		vector3.y += relativeOffset.y * height;
+		if (flag)
+		{
+			if (uiCamera.orthographic)
+			{
+				vector3.x = Mathf.RoundToInt(vector3.x);
+				vector3.y = Mathf.RoundToInt(vector3.y);
+				if (halfPixelOffset && mIsWindows)
+				{
+					vector3.x -= 0.5f;
+					vector3.y += 0.5f;
+				}
+			}
+			vector3 = uiCamera.ScreenToWorldPoint(vector3);
+			if (base.transform.position != vector3)
+			{
+				base.transform.position = vector3;
+			}
+		}
+		else
+		{
+			vector3.x = Mathf.RoundToInt(vector3.x);
+			vector3.y = Mathf.RoundToInt(vector3.y);
+			float z = vector3.z;
+			if (widgetContainer != null)
+			{
+				vector3 = widgetContainer.transform.parent.TransformPoint(vector3);
+			}
+			else if (panelContainer != null)
+			{
+				vector3 = panelContainer.transform.parent.TransformPoint(vector3);
+			}
+			vector3.z = z;
+			if (base.transform.position != vector3)
+			{
+				base.transform.position = vector3;
+			}
+		}
+	}
 }

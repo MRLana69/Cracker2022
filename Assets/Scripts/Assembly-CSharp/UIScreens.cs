@@ -1,63 +1,80 @@
-using UnityEngine;
-
-public class UIScreens : MonoBehaviour
+public class UIScreens
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public const string BRAG_POPUP = "BragPopup";
 
-	1. No dll files were provided to AssetRipper.
+	public const string CHARACTER_SCREEN = "CharacterScreen";
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public const string COINS_SCREEN = "CoinsUI_shop";
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public const string COINS_POPUP = "CoinsUI_quick";
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public const string CHANGE_LOG_END_GAME_POPUP = "ChangeLogEndGamePopup";
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public const string CHANGE_LOG_POPUP = "ChangeLogPopup";
 
-	3. Assembly Reconstruction has not been implemented.
+	public const string CROSS_PROMO_POPUP = "CrossPromoPopup";
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public const string DAILY_CHALLENGE_POPUP = "DailyChallengePopup";
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public const string FACEBOOK_PAYOUT_POPUP = "FacebookPayoutPopup";
 
-	4. This script is unnecessary.
+	public const string FRIENDS_SCREEN = "FriendsUI";
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public const string FRIENDS_SCREEN_OFFLINE = "FriendsUI_offline";
 
-	5. Script Content Level 0
+	public const string FRIENDS_SCREEN_ONLINE = "FriendsUI_online";
 
-		AssetRipper was set to not load any script information.
+	public const string FRONT_SCREEN = "FrontUI";
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public const string GAMECENTER_PAYOUT_POPUP = "GameCenterPayoutPopup";
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public const string GAMEOVER_SCREEN = "GameoverUI";
 
-	7. An incorrect path was provided to AssetRipper.
+	public const string HALLOWEEN_THEME_POPUP = "HalloweenThemePopup";
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public const string HOVERBOARD_POPUP = "HoverboardPopup";
 
-	*/
+	public const string LEADERBOARD_SCREEN = "LeaderboardUI";
+
+	public const string LEADERBOARD_SCREEN_OFFLINE = "LeaderboardUI_offline";
+
+	public const string LEADERBOARD_SCREEN_ONLINE = "LeaderboardUI_online";
+
+	public const string MISSION_POPUP = "Mission_popup";
+
+	public const string MYSTERYBOX_POPUP = "MysteryBoxPopup";
+
+	public const string PAUSE_SCREEN = "PauseUI";
+
+	public const string PRE_BRAG_POPUP = "PreBragPopup";
+
+	public const string PRIZE_MB_POPUP = "PrizeMBPopup";
+
+	public const string PRIZE_SMB_POPUP = "PrizeSMBPopup";
+
+	public const string SETTINGS_POPUP = "SettingsPopup";
+
+	public const string INGAME_SCREEN = "IngameUI";
+
+	public const string TROPHY_SCREEN = "TokensUI";
+
+	public const string TUTORIAL_COLLECT_FROM_FRIENDS = "TutorialCollectFromFriendsPopup";
+
+	public const string TUTORIAL_DOUBLE_COINS = "TutorialDoubleCoinsPopup";
+
+	public const string TUTORIAL_END_GAME_MISSIONS = "TutorialEndGameMissionsPopup";
+
+	public const string TUTORIAL_FACEBOOK_POPUP = "TutorialFacebookPopup";
+
+	public const string TUTORIAL_HOVERBOARDS = "TutorialHoverboardsPopup";
+
+	public const string TUTORIAL_MISSION = "TutorialMissionPopup";
+
+	public const string TUTORIAL_TOKEN = "TutorialTokenPopup";
+
+	public const string UPDATE_APP_POPUP = "UpdateAppPopup";
+
+	public const string UPGRADE_SCREEN = "UpgradesUI_shop";
+
+	public const string UPGRADE_POPUP = "UpgradesUI_quick";
 }

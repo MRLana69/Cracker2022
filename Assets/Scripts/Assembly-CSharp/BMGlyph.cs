@@ -1,63 +1,102 @@
-using UnityEngine;
+using System;
+using System.Collections.Generic;
 
-public class BMGlyph : MonoBehaviour
+[Serializable]
+public class BMGlyph
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public struct Kerning
+	{
+		public int previousChar;
 
-	1. No dll files were provided to AssetRipper.
+		public int amount;
+	}
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public int index;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public int x;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public int y;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public int width;
 
-	3. Assembly Reconstruction has not been implemented.
+	public int height;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public int offsetX;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public int offsetY;
 
-	4. This script is unnecessary.
+	public int advance;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public int channel;
 
-	5. Script Content Level 0
+	public List<Kerning> kerning;
 
-		AssetRipper was set to not load any script information.
+	public int GetKerning(int previousChar)
+	{
+		if (this.kerning != null)
+		{
+			int i = 0;
+			for (int count = this.kerning.Count; i < count; i++)
+			{
+				Kerning kerning = this.kerning[i];
+				if (kerning.previousChar == previousChar)
+				{
+					return kerning.amount;
+				}
+			}
+		}
+		return 0;
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public void SetKerning(int previousChar, int amount)
+	{
+		if (kerning == null)
+		{
+			kerning = new List<Kerning>();
+		}
+		for (int i = 0; i < kerning.Count; i++)
+		{
+			if (kerning[i].previousChar == previousChar)
+			{
+				Kerning value = kerning[i];
+				value.amount = amount;
+				kerning[i] = value;
+				return;
+			}
+		}
+		Kerning item = new Kerning
+		{
+			previousChar = previousChar,
+			amount = amount
+		};
+		kerning.Add(item);
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public void Trim(int xMin, int yMin, int xMax, int yMax)
+	{
+		int num = x + width;
+		int num2 = y + height;
+		if (x < xMin)
+		{
+			int num3 = xMin - x;
+			x += num3;
+			width -= num3;
+			offsetX += num3;
+		}
+		if (y < yMin)
+		{
+			int num4 = yMin - y;
+			y += num4;
+			height -= num4;
+			offsetY += num4;
+		}
+		if (num > xMax)
+		{
+			width -= num - xMax;
+		}
+		if (num2 > yMax)
+		{
+			height -= num2 - yMax;
+		}
+	}
 }

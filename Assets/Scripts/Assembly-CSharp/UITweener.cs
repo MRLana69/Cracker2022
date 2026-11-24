@@ -1,63 +1,249 @@
+using System;
+using AnimationOrTween;
 using UnityEngine;
 
-public class UITweener : MonoBehaviour
+public abstract class UITweener : IgnoreTimeScale
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public enum Method
+	{
+		Linear = 0,
+		EaseIn = 1,
+		EaseOut = 2,
+		EaseInOut = 3,
+		BounceIn = 4,
+		BounceOut = 5
+	}
 
-	1. No dll files were provided to AssetRipper.
+	public enum Style
+	{
+		Once = 0,
+		Loop = 1,
+		PingPong = 2
+	}
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public delegate void OnFinished(UITweener tween);
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public OnFinished onFinished;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public Method method;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public Style style;
 
-	3. Assembly Reconstruction has not been implemented.
+	public bool ignoreTimeScale = true;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public float delay;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public float duration = 1f;
 
-	4. This script is unnecessary.
+	public bool steeperCurves;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public int tweenGroup;
 
-	5. Script Content Level 0
+	public GameObject eventReceiver;
 
-		AssetRipper was set to not load any script information.
+	public string callWhenFinished;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private float mStartTime;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	private float mDuration;
 
-	7. An incorrect path was provided to AssetRipper.
+	private float mAmountPerDelta = 1f;
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	private float mFactor;
 
-	*/
+	public float amountPerDelta
+	{
+		get
+		{
+			if (mDuration != duration)
+			{
+				mDuration = duration;
+				mAmountPerDelta = Mathf.Abs((!(duration > 0f)) ? 1000f : (1f / duration));
+			}
+			return mAmountPerDelta;
+		}
+	}
+
+	public float tweenFactor
+	{
+		get
+		{
+			return mFactor;
+		}
+	}
+
+	public Direction direction
+	{
+		get
+		{
+			return (!(mAmountPerDelta < 0f)) ? Direction.Forward : Direction.Reverse;
+		}
+	}
+
+	protected override void OnEnable()
+	{
+		base.OnEnable();
+		mStartTime = Time.realtimeSinceStartup + delay;
+	}
+
+	private void Start()
+	{
+		mStartTime = Time.realtimeSinceStartup + delay;
+		Update();
+	}
+
+	private void Update()
+	{
+		float num = ((!ignoreTimeScale) ? Time.deltaTime : UpdateRealTimeDelta());
+		if (Time.realtimeSinceStartup < mStartTime)
+		{
+			return;
+		}
+		mFactor += amountPerDelta * num;
+		if (style == Style.Loop)
+		{
+			if (mFactor > 1f)
+			{
+				mFactor -= Mathf.Floor(mFactor);
+			}
+		}
+		else if (style == Style.PingPong)
+		{
+			if (mFactor > 1f)
+			{
+				mFactor = 1f - (mFactor - Mathf.Floor(mFactor));
+				mAmountPerDelta = 0f - mAmountPerDelta;
+			}
+			else if (mFactor < 0f)
+			{
+				mFactor = 0f - mFactor;
+				mFactor -= Mathf.Floor(mFactor);
+				mAmountPerDelta = 0f - mAmountPerDelta;
+			}
+		}
+		if (style == Style.Once && (mFactor > 1f || mFactor < 0f))
+		{
+			mFactor = Mathf.Clamp01(mFactor);
+			Sample(mFactor, true);
+			if (onFinished != null)
+			{
+				onFinished(this);
+			}
+			if (eventReceiver != null && !string.IsNullOrEmpty(callWhenFinished))
+			{
+				eventReceiver.SendMessage(callWhenFinished, this, SendMessageOptions.DontRequireReceiver);
+			}
+			if ((mFactor == 1f && mAmountPerDelta > 0f) || (mFactor == 0f && mAmountPerDelta < 0f))
+			{
+				base.enabled = false;
+			}
+		}
+		else
+		{
+			Sample(mFactor, false);
+		}
+	}
+
+	public void Sample(float factor, bool isFinished)
+	{
+		float num = Mathf.Clamp01(factor);
+		if (method == Method.EaseIn)
+		{
+			num = 1f - Mathf.Sin((float)Math.PI / 2f * (1f - num));
+			if (steeperCurves)
+			{
+				num *= num;
+			}
+		}
+		else if (method == Method.EaseOut)
+		{
+			num = Mathf.Sin((float)Math.PI / 2f * num);
+			if (steeperCurves)
+			{
+				num = 1f - num;
+				num = 1f - num * num;
+			}
+		}
+		else if (method == Method.EaseInOut)
+		{
+			num -= Mathf.Sin(num * ((float)Math.PI * 2f)) / ((float)Math.PI * 2f);
+			if (steeperCurves)
+			{
+				num = num * 2f - 1f;
+				float num2 = Mathf.Sign(num);
+				num = 1f - Mathf.Abs(num);
+				num = 1f - num * num;
+				num = num2 * num * 0.5f + 0.5f;
+			}
+		}
+		else if (method == Method.BounceIn)
+		{
+			num = BounceLogic(num);
+		}
+		else if (method == Method.BounceOut)
+		{
+			num = 1f - BounceLogic(1f - num);
+		}
+		OnUpdate(num, isFinished);
+	}
+
+	private float BounceLogic(float val)
+	{
+		val = ((val < 0.363636f) ? (7.5685f * val * val) : ((val < 0.727272f) ? (7.5625f * (val -= 0.545454f) * val + 0.75f) : ((!(val < 0.90909f)) ? (7.5625f * (val -= 0.9545454f) * val + 63f / 64f) : (7.5625f * (val -= 0.818181f) * val + 0.9375f))));
+		return val;
+	}
+
+	public void Play(bool forward)
+	{
+		mAmountPerDelta = Mathf.Abs(amountPerDelta);
+		if (!forward)
+		{
+			mAmountPerDelta = 0f - mAmountPerDelta;
+		}
+		base.enabled = true;
+	}
+
+	public void Reset()
+	{
+		mFactor = ((!(mAmountPerDelta < 0f)) ? 0f : 1f);
+		Sample(mFactor, false);
+	}
+
+	public void Toggle()
+	{
+		if (mFactor > 0f)
+		{
+			mAmountPerDelta = 0f - amountPerDelta;
+		}
+		else
+		{
+			mAmountPerDelta = Mathf.Abs(amountPerDelta);
+		}
+		base.enabled = true;
+	}
+
+	protected abstract void OnUpdate(float factor, bool isFinished);
+
+	public static T Begin<T>(GameObject go, float duration) where T : UITweener
+	{
+		T val = go.GetComponent<T>();
+		if (val == null)
+		{
+			val = go.AddComponent<T>();
+		}
+		val.duration = duration;
+		val.mFactor = 0f;
+		val.mAmountPerDelta = Mathf.Abs(val.mAmountPerDelta);
+		val.style = Style.Once;
+		val.eventReceiver = null;
+		val.callWhenFinished = null;
+		val.onFinished = null;
+		val.enabled = true;
+		if (duration <= 0f)
+		{
+			val.Sample(1f, true);
+			val.enabled = false;
+		}
+		return val;
+	}
 }

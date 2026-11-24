@@ -1,63 +1,275 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BMFont : MonoBehaviour
+[Serializable]
+public class BMFont
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	[SerializeField]
+	[HideInInspector]
+	private BMGlyph[] mGlyphs;
 
-	1. No dll files were provided to AssetRipper.
+	[SerializeField]
+	[HideInInspector]
+	private int mSize;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[HideInInspector]
+	[SerializeField]
+	private int mBase;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	[HideInInspector]
+	[SerializeField]
+	private int mWidth;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	[SerializeField]
+	[HideInInspector]
+	private int mHeight;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	[SerializeField]
+	[HideInInspector]
+	private string mSpriteName;
 
-	3. Assembly Reconstruction has not been implemented.
+	[SerializeField]
+	[HideInInspector]
+	private List<BMGlyph> mSaved = new List<BMGlyph>();
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	[HideInInspector]
+	[SerializeField]
+	private List<BMSymbol> mSymbols = new List<BMSymbol>();
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private Dictionary<int, BMGlyph> mDict = new Dictionary<int, BMGlyph>();
 
-	4. This script is unnecessary.
+	public bool isValid
+	{
+		get
+		{
+			return mSaved.Count > 0 || LegacyCheck();
+		}
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public int charSize
+	{
+		get
+		{
+			return mSize;
+		}
+		set
+		{
+			mSize = value;
+		}
+	}
 
-	5. Script Content Level 0
+	public int baseOffset
+	{
+		get
+		{
+			return mBase;
+		}
+		set
+		{
+			mBase = value;
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	public int texWidth
+	{
+		get
+		{
+			return mWidth;
+		}
+		set
+		{
+			mWidth = value;
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public int texHeight
+	{
+		get
+		{
+			return mHeight;
+		}
+		set
+		{
+			mHeight = value;
+		}
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public int glyphCount
+	{
+		get
+		{
+			return isValid ? mSaved.Count : 0;
+		}
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public string spriteName
+	{
+		get
+		{
+			return mSpriteName;
+		}
+		set
+		{
+			mSpriteName = value;
+		}
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public List<BMSymbol> symbols
+	{
+		get
+		{
+			return mSymbols;
+		}
+	}
 
-	*/
+	public bool LegacyCheck()
+	{
+		if (mGlyphs != null && mGlyphs.Length > 0)
+		{
+			int i = 0;
+			for (int num = mGlyphs.Length; i < num; i++)
+			{
+				BMGlyph bMGlyph = mGlyphs[i];
+				if (bMGlyph != null)
+				{
+					bMGlyph.index = i;
+					mSaved.Add(bMGlyph);
+					mDict.Add(i, bMGlyph);
+				}
+			}
+			mGlyphs = null;
+			return true;
+		}
+		return false;
+	}
+
+	private int GetArraySize(int index)
+	{
+		if (index < 256)
+		{
+			return 256;
+		}
+		if (index < 65536)
+		{
+			return 65536;
+		}
+		if (index < 262144)
+		{
+			return 262144;
+		}
+		return 0;
+	}
+
+	public BMGlyph GetGlyph(int index, bool createIfMissing)
+	{
+		BMGlyph value = null;
+		if (mDict.Count == 0)
+		{
+			if (mSaved.Count == 0)
+			{
+				LegacyCheck();
+			}
+			else
+			{
+				int i = 0;
+				for (int count = mSaved.Count; i < count; i++)
+				{
+					BMGlyph bMGlyph = mSaved[i];
+					mDict.Add(bMGlyph.index, bMGlyph);
+				}
+			}
+		}
+		if (!mDict.TryGetValue(index, out value) && createIfMissing)
+		{
+			value = new BMGlyph();
+			value.index = index;
+			mSaved.Add(value);
+			mDict.Add(index, value);
+		}
+		return value;
+	}
+
+	public BMGlyph GetGlyph(int index)
+	{
+		return GetGlyph(index, false);
+	}
+
+	public BMSymbol GetSymbol(string sequence, bool createIfMissing)
+	{
+		int i = 0;
+		for (int count = mSymbols.Count; i < count; i++)
+		{
+			BMSymbol bMSymbol = mSymbols[i];
+			if (bMSymbol.sequence == sequence)
+			{
+				return bMSymbol;
+			}
+		}
+		if (createIfMissing)
+		{
+			BMSymbol bMSymbol2 = new BMSymbol();
+			bMSymbol2.sequence = sequence;
+			mSymbols.Add(bMSymbol2);
+			return bMSymbol2;
+		}
+		return null;
+	}
+
+	public BMSymbol MatchSymbol(string text, int offset, int textLength)
+	{
+		int count = mSymbols.Count;
+		if (count == 0)
+		{
+			return null;
+		}
+		textLength -= offset;
+		for (int i = 0; i < count; i++)
+		{
+			BMSymbol bMSymbol = mSymbols[i];
+			int length = bMSymbol.length;
+			if (length == 0 || textLength < length)
+			{
+				continue;
+			}
+			bool flag = true;
+			for (int j = 0; j < length; j++)
+			{
+				if (text[offset + j] != bMSymbol.sequence[j])
+				{
+					flag = false;
+					break;
+				}
+			}
+			if (flag)
+			{
+				return bMSymbol;
+			}
+		}
+		return null;
+	}
+
+	public void Clear()
+	{
+		mGlyphs = null;
+		mDict.Clear();
+		mSaved.Clear();
+	}
+
+	public void Trim(int xMin, int yMin, int xMax, int yMax)
+	{
+		if (!isValid)
+		{
+			return;
+		}
+		int i = 0;
+		for (int count = mSaved.Count; i < count; i++)
+		{
+			BMGlyph bMGlyph = mSaved[i];
+			if (bMGlyph != null)
+			{
+				bMGlyph.Trim(xMin, yMin, xMax, yMax);
+			}
+		}
+	}
 }

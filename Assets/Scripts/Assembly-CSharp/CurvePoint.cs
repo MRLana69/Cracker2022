@@ -2,62 +2,57 @@ using UnityEngine;
 
 public class CurvePoint : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public float t;
 
-	1. No dll files were provided to AssetRipper.
+	public bool smoothTangents = true;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public CurvePointTangent customIn;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public CurvePointTangent customOut;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public float weight = 50f;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public static Curve CreateCurve(Transform curvePointsParent, Vector3 offset)
+	{
+		Curve curve = new Curve();
+		CurvePoint[] componentsInChildren = curvePointsParent.GetComponentsInChildren<CurvePoint>();
+		for (int i = 0; i < componentsInChildren.Length; i++)
+		{
+			CurvePoint curvePoint = componentsInChildren[i];
+			curve.AddKey(curvePoint.t, curvePoint.transform.localPosition + offset, (curvePoint.transform.TransformPoint(-curvePoint.customIn.transform.localPosition) - curvePoint.transform.position) * curvePoint.weight, (curvePoint.transform.TransformPoint(curvePoint.customOut.transform.localPosition) - curvePoint.transform.position) * curvePoint.weight);
+			if (curvePoint.smoothTangents)
+			{
+				curve.SmoothTangents(i, curvePoint.weight);
+			}
+		}
+		return curve;
+	}
 
-	3. Assembly Reconstruction has not been implemented.
+	public static void DrawCurve(Transform curvePointsParent, Color color)
+	{
+		DrawCurve(curvePointsParent, Vector3.zero, color);
+	}
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public static void DrawCurve(Transform curvePointsParent, Vector3 offset, Color color)
+	{
+		CreateCurve(curvePointsParent, offset).DrawGizmos(color);
+	}
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
-
-	4. This script is unnecessary.
-
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
-
-	5. Script Content Level 0
-
-		AssetRipper was set to not load any script information.
-
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(base.transform.position, 0.5f);
+		if (!smoothTangents)
+		{
+			Vector3 position = customIn.transform.position;
+			Vector3 position2 = customOut.transform.position;
+			Gizmos.color = Color.yellow;
+			Gizmos.DrawLine(base.transform.position, position);
+			Gizmos.DrawLine(base.transform.position, position2);
+			Gizmos.color = Color.yellow * 0.8f;
+			Gizmos.DrawSphere(position, 0.3f);
+			Gizmos.color = Color.yellow;
+			Gizmos.DrawSphere(position2, 0.3f);
+		}
+	}
 }

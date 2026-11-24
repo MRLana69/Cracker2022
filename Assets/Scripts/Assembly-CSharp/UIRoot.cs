@@ -1,63 +1,135 @@
+using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
+[AddComponentMenu("NGUI/UI/Root")]
 public class UIRoot : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private static List<UIRoot> mRoots = new List<UIRoot>();
 
-	1. No dll files were provided to AssetRipper.
+	private Transform mTrans;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public bool automatic = true;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public int manualHeight = 800;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public int minimumHeight = 320;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public int maximumHeight = 1080;
 
-	3. Assembly Reconstruction has not been implemented.
+	public static List<UIRoot> list
+	{
+		get
+		{
+			return mRoots;
+		}
+	}
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public int activeHeight
+	{
+		get
+		{
+			int num = Mathf.Max(2, Screen.height);
+			if (num < minimumHeight)
+			{
+				return minimumHeight;
+			}
+			if (num > maximumHeight)
+			{
+				return maximumHeight;
+			}
+			if (automatic)
+			{
+				return num;
+			}
+			return manualHeight;
+		}
+	}
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public float pixelSizeAdjustment
+	{
+		get
+		{
+			float num = Screen.height;
+			if (num < (float)minimumHeight)
+			{
+				return (float)minimumHeight / num;
+			}
+			if (num > (float)maximumHeight)
+			{
+				return (float)maximumHeight / num;
+			}
+			return (!automatic) ? ((float)manualHeight / num) : 1f;
+		}
+	}
 
-	4. This script is unnecessary.
+	private void Awake()
+	{
+		mTrans = base.transform;
+		mRoots.Add(this);
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private void OnDestroy()
+	{
+		mRoots.Remove(this);
+	}
 
-	5. Script Content Level 0
+	private void Start()
+	{
+		UIOrthoCamera componentInChildren = GetComponentInChildren<UIOrthoCamera>();
+		if (componentInChildren != null)
+		{
+			Debug.LogWarning("UIRoot should not be active at the same time as UIOrthoCamera. Disabling UIOrthoCamera.", componentInChildren);
+			Camera component = componentInChildren.gameObject.GetComponent<Camera>();
+			componentInChildren.enabled = false;
+			if (component != null)
+			{
+				component.orthographicSize = 1f;
+			}
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	private void Update()
+	{
+		if (mTrans != null)
+		{
+			float num = 2f / (float)activeHeight;
+			Vector3 localScale = mTrans.localScale;
+			if (!(Mathf.Abs(localScale.x - num) <= float.Epsilon) || !(Mathf.Abs(localScale.y - num) <= float.Epsilon) || !(Mathf.Abs(localScale.z - num) <= float.Epsilon))
+			{
+				mTrans.localScale = new Vector3(num, num, num);
+			}
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public static void Broadcast(string funcName)
+	{
+		int i = 0;
+		for (int count = mRoots.Count; i < count; i++)
+		{
+			UIRoot uIRoot = mRoots[i];
+			if (uIRoot != null)
+			{
+				uIRoot.BroadcastMessage(funcName, SendMessageOptions.DontRequireReceiver);
+			}
+		}
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public static void Broadcast(string funcName, object param)
+	{
+		if (param == null)
+		{
+			Debug.LogError("SendMessage is bugged when you try to pass 'null' in the parameter field. It behaves as if no parameter was specified.");
+			return;
+		}
+		int i = 0;
+		for (int count = mRoots.Count; i < count; i++)
+		{
+			UIRoot uIRoot = mRoots[i];
+			if (uIRoot != null)
+			{
+				uIRoot.BroadcastMessage(funcName, param, SendMessageOptions.DontRequireReceiver);
+			}
+		}
+	}
 }

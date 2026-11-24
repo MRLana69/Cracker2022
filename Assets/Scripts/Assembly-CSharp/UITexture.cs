@@ -1,63 +1,174 @@
 using UnityEngine;
 
-public class UITexture : MonoBehaviour
+[ExecuteInEditMode]
+[AddComponentMenu("NGUI/UI/Texture")]
+public class UITexture : UIWidget
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	[HideInInspector]
+	[SerializeField]
+	private Rect mRect = new Rect(0f, 0f, 1f, 1f);
 
-	1. No dll files were provided to AssetRipper.
+	[HideInInspector]
+	[SerializeField]
+	private Shader mShader;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[SerializeField]
+	[HideInInspector]
+	private Texture mTexture;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private Material mDynamicMat;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private bool mCreatingMat;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public Rect uvRect
+	{
+		get
+		{
+			return mRect;
+		}
+		set
+		{
+			if (mRect != value)
+			{
+				mRect = value;
+				MarkAsChanged();
+			}
+		}
+	}
 
-	3. Assembly Reconstruction has not been implemented.
+	public Shader shader
+	{
+		get
+		{
+			if (mShader == null)
+			{
+				Material material = this.material;
+				if (material != null)
+				{
+					mShader = material.shader;
+				}
+				if (mShader == null)
+				{
+					mShader = Shader.Find("Unlit/Texture");
+				}
+			}
+			return mShader;
+		}
+		set
+		{
+			if (mShader != value)
+			{
+				mShader = value;
+				Material material = this.material;
+				if (material != null)
+				{
+					material.shader = value;
+				}
+			}
+		}
+	}
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public bool hasDynamicMaterial
+	{
+		get
+		{
+			return mDynamicMat != null;
+		}
+	}
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public override bool keepMaterial
+	{
+		get
+		{
+			return true;
+		}
+	}
 
-	4. This script is unnecessary.
+	public override Material material
+	{
+		get
+		{
+			if (!mCreatingMat && base.material == null)
+			{
+				mCreatingMat = true;
+				if (mainTexture != null)
+				{
+					if (mShader == null)
+					{
+						mShader = Shader.Find("Unlit/Texture");
+					}
+					mDynamicMat = new Material(mShader);
+					mDynamicMat.hideFlags = HideFlags.DontSave;
+					mDynamicMat.mainTexture = mainTexture;
+					base.material = mDynamicMat;
+				}
+				mCreatingMat = false;
+			}
+			return base.material;
+		}
+		set
+		{
+			if (mDynamicMat != value && mDynamicMat != null)
+			{
+				NGUITools.Destroy(mDynamicMat);
+				mDynamicMat = null;
+			}
+			base.material = value;
+		}
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public override Texture mainTexture
+	{
+		get
+		{
+			return (!(mTexture != null)) ? base.mainTexture : mTexture;
+		}
+		set
+		{
+			mTexture = value;
+			if (material == null)
+			{
+				mDynamicMat = new Material(shader);
+				mDynamicMat.hideFlags = HideFlags.DontSave;
+				mDynamicMat.mainTexture = mainTexture;
+				material = mDynamicMat;
+			}
+			base.mainTexture = value;
+		}
+	}
 
-	5. Script Content Level 0
+	private void OnDestroy()
+	{
+		NGUITools.Destroy(mDynamicMat);
+	}
 
-		AssetRipper was set to not load any script information.
+	public override void MakePixelPerfect()
+	{
+		Texture texture = mainTexture;
+		if (texture != null)
+		{
+			Vector3 localScale = base.cachedTransform.localScale;
+			localScale.x = (float)texture.width * uvRect.width;
+			localScale.y = (float)texture.height * uvRect.height;
+			localScale.z = 1f;
+			base.cachedTransform.localScale = localScale;
+		}
+		base.MakePixelPerfect();
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public override void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
+	{
+		verts.Add(new Vector3(1f, 0f, 0f));
+		verts.Add(new Vector3(1f, -1f, 0f));
+		verts.Add(new Vector3(0f, -1f, 0f));
+		verts.Add(new Vector3(0f, 0f, 0f));
+		uvs.Add(new Vector2(mRect.xMax, mRect.yMax));
+		uvs.Add(new Vector2(mRect.xMax, mRect.yMin));
+		uvs.Add(new Vector2(mRect.xMin, mRect.yMin));
+		uvs.Add(new Vector2(mRect.xMin, mRect.yMax));
+		cols.Add(base.color);
+		cols.Add(base.color);
+		cols.Add(base.color);
+		cols.Add(base.color);
+	}
 }

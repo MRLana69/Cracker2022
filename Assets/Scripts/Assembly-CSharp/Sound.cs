@@ -1,63 +1,77 @@
+using System.Collections;
 using UnityEngine;
 
-public class Sound : MonoBehaviour
+public class Sound
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private So _manager;
 
-	1. No dll files were provided to AssetRipper.
+	public AudioSource audioSource;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public GameObject gameObject;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public bool available = true;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public bool destroyAfterPlay;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public bool loop
+	{
+		set
+		{
+			audioSource.loop = value;
+		}
+	}
 
-	3. Assembly Reconstruction has not been implemented.
+	public Sound(So manager)
+	{
+		_manager = manager;
+		gameObject = new GameObject();
+		gameObject.name = "empty";
+		gameObject.transform.parent = manager.transform;
+		audioSource = gameObject.AddComponent<AudioSource>();
+	}
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public void destroySelf()
+	{
+		_manager.removeSound(this);
+		Object.Destroy(gameObject);
+	}
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public void stop()
+	{
+		audioSource.Stop();
+		destroySelf();
+	}
 
-	4. This script is unnecessary.
+	public IEnumerator fadeOutAndStop(float duration)
+	{
+		return audioSource.fadeOut(duration, delegate
+		{
+			stop();
+		});
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public IEnumerator playAudioClip(AudioClip audioClip, AudioRolloffMode rolloff, float minVolume, float maxVolume, float minPitch, float maxPitch, Vector3 position)
+	{
+		gameObject.name = audioClip.name;
+		audioSource.clip = audioClip;
+		audioSource.volume = Random.Range(minVolume, maxVolume);
+		audioSource.pitch = Random.Range(minPitch, maxPitch);
+		return play(rolloff, minVolume, maxVolume, minPitch, maxPitch, position);
+	}
 
-	5. Script Content Level 0
-
-		AssetRipper was set to not load any script information.
-
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public IEnumerator play(AudioRolloffMode rolloff, float minVolume, float maxVolume, float minPitch, float maxPitch, Vector3 position)
+	{
+		available = false;
+		gameObject.transform.position = position;
+		audioSource.rolloffMode = rolloff;
+		audioSource.volume = Random.Range(minVolume, maxVolume);
+		audioSource.pitch = Random.Range(minPitch, maxPitch);
+		audioSource.GetComponent<AudioSource>().Play();
+		yield return new WaitForSeconds(audioSource.clip.length + 0.1f);
+		if (destroyAfterPlay)
+		{
+			destroySelf();
+		}
+		available = true;
+	}
 }

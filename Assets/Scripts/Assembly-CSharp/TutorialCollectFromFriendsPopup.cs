@@ -1,63 +1,61 @@
 using UnityEngine;
 
-public class TutorialCollectFromFriendsPopup : MonoBehaviour
+public class TutorialCollectFromFriendsPopup : CharacterPopup
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	[SerializeField]
+	private UILabel topTitle;
 
-	1. No dll files were provided to AssetRipper.
+	[SerializeField]
+	private UILabel bottomTitle;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[SerializeField]
+	private UILabel subTitle;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	[SerializeField]
+	private UILabel line1Big;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	[SerializeField]
+	private UILabel line1Small;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	[SerializeField]
+	private UILabel line2Big;
 
-	3. Assembly Reconstruction has not been implemented.
+	[SerializeField]
+	private UILabel line2Small;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	[SerializeField]
+	private UILabel line3Big;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	[SerializeField]
+	private UILabel line3Small;
 
-	4. This script is unnecessary.
+	[SerializeField]
+	private UILabel buttonText;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private void OnEnable()
+	{
+		SetCharacter(Characters.CharacterType.slick);
+		topTitle.text = "Friends";
+		bottomTitle.text = "Are Gold!";
+		subTitle.text = "Get COINS when\nyour friends play !";
+		line1Big.text = "HOW does it work?";
+		line1Small.text = "Friend does 50 runs = COIN BAG";
+		line2Big.text = "What's inside the BAG?";
+		line2Small.text = "Up to 350 COINS in each!";
+		line3Big.text = "Get COINS right now!";
+		line3Small.text = "There's a BONUS waiting for you!";
+		buttonText.text = "Collect Coins!";
+	}
 
-	5. Script Content Level 0
+	private void OkClicked()
+	{
+		Flurry.LogEventWithAParameter("POPUP Screen GuidelineCollectPopup", "Result", "Ok");
+		UIScreenController.Instance.ClosePopup();
+	}
 
-		AssetRipper was set to not load any script information.
-
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	private void CloseClicked()
+	{
+		Flurry.LogEventWithAParameter("POPUP Screen GuidelineCollectPopup", "Result", "Cancel");
+		UIScreenController.Instance.ClosePopup();
+	}
 }

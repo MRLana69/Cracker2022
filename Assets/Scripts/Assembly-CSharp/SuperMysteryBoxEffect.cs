@@ -1,63 +1,86 @@
+using System;
 using UnityEngine;
 
 public class SuperMysteryBoxEffect : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private const string GLOW_MATERIAL_COLOR_NAME = "_TintColor";
 
-	1. No dll files were provided to AssetRipper.
+	private const float GLOW_ANI_SPEED = 0.5f;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public ParticleSystem[] particleSystems = new ParticleSystem[0];
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public Renderer[] glowRenderers = new Renderer[0];
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private float _glowAniFactor;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private bool _glowShouldBeOn;
 
-	3. Assembly Reconstruction has not been implemented.
+	private Color[] _glowBaseColors;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private Material[] _glowMaterials;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private void Start()
+	{
+		ParticleSystem[] array = particleSystems;
+		foreach (ParticleSystem particleSystem in array)
+		{
+			particleSystem.playOnAwake = false;
+		}
+		_glowMaterials = new Material[glowRenderers.Length];
+		_glowBaseColors = new Color[glowRenderers.Length];
+		for (int j = 0; j < glowRenderers.Length; j++)
+		{
+			_glowMaterials[j] = glowRenderers[j].material;
+			_glowBaseColors[j] = _glowMaterials[j].GetColor("_TintColor");
+		}
+		ApplyGlowAniFactor();
+	}
 
-	4. This script is unnecessary.
+	private void Update()
+	{
+		if (_glowShouldBeOn && _glowAniFactor < 1f)
+		{
+			_glowAniFactor = Mathf.Clamp01(_glowAniFactor + 0.5f * Time.deltaTime);
+			ApplyGlowAniFactor();
+		}
+		else if (!_glowShouldBeOn && _glowAniFactor > 0f)
+		{
+			_glowAniFactor = Mathf.Clamp01(_glowAniFactor - 0.5f * Time.deltaTime);
+			ApplyGlowAniFactor();
+		}
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public void StartEffect()
+	{
+		_glowShouldBeOn = true;
+		ParticleSystem[] array = particleSystems;
+		foreach (ParticleSystem particleSystem in array)
+		{
+			particleSystem.Play();
+		}
+	}
 
-	5. Script Content Level 0
+	public void StopEffect()
+	{
+		_glowShouldBeOn = false;
+		ParticleSystem[] array = particleSystems;
+		foreach (ParticleSystem particleSystem in array)
+		{
+			particleSystem.Stop();
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	public void SetVisible(bool visible)
+	{
+		base.gameObject.SetActiveRecursively(visible);
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	private void ApplyGlowAniFactor()
+	{
+		float num = 0.5f + 0.5f * Mathf.Cos((float)Math.PI + (float)Math.PI * _glowAniFactor);
+		for (int i = 0; i < _glowMaterials.Length; i++)
+		{
+			_glowMaterials[i].SetColor("_TintColor", _glowBaseColors[i] * num);
+		}
+	}
 }

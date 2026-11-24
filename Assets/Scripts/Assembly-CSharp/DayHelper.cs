@@ -2,62 +2,205 @@ using UnityEngine;
 
 public class DayHelper : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public enum DayType
+	{
+		_notset = 0,
+		regular = 1,
+		lastDay = 2
+	}
 
-	1. No dll files were provided to AssetRipper.
+	public DayType dayType;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	private Color32 InactiveDayColor = new Color32(9, 42, 83, byte.MaxValue);
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private Color32 ActiveDayColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private Color32 InactiveDayShadowColor = new Color32(0, 0, 0, 0);
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private Color32 ActiveDayShadowColor = new Color32(26, 116, 30, byte.MaxValue);
 
-	3. Assembly Reconstruction has not been implemented.
+	private Color32 InactiveRewardColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private Color32 ActiveRewardColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private Color32 InactiveRewardShadowColor = new Color32(0, 36, 80, byte.MaxValue);
 
-	4. This script is unnecessary.
+	private Color32 ActiveRewardShadowColor = new Color32(26, 116, 30, byte.MaxValue);
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private Color32 InactiveLastDayDayColor = new Color32(125, 27, 5, byte.MaxValue);
 
-	5. Script Content Level 0
+	private Color32 ActiveLastDayDayColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-		AssetRipper was set to not load any script information.
+	private Color32 InactiveLastDayDayShadowColor = new Color32(0, 0, 0, 0);
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private Color32 ActiveLastDayDayShadowColor = new Color32(26, 116, 30, byte.MaxValue);
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	private Color32 InactiveLastDayRewardShadowColor = new Color32(252, 233, 171, byte.MaxValue);
 
-	7. An incorrect path was provided to AssetRipper.
+	private Color32 ActiveLastDayRewardShadowColor = new Color32(26, 116, 30, byte.MaxValue);
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	private Color32 ActiveLastDayBackgroundColor = new Color32(157, 234, 5, byte.MaxValue);
 
-	*/
+	private Color32 InactiveLastDayBackgroundColor = new Color32(248, 225, 62, byte.MaxValue);
+
+	private Color32 ActiveLastDayGradientColor = new Color32(102, 178, 0, byte.MaxValue);
+
+	private Color32 InactiveLastDayGradientColor = new Color32(245, 169, 40, byte.MaxValue);
+
+	private Color32 ActiveLastDayGlow = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, 180);
+
+	private Color32 InactiveLastDayGlow = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
+
+	[SerializeField]
+	private UILabel dayLabel;
+
+	[SerializeField]
+	private UILabel rewardLabel;
+
+	[SerializeField]
+	private UILabel checkBackLabel;
+
+	[SerializeField]
+	private UISprite checkMark;
+
+	[SerializeField]
+	private UISprite divider;
+
+	[SerializeField]
+	private UISlicedSprite backgroundInactive;
+
+	[SerializeField]
+	private UISlicedSprite backgroundActive;
+
+	[SerializeField]
+	private UISlicedSprite checkbackBackground;
+
+	[SerializeField]
+	private UISlicedSprite[] gradientEffectSprites;
+
+	[SerializeField]
+	private UISprite glowEffect;
+
+	[SerializeField]
+	private bool ForceActive;
+
+	[SerializeField]
+	private bool UnlockColors;
+
+	private int _dayIndex = -1;
+
+	public void Init(int dayIndex)
+	{
+		_dayIndex = dayIndex;
+		DailyWord.DailyWordReward rewardForDay = DailyWord.GetRewardForDay(_dayIndex);
+		if (rewardForDay.type == DailyWord.DailyWordRewardType.Coins)
+		{
+			rewardLabel.text = rewardForDay.coins.ToString();
+		}
+		ForceActive = false;
+		UnlockColors = false;
+	}
+
+	public void RefreshDay()
+	{
+		if (UnlockColors)
+		{
+			return;
+		}
+		bool mostRecentIsToday;
+		int num = Mathf.Clamp(PlayerInfo.Instance.GetDailyWordDaysInARow(out mostRecentIsToday), 0, 5);
+		int num2 = 0;
+		num2 = ((!mostRecentIsToday) ? num : (num - 1));
+		if (dayType == DayType.lastDay)
+		{
+			if (num2 >= 4 || ForceActive)
+			{
+				backgroundInactive.color = ActiveLastDayBackgroundColor;
+				dayLabel.text = "Today!";
+				dayLabel.color = ActiveLastDayDayColor;
+				dayLabel.effectColor = ActiveLastDayDayShadowColor;
+				rewardLabel.color = ActiveLastDayDayColor;
+				rewardLabel.effectColor = ActiveLastDayRewardShadowColor;
+				if (PlayerInfo.Instance.isDailyWordComplete())
+				{
+					checkMark.enabled = true;
+					checkbackBackground.enabled = true;
+					rewardLabel.enabled = false;
+					checkBackLabel.enabled = true;
+				}
+				else
+				{
+					checkMark.enabled = false;
+					checkbackBackground.enabled = false;
+					rewardLabel.enabled = true;
+					checkBackLabel.enabled = false;
+				}
+				for (int i = 0; i < gradientEffectSprites.Length; i++)
+				{
+					gradientEffectSprites[i].color = ActiveLastDayGradientColor;
+				}
+				glowEffect.color = ActiveLastDayGlow;
+			}
+			else
+			{
+				backgroundInactive.color = InactiveLastDayBackgroundColor;
+				dayLabel.text = "Day 5+";
+				dayLabel.color = InactiveLastDayDayColor;
+				dayLabel.effectColor = InactiveLastDayDayShadowColor;
+				rewardLabel.effectColor = InactiveLastDayRewardShadowColor;
+				checkMark.enabled = false;
+				checkbackBackground.enabled = false;
+				rewardLabel.enabled = true;
+				checkBackLabel.enabled = false;
+				for (int j = 0; j < gradientEffectSprites.Length; j++)
+				{
+					gradientEffectSprites[j].color = InactiveLastDayGradientColor;
+				}
+				glowEffect.color = InactiveLastDayGlow;
+			}
+		}
+		else if (dayType == DayType.regular)
+		{
+			if (num2 == _dayIndex)
+			{
+				divider.enabled = true;
+				backgroundActive.enabled = true;
+				backgroundInactive.enabled = false;
+				dayLabel.text = "Today";
+				dayLabel.color = ActiveDayColor;
+				dayLabel.effectColor = ActiveDayShadowColor;
+				rewardLabel.color = ActiveRewardColor;
+				rewardLabel.effectColor = ActiveRewardShadowColor;
+				checkMark.enabled = PlayerInfo.Instance.isDailyWordComplete();
+			}
+			else if (num2 < _dayIndex)
+			{
+				divider.enabled = false;
+				backgroundActive.enabled = false;
+				backgroundInactive.enabled = true;
+				dayLabel.text = "Day " + (_dayIndex + 1);
+				dayLabel.color = InactiveDayColor;
+				dayLabel.effectColor = InactiveDayShadowColor;
+				rewardLabel.color = InactiveRewardColor;
+				rewardLabel.effectColor = InactiveRewardShadowColor;
+				checkMark.enabled = false;
+			}
+			else
+			{
+				divider.enabled = false;
+				backgroundActive.enabled = false;
+				backgroundInactive.enabled = true;
+				dayLabel.text = "Day " + (_dayIndex + 1);
+				dayLabel.color = InactiveDayColor;
+				dayLabel.effectColor = InactiveDayShadowColor;
+				rewardLabel.color = InactiveRewardColor;
+				rewardLabel.effectColor = InactiveRewardShadowColor;
+				checkMark.enabled = true;
+			}
+		}
+		else
+		{
+			Debug.LogError("Day was not set properly.", base.gameObject);
+		}
+	}
 }

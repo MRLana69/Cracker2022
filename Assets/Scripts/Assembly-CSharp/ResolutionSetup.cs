@@ -1,63 +1,122 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ResolutionSetup : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private const string _atlasPath = "Atlases/";
 
-	1. No dll files were provided to AssetRipper.
+	[SerializeField]
+	private UIAtlas[] usedAtlasses;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[SerializeField]
+	private string[] lowResAtlasses;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	[SerializeField]
+	private string[] highResAtlasses;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	[SerializeField]
+	private UIFont[] usedFonts;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	[SerializeField]
+	private UIFont[] lowResFonts;
 
-	3. Assembly Reconstruction has not been implemented.
+	[SerializeField]
+	private UIFont[] highResFonts;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private UIAtlas[] _editorAtlases;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private List<UILabel> allLabels;
 
-	4. This script is unnecessary.
+	private List<UIFont> allModifiedLabelsOldFonts;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private void Awake()
+	{
+		_editorAtlases = new UIAtlas[usedAtlasses.Length];
+		for (int i = 0; i < usedAtlasses.Length; i++)
+		{
+			_editorAtlases[i] = usedAtlasses[i].replacement;
+		}
+		if (lowResAtlasses.Length != highResAtlasses.Length)
+		{
+			Debug.LogError("Low res and high res atlasses do not fit!");
+		}
+		else if (lowResFonts.Length != highResFonts.Length)
+		{
+			Debug.LogError("Low res and high res fonts do not fit!");
+		}
+		else if (DeviceInfo.isHighres)
+		{
+			for (int j = 0; j < usedFonts.Length; j++)
+			{
+				usedFonts[j].replacement = highResFonts[j];
+			}
+			for (int k = 0; k < usedAtlasses.Length; k++)
+			{
+				string path = "Atlases/" + highResAtlasses[k];
+				GameObject gameObject = Resources.Load(path, typeof(GameObject)) as GameObject;
+				UIAtlas component = gameObject.GetComponent<UIAtlas>();
+				usedAtlasses[k].replacement = component;
+			}
+		}
+		else
+		{
+			for (int l = 0; l < usedFonts.Length; l++)
+			{
+				usedFonts[l].replacement = lowResFonts[l];
+			}
+			for (int m = 0; m < usedAtlasses.Length; m++)
+			{
+				string path2 = "Atlases/" + lowResAtlasses[m];
+				GameObject gameObject2 = Resources.Load(path2, typeof(GameObject)) as GameObject;
+				UIAtlas component2 = gameObject2.GetComponent<UIAtlas>();
+				usedAtlasses[m].replacement = component2;
+			}
+		}
+	}
 
-	5. Script Content Level 0
+	private void OnDisable()
+	{
+		if (DeviceInfo.isHighres)
+		{
+			for (int i = 0; i < usedFonts.Length; i++)
+			{
+				usedFonts[i].replacement = lowResFonts[i];
+			}
+			for (int j = 0; j < highResAtlasses.Length; j++)
+			{
+				usedAtlasses[j].replacement = _editorAtlases[j];
+			}
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	public void SwitchFontResolution()
+	{
+		UILabel[] array = Resources.FindObjectsOfTypeAll(typeof(UILabel)) as UILabel[];
+		allLabels = new List<UILabel>();
+		allModifiedLabelsOldFonts = new List<UIFont>();
+		UILabel[] array2 = array;
+		foreach (UILabel uILabel in array2)
+		{
+			for (int j = 0; j < lowResFonts.Length; j++)
+			{
+				if (uILabel.font == lowResFonts[j])
+				{
+					Debug.Log("Switching to high res font now!");
+					allLabels.Add(uILabel);
+					allModifiedLabelsOldFonts.Add(lowResFonts[j]);
+					uILabel.font = highResFonts[j];
+					break;
+				}
+			}
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
-
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public void ResetFontResolution()
+	{
+		Debug.Log("Resetting fonts");
+		for (int i = 0; i < allLabels.Count; i++)
+		{
+			allLabels[i].font = allModifiedLabelsOldFonts[i];
+		}
+	}
 }

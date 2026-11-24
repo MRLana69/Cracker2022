@@ -1,63 +1,196 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class CharacterPickupParticles : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public static Vector3 coinEfxOffset = 1.2f * Vector3.forward;
 
-	1. No dll files were provided to AssetRipper.
+	public GameObject CoinEFX;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public GameObject PowerUpEFX;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	// Optional: assign the AnimationClip asset for the "pickup" animation in the Inspector.
+	// If left null the script will attempt to play "pickup" only if already present on the Animation.
+	public AnimationClip pickupClip;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public Transform master;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public AudioClipInfo CoinPickup;
 
-	3. Assembly Reconstruction has not been implemented.
+	public AudioClipInfo PowerUpPickup;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public float CoinDistanceForStairway;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private int coinStairway;
 
-	4. This script is unnecessary.
+	private int flyWay;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private int[] pentatonicScale = new int[17]
+	{
+		12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+		22, 23, 24, 25, 26, 27, 28
+	};
 
-	5. Script Content Level 0
+	public AnimationCurve compressCurve;
 
-		AssetRipper was set to not load any script information.
+	public void Awake()
+	{
+		// Ensure the "pickup" clip is available at runtime on the EFX Animation components.
+		AddPickupClipIfMissing(CoinEFX);
+		AddPickupClipIfMissing(PowerUpEFX);
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public void Start()
+	{
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public void PickedUpCoin(Pickup pickup)
+	{
+		if (80f < pickup.transform.position.y)
+		{
+			coinStairway = 0;
+			CoinPickup.maxPitch = Mathf.Pow(2f, compressCurve.Evaluate((float)flyWay / 48f));
+			CoinPickup.minPitch = Mathf.Pow(2f, compressCurve.Evaluate((float)flyWay / 48f));
+			flyWay++;
+		}
+		else if (pickup.transform.position.y < 0.1f || (8.795f < pickup.transform.position.y && pickup.transform.position.y < 8.805f) || (9.95f < pickup.transform.position.y && pickup.transform.position.y < 10.05f) || (28.95f < pickup.transform.position.y && pickup.transform.position.y < 29.05f) || (34.95f < pickup.transform.position.y && pickup.transform.position.y < 35.05f))
+		{
+			flyWay = 0;
+			coinStairway = 0;
+			CoinPickup.maxPitch = Mathf.Pow(2f, (float)pentatonicScale[coinStairway % pentatonicScale.Length] / 12f) * 0.5f;
+			CoinPickup.minPitch = Mathf.Pow(2f, (float)pentatonicScale[coinStairway % pentatonicScale.Length] / 12f) * 0.5f;
+		}
+		else
+		{
+			flyWay = 0;
+			if (coinStairway < pentatonicScale.Length - 1)
+			{
+				coinStairway++;
+			}
+			CoinPickup.maxPitch = Mathf.Pow(2f, (float)pentatonicScale[coinStairway % pentatonicScale.Length] / 12f) * 0.5f;
+			CoinPickup.minPitch = Mathf.Pow(2f, (float)pentatonicScale[coinStairway % pentatonicScale.Length] / 12f) * 0.5f;
+		}
+		So.Instance.playSound(CoinPickup);
+		DoCoinEFX();
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	private void DoCoinEFX()
+	{
+		float zAngle = UnityEngine.Random.Range(0f, 360f);
+		CoinEFX.transform.Rotate(0f, 0f, zAngle);
+		PlayPickupAnimation(CoinEFX);
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public void PickedUpPowerUp()
+	{
+		So.Instance.playSound(PowerUpPickup);
+		PickedUpDefaultPowerUp();
+	}
 
-	*/
+	public void PickedUpDefaultPowerUp()
+	{
+		DoCoinEFX();
+		float zAngle = UnityEngine.Random.Range(0f, 360f);
+		PowerUpEFX.transform.Rotate(0f, 0f, zAngle);
+		PlayPickupAnimation(PowerUpEFX);
+	}
+
+	private void AddPickupClipIfMissing(GameObject efx)
+	{
+		if (efx == null)
+			return;
+		Animation anim = efx.GetComponent<Animation>();
+		if (anim == null)
+			return;
+		if (FindClipName(anim, "pickup") == null)
+		{
+			if (pickupClip != null)
+			{
+				anim.AddClip(pickupClip, "pickup");
+			}
+			else
+			{
+				Debug.LogWarning("CharacterPickupParticles: 'pickup' clip missing and pickupClip not assigned. Available clips: " + GetClipList(anim));
+			}
+		}
+	}
+
+	private string GetClipList(Animation anim)
+	{
+		if (anim == null)
+			return "<null>";
+		System.Text.StringBuilder sb = new System.Text.StringBuilder();
+		foreach (AnimationState s in anim)
+		{
+			sb.Append(s.name).Append(",");
+		}
+		return sb.ToString().TrimEnd(',');
+	}
+
+	private string FindClipName(Animation anim, string baseName)
+	{
+		if (anim == null)
+		{
+			return null;
+		}
+		if (anim.GetClip(baseName) != null)
+		{
+			return baseName;
+		}
+		foreach (AnimationState state in anim)
+		{
+			if (state.name.Equals(baseName, StringComparison.OrdinalIgnoreCase))
+			{
+				return state.name;
+			}
+		}
+		foreach (AnimationState state in anim)
+		{
+			if (state.name.IndexOf(baseName, StringComparison.OrdinalIgnoreCase) >= 0)
+			{
+				return state.name;
+			}
+		}
+		return null;
+	}
+
+	private void PlayPickupAnimation(GameObject efx)
+	{
+		if (efx == null)
+		{
+			return;
+		}
+		Animation anim = efx.GetComponent<Animation>();
+		if (anim == null)
+		{
+			return;
+		}
+		string clipName = FindClipName(anim, "pickup");
+		if (clipName != null && anim[clipName] != null)
+		{
+			anim.Stop(clipName);
+			anim.Play(clipName);
+			StartCoroutine(AnimateAlpha(efx, anim[clipName].length));
+		}
+		else
+		{
+			Debug.LogWarning("CharacterPickupParticles: 'pickup' clip not found on " + efx.name + " Animation. Available clips: " + GetClipList(anim));
+		}
+	}
+
+	private IEnumerator AnimateAlpha(GameObject efx, float time)
+	{
+		return pTween.To(time, delegate(float t)
+		{
+			efx.GetComponent<Renderer>().sharedMaterial.SetColor("_MainColor", Color.Lerp(Color.white, Color.black, t));
+		});
+	}
+
+	private IEnumerator TimeScaleTest(float time)
+	{
+		Time.timeScale = 0.5f;
+		yield return new WaitForSeconds(time);
+		Time.timeScale = 1f;
+	}
 }

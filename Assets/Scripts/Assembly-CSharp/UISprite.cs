@@ -1,63 +1,299 @@
 using UnityEngine;
 
-public class UISprite : MonoBehaviour
+[ExecuteInEditMode]
+[AddComponentMenu("NGUI/UI/Sprite (Basic)")]
+public class UISprite : UIWidget
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	[HideInInspector]
+	[SerializeField]
+	private UIAtlas mAtlas;
 
-	1. No dll files were provided to AssetRipper.
+	[HideInInspector]
+	[SerializeField]
+	private string mSpriteName;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	protected UIAtlas.Sprite mSprite;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	protected Rect mOuter;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	protected Rect mOuterUV;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private bool mSpriteSet;
 
-	3. Assembly Reconstruction has not been implemented.
+	private string mLastName = string.Empty;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public Rect outerUV
+	{
+		get
+		{
+			UpdateUVs(false);
+			return mOuterUV;
+		}
+	}
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public UIAtlas atlas
+	{
+		get
+		{
+			return mAtlas;
+		}
+		set
+		{
+			if (mAtlas != value)
+			{
+				mAtlas = value;
+				mSpriteSet = false;
+				mSprite = null;
+				material = ((!(mAtlas != null)) ? null : mAtlas.spriteMaterial);
+				if (string.IsNullOrEmpty(mSpriteName) && mAtlas != null && mAtlas.spriteList.Count > 0)
+				{
+					sprite = mAtlas.spriteList[0];
+					mSpriteName = mSprite.name;
+				}
+				if (!string.IsNullOrEmpty(mSpriteName))
+				{
+					string text = mSpriteName;
+					mSpriteName = string.Empty;
+					spriteName = text;
+					mChanged = true;
+					UpdateUVs(true);
+				}
+			}
+		}
+	}
 
-	4. This script is unnecessary.
+	public string spriteName
+	{
+		get
+		{
+			return mSpriteName;
+		}
+		set
+		{
+			if (string.IsNullOrEmpty(value))
+			{
+				if (!string.IsNullOrEmpty(mSpriteName))
+				{
+					mSpriteName = string.Empty;
+					mSprite = null;
+					mChanged = true;
+				}
+			}
+			else if (mSpriteName != value)
+			{
+				mSpriteName = value;
+				mSprite = null;
+				mChanged = true;
+				if (mSprite != null)
+				{
+					UpdateUVs(true);
+				}
+			}
+		}
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public UIAtlas.Sprite sprite
+	{
+		get
+		{
+			if (!mSpriteSet)
+			{
+				mSprite = null;
+			}
+			if (mSprite == null && mAtlas != null)
+			{
+				if (!string.IsNullOrEmpty(mSpriteName))
+				{
+					sprite = mAtlas.GetSprite(mSpriteName);
+				}
+				if (mSprite == null && mAtlas.spriteList.Count > 0)
+				{
+					sprite = mAtlas.spriteList[0];
+					mSpriteName = mSprite.name;
+				}
+				if (mSprite != null)
+				{
+					material = mAtlas.spriteMaterial;
+				}
+			}
+			return mSprite;
+		}
+		set
+		{
+			mSprite = value;
+			mSpriteSet = true;
+			material = ((mSprite == null || !(mAtlas != null)) ? null : mAtlas.spriteMaterial);
+		}
+	}
 
-	5. Script Content Level 0
+	public override Vector2 pivotOffset
+	{
+		get
+		{
+			Vector2 zero = Vector2.zero;
+			if (sprite != null)
+			{
+				Pivot pivot = base.pivot;
+				switch (pivot)
+				{
+				case Pivot.Top:
+				case Pivot.Center:
+				case Pivot.Bottom:
+					zero.x = (-1f - mSprite.paddingRight + mSprite.paddingLeft) * 0.5f;
+					break;
+				case Pivot.TopRight:
+				case Pivot.Right:
+				case Pivot.BottomRight:
+					zero.x = -1f - mSprite.paddingRight;
+					break;
+				default:
+					zero.x = mSprite.paddingLeft;
+					break;
+				}
+				switch (pivot)
+				{
+				case Pivot.Left:
+				case Pivot.Center:
+				case Pivot.Right:
+					zero.y = (1f + mSprite.paddingBottom - mSprite.paddingTop) * 0.5f;
+					break;
+				case Pivot.BottomLeft:
+				case Pivot.Bottom:
+				case Pivot.BottomRight:
+					zero.y = 1f + mSprite.paddingBottom;
+					break;
+				default:
+					zero.y = 0f - mSprite.paddingTop;
+					break;
+				}
+			}
+			return zero;
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	public override Material material
+	{
+		get
+		{
+			Material material = base.material;
+			if (material == null)
+			{
+				material = ((!(mAtlas != null)) ? null : mAtlas.spriteMaterial);
+				mSprite = null;
+				this.material = material;
+				if (material != null)
+				{
+					UpdateUVs(true);
+				}
+			}
+			return material;
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public virtual Vector4 border
+	{
+		get
+		{
+			return Vector4.zero;
+		}
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public virtual void UpdateUVs(bool force)
+	{
+		if (sprite == null || (!force && !(mOuter != mSprite.outer)))
+		{
+			return;
+		}
+		Texture texture = mainTexture;
+		if (texture != null)
+		{
+			mOuter = mSprite.outer;
+			mOuterUV = mOuter;
+			if (mAtlas.coordinates == UIAtlas.Coordinates.Pixels)
+			{
+				mOuterUV = NGUIMath.ConvertToTexCoords(mOuterUV, texture.width, texture.height);
+			}
+			mChanged = true;
+		}
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public override void MakePixelPerfect()
+	{
+		if (sprite != null)
+		{
+			Texture texture = mainTexture;
+			Vector3 localScale = base.cachedTransform.localScale;
+			if (texture != null)
+			{
+				Rect rect = NGUIMath.ConvertToPixels(outerUV, texture.width, texture.height, true);
+				float pixelSize = atlas.pixelSize;
+				localScale.x = Mathf.RoundToInt(rect.width * pixelSize);
+				localScale.y = Mathf.RoundToInt(rect.height * pixelSize);
+				localScale.z = 1f;
+				base.cachedTransform.localScale = localScale;
+			}
+			int num = Mathf.RoundToInt(localScale.x * (1f + mSprite.paddingLeft + mSprite.paddingRight));
+			int num2 = Mathf.RoundToInt(localScale.y * (1f + mSprite.paddingTop + mSprite.paddingBottom));
+			Vector3 localPosition = base.cachedTransform.localPosition;
+			localPosition.z = Mathf.RoundToInt(localPosition.z);
+			if (num % 2 == 1 && (base.pivot == Pivot.Top || base.pivot == Pivot.Center || base.pivot == Pivot.Bottom))
+			{
+				localPosition.x = Mathf.Floor(localPosition.x) + 0.5f;
+			}
+			else
+			{
+				localPosition.x = Mathf.Round(localPosition.x);
+			}
+			if (num2 % 2 == 1 && (base.pivot == Pivot.Left || base.pivot == Pivot.Center || base.pivot == Pivot.Right))
+			{
+				localPosition.y = Mathf.Ceil(localPosition.y) - 0.5f;
+			}
+			else
+			{
+				localPosition.y = Mathf.Round(localPosition.y);
+			}
+			base.cachedTransform.localPosition = localPosition;
+		}
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	protected override void OnStart()
+	{
+		if (mAtlas != null)
+		{
+			UpdateUVs(true);
+		}
+	}
 
-	*/
+	public override bool OnUpdate()
+	{
+		if (mLastName != mSpriteName)
+		{
+			mSprite = null;
+			mChanged = true;
+			mLastName = mSpriteName;
+			UpdateUVs(false);
+			return true;
+		}
+		UpdateUVs(false);
+		return false;
+	}
+
+	public override void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
+	{
+		Vector2 item = new Vector2(mOuterUV.xMin, mOuterUV.yMin);
+		Vector2 item2 = new Vector2(mOuterUV.xMax, mOuterUV.yMax);
+		verts.Add(new Vector3(1f, 0f, 0f));
+		verts.Add(new Vector3(1f, -1f, 0f));
+		verts.Add(new Vector3(0f, -1f, 0f));
+		verts.Add(new Vector3(0f, 0f, 0f));
+		uvs.Add(item2);
+		uvs.Add(new Vector2(item2.x, item.y));
+		uvs.Add(item);
+		uvs.Add(new Vector2(item.x, item2.y));
+		Color32 item3 = base.color;
+		cols.Add(item3);
+		cols.Add(item3);
+		cols.Add(item3);
+		cols.Add(item3);
+	}
 }

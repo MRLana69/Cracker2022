@@ -1,63 +1,176 @@
+using System.Collections;
 using UnityEngine;
 
 public class AudioStateLoop : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public AudioSource musicPlayer;
 
-	1. No dll files were provided to AssetRipper.
+	private float musicVolume;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	private bool isOtherAudioPlaying;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public float menuMusicVolume = 0.3f;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public float ingameMusicVolume = 0.3f;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public AudioClip jetpackLoop;
 
-	3. Assembly Reconstruction has not been implemented.
+	public float jetpackVolume = 0.4f;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public float jetpackMinPitch = 0.8f;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public float jetpackMaxPitch = 1.1f;
 
-	4. This script is unnecessary.
+	public AudioClip magnetLoop;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public float magnetVolume = 0.4f;
 
-	5. Script Content Level 0
+	public float magnetMinPitch = 0.8f;
 
-		AssetRipper was set to not load any script information.
+	public float magnetMaxPitch = 1.1f;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public AudioClip mysteryBoxOpenSound;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public float mysteryVolume = 1f;
 
-	7. An incorrect path was provided to AssetRipper.
+	private AudioSource jetpackSource;
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	private AudioSource magnetSource;
 
-	*/
+	private AudioSource mysterySource;
+
+	private bool hasPlayedIntro;
+
+	public float fadeDownTime = 0.5f;
+
+	public float pauseTime = 3f;
+
+	public float fadeUpTime = 4f;
+
+	private void Awake()
+	{
+		jetpackSource = base.gameObject.AddComponent<AudioSource>();
+		jetpackSource.clip = jetpackLoop;
+		jetpackSource.volume = jetpackVolume;
+		jetpackSource.loop = true;
+		jetpackSource.playOnAwake = false;
+		magnetSource = base.gameObject.AddComponent<AudioSource>();
+		magnetSource.clip = magnetLoop;
+		magnetSource.volume = magnetVolume;
+		magnetSource.loop = true;
+		magnetSource.playOnAwake = false;
+		mysterySource = base.gameObject.AddComponent<AudioSource>();
+		mysterySource.clip = mysteryBoxOpenSound;
+		mysterySource.volume = mysteryVolume;
+		magnetSource.playOnAwake = false;
+		musicVolume = ingameMusicVolume;
+		UpdateMusicPlayer();
+		musicPlayer.bypassEffects = true;
+		musicPlayer.Play();
+	}
+
+	private void UpdateMusicPlayer()
+	{
+		musicPlayer.volume = ((!isOtherAudioPlaying) ? musicVolume : 0f);
+	}
+
+	public void OnApplicationPause(bool pause)
+	{
+		if (!pause)
+		{
+			isOtherAudioPlaying = DeviceUtility.IsOtherAudioPlaying();
+			UpdateMusicPlayer();
+		}
+	}
+
+	public void PlayMysteryBoxOpenSound()
+	{
+		mysterySource.Play();
+		StartCoroutine(MusicFader());
+	}
+
+	private IEnumerator MusicFader()
+	{
+		float counter = 0f;
+		float startFade = musicVolume;
+		float fadeSpeed = 1f / fadeDownTime;
+		while (counter < 1f)
+		{
+			musicVolume = Mathf.Lerp(startFade, 0f, counter);
+			UpdateMusicPlayer();
+			counter += Time.deltaTime * fadeSpeed;
+			yield return 0;
+		}
+		musicVolume = 0f;
+		UpdateMusicPlayer();
+		yield return new WaitForSeconds(pauseTime);
+		counter = 0f;
+		fadeSpeed = 1f / fadeUpTime;
+		while (counter < 1f)
+		{
+			musicVolume = Mathf.Lerp(0f, menuMusicVolume, counter);
+			UpdateMusicPlayer();
+			counter += Time.deltaTime * fadeSpeed;
+			yield return 0;
+		}
+		musicVolume = menuMusicVolume;
+		UpdateMusicPlayer();
+	}
+
+	public void ChangeLoop(AudioState audioState)
+	{
+		switch (audioState)
+		{
+		case AudioState.Menu:
+			if (hasPlayedIntro)
+			{
+				musicPlayer.bypassEffects = false;
+				musicVolume = menuMusicVolume;
+				UpdateMusicPlayer();
+			}
+			break;
+		case AudioState.Ingame:
+			if (hasPlayedIntro)
+			{
+				musicPlayer.timeSamples = 0;
+			}
+			else
+			{
+				hasPlayedIntro = true;
+			}
+			musicPlayer.bypassEffects = true;
+			musicVolume = ingameMusicVolume;
+			UpdateMusicPlayer();
+			break;
+		case AudioState.Jetpack:
+			PlayLoop(jetpackSource, jetpackMaxPitch, jetpackMaxPitch);
+			break;
+		case AudioState.JetpackStop:
+			StopLoop(jetpackSource);
+			break;
+		case AudioState.Magnet:
+			PlayLoop(magnetSource, magnetMinPitch, magnetMaxPitch);
+			break;
+		case AudioState.MagnetStop:
+			StopLoop(magnetSource);
+			break;
+		}
+	}
+
+	public void PlayLoop(AudioSource audioSource)
+	{
+		audioSource.pitch = Random.Range(0.8f, 1.1f);
+		audioSource.Play();
+	}
+
+	public void PlayLoop(AudioSource audioSource, float minPitch, float maxPitch)
+	{
+		audioSource.pitch = Random.Range(minPitch, maxPitch);
+		audioSource.Play();
+	}
+
+	public void StopLoop(AudioSource audioSource)
+	{
+		audioSource.Stop();
+	}
 }

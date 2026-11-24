@@ -1,63 +1,212 @@
+using System;
 using UnityEngine;
 
 public class FriendGhostHandler : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public FriendGhostHelper helper;
 
-	1. No dll files were provided to AssetRipper.
+	public Texture dummyImage;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	private Friend[] friendsDescending;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private bool _localUserInserted;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private bool _gameRunning;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private int _currentThreshold;
 
-	3. Assembly Reconstruction has not been implemented.
+	private int _currentFriend = -1;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private Color localPlayerColor = new Color(1f, 73f / 85f, 0f, 1f);
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private Color friendColor = Color.white;
 
-	4. This script is unnecessary.
+	private void Init()
+	{
+		Game instance = Game.Instance;
+		instance.OnGameStarted = (Action)Delegate.Combine(instance.OnGameStarted, new Action(NewGame));
+		Game instance2 = Game.Instance;
+		instance2.OnGameEnded = (Action)Delegate.Combine(instance2.OnGameEnded, new Action(GameOver));
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private void OnDestroy()
+	{
+		Game instance = Game.Instance;
+		instance.OnGameStarted = (Action)Delegate.Remove(instance.OnGameStarted, new Action(NewGame));
+		Game instance2 = Game.Instance;
+		instance2.OnGameEnded = (Action)Delegate.Remove(instance2.OnGameEnded, new Action(GameOver));
+	}
 
-	5. Script Content Level 0
+	private void Awake()
+	{
+		Init();
+		NewGame();
+	}
 
-		AssetRipper was set to not load any script information.
+	public void NewGame()
+	{
+		if (_gameRunning)
+		{
+			return;
+		}
+		_gameRunning = true;
+		_localUserInserted = false;
+		_currentThreshold = 0;
+		GameStats.Instance.Reset();
+		if (SocialManager.instance.consolidatedFriendsCompleted && (Social.localUser.authenticated || SocialManager.instance.facebookIsLoggedIn))
+		{
+			friendsDescending = SocialManager.instance.FriendsSortedByScore();
+			if (friendsDescending != null)
+			{
+				_currentFriend = getNextFriendWithHigherScoreIndex(friendsDescending, GameStats.Instance.score);
+			}
+		}
+		helper.NewGame();
+		SetNewFriend();
+		helper.AnimateIn();
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private int getNextFriendWithHigherScoreIndex(Friend[] sortedFriendList, int score)
+	{
+		if (sortedFriendList == null)
+		{
+			return -1;
+		}
+		if (sortedFriendList.Length == 0)
+		{
+			return -1;
+		}
+		for (int num = sortedFriendList.Length - 1; num >= 0; num--)
+		{
+			if (sortedFriendList[num].score > score)
+			{
+				return num;
+			}
+		}
+		return -1;
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	private void Update()
+	{
+		if (!helper.animatingNow && _gameRunning && !helper.noFriendsLeftToGhost && GameStats.Instance.score > _currentThreshold)
+		{
+			PassThreshold();
+		}
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	private void PassThreshold()
+	{
+		helper.AnimateOut();
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public void FinishedAnimatingOut()
+	{
+		if (_gameRunning)
+		{
+			SetNewFriend();
+		}
+	}
 
-	*/
+	public void SetNewFriend()
+	{
+		if (!_gameRunning)
+		{
+			return;
+		}
+		bool flag = false;
+		if (friendsDescending != null || _currentFriend != -1)
+		{
+			int nextFriendWithHigherScoreIndex = getNextFriendWithHigherScoreIndex(friendsDescending, GameStats.Instance.score);
+			_currentFriend = nextFriendWithHigherScoreIndex;
+			if (_currentFriend == -1)
+			{
+				if (PlayerInfo.Instance.highestScore > GameStats.Instance.score && InsertLocalUser())
+				{
+					flag = true;
+				}
+			}
+			else if (PlayerInfo.Instance.highestScore < friendsDescending[_currentFriend].score)
+			{
+				if (InsertLocalUser())
+				{
+					flag = true;
+				}
+				else if (InsertFriend())
+				{
+					flag = true;
+				}
+			}
+			else if (InsertFriend())
+			{
+				flag = true;
+			}
+		}
+		else if (!_localUserInserted && InsertLocalUser())
+		{
+			flag = true;
+		}
+		if (flag)
+		{
+			helper.AnimateIn();
+		}
+		else
+		{
+			helper.NoFriendsLeft();
+		}
+	}
+
+	public void GameOver()
+	{
+		_gameRunning = false;
+		helper.GameOver();
+	}
+
+	private bool InsertLocalUser()
+	{
+		if (PlayerInfo.Instance.highestScore > GameStats.Instance.score && !_localUserInserted)
+		{
+			if (SocialManager.instance.localUserImage != null && SocialManager.instance.consolidatedFriendsCompleted && (Social.localUser.authenticated || SocialManager.instance.facebookIsLoggedIn))
+			{
+				helper.picture.material.mainTexture = SocialManager.instance.localUserImage;
+			}
+			else
+			{
+				helper.picture.material.mainTexture = dummyImage;
+			}
+			helper.points.text = PlayerInfo.Instance.highestScore.ToString();
+			helper.points.color = localPlayerColor;
+			_localUserInserted = true;
+			_currentThreshold = PlayerInfo.Instance.highestScore;
+			return true;
+		}
+		return false;
+	}
+
+	private bool InsertFriend()
+	{
+		int currentFriend = _currentFriend;
+		if (currentFriend < 0 || currentFriend >= friendsDescending.Length)
+		{
+			Debug.LogError("Tried to insert a friend outside the array");
+			return false;
+		}
+		Missions.Instance.PlayerDidThis(Missions.MissionTarget.BeatFriends);
+		Friend friend = friendsDescending[currentFriend];
+		if (friend.score > GameStats.Instance.score)
+		{
+			if (friend.image != null)
+			{
+				helper.picture.material.mainTexture = friend.image;
+			}
+			else
+			{
+				helper.picture.material.mainTexture = dummyImage;
+			}
+			helper.points.text = friend.score.ToString();
+			helper.points.color = friendColor;
+			_currentThreshold = friend.score;
+			return true;
+		}
+		return false;
+	}
 }

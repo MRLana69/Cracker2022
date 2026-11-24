@@ -1,63 +1,135 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class So : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public static So Instance;
 
-	1. No dll files were provided to AssetRipper.
+	public int initialCapacity = 5;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public int maxCapacity = 50;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private List<Sound> _soundList;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private Sound _bgSound;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private bool _audioWasPlaying;
 
-	3. Assembly Reconstruction has not been implemented.
+	private float _audioTime;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private void Awake()
+	{
+		if (Instance != null)
+		{
+			Object.Destroy(this);
+			return;
+		}
+		Instance = this;
+		Object.DontDestroyOnLoad(base.gameObject);
+		_soundList = new List<Sound>(initialCapacity);
+		for (int i = 0; i < initialCapacity; i++)
+		{
+			_soundList.Add(new Sound(this));
+		}
+	}
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private void OnApplicationPause(bool didPause)
+	{
+		if (didPause)
+		{
+			if (_bgSound != null)
+			{
+				_audioWasPlaying = true;
+				_audioTime = _bgSound.audioSource.time;
+			}
+		}
+		else if (_audioWasPlaying)
+		{
+			_audioWasPlaying = false;
+			_bgSound.audioSource.time = _audioTime;
+			_bgSound.audioSource.Play();
+		}
+	}
 
-	4. This script is unnecessary.
+	public void playBGMusic(AudioClip audioClip, float volume, bool loop)
+	{
+		if (_bgSound == null)
+		{
+			_bgSound = new Sound(this);
+		}
+		_bgSound.loop = loop;
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public void beginPlaySound(AudioClipInfo audioClip)
+	{
+		StartCoroutine(playSoundAsync(audioClip));
+	}
 
-	5. Script Content Level 0
+	private IEnumerator playSoundAsync(AudioClipInfo audioClip)
+	{
+		yield return 0;
+		playSound(audioClip);
+	}
 
-		AssetRipper was set to not load any script information.
+	public Sound playSound(AudioClipInfo audioClip)
+	{
+		if (audioClip.Clip == null)
+		{
+			return null;
+		}
+		return playSound(audioClip.Clip, audioClip.Rollof, audioClip.minVolume, audioClip.maxVolume, audioClip.minPitch, audioClip.maxPitch, base.transform.position);
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public Sound playSound(AudioClip audioClip, AudioRolloffMode rolloff, float volume, Vector3 position)
+	{
+		return playSound(audioClip, rolloff, volume, volume, 1f, 1f, position);
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public Sound playSound(AudioClip audioClip, AudioRolloffMode rolloff, float minVolume, float maxVolume, float minPitch, float maxPitch, Vector3 position)
+	{
+		Sound sound = null;
+		bool flag = false;
+		bool flag2 = false;
+		foreach (Sound sound2 in _soundList)
+		{
+			if (!sound2.available)
+			{
+				continue;
+			}
+			if (sound2.gameObject.name == audioClip.name)
+			{
+				sound = sound2;
+				flag = true;
+				break;
+			}
+			if (!flag2)
+			{
+				if (sound2.gameObject.name == "empty")
+				{
+					flag2 = true;
+				}
+				sound = sound2;
+			}
+		}
+		if (sound == null)
+		{
+			sound = _soundList[0];
+			_soundList.Add(sound);
+		}
+		if (flag)
+		{
+			StartCoroutine(sound.play(rolloff, minVolume, maxVolume, minPitch, maxPitch, position));
+		}
+		else
+		{
+			StartCoroutine(sound.playAudioClip(audioClip, rolloff, minVolume, maxVolume, minPitch, maxPitch, position));
+		}
+		return sound;
+	}
 
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public void removeSound(Sound s)
+	{
+		_soundList.Remove(s);
+	}
 }

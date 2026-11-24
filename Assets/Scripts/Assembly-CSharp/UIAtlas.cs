@@ -1,63 +1,367 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("NGUI/UI/Atlas")]
 public class UIAtlas : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	[Serializable]
+	public class Sprite
+	{
+		public string name = "Unity Bug";
 
-	1. No dll files were provided to AssetRipper.
+		public Rect outer = new Rect(0f, 0f, 1f, 1f);
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+		public Rect inner = new Rect(0f, 0f, 1f, 1f);
 
-	2. Incorrect dll files were provided to AssetRipper.
+		public float paddingLeft;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+		public float paddingRight;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+		public float paddingTop;
 
-	3. Assembly Reconstruction has not been implemented.
+		public float paddingBottom;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+		public bool hasPadding
+		{
+			get
+			{
+				return paddingLeft != 0f || paddingRight != 0f || paddingTop != 0f || paddingBottom != 0f;
+			}
+		}
+	}
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public enum Coordinates
+	{
+		Pixels = 0,
+		TexCoords = 1
+	}
 
-	4. This script is unnecessary.
+	[HideInInspector]
+	[SerializeField]
+	private Material material;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	[HideInInspector]
+	[SerializeField]
+	private List<Sprite> sprites = new List<Sprite>();
 
-	5. Script Content Level 0
+	[HideInInspector]
+	[SerializeField]
+	private Coordinates mCoordinates;
 
-		AssetRipper was set to not load any script information.
+	[HideInInspector]
+	[SerializeField]
+	private float mPixelSize = 1f;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	[HideInInspector]
+	[SerializeField]
+	private UIAtlas mReplacement;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public Material spriteMaterial
+	{
+		get
+		{
+			return (!(mReplacement != null)) ? material : mReplacement.spriteMaterial;
+		}
+		set
+		{
+			if (mReplacement != null)
+			{
+				mReplacement.spriteMaterial = value;
+				return;
+			}
+			if (material == null)
+			{
+				material = value;
+				return;
+			}
+			MarkAsDirty();
+			material = value;
+			MarkAsDirty();
+		}
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public List<Sprite> spriteList
+	{
+		get
+		{
+			return (!(mReplacement != null)) ? sprites : mReplacement.spriteList;
+		}
+		set
+		{
+			if (mReplacement != null)
+			{
+				mReplacement.spriteList = value;
+			}
+			else
+			{
+				sprites = value;
+			}
+		}
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public Texture texture
+	{
+		get
+		{
+			return (mReplacement != null) ? mReplacement.texture : ((!(material != null)) ? null : material.mainTexture);
+		}
+	}
 
-	*/
+	public Coordinates coordinates
+	{
+		get
+		{
+			return (!(mReplacement != null)) ? mCoordinates : mReplacement.coordinates;
+		}
+		set
+		{
+			if (mReplacement != null)
+			{
+				mReplacement.coordinates = value;
+			}
+			else
+			{
+				if (mCoordinates == value)
+				{
+					return;
+				}
+				if (material == null || material.mainTexture == null)
+				{
+					Debug.LogError("Can't switch coordinates until the atlas material has a valid texture");
+					return;
+				}
+				mCoordinates = value;
+				Texture mainTexture = material.mainTexture;
+				int i = 0;
+				for (int count = sprites.Count; i < count; i++)
+				{
+					Sprite sprite = sprites[i];
+					if (mCoordinates == Coordinates.TexCoords)
+					{
+						sprite.outer = NGUIMath.ConvertToTexCoords(sprite.outer, mainTexture.width, mainTexture.height);
+						sprite.inner = NGUIMath.ConvertToTexCoords(sprite.inner, mainTexture.width, mainTexture.height);
+					}
+					else
+					{
+						sprite.outer = NGUIMath.ConvertToPixels(sprite.outer, mainTexture.width, mainTexture.height, true);
+						sprite.inner = NGUIMath.ConvertToPixels(sprite.inner, mainTexture.width, mainTexture.height, true);
+					}
+				}
+			}
+		}
+	}
+
+	public float pixelSize
+	{
+		get
+		{
+			return (!(mReplacement != null)) ? mPixelSize : mReplacement.pixelSize;
+		}
+		set
+		{
+			if (mReplacement != null)
+			{
+				mReplacement.pixelSize = value;
+				return;
+			}
+			float num = Mathf.Clamp(value, 0.25f, 4f);
+			if (mPixelSize != num)
+			{
+				mPixelSize = num;
+				MarkAsDirty();
+			}
+		}
+	}
+
+	public UIAtlas replacement
+	{
+		get
+		{
+			return mReplacement;
+		}
+		set
+		{
+			UIAtlas uIAtlas = value;
+			if (uIAtlas == this)
+			{
+				uIAtlas = null;
+			}
+			if (mReplacement != uIAtlas)
+			{
+				if (uIAtlas != null && uIAtlas.replacement == this)
+				{
+					uIAtlas.replacement = null;
+				}
+				if (mReplacement != null)
+				{
+					MarkAsDirty();
+				}
+				mReplacement = uIAtlas;
+				MarkAsDirty();
+			}
+		}
+	}
+
+	public Sprite GetSprite(string name)
+	{
+		if (mReplacement != null)
+		{
+			return mReplacement.GetSprite(name);
+		}
+		if (!string.IsNullOrEmpty(name))
+		{
+			int i = 0;
+			for (int count = sprites.Count; i < count; i++)
+			{
+				Sprite sprite = sprites[i];
+				if (!string.IsNullOrEmpty(sprite.name) && name == sprite.name)
+				{
+					return sprite;
+				}
+			}
+		}
+		else
+		{
+			Debug.LogWarning("Expected a valid name, found nothing");
+		}
+		return null;
+	}
+
+	private static int CompareString(string a, string b)
+	{
+		return a.CompareTo(b);
+	}
+
+	public BetterList<string> GetListOfSprites()
+	{
+		if (mReplacement != null)
+		{
+			return mReplacement.GetListOfSprites();
+		}
+		BetterList<string> betterList = new BetterList<string>();
+		int i = 0;
+		for (int count = sprites.Count; i < count; i++)
+		{
+			Sprite sprite = sprites[i];
+			if (sprite != null && !string.IsNullOrEmpty(sprite.name))
+			{
+				betterList.Add(sprite.name);
+			}
+		}
+		return betterList;
+	}
+
+	public BetterList<string> GetListOfSprites(string match)
+	{
+		if (mReplacement != null)
+		{
+			return mReplacement.GetListOfSprites(match);
+		}
+		if (string.IsNullOrEmpty(match))
+		{
+			return GetListOfSprites();
+		}
+		BetterList<string> betterList = new BetterList<string>();
+		int i = 0;
+		for (int count = sprites.Count; i < count; i++)
+		{
+			Sprite sprite = sprites[i];
+			if (sprite != null && !string.IsNullOrEmpty(sprite.name) && string.Equals(match, sprite.name, StringComparison.OrdinalIgnoreCase))
+			{
+				betterList.Add(sprite.name);
+				return betterList;
+			}
+		}
+		string[] array = match.Split(new char[1] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+		for (int j = 0; j < array.Length; j++)
+		{
+			array[j] = array[j].ToLower();
+		}
+		int k = 0;
+		for (int count2 = sprites.Count; k < count2; k++)
+		{
+			Sprite sprite2 = sprites[k];
+			if (sprite2 == null || string.IsNullOrEmpty(sprite2.name))
+			{
+				continue;
+			}
+			string text = sprite2.name.ToLower();
+			int num = 0;
+			for (int l = 0; l < array.Length; l++)
+			{
+				if (text.Contains(array[l]))
+				{
+					num++;
+				}
+			}
+			if (num == array.Length)
+			{
+				betterList.Add(sprite2.name);
+			}
+		}
+		return betterList;
+	}
+
+	private bool References(UIAtlas atlas)
+	{
+		if (atlas == null)
+		{
+			return false;
+		}
+		if (atlas == this)
+		{
+			return true;
+		}
+		return mReplacement != null && mReplacement.References(atlas);
+	}
+
+	public static bool CheckIfRelated(UIAtlas a, UIAtlas b)
+	{
+		if (a == null || b == null)
+		{
+			return false;
+		}
+		return a == b || a.References(b) || b.References(a);
+	}
+
+	public void MarkAsDirty()
+	{
+		UISprite[] array = NGUITools.FindActive<UISprite>();
+		int i = 0;
+		for (int num = array.Length; i < num; i++)
+		{
+			UISprite uISprite = array[i];
+			if (CheckIfRelated(this, uISprite.atlas))
+			{
+				UIAtlas atlas = uISprite.atlas;
+				uISprite.atlas = null;
+				uISprite.atlas = atlas;
+			}
+		}
+		UIFont[] array2 = Resources.FindObjectsOfTypeAll(typeof(UIFont)) as UIFont[];
+		int j = 0;
+		for (int num2 = array2.Length; j < num2; j++)
+		{
+			UIFont uIFont = array2[j];
+			if (CheckIfRelated(this, uIFont.atlas))
+			{
+				UIAtlas atlas2 = uIFont.atlas;
+				uIFont.atlas = null;
+				uIFont.atlas = atlas2;
+			}
+		}
+		UILabel[] array3 = NGUITools.FindActive<UILabel>();
+		int k = 0;
+		for (int num3 = array3.Length; k < num3; k++)
+		{
+			UILabel uILabel = array3[k];
+			if (uILabel.font != null && CheckIfRelated(this, uILabel.font.atlas))
+			{
+				UIFont font = uILabel.font;
+				uILabel.font = null;
+				uILabel.font = font;
+			}
+		}
+	}
 }

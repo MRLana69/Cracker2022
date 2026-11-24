@@ -1,63 +1,462 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class FollowingGuard : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	[Serializable]
+	public class CatchAnimationSet
+	{
+		public AnimationClip avatar;
 
-	1. No dll files were provided to AssetRipper.
+		public AnimationClip guard;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+		public AnimationClip dog;
 
-	2. Incorrect dll files were provided to AssetRipper.
+		public float catchAvatarAnimationPlayOffset;
+	}
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public float distanceToCharacterMin = 10f;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public float distanceToCharacterMax = 50f;
 
-	3. Assembly Reconstruction has not been implemented.
+	public float catchUpDuration = 0.7f;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public float resetCatchUpDuration = 1.5f;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public float lastGroundedSmoothTime = 0.3f;
 
-	4. This script is unnecessary.
+	public float xSmoothTime = 0.1f;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public float gravity = 200f;
 
-	5. Script Content Level 0
+	public bool isShowing;
 
-		AssetRipper was set to not load any script information.
+	public Animation guardAnimation;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public Animation dogRightAnimation;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public CatchAnimationSet[] caughtLeft;
 
-	7. An incorrect path was provided to AssetRipper.
+	public CatchAnimationSet[] caughtRight;
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	private string previusAvatarCaughtLeft;
 
-	*/
+	private string previusAvatarCaughtRight;
+
+	public int debugCatchAnimationToPlay = -1;
+
+	private Renderer[] enemyRenderers;
+
+	public Transform[] enemies;
+
+	private Vector3[] enemiesStartPos;
+
+	private float y;
+
+	private bool closeToCharacter;
+
+	private float distanceToCharacter;
+
+	private float lastGroundedSmooth;
+
+	private float lastGroundedVelocity;
+
+	private SmoothDampFloat x;
+
+	private Game game;
+
+	private Character character;
+
+	private Transform characterTransform;
+
+	private float verticalSpeed;
+
+	public float guardProximityLoopVolume = 0.9f;
+
+	private static FollowingGuard instance;
+
+	private bool isPaused = true;
+
+	public static FollowingGuard Instance
+	{
+		get
+		{
+			return instance ?? (instance = UnityEngine.Object.FindObjectOfType(typeof(FollowingGuard)) as FollowingGuard);
+		}
+	}
+
+	private void Awake()
+	{
+		game = Game.Instance;
+		character = Character.Instance;
+		characterTransform = character.transform;
+		enemyRenderers = base.gameObject.GetComponentsInChildren<Renderer>();
+		enemiesStartPos = new Vector3[enemies.Length];
+		for (int i = 0; i < enemies.Length; i++)
+		{
+			enemiesStartPos[i] = enemies[i].position;
+		}
+		x = new SmoothDampFloat(0f, xSmoothTime);
+		base.GetComponent<AudioSource>().volume = guardProximityLoopVolume;
+		Game obj = game;
+		obj.OnPauseChange = (Game.OnPauseChangeDelegate)Delegate.Combine(obj.OnPauseChange, new Game.OnPauseChangeDelegate(HandleOnPauseChange));
+		CatchAnimationSet[] array = caughtLeft;
+		foreach (CatchAnimationSet catchAnimationSet in array)
+		{
+			SetupAvatarAnimationsStates(character.characterAnimation, catchAnimationSet.avatar);
+			SetupDogGuardAnimationsStates(guardAnimation, catchAnimationSet.guard);
+			SetupDogGuardAnimationsStates(dogRightAnimation, catchAnimationSet.dog);
+		}
+		CatchAnimationSet[] array2 = caughtRight;
+		foreach (CatchAnimationSet catchAnimationSet2 in array2)
+		{
+			SetupAvatarAnimationsStates(character.characterAnimation, catchAnimationSet2.avatar);
+			SetupDogGuardAnimationsStates(guardAnimation, catchAnimationSet2.guard);
+			SetupDogGuardAnimationsStates(dogRightAnimation, catchAnimationSet2.dog);
+		}
+	}
+
+	private void SetupAvatarAnimationsStates(Animation animation, AnimationClip animationClip)
+	{
+		AnimationClip clip = animation.GetClip(animationClip.name);
+		if (clip == null)
+		{
+			animation.AddClip(animationClip, animationClip.name);
+		}
+		animation[animationClip.name].enabled = false;
+		animation[animationClip.name].layer = 4;
+	}
+
+	private void SetupDogGuardAnimationsStates(Animation animation, AnimationClip animationClip)
+	{
+		AnimationClip clip = animation.GetClip(animationClip.name);
+		if (clip == null)
+		{
+			animation.AddClip(animationClip, animationClip.name);
+		}
+	}
+
+	private void HandleOnPauseChange(bool pause)
+	{
+		if (pause)
+		{
+			if (base.GetComponent<AudioSource>().isPlaying)
+			{
+				base.GetComponent<AudioSource>().Pause();
+			}
+			isPaused = true;
+		}
+		else
+		{
+			if (isPaused)
+			{
+				base.GetComponent<AudioSource>().Play();
+			}
+			isPaused = false;
+		}
+	}
+
+	public void Restart(bool closeToCharacter)
+	{
+		StopAllCoroutines();
+		this.closeToCharacter = closeToCharacter;
+		distanceToCharacter = ((!closeToCharacter) ? distanceToCharacterMax : distanceToCharacterMin);
+	}
+
+	public void OnEnable()
+	{
+		lastGroundedSmooth = character.lastGroundedY;
+		lastGroundedVelocity = 0f;
+		y = character.lastGroundedY;
+		x.Value = character.transform.position.x;
+		distanceToCharacter = distanceToCharacterMin;
+		closeToCharacter = true;
+		verticalSpeed = 0f;
+		character.OnJump += OnJump;
+		character.OnRoll += OnRoll;
+	}
+
+	public void OnDisable()
+	{
+		character.OnJump -= OnJump;
+		character.OnRoll -= OnRoll;
+	}
+
+	public void CatchUp()
+	{
+		CatchUp(catchUpDuration);
+	}
+
+	public void CatchUp(float duration)
+	{
+		if (!closeToCharacter)
+		{
+			float distanceFrom = distanceToCharacter;
+			ShowEnemies(true);
+			StopAllCoroutines();
+			guardAnimation.Play("Guard_grap after");
+			guardAnimation.PlayQueued("Guard_Run");
+			base.GetComponent<AudioSource>().timeSamples = UnityEngine.Random.Range(0, base.GetComponent<AudioSource>().timeSamples);
+			base.GetComponent<AudioSource>().Play();
+			base.GetComponent<AudioSource>().pitch = UnityEngine.Random.Range(0.9f, 1.05f);
+			StartCoroutine(pTween.To(duration, delegate(float t)
+			{
+				distanceToCharacter = Mathf.SmoothStep(distanceFrom, distanceToCharacterMin, t);
+			}));
+			StartCoroutine(pTween.To(duration, delegate(float t)
+			{
+				base.GetComponent<AudioSource>().volume = Mathf.SmoothStep(0f, guardProximityLoopVolume, t);
+			}));
+			closeToCharacter = true;
+		}
+	}
+
+	public void ResetCatchUp()
+	{
+		ResetCatchUp(resetCatchUpDuration);
+	}
+
+	public void ResetCatchUp(float duration)
+	{
+		StartCoroutine(ResetCatchUpCoroutine(duration));
+	}
+
+	public IEnumerator ResetCatchUpCoroutine(float duration)
+	{
+		if (closeToCharacter)
+		{
+			float distanceFrom = distanceToCharacter;
+			closeToCharacter = false;
+			StartCoroutine(pTween.To(duration, delegate(float t)
+			{
+				distanceToCharacter = Mathf.SmoothStep(distanceFrom, distanceToCharacterMax, t);
+			}));
+			yield return StartCoroutine(pTween.To(duration * 2f, delegate(float t)
+			{
+				base.GetComponent<AudioSource>().volume = Mathf.SmoothStep(guardProximityLoopVolume, 0f, t);
+			}));
+			base.GetComponent<AudioSource>().Stop();
+			if (!game.isDead)
+			{
+				ShowEnemies(false);
+			}
+		}
+	}
+
+	public void MuteProximityLoop()
+	{
+		base.GetComponent<AudioSource>().Stop();
+	}
+
+	public void PlayIntro()
+	{
+		base.gameObject.transform.position = new Vector3(0f, 0f, -10f);
+		for (int i = 0; i < enemies.Length; i++)
+		{
+			enemies[i].position = enemiesStartPos[i];
+			enemies[i].rotation = Quaternion.Euler(0f, 0f, 0f);
+		}
+
+		// The animation assets exist in the project but may not be assigned to the
+		// Animation component on the guard/dog GameObjects. Play the first
+		// available candidate name and fall back gracefully if a clip isn't found.
+		string[] introCandidates = new string[2] { "playIntro_0", "playIntro" };
+
+		bool guardPlayed = false;
+		if (guardAnimation != null)
+		{
+			foreach (string name in introCandidates)
+			{
+				if (guardAnimation.GetClip(name) != null)
+				{
+					guardAnimation.Play(name);
+					guardPlayed = true;
+					break;
+				}
+			}
+			if (!guardPlayed)
+			{
+				Debug.LogWarning("FollowingGuard: neither 'playIntro_0' nor 'playIntro' were found on guardAnimation. Available clips: " + GetClipList(guardAnimation));
+			}
+		}
+
+		bool dogPlayed = false;
+		if (dogRightAnimation != null)
+		{
+			foreach (string name in introCandidates)
+			{
+				if (dogRightAnimation.GetClip(name) != null)
+				{
+					dogRightAnimation.Play(name);
+					dogPlayed = true;
+					break;
+				}
+			}
+			if (!dogPlayed)
+			{
+				Debug.LogWarning("FollowingGuard: neither 'playIntro_0' nor 'playIntro' were found on dogRightAnimation. Available clips: " + GetClipList(dogRightAnimation));
+			}
+		}
+
+		if (guardAnimation != null && guardAnimation.GetClip("Guard_Run") != null)
+		{
+			guardAnimation.CrossFadeQueued("Guard_Run", 0.2f);
+		}
+		if (dogRightAnimation != null && dogRightAnimation.GetClip("Dog_Fast Run") != null)
+		{
+			dogRightAnimation.CrossFadeQueued("Dog_Fast Run", 0.2f);
+		}
+	}
+
+	// Helper to list clips on an Animation component for easier debug messages.
+	private string GetClipList(Animation anim)
+	{
+		if (anim == null)
+		{
+			return "<null>";
+		}
+		System.Text.StringBuilder sb = new System.Text.StringBuilder();
+		foreach (AnimationState s in anim)
+		{
+			sb.Append(s.name).Append(",");
+		}
+		return sb.ToString().TrimEnd(',');
+	}
+
+	public void CatchPlayer(float pos)
+	{
+		base.GetComponent<AudioSource>().Stop();
+		StopAllCoroutines();
+		character.characterAnimation.Stop(previusAvatarCaughtLeft);
+		character.characterAnimation.Stop(previusAvatarCaughtRight);
+		int num = ((debugCatchAnimationToPlay <= -1 || debugCatchAnimationToPlay >= caughtLeft.Length) ? UnityEngine.Random.Range(0, caughtLeft.Length) : debugCatchAnimationToPlay);
+		int num2 = ((debugCatchAnimationToPlay <= -1 || debugCatchAnimationToPlay >= caughtRight.Length) ? UnityEngine.Random.Range(0, caughtRight.Length) : debugCatchAnimationToPlay);
+		float num3;
+		if (pos < 20f)
+		{
+			guardAnimation.CrossFade(caughtLeft[num].guard.name, 0.2f);
+			dogRightAnimation.CrossFade(caughtLeft[num].dog.name, 0.2f);
+			character.animations.stumbleDeath = caughtLeft[num].avatar.name;
+			num3 = caughtLeft[num].catchAvatarAnimationPlayOffset / 25f;
+			previusAvatarCaughtLeft = character.animations.stumbleDeath;
+		}
+		else
+		{
+			guardAnimation.CrossFade(caughtRight[num2].guard.name, 0.2f);
+			dogRightAnimation.CrossFade(caughtRight[num2].dog.name, 0.2f);
+			character.animations.stumbleDeath = caughtRight[num2].avatar.name;
+			num3 = caughtLeft[num2].catchAvatarAnimationPlayOffset / 25f;
+			previusAvatarCaughtRight = character.animations.stumbleDeath;
+		}
+		character.characterAnimation[character.animations.stumbleDeath].weight = 0f;
+		character.characterAnimation[character.animations.stumbleDeath].enabled = true;
+		StartCoroutine(pTween.To(num3, delegate(float t)
+		{
+			for (int i = 0; i < enemies.Length; i++)
+			{
+				enemies[i].position = Vector3.Lerp(enemies[i].position, character.transform.position, t);
+			}
+		}));
+		StartCoroutine(CatchPlayerAnimStarter(num3));
+	}
+
+	private IEnumerator CatchPlayerAnimStarter(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		StartCoroutine(pTween.To(0.2f, delegate(float t)
+		{
+			character.characterAnimation[character.animations.stumbleDeath].weight = Mathf.Lerp(0f, 1f, t);
+		}));
+	}
+
+	public void HitByTrainSequence()
+	{
+		base.GetComponent<AudioSource>().Stop();
+		StartCoroutine(HitByTrainSequenceCoroutine());
+	}
+
+	public IEnumerator HitByTrainSequenceCoroutine()
+	{
+		GameStats.Instance.guardHitScreen++;
+		float catchUpTime = 0.2f;
+		yield return StartCoroutine(pTween.To(catchUpTime, delegate(float t)
+		{
+			for (int i = 0; i < enemies.Length; i++)
+			{
+				enemies[i].position = Vector3.Lerp(enemies[i].position, character.transform.position, t);
+			}
+		}));
+		dogRightAnimation.Play("Dog_death_movingTrain");
+		yield return new WaitForSeconds(0.4f);
+		Vector3 charPos = characterTransform.position;
+		StartCoroutine(pTween.To(1f, delegate(float t)
+		{
+			characterTransform.position = Vector3.Lerp(charPos, new Vector3(charPos.x, -5f, charPos.z), t);
+		}));
+		yield return new WaitForSeconds(0.2f);
+		guardAnimation.Play("Guard_death_movingTrain");
+	}
+
+	public void ShowEnemies(bool vis)
+	{
+		isShowing = vis;
+		Renderer[] array = enemyRenderers;
+		foreach (Renderer renderer in array)
+		{
+			renderer.gameObject.active = vis;
+		}
+	}
+
+	public void LateUpdate()
+	{
+		x.Target = character.transform.position.x;
+		x.Update();
+		lastGroundedSmooth = Mathf.SmoothDamp(lastGroundedSmooth, character.lastGroundedY, ref lastGroundedVelocity, lastGroundedSmoothTime);
+		if (y > lastGroundedSmooth)
+		{
+			verticalSpeed -= gravity * Time.deltaTime;
+		}
+		y += verticalSpeed * Time.deltaTime;
+		y = Mathf.Max(y, lastGroundedSmooth);
+		Vector3 position = characterTransform.position - Vector3.forward * distanceToCharacter;
+		position.y = y;
+		position.x = x.Value;
+		base.transform.position = position;
+	}
+
+	private void OnRoll()
+	{
+		StartCoroutine(RollCoroutine(distanceToCharacter / game.currentSpeed));
+	}
+
+	private IEnumerator RollCoroutine(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		verticalSpeed = 0f - character.CalculateJumpVerticalSpeed();
+	}
+
+	private void OnJump()
+	{
+		Jump(distanceToCharacter / game.currentSpeed);
+	}
+
+	public void Jump(float delay)
+	{
+		if (distanceToCharacter <= distanceToCharacterMin)
+		{
+			Missions.Instance.PlayerDidThis(Missions.MissionTarget.GuardJump);
+		}
+		StartCoroutine(JumpCoroutine(delay));
+	}
+
+	private IEnumerator JumpCoroutine(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		guardAnimation.Play("Guard_jump");
+		guardAnimation.CrossFadeQueued("Guard_Run", 0.2f);
+		dogRightAnimation.Play("Dog_jump");
+		dogRightAnimation.CrossFadeQueued("Dog_Fast Run", 0.2f);
+		verticalSpeed = character.CalculateJumpVerticalSpeed() * 0.7f;
+	}
 }

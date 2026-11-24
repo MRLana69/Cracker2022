@@ -1,63 +1,486 @@
 using UnityEngine;
 
-public class UIWidget : MonoBehaviour
+public abstract class UIWidget : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public enum Pivot
+	{
+		TopLeft = 0,
+		Top = 1,
+		TopRight = 2,
+		Left = 3,
+		Center = 4,
+		Right = 5,
+		BottomLeft = 6,
+		Bottom = 7,
+		BottomRight = 8
+	}
 
-	1. No dll files were provided to AssetRipper.
+	[HideInInspector]
+	[SerializeField]
+	private Material mMat;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[SerializeField]
+	[HideInInspector]
+	private Texture mTex;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	[HideInInspector]
+	[SerializeField]
+	private Color mColor = Color.white;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	[SerializeField]
+	[HideInInspector]
+	private Pivot mPivot = Pivot.Center;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	[HideInInspector]
+	[SerializeField]
+	private int mDepth;
 
-	3. Assembly Reconstruction has not been implemented.
+	private Transform mTrans;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private UIPanel mPanel;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	protected bool mChanged = true;
 
-	4. This script is unnecessary.
+	protected bool mPlayMode = true;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private Vector3 mDiffPos;
 
-	5. Script Content Level 0
+	private Quaternion mDiffRot;
 
-		AssetRipper was set to not load any script information.
+	private Vector3 mDiffScale;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private int mVisibleFlag = -1;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	private UIGeometry mGeom = new UIGeometry();
 
-	7. An incorrect path was provided to AssetRipper.
+	public Color color
+	{
+		get
+		{
+			return mColor;
+		}
+		set
+		{
+			if (!mColor.Equals(value))
+			{
+				mColor = value;
+				mChanged = true;
+			}
+		}
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public float alpha
+	{
+		get
+		{
+			return mColor.a;
+		}
+		set
+		{
+			Color color = mColor;
+			color.a = value;
+			this.color = color;
+		}
+	}
 
-	*/
+	public Pivot pivot
+	{
+		get
+		{
+			return mPivot;
+		}
+		set
+		{
+			if (mPivot != value)
+			{
+				mPivot = value;
+				mChanged = true;
+			}
+		}
+	}
+
+	public int depth
+	{
+		get
+		{
+			return mDepth;
+		}
+		set
+		{
+			if (mDepth != value)
+			{
+				mDepth = value;
+				if (mPanel != null)
+				{
+					mPanel.MarkMaterialAsChanged(material, true);
+				}
+			}
+		}
+	}
+
+	public Transform cachedTransform
+	{
+		get
+		{
+			if (mTrans == null)
+			{
+				mTrans = base.transform;
+			}
+			return mTrans;
+		}
+	}
+
+	public virtual Material material
+	{
+		get
+		{
+			return mMat;
+		}
+		set
+		{
+			if (mMat != value)
+			{
+				if (mMat != null && mPanel != null)
+				{
+					mPanel.RemoveWidget(this);
+				}
+				mPanel = null;
+				mMat = value;
+				mTex = null;
+				if (mMat != null)
+				{
+					CreatePanel();
+				}
+			}
+		}
+	}
+
+	public virtual Texture mainTexture
+	{
+		get
+		{
+			Material material = this.material;
+			if (material != null)
+			{
+				if (material.mainTexture != null)
+				{
+					mTex = material.mainTexture;
+				}
+				else if (mTex != null)
+				{
+					if (mPanel != null)
+					{
+						mPanel.RemoveWidget(this);
+					}
+					mPanel = null;
+					mMat.mainTexture = mTex;
+					if (base.enabled)
+					{
+						CreatePanel();
+					}
+				}
+			}
+			return mTex;
+		}
+		set
+		{
+			if (!(mMat == null) && !(mMat.mainTexture != value))
+			{
+				return;
+			}
+			if (mPanel != null)
+			{
+				mPanel.RemoveWidget(this);
+			}
+			mPanel = null;
+			mTex = value;
+			if (mMat != null)
+			{
+				mMat.mainTexture = value;
+				if (base.enabled)
+				{
+					CreatePanel();
+				}
+			}
+		}
+	}
+
+	public UIPanel panel
+	{
+		get
+		{
+			if (mPanel == null)
+			{
+				CreatePanel();
+			}
+			return mPanel;
+		}
+		set
+		{
+			mPanel = value;
+		}
+	}
+
+	public int visibleFlag
+	{
+		get
+		{
+			return mVisibleFlag;
+		}
+		set
+		{
+			mVisibleFlag = value;
+		}
+	}
+
+	public virtual Vector2 pivotOffset
+	{
+		get
+		{
+			Vector2 zero = Vector2.zero;
+			if (mPivot == Pivot.Top || mPivot == Pivot.Center || mPivot == Pivot.Bottom)
+			{
+				zero.x = -0.5f;
+			}
+			else if (mPivot == Pivot.TopRight || mPivot == Pivot.Right || mPivot == Pivot.BottomRight)
+			{
+				zero.x = -1f;
+			}
+			if (mPivot == Pivot.Left || mPivot == Pivot.Center || mPivot == Pivot.Right)
+			{
+				zero.y = 0.5f;
+			}
+			else if (mPivot == Pivot.BottomLeft || mPivot == Pivot.Bottom || mPivot == Pivot.BottomRight)
+			{
+				zero.y = 1f;
+			}
+			return zero;
+		}
+	}
+
+	public virtual Vector2 relativeSize
+	{
+		get
+		{
+			return Vector2.one;
+		}
+	}
+
+	public virtual bool keepMaterial
+	{
+		get
+		{
+			return false;
+		}
+	}
+
+	public static int CompareFunc(UIWidget left, UIWidget right)
+	{
+		if (left.mDepth > right.mDepth)
+		{
+			return 1;
+		}
+		if (left.mDepth < right.mDepth)
+		{
+			return -1;
+		}
+		return 0;
+	}
+
+	public virtual void MarkAsChanged()
+	{
+		mChanged = true;
+		if (mPanel != null && base.enabled && NGUITools.GetActive(base.gameObject) && !Application.isPlaying && material != null)
+		{
+			mPanel.AddWidget(this);
+			CheckLayer();
+		}
+	}
+
+	private void CreatePanel()
+	{
+		if (mPanel == null && base.enabled && NGUITools.GetActive(base.gameObject) && material != null)
+		{
+			mPanel = UIPanel.Find(cachedTransform);
+			if (mPanel != null)
+			{
+				CheckLayer();
+				mPanel.AddWidget(this);
+				mChanged = true;
+			}
+		}
+	}
+
+	public void CheckLayer()
+	{
+		if (mPanel != null && mPanel.gameObject.layer != base.gameObject.layer)
+		{
+			Debug.LogWarning("You can't place widgets on a layer different than the UIPanel that manages them.\nIf you want to move widgets to a different layer, parent them to a new panel instead.", this);
+			base.gameObject.layer = mPanel.gameObject.layer;
+		}
+	}
+
+	public void CheckParent()
+	{
+		if (!(mPanel != null))
+		{
+			return;
+		}
+		bool flag = true;
+		Transform parent = cachedTransform.parent;
+		while (parent != null && !(parent == mPanel.cachedTransform))
+		{
+			if (!mPanel.WatchesTransform(parent))
+			{
+				flag = false;
+				break;
+			}
+			parent = parent.parent;
+		}
+		if (!flag)
+		{
+			if (!keepMaterial)
+			{
+				material = null;
+			}
+			mPanel = null;
+			CreatePanel();
+		}
+	}
+
+	protected virtual void Awake()
+	{
+		mPlayMode = Application.isPlaying;
+	}
+
+	private void OnEnable()
+	{
+		mChanged = true;
+		if (!keepMaterial)
+		{
+			mMat = null;
+			mTex = null;
+		}
+		mPanel = null;
+	}
+
+	private void Start()
+	{
+		OnStart();
+		CreatePanel();
+	}
+
+	public void Update()
+	{
+		CheckLayer();
+		if (mPanel == null)
+		{
+			CreatePanel();
+		}
+		Vector3 localScale = cachedTransform.localScale;
+		if (localScale.z != 1f)
+		{
+			localScale.z = 1f;
+			mTrans.localScale = localScale;
+		}
+	}
+
+	private void OnDisable()
+	{
+		if (!keepMaterial)
+		{
+			material = null;
+		}
+		else if (mPanel != null)
+		{
+			mPanel.RemoveWidget(this);
+		}
+		mPanel = null;
+	}
+
+	private void OnDestroy()
+	{
+		if (mPanel != null)
+		{
+			mPanel.RemoveWidget(this);
+			mPanel = null;
+		}
+	}
+
+	public bool UpdateGeometry(ref Matrix4x4 worldToPanel, bool parentMoved, bool generateNormals)
+	{
+		if (material == null)
+		{
+			return false;
+		}
+		if (OnUpdate() || mChanged)
+		{
+			mChanged = false;
+			mGeom.Clear();
+			OnFill(mGeom.verts, mGeom.uvs, mGeom.cols);
+			if (mGeom.hasVertices)
+			{
+				Vector3 vector = pivotOffset;
+				Vector2 vector2 = relativeSize;
+				vector.x *= vector2.x;
+				vector.y *= vector2.y;
+				mGeom.ApplyOffset(vector);
+				mGeom.ApplyTransform(worldToPanel * cachedTransform.localToWorldMatrix, generateNormals);
+			}
+			return true;
+		}
+		if (mGeom.hasVertices && parentMoved)
+		{
+			mGeom.ApplyTransform(worldToPanel * cachedTransform.localToWorldMatrix, generateNormals);
+		}
+		return false;
+	}
+
+	public void WriteToBuffers(BetterList<Vector3> v, BetterList<Vector2> u, BetterList<Color32> c, BetterList<Vector3> n, BetterList<Vector4> t)
+	{
+		mGeom.WriteToBuffers(v, u, c, n, t);
+	}
+
+	public virtual void MakePixelPerfect()
+	{
+		Vector3 localScale = cachedTransform.localScale;
+		int num = Mathf.RoundToInt(localScale.x);
+		int num2 = Mathf.RoundToInt(localScale.y);
+		localScale.x = num;
+		localScale.y = num2;
+		localScale.z = 1f;
+		Vector3 localPosition = cachedTransform.localPosition;
+		localPosition.z = Mathf.RoundToInt(localPosition.z);
+		if (num % 2 == 1 && (pivot == Pivot.Top || pivot == Pivot.Center || pivot == Pivot.Bottom))
+		{
+			localPosition.x = Mathf.Floor(localPosition.x) + 0.5f;
+		}
+		else
+		{
+			localPosition.x = Mathf.Round(localPosition.x);
+		}
+		if (num2 % 2 == 1 && (pivot == Pivot.Left || pivot == Pivot.Center || pivot == Pivot.Right))
+		{
+			localPosition.y = Mathf.Ceil(localPosition.y) - 0.5f;
+		}
+		else
+		{
+			localPosition.y = Mathf.Round(localPosition.y);
+		}
+		cachedTransform.localPosition = localPosition;
+		cachedTransform.localScale = localScale;
+	}
+
+	protected virtual void OnStart()
+	{
+	}
+
+	public virtual bool OnUpdate()
+	{
+		return false;
+	}
+
+	public virtual void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
+	{
+	}
 }

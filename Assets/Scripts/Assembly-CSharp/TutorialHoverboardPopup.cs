@@ -1,63 +1,87 @@
 using UnityEngine;
 
-public class TutorialHoverboardPopup : MonoBehaviour
+public class TutorialHoverboardPopup : CharacterPopup
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private const int NUMBER_OF_FREE_HOVERBOARDS = 3;
 
-	1. No dll files were provided to AssetRipper.
+	[SerializeField]
+	private UILabel topTitle;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[SerializeField]
+	private UILabel bottomTitle;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	[SerializeField]
+	private UILabel subTitle;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	[SerializeField]
+	private UILabel line1Big;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	[SerializeField]
+	private UILabel line1Small;
 
-	3. Assembly Reconstruction has not been implemented.
+	[SerializeField]
+	private UILabel line2Big;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	[SerializeField]
+	private UILabel line2Small;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	[SerializeField]
+	private UILabel line3Big;
 
-	4. This script is unnecessary.
+	[SerializeField]
+	private UILabel line3Small;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	[SerializeField]
+	private UILabel buttonText;
 
-	5. Script Content Level 0
+	private string hoverboardScreenType = string.Empty;
 
-		AssetRipper was set to not load any script information.
+	private void OnEnable()
+	{
+		SetCharacter(Characters.CharacterType.slick);
+		if (Achievements.Instance.GetNumberOfHoverboardsUsed() == 0)
+		{
+			topTitle.text = "Need";
+			bottomTitle.text = "Help?";
+			subTitle.text = "Use the\nHOVERBOARDS!";
+			line1Big.text = "SURF AWAY from trouble!";
+			line1Small.text = "Boards save you from crashing";
+			line2Big.text = "How to ACTIVATE?";
+			line2Small.text = "DOUBLE TAP while running";
+			line3Big.text = "Where can I get MORE?";
+			line3Small.text = "Get Hoverboards in the Shop";
+			buttonText.text = "Get 3 Free!";
+			hoverboardScreenType = "GuidelineHoverboardNeverUsed";
+		}
+		else
+		{
+			topTitle.text = "Out of";
+			bottomTitle.text = "Boards?";
+			subTitle.text = "Here's 3 to\nget you going!";
+			line1Big.text = "SURF AWAY from trouble!";
+			line1Small.text = "Boards save you from crashing";
+			line2Big.text = "Have another GO!";
+			line2Small.text = "Get a flying start with 3 FREE Boards";
+			line3Big.text = "Where can I get MORE?";
+			line3Small.text = "Get Hoverboards in the Shop";
+			buttonText.text = "Get 3 Free!";
+			hoverboardScreenType = "GuidelineHoverboardNeverBought";
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private void OkClicked()
+	{
+		PlayerInfo.Instance.IncreaseUpgradeAmount(PowerupType.hoverboard, 3);
+		UIScreenController.Instance.QueuePopup("HoverboardPopup");
+		Flurry.LogEventWithAParameter("POPUP Screen " + hoverboardScreenType, "Result", "Ok");
+		UIScreenController.Instance.ClosePopup();
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-	7. An incorrect path was provided to AssetRipper.
-
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	private void CloseClicked()
+	{
+		PlayerInfo.Instance.IncreaseUpgradeAmount(PowerupType.hoverboard, 3);
+		UIScreenController.Instance.QueuePopup("HoverboardPopup");
+		Flurry.LogEventWithAParameter("POPUP Screen " + hoverboardScreenType, "Result", "Cancel");
+		UIScreenController.Instance.ClosePopup();
+	}
 }

@@ -1,63 +1,179 @@
+using System;
 using UnityEngine;
 
 public class FriendHelperCrew : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private const string PROGRESS_STRING = "{0} / {1} runs";
 
-	1. No dll files were provided to AssetRipper.
+	private const int RUNS_TO_COLLECT = 50;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	private const int REWARD_MIN = 50;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private const int REWARD_MAX = 350;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private const string DUMMY_FRIEND_NAME = "Friend Bonus";
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public GameObject collectButtonPrefab;
 
-	3. Assembly Reconstruction has not been implemented.
+	public GameObject progressPrefab;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public UILabel friendName;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public UITexture friendPicture;
 
-	4. This script is unnecessary.
+	public UISlicedSprite friendBackground;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public FriendCrewPokeHelper pokeHelper;
 
-	5. Script Content Level 0
+	private GameObject _collectionIndicator;
 
-		AssetRipper was set to not load any script information.
+	public Texture2D dummyImage;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private bool _imageSet;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	private Friend _friend;
 
-	7. An incorrect path was provided to AssetRipper.
+	private bool _initialized;
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	private bool _isDummyFriend;
 
-	*/
+	public Texture2D dummyFriendImage;
+
+	public void InitDummyFriend(bool collectible, bool backgroundActive = false)
+	{
+		_isDummyFriend = true;
+		if (!backgroundActive)
+		{
+			friendBackground.alpha = 0f;
+		}
+		else
+		{
+			friendBackground.alpha = 0.2f;
+		}
+		friendName.text = "Friend Bonus";
+		friendPicture.material = new Material(Shader.Find("Unlit/Transparent Colored"));
+		friendPicture.material.mainTexture = dummyFriendImage;
+		_imageSet = true;
+		GameObject gameObject;
+		if (collectible)
+		{
+			gameObject = NGUITools.AddChild(base.gameObject, collectButtonPrefab);
+			gameObject.GetComponent<UIButtonMessage>().target = base.gameObject;
+			_collectionIndicator = gameObject;
+			pokeHelper.DeactivatePoke();
+		}
+		else
+		{
+			gameObject = NGUITools.AddChild(base.gameObject, progressPrefab);
+			FriendProgressHelper component = gameObject.GetComponent<FriendProgressHelper>();
+			component.label.text = string.Format("{0} / {1} runs", 0, 50);
+			component.slider.sliderValue = 0f;
+			pokeHelper.DeactivatePoke();
+		}
+		_collectionIndicator = gameObject;
+		_initialized = true;
+	}
+
+	public void InitFriend(Friend friend, bool backgroundActive = false)
+	{
+		_friend = friend;
+		if (!backgroundActive)
+		{
+			friendBackground.alpha = 0f;
+		}
+		else
+		{
+			friendBackground.alpha = 0.2f;
+		}
+		friendName.text = _friend.name;
+		friendPicture.material = new Material(Shader.Find("Unlit/Transparent Colored"));
+		if (_friend.image != null)
+		{
+			friendPicture.material.mainTexture = _friend.image;
+			_imageSet = true;
+		}
+		else
+		{
+			friendPicture.material.mainTexture = dummyImage;
+		}
+		GameObject gameObject;
+		if (_friend.gamesToCashIn >= 50)
+		{
+			gameObject = NGUITools.AddChild(base.gameObject, collectButtonPrefab);
+			gameObject.GetComponent<UIButtonMessage>().target = base.gameObject;
+			_collectionIndicator = gameObject;
+			pokeHelper.DeactivatePoke();
+		}
+		else
+		{
+			gameObject = NGUITools.AddChild(base.gameObject, progressPrefab);
+			FriendProgressHelper component = gameObject.GetComponent<FriendProgressHelper>();
+			component.label.text = string.Format("{0} / {1} runs", Mathf.Clamp(_friend.gamesToCashIn, 0, 50), 50);
+			component.slider.sliderValue = (float)_friend.gamesToCashIn / 50f;
+			if ((DateTime.UtcNow - _friend.status.lastPokeTime).Days > 0)
+			{
+				if (_friend.status.lastPokeTime == DateTime.MinValue)
+				{
+					SocialManager.instance.SetPokeFirstTime(_friend);
+					pokeHelper.DeactivatePoke();
+				}
+				else
+				{
+					pokeHelper.ActivatePoke(_friend);
+				}
+			}
+			else
+			{
+				pokeHelper.DeactivatePoke();
+			}
+		}
+		_collectionIndicator = gameObject;
+		_initialized = true;
+	}
+
+	public void CollectReward()
+	{
+		if (_isDummyFriend)
+		{
+			Debug.Log("Collecting reward from dummy friend");
+			int num = UnityEngine.Random.Range(50, 350);
+			PlayerInfo.Instance.amountOfCoins += num;
+			NGUITools.SetActive(_collectionIndicator, false);
+			UnityEngine.Object.Destroy(_collectionIndicator);
+			_collectionIndicator = NGUITools.AddChild(base.gameObject, progressPrefab);
+			FriendProgressHelper component = _collectionIndicator.GetComponent<FriendProgressHelper>();
+			component.label.text = string.Format("{0} / {1} runs", 0, 50);
+			component.slider.sliderValue = 0f;
+			UIScreenController.Instance.SpawnCollectText(component.GetCoinPouchGlobalPosition(), num.ToString());
+			PlayerInfo.Instance.dummyFriendCollected = true;
+			PlayerInfo.Instance.SaveIfDirty();
+		}
+		else
+		{
+			Debug.Log("Collecting reward");
+			Missions.Instance.PlayerDidThis(Missions.MissionTarget.CollectCoinPouch);
+			SocialManager.instance.CollectFriendReward(_friend);
+			int num2 = UnityEngine.Random.Range(50, 350);
+			PlayerInfo.Instance.amountOfCoins += num2;
+			NGUITools.SetActive(_collectionIndicator, false);
+			UnityEngine.Object.Destroy(_collectionIndicator);
+			_collectionIndicator = NGUITools.AddChild(base.gameObject, progressPrefab);
+			FriendProgressHelper component2 = _collectionIndicator.GetComponent<FriendProgressHelper>();
+			component2.label.text = string.Format("{0} / {1} runs", _friend.gamesToCashIn, 50);
+			component2.slider.sliderValue = _friend.gamesToCashIn / 50;
+			UIScreenController.Instance.SpawnCollectText(component2.GetCoinPouchGlobalPosition(), num2.ToString());
+			PlayerInfo.Instance.SaveIfDirty();
+			SocialManager.instance.Save();
+			Flurry.LogEvent("Friend reward collect");
+		}
+	}
+
+	private void Update()
+	{
+		if (_initialized && !_imageSet && _friend.image != null)
+		{
+			friendPicture.material.mainTexture = _friend.image;
+			_imageSet = true;
+		}
+	}
 }

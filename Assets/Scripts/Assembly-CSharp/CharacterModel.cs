@@ -1,63 +1,221 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterModel : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public SkinnedMeshRenderer model;
 
-	1. No dll files were provided to AssetRipper.
+	public SkinnedMeshRenderer meshSuperSneaker;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public MeshRenderer meshHoverboard;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public MeshRenderer meshCoinMagnet;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public MeshRenderer meshJetpack;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public MeshRenderer meshSprayCan;
 
-	3. Assembly Reconstruction has not been implemented.
+	public MeshRenderer meshBlobShadow;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private SkinnedMeshRenderer[] models;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private Dictionary<string, SkinnedMeshRenderer> modelLookupTable;
 
-	4. This script is unnecessary.
+	private string[] modelNames;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private Color overlayColor = Color.black;
 
-	5. Script Content Level 0
+	private bool blinking;
 
-		AssetRipper was set to not load any script information.
+	public float blinkFrequency = 1.5f;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public string[] ModelNames
+	{
+		get
+		{
+			return modelNames;
+		}
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public Color OverlayColor
+	{
+		get
+		{
+			return overlayColor;
+		}
+		set
+		{
+			overlayColor = value;
+			for (int i = 0; i < models.Length; i++)
+			{
+				SkinnedMeshRenderer skinnedMeshRenderer = models[i];
+				skinnedMeshRenderer.sharedMaterial.SetColor("_OverlayColor", overlayColor);
+			}
+		}
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public void Awake()
+	{
+		models = GetComponentsInChildren<SkinnedMeshRenderer>();
+		modelNames = new string[models.Length];
+		modelLookupTable = new Dictionary<string, SkinnedMeshRenderer>();
+		for (int i = 0; i < models.Length; i++)
+		{
+			SkinnedMeshRenderer skinnedMeshRenderer = models[i];
+			string text = skinnedMeshRenderer.gameObject.name;
+			modelNames[i] = text;
+			modelLookupTable.Add(text, skinnedMeshRenderer);
+		}
+		Characters.Model model = Characters.characterData[(Characters.CharacterType)PlayerInfo.Instance.currentCharacter];
+		if (PlayerInfo.Instance.GetCollectedTokens((Characters.CharacterType)PlayerInfo.Instance.currentCharacter) < model.Price)
+		{
+			Debug.LogWarning("CharacterModel: Resetting to jake/slick because of likely exploit", this);
+			PlayerInfo.Instance.currentCharacter = 0;
+			PlayerInfo.Instance.SaveIfDirty();
+		}
+		ChangeCharacterModel(((Characters.CharacterType)PlayerInfo.Instance.currentCharacter).ToString());
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public void ChangeCharacterModel(string name)
+	{
+		StopIdleAnimations();
+		SkinnedMeshRenderer value;
+		if (modelLookupTable.TryGetValue(name, out value))
+		{
+			for (int i = 0; i < models.Length; i++)
+			{
+				SkinnedMeshRenderer skinnedMeshRenderer = models[i];
+				skinnedMeshRenderer.enabled = skinnedMeshRenderer == value;
+			}
+		}
+		else
+		{
+			Debug.LogWarning(string.Format("Could not find character by the name: {0}", name));
+		}
+		if (value != null)
+		{
+			model = value;
+		}
+	}
 
-	*/
+	public void HideAllPowerups()
+	{
+		meshHoverboard.enabled = false;
+		meshJetpack.enabled = false;
+		meshSuperSneaker.enabled = false;
+		meshCoinMagnet.enabled = false;
+		meshSprayCan.enabled = model.name == "slick";
+		ParticleSystem[] componentsInChildren = meshSprayCan.GetComponentsInChildren<ParticleSystem>();
+		foreach (ParticleSystem particleSystem in componentsInChildren)
+		{
+			particleSystem.enableEmission = false;
+		}
+	}
+
+	public void HideBlobShadow()
+	{
+		meshBlobShadow.enabled = false;
+	}
+
+	public void StartBlink()
+	{
+		blinking = true;
+		StartCoroutine(Blink());
+	}
+
+	private IEnumerator Blink()
+	{
+		while (blinking)
+		{
+			OverlayColor = pMath.Square(Time.time * blinkFrequency) * Color.white;
+			yield return 0;
+		}
+		OverlayColor = Color.black;
+	}
+
+	public void StopBlink()
+	{
+		blinking = false;
+	}
+
+	public void ResetBlink()
+	{
+		OverlayColor = Color.black;
+	}
+
+	public void StartIdleAnimations()
+	{
+		if (!(model == null))
+		{
+			AvatarAnimations component = model.GetComponent<AvatarAnimations>();
+			if (component != null)
+			{
+				component.StartIdleAnimations();
+			}
+			AvatarEyeAnimation component2 = model.GetComponent<AvatarEyeAnimation>();
+			if (component2 != null)
+			{
+				component2.AnimateEyes(false);
+			}
+		}
+	}
+
+	public void StartIdlePopupAnimations()
+	{
+		if (!(model == null))
+		{
+			AvatarAnimations component = model.GetComponent<AvatarAnimations>();
+			if (component != null)
+			{
+				component.StartIdlePopupAnimations();
+			}
+			AvatarEyeAnimation component2 = model.GetComponent<AvatarEyeAnimation>();
+			if (component2 != null)
+			{
+				component2.AnimateEyes(true);
+			}
+		}
+	}
+
+	public void StopIdleAnimations()
+	{
+		if (!(model == null))
+		{
+			AvatarAnimations component = model.GetComponent<AvatarAnimations>();
+			if (component != null)
+			{
+				component.StopIdleAnimations();
+			}
+			AvatarEyeAnimation component2 = model.GetComponent<AvatarEyeAnimation>();
+			if (component2 != null)
+			{
+				component2.StopAnimatingEyes();
+			}
+		}
+	}
+
+	public void PauseIdleAnimations()
+	{
+		if (!(model == null))
+		{
+			AvatarAnimations component = model.GetComponent<AvatarAnimations>();
+			if (component != null)
+			{
+				component.PauseIdleAnimations();
+			}
+		}
+	}
+
+	public void ResumeIdleAnimations()
+	{
+		if (!(model == null))
+		{
+			AvatarAnimations component = model.GetComponent<AvatarAnimations>();
+			if (component != null)
+			{
+				component.ResumeIdleAnimations();
+			}
+		}
+	}
 }

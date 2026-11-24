@@ -1,63 +1,59 @@
-using UnityEngine;
-
-public class Globals : MonoBehaviour
+public class Globals
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public const bool DEBUG = false;
 
-	1. No dll files were provided to AssetRipper.
+	public const bool DEBUG_SOCIAL_MANAGER_SERVER = false;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public const bool DEBUG_FREE_PURCHASES = false;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public const bool DEBUG_ALL_CHARS = false;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public const bool DEBUG_ALWAYS_ONLINE = false;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public const bool DEBUG_FREE_INAPP_PURCHASE = false;
 
-	3. Assembly Reconstruction has not been implemented.
+	public const int MAX_MULTIPLIER = 30;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public const int MAX_RANK = 1;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public const string DEFAULT_ENDSEASON_DATETIME = "05-11-2012 00:00:00";
 
-	4. This script is unnecessary.
+	public const int BONUS_FACEBOOK = 5000;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public const int BONUS_GAMECENTER = 250;
 
-	5. Script Content Level 0
+	public const int MIN_FRIEND_SCORE_REQUEST_INTERVAL = 300;
 
-		AssetRipper was set to not load any script information.
+	public const string FLURRY_API_KEY = "YR898G65YFPWNMQ6X5H5";
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public const string ADCOLONY_APPVERSION = "1.4";
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public const string ADCOLONY_APPID = "appc0d018638a3a47a3b725ab";
 
-	7. An incorrect path was provided to AssetRipper.
+	public const string ADCOLONY_ZONEID = "vzc54d2d8389a24681852d05";
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public const string CHARTBOOST_APPID = "502e041317ba47dc7d000024";
 
-	*/
+	public const string CHARTBOOST_APPSIGNATURE = "e356ea8420eeb855ff880fba02ce0309364d0613";
+
+	public const string VUNGLE_APPID = "507686ae771615941001aca5";
+
+	public const int LAYER_2DGUI = 30;
+
+	public const int LAYER_3DGUI = 31;
+
+	public const int LAYER_2DOVERLAY = 28;
+
+	public const int LAYER_3DCLIP = 29;
+
+	public const float DRAG_THRESHOLD = 0.08f;
+
+	public static PlayerInfo.Season UPDATE_DEFAULT_SEASON = PlayerInfo.Season.halloween;
+
+	public static Theme UPDATE_DEFAULT_THEME = Theme.HALLOWEEN;
+
+	public static Friend[] GetDebugFriends(int numberOfFriends = 10)
+	{
+		return new Friend[numberOfFriends];
+	}
 }

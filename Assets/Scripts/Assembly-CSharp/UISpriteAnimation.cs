@@ -1,63 +1,145 @@
+using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
+[RequireComponent(typeof(UISprite))]
+[AddComponentMenu("NGUI/UI/Sprite Animation")]
 public class UISpriteAnimation : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	[SerializeField]
+	[HideInInspector]
+	private int mFPS = 30;
 
-	1. No dll files were provided to AssetRipper.
+	[HideInInspector]
+	[SerializeField]
+	private string mPrefix = string.Empty;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[HideInInspector]
+	[SerializeField]
+	private bool mLoop = true;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private UISprite mSprite;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private float mDelta;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private int mIndex;
 
-	3. Assembly Reconstruction has not been implemented.
+	private bool mActive = true;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private List<string> mSpriteNames = new List<string>();
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public int frames
+	{
+		get
+		{
+			return mSpriteNames.Count;
+		}
+	}
 
-	4. This script is unnecessary.
+	public int framesPerSecond
+	{
+		get
+		{
+			return mFPS;
+		}
+		set
+		{
+			mFPS = value;
+		}
+	}
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public string namePrefix
+	{
+		get
+		{
+			return mPrefix;
+		}
+		set
+		{
+			if (mPrefix != value)
+			{
+				mPrefix = value;
+				RebuildSpriteList();
+			}
+		}
+	}
 
-	5. Script Content Level 0
+	public bool loop
+	{
+		get
+		{
+			return mLoop;
+		}
+		set
+		{
+			mLoop = value;
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	public bool isPlaying
+	{
+		get
+		{
+			return mActive;
+		}
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private void Start()
+	{
+		RebuildSpriteList();
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	private void Update()
+	{
+		if (!mActive || mSpriteNames.Count <= 1 || !Application.isPlaying || !((float)mFPS > 0f))
+		{
+			return;
+		}
+		mDelta += Time.deltaTime;
+		float num = 1f / (float)mFPS;
+		if (num < mDelta)
+		{
+			mDelta = ((!(num > 0f)) ? 0f : (mDelta - num));
+			if (++mIndex >= mSpriteNames.Count)
+			{
+				mIndex = 0;
+				mActive = loop;
+			}
+			if (mActive)
+			{
+				mSprite.spriteName = mSpriteNames[mIndex];
+				mSprite.MakePixelPerfect();
+			}
+		}
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	private void RebuildSpriteList()
+	{
+		if (mSprite == null)
+		{
+			mSprite = GetComponent<UISprite>();
+		}
+		mSpriteNames.Clear();
+		if (!(mSprite != null) || !(mSprite.atlas != null))
+		{
+			return;
+		}
+		List<UIAtlas.Sprite> spriteList = mSprite.atlas.spriteList;
+		int i = 0;
+		for (int count = spriteList.Count; i < count; i++)
+		{
+			UIAtlas.Sprite sprite = spriteList[i];
+			if (string.IsNullOrEmpty(mPrefix) || sprite.name.StartsWith(mPrefix))
+			{
+				mSpriteNames.Add(sprite.name);
+			}
+		}
+		mSpriteNames.Sort();
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
-
-	*/
+	public void Reset()
+	{
+		mActive = true;
+		mIndex = 0;
+	}
 }

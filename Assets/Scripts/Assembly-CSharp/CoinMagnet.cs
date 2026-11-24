@@ -1,63 +1,111 @@
+using System.Collections;
 using UnityEngine;
 
-public class CoinMagnet : MonoBehaviour
+public class CoinMagnet : CharacterModifier
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public OnTriggerObject coinMagnetCollider;
 
-	1. No dll files were provided to AssetRipper.
+	public float pullSpeed = 150f;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public GameObject powerupMesh;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	private CharacterController characterController;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private Animation characterAnimation;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private Character character;
 
-	3. Assembly Reconstruction has not been implemented.
+	private Transform coinEFX;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public Transform shoulder;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private Game game;
 
-	4. This script is unnecessary.
+	public AudioStateLoop audioStateLoop;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public AudioClipInfo powerDownSound;
 
-	5. Script Content Level 0
+	public ActivePowerup Powerup;
 
-		AssetRipper was set to not load any script information.
+	private void Awake()
+	{
+		character = Character.Instance;
+		characterController = character.characterController;
+		coinEFX = character.CharacterPickupParticleSystem.CoinEFX.transform;
+		characterAnimation = character.characterAnimation;
+		characterAnimation["hold_magnet"].AddMixingTransform(shoulder);
+		characterAnimation["hold_magnet"].layer = 3;
+		characterAnimation["hold_magnet"].weight = 0.9f;
+		characterAnimation["hold_magnet"].enabled = false;
+		game = Game.Instance;
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public override void Reset()
+	{
+		Paused = false;
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public override IEnumerator Begin()
+	{
+		GameStats.Instance.pickedUpPowerups++;
+		Paused = false;
+		audioStateLoop.ChangeLoop(AudioState.Magnet);
+		character.Stumble = false;
+		powerupMesh.active = true;
+		characterAnimation["hold_magnet"].enabled = true;
+		characterAnimation.Play("hold_magnet");
+		Powerup = GameStats.Instance.TriggerPowerup(PowerupType.coinmagnet);
+		coinMagnetCollider.OnEnter = CoinHit;
+		coinMagnetCollider.GetComponent<Collider>().enabled = true;
+		base.enabled = true;
+		stop = StopSignal.DONT_STOP;
+		while (Powerup.timeLeft > 0f && stop == StopSignal.DONT_STOP)
+		{
+			coinEFX.position = powerupMesh.transform.position;
+			yield return 0;
+		}
+		coinMagnetCollider.GetComponent<Collider>().enabled = false;
+		base.enabled = false;
+		powerupMesh.active = false;
+		coinEFX.localPosition = CharacterPickupParticles.coinEfxOffset;
+		characterAnimation["hold_magnet"].enabled = false;
+		audioStateLoop.ChangeLoop(AudioState.MagnetStop);
+		if (Powerup.timeLeft <= 0f)
+		{
+			So.Instance.playSound(powerDownSound);
+		}
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.B))
+		{
+			MonoBehaviour.print("STOP");
+			stop = StopSignal.STOP;
+		}
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public void CoinHit(Collider collider)
+	{
+		Coin component = collider.GetComponent<Coin>();
+		if (component != null)
+		{
+			component.GetComponent<Collider>().enabled = false;
+			StartCoroutine(Pull(component));
+		}
+	}
 
-	*/
+	private IEnumerator Pull(Coin coin)
+	{
+		Transform pivot = coin.pivot.transform;
+		Vector3 position = pivot.position;
+		float distance = (position - characterController.transform.position).magnitude;
+		yield return StartCoroutine(pTween.To(distance / (pullSpeed * game.NormalizedGameSpeed), delegate(float t)
+		{
+			pivot.position = Vector3.Lerp(position, powerupMesh.transform.position, t * t);
+		}));
+		Pickup pickup = coin.GetComponent<Pickup>();
+		character.NotifyPickup(pickup);
+		GameStats.Instance.coinsCoinMagnet++;
+	}
 }

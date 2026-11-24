@@ -1,63 +1,166 @@
+using System.Collections;
 using UnityEngine;
 
 public class FriendGhostHelper : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public UISlicedSprite background;
 
-	1. No dll files were provided to AssetRipper.
+	public UISlicedSprite frame;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public UILabel points;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public UITexture picture;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	private Transform _cachedTransform;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private Vector3 _resetPosition = new Vector3(80f, 0f, 0f);
 
-	3. Assembly Reconstruction has not been implemented.
+	private Vector3 _activePosition = Vector3.zero;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private Vector3 _moveOutPosition = new Vector3(0f, -140f, 0f);
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private float _backgroundAlphaDefault;
 
-	4. This script is unnecessary.
+	private float _frameAlphaDefault;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private float _pointsAlphaDefault;
 
-	5. Script Content Level 0
+	private float _pictureAlphaDefault;
 
-		AssetRipper was set to not load any script information.
+	private bool inited;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private bool _gameRunning;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public bool noFriendsLeftToGhost;
 
-	7. An incorrect path was provided to AssetRipper.
+	private FriendGhostHandler handler;
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public bool animatingNow;
 
-	*/
+	private void Awake()
+	{
+		if (!inited)
+		{
+			Init();
+		}
+	}
+
+	private void OnEnable()
+	{
+		if (animatingNow)
+		{
+			animatingNow = false;
+		}
+	}
+
+	private void Init()
+	{
+		_backgroundAlphaDefault = background.alpha;
+		_frameAlphaDefault = frame.alpha;
+		_pointsAlphaDefault = points.alpha;
+		_pictureAlphaDefault = picture.alpha;
+		_cachedTransform = base.transform;
+		picture.material = new Material(Shader.Find("Unlit/Transparent Colored"));
+		inited = true;
+		handler = _cachedTransform.parent.GetComponent<FriendGhostHandler>();
+	}
+
+	public void NewGame()
+	{
+		if (!inited)
+		{
+			Init();
+		}
+		_gameRunning = true;
+		_cachedTransform.localPosition = _resetPosition;
+		background.alpha = _backgroundAlphaDefault;
+		frame.alpha = _frameAlphaDefault;
+		points.alpha = _pointsAlphaDefault;
+		picture.alpha = _pictureAlphaDefault;
+		noFriendsLeftToGhost = false;
+	}
+
+	public void AnimateIn()
+	{
+		if (!noFriendsLeftToGhost && base.gameObject.active)
+		{
+			StartCoroutine(_AnimateIn());
+		}
+	}
+
+	public void AnimateOut()
+	{
+		if (_gameRunning)
+		{
+			StartCoroutine(_AnimateOut());
+		}
+	}
+
+	public void NoFriendsLeft()
+	{
+		_cachedTransform.localPosition = _resetPosition;
+		background.alpha = _backgroundAlphaDefault;
+		frame.alpha = _frameAlphaDefault;
+		points.alpha = _pointsAlphaDefault;
+		picture.alpha = _pictureAlphaDefault;
+		noFriendsLeftToGhost = true;
+	}
+
+	public void GameOver()
+	{
+		_gameRunning = false;
+		_cachedTransform.localPosition = _resetPosition;
+		background.alpha = _backgroundAlphaDefault;
+		frame.alpha = _frameAlphaDefault;
+		points.alpha = _pointsAlphaDefault;
+		picture.alpha = _pictureAlphaDefault;
+	}
+
+	private IEnumerator _AnimateIn()
+	{
+		animatingNow = true;
+		float duration = 0.5f;
+		float factor = 0f;
+		while (factor < 1f && _gameRunning)
+		{
+			factor += Time.deltaTime / duration;
+			factor = Mathf.Clamp01(factor);
+			_cachedTransform.localPosition = Vector3.Lerp(_resetPosition, _activePosition, factor);
+			yield return null;
+		}
+		if (!_gameRunning)
+		{
+			_cachedTransform.localScale = _resetPosition;
+		}
+		else
+		{
+			_cachedTransform.localPosition = _activePosition;
+		}
+		animatingNow = false;
+	}
+
+	private IEnumerator _AnimateOut()
+	{
+		animatingNow = true;
+		float duration = 0.5f;
+		float factor = 0f;
+		while (factor < 1f && _gameRunning)
+		{
+			factor += Time.deltaTime / duration;
+			factor = Mathf.Clamp01(factor);
+			_cachedTransform.localPosition = Vector3.Lerp(_activePosition, _moveOutPosition, factor);
+			background.alpha = Mathf.Lerp(_backgroundAlphaDefault, 0f, factor);
+			frame.alpha = Mathf.Lerp(_frameAlphaDefault, 0f, factor);
+			points.alpha = Mathf.Lerp(_pointsAlphaDefault, 0f, factor);
+			picture.alpha = Mathf.Lerp(_pictureAlphaDefault, 0f, factor);
+			yield return null;
+		}
+		_cachedTransform.localPosition = _resetPosition;
+		background.alpha = _backgroundAlphaDefault;
+		frame.alpha = _frameAlphaDefault;
+		points.alpha = _pointsAlphaDefault;
+		picture.alpha = _pictureAlphaDefault;
+		animatingNow = false;
+		handler.FinishedAnimatingOut();
+	}
 }

@@ -1,63 +1,177 @@
+using System;
 using UnityEngine;
 
 public class UIModelController : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public enum ModelScreen
+	{
+		Character = 0,
+		GameOver = 1,
+		TutorialPopup = 2
+	}
 
-	1. No dll files were provided to AssetRipper.
+	public GameObject CharacterAnchor;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public GameObject GameOverAnchor;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public GameObject MysteryBoxAnchor;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public GameObject TutorialPopupAnchor;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public GameObject ModelPrefab;
 
-	3. Assembly Reconstruction has not been implemented.
+	private CharacterModel _cachedActiveModel;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private Action _onChangedCurrentlyShown;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private int _currentlyShownModel;
 
-	4. This script is unnecessary.
+	private static UIModelController _instance;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public int currentlyShownModel
+	{
+		get
+		{
+			return _currentlyShownModel;
+		}
+	}
 
-	5. Script Content Level 0
+	public static UIModelController Instance
+	{
+		get
+		{
+			return _instance ?? (_instance = UnityEngine.Object.FindObjectOfType(typeof(UIModelController)) as UIModelController);
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	public void ActivateGameOverModel()
+	{
+		_ActivateModel((Characters.CharacterType)PlayerInfo.Instance.currentCharacter, ModelScreen.GameOver);
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public void AddOnChangedCurrentlyShownHandler(Action handler)
+	{
+		_onChangedCurrentlyShown = (Action)Delegate.Combine(_onChangedCurrentlyShown, handler);
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public void RemoveOnChangedCurrentlyShownHandler(Action handler)
+	{
+		_onChangedCurrentlyShown = (Action)Delegate.Remove(_onChangedCurrentlyShown, handler);
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public void SelectCurrentModel()
+	{
+		PlayerInfo.Instance.currentCharacter = _currentlyShownModel;
+		PlayerInfo.Instance.SaveIfDirty();
+		if (Game.Instance != null)
+		{
+			Game.Instance.Character.characterModel.ChangeCharacterModel(((Characters.CharacterType)currentlyShownModel).ToString());
+		}
+		Action onChangedCurrentlyShown = _onChangedCurrentlyShown;
+		if (onChangedCurrentlyShown != null)
+		{
+			onChangedCurrentlyShown();
+		}
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public void ActivateCharacterModel()
+	{
+		_currentlyShownModel = PlayerInfo.Instance.currentCharacter;
+		_ActivateModel((Characters.CharacterType)_currentlyShownModel, ModelScreen.Character);
+		Action onChangedCurrentlyShown = _onChangedCurrentlyShown;
+		if (onChangedCurrentlyShown != null)
+		{
+			onChangedCurrentlyShown();
+		}
+	}
 
-	*/
+	public void ShowMenuModel(Characters.CharacterType charType)
+	{
+		_currentlyShownModel = (int)charType;
+		_SwitchModel(charType);
+		Action onChangedCurrentlyShown = _onChangedCurrentlyShown;
+		if (onChangedCurrentlyShown != null)
+		{
+			onChangedCurrentlyShown();
+		}
+	}
+
+	private void _ActivateModel(Characters.CharacterType characterName, ModelScreen screen)
+	{
+		if (_cachedActiveModel != null)
+		{
+			ClearModels();
+		}
+		switch (screen)
+		{
+		case ModelScreen.Character:
+		{
+			GameObject gameObject2 = UnityEngine.Object.Instantiate(ModelPrefab) as GameObject;
+			gameObject2.transform.parent = CharacterAnchor.transform;
+			gameObject2.transform.localPosition = new Vector3(0f, 0f, 0f);
+			Utility.SetLayerRecursively(gameObject2.transform, CharacterAnchor.layer);
+			gameObject2.transform.localScale = new Vector3(21f, 21f, 21f);
+			gameObject2.transform.localRotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+			CharacterModel component2 = gameObject2.GetComponent<CharacterModel>();
+			component2.ChangeCharacterModel(characterName.ToString());
+			component2.HideAllPowerups();
+			component2.StartIdleAnimations();
+			_cachedActiveModel = component2;
+			break;
+		}
+		case ModelScreen.GameOver:
+		{
+			GameObject gameObject = UnityEngine.Object.Instantiate(ModelPrefab) as GameObject;
+			gameObject.transform.parent = GameOverAnchor.transform;
+			gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+			Utility.SetLayerRecursively(gameObject.transform, GameOverAnchor.layer);
+			gameObject.transform.localScale = new Vector3(18f, 18f, 18f);
+			gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+			CharacterModel component = gameObject.GetComponent<CharacterModel>();
+			component.ChangeCharacterModel(characterName.ToString());
+			component.HideAllPowerups();
+			component.StartIdleAnimations();
+			_cachedActiveModel = component;
+			break;
+		}
+		}
+	}
+
+	private void _SwitchModel(Characters.CharacterType characterName)
+	{
+		if (_cachedActiveModel != null)
+		{
+			_cachedActiveModel.ChangeCharacterModel(characterName.ToString());
+			_cachedActiveModel.HideAllPowerups();
+			_cachedActiveModel.StartIdleAnimations();
+		}
+		else
+		{
+			_ActivateModel(characterName, ModelScreen.Character);
+		}
+	}
+
+	public void ClearModels()
+	{
+		foreach (Transform item in CharacterAnchor.transform)
+		{
+			UnityEngine.Object.Destroy(item.gameObject);
+		}
+		foreach (Transform item2 in GameOverAnchor.transform)
+		{
+			UnityEngine.Object.Destroy(item2.gameObject);
+		}
+		foreach (Transform item3 in TutorialPopupAnchor.transform)
+		{
+			UnityEngine.Object.Destroy(item3.gameObject);
+		}
+	}
+
+	public void ClearTutorialPopup()
+	{
+		foreach (Transform item in TutorialPopupAnchor.transform)
+		{
+			UnityEngine.Object.Destroy(item.gameObject);
+		}
+	}
 }

@@ -1,63 +1,771 @@
-using UnityEngine;
-
-public class RunnerAnimPlayer : MonoBehaviour
+public class RunnerAnimPlayer : AnimationSoundPlayer
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private Game game;
 
-	1. No dll files were provided to AssetRipper.
+	public AudioClipInfo run__LeftFoot;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public AudioClipInfo run__RightFoot;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public AudioClipInfo superRun__LeftFoot;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public AudioClipInfo superRun__RightFoot;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public AudioClipInfo groundLeft;
 
-	3. Assembly Reconstruction has not been implemented.
+	public AudioClipInfo groundRight;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public AudioClipInfo groundLeft_super;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public AudioClipInfo groundRight_super;
 
-	4. This script is unnecessary.
+	public AudioClipInfo jump;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public AudioClipInfo roll;
 
-	5. Script Content Level 0
+	public AudioClipInfo landing;
 
-		AssetRipper was set to not load any script information.
+	public AudioClipInfo h_jump;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public AudioClipInfo h_roll;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public AudioClipInfo h_kick;
 
-	7. An incorrect path was provided to AssetRipper.
+	public AudioClipInfo h_miniKick;
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public AudioClipInfo h_long;
 
-	*/
+	public AudioClipInfo h_mid;
+
+	public AudioClipInfo h_short;
+
+	public AudioClipInfo h_landingGrind;
+
+	public AudioClipInfo superJump;
+
+	public AudioClipInfo idlePaintSpray;
+
+	public AudioClipInfo idlePaintSprayHigh;
+
+	public AudioClipInfo idlePaintShake;
+
+	public AudioClipInfo deathMovingTrain;
+
+	public AudioClipInfo deathBodyfall;
+
+	public AudioStateLoop audioStateLoop;
+
+	public bool playPaintSound = true;
+
+	private void Awake()
+	{
+		game = Game.Instance;
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "run",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 6,
+			clip = "run",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "run2",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 6,
+			clip = "run2",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "run3",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 6,
+			clip = "run3",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 6,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 10,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 15,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 20,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 25,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 30,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 35,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 40,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 45,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 50,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 55,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 60,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 65,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 70,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 75,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 80,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 85,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 90,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 95,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 100,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 105,
+			clip = "run4_long",
+			Audio = run__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 110,
+			clip = "run4_long",
+			Audio = run__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "superRun",
+			Audio = superRun__RightFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 10,
+			clip = "superRun",
+			Audio = superRun__LeftFoot
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "dodgeLeft",
+			Audio = groundLeft
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "dodgeRight",
+			Audio = groundRight
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "dodgeLeft",
+			Audio = groundLeft
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "dodgeRight",
+			Audio = groundRight
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "landing",
+			Audio = landing
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump",
+			Audio = jump,
+			Callback = PlayJumpSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump_salto",
+			Audio = jump,
+			Callback = PlayJumpSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump2",
+			Audio = jump,
+			Callback = PlayJumpSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump3",
+			Audio = jump,
+			Callback = PlayJumpSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump",
+			Audio = groundLeft
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump_salto",
+			Audio = groundRight
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump2",
+			Audio = groundLeft
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "jump3",
+			Audio = groundLeft
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "roll",
+			Audio = roll
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "slide_roll2",
+			Audio = roll
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "roll",
+			Audio = groundRight
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "slide_roll2",
+			Audio = groundRight
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "h_landing",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "h_roll",
+			Audio = h_roll
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 4,
+			clip = "h_roll",
+			Audio = h_miniKick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump",
+			Audio = h_long
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump2_kickflip",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 4,
+			clip = "h_jump2_kickflip",
+			Audio = h_long
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 21,
+			clip = "h_jump2_kickflip",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump3_180",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump3_180",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "h_jump3_180",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump4_360flip",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump4_360flip",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "h_jump4_360flip",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 13,
+			clip = "h_jump4_360flip",
+			Audio = h_miniKick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 19,
+			clip = "h_jump4_360flip",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump5_Impossible",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump5_Impossible",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "h_jump5_Impossible",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 11,
+			clip = "h_jump5_Impossible",
+			Audio = h_miniKick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 22,
+			clip = "h_jump5_Impossible",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump6_nollie",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump6_nollie",
+			Audio = h_long
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump6_nollie",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 21,
+			clip = "h_jump6_nollie",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 3,
+			clip = "h_jump7_heelflip",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump7_heelflip",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "h_jump7_heelflip",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 13,
+			clip = "h_jump7_heelflip",
+			Audio = h_miniKick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 18,
+			clip = "h_jump7_heelflip",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump8_pop shuvit",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump8_pop shuvit",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 4,
+			clip = "h_jump8_pop shuvit",
+			Audio = h_miniKick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 10,
+			clip = "h_jump8_pop shuvit",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump9_fs360",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 3,
+			clip = "h_jump9_fs360",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 10,
+			clip = "h_jump9_fs360",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 20,
+			clip = "h_jump9_fs360",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			clip = "h_jump10_heel360",
+			Audio = h_miniKick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 4,
+			clip = "h_jump10_heel360",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 5,
+			clip = "h_jump10_heel360",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "h_jump10_heel360",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 11,
+			clip = "h_jump10_heel360",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 14,
+			clip = "h_jump10_heel360",
+			Audio = h_miniKick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 20,
+			clip = "h_jump10_heel360",
+			Audio = h_mid
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "h_jump11_fs salto",
+			Audio = h_kick
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "h_jump11_fs salto",
+			Audio = h_long
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "h_jump11_fs salto",
+			Audio = h_short
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "landing_grind1",
+			Audio = h_landingGrind
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "landing_grind2",
+			Audio = h_landingGrind
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "landing_grind3",
+			Audio = h_landingGrind
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 1,
+			clip = "idlePaint",
+			Audio = idlePaintSpray,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 28,
+			clip = "idlePaint",
+			Audio = idlePaintShake,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 100,
+			clip = "idlePaint",
+			Audio = idlePaintShake,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 150,
+			clip = "idlePaint",
+			Audio = idlePaintSprayHigh,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 200,
+			clip = "idlePaint",
+			Audio = idlePaintSpray,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 237,
+			clip = "idlePaint",
+			Audio = idlePaintSpray,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 260,
+			clip = "idlePaint",
+			Audio = idlePaintShake,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 310,
+			clip = "idlePaint",
+			Audio = idlePaintSpray,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 350,
+			clip = "idlePaint",
+			Audio = idlePaintSpray,
+			Callback = PlayIdlePaintSound
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 13,
+			clip = "death_movingTrain",
+			Audio = deathMovingTrain
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 8,
+			clip = "death_lower",
+			Audio = deathBodyfall
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 11,
+			clip = "death_bounce",
+			Audio = deathBodyfall
+		});
+		AudioClips.Add(new KeyFrameAudio
+		{
+			KeyFrame = 2,
+			clip = "death_upper",
+			Audio = deathBodyfall
+		});
+	}
+
+	public void PlayOrMutePaintSound(bool doPlay)
+	{
+		playPaintSound = doPlay;
+	}
+
+	public void PlayIdlePaintSound(KeyFrameAudio info)
+	{
+		if (playPaintSound)
+		{
+			So.Instance.playSound(info.Audio);
+		}
+	}
+
+	public void PlayJumpSound(KeyFrameAudio info)
+	{
+		if (game.HasSuperSneakers)
+		{
+			So.Instance.playSound(superJump);
+		}
+		else
+		{
+			So.Instance.playSound(info.Audio);
+		}
+	}
+
+	public override void PlayKeyframeAnimation(int soundIndex)
+	{
+		KeyFrameAudio keyFrameAudio = AudioClips[soundIndex];
+		if (keyFrameAudio.Callback != null)
+		{
+			keyFrameAudio.Callback(keyFrameAudio);
+		}
+		else
+		{
+			So.Instance.playSound(AudioClips[soundIndex].Audio);
+		}
+	}
 }

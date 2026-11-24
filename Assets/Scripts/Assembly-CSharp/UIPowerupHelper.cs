@@ -1,63 +1,175 @@
+using System;
 using UnityEngine;
 
 public class UIPowerupHelper : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	private enum FadeTarget
+	{
+		none = 0,
+		white = 1,
+		green = 2,
+		darkgreen = 3
+	}
 
-	1. No dll files were provided to AssetRipper.
+	private const float COLOR_CHANGE_SPEED = 8.2343f;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	[SerializeField]
+	private UISlider slider;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	[SerializeField]
+	private UISprite icon;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	[SerializeField]
+	private UILabel amountLabel;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	[SerializeField]
+	private UISprite foreground;
 
-	3. Assembly Reconstruction has not been implemented.
+	private Color originalColor = new Color(1f, 73f / 85f, 0f);
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private float sliderSteps;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private UIIngameUpdater _uiIngameUpdater;
 
-	4. This script is unnecessary.
+	private bool inverse;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private ActivePowerup _powerup;
 
-	5. Script Content Level 0
+	private FadeTarget currentFadeTarget;
 
-		AssetRipper was set to not load any script information.
+	private FadeTarget oldFadeTarget;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private Color storedColor;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	private float lerpTime = 1f;
 
-	7. An incorrect path was provided to AssetRipper.
+	private UIIngameUpdater uiIngameUpdater
+	{
+		get
+		{
+			if (_uiIngameUpdater == null)
+			{
+				_uiIngameUpdater = UnityEngine.Object.FindObjectOfType(typeof(UIIngameUpdater)) as UIIngameUpdater;
+			}
+			return _uiIngameUpdater;
+		}
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	private void Awake()
+	{
+		sliderSteps = (int)slider.fullSize.x * 2;
+	}
 
-	*/
+	private void OnDisable()
+	{
+		if (_powerup.type == PowerupType.doubleMultiplier)
+		{
+			ReturnToNormal();
+		}
+	}
+
+	public void ReturnToNormal()
+	{
+		lerpTime = 1f;
+		inverse = false;
+		if (uiIngameUpdater.multiplierLabel.color != originalColor)
+		{
+			uiIngameUpdater.multiplierLabel.color = originalColor;
+		}
+	}
+
+	public void SetPowerup(ActivePowerup powerup)
+	{
+		_powerup = powerup;
+		icon.spriteName = Upgrades.upgrades[powerup.type].iconName;
+		float num = powerup.timeLeft / PlayerInfo.Instance.GetPowerupDuration(powerup.type);
+		slider.sliderValue = (float)Mathf.RoundToInt(num * sliderSteps) / sliderSteps;
+		if (powerup.type == PowerupType.hoverboard)
+		{
+			amountLabel.text = PlayerInfo.Instance.GetUpgradeAmount(powerup.type).ToString();
+			amountLabel.gameObject.active = true;
+		}
+		else
+		{
+			amountLabel.gameObject.active = false;
+		}
+		if (powerup.type == PowerupType.doubleMultiplier)
+		{
+			FadingToWhiteToGreenToDarkGreen(inverse);
+		}
+		if (powerup.timeLeft < 0f)
+		{
+			if (slider.gameObject.active)
+			{
+				NGUITools.SetActive(slider.gameObject, false);
+			}
+			icon.color = Color.Lerp(Color.grey, Color.white, 0.5f + 0.5f * Mathf.Cos(powerup.timeLeft * (float)Math.PI * 4f));
+			ReturnToNormal();
+		}
+		else
+		{
+			if (!slider.gameObject.active)
+			{
+				NGUITools.SetActive(slider.gameObject, true);
+			}
+			icon.color = Color.white;
+		}
+	}
+
+	private void FadingToWhiteToGreenToDarkGreen(bool sendInverse)
+	{
+		if (sendInverse)
+		{
+			if (lerpTime <= 1f)
+			{
+				currentFadeTarget = FadeTarget.darkgreen;
+				if (currentFadeTarget != oldFadeTarget)
+				{
+					storedColor = uiIngameUpdater.multiplierLabel.color;
+				}
+				uiIngameUpdater.multiplierLabel.color = new Color(Mathf.Lerp(storedColor.r, 28f / 85f, lerpTime), Mathf.Lerp(storedColor.g, 0.4627451f, lerpTime), Mathf.Lerp(storedColor.b, 0.2509804f, lerpTime));
+			}
+			else if (lerpTime <= 2f)
+			{
+				currentFadeTarget = FadeTarget.green;
+				if (currentFadeTarget != oldFadeTarget)
+				{
+					storedColor = uiIngameUpdater.multiplierLabel.color;
+				}
+				uiIngameUpdater.multiplierLabel.color = new Color(Mathf.Lerp(storedColor.r, 0.58431375f, lerpTime - 1f), Mathf.Lerp(storedColor.g, 64f / 85f, lerpTime - 1f), Mathf.Lerp(storedColor.b, 2f / 15f, lerpTime - 1f));
+			}
+			else
+			{
+				currentFadeTarget = FadeTarget.none;
+				inverse = false;
+				lerpTime = 0f;
+			}
+		}
+		else if (lerpTime <= 1f)
+		{
+			currentFadeTarget = FadeTarget.white;
+			if (currentFadeTarget != oldFadeTarget)
+			{
+				storedColor = uiIngameUpdater.multiplierLabel.color;
+			}
+			uiIngameUpdater.multiplierLabel.color = new Color(Mathf.Lerp(storedColor.r, 1f, lerpTime), Mathf.Lerp(storedColor.g, 1f, lerpTime), Mathf.Lerp(storedColor.b, 1f, lerpTime));
+		}
+		else if (lerpTime <= 2f)
+		{
+			currentFadeTarget = FadeTarget.green;
+			if (currentFadeTarget != oldFadeTarget)
+			{
+				storedColor = uiIngameUpdater.multiplierLabel.color;
+			}
+			uiIngameUpdater.multiplierLabel.color = new Color(Mathf.Lerp(storedColor.r, 0.58431375f, lerpTime - 1f), Mathf.Lerp(storedColor.g, 64f / 85f, lerpTime - 1f), Mathf.Lerp(storedColor.b, 2f / 15f, lerpTime - 1f));
+		}
+		else
+		{
+			currentFadeTarget = FadeTarget.none;
+			inverse = true;
+			lerpTime = 0f;
+		}
+		lerpTime += Time.deltaTime * 8.2343f;
+		oldFadeTarget = currentFadeTarget;
+	}
 }

@@ -1,63 +1,186 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AvatarAnimations : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public Animation Target;
 
-	1. No dll files were provided to AssetRipper.
+	public bool PlayIdleAnimations;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public int MinIdleTimes;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public int MaxIdleTimes;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public AnimationClip Breath;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	public List<AnimationClip> Idles;
 
-	3. Assembly Reconstruction has not been implemented.
+	public List<AnimationClip> IdlesPopup;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	private bool usePopupIdles;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	public bool Paused;
 
-	4. This script is unnecessary.
+	private IEnumerator animationRoutine;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	private float nextAnimationTime;
 
-	5. Script Content Level 0
+	private void Start()
+	{
+		Target = FindAnimationInParent(base.gameObject);
+		if (Target == null)
+		{
+			Debug.LogError("AvatarAnimations: No animation component for avatar animations", this);
+		}
+		else if (PlayIdleAnimations)
+		{
+			if (usePopupIdles)
+			{
+				StartIdlePopupAnimations();
+			}
+			else
+			{
+				StartIdleAnimations();
+			}
+		}
+	}
 
-		AssetRipper was set to not load any script information.
+	private Animation FindAnimationInParent(GameObject current)
+	{
+		Animation component = current.GetComponent<Animation>();
+		if (component != null)
+		{
+			return component;
+		}
+		if (current.transform.parent != null)
+		{
+			return FindAnimationInParent(current.transform.parent.gameObject);
+		}
+		return null;
+	}
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	private void Update()
+	{
+		if (PlayIdleAnimations && animationRoutine != null && !Paused)
+		{
+			animationRoutine.MoveNext();
+		}
+	}
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public void StartIdleAnimations()
+	{
+		PlayIdleAnimations = true;
+		Paused = false;
+		usePopupIdles = false;
+		Target.AddClip(Breath, Breath.name);
+		foreach (AnimationClip idle in Idles)
+		{
+			Target.AddClip(idle, idle.name);
+		}
+		animationRoutine = Play();
+		animationRoutine.MoveNext();
+	}
 
-	7. An incorrect path was provided to AssetRipper.
+	public void StartIdlePopupAnimations()
+	{
+		PlayIdleAnimations = true;
+		Paused = false;
+		usePopupIdles = true;
+		Target.AddClip(Breath, Breath.name);
+		foreach (AnimationClip item in IdlesPopup)
+		{
+			Target.AddClip(item, item.name);
+		}
+		animationRoutine = Play();
+		animationRoutine.MoveNext();
+	}
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public void StopIdleAnimations()
+	{
+		PlayIdleAnimations = false;
+		if (usePopupIdles)
+		{
+			Target.AddClip(Breath, Breath.name);
+			foreach (AnimationClip item in IdlesPopup)
+			{
+				foreach (AnimationState item2 in Target)
+				{
+					if (item2.clip == item)
+					{
+						Target.RemoveClip(item);
+					}
+				}
+			}
+		}
+		else
+		{
+			Target.AddClip(Breath, Breath.name);
+			foreach (AnimationClip idle in Idles)
+			{
+				foreach (AnimationState item3 in Target)
+				{
+					if (item3.clip == idle)
+					{
+						Target.RemoveClip(idle);
+					}
+				}
+			}
+		}
+		animationRoutine = null;
+	}
 
-	*/
+	public void PauseIdleAnimations()
+	{
+		Paused = true;
+		foreach (AnimationState item in Target.GetComponent<Animation>())
+		{
+			item.speed = 0f;
+		}
+	}
+
+	public void ResumeIdleAnimations()
+	{
+		Paused = false;
+		foreach (AnimationState item in Target.GetComponent<Animation>())
+		{
+			item.speed = 1f;
+		}
+	}
+
+	private IEnumerator Play()
+	{
+		AnimationClip selectedClip = null;
+		while (PlayIdleAnimations)
+		{
+			List<AnimationClip> possibleClips = ((!usePopupIdles) ? Idles : IdlesPopup).FindAll((AnimationClip a) => a != selectedClip);
+			if (possibleClips.Count > 0)
+			{
+				selectedClip = possibleClips[Random.Range(0, possibleClips.Count)];
+			}
+			Target.Play(selectedClip.name);
+			nextAnimationTime = selectedClip.length;
+			while (nextAnimationTime > 0f)
+			{
+				nextAnimationTime -= Time.deltaTime;
+				yield return 0;
+			}
+			if (usePopupIdles)
+			{
+				continue;
+			}
+			int count = Random.Range(MinIdleTimes, MaxIdleTimes);
+			for (int i = 0; i < count; i++)
+			{
+				Target.Play(Breath.name);
+				nextAnimationTime = Breath.length;
+				while (nextAnimationTime > 0f)
+				{
+					nextAnimationTime -= Time.deltaTime;
+					yield return 0;
+				}
+			}
+		}
+		animationRoutine = null;
+	}
 }

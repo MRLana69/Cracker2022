@@ -2,62 +2,277 @@ using UnityEngine;
 
 public class AvatarEyeAnimation : MonoBehaviour
 {
-	/*
-	Dummy class. This could have happened for several reasons:
+	public bool animate;
 
-	1. No dll files were provided to AssetRipper.
+	public Renderer closedEyes;
 
-		Unity asset bundles and serialized files do not contain script information to decompile.
-			* For Mono games, that information is contained in .NET dll files.
-			* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-			
-		AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-		A unexpected file structure could cause AssetRipper to not find the required files.
+	public float blinkTime = 0.1f;
 
-	2. Incorrect dll files were provided to AssetRipper.
+	public float blinkWaitTimeMax = 5.7f;
 
-		Any of the following could cause this:
-			* Il2CppInterop assemblies
-			* Deobfuscated assemblies
-			* Older assemblies (compared to when the bundle was built)
-			* Newer assemblies (compared to when the bundle was built)
+	public float blinkWaitTimeMin = 0.6f;
 
-		Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+	private float blinkWaitEndTime;
 
-	3. Assembly Reconstruction has not been implemented.
+	private float blinkEndTime;
 
-		Asset bundles contain a small amount of information about the script content.
-		This information can be used to recover the serializable fields of a script.
+	public Renderer animatedEyes;
 
-		See: https://github.com/AssetRipper/AssetRipper/issues/655
+	private Material animatedEyesMaterial;
 
-	4. This script is unnecessary.
+	public float shiftEyeHorizontalLimit = 0.5f;
 
-		If this script has no asset or script references, it can be deleted.
-		Be sure to resolve any compile errors before deleting because they can hide references.
+	public float shiftEyeVerticalLimit = 0.5f;
 
-	5. Script Content Level 0
+	public float shiftEyeHorizontalMultiplier = 0.1f;
 
-		AssetRipper was set to not load any script information.
+	public float shiftEyeVerticalMultiplier = 0.1f;
 
-	6. Cpp2IL failed to decompile Il2Cpp data
+	public Transform headboneTransform;
 
-		If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-		This is an upstream problem, and the AssetRipper developer has very little control over it.
-		Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+	public GameObject testTargetPoint;
 
-	7. An incorrect path was provided to AssetRipper.
+	public Vector2 maxLookOffset = new Vector2(10f, 10f);
 
-		This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-		AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-		An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-		Generally, AssetRipper expects users to provide the root folder of the game. For example:
-			* Windows: the folder containing the game's .exe file
-			* Mac: the .app file/folder
-			* Linux: the folder containing the game's executable file
-			* Android: the apk file
-			* iOS: the ipa file
-			* Switch: the folder containing exefs and romfs
+	public Vector3 popupMenuFocusPointOffset = new Vector3(-40f, -80f, -200f);
 
-	*/
+	public Vector3 characterMenuFocusPointOffset = new Vector3(10f, -80f, -200f);
+
+	public GameObject targetPosition;
+
+	private Vector3 originalPosition;
+
+	private Vector3 originalRotation;
+
+	private Vector3 newTargetPosition;
+
+	private Vector3 lookToCamera;
+
+	private Vector2 offsetVector = default(Vector2);
+
+	public float timeToMoveFocus = 0.04f;
+
+	public float timeBetweenFocusShiftMax = 1f;
+
+	public float timeBetweenFocusShiftMin = 0.02f;
+
+	private float endTimeToShift;
+
+	private bool useFocuPoint = true;
+
+	private bool shiftToFocusBlink;
+
+	private void Start()
+	{
+		if (animatedEyes != null)
+		{
+			animatedEyesMaterial = animatedEyes.material;
+		}
+		blinkWaitEndTime = Random.Range(blinkWaitTimeMin, blinkWaitTimeMax);
+		blinkEndTime = blinkWaitEndTime + blinkTime;
+		if (testTargetPoint != null)
+		{
+			targetPosition = testTargetPoint;
+			targetPosition.transform.LookAt(base.transform.position);
+		}
+		else if (!(targetPosition != null))
+		{
+			Debug.LogWarning("please add a gameobject in targetPosition", this);
+		}
+	}
+
+	private void OnDestroy()
+	{
+		if (targetPosition != null)
+		{
+			Object.Destroy(targetPosition);
+		}
+	}
+
+	public void AnimateEyes(bool popupMenu)
+	{
+		animate = true;
+		if (popupMenu)
+		{
+			if (targetPosition != null)
+			{
+				targetPosition.transform.parent = null;
+				targetPosition.transform.position = popupMenuFocusPointOffset;
+				targetPosition.transform.LookAt(base.transform.position);
+				originalPosition = new Vector3(targetPosition.transform.localPosition.x, targetPosition.transform.localPosition.y, targetPosition.transform.localPosition.z);
+				originalRotation = new Vector3(targetPosition.transform.localRotation.x, targetPosition.transform.localRotation.y, targetPosition.transform.localRotation.z);
+			}
+			else
+			{
+				Debug.LogWarning("please add a gameobject in targetPosition", this);
+			}
+		}
+		else if (targetPosition != null)
+		{
+			targetPosition.transform.parent = null;
+			targetPosition.transform.position = characterMenuFocusPointOffset;
+			targetPosition.transform.LookAt(base.transform.position);
+			originalPosition = new Vector3(targetPosition.transform.localPosition.x, targetPosition.transform.localPosition.y, targetPosition.transform.localPosition.z);
+			originalRotation = new Vector3(targetPosition.transform.localRotation.x, targetPosition.transform.localRotation.y, targetPosition.transform.localRotation.z);
+		}
+		else
+		{
+			Debug.LogWarning("please add a gameobject in targetPosition", this);
+		}
+	}
+
+	public void StopAnimatingEyes()
+	{
+		animate = false;
+	}
+
+	private void ForceBlink()
+	{
+		blinkWaitEndTime = Time.time;
+		blinkEndTime = blinkWaitEndTime + blinkTime;
+	}
+
+	private void UpdateEyeBlinking()
+	{
+		if (!(closedEyes != null))
+		{
+			return;
+		}
+		if (blinkWaitTimeMax >= blinkWaitTimeMin)
+		{
+			if (!(Time.time >= blinkWaitEndTime))
+			{
+				return;
+			}
+			if (Time.time < blinkEndTime)
+			{
+				if (!closedEyes.GetComponent<Renderer>().enabled)
+				{
+					closedEyes.GetComponent<Renderer>().enabled = true;
+				}
+			}
+			else
+			{
+				closedEyes.GetComponent<Renderer>().enabled = false;
+				blinkWaitEndTime = Time.time + Random.Range(blinkWaitTimeMin, blinkWaitTimeMax);
+				blinkEndTime = blinkWaitEndTime + blinkTime;
+			}
+		}
+		else
+		{
+			Debug.Log("AvatarEyeAnimation: You need to make blinkWaitTimeMax larger then or equal blinkWaitTimeMin", this);
+		}
+	}
+
+	private Vector3 GetFocusPoint()
+	{
+		targetPosition.transform.position = originalPosition;
+		targetPosition.transform.rotation = Quaternion.Euler(originalRotation);
+		targetPosition.transform.Translate(Random.Range(0f - maxLookOffset.x, maxLookOffset.x), Random.Range(0f - maxLookOffset.y, maxLookOffset.y), 0f);
+		return targetPosition.transform.position;
+	}
+
+	private void ShiftFocusPoint(Vector3 focusPoint)
+	{
+		Vector3 fromPosition = targetPosition.transform.position;
+		StartCoroutine(pTween.To(timeToMoveFocus, delegate(float t)
+		{
+			targetPosition.transform.position = Vector3.Lerp(fromPosition, focusPoint, t);
+		}));
+	}
+
+	private void ResetEyes()
+	{
+		offsetVector = new Vector2(0f, 0f);
+		animatedEyesMaterial.SetTextureOffset("_MainTex", offsetVector);
+	}
+
+	private void UpdateGetNewFocusPoint()
+	{
+		if (Time.time > endTimeToShift)
+		{
+			ShiftFocusPoint(GetFocusPoint());
+			endTimeToShift = Time.time + Random.Range(timeBetweenFocusShiftMin, timeBetweenFocusShiftMax);
+		}
+	}
+
+	private void UpdateAnimatedEyes()
+	{
+		if (!(animatedEyes != null) || !(animatedEyesMaterial != null) || !(headboneTransform != null))
+		{
+			return;
+		}
+		if (useFocuPoint)
+		{
+			UpdateGetNewFocusPoint();
+		}
+		lookToCamera = headboneTransform.position - targetPosition.transform.position;
+		Vector3 vector = headboneTransform.InverseTransformDirection(lookToCamera);
+		offsetVector.x = Mathf.Atan2(vector.x, vector.z);
+		offsetVector.y = Mathf.Atan2(vector.y, vector.z);
+		if (offsetVector.x < 0f - shiftEyeHorizontalLimit)
+		{
+			useFocuPoint = false;
+		}
+		else if (offsetVector.x > shiftEyeHorizontalLimit)
+		{
+			useFocuPoint = false;
+		}
+		else if (offsetVector.y < 0f - shiftEyeVerticalLimit)
+		{
+			useFocuPoint = false;
+		}
+		else if (offsetVector.y > shiftEyeVerticalLimit)
+		{
+			useFocuPoint = false;
+		}
+		else
+		{
+			useFocuPoint = true;
+		}
+		if (useFocuPoint)
+		{
+			offsetVector.x = Mathf.Clamp(offsetVector.x, 0f - shiftEyeHorizontalLimit, shiftEyeHorizontalLimit) * shiftEyeHorizontalMultiplier;
+			offsetVector.y = Mathf.Clamp(offsetVector.y, 0f - shiftEyeVerticalLimit, shiftEyeVerticalLimit) * shiftEyeVerticalMultiplier;
+			animatedEyesMaterial.SetTextureOffset("_MainTex", offsetVector);
+			if (!shiftToFocusBlink)
+			{
+				ForceBlink();
+				shiftToFocusBlink = true;
+			}
+		}
+		else
+		{
+			ResetEyes();
+			if (shiftToFocusBlink)
+			{
+				ForceBlink();
+				shiftToFocusBlink = false;
+			}
+		}
+	}
+
+	private void Update()
+	{
+		if (animate)
+		{
+			UpdateEyeBlinking();
+			if (animatedEyes != null)
+			{
+				if (!animatedEyes.enabled)
+				{
+					animatedEyes.enabled = true;
+				}
+				UpdateAnimatedEyes();
+			}
+		}
+		else
+		{
+			closedEyes.enabled = false;
+			if (animatedEyes != null)
+			{
+				animatedEyes.enabled = false;
+			}
+		}
+	}
 }
