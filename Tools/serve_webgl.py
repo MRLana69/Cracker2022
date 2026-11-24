@@ -4,6 +4,7 @@
 Usage:
   python3 Tools/serve_webgl.py /path/to/unzipped/beijing
   python3 Tools/serve_webgl.py /path/to/unzipped/beijing --host 0.0.0.0 --port 8000
+  cd /path/to/unzipped/beijing && python3 /path/to/serve_webgl.py --port 1873
 """
 from __future__ import annotations
 
@@ -33,7 +34,7 @@ class UnityWebGLHandler(http.server.SimpleHTTPRequestHandler):
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Serve a Unity WebGL build, including Brotli headers.")
-    parser.add_argument("directory", type=Path, help="Folder containing index.html and Build/")
+    parser.add_argument("directory", type=Path, nargs="?", default=Path("."), help="Folder containing index.html and Build/ (default: current folder)")
     parser.add_argument("--host", default="127.0.0.1", help="Bind address (default: 127.0.0.1)")
     parser.add_argument("--port", type=int, default=8000, help="HTTP port (default: 8000)")
     args = parser.parse_args()

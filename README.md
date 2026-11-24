@@ -14,7 +14,7 @@ O log anterior do Unity Build Automation (Unity 2022.3.62f3, macOS) não mostrou
 
 ## Servir a build WebGL localmente
 
-Extraia o ZIP da build e rode `python3 Tools/serve_webgl.py /caminho/para/beijing`, trocando o caminho pela pasta que contém `index.html` e `Build/`. Abra `http://127.0.0.1:8000/` no navegador. Esse servidor envia `Content-Encoding: br` para os arquivos Brotli `.br`, necessário para o loader interpretar os arquivos WebGL; abrir o HTML diretamente por `file://` ou usar um servidor sem esse cabeçalho pode causar erro no carregamento. Para acessar a partir de outro dispositivo na mesma rede, inicie com `--host 0.0.0.0` e use o endereço IP local do computador. Não exponha o servidor à internet.
+Extraia o ZIP da build e rode `python3 Tools/serve_webgl.py /caminho/para/beijing`, trocando o caminho pela pasta que contém `index.html` e `Build/`. Se você já estiver dentro dessa pasta e o script estiver ali, rode `python3 serve_webgl.py --port 1873` (ou `python3 serve_webgl.py . --port 1873` com versões anteriores do script). Abra `http://127.0.0.1:1873/` no navegador. Esse servidor envia `Content-Encoding: br` para os arquivos Brotli `.br`, necessário para o loader interpretar os arquivos WebGL; abrir o HTML diretamente por `file://` ou usar um servidor sem esse cabeçalho pode causar erro no carregamento. Para acessar a partir de outro dispositivo na mesma rede, inicie com `--host 0.0.0.0` e use o endereço IP local do computador. Não exponha o servidor à internet.
 
 ## Materiais recuperados
 
