@@ -39,8 +39,8 @@
   "project_compiled": false,
   "webgl_build_generated_from_active_project": false,
   "last_cloud_build_log_diagnosed": true,
-  "last_cloud_build_failure_cause": "Three AssetRipper-generated dummy C# scripts had illegal identifiers/namespace syntax.",
-  "unreferenced_invalid_dummy_scripts_removed": 15,
+  "last_cloud_build_failure_cause": "Second Cloud Build log: CS0101 duplicate UnityEngine.Timeline.AnimationTrack declaration from an AssetRipper dummy stub.",
+  "unreferenced_invalid_dummy_scripts_removed": 16,
   "post_fix_build_verification_performed": false,
   "notes": [
     "The Unity project folders at repository root were replaced with the AssetRipper export; the previously generated Beijing Runner prototype WebGL archive is not a build of this active project.",
@@ -52,6 +52,6 @@
     "Recovered_Assets_Reference, containing a redundant older AssetRipper export copy and TexLow textures, was removed from the current tree at the user's request; the active Unity project folders were not removed.",
     "The existing WABT structured pseudocode was regenerated with WABT 1.0.34 --enable-all and matched byte-for-byte; a named WAT output was also created and compressed.",
     "WABT wasm2c was attempted but reported a generic limited-feature-set error without naming a specific unsupported feature; see BUILD_REPORT.txt.",
-    "The submitted Cloud Build log confirmed Unity 2022.3.62f3 and reported C# syntax errors in three unreferenced AssetRipper dummy scripts. A static scan found 12 more invalid type identifiers in unreferenced dummy stubs; all 15 files and their .meta files were removed. No post-fix build was run."
+    "The first submitted Cloud Build log confirmed Unity 2022.3.62f3 and reported C# syntax errors in three unreferenced AssetRipper dummy scripts. A static scan found 12 more invalid type identifiers in unreferenced dummy stubs; all 15 files and their .meta files were removed. The second log ran commit 7222dd765b4337cab565a06af6627ef7938d468d and showed those syntax errors were resolved, then failed with CS0101 because Assets/Scripts/Unity.Timeline/UnityEngine/Timeline/AnimationTrack.cs was a dummy stub colliding with an existing UnityEngine.Timeline.AnimationTrack definition. Its GUID had no asset references, so that file and its .meta were removed (16 unreferenced dummy scripts removed total). The assistant did not compile; the latest fix is unverified pending another Cloud Build run."
   ]
 }
