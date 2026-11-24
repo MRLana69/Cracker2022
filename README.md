@@ -1,14 +1,14 @@
-# Beijing Runner Reconstruction — Unity 2019.2.0f1
+# Beijing Runner Reconstruction — Unity 2022.3.0f1
 
 Projeto independente de endless runner com três faixas, movimento por teclado/toque, pulo, deslize, moedas, obstáculos, pontuação, aumento progressivo de velocidade e reinício. Não é restauração byte a byte do jogo original nem build oficial.
 
 ## Abrir e compilar
 
-1. Abra a raiz deste repositório no Unity Editor **2019.2.0f1** e aguarde a resolução de pacotes/importação.
+1. Abra a raiz deste repositório no Unity Editor **2022.3.0f1** (ou outro patch da linha 2022.3) e aguarde a resolução de pacotes/importação. Na primeira abertura, o Editor pode atualizar metadados e configurações do projeto.
 2. Abra `Assets/BeijingReconstruction/Scenes/BeijingRunner.unity`; ela está habilitada em `ProjectSettings/EditorBuildSettings.asset`.
 3. Para WebGL, instale WebGL Build Support para a mesma versão do Editor, selecione **File → Build Settings → WebGL → Switch Platform**, confirme `BeijingRunner` em Scenes In Build e use **Build**.
 
-`Packages/manifest.json` declara os módulos Unity Built-in, incluindo `com.unity.modules.inputlegacy` 1.0.0 para os controles. Não há dependências de terceiros. O projeto foi preparado e verificado estaticamente, mas **ainda não foi importado nem compilado no Unity Editor**; compile e teste no Editor antes de considerar a build pronta.
+`ProjectSettings/ProjectVersion.txt` define a versão-alvo como Unity 2022.3.0f1. `Packages/manifest.json` declara os módulos Unity Built-in, incluindo `com.unity.modules.inputlegacy` 1.0.0 para os controles. Não há dependências de terceiros. A versão-alvo e os arquivos de configuração foram atualizados, mas **o projeto ainda não foi aberto, importado nem compilado no Unity Editor 2022.3**; compile e teste no Editor antes de considerar a build pronta.
 
 ## Materiais recuperados
 
