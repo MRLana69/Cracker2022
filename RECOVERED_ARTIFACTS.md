@@ -8,6 +8,9 @@ A raiz deste repositório contém agora a exportação completa do AssetRipper u
 2. **TexLow — 49 PNGs:** `Recovered_Assets_Reference/TexLowPNG/`, junto com `tex_low_export_manifest.csv` e `export_tex_low.py`.
 3. **Análise técnica Cpp2IL, IL2CPP e WebAssembly:** `Recovered_Analysis/Beijing_UnityWeb_Analysis/`. Inclui dumps, inventários, relatórios, intermediários e arquivos de análise preservados.
 4. **Fontes C# aproximadas de ILSpy:** `Recovered_Analysis/Beijing_UnityWeb_Analysis/cpp2il-extra/ilspy-decompiled/`. Estão fora de `Assets` porque não são fontes originais validadas nem prontas para compilar.
+5. **Saídas complementares:** WAT nomeado compactado em `Recovered_Analysis/Beijing_UnityWeb_Analysis/wasm/Beijing_2.named.wat.gz`; IL em `Recovered_Analysis/Beijing_UnityWeb_Analysis/cpp2il-extra/ilspy-il/`; e C# de metadados/stubs em `Recovered_Analysis/Beijing_UnityWeb_Analysis/il2cppdumper/ilspy-decompiled/`.
+
+Os três UnityWeb binários originais e a cópia WASM extraída foram removidos da árvore de trabalho conforme solicitado. Seus blobs ainda constam no histórico Git anterior; esse histórico não foi reescrito. Permanecem os assets e dados já extraídos, além das saídas textuais de análise.
 
 ## Limitações
 

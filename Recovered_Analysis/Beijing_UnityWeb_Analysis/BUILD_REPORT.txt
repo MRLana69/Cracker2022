@@ -22,12 +22,22 @@ RESULTADOS GERADOS
    Inclui avisos sobre assinaturas não resolvidas; mapeamento não equivale à lógica-fonte original.
 5. Il2CppDumper: dump.cs, script.json, stringliteral.json, il2cpp.h e DummyDlls (metadados/stubs).
    O log informa Metadata Version 24.2 e Il2Cpp Version 24.2.
-6. WABT wasm-decompile: gerou wasm/Beijing_2.pseudocode.dcmp (80.358.299 bytes). É pseudocódigo WebAssembly estruturado, não C# original.
-7. WABT wasm-objdump: wasm/wasm-structure.txt lista as seções do módulo.
-8. O contêiner .data.unityweb foi extraído: 7 itens, incluindo global-metadata.dat e data.unity3d.
-9. UnityPy contou 46.719 objetos serializados em data.unity3d; veja asset-inventory.txt. Os itens extraídos estão em data-extracted/.
-10. Os quatro arquivos originais do diretório Build estão preservados em original-inputs/Build/.
-11. AssetRipper 2.0.0.0 importou a pasta data-extracted e exportou 1.864 objetos para assetripper-export/ExportedProject/ (projeto destino Unity 2019.2.0f1).
+6. ILSpy 11.2 também descompilou os DummyDLLs do Il2CppDumper para C# em il2cppdumper/ilspy-decompiled/.
+   Esses arquivos preservam metadados/assinaturas e atributos IL2CPP, mas os corpos são stubs e não incluem a lógica original.
+7. ILSpy 11.2 em modo IL gerou listas textuais comprimidas das DLLs de IL Recovery em cpp2il-extra/ilspy-il/.
+   Elas refletem o IL aproximado recuperado pelo Cpp2IL; não recriam instruções que a build não preservou.
+8. WABT 1.0.34 wasm-decompile: wasm/Beijing_2.pseudocode.dcmp (80.358.299 bytes). A regeneração com --enable-all foi byte-idêntica.
+   É pseudocódigo WASM estruturado, não C# original.
+9. WABT 1.0.34 wasm2wat: módulo textual nomeado gerado de 240.562.034 bytes e guardado compactado em wasm/Beijing_2.named.wat.gz.
+   O gzip foi validado; o texto pode ser aberto com gzip -dc. wasm-validate aceitou o módulo.
+10. WABT wasm2c foi tentado, mas a versão instalada recusou traduzir o módulo: “wasm2c currently only supports a limited set of features”.
+    Não foi gerado C nessa etapa; não é uma falha da validação do WASM nem um resultado equivalente a fonte C#.
+11. WABT wasm-objdump: wasm/wasm-structure.txt lista as seções do módulo.
+12. O contêiner .data.unityweb foi extraído: 7 itens, incluindo global-metadata.dat e data.unity3d.
+13. UnityPy contou 46.719 objetos serializados em data.unity3d; veja asset-inventory.txt. Os itens extraídos estão em data-extracted/.
+14. A pedido do usuário, os três binários originais Beijing_2.data.unityweb, Beijing_2.wasm.code.unityweb e Beijing_2.wasm.framework.unityweb foram removidos da árvore atual do GitHub no commit 87dea66c. O JSON de build e os derivados recuperados permanecem no projeto.
+    As cópias locais temporárias foram apagadas depois da análise. Os commits Git anteriores ainda retêm os blobs; o histórico não foi reescrito.
+15. AssetRipper 2.0.0.0 importou a pasta data-extracted e exportou 1.864 objetos para assetripper-export/ExportedProject/ (projeto destino Unity 2019.2.0f1).
     Veja assetripper-export/ASSET_RIPPER_REPORT.txt, ASSET_RIPPER_INVENTORY.txt e AssetRipper.log.
 
 LIMITAÇÕES IMPORTANTES
@@ -37,4 +47,4 @@ O Cpp2IL registrou 14.475 ocorrências de métodos sem corpo lido e, nas saídas
 
 A build e o projeto exportado não foram abertos, recompilados ou validados no Unity Editor. A exportação do AssetRipper não é um projeto Unity integral reconstituído; o log indica backend de scripts “Unknown” e contém avisos de conversão de áudio. Os scripts auxiliares exportados não recuperam a lógica completa.
 
-Os dados foram mantidos localmente neste pacote. Nada foi publicado no GitHub e o projeto atual não foi alterado.
+Os relatórios e os novos resultados de análise foram publicados em https://github.com/MRLana69/Cracker2022 no branch main. O projeto ativo da raiz está marcado para Unity 2022.3.62f3, mas não foi aberto nem compilado.

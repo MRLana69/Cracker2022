@@ -20,4 +20,10 @@ Os scripts sob `Assets/Scripts/` gerados pelo AssetRipper são **stubs**, não a
 
 Portanto, esta raiz permite abrir e examinar os assets/cenas recuperados no Editor, mas **a lógica de jogo ainda não foi restaurada**. Para obter um jogo funcional, será necessário reparar/reconstruir os scripts e dependências e então compilar e testar. Não é possível prometer fidelidade exata ao original apenas com os dados recuperados.
 
+## Resultados adicionais de análise
+
+Foram mantidos o pseudocódigo estruturado do WABT e um WAT nomeado compactado (`Recovered_Analysis/Beijing_UnityWeb_Analysis/wasm/Beijing_2.named.wat.gz`), além de listagens IL do ILSpy e fontes C# de metadados do Il2CppDumper. Estes são níveis diferentes de representação do binário, não uma restauração completa da fonte C# original. O relatório `Recovered_Analysis/Beijing_UnityWeb_Analysis/BUILD_REPORT.txt` detalha ferramentas, caminhos e limitações.
+
+Os três arquivos UnityWeb originais e o módulo WASM bruto foram removidos da árvore atual conforme solicitado; os derivados textuais e os assets já extraídos permanecem. **O histórico Git anterior ainda contém os blobs removidos**, pois não foi reescrito.
+
 Se posteriormente gerar uma build WebGL com Brotli, `Tools/serve_webgl.py` pode servir os arquivos `.br` localmente com o cabeçalho HTTP correto.
