@@ -8,7 +8,7 @@ Projeto independente de endless runner com três faixas, movimento por teclado/t
 2. Abra `Assets/BeijingReconstruction/Scenes/BeijingRunner.unity`; ela está habilitada em `ProjectSettings/EditorBuildSettings.asset`.
 3. Para WebGL, instale WebGL Build Support para a mesma versão do Editor, selecione **File → Build Settings → WebGL → Switch Platform**, confirme `BeijingRunner` em Scenes In Build e use **Build**.
 
-`ProjectSettings/ProjectVersion.txt` define a versão-alvo como Unity 2022.3.0f1. `Packages/manifest.json` declara os módulos Unity Built-in, incluindo `com.unity.modules.inputlegacy` 1.0.0 para os controles. Não há dependências de terceiros. A versão-alvo e os arquivos de configuração foram atualizados, mas **o projeto ainda não foi aberto, importado nem compilado no Unity Editor 2022.3**; compile e teste no Editor antes de considerar a build pronta.
+`ProjectSettings/ProjectVersion.txt` define a versão-alvo como Unity 2022.3.0f1. Os controles usam a API legada `UnityEngine.Input`, fornecida pelo próprio Unity; ela não requer uma dependência UPM separada. `Packages/manifest.json` contém os módulos Built-in válidos do projeto. Não há dependências de terceiros. O projeto ainda precisa ser aberto, importado e validado no Unity Editor 2022.3; compile e teste no Editor antes de considerar a build pronta.
 
 ## Materiais recuperados
 
