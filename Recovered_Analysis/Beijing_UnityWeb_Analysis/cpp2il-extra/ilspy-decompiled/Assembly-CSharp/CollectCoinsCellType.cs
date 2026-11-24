@@ -1,0 +1,8 @@
+public enum CollectCoinsCellType
+{
+	FRIEND,
+	DUMMYFRIEND,
+	FACEBOOK_BUTTON,
+	RECOMMEND_BUTTON,
+	SPACE
+}

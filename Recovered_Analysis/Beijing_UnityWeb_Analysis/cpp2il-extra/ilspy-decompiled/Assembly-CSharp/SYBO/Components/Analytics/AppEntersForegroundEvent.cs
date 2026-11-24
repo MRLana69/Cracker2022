@@ -1,0 +1,39 @@
+using Cpp2ILInjected;
+
+namespace SYBO.Components.Analytics;
+
+public class AppEntersForegroundEvent : BaseSessionEvent
+{
+	public override string EventName => "client_updated";
+
+	public AppEntersForegroundEvent()
+	{
+		//IL_0087: Expected I, but got Obj
+		//IL_009d: Expected Obj, but got I
+		//IL_00c6: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00cb: Expected Obj, but got Unknown
+		//IL_005d: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0062: Expected Obj, but got Unknown
+		//IL_0013: Expected I, but got Obj
+		nint num = (nint)typeof(BaseSessionEvent);
+		Cpp2ILHelpers.NoteDecompilerIssue("Unmanaged memory load: [v12 @ S0_v6 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>)+BA]");
+		object obj = (nint)0 & (nint)0x200;
+		if (obj != null)
+		{
+			nint num2 = (nint)typeof(BaseSessionEvent);
+			Cpp2ILHelpers.NoteDecompilerIssue("Unmanaged memory load: [v18 @ S0_v16 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>)+74]");
+			if ((nint)0 == 0)
+			{
+				Cpp2ILHelpers.NoteDecompilerIssue("Method not found @11A99");
+			}
+		}
+		InitializeCommon();
+		object obj2 = this + 36;
+		string text = BaseSessionEvent.GetDeviceID();
+		obj2 = text;
+		float num3 = AnalyticsEvent.GetSamplingKey();
+		object obj3 = this + 16;
+		string text2 = AnalyticsEvent.GetGameVersion();
+		obj3 = text2;
+	}
+}

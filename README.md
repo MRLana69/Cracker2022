@@ -1,21 +1,23 @@
-# Beijing Runner Reconstruction — Unity 2022.3.0f1
+# Beijing — projeto recuperado para Unity 2022.3
 
-Projeto independente de endless runner com três faixas, movimento por teclado/toque, pulo, deslize, moedas, obstáculos, pontuação, aumento progressivo de velocidade e reinício. Não é restauração byte a byte do jogo original nem build oficial.
+A raiz deste repositório agora usa como projeto ativo a exportação de assets e cenas da build Beijing/Subway Surfers 1.94.0 feita pelo AssetRipper. O marcador do Editor foi atualizado para **Unity 2022.3.62f3**. Isso é uma reconstrução a partir da build compilada, não o projeto-fonte original.
 
-## Abrir e compilar
+## Abrir no Unity
 
-1. Abra a raiz deste repositório no Unity Editor **2022.3.0f1** (ou outro patch da linha 2022.3) e aguarde a resolução de pacotes/importação. Na primeira abertura, o Editor pode atualizar metadados e configurações do projeto.
-2. Abra `Assets/BeijingReconstruction/Scenes/BeijingRunner.unity`; ela está habilitada em `ProjectSettings/EditorBuildSettings.asset`.
-3. Para WebGL, instale WebGL Build Support para a mesma versão do Editor, selecione **File → Build Settings → WebGL → Switch Platform**, confirme `BeijingRunner` em Scenes In Build e use **Build**. O projeto seleciona explicitamente o template interno `APPLICATION:Default`.
+1. Abra esta pasta raiz no Unity Editor **2022.3.62f3**.
+2. Aguarde a migração de configurações e a importação dos assets. O projeto exportado originalmente indicava Unity 2019.2.0f1; o upgrade para 2022.3 ainda não foi executado nem validado pelo assistente.
+3. As cenas `Assets/Scenes/LoadScene.unity` e `Assets/Scenes/Merge.unity` estão listadas nas configurações de build.
 
-`ProjectSettings/ProjectVersion.txt` define a versão-alvo como Unity 2022.3.0f1; o ZIP recebido foi gerado usando Unity 2022.3.62f3. Os controles usam a API legada `UnityEngine.Input`, fornecida pelo próprio Unity; ela não requer uma dependência UPM separada. `Packages/manifest.json` contém os módulos Built-in válidos do projeto. Não há dependências de terceiros. Os artefatos WebGL foram gerados, mas ainda não foram validados em execução no navegador.
+**Não compilei nem gerei uma build**, conforme solicitado. Também não posso afirmar que os scripts compilarão sem erros.
 
-O log anterior do Unity Build Automation (Unity 2022.3.62f3, macOS) não mostrou erros C# e falhou no pós-processamento WebGL. O ZIP recebido depois contém os artefatos completos de uma build WebGL, então os arquivos do player foram gerados; a execução do jogo no navegador ainda precisa ser validada.
+## O que foi recuperado
 
-## Servir a build WebGL localmente
+A exportação contém cenas, prefabs, meshes, animações, materiais, texturas, shaders, áudio, Resources e outros assets. O projeto original indicado nos dados era Subway Surfers 1.94.0, Unity 2019.2.0f1. Os relatórios da exportação estão em `Recovered_Analysis/Beijing_UnityWeb_Analysis/assetripper-export/`.
 
-Extraia o ZIP da build e rode `python3 Tools/serve_webgl.py /caminho/para/beijing`, trocando o caminho pela pasta que contém `index.html` e `Build/`. Se você já estiver dentro dessa pasta e o script estiver ali, rode `python3 serve_webgl.py --port 1873` (ou `python3 serve_webgl.py . --port 1873` com versões anteriores do script). Abra `http://127.0.0.1:1873/` no navegador. Esse servidor envia `Content-Encoding: br` para os arquivos Brotli `.br`, necessário para o loader interpretar os arquivos WebGL; abrir o HTML diretamente por `file://` ou usar um servidor sem esse cabeçalho pode causar erro no carregamento. Para acessar a partir de outro dispositivo na mesma rede, inicie com `--host 0.0.0.0` e use o endereço IP local do computador. Não exponha o servidor à internet.
+## Limitação importante da lógica C#
 
-## Materiais recuperados
+Os scripts sob `Assets/Scripts/` gerados pelo AssetRipper são **stubs**, não a lógica original do jogo. A saída Cpp2IL foi convertida em fontes legíveis pelo ILSpy e está separada em `Recovered_Analysis/Beijing_UnityWeb_Analysis/cpp2il-extra/ilspy-decompiled/`. Ela é aproximada e contém muitos trechos não resolvidos (`Cpp2ILHelpers.NoteDecompilerIssue`); não a coloquei em `Assets` porque não é código-fonte validado e pode não compilar. Consulte o README dessa pasta e `BUILD_REPORT.txt` para detalhes e limitações.
 
-Os assets do AssetRipper, os PNGs TexLow e os dados de análise estão sob `Recovered_Assets_Reference/` e `Recovered_Analysis/`, fora da pasta raiz especial `Assets` do Unity. Permanecem acessíveis no repositório, mas não são importados automaticamente nem fazem parte do protótipo ativo. Por isso o `beijing.data.br` da build atual tem apenas cerca de 655 KB comprimido (cerca de 2,70 MB descomprimido); essa pequena dimensão é esperada para o protótipo atual e não indica, por si só, arquivo truncado. Veja [RECOVERED_ARTIFACTS.md](RECOVERED_ARTIFACTS.md) para inventário, localização e limitações dos dados recuperados.
+Portanto, esta raiz permite abrir e examinar os assets/cenas recuperados no Editor, mas **a lógica de jogo ainda não foi restaurada**. Para obter um jogo funcional, será necessário reparar/reconstruir os scripts e dependências e então compilar e testar. Não é possível prometer fidelidade exata ao original apenas com os dados recuperados.
+
+Se posteriormente gerar uma build WebGL com Brotli, `Tools/serve_webgl.py` pode servir os arquivos `.br` localmente com o cabeçalho HTTP correto.
