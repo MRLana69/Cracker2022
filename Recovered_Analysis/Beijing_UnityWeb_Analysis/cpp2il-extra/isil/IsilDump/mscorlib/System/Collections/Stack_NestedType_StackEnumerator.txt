@@ -1,0 +1,608 @@
+Type: System.Collections.Stack+StackEnumerator
+
+Method: System.Void .ctor(System.Collections.Stack stack)
+
+Disassembly:
+	0x11F9133 I32Const 4568810
+	0x11F9138 I32Load8_S 0, 0
+	0x11F913B I32Eqz
+	0x11F913C If -64
+	0x11F913E I32Const 3006156
+	0x11F9143 I32Load 2, 0
+	0x11F9146 Call 73003
+	0x11F914A I32Const 4568810
+	0x11F914F I32Const 1
+	0x11F9151 I32Store8 0, 0
+	0x11F9154 End
+	0x11F9155 LocalGet 0
+	0x11F9157 I32Load 2, 12
+	0x11F915A LocalGet 0
+	0x11F915C I32Load 2, 8
+	0x11F915F I32Load 2, 12
+	0x11F9162 I32Eq
+	0x11F9163 If -64
+	0x11F9165 I32Const 4428060
+	0x11F916A I32Load 2, 0
+	0x11F916D LocalGet 0
+	0x11F916F I32Load 2, 8
+	0x11F9172 I32Load 2, 12
+	0x11F9175 I32Const 1
+	0x11F9177 I32Shl
+	0x11F9178 Call 71670
+	0x11F917C LocalSet 2
+	0x11F917E LocalGet 0
+	0x11F9180 I32Load 2, 8
+	0x11F9183 I32Const 0
+	0x11F9185 LocalGet 2
+	0x11F9187 I32Const 0
+	0x11F9189 LocalGet 0
+	0x11F918B I32Load 2, 12
+	0x11F918E I32Const 0
+	0x11F9190 Call 57646
+	0x11F9194 LocalGet 0
+	0x11F9196 I32Const 8
+	0x11F9198 I32Add
+	0x11F9199 LocalGet 2
+	0x11F919B I32Store 2, 0
+	0x11F919E End
+	0x11F919F LocalGet 0
+	0x11F91A1 I32Load 2, 8
+	0x11F91A4 LocalSet 2
+	0x11F91A6 LocalGet 0
+	0x11F91A8 LocalGet 0
+	0x11F91AA I32Load 2, 12
+	0x11F91AD LocalTee 3
+	0x11F91AF I32Const 1
+	0x11F91B1 I32Add
+	0x11F91B2 I32Store 2, 12
+	0x11F91B5 LocalGet 2
+	0x11F91B7 LocalGet 1
+	0x11F91B9 Call 29652
+	0x11F91BD LocalGet 2
+	0x11F91BF I32Const 16
+	0x11F91C1 I32Add
+	0x11F91C2 LocalGet 3
+	0x11F91C4 I32Const 2
+	0x11F91C6 I32Shl
+	0x11F91C7 I32Add
+	0x11F91C8 LocalGet 1
+	0x11F91CA I32Store 2, 0
+	0x11F91CD LocalGet 0
+	0x11F91CF LocalGet 0
+	0x11F91D1 I32Load 2, 16
+	0x11F91D4 I32Const 1
+	0x11F91D6 I32Add
+	0x11F91D7 I32Store 2, 16
+	0x11F91DA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v25, [2DDECC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v25
+	8 Nop
+	9 Move v7 @ S1_v24, 1
+	10 Move [45B6EA], v7 @ S1_v24
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S1_v3 (System.Collections.Stack), this._stack (System.Collections.Stack)
+	16 Nop
+	17 CheckEqual v17 @ S0_v7 (System.Boolean), this._index (System.Int32), v15._size (System.Int32)
+	18 Not v18 @ TEMP_v2 (System.Boolean), v17 @ S0_v7 (System.Boolean)
+	19 ConditionalJump @b10, v18 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Newobj v26 @ S0_v19 (System.OverflowException), typeof(System.OverflowException)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid Array.ConstrainedCopy, this._stack (System.Collections.Stack), 0, v26 @ S0_v19 (System.OverflowException), 0, this._index (System.Int32)
+	38 Nop
+	39 Nop
+	40 Add v45 @ S0_v23, this @ L0 (System.Collections.Stack+StackEnumerator), 8
+	41 Nop
+	42 Move [v45 @ S0_v23], v26 @ S0_v19 (System.OverflowException)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Add v54 @ S1_v8 (System.Int32), this._index (System.Int32), 1
+	53 Move this._index (System.Int32), v54 @ S1_v8 (System.Int32)
+	54 Nop
+	55 Nop
+	56 Throw typeof(System.ArrayTypeMismatchException)
+	57 Nop
+	58 Nop
+	59 Add v64 @ S0_v14, this._stack (System.Collections.Stack), 16
+	60 Nop
+	61 Nop
+	62 ShiftLeft v67 @ S1_v12 (System.Int32), this._index (System.Int32), 2
+	63 Add v68 @ S0_v15, v64 @ S0_v14, v67 @ S1_v12 (System.Int32)
+	64 Nop
+	65 Move [v68 @ S0_v15], stack @ L1 (System.Collections.Stack)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Add v74 @ S1_v16 (System.Int32), this._version (System.Int32), 1
+	71 Move this._version (System.Int32), v74 @ S1_v16 (System.Int32)
+	72 Nop
+	73 Return
+
+Method: System.Object Clone()
+
+Disassembly:
+	0x11F907C I32Const 4568809
+	0x11F9081 I32Load8_S 0, 0
+	0x11F9084 I32Eqz
+	0x11F9085 If -64
+	0x11F9087 I32Const 3006152
+	0x11F908C I32Load 2, 0
+	0x11F908F Call 73003
+	0x11F9093 I32Const 4568809
+	0x11F9098 I32Const 1
+	0x11F909A I32Store8 0, 0
+	0x11F909D End
+	0x11F909E LocalGet 0
+	0x11F90A0 I32Load 2, 12
+	0x11F90A3 If -64
+	0x11F90A5 LocalGet 0
+	0x11F90A7 LocalGet 0
+	0x11F90A9 I32Load 2, 16
+	0x11F90AC I32Const 1
+	0x11F90AE I32Add
+	0x11F90AF I32Store 2, 16
+	0x11F90B2 LocalGet 0
+	0x11F90B4 I32Load 2, 8
+	0x11F90B7 LocalGet 0
+	0x11F90B9 LocalGet 0
+	0x11F90BB I32Load 2, 12
+	0x11F90BE I32Const 1
+	0x11F90C0 I32Sub
+	0x11F90C1 LocalTee 2
+	0x11F90C3 I32Store 2, 12
+	0x11F90C6 I32Const 16
+	0x11F90C8 I32Add
+	0x11F90C9 LocalGet 2
+	0x11F90CB I32Const 2
+	0x11F90CD I32Shl
+	0x11F90CE I32Add
+	0x11F90CF I32Load 2, 0
+	0x11F90D2 LocalGet 0
+	0x11F90D4 I32Load 2, 8
+	0x11F90D7 LocalSet 1
+	0x11F90D9 LocalGet 0
+	0x11F90DB I32Load 2, 12
+	0x11F90DE LocalSet 0
+	0x11F90E0 LocalGet 1
+	0x11F90E2 I32Const 0
+	0x11F90E4 Call 29652
+	0x11F90E8 LocalGet 1
+	0x11F90EA I32Const 16
+	0x11F90EC I32Add
+	0x11F90ED LocalGet 0
+	0x11F90EF I32Const 2
+	0x11F90F1 I32Shl
+	0x11F90F2 I32Add
+	0x11F90F3 I32Const 0
+	0x11F90F5 I32Store 2, 0
+	0x11F90F8 Return
+	0x11F90F9 Else
+	0x11F90FA I32Const 4503592
+	0x11F90FF I32Load 2, 0
+	0x11F9102 LocalSet 0
+	0x11F9104 I32Const 4428404
+	0x11F9109 I32Load 2, 0
+	0x11F910C Call 72556
+	0x11F9110 LocalTee 1
+	0x11F9112 LocalGet 0
+	0x11F9114 I32Const 0
+	0x11F9116 Call 54737
+	0x11F911A LocalGet 1
+	0x11F911C I32Const 0
+	0x11F911E I32Const 4466304
+	0x11F9123 I32Load 2, 0
+	0x11F9126 Call 73899
+	0x11F912A End
+	0x11F912B I32Const 0
+	0x11F912D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v22, [2DDEC8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v20, 1
+	10 Move [45B6E9], v7 @ S1_v20
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this._index (System.Int32), 0
+	15 ConditionalJump @b7, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S1_v6 (System.Int32), this._version (System.Int32), 1
+	21 Move this._version (System.Int32), v19 @ S1_v6 (System.Int32)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Subtract v26 @ S2_v7 (System.Int32), this._index (System.Int32), 1
+	29 Nop
+	30 Move this._index (System.Int32), v26 @ S2_v7 (System.Int32)
+	31 Nop
+	32 Add v29 @ S0_v17, this._stack (System.Collections.Stack), 16
+	33 Nop
+	34 Nop
+	35 ShiftLeft v32 @ S1_v10 (System.Int32), v26 @ S2_v7 (System.Int32), 2
+	36 Add v33 @ S0_v18, v29 @ S0_v17, v32 @ S1_v10 (System.Int32)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Throw typeof(System.ArrayTypeMismatchException)
+	47 Nop
+	48 Nop
+	49 Add v51 @ S1_v17, this._stack (System.Collections.Stack), 16
+	50 Nop
+	51 Nop
+	52 ShiftLeft v54 @ S2_v12 (System.Int32), this._index (System.Int32), 2
+	53 Add v55 @ S1_v18, v51 @ S1_v17, v54 @ S2_v12 (System.Int32)
+	54 Nop
+	55 Move [v55 @ S1_v18], 0
+	56 Return [v33 @ S0_v18]
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Call 11B6C, v48 @ S0_v11 (System.InvalidProgramException), typeof(System.InvalidOperationException)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 CallVoid InvalidProgramException..ctor, v48 @ S0_v11 (System.InvalidProgramException), "Stack empty."
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 CallVoid 120AB, v48 @ S0_v11 (System.InvalidProgramException), 0, methodof(System.Collections.Stack::Pop)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Return 0
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x11CAD1C LocalGet 0
+	0x11CAD1E Call 73007
+	0x11CAD22 End
+
+ISIL:
+	0 Nop
+	1 Newobj returnVal1 @ S0_v2 (System.OverflowException), typeof(System.OverflowException)
+	2 Nop
+	3 Return returnVal1 @ S0_v2 (System.OverflowException)
+
+Method: System.Object get_Current()
+
+Disassembly:
+	0x11F91E0 I32Const 4568811
+	0x11F91E5 I32Load8_S 0, 0
+	0x11F91E8 I32Eqz
+	0x11F91E9 If -64
+	0x11F91EB I32Const 3006040
+	0x11F91F0 I32Load 2, 0
+	0x11F91F3 Call 73003
+	0x11F91F7 I32Const 4568811
+	0x11F91FC I32Const 1
+	0x11F91FE I32Store8 0, 0
+	0x11F9201 End
+	0x11F9202 LocalGet 0
+	0x11F9204 I32Load 2, 16
+	0x11F9207 LocalGet 0
+	0x11F9209 I32Load 2, 8
+	0x11F920C I32Load 2, 16
+	0x11F920F I32Ne
+	0x11F9210 If -64
+	0x11F9212 I32Const 4503428
+	0x11F9217 I32Load 2, 0
+	0x11F921A LocalSet 1
+	0x11F921C I32Const 4428404
+	0x11F9221 I32Load 2, 0
+	0x11F9224 Call 72556
+	0x11F9228 LocalTee 2
+	0x11F922A LocalGet 1
+	0x11F922C I32Const 0
+	0x11F922E Call 54737
+	0x11F9232 LocalGet 2
+	0x11F9234 I32Const 0
+	0x11F9236 I32Const 4456564
+	0x11F923B I32Load 2, 0
+	0x11F923E Call 73899
+	0x11F9242 End
+	0x11F9243 LocalGet 0
+	0x11F9245 I32Load 2, 12
+	0x11F9248 I32Const -2
+	0x11F924A I32Eq
+	0x11F924B If -1
+	0x11F924D LocalGet 0
+	0x11F924F LocalGet 0
+	0x11F9251 I32Load 2, 8
+	0x11F9254 I32Load 2, 12
+	0x11F9257 I32Const 1
+	0x11F9259 I32Sub
+	0x11F925A I32Store 2, 12
+	0x11F925D LocalGet 0
+	0x11F925F I32Load 2, 12
+	0x11F9262 I32Const -1
+	0x11F9264 I32Gt_S
+	0x11F9265 If -1
+	0x11F9267 LocalGet 0
+	0x11F9269 I32Const 20
+	0x11F926B I32Add
+	0x11F926C LocalGet 0
+	0x11F926E I32Load 2, 8
+	0x11F9271 I32Load 2, 8
+	0x11F9274 I32Const 16
+	0x11F9276 I32Add
+	0x11F9277 LocalGet 0
+	0x11F9279 I32Load 2, 12
+	0x11F927C I32Const 2
+	0x11F927E I32Shl
+	0x11F927F I32Add
+	0x11F9280 I32Load 2, 0
+	0x11F9283 I32Store 2, 0
+	0x11F9286 I32Const 1
+	0x11F9288 Else
+	0x11F9289 I32Const 0
+	0x11F928B End
+	0x11F928C Else
+	0x11F928D LocalGet 0
+	0x11F928F I32Load 2, 12
+	0x11F9292 I32Const -1
+	0x11F9294 I32Eq
+	0x11F9295 If -1
+	0x11F9297 I32Const 0
+	0x11F9299 Else
+	0x11F929A LocalGet 0
+	0x11F929C LocalGet 0
+	0x11F929E I32Load 2, 12
+	0x11F92A1 I32Const 1
+	0x11F92A3 I32Sub
+	0x11F92A4 LocalTee 1
+	0x11F92A6 I32Store 2, 12
+	0x11F92A9 LocalGet 1
+	0x11F92AB I32Const -1
+	0x11F92AD I32Gt_S
+	0x11F92AE If -1
+	0x11F92B0 LocalGet 0
+	0x11F92B2 I32Const 20
+	0x11F92B4 I32Add
+	0x11F92B5 LocalGet 0
+	0x11F92B7 I32Load 2, 8
+	0x11F92BA I32Load 2, 8
+	0x11F92BD I32Const 16
+	0x11F92BF I32Add
+	0x11F92C0 LocalGet 0
+	0x11F92C2 I32Load 2, 12
+	0x11F92C5 I32Const 2
+	0x11F92C7 I32Shl
+	0x11F92C8 I32Add
+	0x11F92C9 I32Load 2, 0
+	0x11F92CC I32Store 2, 0
+	0x11F92CF I32Const 1
+	0x11F92D1 Else
+	0x11F92D2 LocalGet 0
+	0x11F92D4 I32Const 20
+	0x11F92D6 I32Add
+	0x11F92D7 I32Const 0
+	0x11F92D9 I32Store 2, 0
+	0x11F92DC I32Const 0
+	0x11F92DE End
+	0x11F92DF End
+	0x11F92E0 End
+	0x11F92E1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v42, [2DDE58]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v42
+	8 Nop
+	9 Move v7 @ S1_v37, 1
+	10 Move [45B6EB], v7 @ S1_v37
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S1_v3 (System.Collections.Stack), this._stack (System.Collections.Stack)
+	16 Nop
+	17 CheckNotEqual v17 @ S0_v7 (System.Boolean), this._version (System.Int32), v15._version (System.Int32)
+	18 Not v18 @ TEMP_v2 (System.Boolean), v17 @ S0_v7 (System.Boolean)
+	19 ConditionalJump @b8, v18 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Call 11B6C, v24 @ S0_v39 (System.InvalidProgramException), typeof(System.InvalidOperationException)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CallVoid InvalidProgramException..ctor, v24 @ S0_v39 (System.InvalidProgramException), "Collection was modified; enumeration operation may not execute."
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 CallVoid 120AB, v24 @ S0_v39 (System.InvalidProgramException), 0, methodof(System.Collections.Stack+StackEnumerator::MoveNext)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 CheckEqual v40 @ S0_v11 (System.Boolean), this._index (System.Int32), -2
+	40 Not v41 @ TEMP_v3 (System.Boolean), v40 @ S0_v11 (System.Boolean)
+	41 ConditionalJump @b12, v41 @ TEMP_v3 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Move v46 @ S1_v23 (System.Collections.Stack), this._stack (System.Collections.Stack)
+	45 Nop
+	46 Nop
+	47 Subtract v49 @ S1_v25 (System.Int32), v46._size (System.Int32), 1
+	48 Move this._index (System.Int32), v49 @ S1_v25 (System.Int32)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CheckGreater v53 @ S0_v29 (System.Boolean), this._index (System.Int32), -1
+	53 Not v54 @ TEMP_v7 (System.Boolean), v53 @ S0_v29 (System.Boolean)
+	54 ConditionalJump @b11, v54 @ TEMP_v7 (System.Boolean)
+	55 Nop
+	56 Nop
+	57 Add v63 @ S0_v33, this @ L0 (System.Collections.Stack+StackEnumerator), 20
+	58 Nop
+	59 Move v65 @ S1_v30 (System.Collections.Stack), this._stack (System.Collections.Stack)
+	60 Nop
+	61 Nop
+	62 Add v68 @ S1_v32, v65._array (System.Object[]), 16
+	63 Nop
+	64 Nop
+	65 Nop
+	66 ShiftLeft v72 @ S2_v13 (System.Int32), this._index (System.Int32), 2
+	67 Add v73 @ S1_v33, v68 @ S1_v32, v72 @ S2_v13 (System.Int32)
+	68 Nop
+	69 Move [v63 @ S0_v33], [v73 @ S1_v33]
+	70 Nop
+	71 Jump @b18
+	72 Nop
+	73 Nop
+	74 Jump @b21
+	75 Nop
+	76 Nop
+	77 Nop
+	78 CheckEqual v58 @ S0_v15 (System.Boolean), this._index (System.Int32), -1
+	79 Not v59 @ TEMP_v5 (System.Boolean), v58 @ S0_v15 (System.Boolean)
+	80 ConditionalJump @b14, v59 @ TEMP_v5 (System.Boolean)
+	81 Nop
+	82 Jump @b21
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Subtract v82 @ S1_v11 (System.Int32), this._index (System.Int32), 1
+	88 Nop
+	89 Move this._index (System.Int32), v82 @ S1_v11 (System.Int32)
+	90 Nop
+	91 Nop
+	92 CheckGreater v86 @ S0_v18 (System.Boolean), v82 @ S1_v11 (System.Int32), -1
+	93 Not v87 @ TEMP_v6 (System.Boolean), v86 @ S0_v18 (System.Boolean)
+	94 ConditionalJump @b16, v87 @ TEMP_v6 (System.Boolean)
+	95 Nop
+	96 Nop
+	97 Add v107 @ S0_v23, this @ L0 (System.Collections.Stack+StackEnumerator), 20
+	98 Nop
+	99 Move v109 @ S1_v17 (System.Collections.Stack), this._stack (System.Collections.Stack)
+	100 Nop
+	101 Nop
+	102 Add v112 @ S1_v19, v109._array (System.Object[]), 16
+	103 Nop
+	104 Nop
+	105 Nop
+	106 ShiftLeft v96 @ S2_v7 (System.Int32), this._index (System.Int32), 2
+	107 Add v115 @ S1_v20, v112 @ S1_v19, v96 @ S2_v7 (System.Int32)
+	108 Nop
+	109 Move [v107 @ S0_v23], [v115 @ S1_v20]
+	110 Nop
+	111 Jump @b21
+	112 Nop
+	113 Nop
+	114 Add v118 @ S0_v20, this @ L0 (System.Collections.Stack+StackEnumerator), 20
+	115 Nop
+	116 Move [v118 @ S0_v20], 0
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Return returnVal1 @ S0_v12 (System.Object)
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x11F8D0F LocalGet 0
+	0x11F8D11 I32Load 2, 8
+	0x11F8D14 I32Const 0
+	0x11F8D16 LocalGet 0
+	0x11F8D18 I32Load 2, 12
+	0x11F8D1B I32Const 0
+	0x11F8D1D Call 57762
+	0x11F8D21 LocalGet 0
+	0x11F8D23 I32Const 0
+	0x11F8D25 I32Store 2, 12
+	0x11F8D28 LocalGet 0
+	0x11F8D2A LocalGet 0
+	0x11F8D2C I32Load 2, 16
+	0x11F8D2F I32Const 1
+	0x11F8D31 I32Add
+	0x11F8D32 I32Store 2, 16
+	0x11F8D35 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CallVoid Array.ClearInternal, this._stack (System.Collections.Stack), 0, this._index (System.Int32)
+	7 Nop
+	8 Nop
+	9 Move this._index (System.Int32), 0
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v13 @ S1_v5 (System.Int32), this._version (System.Int32), 1
+	15 Move this._version (System.Int32), v13 @ S1_v5 (System.Int32)
+	16 Nop
+	17 Return
+

@@ -1,0 +1,96 @@
+Type: Kiloo.Common.Ads.AdController+<>c__DisplayClass29_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xF7270B LocalGet 0
+	0xF7270D LocalGet 0
+	0xF7270F I32Load 2, 16
+	0xF72712 I32Const 1
+	0xF72714 I32Add
+	0xF72715 I32Store 2, 16
+	0xF72718 LocalGet 0
+	0xF7271A I32Load 2, 16
+	0xF7271D LocalGet 0
+	0xF7271F I32Const 0
+	0xF72721 Call 42952
+	0xF72725 I32Ge_S
+	0xF72726 If -64
+	0xF72728 LocalGet 0
+	0xF7272A I32Const 0
+	0xF7272C I32Store 2, 16
+	0xF7272F End
+	0xF72730 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S1_v3, [this @ L0 (Kiloo.Common.Ads.AdController+<>c__DisplayClass29_0)+10], 1
+	5 Move [this @ L0 (Kiloo.Common.Ads.AdController+<>c__DisplayClass29_0)+10], v5 @ S1_v3
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Call CacheList.GetLocationToShow, v10 @ S1_v5 (Kiloo.Common.Ads.AdLocation), this @ L0 (Kiloo.Common.Ads.AdController+<>c__DisplayClass29_0)
+	11 CheckGreaterOrEqual v11 @ S0_v4 (System.Boolean), [this @ L0 (Kiloo.Common.Ads.AdController+<>c__DisplayClass29_0)+10], v10 @ S1_v5 (Kiloo.Common.Ads.AdLocation)
+	12 Not v12 @ TEMP_v1 (System.Boolean), v11 @ S0_v4 (System.Boolean)
+	13 ConditionalJump @b5, v12 @ TEMP_v1 (System.Boolean)
+	14 Nop
+	15 Nop
+	16 Move [this @ L0 (Kiloo.Common.Ads.AdController+<>c__DisplayClass29_0)+10], 0
+	17 Nop
+	18 Nop
+	19 Return
+
+Method: System.Boolean <IsCached>b__0(Kiloo.Common.Ads.AdLocation location)
+
+Disassembly:
+	0xF73D04 I32Const 4560841
+	0xF73D09 I32Load8_S 0, 0
+	0xF73D0C I32Eqz
+	0xF73D0D If -64
+	0xF73D0F I32Const 2960596
+	0xF73D14 I32Load 2, 0
+	0xF73D17 Call 73003
+	0xF73D1B I32Const 4560841
+	0xF73D20 I32Const 1
+	0xF73D22 I32Store8 0, 0
+	0xF73D25 End
+	0xF73D26 LocalGet 0
+	0xF73D28 I32Load 2, 8
+	0xF73D2B I32Load 2, 16
+	0xF73D2E LocalGet 1
+	0xF73D30 I32Const 4449968
+	0xF73D35 I32Load 2, 0
+	0xF73D38 Call 29792
+	0xF73D3C I32Const 0
+	0xF73D3E Call 42976
+	0xF73D42 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v11, [2D2CD4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4597C9], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v13 @ S0_v6 (Kiloo.Common.Ads.AdType), this.adType (Kiloo.Common.Ads.AdType)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call Dictionary`2<System.String, Kiloo.Common.Ads.PriorityList>.get_Item, v19 @ S0_v8 (Kiloo.Common.Ads.PriorityList), [v13 @ S0_v6 (Kiloo.Common.Ads.AdType)+10], location @ L1 (Kiloo.Common.Ads.AdLocation)
+	19 Nop
+	20 Call AbstractListAdapter.HasStableIds, returnVal1 @ S0_v9 (System.Boolean), v19 @ S0_v8 (Kiloo.Common.Ads.PriorityList)
+	21 Nop
+	22 Return returnVal1 @ S0_v9 (System.Boolean)
+

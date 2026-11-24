@@ -1,0 +1,196 @@
+Type: SYBO.Components.BuildSizeMonitor.BuildSizeMonitorLogCategory
+
+Method: System.Void .ctor(System.Int32 categoryId)
+
+Disassembly:
+	0xFF97CA I32Const 4562668
+	0xFF97CF I32Load8_S 0, 0
+	0xFF97D2 I32Eqz
+	0xFF97D3 If -64
+	0xFF97D5 I32Const 3002840
+	0xFF97DA I32Load 2, 0
+	0xFF97DD Call 73003
+	0xFF97E1 I32Const 4562668
+	0xFF97E6 I32Const 1
+	0xFF97E8 I32Store8 0, 0
+	0xFF97EB End
+	0xFF97EC I32Const 4440892
+	0xFF97F1 I32Load 2, 0
+	0xFF97F4 LocalTee 2
+	0xFF97F6 I32Load16_S 1, 186
+	0xFF97FA I32Const 512
+	0xFF97FD I32And
+	0xFF97FE If -64
+	0xFF9800 LocalGet 2
+	0xFF9802 I32Load 2, 116
+	0xFF9805 I32Eqz
+	0xFF9806 If -64
+	0xFF9808 LocalGet 2
+	0xFF980A Call 72345
+	0xFF980E End
+	0xFF980F End
+	0xFF9810 LocalGet 0
+	0xFF9812 LocalGet 1
+	0xFF9814 I32Store 2, 8
+	0xFF9817 LocalGet 0
+	0xFF9819 I32Const 12
+	0xFF981B I32Add
+	0xFF981C I32Const 4540152
+	0xFF9821 I32Load 2, 0
+	0xFF9824 I32Store 2, 0
+	0xFF9827 I32Const 4440868
+	0xFF982C I32Load 2, 0
+	0xFF982F LocalTee 1
+	0xFF9831 I32Load16_S 1, 186
+	0xFF9835 I32Const 512
+	0xFF9838 I32And
+	0xFF9839 If -64
+	0xFF983B LocalGet 1
+	0xFF983D I32Load 2, 116
+	0xFF9840 I32Eqz
+	0xFF9841 If -64
+	0xFF9843 LocalGet 1
+	0xFF9845 Call 72345
+	0xFF9849 I32Const 4440868
+	0xFF984E I32Load 2, 0
+	0xFF9851 LocalSet 1
+	0xFF9853 End
+	0xFF9854 End
+	0xFF9855 LocalGet 1
+	0xFF9857 I32Load 2, 92
+	0xFF985A I32Const 40
+	0xFF985C I32Add
+	0xFF985D LocalGet 0
+	0xFF985F I32Store 2, 0
+	0xFF9862 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v32, [2DD1D8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v32
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [459EEC], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<SYBO.Components.Logging.LogCategory>), typeof(SYBO.Components.Logging.LogCategory)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<SYBO.Components.Logging.LogCategory>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b14, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v27 (Il2CppClass<SYBO.Components.Logging.LogCategory>), typeof(SYBO.Components.Logging.LogCategory)
+	21 Nop
+	22 CheckEqual v20 @ S0_v29 (System.Boolean), [v18 @ S0_v27 (Il2CppClass<SYBO.Components.Logging.LogCategory>)+74], 0
+	23 Not v21 @ TEMP_v7 (System.Boolean), v20 @ S0_v29 (System.Boolean)
+	24 ConditionalJump @b14, v21 @ TEMP_v7 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(SYBO.Components.Logging.LogCategory)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move this.CategoryId (System.Int32), categoryId @ L1 (System.Int32)
+	32 Nop
+	33 Nop
+	34 Add v31 @ S0_v12, this @ L0 (SYBO.Components.BuildSizeMonitor.BuildSizeMonitorLogCategory), 12
+	35 Nop
+	36 Nop
+	37 Move [v31 @ S0_v12], "Settings"
+	38 Nop
+	39 Move v35 @ S0_v14 (Il2CppClass<SYBO.Components.Logging.Log>), typeof(SYBO.Components.Logging.Log)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 And v39 @ S0_v16, [v35 @ S0_v14 (Il2CppClass<SYBO.Components.Logging.Log>)+BA], 512
+	44 CheckEqual v40 @ TEMP_v4 (System.Boolean), v39 @ S0_v16, 0
+	45 ConditionalJump @b12, v40 @ TEMP_v4 (System.Boolean)
+	46 Move v41 @ S0_v21 (Il2CppClass<SYBO.Components.Logging.Log>), typeof(SYBO.Components.Logging.Log)
+	47 Nop
+	48 CheckEqual v43 @ S0_v23 (System.Boolean), [v41 @ S0_v21 (Il2CppClass<SYBO.Components.Logging.Log>)+74], 0
+	49 Not v44 @ TEMP_v6 (System.Boolean), v43 @ S0_v23 (System.Boolean)
+	50 ConditionalJump @b12, v44 @ TEMP_v6 (System.Boolean)
+	51 Nop
+	52 CallVoid 11A99, typeof(SYBO.Components.Logging.Log)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Add v53 @ S0_v20, [v45 @ L1_v2 (Il2CppClass<SYBO.Components.Logging.Log>)+5C], 40
+	62 Nop
+	63 Move [v53 @ S0_v20], this @ L0 (SYBO.Components.BuildSizeMonitor.BuildSizeMonitorLogCategory)
+	64 Nop
+	65 Return
+
+Method: System.String[] GetCallstackPrefixes()
+
+Disassembly:
+	0xFF9867 I32Const 4562669
+	0xFF986C I32Load8_S 0, 0
+	0xFF986F I32Eqz
+	0xFF9870 If -64
+	0xFF9872 I32Const 3002836
+	0xFF9877 I32Load 2, 0
+	0xFF987A Call 73003
+	0xFF987E I32Const 4562669
+	0xFF9883 I32Const 1
+	0xFF9885 I32Store8 0, 0
+	0xFF9888 End
+	0xFF9889 I32Const 4427812
+	0xFF988E I32Load 2, 0
+	0xFF9891 I32Const 1
+	0xFF9893 Call 71670
+	0xFF9897 LocalTee 2
+	0xFF9899 I32Const 4540156
+	0xFF989E I32Load 2, 0
+	0xFF98A1 Call 29652
+	0xFF98A5 LocalGet 2
+	0xFF98A7 I32Const 16
+	0xFF98A9 I32Add
+	0xFF98AA I32Const 4540156
+	0xFF98AF I32Load 2, 0
+	0xFF98B2 I32Store 2, 0
+	0xFF98B5 LocalGet 2
+	0xFF98B7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v12, [2DD1D4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [459EED], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Newobj v14 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Throw typeof(System.ArrayTypeMismatchException)
+	20 Nop
+	21 Nop
+	22 Add v20 @ S0_v9, v14 @ S0_v7 (System.OverflowException), 16
+	23 Nop
+	24 Nop
+	25 Move [v20 @ S0_v9], "SYBO.Components.Settings."
+	26 Nop
+	27 Nop
+	28 Return v14 @ S0_v7 (System.OverflowException)
+

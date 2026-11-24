@@ -1,0 +1,115 @@
+Type: System.Runtime.Serialization.Formatters.Binary.BinaryObject
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void Set(System.Int32 objectId, System.Int32 mapId)
+
+Disassembly:
+	0x1236847 LocalGet 0
+	0x1236849 LocalGet 1
+	0x123684B I32Store 2, 8
+	0x123684E LocalGet 0
+	0x1236850 I32Const 12
+	0x1236852 I32Add
+	0x1236853 LocalGet 2
+	0x1236855 I32Store 2, 0
+	0x1236858 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.objectId (System.Int32), objectId @ L1 (System.Int32)
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v3, this @ L0 (System.Runtime.Serialization.Formatters.Binary.BinaryObject), 12
+	6 Nop
+	7 Move [v6 @ S0_v3], mapId @ L2 (System.Int32)
+	8 Nop
+	9 Return
+
+Method: System.Void Write(System.Runtime.Serialization.Formatters.Binary.__BinaryWriter sout)
+
+Disassembly:
+	0x123924E LocalGet 0
+	0x1239250 LocalGet 1
+	0x1239252 I32Const 0
+	0x1239254 Call 57339
+	0x1239258 I32Store 2, 8
+	0x123925B LocalGet 0
+	0x123925D LocalGet 1
+	0x123925F I32Const 0
+	0x1239261 Call 57339
+	0x1239265 I32Store 2, 12
+	0x1239268 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call __BinaryParser.ReadSByte, v5 @ S1_v2 (System.SByte), sout @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryWriter)
+	4 Move this.objectId (System.Int32), v5 @ S1_v2 (System.SByte)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call __BinaryParser.ReadSByte, v9 @ S1_v4 (System.SByte), sout @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryWriter)
+	9 Move this.mapId (System.Int32), v9 @ S1_v4 (System.SByte)
+	10 Nop
+	11 Return
+
+Method: System.Void Read(System.Runtime.Serialization.Formatters.Binary.__BinaryParser input)
+
+Disassembly:
+	0x124522A LocalGet 1
+	0x124522C I32Const 1
+	0x124522E I32Const 0
+	0x1245230 Call 49439
+	0x1245234 LocalGet 1
+	0x1245236 LocalGet 0
+	0x1245238 I32Load 2, 8
+	0x124523B I32Const 0
+	0x124523D Call 49449
+	0x1245241 LocalGet 1
+	0x1245243 LocalGet 0
+	0x1245245 I32Load 2, 12
+	0x1245248 I32Const 0
+	0x124524A Call 49449
+	0x124524E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid __BinaryWriter.WriteBytes, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), 1
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CallVoid __BinaryWriter.WriteSByte, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), this.objectId (System.Int32)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 CallVoid __BinaryWriter.WriteSByte, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), this.mapId (System.Int32)
+	14 Nop
+	15 Return
+
+Method: System.Void Dump()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

@@ -1,0 +1,46 @@
+Type: UnityEngine.Rendering.GraphicsSettings
+
+Method: System.Boolean get_lightsUseLinearIntensity()
+
+Disassembly:
+	0x137C70F I32Const 3926276
+	0x137C714 I32Load 2, 0
+	0x137C717 LocalTee 0
+	0x137C719 I32Eqz
+	0x137C71A If -64
+	0x137C71C I32Const 3926276
+	0x137C721 I32Const 3497200
+	0x137C726 Call 73893
+	0x137C72A LocalTee 0
+	0x137C72C I32Store 2, 0
+	0x137C72F End
+	0x137C730 LocalGet 0
+	0x137C732 I32Const 127
+	0x137C735 I32And
+	0x137C736 I32Const 1599
+	0x137C739 I32Add
+	0x137C73A CallIndirect 38, 0
+	0x137C73D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE904], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v5, 3497200
+	9 Nop
+	10 Move [3BE904], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 And v15 @ S0_v6, v10 @ L0_v2, 127
+	15 Nop
+	16 Add v17 @ S0_v7, v15 @ S0_v6, 1599
+	17 IndirectCall v17 @ S0_v7, returnVal1 @ S0_v8 (System.Boolean)
+	18 Nop
+	19 Return returnVal1 @ S0_v8 (System.Boolean)
+

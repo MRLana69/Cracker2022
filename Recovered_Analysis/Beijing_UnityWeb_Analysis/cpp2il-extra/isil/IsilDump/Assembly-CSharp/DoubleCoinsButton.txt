@@ -1,0 +1,217 @@
+Type: DoubleCoinsButton
+
+Method: System.Void Awake()
+
+Disassembly:
+	0xCEEFC5 I32Const 0
+	0xCEEFC7 Call 64120
+	0xCEEFCB I32Const 1024
+	0xCEEFCE I32Gt_S
+	0xCEEFCF If -64
+	0xCEEFD1 LocalGet 0
+	0xCEEFD3 I32Const 2
+	0xCEEFD5 I32Store 2, 8
+	0xCEEFD8 Else
+	0xCEEFD9 LocalGet 0
+	0xCEEFDB I32Const 0
+	0xCEEFDD I32Store 2, 8
+	0xCEEFE0 End
+	0xCEEFE1 LocalGet 0
+	0xCEEFE3 I32Const 1
+	0xCEEFE5 I32Store 2, 20
+	0xCEEFE8 LocalGet 0
+	0xCEEFEA I32Const 0
+	0xCEEFEC Call 64120
+	0xCEEFF0 I32Const 480
+	0xCEEFF3 I32Gt_S
+	0xCEEFF4 I32Store8 0, 24
+	0xCEEFF7 LocalGet 0
+	0xCEEFF9 F32Const 264
+	0xCEEFFE F32Store 2, 16
+	0xCEF001 End
+
+ISIL:
+	0 Nop
+	1 Call Screen.get_sleepTimeout, v1 @ S0_v2 (System.Int32)
+	2 Nop
+	3 CheckGreater v3 @ S0_v3 (System.Boolean), v1 @ S0_v2 (System.Int32), 1024
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Move this.m_CachedPtr (System.IntPtr), 2
+	9 Jump @b7
+	10 Nop
+	11 Nop
+	12 Move this.m_CachedPtr (System.IntPtr), 0
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [this @ L0 (DoubleCoinsButton)+14], 1
+	17 Nop
+	18 Nop
+	19 Call Screen.get_sleepTimeout, v16 @ S1_v5 (System.Int32)
+	20 Nop
+	21 CheckGreater v18 @ S1_v6 (System.Boolean), v16 @ S1_v5 (System.Int32), 480
+	22 Move [this @ L0 (DoubleCoinsButton)+18], v18 @ S1_v6 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Move this._notOwnedLabelColor (UnityEngine.Color), 264f
+	26 Nop
+	27 Return
+
+Method: System.Void ChangeState(System.Boolean owned)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void Update()
+
+Disassembly:
+	0xCEF796 I32Const 4553393
+	0xCEF79B I32Load8_S 0, 0
+	0xCEF79E I32Eqz
+	0xCEF79F If -64
+	0xCEF7A1 I32Const 2955360
+	0xCEF7A6 I32Load 2, 0
+	0xCEF7A9 Call 73003
+	0xCEF7AD I32Const 4553393
+	0xCEF7B2 I32Const 1
+	0xCEF7B4 I32Store8 0, 0
+	0xCEF7B7 End
+	0xCEF7B8 LocalGet 0
+	0xCEF7BA I32Load 2, 12
+	0xCEF7BD I32Const 4435772
+	0xCEF7C2 I32Load 2, 0
+	0xCEF7C5 LocalTee 0
+	0xCEF7C7 I32Load16_S 1, 186
+	0xCEF7CB I32Const 512
+	0xCEF7CE I32And
+	0xCEF7CF If -64
+	0xCEF7D1 LocalGet 0
+	0xCEF7D3 I32Load 2, 116
+	0xCEF7D6 I32Eqz
+	0xCEF7D7 If -64
+	0xCEF7D9 LocalGet 0
+	0xCEF7DB Call 72345
+	0xCEF7DF End
+	0xCEF7E0 End
+	0xCEF7E1 I32Const 4530412
+	0xCEF7E6 I32Load 2, 0
+	0xCEF7E9 I32Const 0
+	0xCEF7EB Call 41749
+	0xCEF7EF I32Const 0
+	0xCEF7F1 Call 39963
+	0xCEF7F5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v8, [2D1860]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [457AB1], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S1_v3 (Il2CppClass<Strings>), typeof(Strings)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 And v19 @ S1_v5, [v15 @ S1_v3 (Il2CppClass<Strings>)+BA], 512
+	20 CheckEqual v20 @ TEMP_v2 (System.Boolean), v19 @ S1_v5, 0
+	21 ConditionalJump @b11, v20 @ TEMP_v2 (System.Boolean)
+	22 Move v21 @ S1_v10 (Il2CppClass<Strings>), typeof(Strings)
+	23 Nop
+	24 CheckEqual v23 @ S1_v12 (System.Boolean), [v21 @ S1_v10 (Il2CppClass<Strings>)+74], 0
+	25 Not v24 @ TEMP_v4 (System.Boolean), v23 @ S1_v12 (System.Boolean)
+	26 ConditionalJump @b11, v24 @ TEMP_v4 (System.Boolean)
+	27 Nop
+	28 CallVoid 11A99, typeof(Strings)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call Strings.GetDefault, v31 @ S1_v9 (System.String), "DOUBLE_COINS_TITLE"
+	35 Nop
+	36 CallVoid UILabel.set_fontSize, this._doubleCoinsLabel (UILabel), v31 @ S1_v9 (System.String)
+	37 Nop
+	38 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xCEFC89 LocalGet 0
+	0xCEFC8B I32Load8_S 0, 32
+	0xCEFC8E If -64
+	0xCEFC90 LocalGet 0
+	0xCEFC92 LocalGet 0
+	0xCEFC94 I32Load8_S 0, 32
+	0xCEFC97 I32Const 0
+	0xCEFC99 I32Ne
+	0xCEFC9A I32Const 1
+	0xCEFC9C I32Xor
+	0xCEFC9D I32Store8 0, 32
+	0xCEFCA0 LocalGet 0
+	0xCEFCA2 LocalGet 0
+	0xCEFCA4 I32Load8_S 0, 132
+	0xCEFCA8 I32Const 0
+	0xCEFCAA I32Ne
+	0xCEFCAB I32Const 1
+	0xCEFCAD I32Xor
+	0xCEFCAE I32Store8 0, 132
+	0xCEFCB2 LocalGet 0
+	0xCEFCB4 LocalGet 0
+	0xCEFCB6 I32Load8_S 0, 132
+	0xCEFCBA I32Const 0
+	0xCEFCBC I32Ne
+	0xCEFCBD I32Const 0
+	0xCEFCBF Call 32569
+	0xCEFCC3 End
+	0xCEFCC4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Not v3 @ TEMP_v1 (System.Boolean), this._switch (System.Boolean)
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CheckNotEqual v8 @ S1_v4 (System.Boolean), this._switch (System.Boolean), 0
+	9 Nop
+	10 Xor v10 @ S1_v5 (System.Boolean), v8 @ S1_v4 (System.Boolean), 1
+	11 Move this._switch (System.Boolean), v10 @ S1_v5 (System.Boolean)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CheckNotEqual v15 @ S1_v8 (System.Boolean), this.owned (System.Boolean), 0
+	17 Nop
+	18 Xor v17 @ S1_v9 (System.Boolean), v15 @ S1_v8 (System.Boolean), 1
+	19 Move this.owned (System.Boolean), v17 @ S1_v9 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CheckNotEqual v22 @ S1_v12 (System.Boolean), this.owned (System.Boolean), 0
+	25 Nop
+	26 CallVoid EventButtonBreadcrumb.PopupWasShown, this @ L0 (DoubleCoinsButton), v22 @ S1_v12 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Return
+

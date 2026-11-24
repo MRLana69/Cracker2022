@@ -1,0 +1,263 @@
+Type: SYBO.Common.Math.MathUtil
+
+Method: System.Single SnapValueStep(System.Single value, System.Single step)
+
+Disassembly:
+	0x102A583 I32Const 4563330
+	0x102A588 I32Load8_S 0, 0
+	0x102A58B I32Eqz
+	0x102A58C If -64
+	0x102A58E I32Const 2983772
+	0x102A593 I32Load 2, 0
+	0x102A596 Call 73003
+	0x102A59A I32Const 4563330
+	0x102A59F I32Const 1
+	0x102A5A1 I32Store8 0, 0
+	0x102A5A4 End
+	0x102A5A5 I32Const 4433348
+	0x102A5AA I32Load 2, 0
+	0x102A5AD LocalTee 2
+	0x102A5AF I32Load16_S 1, 186
+	0x102A5B3 I32Const 512
+	0x102A5B6 I32And
+	0x102A5B7 If -64
+	0x102A5B9 LocalGet 2
+	0x102A5BB I32Load 2, 116
+	0x102A5BE I32Eqz
+	0x102A5BF If -64
+	0x102A5C1 LocalGet 2
+	0x102A5C3 Call 72345
+	0x102A5C7 End
+	0x102A5C8 End
+	0x102A5C9 LocalGet 1
+	0x102A5CB F32Const 1
+	0x102A5D0 F32Gt
+	0x102A5D1 If -3
+	0x102A5D3 F32Const 1
+	0x102A5D8 Else
+	0x102A5D9 LocalGet 1
+	0x102A5DB End
+	0x102A5DC F32Const 1000
+	0x102A5E1 F32Mul
+	0x102A5E2 I32Const 0
+	0x102A5E4 Call 63152
+	0x102A5E8 LocalSet 4
+	0x102A5EA F32Const 0.001
+	0x102A5EF LocalGet 0
+	0x102A5F1 F32Mul
+	0x102A5F2 LocalSet 1
+	0x102A5F4 F32Const 0
+	0x102A5F9 LocalSet 0
+	0x102A5FB I32Const 0
+	0x102A5FD LocalSet 2
+	0x102A5FF Loop -64
+	0x102A601 LocalGet 2
+	0x102A603 LocalGet 4
+	0x102A605 I32Lt_S
+	0x102A606 If -64
+	0x102A608 I32Const 4433348
+	0x102A60D I32Load 2, 0
+	0x102A610 LocalTee 3
+	0x102A612 I32Load16_S 1, 186
+	0x102A616 I32Const 512
+	0x102A619 I32And
+	0x102A61A If -64
+	0x102A61C LocalGet 3
+	0x102A61E I32Load 2, 116
+	0x102A621 I32Eqz
+	0x102A622 If -64
+	0x102A624 LocalGet 3
+	0x102A626 Call 72345
+	0x102A62A End
+	0x102A62B End
+	0x102A62C LocalGet 0
+	0x102A62E F32Const 1
+	0x102A633 LocalGet 1
+	0x102A635 I32Const 0
+	0x102A637 Call 63156
+	0x102A63B LocalSet 0
+	0x102A63D LocalGet 2
+	0x102A63F I32Const 1
+	0x102A641 I32Add
+	0x102A642 LocalSet 2
+	0x102A644 Br 1
+	0x102A646 End
+	0x102A647 End
+	0x102A648 LocalGet 0
+	0x102A64A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v43, [2D875C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v43
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45A182], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b21, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v38 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	21 Nop
+	22 CheckEqual v20 @ S0_v40 (System.Boolean), [v18 @ S0_v38 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	23 Not v21 @ TEMP_v10 (System.Boolean), v20 @ S0_v40 (System.Boolean)
+	24 ConditionalJump @b21, v21 @ TEMP_v10 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CheckGreater v28 @ S0_v11 (System.Boolean), step @ L1 (System.Single), 1f
+	32 Not v29 @ TEMP_v4 (System.Boolean), v28 @ S0_v11 (System.Boolean)
+	33 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	34 Nop
+	35 Jump @b18
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Multiply v34 @ S0_v13 (System.Single), v32 @ S0_v12 (System.Single), 1000f
+	40 Nop
+	41 Call GUILayout.Width, v36 @ S0_v14 (UnityEngine.GUILayoutOption), v34 @ S0_v13 (System.Single)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Multiply v41 @ S0_v16 (System.Single), 0.001f, value @ L0 (System.Single)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CheckLess v68 @ S0_v21 (System.Boolean), v56 @ L2_v3, v36 @ S0_v14 (UnityEngine.GUILayoutOption)
+	55 Not v69 @ TEMP_v6 (System.Boolean), v68 @ S0_v21 (System.Boolean)
+	56 ConditionalJump @b16, v69 @ TEMP_v6 (System.Boolean)
+	57 Nop
+	58 Move v71 @ S0_v24 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 And v74 @ S0_v26, [v71 @ S0_v24 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	63 CheckEqual v75 @ TEMP_v7 (System.Boolean), v74 @ S0_v26, 0
+	64 ConditionalJump @b19, v75 @ TEMP_v7 (System.Boolean)
+	65 Move v77 @ S0_v32 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	66 Nop
+	67 CheckEqual v79 @ S0_v34 (System.Boolean), [v77 @ S0_v32 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	68 Not v80 @ TEMP_v9 (System.Boolean), v79 @ S0_v34 (System.Boolean)
+	69 ConditionalJump @b19, v80 @ TEMP_v9 (System.Boolean)
+	70 Nop
+	71 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Call Mathf.LerpUnclamped, v85 @ S0_v29 (System.Single), v58 @ L0_v2 (System.Single), 1f, v41 @ S0_v16 (System.Single)
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Add v65 @ S0_v31, v56 @ L2_v3, 1
+	83 Nop
+	84 Jump @b20
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Return v58 @ L0_v2 (System.Single)
+
+Method: System.Single ClampMaxAboveChangedMin(System.Single max, System.Single min, System.Single minPrev)
+
+Disassembly:
+	0xE2A94F LocalGet 0
+	0xE2A951 LocalGet 2
+	0xE2A953 LocalGet 1
+	0xE2A955 F32Div
+	0xE2A956 F32Mul
+	0xE2A957 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Divide v6 @ S1_v2 (System.Single), minPrev @ L2 (System.Single), min @ L1 (System.Single)
+	4 Multiply returnVal1 @ S0_v2 (System.Single), max @ L0 (System.Single), v6 @ S1_v2 (System.Single)
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Single)
+
+Method: System.Single ClampMinBelowChangedMax(System.Single min, System.Single max, System.Single maxPrev)
+
+Disassembly:
+	0xE25E1C LocalGet 0
+	0xE25E1E LocalGet 1
+	0xE25E20 F32Lt
+	0xE25E21 LocalGet 1
+	0xE25E23 LocalGet 2
+	0xE25E25 F32Ne
+	0xE25E26 I32And
+	0xE25E27 If -3
+	0xE25E29 LocalGet 1
+	0xE25E2B Else
+	0xE25E2C LocalGet 0
+	0xE25E2E End
+	0xE25E2F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckLess v4 @ S0_v2 (System.Boolean), min @ L0 (System.Single), max @ L1 (System.Single)
+	3 Nop
+	4 Nop
+	5 CheckNotEqual v8 @ S1_v3 (System.Boolean), max @ L1 (System.Single), maxPrev @ L2 (System.Single)
+	6 And v9 @ S0_v3, v4 @ S0_v2 (System.Boolean), v8 @ S1_v3 (System.Boolean)
+	7 CheckEqual v10 @ TEMP_v1 (System.Boolean), v9 @ S0_v3, 0
+	8 ConditionalJump @b4, v10 @ TEMP_v1 (System.Boolean)
+	9 Nop
+	10 Jump @b5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Return returnVal1 @ S0_v4 (System.Single)
+
+Method: System.Boolean IsValueInRange(System.Single value, System.Single min, System.Single max, System.Boolean minInclusive = True, System.Boolean maxInclusive = True)
+
+Disassembly:
+	0x160039E I32Const 57
+	0x16003A0 Call 1
+	0x16003A2 I32Const 0
+	0x16003A4 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 57
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.Boolean AreRangesOverlapping(System.Single range1Start, System.Single range1End, System.Single range2Start, System.Single range2End)
+
+Disassembly:
+	0x1600383 I32Const 54
+	0x1600385 Call 1
+	0x1600387 I32Const 0
+	0x1600389 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 54
+	2 Nop
+	3 Nop
+	4 Return 0
+

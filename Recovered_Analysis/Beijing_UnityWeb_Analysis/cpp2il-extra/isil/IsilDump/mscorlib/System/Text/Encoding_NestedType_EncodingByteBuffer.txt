@@ -1,0 +1,698 @@
+Type: System.Text.Encoding+EncodingByteBuffer
+
+Method: System.Void .ctor(System.Text.Encoding inEncoding, System.Text.EncoderNLS inEncoder, System.Byte* inByteStart, System.Int32 inByteCount, System.Char* inCharStart, System.Int32 inCharCount)
+
+Disassembly:
+	0x1330854 LocalGet 0
+	0x1330856 I32Const 24
+	0x1330858 I32Add
+	0x1330859 LocalGet 1
+	0x133085B I32Store 2, 0
+	0x133085E LocalGet 0
+	0x1330860 I32Const 28
+	0x1330862 I32Add
+	0x1330863 LocalGet 2
+	0x1330865 I32Store 2, 0
+	0x1330868 LocalGet 0
+	0x133086A LocalGet 3
+	0x133086C I32Store 2, 8
+	0x133086F LocalGet 0
+	0x1330871 LocalGet 3
+	0x1330873 I32Store 2, 12
+	0x1330876 LocalGet 0
+	0x1330878 LocalGet 4
+	0x133087A I32Const 1
+	0x133087C I32Shl
+	0x133087D LocalGet 3
+	0x133087F I32Add
+	0x1330880 I32Store 2, 16
+	0x1330883 LocalGet 0
+	0x1330885 LocalGet 5
+	0x1330887 I32Store 2, 32
+	0x133088A LocalGet 0
+	0x133088C LocalGet 5
+	0x133088E I32Store 2, 40
+	0x1330891 LocalGet 0
+	0x1330893 LocalGet 6
+	0x1330895 LocalGet 5
+	0x1330897 I32Add
+	0x1330898 I32Store 2, 36
+	0x133089B LocalGet 0
+	0x133089D I32Load 2, 28
+	0x13308A0 If -64
+	0x13308A2 LocalGet 0
+	0x13308A4 I32Const 44
+	0x13308A6 I32Add
+	0x13308A7 LocalGet 0
+	0x13308A9 I32Load 2, 28
+	0x13308AC I32Const 0
+	0x13308AE Call 61361
+	0x13308B2 I32Store 2, 0
+	0x13308B5 Else
+	0x13308B6 LocalGet 0
+	0x13308B8 I32Const 44
+	0x13308BA I32Add
+	0x13308BB I32Const 4
+	0x13308BD LocalGet 1
+	0x13308BF I32Load 2, 24
+	0x13308C2 Call 29262
+	0x13308C6 I32Store 2, 0
+	0x13308C9 End
+	0x13308CA LocalGet 0
+	0x13308CC I32Load 2, 16
+	0x13308CF LocalSet 1
+	0x13308D1 LocalGet 0
+	0x13308D3 I32Load 2, 44
+	0x13308D6 LocalTee 2
+	0x13308D8 LocalGet 0
+	0x13308DA I32Load 2, 40
+	0x13308DD I32Store 2, 8
+	0x13308E0 LocalGet 2
+	0x13308E2 LocalGet 1
+	0x13308E4 I32Store 2, 12
+	0x13308E7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Text.Encoding+EncodingByteBuffer), 24
+	3 Nop
+	4 Move [v3 @ S0_v2], inEncoding @ L1 (System.Text.Encoding)
+	5 Nop
+	6 Nop
+	7 Add v8 @ S0_v4, this @ L0 (System.Text.Encoding+EncodingByteBuffer), 28
+	8 Nop
+	9 Move [v8 @ S0_v4], inEncoder @ L2 (System.Text.EncoderNLS)
+	10 Nop
+	11 Nop
+	12 Move this.bytes (System.Byte*), inByteStart @ L3 (System.Byte*)
+	13 Nop
+	14 Nop
+	15 Move this.byteStart (System.Byte*), inByteStart @ L3 (System.Byte*)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 ShiftLeft v20 @ S1_v8 (System.Int32), inByteCount @ L4 (System.Int32), 1
+	20 Nop
+	21 Add v22 @ S1_v9 (System.Byte*), v20 @ S1_v8 (System.Int32), inByteStart @ L3 (System.Byte*)
+	22 Move this.byteEnd (System.Byte*), v22 @ S1_v9 (System.Byte*)
+	23 Nop
+	24 Nop
+	25 Move this.byteCountResult (System.Int32), inCharStart @ L5 (System.Char*)
+	26 Nop
+	27 Nop
+	28 Move this.encoder (System.Text.EncoderNLS), inCharStart @ L5 (System.Char*)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Add v32 @ S1_v13 (System.Text.Encoding), inCharCount @ L6 (System.Int32), inCharStart @ L5 (System.Char*)
+	33 Move this.enc (System.Text.Encoding), v32 @ S1_v13 (System.Text.Encoding)
+	34 Nop
+	35 Nop
+	36 CheckEqual v35 @ TEMP_v1 (System.Boolean), this.charEnd (System.Char*), 0
+	37 ConditionalJump @b5, v35 @ TEMP_v1 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Add v38 @ S0_v22, this @ L0 (System.Text.Encoding+EncodingByteBuffer), 44
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Call Decoder.get_InternalHasFallbackBuffer, v42 @ S1_v24 (System.Boolean), this.charEnd (System.Char*)
+	45 Move [v38 @ S0_v22], v42 @ S1_v24 (System.Boolean)
+	46 Jump @b7
+	47 Nop
+	48 Nop
+	49 Add v45 @ S0_v20, this @ L0 (System.Text.Encoding+EncodingByteBuffer), 44
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Call 724E, v49 @ S1_v20, 4, inEncoding.decoderFallback (System.Text.DecoderFallback)
+	54 Move [v45 @ S0_v20], v49 @ S1_v20
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Move v57 @ S0_v17 (System.Text.EncoderFallbackBuffer), this.fallbackBuffer (System.Text.EncoderFallbackBuffer)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Move v57.charStart (System.Char*), this.encoder (System.Text.EncoderNLS)
+	65 Nop
+	66 Nop
+	67 Move v57.charEnd (System.Char*), this.byteEnd (System.Byte*)
+	68 Nop
+	69 Return
+
+Method: System.Boolean AddByte(System.Byte b, System.Int32 moreBytesExpected)
+
+Disassembly:
+	0x13308EA Block -1
+	0x13308EC Block -64
+	0x13308EE LocalGet 0
+	0x13308F0 I32Load 2, 8
+	0x13308F3 I32Eqz
+	0x13308F4 BrIf 0
+	0x13308F6 LocalGet 0
+	0x13308F8 I32Load 2, 8
+	0x13308FB LocalGet 0
+	0x13308FD I32Load 2, 16
+	0x1330900 I32Lt_U
+	0x1330901 If -1
+	0x1330903 LocalGet 0
+	0x1330905 LocalGet 0
+	0x1330907 I32Load 2, 8
+	0x133090A LocalTee 2
+	0x133090C I32Const 2
+	0x133090E I32Add
+	0x133090F I32Store 2, 8
+	0x1330912 LocalGet 2
+	0x1330914 LocalGet 1
+	0x1330916 I32Store16 1, 0
+	0x1330919 Br 1
+	0x133091B Else
+	0x133091C LocalGet 0
+	0x133091E LocalGet 0
+	0x1330920 I32Load 2, 40
+	0x1330923 LocalGet 2
+	0x1330925 I32Sub
+	0x1330926 I32Store 2, 40
+	0x1330929 LocalGet 0
+	0x133092B I32Load 2, 24
+	0x133092E LocalGet 0
+	0x1330930 I32Load 2, 28
+	0x1330933 LocalGet 0
+	0x1330935 I32Load 2, 40
+	0x1330938 LocalGet 0
+	0x133093A I32Load 2, 32
+	0x133093D I32Le_U
+	0x133093E I32Const 0
+	0x1330940 Call 61529
+	0x1330944 I32Const 0
+	0x1330946 End
+	0x1330947 Br 1
+	0x1330949 End
+	0x133094A LocalGet 0
+	0x133094C LocalGet 0
+	0x133094E I32Load 2, 20
+	0x1330951 I32Const 1
+	0x1330953 I32Add
+	0x1330954 I32Store 2, 20
+	0x1330957 I32Const 1
+	0x1330959 End
+	0x133095A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), this.bytes (System.Byte*), 0
+	3 ConditionalJump @b7, v3 @ S0_v3 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CheckLess v8 @ S0_v10 (System.Boolean), this.bytes (System.Byte*), this.byteEnd (System.Byte*)
+	9 Not v9 @ TEMP_v3 (System.Boolean), v8 @ S0_v10 (System.Boolean)
+	10 ConditionalJump @b5, v9 @ TEMP_v3 (System.Boolean)
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Add v32 @ S1_v15 (System.Byte*), this.bytes (System.Byte*), 2
+	17 Move this.bytes (System.Byte*), v32 @ S1_v15 (System.Byte*)
+	18 Nop
+	19 Nop
+	20 Move [v31 @ S1_v14 (System.Byte*)], b @ L1 (System.Byte)
+	21 Jump @b7
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Subtract v38 @ S1_v10 (System.Text.EncoderNLS), this.encoder (System.Text.EncoderNLS), moreBytesExpected @ L2 (System.Int32)
+	27 Move this.encoder (System.Text.EncoderNLS), v38 @ S1_v10 (System.Text.EncoderNLS)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckLessOrEqual v47 @ S2_v7 (System.Boolean), this.encoder (System.Text.EncoderNLS), this.byteCountResult (System.Int32)
+	37 Nop
+	38 CallVoid DefaultEncoder..ctor, this.charStart (System.Char*), this.charEnd (System.Char*), v47 @ S2_v7 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Jump @b8
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Add v27 @ S1_v5 (System.Char*), this.chars (System.Char*), 1
+	48 Move this.chars (System.Char*), v27 @ S1_v5 (System.Char*)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Return returnVal1 @ S0_v4 (System.Boolean)
+
+Method: System.Boolean AddByte(System.Byte b1)
+
+Disassembly:
+	0x13309FA LocalGet 0
+	0x13309FC I32Load 2, 8
+	0x13309FF If -1
+	0x1330A01 LocalGet 0
+	0x1330A03 I32Load 2, 8
+	0x1330A06 LocalSet 2
+	0x1330A08 I32Const 7
+	0x1330A0A LocalGet 0
+	0x1330A0C I32Load 2, 44
+	0x1330A0F LocalGet 1
+	0x1330A11 LocalGet 0
+	0x1330A13 I32Load 2, 40
+	0x1330A16 LocalGet 0
+	0x1330A18 I32Const 8
+	0x1330A1A I32Add
+	0x1330A1B Call 29450
+	0x1330A1F If -1
+	0x1330A21 LocalGet 0
+	0x1330A23 LocalGet 0
+	0x1330A25 I32Load 2, 20
+	0x1330A28 LocalSet 1
+	0x1330A2A LocalGet 0
+	0x1330A2C I32Load 2, 8
+	0x1330A2F LocalGet 2
+	0x1330A31 I32Sub
+	0x1330A32 LocalTee 0
+	0x1330A34 I32Const 2
+	0x1330A36 I32Div_S
+	0x1330A37 LocalGet 1
+	0x1330A39 I32Add
+	0x1330A3A I32Store 2, 20
+	0x1330A3D I32Const 1
+	0x1330A3F Else
+	0x1330A40 LocalGet 0
+	0x1330A42 LocalGet 0
+	0x1330A44 I32Load 2, 40
+	0x1330A47 LocalGet 1
+	0x1330A49 I32Load 2, 12
+	0x1330A4C I32Sub
+	0x1330A4D I32Store 2, 40
+	0x1330A50 LocalGet 0
+	0x1330A52 I32Load 2, 44
+	0x1330A55 I32Const 0
+	0x1330A57 Call 61389
+	0x1330A5B LocalGet 0
+	0x1330A5D I32Load 2, 24
+	0x1330A60 LocalGet 0
+	0x1330A62 I32Load 2, 28
+	0x1330A65 LocalGet 0
+	0x1330A67 I32Load 2, 8
+	0x1330A6A LocalGet 0
+	0x1330A6C I32Load 2, 12
+	0x1330A6F I32Eq
+	0x1330A70 I32Const 0
+	0x1330A72 Call 61529
+	0x1330A76 I32Const 0
+	0x1330A78 End
+	0x1330A79 Else
+	0x1330A7A LocalGet 0
+	0x1330A7C I32Load 2, 20
+	0x1330A7F LocalSet 2
+	0x1330A81 LocalGet 0
+	0x1330A83 I32Const 8
+	0x1330A85 LocalGet 0
+	0x1330A87 I32Load 2, 44
+	0x1330A8A LocalGet 1
+	0x1330A8C LocalGet 0
+	0x1330A8E I32Load 2, 40
+	0x1330A91 Call 29291
+	0x1330A95 LocalGet 2
+	0x1330A97 I32Add
+	0x1330A98 I32Store 2, 20
+	0x1330A9B I32Const 1
+	0x1330A9D End
+	0x1330A9E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), this.bytes (System.Byte*), 0
+	3 ConditionalJump @b9, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Add v16 @ S4_v5, this @ L0 (System.Text.Encoding+EncodingByteBuffer), 8
+	16 Call 730A, v17 @ S0_v11, 7, this.fallbackBuffer (System.Text.EncoderFallbackBuffer), b1 @ L1 (System.Byte), this.encoder (System.Text.EncoderNLS), v16 @ S4_v5
+	17 CheckEqual v29 @ TEMP_v3 (System.Boolean), v17 @ S0_v11, 0
+	18 ConditionalJump @b6, v29 @ TEMP_v3 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Subtract v40 @ S1_v18, this.bytes (System.Byte*), this.bytes (System.Byte*)
+	27 Nop
+	28 Nop
+	29 Divide v43 @ S1_v19, v40 @ S1_v18, 2
+	30 Nop
+	31 Add v45 @ S1_v20 (System.Char*), v43 @ S1_v19, this.chars (System.Char*)
+	32 Move this.chars (System.Char*), v45 @ S1_v20 (System.Char*)
+	33 Nop
+	34 Jump @b11
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Subtract v52 @ S1_v10 (System.Text.EncoderNLS), this.encoder (System.Text.EncoderNLS), [b1 @ L1 (System.Byte)+C]
+	41 Move this.encoder (System.Text.EncoderNLS), v52 @ S1_v10 (System.Text.EncoderNLS)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid DecoderFallbackBuffer..ctor, this.fallbackBuffer (System.Text.EncoderFallbackBuffer)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CheckEqual v74 @ S2_v11 (System.Boolean), this.bytes (System.Byte*), this.byteStart (System.Byte*)
+	55 Nop
+	56 CallVoid DefaultEncoder..ctor, this.charStart (System.Char*), this.charEnd (System.Char*), v74 @ S2_v11 (System.Boolean)
+	57 Nop
+	58 Nop
+	59 Jump @b12
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Call 726B, v28 @ S1_v3, 8, this.fallbackBuffer (System.Text.EncoderFallbackBuffer), b1 @ L1 (System.Byte), this.encoder (System.Text.EncoderNLS)
+	71 Nop
+	72 Add v31 @ S1_v4 (System.Char*), v28 @ S1_v3, this.chars (System.Char*)
+	73 Move this.chars (System.Char*), v31 @ S1_v4 (System.Char*)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Boolean AddByte(System.Byte b1, System.Byte b2)
+
+Disassembly:
+	0x13306EC Block -1
+	0x13306EE Block -64
+	0x13306F0 LocalGet 0
+	0x13306F2 I32Load 2, 8
+	0x13306F5 I32Eqz
+	0x13306F6 BrIf 0
+	0x13306F8 LocalGet 0
+	0x13306FA I32Load 2, 16
+	0x13306FD LocalGet 2
+	0x13306FF I32Sub
+	0x1330700 LocalGet 0
+	0x1330702 I32Load 2, 8
+	0x1330705 I32Gt_U
+	0x1330706 If -1
+	0x1330708 LocalGet 0
+	0x133070A LocalGet 0
+	0x133070C I32Load 2, 8
+	0x133070F LocalTee 2
+	0x1330711 I32Const 1
+	0x1330713 I32Add
+	0x1330714 I32Store 2, 8
+	0x1330717 LocalGet 2
+	0x1330719 LocalGet 1
+	0x133071B I32Store8 0, 0
+	0x133071E Br 1
+	0x1330720 Else
+	0x1330721 LocalGet 0
+	0x1330723 I32Const 1
+	0x1330725 I32Const 0
+	0x1330727 Call 61546
+	0x133072B I32Const 0
+	0x133072D End
+	0x133072E Br 1
+	0x1330730 End
+	0x1330731 LocalGet 0
+	0x1330733 LocalGet 0
+	0x1330735 I32Load 2, 32
+	0x1330738 I32Const 1
+	0x133073A I32Add
+	0x133073B I32Store 2, 32
+	0x133073E I32Const 1
+	0x1330740 End
+	0x1330741 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), this.bytes (System.Byte*), 0
+	3 ConditionalJump @b7, v3 @ S0_v3 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Subtract v8 @ S0_v10, this.byteEnd (System.Byte*), b2 @ L2 (System.Byte)
+	8 Nop
+	9 Nop
+	10 CheckGreater v11 @ S0_v11 (System.Boolean), v8 @ S0_v10, this.bytes (System.Byte*)
+	11 Not v12 @ TEMP_v3 (System.Boolean), v11 @ S0_v11 (System.Boolean)
+	12 ConditionalJump @b5, v12 @ TEMP_v3 (System.Boolean)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Add v34 @ S1_v12 (System.Byte*), this.bytes (System.Byte*), 1
+	19 Move this.bytes (System.Byte*), v34 @ S1_v12 (System.Byte*)
+	20 Nop
+	21 Nop
+	22 Move [v33 @ S1_v11 (System.Byte*)], b1 @ L1 (System.Byte)
+	23 Jump @b7
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid EncodingNLS..ctor, this @ L0 (System.Text.Encoding+EncodingByteBuffer), 1
+	28 Nop
+	29 Nop
+	30 Jump @b8
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v29 @ S1_v5 (System.Int32), this.byteCountResult (System.Int32), 1
+	37 Move this.byteCountResult (System.Int32), v29 @ S1_v5 (System.Int32)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Return returnVal1 @ S0_v4 (System.Boolean)
+
+Method: System.Boolean AddByte(System.Byte b1, System.Byte b2, System.Int32 moreBytesExpected)
+
+Disassembly:
+	0x13300A4 I32Const 24
+	0x13300A6 LocalGet 0
+	0x13300A8 I32Load 2, 16
+	0x13300AB LocalGet 1
+	0x13300AD LocalGet 2
+	0x13300AF Call 29291
+	0x13300B3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call 726B, returnVal1 @ S0_v2 (System.Boolean), 24, this.byteEnd (System.Byte*), b1 @ L1 (System.Byte), b2 @ L2 (System.Byte)
+	6 Nop
+	7 Return returnVal1 @ S0_v2 (System.Boolean)
+
+Method: System.Void MovePrevious(System.Boolean bThrow)
+
+Disassembly:
+	0x125A0FF LocalGet 0
+	0x125A101 LocalGet 1
+	0x125A103 LocalGet 0
+	0x125A105 I32Load 2, 40
+	0x125A108 I32Add
+	0x125A109 I32Store 2, 40
+	0x125A10C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v6 @ S1_v2 (System.Text.EncoderNLS), bThrow @ L1 (System.Boolean), this.encoder (System.Text.EncoderNLS)
+	5 Move this.encoder (System.Text.EncoderNLS), v6 @ S1_v2 (System.Text.EncoderNLS)
+	6 Nop
+	7 Return
+
+Method: System.Boolean get_MoreData()
+
+Disassembly:
+	0xC1173F LocalGet 0
+	0xC11741 I32Load 2, 20
+	0xC11744 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.chars (System.Char*)
+
+Method: System.Char GetNextChar()
+
+Disassembly:
+	0x13307DE I32Const 8
+	0x13307E0 LocalGet 0
+	0x13307E2 I32Load 2, 44
+	0x13307E5 Call 29262
+	0x13307E9 I32Const 1
+	0x13307EB I32Lt_S
+	0x13307EC If -1
+	0x13307EE LocalGet 0
+	0x13307F0 I32Load 2, 20
+	0x13307F3 LocalGet 0
+	0x13307F5 I32Load 2, 28
+	0x13307F8 I32Lt_U
+	0x13307F9 Else
+	0x13307FA I32Const 1
+	0x13307FC End
+	0x13307FD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 724E, v4 @ S0_v2, 8, this.fallbackBuffer (System.Text.EncoderFallbackBuffer)
+	4 Nop
+	5 CheckLess v6 @ S0_v3 (System.Boolean), v4 @ S0_v2, 1
+	6 Not v7 @ TEMP_v1 (System.Boolean), v6 @ S0_v3 (System.Boolean)
+	7 ConditionalJump @b5, v7 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CheckLess v12 @ S0_v8 (System.Boolean), this.chars (System.Char*), this.charEnd (System.Char*)
+	13 Jump @b6
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return returnVal1 @ S0_v4 (System.Char)
+
+Method: System.Int32 get_CharsUsed()
+
+Disassembly:
+	0x1330800 LocalGet 0
+	0x1330802 I32Load 2, 44
+	0x1330805 I32Const 0
+	0x1330807 Call 61433
+	0x133080B LocalTee 1
+	0x133080D I32Const 65535
+	0x1330811 I32And
+	0x1330812 I32Eqz
+	0x1330813 If -64
+	0x1330815 LocalGet 0
+	0x1330817 I32Load 2, 20
+	0x133081A LocalGet 0
+	0x133081C I32Load 2, 28
+	0x133081F I32Lt_U
+	0x1330820 If -1
+	0x1330822 LocalGet 0
+	0x1330824 LocalGet 0
+	0x1330826 I32Load 2, 20
+	0x1330829 LocalTee 0
+	0x133082B I32Const 2
+	0x133082D I32Add
+	0x133082E I32Store 2, 20
+	0x1330831 LocalGet 0
+	0x1330833 I32Load16_S 1, 0
+	0x1330836 Else
+	0x1330837 I32Const 0
+	0x1330839 End
+	0x133083A LocalSet 1
+	0x133083C End
+	0x133083D LocalGet 1
+	0x133083F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call EncoderNLS.get_Encoding, v4 @ S0_v3 (System.Text.Encoding), this.fallbackBuffer (System.Text.EncoderFallbackBuffer)
+	4 Nop
+	5 Nop
+	6 And v7 @ S0_v4, v4 @ S0_v3 (System.Text.Encoding), 65535
+	7 CheckEqual v8 @ S0_v5 (System.Boolean), v7 @ S0_v4, 0
+	8 Not v9 @ TEMP_v1 (System.Boolean), v8 @ S0_v5 (System.Boolean)
+	9 ConditionalJump @b7, v9 @ TEMP_v1 (System.Boolean)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckLess v14 @ S0_v10 (System.Boolean), this.chars (System.Char*), this.charEnd (System.Char*)
+	15 Not v15 @ TEMP_v3 (System.Boolean), v14 @ S0_v10 (System.Boolean)
+	16 ConditionalJump @b6, v15 @ TEMP_v3 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Move v31 @ S1_v8 (System.Char*), this.chars (System.Char*)
+	20 Nop
+	21 Nop
+	22 Add v34 @ S1_v9 (System.Char*), this.chars (System.Char*), 2
+	23 Move this.chars (System.Char*), v34 @ S1_v9 (System.Char*)
+	24 Nop
+	25 Nop
+	26 Jump @b8
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Return v22 @ L1_v2 (System.Text.Encoding)
+
+Method: System.Int32 get_Count()
+
+Disassembly:
+	0x1330842 LocalGet 0
+	0x1330844 I32Load 2, 20
+	0x1330847 LocalGet 0
+	0x1330849 I32Load 2, 24
+	0x133084C I32Sub
+	0x133084D I32Const 2
+	0x133084F I32Div_S
+	0x1330850 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Subtract v5 @ S0_v3, this.chars (System.Char*), this.charStart (System.Char*)
+	5 Nop
+	6 Divide returnVal1 @ S0_v4 (System.Int32), v5 @ S0_v3, 2
+	7 Nop
+	8 Return returnVal1 @ S0_v4 (System.Int32)
+

@@ -1,0 +1,196 @@
+Type: SYBO.Components.Analytics.ClientUpdatedEvent
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xDD584D I32Const 4556134
+	0xDD5852 I32Load8_S 0, 0
+	0xDD5855 I32Eqz
+	0xDD5856 If -64
+	0xDD5858 I32Const 2923392
+	0xDD585D I32Load 2, 0
+	0xDD5860 Call 73003
+	0xDD5864 I32Const 4556134
+	0xDD5869 I32Const 1
+	0xDD586B I32Store8 0, 0
+	0xDD586E End
+	0xDD586F I32Const 4440856
+	0xDD5874 I32Load 2, 0
+	0xDD5877 LocalTee 1
+	0xDD5879 I32Load16_S 1, 186
+	0xDD587D I32Const 512
+	0xDD5880 I32And
+	0xDD5881 If -64
+	0xDD5883 LocalGet 1
+	0xDD5885 I32Load 2, 116
+	0xDD5888 I32Eqz
+	0xDD5889 If -64
+	0xDD588B LocalGet 1
+	0xDD588D Call 72345
+	0xDD5891 End
+	0xDD5892 End
+	0xDD5893 LocalGet 0
+	0xDD5895 I32Const 0
+	0xDD5897 Call 36595
+	0xDD589B LocalGet 0
+	0xDD589D I32Const 36
+	0xDD589F I32Add
+	0xDD58A0 I32Const 4440856
+	0xDD58A5 I32Load 2, 0
+	0xDD58A8 I32Load 2, 92
+	0xDD58AB I32Load 2, 12
+	0xDD58AE I32Const 4449584
+	0xDD58B3 I32Load 2, 0
+	0xDD58B6 Call 30862
+	0xDD58BA I32Store 2, 0
+	0xDD58BD LocalGet 0
+	0xDD58BF I32Const 4440860
+	0xDD58C4 I32Load 2, 0
+	0xDD58C7 I32Load 2, 92
+	0xDD58CA I32Load 2, 12
+	0xDD58CD I32Const 4449580
+	0xDD58D2 I32Load 2, 0
+	0xDD58D5 Call 36596
+	0xDD58D9 F32Store 2, 40
+	0xDD58DC LocalGet 0
+	0xDD58DE I32Const 16
+	0xDD58E0 I32Add
+	0xDD58E1 I32Const 4440860
+	0xDD58E6 I32Load 2, 0
+	0xDD58E9 I32Load 2, 92
+	0xDD58EC I32Load 2, 0
+	0xDD58EF I32Const 4449584
+	0xDD58F4 I32Load 2, 0
+	0xDD58F7 Call 30862
+	0xDD58FB I32Store 2, 0
+	0xDD58FE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v21, [2C9B80]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [458566], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>), typeof(SYBO.Components.Analytics.BaseSessionEvent)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b13, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v16 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>), typeof(SYBO.Components.Analytics.BaseSessionEvent)
+	21 Nop
+	22 CheckEqual v20 @ S0_v18 (System.Boolean), [v18 @ S0_v16 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v18 (System.Boolean)
+	24 ConditionalJump @b13, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(SYBO.Components.Analytics.BaseSessionEvent)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid BaseSessionEvent.InitializeCommon, this @ L0 (SYBO.Components.Analytics.ClientUpdatedEvent)
+	32 Nop
+	33 Nop
+	34 Add v30 @ S0_v12, this @ L0 (SYBO.Components.Analytics.ClientUpdatedEvent), 36
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call Func`1<System.String>.Invoke, v37 @ S1_v9 (System.String), v33.GetDeviceID (System.Func`1<System.String>)
+	42 Move [v30 @ S0_v12], v37 @ S1_v9 (System.String)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call Func`1<System.Single>.Invoke, v45 @ S1_v14 (System.Single), v41.GetSamplingKey (System.Func`1<System.Single>)
+	51 Move this._samplingKey (System.Single), v45 @ S1_v14 (System.Single)
+	52 Nop
+	53 Nop
+	54 Add v48 @ S0_v15, this @ L0 (SYBO.Components.Analytics.ClientUpdatedEvent), 16
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Call Func`1<System.String>.Invoke, v55 @ S1_v20 (System.String), v51.GetGameVersion (System.Func`1<System.String>)
+	62 Move [v48 @ S0_v15], v55 @ S1_v20 (System.String)
+	63 Nop
+	64 Return
+
+Method: System.String get_DeviceID()
+
+Disassembly:
+	0xDD5EFD I32Const 4556141
+	0xDD5F02 I32Load8_S 0, 0
+	0xDD5F05 I32Eqz
+	0xDD5F06 If -64
+	0xDD5F08 I32Const 2923396
+	0xDD5F0D I32Load 2, 0
+	0xDD5F10 Call 73003
+	0xDD5F14 I32Const 4556141
+	0xDD5F19 I32Const 1
+	0xDD5F1B I32Store8 0, 0
+	0xDD5F1E End
+	0xDD5F1F I32Const 4539172
+	0xDD5F24 I32Load 2, 0
+	0xDD5F27 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v8, [2C9B84]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45856D], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Return "account_created"
+
+Method: System.Single get_SamplingKey()
+
+Disassembly:
+	0xCC9653 LocalGet 0
+	0xCC9655 F32Load 2, 40
+	0xCC9658 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._samplingKey (System.Single)
+
+Method: System.String get_EventName()
+
+Disassembly:
+	0xC1F290 LocalGet 0
+	0xC1F292 I32Load 2, 36
+	0xC1F295 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._deviceID (System.String)
+

@@ -1,0 +1,256 @@
+Type: Mono.Globalization.Unicode.ContractionComparer
+
+Method: System.Int32 Compare(Mono.Globalization.Unicode.Contraction c1, Mono.Globalization.Unicode.Contraction c2)
+
+Disassembly:
+	0x1247BF8 I32Const 4569654
+	0x1247BFD I32Load8_S 0, 0
+	0x1247C00 I32Eqz
+	0x1247C01 If -64
+	0x1247C03 I32Const 3004140
+	0x1247C08 I32Load 2, 0
+	0x1247C0B Call 73003
+	0x1247C0F I32Const 4569654
+	0x1247C14 I32Const 1
+	0x1247C16 I32Store8 0, 0
+	0x1247C19 End
+	0x1247C1A Block -64
+	0x1247C1C Block -64
+	0x1247C1E Block -64
+	0x1247C20 Loop -64
+	0x1247C22 LocalGet 0
+	0x1247C24 I32Const 0
+	0x1247C26 Call 54603
+	0x1247C2A I32Const -1
+	0x1247C2C I32Le_S
+	0x1247C2D BrIf 1
+	0x1247C2F LocalGet 0
+	0x1247C31 I32Const 0
+	0x1247C33 Call 57629
+	0x1247C37 LocalTee 3
+	0x1247C39 I32Const 65535
+	0x1247C3D I32And
+	0x1247C3E LocalTee 4
+	0x1247C40 LocalGet 1
+	0x1247C42 I32Const 65535
+	0x1247C46 I32And
+	0x1247C47 I32Eq
+	0x1247C48 BrIf 2
+	0x1247C4A LocalGet 3
+	0x1247C4C I32Const 65535
+	0x1247C50 I32And
+	0x1247C51 I32Const 38
+	0x1247C53 I32Eq
+	0x1247C54 LocalGet 2
+	0x1247C56 I32And
+	0x1247C57 If -64
+	0x1247C59 LocalGet 0
+	0x1247C5B I32Const 0
+	0x1247C5D Call 57639
+	0x1247C61 Else
+	0x1247C62 LocalGet 0
+	0x1247C64 I32Load 2, 28
+	0x1247C67 LocalGet 4
+	0x1247C69 I32Const 0
+	0x1247C6B Call 61633
+	0x1247C6F Drop
+	0x1247C70 End
+	0x1247C71 Br 0
+	0x1247C73 End
+	0x1247C74 Unreachable
+	0x1247C75 End
+	0x1247C76 LocalGet 0
+	0x1247C78 I32Const 0
+	0x1247C7A Call 57636
+	0x1247C7E I32Const 0
+	0x1247C80 I32Const 4467884
+	0x1247C85 I32Load 2, 0
+	0x1247C88 Call 73899
+	0x1247C8C Br 1
+	0x1247C8E End
+	0x1247C8F I32Const 3
+	0x1247C91 LocalGet 0
+	0x1247C93 I32Load 2, 28
+	0x1247C96 Call 29262
+	0x1247C9A LocalGet 0
+	0x1247C9C I32Load 2, 28
+	0x1247C9F I32Const 0
+	0x1247CA1 I32Const 0
+	0x1247CA3 Call 61623
+	0x1247CA7 Return
+	0x1247CA8 End
+	0x1247CA9 I32Const 0
+	0x1247CAB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b22
+	5 Nop
+	6 Move v5 @ S0_v28, [2DD6EC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v17 @ S1_v21, 1
+	10 Move [45BA36], v17 @ S1_v21
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call D54B, v27 @ S0_v6, this @ L0 (Mono.Globalization.Unicode.ContractionComparer), 0
+	16 Nop
+	17 CheckLessOrEqual v29 @ S0_v7 (System.Boolean), v27 @ S0_v6, -1
+	18 ConditionalJump @b21, v29 @ S0_v7 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Call SmallXmlParser.ReadName, v32 @ S0_v12 (System.String), this @ L0 (Mono.Globalization.Unicode.ContractionComparer)
+	22 Nop
+	23 Nop
+	24 And v37 @ S0_v13 (System.Int32), v32 @ S0_v12 (System.String), 65535
+	25 Nop
+	26 Nop
+	27 Nop
+	28 And v41 @ S1_v9, c1 @ L1 (Mono.Globalization.Unicode.Contraction), 65535
+	29 CheckEqual v42 @ S0_v14 (System.Boolean), v37 @ S0_v13 (System.Int32), v41 @ S1_v9
+	30 ConditionalJump @b16, v42 @ S0_v14 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 And v48 @ S0_v18, v32 @ S0_v12 (System.String), 65535
+	34 Nop
+	35 CheckEqual v50 @ S0_v19 (System.Boolean), v48 @ S0_v18, 38
+	36 Nop
+	37 And v53 @ S0_v20, v50 @ S0_v19 (System.Boolean), c2 @ L2 (Mono.Globalization.Unicode.Contraction)
+	38 CheckEqual v20 @ TEMP_v3 (System.Boolean), v53 @ S0_v20, 0
+	39 ConditionalJump @b11, v20 @ TEMP_v3 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 CallVoid SmallXmlParser.ReadCDATASection, this @ L0 (Mono.Globalization.Unicode.ContractionComparer)
+	43 Jump @b12
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Call StringBuilder.Append, v64 @ S0_v24 (System.Text.StringBuilder), [this @ L0 (Mono.Globalization.Unicode.ContractionComparer)+1C], v37 @ S0_v13 (System.Int32)
+	49 Nop
+	50 Jump @b22
+	51 Nop
+	52 Interrupt
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Call SmallXmlParser.Peek, v35 @ S0_v9 (System.Int32), this @ L0 (Mono.Globalization.Unicode.ContractionComparer)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 CallVoid 120AB, v35 @ S0_v9 (System.Int32), 0, methodof(Mono.Xml.SmallXmlParser::ReadUntil)
+	61 Jump @b19
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Call 724E, returnVal2 @ S0_v16 (System.Int32), 3, [this @ L0 (Mono.Globalization.Unicode.ContractionComparer)+1C]
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 CallVoid StringBuilder.AppendHelper, [this @ L0 (Mono.Globalization.Unicode.ContractionComparer)+1C], 0
+	72 Return returnVal2 @ S0_v16 (System.Int32)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Return 0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x1246FAE I32Const 4569641
+	0x1246FB3 I32Load8_S 0, 0
+	0x1246FB6 I32Eqz
+	0x1246FB7 If -64
+	0x1246FB9 I32Const 2936192
+	0x1246FBE I32Load 2, 0
+	0x1246FC1 Call 73003
+	0x1246FC5 I32Const 4569641
+	0x1246FCA I32Const 1
+	0x1246FCC I32Store8 0, 0
+	0x1246FCF End
+	0x1246FD0 I32Const 4427792
+	0x1246FD5 I32Load 2, 0
+	0x1246FD8 Call 72556
+	0x1246FDC LocalTee 1
+	0x1246FDE I32Const 4486260
+	0x1246FE3 I32Load 2, 0
+	0x1246FE6 Call 29311
+	0x1246FEA LocalGet 0
+	0x1246FEC I32Const 8
+	0x1246FEE I32Add
+	0x1246FEF LocalGet 1
+	0x1246FF1 I32Store 2, 0
+	0x1246FF4 I32Const 4427792
+	0x1246FF9 I32Load 2, 0
+	0x1246FFC Call 72556
+	0x1247000 LocalTee 1
+	0x1247002 I32Const 4486260
+	0x1247007 I32Load 2, 0
+	0x124700A Call 29311
+	0x124700E LocalGet 0
+	0x1247010 I32Const 12
+	0x1247012 I32Add
+	0x1247013 LocalGet 1
+	0x1247015 I32Store 2, 0
+	0x1247018 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v16, [2CCD80]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [45BA29], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.Generic.List`1<System.String>), typeof(System.Collections.Generic.List`1<System.String>)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid List`1<System.String>..ctor, v13 @ S0_v7 (System.Collections.Generic.List`1<System.String>)
+	19 Nop
+	20 Nop
+	21 Add v20 @ S0_v9, this @ L0 (Mono.Globalization.Unicode.ContractionComparer), 8
+	22 Nop
+	23 Move [v20 @ S0_v9], v13 @ S0_v7 (System.Collections.Generic.List`1<System.String>)
+	24 Nop
+	25 Nop
+	26 Call 11B6C, v24 @ S0_v12 (System.Collections.Generic.List`1<System.String>), typeof(System.Collections.Generic.List`1<System.String>)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 CallVoid List`1<System.String>..ctor, v24 @ S0_v12 (System.Collections.Generic.List`1<System.String>)
+	31 Nop
+	32 Nop
+	33 Add v30 @ S0_v14, this @ L0 (Mono.Globalization.Unicode.ContractionComparer), 12
+	34 Nop
+	35 Move [v30 @ S0_v14], v24 @ S0_v12 (System.Collections.Generic.List`1<System.String>)
+	36 Nop
+	37 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x12C9A1C I32Const 0
+	0x12C9A1E Call 59940
+	0x12C9A22 End
+
+ISIL:
+	0 Nop
+	1 CallVoid Runtime.RemoveSignalHandlers
+	2 Nop
+	3 Return
+

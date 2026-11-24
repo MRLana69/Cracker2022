@@ -1,0 +1,593 @@
+Type: UnityEngine.CubemapArray
+
+Method: System.Void .ctor(System.Int32 width, System.Int32 cubemapCount, UnityEngine.Experimental.Rendering.DefaultFormat format, UnityEngine.Experimental.Rendering.TextureCreationFlags flags)
+
+Disassembly:
+	0x13742B6 LocalGet 0
+	0x13742B8 LocalGet 1
+	0x13742BA LocalGet 2
+	0x13742BC LocalGet 3
+	0x13742BE If -1
+	0x13742C0 I32Const -1
+	0x13742C2 Else
+	0x13742C3 I32Const 1
+	0x13742C5 End
+	0x13742C6 LocalGet 4
+	0x13742C8 I32Const 0
+	0x13742CA Call 62816
+	0x13742CE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CheckEqual v8 @ TEMP_v1 (System.Boolean), format @ L3 (UnityEngine.Experimental.Rendering.DefaultFormat), 0
+	5 ConditionalJump @b4, v8 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Jump @b6
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CallVoid Cubemap..ctor, this @ L0 (UnityEngine.CubemapArray), width @ L1 (System.Int32), cubemapCount @ L2 (System.Int32), v11 @ S3_v2 (System.Boolean), flags @ L4 (UnityEngine.Experimental.Rendering.TextureCreationFlags)
+	13 Nop
+	14 Return
+
+Method: System.Void .ctor(System.Int32 width, System.Int32 cubemapCount, UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.Experimental.Rendering.TextureCreationFlags flags)
+
+Disassembly:
+	0x1374341 LocalGet 0
+	0x1374343 LocalGet 1
+	0x1374345 LocalGet 2
+	0x1374347 LocalGet 3
+	0x1374349 I32Const 0
+	0x137434B Call 63962
+	0x137434F LocalGet 4
+	0x1374351 I32Const 0
+	0x1374353 Call 62825
+	0x1374357 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call TouchScreenKeyboard.get_text, v9 @ S3_v2 (System.String), format @ L3 (UnityEngine.Experimental.Rendering.GraphicsFormat)
+	6 Nop
+	7 Nop
+	8 CallVoid CubemapArray..ctor, this @ L0 (UnityEngine.CubemapArray), width @ L1 (System.Int32), cubemapCount @ L2 (System.Int32), v9 @ S3_v2 (System.String), flags @ L4 (UnityEngine.Experimental.Rendering.TextureCreationFlags)
+	9 Nop
+	10 Return
+
+Method: System.Void .ctor(System.Int32 width, System.Int32 cubemapCount, UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.Experimental.Rendering.TextureCreationFlags flags, System.Int32 mipCount)
+
+Disassembly:
+	0x13A876D LocalGet 0
+	0x13A876F LocalGet 1
+	0x13A8771 LocalGet 2
+	0x13A8773 LocalGet 3
+	0x13A8775 LocalGet 4
+	0x13A8777 LocalGet 5
+	0x13A8779 If -1
+	0x13A877B I32Const -1
+	0x13A877D Else
+	0x13A877E I32Const 1
+	0x13A8780 End
+	0x13A8781 I32Const 0
+	0x13A8783 I32Const 0
+	0x13A8785 Call 64286
+	0x13A8789 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CheckEqual v12 @ TEMP_v1 (System.Boolean), mipCount @ L5 (System.Int32), 0
+	7 ConditionalJump @b4, v12 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Jump @b6
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid Texture2DArray..ctor, this @ L0 (UnityEngine.CubemapArray), width @ L1 (System.Int32), cubemapCount @ L2 (System.Int32), format @ L3 (UnityEngine.Experimental.Rendering.GraphicsFormat), flags @ L4 (UnityEngine.Experimental.Rendering.TextureCreationFlags), v15 @ S5_v2 (System.Boolean), 0
+	15 Nop
+	16 Return
+
+Method: System.Void .ctor(System.Int32 width, System.Int32 cubemapCount, UnityEngine.TextureFormat textureFormat, System.Int32 mipCount, System.Boolean linear)
+
+Disassembly:
+	0x13743C7 I32Const 4572919
+	0x13743CC I32Load8_S 0, 0
+	0x13743CF I32Eqz
+	0x13743D0 If -64
+	0x13743D2 I32Const 2948676
+	0x13743D7 I32Load 2, 0
+	0x13743DA Call 73003
+	0x13743DE I32Const 4572919
+	0x13743E3 I32Const 1
+	0x13743E5 I32Store8 0, 0
+	0x13743E8 End
+	0x13743E9 I32Const 4433352
+	0x13743EE I32Load 2, 0
+	0x13743F1 LocalTee 7
+	0x13743F3 I32Load16_S 1, 186
+	0x13743F7 I32Const 512
+	0x13743FA I32And
+	0x13743FB If -64
+	0x13743FD LocalGet 7
+	0x13743FF I32Load 2, 116
+	0x1374402 I32Eqz
+	0x1374403 If -64
+	0x1374405 LocalGet 7
+	0x1374407 Call 72345
+	0x137440B End
+	0x137440C End
+	0x137440D LocalGet 0
+	0x137440F I32Const 0
+	0x1374411 Call 63949
+	0x1374415 LocalGet 0
+	0x1374417 LocalGet 3
+	0x1374419 I32Const 0
+	0x137441B I32Const 0
+	0x137441D Call 63964
+	0x1374421 If -64
+	0x1374423 LocalGet 0
+	0x1374425 LocalGet 1
+	0x1374427 LocalGet 2
+	0x1374429 LocalGet 5
+	0x137442B LocalGet 3
+	0x137442D LocalGet 4
+	0x137442F I32Const 0
+	0x1374431 Call 62827
+	0x1374435 End
+	0x1374436 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v20, [2CFE44]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [45C6F7], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Texture>), typeof(UnityEngine.Texture)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Texture>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b13, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v15 (Il2CppClass<UnityEngine.Texture>), typeof(UnityEngine.Texture)
+	21 Nop
+	22 CheckEqual v20 @ S0_v17 (System.Boolean), [v18 @ S0_v15 (Il2CppClass<UnityEngine.Texture>)+74], 0
+	23 Not v21 @ TEMP_v5 (System.Boolean), v20 @ S0_v17 (System.Boolean)
+	24 ConditionalJump @b13, v21 @ TEMP_v5 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Texture)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid Texture2D.Apply, this @ L0 (UnityEngine.CubemapArray)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call Mathf.Clamp, v33 @ S0_v12 (System.Int32), this @ L0 (UnityEngine.CubemapArray), textureFormat @ L3 (UnityEngine.TextureFormat), 0
+	37 CheckEqual v34 @ TEMP_v4 (System.Boolean), v33 @ S0_v12 (System.Int32), 0
+	38 ConditionalJump @b11, v34 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 CallVoid RenderTexture..ctor, this @ L0 (UnityEngine.CubemapArray), width @ L1 (System.Int32), cubemapCount @ L2 (System.Int32), linear @ L5 (System.Boolean), textureFormat @ L3 (UnityEngine.TextureFormat), mipCount @ L4 (System.Int32)
+	47 Nop
+	48 Nop
+	49 Return
+
+Method: System.Void .ctor(System.Int32 width, System.Int32 cubemapCount, UnityEngine.TextureFormat textureFormat, System.Boolean mipChain, System.Boolean linear)
+
+Disassembly:
+	0x13744E3 I32Const 4572921
+	0x13744E8 I32Load8_S 0, 0
+	0x13744EB I32Eqz
+	0x13744EC If -64
+	0x13744EE I32Const 2948668
+	0x13744F3 I32Load 2, 0
+	0x13744F6 Call 73003
+	0x13744FA I32Const 4572921
+	0x13744FF I32Const 1
+	0x1374501 I32Store8 0, 0
+	0x1374504 End
+	0x1374505 I32Const 4433352
+	0x137450A I32Load 2, 0
+	0x137450D LocalTee 6
+	0x137450F I32Load16_S 1, 186
+	0x1374513 I32Const 512
+	0x1374516 I32And
+	0x1374517 If -64
+	0x1374519 LocalGet 6
+	0x137451B I32Load 2, 116
+	0x137451E I32Eqz
+	0x137451F If -64
+	0x1374521 LocalGet 6
+	0x1374523 Call 72345
+	0x1374527 End
+	0x1374528 End
+	0x1374529 LocalGet 0
+	0x137452B I32Const 0
+	0x137452D Call 63949
+	0x1374531 LocalGet 4
+	0x1374533 I32Const 1
+	0x1374535 I32Ne
+	0x1374536 LocalSet 6
+	0x1374538 LocalGet 0
+	0x137453A LocalGet 3
+	0x137453C I32Const 0
+	0x137453E Call 64252
+	0x1374542 If -64
+	0x1374544 LocalGet 6
+	0x1374546 I32Const 64
+	0x1374549 I32Or
+	0x137454A LocalSet 7
+	0x137454C LocalGet 0
+	0x137454E LocalGet 1
+	0x1374550 LocalGet 2
+	0x1374552 LocalGet 4
+	0x1374554 LocalGet 3
+	0x1374556 LocalGet 5
+	0x1374558 I32Const 1
+	0x137455A I32Xor
+	0x137455B I32Const 0
+	0x137455D Call 62817
+	0x1374561 LocalGet 3
+	0x1374563 I32Const -2
+	0x1374565 I32And
+	0x1374566 I32Const 28
+	0x1374568 I32Eq
+	0x1374569 If -1
+	0x137456B I32Const 1
+	0x137456D Else
+	0x137456E LocalGet 3
+	0x1374570 I32Const 1
+	0x1374572 I32Or
+	0x1374573 I32Const 65
+	0x1374576 I32Eq
+	0x1374577 End
+	0x1374578 If -1
+	0x137457A LocalGet 7
+	0x137457C Else
+	0x137457D LocalGet 6
+	0x137457F End
+	0x1374580 I32Const 0
+	0x1374582 Call 62827
+	0x1374586 End
+	0x1374587 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v24, [2CFE3C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v24
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45C6F9], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Texture>), typeof(UnityEngine.Texture)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Texture>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b20, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v19 (Il2CppClass<UnityEngine.Texture>), typeof(UnityEngine.Texture)
+	21 Nop
+	22 CheckEqual v20 @ S0_v21 (System.Boolean), [v18 @ S0_v19 (Il2CppClass<UnityEngine.Texture>)+74], 0
+	23 Not v21 @ TEMP_v8 (System.Boolean), v20 @ S0_v21 (System.Boolean)
+	24 ConditionalJump @b20, v21 @ TEMP_v8 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Texture)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid Texture2D.Apply, this @ L0 (UnityEngine.CubemapArray)
+	32 Nop
+	33 Nop
+	34 CheckNotEqual v31 @ S0_v12 (System.Boolean), mipChain @ L4 (System.Boolean), 1
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call Texture.CreateNonReadableException, v37 @ S0_v14 (UnityEngine.UnityException), this @ L0 (UnityEngine.CubemapArray), textureFormat @ L3 (UnityEngine.TextureFormat)
+	40 CheckEqual v38 @ TEMP_v4 (System.Boolean), v37 @ S0_v14 (UnityEngine.UnityException), 0
+	41 ConditionalJump @b16, v38 @ TEMP_v4 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Or v41 @ S0_v17 (System.Int32), v31 @ S0_v12 (System.Boolean), 64
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Xor v53 @ S5_v3 (System.Boolean), linear @ L5 (System.Boolean), 1
+	54 Nop
+	55 Call GraphicsFormatUtility.GetGraphicsFormat_Native_TextureFormat, v55 @ S4_v3 (UnityEngine.Experimental.Rendering.GraphicsFormat), textureFormat @ L3 (UnityEngine.TextureFormat), v53 @ S5_v3 (System.Boolean)
+	56 Nop
+	57 Nop
+	58 And v75 @ S5_v5, textureFormat @ L3 (UnityEngine.TextureFormat), -2
+	59 Nop
+	60 CheckEqual v77 @ S5_v6 (System.Boolean), v75 @ S5_v5, 28
+	61 Not v78 @ TEMP_v6 (System.Boolean), v77 @ S5_v6 (System.Boolean)
+	62 ConditionalJump @b13, v78 @ TEMP_v6 (System.Boolean)
+	63 Nop
+	64 Jump @b18
+	65 Nop
+	66 Nop
+	67 Or v82 @ S5_v12, textureFormat @ L3 (UnityEngine.TextureFormat), 1
+	68 Nop
+	69 CheckEqual v86 @ S5_v7 (System.Boolean), v82 @ S5_v12, 65
+	70 Nop
+	71 Not v71 @ TEMP_v7 (System.Boolean), v86 @ S5_v7 (System.Boolean)
+	72 ConditionalJump @b15, v71 @ TEMP_v7 (System.Boolean)
+	73 Nop
+	74 Jump @b19
+	75 Nop
+	76 Nop
+	77 Nop
+	78 CallVoid RenderTexture..ctor, this @ L0 (UnityEngine.CubemapArray), width @ L1 (System.Int32), cubemapCount @ L2 (System.Int32), mipChain @ L4 (System.Boolean), v55 @ S4_v3 (UnityEngine.Experimental.Rendering.GraphicsFormat), v60 @ S5_v8 (System.Int32)
+	79 Nop
+	80 Nop
+	81 Return
+
+Method: System.Void .ctor(System.Int32 width, System.Int32 cubemapCount, UnityEngine.TextureFormat textureFormat, System.Boolean mipChain)
+
+Disassembly:
+	0x137435A I32Const 4572918
+	0x137435F I32Load8_S 0, 0
+	0x1374362 I32Eqz
+	0x1374363 If -64
+	0x1374365 I32Const 2948672
+	0x137436A I32Load 2, 0
+	0x137436D Call 73003
+	0x1374371 I32Const 4572918
+	0x1374376 I32Const 1
+	0x1374378 I32Store8 0, 0
+	0x137437B End
+	0x137437C I32Const 4433352
+	0x1374381 I32Load 2, 0
+	0x1374384 LocalTee 5
+	0x1374386 I32Load16_S 1, 186
+	0x137438A I32Const 512
+	0x137438D I32And
+	0x137438E If -64
+	0x1374390 LocalGet 5
+	0x1374392 I32Load 2, 116
+	0x1374395 I32Eqz
+	0x1374396 If -64
+	0x1374398 LocalGet 5
+	0x137439A Call 72345
+	0x137439E I32Const 4433352
+	0x13743A3 I32Load 2, 0
+	0x13743A6 LocalSet 5
+	0x13743A8 End
+	0x13743A9 End
+	0x13743AA LocalGet 0
+	0x13743AC LocalGet 1
+	0x13743AE LocalGet 2
+	0x13743B0 LocalGet 3
+	0x13743B2 LocalGet 4
+	0x13743B4 LocalGet 5
+	0x13743B6 I32Load 2, 92
+	0x13743B9 I32Load 2, 0
+	0x13743BC I32Const 0
+	0x13743BE Call 62826
+	0x13743C2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v18, [2CFE40]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v18
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45C6F6], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Texture>), typeof(UnityEngine.Texture)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Texture>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v11 (Il2CppClass<UnityEngine.Texture>), typeof(UnityEngine.Texture)
+	21 Nop
+	22 CheckEqual v20 @ S0_v13 (System.Boolean), [v18 @ S0_v11 (Il2CppClass<UnityEngine.Texture>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Texture)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CallVoid CubemapArray..ctor, this @ L0 (UnityEngine.CubemapArray), width @ L1 (System.Int32), cubemapCount @ L2 (System.Int32), textureFormat @ L3 (UnityEngine.TextureFormat), mipChain @ L4 (System.Boolean), v38.GenerateAllMips (System.Int32)
+	42 Nop
+	43 Return
+
+Method: System.Boolean get_isReadable()
+
+Disassembly:
+	0x13A878C I32Const 3927296
+	0x13A8791 I32Load 2, 0
+	0x13A8794 LocalTee 1
+	0x13A8796 I32Eqz
+	0x13A8797 If -64
+	0x13A8799 I32Const 3927296
+	0x13A879E I32Const 3514332
+	0x13A87A3 Call 73893
+	0x13A87A7 LocalTee 1
+	0x13A87A9 I32Store 2, 0
+	0x13A87AC End
+	0x13A87AD LocalGet 0
+	0x13A87AF LocalGet 1
+	0x13A87B1 I32Const 4095
+	0x13A87B4 I32And
+	0x13A87B5 I32Const 1797
+	0x13A87B8 I32Add
+	0x13A87B9 CallIndirect 2, 0
+	0x13A87BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BED00], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3514332
+	9 Nop
+	10 Move [3BED00], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 4095
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 1797
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Boolean), this @ L0 (UnityEngine.CubemapArray)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Boolean)
+
+Method: System.Boolean Internal_CreateImpl(UnityEngine.CubemapArray mono, System.Int32 ext, System.Int32 count, System.Int32 mipCount, UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.Experimental.Rendering.TextureCreationFlags flags)
+
+Disassembly:
+	0x13740CB I32Const 3925948
+	0x13740D0 I32Load 2, 0
+	0x13740D3 LocalTee 6
+	0x13740D5 I32Eqz
+	0x13740D6 If -64
+	0x13740D8 I32Const 3925948
+	0x13740DD I32Const 3491159
+	0x13740E2 Call 73893
+	0x13740E6 LocalTee 6
+	0x13740E8 I32Store 2, 0
+	0x13740EB End
+	0x13740EC LocalGet 0
+	0x13740EE LocalGet 1
+	0x13740F0 LocalGet 2
+	0x13740F2 LocalGet 3
+	0x13740F4 LocalGet 4
+	0x13740F6 LocalGet 5
+	0x13740F8 LocalGet 6
+	0x13740FA I32Const 1023
+	0x13740FD I32And
+	0x13740FE I32Const 41275
+	0x1374102 I32Add
+	0x1374103 CallIndirect 20, 0
+	0x1374106 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE7BC], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3491159
+	9 Nop
+	10 Move [3BE7BC], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v27 @ S6_v2, v10 @ L6_v2, 1023
+	21 Nop
+	22 Add v29 @ S6_v3, v27 @ S6_v2, 41275
+	23 IndirectCall v29 @ S6_v3, returnVal1 @ S0_v6 (System.Boolean), mono @ L0 (UnityEngine.CubemapArray), ext @ L1 (System.Int32), count @ L2 (System.Int32), mipCount @ L3 (System.Int32), format @ L4 (UnityEngine.Experimental.Rendering.GraphicsFormat), flags @ L5 (UnityEngine.Experimental.Rendering.TextureCreationFlags)
+	24 Nop
+	25 Return returnVal1 @ S0_v6 (System.Boolean)
+
+Method: System.Void Internal_Create(UnityEngine.CubemapArray mono, System.Int32 ext, System.Int32 count, System.Int32 mipCount, UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.Experimental.Rendering.TextureCreationFlags flags)
+
+Disassembly:
+	0x137458A LocalGet 0
+	0x137458C LocalGet 1
+	0x137458E LocalGet 2
+	0x1374590 LocalGet 3
+	0x1374592 LocalGet 4
+	0x1374594 If -1
+	0x1374596 I32Const -1
+	0x1374598 Else
+	0x1374599 I32Const 1
+	0x137459B End
+	0x137459C LocalGet 5
+	0x137459E I32Const 0
+	0x13745A0 Call 62829
+	0x13745A4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 CheckEqual v10 @ TEMP_v1 (System.Boolean), format @ L4 (UnityEngine.Experimental.Rendering.GraphicsFormat), 0
+	6 ConditionalJump @b4, v10 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Jump @b6
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 CallVoid CubemapArray..ctor, mono @ L0 (UnityEngine.CubemapArray), ext @ L1 (System.Int32), count @ L2 (System.Int32), mipCount @ L3 (System.Int32), v13 @ S4_v2 (System.Boolean), flags @ L5 (UnityEngine.Experimental.Rendering.TextureCreationFlags)
+	14 Nop
+	15 Return
+

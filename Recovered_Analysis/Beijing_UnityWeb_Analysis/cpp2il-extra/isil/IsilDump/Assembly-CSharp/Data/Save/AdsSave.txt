@@ -1,0 +1,1074 @@
+Type: Data.Save.AdsSave
+
+Method: System.Boolean get_behavioralAdsAllowed()
+
+Disassembly:
+	0xF01EF2 I32Const 4559850
+	0xF01EF7 I32Load8_S 0, 0
+	0xF01EFA I32Eqz
+	0xF01EFB If -64
+	0xF01EFD I32Const 2971572
+	0xF01F02 I32Load 2, 0
+	0xF01F05 Call 73003
+	0xF01F09 I32Const 4559850
+	0xF01F0E I32Const 1
+	0xF01F10 I32Store8 0, 0
+	0xF01F13 End
+	0xF01F14 I32Const 4435460
+	0xF01F19 I32Load 2, 0
+	0xF01F1C LocalTee 0
+	0xF01F1E I32Load16_S 1, 186
+	0xF01F22 I32Const 512
+	0xF01F25 I32And
+	0xF01F26 If -64
+	0xF01F28 LocalGet 0
+	0xF01F2A I32Load 2, 116
+	0xF01F2D I32Eqz
+	0xF01F2E If -64
+	0xF01F30 LocalGet 0
+	0xF01F32 Call 72345
+	0xF01F36 End
+	0xF01F37 End
+	0xF01F38 I32Const 0
+	0xF01F3A Call 35229
+	0xF01F3E I32Const 4532048
+	0xF01F43 I32Load 2, 0
+	0xF01F46 I32Const 0
+	0xF01F48 I32Const 0
+	0xF01F4A Call 35296
+	0xF01F4E If -1
+	0xF01F50 I32Const 1
+	0xF01F52 Else
+	0xF01F53 I32Const 4435480
+	0xF01F58 I32Load 2, 0
+	0xF01F5B LocalTee 0
+	0xF01F5D I32Load16_S 1, 186
+	0xF01F61 I32Const 512
+	0xF01F64 I32And
+	0xF01F65 If -64
+	0xF01F67 LocalGet 0
+	0xF01F69 I32Load 2, 116
+	0xF01F6C I32Eqz
+	0xF01F6D If -64
+	0xF01F6F LocalGet 0
+	0xF01F71 Call 72345
+	0xF01F75 I32Const 4435480
+	0xF01F7A I32Load 2, 0
+	0xF01F7D LocalSet 0
+	0xF01F7F End
+	0xF01F80 End
+	0xF01F81 LocalGet 0
+	0xF01F83 I32Load 2, 92
+	0xF01F86 I32Load8_S 0, 65
+	0xF01F89 I32Const 0
+	0xF01F8B I32Ne
+	0xF01F8C End
+	0xF01F8D I32Const 4436272
+	0xF01F92 I32Load 2, 0
+	0xF01F95 LocalTee 1
+	0xF01F97 I32Load16_S 1, 186
+	0xF01F9B I32Const 512
+	0xF01F9E I32And
+	0xF01F9F If -64
+	0xF01FA1 LocalGet 1
+	0xF01FA3 I32Load 2, 116
+	0xF01FA6 I32Eqz
+	0xF01FA7 If -64
+	0xF01FA9 LocalGet 1
+	0xF01FAB Call 72345
+	0xF01FAF End
+	0xF01FB0 End
+	0xF01FB1 I32Const 0
+	0xF01FB3 Call 41614
+	0xF01FB7 I32Const 1
+	0xF01FB9 I32And
+	0xF01FBA I32And
+	0xF01FBB I32Const 0
+	0xF01FBD I32Ne
+	0xF01FBE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v37, [2D57B4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v37
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [4593EA], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Info.OnlineSettings>), typeof(Info.OnlineSettings)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Info.OnlineSettings>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b23, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v32 (Il2CppClass<Info.OnlineSettings>), typeof(Info.OnlineSettings)
+	21 Nop
+	22 CheckEqual v20 @ S0_v34 (System.Boolean), [v18 @ S0_v32 (Il2CppClass<Info.OnlineSettings>)+74], 0
+	23 Not v21 @ TEMP_v12 (System.Boolean), v20 @ S0_v34 (System.Boolean)
+	24 ConditionalJump @b23, v21 @ TEMP_v12 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Info.OnlineSettings)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call OnlineSettings.GetSaveDataPath, v26 @ S0_v11 (System.String)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call OnlineSettings.TryGetValue, v31 @ S0_v12 (System.Boolean), v26 @ S0_v11 (System.String), "new_year_sale_active", 0
+	36 Not v32 @ TEMP_v4 (System.Boolean), v31 @ S0_v12 (System.Boolean)
+	37 ConditionalJump @b11, v32 @ TEMP_v4 (System.Boolean)
+	38 Nop
+	39 Jump @b20
+	40 Nop
+	41 Move v35 @ S0_v17 (Il2CppClass<Globals>), typeof(Globals)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v39 @ S0_v19, [v35 @ S0_v17 (Il2CppClass<Globals>)+BA], 512
+	46 CheckEqual v40 @ TEMP_v9 (System.Boolean), v39 @ S0_v19, 0
+	47 ConditionalJump @b21, v40 @ TEMP_v9 (System.Boolean)
+	48 Move v56 @ S0_v25 (Il2CppClass<Globals>), typeof(Globals)
+	49 Nop
+	50 CheckEqual v58 @ S0_v27 (System.Boolean), [v56 @ S0_v25 (Il2CppClass<Globals>)+74], 0
+	51 Not v59 @ TEMP_v11 (System.Boolean), v58 @ S0_v27 (System.Boolean)
+	52 ConditionalJump @b21, v59 @ TEMP_v11 (System.Boolean)
+	53 Nop
+	54 CallVoid 11A99, typeof(Globals)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 CheckNotEqual v47 @ S0_v13 (System.Boolean), v64.DEBUG_ENABLE_NEW_YEAR_SALES (System.Boolean), 0
+	65 Nop
+	66 Nop
+	67 Move v50 @ S1_v7 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 And v54 @ S1_v9, [v50 @ S1_v7 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	72 CheckEqual v55 @ TEMP_v6 (System.Boolean), v54 @ S1_v9, 0
+	73 ConditionalJump @b24, v55 @ TEMP_v6 (System.Boolean)
+	74 Move v66 @ S1_v15 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	75 Nop
+	76 CheckEqual v68 @ S1_v17 (System.Boolean), [v66 @ S1_v15 (Il2CppClass<InApp.InAppManager>)+74], 0
+	77 Not v69 @ TEMP_v8 (System.Boolean), v68 @ S1_v17 (System.Boolean)
+	78 ConditionalJump @b24, v69 @ TEMP_v8 (System.Boolean)
+	79 Nop
+	80 CallVoid 11A99, typeof(InApp.InAppManager)
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Call InAppManager.get_IsDoubleCoinsDiscountActive, v74 @ S1_v12 (System.Boolean)
+	85 Nop
+	86 Nop
+	87 And v78 @ S0_v14, v47 @ S0_v13 (System.Boolean), v74 @ S1_v12 (System.Boolean)
+	88 Nop
+	89 CheckNotEqual returnVal1 @ S0_v15 (System.Boolean), v78 @ S0_v14, 0
+	90 Nop
+	91 Return returnVal1 @ S0_v15 (System.Boolean)
+
+Method: System.Void set_behavioralAdsAllowed(System.Boolean value)
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid F4C1, value @ L0 (System.Boolean), 0
+	3 Nop
+	4 Return
+
+Method: System.DateTime get_scheduledFirstInterstitialShowTime()
+
+Disassembly:
+	0xD7C1AD GlobalGet 7
+	0xD7C1AF LocalSet 0
+	0xD7C1B1 GlobalGet 7
+	0xD7C1B3 I32Const 16
+	0xD7C1B5 I32Add
+	0xD7C1B6 GlobalSet 7
+	0xD7C1B8 I32Const 4555139
+	0xD7C1BD I32Load8_S 0, 0
+	0xD7C1C0 I32Eqz
+	0xD7C1C1 If -64
+	0xD7C1C3 I32Const 2925332
+	0xD7C1C8 I32Load 2, 0
+	0xD7C1CB Call 73003
+	0xD7C1CF I32Const 4555139
+	0xD7C1D4 I32Const 1
+	0xD7C1D6 I32Store8 0, 0
+	0xD7C1D9 End
+	0xD7C1DA LocalGet 0
+	0xD7C1DC I64Const 0
+	0xD7C1DE I64Store 3, 0
+	0xD7C1E1 I32Const 4435612
+	0xD7C1E6 I32Load 2, 0
+	0xD7C1E9 LocalTee 1
+	0xD7C1EB I32Load16_S 1, 186
+	0xD7C1EF I32Const 512
+	0xD7C1F2 I32And
+	0xD7C1F3 If -64
+	0xD7C1F5 LocalGet 1
+	0xD7C1F7 I32Load 2, 116
+	0xD7C1FA I32Eqz
+	0xD7C1FB If -64
+	0xD7C1FD LocalGet 1
+	0xD7C1FF Call 72345
+	0xD7C203 End
+	0xD7C204 End
+	0xD7C205 LocalGet 0
+	0xD7C207 I32Const 8
+	0xD7C209 I32Add
+	0xD7C20A LocalSet 1
+	0xD7C20C I32Const 0
+	0xD7C20E Call 35244
+	0xD7C212 If -64
+	0xD7C214 I32Const 4435468
+	0xD7C219 I32Load 2, 0
+	0xD7C21C LocalTee 2
+	0xD7C21E I32Load16_S 1, 186
+	0xD7C222 I32Const 512
+	0xD7C225 I32And
+	0xD7C226 If -64
+	0xD7C228 LocalGet 2
+	0xD7C22A I32Load 2, 116
+	0xD7C22D I32Eqz
+	0xD7C22E If -64
+	0xD7C230 LocalGet 2
+	0xD7C232 Call 72345
+	0xD7C236 End
+	0xD7C237 End
+	0xD7C238 I32Const 0
+	0xD7C23A Call 37756
+	0xD7C23E LocalSet 2
+	0xD7C240 I32Const 0
+	0xD7C242 Call 37758
+	0xD7C246 LocalSet 3
+	0xD7C248 LocalGet 1
+	0xD7C24A I64Const 0
+	0xD7C24C I64Store 3, 0
+	0xD7C24F LocalGet 1
+	0xD7C251 LocalGet 3
+	0xD7C253 LocalGet 2
+	0xD7C255 I32Const 1
+	0xD7C257 I32Const 0
+	0xD7C259 Call 56451
+	0xD7C25D LocalGet 1
+	0xD7C25F I64Load 3, 0
+	0xD7C262 LocalSet 4
+	0xD7C264 Else
+	0xD7C265 LocalGet 0
+	0xD7C267 I32Const 8
+	0xD7C269 Call 14799
+	0xD7C26C LocalGet 1
+	0xD7C26E LocalGet 0
+	0xD7C270 I64Load 3, 0
+	0xD7C273 LocalTee 4
+	0xD7C275 I64Store 3, 0
+	0xD7C278 End
+	0xD7C279 LocalGet 0
+	0xD7C27B GlobalSet 7
+	0xD7C27D LocalGet 4
+	0xD7C27F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b18
+	11 Nop
+	12 Move v12 @ S0_v45, [2CA314]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v45
+	14 Nop
+	15 Move v14 @ S1_v13, 1
+	16 Move [458183], v14 @ S1_v13
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Move v20 @ S0_v10 (Il2CppClass<Info.AgeRestriction>), typeof(Info.AgeRestriction)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v24 @ S0_v12, [v20 @ S0_v10 (Il2CppClass<Info.AgeRestriction>)+BA], 512
+	27 CheckEqual v25 @ TEMP_v2 (System.Boolean), v24 @ S0_v12, 0
+	28 ConditionalJump @b21, v25 @ TEMP_v2 (System.Boolean)
+	29 Move v26 @ S0_v40 (Il2CppClass<Info.AgeRestriction>), typeof(Info.AgeRestriction)
+	30 Nop
+	31 CheckEqual v28 @ S0_v42 (System.Boolean), [v26 @ S0_v40 (Il2CppClass<Info.AgeRestriction>)+74], 0
+	32 Not v29 @ TEMP_v9 (System.Boolean), v28 @ S0_v42 (System.Boolean)
+	33 ConditionalJump @b21, v29 @ TEMP_v9 (System.Boolean)
+	34 Nop
+	35 CallVoid 11A99, typeof(Info.AgeRestriction)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Add v35 @ S0_v15, v1 @ G7, 8
+	41 Nop
+	42 Nop
+	43 Call AgeRestriction.IsConsentGiven, v38 @ S0_v17 (System.Boolean)
+	44 Not v39 @ TEMP_v4 (System.Boolean), v38 @ S0_v17 (System.Boolean)
+	45 ConditionalJump @b16, v39 @ TEMP_v4 (System.Boolean)
+	46 Nop
+	47 Move v41 @ S0_v24 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 And v45 @ S0_v26, [v41 @ S0_v24 (Il2CppClass<Data.Save.UserSave>)+BA], 512
+	52 CheckEqual v46 @ TEMP_v6 (System.Boolean), v45 @ S0_v26, 0
+	53 ConditionalJump @b19, v46 @ TEMP_v6 (System.Boolean)
+	54 Move v49 @ S0_v36 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	55 Nop
+	56 CheckEqual v51 @ S0_v38 (System.Boolean), [v49 @ S0_v36 (Il2CppClass<Data.Save.UserSave>)+74], 0
+	57 Not v52 @ TEMP_v8 (System.Boolean), v51 @ S0_v38 (System.Boolean)
+	58 ConditionalJump @b19, v52 @ TEMP_v8 (System.Boolean)
+	59 Nop
+	60 CallVoid 11A99, typeof(Data.Save.UserSave)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Call UserSave.get_ageRestrictionInputYear, v57 @ S0_v29 (System.Int32)
+	65 Nop
+	66 Nop
+	67 Call UserSave.get_cloudSaveEnabled, v64 @ S0_v31 (System.Boolean)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Move [v35 @ S0_v15], 0
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 CallVoid DC83, v35 @ S0_v15, v64 @ S0_v31 (System.Boolean), v57 @ S0_v29 (System.Int32), 1, 0
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Jump @b20
+	82 Nop
+	83 Nop
+	84 CallVoid 39CF, v1 @ G7, 8
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Move [v35 @ S0_v15], [v1 @ G7]
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Return v65 @ L4_v1 (System.DateTime)
+
+Method: System.Void set_scheduledFirstInterstitialShowTime(System.DateTime value)
+
+Disassembly:
+	0x1600D21 I32Const 330
+	0x1600D24 Call 1
+	0x1600D26 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 330
+	2 Nop
+	3 Return
+
+Method: System.Collections.Generic.Dictionary`2<System.String, System.String> get_lastShowedProviders()
+
+Disassembly:
+	0xE01DAB I32Const 4556716
+	0xE01DB0 I32Load8_S 0, 0
+	0xE01DB3 I32Eqz
+	0xE01DB4 If -64
+	0xE01DB6 I32Const 2925100
+	0xE01DBB I32Load 2, 0
+	0xE01DBE Call 73003
+	0xE01DC2 I32Const 4556716
+	0xE01DC7 I32Const 1
+	0xE01DC9 I32Store8 0, 0
+	0xE01DCC End
+	0xE01DCD I32Const 4450376
+	0xE01DD2 I32Load 2, 0
+	0xE01DD5 Call 53270
+	0xE01DD9 I32Load8_S 0, 328
+	0xE01DDD I32Const 0
+	0xE01DDF I32Ne
+	0xE01DE0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v11, [2CA22C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4587AC], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 CheckNotEqual returnVal1 @ S0_v9 (System.Boolean), [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+148], 0
+	18 Nop
+	19 Return returnVal1 @ S0_v9 (System.Boolean)
+
+Method: System.Void set_lastShowedProviders(System.Collections.Generic.Dictionary`2<System.String, System.String> value)
+
+Disassembly:
+	0xE01E53 GlobalGet 7
+	0xE01E55 LocalSet 1
+	0xE01E57 GlobalGet 7
+	0xE01E59 I32Const 16
+	0xE01E5B I32Add
+	0xE01E5C GlobalSet 7
+	0xE01E5E I32Const 4556719
+	0xE01E63 I32Load8_S 0, 0
+	0xE01E66 I32Eqz
+	0xE01E67 If -64
+	0xE01E69 I32Const 2925164
+	0xE01E6E I32Load 2, 0
+	0xE01E71 Call 73003
+	0xE01E75 I32Const 4556719
+	0xE01E7A I32Const 1
+	0xE01E7C I32Store8 0, 0
+	0xE01E7F End
+	0xE01E80 I32Const 4450424
+	0xE01E85 I32Load 2, 0
+	0xE01E88 Call 53269
+	0xE01E8C LocalGet 1
+	0xE01E8E LocalGet 0
+	0xE01E90 I64Load 3, 0
+	0xE01E93 I64Store 3, 0
+	0xE01E96 LocalGet 1
+	0xE01E98 I32Const 8
+	0xE01E9A I32Add
+	0xE01E9B LocalTee 0
+	0xE01E9D LocalGet 1
+	0xE01E9F I64Load 3, 0
+	0xE01EA2 I64Store 3, 0
+	0xE01EA5 LocalGet 0
+	0xE01EA7 I64Load 3, 0
+	0xE01EAA I64Store 3, 16
+	0xE01EAD LocalGet 1
+	0xE01EAF GlobalSet 7
+	0xE01EB1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b6
+	11 Nop
+	12 Move v12 @ S0_v13, [2CA26C]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v13
+	14 Nop
+	15 Move v14 @ S1_v8, 1
+	16 Move [4587AF], v14 @ S1_v8
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call DataManager`1.get_cloud, v19 @ S0_v10 (Data.Save.Internal.CloudData)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Move [v1 @ G7], [value @ L0 (System.Collections.Generic.Dictionary`2<System.String, System.String>)]
+	25 Nop
+	26 Nop
+	27 Add v26 @ S1_v5, v1 @ G7, 8
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v26 @ S1_v5], [v1 @ G7]
+	32 Nop
+	33 Nop
+	34 Move v19.obfuscatedUnrewardedCoins (System.Int32), [v26 @ S1_v5]
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Return
+
+Method: Kiloo.Common.Ads.InterstitialStats get_interstitialStats()
+
+Disassembly:
+	0xE01EB4 I32Const 4556720
+	0xE01EB9 I32Load8_S 0, 0
+	0xE01EBC I32Eqz
+	0xE01EBD If -64
+	0xE01EBF I32Const 2925124
+	0xE01EC4 I32Load 2, 0
+	0xE01EC7 Call 73003
+	0xE01ECB I32Const 4556720
+	0xE01ED0 I32Const 1
+	0xE01ED2 I32Store8 0, 0
+	0xE01ED5 End
+	0xE01ED6 I32Const 4450424
+	0xE01EDB I32Load 2, 0
+	0xE01EDE Call 53269
+	0xE01EE2 I32Load 2, 24
+	0xE01EE5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA244]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4587B0], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_cloud, v13 @ S0_v7 (Data.Save.Internal.CloudData)
+	15 Nop
+	16 Nop
+	17 Return v13.upgrades (System.Collections.Generic.Dictionary`2<Info.UpgradeType, System.Int32>)
+
+Method: System.Void set_interstitialStats(Kiloo.Common.Ads.InterstitialStats value)
+
+Disassembly:
+	0xE01EE8 I32Const 4556721
+	0xE01EED I32Load8_S 0, 0
+	0xE01EF0 I32Eqz
+	0xE01EF1 If -64
+	0xE01EF3 I32Const 2925160
+	0xE01EF8 I32Load 2, 0
+	0xE01EFB Call 73003
+	0xE01EFF I32Const 4556721
+	0xE01F04 I32Const 1
+	0xE01F06 I32Store8 0, 0
+	0xE01F09 End
+	0xE01F0A I32Const 4450424
+	0xE01F0F I32Load 2, 0
+	0xE01F12 Call 53269
+	0xE01F16 I32Const 24
+	0xE01F18 I32Add
+	0xE01F19 LocalGet 0
+	0xE01F1B I32Store 2, 0
+	0xE01F1E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA268]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4587B1], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_cloud, v13 @ S0_v7 (Data.Save.Internal.CloudData)
+	15 Nop
+	16 Add v15 @ S0_v8, v13 @ S0_v7 (Data.Save.Internal.CloudData), 24
+	17 Nop
+	18 Move [v15 @ S0_v8], value @ L0 (Kiloo.Common.Ads.InterstitialStats)
+	19 Nop
+	20 Return
+
+Method: System.Int32 get_currentIntroVideoAdPrizeIndex()
+
+Disassembly:
+	0xE01F21 I32Const 4556722
+	0xE01F26 I32Load8_S 0, 0
+	0xE01F29 I32Eqz
+	0xE01F2A If -64
+	0xE01F2C I32Const 2925120
+	0xE01F31 I32Load 2, 0
+	0xE01F34 Call 73003
+	0xE01F38 I32Const 4556722
+	0xE01F3D I32Const 1
+	0xE01F3F I32Store8 0, 0
+	0xE01F42 End
+	0xE01F43 I32Const 4450376
+	0xE01F48 I32Load 2, 0
+	0xE01F4B Call 53270
+	0xE01F4F I32Load 2, 332
+	0xE01F53 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA240]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4587B2], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 Return [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+14C]
+
+Method: System.Void set_currentIntroVideoAdPrizeIndex(System.Int32 value)
+
+Disassembly:
+	0xE01F56 I32Const 4556723
+	0xE01F5B I32Load8_S 0, 0
+	0xE01F5E I32Eqz
+	0xE01F5F If -64
+	0xE01F61 I32Const 2925156
+	0xE01F66 I32Load 2, 0
+	0xE01F69 Call 73003
+	0xE01F6D I32Const 4556723
+	0xE01F72 I32Const 1
+	0xE01F74 I32Store8 0, 0
+	0xE01F77 End
+	0xE01F78 I32Const 4450376
+	0xE01F7D I32Load 2, 0
+	0xE01F80 Call 53270
+	0xE01F84 I32Const 332
+	0xE01F87 I32Add
+	0xE01F88 LocalGet 0
+	0xE01F8A I32Store 2, 0
+	0xE01F8D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA264]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4587B3], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Add v15 @ S0_v8, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData), 332
+	17 Nop
+	18 Move [v15 @ S0_v8], value @ L0 (System.Int32)
+	19 Nop
+	20 Return
+
+Method: System.Int32 get_currentRandomVideoAdPrizeIndex()
+
+Disassembly:
+	0xE01F90 I32Const 4556724
+	0xE01F95 I32Load8_S 0, 0
+	0xE01F98 I32Eqz
+	0xE01F99 If -64
+	0xE01F9B I32Const 2925108
+	0xE01FA0 I32Load 2, 0
+	0xE01FA3 Call 73003
+	0xE01FA7 I32Const 4556724
+	0xE01FAC I32Const 1
+	0xE01FAE I32Store8 0, 0
+	0xE01FB1 End
+	0xE01FB2 I32Const 4450376
+	0xE01FB7 I32Load 2, 0
+	0xE01FBA Call 53270
+	0xE01FBE I32Load 2, 504
+	0xE01FC2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA234]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4587B4], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 Return [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+1F8]
+
+Method: System.Void set_currentRandomVideoAdPrizeIndex(System.Int32 value)
+
+Disassembly:
+	0xE01FC5 I32Const 4556725
+	0xE01FCA I32Load8_S 0, 0
+	0xE01FCD I32Eqz
+	0xE01FCE If -64
+	0xE01FD0 I32Const 2925144
+	0xE01FD5 I32Load 2, 0
+	0xE01FD8 Call 73003
+	0xE01FDC I32Const 4556725
+	0xE01FE1 I32Const 1
+	0xE01FE3 I32Store8 0, 0
+	0xE01FE6 End
+	0xE01FE7 I32Const 4450376
+	0xE01FEC I32Load 2, 0
+	0xE01FEF Call 53270
+	0xE01FF3 LocalGet 0
+	0xE01FF5 I32Store 2, 504
+	0xE01FF9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2CA258]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4587B5], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Move [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+1F8], value @ L0 (System.Int32)
+	17 Nop
+	18 Return
+
+Method: System.Int32 get_currentVideoAdPrizeSeed()
+
+Disassembly:
+	0xE01FFC I32Const 4556726
+	0xE02001 I32Load8_S 0, 0
+	0xE02004 I32Eqz
+	0xE02005 If -64
+	0xE02007 I32Const 2925112
+	0xE0200C I32Load 2, 0
+	0xE0200F Call 73003
+	0xE02013 I32Const 4556726
+	0xE02018 I32Const 1
+	0xE0201A I32Store8 0, 0
+	0xE0201D End
+	0xE0201E I32Const 4450376
+	0xE02023 I32Load 2, 0
+	0xE02026 Call 53270
+	0xE0202A I32Load 2, 508
+	0xE0202E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA238]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4587B6], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 Return [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+1FC]
+
+Method: System.Void set_currentVideoAdPrizeSeed(System.Int32 value)
+
+Disassembly:
+	0xE02031 I32Const 4556727
+	0xE02036 I32Load8_S 0, 0
+	0xE02039 I32Eqz
+	0xE0203A If -64
+	0xE0203C I32Const 2925148
+	0xE02041 I32Load 2, 0
+	0xE02044 Call 73003
+	0xE02048 I32Const 4556727
+	0xE0204D I32Const 1
+	0xE0204F I32Store8 0, 0
+	0xE02052 End
+	0xE02053 I32Const 4450376
+	0xE02058 I32Load 2, 0
+	0xE0205B Call 53270
+	0xE0205F LocalGet 0
+	0xE02061 I32Store 2, 508
+	0xE02065 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2CA25C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4587B7], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Move [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+1FC], value @ L0 (System.Int32)
+	17 Nop
+	18 Return
+
+Method: System.Int32 get_videosWatchedSinceDailyKeys()
+
+Disassembly:
+	0xE02068 I32Const 4556728
+	0xE0206D I32Load8_S 0, 0
+	0xE02070 I32Eqz
+	0xE02071 If -64
+	0xE02073 I32Const 2925116
+	0xE02078 I32Load 2, 0
+	0xE0207B Call 73003
+	0xE0207F I32Const 4556728
+	0xE02084 I32Const 1
+	0xE02086 I32Store8 0, 0
+	0xE02089 End
+	0xE0208A I32Const 4450376
+	0xE0208F I32Load 2, 0
+	0xE02092 Call 53270
+	0xE02096 I32Load 2, 512
+	0xE0209A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA23C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4587B8], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 Return [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+200]
+
+Method: System.Void set_videosWatchedSinceDailyKeys(System.Int32 value)
+
+Disassembly:
+	0xE0209D I32Const 4556729
+	0xE020A2 I32Load8_S 0, 0
+	0xE020A5 I32Eqz
+	0xE020A6 If -64
+	0xE020A8 I32Const 2925152
+	0xE020AD I32Load 2, 0
+	0xE020B0 Call 73003
+	0xE020B4 I32Const 4556729
+	0xE020B9 I32Const 1
+	0xE020BB I32Store8 0, 0
+	0xE020BE End
+	0xE020BF I32Const 4450376
+	0xE020C4 I32Load 2, 0
+	0xE020C7 Call 53270
+	0xE020CB LocalGet 0
+	0xE020CD I32Store 2, 512
+	0xE020D1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2CA260]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4587B9], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Move [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+200], value @ L0 (System.Int32)
+	17 Nop
+	18 Return
+
+Method: Info.VideoRewardCooldowns.Cooldowns get_cooldowns()
+
+Disassembly:
+	0xE020D4 I32Const 4556730
+	0xE020D9 I32Load8_S 0, 0
+	0xE020DC I32Eqz
+	0xE020DD If -64
+	0xE020DF I32Const 2925132
+	0xE020E4 I32Load 2, 0
+	0xE020E7 Call 73003
+	0xE020EB I32Const 4556730
+	0xE020F0 I32Const 1
+	0xE020F2 I32Store8 0, 0
+	0xE020F5 End
+	0xE020F6 I32Const 4450376
+	0xE020FB I32Load 2, 0
+	0xE020FE Call 53270
+	0xE02102 I32Load 2, 516
+	0xE02106 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA24C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4587BA], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 Return [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+204]
+
+Method: System.Void set_cooldowns(Info.VideoRewardCooldowns.Cooldowns value)
+
+Disassembly:
+	0xE02109 I32Const 4556731
+	0xE0210E I32Load8_S 0, 0
+	0xE02111 I32Eqz
+	0xE02112 If -64
+	0xE02114 I32Const 2925168
+	0xE02119 I32Load 2, 0
+	0xE0211C Call 73003
+	0xE02120 I32Const 4556731
+	0xE02125 I32Const 1
+	0xE02127 I32Store8 0, 0
+	0xE0212A End
+	0xE0212B I32Const 4450376
+	0xE02130 I32Load 2, 0
+	0xE02133 Call 53270
+	0xE02137 LocalGet 0
+	0xE02139 I32Store 2, 516
+	0xE0213D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2CA270]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4587BB], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Move [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+204], value @ L0 (Info.VideoRewardCooldowns.Cooldowns)
+	17 Nop
+	18 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE02175 I32Const 4556733
+	0xE0217A I32Load8_S 0, 0
+	0xE0217D I32Eqz
+	0xE0217E If -64
+	0xE02180 I32Const 2925140
+	0xE02185 I32Load 2, 0
+	0xE02188 Call 73003
+	0xE0218C I32Const 4556733
+	0xE02191 I32Const 1
+	0xE02193 I32Store8 0, 0
+	0xE02196 End
+	0xE02197 I32Const 4450376
+	0xE0219C I32Load 2, 0
+	0xE0219F Call 53270
+	0xE021A3 I32Const 344
+	0xE021A6 I32Add
+	0xE021A7 LocalGet 0
+	0xE021A9 I32Store 2, 0
+	0xE021AC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2CA254]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4587BD], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Add v15 @ S0_v8, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData), 344
+	17 Nop
+	18 Move [v15 @ S0_v8], this @ L0 (Data.Save.AdsSave)
+	19 Nop
+	20 Return
+

@@ -1,0 +1,319 @@
+Type: Kiloo.Common.Backend.Authentication.KilooAuthErrorExtensions
+
+Method: Kiloo.Common.Backend.Authentication.KilooAuthError KilooAuthError(Kiloo.Common.Backend.Error error)
+
+Disassembly:
+	0xF77F7B I32Const 4560915
+	0xF77F80 I32Load8_S 0, 0
+	0xF77F83 I32Eqz
+	0xF77F84 If -64
+	0xF77F86 I32Const 2976120
+	0xF77F8B I32Load 2, 0
+	0xF77F8E Call 73003
+	0xF77F92 I32Const 4560915
+	0xF77F97 I32Const 1
+	0xF77F99 I32Store8 0, 0
+	0xF77F9C End
+	0xF77F9D LocalGet 0
+	0xF77F9F I32Const 0
+	0xF77FA1 Call 43063
+	0xF77FA5 I32Const 2
+	0xF77FA7 I32Eq
+	0xF77FA8 If -1
+	0xF77FAA LocalGet 0
+	0xF77FAC I32Const 32
+	0xF77FAE I32Add
+	0xF77FAF I32Load 2, 0
+	0xF77FB2 LocalTee 1
+	0xF77FB4 If -1
+	0xF77FB6 LocalGet 1
+	0xF77FB8 I32Load 2, 8
+	0xF77FBB I32Eqz
+	0xF77FBC Else
+	0xF77FBD I32Const 1
+	0xF77FBF End
+	0xF77FC0 If -1
+	0xF77FC2 I32Const 0
+	0xF77FC4 Else
+	0xF77FC5 LocalGet 0
+	0xF77FC7 I32Load 2, 28
+	0xF77FCA I32Const 4438656
+	0xF77FCF I32Load 2, 0
+	0xF77FD2 Call 72556
+	0xF77FD6 LocalTee 3
+	0xF77FD8 LocalSet 2
+	0xF77FDA I32Const 4488640
+	0xF77FDF I32Load 2, 0
+	0xF77FE2 Drop
+	0xF77FE3 LocalGet 2
+	0xF77FE5 I32Const 4451156
+	0xF77FEA I32Load 2, 0
+	0xF77FED LocalTee 4
+	0xF77FEF I32Load 2, 0
+	0xF77FF2 I32Store 2, 8
+	0xF77FF5 LocalGet 2
+	0xF77FF7 LocalGet 4
+	0xF77FF9 I32Store 2, 20
+	0xF77FFC LocalGet 2
+	0xF77FFE I32Const 16
+	0xF78000 I32Add
+	0xF78001 LocalGet 0
+	0xF78003 I32Store 2, 0
+	0xF78006 LocalGet 3
+	0xF78008 I32Const 4456692
+	0xF7800D I32Load 2, 0
+	0xF78010 Call 37203
+	0xF78014 End
+	0xF78015 Else
+	0xF78016 I32Const 0
+	0xF78018 End
+	0xF78019 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v24, [2D6978]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v24
+	8 Nop
+	9 Move v7 @ S1_v17, 1
+	10 Move [459813], v7 @ S1_v17
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call KilooAuth.get_allowAnonymous, v14 @ S0_v6 (System.Boolean), error @ L0 (Kiloo.Common.Backend.Error)
+	15 Nop
+	16 CheckEqual v16 @ S0_v7 (System.Boolean), v14 @ S0_v6 (System.Boolean), 2
+	17 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v7 (System.Boolean)
+	18 ConditionalJump @b13, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Add v20 @ S0_v11, error @ L0 (Kiloo.Common.Backend.Error), 32
+	22 Move v21 @ S0_v12, [v20 @ S0_v11]
+	23 Nop
+	24 CheckEqual v23 @ TEMP_v4 (System.Boolean), [v20 @ S0_v11], 0
+	25 ConditionalJump @b8, v23 @ TEMP_v4 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 CheckEqual v49 @ S0_v13 (System.Boolean), [v21 @ S0_v12+8], 0
+	29 Jump @b15
+	30 Nop
+	31 Nop
+	32 Not v46 @ TEMP_v5 (System.Boolean), v49 @ S0_v13 (System.Boolean)
+	33 ConditionalJump @b10, v46 @ TEMP_v5 (System.Boolean)
+	34 Nop
+	35 Jump @b12
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call 11B6C, v55 @ S1_v9 (System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String, Kiloo.Common.Backend.Authentication.IKilooAuthPlatform>, System.Boolean>), typeof(System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String, Kiloo.Common.Backend.Authentication.IKilooAuthPlatform>, System.Boolean>)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move v66 @ S2_v4 (Il2CppMethodInfo), methodof(Kiloo.Common.Backend.Authentication.KilooAuth::<IsCachedTokenValid>b__45_0)
+	48 Nop
+	49 Nop
+	50 Move [v55 @ S1_v9 (System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String, Kiloo.Common.Backend.Authentication.IKilooAuthPlatform>, System.Boolean>)+8], [v66 @ S2_v4 (Il2CppMethodInfo)]
+	51 Nop
+	52 Nop
+	53 Move [v55 @ S1_v9 (System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String, Kiloo.Common.Backend.Authentication.IKilooAuthPlatform>, System.Boolean>)+14], methodof(Kiloo.Common.Backend.Authentication.KilooAuth::<IsCachedTokenValid>b__45_0)
+	54 Nop
+	55 Nop
+	56 Add v72 @ S1_v15, v55 @ S1_v9 (System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String, Kiloo.Common.Backend.Authentication.IKilooAuthPlatform>, System.Boolean>), 16
+	57 Nop
+	58 Move [v72 @ S1_v15], error @ L0 (Kiloo.Common.Backend.Error)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Call Enumerable.All, v61 @ S0_v17 (System.Boolean), [error @ L0 (Kiloo.Common.Backend.Error)+1C], v55 @ S1_v9 (System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String, Kiloo.Common.Backend.Authentication.IKilooAuthPlatform>, System.Boolean>)
+	63 Nop
+	64 Jump @b16
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Return returnVal1 @ S0_v8 (Kiloo.Common.Backend.Authentication.KilooAuthError)
+
+Method: System.Int32 GetErrorCode(Kiloo.Common.Backend.Authentication.KilooAuthError error)
+
+Disassembly:
+	0xF79E33 GlobalGet 7
+	0xF79E35 LocalSet 1
+	0xF79E37 GlobalGet 7
+	0xF79E39 I32Const 16
+	0xF79E3B I32Add
+	0xF79E3C GlobalSet 7
+	0xF79E3E I32Const 4560935
+	0xF79E43 I32Load8_S 0, 0
+	0xF79E46 I32Eqz
+	0xF79E47 If -64
+	0xF79E49 I32Const 2976052
+	0xF79E4E I32Load 2, 0
+	0xF79E51 Call 73003
+	0xF79E55 I32Const 4560935
+	0xF79E5A I32Const 1
+	0xF79E5C I32Store8 0, 0
+	0xF79E5F End
+	0xF79E60 I32Const 4425420
+	0xF79E65 I32Load 2, 0
+	0xF79E68 LocalSet 3
+	0xF79E6A I32Const 4427800
+	0xF79E6F I32Load 2, 0
+	0xF79E72 LocalTee 2
+	0xF79E74 I32Load16_S 1, 186
+	0xF79E78 I32Const 512
+	0xF79E7B I32And
+	0xF79E7C If -64
+	0xF79E7E LocalGet 2
+	0xF79E80 I32Load 2, 116
+	0xF79E83 I32Eqz
+	0xF79E84 If -64
+	0xF79E86 LocalGet 2
+	0xF79E88 Call 72345
+	0xF79E8C End
+	0xF79E8D End
+	0xF79E8E LocalGet 1
+	0xF79E90 LocalGet 3
+	0xF79E92 I32Store 2, 0
+	0xF79E95 LocalGet 1
+	0xF79E97 I32Const 4
+	0xF79E99 I32Add
+	0xF79E9A LocalTee 2
+	0xF79E9C LocalGet 1
+	0xF79E9E I32Load 2, 0
+	0xF79EA1 I32Store 2, 0
+	0xF79EA4 LocalGet 2
+	0xF79EA6 I32Const 0
+	0xF79EA8 Call 49925
+	0xF79EAC LocalGet 2
+	0xF79EAE LocalGet 0
+	0xF79EB0 I32Load 2, 12
+	0xF79EB3 I32Store 2, 0
+	0xF79EB6 I32Const 4427776
+	0xF79EBB I32Load 2, 0
+	0xF79EBE LocalGet 2
+	0xF79EC0 Call 73903
+	0xF79EC4 I32Const 4428688
+	0xF79EC9 I32Load 2, 0
+	0xF79ECC LocalTee 2
+	0xF79ECE I32Load16_S 1, 186
+	0xF79ED2 I32Const 512
+	0xF79ED5 I32And
+	0xF79ED6 If -64
+	0xF79ED8 LocalGet 2
+	0xF79EDA I32Load 2, 116
+	0xF79EDD I32Eqz
+	0xF79EDE If -64
+	0xF79EE0 LocalGet 2
+	0xF79EE2 Call 72345
+	0xF79EE6 End
+	0xF79EE7 End
+	0xF79EE8 I32Const 0
+	0xF79EEA Call 51315
+	0xF79EEE If -1
+	0xF79EF0 LocalGet 0
+	0xF79EF2 I32Load 2, 12
+	0xF79EF5 Else
+	0xF79EF6 I32Const 0
+	0xF79EF8 End
+	0xF79EF9 LocalGet 1
+	0xF79EFB GlobalSet 7
+	0xF79EFD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b16
+	11 Nop
+	12 Move v12 @ S0_v30, [2D6934]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v30
+	14 Nop
+	15 Move v14 @ S1_v14, 1
+	16 Move [459827], v14 @ S1_v14
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move v21 @ S0_v11 (Il2CppClass<System.Type>), typeof(System.Type)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v25 @ S0_v13, [v21 @ S0_v11 (Il2CppClass<System.Type>)+BA], 512
+	27 CheckEqual v26 @ TEMP_v2 (System.Boolean), v25 @ S0_v13, 0
+	28 ConditionalJump @b19, v26 @ TEMP_v2 (System.Boolean)
+	29 Move v27 @ S0_v25 (Il2CppClass<System.Type>), typeof(System.Type)
+	30 Nop
+	31 CheckEqual v29 @ S0_v27 (System.Boolean), [v27 @ S0_v25 (Il2CppClass<System.Type>)+74], 0
+	32 Not v30 @ TEMP_v8 (System.Boolean), v29 @ S0_v27 (System.Boolean)
+	33 ConditionalJump @b19, v30 @ TEMP_v8 (System.Boolean)
+	34 Nop
+	35 CallVoid 11A99, typeof(System.Type)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move [v1 @ G7], typeof(Kiloo.Common.Backend.Authentication.KilooAuthError)
+	41 Nop
+	42 Nop
+	43 Add v38 @ S0_v17 (System.IntPtr), v1 @ G7, 4
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move v38.m_value (System.Void*), [v1 @ G7]
+	48 Nop
+	49 Nop
+	50 Call Type.internal_from_handle, v44 @ S0_v19 (System.Type), v38 @ S0_v17 (System.IntPtr)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Move v38.m_value (System.Void*), [error @ L0 (Kiloo.Common.Backend.Authentication.KilooAuthError)+C]
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Call 120AF, v52 @ S1_v12 (System.Enum), typeof(System.Int32), v38 @ S0_v17 (System.IntPtr)
+	59 Nop
+	60 Move v54 @ S2_v5 (Il2CppClass<System.Enum>), typeof(System.Enum)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 And v58 @ S2_v7, [v54 @ S2_v5 (Il2CppClass<System.Enum>)+BA], 512
+	65 CheckEqual v59 @ TEMP_v4 (System.Boolean), v58 @ S2_v7, 0
+	66 ConditionalJump @b17, v59 @ TEMP_v4 (System.Boolean)
+	67 Move v60 @ S2_v10 (Il2CppClass<System.Enum>), typeof(System.Enum)
+	68 Nop
+	69 CheckEqual v62 @ S2_v12 (System.Boolean), [v60 @ S2_v10 (Il2CppClass<System.Enum>)+74], 0
+	70 Not v63 @ TEMP_v7 (System.Boolean), v62 @ S2_v12 (System.Boolean)
+	71 ConditionalJump @b17, v63 @ TEMP_v7 (System.Boolean)
+	72 Nop
+	73 CallVoid 11A99, typeof(System.Enum)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Call Enum.InternalHasFlag, v68 @ S0_v20 (System.Boolean), v44 @ S0_v19 (System.Type), v52 @ S1_v12 (System.Enum)
+	78 Not v69 @ TEMP_v6 (System.Boolean), v68 @ S0_v20 (System.Boolean)
+	79 ConditionalJump @b15, v69 @ TEMP_v6 (System.Boolean)
+	80 Nop
+	81 Move returnVal1 @ S0_v21 (System.Int32), [error @ L0 (Kiloo.Common.Backend.Authentication.KilooAuthError)+C]
+	82 Jump @b18
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Return returnVal1 @ S0_v21 (System.Int32)
+

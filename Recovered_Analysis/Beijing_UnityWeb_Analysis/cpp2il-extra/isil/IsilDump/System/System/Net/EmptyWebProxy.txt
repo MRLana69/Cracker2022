@@ -1,0 +1,156 @@
+Type: System.Net.EmptyWebProxy
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x1130385 LocalGet 0
+	0x1130387 I32Const 0
+	0x1130389 I32Const 0
+	0x113038B Call 52368
+	0x113038F LocalGet 0
+	0x1130391 I32Const 3
+	0x1130393 I32Store 2, 16
+	0x1130396 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid Callback.EndInvoke, this @ L0 (System.Net.EmptyWebProxy), 0
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (System.Net.EmptyWebProxy)+10], 3
+	7 Nop
+	8 Return
+
+Method: System.Uri GetProxy(System.Uri uri)
+
+Disassembly:
+	0x11203CC I32Const 4566284
+	0x11203D1 I32Load8_S 0, 0
+	0x11203D4 I32Eqz
+	0x11203D5 If -64
+	0x11203D7 I32Const 2984604
+	0x11203DC I32Load 2, 0
+	0x11203DF Call 73003
+	0x11203E3 I32Const 4566284
+	0x11203E8 I32Const 1
+	0x11203EA I32Store8 0, 0
+	0x11203ED End
+	0x11203EE I32Const 4432584
+	0x11203F3 I32Load 2, 0
+	0x11203F6 LocalTee 2
+	0x11203F8 I32Load16_S 1, 186
+	0x11203FC I32Const 512
+	0x11203FF I32And
+	0x1120400 If -64
+	0x1120402 LocalGet 2
+	0x1120404 I32Load 2, 116
+	0x1120407 I32Eqz
+	0x1120408 If -64
+	0x112040A LocalGet 2
+	0x112040C Call 72345
+	0x1120410 End
+	0x1120411 End
+	0x1120412 LocalGet 1
+	0x1120414 I32Const 0
+	0x1120416 Call 52114
+	0x112041A LocalSet 1
+	0x112041C LocalGet 0
+	0x112041E LocalSet 2
+	0x1120420 I32Const 4427896
+	0x1120425 I32Load 2, 0
+	0x1120428 LocalTee 0
+	0x112042A I32Load16_S 1, 186
+	0x112042E I32Const 512
+	0x1120431 I32And
+	0x1120432 If -64
+	0x1120434 LocalGet 0
+	0x1120436 I32Load 2, 116
+	0x1120439 I32Eqz
+	0x112043A If -64
+	0x112043C LocalGet 0
+	0x112043E Call 72345
+	0x1120442 End
+	0x1120443 End
+	0x1120444 I32Const 0
+	0x1120446 Call 51329
+	0x112044A LocalGet 2
+	0x112044C LocalGet 1
+	0x112044E I32Const 0
+	0x1120450 Call 55898
+	0x1120454 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v30, [2D8A9C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v30
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45AD0C], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Net.WebExceptionMapping>), typeof(System.Net.WebExceptionMapping)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Net.WebExceptionMapping>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b16, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v25 (Il2CppClass<System.Net.WebExceptionMapping>), typeof(System.Net.WebExceptionMapping)
+	21 Nop
+	22 CheckEqual v20 @ S0_v27 (System.Boolean), [v18 @ S0_v25 (Il2CppClass<System.Net.WebExceptionMapping>)+74], 0
+	23 Not v21 @ TEMP_v7 (System.Boolean), v20 @ S0_v27 (System.Boolean)
+	24 ConditionalJump @b16, v21 @ TEMP_v7 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Net.WebExceptionMapping)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call WebHeaderCollection.get_InnerCollection, v28 @ S0_v11 (System.Collections.Specialized.NameValueCollection), uri @ L1 (System.Uri)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Move v34 @ S0_v14 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 And v38 @ S0_v16, [v34 @ S0_v14 (Il2CppClass<System.Globalization.CultureInfo>)+BA], 512
+	41 CheckEqual v39 @ TEMP_v4 (System.Boolean), v38 @ S0_v16, 0
+	42 ConditionalJump @b15, v39 @ TEMP_v4 (System.Boolean)
+	43 Move v40 @ S0_v21 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	44 Nop
+	45 CheckEqual v42 @ S0_v23 (System.Boolean), [v40 @ S0_v21 (Il2CppClass<System.Globalization.CultureInfo>)+74], 0
+	46 Not v43 @ TEMP_v6 (System.Boolean), v42 @ S0_v23 (System.Boolean)
+	47 ConditionalJump @b15, v43 @ TEMP_v6 (System.Boolean)
+	48 Nop
+	49 CallVoid 11A99, typeof(System.Globalization.CultureInfo)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Call CultureInfo.get_CurrentUICulture, v48 @ S0_v19 (System.Globalization.CultureInfo)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Call String.Format, returnVal1 @ S0_v20 (System.Uri), v48 @ S0_v19 (System.Globalization.CultureInfo), this @ L0 (System.Net.EmptyWebProxy), v28 @ S0_v11 (System.Collections.Specialized.NameValueCollection)
+	58 Nop
+	59 Return returnVal1 @ S0_v20 (System.Uri)
+
+Method: System.Boolean IsBypassed(System.Uri uri)
+
+Disassembly:
+	0xB2DD91 LocalGet 1
+	0xB2DD93 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return uri @ L1 (System.Uri)
+

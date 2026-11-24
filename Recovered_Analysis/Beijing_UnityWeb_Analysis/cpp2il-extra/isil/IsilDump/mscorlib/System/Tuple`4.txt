@@ -1,0 +1,327 @@
+Type: System.Tuple`4
+
+Method: T1 get_Item1()
+
+Disassembly:
+	0x13ABDB6 LocalGet 0
+	0x13ABDB8 I32Const 8
+	0x13ABDBA I32Add
+	0x13ABDBB LocalGet 1
+	0x13ABDBD Call 48513
+	0x13ABDC1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Newobj returnVal1 @ S0_v3 (System.OverflowException), typeof(System.OverflowException)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.OverflowException)
+
+Method: T2 get_Item2()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_Item1 (T1)
+
+Method: T3 get_Item3()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_Item2 (T2)
+
+Method: T4 get_Item4()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_Item3 (T3)
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x13B1036 GlobalGet 7
+	0x13B1038 LocalSet 3
+	0x13B103A GlobalGet 7
+	0x13B103C I32Const 16
+	0x13B103E I32Add
+	0x13B103F GlobalSet 7
+	0x13B1041 I32Const 4573577
+	0x13B1046 I32Load8_S 0, 0
+	0x13B1049 I32Eqz
+	0x13B104A If -64
+	0x13B104C I32Const 3011944
+	0x13B1051 I32Load 2, 0
+	0x13B1054 Call 73003
+	0x13B1058 I32Const 4573577
+	0x13B105D I32Const 1
+	0x13B105F I32Store8 0, 0
+	0x13B1062 End
+	0x13B1063 LocalGet 1
+	0x13B1065 LocalGet 0
+	0x13B1067 I32Load 2, 8
+	0x13B106A I32Const 0
+	0x13B106C Call 61658
+	0x13B1070 Drop
+	0x13B1071 LocalGet 1
+	0x13B1073 I32Const 4502680
+	0x13B1078 I32Load 2, 0
+	0x13B107B I32Const 0
+	0x13B107D Call 61377
+	0x13B1081 Drop
+	0x13B1082 LocalGet 3
+	0x13B1084 LocalGet 0
+	0x13B1086 I32Load16_S 1, 12
+	0x13B1089 I32Store16 1, 0
+	0x13B108C LocalGet 1
+	0x13B108E LocalGet 2
+	0x13B1090 I32Load 2, 12
+	0x13B1093 I32Load 2, 96
+	0x13B1096 I32Load 2, 8
+	0x13B1099 Call 29253
+	0x13B109D LocalGet 3
+	0x13B109F Call 73903
+	0x13B10A3 I32Const 0
+	0x13B10A5 Call 61658
+	0x13B10A9 Drop
+	0x13B10AA LocalGet 1
+	0x13B10AC I32Const 41
+	0x13B10AE I32Const 0
+	0x13B10B0 Call 61633
+	0x13B10B4 Drop
+	0x13B10B5 I32Const 3
+	0x13B10B7 LocalGet 1
+	0x13B10B9 Call 29262
+	0x13B10BD LocalGet 3
+	0x13B10BF GlobalSet 7
+	0x13B10C1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b12
+	11 Nop
+	12 Move v12 @ S0_v20, [2DF568]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v20
+	14 Nop
+	15 Move v14 @ S1_v18, 1
+	16 Move [45C989], v14 @ S1_v18
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call StringBuilder.FindChunkForIndex, v23 @ S0_v9 (System.Text.StringBuilder), obj @ L1 (System.Object), this.m_Item1 (T1)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Call StringBuilder.AppendLine, v28 @ S0_v11 (System.Text.StringBuilder), obj @ L1 (System.Object), ", "
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v1 @ G7], this.m_Item2 (T2)
+	32 Nop
+	33 Nop
+	34 Move v35 @ S1_v10, [methodInfo @ L2 (Il2CppMethodInfo)+C]
+	35 Move v36 @ S1_v11, [v35 @ S1_v10+60]
+	36 Nop
+	37 Call 7245, v38 @ S1_v13, [v36 @ S1_v11+8]
+	38 Nop
+	39 Call 120AF, v40 @ S1_v14 (System.Int32), v38 @ S1_v13, v1 @ G7
+	40 Nop
+	41 Call StringBuilder.FindChunkForIndex, v42 @ S0_v14 (System.Text.StringBuilder), obj @ L1 (System.Object), v40 @ S1_v14 (System.Int32)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call StringBuilder.Append, v46 @ S0_v16 (System.Text.StringBuilder), obj @ L1 (System.Object), 41
+	46 Nop
+	47 Nop
+	48 Call 724E, returnVal1 @ S0_v18 (System.Boolean), 3, obj @ L1 (System.Object)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Return returnVal1 @ S0_v18 (System.Boolean)
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x13B0FD7 I32Const 4573576
+	0x13B0FDC I32Load8_S 0, 0
+	0x13B0FDF I32Eqz
+	0x13B0FE0 If -64
+	0x13B0FE2 I32Const 3011952
+	0x13B0FE7 I32Load 2, 0
+	0x13B0FEA Call 73003
+	0x13B0FEE I32Const 4573576
+	0x13B0FF3 I32Const 1
+	0x13B0FF5 I32Store8 0, 0
+	0x13B0FF8 End
+	0x13B0FF9 I32Const 4427712
+	0x13B0FFE I32Load 2, 0
+	0x13B1001 Call 72556
+	0x13B1005 LocalTee 2
+	0x13B1007 I32Const 0
+	0x13B1009 Call 61640
+	0x13B100D LocalGet 2
+	0x13B100F I32Const 4505780
+	0x13B1014 I32Load 2, 0
+	0x13B1017 I32Const 0
+	0x13B1019 Call 61377
+	0x13B101D Drop
+	0x13B101E I32Const 0
+	0x13B1020 I32Const 4445792
+	0x13B1025 I32Load 2, 0
+	0x13B1028 LocalGet 0
+	0x13B102A LocalGet 2
+	0x13B102C Call 29786
+	0x13B1030 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v13, [2DF570]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [45C988], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Text.StringBuilder), typeof(System.Text.StringBuilder)
+	15 Nop
+	16 Nop
+	17 CallVoid StringBuilderCache.Release, v13 @ S0_v7 (System.Text.StringBuilder)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call StringBuilder.AppendLine, v20 @ S0_v9 (System.Text.StringBuilder), v13 @ S0_v7 (System.Text.StringBuilder), "("
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Call 745A, returnVal1 @ S0_v11 (System.Int32), 0, typeof(System.ITupleInternal), this @ L0 (System.Tuple`4<T1, T2, T3, T4>), v13 @ S0_v7 (System.Text.StringBuilder)
+	29 Nop
+	30 Return returnVal1 @ S0_v11 (System.Int32)
+
+Method: System.String ToString()
+
+Disassembly:
+	0x13B192B I32Const 4573595
+	0x13B1930 I32Load8_S 0, 0
+	0x13B1933 I32Eqz
+	0x13B1934 If -64
+	0x13B1936 I32Const 3012000
+	0x13B193B I32Load 2, 0
+	0x13B193E Call 73003
+	0x13B1942 I32Const 4573595
+	0x13B1947 I32Const 1
+	0x13B1949 I32Store8 0, 0
+	0x13B194C End
+	0x13B194D I32Const 4428524
+	0x13B1952 I32Load 2, 0
+	0x13B1955 LocalTee 1
+	0x13B1957 I32Load16_S 1, 186
+	0x13B195B I32Const 512
+	0x13B195E I32And
+	0x13B195F If -64
+	0x13B1961 LocalGet 1
+	0x13B1963 I32Load 2, 116
+	0x13B1966 I32Eqz
+	0x13B1967 If -64
+	0x13B1969 LocalGet 1
+	0x13B196B Call 72345
+	0x13B196F I32Const 4428524
+	0x13B1974 I32Load 2, 0
+	0x13B1977 LocalSet 1
+	0x13B1979 End
+	0x13B197A End
+	0x13B197B I32Const 1
+	0x13B197D I32Const 4445784
+	0x13B1982 I32Load 2, 0
+	0x13B1985 LocalGet 0
+	0x13B1987 LocalGet 1
+	0x13B1989 I32Load 2, 92
+	0x13B198C I32Load 2, 0
+	0x13B198F Call 29786
+	0x13B1993 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v19, [2DF5A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v19
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45C99B], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Collections.Generic.ObjectEqualityComparer>), typeof(System.Collections.Generic.ObjectEqualityComparer)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Collections.Generic.ObjectEqualityComparer>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.Collections.Generic.ObjectEqualityComparer>), typeof(System.Collections.Generic.ObjectEqualityComparer)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.Collections.Generic.ObjectEqualityComparer>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Collections.Generic.ObjectEqualityComparer)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call 745A, returnVal1 @ S0_v11 (System.String), 1, typeof(System.Collections.IStructuralEquatable), this @ L0 (System.Tuple`4<T1, T2, T3, T4>), v33.Default (System.Collections.Generic.ObjectEqualityComparer)
+	40 Nop
+	41 Return returnVal1 @ S0_v11 (System.String)
+

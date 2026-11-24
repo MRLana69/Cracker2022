@@ -1,0 +1,233 @@
+Type: SYBO.Subway.RouteTransitionState
+
+Method: System.Boolean get_IsCompleted()
+
+Disassembly:
+	0xE6CAD8 I32Const 4558320
+	0xE6CADD I32Load8_S 0, 0
+	0xE6CAE0 I32Eqz
+	0xE6CAE1 If -64
+	0xE6CAE3 I32Const 2967680
+	0xE6CAE8 I32Load 2, 0
+	0xE6CAEB Call 73003
+	0xE6CAEF I32Const 4558320
+	0xE6CAF4 I32Const 1
+	0xE6CAF6 I32Store8 0, 0
+	0xE6CAF9 End
+	0xE6CAFA I32Const 4442084
+	0xE6CAFF I32Load 2, 0
+	0xE6CB02 Call 72556
+	0xE6CB06 LocalTee 1
+	0xE6CB08 I32Const 0
+	0xE6CB0A I32Store 2, 8
+	0xE6CB0D LocalGet 1
+	0xE6CB0F I32Const 16
+	0xE6CB11 I32Add
+	0xE6CB12 LocalGet 0
+	0xE6CB14 I32Store 2, 0
+	0xE6CB17 LocalGet 1
+	0xE6CB19 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v12, [2D4880]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [458DF0], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Boolean), typeof(SYBO.Subway.Game+<StumbleDeathSequence>d__203)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (System.Boolean)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.Boolean), 16
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (SYBO.Subway.RouteTransitionState)
+	23 Nop
+	24 Nop
+	25 Return v13 @ S0_v7 (System.Boolean)
+
+Method: System.Void set_IsCompleted(System.Boolean value)
+
+Disassembly:
+	0xE6D552 LocalGet 0
+	0xE6D554 I32Load 2, 164
+	0xE6D558 I32Load 2, 52
+	0xE6D55B I32Const 0
+	0xE6D55D I32Const 0
+	0xE6D55F Call 35601
+	0xE6D563 End
+
+ISIL:
+	0 Nop
+	1 Move v2 @ S0_v2, [this @ L0 (SYBO.Subway.RouteTransitionState)+A4]
+	2 Nop
+	3 Nop
+	4 Nop
+	5 CallVoid CharacterModel.StartIdleAnimations, [v2 @ S0_v2+34], 0
+	6 Nop
+	7 Return
+
+Method: System.Boolean get_IsReadyToEnter()
+
+Disassembly:
+	0xC765EA LocalGet 0
+	0xC765EC I32Load8_S 0, 20
+	0xC765EF I32Const 0
+	0xC765F1 I32Ne
+	0xC765F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.<IsCompleted>k__BackingField (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_IsReadyToEnter(System.Boolean value)
+
+Disassembly:
+	0xC765F5 LocalGet 0
+	0xC765F7 LocalGet 1
+	0xC765F9 I32Const 1
+	0xC765FB I32And
+	0xC765FC I32Store8 0, 20
+	0xC765FF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Move this.<IsCompleted>k__BackingField (System.Boolean), value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.Void Prepare(SYBO.Subway.Routes.Route sourceRoute, SYBO.Subway.Routes.RouteType targetRouteType)
+
+Disassembly:
+	0xE6D408 LocalGet 0
+	0xE6D40A I32Const 0
+	0xE6D40C Call 39552
+	0xE6D410 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid Game.ToggleSwipeLeftRight, this @ L0 (SYBO.Subway.RouteTransitionState)
+	3 Nop
+	4 Return
+
+Method: System.Void Initialize()
+
+Disassembly:
+	0xE6CE15 I32Const 4558325
+	0xE6CE1A I32Load8_S 0, 0
+	0xE6CE1D I32Eqz
+	0xE6CE1E If -64
+	0xE6CE20 I32Const 2967644
+	0xE6CE25 I32Load 2, 0
+	0xE6CE28 Call 73003
+	0xE6CE2C I32Const 4558325
+	0xE6CE31 I32Const 1
+	0xE6CE33 I32Store8 0, 0
+	0xE6CE36 End
+	0xE6CE37 I32Const 4496428
+	0xE6CE3C I32Load 2, 0
+	0xE6CE3F Call 53430
+	0xE6CE43 I32Load8_S 0, 20
+	0xE6CE46 If -64
+	0xE6CE48 I32Const 4496428
+	0xE6CE4D I32Load 2, 0
+	0xE6CE50 Call 53430
+	0xE6CE54 I32Const 0
+	0xE6CE56 Call 39158
+	0xE6CE5A End
+	0xE6CE5B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v14, [2D485C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [458DF5], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call SingletonMonoBehaviour`1.Instantiate, v13 @ S0_v7 (T)
+	15 Nop
+	16 CheckEqual v15 @ TEMP_v2 (System.Boolean), [v13 @ S0_v7 (T)+14], 0
+	17 ConditionalJump @b8, v15 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Call SingletonMonoBehaviour`1.Instantiate, v18 @ S0_v12 (T)
+	21 Nop
+	22 CallVoid SceneViewWindowManager.UpdatePropertiesOnSceneView, v18 @ S0_v12 (T)
+	23 Nop
+	24 Nop
+	25 Return
+
+Method: System.Void Enter()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void UpdateState()
+
+Disassembly:
+	0xE3C7B8 LocalGet 0
+	0xE3C7BA I32Const 0
+	0xE3C7BC I32Store8 0, 21
+	0xE3C7BF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.<IsReadyToEnter>k__BackingField (System.Boolean), 0
+	3 Nop
+	4 Return
+
+Method: System.Void Exit()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

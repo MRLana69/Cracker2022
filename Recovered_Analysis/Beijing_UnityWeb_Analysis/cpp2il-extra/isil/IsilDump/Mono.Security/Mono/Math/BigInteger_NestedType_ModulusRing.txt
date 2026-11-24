@@ -1,0 +1,1271 @@
+Type: Mono.Math.BigInteger+ModulusRing
+
+Method: System.Void .ctor(Mono.Math.BigInteger modulus)
+
+Disassembly:
+	0x12C76C6 LocalGet 0
+	0x12C76C8 LocalGet 1
+	0x12C76CA I32Const 1
+	0x12C76CC I32Const 0
+	0x12C76CE Call 59894
+	0x12C76D2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid E9F6, this @ L0 (Mono.Math.BigInteger+ModulusRing), modulus @ L1 (Mono.Math.BigInteger), 1, 0
+	5 Nop
+	6 Return
+
+Method: System.Void BarrettReduction(Mono.Math.BigInteger x)
+
+Disassembly:
+	0x1429EF0 I32Const 4574858
+	0x1429EF5 I32Load8_S 0, 0
+	0x1429EF8 I32Eqz
+	0x1429EF9 If -64
+	0x1429EFB I32Const 2982584
+	0x1429F00 I32Load 2, 0
+	0x1429F03 Call 73003
+	0x1429F07 I32Const 4574858
+	0x1429F0C I32Const 1
+	0x1429F0E I32Store8 0, 0
+	0x1429F11 End
+	0x1429F12 LocalGet 0
+	0x1429F14 I32Const 8
+	0x1429F16 I32Add
+	0x1429F17 LocalGet 1
+	0x1429F19 I32Store 2, 0
+	0x1429F1C LocalGet 0
+	0x1429F1E I32Load 2, 8
+	0x1429F21 I32Load 2, 8
+	0x1429F24 I32Const 1
+	0x1429F26 I32Shl
+	0x1429F27 LocalSet 1
+	0x1429F29 I32Const 4433108
+	0x1429F2E I32Load 2, 0
+	0x1429F31 Call 72556
+	0x1429F35 LocalTee 2
+	0x1429F37 I32Const 0
+	0x1429F39 LocalGet 1
+	0x1429F3B I32Const 1
+	0x1429F3D I32Add
+	0x1429F3E I32Const 0
+	0x1429F40 Call 66921
+	0x1429F44 LocalGet 0
+	0x1429F46 I32Const 12
+	0x1429F48 I32Add
+	0x1429F49 LocalGet 2
+	0x1429F4B I32Store 2, 0
+	0x1429F4E LocalGet 0
+	0x1429F50 I32Load 2, 12
+	0x1429F53 I32Load 2, 12
+	0x1429F56 I32Const 16
+	0x1429F58 I32Add
+	0x1429F59 LocalGet 1
+	0x1429F5B I32Const 2
+	0x1429F5D I32Shl
+	0x1429F5E I32Add
+	0x1429F5F I32Const 1
+	0x1429F61 I32Store 2, 0
+	0x1429F64 LocalGet 0
+	0x1429F66 I32Load 2, 12
+	0x1429F69 LocalSet 2
+	0x1429F6B LocalGet 0
+	0x1429F6D I32Load 2, 8
+	0x1429F70 LocalSet 3
+	0x1429F72 I32Const 4433108
+	0x1429F77 I32Load 2, 0
+	0x1429F7A LocalTee 1
+	0x1429F7C I32Load16_S 1, 186
+	0x1429F80 I32Const 512
+	0x1429F83 I32And
+	0x1429F84 If -64
+	0x1429F86 LocalGet 1
+	0x1429F88 I32Load 2, 116
+	0x1429F8B I32Eqz
+	0x1429F8C If -64
+	0x1429F8E LocalGet 1
+	0x1429F90 Call 72345
+	0x1429F94 End
+	0x1429F95 End
+	0x1429F96 LocalGet 0
+	0x1429F98 I32Const 12
+	0x1429F9A I32Add
+	0x1429F9B LocalGet 2
+	0x1429F9D LocalGet 3
+	0x1429F9F I32Const 0
+	0x1429FA1 Call 66939
+	0x1429FA5 I32Store 2, 0
+	0x1429FA8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v37, [2D82B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v37
+	8 Nop
+	9 Move v7 @ S1_v16, 1
+	10 Move [45CE8A], v7 @ S1_v16
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (Mono.Math.BigInteger+ModulusRing), 8
+	15 Nop
+	16 Move [v14 @ S0_v6], x @ L1 (Mono.Math.BigInteger)
+	17 Nop
+	18 Move v18 @ S0_v8 (Mono.Math.BigInteger), this.mod (Mono.Math.BigInteger)
+	19 Nop
+	20 Nop
+	21 ShiftLeft v21 @ S0_v10 (System.Int32), v18.length (System.UInt32), 1
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Call 11B6C, v25 @ S0_v13 (Mono.Math.BigInteger), typeof(Mono.Math.BigInteger)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Add v30 @ S2_v2 (System.UInt32), v21 @ S0_v10 (System.Int32), 1
+	31 Nop
+	32 CallVoid BigInteger..ctor, v25 @ S0_v13 (Mono.Math.BigInteger), 0, v30 @ S2_v2 (System.UInt32)
+	33 Nop
+	34 Nop
+	35 Add v34 @ S0_v15, this @ L0 (Mono.Math.BigInteger+ModulusRing), 12
+	36 Nop
+	37 Move [v34 @ S0_v15], v25 @ S0_v13 (Mono.Math.BigInteger)
+	38 Nop
+	39 Move v37 @ S0_v17 (Mono.Math.BigInteger), this.constant (Mono.Math.BigInteger)
+	40 Nop
+	41 Nop
+	42 Add v40 @ S0_v19, v37.data (System.UInt32[]), 16
+	43 Nop
+	44 Nop
+	45 ShiftLeft v43 @ S1_v10 (System.Int32), v21 @ S0_v10 (System.Int32), 2
+	46 Add v44 @ S0_v20, v40 @ S0_v19, v43 @ S1_v10 (System.Int32)
+	47 Nop
+	48 Move [v44 @ S0_v20], 1
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move v53 @ S0_v26 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 And v57 @ S0_v28, [v53 @ S0_v26 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	61 CheckEqual v58 @ TEMP_v2 (System.Boolean), v57 @ S0_v28, 0
+	62 ConditionalJump @b12, v58 @ TEMP_v2 (System.Boolean)
+	63 Move v59 @ S0_v32 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	64 Nop
+	65 CheckEqual v61 @ S0_v34 (System.Boolean), [v59 @ S0_v32 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	66 Not v62 @ TEMP_v4 (System.Boolean), v61 @ S0_v34 (System.Boolean)
+	67 ConditionalJump @b12, v62 @ TEMP_v4 (System.Boolean)
+	68 Nop
+	69 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Add v68 @ S0_v31, this @ L0 (Mono.Math.BigInteger+ModulusRing), 12
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Call BigInteger.op_Multiply, v72 @ S1_v15 (Mono.Math.BigInteger), this.constant (Mono.Math.BigInteger), this.mod (Mono.Math.BigInteger)
+	79 Move [v68 @ S0_v31], v72 @ S1_v15 (Mono.Math.BigInteger)
+	80 Nop
+	81 Return
+
+Method: Mono.Math.BigInteger Multiply(Mono.Math.BigInteger a, Mono.Math.BigInteger b)
+
+Disassembly:
+	0x142A39B I32Const 4574860
+	0x142A3A0 I32Load8_S 0, 0
+	0x142A3A3 I32Eqz
+	0x142A3A4 If -64
+	0x142A3A6 I32Const 2937556
+	0x142A3AB I32Load 2, 0
+	0x142A3AE Call 73003
+	0x142A3B2 I32Const 4574860
+	0x142A3B7 I32Const 1
+	0x142A3B9 I32Store8 0, 0
+	0x142A3BC End
+	0x142A3BD I32Const 4433112
+	0x142A3C2 I32Load 2, 0
+	0x142A3C5 Call 72556
+	0x142A3C9 LocalTee 4
+	0x142A3CB LocalGet 2
+	0x142A3CD I32Const 0
+	0x142A3CF Call 66956
+	0x142A3D3 LocalGet 4
+	0x142A3D5 LocalGet 0
+	0x142A3D7 LocalGet 1
+	0x142A3D9 I32Const 0
+	0x142A3DB Call 66960
+	0x142A3DF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v11, [2CD2D4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45CE8C], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (Mono.Math.BigInteger+ModulusRing), typeof(Mono.Math.BigInteger+ModulusRing)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid ModulusRing.BarrettReduction, v13 @ S0_v7 (Mono.Math.BigInteger+ModulusRing), b @ L2 (Mono.Math.BigInteger)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call ModulusRing.Pow, returnVal1 @ S0_v9 (Mono.Math.BigInteger), v13 @ S0_v7 (Mono.Math.BigInteger+ModulusRing), this @ L0 (Mono.Math.BigInteger+ModulusRing), a @ L1 (Mono.Math.BigInteger)
+	24 Nop
+	25 Return returnVal1 @ S0_v9 (Mono.Math.BigInteger)
+
+Method: Mono.Math.BigInteger Difference(Mono.Math.BigInteger a, Mono.Math.BigInteger b)
+
+Disassembly:
+	0x142A4BD I32Const 4574862
+	0x142A4C2 I32Load8_S 0, 0
+	0x142A4C5 I32Eqz
+	0x142A4C6 If -64
+	0x142A4C8 I32Const 2982560
+	0x142A4CD I32Load 2, 0
+	0x142A4D0 Call 73003
+	0x142A4D4 I32Const 4574862
+	0x142A4D9 I32Const 1
+	0x142A4DB I32Store8 0, 0
+	0x142A4DE End
+	0x142A4DF I32Const 4433108
+	0x142A4E4 I32Load 2, 0
+	0x142A4E7 LocalTee 3
+	0x142A4E9 I32Load16_S 1, 186
+	0x142A4ED I32Const 512
+	0x142A4F0 I32And
+	0x142A4F1 If -64
+	0x142A4F3 LocalGet 3
+	0x142A4F5 I32Load 2, 116
+	0x142A4F8 I32Eqz
+	0x142A4F9 If -64
+	0x142A4FB LocalGet 3
+	0x142A4FD Call 72345
+	0x142A501 End
+	0x142A502 End
+	0x142A503 Block -64
+	0x142A505 Block -64
+	0x142A507 LocalGet 1
+	0x142A509 I32Const 0
+	0x142A50B I32Const 0
+	0x142A50D Call 59866
+	0x142A511 BrIf 0
+	0x142A513 I32Const 4433108
+	0x142A518 I32Load 2, 0
+	0x142A51B LocalTee 3
+	0x142A51D I32Load16_S 1, 186
+	0x142A521 I32Const 512
+	0x142A524 I32And
+	0x142A525 If -64
+	0x142A527 LocalGet 3
+	0x142A529 I32Load 2, 116
+	0x142A52C I32Eqz
+	0x142A52D If -64
+	0x142A52F LocalGet 3
+	0x142A531 Call 72345
+	0x142A535 End
+	0x142A536 End
+	0x142A537 LocalGet 2
+	0x142A539 I32Const 0
+	0x142A53B I32Const 0
+	0x142A53D Call 59866
+	0x142A541 BrIf 0
+	0x142A543 LocalGet 0
+	0x142A545 I32Load 2, 8
+	0x142A548 LocalSet 4
+	0x142A54A I32Const 4433108
+	0x142A54F I32Load 2, 0
+	0x142A552 LocalTee 3
+	0x142A554 I32Load16_S 1, 186
+	0x142A558 I32Const 512
+	0x142A55B I32And
+	0x142A55C If -64
+	0x142A55E LocalGet 3
+	0x142A560 I32Load 2, 116
+	0x142A563 I32Eqz
+	0x142A564 If -64
+	0x142A566 LocalGet 3
+	0x142A568 Call 72345
+	0x142A56C End
+	0x142A56D End
+	0x142A56E LocalGet 1
+	0x142A570 LocalGet 4
+	0x142A572 I32Const 0
+	0x142A574 Call 59900
+	0x142A578 If -64
+	0x142A57A LocalGet 0
+	0x142A57C I32Load 2, 8
+	0x142A57F LocalSet 4
+	0x142A581 I32Const 4433108
+	0x142A586 I32Load 2, 0
+	0x142A589 LocalTee 3
+	0x142A58B I32Load16_S 1, 186
+	0x142A58F I32Const 512
+	0x142A592 I32And
+	0x142A593 If -64
+	0x142A595 LocalGet 3
+	0x142A597 I32Load 2, 116
+	0x142A59A I32Eqz
+	0x142A59B If -64
+	0x142A59D LocalGet 3
+	0x142A59F Call 72345
+	0x142A5A3 End
+	0x142A5A4 End
+	0x142A5A5 LocalGet 1
+	0x142A5A7 LocalGet 4
+	0x142A5A9 I32Const 0
+	0x142A5AB Call 66932
+	0x142A5AF LocalSet 1
+	0x142A5B1 End
+	0x142A5B2 LocalGet 0
+	0x142A5B4 I32Load 2, 8
+	0x142A5B7 LocalSet 4
+	0x142A5B9 I32Const 4433108
+	0x142A5BE I32Load 2, 0
+	0x142A5C1 LocalTee 3
+	0x142A5C3 I32Load16_S 1, 186
+	0x142A5C7 I32Const 512
+	0x142A5CA I32And
+	0x142A5CB If -64
+	0x142A5CD LocalGet 3
+	0x142A5CF I32Load 2, 116
+	0x142A5D2 I32Eqz
+	0x142A5D3 If -64
+	0x142A5D5 LocalGet 3
+	0x142A5D7 Call 72345
+	0x142A5DB End
+	0x142A5DC End
+	0x142A5DD LocalGet 2
+	0x142A5DF LocalGet 4
+	0x142A5E1 I32Const 0
+	0x142A5E3 Call 59900
+	0x142A5E7 If -64
+	0x142A5E9 LocalGet 0
+	0x142A5EB I32Load 2, 8
+	0x142A5EE LocalSet 4
+	0x142A5F0 I32Const 4433108
+	0x142A5F5 I32Load 2, 0
+	0x142A5F8 LocalTee 3
+	0x142A5FA I32Load16_S 1, 186
+	0x142A5FE I32Const 512
+	0x142A601 I32And
+	0x142A602 If -64
+	0x142A604 LocalGet 3
+	0x142A606 I32Load 2, 116
+	0x142A609 I32Eqz
+	0x142A60A If -64
+	0x142A60C LocalGet 3
+	0x142A60E Call 72345
+	0x142A612 End
+	0x142A613 End
+	0x142A614 LocalGet 2
+	0x142A616 LocalGet 4
+	0x142A618 I32Const 0
+	0x142A61A Call 66932
+	0x142A61E LocalSet 2
+	0x142A620 End
+	0x142A621 I32Const 4433108
+	0x142A626 I32Load 2, 0
+	0x142A629 LocalTee 3
+	0x142A62B I32Load16_S 1, 186
+	0x142A62F I32Const 512
+	0x142A632 I32And
+	0x142A633 If -64
+	0x142A635 LocalGet 3
+	0x142A637 I32Load 2, 116
+	0x142A63A I32Eqz
+	0x142A63B If -64
+	0x142A63D LocalGet 3
+	0x142A63F Call 72345
+	0x142A643 End
+	0x142A644 End
+	0x142A645 LocalGet 0
+	0x142A647 LocalGet 1
+	0x142A649 LocalGet 2
+	0x142A64B I32Const 0
+	0x142A64D Call 66940
+	0x142A651 LocalTee 0
+	0x142A653 I32Const 0
+	0x142A655 Call 66958
+	0x142A659 Br 1
+	0x142A65B End
+	0x142A65C I32Const 4433108
+	0x142A661 I32Load 2, 0
+	0x142A664 LocalTee 0
+	0x142A666 I32Load16_S 1, 186
+	0x142A66A I32Const 512
+	0x142A66D I32And
+	0x142A66E If -64
+	0x142A670 LocalGet 0
+	0x142A672 I32Load 2, 116
+	0x142A675 I32Eqz
+	0x142A676 If -64
+	0x142A678 LocalGet 0
+	0x142A67A Call 72345
+	0x142A67E End
+	0x142A67F End
+	0x142A680 I32Const 0
+	0x142A682 I32Const 0
+	0x142A684 Call 66927
+	0x142A688 LocalSet 0
+	0x142A68A End
+	0x142A68B LocalGet 0
+	0x142A68D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b43
+	5 Nop
+	6 Move v5 @ S0_v106, [2D82A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v106
+	8 Nop
+	9 Move v7 @ S1_v23, 1
+	10 Move [45CE8E], v7 @ S1_v23
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b52, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v101 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	21 Nop
+	22 CheckEqual v20 @ S0_v103 (System.Boolean), [v18 @ S0_v101 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	23 Not v21 @ TEMP_v31 (System.Boolean), v20 @ S0_v103 (System.Boolean)
+	24 ConditionalJump @b52, v21 @ TEMP_v31 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call E9DA, v29 @ S0_v11, v93 @ L1_v2 (Mono.Math.BigInteger), 0, 0
+	33 ConditionalJump @b38, v29 @ S0_v11
+	34 Nop
+	35 Move v31 @ S0_v27 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 And v35 @ S0_v29, [v31 @ S0_v27 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	40 CheckEqual v36 @ TEMP_v9 (System.Boolean), v35 @ S0_v29, 0
+	41 ConditionalJump @b44, v36 @ TEMP_v9 (System.Boolean)
+	42 Move v53 @ S0_v97 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	43 Nop
+	44 CheckEqual v55 @ S0_v99 (System.Boolean), [v53 @ S0_v97 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	45 Not v56 @ TEMP_v30 (System.Boolean), v55 @ S0_v99 (System.Boolean)
+	46 ConditionalJump @b44, v56 @ TEMP_v30 (System.Boolean)
+	47 Nop
+	48 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Call E9DA, v45 @ S0_v32, v91 @ L2_v2 (Mono.Math.BigInteger), 0, 0
+	55 ConditionalJump @b38, v45 @ S0_v32
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Move v77 @ S0_v36 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 And v81 @ S0_v38, [v77 @ S0_v36 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	65 CheckEqual v82 @ TEMP_v11 (System.Boolean), v81 @ S0_v38, 0
+	66 ConditionalJump @b45, v82 @ TEMP_v11 (System.Boolean)
+	67 Move v106 @ S0_v93 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	68 Nop
+	69 CheckEqual v108 @ S0_v95 (System.Boolean), [v106 @ S0_v93 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	70 Not v109 @ TEMP_v29 (System.Boolean), v108 @ S0_v95 (System.Boolean)
+	71 ConditionalJump @b45, v109 @ TEMP_v29 (System.Boolean)
+	72 Nop
+	73 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Call E9FC, v116 @ S0_v41, v93 @ L1_v2 (Mono.Math.BigInteger), this.mod (Mono.Math.BigInteger), 0
+	80 CheckEqual v117 @ TEMP_v13 (System.Boolean), v116 @ S0_v41, 0
+	81 ConditionalJump @b46, v117 @ TEMP_v13 (System.Boolean)
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Move v122 @ S0_v83 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 And v126 @ S0_v85, [v122 @ S0_v83 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	91 CheckEqual v127 @ TEMP_v26 (System.Boolean), v126 @ S0_v85, 0
+	92 ConditionalJump @b47, v127 @ TEMP_v26 (System.Boolean)
+	93 Move v149 @ S0_v89 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	94 Nop
+	95 CheckEqual v151 @ S0_v91 (System.Boolean), [v149 @ S0_v89 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	96 Not v152 @ TEMP_v28 (System.Boolean), v151 @ S0_v91 (System.Boolean)
+	97 ConditionalJump @b47, v152 @ TEMP_v28 (System.Boolean)
+	98 Nop
+	99 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Call BigInteger.op_Division, v138 @ S0_v88 (Mono.Math.BigInteger), v93 @ L1_v2 (Mono.Math.BigInteger), this.mod (Mono.Math.BigInteger)
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Move v143 @ S0_v46 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	113 Nop
+	114 Nop
+	115 Nop
+	116 And v147 @ S0_v48, [v143 @ S0_v46 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	117 CheckEqual v148 @ TEMP_v15 (System.Boolean), v147 @ S0_v48, 0
+	118 ConditionalJump @b53, v148 @ TEMP_v15 (System.Boolean)
+	119 Move v156 @ S0_v76 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	120 Nop
+	121 CheckEqual v158 @ S0_v78 (System.Boolean), [v156 @ S0_v76 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	122 Not v159 @ TEMP_v25 (System.Boolean), v158 @ S0_v78 (System.Boolean)
+	123 ConditionalJump @b53, v159 @ TEMP_v25 (System.Boolean)
+	124 Nop
+	125 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Call E9FC, v166 @ S0_v51, v91 @ L2_v2 (Mono.Math.BigInteger), this.mod (Mono.Math.BigInteger), 0
+	132 CheckEqual v167 @ TEMP_v17 (System.Boolean), v166 @ S0_v51, 0
+	133 ConditionalJump @b48, v167 @ TEMP_v17 (System.Boolean)
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 Move v172 @ S0_v66 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	139 Nop
+	140 Nop
+	141 Nop
+	142 And v176 @ S0_v68, [v172 @ S0_v66 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	143 CheckEqual v177 @ TEMP_v22 (System.Boolean), v176 @ S0_v68, 0
+	144 ConditionalJump @b49, v177 @ TEMP_v22 (System.Boolean)
+	145 Move v194 @ S0_v72 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	146 Nop
+	147 CheckEqual v196 @ S0_v74 (System.Boolean), [v194 @ S0_v72 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	148 Not v197 @ TEMP_v24 (System.Boolean), v196 @ S0_v74 (System.Boolean)
+	149 ConditionalJump @b49, v197 @ TEMP_v24 (System.Boolean)
+	150 Nop
+	151 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Call BigInteger.op_Division, v187 @ S0_v71 (Mono.Math.BigInteger), v91 @ L2_v2 (Mono.Math.BigInteger), this.mod (Mono.Math.BigInteger)
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Move v189 @ S0_v54 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	162 Nop
+	163 Nop
+	164 Nop
+	165 And v192 @ S0_v56, [v189 @ S0_v54 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	166 CheckEqual v193 @ TEMP_v19 (System.Boolean), v192 @ S0_v56, 0
+	167 ConditionalJump @b54, v193 @ TEMP_v19 (System.Boolean)
+	168 Move v201 @ S0_v59 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	169 Nop
+	170 CheckEqual v203 @ S0_v61 (System.Boolean), [v201 @ S0_v59 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	171 Not v204 @ TEMP_v21 (System.Boolean), v203 @ S0_v61 (System.Boolean)
+	172 ConditionalJump @b54, v204 @ TEMP_v21 (System.Boolean)
+	173 Nop
+	174 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Call BigInteger.op_LeftShift, v100 @ S1_v18 (Mono.Math.BigInteger), v138 @ S0_v88 (Mono.Math.BigInteger), v187 @ S0_v71 (Mono.Math.BigInteger)
+	182 Nop
+	183 Nop
+	184 CallVoid Kernel.MinusEq, this @ L0 (Mono.Math.BigInteger+ModulusRing), v100 @ S1_v18 (Mono.Math.BigInteger)
+	185 Jump @b50
+	186 Nop
+	187 Nop
+	188 Move v47 @ S0_v16 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	189 Nop
+	190 Nop
+	191 Nop
+	192 And v51 @ S0_v18, [v47 @ S0_v16 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	193 CheckEqual v52 @ TEMP_v6 (System.Boolean), v51 @ S0_v18, 0
+	194 ConditionalJump @b51, v52 @ TEMP_v6 (System.Boolean)
+	195 Move v61 @ S0_v22 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	196 Nop
+	197 CheckEqual v63 @ S0_v24 (System.Boolean), [v61 @ S0_v22 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	198 Not v64 @ TEMP_v8 (System.Boolean), v63 @ S0_v24 (System.Boolean)
+	199 ConditionalJump @b51, v64 @ TEMP_v8 (System.Boolean)
+	200 Nop
+	201 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Call BigInteger.GenerateRandom, v70 @ S0_v21 (Mono.Math.BigInteger), 0
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Return v88 @ L0_v1 (Mono.Math.BigInteger)
+
+Method: Mono.Math.BigInteger Pow(Mono.Math.BigInteger a, Mono.Math.BigInteger k)
+
+Disassembly:
+	0x1429FAE I32Const 4574856
+	0x1429FB3 I32Load8_S 0, 0
+	0x1429FB6 I32Eqz
+	0x1429FB7 If -64
+	0x1429FB9 I32Const 2982548
+	0x1429FBE I32Load 2, 0
+	0x1429FC1 Call 73003
+	0x1429FC5 I32Const 4574856
+	0x1429FCA I32Const 1
+	0x1429FCC I32Store8 0, 0
+	0x1429FCF End
+	0x1429FD0 Block -64
+	0x1429FD2 Block -64
+	0x1429FD4 Block -64
+	0x1429FD6 Block -64
+	0x1429FD8 Block -64
+	0x1429FDA Block -64
+	0x1429FDC LocalGet 1
+	0x1429FDE LocalGet 2
+	0x1429FE0 I32Const 0
+	0x1429FE2 Call 59869
+	0x1429FE6 LocalTee 3
+	0x1429FE8 I32Const -1
+	0x1429FEA I32Sub
+	0x1429FEB BrTable System.UInt64[], 3
+	0x1429FF1 End
+	0x1429FF2 I32Const 4433108
+	0x1429FF7 I32Load 2, 0
+	0x1429FFA LocalTee 4
+	0x1429FFC I32Load16_S 1, 186
+	0x142A000 I32Const 512
+	0x142A003 I32And
+	0x142A004 If -64
+	0x142A006 LocalGet 4
+	0x142A008 I32Load 2, 116
+	0x142A00B I32Eqz
+	0x142A00C If -64
+	0x142A00E LocalGet 4
+	0x142A010 Call 72345
+	0x142A014 End
+	0x142A015 End
+	0x142A016 LocalGet 2
+	0x142A018 LocalGet 1
+	0x142A01A I32Const 0
+	0x142A01C Call 66930
+	0x142A020 LocalSet 1
+	0x142A022 Br 3
+	0x142A024 End
+	0x142A025 I32Const 4433108
+	0x142A02A I32Load 2, 0
+	0x142A02D LocalTee 0
+	0x142A02F I32Load16_S 1, 186
+	0x142A033 I32Const 512
+	0x142A036 I32And
+	0x142A037 If -64
+	0x142A039 LocalGet 0
+	0x142A03B I32Load 2, 116
+	0x142A03E I32Eqz
+	0x142A03F If -64
+	0x142A041 LocalGet 0
+	0x142A043 Call 72345
+	0x142A047 End
+	0x142A048 End
+	0x142A049 I32Const 0
+	0x142A04B I32Const 0
+	0x142A04D Call 66927
+	0x142A051 LocalSet 4
+	0x142A053 Br 3
+	0x142A055 End
+	0x142A056 I32Const 4433108
+	0x142A05B I32Load 2, 0
+	0x142A05E LocalTee 4
+	0x142A060 I32Load16_S 1, 186
+	0x142A064 I32Const 512
+	0x142A067 I32And
+	0x142A068 If -64
+	0x142A06A LocalGet 4
+	0x142A06C I32Load 2, 116
+	0x142A06F I32Eqz
+	0x142A070 If -64
+	0x142A072 LocalGet 4
+	0x142A074 Call 72345
+	0x142A078 End
+	0x142A079 End
+	0x142A07A LocalGet 1
+	0x142A07C LocalGet 2
+	0x142A07E I32Const 0
+	0x142A080 Call 66930
+	0x142A084 LocalSet 1
+	0x142A086 Br 1
+	0x142A088 End
+	0x142A089 I32Const 4427764
+	0x142A08E I32Load 2, 0
+	0x142A091 Call 72556
+	0x142A095 LocalTee 0
+	0x142A097 I32Const 0
+	0x142A099 Call 51387
+	0x142A09D LocalGet 0
+	0x142A09F I32Const 0
+	0x142A0A1 I32Const 4450592
+	0x142A0A6 I32Load 2, 0
+	0x142A0A9 Call 73899
+	0x142A0AD Br 1
+	0x142A0AF End
+	0x142A0B0 LocalGet 0
+	0x142A0B2 I32Load 2, 8
+	0x142A0B5 LocalSet 2
+	0x142A0B7 I32Const 4433108
+	0x142A0BC I32Load 2, 0
+	0x142A0BF LocalTee 4
+	0x142A0C1 I32Load16_S 1, 186
+	0x142A0C5 I32Const 512
+	0x142A0C8 I32And
+	0x142A0C9 If -64
+	0x142A0CB LocalGet 4
+	0x142A0CD I32Load 2, 116
+	0x142A0D0 I32Eqz
+	0x142A0D1 If -64
+	0x142A0D3 LocalGet 4
+	0x142A0D5 Call 72345
+	0x142A0D9 End
+	0x142A0DA End
+	0x142A0DB Block -64
+	0x142A0DD LocalGet 1
+	0x142A0DF LocalGet 2
+	0x142A0E1 I32Const 0
+	0x142A0E3 Call 59902
+	0x142A0E7 If -64
+	0x142A0E9 LocalGet 1
+	0x142A0EB I32Load 2, 8
+	0x142A0EE LocalGet 0
+	0x142A0F0 I32Load 2, 8
+	0x142A0F3 I32Load 2, 8
+	0x142A0F6 I32Const 1
+	0x142A0F8 I32Shl
+	0x142A0F9 I32Lt_U
+	0x142A0FA If -64
+	0x142A0FC LocalGet 0
+	0x142A0FE LocalGet 1
+	0x142A100 I32Const 0
+	0x142A102 Call 66958
+	0x142A106 Br 2
+	0x142A108 End
+	0x142A109 LocalGet 0
+	0x142A10B I32Load 2, 8
+	0x142A10E LocalSet 2
+	0x142A110 I32Const 4433108
+	0x142A115 I32Load 2, 0
+	0x142A118 LocalTee 4
+	0x142A11A I32Load16_S 1, 186
+	0x142A11E I32Const 512
+	0x142A121 I32And
+	0x142A122 If -64
+	0x142A124 LocalGet 4
+	0x142A126 I32Load 2, 116
+	0x142A129 I32Eqz
+	0x142A12A If -64
+	0x142A12C LocalGet 4
+	0x142A12E Call 72345
+	0x142A132 End
+	0x142A133 End
+	0x142A134 LocalGet 1
+	0x142A136 LocalGet 2
+	0x142A138 I32Const 0
+	0x142A13A Call 66932
+	0x142A13E LocalSet 1
+	0x142A140 End
+	0x142A141 End
+	0x142A142 LocalGet 3
+	0x142A144 I32Const -1
+	0x142A146 I32Eq
+	0x142A147 If -1
+	0x142A149 LocalGet 0
+	0x142A14B I32Load 2, 8
+	0x142A14E I32Const 4433108
+	0x142A153 I32Load 2, 0
+	0x142A156 LocalTee 2
+	0x142A158 I32Load16_S 1, 186
+	0x142A15C I32Const 512
+	0x142A15F I32And
+	0x142A160 If -64
+	0x142A162 LocalGet 2
+	0x142A164 I32Load 2, 116
+	0x142A167 I32Eqz
+	0x142A168 If -64
+	0x142A16A LocalGet 2
+	0x142A16C Call 72345
+	0x142A170 End
+	0x142A171 End
+	0x142A172 LocalGet 1
+	0x142A174 I32Const 0
+	0x142A176 Call 66930
+	0x142A17A Else
+	0x142A17B LocalGet 1
+	0x142A17D End
+	0x142A17E LocalSet 4
+	0x142A180 End
+	0x142A181 LocalGet 4
+	0x142A183 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b47
+	5 Nop
+	6 Move v5 @ S0_v87, [2D8294]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v87
+	8 Nop
+	9 Move v7 @ S1_v36, 1
+	10 Move [45CE88], v7 @ S1_v36
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call E9DD, v16 @ S0_v6, a @ L1 (Mono.Math.BigInteger), k @ L2 (Mono.Math.BigInteger), 0
+	16 Nop
+	17 Nop
+	18 Subtract v19 @ S0_v7, v16 @ S0_v6, -1
+	19 CheckEqual v20 @ TEMP_v2 (System.Boolean), v16 @ S0_v6, -1
+	20 ConditionalJump @b9, v20 @ TEMP_v2 (System.Boolean)
+	21 CheckEqual v21 @ TEMP_v22 (System.Boolean), v19 @ S0_v7, 1
+	22 ConditionalJump @b14, v21 @ TEMP_v22 (System.Boolean)
+	23 CheckEqual v29 @ TEMP_v26 (System.Boolean), v19 @ S0_v7, 2
+	24 ConditionalJump @b19, v29 @ TEMP_v26 (System.Boolean)
+	25 Jump @b24
+	26 Nop
+	27 Nop
+	28 Move v23 @ S0_v50 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 And v27 @ S0_v52, [v23 @ S0_v50 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	33 CheckEqual v28 @ TEMP_v19 (System.Boolean), v27 @ S0_v52, 0
+	34 ConditionalJump @b48, v28 @ TEMP_v19 (System.Boolean)
+	35 Move v37 @ S0_v56 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	36 Nop
+	37 CheckEqual v39 @ S0_v58 (System.Boolean), [v37 @ S0_v56 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	38 Not v40 @ TEMP_v21 (System.Boolean), v39 @ S0_v58 (System.Boolean)
+	39 ConditionalJump @b48, v40 @ TEMP_v21 (System.Boolean)
+	40 Nop
+	41 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Call BigInteger.op_Modulus, v47 @ S0_v55 (System.UInt32), k @ L2 (Mono.Math.BigInteger), a @ L1 (Mono.Math.BigInteger)
+	48 Nop
+	49 Jump @b28
+	50 Nop
+	51 Nop
+	52 Move v31 @ S0_v61 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 And v35 @ S0_v63, [v31 @ S0_v61 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	57 CheckEqual v36 @ TEMP_v23 (System.Boolean), v35 @ S0_v63, 0
+	58 ConditionalJump @b49, v36 @ TEMP_v23 (System.Boolean)
+	59 Move v55 @ S0_v67 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	60 Nop
+	61 CheckEqual v57 @ S0_v69 (System.Boolean), [v55 @ S0_v67 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	62 Not v58 @ TEMP_v25 (System.Boolean), v57 @ S0_v69 (System.Boolean)
+	63 ConditionalJump @b49, v58 @ TEMP_v25 (System.Boolean)
+	64 Nop
+	65 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Call BigInteger.GenerateRandom, v64 @ S0_v66 (Mono.Math.BigInteger), 0
+	71 Nop
+	72 Jump @b50
+	73 Nop
+	74 Nop
+	75 Move v49 @ S0_v72 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 And v53 @ S0_v74, [v49 @ S0_v72 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	80 CheckEqual v54 @ TEMP_v27 (System.Boolean), v53 @ S0_v74, 0
+	81 ConditionalJump @b51, v54 @ TEMP_v27 (System.Boolean)
+	82 Move v69 @ S0_v78 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	83 Nop
+	84 CheckEqual v71 @ S0_v80 (System.Boolean), [v69 @ S0_v78 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	85 Not v72 @ TEMP_v29 (System.Boolean), v71 @ S0_v80 (System.Boolean)
+	86 ConditionalJump @b51, v72 @ TEMP_v29 (System.Boolean)
+	87 Nop
+	88 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Call BigInteger.op_Modulus, v79 @ S0_v77 (System.UInt32), a @ L1 (Mono.Math.BigInteger), k @ L2 (Mono.Math.BigInteger)
+	95 Nop
+	96 Jump @b28
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Call 11B6C, v68 @ S0_v84 (System.Exception), typeof(System.Exception)
+	101 Nop
+	102 Nop
+	103 CallVoid Exception.ReportUnhandledException, v68 @ S0_v84 (System.Exception)
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 CallVoid 120AB, v68 @ S0_v84 (System.Exception), 0, methodof(Mono.Math.BigInteger+ModulusRing::Difference)
+	109 Jump @b50
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Move v93 @ S0_v14 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	116 Nop
+	117 Nop
+	118 Nop
+	119 And v97 @ S0_v16, [v93 @ S0_v14 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	120 CheckEqual v98 @ TEMP_v5 (System.Boolean), v97 @ S0_v16, 0
+	121 ConditionalJump @b52, v98 @ TEMP_v5 (System.Boolean)
+	122 Move v121 @ S0_v45 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	123 Nop
+	124 CheckEqual v123 @ S0_v47 (System.Boolean), [v121 @ S0_v45 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	125 Not v124 @ TEMP_v18 (System.Boolean), v123 @ S0_v47 (System.Boolean)
+	126 ConditionalJump @b52, v124 @ TEMP_v18 (System.Boolean)
+	127 Nop
+	128 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Call E9FE, v131 @ S0_v19, v108 @ L1_v3 (System.UInt32), this.mod (Mono.Math.BigInteger), 0
+	135 CheckEqual v133 @ TEMP_v7 (System.Boolean), v131 @ S0_v19, 0
+	136 ConditionalJump @b54, v133 @ TEMP_v7 (System.Boolean)
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Move v137 @ S1_v22 (Mono.Math.BigInteger), this.mod (Mono.Math.BigInteger)
+	141 Nop
+	142 Nop
+	143 ShiftLeft v140 @ S1_v24 (System.Int32), v137.length (System.UInt32), 1
+	144 CheckLess v141 @ S0_v30 (System.Boolean), [v108 @ L1_v3 (System.UInt32)+8], v140 @ S1_v24 (System.Int32)
+	145 Not v142 @ TEMP_v14 (System.Boolean), v141 @ S0_v30 (System.Boolean)
+	146 ConditionalJump @b36, v142 @ TEMP_v14 (System.Boolean)
+	147 Nop
+	148 Nop
+	149 Nop
+	150 CallVoid Kernel.MinusEq, this @ L0 (Mono.Math.BigInteger+ModulusRing), v108 @ L1_v3 (System.UInt32)
+	151 Jump @b54
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Move v166 @ S0_v34 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	158 Nop
+	159 Nop
+	160 Nop
+	161 And v169 @ S0_v36, [v166 @ S0_v34 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	162 CheckEqual v170 @ TEMP_v15 (System.Boolean), v169 @ S0_v36, 0
+	163 ConditionalJump @b55, v170 @ TEMP_v15 (System.Boolean)
+	164 Move v181 @ S0_v40 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	165 Nop
+	166 CheckEqual v183 @ S0_v42 (System.Boolean), [v181 @ S0_v40 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	167 Not v184 @ TEMP_v17 (System.Boolean), v183 @ S0_v42 (System.Boolean)
+	168 ConditionalJump @b55, v184 @ TEMP_v17 (System.Boolean)
+	169 Nop
+	170 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	171 Nop
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Nop
+	176 Call BigInteger.op_Division, v158 @ S0_v39 (Mono.Math.BigInteger), v108 @ L1_v3 (System.UInt32), this.mod (Mono.Math.BigInteger)
+	177 Nop
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Nop
+	182 CheckEqual v161 @ S0_v22 (System.Boolean), v16 @ S0_v6, -1
+	183 Not v162 @ TEMP_v9 (System.Boolean), v161 @ S0_v22 (System.Boolean)
+	184 ConditionalJump @b46, v162 @ TEMP_v9 (System.Boolean)
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Move v174 @ S1_v12 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	189 Nop
+	190 Nop
+	191 Nop
+	192 And v178 @ S1_v14, [v174 @ S1_v12 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	193 CheckEqual v179 @ TEMP_v11 (System.Boolean), v178 @ S1_v14, 0
+	194 ConditionalJump @b56, v179 @ TEMP_v11 (System.Boolean)
+	195 Move v188 @ S1_v17 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	196 Nop
+	197 CheckEqual v190 @ S1_v19 (System.Boolean), [v188 @ S1_v17 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	198 Not v191 @ TEMP_v13 (System.Boolean), v190 @ S1_v19 (System.Boolean)
+	199 ConditionalJump @b56, v191 @ TEMP_v13 (System.Boolean)
+	200 Nop
+	201 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Call BigInteger.op_Modulus, v118 @ S0_v23 (System.UInt32), this.mod (Mono.Math.BigInteger), v108 @ L1_v3 (System.UInt32)
+	207 Jump @b57
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Nop
+	214 Return v109 @ L4_v1 (Mono.Math.BigInteger)
+
+Method: Mono.Math.BigInteger Pow(System.UInt32 b, Mono.Math.BigInteger exp)
+
+Disassembly:
+	0x142A3E5 I32Const 4574861
+	0x142A3EA I32Load8_S 0, 0
+	0x142A3ED I32Eqz
+	0x142A3EE If -64
+	0x142A3F0 I32Const 2982564
+	0x142A3F5 I32Load 2, 0
+	0x142A3F8 Call 73003
+	0x142A3FC I32Const 4574861
+	0x142A401 I32Const 1
+	0x142A403 I32Store8 0, 0
+	0x142A406 End
+	0x142A407 I32Const 4433108
+	0x142A40C I32Load 2, 0
+	0x142A40F Call 72556
+	0x142A413 LocalTee 5
+	0x142A415 I32Const 1
+	0x142A417 I32Const 0
+	0x142A419 Call 66925
+	0x142A41D I32Const 4433108
+	0x142A422 I32Load 2, 0
+	0x142A425 LocalTee 3
+	0x142A427 I32Load16_S 1, 186
+	0x142A42B I32Const 512
+	0x142A42E I32And
+	0x142A42F If -64
+	0x142A431 LocalGet 3
+	0x142A433 I32Load 2, 116
+	0x142A436 I32Eqz
+	0x142A437 If -64
+	0x142A439 LocalGet 3
+	0x142A43B Call 72345
+	0x142A43F End
+	0x142A440 End
+	0x142A441 Block -64
+	0x142A443 LocalGet 2
+	0x142A445 I32Const 0
+	0x142A447 I32Const 0
+	0x142A449 Call 59866
+	0x142A44D If -1
+	0x142A44F LocalGet 5
+	0x142A451 Else
+	0x142A452 LocalGet 1
+	0x142A454 LocalSet 3
+	0x142A456 I32Const 1
+	0x142A458 LocalSet 4
+	0x142A45A LocalGet 2
+	0x142A45C I32Const 0
+	0x142A45E I32Const 0
+	0x142A460 Call 66944
+	0x142A464 If -1
+	0x142A466 LocalGet 3
+	0x142A468 Else
+	0x142A469 LocalGet 5
+	0x142A46B End
+	0x142A46C LocalSet 1
+	0x142A46E Loop -64
+	0x142A470 LocalGet 4
+	0x142A472 LocalGet 2
+	0x142A474 I32Const 0
+	0x142A476 Call 59889
+	0x142A47A I32Ge_S
+	0x142A47B BrIf 2
+	0x142A47D LocalGet 0
+	0x142A47F LocalGet 3
+	0x142A481 LocalGet 3
+	0x142A483 I32Const 0
+	0x142A485 Call 66961
+	0x142A489 LocalSet 3
+	0x142A48B LocalGet 2
+	0x142A48D LocalGet 4
+	0x142A48F I32Const 0
+	0x142A491 Call 66944
+	0x142A495 If -64
+	0x142A497 LocalGet 0
+	0x142A499 LocalGet 3
+	0x142A49B LocalGet 1
+	0x142A49D I32Const 0
+	0x142A49F Call 66961
+	0x142A4A3 LocalSet 1
+	0x142A4A5 End
+	0x142A4A6 LocalGet 4
+	0x142A4A8 I32Const 1
+	0x142A4AA I32Add
+	0x142A4AB LocalSet 4
+	0x142A4AD Br 0
+	0x142A4AF End
+	0x142A4B0 Unreachable
+	0x142A4B1 End
+	0x142A4B2 LocalSet 1
+	0x142A4B4 End
+	0x142A4B5 LocalGet 1
+	0x142A4B7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b23
+	5 Nop
+	6 Move v5 @ S0_v42, [2D82A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v42
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [45CE8D], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v70 @ S0_v21 (Mono.Math.BigInteger), typeof(Mono.Math.BigInteger)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid BigInteger.SetBit, v70 @ S0_v21 (Mono.Math.BigInteger), 1
+	19 Nop
+	20 Move v18 @ S0_v9 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<Mono.Math.BigInteger>)+BA], 512
+	25 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	26 ConditionalJump @b24, v23 @ TEMP_v2 (System.Boolean)
+	27 Move v24 @ S0_v37 (Il2CppClass<Mono.Math.BigInteger>), typeof(Mono.Math.BigInteger)
+	28 Nop
+	29 CheckEqual v26 @ S0_v39 (System.Boolean), [v24 @ S0_v37 (Il2CppClass<Mono.Math.BigInteger>)+74], 0
+	30 Not v27 @ TEMP_v9 (System.Boolean), v26 @ S0_v39 (System.Boolean)
+	31 ConditionalJump @b24, v27 @ TEMP_v9 (System.Boolean)
+	32 Nop
+	33 CallVoid 11A99, typeof(Mono.Math.BigInteger)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call E9DA, v35 @ S0_v14, exp @ L2 (Mono.Math.BigInteger), 0, 0
+	40 CheckEqual v36 @ TEMP_v4 (System.Boolean), v35 @ S0_v14, 0
+	41 ConditionalJump @b12, v36 @ TEMP_v4 (System.Boolean)
+	42 Nop
+	43 Jump @b25
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Call BigInteger.op_Equality, v46 @ S0_v20 (System.Boolean), exp @ L2 (Mono.Math.BigInteger), 0
+	52 Not v48 @ TEMP_v6 (System.Boolean), v46 @ S0_v20 (System.Boolean)
+	53 ConditionalJump @b26, v48 @ TEMP_v6 (System.Boolean)
+	54 Nop
+	55 Jump @b26
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Call BigInteger.LowestSetBit, v62 @ S1_v9 (System.Int32), exp @ L2 (Mono.Math.BigInteger)
+	64 CheckGreaterOrEqual v66 @ S0_v24 (System.Boolean), v56 @ L4_v3 (System.UInt32), v62 @ S1_v9 (System.Int32)
+	65 ConditionalJump @b27, v66 @ S0_v24 (System.Boolean)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Call ModulusRing.Difference, v90 @ S0_v26 (Mono.Math.BigInteger), this @ L0 (Mono.Math.BigInteger+ModulusRing), v58 @ L3_v4 (System.UInt32), v58 @ L3_v4 (System.UInt32)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call BigInteger.op_Equality, v94 @ S0_v28 (System.Boolean), exp @ L2 (Mono.Math.BigInteger), v56 @ L4_v3 (System.UInt32)
+	76 Not v80 @ TEMP_v8 (System.Boolean), v94 @ S0_v28 (System.Boolean)
+	77 ConditionalJump @b28, v80 @ TEMP_v8 (System.Boolean)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Call ModulusRing.Difference, v99 @ S0_v33 (Mono.Math.BigInteger), this @ L0 (Mono.Math.BigInteger+ModulusRing), v90 @ S0_v26 (Mono.Math.BigInteger), v72 @ L1_v4 (Mono.Math.BigInteger)
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Add v82 @ S0_v31 (System.UInt32), v56 @ L4_v3 (System.UInt32), 1
+	88 Nop
+	89 Jump @b29
+	90 Nop
+	91 Interrupt
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Return v72 @ L1_v4 (Mono.Math.BigInteger)
+

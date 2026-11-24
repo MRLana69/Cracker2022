@@ -1,0 +1,542 @@
+Type: System.Net.Sockets.SocketAsyncResult
+
+Method: System.IntPtr get_Handle()
+
+Disassembly:
+	0xC5D3C2 LocalGet 0
+	0xC5D3C4 I32Load 2, 24
+	0xC5D3C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.socket (System.Net.Sockets.Socket)
+
+Method: System.Void .ctor(System.Net.Sockets.Socket socket, System.AsyncCallback callback, System.Object state, System.Net.Sockets.SocketOperation operation)
+
+Disassembly:
+	0x112855D LocalGet 0
+	0x112855F LocalGet 1
+	0x1128561 LocalGet 2
+	0x1128563 LocalGet 3
+	0x1128565 LocalGet 4
+	0x1128567 Call 71699
+	0x112856B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 CallVoid 11813, this @ L0 (System.Net.Sockets.SocketAsyncResult), socket @ L1 (System.Net.Sockets.Socket), callback @ L2 (System.AsyncCallback), state @ L3 (System.Object), operation @ L4 (System.Net.Sockets.SocketOperation)
+	6 Nop
+	7 Return
+
+Method: System.Net.Sockets.SocketError get_ErrorCode()
+
+Disassembly:
+	0x1125377 I32Const 4566359
+	0x112537C I32Load8_S 0, 0
+	0x112537F I32Eqz
+	0x1125380 If -64
+	0x1125382 I32Const 3004816
+	0x1125387 I32Load 2, 0
+	0x112538A Call 73003
+	0x112538E I32Const 4566359
+	0x1125393 I32Const 1
+	0x1125395 I32Store8 0, 0
+	0x1125398 End
+	0x1125399 LocalGet 0
+	0x112539B I32Load 2, 24
+	0x112539E If -1
+	0x11253A0 LocalGet 0
+	0x11253A2 I32Load 2, 24
+	0x11253A5 I32Load 2, 28
+	0x11253A8 I32Load 2, 8
+	0x11253AB Else
+	0x11253AC I32Const 0
+	0x11253AE End
+	0x11253AF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v14, [2DD990]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45AD57], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.socket (System.Net.Sockets.Socket), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Move v16 @ S0_v10 (System.Net.Sockets.Socket), this.socket (System.Net.Sockets.Socket)
+	18 Move v17 @ S0_v11 (System.Net.Sockets.SafeSocketHandle), v16.m_Handle (System.Net.Sockets.SafeSocketHandle)
+	19 Move returnVal1 @ S0_v7 (System.Net.Sockets.SocketError), v17.handle (System.IntPtr)
+	20 Jump @b8
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Return returnVal1 @ S0_v7 (System.Net.Sockets.SocketError)
+
+Method: System.Void CheckIfThrowDelayedException()
+
+Disassembly:
+	0x112C659 I32Const 4
+	0x112C65B LocalGet 0
+	0x112C65D LocalGet 0
+	0x112C65F Call 29437
+	0x112C663 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid 72FD, 4, this @ L0 (System.Net.Sockets.SocketAsyncResult), this @ L0 (System.Net.Sockets.SocketAsyncResult)
+	4 Nop
+	5 Return
+
+Method: System.Void CompleteDisposed()
+
+Disassembly:
+	0x11259FE I32Const 4566363
+	0x1125A03 I32Load8_S 0, 0
+	0x1125A06 I32Eqz
+	0x1125A07 If -64
+	0x1125A09 I32Const 3004804
+	0x1125A0E I32Load 2, 0
+	0x1125A11 Call 73003
+	0x1125A15 I32Const 4566363
+	0x1125A1A I32Const 1
+	0x1125A1C I32Store8 0, 0
+	0x1125A1F End
+	0x1125A20 LocalGet 0
+	0x1125A22 I32Load 2, 32
+	0x1125A25 If -64
+	0x1125A27 LocalGet 0
+	0x1125A29 I32Load 2, 24
+	0x1125A2C I32Const 0
+	0x1125A2E I32Store8 0, 46
+	0x1125A31 LocalGet 0
+	0x1125A33 I32Load 2, 32
+	0x1125A36 I32Const 0
+	0x1125A38 I32Const 4489720
+	0x1125A3D I32Load 2, 0
+	0x1125A40 Call 73899
+	0x1125A44 End
+	0x1125A45 LocalGet 0
+	0x1125A47 I32Load 2, 88
+	0x1125A4A If -64
+	0x1125A4C LocalGet 0
+	0x1125A4E I32Load 2, 24
+	0x1125A51 I32Const 0
+	0x1125A53 I32Store8 0, 46
+	0x1125A56 LocalGet 0
+	0x1125A58 I32Load 2, 88
+	0x1125A5B LocalSet 0
+	0x1125A5D I32Const 4432456
+	0x1125A62 I32Load 2, 0
+	0x1125A65 Call 72556
+	0x1125A69 LocalTee 1
+	0x1125A6B LocalGet 0
+	0x1125A6D I32Const 0
+	0x1125A6F Call 52205
+	0x1125A73 LocalGet 1
+	0x1125A75 I32Const 0
+	0x1125A77 I32Const 4489720
+	0x1125A7C I32Load 2, 0
+	0x1125A7F Call 73899
+	0x1125A83 End
+	0x1125A84 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v24, [2DD984]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v24
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45AD5B], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.DelayedException (System.Exception), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Move v16 @ S0_v20 (System.Net.Sockets.Socket), this.socket (System.Net.Sockets.Socket)
+	18 Nop
+	19 Move v16.is_connected (System.Boolean), 0
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CallVoid 120AB, this.DelayedException (System.Exception), 0, methodof(System.Net.Sockets.SocketAsyncResult::CheckIfThrowDelayedException)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CheckEqual v29 @ TEMP_v3 (System.Boolean), this.error (System.Int32), 0
+	30 ConditionalJump @b10, v29 @ TEMP_v3 (System.Boolean)
+	31 Nop
+	32 Move v31 @ S0_v12 (System.Net.Sockets.Socket), this.socket (System.Net.Sockets.Socket)
+	33 Nop
+	34 Move v31.is_connected (System.Boolean), 0
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call 11B6C, v38 @ S0_v17 (System.Net.Sockets.SocketException), typeof(System.Net.Sockets.SocketException)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 CallVoid SocketException..ctor, v38 @ S0_v17 (System.Net.Sockets.SocketException), this.error (System.Int32)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid 120AB, v38 @ S0_v17 (System.Net.Sockets.SocketException), 0, methodof(System.Net.Sockets.SocketAsyncResult::CheckIfThrowDelayedException)
+	50 Nop
+	51 Nop
+	52 Return
+
+Method: System.Void Complete()
+
+Disassembly:
+	0x112EDB5 LocalGet 0
+	0x112EDB7 I32Const 0
+	0x112EDB9 Call 52302
+	0x112EDBD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid <>c..ctor, this @ L0 (System.Net.Sockets.SocketAsyncResult)
+	3 Nop
+	4 Return
+
+Method: System.Void Complete(System.Boolean synch)
+
+Disassembly:
+	0x112ED58 I32Const 4566448
+	0x112ED5D I32Load8_S 0, 0
+	0x112ED60 I32Eqz
+	0x112ED61 If -64
+	0x112ED63 I32Const 3004800
+	0x112ED68 I32Load 2, 0
+	0x112ED6B Call 73003
+	0x112ED6F I32Const 4566448
+	0x112ED74 I32Const 1
+	0x112ED76 I32Store8 0, 0
+	0x112ED79 End
+	0x112ED7A LocalGet 1
+	0x112ED7C If -64
+	0x112ED7E LocalGet 1
+	0x112ED80 I32Load 2, 36
+	0x112ED83 LocalTee 3
+	0x112ED85 If -64
+	0x112ED87 LocalGet 3
+	0x112ED89 LocalGet 1
+	0x112ED8B I32Load 2, 20
+	0x112ED8E LocalGet 1
+	0x112ED90 I32Const 4488456
+	0x112ED95 I32Load 2, 0
+	0x112ED98 Call 31348
+	0x112ED9C End
+	0x112ED9D End
+	0x112ED9E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v11, [2DD980]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45ADB0], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Not v13 @ TEMP_v2 (System.Boolean), synch @ L1 (System.Boolean)
+	14 ConditionalJump @b9, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CheckEqual v17 @ TEMP_v4 (System.Boolean), [synch @ L1 (System.Boolean)+24], 0
+	19 ConditionalJump @b9, v17 @ TEMP_v4 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CallVoid 7A74, [synch @ L1 (System.Boolean)+24], [synch @ L1 (System.Boolean)+14], synch @ L1 (System.Boolean), methodof(System.EventHandler`1<System.Net.Sockets.SocketAsyncEventArgs>::Invoke)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Return
+
+Method: System.Void Complete(System.Int32 total)
+
+Disassembly:
+	0x112AD83 LocalGet 0
+	0x112AD85 LocalGet 1
+	0x112AD87 I32Const 1
+	0x112AD89 I32And
+	0x112AD8A I32Store8 0, 20
+	0x112AD8D LocalGet 0
+	0x112AD8F I32Const 0
+	0x112AD91 Call 52302
+	0x112AD95 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.Int32), total @ L1 (System.Int32), 1
+	4 Move this.completed_synchronously (System.Boolean), v5 @ S1_v2 (System.Int32)
+	5 Nop
+	6 Nop
+	7 CallVoid <>c..ctor, this @ L0 (System.Net.Sockets.SocketAsyncResult)
+	8 Nop
+	9 Return
+
+Method: System.Void Complete(System.Exception e, System.Boolean synch)
+
+Disassembly:
+	0x1126530 I32Const 4566374
+	0x1126535 I32Load8_S 0, 0
+	0x1126538 I32Eqz
+	0x1126539 If -64
+	0x112653B I32Const 3000304
+	0x1126540 I32Load 2, 0
+	0x1126543 Call 73003
+	0x1126547 I32Const 4566374
+	0x112654C I32Const 1
+	0x112654E I32Store8 0, 0
+	0x1126551 End
+	0x1126552 LocalGet 0
+	0x1126554 LocalGet 2
+	0x1126556 I32Const 0
+	0x1126558 Call 59710
+	0x112655C LocalGet 0
+	0x112655E LocalGet 1
+	0x1126560 I32Store 2, 8
+	0x1126563 I32Const 4432640
+	0x1126568 I32Load 2, 0
+	0x112656B LocalTee 1
+	0x112656D I32Load16_S 1, 186
+	0x1126571 I32Const 512
+	0x1126574 I32And
+	0x1126575 If -64
+	0x1126577 LocalGet 1
+	0x1126579 I32Load 2, 116
+	0x112657C I32Eqz
+	0x112657D If -64
+	0x112657F LocalGet 1
+	0x1126581 Call 72345
+	0x1126585 I32Const 4432640
+	0x112658A I32Load 2, 0
+	0x112658D LocalSet 1
+	0x112658F End
+	0x1126590 End
+	0x1126591 LocalGet 1
+	0x1126593 I32Load 2, 92
+	0x1126596 I32Load8_S 0, 0
+	0x1126599 If -64
+	0x112659B I32Const 4432644
+	0x11265A0 I32Load 2, 0
+	0x11265A3 Call 72556
+	0x11265A7 LocalTee 1
+	0x11265A9 I32Const 0
+	0x11265AB I32Const 0
+	0x11265AD I32Const 4483236
+	0x11265B2 I32Load 2, 0
+	0x11265B5 I32Load 2, 12
+	0x11265B8 I32Load 2, 96
+	0x11265BB I32Load 2, 0
+	0x11265BE LocalTee 2
+	0x11265C0 LocalGet 2
+	0x11265C2 I32Load 2, 0
+	0x11265C5 I32Const 8191
+	0x11265C8 I32And
+	0x11265C9 I32Const 113696
+	0x11265CD I32Add
+	0x11265CE CallIndirect 8, 0
+	0x11265D1 LocalGet 0
+	0x11265D3 I32Const 24
+	0x11265D5 I32Add
+	0x11265D6 LocalGet 1
+	0x11265D8 I32Store 2, 0
+	0x11265DB End
+	0x11265DC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v28, [2DC7F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45AD66], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid RuntimeClassHandle..ctor, this @ L0 (System.Net.Sockets.SocketAsyncResult), synch @ L2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Move this.async_callback (System.AsyncCallback), e @ L1 (System.Exception)
+	19 Nop
+	20 Move v20 @ S0_v8 (Il2CppClass<System.Net.Sockets.SafeSocketHandle>), typeof(System.Net.Sockets.SafeSocketHandle)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 And v24 @ S0_v10, [v20 @ S0_v8 (Il2CppClass<System.Net.Sockets.SafeSocketHandle>)+BA], 512
+	25 CheckEqual v25 @ TEMP_v2 (System.Boolean), v24 @ S0_v10, 0
+	26 ConditionalJump @b12, v25 @ TEMP_v2 (System.Boolean)
+	27 Move v26 @ S0_v21 (Il2CppClass<System.Net.Sockets.SafeSocketHandle>), typeof(System.Net.Sockets.SafeSocketHandle)
+	28 Nop
+	29 CheckEqual v28 @ S0_v23 (System.Boolean), [v26 @ S0_v21 (Il2CppClass<System.Net.Sockets.SafeSocketHandle>)+74], 0
+	30 Not v29 @ TEMP_v5 (System.Boolean), v28 @ S0_v23 (System.Boolean)
+	31 ConditionalJump @b12, v29 @ TEMP_v5 (System.Boolean)
+	32 Nop
+	33 CallVoid 11A99, typeof(System.Net.Sockets.SafeSocketHandle)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Not v38 @ TEMP_v4 (System.Boolean), v36.THROW_ON_ABORT_RETRIES (System.Boolean)
+	43 ConditionalJump @b14, v38 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Call 11B6C, v42 @ S0_v18, typeof(System.Collections.Generic.Dictionary`2<System.Threading.Thread, System.Diagnostics.StackTrace>)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Move v68 @ S3_v3 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.Threading.Thread, System.Diagnostics.StackTrace>::.ctor)
+	52 Move v69 @ S3_v4, [v68 @ S3_v3 (Il2CppMethodInfo)+C]
+	53 Move v70 @ S3_v5, [v69 @ S3_v4+60]
+	54 Move v55 @ S3_v6, [v70 @ S3_v5]
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 And v74 @ S4_v4, [v55 @ S3_v6], 8191
+	60 Nop
+	61 Add v50 @ S4_v5, v74 @ S4_v4, 113696
+	62 IndirectCall v50 @ S4_v5, v44 @ SRET_v2, v42 @ S0_v18, 0, 0, v55 @ S3_v6
+	63 Nop
+	64 Nop
+	65 Add v64 @ S0_v20, this @ L0 (System.Net.Sockets.SocketAsyncResult), 24
+	66 Nop
+	67 Move [v64 @ S0_v20], v42 @ S0_v18
+	68 Nop
+	69 Nop
+	70 Return
+
+Method: System.Void Complete(System.Exception e)
+
+Disassembly:
+	0x112B9F3 LocalGet 0
+	0x112B9F5 LocalGet 1
+	0x112B9F7 I32Store 2, 84
+	0x112B9FA LocalGet 0
+	0x112B9FC I32Const 0
+	0x112B9FE Call 52302
+	0x112BA02 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.Total (System.Int32), e @ L1 (System.Exception)
+	3 Nop
+	4 Nop
+	5 CallVoid <>c..ctor, this @ L0 (System.Net.Sockets.SocketAsyncResult)
+	6 Nop
+	7 Return
+
+Method: System.Void Complete(System.Net.Sockets.Socket s)
+
+Disassembly:
+	0x112B9DE LocalGet 0
+	0x112B9E0 I32Const 32
+	0x112B9E2 I32Add
+	0x112B9E3 LocalGet 1
+	0x112B9E5 I32Store 2, 0
+	0x112B9E8 LocalGet 0
+	0x112B9EA I32Const 0
+	0x112B9EC Call 52302
+	0x112B9F0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Net.Sockets.SocketAsyncResult), 32
+	3 Nop
+	4 Move [v3 @ S0_v2], s @ L1 (System.Net.Sockets.Socket)
+	5 Nop
+	6 Nop
+	7 CallVoid <>c..ctor, this @ L0 (System.Net.Sockets.SocketAsyncResult)
+	8 Nop
+	9 Return
+
+Method: System.Void Complete(System.Net.Sockets.Socket s, System.Int32 total)
+
+Disassembly:
+	0x112AD64 LocalGet 0
+	0x112AD66 I32Const 32
+	0x112AD68 I32Add
+	0x112AD69 LocalGet 1
+	0x112AD6B I32Store 2, 0
+	0x112AD6E LocalGet 0
+	0x112AD70 LocalGet 2
+	0x112AD72 I32Const 1
+	0x112AD74 I32And
+	0x112AD75 I32Store8 0, 20
+	0x112AD78 LocalGet 0
+	0x112AD7A I32Const 0
+	0x112AD7C Call 52302
+	0x112AD80 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Net.Sockets.SocketAsyncResult), 32
+	3 Nop
+	4 Move [v3 @ S0_v2], s @ L1 (System.Net.Sockets.Socket)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 And v10 @ S1_v4 (System.Int32), total @ L2 (System.Int32), 1
+	9 Move this.completed_synchronously (System.Boolean), v10 @ S1_v4 (System.Int32)
+	10 Nop
+	11 Nop
+	12 CallVoid <>c..ctor, this @ L0 (System.Net.Sockets.SocketAsyncResult)
+	13 Nop
+	14 Return
+

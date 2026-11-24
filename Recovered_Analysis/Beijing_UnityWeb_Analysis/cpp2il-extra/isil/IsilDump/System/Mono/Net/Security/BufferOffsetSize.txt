@@ -1,0 +1,259 @@
+Type: Mono.Net.Security.BufferOffsetSize
+
+Method: System.Int32 get_EndOffset()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.Buffer (System.Byte[])
+
+Method: System.Int32 get_Remaining()
+
+Disassembly:
+	0x110EE59 LocalGet 0
+	0x110EE5B I32Load 2, 16
+	0x110EE5E LocalGet 0
+	0x110EE60 I32Load 2, 12
+	0x110EE63 I32Add
+	0x110EE64 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add returnVal1 @ S0_v3 (System.Int32), this.Size (System.Int32), this.Offset (System.Int32)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Int32)
+
+Method: System.Void .ctor(System.Byte[] buffer, System.Int32 offset, System.Int32 size)
+
+Disassembly:
+	0x110AABB I32Const 4566124
+	0x110AAC0 I32Load8_S 0, 0
+	0x110AAC3 I32Eqz
+	0x110AAC4 If -64
+	0x110AAC6 I32Const 3016608
+	0x110AACB I32Load 2, 0
+	0x110AACE Call 73003
+	0x110AAD2 I32Const 4566124
+	0x110AAD7 I32Const 1
+	0x110AAD9 I32Store8 0, 0
+	0x110AADC End
+	0x110AADD LocalGet 2
+	0x110AADF If -64
+	0x110AAE1 I32Const 4431860
+	0x110AAE6 I32Load 2, 0
+	0x110AAE9 Call 72556
+	0x110AAED LocalTee 3
+	0x110AAEF LocalGet 2
+	0x110AAF1 I32Const 0
+	0x110AAF3 I32Const 0
+	0x110AAF5 Call 51692
+	0x110AAF9 LocalGet 3
+	0x110AAFB I32Const 0
+	0x110AAFD Call 51707
+	0x110AB01 LocalSet 1
+	0x110AB03 LocalGet 0
+	0x110AB05 I32Const 8
+	0x110AB07 I32Add
+	0x110AB08 I32Const 4431884
+	0x110AB0D I32Load 2, 0
+	0x110AB10 LocalGet 1
+	0x110AB12 Call 71670
+	0x110AB16 I32Store 2, 0
+	0x110AB19 I32Const 0
+	0x110AB1B LocalSet 1
+	0x110AB1D Loop -64
+	0x110AB1F LocalGet 1
+	0x110AB21 LocalGet 0
+	0x110AB23 I32Load 2, 8
+	0x110AB26 I32Load 2, 12
+	0x110AB29 I32Lt_S
+	0x110AB2A If -64
+	0x110AB2C LocalGet 3
+	0x110AB2E LocalGet 1
+	0x110AB30 I32Const 0
+	0x110AB32 Call 51710
+	0x110AB36 LocalSet 2
+	0x110AB38 I32Const 4431864
+	0x110AB3D I32Load 2, 0
+	0x110AB40 Call 72556
+	0x110AB44 LocalTee 5
+	0x110AB46 LocalGet 2
+	0x110AB48 I32Const 0
+	0x110AB4A I32Const 0
+	0x110AB4C Call 51692
+	0x110AB50 LocalGet 0
+	0x110AB52 I32Load 2, 8
+	0x110AB55 LocalSet 2
+	0x110AB57 I32Const 4431888
+	0x110AB5C I32Load 2, 0
+	0x110AB5F Call 72556
+	0x110AB63 LocalTee 4
+	0x110AB65 I32Const 8
+	0x110AB67 I32Add
+	0x110AB68 LocalGet 5
+	0x110AB6A I32Store 2, 0
+	0x110AB6D LocalGet 2
+	0x110AB6F LocalGet 4
+	0x110AB71 Call 29652
+	0x110AB75 LocalGet 2
+	0x110AB77 I32Const 16
+	0x110AB79 I32Add
+	0x110AB7A LocalGet 1
+	0x110AB7C I32Const 2
+	0x110AB7E I32Shl
+	0x110AB7F I32Add
+	0x110AB80 LocalGet 4
+	0x110AB82 I32Store 2, 0
+	0x110AB85 LocalGet 1
+	0x110AB87 I32Const 1
+	0x110AB89 I32Add
+	0x110AB8A LocalSet 1
+	0x110AB8C Br 1
+	0x110AB8E End
+	0x110AB8F End
+	0x110AB90 LocalGet 3
+	0x110AB92 I32Const 0
+	0x110AB94 Call 51726
+	0x110AB98 End
+	0x110AB99 LocalGet 0
+	0x110AB9B I32Load 2, 12
+	0x110AB9E I32Const 0
+	0x110ABA0 Call 51756
+	0x110ABA4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v39, [2E07A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v39
+	8 Nop
+	9 Move v7 @ S1_v25, 1
+	10 Move [45AC6C], v7 @ S1_v25
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), offset @ L2 (System.Int32), 0
+	14 ConditionalJump @b17, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v11 (System.IntPtr), typeof(Mono.Net.CFArray)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid C9EC, v16 @ S0_v11 (System.IntPtr), offset @ L2 (System.Int32), 0, 0
+	23 Nop
+	24 Nop
+	25 Call CFNumber.AsInt32, v52 @ S0_v13 (System.Int32), v16 @ S0_v11 (System.IntPtr)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Add v56 @ S0_v15, this @ L0 (Mono.Net.Security.BufferOffsetSize), 8
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Newobj v60 @ S1_v9 (System.OverflowException), typeof(System.OverflowException)
+	34 Move [v56 @ S0_v15], v60 @ S1_v9 (System.OverflowException)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move v76 @ S1_v12 (System.Byte[]), this.Buffer (System.Byte[])
+	41 Nop
+	42 CheckLess v78 @ S0_v19 (System.Boolean), v26 @ L1_v4 (System.IntPtr), v76.Length
+	43 Not v40 @ TEMP_v5 (System.Boolean), v78 @ S0_v19 (System.Boolean)
+	44 ConditionalJump @b16, v40 @ TEMP_v5 (System.Boolean)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Call CFDictionary.CFDictionaryGetValue, v82 @ S0_v22 (System.IntPtr), v16 @ S0_v11 (System.IntPtr), v26 @ L1_v4 (System.IntPtr)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call 11B6C, v86 @ S0_v25, typeof(Mono.Net.CFDictionary)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 CallVoid C9EC, v86 @ S0_v25, v82 @ S0_v22 (System.IntPtr), 0, 0
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Call 11B6C, v93 @ S0_v30, typeof(Mono.Net.CFProxy)
+	64 Nop
+	65 Nop
+	66 Add v95 @ S0_v31, v93 @ S0_v30, 8
+	67 Nop
+	68 Move [v95 @ S0_v31], v86 @ S0_v25
+	69 Nop
+	70 Nop
+	71 Throw typeof(System.ArrayTypeMismatchException)
+	72 Nop
+	73 Nop
+	74 Add v101 @ S0_v34, this.Buffer (System.Byte[]), 16
+	75 Nop
+	76 Nop
+	77 ShiftLeft v103 @ S1_v22, v26 @ L1_v4 (System.IntPtr), 2
+	78 Add v104 @ S0_v35, v101 @ S0_v34, v103 @ S1_v22
+	79 Nop
+	80 Move [v104 @ S0_v35], v93 @ S0_v30
+	81 Nop
+	82 Nop
+	83 Add v73 @ S0_v37 (System.IntPtr), v26 @ L1_v4 (System.IntPtr), 1
+	84 Nop
+	85 Jump @b20
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 CallVoid CFRunLoop.CFRunLoopStop, v16 @ S0_v11 (System.IntPtr)
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 CallVoid GetProxyData.Dispose, this.Offset (System.Int32)
+	96 Nop
+	97 Return
+
+Method: System.String ToString()
+
+Disassembly:
+	0x110EE67 LocalGet 0
+	0x110EE69 I32Load 2, 8
+	0x110EE6C I32Load 2, 12
+	0x110EE6F LocalGet 0
+	0x110EE71 I32Load 2, 12
+	0x110EE74 I32Sub
+	0x110EE75 LocalGet 0
+	0x110EE77 I32Load 2, 16
+	0x110EE7A I32Sub
+	0x110EE7B End
+
+ISIL:
+	0 Nop
+	1 Move v2 @ S0_v2 (System.Byte[]), this.Buffer (System.Byte[])
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Subtract v6 @ S0_v4, v2.Length, this.Offset (System.Int32)
+	6 Nop
+	7 Nop
+	8 Subtract returnVal1 @ S0_v5 (System.String), v6 @ S0_v4, this.Size (System.Int32)
+	9 Nop
+	10 Return returnVal1 @ S0_v5 (System.String)
+

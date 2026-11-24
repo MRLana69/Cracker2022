@@ -1,0 +1,127 @@
+Type: System.Security.Cryptography.RIPEMD160
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x13E6727 I32Const 4574351
+	0x13E672C I32Load8_S 0, 0
+	0x13E672F I32Eqz
+	0x13E6730 If -64
+	0x13E6732 I32Const 2997956
+	0x13E6737 I32Load 2, 0
+	0x13E673A Call 73003
+	0x13E673E I32Const 4574351
+	0x13E6743 I32Const 1
+	0x13E6745 I32Store8 0, 0
+	0x13E6748 End
+	0x13E6749 I32Const 4491216
+	0x13E674E I32Load 2, 0
+	0x13E6751 Call 73897
+	0x13E6755 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v8, [2DBEC4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45CC8F], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid 120A9, methodof(System.Security.Cryptography.RijndaelManagedTransform::.ctor)
+	15 Nop
+	16 Return
+
+Method: System.Security.Cryptography.RIPEMD160 Create()
+
+Disassembly:
+	0x13E358E I32Const 4574335
+	0x13E3593 I32Load8_S 0, 0
+	0x13E3596 I32Eqz
+	0x13E3597 If -64
+	0x13E3599 I32Const 2997976
+	0x13E359E I32Load 2, 0
+	0x13E35A1 Call 73003
+	0x13E35A5 I32Const 4574335
+	0x13E35AA I32Const 1
+	0x13E35AC I32Store8 0, 0
+	0x13E35AF End
+	0x13E35B0 I32Const 4430888
+	0x13E35B5 I32Load 2, 0
+	0x13E35B8 Call 72556
+	0x13E35BC LocalTee 1
+	0x13E35BE I32Const 0
+	0x13E35C0 Call 66032
+	0x13E35C4 LocalGet 1
+	0x13E35C6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2DBED8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45CC7F], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Security.Cryptography.RijndaelManaged), typeof(System.Security.Cryptography.RijndaelManaged)
+	15 Nop
+	16 Nop
+	17 CallVoid RijndaelManaged.GenerateKey, v13 @ S0_v7 (System.Security.Cryptography.RijndaelManaged)
+	18 Nop
+	19 Nop
+	20 Return v13 @ S0_v7 (System.Security.Cryptography.RijndaelManaged)
+
+Method: System.Security.Cryptography.RIPEMD160 Create(System.String hashName)
+
+Disassembly:
+	0x13E446C LocalGet 0
+	0x13E446E I32Const -2139062144
+	0x13E4474 I32And
+	0x13E4475 LocalTee 2
+	0x13E4477 LocalGet 2
+	0x13E4479 I32Const 7
+	0x13E447B I32Shr_U
+	0x13E447C I32Sub
+	0x13E447D I32Const 454761243
+	0x13E4483 I32And
+	0x13E4484 LocalGet 0
+	0x13E4486 I32Const 1
+	0x13E4488 I32Shl
+	0x13E4489 I32Const -16843010
+	0x13E448E I32And
+	0x13E448F I32Xor
+	0x13E4490 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 And v3 @ S0_v2, hashName @ L0 (System.String), -2139062144
+	3 Nop
+	4 Nop
+	5 Nop
+	6 ShiftRight v7 @ S1_v3, v3 @ S0_v2, 7
+	7 Subtract v8 @ S0_v3, v3 @ S0_v2, v7 @ S1_v3
+	8 Nop
+	9 And v10 @ S0_v4, v8 @ S0_v3, 454761243
+	10 Nop
+	11 Nop
+	12 ShiftLeft v13 @ S1_v6, hashName @ L0 (System.String), 1
+	13 Nop
+	14 And v15 @ S1_v7, v13 @ S1_v6, -16843010
+	15 Xor returnVal1 @ S0_v5 (System.Security.Cryptography.RIPEMD160), v10 @ S0_v4, v15 @ S1_v7
+	16 Nop
+	17 Return returnVal1 @ S0_v5 (System.Security.Cryptography.RIPEMD160)
+

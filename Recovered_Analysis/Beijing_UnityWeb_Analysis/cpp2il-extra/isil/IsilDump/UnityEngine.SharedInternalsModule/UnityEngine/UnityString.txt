@@ -1,0 +1,50 @@
+Type: UnityEngine.UnityString
+
+Method: System.String Format(System.String fmt, System.Object[] args)
+
+Disassembly:
+	0x15618C1 I32Const 3928572
+	0x15618C6 I32Load 2, 0
+	0x15618C9 LocalTee 2
+	0x15618CB I32Eqz
+	0x15618CC If -64
+	0x15618CE I32Const 3928572
+	0x15618D3 I32Const 3537657
+	0x15618D8 Call 73893
+	0x15618DC LocalTee 2
+	0x15618DE I32Store 2, 0
+	0x15618E1 End
+	0x15618E2 LocalGet 0
+	0x15618E4 LocalGet 1
+	0x15618E6 LocalGet 2
+	0x15618E8 I32Const 16383
+	0x15618EC I32And
+	0x15618ED I32Const 6161
+	0x15618F0 I32Add
+	0x15618F1 CallIndirect 0, 0
+	0x15618F4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF1FC], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3537657
+	9 Nop
+	10 Move [3BF1FC], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 6161
+	19 IndirectCall v21 @ S2_v3, returnVal1 @ S0_v6 (System.String), fmt @ L0 (System.String), args @ L1 (System.Object[])
+	20 Nop
+	21 Return returnVal1 @ S0_v6 (System.String)
+

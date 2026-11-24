@@ -1,0 +1,276 @@
+Type: SYBO.Components.Utilities.Data.NumericToggle
+
+Method: System.Boolean IsOriginalValue()
+
+Disassembly:
+	0xE5CD05 GlobalGet 7
+	0xE5CD07 LocalSet 5
+	0xE5CD09 GlobalGet 7
+	0xE5CD0B I32Const 32
+	0xE5CD0D I32Add
+	0xE5CD0E GlobalSet 7
+	0xE5CD10 LocalGet 5
+	0xE5CD12 I32Const 12
+	0xE5CD14 I32Add
+	0xE5CD15 LocalTee 6
+	0xE5CD17 LocalGet 1
+	0xE5CD19 F32Store 2, 0
+	0xE5CD1C LocalGet 5
+	0xE5CD1E I32Const 16
+	0xE5CD20 I32Add
+	0xE5CD21 LocalTee 7
+	0xE5CD23 LocalGet 2
+	0xE5CD25 I32Const 1
+	0xE5CD27 I32And
+	0xE5CD28 I32Store8 0, 0
+	0xE5CD2B I32Const 4558128
+	0xE5CD30 I32Load8_S 0, 0
+	0xE5CD33 I32Eqz
+	0xE5CD34 If -64
+	0xE5CD36 I32Const 2989120
+	0xE5CD3B I32Load 2, 0
+	0xE5CD3E Call 73003
+	0xE5CD42 I32Const 4558128
+	0xE5CD47 I32Const 1
+	0xE5CD49 I32Store8 0, 0
+	0xE5CD4C End
+	0xE5CD4D LocalGet 5
+	0xE5CD4F I32Const 0
+	0xE5CD51 I32Store 2, 8
+	0xE5CD54 LocalGet 5
+	0xE5CD56 I32Const 4428680
+	0xE5CD5B I32Load 2, 0
+	0xE5CD5E LocalGet 6
+	0xE5CD60 Call 73903
+	0xE5CD64 I32Store 2, 0
+	0xE5CD67 LocalGet 5
+	0xE5CD69 I32Const 4428456
+	0xE5CD6E I32Load 2, 0
+	0xE5CD71 LocalGet 7
+	0xE5CD73 Call 73903
+	0xE5CD77 I32Store 2, 4
+	0xE5CD7A LocalGet 0
+	0xE5CD7C LocalGet 5
+	0xE5CD7E LocalGet 3
+	0xE5CD80 LocalGet 4
+	0xE5CD82 Call 73891
+	0xE5CD86 LocalGet 5
+	0xE5CD88 GlobalSet 7
+	0xE5CD8A End
+
+ISIL:
+No ISIL was generated
+Method: System.Boolean get_IsEnabled()
+
+Disassembly:
+	0xFFA294 LocalGet 0
+	0xFFA296 I32Load 2, 24
+	0xFFA299 LocalGet 0
+	0xFFA29B I32Load 2, 28
+	0xFFA29E I32Eq
+	0xFFA29F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CheckEqual returnVal1 @ S0_v3 (System.Boolean), [this @ L0 (SYBO.Components.Utilities.Data.NumericToggle)+18], [this @ L0 (SYBO.Components.Utilities.Data.NumericToggle)+1C]
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_IsEnabled(System.Boolean value)
+
+Disassembly:
+	0xFFA282 LocalGet 0
+	0xFFA284 LocalGet 1
+	0xFFA286 I32Store 2, 24
+	0xFFA289 I32Const 5
+	0xFFA28B LocalGet 0
+	0xFFA28D Call 29286
+	0xFFA291 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (SYBO.Components.Utilities.Data.NumericToggle)+18], value @ L1 (System.Boolean)
+	3 Nop
+	4 Nop
+	5 CallVoid 7266, 5, this @ L0 (SYBO.Components.Utilities.Data.NumericToggle)
+	6 Nop
+	7 Return
+
+Method: System.Boolean get_IsEnabledOriginal()
+
+Disassembly:
+	0xC13ADF LocalGet 0
+	0xC13AE1 I32Load8_S 0, 8
+	0xC13AE4 I32Const 0
+	0xC13AE6 I32Ne
+	0xC13AE7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._isEnabled (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_IsEnabledOriginal(System.Boolean value)
+
+Disassembly:
+	0xC5FB8A LocalGet 0
+	0xC5FB8C LocalGet 1
+	0xC5FB8E I32Const 1
+	0xC5FB90 I32And
+	0xC5FB91 I32Store8 0, 8
+	0xC5FB94 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Move this._isEnabled (System.Boolean), value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.String get_InspectorMessage()
+
+Disassembly:
+	0xC5FB97 LocalGet 0
+	0xC5FB99 I32Load8_S 0, 9
+	0xC5FB9C I32Const 0
+	0xC5FB9E I32Ne
+	0xC5FB9F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._isEnabledOriginal (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_InspectorMessage(System.String value)
+
+Disassembly:
+	0xC5FBA2 LocalGet 0
+	0xC5FBA4 LocalGet 1
+	0xC5FBA6 I32Const 1
+	0xC5FBA8 I32And
+	0xC5FBA9 I32Store8 0, 9
+	0xC5FBAC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.Boolean), value @ L1 (System.String), 1
+	4 Move this._isEnabledOriginal (System.Boolean), v5 @ S1_v2 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.String get_InspectorMessageOriginal()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._inspectorMessage (System.String)
+
+Method: System.Void set_InspectorMessageOriginal(System.String value)
+
+Disassembly:
+	0xC57CB4 LocalGet 0
+	0xC57CB6 I32Const 12
+	0xC57CB8 I32Add
+	0xC57CB9 LocalGet 1
+	0xC57CBB I32Store 2, 0
+	0xC57CBE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Components.Utilities.Data.NumericToggle), 12
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.String)
+	5 Nop
+	6 Return
+
+Method: System.Boolean get_ShowInspectorMessage()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._inspectorMessageOriginal (System.String)
+
+Method: System.Void set_ShowInspectorMessage(System.Boolean value)
+
+Disassembly:
+	0xC57CC1 LocalGet 0
+	0xC57CC3 I32Const 16
+	0xC57CC5 I32Add
+	0xC57CC6 LocalGet 1
+	0xC57CC8 I32Store 2, 0
+	0xC57CCB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Components.Utilities.Data.NumericToggle), 16
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.Void OnChanged()
+
+Disassembly:
+	0xFFA277 LocalGet 0
+	0xFFA279 I32Const 0
+	0xFFA27B Call 45780
+	0xFFA27F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid NumericIntToggle.SoftReset, this @ L0 (SYBO.Components.Utilities.Data.NumericToggle)
+	3 Nop
+	4 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xFFA2A2 LocalGet 0
+	0xFFA2A4 I32Const 4
+	0xFFA2A6 LocalGet 0
+	0xFFA2A8 Call 29262
+	0xFFA2AC I32Const 1
+	0xFFA2AE I32And
+	0xFFA2AF I32Store8 0, 20
+	0xFFA2B2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 724E, v4 @ S1_v2, 4, this @ L0 (SYBO.Components.Utilities.Data.NumericToggle)
+	4 Nop
+	5 And v6 @ S1_v3 (System.Boolean), v4 @ S1_v2, 1
+	6 Move this._showInspectorMessage (System.Boolean), v6 @ S1_v3 (System.Boolean)
+	7 Nop
+	8 Return
+

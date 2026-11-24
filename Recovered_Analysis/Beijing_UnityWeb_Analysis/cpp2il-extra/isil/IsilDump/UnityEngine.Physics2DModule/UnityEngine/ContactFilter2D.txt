@@ -1,0 +1,441 @@
+Type: UnityEngine.ContactFilter2D
+
+Method: System.Void CheckConsistency()
+
+Disassembly:
+	0x154AA48 I32Const 4576669
+	0x154AA4D I32Load8_S 0, 0
+	0x154AA50 I32Eqz
+	0x154AA51 If -64
+	0x154AA53 I32Const 3023936
+	0x154AA58 I32Load 2, 0
+	0x154AA5B Call 73003
+	0x154AA5F I32Const 4576669
+	0x154AA64 I32Const 1
+	0x154AA66 I32Store8 0, 0
+	0x154AA69 End
+	0x154AA6A LocalGet 0
+	0x154AA6C I32Load 2, 8
+	0x154AA6F If -64
+	0x154AA71 LocalGet 0
+	0x154AA73 I32Const 0
+	0x154AA75 Call 70516
+	0x154AA79 LocalGet 0
+	0x154AA7B I32Const 0
+	0x154AA7D I32Store 2, 8
+	0x154AA80 End
+	0x154AA81 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v11, [2E2440]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45D59D], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.layerMask (UnityEngine.LayerMask), 0
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 CallVoid UploadHandler.Finalize, this @ L0 (UnityEngine.ContactFilter2D)
+	19 Nop
+	20 Nop
+	21 Move this.layerMask (UnityEngine.LayerMask), 0
+	22 Nop
+	23 Nop
+	24 Return
+
+Method: System.Void SetLayerMask(UnityEngine.LayerMask layerMask)
+
+Disassembly:
+	0x154D0D2 LocalGet 0
+	0x154D0D4 LocalGet 1
+	0x154D0D6 I32Const 0
+	0x154D0D8 Call 70558
+	0x154D0DC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid UploadHandlerRaw.SetContentType, this @ L0 (UnityEngine.ContactFilter2D), layerMask @ L1 (UnityEngine.LayerMask)
+	4 Nop
+	5 Return
+
+Method: System.Void SetDepth(System.Single minDepth, System.Single maxDepth)
+
+Disassembly:
+	0x1402523 LocalGet 0
+	0x1402525 I32Load8_S 0, 150
+	0x1402529 If -3
+	0x140252B LocalGet 2
+	0x140252D LocalGet 0
+	0x140252F I32Load 2, 152
+	0x1402533 I32Const 0
+	0x1402535 Call 66472
+	0x1402539 LocalGet 0
+	0x140253B I32Load 2, 152
+	0x140253F I32Const 0
+	0x1402541 Call 66506
+	0x1402545 I32Const 0
+	0x1402547 Call 63899
+	0x140254B F32Convert_I32_S
+	0x140254C F32Add
+	0x140254D F32Sub
+	0x140254E Else
+	0x140254F LocalGet 2
+	0x1402551 End
+	0x1402552 LocalSet 4
+	0x1402554 Block -64
+	0x1402556 Block -64
+	0x1402558 LocalGet 0
+	0x140255A I32Load8_S 0, 149
+	0x140255E I32Eqz
+	0x140255F BrIf 0
+	0x1402561 LocalGet 4
+	0x1402563 LocalGet 0
+	0x1402565 F32Load 2, 132
+	0x1402569 F32Lt
+	0x140256A I32Eqz
+	0x140256B BrIf 0
+	0x140256D LocalGet 0
+	0x140256F I32Load8_S 0, 150
+	0x1402573 I32Eqz
+	0x1402574 If -64
+	0x1402576 LocalGet 0
+	0x1402578 I32Load8_S 0, 151
+	0x140257C I32Eqz
+	0x140257D If -64
+	0x140257F LocalGet 0
+	0x1402581 LocalGet 0
+	0x1402583 I32Const 24
+	0x1402585 I32Add
+	0x1402586 F32Load 2, 8
+	0x1402589 LocalGet 0
+	0x140258B I32Load 2, 156
+	0x140258F I32Const 0
+	0x1402591 Call 66471
+	0x1402595 F32Sub
+	0x1402596 LocalGet 0
+	0x1402598 I32Load 2, 156
+	0x140259C I32Const 0
+	0x140259E Call 66506
+	0x14025A2 I32Const 0
+	0x14025A4 Call 63897
+	0x14025A8 F32Convert_I32_S
+	0x14025A9 F32Sub
+	0x14025AA F32Store 2, 140
+	0x14025AE LocalGet 0
+	0x14025B0 F32Load 2, 140
+	0x14025B4 LocalGet 0
+	0x14025B6 F32Load 2, 124
+	0x14025B9 F32Lt
+	0x14025BA If -64
+	0x14025BC LocalGet 0
+	0x14025BE LocalGet 0
+	0x14025C0 F32Load 2, 124
+	0x14025C3 F32Store 2, 140
+	0x14025C7 End
+	0x14025C8 LocalGet 0
+	0x14025CA I32Const 24
+	0x14025CC I32Add
+	0x14025CD F32Load 2, 8
+	0x14025D0 LocalSet 4
+	0x14025D2 I32Const 10
+	0x14025D4 LocalGet 0
+	0x14025D6 LocalGet 0
+	0x14025D8 I32Const 24
+	0x14025DA I32Add
+	0x14025DB F32Load 2, 0
+	0x14025DE LocalGet 0
+	0x14025E0 F32Load 2, 140
+	0x14025E4 Call 32839
+	0x14025E8 I32Const 9
+	0x14025EA LocalGet 0
+	0x14025EC Call 29286
+	0x14025F0 LocalGet 0
+	0x14025F2 I32Const 24
+	0x14025F4 I32Add
+	0x14025F5 LocalGet 4
+	0x14025F7 F32Store 2, 8
+	0x14025FA End
+	0x14025FB End
+	0x14025FC LocalGet 0
+	0x14025FE F32Load 2, 16
+	0x1402601 LocalSet 4
+	0x1402603 LocalGet 0
+	0x1402605 F32Load 2, 20
+	0x1402608 LocalSet 5
+	0x140260A LocalGet 0
+	0x140260C LocalGet 0
+	0x140260E F32Load 2, 132
+	0x1402612 F32Store 2, 16
+	0x1402615 LocalGet 0
+	0x1402617 LocalGet 0
+	0x1402619 F32Load 2, 136
+	0x140261D F32Store 2, 20
+	0x1402620 LocalGet 0
+	0x1402622 LocalGet 1
+	0x1402624 LocalGet 0
+	0x1402626 F32Load 2, 132
+	0x140262A I32Const 0
+	0x140262C Call 66609
+	0x1402630 LocalGet 0
+	0x1402632 LocalGet 4
+	0x1402634 F32Store 2, 16
+	0x1402637 LocalGet 0
+	0x1402639 LocalGet 5
+	0x140263B F32Store 2, 20
+	0x140263E LocalGet 0
+	0x1402640 I32Const 24
+	0x1402642 I32Add
+	0x1402643 LocalGet 2
+	0x1402645 F32Store 2, 12
+	0x1402648 LocalGet 0
+	0x140264A LocalGet 0
+	0x140264C F32Load 2, 132
+	0x1402650 F32Store 2, 144
+	0x1402654 Br 1
+	0x1402656 End
+	0x1402657 LocalGet 0
+	0x1402659 I32Load8_S 0, 149
+	0x140265D If -64
+	0x140265F LocalGet 0
+	0x1402661 LocalGet 0
+	0x1402663 F32Load 2, 132
+	0x1402667 F32Store 2, 16
+	0x140266A LocalGet 0
+	0x140266C LocalGet 0
+	0x140266E F32Load 2, 136
+	0x1402672 F32Store 2, 20
+	0x1402675 End
+	0x1402676 LocalGet 0
+	0x1402678 LocalGet 1
+	0x140267A LocalGet 4
+	0x140267C I32Const 0
+	0x140267E Call 66609
+	0x1402682 LocalGet 0
+	0x1402684 I32Const 24
+	0x1402686 I32Add
+	0x1402687 LocalGet 2
+	0x1402689 F32Store 2, 12
+	0x140268C LocalGet 0
+	0x140268E LocalGet 4
+	0x1402690 F32Store 2, 144
+	0x1402694 End
+	0x1402695 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), [this @ L0 (UnityEngine.ContactFilter2D)+96], 0
+	3 ConditionalJump @b7, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call GUIStyle.Internal_GetLineHeight, v9 @ S1_v44 (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+98]
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Call GUIStyle.get_padding, v14 @ S2_v21 (UnityEngine.RectOffset), [this @ L0 (UnityEngine.ContactFilter2D)+98]
+	13 Nop
+	14 Call RectOffset.get_bottom, v20 @ S2_v22 (System.Int32), v14 @ S2_v21 (UnityEngine.RectOffset)
+	15 Add v23 @ S1_v45 (System.Single), v9 @ S1_v44 (System.Single), v20 @ S2_v22 (System.Int32)
+	16 Subtract v24 @ S0_v3 (System.Single), maxDepth @ L2 (System.Single), v23 @ S1_v45 (System.Single)
+	17 Jump @b22
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CheckEqual v29 @ S0_v6 (System.Boolean), [this @ L0 (UnityEngine.ContactFilter2D)+95], 0
+	24 ConditionalJump @b19, v29 @ S0_v6 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CheckLess v33 @ S0_v19 (System.Boolean), v24 @ S0_v3 (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+84]
+	29 Not v34 @ S0_v20 (System.Boolean), v33 @ S0_v19 (System.Boolean)
+	30 ConditionalJump @b19, v34 @ S0_v20 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 CheckEqual v42 @ S0_v23 (System.Boolean), [this @ L0 (UnityEngine.ContactFilter2D)+96], 0
+	34 Not v43 @ TEMP_v4 (System.Boolean), v42 @ S0_v23 (System.Boolean)
+	35 ConditionalJump @b23, v43 @ TEMP_v4 (System.Boolean)
+	36 Nop
+	37 Nop
+	38 CheckEqual v59 @ S0_v39 (System.Boolean), [this @ L0 (UnityEngine.ContactFilter2D)+97], 0
+	39 Not v60 @ TEMP_v6 (System.Boolean), v59 @ S0_v39 (System.Boolean)
+	40 ConditionalJump @b23, v60 @ TEMP_v6 (System.Boolean)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Add v99 @ S1_v28, this @ L0 (UnityEngine.ContactFilter2D), 24
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Call GUIStyle.get_fixedHeight, v104 @ S2_v10 (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+9C]
+	50 Subtract v124 @ S1_v30 (System.Single), [v99 @ S1_v28+8], v104 @ S2_v10 (System.Single)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Call GUIStyle.get_padding, v128 @ S2_v13 (UnityEngine.RectOffset), [this @ L0 (UnityEngine.ContactFilter2D)+9C]
+	55 Nop
+	56 Call RectOffset.get_right, v130 @ S2_v14 (System.Int32), v128 @ S2_v13 (UnityEngine.RectOffset)
+	57 Subtract v131 @ S1_v31 (System.Single), v124 @ S1_v30 (System.Single), v130 @ S2_v14 (System.Int32)
+	58 Move [this @ L0 (UnityEngine.ContactFilter2D)+8C], v131 @ S1_v31 (System.Single)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 CheckLess v136 @ S0_v43 (System.Boolean), [this @ L0 (UnityEngine.ContactFilter2D)+8C], [this @ L0 (UnityEngine.ContactFilter2D)+7C]
+	64 Not v70 @ TEMP_v7 (System.Boolean), v136 @ S0_v43 (System.Boolean)
+	65 ConditionalJump @b25, v70 @ TEMP_v7 (System.Boolean)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Move [this @ L0 (UnityEngine.ContactFilter2D)+8C], [this @ L0 (UnityEngine.ContactFilter2D)+7C]
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Add v144 @ S0_v46, this @ L0 (UnityEngine.ContactFilter2D), 24
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Add v150 @ S2_v16, this @ L0 (UnityEngine.ContactFilter2D), 24
+	81 Nop
+	82 Nop
+	83 Nop
+	84 CallVoid 8047, 10, this @ L0 (UnityEngine.ContactFilter2D), [v150 @ S2_v16], [this @ L0 (UnityEngine.ContactFilter2D)+8C]
+	85 Nop
+	86 Nop
+	87 CallVoid 7266, 9, this @ L0 (UnityEngine.ContactFilter2D)
+	88 Nop
+	89 Nop
+	90 Add v72 @ S0_v51, this @ L0 (UnityEngine.ContactFilter2D), 24
+	91 Nop
+	92 Move [v72 @ S0_v51+8], [v144 @ S0_v46+8]
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Move this.maxDepth (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+84]
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Move this.minNormalAngle (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+88]
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Nop
+	114 CallVoid GUIScrollGroup.SetHorizontal, this @ L0 (UnityEngine.ContactFilter2D), minDepth @ L1 (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+84]
+	115 Nop
+	116 Nop
+	117 Move this.maxDepth (System.Single), this.maxDepth (System.Single)
+	118 Nop
+	119 Nop
+	120 Move this.minNormalAngle (System.Single), this.minNormalAngle (System.Single)
+	121 Nop
+	122 Nop
+	123 Add v111 @ S0_v35, this @ L0 (UnityEngine.ContactFilter2D), 24
+	124 Nop
+	125 Move [v111 @ S0_v35+C], maxDepth @ L2 (System.Single)
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Move [this @ L0 (UnityEngine.ContactFilter2D)+90], [this @ L0 (UnityEngine.ContactFilter2D)+84]
+	130 Jump @b26
+	131 Nop
+	132 Nop
+	133 Nop
+	134 CheckEqual v39 @ TEMP_v3 (System.Boolean), [this @ L0 (UnityEngine.ContactFilter2D)+95], 0
+	135 ConditionalJump @b27, v39 @ TEMP_v3 (System.Boolean)
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Move this.maxDepth (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+84]
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Move this.minNormalAngle (System.Single), [this @ L0 (UnityEngine.ContactFilter2D)+88]
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Nop
+	148 Nop
+	149 CallVoid GUIScrollGroup.SetHorizontal, this @ L0 (UnityEngine.ContactFilter2D), minDepth @ L1 (System.Single), v24 @ S0_v3 (System.Single)
+	150 Nop
+	151 Nop
+	152 Add v92 @ S0_v14, this @ L0 (UnityEngine.ContactFilter2D), 24
+	153 Nop
+	154 Move [v92 @ S0_v14+C], maxDepth @ L2 (System.Single)
+	155 Nop
+	156 Nop
+	157 Move [this @ L0 (UnityEngine.ContactFilter2D)+90], v24 @ S0_v3 (System.Single)
+	158 Nop
+	159 Nop
+	160 Return
+
+Method: UnityEngine.ContactFilter2D CreateLegacyFilter(System.Int32 layerMask, System.Single minDepth, System.Single maxDepth)
+
+Disassembly:
+	0xCFF790 LocalGet 0
+	0xCFF792 I32Load 2, 20
+	0xCFF795 I32Load 2, 0
+	0xCFF798 LocalSet 0
+	0xCFF79A LocalGet 1
+	0xCFF79C Call 73016
+	0xCFF7A0 LocalTee 1
+	0xCFF7A2 LocalGet 2
+	0xCFF7A4 LocalGet 3
+	0xCFF7A6 LocalGet 0
+	0xCFF7A8 I32Const 7
+	0xCFF7AA I32And
+	0xCFF7AB I32Const 79748
+	0xCFF7AF I32Add
+	0xCFF7B0 CallIndirect 58, 0
+	0xCFF7B3 LocalGet 1
+	0xCFF7B5 Call 73015
+	0xCFF7B9 End
+
+ISIL:
+	0 Nop
+	1 Move v2 @ S0_v2, [v1 @ L0+14]
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call 11D38, v7 @ S0_v5, layerMask @ L1 (System.Int32)
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 And v15 @ S3_v2, [v2 @ S0_v2], 7
+	12 Nop
+	13 Add v17 @ S3_v3, v15 @ S3_v2, 79748
+	14 IndirectCall v17 @ S3_v3, v18 @ SRET_v1, v7 @ S0_v5, minDepth @ L2 (System.Single), maxDepth @ L3 (System.Single)
+	15 Nop
+	16 CallVoid 11D37, v7 @ S0_v5
+	17 Nop
+	18 Return [v2 @ S0_v2]
+

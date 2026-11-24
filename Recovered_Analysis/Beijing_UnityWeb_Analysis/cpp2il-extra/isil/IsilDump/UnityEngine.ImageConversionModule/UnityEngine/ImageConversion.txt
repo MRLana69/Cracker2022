@@ -1,0 +1,335 @@
+Type: UnityEngine.ImageConversion
+
+Method: System.Byte[] EncodeToPNG(UnityEngine.Texture2D tex)
+
+Disassembly:
+	0x1573985 LocalGet 0
+	0x1573987 I32Const 0
+	0x1573989 I32Const 0
+	0x157398B Call 71663
+	0x157398F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call JsonUtility.FromJson, returnVal1 @ S0_v2 (System.Byte[]), tex @ L0 (UnityEngine.Texture2D), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v2 (System.Byte[])
+
+Method: System.Boolean LoadImage(UnityEngine.Texture2D tex, System.Byte[] data, System.Boolean markNonReadable)
+
+Disassembly:
+	0x157394D I32Const 3929396
+	0x1573952 I32Load 2, 0
+	0x1573955 LocalTee 3
+	0x1573957 I32Eqz
+	0x1573958 If -64
+	0x157395A I32Const 3929396
+	0x157395F I32Const 3553749
+	0x1573964 Call 73893
+	0x1573968 LocalTee 3
+	0x157396A I32Store 2, 0
+	0x157396D End
+	0x157396E LocalGet 0
+	0x1573970 LocalGet 1
+	0x1573972 LocalGet 2
+	0x1573974 LocalGet 3
+	0x1573976 I32Const 8191
+	0x1573979 I32And
+	0x157397A I32Const 22691
+	0x157397E I32Add
+	0x157397F CallIndirect 5, 0
+	0x1573982 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF534], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3553749
+	9 Nop
+	10 Move [3BF534], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v21 @ S3_v2, v10 @ L3_v2, 8191
+	18 Nop
+	19 Add v23 @ S3_v3, v21 @ S3_v2, 22691
+	20 IndirectCall v23 @ S3_v3, returnVal1 @ S0_v6 (System.Boolean), tex @ L0 (UnityEngine.Texture2D), data @ L1 (System.Byte[]), markNonReadable @ L2 (System.Boolean)
+	21 Nop
+	22 Return returnVal1 @ S0_v6 (System.Boolean)
+
+Method: System.Boolean LoadImage(UnityEngine.Texture2D tex, System.Byte[] data)
+
+Disassembly:
+	0x1573A34 GlobalGet 7
+	0x1573A36 LocalSet 2
+	0x1573A38 GlobalGet 7
+	0x1573A3A I32Const 16
+	0x1573A3C I32Add
+	0x1573A3D GlobalSet 7
+	0x1573A3F I32Const 4577007
+	0x1573A44 I32Load8_S 0, 0
+	0x1573A47 I32Eqz
+	0x1573A48 If -64
+	0x1573A4A I32Const 2974872
+	0x1573A4F I32Load 2, 0
+	0x1573A52 Call 73003
+	0x1573A56 I32Const 4577007
+	0x1573A5B I32Const 1
+	0x1573A5D I32Store8 0, 0
+	0x1573A60 End
+	0x1573A61 LocalGet 2
+	0x1573A63 I32Const 4
+	0x1573A65 I32Add
+	0x1573A66 LocalSet 4
+	0x1573A68 Block -64
+	0x1573A6A LocalGet 0
+	0x1573A6C If -1
+	0x1573A6E LocalGet 0
+	0x1573A70 I32Load 2, 8
+	0x1573A73 I32Eqz
+	0x1573A74 Else
+	0x1573A75 I32Const 1
+	0x1573A77 End
+	0x1573A78 I32Eqz
+	0x1573A79 If -64
+	0x1573A7B LocalGet 1
+	0x1573A7D I32Eqz
+	0x1573A7E If -64
+	0x1573A80 I32Const 4427864
+	0x1573A85 I32Load 2, 0
+	0x1573A88 Call 72556
+	0x1573A8C LocalTee 3
+	0x1573A8E I32Const 4501668
+	0x1573A93 I32Load 2, 0
+	0x1573A96 I32Const 0
+	0x1573A98 Call 57599
+	0x1573A9C LocalGet 3
+	0x1573A9E I32Const 0
+	0x1573AA0 I32Const 4466632
+	0x1573AA5 I32Load 2, 0
+	0x1573AA8 Call 73899
+	0x1573AAC End
+	0x1573AAD LocalGet 1
+	0x1573AAF I32Const 0
+	0x1573AB1 Call 50352
+	0x1573AB5 I32Eqz
+	0x1573AB6 If -64
+	0x1573AB8 I32Const 4425036
+	0x1573ABD I32Load 2, 0
+	0x1573AC0 LocalSet 5
+	0x1573AC2 I32Const 4427800
+	0x1573AC7 I32Load 2, 0
+	0x1573ACA LocalTee 3
+	0x1573ACC I32Load16_S 1, 186
+	0x1573AD0 I32Const 512
+	0x1573AD3 I32And
+	0x1573AD4 If -64
+	0x1573AD6 LocalGet 3
+	0x1573AD8 I32Load 2, 116
+	0x1573ADB I32Eqz
+	0x1573ADC If -64
+	0x1573ADE LocalGet 3
+	0x1573AE0 Call 72345
+	0x1573AE4 End
+	0x1573AE5 End
+	0x1573AE6 LocalGet 2
+	0x1573AE8 LocalGet 5
+	0x1573AEA I32Store 2, 0
+	0x1573AED LocalGet 4
+	0x1573AEF LocalGet 2
+	0x1573AF1 I32Load 2, 0
+	0x1573AF4 I32Store 2, 0
+	0x1573AF7 I32Const 108
+	0x1573AFA LocalGet 1
+	0x1573AFC LocalGet 4
+	0x1573AFE I32Const 0
+	0x1573B00 Call 49925
+	0x1573B04 Call 29448
+	0x1573B08 I32Eqz
+	0x1573B09 If -64
+	0x1573B0B LocalGet 0
+	0x1573B0D I32Const 0
+	0x1573B0F LocalGet 1
+	0x1573B11 I32Const 0
+	0x1573B13 Call 71661
+	0x1573B17 LocalSet 6
+	0x1573B19 Br 3
+	0x1573B1B End
+	0x1573B1C End
+	0x1573B1D I32Const 7
+	0x1573B1F LocalGet 1
+	0x1573B21 Call 29262
+	0x1573B25 LocalSet 0
+	0x1573B27 I32Const 4518676
+	0x1573B2C I32Load 2, 0
+	0x1573B2F LocalGet 0
+	0x1573B31 I32Const 4518680
+	0x1573B36 I32Load 2, 0
+	0x1573B39 I32Const 0
+	0x1573B3B Call 55683
+	0x1573B3F LocalSet 0
+	0x1573B41 I32Const 4427876
+	0x1573B46 I32Load 2, 0
+	0x1573B49 Call 72556
+	0x1573B4D LocalTee 1
+	0x1573B4F LocalGet 0
+	0x1573B51 I32Const 0
+	0x1573B53 Call 57610
+	0x1573B57 LocalGet 1
+	0x1573B59 I32Const 0
+	0x1573B5B I32Const 4466632
+	0x1573B60 I32Load 2, 0
+	0x1573B63 Call 73899
+	0x1573B67 End
+	0x1573B68 End
+	0x1573B69 LocalGet 2
+	0x1573B6B GlobalSet 7
+	0x1573B6D LocalGet 6
+	0x1573B6F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b27
+	11 Nop
+	12 Move v12 @ S0_v59, [2D6498]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v59
+	14 Nop
+	15 Move v14 @ S1_v21, 1
+	16 Move [45D6EF], v14 @ S1_v21
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9 (System.IntPtr), v1 @ G7, 4
+	21 Nop
+	22 Nop
+	23 CheckEqual v23 @ TEMP_v2 (System.Boolean), tex @ L0 (UnityEngine.Texture2D), 0
+	24 ConditionalJump @b6, v23 @ TEMP_v2 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 CheckEqual v28 @ S0_v11 (System.Boolean), tex.m_CachedPtr (System.IntPtr), 0
+	28 Jump @b28
+	29 Nop
+	30 Nop
+	31 Not v29 @ S0_v12 (System.Boolean), v28 @ S0_v11 (System.Boolean)
+	32 Not v30 @ TEMP_v3 (System.Boolean), v29 @ S0_v12 (System.Boolean)
+	33 ConditionalJump @b31, v30 @ TEMP_v3 (System.Boolean)
+	34 Nop
+	35 CheckEqual v33 @ S0_v17 (System.Boolean), data @ L1 (System.Byte[]), 0
+	36 Not v34 @ TEMP_v5 (System.Boolean), v33 @ S0_v17 (System.Boolean)
+	37 ConditionalJump @b11, v34 @ TEMP_v5 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Call 11B6C, v72 @ S0_v52 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid ArgumentOutOfRangeException..ctor, v72 @ S0_v52 (System.ArgumentOutOfRangeException), "type"
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CallVoid JsonUtility.FromJson, v72 @ S0_v52 (System.ArgumentOutOfRangeException), 0
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Call Type.get_IsSealed, v83 @ S0_v20 (System.Boolean), data @ L1 (System.Byte[])
+	55 Not v87 @ S0_v21 (System.Boolean), v83 @ S0_v20 (System.Boolean)
+	56 Not v88 @ TEMP_v6 (System.Boolean), v87 @ S0_v21 (System.Boolean)
+	57 ConditionalJump @b29, v88 @ TEMP_v6 (System.Boolean)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move v93 @ S0_v35 (Il2CppClass<System.Type>), typeof(System.Type)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 And v96 @ S0_v37, [v93 @ S0_v35 (Il2CppClass<System.Type>)+BA], 512
+	67 CheckEqual v97 @ TEMP_v8 (System.Boolean), v96 @ S0_v37, 0
+	68 ConditionalJump @b30, v97 @ TEMP_v8 (System.Boolean)
+	69 Move v109 @ S0_v46 (Il2CppClass<System.Type>), typeof(System.Type)
+	70 Nop
+	71 CheckEqual v111 @ S0_v48 (System.Boolean), [v109 @ S0_v46 (Il2CppClass<System.Type>)+74], 0
+	72 Not v112 @ TEMP_v11 (System.Boolean), v111 @ S0_v48 (System.Boolean)
+	73 ConditionalJump @b30, v112 @ TEMP_v11 (System.Boolean)
+	74 Nop
+	75 CallVoid 11A99, typeof(System.Type)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Move [v1 @ G7], typeof(UnityEngine.Object)
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Move v19.m_value (System.Void*), [v1 @ G7]
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Call Type.internal_from_handle, v101 @ S2_v10 (System.Type), v19 @ S0_v9 (System.IntPtr)
+	90 Call 7308, v130 @ S0_v42, 108, data @ L1 (System.Byte[]), v101 @ S2_v10 (System.Type)
+	91 CheckEqual v105 @ S0_v43 (System.Boolean), v130 @ S0_v42, 0
+	92 Not v59 @ TEMP_v10 (System.Boolean), v105 @ S0_v43 (System.Boolean)
+	93 ConditionalJump @b29, v59 @ TEMP_v10 (System.Boolean)
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Call ImageConversion.LoadImage, v65 @ S0_v45 (System.Boolean), tex @ L0 (UnityEngine.Texture2D), 0, data @ L1 (System.Byte[])
+	99 Nop
+	100 Jump @b31
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Call 724E, v108 @ S0_v24 (System.Type), 7, data @ L1 (System.Byte[])
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Call String.System.IConvertible.ToType, v129 @ S0_v27 (System.Object), "Cannot deserialize JSON to new instances of type '", v108 @ S0_v24 (System.Type), ".'"
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Call 11B6C, v133 @ S0_v30 (System.ArgumentNullException), typeof(System.ArgumentException)
+	118 Nop
+	119 Nop
+	120 Nop
+	121 CallVoid ArgumentNullException..ctor, v133 @ S0_v30 (System.ArgumentNullException), v129 @ S0_v27 (System.Object)
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Nop
+	126 CallVoid JsonUtility.FromJson, v133 @ S0_v30 (System.ArgumentNullException), 0
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Return v65 @ S0_v45 (System.Boolean)
+

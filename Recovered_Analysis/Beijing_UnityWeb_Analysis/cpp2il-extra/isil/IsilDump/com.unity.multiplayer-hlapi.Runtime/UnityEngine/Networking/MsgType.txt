@@ -1,0 +1,416 @@
+Type: UnityEngine.Networking.MsgType
+
+Method: System.String MsgTypeToString(System.Int16 value)
+
+Disassembly:
+	0x121FBC9 I32Const 4569275
+	0x121FBCE I32Load8_S 0, 0
+	0x121FBD1 I32Eqz
+	0x121FBD2 If -64
+	0x121FBD4 I32Const 3008088
+	0x121FBD9 I32Load 2, 0
+	0x121FBDC Call 73003
+	0x121FBE0 I32Const 4569275
+	0x121FBE5 I32Const 1
+	0x121FBE7 I32Store8 0, 0
+	0x121FBEA End
+	0x121FBEB LocalGet 0
+	0x121FBED I32Const 0
+	0x121FBEF Call 54095
+	0x121FBF3 I32Const 4435432
+	0x121FBF8 I32Load 2, 0
+	0x121FBFB Call 72556
+	0x121FBFF LocalTee 1
+	0x121FC01 I32Const 0
+	0x121FC03 Call 56948
+	0x121FC07 I32Const 65535
+	0x121FC0B I32And
+	0x121FC0C LocalSet 4
+	0x121FC0E I32Const 0
+	0x121FC10 LocalSet 2
+	0x121FC12 Loop -64
+	0x121FC14 LocalGet 2
+	0x121FC16 I32Const 65535
+	0x121FC1A I32And
+	0x121FC1B LocalTee 2
+	0x121FC1D LocalGet 4
+	0x121FC1F I32Lt_U
+	0x121FC20 If -64
+	0x121FC22 LocalGet 0
+	0x121FC24 I32Const 0
+	0x121FC26 Call 54031
+	0x121FC2A LocalSet 3
+	0x121FC2C LocalGet 1
+	0x121FC2E I32Load 2, 8
+	0x121FC31 LocalGet 3
+	0x121FC33 I32Const 4495324
+	0x121FC38 I32Load 2, 0
+	0x121FC3B I32Load 2, 12
+	0x121FC3E I32Load 2, 96
+	0x121FC41 I32Load 2, 20
+	0x121FC44 LocalTee 3
+	0x121FC46 LocalGet 3
+	0x121FC48 I32Load 2, 0
+	0x121FC4B I32Const 16383
+	0x121FC4F I32And
+	0x121FC50 I32Const 97173
+	0x121FC54 I32Add
+	0x121FC55 CallIndirect 9, 0
+	0x121FC58 LocalGet 2
+	0x121FC5A I32Const 1
+	0x121FC5C I32Add
+	0x121FC5D LocalSet 2
+	0x121FC5F Br 1
+	0x121FC61 End
+	0x121FC62 End
+	0x121FC63 LocalGet 1
+	0x121FC65 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v21, [2DE658]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45B8BB], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call D34F, v14 @ S0_v6, value @ L0 (System.Int16), 0
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v17 @ S1_v5 (UnityEngine.Networking.MsgType), typeof(UnityEngine.Networking.SyncListBool)
+	18 Nop
+	19 Nop
+	20 CallVoid MsgType..ctor, v17 @ S1_v5 (UnityEngine.Networking.MsgType)
+	21 Nop
+	22 And v21 @ S0_v7, v14 @ S0_v6, 65535
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v49 @ S0_v11, v37 @ L2_v2, 65535
+	30 Nop
+	31 Nop
+	32 CheckLess v52 @ S0_v12 (System.Boolean), v49 @ S0_v11, v21 @ S0_v7
+	33 Not v44 @ TEMP_v3 (System.Boolean), v52 @ S0_v12 (System.Boolean)
+	34 ConditionalJump @b10, v44 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Call NetworkReader.ReadBytesAndSize, v55 @ S0_v15 (System.Byte[]), value @ L0 (System.Int16)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move v62 @ S2_v4 (Il2CppMethodInfo), methodof(UnityEngine.Networking.SyncList`1<System.Boolean>::AddInternal)
+	44 Move v63 @ S2_v5, [v62 @ S2_v4 (Il2CppMethodInfo)+C]
+	45 Move v64 @ S2_v6, [v63 @ S2_v5+60]
+	46 Move v40 @ S2_v7, [v64 @ S2_v6+14]
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 And v68 @ S3_v4, [v40 @ S2_v7], 16383
+	52 Nop
+	53 Add v33 @ S3_v5, v68 @ S3_v4, 97173
+	54 IndirectCall v33 @ S3_v5, v27 @ SRET_v2, [v17 @ S1_v5 (UnityEngine.Networking.MsgType)+8], v55 @ S0_v15 (System.Byte[]), v40 @ S2_v7
+	55 Nop
+	56 Nop
+	57 Add v46 @ S0_v19, v49 @ S0_v11, 1
+	58 Nop
+	59 Jump @b12
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Return v17 @ S1_v5 (UnityEngine.Networking.MsgType)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x121FC68 I32Const 4569276
+	0x121FC6D I32Load8_S 0, 0
+	0x121FC70 I32Eqz
+	0x121FC71 If -64
+	0x121FC73 I32Const 3008100
+	0x121FC78 I32Load 2, 0
+	0x121FC7B Call 73003
+	0x121FC7F I32Const 4569276
+	0x121FC84 I32Const 1
+	0x121FC86 I32Store8 0, 0
+	0x121FC89 End
+	0x121FC8A LocalGet 0
+	0x121FC8C I32Const 4495320
+	0x121FC91 I32Load 2, 0
+	0x121FC94 Call 64751
+	0x121FC98 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v7, [2DE664]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45B8BC], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid DropdownList`1..ctor, this @ L0 (UnityEngine.Networking.MsgType)
+	16 Nop
+	17 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x121D25D I32Const 4569257
+	0x121D262 I32Load8_S 0, 0
+	0x121D265 I32Eqz
+	0x121D266 If -64
+	0x121D268 I32Const 2986772
+	0x121D26D I32Load 2, 0
+	0x121D270 Call 73003
+	0x121D274 I32Const 4569257
+	0x121D279 I32Const 1
+	0x121D27B I32Store8 0, 0
+	0x121D27E End
+	0x121D27F I32Const 4435428
+	0x121D284 I32Load 2, 0
+	0x121D287 I32Load 2, 92
+	0x121D28A I32Load 2, 0
+	0x121D28D LocalSet 1
+	0x121D28F I32Const 4433280
+	0x121D294 I32Load 2, 0
+	0x121D297 LocalTee 0
+	0x121D299 I32Load16_S 1, 186
+	0x121D29D I32Const 512
+	0x121D2A0 I32And
+	0x121D2A1 If -64
+	0x121D2A3 LocalGet 0
+	0x121D2A5 I32Load 2, 116
+	0x121D2A8 I32Eqz
+	0x121D2A9 If -64
+	0x121D2AB LocalGet 0
+	0x121D2AD Call 72345
+	0x121D2B1 End
+	0x121D2B2 End
+	0x121D2B3 Block -64
+	0x121D2B5 LocalGet 1
+	0x121D2B7 I32Const 0
+	0x121D2B9 Call 63667
+	0x121D2BD I32Eqz
+	0x121D2BE If -64
+	0x121D2C0 I32Const 4522556
+	0x121D2C5 I32Load 2, 0
+	0x121D2C8 I32Const 0
+	0x121D2CA Call 64135
+	0x121D2CE LocalSet 0
+	0x121D2D0 I32Const 4433280
+	0x121D2D5 I32Load 2, 0
+	0x121D2D8 LocalTee 1
+	0x121D2DA I32Load16_S 1, 186
+	0x121D2DE I32Const 512
+	0x121D2E1 I32And
+	0x121D2E2 If -64
+	0x121D2E4 LocalGet 1
+	0x121D2E6 I32Load 2, 116
+	0x121D2E9 I32Eqz
+	0x121D2EA If -64
+	0x121D2EC LocalGet 1
+	0x121D2EE Call 72345
+	0x121D2F2 End
+	0x121D2F3 End
+	0x121D2F4 LocalGet 0
+	0x121D2F6 I32Const 0
+	0x121D2F8 Call 63667
+	0x121D2FC If -64
+	0x121D2FE I32Const 4434792
+	0x121D303 I32Load 2, 0
+	0x121D306 Call 72556
+	0x121D30A LocalTee 1
+	0x121D30C LocalGet 0
+	0x121D30E I32Const 0
+	0x121D310 Call 63067
+	0x121D314 I32Const 4435428
+	0x121D319 I32Load 2, 0
+	0x121D31C I32Load 2, 92
+	0x121D31F LocalGet 1
+	0x121D321 I32Store 2, 0
+	0x121D324 I32Const 4435428
+	0x121D329 I32Load 2, 0
+	0x121D32C I32Load 2, 92
+	0x121D32F I32Load 2, 0
+	0x121D332 I32Const 61
+	0x121D334 I32Const 0
+	0x121D336 Call 63631
+	0x121D33A I32Const 4435428
+	0x121D33F I32Load 2, 0
+	0x121D342 I32Load 2, 92
+	0x121D345 I32Load 2, 0
+	0x121D348 I32Const 4522564
+	0x121D34D I32Load 2, 0
+	0x121D350 I32Const 0
+	0x121D352 I32Const 0
+	0x121D354 Call 63116
+	0x121D358 Br 2
+	0x121D35A End
+	0x121D35B I32Const 4433260
+	0x121D360 I32Load 2, 0
+	0x121D363 LocalTee 0
+	0x121D365 I32Load16_S 1, 186
+	0x121D369 I32Const 512
+	0x121D36C I32And
+	0x121D36D If -64
+	0x121D36F LocalGet 0
+	0x121D371 I32Load 2, 116
+	0x121D374 I32Eqz
+	0x121D375 If -64
+	0x121D377 LocalGet 0
+	0x121D379 Call 72345
+	0x121D37D End
+	0x121D37E End
+	0x121D37F I32Const 4522560
+	0x121D384 I32Load 2, 0
+	0x121D387 I32Const 0
+	0x121D389 Call 62857
+	0x121D38D End
+	0x121D38E End
+	0x121D38F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b25
+	5 Nop
+	6 Move v5 @ S0_v62, [2D9314]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v62
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [45B8A9], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move v17 @ S0_v10 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 And v21 @ S0_v12, [v17 @ S0_v10 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	23 CheckEqual v22 @ TEMP_v2 (System.Boolean), v21 @ S0_v12, 0
+	24 ConditionalJump @b29, v22 @ TEMP_v2 (System.Boolean)
+	25 Move v23 @ S0_v57 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	26 Nop
+	27 CheckEqual v25 @ S0_v59 (System.Boolean), [v23 @ S0_v57 (Il2CppClass<UnityEngine.Object>)+74], 0
+	28 Not v26 @ TEMP_v13 (System.Boolean), v25 @ S0_v59 (System.Boolean)
+	29 ConditionalJump @b29, v26 @ TEMP_v13 (System.Boolean)
+	30 Nop
+	31 CallVoid 11A99, typeof(UnityEngine.Object)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call Object.IsNativeObjectAlive, v32 @ S0_v15 (System.Boolean), v13.s_LineMaterial (UnityEngine.Material)
+	37 Not v33 @ S0_v16 (System.Boolean), v32 @ S0_v15 (System.Boolean)
+	38 Not v34 @ TEMP_v4 (System.Boolean), v33 @ S0_v16 (System.Boolean)
+	39 ConditionalJump @b27, v34 @ TEMP_v4 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Call Shader.PropertyToID, v38 @ S0_v20 (System.Int32), "Hidden/Internal-Colored"
+	44 Nop
+	45 Nop
+	46 Move v61 @ S0_v22 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 And v64 @ S0_v24, [v61 @ S0_v22 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	51 CheckEqual v65 @ TEMP_v6 (System.Boolean), v64 @ S0_v24, 0
+	52 ConditionalJump @b26, v65 @ TEMP_v6 (System.Boolean)
+	53 Move v66 @ S0_v53 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	54 Nop
+	55 CheckEqual v68 @ S0_v55 (System.Boolean), [v66 @ S0_v53 (Il2CppClass<UnityEngine.Object>)+74], 0
+	56 Not v69 @ TEMP_v12 (System.Boolean), v68 @ S0_v55 (System.Boolean)
+	57 ConditionalJump @b26, v69 @ TEMP_v12 (System.Boolean)
+	58 Nop
+	59 CallVoid 11A99, typeof(UnityEngine.Object)
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Call Object.IsNativeObjectAlive, v75 @ S0_v27 (System.Boolean), v38 @ S0_v20 (System.Int32)
+	65 Not v55 @ TEMP_v8 (System.Boolean), v75 @ S0_v27 (System.Boolean)
+	66 ConditionalJump @b20, v55 @ TEMP_v8 (System.Boolean)
+	67 Nop
+	68 Nop
+	69 Call 11B6C, v78 @ S0_v41 (UnityEngine.Material), typeof(UnityEngine.Material)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 CallVoid Material..ctor, v78 @ S0_v41 (UnityEngine.Material), v38 @ S0_v20 (System.Int32)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Move v96.s_LineMaterial (UnityEngine.Material), v78 @ S0_v41 (UnityEngine.Material)
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 CallVoid Object.CheckNullArgument, v100.s_LineMaterial (UnityEngine.Material), 61
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 CallVoid Material.SetColor, v106.s_LineMaterial (UnityEngine.Material), "_ZWrite", 0
+	95 Jump @b27
+	96 Nop
+	97 Nop
+	98 Move v80 @ S0_v29 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	99 Nop
+	100 Nop
+	101 Nop
+	102 And v83 @ S0_v31, [v80 @ S0_v29 (Il2CppClass<UnityEngine.Debug>)+BA], 512
+	103 CheckEqual v84 @ TEMP_v9 (System.Boolean), v83 @ S0_v31, 0
+	104 ConditionalJump @b28, v84 @ TEMP_v9 (System.Boolean)
+	105 Move v87 @ S0_v35 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	106 Nop
+	107 CheckEqual v89 @ S0_v37 (System.Boolean), [v87 @ S0_v35 (Il2CppClass<UnityEngine.Debug>)+74], 0
+	108 Not v90 @ TEMP_v11 (System.Boolean), v89 @ S0_v37 (System.Boolean)
+	109 ConditionalJump @b28, v90 @ TEMP_v11 (System.Boolean)
+	110 Nop
+	111 CallVoid 11A99, typeof(UnityEngine.Debug)
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 CallVoid Debug.LogAssertion, "Could not find Colored builtin shader"
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Return
+

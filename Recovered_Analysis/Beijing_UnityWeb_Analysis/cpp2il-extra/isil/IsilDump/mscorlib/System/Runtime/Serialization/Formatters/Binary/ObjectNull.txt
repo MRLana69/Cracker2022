@@ -1,0 +1,83 @@
+Type: System.Runtime.Serialization.Formatters.Binary.ObjectNull
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void SetNullCount(System.Int32 nullCount)
+
+Disassembly:
+	0x123926B LocalGet 0
+	0x123926D LocalGet 1
+	0x123926F I32Const 0
+	0x1239271 Call 57339
+	0x1239275 I32Store 2, 8
+	0x1239278 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call __BinaryParser.ReadSByte, v5 @ S1_v2 (System.SByte), nullCount @ L1 (System.Int32)
+	4 Move this.nullCount (System.Int32), v5 @ S1_v2 (System.SByte)
+	5 Nop
+	6 Return
+
+Method: System.Void Write(System.Runtime.Serialization.Formatters.Binary.__BinaryWriter sout)
+
+Disassembly:
+	0xC12227 LocalGet 0
+	0xC12229 LocalGet 1
+	0xC1222B I32Store 2, 8
+	0xC1222E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.nullCount (System.Int32), sout @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryWriter)
+	3 Nop
+	4 Return
+
+Method: System.Void Read(System.Runtime.Serialization.Formatters.Binary.__BinaryParser input, System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum binaryHeaderEnum)
+
+Disassembly:
+	0x1236847 LocalGet 0
+	0x1236849 LocalGet 1
+	0x123684B I32Store 2, 8
+	0x123684E LocalGet 0
+	0x1236850 I32Const 12
+	0x1236852 I32Add
+	0x1236853 LocalGet 2
+	0x1236855 I32Store 2, 0
+	0x1236858 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.nullCount (System.Int32), input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser)
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v3, this @ L0 (System.Runtime.Serialization.Formatters.Binary.ObjectNull), 12
+	6 Nop
+	7 Move [v6 @ S0_v3], binaryHeaderEnum @ L2 (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum)
+	8 Nop
+	9 Return
+
+Method: System.Void Dump()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

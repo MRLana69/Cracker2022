@@ -1,0 +1,132 @@
+Type: SYBO.Common.Events.ValueChangedEventArgs
+
+Method: System.Void .ctor(System.Single newValue, System.Single oldValue, System.Single deltaValue)
+
+Disassembly:
+	0xDA6D32 GlobalGet 7
+	0xDA6D34 LocalSet 4
+	0xDA6D36 GlobalGet 7
+	0xDA6D38 I32Const 32
+	0xDA6D3A I32Add
+	0xDA6D3B GlobalSet 7
+	0xDA6D3D LocalGet 0
+	0xDA6D3F I32Load 2, 40
+	0xDA6D42 I32Const 0
+	0xDA6D44 Call 63019
+	0xDA6D48 LocalGet 4
+	0xDA6D4A I64Const 0
+	0xDA6D4C I64Store 2, 0
+	0xDA6D4F LocalGet 4
+	0xDA6D51 I32Const 0
+	0xDA6D53 I32Store 2, 8
+	0xDA6D56 LocalGet 4
+	0xDA6D58 LocalGet 1
+	0xDA6D5A F32Store 2, 0
+	0xDA6D5D LocalGet 4
+	0xDA6D5F LocalGet 2
+	0xDA6D61 F32Store 2, 4
+	0xDA6D64 LocalGet 4
+	0xDA6D66 LocalGet 3
+	0xDA6D68 F32Store 2, 8
+	0xDA6D6B LocalGet 4
+	0xDA6D6D I32Const 12
+	0xDA6D6F I32Add
+	0xDA6D70 LocalTee 5
+	0xDA6D72 LocalGet 4
+	0xDA6D74 I64Load 2, 0
+	0xDA6D77 I64Store 2, 0
+	0xDA6D7A LocalGet 5
+	0xDA6D7C LocalGet 4
+	0xDA6D7E I32Load 2, 8
+	0xDA6D81 I32Store 2, 8
+	0xDA6D84 LocalGet 5
+	0xDA6D86 I32Const 0
+	0xDA6D88 Call 64340
+	0xDA6D8C LocalGet 4
+	0xDA6D8E GlobalSet 7
+	0xDA6D90 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Call GameObject.get_layer, v11 @ S0_v6 (System.Int32), [this @ L0 (SYBO.Common.Events.ValueChangedEventArgs)+28]
+	10 Nop
+	11 Nop
+	12 Move [v1 @ G7], 0
+	13 Nop
+	14 Nop
+	15 Move [v1 @ G7+8], 0
+	16 Nop
+	17 Nop
+	18 Move [v1 @ G7], newValue @ L1 (System.Single)
+	19 Nop
+	20 Nop
+	21 Move [v1 @ G7+4], oldValue @ L2 (System.Single)
+	22 Nop
+	23 Nop
+	24 Move [v1 @ G7+8], deltaValue @ L3 (System.Single)
+	25 Nop
+	26 Nop
+	27 Add v27 @ S1_v9 (UnityEngine.Transform), v1 @ G7, 12
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v27 @ S1_v9 (UnityEngine.Transform)], [v1 @ G7]
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Move v27.m_CachedPtr (System.IntPtr), [v1 @ G7+8]
+	36 Nop
+	37 Nop
+	38 Call Transform.get_eulerAngles, v36 @ SRET_v1 (UnityEngine.Vector3), v27 @ S1_v9 (UnityEngine.Transform)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Return
+
+Method: System.Single get_NewValue()
+
+Disassembly:
+	0xC24C2F LocalGet 0
+	0xC24C31 F32Load 2, 20
+	0xC24C34 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return [this @ L0 (SYBO.Common.Events.ValueChangedEventArgs)+14]
+
+Method: System.Single get_OldValue()
+
+Disassembly:
+	0xC24A70 LocalGet 0
+	0xC24A72 F32Load 2, 8
+	0xC24A75 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._newValue (System.Single)
+
+Method: System.Single get_DeltaValue()
+
+Disassembly:
+	0xC11850 LocalGet 0
+	0xC11852 F32Load 2, 12
+	0xC11855 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._oldValue (System.Single)
+

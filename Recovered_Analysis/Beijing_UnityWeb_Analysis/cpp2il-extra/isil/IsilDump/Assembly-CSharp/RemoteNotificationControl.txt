@@ -1,0 +1,722 @@
+Type: RemoteNotificationControl
+
+Method: System.Void Disable()
+
+Disassembly:
+	0x75CCC Nop
+	0x75CCD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void Enable(RemoteNotificationControl+RemoteNotificationsEnabledHandler completionHandler, System.String soundToPlay)
+
+Disassembly:
+	0xCFFCBB I32Const 4553622
+	0xCFFCC0 I32Load8_S 0, 0
+	0xCFFCC3 I32Eqz
+	0xCFFCC4 If -64
+	0xCFFCC6 I32Const 2964948
+	0xCFFCCB I32Load 2, 0
+	0xCFFCCE Call 73003
+	0xCFFCD2 I32Const 4553622
+	0xCFFCD7 I32Const 1
+	0xCFFCD9 I32Store8 0, 0
+	0xCFFCDC End
+	0xCFFCDD LocalGet 0
+	0xCFFCDF I32Load 2, 44
+	0xCFFCE2 LocalSet 2
+	0xCFFCE4 Loop -64
+	0xCFFCE6 LocalGet 2
+	0xCFFCE8 LocalGet 1
+	0xCFFCEA I32Const 0
+	0xCFFCEC Call 63555
+	0xCFFCF0 I32Const 4429724
+	0xCFFCF5 I32Load 2, 0
+	0xCFFCF8 Call 29321
+	0xCFFCFC LocalSet 4
+	0xCFFCFE LocalGet 0
+	0xCFFD00 I32Const 44
+	0xCFFD02 I32Add
+	0xCFFD03 LocalTee 3
+	0xCFFD05 I32Load 2, 0
+	0xCFFD08 LocalGet 3
+	0xCFFD0A I32Load 2, 0
+	0xCFFD0D LocalGet 2
+	0xCFFD0F I32Eq
+	0xCFFD10 If -64
+	0xCFFD12 LocalGet 3
+	0xCFFD14 LocalGet 4
+	0xCFFD16 I32Store 2, 0
+	0xCFFD19 End
+	0xCFFD1A LocalTee 3
+	0xCFFD1C LocalGet 2
+	0xCFFD1E I32Ne
+	0xCFFD1F If -64
+	0xCFFD21 LocalGet 3
+	0xCFFD23 LocalSet 2
+	0xCFFD25 Br 1
+	0xCFFD27 End
+	0xCFFD28 End
+	0xCFFD29 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D3DD4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [457B96], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.RemoveImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), soundToPlay @ L1 (System.String)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, completionHandler @ L0 (RemoteNotificationControl+RemoteNotificationsEnabledHandler), 44
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.String CacheTokenAndGetOldIfChanged(System.String token)
+
+Disassembly:
+	0xCFFAA4 GlobalGet 7
+	0xCFFAA6 LocalSet 1
+	0xCFFAA8 GlobalGet 7
+	0xCFFAAA I32Const 16
+	0xCFFAAC I32Add
+	0xCFFAAD GlobalSet 7
+	0xCFFAAF LocalGet 1
+	0xCFFAB1 LocalGet 0
+	0xCFFAB3 I32Load 2, 40
+	0xCFFAB6 I64Load 3, 8
+	0xCFFAB9 I64Store 3, 0
+	0xCFFABC LocalGet 1
+	0xCFFABE I32Const 8
+	0xCFFAC0 I32Add
+	0xCFFAC1 LocalTee 2
+	0xCFFAC3 LocalGet 1
+	0xCFFAC5 I64Load 3, 0
+	0xCFFAC8 I64Store 3, 0
+	0xCFFACB LocalGet 0
+	0xCFFACD LocalGet 2
+	0xCFFACF I32Const 0
+	0xCFFAD1 Call 32879
+	0xCFFAD5 LocalGet 1
+	0xCFFAD7 GlobalSet 7
+	0xCFFAD9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move v10 @ S1_v3, [token @ L0 (System.String)+28]
+	9 Nop
+	10 Move [v1 @ G7], [v10 @ S1_v3+8]
+	11 Nop
+	12 Nop
+	13 Add v14 @ S0_v6 (System.Int32), v1 @ G7, 8
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Move v14.m_value (System.Int32), [v1 @ G7]
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call SocialManager.FindFriend, returnVal1 @ S0_v8 (System.String), token @ L0 (System.String), v14 @ S0_v6 (System.Int32)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Return returnVal1 @ S0_v8 (System.String)
+
+Method: System.String GetDeviceToken()
+
+Disassembly:
+	0xCD1BCA I32Const 4553082
+	0xCD1BCF I32Load8_S 0, 0
+	0xCD1BD2 I32Eqz
+	0xCD1BD3 If -64
+	0xCD1BD5 I32Const 2997724
+	0xCD1BDA I32Load 2, 0
+	0xCD1BDD Call 73003
+	0xCD1BE1 I32Const 4553082
+	0xCD1BE6 I32Const 1
+	0xCD1BE8 I32Store8 0, 0
+	0xCD1BEB End
+	0xCD1BEC I32Const 4438468
+	0xCD1BF1 I32Load 2, 0
+	0xCD1BF4 LocalTee 0
+	0xCD1BF6 I32Load16_S 1, 186
+	0xCD1BFA I32Const 512
+	0xCD1BFD I32And
+	0xCD1BFE If -64
+	0xCD1C00 LocalGet 0
+	0xCD1C02 I32Load 2, 116
+	0xCD1C05 I32Eqz
+	0xCD1C06 If -64
+	0xCD1C08 LocalGet 0
+	0xCD1C0A Call 72345
+	0xCD1C0E I32Const 4438468
+	0xCD1C13 I32Load 2, 0
+	0xCD1C16 LocalSet 0
+	0xCD1C18 End
+	0xCD1C19 End
+	0xCD1C1A LocalGet 0
+	0xCD1C1C I32Load 2, 92
+	0xCD1C1F I32Load 2, 0
+	0xCD1C22 LocalTee 0
+	0xCD1C24 I32Eqz
+	0xCD1C25 If -64
+	0xCD1C27 I32Const 4435548
+	0xCD1C2C I32Load 2, 0
+	0xCD1C2F LocalTee 0
+	0xCD1C31 I32Load16_S 1, 186
+	0xCD1C35 I32Const 512
+	0xCD1C38 I32And
+	0xCD1C39 If -64
+	0xCD1C3B LocalGet 0
+	0xCD1C3D I32Load 2, 116
+	0xCD1C40 I32Eqz
+	0xCD1C41 If -64
+	0xCD1C43 LocalGet 0
+	0xCD1C45 Call 72345
+	0xCD1C49 End
+	0xCD1C4A End
+	0xCD1C4B I32Const 1
+	0xCD1C4D I32Const 4499964
+	0xCD1C52 I32Load 2, 0
+	0xCD1C55 Call 48504
+	0xCD1C59 LocalSet 1
+	0xCD1C5B I32Const 4438468
+	0xCD1C60 I32Load 2, 0
+	0xCD1C63 LocalTee 0
+	0xCD1C65 I32Load16_S 1, 186
+	0xCD1C69 I32Const 512
+	0xCD1C6C I32And
+	0xCD1C6D If -64
+	0xCD1C6F LocalGet 0
+	0xCD1C71 I32Load 2, 116
+	0xCD1C74 I32Eqz
+	0xCD1C75 If -64
+	0xCD1C77 LocalGet 0
+	0xCD1C79 Call 72345
+	0xCD1C7D I32Const 4438468
+	0xCD1C82 I32Load 2, 0
+	0xCD1C85 LocalSet 0
+	0xCD1C87 End
+	0xCD1C88 End
+	0xCD1C89 LocalGet 0
+	0xCD1C8B I32Load 2, 92
+	0xCD1C8E LocalGet 1
+	0xCD1C90 I32Store 2, 0
+	0xCD1C93 LocalGet 1
+	0xCD1C95 LocalSet 0
+	0xCD1C97 End
+	0xCD1C98 LocalGet 0
+	0xCD1C9A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b16
+	5 Nop
+	6 Move v5 @ S0_v48, [2DBDDC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v48
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45797A], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Revive>), typeof(Revive)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Revive>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b21, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v41 (Il2CppClass<Revive>), typeof(Revive)
+	21 Nop
+	22 CheckEqual v20 @ S0_v43 (System.Boolean), [v18 @ S0_v41 (Il2CppClass<Revive>)+74], 0
+	23 Not v21 @ TEMP_v12 (System.Boolean), v20 @ S0_v43 (System.Boolean)
+	24 ConditionalJump @b21, v21 @ TEMP_v12 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Revive)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v31 @ S0_v13 (System.Boolean), v28.instance (Revive), 0
+	37 Not v32 @ TEMP_v4 (System.Boolean), v31 @ S0_v13 (System.Boolean)
+	38 ConditionalJump @b22, v32 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Move v35 @ S0_v17 (Il2CppClass<Utils>), typeof(Utils)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 And v39 @ S0_v19, [v35 @ S0_v17 (Il2CppClass<Utils>)+BA], 512
+	45 CheckEqual v40 @ TEMP_v6 (System.Boolean), v39 @ S0_v19, 0
+	46 ConditionalJump @b18, v40 @ TEMP_v6 (System.Boolean)
+	47 Move v54 @ S0_v37 (Il2CppClass<Utils>), typeof(Utils)
+	48 Nop
+	49 CheckEqual v56 @ S0_v39 (System.Boolean), [v54 @ S0_v37 (Il2CppClass<Utils>)+74], 0
+	50 Not v57 @ TEMP_v11 (System.Boolean), v56 @ S0_v39 (System.Boolean)
+	51 ConditionalJump @b18, v57 @ TEMP_v11 (System.Boolean)
+	52 Nop
+	53 CallVoid 11A99, typeof(Utils)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call Utils.FindComponentInThisOrParents, v64 @ S0_v22 (T), 1
+	60 Nop
+	61 Nop
+	62 Move v66 @ S0_v24 (Il2CppClass<Revive>), typeof(Revive)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 And v70 @ S0_v26, [v66 @ S0_v24 (Il2CppClass<Revive>)+BA], 512
+	67 CheckEqual v71 @ TEMP_v8 (System.Boolean), v70 @ S0_v26, 0
+	68 ConditionalJump @b19, v71 @ TEMP_v8 (System.Boolean)
+	69 Move v72 @ S0_v31 (Il2CppClass<Revive>), typeof(Revive)
+	70 Nop
+	71 CheckEqual v74 @ S0_v33 (System.Boolean), [v72 @ S0_v31 (Il2CppClass<Revive>)+74], 0
+	72 Not v75 @ TEMP_v10 (System.Boolean), v74 @ S0_v33 (System.Boolean)
+	73 ConditionalJump @b19, v75 @ TEMP_v10 (System.Boolean)
+	74 Nop
+	75 CallVoid 11A99, typeof(Revive)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Move v81.instance (Revive), v64 @ S0_v22 (T)
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Return v44 @ L0_v4 (System.String)
+
+Method: System.String ByteArrayToHex(System.Byte[] barray)
+
+Disassembly:
+	0xCD0198 I32Const 4553048
+	0xCD019D I32Load8_S 0, 0
+	0xCD01A0 I32Eqz
+	0xCD01A1 If -64
+	0xCD01A3 I32Const 2996768
+	0xCD01A8 I32Load 2, 0
+	0xCD01AB Call 73003
+	0xCD01AF I32Const 4553048
+	0xCD01B4 I32Const 1
+	0xCD01B6 I32Store8 0, 0
+	0xCD01B9 End
+	0xCD01BA I32Const 4440372
+	0xCD01BF I32Load 2, 0
+	0xCD01C2 LocalTee 1
+	0xCD01C4 I32Load16_S 1, 186
+	0xCD01C8 I32Const 512
+	0xCD01CB I32And
+	0xCD01CC If -64
+	0xCD01CE LocalGet 1
+	0xCD01D0 I32Load 2, 116
+	0xCD01D3 I32Eqz
+	0xCD01D4 If -64
+	0xCD01D6 LocalGet 1
+	0xCD01D8 Call 72345
+	0xCD01DC I32Const 4440372
+	0xCD01E1 I32Load 2, 0
+	0xCD01E4 LocalSet 1
+	0xCD01E6 End
+	0xCD01E7 End
+	0xCD01E8 LocalGet 1
+	0xCD01EA I32Load 2, 92
+	0xCD01ED I32Load8_S 0, 0
+	0xCD01F0 I32Eqz
+	0xCD01F1 If -64
+	0xCD01F3 I32Const 4538748
+	0xCD01F8 I32Load 2, 0
+	0xCD01FB I32Const 0
+	0xCD01FD I32Const 0
+	0xCD01FF Call 63775
+	0xCD0203 LocalSet 2
+	0xCD0205 I32Const 4440372
+	0xCD020A I32Load 2, 0
+	0xCD020D LocalTee 1
+	0xCD020F I32Load16_S 1, 186
+	0xCD0213 I32Const 512
+	0xCD0216 I32And
+	0xCD0217 If -64
+	0xCD0219 LocalGet 1
+	0xCD021B I32Load 2, 116
+	0xCD021E I32Eqz
+	0xCD021F If -64
+	0xCD0221 LocalGet 1
+	0xCD0223 Call 72345
+	0xCD0227 I32Const 4440372
+	0xCD022C I32Load 2, 0
+	0xCD022F LocalSet 1
+	0xCD0231 End
+	0xCD0232 End
+	0xCD0233 LocalGet 1
+	0xCD0235 I32Load 2, 92
+	0xCD0238 I32Const 4
+	0xCD023A I32Add
+	0xCD023B LocalGet 2
+	0xCD023D I32Store 2, 0
+	0xCD0240 I32Const 4440372
+	0xCD0245 I32Load 2, 0
+	0xCD0248 I32Load 2, 92
+	0xCD024B I32Const 1
+	0xCD024D I32Store8 0, 0
+	0xCD0250 End
+	0xCD0251 I32Const 4440372
+	0xCD0256 I32Load 2, 0
+	0xCD0259 LocalTee 1
+	0xCD025B I32Load16_S 1, 186
+	0xCD025F I32Const 512
+	0xCD0262 I32And
+	0xCD0263 If -64
+	0xCD0265 LocalGet 1
+	0xCD0267 I32Load 2, 116
+	0xCD026A I32Eqz
+	0xCD026B If -64
+	0xCD026D LocalGet 1
+	0xCD026F Call 72345
+	0xCD0273 I32Const 4440372
+	0xCD0278 I32Load 2, 0
+	0xCD027B LocalSet 1
+	0xCD027D End
+	0xCD027E End
+	0xCD027F LocalGet 0
+	0xCD0281 LocalGet 1
+	0xCD0283 I32Load 2, 92
+	0xCD0286 I32Load 2, 4
+	0xCD0289 I32Const 0
+	0xCD028B Call 55817
+	0xCD028F If -64
+	0xCD0291 I32Const 4440372
+	0xCD0296 I32Load 2, 0
+	0xCD0299 LocalTee 1
+	0xCD029B I32Load16_S 1, 186
+	0xCD029F I32Const 512
+	0xCD02A2 I32And
+	0xCD02A3 If -64
+	0xCD02A5 LocalGet 1
+	0xCD02A7 I32Load 2, 116
+	0xCD02AA I32Eqz
+	0xCD02AB If -64
+	0xCD02AD LocalGet 1
+	0xCD02AF Call 72345
+	0xCD02B3 I32Const 4440372
+	0xCD02B8 I32Load 2, 0
+	0xCD02BB LocalSet 1
+	0xCD02BD End
+	0xCD02BE End
+	0xCD02BF LocalGet 1
+	0xCD02C1 I32Load 2, 92
+	0xCD02C4 I32Load 2, 4
+	0xCD02C7 LocalSet 2
+	0xCD02C9 I32Const 4538748
+	0xCD02CE I32Load 2, 0
+	0xCD02D1 LocalSet 1
+	0xCD02D3 LocalGet 0
+	0xCD02D5 If -64
+	0xCD02D7 LocalGet 1
+	0xCD02D9 LocalGet 0
+	0xCD02DB I32Const 0
+	0xCD02DD Call 63774
+	0xCD02E1 Else
+	0xCD02E2 LocalGet 1
+	0xCD02E4 I32Const 0
+	0xCD02E6 Call 63778
+	0xCD02EA End
+	0xCD02EB I32Const 4440372
+	0xCD02F0 I32Load 2, 0
+	0xCD02F3 LocalTee 1
+	0xCD02F5 I32Load16_S 1, 186
+	0xCD02F9 I32Const 512
+	0xCD02FC I32And
+	0xCD02FD If -64
+	0xCD02FF LocalGet 1
+	0xCD0301 I32Load 2, 116
+	0xCD0304 I32Eqz
+	0xCD0305 If -64
+	0xCD0307 LocalGet 1
+	0xCD0309 Call 72345
+	0xCD030D I32Const 4440372
+	0xCD0312 I32Load 2, 0
+	0xCD0315 LocalSet 1
+	0xCD0317 End
+	0xCD0318 End
+	0xCD0319 LocalGet 1
+	0xCD031B I32Load 2, 92
+	0xCD031E I32Const 4
+	0xCD0320 I32Add
+	0xCD0321 LocalGet 0
+	0xCD0323 I32Store 2, 0
+	0xCD0326 Else
+	0xCD0327 I32Const 0
+	0xCD0329 LocalSet 2
+	0xCD032B End
+	0xCD032C LocalGet 2
+	0xCD032E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b29
+	5 Nop
+	6 Move v5 @ S0_v92, [2DBA20]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v92
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [457958], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<RemoteNotificationControl>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b38, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v85 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	21 Nop
+	22 CheckEqual v20 @ S0_v87 (System.Boolean), [v18 @ S0_v85 (Il2CppClass<RemoteNotificationControl>)+74], 0
+	23 Not v21 @ TEMP_v21 (System.Boolean), v20 @ S0_v87 (System.Boolean)
+	24 ConditionalJump @b38, v21 @ TEMP_v21 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(RemoteNotificationControl)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Not v30 @ S0_v13 (System.Boolean), v28._cachedDeviceTokenLoaded (System.Boolean)
+	36 Not v31 @ TEMP_v4 (System.Boolean), v30 @ S0_v13 (System.Boolean)
+	37 ConditionalJump @b41, v31 @ TEMP_v4 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call Random.Range, v37 @ S0_v67 (System.Int32), "remote_notifications_cached_device_token", 0
+	43 Nop
+	44 Nop
+	45 Move v60 @ S0_v69 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 And v64 @ S0_v71, [v60 @ S0_v69 (Il2CppClass<RemoteNotificationControl>)+BA], 512
+	50 CheckEqual v65 @ TEMP_v18 (System.Boolean), v64 @ S0_v71, 0
+	51 ConditionalJump @b31, v65 @ TEMP_v18 (System.Boolean)
+	52 Move v82 @ S0_v79 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	53 Nop
+	54 CheckEqual v84 @ S0_v81 (System.Boolean), [v82 @ S0_v79 (Il2CppClass<RemoteNotificationControl>)+74], 0
+	55 Not v85 @ TEMP_v20 (System.Boolean), v84 @ S0_v81 (System.Boolean)
+	56 ConditionalJump @b31, v85 @ TEMP_v20 (System.Boolean)
+	57 Nop
+	58 CallVoid 11A99, typeof(RemoteNotificationControl)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Add v92 @ S0_v75, [v44 @ L1_v16 (Il2CppClass<RemoteNotificationControl>)+5C], 4
+	68 Nop
+	69 Move [v92 @ S0_v75], v37 @ S0_v67 (System.Int32)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Move v50._cachedDeviceTokenLoaded (System.Boolean), 1
+	75 Nop
+	76 Nop
+	77 Move v52 @ S0_v16 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 And v56 @ S0_v18, [v52 @ S0_v16 (Il2CppClass<RemoteNotificationControl>)+BA], 512
+	82 CheckEqual v57 @ TEMP_v6 (System.Boolean), v56 @ S0_v18, 0
+	83 ConditionalJump @b39, v57 @ TEMP_v6 (System.Boolean)
+	84 Move v66 @ S0_v59 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	85 Nop
+	86 CheckEqual v68 @ S0_v61 (System.Boolean), [v66 @ S0_v59 (Il2CppClass<RemoteNotificationControl>)+74], 0
+	87 Not v69 @ TEMP_v17 (System.Boolean), v68 @ S0_v61 (System.Boolean)
+	88 ConditionalJump @b39, v69 @ TEMP_v17 (System.Boolean)
+	89 Nop
+	90 CallVoid 11A99, typeof(RemoteNotificationControl)
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Call String.get_Chars, v81 @ S0_v21 (System.Char), barray @ L0 (System.Byte[]), v78._cachedDeviceToken (System.String)
+	102 CheckEqual v97 @ TEMP_v8 (System.Boolean), v81 @ S0_v21 (System.Char), 0
+	103 ConditionalJump @b28, v97 @ TEMP_v8 (System.Boolean)
+	104 Nop
+	105 Move v101 @ S0_v26 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	106 Nop
+	107 Nop
+	108 Nop
+	109 And v105 @ S0_v28, [v101 @ S0_v26 (Il2CppClass<RemoteNotificationControl>)+BA], 512
+	110 CheckEqual v106 @ TEMP_v10 (System.Boolean), v105 @ S0_v28, 0
+	111 ConditionalJump @b34, v106 @ TEMP_v10 (System.Boolean)
+	112 Move v110 @ S0_v53 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	113 Nop
+	114 CheckEqual v112 @ S0_v55 (System.Boolean), [v110 @ S0_v53 (Il2CppClass<RemoteNotificationControl>)+74], 0
+	115 Not v113 @ TEMP_v16 (System.Boolean), v112 @ S0_v55 (System.Boolean)
+	116 ConditionalJump @b34, v113 @ TEMP_v16 (System.Boolean)
+	117 Nop
+	118 CallVoid 11A99, typeof(RemoteNotificationControl)
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 CheckEqual v127 @ TEMP_v12 (System.Boolean), barray @ L0 (System.Byte[]), 0
+	133 ConditionalJump @b23, v127 @ TEMP_v12 (System.Boolean)
+	134 Nop
+	135 Nop
+	136 Nop
+	137 CallVoid TooltipAttribute..ctor, "remote_notifications_cached_device_token", barray @ L0 (System.Byte[])
+	138 Jump @b24
+	139 Nop
+	140 Nop
+	141 CallVoid PropertyAttribute..ctor, "remote_notifications_cached_device_token"
+	142 Nop
+	143 Nop
+	144 Move v150 @ S0_v38 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	145 Nop
+	146 Nop
+	147 Nop
+	148 And v154 @ S0_v40, [v150 @ S0_v38 (Il2CppClass<RemoteNotificationControl>)+BA], 512
+	149 CheckEqual v155 @ TEMP_v13 (System.Boolean), v154 @ S0_v40, 0
+	150 ConditionalJump @b36, v155 @ TEMP_v13 (System.Boolean)
+	151 Move v156 @ S0_v45 (Il2CppClass<RemoteNotificationControl>), typeof(RemoteNotificationControl)
+	152 Nop
+	153 CheckEqual v158 @ S0_v47 (System.Boolean), [v156 @ S0_v45 (Il2CppClass<RemoteNotificationControl>)+74], 0
+	154 Not v159 @ TEMP_v15 (System.Boolean), v158 @ S0_v47 (System.Boolean)
+	155 ConditionalJump @b36, v159 @ TEMP_v15 (System.Boolean)
+	156 Nop
+	157 CallVoid 11A99, typeof(RemoteNotificationControl)
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Add v138 @ S0_v44, [v132 @ L1_v11 (Il2CppClass<RemoteNotificationControl>)+5C], 4
+	167 Nop
+	168 Move [v138 @ S0_v44], barray @ L0 (System.Byte[])
+	169 Jump @b40
+	170 Nop
+	171 Nop
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Return v128 @ L2_v2 (System.String)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0xCD000A I32Const 0
+	0xCD000C I32Const 0
+	0xCD000E Call 37594
+	0xCD0012 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid PreferencesSave.set_localNotificationsEnabled, 0
+	3 Nop
+	4 Return
+

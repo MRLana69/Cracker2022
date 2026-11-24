@@ -1,0 +1,303 @@
+Type: System.Linq.Enumerable+WhereArrayIterator`1
+
+Method: System.Void .ctor(TSource[] source, System.Func`2<TSource, System.Boolean> predicate)
+
+Disassembly:
+	0x143E76A LocalGet 0
+	0x143E76C LocalGet 2
+	0x143E76E I32Const 0
+	0x143E770 Call 73892
+	0x143E774 Call 29263
+	0x143E778 I32Load8_S 0, 0
+	0x143E77B I32Store8 0, 0
+	0x143E77E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Newobj v5 @ S1_v2 (System.InvalidOperationException), typeof(System.InvalidOperationException)
+	4 Throw typeof(System.NullReferenceException)
+	5 Nop
+	6 Move [this @ L0 (System.Linq.Enumerable+WhereArrayIterator`1<TSource>)], [v6 @ S1_v3]
+	7 Nop
+	8 Return
+
+Method: System.Linq.Enumerable+Iterator`1<TSource> Clone()
+
+Disassembly:
+	0x116520A LocalGet 0
+	0x116520C LocalGet 1
+	0x116520E I32Load 2, 12
+	0x1165211 I32Load 2, 96
+	0x1165214 I32Load 2, 12
+	0x1165217 LocalTee 2
+	0x1165219 LocalGet 2
+	0x116521B I32Load 2, 0
+	0x116521E I32Const 16383
+	0x1165222 I32And
+	0x1165223 I32Const 6161
+	0x1165226 I32Add
+	0x1165227 CallIndirect 0, 0
+	0x116522A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move v4 @ S1_v2, [methodInfo @ L1 (Il2CppMethodInfo)+C]
+	3 Move v5 @ S1_v3, [v4 @ S1_v2+60]
+	4 Move v6 @ S1_v4, [v5 @ S1_v3+C]
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 And v11 @ S2_v3, [v6 @ S1_v4], 16383
+	10 Nop
+	11 Add v13 @ S2_v4, v11 @ S2_v3, 6161
+	12 IndirectCall v13 @ S2_v4, returnVal1 @ S0_v2 (System.Linq.Enumerable+Iterator`1<TSource>), this @ L0 (System.Linq.Enumerable+WhereArrayIterator`1<TSource>), v6 @ S1_v4
+	13 Nop
+	14 Return returnVal1 @ S0_v2 (System.Linq.Enumerable+Iterator`1<TSource>)
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x1445B50 LocalGet 0
+	0x1445B52 I32Load 2, 24
+	0x1445B55 LocalSet 2
+	0x1445B57 LocalGet 0
+	0x1445B59 I32Load 2, 28
+	0x1445B5C LocalSet 0
+	0x1445B5E LocalGet 1
+	0x1445B60 I32Const 12
+	0x1445B62 I32Add
+	0x1445B63 LocalTee 1
+	0x1445B65 I32Load 2, 0
+	0x1445B68 I32Load 2, 96
+	0x1445B6B I32Load 2, 8
+	0x1445B6E Call 29253
+	0x1445B72 Call 72556
+	0x1445B76 LocalTee 3
+	0x1445B78 LocalGet 2
+	0x1445B7A LocalGet 0
+	0x1445B7C LocalGet 1
+	0x1445B7E I32Load 2, 0
+	0x1445B81 I32Load 2, 96
+	0x1445B84 I32Load 2, 12
+	0x1445B87 LocalTee 0
+	0x1445B89 LocalGet 0
+	0x1445B8B I32Load 2, 0
+	0x1445B8E I32Const 8191
+	0x1445B91 I32And
+	0x1445B92 I32Const 113696
+	0x1445B96 I32Add
+	0x1445B97 CallIndirect 8, 0
+	0x1445B9A LocalGet 3
+	0x1445B9C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v10 @ S0_v6, methodInfo @ L1 (Il2CppMethodInfo), 12
+	9 Nop
+	10 Move v12 @ S0_v7, [v10 @ S0_v6]
+	11 Move v13 @ S0_v8, [v12 @ S0_v7+60]
+	12 Nop
+	13 Call 7245, v15 @ S0_v10, [v13 @ S0_v8+8]
+	14 Call 11B6C, v16 @ S0_v11 (System.Boolean), v15 @ S0_v10
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move v21 @ S3_v2, [v10 @ S0_v6]
+	20 Move v22 @ S3_v3, [v21 @ S3_v2+60]
+	21 Move v23 @ S3_v4, [v22 @ S3_v3+C]
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v28 @ S4_v3, [v23 @ S3_v4], 8191
+	27 Nop
+	28 Add v30 @ S4_v4, v28 @ S4_v3, 113696
+	29 IndirectCall v30 @ S4_v4, v31 @ SRET_v1, v16 @ S0_v11 (System.Boolean), [this @ L0 (System.Linq.Enumerable+WhereArrayIterator`1<TSource>)+18], [this @ L0 (System.Linq.Enumerable+WhereArrayIterator`1<TSource>)+1C], v23 @ S3_v4
+	30 Nop
+	31 Nop
+	32 Return v16 @ S0_v11 (System.Boolean)
+
+Method: System.Collections.Generic.IEnumerable`1<TResult> Select(System.Func`2<TSource, TResult> selector)
+
+Disassembly:
+	0xDFD6E3 LocalGet 0
+	0xDFD6E5 I32Load 2, 20
+	0xDFD6E8 LocalSet 3
+	0xDFD6EA LocalGet 0
+	0xDFD6EC I32Load 2, 24
+	0xDFD6EF LocalSet 4
+	0xDFD6F1 LocalGet 0
+	0xDFD6F3 I32Load 2, 28
+	0xDFD6F6 LocalGet 1
+	0xDFD6F8 LocalGet 2
+	0xDFD6FA I32Const 24
+	0xDFD6FC I32Add
+	0xDFD6FD LocalTee 0
+	0xDFD6FF I32Load 2, 0
+	0xDFD702 I32Load 2, 0
+	0xDFD705 LocalTee 1
+	0xDFD707 LocalGet 1
+	0xDFD709 I32Load 2, 0
+	0xDFD70C I32Const 8191
+	0xDFD70F I32And
+	0xDFD710 I32Const 22691
+	0xDFD714 I32Add
+	0xDFD715 CallIndirect 5, 0
+	0xDFD718 LocalSet 1
+	0xDFD71A LocalGet 0
+	0xDFD71C I32Load 2, 0
+	0xDFD71F I32Load 2, 4
+	0xDFD722 Call 29253
+	0xDFD726 Call 72556
+	0xDFD72A LocalTee 2
+	0xDFD72C LocalGet 3
+	0xDFD72E LocalGet 4
+	0xDFD730 LocalGet 1
+	0xDFD732 LocalGet 0
+	0xDFD734 I32Load 2, 0
+	0xDFD737 I32Load 2, 8
+	0xDFD73A LocalTee 0
+	0xDFD73C LocalGet 0
+	0xDFD73E I32Load 2, 0
+	0xDFD741 I32Const 2047
+	0xDFD744 I32And
+	0xDFD745 I32Const 121922
+	0xDFD749 I32Add
+	0xDFD74A CallIndirect 30, 0
+	0xDFD74D LocalGet 2
+	0xDFD74F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Add v14 @ S2_v2, methodInfo @ L2 (Il2CppMethodInfo), 24
+	12 Nop
+	13 Move v16 @ S2_v3, [v14 @ S2_v2]
+	14 Move v17 @ S2_v4, [v16 @ S2_v3]
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 And v22 @ S3_v4, [v17 @ S2_v4], 8191
+	20 Nop
+	21 Add v24 @ S3_v5, v22 @ S3_v4, 22691
+	22 IndirectCall v24 @ S3_v5, v25 @ S0_v7, [this @ L0 (System.Linq.Enumerable+WhereArrayIterator`1<TSource>)+1C], selector @ L1 (System.Func`2<TSource, TResult>), v17 @ S2_v4
+	23 Nop
+	24 Nop
+	25 Move v28 @ S0_v9, [v14 @ S2_v2]
+	26 Nop
+	27 Call 7245, v30 @ S0_v11, [v28 @ S0_v9+4]
+	28 Call 11B6C, v31 @ S0_v12 (System.Collections.Generic.IEnumerable`1<TResult>), v30 @ S0_v11
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Move v37 @ S4_v4, [v14 @ S2_v2]
+	35 Move v38 @ S4_v5, [v37 @ S4_v4+8]
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 And v43 @ S5_v3, [v38 @ S4_v5], 2047
+	41 Nop
+	42 Add v45 @ S5_v4, v43 @ S5_v3, 121922
+	43 IndirectCall v45 @ S5_v4, v46 @ SRET_v1, v31 @ S0_v12 (System.Collections.Generic.IEnumerable`1<TResult>), [this @ L0 (System.Linq.Enumerable+WhereArrayIterator`1<TSource>)+14], [this @ L0 (System.Linq.Enumerable+WhereArrayIterator`1<TSource>)+18], v25 @ S0_v7, v38 @ S4_v5
+	44 Nop
+	45 Nop
+	46 Return v31 @ S0_v12 (System.Collections.Generic.IEnumerable`1<TResult>)
+
+Method: System.Collections.Generic.IEnumerable`1<TSource> Where(System.Func`2<TSource, System.Boolean> predicate)
+
+Disassembly:
+	0x144422B LocalGet 0
+	0x144422D I32Load 2, 8
+	0x1444230 LocalGet 0
+	0x1444232 I32Load 2, 12
+	0x1444235 LocalGet 1
+	0x1444237 LocalGet 2
+	0x1444239 I32Const 12
+	0x144423B I32Add
+	0x144423C LocalTee 0
+	0x144423E I32Load 2, 0
+	0x1444241 I32Load 2, 96
+	0x1444244 I32Load 2, 0
+	0x1444247 LocalTee 1
+	0x1444249 LocalGet 1
+	0x144424B I32Load 2, 0
+	0x144424E I32Const 8191
+	0x1444251 I32And
+	0x1444252 I32Const 22691
+	0x1444256 I32Add
+	0x1444257 CallIndirect 5, 0
+	0x144425A LocalGet 0
+	0x144425C I32Load 2, 0
+	0x144425F I32Load 2, 96
+	0x1444262 I32Load 2, 4
+	0x1444265 LocalTee 0
+	0x1444267 LocalGet 0
+	0x1444269 I32Load 2, 0
+	0x144426C I32Const 8191
+	0x144426F I32And
+	0x1444270 I32Const 22691
+	0x1444274 I32Add
+	0x1444275 CallIndirect 5, 0
+	0x1444278 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Add v10 @ S3_v2, methodInfo @ L2 (Il2CppMethodInfo), 12
+	8 Nop
+	9 Move v12 @ S3_v3, [v10 @ S3_v2]
+	10 Move v13 @ S3_v4, [v12 @ S3_v3+60]
+	11 Move v14 @ S3_v5, [v13 @ S3_v4]
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S4_v4, [v14 @ S3_v5], 8191
+	17 Nop
+	18 Add v21 @ S4_v5, v19 @ S4_v4, 22691
+	19 IndirectCall v21 @ S4_v5, v22 @ S1_v3, this.predicate (System.Func`2<TSource, System.Boolean>), predicate @ L1 (System.Func`2<TSource, System.Boolean>), v14 @ S3_v5
+	20 Nop
+	21 Move v24 @ S2_v3, [v10 @ S3_v2]
+	22 Move v25 @ S2_v4, [v24 @ S2_v3+60]
+	23 Move v26 @ S2_v5, [v25 @ S2_v4+4]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 And v31 @ S3_v8, [v26 @ S2_v5], 8191
+	29 Nop
+	30 Add v33 @ S3_v9, v31 @ S3_v8, 22691
+	31 IndirectCall v33 @ S3_v9, returnVal1 @ S0_v3 (System.Collections.Generic.IEnumerable`1<TSource>), this.source (TSource[]), v22 @ S1_v3, v26 @ S2_v5
+	32 Nop
+	33 Return returnVal1 @ S0_v3 (System.Collections.Generic.IEnumerable`1<TSource>)
+

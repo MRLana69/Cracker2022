@@ -1,0 +1,42 @@
+Type: System.Net.WebRequest+WebProxyWrapper
+
+Method: System.Net.WebProxy get_WebProxy()
+
+Disassembly:
+	0x1131B7A LocalGet 0
+	0x1131B7C I32Load 2, 52
+	0x1131B7F If -1
+	0x1131B81 I32Const 12
+	0x1131B83 LocalGet 0
+	0x1131B85 I32Load 2, 52
+	0x1131B88 Call 29262
+	0x1131B8C Else
+	0x1131B8D I32Const 0
+	0x1131B8F End
+	0x1131B90 LocalSet 2
+	0x1131B92 LocalGet 0
+	0x1131B94 I32Load 2, 48
+	0x1131B97 LocalGet 2
+	0x1131B99 I32Add
+	0x1131B9A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), [this @ L0 (System.Net.WebRequest+WebProxyWrapper)+34], 0
+	3 ConditionalJump @b5, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Call 724E, v11 @ S0_v3, 12, [this @ L0 (System.Net.WebRequest+WebProxyWrapper)+34]
+	8 Jump @b6
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Add returnVal1 @ S0_v6 (System.Net.WebProxy), [this @ L0 (System.Net.WebRequest+WebProxyWrapper)+30], v11 @ S0_v3
+	16 Nop
+	17 Return returnVal1 @ S0_v6 (System.Net.WebProxy)
+

@@ -1,0 +1,73 @@
+Type: SYBO.Common.StateSystem.State
+
+Method: System.Void .ctor(System.Int32 id)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Common.StateSystem.State), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], id @ L1 (System.Int32)
+	5 Nop
+	6 Return
+
+Method: System.Void Enter(SYBO.Common.StateSystem.State fromState)
+
+Disassembly:
+	0xC12227 LocalGet 0
+	0xC12229 LocalGet 1
+	0xC1222B I32Store 2, 8
+	0xC1222E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.Id (System.Int32), fromState @ L1 (SYBO.Common.StateSystem.State)
+	3 Nop
+	4 Return
+
+Method: System.Void Leave(SYBO.Common.StateSystem.State toState)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void OnUpdate()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid F4C1, this @ L0 (SYBO.Common.StateSystem.State), 0
+	3 Nop
+	4 Return
+
+Method: System.Void OnLateUpdate()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

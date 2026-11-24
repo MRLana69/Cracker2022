@@ -1,0 +1,6072 @@
+Type: System.Text.UTF7Encoding
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x1338CDA LocalGet 0
+	0x1338CDC I32Const 0
+	0x1338CDE I32Store 2, 28
+	0x1338CE1 LocalGet 0
+	0x1338CE3 I32Const 0
+	0x1338CE5 I32Store 2, 32
+	0x1338CE8 LocalGet 0
+	0x1338CEA I32Load 2, 12
+	0x1338CED If -64
+	0x1338CEF I32Const 6
+	0x1338CF1 LocalGet 0
+	0x1338CF3 I32Load 2, 12
+	0x1338CF6 Call 29286
+	0x1338CFA End
+	0x1338CFB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.base64Bytes (System.Byte[]), 0
+	3 Nop
+	4 Nop
+	5 Move this.base64Values (System.SByte[]), 0
+	6 Nop
+	7 Nop
+	8 CheckEqual v7 @ TEMP_v1 (System.Boolean), this.dataItem (System.Globalization.CodePageDataItem), 0
+	9 ConditionalJump @b4, v7 @ TEMP_v1 (System.Boolean)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 CallVoid 7266, 6, this.dataItem (System.Globalization.CodePageDataItem)
+	14 Nop
+	15 Nop
+	16 Return
+
+Method: System.Void .ctor(System.Boolean allowOptionals)
+
+Disassembly:
+	0x12E4C8E LocalGet 0
+	0x12E4C90 LocalGet 1
+	0x12E4C92 I32Const 0
+	0x12E4C94 Call 61396
+	0x12E4C98 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid DecoderReplacementFallback..ctor, this @ L0 (System.Text.UTF7Encoding), allowOptionals @ L1 (System.Boolean)
+	4 Nop
+	5 Return
+
+Method: System.Void MakeTables()
+
+Disassembly:
+	0x132E35B LocalGet 0
+	0x132E35D I32Const 0
+	0x132E35F I32Const 0
+	0x132E361 Call 61485
+	0x132E365 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid UTF7Encoding.OnDeserializing, this @ L0 (System.Text.UTF7Encoding), 0
+	4 Nop
+	5 Return
+
+Method: System.Void SetDefaultFallbacks()
+
+Disassembly:
+	0x132E38C I32Const 4572041
+	0x132E391 I32Load8_S 0, 0
+	0x132E394 I32Eqz
+	0x132E395 If -64
+	0x132E397 I32Const 3022904
+	0x132E39C I32Load 2, 0
+	0x132E39F Call 73003
+	0x132E3A3 I32Const 4572041
+	0x132E3A8 I32Const 1
+	0x132E3AA I32Store8 0, 0
+	0x132E3AD End
+	0x132E3AE LocalGet 0
+	0x132E3B0 I32Const 28
+	0x132E3B2 I32Add
+	0x132E3B3 I32Const 4427832
+	0x132E3B8 I32Load 2, 0
+	0x132E3BB I32Const 64
+	0x132E3BE Call 71670
+	0x132E3C2 I32Store 2, 0
+	0x132E3C5 I32Const 0
+	0x132E3C7 LocalSet 1
+	0x132E3C9 Loop -64
+	0x132E3CB LocalGet 1
+	0x132E3CD I32Const 63
+	0x132E3CF I32Le_S
+	0x132E3D0 If -64
+	0x132E3D2 LocalGet 0
+	0x132E3D4 I32Load 2, 28
+	0x132E3D7 I32Const 16
+	0x132E3D9 I32Add
+	0x132E3DA LocalGet 1
+	0x132E3DC I32Add
+	0x132E3DD I32Const 4512252
+	0x132E3E2 I32Load 2, 0
+	0x132E3E5 LocalGet 1
+	0x132E3E7 I32Const 0
+	0x132E3E9 Call 55658
+	0x132E3ED I32Store8 0, 0
+	0x132E3F0 LocalGet 1
+	0x132E3F2 I32Const 1
+	0x132E3F4 I32Add
+	0x132E3F5 LocalSet 1
+	0x132E3F7 Br 1
+	0x132E3F9 End
+	0x132E3FA End
+	0x132E3FB LocalGet 0
+	0x132E3FD I32Const 32
+	0x132E3FF I32Add
+	0x132E400 I32Const 4430160
+	0x132E405 I32Load 2, 0
+	0x132E408 I32Const 128
+	0x132E40B Call 71670
+	0x132E40F I32Store 2, 0
+	0x132E412 I32Const 0
+	0x132E414 LocalSet 1
+	0x132E416 Loop -64
+	0x132E418 LocalGet 1
+	0x132E41A I32Const 127
+	0x132E41D I32Le_S
+	0x132E41E If -64
+	0x132E420 LocalGet 0
+	0x132E422 I32Load 2, 32
+	0x132E425 I32Const 16
+	0x132E427 I32Add
+	0x132E428 LocalGet 1
+	0x132E42A I32Add
+	0x132E42B I32Const -1
+	0x132E42D I32Store8 0, 0
+	0x132E430 LocalGet 1
+	0x132E432 I32Const 1
+	0x132E434 I32Add
+	0x132E435 LocalSet 1
+	0x132E437 Br 1
+	0x132E439 End
+	0x132E43A End
+	0x132E43B I32Const 0
+	0x132E43D LocalSet 1
+	0x132E43F Loop -64
+	0x132E441 LocalGet 1
+	0x132E443 I32Const 63
+	0x132E445 I32Le_S
+	0x132E446 If -64
+	0x132E448 LocalGet 0
+	0x132E44A I32Load 2, 32
+	0x132E44D I32Const 16
+	0x132E44F I32Add
+	0x132E450 LocalGet 0
+	0x132E452 I32Load 2, 28
+	0x132E455 I32Const 16
+	0x132E457 I32Add
+	0x132E458 LocalGet 1
+	0x132E45A I32Add
+	0x132E45B I32Load8_U 0, 0
+	0x132E45E I32Add
+	0x132E45F LocalGet 1
+	0x132E461 I32Store8 0, 0
+	0x132E464 LocalGet 1
+	0x132E466 I32Const 1
+	0x132E468 I32Add
+	0x132E469 LocalSet 1
+	0x132E46B Br 1
+	0x132E46D End
+	0x132E46E End
+	0x132E46F LocalGet 0
+	0x132E471 I32Const 36
+	0x132E473 I32Add
+	0x132E474 I32Const 4428812
+	0x132E479 I32Load 2, 0
+	0x132E47C I32Const 128
+	0x132E47F Call 71670
+	0x132E483 I32Store 2, 0
+	0x132E486 I32Const 4512256
+	0x132E48B I32Load 2, 0
+	0x132E48E I32Load 2, 8
+	0x132E491 LocalSet 2
+	0x132E493 I32Const 0
+	0x132E495 LocalSet 1
+	0x132E497 Loop -64
+	0x132E499 LocalGet 1
+	0x132E49B LocalGet 2
+	0x132E49D I32Lt_S
+	0x132E49E If -64
+	0x132E4A0 LocalGet 0
+	0x132E4A2 I32Load 2, 36
+	0x132E4A5 I32Const 16
+	0x132E4A7 I32Add
+	0x132E4A8 I32Const 4512256
+	0x132E4AD I32Load 2, 0
+	0x132E4B0 LocalGet 1
+	0x132E4B2 I32Const 0
+	0x132E4B4 Call 55658
+	0x132E4B8 I32Const 65535
+	0x132E4BC I32And
+	0x132E4BD I32Add
+	0x132E4BE I32Const 1
+	0x132E4C0 I32Store8 0, 0
+	0x132E4C3 LocalGet 1
+	0x132E4C5 I32Const 1
+	0x132E4C7 I32Add
+	0x132E4C8 LocalSet 1
+	0x132E4CA Br 1
+	0x132E4CC End
+	0x132E4CD End
+	0x132E4CE Block -64
+	0x132E4D0 LocalGet 0
+	0x132E4D2 I32Load8_S 0, 40
+	0x132E4D5 If -64
+	0x132E4D7 I32Const 4512260
+	0x132E4DC I32Load 2, 0
+	0x132E4DF I32Load 2, 8
+	0x132E4E2 LocalSet 2
+	0x132E4E4 I32Const 0
+	0x132E4E6 LocalSet 1
+	0x132E4E8 Loop -64
+	0x132E4EA LocalGet 1
+	0x132E4EC LocalGet 2
+	0x132E4EE I32Ge_S
+	0x132E4EF BrIf 2
+	0x132E4F1 LocalGet 0
+	0x132E4F3 I32Load 2, 36
+	0x132E4F6 I32Const 16
+	0x132E4F8 I32Add
+	0x132E4F9 I32Const 4512260
+	0x132E4FE I32Load 2, 0
+	0x132E501 LocalGet 1
+	0x132E503 I32Const 0
+	0x132E505 Call 55658
+	0x132E509 I32Const 65535
+	0x132E50D I32And
+	0x132E50E I32Add
+	0x132E50F I32Const 1
+	0x132E511 I32Store8 0, 0
+	0x132E514 LocalGet 1
+	0x132E516 I32Const 1
+	0x132E518 I32Add
+	0x132E519 LocalSet 1
+	0x132E51B Br 0
+	0x132E51D End
+	0x132E51E Unreachable
+	0x132E51F End
+	0x132E520 End
+	0x132E521 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b22
+	5 Nop
+	6 Move v5 @ S0_v71, [2E2038]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v71
+	8 Nop
+	9 Move v7 @ S1_v57, 1
+	10 Move [45C389], v7 @ S1_v57
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (System.Text.UTF7Encoding), 28
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Newobj v18 @ S1_v5 (System.OverflowException), typeof(System.OverflowException)
+	19 Move [v14 @ S0_v6], v18 @ S1_v5 (System.OverflowException)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CheckLessOrEqual v36 @ S0_v10 (System.Boolean), v26 @ L1_v2 (System.Char[]), 63
+	26 Not v31 @ TEMP_v3 (System.Boolean), v36 @ S0_v10 (System.Boolean)
+	27 ConditionalJump @b8, v31 @ TEMP_v3 (System.Boolean)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Add v40 @ S0_v66, this.base64Bytes (System.Byte[]), 16
+	32 Nop
+	33 Add v42 @ S0_v67, v40 @ S0_v66, v26 @ L1_v2 (System.Char[])
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call String.Split, v45 @ S1_v55 (System.String[]), "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", v26 @ L1_v2 (System.Char[])
+	39 Move [v42 @ S0_v67], v45 @ S1_v55 (System.String[])
+	40 Nop
+	41 Nop
+	42 Add v33 @ S0_v69 (System.Char[]), v26 @ L1_v2 (System.Char[]), 1
+	43 Nop
+	44 Jump @b23
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Add v48 @ S0_v12, this @ L0 (System.Text.UTF7Encoding), 32
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Newobj v52 @ S1_v11 (System.OverflowException), typeof(System.OverflowException)
+	54 Move [v48 @ S0_v12], v52 @ S1_v11 (System.OverflowException)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 CheckLessOrEqual v66 @ S0_v16 (System.Boolean), v56 @ L1_v4, 127
+	61 Not v61 @ TEMP_v5 (System.Boolean), v66 @ S0_v16 (System.Boolean)
+	62 ConditionalJump @b11, v61 @ TEMP_v5 (System.Boolean)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Add v70 @ S0_v60, this.base64Values (System.SByte[]), 16
+	67 Nop
+	68 Add v72 @ S0_v61, v70 @ S0_v60, v56 @ L1_v4
+	69 Nop
+	70 Move [v72 @ S0_v61], -1
+	71 Nop
+	72 Nop
+	73 Add v63 @ S0_v63, v56 @ L1_v4, 1
+	74 Nop
+	75 Jump @b24
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 CheckLessOrEqual v89 @ S0_v20 (System.Boolean), v79 @ L1_v6, 63
+	84 Not v84 @ TEMP_v7 (System.Boolean), v89 @ S0_v20 (System.Boolean)
+	85 ConditionalJump @b13, v84 @ TEMP_v7 (System.Boolean)
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Add v93 @ S0_v54, this.base64Values (System.SByte[]), 16
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Add v97 @ S1_v42, this.base64Bytes (System.Byte[]), 16
+	94 Nop
+	95 Add v98 @ S1_v43, v97 @ S1_v42, v79 @ L1_v6
+	96 Nop
+	97 Add v100 @ S0_v55, v93 @ S0_v54, [v98 @ S1_v43]
+	98 Nop
+	99 Move [v100 @ S0_v55], v79 @ L1_v6
+	100 Nop
+	101 Nop
+	102 Add v86 @ S0_v57, v79 @ L1_v6, 1
+	103 Nop
+	104 Jump @b25
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Add v105 @ S0_v22, this @ L0 (System.Text.UTF7Encoding), 36
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Newobj v109 @ S1_v19 (System.OverflowException), typeof(System.OverflowException)
+	114 Move [v105 @ S0_v22], v109 @ S1_v19 (System.OverflowException)
+	115 Nop
+	116 Move v111 @ S0_v24, "	
+ '(),-./0123456789:?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 CheckLess v130 @ S0_v29 (System.Boolean), v120 @ L1_v8 (System.Char[]), [v111 @ S0_v24+8]
+	125 Not v125 @ TEMP_v9 (System.Boolean), v130 @ S0_v29 (System.Boolean)
+	126 ConditionalJump @b17, v125 @ TEMP_v9 (System.Boolean)
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Add v134 @ S0_v48, this.directEncode (System.Boolean[]), 16
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Call String.Split, v138 @ S1_v35 (System.String[]), "	
+ '(),-./0123456789:?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", v120 @ L1_v8 (System.Char[])
+	136 Nop
+	137 And v142 @ S1_v36, v138 @ S1_v35 (System.String[]), 65535
+	138 Add v143 @ S0_v49, v134 @ S0_v48, v142 @ S1_v36
+	139 Nop
+	140 Move [v143 @ S0_v49], 1
+	141 Nop
+	142 Nop
+	143 Add v127 @ S0_v51 (System.Char[]), v120 @ L1_v8 (System.Char[]), 1
+	144 Nop
+	145 Jump @b26
+	146 Nop
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Not v141 @ TEMP_v10 (System.Boolean), this.m_allowOptionals (System.Boolean)
+	151 ConditionalJump @b28, v141 @ TEMP_v10 (System.Boolean)
+	152 Nop
+	153 Move v147 @ S0_v34, "!"#$%&*;<=>@[]^_`{|}"
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 CheckGreaterOrEqual v162 @ S0_v39 (System.Boolean), v158 @ L1_v11 (System.Char[]), [v147 @ S0_v34+8]
+	162 ConditionalJump @b28, v162 @ S0_v39 (System.Boolean)
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Add v174 @ S0_v42, this.directEncode (System.Boolean[]), 16
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Call String.Split, v178 @ S1_v28 (System.String[]), "!"#$%&*;<=>@[]^_`{|}", v158 @ L1_v11 (System.Char[])
+	172 Nop
+	173 And v179 @ S1_v29, v178 @ S1_v28 (System.String[]), 65535
+	174 Add v180 @ S0_v43, v174 @ S0_v42, v179 @ S1_v29
+	175 Nop
+	176 Move [v180 @ S0_v43], 1
+	177 Nop
+	178 Nop
+	179 Add v169 @ S0_v45 (System.Char[]), v158 @ L1_v11 (System.Char[]), 1
+	180 Nop
+	181 Jump @b29
+	182 Nop
+	183 Interrupt
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Return
+
+Method: System.Void OnDeserializing(System.Runtime.Serialization.StreamingContext ctx)
+
+Disassembly:
+	0x132E368 LocalGet 0
+	0x132E36A I32Const 65000
+	0x132E36E I32Const 0
+	0x132E370 Call 61456
+	0x132E374 LocalGet 0
+	0x132E376 LocalGet 1
+	0x132E378 I32Const 1
+	0x132E37A I32And
+	0x132E37B I32Store8 0, 40
+	0x132E37E LocalGet 0
+	0x132E380 I32Const 0
+	0x132E382 Call 61486
+	0x132E386 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid Encoding.OnDeserializing, this @ L0 (System.Text.UTF7Encoding), 65000
+	4 Nop
+	5 Nop
+	6 Nop
+	7 And v8 @ S1_v3 (System.Boolean), ctx @ L1 (System.Runtime.Serialization.StreamingContext), 1
+	8 Move this.m_allowOptionals (System.Boolean), v8 @ S1_v3 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 CallVoid UTF7Encoding.SetDefaultFallbacks, this @ L0 (System.Text.UTF7Encoding)
+	12 Nop
+	13 Return
+
+Method: System.Void OnDeserialized(System.Runtime.Serialization.StreamingContext ctx)
+
+Disassembly:
+	0x132B98F LocalGet 0
+	0x132B991 LocalTee 3
+	0x132B993 I32Const 20
+	0x132B995 I32Add
+	0x132B996 I32Const 0
+	0x132B998 I32Store 2, 0
+	0x132B99B LocalGet 3
+	0x132B99D I32Const 24
+	0x132B99F I32Add
+	0x132B9A0 I32Const 0
+	0x132B9A2 I32Store 2, 0
+	0x132B9A5 LocalGet 3
+	0x132B9A7 I32Const 1
+	0x132B9A9 I32Store8 0, 17
+	0x132B9AC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v4 @ S0_v2, this @ L0 (System.Text.UTF7Encoding), 20
+	4 Nop
+	5 Move [v4 @ S0_v2], 0
+	6 Nop
+	7 Nop
+	8 Add v8 @ S0_v4, this @ L0 (System.Text.UTF7Encoding), 24
+	9 Nop
+	10 Move [v8 @ S0_v4], 0
+	11 Nop
+	12 Nop
+	13 Move this.m_isReadOnly (System.Boolean), 1
+	14 Nop
+	15 Return
+
+Method: System.Boolean Equals(System.Object value)
+
+Disassembly:
+	0x1338BCC I32Const 4572180
+	0x1338BD1 I32Load8_S 0, 0
+	0x1338BD4 I32Eqz
+	0x1338BD5 If -64
+	0x1338BD7 I32Const 3022744
+	0x1338BDC I32Load 2, 0
+	0x1338BDF Call 73003
+	0x1338BE3 I32Const 4572180
+	0x1338BE8 I32Const 1
+	0x1338BEA I32Store8 0, 0
+	0x1338BED End
+	0x1338BEE I32Const 4429232
+	0x1338BF3 I32Load 2, 0
+	0x1338BF6 LocalSet 2
+	0x1338BF8 LocalGet 1
+	0x1338BFA If -1
+	0x1338BFC LocalGet 1
+	0x1338BFE I32Load 2, 0
+	0x1338C01 LocalGet 2
+	0x1338C03 I32Eq
+	0x1338C04 If -1
+	0x1338C06 LocalGet 1
+	0x1338C08 Else
+	0x1338C09 I32Const 0
+	0x1338C0B End
+	0x1338C0C Else
+	0x1338C0D I32Const 0
+	0x1338C0F End
+	0x1338C10 LocalTee 1
+	0x1338C12 If -1
+	0x1338C14 LocalGet 0
+	0x1338C16 I32Load8_S 0, 28
+	0x1338C19 I32Const 0
+	0x1338C1B I32Ne
+	0x1338C1C LocalGet 1
+	0x1338C1E I32Load8_S 0, 28
+	0x1338C21 I32Const 0
+	0x1338C23 I32Ne
+	0x1338C24 I32Xor
+	0x1338C25 If -1
+	0x1338C27 I32Const 0
+	0x1338C29 Else
+	0x1338C2A LocalGet 0
+	0x1338C2C I32Load8_S 0, 30
+	0x1338C2F I32Const 0
+	0x1338C31 I32Ne
+	0x1338C32 LocalGet 1
+	0x1338C34 I32Load8_S 0, 30
+	0x1338C37 I32Const 0
+	0x1338C39 I32Ne
+	0x1338C3A I32Xor
+	0x1338C3B If -1
+	0x1338C3D I32Const 0
+	0x1338C3F Else
+	0x1338C40 I32Const 0
+	0x1338C42 LocalGet 0
+	0x1338C44 I32Load 2, 20
+	0x1338C47 LocalGet 1
+	0x1338C49 I32Load 2, 20
+	0x1338C4C Call 29448
+	0x1338C50 If -1
+	0x1338C52 I32Const 0
+	0x1338C54 LocalGet 0
+	0x1338C56 I32Load 2, 24
+	0x1338C59 LocalGet 1
+	0x1338C5B I32Load 2, 24
+	0x1338C5E Call 29448
+	0x1338C62 Else
+	0x1338C63 I32Const 0
+	0x1338C65 End
+	0x1338C66 End
+	0x1338C67 End
+	0x1338C68 Else
+	0x1338C69 I32Const 0
+	0x1338C6B End
+	0x1338C6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v35, [2E1F98]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v35
+	8 Nop
+	9 Move v7 @ S1_v18, 1
+	10 Move [45C414], v7 @ S1_v18
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CheckEqual v16 @ TEMP_v2 (System.Boolean), value @ L1 (System.Object), 0
+	17 ConditionalJump @b8, v16 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CheckEqual v20 @ S0_v30 (System.Boolean), [value @ L1 (System.Object)], typeof(System.Text.UTF32Encoding)
+	22 Not v21 @ TEMP_v10 (System.Boolean), v20 @ S0_v30 (System.Boolean)
+	23 ConditionalJump @b7, v21 @ TEMP_v10 (System.Boolean)
+	24 Nop
+	25 Jump @b20
+	26 Nop
+	27 Nop
+	28 Jump @b24
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v30 @ TEMP_v4 (System.Boolean), v27 @ S0_v8 (System.Object), 0
+	33 ConditionalJump @b18, v30 @ TEMP_v4 (System.Boolean)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CheckNotEqual v35 @ S0_v13 (System.Boolean), this.base64Bytes (System.Byte[]), 0
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v39 @ S1_v7 (System.Boolean), [v27 @ S0_v8 (System.Object)+1C], 0
+	42 Xor v40 @ S0_v14, v35 @ S0_v13 (System.Boolean), v39 @ S1_v7 (System.Boolean)
+	43 CheckEqual v41 @ TEMP_v6 (System.Boolean), v40 @ S0_v14, 0
+	44 ConditionalJump @b11, v41 @ TEMP_v6 (System.Boolean)
+	45 Nop
+	46 Jump @b21
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CheckNotEqual v47 @ S0_v18 (System.Boolean), [this @ L0 (System.Text.UTF7Encoding)+1E], 0
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CheckNotEqual v51 @ S1_v12 (System.Boolean), [v27 @ S0_v8 (System.Object)+1E], 0
+	55 Xor v52 @ S0_v19, v47 @ S0_v18 (System.Boolean), v51 @ S1_v12 (System.Boolean)
+	56 CheckEqual v53 @ TEMP_v8 (System.Boolean), v52 @ S0_v19, 0
+	57 ConditionalJump @b13, v53 @ TEMP_v8 (System.Boolean)
+	58 Nop
+	59 Jump @b21
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Call 7308, v74 @ S0_v21, 0, this.encoderFallback (System.Text.EncoderFallback), [v27 @ S0_v8 (System.Object)+14]
+	66 CheckEqual v67 @ TEMP_v9 (System.Boolean), v74 @ S0_v21, 0
+	67 ConditionalJump @b17, v67 @ TEMP_v9 (System.Boolean)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Call 7308, returnVal1 @ S0_v9 (System.Boolean), 0, this.decoderFallback (System.Text.DecoderFallback), [v27 @ S0_v8 (System.Object)+18]
+	74 Jump @b21
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Jump @b25
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Return returnVal1 @ S0_v9 (System.Boolean)
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0xF05F3E LocalGet 0
+	0xF05F40 I32Load 2, 32
+	0xF05F43 I32Const 0
+	0xF05F45 I32Ne
+	0xF05F46 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.base64Values (System.SByte[]), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Int32 GetByteCount(System.Char[] chars, System.Int32 index, System.Int32 count)
+
+Disassembly:
+	0x13382D7 I32Const 4572173
+	0x13382DC I32Load8_S 0, 0
+	0x13382DF I32Eqz
+	0x13382E0 If -64
+	0x13382E2 I32Const 3022788
+	0x13382E7 I32Load 2, 0
+	0x13382EA Call 73003
+	0x13382EE I32Const 4572173
+	0x13382F3 I32Const 1
+	0x13382F5 I32Store8 0, 0
+	0x13382F8 End
+	0x13382F9 LocalGet 2
+	0x13382FB LocalGet 1
+	0x13382FD I32Add
+	0x13382FE LocalSet 8
+	0x1338300 LocalGet 3
+	0x1338302 I32Const 4431284
+	0x1338307 I32Load 2, 0
+	0x133830A Call 29968
+	0x133830E LocalTee 6
+	0x1338310 I32Const 0
+	0x1338312 I32Ne
+	0x1338313 LocalTee 9
+	0x1338315 If -1
+	0x1338317 LocalGet 6
+	0x1338319 I32Load 2, 32
+	0x133831C LocalSet 2
+	0x133831E LocalGet 6
+	0x1338320 I32Load 2, 28
+	0x1338323 LocalSet 3
+	0x1338325 LocalGet 6
+	0x1338327 I32Const 0
+	0x1338329 Call 61361
+	0x133832D Else
+	0x133832E I32Const 0
+	0x1338330 LocalSet 2
+	0x1338332 I32Const 0
+	0x1338334 LocalSet 3
+	0x1338336 I32Const 4
+	0x1338338 LocalGet 0
+	0x133833A I32Load 2, 24
+	0x133833D Call 29262
+	0x1338341 End
+	0x1338342 LocalTee 7
+	0x1338344 LocalTee 4
+	0x1338346 LocalGet 1
+	0x1338348 I32Store 2, 8
+	0x133834B LocalGet 4
+	0x133834D I32Const 0
+	0x133834F I32Store 2, 12
+	0x1338352 LocalGet 1
+	0x1338354 LocalSet 4
+	0x1338356 I32Const 0
+	0x1338358 LocalSet 1
+	0x133835A Loop -64
+	0x133835C Block -64
+	0x133835E LocalGet 1
+	0x1338360 I32Const 0
+	0x1338362 I32Lt_S
+	0x1338363 LocalSet 10
+	0x1338365 Loop -64
+	0x1338367 LocalGet 10
+	0x1338369 LocalGet 8
+	0x133836B LocalGet 4
+	0x133836D LocalTee 5
+	0x133836F I32Le_U
+	0x1338370 I32Or
+	0x1338371 BrIf 1
+	0x1338373 LocalGet 0
+	0x1338375 I32Load8_S 0, 30
+	0x1338378 If -1
+	0x133837A LocalGet 5
+	0x133837C I32Const 1
+	0x133837E I32Add
+	0x133837F LocalSet 4
+	0x1338381 LocalGet 5
+	0x1338383 I32Load8_U 0, 0
+	0x1338386 LocalGet 3
+	0x1338388 I32Const 8
+	0x133838A I32Shl
+	0x133838B I32Add
+	0x133838C Else
+	0x133838D LocalGet 5
+	0x133838F I32Const 1
+	0x1338391 I32Add
+	0x1338392 LocalSet 4
+	0x1338394 LocalGet 5
+	0x1338396 I32Load8_U 0, 0
+	0x1338399 I32Const 24
+	0x133839B I32Shl
+	0x133839C LocalGet 3
+	0x133839E I32Const 8
+	0x13383A0 I32Shr_U
+	0x13383A1 I32Add
+	0x13383A2 End
+	0x13383A3 LocalSet 3
+	0x13383A5 LocalGet 2
+	0x13383A7 I32Const 1
+	0x13383A9 I32Add
+	0x13383AA LocalTee 2
+	0x13383AC I32Const 4
+	0x13383AE I32Lt_S
+	0x13383AF BrIf 0
+	0x13383B1 End
+	0x13383B2 LocalGet 3
+	0x13383B4 I32Const 1114111
+	0x13383B9 I32Gt_U
+	0x13383BA LocalGet 3
+	0x13383BC I32Const -2048
+	0x13383BF I32And
+	0x13383C0 I32Const 55296
+	0x13383C4 I32Eq
+	0x13383C5 I32Or
+	0x13383C6 If -1
+	0x13383C8 LocalGet 0
+	0x13383CA I32Load8_S 0, 30
+	0x13383CD I32Const 0
+	0x13383CF I32Ne
+	0x13383D0 I32Const 4427832
+	0x13383D5 I32Load 2, 0
+	0x13383D8 I32Const 4
+	0x13383DA Call 71670
+	0x13383DE LocalSet 2
+	0x13383E0 If -64
+	0x13383E2 LocalGet 2
+	0x13383E4 I32Const 16
+	0x13383E6 I32Add
+	0x13383E7 LocalGet 3
+	0x13383E9 I32Const 24
+	0x13383EB I32Shr_U
+	0x13383EC I32Store8 0, 0
+	0x13383EF LocalGet 2
+	0x13383F1 I32Const 17
+	0x13383F3 I32Add
+	0x13383F4 LocalGet 3
+	0x13383F6 I32Const 16
+	0x13383F8 I32Shr_U
+	0x13383F9 I32Store8 0, 0
+	0x13383FC LocalGet 2
+	0x13383FE I32Const 18
+	0x1338400 I32Add
+	0x1338401 LocalGet 3
+	0x1338403 I32Const 8
+	0x1338405 I32Shr_U
+	0x1338406 I32Store8 0, 0
+	0x1338409 LocalGet 2
+	0x133840B I32Const 19
+	0x133840D I32Add
+	0x133840E LocalGet 3
+	0x1338410 I32Store8 0, 0
+	0x1338413 Else
+	0x1338414 LocalGet 2
+	0x1338416 I32Const 16
+	0x1338418 I32Add
+	0x1338419 LocalGet 3
+	0x133841B I32Store8 0, 0
+	0x133841E LocalGet 2
+	0x1338420 I32Const 17
+	0x1338422 I32Add
+	0x1338423 LocalGet 3
+	0x1338425 I32Const 8
+	0x1338427 I32Shr_U
+	0x1338428 I32Store8 0, 0
+	0x133842B LocalGet 2
+	0x133842D I32Const 18
+	0x133842F I32Add
+	0x1338430 LocalGet 3
+	0x1338432 I32Const 16
+	0x1338434 I32Shr_U
+	0x1338435 I32Store8 0, 0
+	0x1338438 LocalGet 2
+	0x133843A I32Const 19
+	0x133843C I32Add
+	0x133843D LocalGet 3
+	0x133843F I32Const 24
+	0x1338441 I32Shr_U
+	0x1338442 I32Store8 0, 0
+	0x1338445 End
+	0x1338446 I32Const 8
+	0x1338448 LocalGet 7
+	0x133844A LocalGet 2
+	0x133844C LocalGet 4
+	0x133844E Call 29291
+	0x1338452 LocalGet 1
+	0x1338454 I32Add
+	0x1338455 Else
+	0x1338456 LocalGet 3
+	0x1338458 I32Const 65535
+	0x133845C I32Gt_U
+	0x133845D If -64
+	0x133845F LocalGet 1
+	0x1338461 I32Const 1
+	0x1338463 I32Add
+	0x1338464 LocalSet 1
+	0x1338466 End
+	0x1338467 LocalGet 1
+	0x1338469 I32Const 1
+	0x133846B I32Add
+	0x133846C End
+	0x133846D LocalSet 1
+	0x133846F I32Const 0
+	0x1338471 LocalSet 2
+	0x1338473 I32Const 0
+	0x1338475 LocalSet 3
+	0x1338477 Br 1
+	0x1338479 End
+	0x133847A End
+	0x133847B Block -64
+	0x133847D LocalGet 2
+	0x133847F I32Const 1
+	0x1338481 I32Ge_S
+	0x1338482 If -64
+	0x1338484 LocalGet 9
+	0x1338486 If -64
+	0x1338488 LocalGet 6
+	0x133848A I32Load8_S 0, 20
+	0x133848D I32Eqz
+	0x133848E BrIf 2
+	0x1338490 End
+	0x1338491 I32Const 4427832
+	0x1338496 I32Load 2, 0
+	0x1338499 LocalGet 2
+	0x133849B Call 71670
+	0x133849F LocalSet 4
+	0x13384A1 Block -64
+	0x13384A3 LocalGet 0
+	0x13384A5 I32Load8_S 0, 30
+	0x13384A8 If -64
+	0x13384AA Loop -64
+	0x13384AC LocalGet 2
+	0x13384AE I32Const 1
+	0x13384B0 I32Lt_S
+	0x13384B1 BrIf 2
+	0x13384B3 LocalGet 4
+	0x13384B5 I32Const 16
+	0x13384B7 I32Add
+	0x13384B8 LocalGet 2
+	0x13384BA I32Const 1
+	0x13384BC I32Sub
+	0x13384BD LocalTee 2
+	0x13384BF I32Add
+	0x13384C0 LocalGet 3
+	0x13384C2 I32Store8 0, 0
+	0x13384C5 LocalGet 3
+	0x13384C7 I32Const 8
+	0x13384C9 I32Shr_U
+	0x13384CA LocalSet 3
+	0x13384CC Br 0
+	0x13384CE End
+	0x13384CF Unreachable
+	0x13384D0 Else
+	0x13384D1 Loop -64
+	0x13384D3 LocalGet 2
+	0x13384D5 I32Const 1
+	0x13384D7 I32Lt_S
+	0x13384D8 BrIf 2
+	0x13384DA LocalGet 4
+	0x13384DC I32Const 16
+	0x13384DE I32Add
+	0x13384DF LocalGet 2
+	0x13384E1 I32Const 1
+	0x13384E3 I32Sub
+	0x13384E4 LocalTee 2
+	0x13384E6 I32Add
+	0x13384E7 LocalGet 3
+	0x13384E9 I32Const 24
+	0x13384EB I32Shr_U
+	0x13384EC I32Store8 0, 0
+	0x13384EF LocalGet 3
+	0x13384F1 I32Const 8
+	0x13384F3 I32Shl
+	0x13384F4 LocalSet 3
+	0x13384F6 Br 0
+	0x13384F8 End
+	0x13384F9 Unreachable
+	0x13384FA End
+	0x13384FB Unreachable
+	0x13384FC End
+	0x13384FD I32Const 8
+	0x13384FF LocalGet 7
+	0x1338501 LocalGet 4
+	0x1338503 LocalGet 5
+	0x1338505 Call 29291
+	0x1338509 LocalGet 1
+	0x133850B I32Add
+	0x133850C LocalSet 1
+	0x133850E End
+	0x133850F End
+	0x1338510 LocalGet 1
+	0x1338512 I32Const 0
+	0x1338514 I32Lt_S
+	0x1338515 If -64
+	0x1338517 I32Const 4512048
+	0x133851C I32Load 2, 0
+	0x133851F LocalSet 0
+	0x1338521 I32Const 4427992
+	0x1338526 I32Load 2, 0
+	0x1338529 Call 72556
+	0x133852D LocalTee 1
+	0x133852F I32Const 4503100
+	0x1338534 I32Load 2, 0
+	0x1338537 LocalGet 0
+	0x1338539 I32Const 0
+	0x133853B Call 57647
+	0x133853F LocalGet 1
+	0x1338541 I32Const 0
+	0x1338543 I32Const 4464620
+	0x1338548 I32Load 2, 0
+	0x133854B Call 73899
+	0x133854F Else
+	0x1338550 LocalGet 1
+	0x1338552 Return
+	0x1338553 End
+	0x1338554 I32Const 0
+	0x1338556 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b38
+	5 Nop
+	6 Move v5 @ S0_v128, [2E1FC4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v128
+	8 Nop
+	9 Move v7 @ S1_v91, 1
+	10 Move [45C40D], v7 @ S1_v91
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v15 @ S0_v6, index @ L2 (System.Int32), chars @ L1 (System.Char[])
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call 7510, v21 @ S0_v8 (System.Text.Decoder), count @ L3 (System.Int32), typeof(System.Text.UTF32Encoding+UTF32Decoder)
+	20 Nop
+	21 Nop
+	22 CheckNotEqual v24 @ S0_v9 (System.Boolean), v21 @ S0_v8 (System.Text.Decoder), 0
+	23 Nop
+	24 Not v26 @ TEMP_v2 (System.Boolean), v24 @ S0_v9 (System.Boolean)
+	25 ConditionalJump @b8, v26 @ TEMP_v2 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call Decoder.get_InternalHasFallbackBuffer, v48 @ S0_v10 (System.Boolean), v21 @ S0_v8 (System.Text.Decoder)
+	35 Jump @b9
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Call 724E, v48 @ S0_v10 (System.Boolean), 4, this.decoderFallback (System.Text.DecoderFallback)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Move [v48 @ S0_v10 (System.Boolean)+8], chars @ L1 (System.Char[])
+	49 Nop
+	50 Nop
+	51 Move [v48 @ S0_v10 (System.Boolean)+C], 0
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 CheckLess v86 @ S0_v16 (System.Boolean), v250 @ L1_v9 (System.Int32), 0
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 CheckLessOrEqual v104 @ S1_v13 (System.Boolean), v15 @ S0_v6, v90 @ L4_v4 (System.Char[])
+	67 Or v105 @ S0_v19, v86 @ S0_v16 (System.Boolean), v104 @ S1_v13 (System.Boolean)
+	68 ConditionalJump @b21, v105 @ S0_v19
+	69 Nop
+	70 Nop
+	71 CheckEqual v98 @ TEMP_v10 (System.Boolean), [this @ L0 (System.Text.UTF7Encoding)+1E], 0
+	72 ConditionalJump @b12, v98 @ TEMP_v10 (System.Boolean)
+	73 Nop
+	74 Nop
+	75 Add v114 @ S0_v113 (System.Char[]), v90 @ L4_v4 (System.Char[]), 1
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 ShiftLeft v120 @ S1_v87, v218 @ L3_v8, 8
+	82 Add v160 @ S0_v66, [v90 @ L4_v4 (System.Char[])], v120 @ S1_v87
+	83 Jump @b39
+	84 Nop
+	85 Nop
+	86 Add v124 @ S0_v107 (System.Char[]), v90 @ L4_v4 (System.Char[]), 1
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 ShiftLeft v129 @ S0_v110, [v90 @ L4_v4 (System.Char[])], 24
+	92 Nop
+	93 Nop
+	94 ShiftRight v132 @ S1_v84, v218 @ L3_v8, 8
+	95 Add v160 @ S0_v66, v129 @ S0_v110, v132 @ S1_v84
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Add v163 @ S0_v68, v220 @ L2_v8, 1
+	101 Nop
+	102 Nop
+	103 CheckLess v100 @ S0_v69 (System.Boolean), v163 @ S0_v68, 4
+	104 ConditionalJump @b47, v100 @ S0_v69 (System.Boolean)
+	105 Nop
+	106 Nop
+	107 Nop
+	108 CheckGreater v180 @ S0_v71 (System.Boolean), v160 @ S0_v66, 1114111
+	109 Nop
+	110 Nop
+	111 And v183 @ S1_v45, v160 @ S0_v66, -2048
+	112 Nop
+	113 CheckEqual v185 @ S1_v46 (System.Boolean), v183 @ S1_v45, 55296
+	114 Or v186 @ S0_v72, v180 @ S0_v71 (System.Boolean), v185 @ S1_v46 (System.Boolean)
+	115 CheckEqual v187 @ TEMP_v11 (System.Boolean), v186 @ S0_v72, 0
+	116 ConditionalJump @b19, v187 @ TEMP_v11 (System.Boolean)
+	117 Nop
+	118 Nop
+	119 Nop
+	120 CheckNotEqual v207 @ S0_v85 (System.Boolean), [this @ L0 (System.Text.UTF7Encoding)+1E], 0
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Newobj v211 @ S1_v55 (System.OverflowException), typeof(System.OverflowException)
+	125 Nop
+	126 Not v245 @ TEMP_v14 (System.Boolean), v207 @ S0_v85 (System.Boolean)
+	127 ConditionalJump @b17, v245 @ TEMP_v14 (System.Boolean)
+	128 Nop
+	129 Nop
+	130 Add v282 @ S0_v99, v211 @ S1_v55 (System.OverflowException), 16
+	131 Nop
+	132 Nop
+	133 ShiftRight v285 @ S1_v72, v160 @ S0_v66, 24
+	134 Move [v282 @ S0_v99], v285 @ S1_v72
+	135 Nop
+	136 Nop
+	137 Add v288 @ S0_v101, v211 @ S1_v55 (System.OverflowException), 17
+	138 Nop
+	139 Nop
+	140 ShiftRight v291 @ S1_v75, v160 @ S0_v66, 16
+	141 Move [v288 @ S0_v101], v291 @ S1_v75
+	142 Nop
+	143 Nop
+	144 Add v294 @ S0_v103, v211 @ S1_v55 (System.OverflowException), 18
+	145 Nop
+	146 Nop
+	147 ShiftRight v297 @ S1_v78, v160 @ S0_v66, 8
+	148 Move [v294 @ S0_v103], v297 @ S1_v78
+	149 Nop
+	150 Nop
+	151 Add v300 @ S0_v105, v211 @ S1_v55 (System.OverflowException), 19
+	152 Nop
+	153 Move [v300 @ S0_v105], v160 @ S0_v66
+	154 Jump @b40
+	155 Nop
+	156 Nop
+	157 Add v304 @ S0_v91, v211 @ S1_v55 (System.OverflowException), 16
+	158 Nop
+	159 Move [v304 @ S0_v91], v160 @ S0_v66
+	160 Nop
+	161 Nop
+	162 Add v308 @ S0_v93, v211 @ S1_v55 (System.OverflowException), 17
+	163 Nop
+	164 Nop
+	165 ShiftRight v311 @ S1_v63, v160 @ S0_v66, 8
+	166 Move [v308 @ S0_v93], v311 @ S1_v63
+	167 Nop
+	168 Nop
+	169 Add v314 @ S0_v95, v211 @ S1_v55 (System.OverflowException), 18
+	170 Nop
+	171 Nop
+	172 ShiftRight v317 @ S1_v66, v160 @ S0_v66, 16
+	173 Move [v314 @ S0_v95], v317 @ S1_v66
+	174 Nop
+	175 Nop
+	176 Add v320 @ S0_v97, v211 @ S1_v55 (System.OverflowException), 19
+	177 Nop
+	178 Nop
+	179 ShiftRight v323 @ S1_v69, v160 @ S0_v66, 24
+	180 Move [v320 @ S0_v97], v323 @ S1_v69
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Call 726B, v337 @ S0_v88, 8, v48 @ S0_v10 (System.Boolean), v211 @ S1_v55 (System.OverflowException), v90 @ L4_v4 (System.Char[])
+	187 Nop
+	188 Add v329 @ S0_v73 (System.Int32), v337 @ S0_v88, v250 @ L1_v9 (System.Int32)
+	189 Jump @b41
+	190 Nop
+	191 Nop
+	192 CheckGreater v214 @ S0_v77 (System.Boolean), v160 @ S0_v66, 65535
+	193 Not v215 @ TEMP_v13 (System.Boolean), v214 @ S0_v77 (System.Boolean)
+	194 ConditionalJump @b42, v215 @ TEMP_v13 (System.Boolean)
+	195 Nop
+	196 Nop
+	197 Add v248 @ S0_v82 (System.Int32), v250 @ L1_v9 (System.Int32), 1
+	198 Nop
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Add v329 @ S0_v73 (System.Int32), v250 @ L1_v9 (System.Int32), 1
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Nop
+	209 Jump @b48
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Nop
+	214 CheckGreaterOrEqual v110 @ S0_v21 (System.Boolean), v220 @ L2_v8, 1
+	215 Not v111 @ TEMP_v5 (System.Boolean), v110 @ S0_v21 (System.Boolean)
+	216 ConditionalJump @b44, v111 @ TEMP_v5 (System.Boolean)
+	217 Nop
+	218 Not v135 @ TEMP_v8 (System.Boolean), v24 @ S0_v9 (System.Boolean)
+	219 ConditionalJump @b24, v135 @ TEMP_v8 (System.Boolean)
+	220 Nop
+	221 Nop
+	222 CheckEqual v153 @ S0_v63 (System.Boolean), [v21 @ S0_v8 (System.Text.Decoder)+14], 0
+	223 ConditionalJump @b44, v153 @ S0_v63 (System.Boolean)
+	224 Nop
+	225 Nop
+	226 Nop
+	227 Nop
+	228 Newobj v170 @ S0_v38 (System.OverflowException), typeof(System.OverflowException)
+	229 Nop
+	230 Nop
+	231 Nop
+	232 CheckEqual v151 @ TEMP_v9 (System.Boolean), [this @ L0 (System.Text.UTF7Encoding)+1E], 0
+	233 ConditionalJump @b45, v151 @ TEMP_v9 (System.Boolean)
+	234 Nop
+	235 Nop
+	236 Nop
+	237 CheckLess v228 @ S0_v55 (System.Boolean), v220 @ L2_v8, 1
+	238 ConditionalJump @b46, v228 @ S0_v55 (System.Boolean)
+	239 Nop
+	240 Nop
+	241 Add v258 @ S0_v57, v170 @ S0_v38 (System.OverflowException), 16
+	242 Nop
+	243 Nop
+	244 Subtract v260 @ S1_v37, v220 @ L2_v8, 1
+	245 Nop
+	246 Add v261 @ S0_v58, v258 @ S0_v57, v260 @ S1_v37
+	247 Nop
+	248 Move [v261 @ S0_v58], v218 @ L3_v8
+	249 Nop
+	250 Nop
+	251 Nop
+	252 Nop
+	253 Jump @b26
+	254 Nop
+	255 Interrupt
+	256 Nop
+	257 Nop
+	258 Nop
+	259 CheckLess v241 @ S0_v47 (System.Boolean), v233 @ L2_v6, 1
+	260 ConditionalJump @b46, v241 @ S0_v47 (System.Boolean)
+	261 Nop
+	262 Nop
+	263 Add v272 @ S0_v49, v170 @ S0_v38 (System.OverflowException), 16
+	264 Nop
+	265 Nop
+	266 Subtract v275 @ S1_v29, v233 @ L2_v6, 1
+	267 Nop
+	268 Add v276 @ S0_v50, v272 @ S0_v49, v275 @ S1_v29
+	269 Nop
+	270 Nop
+	271 ShiftRight v278 @ S1_v31, v218 @ L3_v8, 24
+	272 Move [v276 @ S0_v50], v278 @ S1_v31
+	273 Nop
+	274 Nop
+	275 Nop
+	276 Nop
+	277 Jump @b45
+	278 Nop
+	279 Interrupt
+	280 Nop
+	281 Interrupt
+	282 Nop
+	283 Nop
+	284 Nop
+	285 Nop
+	286 Nop
+	287 Call 726B, v269 @ S0_v43, 8, v48 @ S0_v10 (System.Boolean), v170 @ S0_v38 (System.OverflowException), v90 @ L4_v4 (System.Char[])
+	288 Nop
+	289 Add v154 @ S0_v44 (System.Int32), v269 @ S0_v43, v250 @ L1_v9 (System.Int32)
+	290 Nop
+	291 Nop
+	292 Nop
+	293 Nop
+	294 Nop
+	295 CheckLess v157 @ S0_v24 (System.Boolean), v250 @ L1_v9 (System.Int32), 0
+	296 Not v158 @ TEMP_v7 (System.Boolean), v157 @ S0_v24 (System.Boolean)
+	297 ConditionalJump @b36, v158 @ TEMP_v7 (System.Boolean)
+	298 Nop
+	299 Nop
+	300 Nop
+	301 Nop
+	302 Nop
+	303 Call 11B6C, v176 @ S0_v30 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	304 Nop
+	305 Nop
+	306 Nop
+	307 Nop
+	308 Nop
+	309 CallVoid ArgumentOutOfRangeException.GetObjectData, v176 @ S0_v30 (System.ArgumentOutOfRangeException), "count", "Too many characters. The resulting number of bytes is larger than what can be returned as an int."
+	310 Nop
+	311 Nop
+	312 Nop
+	313 Nop
+	314 CallVoid 120AB, v176 @ S0_v30 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF32Encoding::GetCharCount)
+	315 Jump @b37
+	316 Nop
+	317 Return v250 @ L1_v9 (System.Int32)
+	318 Nop
+	319 Nop
+	320 Nop
+	321 Return 0
+
+Method: System.Int32 GetByteCount(System.String s)
+
+Disassembly:
+	0x1338DCF I32Const 4572183
+	0x1338DD4 I32Load8_S 0, 0
+	0x1338DD7 I32Eqz
+	0x1338DD8 If -64
+	0x1338DDA I32Const 3022832
+	0x1338DDF I32Load 2, 0
+	0x1338DE2 Call 73003
+	0x1338DE6 I32Const 4572183
+	0x1338DEB I32Const 1
+	0x1338DED I32Store8 0, 0
+	0x1338DF0 End
+	0x1338DF1 LocalGet 1
+	0x1338DF3 I32Const 4431264
+	0x1338DF8 I32Load 2, 0
+	0x1338DFB Call 29313
+	0x1338DFF LocalTee 1
+	0x1338E01 If -1
+	0x1338E03 LocalGet 0
+	0x1338E05 I32Load8_S 0, 40
+	0x1338E08 I32Const 0
+	0x1338E0A I32Ne
+	0x1338E0B LocalGet 1
+	0x1338E0D I32Load8_S 0, 40
+	0x1338E10 I32Const 0
+	0x1338E12 I32Ne
+	0x1338E13 I32Xor
+	0x1338E14 If -1
+	0x1338E16 I32Const 0
+	0x1338E18 Else
+	0x1338E19 I32Const 0
+	0x1338E1B LocalGet 0
+	0x1338E1D I32Load 2, 20
+	0x1338E20 LocalGet 1
+	0x1338E22 I32Load 2, 20
+	0x1338E25 Call 29448
+	0x1338E29 If -1
+	0x1338E2B I32Const 0
+	0x1338E2D LocalGet 0
+	0x1338E2F I32Load 2, 24
+	0x1338E32 LocalGet 1
+	0x1338E34 I32Load 2, 24
+	0x1338E37 Call 29448
+	0x1338E3B Else
+	0x1338E3C I32Const 0
+	0x1338E3E End
+	0x1338E3F End
+	0x1338E40 Else
+	0x1338E41 I32Const 0
+	0x1338E43 End
+	0x1338E44 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v21, [2E1FF0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [45C417], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call 7281, v15 @ S0_v6, s @ L1 (System.String), typeof(System.Text.UTF7Encoding)
+	16 Nop
+	17 CheckEqual v17 @ TEMP_v2 (System.Boolean), v15 @ S0_v6, 0
+	18 ConditionalJump @b13, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CheckNotEqual v22 @ S0_v11 (System.Boolean), this.m_allowOptionals (System.Boolean), 0
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CheckNotEqual v26 @ S1_v8 (System.Boolean), [v15 @ S0_v6+28], 0
+	27 Xor v27 @ S0_v12, v22 @ S0_v11 (System.Boolean), v26 @ S1_v8 (System.Boolean)
+	28 CheckEqual v28 @ TEMP_v4 (System.Boolean), v27 @ S0_v12, 0
+	29 ConditionalJump @b8, v28 @ TEMP_v4 (System.Boolean)
+	30 Nop
+	31 Jump @b15
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 7308, v36 @ S0_v15, 0, this.encoderFallback (System.Text.EncoderFallback), [v15 @ S0_v6+14]
+	38 CheckEqual v48 @ TEMP_v6 (System.Boolean), v36 @ S0_v15, 0
+	39 ConditionalJump @b12, v48 @ TEMP_v6 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call 7308, returnVal1 @ S0_v7 (System.Int32), 0, this.decoderFallback (System.Text.DecoderFallback), [v15 @ S0_v6+18]
+	46 Jump @b15
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Jump @b17
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Return returnVal1 @ S0_v7 (System.Int32)
+
+Method: System.Int32 GetByteCount(System.Char* chars, System.Int32 count)
+
+Disassembly:
+	0x13382B9 LocalGet 2
+	0x13382BB I32Const 65535
+	0x13382BF I32And
+	0x13382C0 LocalGet 1
+	0x13382C2 I32Const 65535
+	0x13382C6 I32And
+	0x13382C7 I32Const 10
+	0x13382C9 I32Shl
+	0x13382CA I32Add
+	0x13382CB I32Const -56613888
+	0x13382D0 I32Add
+	0x13382D1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 And v3 @ S0_v2 (System.Int32), count @ L2 (System.Int32), 65535
+	3 Nop
+	4 Nop
+	5 And v7 @ S1_v3, chars @ L1 (System.Char*), 65535
+	6 Nop
+	7 ShiftLeft v9 @ S1_v4, v7 @ S1_v3, 10
+	8 Add v10 @ S0_v3, v3 @ S0_v2 (System.Int32), v9 @ S1_v4
+	9 Nop
+	10 Add returnVal1 @ S0_v4 (System.Int32), v10 @ S0_v3, -56613888
+	11 Nop
+	12 Return returnVal1 @ S0_v4 (System.Int32)
+
+Method: System.Int32 GetBytes(System.String s, System.Int32 charIndex, System.Int32 charCount, System.Byte[] bytes, System.Int32 byteIndex)
+
+Disassembly:
+	0x133855C GlobalGet 7
+	0x133855E LocalSet 7
+	0x1338560 GlobalGet 7
+	0x1338562 I32Const 16
+	0x1338564 I32Add
+	0x1338565 GlobalSet 7
+	0x1338567 LocalGet 7
+	0x1338569 LocalGet 3
+	0x133856B I32Store 2, 0
+	0x133856E I32Const 4572174
+	0x1338573 I32Load8_S 0, 0
+	0x1338576 I32Eqz
+	0x1338577 If -64
+	0x1338579 I32Const 3022792
+	0x133857E I32Load 2, 0
+	0x1338581 Call 73003
+	0x1338585 I32Const 4572174
+	0x133858A I32Const 1
+	0x133858C I32Store8 0, 0
+	0x133858F End
+	0x1338590 LocalGet 4
+	0x1338592 I32Const 1
+	0x1338594 I32Shl
+	0x1338595 LocalGet 3
+	0x1338597 LocalTee 8
+	0x1338599 I32Add
+	0x133859A LocalSet 9
+	0x133859C LocalGet 2
+	0x133859E LocalGet 1
+	0x13385A0 LocalTee 10
+	0x13385A2 I32Add
+	0x13385A3 LocalSet 12
+	0x13385A5 LocalGet 5
+	0x13385A7 I32Const 4431284
+	0x13385AC I32Load 2, 0
+	0x13385AF Call 29968
+	0x13385B3 LocalTee 6
+	0x13385B5 I32Const 0
+	0x13385B7 I32Ne
+	0x13385B8 LocalTee 11
+	0x13385BA If -1
+	0x13385BC LocalGet 6
+	0x13385BE I32Load 2, 32
+	0x13385C1 LocalSet 1
+	0x13385C3 LocalGet 6
+	0x13385C5 I32Load 2, 28
+	0x13385C8 LocalSet 2
+	0x13385CA LocalGet 5
+	0x13385CC I32Const 0
+	0x13385CE Call 61361
+	0x13385D2 Else
+	0x13385D3 I32Const 0
+	0x13385D5 LocalSet 1
+	0x13385D7 I32Const 0
+	0x13385D9 LocalSet 2
+	0x13385DB I32Const 4
+	0x13385DD LocalGet 0
+	0x13385DF I32Load 2, 24
+	0x13385E2 Call 29262
+	0x13385E6 End
+	0x13385E7 LocalTee 5
+	0x13385E9 LocalTee 3
+	0x13385EB LocalGet 10
+	0x13385ED I32Store 2, 8
+	0x13385F0 LocalGet 3
+	0x13385F2 LocalGet 4
+	0x13385F4 I32Const 1
+	0x13385F6 I32Shl
+	0x13385F7 LocalGet 8
+	0x13385F9 I32Add
+	0x13385FA I32Store 2, 12
+	0x13385FD LocalGet 10
+	0x13385FF LocalSet 3
+	0x1338601 Block -64
+	0x1338603 Block -64
+	0x1338605 Block -1
+	0x1338607 Block -64
+	0x1338609 Block -64
+	0x133860B Block -64
+	0x133860D Block -64
+	0x133860F Loop -64
+	0x1338611 LocalGet 12
+	0x1338613 LocalGet 3
+	0x1338615 I32Le_U
+	0x1338616 BrIf 4
+	0x1338618 LocalGet 0
+	0x133861A I32Load8_S 0, 30
+	0x133861D If -1
+	0x133861F LocalGet 3
+	0x1338621 I32Const 1
+	0x1338623 I32Add
+	0x1338624 LocalSet 4
+	0x1338626 LocalGet 3
+	0x1338628 I32Load8_U 0, 0
+	0x133862B LocalGet 2
+	0x133862D I32Const 8
+	0x133862F I32Shl
+	0x1338630 I32Add
+	0x1338631 Else
+	0x1338632 LocalGet 3
+	0x1338634 I32Const 1
+	0x1338636 I32Add
+	0x1338637 LocalSet 4
+	0x1338639 LocalGet 3
+	0x133863B I32Load8_U 0, 0
+	0x133863E I32Const 24
+	0x1338640 I32Shl
+	0x1338641 LocalGet 2
+	0x1338643 I32Const 8
+	0x1338645 I32Shr_U
+	0x1338646 I32Add
+	0x1338647 End
+	0x1338648 LocalSet 2
+	0x133864A LocalGet 4
+	0x133864C LocalSet 3
+	0x133864E Block -64
+	0x1338650 LocalGet 1
+	0x1338652 I32Const 1
+	0x1338654 I32Add
+	0x1338655 LocalTee 1
+	0x1338657 I32Const 4
+	0x1338659 I32Ge_S
+	0x133865A If -64
+	0x133865C LocalGet 2
+	0x133865E I32Const 1114111
+	0x1338663 I32Gt_U
+	0x1338664 LocalGet 2
+	0x1338666 I32Const -2048
+	0x1338669 I32And
+	0x133866A I32Const 55296
+	0x133866E I32Eq
+	0x133866F I32Or
+	0x1338670 If -64
+	0x1338672 LocalGet 0
+	0x1338674 I32Load8_S 0, 30
+	0x1338677 I32Const 0
+	0x1338679 I32Ne
+	0x133867A I32Const 4427832
+	0x133867F I32Load 2, 0
+	0x1338682 I32Const 4
+	0x1338684 Call 71670
+	0x1338688 LocalSet 1
+	0x133868A If -64
+	0x133868C LocalGet 1
+	0x133868E I32Const 16
+	0x1338690 I32Add
+	0x1338691 LocalGet 2
+	0x1338693 I32Const 24
+	0x1338695 I32Shr_U
+	0x1338696 I32Store8 0, 0
+	0x1338699 LocalGet 1
+	0x133869B I32Const 17
+	0x133869D I32Add
+	0x133869E LocalGet 2
+	0x13386A0 I32Const 16
+	0x13386A2 I32Shr_U
+	0x13386A3 I32Store8 0, 0
+	0x13386A6 LocalGet 1
+	0x13386A8 I32Const 18
+	0x13386AA I32Add
+	0x13386AB LocalGet 2
+	0x13386AD I32Const 8
+	0x13386AF I32Shr_U
+	0x13386B0 I32Store8 0, 0
+	0x13386B3 LocalGet 1
+	0x13386B5 I32Const 19
+	0x13386B7 I32Add
+	0x13386B8 LocalGet 2
+	0x13386BA I32Store8 0, 0
+	0x13386BD Else
+	0x13386BE LocalGet 1
+	0x13386C0 I32Const 16
+	0x13386C2 I32Add
+	0x13386C3 LocalGet 2
+	0x13386C5 I32Store8 0, 0
+	0x13386C8 LocalGet 1
+	0x13386CA I32Const 17
+	0x13386CC I32Add
+	0x13386CD LocalGet 2
+	0x13386CF I32Const 8
+	0x13386D1 I32Shr_U
+	0x13386D2 I32Store8 0, 0
+	0x13386D5 LocalGet 1
+	0x13386D7 I32Const 18
+	0x13386D9 I32Add
+	0x13386DA LocalGet 2
+	0x13386DC I32Const 16
+	0x13386DE I32Shr_U
+	0x13386DF I32Store8 0, 0
+	0x13386E2 LocalGet 1
+	0x13386E4 I32Const 19
+	0x13386E6 I32Add
+	0x13386E7 LocalGet 2
+	0x13386E9 I32Const 24
+	0x13386EB I32Shr_U
+	0x13386EC I32Store8 0, 0
+	0x13386EF End
+	0x13386F0 I32Const 7
+	0x13386F2 LocalGet 5
+	0x13386F4 LocalGet 1
+	0x13386F6 LocalGet 3
+	0x13386F8 LocalGet 7
+	0x13386FA Call 29450
+	0x13386FE I32Eqz
+	0x13386FF BrIf 4
+	0x1338701 I32Const 0
+	0x1338703 LocalSet 1
+	0x1338705 I32Const 0
+	0x1338707 LocalSet 2
+	0x1338709 Br 2
+	0x133870B End
+	0x133870C LocalGet 7
+	0x133870E I32Load 2, 0
+	0x1338711 LocalSet 1
+	0x1338713 LocalGet 2
+	0x1338715 I32Const 65535
+	0x1338719 I32Gt_U
+	0x133871A If -64
+	0x133871C LocalGet 1
+	0x133871E LocalGet 9
+	0x1338720 I32Const 2
+	0x1338722 I32Sub
+	0x1338723 I32Ge_U
+	0x1338724 BrIf 5
+	0x1338726 LocalGet 7
+	0x1338728 LocalGet 7
+	0x133872A I32Load 2, 0
+	0x133872D LocalTee 1
+	0x133872F I32Const 2
+	0x1338731 I32Add
+	0x1338732 I32Store 2, 0
+	0x1338735 LocalGet 1
+	0x1338737 LocalGet 2
+	0x1338739 I32Const 65536
+	0x133873D I32Sub
+	0x133873E I32Const 10
+	0x1338740 I32Shr_U
+	0x1338741 I32Const 55296
+	0x1338745 I32Add
+	0x1338746 I32Store16 1, 0
+	0x1338749 LocalGet 2
+	0x133874B I32Const 65536
+	0x133874F I32Sub
+	0x1338750 I32Const 1023
+	0x1338753 I32And
+	0x1338754 I32Const 56320
+	0x1338758 I32Add
+	0x1338759 I32Const 65535
+	0x133875D I32And
+	0x133875E LocalSet 2
+	0x1338760 LocalGet 7
+	0x1338762 I32Load 2, 0
+	0x1338765 LocalSet 1
+	0x1338767 Else
+	0x1338768 LocalGet 1
+	0x133876A LocalGet 9
+	0x133876C I32Ge_U
+	0x133876D BrIf 6
+	0x133876F End
+	0x1338770 LocalGet 7
+	0x1338772 LocalGet 1
+	0x1338774 I32Const 2
+	0x1338776 I32Add
+	0x1338777 I32Store 2, 0
+	0x133877A LocalGet 1
+	0x133877C LocalGet 2
+	0x133877E I32Store16 1, 0
+	0x1338781 I32Const 0
+	0x1338783 LocalSet 1
+	0x1338785 I32Const 0
+	0x1338787 LocalSet 2
+	0x1338789 End
+	0x133878A End
+	0x133878B Br 0
+	0x133878D End
+	0x133878E Unreachable
+	0x133878F End
+	0x1338790 LocalGet 5
+	0x1338792 I32Const 0
+	0x1338794 Call 61389
+	0x1338798 LocalGet 0
+	0x133879A LocalGet 6
+	0x133879C LocalGet 7
+	0x133879E I32Load 2, 0
+	0x13387A1 LocalGet 8
+	0x13387A3 I32Eq
+	0x13387A4 I32Const 0
+	0x13387A6 Call 61529
+	0x13387AA I32Const 0
+	0x13387AC LocalSet 1
+	0x13387AE I32Const 0
+	0x13387B0 LocalSet 2
+	0x13387B2 LocalGet 3
+	0x13387B4 I32Const 4
+	0x13387B6 I32Sub
+	0x13387B7 Br 3
+	0x13387B9 End
+	0x13387BA LocalGet 0
+	0x13387BC LocalGet 6
+	0x13387BE LocalGet 7
+	0x13387C0 I32Load 2, 0
+	0x13387C3 LocalGet 8
+	0x13387C5 I32Eq
+	0x13387C6 I32Const 0
+	0x13387C8 Call 61529
+	0x13387CC I32Const 0
+	0x13387CE LocalSet 1
+	0x13387D0 I32Const 0
+	0x13387D2 LocalSet 2
+	0x13387D4 LocalGet 3
+	0x13387D6 I32Const 4
+	0x13387D8 I32Sub
+	0x13387D9 Br 2
+	0x13387DB End
+	0x13387DC LocalGet 0
+	0x13387DE LocalGet 6
+	0x13387E0 LocalGet 7
+	0x13387E2 I32Load 2, 0
+	0x13387E5 LocalGet 8
+	0x13387E7 I32Eq
+	0x13387E8 I32Const 0
+	0x13387EA Call 61529
+	0x13387EE I32Const 0
+	0x13387F0 LocalSet 1
+	0x13387F2 I32Const 0
+	0x13387F4 LocalSet 2
+	0x13387F6 LocalGet 3
+	0x13387F8 I32Const 4
+	0x13387FA I32Sub
+	0x13387FB Br 1
+	0x13387FD End
+	0x13387FE LocalGet 1
+	0x1338800 I32Const 1
+	0x1338802 I32Ge_S
+	0x1338803 If -64
+	0x1338805 LocalGet 11
+	0x1338807 If -64
+	0x1338809 LocalGet 6
+	0x133880B I32Load8_S 0, 20
+	0x133880E I32Eqz
+	0x133880F If -64
+	0x1338811 LocalGet 3
+	0x1338813 LocalSet 0
+	0x1338815 Br 4
+	0x1338817 End
+	0x1338818 End
+	0x1338819 I32Const 4427832
+	0x133881E I32Load 2, 0
+	0x1338821 LocalGet 1
+	0x1338823 Call 71670
+	0x1338827 LocalSet 9
+	0x1338829 LocalGet 0
+	0x133882B I32Load8_S 0, 30
+	0x133882E If -64
+	0x1338830 LocalGet 1
+	0x1338832 LocalSet 4
+	0x1338834 Loop -64
+	0x1338836 LocalGet 4
+	0x1338838 I32Const 1
+	0x133883A I32Ge_S
+	0x133883B If -64
+	0x133883D LocalGet 9
+	0x133883F I32Const 16
+	0x1338841 I32Add
+	0x1338842 LocalGet 4
+	0x1338844 I32Const 1
+	0x1338846 I32Sub
+	0x1338847 LocalTee 4
+	0x1338849 I32Add
+	0x133884A LocalGet 2
+	0x133884C I32Store8 0, 0
+	0x133884F LocalGet 2
+	0x1338851 I32Const 8
+	0x1338853 I32Shr_U
+	0x1338854 LocalSet 2
+	0x1338856 Br 1
+	0x1338858 End
+	0x1338859 End
+	0x133885A Else
+	0x133885B LocalGet 1
+	0x133885D LocalSet 4
+	0x133885F Loop -64
+	0x1338861 LocalGet 4
+	0x1338863 I32Const 1
+	0x1338865 I32Ge_S
+	0x1338866 If -64
+	0x1338868 LocalGet 9
+	0x133886A I32Const 16
+	0x133886C I32Add
+	0x133886D LocalGet 4
+	0x133886F I32Const 1
+	0x1338871 I32Sub
+	0x1338872 LocalTee 4
+	0x1338874 I32Add
+	0x1338875 LocalGet 2
+	0x1338877 I32Const 24
+	0x1338879 I32Shr_U
+	0x133887A I32Store8 0, 0
+	0x133887D LocalGet 2
+	0x133887F I32Const 8
+	0x1338881 I32Shl
+	0x1338882 LocalSet 2
+	0x1338884 Br 1
+	0x1338886 End
+	0x1338887 End
+	0x1338888 End
+	0x1338889 I32Const 7
+	0x133888B LocalGet 5
+	0x133888D LocalGet 9
+	0x133888F LocalGet 3
+	0x1338891 LocalGet 7
+	0x1338893 Call 29450
+	0x1338897 If -64
+	0x1338899 I32Const 0
+	0x133889B LocalSet 1
+	0x133889D I32Const 0
+	0x133889F LocalSet 2
+	0x13388A1 Else
+	0x13388A2 LocalGet 5
+	0x13388A4 I32Const 0
+	0x13388A6 Call 61389
+	0x13388AA LocalGet 0
+	0x13388AC LocalGet 6
+	0x13388AE LocalGet 7
+	0x13388B0 I32Load 2, 0
+	0x13388B3 LocalGet 8
+	0x13388B5 I32Eq
+	0x13388B6 I32Const 0
+	0x13388B8 Call 61529
+	0x13388BC End
+	0x13388BD End
+	0x13388BE LocalGet 3
+	0x13388C0 End
+	0x13388C1 LocalSet 0
+	0x13388C3 LocalGet 11
+	0x13388C5 BrIf 0
+	0x13388C7 Br 1
+	0x13388C9 End
+	0x13388CA LocalGet 6
+	0x13388CC LocalGet 2
+	0x13388CE I32Store 2, 28
+	0x13388D1 LocalGet 6
+	0x13388D3 LocalGet 1
+	0x13388D5 I32Store 2, 32
+	0x13388D8 LocalGet 6
+	0x13388DA LocalGet 0
+	0x13388DC LocalGet 10
+	0x13388DE I32Sub
+	0x13388DF I32Store 2, 24
+	0x13388E2 End
+	0x13388E3 LocalGet 7
+	0x13388E5 I32Load 2, 0
+	0x13388E8 LocalGet 8
+	0x13388EA I32Sub
+	0x13388EB I32Const 2
+	0x13388ED I32Div_S
+	0x13388EE LocalGet 7
+	0x13388F0 GlobalSet 7
+	0x13388F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], charCount @ L3 (System.Int32)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Jump @b51
+	14 Nop
+	15 Move v15 @ S0_v170, [2E1FC8]
+	16 CallVoid "il2cpp_runtime_class_init_actual", v15 @ S0_v170
+	17 Nop
+	18 Move v17 @ S1_v121, 1
+	19 Move [45C40E], v17 @ S1_v121
+	20 Nop
+	21 Nop
+	22 Nop
+	23 ShiftLeft v23 @ S0_v10, bytes @ L4 (System.Byte[]), 1
+	24 Nop
+	25 Nop
+	26 Add v26 @ S0_v11, v23 @ S0_v10, charCount @ L3 (System.Int32)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Add v33 @ S0_v13, charIndex @ L2 (System.Int32), s @ L1 (System.String)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call 7510, v39 @ S0_v15 (System.Runtime.Serialization.SerializationInfo), byteIndex @ L5 (System.Int32), typeof(System.Text.UTF32Encoding+UTF32Decoder)
+	37 Nop
+	38 Nop
+	39 CheckNotEqual v42 @ S0_v16 (System.Boolean), v39 @ S0_v15 (System.Runtime.Serialization.SerializationInfo), 0
+	40 Nop
+	41 Not v44 @ TEMP_v2 (System.Boolean), v42 @ S0_v16 (System.Boolean)
+	42 ConditionalJump @b8, v44 @ TEMP_v2 (System.Boolean)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Call Decoder.get_InternalHasFallbackBuffer, v66 @ S0_v17 (System.Boolean), byteIndex @ L5 (System.Int32)
+	52 Jump @b9
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Call 724E, v66 @ S0_v17 (System.Boolean), 4, this.decoderFallback (System.Text.DecoderFallback)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Move [v66 @ S0_v17 (System.Boolean)+8], s @ L1 (System.String)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 ShiftLeft v73 @ S1_v13, bytes @ L4 (System.Byte[]), 1
+	70 Nop
+	71 Add v75 @ S1_v14, v73 @ S1_v13, charCount @ L3 (System.Int32)
+	72 Move [v66 @ S0_v17 (System.Boolean)+C], v75 @ S1_v14
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 CheckLessOrEqual v102 @ S0_v22 (System.Boolean), v33 @ S0_v13, v88 @ L3_v3 (System.String)
+	79 ConditionalJump @b32, v102 @ S0_v22 (System.Boolean)
+	80 Nop
+	81 Nop
+	82 CheckEqual v105 @ TEMP_v19 (System.Boolean), [this @ L0 (System.Text.UTF7Encoding)+1E], 0
+	83 ConditionalJump @b12, v105 @ TEMP_v19 (System.Boolean)
+	84 Nop
+	85 Nop
+	86 Add v112 @ S0_v155 (System.String), v88 @ L3_v3 (System.String), 1
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 ShiftLeft v118 @ S1_v117, v147 @ L2_v7 (System.Runtime.Serialization.IFormatterConverter), 8
+	93 Add v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), [v88 @ L3_v3 (System.String)], v118 @ S1_v117
+	94 Jump @b52
+	95 Nop
+	96 Nop
+	97 Add v122 @ S0_v149 (System.String), v88 @ L3_v3 (System.String), 1
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 ShiftLeft v127 @ S0_v152, [v88 @ L3_v3 (System.String)], 24
+	103 Nop
+	104 Nop
+	105 ShiftRight v130 @ S1_v114, v147 @ L2_v7 (System.Runtime.Serialization.IFormatterConverter), 8
+	106 Add v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), v127 @ S0_v152, v130 @ S1_v114
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Add v167 @ S0_v79 (System.String), v250 @ L1_v5 (System.String), 1
+	114 Nop
+	115 Nop
+	116 CheckGreaterOrEqual v170 @ S0_v80 (System.Boolean), v167 @ S0_v79 (System.String), 4
+	117 Not v171 @ TEMP_v20 (System.Boolean), v170 @ S0_v80 (System.Boolean)
+	118 ConditionalJump @b55, v171 @ TEMP_v20 (System.Boolean)
+	119 Nop
+	120 Nop
+	121 CheckGreater v218 @ S0_v83 (System.Boolean), v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 1114111
+	122 Nop
+	123 Nop
+	124 And v221 @ S1_v55, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), -2048
+	125 Nop
+	126 CheckEqual v223 @ S1_v56 (System.Boolean), v221 @ S1_v55, 55296
+	127 Or v224 @ S0_v84, v218 @ S0_v83 (System.Boolean), v223 @ S1_v56 (System.Boolean)
+	128 CheckEqual v225 @ TEMP_v22 (System.Boolean), v224 @ S0_v84, 0
+	129 ConditionalJump @b20, v225 @ TEMP_v22 (System.Boolean)
+	130 Nop
+	131 Nop
+	132 Nop
+	133 CheckNotEqual v265 @ S0_v119 (System.Boolean), [this @ L0 (System.Text.UTF7Encoding)+1E], 0
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Newobj v269 @ S1_v83 (System.OverflowException), typeof(System.OverflowException)
+	138 Nop
+	139 Not v204 @ TEMP_v24 (System.Boolean), v265 @ S0_v119 (System.Boolean)
+	140 ConditionalJump @b17, v204 @ TEMP_v24 (System.Boolean)
+	141 Nop
+	142 Nop
+	143 Add v341 @ S0_v141, v269 @ S1_v83 (System.OverflowException), 16
+	144 Nop
+	145 Nop
+	146 ShiftRight v344 @ S1_v102, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 24
+	147 Move [v341 @ S0_v141], v344 @ S1_v102
+	148 Nop
+	149 Nop
+	150 Add v347 @ S0_v143, v269 @ S1_v83 (System.OverflowException), 17
+	151 Nop
+	152 Nop
+	153 ShiftRight v350 @ S1_v105, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 16
+	154 Move [v347 @ S0_v143], v350 @ S1_v105
+	155 Nop
+	156 Nop
+	157 Add v353 @ S0_v145, v269 @ S1_v83 (System.OverflowException), 18
+	158 Nop
+	159 Nop
+	160 ShiftRight v356 @ S1_v108, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 8
+	161 Move [v353 @ S0_v145], v356 @ S1_v108
+	162 Nop
+	163 Nop
+	164 Add v359 @ S0_v147, v269 @ S1_v83 (System.OverflowException), 19
+	165 Nop
+	166 Move [v359 @ S0_v147], v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter)
+	167 Jump @b53
+	168 Nop
+	169 Nop
+	170 Add v363 @ S0_v133, v269 @ S1_v83 (System.OverflowException), 16
+	171 Nop
+	172 Move [v363 @ S0_v133], v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter)
+	173 Nop
+	174 Nop
+	175 Add v367 @ S0_v135, v269 @ S1_v83 (System.OverflowException), 17
+	176 Nop
+	177 Nop
+	178 ShiftRight v370 @ S1_v93, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 8
+	179 Move [v367 @ S0_v135], v370 @ S1_v93
+	180 Nop
+	181 Nop
+	182 Add v373 @ S0_v137, v269 @ S1_v83 (System.OverflowException), 18
+	183 Nop
+	184 Nop
+	185 ShiftRight v376 @ S1_v96, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 16
+	186 Move [v373 @ S0_v137], v376 @ S1_v96
+	187 Nop
+	188 Nop
+	189 Add v379 @ S0_v139, v269 @ S1_v83 (System.OverflowException), 19
+	190 Nop
+	191 Nop
+	192 ShiftRight v382 @ S1_v99, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 24
+	193 Move [v379 @ S0_v139], v382 @ S1_v99
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Call 730A, v458 @ S0_v122, 7, v66 @ S0_v17 (System.Boolean), v269 @ S1_v83 (System.OverflowException), v85 @ L4_v13 (System.String), v1 @ G7
+	201 CheckEqual v465 @ S0_v123 (System.Boolean), v458 @ S0_v122, 0
+	202 ConditionalJump @b54, v465 @ S0_v123 (System.Boolean)
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Jump @b55
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Nop
+	214 CheckGreater v275 @ S0_v88 (System.Boolean), v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 65535
+	215 Not v205 @ TEMP_v23 (System.Boolean), v275 @ S0_v88 (System.Boolean)
+	216 ConditionalJump @b23, v205 @ TEMP_v23 (System.Boolean)
+	217 Nop
+	218 Nop
+	219 Nop
+	220 Subtract v304 @ S1_v66, v26 @ S0_v11, 2
+	221 CheckGreaterOrEqual v305 @ S0_v102 (System.Boolean), [v1 @ G7], v304 @ S1_v66
+	222 ConditionalJump @b28, v305 @ S0_v102 (System.Boolean)
+	223 Nop
+	224 Nop
+	225 Move v385 @ S1_v70, [v1 @ G7]
+	226 Nop
+	227 Nop
+	228 Add v388 @ S1_v71, [v1 @ G7], 2
+	229 Move [v1 @ G7], v388 @ S1_v71
+	230 Nop
+	231 Nop
+	232 Nop
+	233 Subtract v392 @ S1_v73, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 65536
+	234 Nop
+	235 ShiftRight v394 @ S1_v74, v392 @ S1_v73, 10
+	236 Nop
+	237 Add v396 @ S1_v75, v394 @ S1_v74, 55296
+	238 Move [v385 @ S1_v70], v396 @ S1_v75
+	239 Nop
+	240 Nop
+	241 Subtract v399 @ S0_v111, v162 @ S0_v76 (System.Runtime.Serialization.IFormatterConverter), 65536
+	242 Nop
+	243 And v401 @ S0_v112, v399 @ S0_v111, 1023
+	244 Nop
+	245 Add v403 @ S0_v113, v401 @ S0_v112, 56320
+	246 Nop
+	247 And v405 @ S0_v114 (System.Runtime.Serialization.IFormatterConverter), v403 @ S0_v113, 65535
+	248 Nop
+	249 Nop
+	250 Nop
+	251 Nop
+	252 Jump @b24
+	253 Nop
+	254 Nop
+	255 CheckGreaterOrEqual v308 @ S0_v95 (System.Boolean), [v1 @ G7], v26 @ S0_v11
+	256 ConditionalJump @b30, v308 @ S0_v95 (System.Boolean)
+	257 Nop
+	258 Nop
+	259 Nop
+	260 Nop
+	261 Add v422 @ S1_v60, v417 @ L1_v11, 2
+	262 Move [v1 @ G7], v422 @ S1_v60
+	263 Nop
+	264 Nop
+	265 Move [v417 @ L1_v11], v416 @ L2_v15 (System.Runtime.Serialization.IFormatterConverter)
+	266 Nop
+	267 Nop
+	268 Nop
+	269 Nop
+	270 Nop
+	271 Nop
+	272 Jump @b64
+	273 Nop
+	274 Interrupt
+	275 Nop
+	276 Nop
+	277 Nop
+	278 CallVoid DecoderFallbackBuffer..ctor, v66 @ S0_v17 (System.Boolean)
+	279 Nop
+	280 Nop
+	281 Nop
+	282 Nop
+	283 Nop
+	284 CheckEqual v191 @ S2_v41 (System.Boolean), [v1 @ G7], charCount @ L3 (System.Int32)
+	285 Nop
+	286 CallVoid DefaultEncoder..ctor, this @ L0 (System.Text.UTF7Encoding), v39 @ S0_v15 (System.Runtime.Serialization.SerializationInfo), v191 @ S2_v41 (System.Boolean)
+	287 Nop
+	288 Nop
+	289 Nop
+	290 Nop
+	291 Nop
+	292 Nop
+	293 Subtract v210 @ S0_v28 (System.String), v85 @ L4_v13 (System.String), 4
+	294 Jump @b56
+	295 Nop
+	296 Nop
+	297 Nop
+	298 Nop
+	299 Nop
+	300 Nop
+	301 CheckEqual v192 @ S2_v31 (System.Boolean), [v1 @ G7], charCount @ L3 (System.Int32)
+	302 Nop
+	303 CallVoid DefaultEncoder..ctor, this @ L0 (System.Text.UTF7Encoding), v39 @ S0_v15 (System.Runtime.Serialization.SerializationInfo), v192 @ S2_v31 (System.Boolean)
+	304 Nop
+	305 Nop
+	306 Nop
+	307 Nop
+	308 Nop
+	309 Nop
+	310 Subtract v210 @ S0_v28 (System.String), v85 @ L4_v13 (System.String), 4
+	311 Jump @b56
+	312 Nop
+	313 Nop
+	314 Nop
+	315 Nop
+	316 Nop
+	317 Nop
+	318 CheckEqual v193 @ S2_v27 (System.Boolean), [v1 @ G7], charCount @ L3 (System.Int32)
+	319 Nop
+	320 CallVoid DefaultEncoder..ctor, this @ L0 (System.Text.UTF7Encoding), v39 @ S0_v15 (System.Runtime.Serialization.SerializationInfo), v193 @ S2_v27 (System.Boolean)
+	321 Nop
+	322 Nop
+	323 Nop
+	324 Nop
+	325 Nop
+	326 Nop
+	327 Subtract v210 @ S0_v28 (System.String), v85 @ L4_v13 (System.String), 4
+	328 Jump @b56
+	329 Nop
+	330 Nop
+	331 Nop
+	332 CheckGreaterOrEqual v108 @ S0_v35 (System.Boolean), v250 @ L1_v5 (System.String), 1
+	333 Not v109 @ TEMP_v7 (System.Boolean), v108 @ S0_v35 (System.Boolean)
+	334 ConditionalJump @b57, v109 @ TEMP_v7 (System.Boolean)
+	335 Nop
+	336 Not v133 @ TEMP_v9 (System.Boolean), v42 @ S0_v16 (System.Boolean)
+	337 ConditionalJump @b58, v133 @ TEMP_v9 (System.Boolean)
+	338 Nop
+	339 Nop
+	340 CheckEqual v174 @ S0_v72 (System.Boolean), v39.m_nameToIndex (System.Collections.Generic.Dictionary`2<System.String, System.Int32>), 0
+	341 Not v175 @ TEMP_v18 (System.Boolean), v174 @ S0_v72 (System.Boolean)
+	342 ConditionalJump @b58, v175 @ TEMP_v18 (System.Boolean)
+	343 Nop
+	344 Nop
+	345 Jump @b50
+	346 Nop
+	347 Nop
+	348 Nop
+	349 Nop
+	350 Nop
+	351 Newobj v181 @ S0_v42 (System.OverflowException), typeof(System.OverflowException)
+	352 Nop
+	353 Nop
+	354 Nop
+	355 CheckEqual v241 @ TEMP_v11 (System.Boolean), [this @ L0 (System.Text.UTF7Encoding)+1E], 0
+	356 ConditionalJump @b41, v241 @ TEMP_v11 (System.Boolean)
+	357 Nop
+	358 Nop
+	359 Nop
+	360 Nop
+	361 Nop
+	362 CheckGreaterOrEqual v323 @ S0_v64 (System.Boolean), v309 @ L4_v11 (System.String), 1
+	363 Not v316 @ TEMP_v17 (System.Boolean), v323 @ S0_v64 (System.Boolean)
+	364 ConditionalJump @b40, v316 @ TEMP_v17 (System.Boolean)
+	365 Nop
+	366 Nop
+	367 Add v432 @ S0_v66, v181 @ S0_v42 (System.OverflowException), 16
+	368 Nop
+	369 Nop
+	370 Subtract v434 @ S1_v46 (System.String), v309 @ L4_v11 (System.String), 1
+	371 Nop
+	372 Add v435 @ S0_v67, v432 @ S0_v66, v434 @ S1_v46 (System.String)
+	373 Nop
+	374 Move [v435 @ S0_v67], v147 @ L2_v7 (System.Runtime.Serialization.IFormatterConverter)
+	375 Nop
+	376 Nop
+	377 ShiftRight v320 @ S0_v69 (System.Runtime.Serialization.IFormatterConverter), v147 @ L2_v7 (System.Runtime.Serialization.IFormatterConverter), 8
+	378 Nop
+	379 Jump @b59
+	380 Nop
+	381 Nop
+	382 Jump @b60
+	383 Nop
+	384 Nop
+	385 Nop
+	386 Nop
+	387 Nop
+	388 CheckGreaterOrEqual v338 @ S0_v55 (System.Boolean), v324 @ L4_v8 (System.String), 1
+	389 Not v331 @ TEMP_v15 (System.Boolean), v338 @ S0_v55 (System.Boolean)
+	390 ConditionalJump @b60, v331 @ TEMP_v15 (System.Boolean)
+	391 Nop
+	392 Nop
+	393 Add v440 @ S0_v57, v181 @ S0_v42 (System.OverflowException), 16
+	394 Nop
+	395 Nop
+	396 Subtract v443 @ S1_v38 (System.String), v324 @ L4_v8 (System.String), 1
+	397 Nop
+	398 Add v444 @ S0_v58, v440 @ S0_v57, v443 @ S1_v38 (System.String)
+	399 Nop
+	400 Nop
+	401 ShiftRight v446 @ S1_v40, v147 @ L2_v7 (System.Runtime.Serialization.IFormatterConverter), 24
+	402 Move [v444 @ S0_v58], v446 @ S1_v40
+	403 Nop
+	404 Nop
+	405 ShiftLeft v335 @ S0_v60 (System.Runtime.Serialization.IFormatterConverter), v147 @ L2_v7 (System.Runtime.Serialization.IFormatterConverter), 8
+	406 Nop
+	407 Jump @b61
+	408 Nop
+	409 Nop
+	410 Nop
+	411 Nop
+	412 Nop
+	413 Nop
+	414 Nop
+	415 Nop
+	416 Call 730A, v453 @ S0_v47, 7, v66 @ S0_v17 (System.Boolean), v181 @ S0_v42 (System.OverflowException), v88 @ L3_v3 (System.String), v1 @ G7
+	417 CheckEqual v152 @ TEMP_v13 (System.Boolean), v453 @ S0_v47, 0
+	418 ConditionalJump @b46, v152 @ TEMP_v13 (System.Boolean)
+	419 Nop
+	420 Nop
+	421 Nop
+	422 Nop
+	423 Jump @b57
+	424 Nop
+	425 Nop
+	426 CallVoid DecoderFallbackBuffer..ctor, v66 @ S0_v17 (System.Boolean)
+	427 Nop
+	428 Nop
+	429 Nop
+	430 Nop
+	431 Nop
+	432 CheckEqual v144 @ S2_v13 (System.Boolean), [v1 @ G7], charCount @ L3 (System.Int32)
+	433 Nop
+	434 CallVoid DefaultEncoder..ctor, this @ L0 (System.Text.UTF7Encoding), v39 @ S0_v15 (System.Runtime.Serialization.SerializationInfo), v144 @ S2_v13 (System.Boolean)
+	435 Nop
+	436 Nop
+	437 Nop
+	438 Nop
+	439 Nop
+	440 Nop
+	441 ConditionalJump @b50, v42 @ S0_v16 (System.Boolean)
+	442 Jump @b62
+	443 Nop
+	444 Nop
+	445 Nop
+	446 Move v39.m_converter (System.Runtime.Serialization.IFormatterConverter), v147 @ L2_v7 (System.Runtime.Serialization.IFormatterConverter)
+	447 Nop
+	448 Nop
+	449 Move v39.m_fullTypeName (System.String), v250 @ L1_v5 (System.String)
+	450 Nop
+	451 Nop
+	452 Nop
+	453 Subtract v261 @ S1_v26 (System.Int32), v244 @ L0_v3 (System.String), s @ L1 (System.String)
+	454 Move v39.m_currMember (System.Int32), v261 @ S1_v26 (System.Int32)
+	455 Nop
+	456 Nop
+	457 Nop
+	458 Nop
+	459 Subtract v295 @ S0_v26, [v1 @ G7], charCount @ L3 (System.Int32)
+	460 Nop
+	461 Divide returnVal1 @ S0_v27 (System.Int32), v295 @ S0_v26, 2
+	462 Nop
+	463 Nop
+	464 Nop
+	465 Return returnVal1 @ S0_v27 (System.Int32)
+
+Method: System.Int32 GetBytes(System.Char[] chars, System.Int32 charIndex, System.Int32 charCount, System.Byte[] bytes, System.Int32 byteIndex)
+
+Disassembly:
+	0x13390D4 I32Const 4572187
+	0x13390D9 I32Load8_S 0, 0
+	0x13390DC I32Eqz
+	0x13390DD If -64
+	0x13390DF I32Const 3022860
+	0x13390E4 I32Load 2, 0
+	0x13390E7 Call 73003
+	0x13390EB I32Const 4572187
+	0x13390F0 I32Const 1
+	0x13390F2 I32Store8 0, 0
+	0x13390F5 End
+	0x13390F6 LocalGet 4
+	0x13390F8 I32Eqz
+	0x13390F9 LocalGet 1
+	0x13390FB I32Const 0
+	0x13390FD I32Ne
+	0x13390FE LocalTee 6
+	0x1339100 I32Const 1
+	0x1339102 I32Xor
+	0x1339103 I32Or
+	0x1339104 If -64
+	0x1339106 I32Const 4512032
+	0x133910B I32Load 2, 0
+	0x133910E LocalSet 7
+	0x1339110 I32Const 4503352
+	0x1339115 I32Load 2, 0
+	0x1339118 LocalSet 8
+	0x133911A I32Const 4503480
+	0x133911F I32Load 2, 0
+	0x1339122 LocalSet 9
+	0x1339124 I32Const 4427864
+	0x1339129 I32Load 2, 0
+	0x133912C Call 72556
+	0x1339130 LocalTee 10
+	0x1339132 LocalGet 6
+	0x1339134 If -1
+	0x1339136 LocalGet 7
+	0x1339138 Else
+	0x1339139 LocalGet 8
+	0x133913B End
+	0x133913C LocalGet 9
+	0x133913E I32Const 0
+	0x1339140 Call 57736
+	0x1339144 LocalGet 10
+	0x1339146 I32Const 0
+	0x1339148 I32Const 4464668
+	0x133914D I32Load 2, 0
+	0x1339150 Call 73899
+	0x1339154 End
+	0x1339155 LocalGet 3
+	0x1339157 I32Const -1
+	0x1339159 I32Gt_S
+	0x133915A LocalGet 2
+	0x133915C I32Const 0
+	0x133915E I32Lt_S
+	0x133915F LocalTee 6
+	0x1339161 I32Const 1
+	0x1339163 I32Xor
+	0x1339164 I32And
+	0x1339165 I32Eqz
+	0x1339166 If -64
+	0x1339168 I32Const 4512036
+	0x133916D I32Load 2, 0
+	0x1339170 LocalSet 7
+	0x1339172 I32Const 4507896
+	0x1339177 I32Load 2, 0
+	0x133917A LocalSet 8
+	0x133917C I32Const 4503076
+	0x1339181 I32Load 2, 0
+	0x1339184 LocalSet 9
+	0x1339186 I32Const 4427992
+	0x133918B I32Load 2, 0
+	0x133918E Call 72556
+	0x1339192 LocalTee 10
+	0x1339194 LocalGet 6
+	0x1339196 If -1
+	0x1339198 LocalGet 7
+	0x133919A Else
+	0x133919B LocalGet 8
+	0x133919D End
+	0x133919E LocalGet 9
+	0x13391A0 I32Const 0
+	0x13391A2 Call 57647
+	0x13391A6 LocalGet 10
+	0x13391A8 I32Const 0
+	0x13391AA I32Const 4464668
+	0x13391AF I32Load 2, 0
+	0x13391B2 Call 73899
+	0x13391B6 End
+	0x13391B7 LocalGet 1
+	0x13391B9 I32Load 2, 8
+	0x13391BC LocalGet 2
+	0x13391BE I32Sub
+	0x13391BF LocalGet 3
+	0x13391C1 I32Lt_S
+	0x13391C2 If -64
+	0x13391C4 I32Const 4511840
+	0x13391C9 I32Load 2, 0
+	0x13391CC LocalSet 6
+	0x13391CE I32Const 4427992
+	0x13391D3 I32Load 2, 0
+	0x13391D6 Call 72556
+	0x13391DA LocalTee 7
+	0x13391DC I32Const 4503352
+	0x13391E1 I32Load 2, 0
+	0x13391E4 LocalGet 6
+	0x13391E6 I32Const 0
+	0x13391E8 Call 57647
+	0x13391EC LocalGet 7
+	0x13391EE I32Const 0
+	0x13391F0 I32Const 4464668
+	0x13391F5 I32Load 2, 0
+	0x13391F8 Call 73899
+	0x13391FC End
+	0x13391FD LocalGet 5
+	0x13391FF I32Const 0
+	0x1339201 I32Ge_S
+	0x1339202 If -64
+	0x1339204 LocalGet 4
+	0x1339206 I32Const 12
+	0x1339208 I32Add
+	0x1339209 LocalTee 6
+	0x133920B I32Load 2, 0
+	0x133920E LocalTee 7
+	0x1339210 LocalGet 5
+	0x1339212 I32Ge_S
+	0x1339213 If -64
+	0x1339215 LocalGet 7
+	0x1339217 LocalGet 5
+	0x1339219 I32Sub
+	0x133921A LocalSet 7
+	0x133921C LocalGet 6
+	0x133921E I32Load 2, 0
+	0x1339221 I32Eqz
+	0x1339222 If -64
+	0x1339224 I32Const 4427832
+	0x1339229 I32Load 2, 0
+	0x133922C I32Const 1
+	0x133922E Call 71670
+	0x1339232 LocalSet 4
+	0x1339234 End
+	0x1339235 LocalGet 1
+	0x1339237 If -64
+	0x1339239 LocalGet 1
+	0x133923B I32Const 12
+	0x133923D I32Add
+	0x133923E LocalSet 1
+	0x1339240 End
+	0x1339241 I32Const 20
+	0x1339243 LocalGet 0
+	0x1339245 LocalGet 2
+	0x1339247 I32Const 1
+	0x1339249 I32Shl
+	0x133924A LocalGet 1
+	0x133924C I32Add
+	0x133924D LocalGet 3
+	0x133924F LocalGet 5
+	0x1339251 LocalGet 4
+	0x1339253 If -1
+	0x1339255 LocalGet 4
+	0x1339257 I32Load 2, 12
+	0x133925A If -1
+	0x133925C LocalGet 4
+	0x133925E I32Const 16
+	0x1339260 I32Add
+	0x1339261 Else
+	0x1339262 I32Const 0
+	0x1339264 End
+	0x1339265 Else
+	0x1339266 I32Const 0
+	0x1339268 End
+	0x1339269 I32Add
+	0x133926A LocalGet 7
+	0x133926C I32Const 0
+	0x133926E Call 42534
+	0x1339272 Return
+	0x1339273 End
+	0x1339274 End
+	0x1339275 I32Const 4503096
+	0x133927A I32Load 2, 0
+	0x133927D LocalSet 0
+	0x133927F I32Const 4427992
+	0x1339284 I32Load 2, 0
+	0x1339287 Call 72556
+	0x133928B LocalTee 1
+	0x133928D I32Const 4512040
+	0x1339292 I32Load 2, 0
+	0x1339295 LocalGet 0
+	0x1339297 I32Const 0
+	0x1339299 Call 57647
+	0x133929D LocalGet 1
+	0x133929F I32Const 0
+	0x13392A1 I32Const 4464668
+	0x13392A6 I32Load 2, 0
+	0x13392A9 Call 73899
+	0x13392AD I32Const 0
+	0x13392AF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b35
+	5 Nop
+	6 Move v5 @ S0_v76, [2E200C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v76
+	8 Nop
+	9 Move v7 @ S1_v41, 1
+	10 Move [45C41B], v7 @ S1_v41
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), bytes @ L4 (System.Byte[]), 0
+	14 Nop
+	15 Nop
+	16 CheckNotEqual v17 @ S1_v3 (System.Boolean), v192 @ L1_v2 (System.Char[]), 0
+	17 Nop
+	18 Nop
+	19 Xor v20 @ S1_v4, v17 @ S1_v3 (System.Boolean), 1
+	20 Or v21 @ S0_v7, v13 @ S0_v6 (System.Boolean), v20 @ S1_v4
+	21 CheckEqual v22 @ TEMP_v2 (System.Boolean), v21 @ S0_v7, 0
+	22 ConditionalJump @b10, v22 @ TEMP_v2 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call 11B6C, v34 @ S0_v73 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	35 Nop
+	36 Nop
+	37 Not v52 @ TEMP_v17 (System.Boolean), v17 @ S1_v3 (System.Boolean)
+	38 ConditionalJump @b8, v52 @ TEMP_v17 (System.Boolean)
+	39 Nop
+	40 Jump @b36
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid ArgumentNullException..ctor, v34 @ S0_v73 (System.ArgumentNullException), v129 @ S1_v37 (System.Runtime.Serialization.SerializationInfo), "Array cannot be null."
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CallVoid 120AB, v34 @ S0_v73 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CheckGreater v58 @ S0_v10 (System.Boolean), charCount @ L3 (System.Int32), -1
+	55 Nop
+	56 Nop
+	57 CheckLess v62 @ S1_v8 (System.Boolean), charIndex @ L2 (System.Int32), 0
+	58 Nop
+	59 Nop
+	60 Xor v65 @ S1_v9, v62 @ S1_v8 (System.Boolean), 1
+	61 And v66 @ S0_v11, v58 @ S0_v10 (System.Boolean), v65 @ S1_v9
+	62 CheckEqual v67 @ S0_v12 (System.Boolean), v66 @ S0_v11, 0
+	63 Not v68 @ TEMP_v4 (System.Boolean), v67 @ S0_v12 (System.Boolean)
+	64 ConditionalJump @b16, v68 @ TEMP_v4 (System.Boolean)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Call 11B6C, v81 @ S0_v63 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	77 Nop
+	78 Nop
+	79 Not v94 @ TEMP_v16 (System.Boolean), v62 @ S1_v8 (System.Boolean)
+	80 ConditionalJump @b14, v94 @ TEMP_v16 (System.Boolean)
+	81 Nop
+	82 Jump @b37
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 CallVoid ArgumentOutOfRangeException.GetObjectData, v81 @ S0_v63 (System.ArgumentOutOfRangeException), v157 @ S1_v32 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 CallVoid 120AB, v81 @ S0_v63 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Subtract v100 @ S0_v16, [v192 @ L1_v2 (System.Char[])+8], charIndex @ L2 (System.Int32)
+	98 Nop
+	99 CheckLess v102 @ S0_v17 (System.Boolean), v100 @ S0_v16, charCount @ L3 (System.Int32)
+	100 Not v103 @ TEMP_v6 (System.Boolean), v102 @ S0_v17 (System.Boolean)
+	101 ConditionalJump @b20, v103 @ TEMP_v6 (System.Boolean)
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Call 11B6C, v112 @ S0_v53 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 CallVoid ArgumentOutOfRangeException.GetObjectData, v112 @ S0_v53 (System.ArgumentOutOfRangeException), "s", "Index and count must refer to a location within the string."
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 CallVoid 120AB, v112 @ S0_v53 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	119 Nop
+	120 Nop
+	121 Nop
+	122 CheckGreaterOrEqual v127 @ S0_v20 (System.Boolean), byteIndex @ L5 (System.Int32), 0
+	123 Not v128 @ TEMP_v7 (System.Boolean), v127 @ S0_v20 (System.Boolean)
+	124 ConditionalJump @b38, v128 @ TEMP_v7 (System.Boolean)
+	125 Nop
+	126 Nop
+	127 Add v138 @ S0_v30, bytes @ L4 (System.Byte[]), 12
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 CheckGreaterOrEqual v143 @ S0_v32 (System.Boolean), [v138 @ S0_v30], byteIndex @ L5 (System.Int32)
+	133 Not v144 @ TEMP_v9 (System.Boolean), v143 @ S0_v32 (System.Boolean)
+	134 ConditionalJump @b38, v144 @ TEMP_v9 (System.Boolean)
+	135 Nop
+	136 Nop
+	137 Subtract v162 @ S0_v34, [v138 @ S0_v30], byteIndex @ L5 (System.Int32)
+	138 Nop
+	139 Nop
+	140 Nop
+	141 CheckEqual v166 @ S0_v37 (System.Boolean), [v138 @ S0_v30], 0
+	142 Not v167 @ TEMP_v10 (System.Boolean), v166 @ S0_v37 (System.Boolean)
+	143 ConditionalJump @b39, v167 @ TEMP_v10 (System.Boolean)
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Newobj v177 @ S0_v47 (System.OverflowException), typeof(System.OverflowException)
+	148 Nop
+	149 Nop
+	150 Nop
+	151 CheckEqual v183 @ TEMP_v11 (System.Boolean), v192 @ L1_v2 (System.Char[]), 0
+	152 ConditionalJump @b41, v183 @ TEMP_v11 (System.Boolean)
+	153 Nop
+	154 Nop
+	155 Add v190 @ S0_v44 (System.Char[]), v192 @ L1_v2 (System.Char[]), 12
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 ShiftLeft v200 @ S2_v12 (System.Int32), charIndex @ L2 (System.Int32), 1
+	163 Nop
+	164 Add v202 @ S2_v13, v200 @ S2_v12 (System.Int32), v190 @ S0_v44 (System.Char[])
+	165 Nop
+	166 Nop
+	167 Nop
+	168 CheckEqual v206 @ TEMP_v12 (System.Boolean), v178 @ L4_v1 (System.OverflowException), 0
+	169 ConditionalJump @b29, v206 @ TEMP_v12 (System.Boolean)
+	170 Nop
+	171 Nop
+	172 CheckEqual v210 @ TEMP_v14 (System.Boolean), v178._message (System.String), 0
+	173 ConditionalJump @b28, v210 @ TEMP_v14 (System.Boolean)
+	174 Nop
+	175 Nop
+	176 Add v239 @ S5_v2, v178 @ L4_v1 (System.OverflowException), 16
+	177 Jump @b40
+	178 Nop
+	179 Nop
+	180 Jump @b42
+	181 Nop
+	182 Nop
+	183 Add v213 @ S4_v2, byteIndex @ L5 (System.Int32), v239 @ S5_v2
+	184 Nop
+	185 Nop
+	186 Call A626, returnVal2 @ S0_v42 (System.Int32), 20, this @ L0 (System.Text.UTF7Encoding), v202 @ S2_v13, charCount @ L3 (System.Int32), v213 @ S4_v2, v162 @ S0_v34, 0
+	187 Return returnVal2 @ S0_v42 (System.Int32)
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Nop
+	194 Nop
+	195 Call 11B6C, v155 @ S0_v26 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Nop
+	201 CallVoid ArgumentOutOfRangeException.GetObjectData, v155 @ S0_v26 (System.ArgumentOutOfRangeException), "byteIndex", "Index was out of range. Must be non-negative and less than the size of the collection."
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 CallVoid 120AB, v155 @ S0_v26 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	207 Nop
+	208 Nop
+	209 Return 0
+
+Method: System.Int32 GetBytes(System.Char* chars, System.Int32 charCount, System.Byte* bytes, System.Int32 byteCount)
+
+Disassembly:
+	0x1337994 I32Const 4572169
+	0x1337999 I32Load8_S 0, 0
+	0x133799C I32Eqz
+	0x133799D If -64
+	0x133799F I32Const 3022800
+	0x13379A4 I32Load 2, 0
+	0x13379A7 Call 73003
+	0x13379AB I32Const 4572169
+	0x13379B0 I32Const 1
+	0x13379B2 I32Store8 0, 0
+	0x13379B5 End
+	0x13379B6 LocalGet 1
+	0x13379B8 I32Eqz
+	0x13379B9 LocalTee 5
+	0x13379BB LocalGet 3
+	0x13379BD I32Eqz
+	0x13379BE I32Or
+	0x13379BF If -64
+	0x13379C1 I32Const 4512032
+	0x13379C6 I32Load 2, 0
+	0x13379C9 LocalSet 6
+	0x13379CB I32Const 4507892
+	0x13379D0 I32Load 2, 0
+	0x13379D3 LocalSet 7
+	0x13379D5 I32Const 4503480
+	0x13379DA I32Load 2, 0
+	0x13379DD LocalSet 8
+	0x13379DF I32Const 4427864
+	0x13379E4 I32Load 2, 0
+	0x13379E7 Call 72556
+	0x13379EB LocalTee 9
+	0x13379ED LocalGet 5
+	0x13379EF If -1
+	0x13379F1 LocalGet 6
+	0x13379F3 Else
+	0x13379F4 LocalGet 7
+	0x13379F6 End
+	0x13379F7 LocalGet 8
+	0x13379F9 I32Const 0
+	0x13379FB Call 57736
+	0x13379FF LocalGet 9
+	0x1337A01 I32Const 0
+	0x1337A03 I32Const 4464628
+	0x1337A08 I32Load 2, 0
+	0x1337A0B Call 73899
+	0x1337A0F End
+	0x1337A10 LocalGet 2
+	0x1337A12 I32Const -1
+	0x1337A14 I32Gt_S
+	0x1337A15 LocalGet 4
+	0x1337A17 I32Const 0
+	0x1337A19 I32Lt_S
+	0x1337A1A LocalTee 5
+	0x1337A1C I32Const 1
+	0x1337A1E I32Xor
+	0x1337A1F I32And
+	0x1337A20 If -64
+	0x1337A22 I32Const 30
+	0x1337A24 LocalGet 0
+	0x1337A26 LocalGet 1
+	0x1337A28 LocalGet 2
+	0x1337A2A LocalGet 3
+	0x1337A2C LocalGet 4
+	0x1337A2E I32Const 0
+	0x1337A30 Call 42534
+	0x1337A34 Return
+	0x1337A35 Else
+	0x1337A36 I32Const 4507896
+	0x1337A3B I32Load 2, 0
+	0x1337A3E LocalSet 0
+	0x1337A40 I32Const 4507852
+	0x1337A45 I32Load 2, 0
+	0x1337A48 LocalSet 1
+	0x1337A4A I32Const 4503076
+	0x1337A4F I32Load 2, 0
+	0x1337A52 LocalSet 2
+	0x1337A54 I32Const 4427992
+	0x1337A59 I32Load 2, 0
+	0x1337A5C Call 72556
+	0x1337A60 LocalTee 3
+	0x1337A62 LocalGet 5
+	0x1337A64 If -1
+	0x1337A66 LocalGet 0
+	0x1337A68 Else
+	0x1337A69 LocalGet 1
+	0x1337A6B End
+	0x1337A6C LocalGet 2
+	0x1337A6E I32Const 0
+	0x1337A70 Call 57647
+	0x1337A74 LocalGet 3
+	0x1337A76 I32Const 0
+	0x1337A78 I32Const 4464628
+	0x1337A7D I32Load 2, 0
+	0x1337A80 Call 73899
+	0x1337A84 End
+	0x1337A85 I32Const 0
+	0x1337A87 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v37, [2E1FD0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v37
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [45C409], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), chars @ L1 (System.Char*), 0
+	14 Nop
+	15 Nop
+	16 CheckEqual v17 @ S1_v3 (System.Boolean), bytes @ L3 (System.Byte*), 0
+	17 Or v18 @ S0_v7, v13 @ S0_v6 (System.Boolean), v17 @ S1_v3 (System.Boolean)
+	18 CheckEqual v19 @ TEMP_v2 (System.Boolean), v18 @ S0_v7, 0
+	19 ConditionalJump @b10, v19 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call 11B6C, v31 @ S0_v34 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	32 Nop
+	33 Nop
+	34 Not v50 @ TEMP_v7 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	35 ConditionalJump @b8, v50 @ TEMP_v7 (System.Boolean)
+	36 Nop
+	37 Jump @b20
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid ArgumentNullException..ctor, v31 @ S0_v34 (System.ArgumentNullException), v93 @ S1_v17 (System.Runtime.Serialization.SerializationInfo), "Array cannot be null."
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 CallVoid 120AB, v31 @ S0_v34 (System.ArgumentNullException), 0, methodof(System.Text.UTF32Encoding::GetChars)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CheckGreater v56 @ S0_v10 (System.Boolean), charCount @ L2 (System.Int32), -1
+	52 Nop
+	53 Nop
+	54 CheckLess v60 @ S1_v7 (System.Boolean), byteCount @ L4 (System.Int32), 0
+	55 Nop
+	56 Nop
+	57 Xor v63 @ S1_v8, v60 @ S1_v7 (System.Boolean), 1
+	58 And v64 @ S0_v11, v56 @ S0_v10 (System.Boolean), v63 @ S1_v8
+	59 CheckEqual v65 @ TEMP_v4 (System.Boolean), v64 @ S0_v11, 0
+	60 ConditionalJump @b13, v65 @ TEMP_v4 (System.Boolean)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Call A626, returnVal1 @ S0_v24 (System.Int32), 30, this @ L0 (System.Text.UTF7Encoding), chars @ L1 (System.Char*), charCount @ L2 (System.Int32), bytes @ L3 (System.Byte*), byteCount @ L4 (System.Int32), 0
+	69 Return returnVal1 @ S0_v24 (System.Int32)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Call 11B6C, v87 @ S0_v20 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	82 Nop
+	83 Nop
+	84 Not v92 @ TEMP_v5 (System.Boolean), v60 @ S1_v7 (System.Boolean)
+	85 ConditionalJump @b16, v92 @ TEMP_v5 (System.Boolean)
+	86 Nop
+	87 Jump @b21
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 CallVoid ArgumentOutOfRangeException.GetObjectData, v87 @ S0_v20 (System.ArgumentOutOfRangeException), v117 @ S1_v10 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 CallVoid 120AB, v87 @ S0_v20 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF32Encoding::GetChars)
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Return 0
+
+Method: System.Int32 GetCharCount(System.Byte[] bytes, System.Int32 index, System.Int32 count)
+
+Disassembly:
+	0x1338E77 I32Const 4572184
+	0x1338E7C I32Load8_S 0, 0
+	0x1338E7F I32Eqz
+	0x1338E80 If -64
+	0x1338E82 I32Const 3022840
+	0x1338E87 I32Load 2, 0
+	0x1338E8A Call 73003
+	0x1338E8E I32Const 4572184
+	0x1338E93 I32Const 1
+	0x1338E95 I32Store8 0, 0
+	0x1338E98 End
+	0x1338E99 LocalGet 1
+	0x1338E9B I32Eqz
+	0x1338E9C If -64
+	0x1338E9E I32Const 4503480
+	0x1338EA3 I32Load 2, 0
+	0x1338EA6 LocalSet 4
+	0x1338EA8 I32Const 4427864
+	0x1338EAD I32Load 2, 0
+	0x1338EB0 Call 72556
+	0x1338EB4 LocalTee 5
+	0x1338EB6 I32Const 4507892
+	0x1338EBB I32Load 2, 0
+	0x1338EBE LocalGet 4
+	0x1338EC0 I32Const 0
+	0x1338EC2 Call 57736
+	0x1338EC6 LocalGet 5
+	0x1338EC8 I32Const 0
+	0x1338ECA I32Const 4464652
+	0x1338ECF I32Load 2, 0
+	0x1338ED2 Call 73899
+	0x1338ED6 End
+	0x1338ED7 LocalGet 3
+	0x1338ED9 I32Const -1
+	0x1338EDB I32Gt_S
+	0x1338EDC LocalGet 2
+	0x1338EDE I32Const 0
+	0x1338EE0 I32Lt_S
+	0x1338EE1 LocalTee 4
+	0x1338EE3 I32Const 1
+	0x1338EE5 I32Xor
+	0x1338EE6 I32And
+	0x1338EE7 I32Eqz
+	0x1338EE8 If -64
+	0x1338EEA I32Const 4503052
+	0x1338EEF I32Load 2, 0
+	0x1338EF2 LocalSet 5
+	0x1338EF4 I32Const 4503100
+	0x1338EF9 I32Load 2, 0
+	0x1338EFC LocalSet 6
+	0x1338EFE I32Const 4503076
+	0x1338F03 I32Load 2, 0
+	0x1338F06 LocalSet 7
+	0x1338F08 I32Const 4427992
+	0x1338F0D I32Load 2, 0
+	0x1338F10 Call 72556
+	0x1338F14 LocalTee 8
+	0x1338F16 LocalGet 4
+	0x1338F18 If -1
+	0x1338F1A LocalGet 5
+	0x1338F1C Else
+	0x1338F1D LocalGet 6
+	0x1338F1F End
+	0x1338F20 LocalGet 7
+	0x1338F22 I32Const 0
+	0x1338F24 Call 57647
+	0x1338F28 LocalGet 8
+	0x1338F2A I32Const 0
+	0x1338F2C I32Const 4464652
+	0x1338F31 I32Load 2, 0
+	0x1338F34 Call 73899
+	0x1338F38 End
+	0x1338F39 LocalGet 1
+	0x1338F3B I32Const 12
+	0x1338F3D I32Add
+	0x1338F3E LocalTee 4
+	0x1338F40 I32Load 2, 0
+	0x1338F43 LocalGet 2
+	0x1338F45 I32Sub
+	0x1338F46 LocalGet 3
+	0x1338F48 I32Lt_S
+	0x1338F49 If -64
+	0x1338F4B I32Const 4511828
+	0x1338F50 I32Load 2, 0
+	0x1338F53 LocalSet 5
+	0x1338F55 I32Const 4427992
+	0x1338F5A I32Load 2, 0
+	0x1338F5D Call 72556
+	0x1338F61 LocalTee 6
+	0x1338F63 I32Const 4507892
+	0x1338F68 I32Load 2, 0
+	0x1338F6B LocalGet 5
+	0x1338F6D I32Const 0
+	0x1338F6F Call 57647
+	0x1338F73 LocalGet 6
+	0x1338F75 I32Const 0
+	0x1338F77 I32Const 4464652
+	0x1338F7C I32Load 2, 0
+	0x1338F7F Call 73899
+	0x1338F83 End
+	0x1338F84 LocalGet 4
+	0x1338F86 I32Load 2, 0
+	0x1338F89 If -1
+	0x1338F8B I32Const 14
+	0x1338F8D LocalGet 0
+	0x1338F8F LocalGet 2
+	0x1338F91 I32Const 1
+	0x1338F93 I32Shl
+	0x1338F94 LocalGet 1
+	0x1338F96 I32Const 16
+	0x1338F98 I32Add
+	0x1338F99 I32Add
+	0x1338F9A LocalGet 3
+	0x1338F9C I32Const 0
+	0x1338F9E Call 29450
+	0x1338FA2 Else
+	0x1338FA3 I32Const 0
+	0x1338FA5 End
+	0x1338FA6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b22
+	5 Nop
+	6 Move v5 @ S0_v48, [2E1FF8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v48
+	8 Nop
+	9 Move v7 @ S1_v25, 1
+	10 Move [45C418], v7 @ S1_v25
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), bytes @ L1 (System.Byte[]), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call 11B6C, v20 @ S0_v45 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid ArgumentNullException..ctor, v20 @ S0_v45 (System.ArgumentNullException), "chars", "Array cannot be null."
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid 120AB, v20 @ S0_v45 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetByteCount)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckGreater v39 @ S0_v9 (System.Boolean), count @ L3 (System.Int32), -1
+	37 Nop
+	38 Nop
+	39 CheckLess v43 @ S1_v5 (System.Boolean), index @ L2 (System.Int32), 0
+	40 Nop
+	41 Nop
+	42 Xor v46 @ S1_v6, v43 @ S1_v5 (System.Boolean), 1
+	43 And v47 @ S0_v10, v39 @ S0_v9 (System.Boolean), v46 @ S1_v6
+	44 CheckEqual v48 @ S0_v11 (System.Boolean), v47 @ S0_v10, 0
+	45 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S0_v11 (System.Boolean)
+	46 ConditionalJump @b14, v49 @ TEMP_v3 (System.Boolean)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Call 11B6C, v64 @ S0_v39 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	59 Nop
+	60 Nop
+	61 Not v80 @ TEMP_v7 (System.Boolean), v43 @ S1_v5 (System.Boolean)
+	62 ConditionalJump @b12, v80 @ TEMP_v7 (System.Boolean)
+	63 Nop
+	64 Jump @b23
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 CallVoid ArgumentOutOfRangeException.GetObjectData, v64 @ S0_v39 (System.ArgumentOutOfRangeException), v134 @ S1_v18 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 CallVoid 120AB, v64 @ S0_v39 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetByteCount)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Add v85 @ S0_v14, bytes @ L1 (System.Byte[]), 12
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Subtract v89 @ S0_v16, [v85 @ S0_v14], index @ L2 (System.Int32)
+	83 Nop
+	84 CheckLess v91 @ S0_v17 (System.Boolean), v89 @ S0_v16, count @ L3 (System.Int32)
+	85 Not v92 @ TEMP_v5 (System.Boolean), v91 @ S0_v17 (System.Boolean)
+	86 ConditionalJump @b18, v92 @ TEMP_v5 (System.Boolean)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Call 11B6C, v100 @ S0_v29 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 CallVoid ArgumentOutOfRangeException.GetObjectData, v100 @ S0_v29 (System.ArgumentOutOfRangeException), "chars", "Index and count must refer to a location within the buffer."
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 CallVoid 120AB, v100 @ S0_v29 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetByteCount)
+	104 Nop
+	105 Nop
+	106 Nop
+	107 CheckEqual v114 @ TEMP_v6 (System.Boolean), [v85 @ S0_v14], 0
+	108 ConditionalJump @b21, v114 @ TEMP_v6 (System.Boolean)
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 ShiftLeft v125 @ S2_v8 (System.Int32), index @ L2 (System.Int32), 1
+	114 Nop
+	115 Nop
+	116 Add v128 @ S3_v7, bytes @ L1 (System.Byte[]), 16
+	117 Add v129 @ S2_v9, v125 @ S2_v8 (System.Int32), v128 @ S3_v7
+	118 Nop
+	119 Nop
+	120 Call 730A, returnVal1 @ S0_v21 (System.Int32), 14, this @ L0 (System.Text.UTF7Encoding), v129 @ S2_v9, count @ L3 (System.Int32), 0
+	121 Jump @b24
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Return returnVal1 @ S0_v21 (System.Int32)
+
+Method: System.Int32 GetCharCount(System.Byte* bytes, System.Int32 count)
+
+Disassembly:
+	0x133901C I32Const 4572186
+	0x1339021 I32Load8_S 0, 0
+	0x1339024 I32Eqz
+	0x1339025 If -64
+	0x1339027 I32Const 3022836
+	0x133902C I32Load 2, 0
+	0x133902F Call 73003
+	0x1339033 I32Const 4572186
+	0x1339038 I32Const 1
+	0x133903A I32Store8 0, 0
+	0x133903D End
+	0x133903E LocalGet 1
+	0x1339040 I32Eqz
+	0x1339041 If -64
+	0x1339043 I32Const 4503480
+	0x1339048 I32Load 2, 0
+	0x133904B LocalSet 3
+	0x133904D I32Const 4427864
+	0x1339052 I32Load 2, 0
+	0x1339055 Call 72556
+	0x1339059 LocalTee 4
+	0x133905B I32Const 4507892
+	0x1339060 I32Load 2, 0
+	0x1339063 LocalGet 3
+	0x1339065 I32Const 0
+	0x1339067 Call 57736
+	0x133906B LocalGet 4
+	0x133906D I32Const 0
+	0x133906F I32Const 4464648
+	0x1339074 I32Load 2, 0
+	0x1339077 Call 73899
+	0x133907B End
+	0x133907C LocalGet 2
+	0x133907E I32Const 0
+	0x1339080 I32Lt_S
+	0x1339081 If -64
+	0x1339083 I32Const 4503076
+	0x1339088 I32Load 2, 0
+	0x133908B LocalSet 0
+	0x133908D I32Const 4427992
+	0x1339092 I32Load 2, 0
+	0x1339095 Call 72556
+	0x1339099 LocalTee 1
+	0x133909B I32Const 4503100
+	0x13390A0 I32Load 2, 0
+	0x13390A3 LocalGet 0
+	0x13390A5 I32Const 0
+	0x13390A7 Call 57647
+	0x13390AB LocalGet 1
+	0x13390AD I32Const 0
+	0x13390AF I32Const 4464648
+	0x13390B4 I32Load 2, 0
+	0x13390B7 Call 73899
+	0x13390BB Else
+	0x13390BC I32Const 14
+	0x13390BE LocalGet 0
+	0x13390C0 LocalGet 1
+	0x13390C2 LocalGet 2
+	0x13390C4 I32Const 0
+	0x13390C6 Call 29450
+	0x13390CA Return
+	0x13390CB End
+	0x13390CC I32Const 0
+	0x13390CE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b16
+	5 Nop
+	6 Move v5 @ S0_v27, [2E1FF4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v27
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45C41A], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), bytes @ L1 (System.Byte*), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call 11B6C, v20 @ S0_v24 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid ArgumentNullException..ctor, v20 @ S0_v24 (System.ArgumentNullException), "chars", "Array cannot be null."
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid 120AB, v20 @ S0_v24 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetByteCount)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckLess v39 @ S0_v9 (System.Boolean), count @ L2 (System.Int32), 0
+	37 Not v40 @ TEMP_v3 (System.Boolean), v39 @ S0_v9 (System.Boolean)
+	38 ConditionalJump @b13, v40 @ TEMP_v3 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Call 11B6C, v49 @ S0_v16 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CallVoid ArgumentOutOfRangeException.GetObjectData, v49 @ S0_v16 (System.ArgumentOutOfRangeException), "count", "Non-negative number required."
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 CallVoid 120AB, v49 @ S0_v16 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetByteCount)
+	56 Jump @b15
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Call 730A, returnVal1 @ S0_v11 (System.Int32), 14, this @ L0 (System.Text.UTF7Encoding), bytes @ L1 (System.Byte*), count @ L2 (System.Int32), 0
+	63 Return returnVal1 @ S0_v11 (System.Int32)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Return 0
+
+Method: System.Int32 GetChars(System.Byte[] bytes, System.Int32 byteIndex, System.Int32 byteCount, System.Char[] chars, System.Int32 charIndex)
+
+Disassembly:
+	0x13392B5 I32Const 4572188
+	0x13392BA I32Load8_S 0, 0
+	0x13392BD I32Eqz
+	0x13392BE If -64
+	0x13392C0 I32Const 3022848
+	0x13392C5 I32Load 2, 0
+	0x13392C8 Call 73003
+	0x13392CC I32Const 4572188
+	0x13392D1 I32Const 1
+	0x13392D3 I32Store8 0, 0
+	0x13392D6 End
+	0x13392D7 LocalGet 4
+	0x13392D9 I32Eqz
+	0x13392DA LocalGet 1
+	0x13392DC I32Const 0
+	0x13392DE I32Ne
+	0x13392DF LocalTee 6
+	0x13392E1 I32Const 1
+	0x13392E3 I32Xor
+	0x13392E4 I32Or
+	0x13392E5 If -64
+	0x13392E7 I32Const 4512032
+	0x13392EC I32Load 2, 0
+	0x13392EF LocalSet 8
+	0x13392F1 I32Const 4507892
+	0x13392F6 I32Load 2, 0
+	0x13392F9 LocalSet 7
+	0x13392FB I32Const 4503480
+	0x1339300 I32Load 2, 0
+	0x1339303 LocalSet 9
+	0x1339305 I32Const 4427864
+	0x133930A I32Load 2, 0
+	0x133930D Call 72556
+	0x1339311 LocalTee 10
+	0x1339313 LocalGet 6
+	0x1339315 If -1
+	0x1339317 LocalGet 8
+	0x1339319 Else
+	0x133931A LocalGet 7
+	0x133931C End
+	0x133931D LocalGet 9
+	0x133931F I32Const 0
+	0x1339321 Call 57736
+	0x1339325 LocalGet 10
+	0x1339327 I32Const 0
+	0x1339329 I32Const 4464664
+	0x133932E I32Load 2, 0
+	0x1339331 Call 73899
+	0x1339335 End
+	0x1339336 LocalGet 3
+	0x1339338 I32Const -1
+	0x133933A I32Gt_S
+	0x133933B LocalGet 2
+	0x133933D I32Const 0
+	0x133933F I32Lt_S
+	0x1339340 LocalTee 6
+	0x1339342 I32Const 1
+	0x1339344 I32Xor
+	0x1339345 I32And
+	0x1339346 I32Eqz
+	0x1339347 If -64
+	0x1339349 I32Const 4512036
+	0x133934E I32Load 2, 0
+	0x1339351 LocalSet 8
+	0x1339353 I32Const 4507896
+	0x1339358 I32Load 2, 0
+	0x133935B LocalSet 7
+	0x133935D I32Const 4503076
+	0x1339362 I32Load 2, 0
+	0x1339365 LocalSet 9
+	0x1339367 I32Const 4427992
+	0x133936C I32Load 2, 0
+	0x133936F Call 72556
+	0x1339373 LocalTee 10
+	0x1339375 LocalGet 6
+	0x1339377 If -1
+	0x1339379 LocalGet 8
+	0x133937B Else
+	0x133937C LocalGet 7
+	0x133937E End
+	0x133937F LocalGet 9
+	0x1339381 I32Const 0
+	0x1339383 Call 57647
+	0x1339387 LocalGet 10
+	0x1339389 I32Const 0
+	0x133938B I32Const 4464664
+	0x1339390 I32Load 2, 0
+	0x1339393 Call 73899
+	0x1339397 End
+	0x1339398 LocalGet 1
+	0x133939A I32Const 12
+	0x133939C I32Add
+	0x133939D LocalTee 6
+	0x133939F I32Load 2, 0
+	0x13393A2 LocalGet 2
+	0x13393A4 I32Sub
+	0x13393A5 LocalGet 3
+	0x13393A7 I32Lt_S
+	0x13393A8 If -64
+	0x13393AA I32Const 4511828
+	0x13393AF I32Load 2, 0
+	0x13393B2 LocalSet 8
+	0x13393B4 I32Const 4427992
+	0x13393B9 I32Load 2, 0
+	0x13393BC Call 72556
+	0x13393C0 LocalTee 7
+	0x13393C2 I32Const 4507892
+	0x13393C7 I32Load 2, 0
+	0x13393CA LocalGet 8
+	0x13393CC I32Const 0
+	0x13393CE Call 57647
+	0x13393D2 LocalGet 7
+	0x13393D4 I32Const 0
+	0x13393D6 I32Const 4464664
+	0x13393DB I32Load 2, 0
+	0x13393DE Call 73899
+	0x13393E2 End
+	0x13393E3 LocalGet 5
+	0x13393E5 I32Const 0
+	0x13393E7 I32Ge_S
+	0x13393E8 If -64
+	0x13393EA LocalGet 4
+	0x13393EC I32Const 12
+	0x13393EE I32Add
+	0x13393EF LocalTee 8
+	0x13393F1 I32Load 2, 0
+	0x13393F4 LocalTee 7
+	0x13393F6 LocalGet 5
+	0x13393F8 I32Ge_S
+	0x13393F9 If -64
+	0x13393FB LocalGet 6
+	0x13393FD I32Load 2, 0
+	0x1339400 If -1
+	0x1339402 LocalGet 7
+	0x1339404 LocalGet 5
+	0x1339406 I32Sub
+	0x1339407 LocalSet 7
+	0x1339409 LocalGet 8
+	0x133940B I32Load 2, 0
+	0x133940E I32Eqz
+	0x133940F If -64
+	0x1339411 I32Const 4427832
+	0x1339416 I32Load 2, 0
+	0x1339419 I32Const 1
+	0x133941B Call 71670
+	0x133941F LocalSet 4
+	0x1339421 End
+	0x1339422 I32Const 20
+	0x1339424 LocalGet 0
+	0x1339426 LocalGet 2
+	0x1339428 I32Const 1
+	0x133942A I32Shl
+	0x133942B LocalGet 6
+	0x133942D I32Load 2, 0
+	0x1339430 If -1
+	0x1339432 LocalGet 1
+	0x1339434 I32Const 16
+	0x1339436 I32Add
+	0x1339437 Else
+	0x1339438 I32Const 0
+	0x133943A End
+	0x133943B I32Add
+	0x133943C LocalGet 3
+	0x133943E LocalGet 5
+	0x1339440 LocalGet 4
+	0x1339442 If -1
+	0x1339444 LocalGet 4
+	0x1339446 I32Load 2, 12
+	0x1339449 If -1
+	0x133944B LocalGet 4
+	0x133944D I32Const 16
+	0x133944F I32Add
+	0x1339450 Else
+	0x1339451 I32Const 0
+	0x1339453 End
+	0x1339454 Else
+	0x1339455 I32Const 0
+	0x1339457 End
+	0x1339458 I32Add
+	0x1339459 LocalGet 7
+	0x133945B I32Const 0
+	0x133945D Call 42534
+	0x1339461 Else
+	0x1339462 I32Const 0
+	0x1339464 End
+	0x1339465 Return
+	0x1339466 End
+	0x1339467 End
+	0x1339468 I32Const 4503096
+	0x133946D I32Load 2, 0
+	0x1339470 LocalSet 0
+	0x1339472 I32Const 4427992
+	0x1339477 I32Load 2, 0
+	0x133947A Call 72556
+	0x133947E LocalTee 1
+	0x1339480 I32Const 4512040
+	0x1339485 I32Load 2, 0
+	0x1339488 LocalGet 0
+	0x133948A I32Const 0
+	0x133948C Call 57647
+	0x1339490 LocalGet 1
+	0x1339492 I32Const 0
+	0x1339494 I32Const 4464664
+	0x1339499 I32Load 2, 0
+	0x133949C Call 73899
+	0x13394A0 I32Const 0
+	0x13394A2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b38
+	5 Nop
+	6 Move v5 @ S0_v77, [2E2000]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v77
+	8 Nop
+	9 Move v7 @ S1_v41, 1
+	10 Move [45C41C], v7 @ S1_v41
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), chars @ L4 (System.Char[]), 0
+	14 Nop
+	15 Nop
+	16 CheckNotEqual v17 @ S1_v3 (System.Boolean), bytes @ L1 (System.Byte[]), 0
+	17 Nop
+	18 Nop
+	19 Xor v20 @ S1_v4, v17 @ S1_v3 (System.Boolean), 1
+	20 Or v21 @ S0_v7, v13 @ S0_v6 (System.Boolean), v20 @ S1_v4
+	21 CheckEqual v22 @ TEMP_v2 (System.Boolean), v21 @ S0_v7, 0
+	22 ConditionalJump @b10, v22 @ TEMP_v2 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call 11B6C, v34 @ S0_v74 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	35 Nop
+	36 Nop
+	37 Not v52 @ TEMP_v19 (System.Boolean), v17 @ S1_v3 (System.Boolean)
+	38 ConditionalJump @b8, v52 @ TEMP_v19 (System.Boolean)
+	39 Nop
+	40 Jump @b39
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid ArgumentNullException..ctor, v34 @ S0_v74 (System.ArgumentNullException), v132 @ S1_v37 (System.Runtime.Serialization.SerializationInfo), "Array cannot be null."
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CallVoid 120AB, v34 @ S0_v74 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CheckGreater v58 @ S0_v10 (System.Boolean), byteCount @ L3 (System.Int32), -1
+	55 Nop
+	56 Nop
+	57 CheckLess v62 @ S1_v8 (System.Boolean), byteIndex @ L2 (System.Int32), 0
+	58 Nop
+	59 Nop
+	60 Xor v65 @ S1_v9, v62 @ S1_v8 (System.Boolean), 1
+	61 And v66 @ S0_v11, v58 @ S0_v10 (System.Boolean), v65 @ S1_v9
+	62 CheckEqual v67 @ S0_v12 (System.Boolean), v66 @ S0_v11, 0
+	63 Not v68 @ TEMP_v4 (System.Boolean), v67 @ S0_v12 (System.Boolean)
+	64 ConditionalJump @b16, v68 @ TEMP_v4 (System.Boolean)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Call 11B6C, v81 @ S0_v64 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	77 Nop
+	78 Nop
+	79 Not v94 @ TEMP_v18 (System.Boolean), v62 @ S1_v8 (System.Boolean)
+	80 ConditionalJump @b14, v94 @ TEMP_v18 (System.Boolean)
+	81 Nop
+	82 Jump @b40
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 CallVoid ArgumentOutOfRangeException.GetObjectData, v81 @ S0_v64 (System.ArgumentOutOfRangeException), v160 @ S1_v32 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 CallVoid 120AB, v81 @ S0_v64 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Add v99 @ S0_v15, bytes @ L1 (System.Byte[]), 12
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Subtract v103 @ S0_v17, [v99 @ S0_v15], byteIndex @ L2 (System.Int32)
+	101 Nop
+	102 CheckLess v105 @ S0_v18 (System.Boolean), v103 @ S0_v17, byteCount @ L3 (System.Int32)
+	103 Not v106 @ TEMP_v6 (System.Boolean), v105 @ S0_v18 (System.Boolean)
+	104 ConditionalJump @b20, v106 @ TEMP_v6 (System.Boolean)
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Call 11B6C, v115 @ S0_v54 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 CallVoid ArgumentOutOfRangeException.GetObjectData, v115 @ S0_v54 (System.ArgumentOutOfRangeException), "chars", "Index and count must refer to a location within the buffer."
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 CallVoid 120AB, v115 @ S0_v54 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	122 Nop
+	123 Nop
+	124 Nop
+	125 CheckGreaterOrEqual v130 @ S0_v21 (System.Boolean), charIndex @ L5 (System.Int32), 0
+	126 Not v131 @ TEMP_v7 (System.Boolean), v130 @ S0_v21 (System.Boolean)
+	127 ConditionalJump @b41, v131 @ TEMP_v7 (System.Boolean)
+	128 Nop
+	129 Nop
+	130 Add v141 @ S0_v31, chars @ L4 (System.Char[]), 12
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 CheckGreaterOrEqual v146 @ S0_v33 (System.Boolean), [v141 @ S0_v31], charIndex @ L5 (System.Int32)
+	136 Not v147 @ TEMP_v9 (System.Boolean), v146 @ S0_v33 (System.Boolean)
+	137 ConditionalJump @b41, v147 @ TEMP_v9 (System.Boolean)
+	138 Nop
+	139 Nop
+	140 CheckEqual v165 @ TEMP_v10 (System.Boolean), [v99 @ S0_v15], 0
+	141 ConditionalJump @b33, v165 @ TEMP_v10 (System.Boolean)
+	142 Nop
+	143 Nop
+	144 Subtract v174 @ S0_v39, [v141 @ S0_v31], charIndex @ L5 (System.Int32)
+	145 Nop
+	146 Nop
+	147 Nop
+	148 CheckEqual v178 @ S0_v42 (System.Boolean), [v141 @ S0_v31], 0
+	149 Not v179 @ TEMP_v12 (System.Boolean), v178 @ S0_v42 (System.Boolean)
+	150 ConditionalJump @b42, v179 @ TEMP_v12 (System.Boolean)
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Newobj v188 @ S0_v48 (System.OverflowException), typeof(System.OverflowException)
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 ShiftLeft v198 @ S2_v13 (System.Int32), byteIndex @ L2 (System.Int32), 1
+	162 Nop
+	163 Nop
+	164 CheckEqual v201 @ TEMP_v13 (System.Boolean), [v99 @ S0_v15], 0
+	165 ConditionalJump @b27, v201 @ TEMP_v13 (System.Boolean)
+	166 Nop
+	167 Nop
+	168 Add v241 @ S3_v9, bytes @ L1 (System.Byte[]), 16
+	169 Jump @b43
+	170 Nop
+	171 Nop
+	172 Add v215 @ S2_v14, v198 @ S2_v13 (System.Int32), v241 @ S3_v9
+	173 Nop
+	174 Nop
+	175 Nop
+	176 CheckEqual v244 @ TEMP_v14 (System.Boolean), v189 @ L4_v2 (System.OverflowException), 0
+	177 ConditionalJump @b31, v244 @ TEMP_v14 (System.Boolean)
+	178 Nop
+	179 Nop
+	180 CheckEqual v247 @ TEMP_v16 (System.Boolean), v189._message (System.String), 0
+	181 ConditionalJump @b30, v247 @ TEMP_v16 (System.Boolean)
+	182 Nop
+	183 Nop
+	184 Add v255 @ S5_v3, v189 @ L4_v2 (System.OverflowException), 16
+	185 Jump @b44
+	186 Nop
+	187 Nop
+	188 Jump @b46
+	189 Nop
+	190 Nop
+	191 Add v210 @ S4_v4, charIndex @ L5 (System.Int32), v255 @ S5_v3
+	192 Nop
+	193 Nop
+	194 Call A626, returnVal1 @ S0_v36 (System.Int32), 20, this @ L0 (System.Text.UTF7Encoding), v215 @ S2_v14, byteCount @ L3 (System.Int32), v210 @ S4_v4, v174 @ S0_v39, 0
+	195 Jump @b45
+	196 Nop
+	197 Nop
+	198 Return returnVal1 @ S0_v36 (System.Int32)
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Call 11B6C, v158 @ S0_v27 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Nop
+	212 CallVoid ArgumentOutOfRangeException.GetObjectData, v158 @ S0_v27 (System.ArgumentOutOfRangeException), "byteIndex", "Index was out of range. Must be non-negative and less than the size of the collection."
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 CallVoid 120AB, v158 @ S0_v27 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	218 Nop
+	219 Nop
+	220 Return 0
+
+Method: System.Int32 GetChars(System.Byte* bytes, System.Int32 byteCount, System.Char* chars, System.Int32 charCount)
+
+Disassembly:
+	0x13394A8 I32Const 4572189
+	0x13394AD I32Load8_S 0, 0
+	0x13394B0 I32Eqz
+	0x13394B1 If -64
+	0x13394B3 I32Const 3022856
+	0x13394B8 I32Load 2, 0
+	0x13394BB Call 73003
+	0x13394BF I32Const 4572189
+	0x13394C4 I32Const 1
+	0x13394C6 I32Store8 0, 0
+	0x13394C9 End
+	0x13394CA LocalGet 1
+	0x13394CC I32Eqz
+	0x13394CD LocalGet 3
+	0x13394CF I32Eqz
+	0x13394D0 LocalTee 5
+	0x13394D2 I32Or
+	0x13394D3 If -64
+	0x13394D5 I32Const 4512032
+	0x13394DA I32Load 2, 0
+	0x13394DD LocalSet 6
+	0x13394DF I32Const 4507892
+	0x13394E4 I32Load 2, 0
+	0x13394E7 LocalSet 7
+	0x13394E9 I32Const 4503480
+	0x13394EE I32Load 2, 0
+	0x13394F1 LocalSet 8
+	0x13394F3 I32Const 4427864
+	0x13394F8 I32Load 2, 0
+	0x13394FB Call 72556
+	0x13394FF LocalTee 9
+	0x1339501 LocalGet 5
+	0x1339503 If -1
+	0x1339505 LocalGet 6
+	0x1339507 Else
+	0x1339508 LocalGet 7
+	0x133950A End
+	0x133950B LocalGet 8
+	0x133950D I32Const 0
+	0x133950F Call 57736
+	0x1339513 LocalGet 9
+	0x1339515 I32Const 0
+	0x1339517 I32Const 4464660
+	0x133951C I32Load 2, 0
+	0x133951F Call 73899
+	0x1339523 End
+	0x1339524 LocalGet 4
+	0x1339526 I32Const -1
+	0x1339528 I32Gt_S
+	0x1339529 LocalGet 2
+	0x133952B I32Const 0
+	0x133952D I32Lt_S
+	0x133952E LocalTee 5
+	0x1339530 I32Const 1
+	0x1339532 I32Xor
+	0x1339533 I32And
+	0x1339534 If -64
+	0x1339536 I32Const 20
+	0x1339538 LocalGet 0
+	0x133953A LocalGet 1
+	0x133953C LocalGet 2
+	0x133953E LocalGet 3
+	0x1339540 LocalGet 4
+	0x1339542 I32Const 0
+	0x1339544 Call 42534
+	0x1339548 Return
+	0x1339549 Else
+	0x133954A I32Const 4507896
+	0x133954F I32Load 2, 0
+	0x1339552 LocalSet 0
+	0x1339554 I32Const 4507852
+	0x1339559 I32Load 2, 0
+	0x133955C LocalSet 1
+	0x133955E I32Const 4503076
+	0x1339563 I32Load 2, 0
+	0x1339566 LocalSet 2
+	0x1339568 I32Const 4427992
+	0x133956D I32Load 2, 0
+	0x1339570 Call 72556
+	0x1339574 LocalTee 3
+	0x1339576 LocalGet 5
+	0x1339578 If -1
+	0x133957A LocalGet 0
+	0x133957C Else
+	0x133957D LocalGet 1
+	0x133957F End
+	0x1339580 LocalGet 2
+	0x1339582 I32Const 0
+	0x1339584 Call 57647
+	0x1339588 LocalGet 3
+	0x133958A I32Const 0
+	0x133958C I32Const 4464660
+	0x1339591 I32Load 2, 0
+	0x1339594 Call 73899
+	0x1339598 End
+	0x1339599 I32Const 0
+	0x133959B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v37, [2E2008]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v37
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [45C41D], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), bytes @ L1 (System.Byte*), 0
+	14 Nop
+	15 CheckEqual v16 @ S1_v3 (System.Boolean), chars @ L3 (System.Char*), 0
+	16 Nop
+	17 Or v18 @ S0_v7, v13 @ S0_v6 (System.Boolean), v16 @ S1_v3 (System.Boolean)
+	18 CheckEqual v19 @ TEMP_v2 (System.Boolean), v18 @ S0_v7, 0
+	19 ConditionalJump @b10, v19 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call 11B6C, v31 @ S0_v34 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	32 Nop
+	33 Nop
+	34 Not v50 @ TEMP_v7 (System.Boolean), v16 @ S1_v3 (System.Boolean)
+	35 ConditionalJump @b8, v50 @ TEMP_v7 (System.Boolean)
+	36 Nop
+	37 Jump @b20
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid ArgumentNullException..ctor, v31 @ S0_v34 (System.ArgumentNullException), v93 @ S1_v17 (System.Runtime.Serialization.SerializationInfo), "Array cannot be null."
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 CallVoid 120AB, v31 @ S0_v34 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CheckGreater v56 @ S0_v10 (System.Boolean), charCount @ L4 (System.Int32), -1
+	52 Nop
+	53 Nop
+	54 CheckLess v60 @ S1_v7 (System.Boolean), byteCount @ L2 (System.Int32), 0
+	55 Nop
+	56 Nop
+	57 Xor v63 @ S1_v8, v60 @ S1_v7 (System.Boolean), 1
+	58 And v64 @ S0_v11, v56 @ S0_v10 (System.Boolean), v63 @ S1_v8
+	59 CheckEqual v65 @ TEMP_v4 (System.Boolean), v64 @ S0_v11, 0
+	60 ConditionalJump @b13, v65 @ TEMP_v4 (System.Boolean)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Call A626, returnVal1 @ S0_v24 (System.Int32), 20, this @ L0 (System.Text.UTF7Encoding), bytes @ L1 (System.Byte*), byteCount @ L2 (System.Int32), chars @ L3 (System.Char*), charCount @ L4 (System.Int32), 0
+	69 Return returnVal1 @ S0_v24 (System.Int32)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Call 11B6C, v87 @ S0_v20 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	82 Nop
+	83 Nop
+	84 Not v92 @ TEMP_v5 (System.Boolean), v60 @ S1_v7 (System.Boolean)
+	85 ConditionalJump @b16, v92 @ TEMP_v5 (System.Boolean)
+	86 Nop
+	87 Jump @b21
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 CallVoid ArgumentOutOfRangeException.GetObjectData, v87 @ S0_v20 (System.ArgumentOutOfRangeException), v117 @ S1_v10 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 CallVoid 120AB, v87 @ S0_v20 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetBytes)
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Return 0
+
+Method: System.String GetString(System.Byte[] bytes, System.Int32 index, System.Int32 count)
+
+Disassembly:
+	0x13395A1 I32Const 4572190
+	0x13395A6 I32Load8_S 0, 0
+	0x13395A9 I32Eqz
+	0x13395AA If -64
+	0x13395AC I32Const 3022868
+	0x13395B1 I32Load 2, 0
+	0x13395B4 Call 73003
+	0x13395B8 I32Const 4572190
+	0x13395BD I32Const 1
+	0x13395BF I32Store8 0, 0
+	0x13395C2 End
+	0x13395C3 LocalGet 1
+	0x13395C5 I32Eqz
+	0x13395C6 If -64
+	0x13395C8 I32Const 4503480
+	0x13395CD I32Load 2, 0
+	0x13395D0 LocalSet 4
+	0x13395D2 I32Const 4427864
+	0x13395D7 I32Load 2, 0
+	0x13395DA Call 72556
+	0x13395DE LocalTee 5
+	0x13395E0 I32Const 4512032
+	0x13395E5 I32Load 2, 0
+	0x13395E8 LocalGet 4
+	0x13395EA I32Const 0
+	0x13395EC Call 57736
+	0x13395F0 LocalGet 5
+	0x13395F2 I32Const 0
+	0x13395F4 I32Const 4464676
+	0x13395F9 I32Load 2, 0
+	0x13395FC Call 73899
+	0x1339600 End
+	0x1339601 LocalGet 3
+	0x1339603 I32Const -1
+	0x1339605 I32Gt_S
+	0x1339606 LocalGet 2
+	0x1339608 I32Const 0
+	0x133960A I32Lt_S
+	0x133960B LocalTee 4
+	0x133960D I32Const 1
+	0x133960F I32Xor
+	0x1339610 I32And
+	0x1339611 I32Eqz
+	0x1339612 If -64
+	0x1339614 I32Const 4503052
+	0x1339619 I32Load 2, 0
+	0x133961C LocalSet 5
+	0x133961E I32Const 4503100
+	0x1339623 I32Load 2, 0
+	0x1339626 LocalSet 6
+	0x1339628 I32Const 4503076
+	0x133962D I32Load 2, 0
+	0x1339630 LocalSet 7
+	0x1339632 I32Const 4427992
+	0x1339637 I32Load 2, 0
+	0x133963A Call 72556
+	0x133963E LocalTee 8
+	0x1339640 LocalGet 4
+	0x1339642 If -1
+	0x1339644 LocalGet 5
+	0x1339646 Else
+	0x1339647 LocalGet 6
+	0x1339649 End
+	0x133964A LocalGet 7
+	0x133964C I32Const 0
+	0x133964E Call 57647
+	0x1339652 LocalGet 8
+	0x1339654 I32Const 0
+	0x1339656 I32Const 4464676
+	0x133965B I32Load 2, 0
+	0x133965E Call 73899
+	0x1339662 End
+	0x1339663 LocalGet 1
+	0x1339665 I32Const 12
+	0x1339667 I32Add
+	0x1339668 LocalTee 4
+	0x133966A I32Load 2, 0
+	0x133966D LocalGet 2
+	0x133966F I32Sub
+	0x1339670 LocalGet 3
+	0x1339672 I32Lt_S
+	0x1339673 If -64
+	0x1339675 I32Const 4511828
+	0x133967A I32Load 2, 0
+	0x133967D LocalSet 5
+	0x133967F I32Const 4427992
+	0x1339684 I32Load 2, 0
+	0x1339687 Call 72556
+	0x133968B LocalTee 6
+	0x133968D I32Const 4512032
+	0x1339692 I32Load 2, 0
+	0x1339695 LocalGet 5
+	0x1339697 I32Const 0
+	0x1339699 Call 57647
+	0x133969D LocalGet 6
+	0x133969F I32Const 0
+	0x13396A1 I32Const 4464676
+	0x13396A6 I32Load 2, 0
+	0x13396A9 Call 73899
+	0x13396AD End
+	0x13396AE LocalGet 4
+	0x13396B0 I32Load 2, 0
+	0x13396B3 If -1
+	0x13396B5 I32Const 25
+	0x13396B7 LocalGet 0
+	0x13396B9 LocalGet 2
+	0x13396BB LocalGet 1
+	0x13396BD I32Const 16
+	0x13396BF I32Add
+	0x13396C0 I32Add
+	0x13396C1 LocalGet 3
+	0x13396C3 I32Const 0
+	0x13396C5 Call 29450
+	0x13396C9 Else
+	0x13396CA I32Const 0
+	0x13396CC End
+	0x13396CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b22
+	5 Nop
+	6 Move v5 @ S0_v48, [2E2014]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v48
+	8 Nop
+	9 Move v7 @ S1_v25, 1
+	10 Move [45C41E], v7 @ S1_v25
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), bytes @ L1 (System.Byte[]), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call 11B6C, v20 @ S0_v45 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid ArgumentNullException..ctor, v20 @ S0_v45 (System.ArgumentNullException), "bytes", "Array cannot be null."
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid 120AB, v20 @ S0_v45 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetCharCount)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckGreater v39 @ S0_v9 (System.Boolean), count @ L3 (System.Int32), -1
+	37 Nop
+	38 Nop
+	39 CheckLess v43 @ S1_v5 (System.Boolean), index @ L2 (System.Int32), 0
+	40 Nop
+	41 Nop
+	42 Xor v46 @ S1_v6, v43 @ S1_v5 (System.Boolean), 1
+	43 And v47 @ S0_v10, v39 @ S0_v9 (System.Boolean), v46 @ S1_v6
+	44 CheckEqual v48 @ S0_v11 (System.Boolean), v47 @ S0_v10, 0
+	45 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S0_v11 (System.Boolean)
+	46 ConditionalJump @b14, v49 @ TEMP_v3 (System.Boolean)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Call 11B6C, v64 @ S0_v39 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	59 Nop
+	60 Nop
+	61 Not v80 @ TEMP_v7 (System.Boolean), v43 @ S1_v5 (System.Boolean)
+	62 ConditionalJump @b12, v80 @ TEMP_v7 (System.Boolean)
+	63 Nop
+	64 Jump @b23
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 CallVoid ArgumentOutOfRangeException.GetObjectData, v64 @ S0_v39 (System.ArgumentOutOfRangeException), v132 @ S1_v18 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 CallVoid 120AB, v64 @ S0_v39 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetCharCount)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Add v85 @ S0_v14, bytes @ L1 (System.Byte[]), 12
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Subtract v89 @ S0_v16, [v85 @ S0_v14], index @ L2 (System.Int32)
+	83 Nop
+	84 CheckLess v91 @ S0_v17 (System.Boolean), v89 @ S0_v16, count @ L3 (System.Int32)
+	85 Not v92 @ TEMP_v5 (System.Boolean), v91 @ S0_v17 (System.Boolean)
+	86 ConditionalJump @b18, v92 @ TEMP_v5 (System.Boolean)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Call 11B6C, v100 @ S0_v29 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 CallVoid ArgumentOutOfRangeException.GetObjectData, v100 @ S0_v29 (System.ArgumentOutOfRangeException), "bytes", "Index and count must refer to a location within the buffer."
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 CallVoid 120AB, v100 @ S0_v29 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetCharCount)
+	104 Nop
+	105 Nop
+	106 Nop
+	107 CheckEqual v114 @ TEMP_v6 (System.Boolean), [v85 @ S0_v14], 0
+	108 ConditionalJump @b21, v114 @ TEMP_v6 (System.Boolean)
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Add v126 @ S3_v6, bytes @ L1 (System.Byte[]), 16
+	115 Add v127 @ S2_v8, index @ L2 (System.Int32), v126 @ S3_v6
+	116 Nop
+	117 Nop
+	118 Call 730A, returnVal1 @ S0_v21 (System.String), 25, this @ L0 (System.Text.UTF7Encoding), v127 @ S2_v8, count @ L3 (System.Int32), 0
+	119 Jump @b24
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Return returnVal1 @ S0_v21 (System.String)
+
+Method: System.Int32 GetByteCount(System.Char* chars, System.Int32 count, System.Text.EncoderNLS baseEncoder)
+
+Disassembly:
+	0x1339A77 I32Const 4572194
+	0x1339A7C I32Load8_S 0, 0
+	0x1339A7F I32Eqz
+	0x1339A80 If -64
+	0x1339A82 I32Const 3022900
+	0x1339A87 I32Load 2, 0
+	0x1339A8A Call 73003
+	0x1339A8E I32Const 4572194
+	0x1339A93 I32Const 1
+	0x1339A95 I32Store8 0, 0
+	0x1339A98 End
+	0x1339A99 LocalGet 1
+	0x1339A9B I32Eqz
+	0x1339A9C If -64
+	0x1339A9E I32Const 4503480
+	0x1339AA3 I32Load 2, 0
+	0x1339AA6 LocalSet 4
+	0x1339AA8 I32Const 4427864
+	0x1339AAD I32Load 2, 0
+	0x1339AB0 Call 72556
+	0x1339AB4 LocalTee 5
+	0x1339AB6 I32Const 4512032
+	0x1339ABB I32Load 2, 0
+	0x1339ABE LocalGet 4
+	0x1339AC0 I32Const 0
+	0x1339AC2 Call 57736
+	0x1339AC6 LocalGet 5
+	0x1339AC8 I32Const 0
+	0x1339ACA I32Const 4468544
+	0x1339ACF I32Load 2, 0
+	0x1339AD2 Call 73899
+	0x1339AD6 End
+	0x1339AD7 LocalGet 3
+	0x1339AD9 I32Const -1
+	0x1339ADB I32Gt_S
+	0x1339ADC LocalGet 2
+	0x1339ADE I32Const 0
+	0x1339AE0 I32Lt_S
+	0x1339AE1 LocalTee 4
+	0x1339AE3 I32Const 1
+	0x1339AE5 I32Xor
+	0x1339AE6 I32And
+	0x1339AE7 I32Eqz
+	0x1339AE8 If -64
+	0x1339AEA I32Const 4503052
+	0x1339AEF I32Load 2, 0
+	0x1339AF2 LocalSet 5
+	0x1339AF4 I32Const 4503100
+	0x1339AF9 I32Load 2, 0
+	0x1339AFC LocalSet 6
+	0x1339AFE I32Const 4503076
+	0x1339B03 I32Load 2, 0
+	0x1339B06 LocalSet 7
+	0x1339B08 I32Const 4427992
+	0x1339B0D I32Load 2, 0
+	0x1339B10 Call 72556
+	0x1339B14 LocalTee 8
+	0x1339B16 LocalGet 4
+	0x1339B18 If -1
+	0x1339B1A LocalGet 5
+	0x1339B1C Else
+	0x1339B1D LocalGet 6
+	0x1339B1F End
+	0x1339B20 LocalGet 7
+	0x1339B22 I32Const 0
+	0x1339B24 Call 57647
+	0x1339B28 LocalGet 8
+	0x1339B2A I32Const 0
+	0x1339B2C I32Const 4468544
+	0x1339B31 I32Load 2, 0
+	0x1339B34 Call 73899
+	0x1339B38 End
+	0x1339B39 LocalGet 1
+	0x1339B3B I32Const 12
+	0x1339B3D I32Add
+	0x1339B3E LocalTee 4
+	0x1339B40 I32Load 2, 0
+	0x1339B43 LocalGet 2
+	0x1339B45 I32Sub
+	0x1339B46 LocalGet 3
+	0x1339B48 I32Lt_S
+	0x1339B49 If -64
+	0x1339B4B I32Const 4511828
+	0x1339B50 I32Load 2, 0
+	0x1339B53 LocalSet 5
+	0x1339B55 I32Const 4427992
+	0x1339B5A I32Load 2, 0
+	0x1339B5D Call 72556
+	0x1339B61 LocalTee 6
+	0x1339B63 I32Const 4512032
+	0x1339B68 I32Load 2, 0
+	0x1339B6B LocalGet 5
+	0x1339B6D I32Const 0
+	0x1339B6F Call 57647
+	0x1339B73 LocalGet 6
+	0x1339B75 I32Const 0
+	0x1339B77 I32Const 4468544
+	0x1339B7C I32Load 2, 0
+	0x1339B7F Call 73899
+	0x1339B83 End
+	0x1339B84 LocalGet 4
+	0x1339B86 I32Load 2, 0
+	0x1339B89 If -1
+	0x1339B8B LocalGet 2
+	0x1339B8D LocalGet 1
+	0x1339B8F I32Const 16
+	0x1339B91 I32Add
+	0x1339B92 I32Add
+	0x1339B93 LocalGet 3
+	0x1339B95 LocalGet 0
+	0x1339B97 I32Const 0
+	0x1339B99 Call 55841
+	0x1339B9D Else
+	0x1339B9E I32Const 4427772
+	0x1339BA3 I32Load 2, 0
+	0x1339BA6 I32Load 2, 92
+	0x1339BA9 I32Load 2, 0
+	0x1339BAC End
+	0x1339BAD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b22
+	5 Nop
+	6 Move v5 @ S0_v52, [2E2034]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v52
+	8 Nop
+	9 Move v7 @ S1_v27, 1
+	10 Move [45C422], v7 @ S1_v27
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), chars @ L1 (System.Char*), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call 11B6C, v20 @ S0_v49 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid ArgumentNullException..ctor, v20 @ S0_v49 (System.ArgumentNullException), "bytes", "Array cannot be null."
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid 120AB, v20 @ S0_v49 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetString)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckGreater v39 @ S0_v9 (System.Boolean), baseEncoder @ L3 (System.Text.EncoderNLS), -1
+	37 Nop
+	38 Nop
+	39 CheckLess v43 @ S1_v5 (System.Boolean), count @ L2 (System.Int32), 0
+	40 Nop
+	41 Nop
+	42 Xor v46 @ S1_v6, v43 @ S1_v5 (System.Boolean), 1
+	43 And v47 @ S0_v10, v39 @ S0_v9 (System.Boolean), v46 @ S1_v6
+	44 CheckEqual v48 @ S0_v11 (System.Boolean), v47 @ S0_v10, 0
+	45 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S0_v11 (System.Boolean)
+	46 ConditionalJump @b14, v49 @ TEMP_v3 (System.Boolean)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Call 11B6C, v64 @ S0_v43 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	59 Nop
+	60 Nop
+	61 Not v80 @ TEMP_v7 (System.Boolean), v43 @ S1_v5 (System.Boolean)
+	62 ConditionalJump @b12, v80 @ TEMP_v7 (System.Boolean)
+	63 Nop
+	64 Jump @b23
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 CallVoid ArgumentOutOfRangeException.GetObjectData, v64 @ S0_v43 (System.ArgumentOutOfRangeException), v134 @ S1_v20 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 CallVoid 120AB, v64 @ S0_v43 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetString)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Add v85 @ S0_v14, chars @ L1 (System.Char*), 12
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Subtract v89 @ S0_v16, [v85 @ S0_v14], count @ L2 (System.Int32)
+	83 Nop
+	84 CheckLess v91 @ S0_v17 (System.Boolean), v89 @ S0_v16, baseEncoder @ L3 (System.Text.EncoderNLS)
+	85 Not v92 @ TEMP_v5 (System.Boolean), v91 @ S0_v17 (System.Boolean)
+	86 ConditionalJump @b18, v92 @ TEMP_v5 (System.Boolean)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Call 11B6C, v100 @ S0_v33 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 CallVoid ArgumentOutOfRangeException.GetObjectData, v100 @ S0_v33 (System.ArgumentOutOfRangeException), "bytes", "Index and count must refer to a location within the buffer."
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 CallVoid 120AB, v100 @ S0_v33 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetString)
+	104 Nop
+	105 Nop
+	106 Nop
+	107 CheckEqual v114 @ TEMP_v6 (System.Boolean), [v85 @ S0_v14], 0
+	108 ConditionalJump @b21, v114 @ TEMP_v6 (System.Boolean)
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Add v123 @ S1_v14, chars @ L1 (System.Char*), 16
+	113 Add v124 @ S0_v27 (System.String), count @ L2 (System.Int32), v123 @ S1_v14
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Call String.Compare, returnVal1 @ S0_v21 (System.Int32), v124 @ S0_v27 (System.String), baseEncoder @ L3 (System.Text.EncoderNLS), this @ L0 (System.Text.UTF7Encoding)
+	118 Jump @b24
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Move returnVal1 @ S0_v21 (System.Int32), v132.Empty (System.String)
+	123 Nop
+	124 Nop
+	125 Return returnVal1 @ S0_v21 (System.Int32)
+
+Method: System.Int32 GetBytes(System.Char* chars, System.Int32 charCount, System.Byte* bytes, System.Int32 byteCount, System.Text.EncoderNLS baseEncoder)
+
+Disassembly:
+	0x133978B I32Const 4572192
+	0x1339790 I32Load8_S 0, 0
+	0x1339793 I32Eqz
+	0x1339794 If -64
+	0x1339796 I32Const 3022880
+	0x133979B I32Load 2, 0
+	0x133979E Call 73003
+	0x13397A2 I32Const 4572192
+	0x13397A7 I32Const 1
+	0x13397A9 I32Store8 0, 0
+	0x13397AC End
+	0x13397AD LocalGet 4
+	0x13397AF I32Eqz
+	0x13397B0 LocalGet 1
+	0x13397B2 I32Const 0
+	0x13397B4 I32Ne
+	0x13397B5 LocalTee 6
+	0x13397B7 I32Const 1
+	0x13397B9 I32Xor
+	0x13397BA I32Or
+	0x13397BB If -64
+	0x13397BD I32Const 4507892
+	0x13397C2 I32Load 2, 0
+	0x13397C5 LocalSet 8
+	0x13397C7 I32Const 4512032
+	0x13397CC I32Load 2, 0
+	0x13397CF LocalSet 7
+	0x13397D1 I32Const 4503480
+	0x13397D6 I32Load 2, 0
+	0x13397D9 LocalSet 9
+	0x13397DB I32Const 4427864
+	0x13397E0 I32Load 2, 0
+	0x13397E3 Call 72556
+	0x13397E7 LocalTee 10
+	0x13397E9 LocalGet 6
+	0x13397EB If -1
+	0x13397ED LocalGet 8
+	0x13397EF Else
+	0x13397F0 LocalGet 7
+	0x13397F2 End
+	0x13397F3 LocalGet 9
+	0x13397F5 I32Const 0
+	0x13397F7 Call 57736
+	0x13397FB LocalGet 10
+	0x13397FD I32Const 0
+	0x13397FF I32Const 4464684
+	0x1339804 I32Load 2, 0
+	0x1339807 Call 73899
+	0x133980B End
+	0x133980C LocalGet 3
+	0x133980E I32Const -1
+	0x1339810 I32Gt_S
+	0x1339811 LocalGet 2
+	0x1339813 I32Const 0
+	0x1339815 I32Lt_S
+	0x1339816 LocalTee 6
+	0x1339818 I32Const 1
+	0x133981A I32Xor
+	0x133981B I32And
+	0x133981C I32Eqz
+	0x133981D If -64
+	0x133981F I32Const 4512040
+	0x1339824 I32Load 2, 0
+	0x1339827 LocalSet 8
+	0x1339829 I32Const 4507852
+	0x133982E I32Load 2, 0
+	0x1339831 LocalSet 7
+	0x1339833 I32Const 4503076
+	0x1339838 I32Load 2, 0
+	0x133983B LocalSet 9
+	0x133983D I32Const 4427992
+	0x1339842 I32Load 2, 0
+	0x1339845 Call 72556
+	0x1339849 LocalTee 10
+	0x133984B LocalGet 6
+	0x133984D If -1
+	0x133984F LocalGet 8
+	0x1339851 Else
+	0x1339852 LocalGet 7
+	0x1339854 End
+	0x1339855 LocalGet 9
+	0x1339857 I32Const 0
+	0x1339859 Call 57647
+	0x133985D LocalGet 10
+	0x133985F I32Const 0
+	0x1339861 I32Const 4464684
+	0x1339866 I32Load 2, 0
+	0x1339869 Call 73899
+	0x133986D End
+	0x133986E LocalGet 1
+	0x1339870 I32Const 12
+	0x1339872 I32Add
+	0x1339873 LocalTee 6
+	0x1339875 I32Load 2, 0
+	0x1339878 LocalGet 2
+	0x133987A I32Sub
+	0x133987B LocalGet 3
+	0x133987D I32Lt_S
+	0x133987E If -64
+	0x1339880 I32Const 4511828
+	0x1339885 I32Load 2, 0
+	0x1339888 LocalSet 8
+	0x133988A I32Const 4427992
+	0x133988F I32Load 2, 0
+	0x1339892 Call 72556
+	0x1339896 LocalTee 7
+	0x1339898 I32Const 4512032
+	0x133989D I32Load 2, 0
+	0x13398A0 LocalGet 8
+	0x13398A2 I32Const 0
+	0x13398A4 Call 57647
+	0x13398A8 LocalGet 7
+	0x13398AA I32Const 0
+	0x13398AC I32Const 4464684
+	0x13398B1 I32Load 2, 0
+	0x13398B4 Call 73899
+	0x13398B8 End
+	0x13398B9 LocalGet 5
+	0x13398BB I32Const 0
+	0x13398BD I32Ge_S
+	0x13398BE If -64
+	0x13398C0 LocalGet 4
+	0x13398C2 I32Const 12
+	0x13398C4 I32Add
+	0x13398C5 LocalTee 8
+	0x13398C7 I32Load 2, 0
+	0x13398CA LocalTee 7
+	0x13398CC LocalGet 5
+	0x13398CE I32Ge_S
+	0x13398CF If -64
+	0x13398D1 LocalGet 6
+	0x13398D3 I32Load 2, 0
+	0x13398D6 If -1
+	0x13398D8 LocalGet 7
+	0x13398DA LocalGet 5
+	0x13398DC I32Sub
+	0x13398DD LocalSet 7
+	0x13398DF LocalGet 8
+	0x13398E1 I32Load 2, 0
+	0x13398E4 I32Eqz
+	0x13398E5 If -64
+	0x13398E7 I32Const 4427880
+	0x13398EC I32Load 2, 0
+	0x13398EF I32Const 1
+	0x13398F1 Call 71670
+	0x13398F5 LocalSet 4
+	0x13398F7 End
+	0x13398F8 I32Const 30
+	0x13398FA LocalGet 0
+	0x13398FC LocalGet 2
+	0x13398FE LocalGet 6
+	0x1339900 I32Load 2, 0
+	0x1339903 If -1
+	0x1339905 LocalGet 1
+	0x1339907 I32Const 16
+	0x1339909 I32Add
+	0x133990A Else
+	0x133990B I32Const 0
+	0x133990D End
+	0x133990E I32Add
+	0x133990F LocalGet 3
+	0x1339911 LocalGet 5
+	0x1339913 I32Const 1
+	0x1339915 I32Shl
+	0x1339916 LocalGet 4
+	0x1339918 If -1
+	0x133991A LocalGet 4
+	0x133991C I32Load 2, 12
+	0x133991F If -1
+	0x1339921 LocalGet 4
+	0x1339923 I32Const 16
+	0x1339925 I32Add
+	0x1339926 Else
+	0x1339927 I32Const 0
+	0x1339929 End
+	0x133992A Else
+	0x133992B I32Const 0
+	0x133992D End
+	0x133992E I32Add
+	0x133992F LocalGet 7
+	0x1339931 I32Const 0
+	0x1339933 Call 42534
+	0x1339937 Else
+	0x1339938 I32Const 0
+	0x133993A End
+	0x133993B Return
+	0x133993C End
+	0x133993D End
+	0x133993E I32Const 4503096
+	0x1339943 I32Load 2, 0
+	0x1339946 LocalSet 0
+	0x1339948 I32Const 4427992
+	0x133994D I32Load 2, 0
+	0x1339950 Call 72556
+	0x1339954 LocalTee 1
+	0x1339956 I32Const 4512036
+	0x133995B I32Load 2, 0
+	0x133995E LocalGet 0
+	0x1339960 I32Const 0
+	0x1339962 Call 57647
+	0x1339966 LocalGet 1
+	0x1339968 I32Const 0
+	0x133996A I32Const 4464684
+	0x133996F I32Load 2, 0
+	0x1339972 Call 73899
+	0x1339976 I32Const 0
+	0x1339978 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b38
+	5 Nop
+	6 Move v5 @ S0_v77, [2E2020]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v77
+	8 Nop
+	9 Move v7 @ S1_v41, 1
+	10 Move [45C420], v7 @ S1_v41
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), byteCount @ L4 (System.Int32), 0
+	14 Nop
+	15 Nop
+	16 CheckNotEqual v17 @ S1_v3 (System.Boolean), chars @ L1 (System.Char*), 0
+	17 Nop
+	18 Nop
+	19 Xor v20 @ S1_v4, v17 @ S1_v3 (System.Boolean), 1
+	20 Or v21 @ S0_v7, v13 @ S0_v6 (System.Boolean), v20 @ S1_v4
+	21 CheckEqual v22 @ TEMP_v2 (System.Boolean), v21 @ S0_v7, 0
+	22 ConditionalJump @b10, v22 @ TEMP_v2 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call 11B6C, v34 @ S0_v74 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	35 Nop
+	36 Nop
+	37 Not v52 @ TEMP_v19 (System.Boolean), v17 @ S1_v3 (System.Boolean)
+	38 ConditionalJump @b8, v52 @ TEMP_v19 (System.Boolean)
+	39 Nop
+	40 Jump @b39
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid ArgumentNullException..ctor, v34 @ S0_v74 (System.ArgumentNullException), v132 @ S1_v37 (System.Runtime.Serialization.SerializationInfo), "Array cannot be null."
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CallVoid 120AB, v34 @ S0_v74 (System.ArgumentNullException), 0, methodof(System.Text.UTF7Encoding::GetChars)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CheckGreater v58 @ S0_v10 (System.Boolean), bytes @ L3 (System.Byte*), -1
+	55 Nop
+	56 Nop
+	57 CheckLess v62 @ S1_v8 (System.Boolean), charCount @ L2 (System.Int32), 0
+	58 Nop
+	59 Nop
+	60 Xor v65 @ S1_v9, v62 @ S1_v8 (System.Boolean), 1
+	61 And v66 @ S0_v11, v58 @ S0_v10 (System.Boolean), v65 @ S1_v9
+	62 CheckEqual v67 @ S0_v12 (System.Boolean), v66 @ S0_v11, 0
+	63 Not v68 @ TEMP_v4 (System.Boolean), v67 @ S0_v12 (System.Boolean)
+	64 ConditionalJump @b16, v68 @ TEMP_v4 (System.Boolean)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Call 11B6C, v81 @ S0_v64 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	77 Nop
+	78 Nop
+	79 Not v94 @ TEMP_v18 (System.Boolean), v62 @ S1_v8 (System.Boolean)
+	80 ConditionalJump @b14, v94 @ TEMP_v18 (System.Boolean)
+	81 Nop
+	82 Jump @b40
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 CallVoid ArgumentOutOfRangeException.GetObjectData, v81 @ S0_v64 (System.ArgumentOutOfRangeException), v160 @ S1_v32 (System.Runtime.Serialization.SerializationInfo), "Non-negative number required."
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 CallVoid 120AB, v81 @ S0_v64 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetChars)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Add v99 @ S0_v15, chars @ L1 (System.Char*), 12
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Subtract v103 @ S0_v17, [v99 @ S0_v15], charCount @ L2 (System.Int32)
+	101 Nop
+	102 CheckLess v105 @ S0_v18 (System.Boolean), v103 @ S0_v17, bytes @ L3 (System.Byte*)
+	103 Not v106 @ TEMP_v6 (System.Boolean), v105 @ S0_v18 (System.Boolean)
+	104 ConditionalJump @b20, v106 @ TEMP_v6 (System.Boolean)
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Call 11B6C, v115 @ S0_v54 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 CallVoid ArgumentOutOfRangeException.GetObjectData, v115 @ S0_v54 (System.ArgumentOutOfRangeException), "bytes", "Index and count must refer to a location within the buffer."
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 CallVoid 120AB, v115 @ S0_v54 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetChars)
+	122 Nop
+	123 Nop
+	124 Nop
+	125 CheckGreaterOrEqual v130 @ S0_v21 (System.Boolean), baseEncoder @ L5 (System.Text.EncoderNLS), 0
+	126 Not v131 @ TEMP_v7 (System.Boolean), v130 @ S0_v21 (System.Boolean)
+	127 ConditionalJump @b41, v131 @ TEMP_v7 (System.Boolean)
+	128 Nop
+	129 Nop
+	130 Add v141 @ S0_v31, byteCount @ L4 (System.Int32), 12
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 CheckGreaterOrEqual v146 @ S0_v33 (System.Boolean), [v141 @ S0_v31], baseEncoder @ L5 (System.Text.EncoderNLS)
+	136 Not v147 @ TEMP_v9 (System.Boolean), v146 @ S0_v33 (System.Boolean)
+	137 ConditionalJump @b41, v147 @ TEMP_v9 (System.Boolean)
+	138 Nop
+	139 Nop
+	140 CheckEqual v165 @ TEMP_v10 (System.Boolean), [v99 @ S0_v15], 0
+	141 ConditionalJump @b33, v165 @ TEMP_v10 (System.Boolean)
+	142 Nop
+	143 Nop
+	144 Subtract v174 @ S0_v39, [v141 @ S0_v31], baseEncoder @ L5 (System.Text.EncoderNLS)
+	145 Nop
+	146 Nop
+	147 Nop
+	148 CheckEqual v178 @ S0_v42 (System.Boolean), [v141 @ S0_v31], 0
+	149 Not v179 @ TEMP_v12 (System.Boolean), v178 @ S0_v42 (System.Boolean)
+	150 ConditionalJump @b42, v179 @ TEMP_v12 (System.Boolean)
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Newobj v188 @ S0_v48 (System.OverflowException), typeof(System.OverflowException)
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 CheckEqual v199 @ TEMP_v13 (System.Boolean), [v99 @ S0_v15], 0
+	163 ConditionalJump @b27, v199 @ TEMP_v13 (System.Boolean)
+	164 Nop
+	165 Nop
+	166 Add v239 @ S3_v8, chars @ L1 (System.Char*), 16
+	167 Jump @b43
+	168 Nop
+	169 Nop
+	170 Add v213 @ S2_v13, charCount @ L2 (System.Int32), v239 @ S3_v8
+	171 Nop
+	172 Nop
+	173 Nop
+	174 ShiftLeft v242 @ S4_v4, baseEncoder @ L5 (System.Text.EncoderNLS), 1
+	175 Nop
+	176 CheckEqual v244 @ TEMP_v14 (System.Boolean), v189 @ L4_v2 (System.OverflowException), 0
+	177 ConditionalJump @b31, v244 @ TEMP_v14 (System.Boolean)
+	178 Nop
+	179 Nop
+	180 CheckEqual v247 @ TEMP_v16 (System.Boolean), v189._message (System.String), 0
+	181 ConditionalJump @b30, v247 @ TEMP_v16 (System.Boolean)
+	182 Nop
+	183 Nop
+	184 Add v255 @ S5_v4, v189 @ L4_v2 (System.OverflowException), 16
+	185 Jump @b44
+	186 Nop
+	187 Nop
+	188 Jump @b46
+	189 Nop
+	190 Nop
+	191 Add v208 @ S4_v5, v242 @ S4_v4, v255 @ S5_v4
+	192 Nop
+	193 Nop
+	194 Call A626, returnVal1 @ S0_v36 (System.Int32), 30, this @ L0 (System.Text.UTF7Encoding), v213 @ S2_v13, bytes @ L3 (System.Byte*), v208 @ S4_v5, v174 @ S0_v39, 0
+	195 Jump @b45
+	196 Nop
+	197 Nop
+	198 Return returnVal1 @ S0_v36 (System.Int32)
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Call 11B6C, v158 @ S0_v27 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Nop
+	212 CallVoid ArgumentOutOfRangeException.GetObjectData, v158 @ S0_v27 (System.ArgumentOutOfRangeException), "charIndex", "Index was out of range. Must be non-negative and less than the size of the collection."
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 CallVoid 120AB, v158 @ S0_v27 (System.ArgumentOutOfRangeException), 0, methodof(System.Text.UTF7Encoding::GetChars)
+	218 Nop
+	219 Nop
+	220 Return 0
+
+Method: System.Int32 GetCharCount(System.Byte* bytes, System.Int32 count, System.Text.DecoderNLS baseDecoder)
+
+Disassembly:
+	0x1339BB0 I32Const 20
+	0x1339BB2 LocalGet 0
+	0x1339BB4 LocalGet 1
+	0x1339BB6 LocalGet 2
+	0x1339BB8 I32Const 0
+	0x1339BBA I32Const 0
+	0x1339BBC LocalGet 3
+	0x1339BBE Call 42534
+	0x1339BC2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Call A626, returnVal1 @ S0_v2 (System.Int32), 20, this @ L0 (System.Text.UTF7Encoding), bytes @ L1 (System.Byte*), count @ L2 (System.Int32), 0, 0, baseDecoder @ L3 (System.Text.DecoderNLS)
+	8 Nop
+	9 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Int32 GetChars(System.Byte* bytes, System.Int32 byteCount, System.Char* chars, System.Int32 charCount, System.Text.DecoderNLS baseDecoder)
+
+Disassembly:
+	0x1339BC8 I32Const 4572195
+	0x1339BCD I32Load8_S 0, 0
+	0x1339BD0 I32Eqz
+	0x1339BD1 If -64
+	0x1339BD3 I32Const 3022852
+	0x1339BD8 I32Load 2, 0
+	0x1339BDB Call 73003
+	0x1339BDF I32Const 4572195
+	0x1339BE4 I32Const 1
+	0x1339BE6 I32Store8 0, 0
+	0x1339BE9 End
+	0x1339BEA LocalGet 5
+	0x1339BEC I32Const 4431292
+	0x1339BF1 I32Load 2, 0
+	0x1339BF4 Call 29968
+	0x1339BF8 LocalSet 6
+	0x1339BFA I32Const 4431296
+	0x1339BFF I32Load 2, 0
+	0x1339C02 Call 72556
+	0x1339C06 LocalTee 5
+	0x1339C08 LocalGet 0
+	0x1339C0A LocalGet 6
+	0x1339C0C LocalGet 3
+	0x1339C0E LocalGet 4
+	0x1339C10 LocalGet 1
+	0x1339C12 LocalGet 2
+	0x1339C14 I32Const 0
+	0x1339C16 Call 61544
+	0x1339C1A Block -64
+	0x1339C1C LocalGet 6
+	0x1339C1E I32Const 0
+	0x1339C20 I32Ne
+	0x1339C21 LocalTee 7
+	0x1339C23 If -1
+	0x1339C25 LocalGet 6
+	0x1339C27 I32Load 2, 32
+	0x1339C2A LocalSet 2
+	0x1339C2C LocalGet 6
+	0x1339C2E I32Load 2, 36
+	0x1339C31 LocalSet 1
+	0x1339C33 Loop -64
+	0x1339C35 LocalGet 1
+	0x1339C37 I32Const 6
+	0x1339C39 I32Lt_S
+	0x1339C3A BrIf 2
+	0x1339C3C LocalGet 5
+	0x1339C3E LocalGet 0
+	0x1339C40 I32Load 2, 28
+	0x1339C43 I32Const 16
+	0x1339C45 I32Add
+	0x1339C46 LocalGet 2
+	0x1339C48 LocalGet 1
+	0x1339C4A I32Const 6
+	0x1339C4C I32Sub
+	0x1339C4D LocalTee 1
+	0x1339C4F I32Const 31
+	0x1339C51 I32And
+	0x1339C52 I32Shr_S
+	0x1339C53 I32Const 63
+	0x1339C55 I32And
+	0x1339C56 I32Add
+	0x1339C57 I32Load8_S 0, 0
+	0x1339C5A I32Const 0
+	0x1339C5C Call 61547
+	0x1339C60 I32Eqz
+	0x1339C61 If -64
+	0x1339C63 LocalGet 0
+	0x1339C65 LocalGet 6
+	0x1339C67 LocalGet 5
+	0x1339C69 I32Load 2, 32
+	0x1339C6C I32Eqz
+	0x1339C6D I32Const 0
+	0x1339C6F Call 61527
+	0x1339C73 End
+	0x1339C74 Br 0
+	0x1339C76 End
+	0x1339C77 Unreachable
+	0x1339C78 Else
+	0x1339C79 I32Const 0
+	0x1339C7B LocalSet 2
+	0x1339C7D I32Const -1
+	0x1339C7F End
+	0x1339C80 LocalSet 1
+	0x1339C82 End
+	0x1339C83 Block -64
+	0x1339C85 Block -64
+	0x1339C87 Block -64
+	0x1339C89 Loop -64
+	0x1339C8B Block -64
+	0x1339C8D Block -64
+	0x1339C8F Block -64
+	0x1339C91 Block -64
+	0x1339C93 Block -64
+	0x1339C95 Loop -64
+	0x1339C97 LocalGet 1
+	0x1339C99 I32Const -1
+	0x1339C9B I32Gt_S
+	0x1339C9C LocalTee 8
+	0x1339C9E I32Const 1
+	0x1339CA0 I32Xor
+	0x1339CA1 LocalSet 10
+	0x1339CA3 Loop -64
+	0x1339CA5 Block -64
+	0x1339CA7 LocalGet 5
+	0x1339CA9 I32Const 0
+	0x1339CAB Call 61550
+	0x1339CAF I32Eqz
+	0x1339CB0 BrIf 9
+	0x1339CB2 LocalGet 5
+	0x1339CB4 I32Const 0
+	0x1339CB6 Call 61551
+	0x1339CBA LocalTee 4
+	0x1339CBC I32Const 65535
+	0x1339CC0 I32And
+	0x1339CC1 LocalSet 9
+	0x1339CC3 LocalGet 4
+	0x1339CC5 I32Const 65535
+	0x1339CC9 I32And
+	0x1339CCA I32Const 127
+	0x1339CCD I32Gt_S
+	0x1339CCE BrIf 3
+	0x1339CD0 LocalGet 0
+	0x1339CD2 I32Load 2, 36
+	0x1339CD5 I32Const 16
+	0x1339CD7 I32Add
+	0x1339CD8 LocalGet 9
+	0x1339CDA I32Add
+	0x1339CDB I32Load8_S 0, 0
+	0x1339CDE BrIf 0
+	0x1339CE0 LocalGet 4
+	0x1339CE2 I32Const 65535
+	0x1339CE6 I32And
+	0x1339CE7 I32Const 43
+	0x1339CE9 I32Eq
+	0x1339CEA LocalGet 10
+	0x1339CEC I32And
+	0x1339CED I32Eqz
+	0x1339CEE BrIf 4
+	0x1339CF0 LocalGet 5
+	0x1339CF2 I32Const 43
+	0x1339CF4 I32Const 45
+	0x1339CF6 I32Const 0
+	0x1339CF8 Call 61548
+	0x1339CFC BrIf 1
+	0x1339CFE Br 9
+	0x1339D00 End
+	0x1339D01 End
+	0x1339D02 LocalGet 1
+	0x1339D04 I32Const 0
+	0x1339D06 I32Ge_S
+	0x1339D07 If -64
+	0x1339D09 LocalGet 1
+	0x1339D0B If -64
+	0x1339D0D LocalGet 5
+	0x1339D0F LocalGet 0
+	0x1339D11 I32Load 2, 28
+	0x1339D14 I32Const 16
+	0x1339D16 I32Add
+	0x1339D17 LocalGet 2
+	0x1339D19 I32Const 6
+	0x1339D1B LocalGet 1
+	0x1339D1D I32Sub
+	0x1339D1E I32Const 31
+	0x1339D20 I32And
+	0x1339D21 I32Shl
+	0x1339D22 I32Const 63
+	0x1339D24 I32And
+	0x1339D25 I32Add
+	0x1339D26 I32Load8_S 0, 0
+	0x1339D29 I32Const 0
+	0x1339D2B Call 61547
+	0x1339D2F I32Eqz
+	0x1339D30 BrIf 10
+	0x1339D32 End
+	0x1339D33 LocalGet 5
+	0x1339D35 I32Const 45
+	0x1339D37 I32Const 0
+	0x1339D39 Call 61547
+	0x1339D3D If -1
+	0x1339D3F I32Const -1
+	0x1339D41 Else
+	0x1339D42 I32Const 0
+	0x1339D44 LocalSet 1
+	0x1339D46 Br 10
+	0x1339D48 End
+	0x1339D49 LocalSet 1
+	0x1339D4B End
+	0x1339D4C LocalGet 5
+	0x1339D4E LocalGet 4
+	0x1339D50 I32Const 255
+	0x1339D53 I32And
+	0x1339D54 I32Const 0
+	0x1339D56 Call 61547
+	0x1339D5A BrIf 0
+	0x1339D5C End
+	0x1339D5D Br 4
+	0x1339D5F End
+	0x1339D60 LocalGet 8
+	0x1339D62 I32Eqz
+	0x1339D63 BrIf 1
+	0x1339D65 Br 2
+	0x1339D67 End
+	0x1339D68 LocalGet 8
+	0x1339D6A I32Eqz
+	0x1339D6B BrIf 0
+	0x1339D6D Br 1
+	0x1339D6F End
+	0x1339D70 LocalGet 5
+	0x1339D72 I32Const 43
+	0x1339D74 I32Const 0
+	0x1339D76 Call 61547
+	0x1339D7A I32Eqz
+	0x1339D7B BrIf 1
+	0x1339D7D I32Const 0
+	0x1339D7F LocalSet 1
+	0x1339D81 End
+	0x1339D82 LocalGet 2
+	0x1339D84 I32Const 16
+	0x1339D86 I32Shl
+	0x1339D87 LocalGet 9
+	0x1339D89 I32Or
+	0x1339D8A LocalSet 2
+	0x1339D8C LocalGet 1
+	0x1339D8E I32Const 16
+	0x1339D90 I32Add
+	0x1339D91 LocalSet 1
+	0x1339D93 Block -64
+	0x1339D95 Block -64
+	0x1339D97 Loop -64
+	0x1339D99 LocalGet 1
+	0x1339D9B I32Const 6
+	0x1339D9D I32Ge_S
+	0x1339D9E If -64
+	0x1339DA0 LocalGet 5
+	0x1339DA2 LocalGet 0
+	0x1339DA4 I32Load 2, 28
+	0x1339DA7 I32Const 16
+	0x1339DA9 I32Add
+	0x1339DAA LocalGet 2
+	0x1339DAC LocalGet 1
+	0x1339DAE I32Const 6
+	0x1339DB0 I32Sub
+	0x1339DB1 LocalTee 1
+	0x1339DB3 I32Const 31
+	0x1339DB5 I32And
+	0x1339DB6 I32Shr_S
+	0x1339DB7 I32Const 63
+	0x1339DB9 I32And
+	0x1339DBA I32Add
+	0x1339DBB I32Load8_S 0, 0
+	0x1339DBE I32Const 0
+	0x1339DC0 Call 61547
+	0x1339DC4 BrIf 1
+	0x1339DC6 Br 2
+	0x1339DC8 End
+	0x1339DC9 End
+	0x1339DCA Br 1
+	0x1339DCC End
+	0x1339DCD LocalGet 1
+	0x1339DCF I32Const 6
+	0x1339DD1 I32Add
+	0x1339DD2 LocalSet 1
+	0x1339DD4 LocalGet 5
+	0x1339DD6 I32Const 0
+	0x1339DD8 Call 61551
+	0x1339DDC Drop
+	0x1339DDD End
+	0x1339DDE LocalGet 1
+	0x1339DE0 I32Const 5
+	0x1339DE2 I32Le_S
+	0x1339DE3 BrIf 1
+	0x1339DE5 Br 3
+	0x1339DE7 End
+	0x1339DE8 End
+	0x1339DE9 Br 2
+	0x1339DEB End
+	0x1339DEC LocalGet 1
+	0x1339DEE I32Const 0
+	0x1339DF0 I32Ge_S
+	0x1339DF1 BrIf 0
+	0x1339DF3 Br 1
+	0x1339DF5 End
+	0x1339DF6 LocalGet 7
+	0x1339DF8 If -64
+	0x1339DFA LocalGet 6
+	0x1339DFC I32Load8_S 0, 24
+	0x1339DFF I32Eqz
+	0x1339E00 BrIf 1
+	0x1339E02 End
+	0x1339E03 LocalGet 1
+	0x1339E05 I32Const 1
+	0x1339E07 I32Lt_S
+	0x1339E08 If -64
+	0x1339E0A I32Const 0
+	0x1339E0C LocalSet 1
+	0x1339E0E Else
+	0x1339E0F LocalGet 5
+	0x1339E11 LocalGet 0
+	0x1339E13 I32Load 2, 28
+	0x1339E16 I32Const 16
+	0x1339E18 I32Add
+	0x1339E19 LocalGet 2
+	0x1339E1B I32Const 6
+	0x1339E1D LocalGet 1
+	0x1339E1F I32Sub
+	0x1339E20 I32Const 31
+	0x1339E22 I32And
+	0x1339E23 I32Shl
+	0x1339E24 I32Const 63
+	0x1339E26 I32And
+	0x1339E27 I32Add
+	0x1339E28 I32Load8_S 0, 0
+	0x1339E2B I32Const 0
+	0x1339E2D Call 61547
+	0x1339E31 If -64
+	0x1339E33 I32Const 0
+	0x1339E35 LocalSet 1
+	0x1339E37 End
+	0x1339E38 End
+	0x1339E39 LocalGet 5
+	0x1339E3B I32Const 45
+	0x1339E3D I32Const 0
+	0x1339E3F Call 61547
+	0x1339E43 If -64
+	0x1339E45 I32Const 0
+	0x1339E47 LocalSet 2
+	0x1339E49 I32Const -1
+	0x1339E4B LocalSet 1
+	0x1339E4D Else
+	0x1339E4E LocalGet 5
+	0x1339E50 I32Const 0
+	0x1339E52 Call 61551
+	0x1339E56 Drop
+	0x1339E57 End
+	0x1339E58 End
+	0x1339E59 LocalGet 3
+	0x1339E5B I32Eqz
+	0x1339E5C LocalGet 7
+	0x1339E5E I32Const 1
+	0x1339E60 I32Xor
+	0x1339E61 I32Or
+	0x1339E62 I32Eqz
+	0x1339E63 If -64
+	0x1339E65 LocalGet 6
+	0x1339E67 LocalGet 2
+	0x1339E69 I32Store 2, 32
+	0x1339E6C LocalGet 6
+	0x1339E6E LocalGet 1
+	0x1339E70 I32Store 2, 36
+	0x1339E73 LocalGet 6
+	0x1339E75 LocalGet 5
+	0x1339E77 I32Load 2, 20
+	0x1339E7A LocalGet 5
+	0x1339E7C I32Load 2, 24
+	0x1339E7F I32Sub
+	0x1339E80 I32Const 2
+	0x1339E82 I32Div_S
+	0x1339E83 I32Store 2, 28
+	0x1339E86 End
+	0x1339E87 LocalGet 5
+	0x1339E89 I32Load 2, 32
+	0x1339E8C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b62
+	5 Nop
+	6 Move v5 @ S0_v128, [2E2004]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v128
+	8 Nop
+	9 Move v7 @ S1_v81, 1
+	10 Move [45C423], v7 @ S1_v81
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call 7510, v15 @ S0_v6 (System.RuntimeType), baseDecoder @ L5 (System.Text.DecoderNLS), typeof(System.Text.UTF7Encoding+Encoder)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call 11B6C, v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), typeof(System.Text.Encoding+EncodingByteBuffer)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid MemberInfoSerializationHolder.GetSerializationInfo, v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), this @ L0 (System.Text.UTF7Encoding), v15 @ S0_v6 (System.RuntimeType), chars @ L3 (System.Char*), charCount @ L4 (System.Int32), bytes @ L1 (System.Byte*), byteCount @ L2 (System.Int32)
+	29 Nop
+	30 Nop
+	31 CheckNotEqual v35 @ S0_v11 (System.Boolean), v15 @ S0_v6 (System.RuntimeType), 0
+	32 Nop
+	33 Not v37 @ TEMP_v2 (System.Boolean), v35 @ S0_v11 (System.Boolean)
+	34 ConditionalJump @b63, v37 @ TEMP_v2 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 CheckLess v64 @ S0_v121 (System.Boolean), v199 @ L1_v4, 6
+	45 ConditionalJump @b68, v64 @ S0_v121 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Add v108 @ S1_v76, this.base64Bytes (System.Byte[]), 16
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Subtract v112 @ S3_v28, v199 @ L1_v4, 6
+	55 Nop
+	56 Nop
+	57 And v113 @ S3_v29, v112 @ S3_v28, 31
+	58 ShiftRight v114 @ S2_v43 (System.Int32), [v15 @ S0_v6 (System.RuntimeType)+20], v113 @ S3_v29
+	59 Nop
+	60 And v116 @ S2_v44 (System.Int32), v114 @ S2_v43 (System.Int32), 63
+	61 Add v117 @ S1_v77, v108 @ S1_v76, v116 @ S2_v44 (System.Int32)
+	62 Nop
+	63 Nop
+	64 Call EncodingNLS.GetByteCount, v120 @ S0_v123 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), [v117 @ S1_v77]
+	65 CheckEqual v134 @ S0_v124 (System.Boolean), v120 @ S0_v123 (System.Int32), 0
+	66 Not v59 @ TEMP_v20 (System.Boolean), v134 @ S0_v124 (System.Boolean)
+	67 ConditionalJump @b12, v59 @ TEMP_v20 (System.Boolean)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 CheckEqual v140 @ S2_v49 (System.Boolean), v19.m_fullTypeName (System.String), 0
+	73 Nop
+	74 CallVoid Encoding.ThrowCharsOverflow, this @ L0 (System.Text.UTF7Encoding), v15 @ S0_v6 (System.RuntimeType), v140 @ S2_v49 (System.Boolean)
+	75 Nop
+	76 Jump @b65
+	77 Nop
+	78 Interrupt
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 CheckGreater v101 @ S0_v14 (System.Boolean), v199 @ L1_v4, -1
+	90 Nop
+	91 Nop
+	92 Xor v103 @ S0_v15, v101 @ S0_v14 (System.Boolean), 1
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Call EncodingByteBuffer.GetNextChar, v133 @ S0_v18 (System.Char), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo)
+	98 CheckEqual v135 @ S0_v19 (System.Boolean), v133 @ S0_v18 (System.Char), 0
+	99 ConditionalJump @b48, v135 @ S0_v19 (System.Boolean)
+	100 Nop
+	101 Nop
+	102 Call EncodingByteBuffer.get_CharsUsed, v144 @ S0_v54 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo)
+	103 Nop
+	104 Nop
+	105 And v155 @ S0_v55 (System.Int32), v144 @ S0_v54 (System.Int32), 65535
+	106 Nop
+	107 Nop
+	108 Nop
+	109 And v158 @ S0_v57 (System.Int32), v144 @ S0_v54 (System.Int32), 65535
+	110 Nop
+	111 CheckGreater v160 @ S0_v58 (System.Boolean), v158 @ S0_v57 (System.Int32), 127
+	112 ConditionalJump @b33, v160 @ S0_v58 (System.Boolean)
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Add v189 @ S0_v87, this.directEncode (System.Boolean[]), 16
+	117 Nop
+	118 Add v191 @ S0_v88, v189 @ S0_v87, v155 @ S0_v55 (System.Int32)
+	119 Nop
+	120 ConditionalJump @b22, [v191 @ S0_v88]
+	121 Nop
+	122 Nop
+	123 And v241 @ S0_v105 (System.Int32), v144 @ S0_v54 (System.Int32), 65535
+	124 Nop
+	125 CheckEqual v243 @ S0_v106 (System.Boolean), v241 @ S0_v105 (System.Int32), 43
+	126 Nop
+	127 And v245 @ S0_v107, v243 @ S0_v106 (System.Boolean), v103 @ S0_v15
+	128 CheckEqual v246 @ S0_v108 (System.Boolean), v245 @ S0_v107, 0
+	129 ConditionalJump @b35, v246 @ S0_v108 (System.Boolean)
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Call EncodingNLS.GetByteCount, v130 @ S0_v112 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), 43, 45
+	135 ConditionalJump @b66, v130 @ S0_v112 (System.Int32)
+	136 Jump @b48
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Nop
+	141 CheckGreaterOrEqual v249 @ S0_v91 (System.Boolean), v199 @ L1_v4, 0
+	142 Not v250 @ TEMP_v15 (System.Boolean), v249 @ S0_v91 (System.Boolean)
+	143 ConditionalJump @b67, v250 @ TEMP_v15 (System.Boolean)
+	144 Nop
+	145 CheckEqual v179 @ TEMP_v17 (System.Boolean), v199 @ L1_v4, 0
+	146 ConditionalJump @b26, v179 @ TEMP_v17 (System.Boolean)
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Add v335 @ S1_v65, this.base64Bytes (System.Byte[]), 16
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Subtract v339 @ S3_v22, 6, v199 @ L1_v4
+	156 Nop
+	157 And v340 @ S3_v23, v339 @ S3_v22, 31
+	158 ShiftLeft v341 @ S2_v36 (System.Int32), v201 @ L2_v2 (System.Int32), v340 @ S3_v23
+	159 Nop
+	160 And v342 @ S2_v37 (System.Int32), v341 @ S2_v36 (System.Int32), 63
+	161 Add v343 @ S1_v66, v335 @ S1_v65, v342 @ S2_v37 (System.Int32)
+	162 Nop
+	163 Nop
+	164 Call EncodingNLS.GetByteCount, v344 @ S0_v102 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), [v343 @ S1_v66]
+	165 CheckEqual v182 @ S0_v103 (System.Boolean), v344 @ S0_v102 (System.Int32), 0
+	166 ConditionalJump @b50, v182 @ S0_v103 (System.Boolean)
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Call EncodingNLS.GetByteCount, v349 @ S0_v98 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), 45
+	172 CheckEqual v180 @ TEMP_v18 (System.Boolean), v349 @ S0_v98 (System.Int32), 0
+	173 ConditionalJump @b29, v180 @ TEMP_v18 (System.Boolean)
+	174 Nop
+	175 Jump @b30
+	176 Nop
+	177 Nop
+	178 Jump @b50
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Nop
+	185 And v91 @ S1_v60 (System.String), v144 @ S0_v54 (System.Int32), 255
+	186 Nop
+	187 Call EncodingNLS.GetByteCount, v97 @ S0_v94 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), v91 @ S1_v60 (System.String)
+	188 ConditionalJump @b68, v97 @ S0_v94 (System.Int32)
+	189 Nop
+	190 Jump @b47
+	191 Nop
+	192 Nop
+	193 Not v194 @ S0_v84 (System.Boolean), v101 @ S0_v14 (System.Boolean)
+	194 ConditionalJump @b37, v194 @ S0_v84 (System.Boolean)
+	195 Jump @b69
+	196 Nop
+	197 Nop
+	198 Not v253 @ S0_v110 (System.Boolean), v101 @ S0_v14 (System.Boolean)
+	199 ConditionalJump @b37, v253 @ S0_v110 (System.Boolean)
+	200 Jump @b69
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Call EncodingNLS.GetByteCount, v257 @ S0_v80 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), 43
+	206 CheckEqual v321 @ S0_v81 (System.Boolean), v257 @ S0_v80 (System.Int32), 0
+	207 ConditionalJump @b47, v321 @ S0_v81 (System.Boolean)
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Nop
+	212 Nop
+	213 ShiftLeft v314 @ S0_v61 (System.Int32), v201 @ L2_v2 (System.Int32), 16
+	214 Nop
+	215 Or v316 @ S0_v62 (System.Int32), v314 @ S0_v61 (System.Int32), v155 @ S0_v55 (System.Int32)
+	216 Nop
+	217 Nop
+	218 Nop
+	219 Add v319 @ S0_v64, v199 @ L1_v4, 16
+	220 Nop
+	221 Nop
+	222 Nop
+	223 Nop
+	224 CheckGreaterOrEqual v365 @ S0_v67 (System.Boolean), v199 @ L1_v4, 6
+	225 Not v95 @ TEMP_v13 (System.Boolean), v365 @ S0_v67 (System.Boolean)
+	226 ConditionalJump @b43, v95 @ TEMP_v13 (System.Boolean)
+	227 Nop
+	228 Nop
+	229 Nop
+	230 Nop
+	231 Add v370 @ S1_v47, this.base64Bytes (System.Byte[]), 16
+	232 Nop
+	233 Nop
+	234 Nop
+	235 Subtract v374 @ S3_v15, v199 @ L1_v4, 6
+	236 Nop
+	237 Nop
+	238 And v375 @ S3_v16, v374 @ S3_v15, 31
+	239 ShiftRight v376 @ S2_v24 (System.Int32), v316 @ S0_v62 (System.Int32), v375 @ S3_v16
+	240 Nop
+	241 And v377 @ S2_v25 (System.Int32), v376 @ S2_v24 (System.Int32), 63
+	242 Add v378 @ S1_v48, v370 @ S1_v47, v377 @ S2_v25 (System.Int32)
+	243 Nop
+	244 Nop
+	245 Call EncodingNLS.GetByteCount, v362 @ S0_v72 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), [v378 @ S1_v48]
+	246 ConditionalJump @b70, v362 @ S0_v72 (System.Int32)
+	247 Jump @b44
+	248 Nop
+	249 Nop
+	250 Jump @b45
+	251 Nop
+	252 Nop
+	253 Nop
+	254 Add v389 @ S0_v74, v374 @ S3_v15, 6
+	255 Nop
+	256 Nop
+	257 Nop
+	258 Call EncodingByteBuffer.get_CharsUsed, v385 @ S0_v76 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo)
+	259 Nop
+	260 Nop
+	261 Nop
+	262 CheckLessOrEqual v98 @ S0_v70 (System.Boolean), v199 @ L1_v4, 5
+	263 ConditionalJump @b68, v98 @ S0_v70 (System.Boolean)
+	264 Jump @b50
+	265 Nop
+	266 Nop
+	267 Jump @b72
+	268 Nop
+	269 Nop
+	270 Nop
+	271 CheckGreaterOrEqual v153 @ S0_v52 (System.Boolean), v199 @ L1_v4, 0
+	272 ConditionalJump @b50, v153 @ S0_v52 (System.Boolean)
+	273 Jump @b72
+	274 Nop
+	275 Nop
+	276 Not v185 @ TEMP_v7 (System.Boolean), v35 @ S0_v11 (System.Boolean)
+	277 ConditionalJump @b52, v185 @ TEMP_v7 (System.Boolean)
+	278 Nop
+	279 Nop
+	280 CheckEqual v221 @ S0_v49 (System.Boolean), [v15 @ S0_v6 (System.RuntimeType)+18], 0
+	281 ConditionalJump @b72, v221 @ S0_v49 (System.Boolean)
+	282 Nop
+	283 Nop
+	284 Nop
+	285 CheckLess v237 @ S0_v35 (System.Boolean), v199 @ L1_v4, 1
+	286 Not v238 @ TEMP_v8 (System.Boolean), v237 @ S0_v35 (System.Boolean)
+	287 ConditionalJump @b54, v238 @ TEMP_v8 (System.Boolean)
+	288 Nop
+	289 Nop
+	290 Jump @b73
+	291 Nop
+	292 Nop
+	293 Nop
+	294 Nop
+	295 Add v281 @ S1_v28, this.base64Bytes (System.Byte[]), 16
+	296 Nop
+	297 Nop
+	298 Nop
+	299 Subtract v285 @ S3_v8, 6, v199 @ L1_v4
+	300 Nop
+	301 And v287 @ S3_v9, v285 @ S3_v8, 31
+	302 ShiftLeft v288 @ S2_v15 (System.Int32), v201 @ L2_v2 (System.Int32), v287 @ S3_v9
+	303 Nop
+	304 And v290 @ S2_v16 (System.Int32), v288 @ S2_v15 (System.Int32), 63
+	305 Add v291 @ S1_v29, v281 @ S1_v28, v290 @ S2_v16 (System.Int32)
+	306 Nop
+	307 Nop
+	308 Call EncodingNLS.GetByteCount, v294 @ S0_v44 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), [v291 @ S1_v29]
+	309 CheckEqual v326 @ TEMP_v11 (System.Boolean), v294 @ S0_v44 (System.Int32), 0
+	310 ConditionalJump @b73, v326 @ TEMP_v11 (System.Boolean)
+	311 Nop
+	312 Nop
+	313 Nop
+	314 Nop
+	315 Nop
+	316 Nop
+	317 Nop
+	318 Call EncodingNLS.GetByteCount, v330 @ S0_v38 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo), 45
+	319 CheckEqual v218 @ TEMP_v10 (System.Boolean), v330 @ S0_v38 (System.Int32), 0
+	320 ConditionalJump @b59, v218 @ TEMP_v10 (System.Boolean)
+	321 Nop
+	322 Nop
+	323 Nop
+	324 Nop
+	325 Jump @b72
+	326 Nop
+	327 Nop
+	328 Call EncodingByteBuffer.get_CharsUsed, v222 @ S0_v40 (System.Int32), v19 @ S0_v9 (System.Runtime.Serialization.SerializationInfo)
+	329 Nop
+	330 Nop
+	331 Nop
+	332 CheckEqual v225 @ S0_v22 (System.Boolean), chars @ L3 (System.Char*), 0
+	333 Nop
+	334 Nop
+	335 Xor v228 @ S1_v13, v35 @ S0_v11 (System.Boolean), 1
+	336 Or v229 @ S0_v23, v225 @ S0_v22 (System.Boolean), v228 @ S1_v13
+	337 CheckEqual v230 @ S0_v24 (System.Boolean), v229 @ S0_v23, 0
+	338 Not v231 @ TEMP_v5 (System.Boolean), v230 @ S0_v24 (System.Boolean)
+	339 ConditionalJump @b75, v231 @ TEMP_v5 (System.Boolean)
+	340 Nop
+	341 Nop
+	342 Move [v15 @ S0_v6 (System.RuntimeType)+20], v201 @ L2_v2 (System.Int32)
+	343 Nop
+	344 Nop
+	345 Move [v15 @ S0_v6 (System.RuntimeType)+24], v199 @ L1_v4
+	346 Nop
+	347 Nop
+	348 Nop
+	349 Nop
+	350 Nop
+	351 Subtract v267 @ S1_v19, v19.m_nameToIndex (System.Collections.Generic.Dictionary`2<System.String, System.Int32>), v19.m_currMember (System.Int32)
+	352 Nop
+	353 Divide v269 @ S1_v20, v267 @ S1_v19, 2
+	354 Move [v15 @ S0_v6 (System.RuntimeType)+1C], v269 @ S1_v20
+	355 Nop
+	356 Nop
+	357 Nop
+	358 Nop
+	359 Return v19.m_fullTypeName (System.String)
+
+Method: System.Text.Decoder GetDecoder()
+
+Disassembly:
+	0x1338E49 I32Const 31
+	0x1338E4B LocalGet 0
+	0x1338E4D Call 29262
+	0x1338E51 LocalSet 1
+	0x1338E53 I32Const 2
+	0x1338E55 LocalGet 0
+	0x1338E57 I32Load 2, 20
+	0x1338E5A Call 29262
+	0x1338E5E LocalSet 2
+	0x1338E60 I32Const 2
+	0x1338E62 LocalGet 0
+	0x1338E64 I32Load 2, 24
+	0x1338E67 Call 29262
+	0x1338E6B LocalGet 2
+	0x1338E6D LocalGet 1
+	0x1338E6F I32Add
+	0x1338E70 I32Add
+	0x1338E71 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call 724E, v3 @ S0_v2, 31, this @ L0 (System.Text.UTF7Encoding)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Call 724E, v8 @ S0_v4, 2, this.encoderFallback (System.Text.EncoderFallback)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Call 724E, v13 @ S0_v6, 2, this.decoderFallback (System.Text.DecoderFallback)
+	13 Nop
+	14 Nop
+	15 Add v16 @ S1_v7, v8 @ S0_v4, v3 @ S0_v2
+	16 Add returnVal1 @ S0_v7 (System.Text.Decoder), v13 @ S0_v6, v16 @ S1_v7
+	17 Nop
+	18 Return returnVal1 @ S0_v7 (System.Text.Decoder)
+
+Method: System.Text.Encoder GetEncoder()
+
+Disassembly:
+	0x133A13A I32Const 4572197
+	0x133A13F I32Load8_S 0, 0
+	0x133A142 I32Eqz
+	0x133A143 If -64
+	0x133A145 I32Const 3022884
+	0x133A14A I32Load 2, 0
+	0x133A14D Call 73003
+	0x133A151 I32Const 4572197
+	0x133A156 I32Const 1
+	0x133A158 I32Store8 0, 0
+	0x133A15B End
+	0x133A15C I32Const 4431300
+	0x133A161 I32Load 2, 0
+	0x133A164 Call 72556
+	0x133A168 LocalTee 2
+	0x133A16A LocalGet 0
+	0x133A16C I32Const 0
+	0x133A16E Call 60240
+	0x133A172 LocalGet 2
+	0x133A174 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2E2024]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45C425], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Text.Encoder), typeof(System.Text.UTF7Encoding+Decoder)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid EB50, v13 @ S0_v7 (System.Text.Encoder), this @ L0 (System.Text.UTF7Encoding), 0
+	19 Nop
+	20 Nop
+	21 Return v13 @ S0_v7 (System.Text.Encoder)
+
+Method: System.Int32 GetMaxByteCount(System.Int32 charCount)
+
+Disassembly:
+	0x1338FAB I32Const 4572185
+	0x1338FB0 I32Load8_S 0, 0
+	0x1338FB3 I32Eqz
+	0x1338FB4 If -64
+	0x1338FB6 I32Const 3022844
+	0x1338FBB I32Load 2, 0
+	0x1338FBE Call 73003
+	0x1338FC2 I32Const 4572185
+	0x1338FC7 I32Const 1
+	0x1338FC9 I32Store8 0, 0
+	0x1338FCC End
+	0x1338FCD LocalGet 1
+	0x1338FCF If -64
+	0x1338FD1 I32Const 14
+	0x1338FD3 LocalGet 0
+	0x1338FD5 LocalGet 1
+	0x1338FD7 I32Const 12
+	0x1338FD9 I32Add
+	0x1338FDA LocalGet 1
+	0x1338FDC I32Load 2, 8
+	0x1338FDF I32Const 0
+	0x1338FE1 Call 29450
+	0x1338FE5 Return
+	0x1338FE6 Else
+	0x1338FE7 I32Const 4427864
+	0x1338FEC I32Load 2, 0
+	0x1338FEF Call 72556
+	0x1338FF3 LocalTee 3
+	0x1338FF5 I32Const 4503352
+	0x1338FFA I32Load 2, 0
+	0x1338FFD I32Const 0
+	0x1338FFF Call 57599
+	0x1339003 LocalGet 3
+	0x1339005 I32Const 0
+	0x1339007 I32Const 4464656
+	0x133900C I32Load 2, 0
+	0x133900F Call 73899
+	0x1339013 End
+	0x1339014 I32Const 0
+	0x1339016 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v15, [2E1FFC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [45C419], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), charCount @ L1 (System.Int32), 0
+	14 ConditionalJump @b7, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Add v19 @ S2_v5, charCount @ L1 (System.Int32), 12
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call 730A, returnVal1 @ S0_v12 (System.Int32), 14, this @ L0 (System.Text.UTF7Encoding), v19 @ S2_v5, [charCount @ L1 (System.Int32)+8], 0
+	24 Return returnVal1 @ S0_v12 (System.Int32)
+	25 Nop
+	26 Nop
+	27 Call 11B6C, v26 @ S0_v8 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid ArgumentOutOfRangeException..ctor, v26 @ S0_v8 (System.ArgumentOutOfRangeException), "s"
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid UTF7Encoding.GetByteCount, v26 @ S0_v8 (System.ArgumentOutOfRangeException), 0
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Return 0
+
+Method: System.Int32 GetMaxCharCount(System.Int32 byteCount)
+
+Disassembly:
+	0x133A1B9 I32Const 4572199
+	0x133A1BE I32Load8_S 0, 0
+	0x133A1C1 I32Eqz
+	0x133A1C2 If -64
+	0x133A1C4 I32Const 3022892
+	0x133A1C9 I32Load 2, 0
+	0x133A1CC Call 73003
+	0x133A1D0 I32Const 4572199
+	0x133A1D5 I32Const 1
+	0x133A1D7 I32Store8 0, 0
+	0x133A1DA End
+	0x133A1DB LocalGet 1
+	0x133A1DD I32Const -1
+	0x133A1DF I32Le_S
+	0x133A1E0 If -64
+	0x133A1E2 I32Const 4503076
+	0x133A1E7 I32Load 2, 0
+	0x133A1EA LocalSet 0
+	0x133A1EC I32Const 4427992
+	0x133A1F1 I32Load 2, 0
+	0x133A1F4 Call 72556
+	0x133A1F8 LocalTee 2
+	0x133A1FA I32Const 4507896
+	0x133A1FF I32Load 2, 0
+	0x133A202 LocalGet 0
+	0x133A204 I32Const 0
+	0x133A206 Call 57647
+	0x133A20A LocalGet 2
+	0x133A20C I32Const 0
+	0x133A20E I32Const 4464688
+	0x133A213 I32Load 2, 0
+	0x133A216 Call 73899
+	0x133A21A End
+	0x133A21B LocalGet 1
+	0x133A21D I64Extend_I32_S
+	0x133A21E I64Const 3
+	0x133A220 I64Mul
+	0x133A221 I64Const 2
+	0x133A223 I64Add
+	0x133A224 LocalTee 3
+	0x133A226 I64Const 2147483648
+	0x133A22C I64Lt_S
+	0x133A22D If -64
+	0x133A22F LocalGet 3
+	0x133A231 I32Wrap_I64
+	0x133A232 Return
+	0x133A233 Else
+	0x133A234 I32Const 4512048
+	0x133A239 I32Load 2, 0
+	0x133A23C LocalSet 0
+	0x133A23E I32Const 4427992
+	0x133A243 I32Load 2, 0
+	0x133A246 Call 72556
+	0x133A24A LocalTee 1
+	0x133A24C I32Const 4507896
+	0x133A251 I32Load 2, 0
+	0x133A254 LocalGet 0
+	0x133A256 I32Const 0
+	0x133A258 Call 57647
+	0x133A25C LocalGet 1
+	0x133A25E I32Const 0
+	0x133A260 I32Const 4464688
+	0x133A265 I32Load 2, 0
+	0x133A268 Call 73899
+	0x133A26C End
+	0x133A26D I32Const 0
+	0x133A26F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v28, [2E202C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [45C427], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckLessOrEqual v14 @ S0_v6 (System.Boolean), byteCount @ L1 (System.Int32), -1
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v6 (System.Boolean)
+	16 ConditionalJump @b8, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 11B6C, v21 @ S0_v25 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid ArgumentOutOfRangeException.GetObjectData, v21 @ S0_v25 (System.ArgumentOutOfRangeException), "charCount", "Non-negative number required."
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid UTF7Encoding.GetMaxByteCount, v21 @ S0_v25 (System.ArgumentOutOfRangeException), 0
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Multiply v39 @ S0_v9, byteCount @ L1 (System.Int32), 3
+	38 Nop
+	39 Add v41 @ S0_v10 (System.Int32), v39 @ S0_v9, 2
+	40 Nop
+	41 Nop
+	42 CheckLess v44 @ S0_v11 (System.Boolean), v41 @ S0_v10 (System.Int32), 2147483648
+	43 Not v45 @ TEMP_v3 (System.Boolean), v44 @ S0_v11 (System.Boolean)
+	44 ConditionalJump @b10, v45 @ TEMP_v3 (System.Boolean)
+	45 Nop
+	46 Return v41 @ S0_v10 (System.Int32)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call 11B6C, v55 @ S0_v16 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 CallVoid ArgumentOutOfRangeException.GetObjectData, v55 @ S0_v16 (System.ArgumentOutOfRangeException), "charCount", "Too many characters. The resulting number of bytes is larger than what can be returned as an int."
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 CallVoid UTF7Encoding.GetMaxByteCount, v55 @ S0_v16 (System.ArgumentOutOfRangeException), 0
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Return 0
+

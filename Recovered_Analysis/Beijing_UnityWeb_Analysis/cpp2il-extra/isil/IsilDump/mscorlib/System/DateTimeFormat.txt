@@ -1,0 +1,4324 @@
+Type: System.DateTimeFormat
+
+Method: System.Void FormatDigits(System.Text.StringBuilder outputBuffer, System.Int32 value, System.Int32 len)
+
+Disassembly:
+	0x1007A1E GlobalGet 7
+	0x1007A20 LocalSet 3
+	0x1007A22 GlobalGet 7
+	0x1007A24 I32Const 16
+	0x1007A26 I32Add
+	0x1007A27 GlobalSet 7
+	0x1007A29 LocalGet 3
+	0x1007A2B LocalGet 2
+	0x1007A2D I64Load 2, 0
+	0x1007A30 I64Store 3, 0
+	0x1007A33 LocalGet 3
+	0x1007A35 I32Const 8
+	0x1007A37 I32Add
+	0x1007A38 LocalTee 2
+	0x1007A3A LocalGet 3
+	0x1007A3C I64Load 2, 0
+	0x1007A3F I64Store 2, 0
+	0x1007A42 LocalGet 0
+	0x1007A44 LocalGet 1
+	0x1007A46 LocalGet 2
+	0x1007A48 I32Const 0
+	0x1007A4A Call 55714
+	0x1007A4E LocalGet 3
+	0x1007A50 GlobalSet 7
+	0x1007A52 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], len.m_value (System.Int32)
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6 (System.Runtime.Serialization.StreamingContext), v1 @ G7, 8
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v13.m_additionalContext (System.Object), [v1 @ G7]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid TimeoutException..ctor, outputBuffer @ L0 (System.Text.StringBuilder), value @ L1 (System.Int32), v13 @ S0_v6 (System.Runtime.Serialization.StreamingContext)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Return
+
+Method: System.Void FormatDigits(System.Text.StringBuilder outputBuffer, System.Int32 value, System.Int32 len, System.Boolean overrideLengthLimit)
+
+Disassembly:
+	0x10F8194 LocalGet 0
+	0x10F8196 I32Const 8
+	0x10F8198 I32Add
+	0x10F8199 LocalGet 1
+	0x10F819B LocalGet 2
+	0x10F819D LocalGet 3
+	0x10F819F I32Const 0
+	0x10F81A1 Call 51298
+	0x10F81A5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Throw typeof(System.OverflowException)
+	8 Nop
+	9 Return
+
+Method: System.Void HebrewFormatDigits(System.Text.StringBuilder outputBuffer, System.Int32 digits)
+
+Disassembly:
+	0x10F72FD LocalGet 0
+	0x10F72FF LocalGet 1
+	0x10F7301 I32Const 0
+	0x10F7303 Call 55700
+	0x10F7307 LocalGet 0
+	0x10F7309 I32Const -2146233033
+	0x10F730F I32Store 2, 48
+	0x10F7312 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid TimeoutException..ctor, outputBuffer @ L0 (System.Text.StringBuilder), digits @ L1 (System.Int32)
+	4 Nop
+	5 Nop
+	6 Move [outputBuffer @ L0 (System.Text.StringBuilder)+30], -2146233033
+	7 Nop
+	8 Return
+
+Method: System.Int32 ParseRepeatPattern(System.String format, System.Int32 pos, System.Char patternChar)
+
+Disassembly:
+	0x10F9B0C LocalGet 1
+	0x10F9B0E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return pos @ L1 (System.String)
+
+Method: System.String FormatDayOfWeek(System.Int32 dayOfWeek, System.Int32 repeat, System.Globalization.DateTimeFormatInfo dtfi)
+
+Disassembly:
+	0x1206143 LocalGet 0
+	0x1206145 I32Load 2, 8
+	0x1206148 LocalSet 4
+	0x120614A LocalGet 1
+	0x120614C LocalSet 3
+	0x120614E Loop -64
+	0x1206150 LocalGet 3
+	0x1206152 I32Const 1
+	0x1206154 I32Add
+	0x1206155 LocalTee 3
+	0x1206157 LocalGet 4
+	0x1206159 I32Lt_S
+	0x120615A If -64
+	0x120615C LocalGet 0
+	0x120615E LocalGet 3
+	0x1206160 I32Const 0
+	0x1206162 Call 55658
+	0x1206166 I32Const 65535
+	0x120616A I32And
+	0x120616B LocalGet 2
+	0x120616D I32Const 65535
+	0x1206171 I32And
+	0x1206172 I32Eq
+	0x1206173 BrIf 1
+	0x1206175 End
+	0x1206176 End
+	0x1206177 LocalGet 3
+	0x1206179 LocalGet 1
+	0x120617B I32Sub
+	0x120617C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v22 @ S0_v6 (System.Int32), v16 @ L3_v2 (System.Int32), 1
+	9 Nop
+	10 Nop
+	11 CheckLess v24 @ S0_v7 (System.Boolean), v22 @ S0_v6 (System.Int32), [dayOfWeek @ L0 (System.Int32)+8]
+	12 Not v9 @ TEMP_v2 (System.Boolean), v24 @ S0_v7 (System.Boolean)
+	13 ConditionalJump @b5, v9 @ TEMP_v2 (System.Boolean)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call String.Split, v28 @ S0_v12 (System.String[]), dayOfWeek @ L0 (System.Int32), v22 @ S0_v6 (System.Int32)
+	18 Nop
+	19 And v36 @ S0_v13, v28 @ S0_v12 (System.String[]), 65535
+	20 Nop
+	21 Nop
+	22 And v15 @ S1_v9, dtfi @ L2 (System.Globalization.DateTimeFormatInfo), 65535
+	23 CheckEqual v19 @ S0_v14 (System.Boolean), v36 @ S0_v13, v15 @ S1_v9
+	24 ConditionalJump @b6, v19 @ S0_v14 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Subtract returnVal1 @ S0_v10 (System.String), v22 @ S0_v6 (System.Int32), repeat @ L1 (System.Int32)
+	30 Nop
+	31 Return returnVal1 @ S0_v10 (System.String)
+
+Method: System.String FormatMonth(System.Int32 month, System.Int32 repeatCount, System.Globalization.DateTimeFormatInfo dtfi)
+
+Disassembly:
+	0x1206234 LocalGet 1
+	0x1206236 I32Const 3
+	0x1206238 I32Eq
+	0x1206239 If -1
+	0x120623B LocalGet 2
+	0x120623D LocalGet 0
+	0x120623F I32Const 0
+	0x1206241 Call 51657
+	0x1206245 Else
+	0x1206246 LocalGet 2
+	0x1206248 LocalGet 0
+	0x120624A I32Const 0
+	0x120624C Call 51660
+	0x1206250 End
+	0x1206251 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v2 (System.Boolean), repeatCount @ L1 (System.Int32), 3
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call DateTimeFormatInfo.GetAllDateTimePatterns, v10 @ S0_v7 (System.String[]), dtfi @ L2 (System.Globalization.DateTimeFormatInfo), month @ L0 (System.Int32)
+	9 Jump @b6
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Call DateTimeFormatInfo.GetAbbreviatedMonthName, returnVal1 @ S0_v3 (System.String), dtfi @ L2 (System.Globalization.DateTimeFormatInfo), month @ L0 (System.Int32)
+	14 Nop
+	15 Nop
+	16 Return returnVal1 @ S0_v3 (System.String)
+
+Method: System.String FormatHebrewMonthName(System.DateTime time, System.Int32 month, System.Int32 repeatCount, System.Globalization.DateTimeFormatInfo dtfi)
+
+Disassembly:
+	Method threw an exception while analyzing - System.Exception: Failed to find wasm definition for Method: System.DateTimeFormat::FormatHebrewMonthName
+which has params [DateTime time, int month, int repeatCount, DateTimeFormatInfo dtfi]
+ ---> System.Exception: Can't get function with signature ijiiii, as it's not defined in the binary
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 109
+   --- End of inner exception stack trace ---
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 120
+   at Cpp2IL.Core.OutputFormats.IsilDumpOutputFormat.<>c__DisplayClass4_1.<DoOutput>b__0(TypeAnalysisContext type) in /_/Cpp2IL.Core/OutputFormats/IsilDumpOutputFormat.cs:line 53
+
+Method: System.Int32 ParseQuoteString(System.String format, System.Int32 pos, System.Text.StringBuilder result)
+
+Disassembly:
+	0x12063E5 LocalGet 1
+	0x12063E7 I32Const 3
+	0x12063E9 I32Eq
+	0x12063EA If -1
+	0x12063EC LocalGet 2
+	0x12063EE LocalGet 0
+	0x12063F0 I32Const 0
+	0x12063F2 Call 51661
+	0x12063F6 Else
+	0x12063F7 LocalGet 2
+	0x12063F9 LocalGet 0
+	0x12063FB I32Const 0
+	0x12063FD Call 51662
+	0x1206401 End
+	0x1206402 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v2 (System.Boolean), pos @ L1 (System.Int32), 3
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call DateTimeFormatInfo.GetMonthName, v10 @ S0_v7 (System.String), result @ L2 (System.Text.StringBuilder), format @ L0 (System.String)
+	9 Jump @b6
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Call DateTimeFormatInfo.GetMergedPatterns, v14 @ S0_v5 (System.String[]), result @ L2 (System.Text.StringBuilder), format @ L0 (System.String)
+	14 Nop
+	15 Nop
+	16 Return returnVal1 @ S0_v3 (System.Int32)
+
+Method: System.Int32 ParseNextChar(System.String format, System.Int32 pos)
+
+Disassembly:
+	0x10F9ACD LocalGet 0
+	0x10F9ACF I32Load 2, 36
+	0x10F9AD2 LocalSet 2
+	0x10F9AD4 LocalGet 0
+	0x10F9AD6 I32Load 2, 32
+	0x10F9AD9 LocalTee 3
+	0x10F9ADB If -64
+	0x10F9ADD LocalGet 2
+	0x10F9ADF LocalGet 3
+	0x10F9AE1 I32Const 0
+	0x10F9AE3 Call 55680
+	0x10F9AE7 LocalSet 2
+	0x10F9AE9 Else
+	0x10F9AEA LocalGet 0
+	0x10F9AEC I32Load 2, 28
+	0x10F9AEF If -64
+	0x10F9AF1 LocalGet 2
+	0x10F9AF3 LocalGet 0
+	0x10F9AF5 LocalGet 1
+	0x10F9AF7 I32Const 0
+	0x10F9AF9 Call 51383
+	0x10F9AFD I32Const 0
+	0x10F9AFF Call 55680
+	0x10F9B03 LocalSet 2
+	0x10F9B05 End
+	0x10F9B06 End
+	0x10F9B07 LocalGet 2
+	0x10F9B09 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CheckEqual v7 @ TEMP_v1 (System.Boolean), [format @ L0 (System.String)+20], 0
+	7 ConditionalJump @b5, v7 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Call String.ConcatArray, v11 @ S0_v12 (System.String), [format @ L0 (System.String)+24], [format @ L0 (System.String)+20]
+	12 Nop
+	13 Jump @b9
+	14 Nop
+	15 Nop
+	16 CheckEqual v14 @ TEMP_v3 (System.Boolean), [format @ L0 (System.String)+1C], 0
+	17 ConditionalJump @b9, v14 @ TEMP_v3 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call ArgIterator.Equals, v21 @ S1_v3 (System.Boolean), format @ L0 (System.String), pos @ L1 (System.Int32)
+	23 Nop
+	24 Call String.ConcatArray, v33 @ S0_v10 (System.String), [format @ L0 (System.String)+24], v21 @ S1_v3 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Return v30 @ L2_v2 (System.String)
+
+Method: System.Boolean IsUseGenitiveForm(System.String format, System.Int32 index, System.Int32 tokenLen, System.Char patternToMatch)
+
+Disassembly:
+	0x1206257 GlobalGet 7
+	0x1206259 LocalSet 4
+	0x120625B GlobalGet 7
+	0x120625D I32Const 16
+	0x120625F I32Add
+	0x1206260 GlobalSet 7
+	0x1206262 LocalGet 3
+	0x1206264 I32Load 2, 60
+	0x1206267 LocalSet 5
+	0x1206269 LocalGet 3
+	0x120626B I32Load 2, 60
+	0x120626E LocalSet 6
+	0x1206270 LocalGet 4
+	0x1206272 LocalGet 0
+	0x1206274 I64Load 3, 0
+	0x1206277 I64Store 3, 0
+	0x120627A LocalGet 4
+	0x120627C I32Const 8
+	0x120627E I32Add
+	0x120627F LocalTee 0
+	0x1206281 LocalGet 4
+	0x1206283 I64Load 3, 0
+	0x1206286 I64Store 3, 0
+	0x1206289 I32Const 19
+	0x120628B LocalGet 5
+	0x120628D I32Const 18
+	0x120628F LocalGet 6
+	0x1206291 LocalGet 0
+	0x1206293 Call 51453
+	0x1206297 Call 29448
+	0x120629B If -1
+	0x120629D LocalGet 3
+	0x120629F LocalGet 1
+	0x12062A1 I32Const 2
+	0x12062A3 LocalGet 2
+	0x12062A5 I32Const 3
+	0x12062A7 I32Eq
+	0x12062A8 I32Const 0
+	0x12062AA Call 51655
+	0x12062AE Else
+	0x12062AF LocalGet 1
+	0x12062B1 I32Const 6
+	0x12062B3 I32Gt_S
+	0x12062B4 If -64
+	0x12062B6 LocalGet 1
+	0x12062B8 I32Const 1
+	0x12062BA I32Add
+	0x12062BB LocalSet 1
+	0x12062BD End
+	0x12062BE LocalGet 2
+	0x12062C0 I32Const 3
+	0x12062C2 I32Eq
+	0x12062C3 If -1
+	0x12062C5 LocalGet 3
+	0x12062C7 LocalGet 1
+	0x12062C9 I32Const 0
+	0x12062CB Call 51661
+	0x12062CF Else
+	0x12062D0 LocalGet 3
+	0x12062D2 LocalGet 1
+	0x12062D4 I32Const 0
+	0x12062D6 Call 51662
+	0x12062DA End
+	0x12062DB End
+	0x12062DC LocalGet 4
+	0x12062DE GlobalSet 7
+	0x12062E0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move [v1 @ G7], [format @ L0 (System.String)]
+	16 Nop
+	17 Nop
+	18 Add v20 @ S0_v10, v1 @ G7, 8
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move [v20 @ S0_v10], [v1 @ G7]
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Call C8FD, v29 @ S2_v2, 18, [patternToMatch @ L3 (System.Char)+3C], v20 @ S0_v10
+	29 Call 7308, v30 @ S0_v12, 19, [patternToMatch @ L3 (System.Char)+3C], v29 @ S2_v2
+	30 CheckEqual v31 @ TEMP_v1 (System.Boolean), v30 @ S0_v12, 0
+	31 ConditionalJump @b7, v31 @ TEMP_v1 (System.Boolean)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CheckEqual v39 @ S3_v4 (System.Boolean), tokenLen @ L2 (System.Int32), 3
+	38 Nop
+	39 Call DateTimeFormatInfo.YearMonthAdjustment, returnVal1 @ S0_v13 (System.Boolean), patternToMatch @ L3 (System.Char), v50 @ L1_v2 (System.Int32), 2, v39 @ S3_v4 (System.Boolean)
+	40 Jump @b13
+	41 Nop
+	42 Nop
+	43 CheckGreater v44 @ S0_v15 (System.Boolean), v50 @ L1_v2 (System.Int32), 6
+	44 Not v45 @ TEMP_v3 (System.Boolean), v44 @ S0_v15 (System.Boolean)
+	45 ConditionalJump @b14, v45 @ TEMP_v3 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Add v48 @ S0_v24 (System.Int32), v50 @ L1_v2 (System.Int32), 1
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 CheckEqual v55 @ S0_v18 (System.Boolean), tokenLen @ L2 (System.Int32), 3
+	54 Not v56 @ TEMP_v4 (System.Boolean), v55 @ S0_v18 (System.Boolean)
+	55 ConditionalJump @b11, v56 @ TEMP_v4 (System.Boolean)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call DateTimeFormatInfo.GetMonthName, v69 @ S0_v22 (System.String), patternToMatch @ L3 (System.Char), v48 @ S0_v24 (System.Int32)
+	60 Jump @b13
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Call DateTimeFormatInfo.GetMergedPatterns, v68 @ S0_v20 (System.String[]), patternToMatch @ L3 (System.Char), v48 @ S0_v24 (System.Int32)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Return returnVal1 @ S0_v13 (System.Boolean)
+
+Method: System.String FormatCustomized(System.DateTime dateTime, System.String format, System.Globalization.DateTimeFormatInfo dtfi, System.TimeSpan offset)
+
+Disassembly:
+	Method threw an exception while analyzing - System.Exception: Failed to find wasm definition for Method: System.DateTimeFormat::FormatCustomized
+which has params [DateTime dateTime, string format, DateTimeFormatInfo dtfi, TimeSpan offset]
+ ---> System.Exception: Can't get function with signature ijiiji, as it's not defined in the binary
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 109
+   --- End of inner exception stack trace ---
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 120
+   at Cpp2IL.Core.OutputFormats.IsilDumpOutputFormat.<>c__DisplayClass4_1.<DoOutput>b__0(TypeAnalysisContext type) in /_/Cpp2IL.Core/OutputFormats/IsilDumpOutputFormat.cs:line 53
+
+Method: System.Void FormatCustomizedTimeZone(System.DateTime dateTime, System.TimeSpan offset, System.String format, System.Int32 tokenLen, System.Boolean timeOnly, System.Text.StringBuilder result)
+
+Disassembly:
+	Method threw an exception while analyzing - System.Exception: Failed to find wasm definition for Method: System.DateTimeFormat::FormatCustomizedTimeZone
+which has params [DateTime dateTime, TimeSpan offset, string format, int tokenLen, bool timeOnly, StringBuilder result]
+ ---> System.Exception: Can't get function with signature vjjiiiii, as it's not defined in the binary
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 109
+   --- End of inner exception stack trace ---
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 120
+   at Cpp2IL.Core.OutputFormats.IsilDumpOutputFormat.<>c__DisplayClass4_1.<DoOutput>b__0(TypeAnalysisContext type) in /_/Cpp2IL.Core/OutputFormats/IsilDumpOutputFormat.cs:line 53
+
+Method: System.Void FormatCustomizedRoundripTimeZone(System.DateTime dateTime, System.TimeSpan offset, System.Text.StringBuilder result)
+
+Disassembly:
+	Method threw an exception while analyzing - System.Exception: Failed to find wasm definition for Method: System.DateTimeFormat::FormatCustomizedRoundripTimeZone
+which has params [DateTime dateTime, TimeSpan offset, StringBuilder result]
+ ---> System.Exception: Can't get function with signature vjjii, as it's not defined in the binary
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 109
+   --- End of inner exception stack trace ---
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 120
+   at Cpp2IL.Core.OutputFormats.IsilDumpOutputFormat.<>c__DisplayClass4_1.<DoOutput>b__0(TypeAnalysisContext type) in /_/Cpp2IL.Core/OutputFormats/IsilDumpOutputFormat.cs:line 53
+
+Method: System.String GetRealFormat(System.String format, System.Globalization.DateTimeFormatInfo dtfi)
+
+Disassembly:
+	0x1206C19 LocalGet 0
+	0x1206C1B I32Load 2, 8
+	0x1206C1E I32Const 1
+	0x1206C20 I32Sub
+	0x1206C21 LocalGet 1
+	0x1206C23 I32Gt_S
+	0x1206C24 If -1
+	0x1206C26 LocalGet 0
+	0x1206C28 LocalGet 1
+	0x1206C2A I32Const 1
+	0x1206C2C I32Add
+	0x1206C2D I32Const 0
+	0x1206C2F Call 55658
+	0x1206C33 I32Const 65535
+	0x1206C37 I32And
+	0x1206C38 Else
+	0x1206C39 I32Const -1
+	0x1206C3B End
+	0x1206C3C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Subtract v4 @ S0_v3, format.m_stringLength (System.Int32), 1
+	4 Nop
+	5 CheckGreater v7 @ S0_v4 (System.Boolean), v4 @ S0_v3, dtfi @ L1 (System.Globalization.DateTimeFormatInfo)
+	6 Not v8 @ TEMP_v1 (System.Boolean), v7 @ S0_v4 (System.Boolean)
+	7 ConditionalJump @b5, v8 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Add v12 @ S1_v5 (System.Char[]), dtfi @ L1 (System.Globalization.DateTimeFormatInfo), 1
+	12 Nop
+	13 Call String.Split, v14 @ S0_v8 (System.String[]), format @ L0 (System.String), v12 @ S1_v5 (System.Char[])
+	14 Nop
+	15 And returnVal1 @ S0_v5 (System.String), v14 @ S0_v8 (System.String[]), 65535
+	16 Jump @b6
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Return returnVal1 @ S0_v5 (System.String)
+
+Method: System.String ExpandPredefinedFormat(System.String format, ref System.DateTime dateTime, ref System.Globalization.DateTimeFormatInfo dtfi, ref System.TimeSpan offset)
+
+Disassembly:
+	0x1205214 GlobalGet 7
+	0x1205216 LocalSet 4
+	0x1205218 GlobalGet 7
+	0x120521A I32Const 128
+	0x120521D I32Add
+	0x120521E GlobalSet 7
+	0x1205220 I32Const 4569039
+	0x1205225 I32Load8_S 0, 0
+	0x1205228 I32Eqz
+	0x1205229 If -64
+	0x120522B I32Const 2949820
+	0x1205230 I32Load 2, 0
+	0x1205233 Call 73003
+	0x1205237 I32Const 4569039
+	0x120523C I32Const 1
+	0x120523E I32Store8 0, 0
+	0x1205241 End
+	0x1205242 LocalGet 4
+	0x1205244 I32Const 104
+	0x1205247 I32Add
+	0x1205248 LocalSet 8
+	0x120524A LocalGet 4
+	0x120524C I32Const 96
+	0x120524F I32Add
+	0x1205250 LocalSet 11
+	0x1205252 LocalGet 4
+	0x1205254 I32Const 88
+	0x1205257 I32Add
+	0x1205258 LocalSet 16
+	0x120525A LocalGet 4
+	0x120525C I32Const 80
+	0x120525F I32Add
+	0x1205260 LocalSet 17
+	0x1205262 LocalGet 4
+	0x1205264 I32Const 72
+	0x1205267 I32Add
+	0x1205268 LocalSet 18
+	0x120526A LocalGet 4
+	0x120526C I32Const -64
+	0x120526E I32Sub
+	0x120526F LocalSet 19
+	0x1205271 LocalGet 4
+	0x1205273 I32Const 56
+	0x1205275 I32Add
+	0x1205276 LocalSet 20
+	0x1205278 LocalGet 4
+	0x120527A I32Const 48
+	0x120527C I32Add
+	0x120527D LocalSet 21
+	0x120527F LocalGet 4
+	0x1205281 I32Const 40
+	0x1205283 I32Add
+	0x1205284 LocalSet 22
+	0x1205286 LocalGet 4
+	0x1205288 I32Const 32
+	0x120528A I32Add
+	0x120528B LocalSet 23
+	0x120528D LocalGet 4
+	0x120528F I32Const 24
+	0x1205291 I32Add
+	0x1205292 LocalSet 24
+	0x1205294 LocalGet 4
+	0x1205296 I32Const 16
+	0x1205298 I32Add
+	0x1205299 LocalSet 25
+	0x120529B LocalGet 4
+	0x120529D I32Const 8
+	0x120529F I32Add
+	0x12052A0 LocalSet 26
+	0x12052A2 LocalGet 4
+	0x12052A4 LocalTee 14
+	0x12052A6 I32Const 116
+	0x12052A9 I32Add
+	0x12052AA LocalTee 12
+	0x12052AC I32Const 0
+	0x12052AE I32Store 2, 0
+	0x12052B1 LocalGet 4
+	0x12052B3 I32Const 112
+	0x12052B6 I32Add
+	0x12052B7 LocalTee 13
+	0x12052B9 I32Const 0
+	0x12052BB I32Store 2, 0
+	0x12052BE LocalGet 4
+	0x12052C0 I32Const 120
+	0x12052C3 I32Add
+	0x12052C4 LocalTee 27
+	0x12052C6 I32Const 0
+	0x12052C8 I32Store16 1, 0
+	0x12052CB LocalGet 2
+	0x12052CD I32Load 2, 60
+	0x12052D0 LocalSet 10
+	0x12052D2 I32Const 16
+	0x12052D4 I32Const 0
+	0x12052D6 Call 61674
+	0x12052DA LocalSet 6
+	0x12052DC I32Const 7
+	0x12052DE LocalGet 10
+	0x12052E0 Call 29262
+	0x12052E4 I32Const 8
+	0x12052E6 I32Eq
+	0x12052E7 LocalSet 15
+	0x12052E9 LocalGet 3
+	0x12052EB I64Load 3, 0
+	0x12052EE LocalSet 31
+	0x12052F0 I32Const 1
+	0x12052F2 LocalSet 4
+	0x12052F4 Block -64
+	0x12052F6 Block -64
+	0x12052F8 Loop -64
+	0x12052FA LocalGet 9
+	0x12052FC LocalGet 1
+	0x12052FE I32Load 2, 8
+	0x1205301 I32Ge_S
+	0x1205302 BrIf 1
+	0x1205304 LocalGet 1
+	0x1205306 LocalGet 9
+	0x1205308 I32Const 0
+	0x120530A Call 55658
+	0x120530E LocalTee 5
+	0x1205310 I32Const 65535
+	0x1205314 I32And
+	0x1205315 LocalSet 3
+	0x1205317 Block -64
+	0x1205319 Block -64
+	0x120531B Block -64
+	0x120531D LocalGet 5
+	0x120531F I32Const 65535
+	0x1205323 I32And
+	0x1205324 I32Const 76
+	0x1205327 I32Lt_S
+	0x1205328 If -64
+	0x120532A LocalGet 5
+	0x120532C I32Const 65535
+	0x1205330 I32And
+	0x1205331 I32Const 48
+	0x1205333 I32Ge_S
+	0x1205334 If -64
+	0x1205336 LocalGet 5
+	0x1205338 I32Const 65535
+	0x120533C I32And
+	0x120533D I32Const 71
+	0x1205340 I32Lt_S
+	0x1205341 If -64
+	0x1205343 Block -64
+	0x1205345 Block -64
+	0x1205347 Block -64
+	0x1205349 Block -64
+	0x120534B LocalGet 5
+	0x120534D I32Const 16
+	0x120534F I32Shl
+	0x1205350 I32Const 16
+	0x1205352 I32Shr_S
+	0x1205353 I32Const 58
+	0x1205355 I32Sub
+	0x1205356 BrTable System.UInt64[], 2
+	0x1205366 End
+	0x1205367 Br 6
+	0x1205369 End
+	0x120536A Br 1
+	0x120536C End
+	0x120536D Br 5
+	0x120536F End
+	0x1205370 LocalGet 6
+	0x1205372 LocalGet 2
+	0x1205374 I32Load 2, 48
+	0x1205377 I32Const 0
+	0x1205379 Call 61377
+	0x120537D Drop
+	0x120537E I32Const 1
+	0x1205380 LocalSet 3
+	0x1205382 Br 5
+	0x1205384 End
+	0x1205385 Block -64
+	0x1205387 Block -64
+	0x1205389 Block -64
+	0x120538B LocalGet 5
+	0x120538D I32Const 16
+	0x120538F I32Shl
+	0x1205390 I32Const 16
+	0x1205392 I32Shr_S
+	0x1205393 I32Const 72
+	0x1205396 I32Sub
+	0x1205397 BrTable System.UInt64[], 2
+	0x120539E End
+	0x120539F I32Const 4428732
+	0x12053A4 I32Load 2, 0
+	0x12053A7 LocalTee 3
+	0x12053A9 I32Load16_S 1, 186
+	0x12053AD I32Const 512
+	0x12053B0 I32And
+	0x12053B1 If -64
+	0x12053B3 LocalGet 3
+	0x12053B5 I32Load 2, 116
+	0x12053B8 I32Eqz
+	0x12053B9 If -64
+	0x12053BB LocalGet 3
+	0x12053BD Call 72345
+	0x12053C1 End
+	0x12053C2 End
+	0x12053C3 LocalGet 1
+	0x12053C5 LocalGet 9
+	0x12053C7 I32Const 72
+	0x12053CA I32Const 0
+	0x12053CC Call 56550
+	0x12053D0 LocalSet 3
+	0x12053D2 LocalGet 6
+	0x12053D4 LocalGet 0
+	0x12053D6 I64Load 3, 0
+	0x12053D9 I64Const 4611686018427387903
+	0x12053E3 I64And
+	0x12053E4 I64Const 36000000000
+	0x12053EB I64Div_S
+	0x12053EC I64Const 24
+	0x12053EE I64Rem_S
+	0x12053EF I32Wrap_I64
+	0x12053F0 LocalGet 3
+	0x12053F2 I32Const 0
+	0x12053F4 Call 56551
+	0x12053F8 Br 6
+	0x12053FA End
+	0x12053FB LocalGet 0
+	0x12053FD I64Load 3, 0
+	0x1205400 LocalSet 29
+	0x1205402 I32Const 4428732
+	0x1205407 I32Load 2, 0
+	0x120540A LocalTee 3
+	0x120540C I32Load16_S 1, 186
+	0x1205410 I32Const 512
+	0x1205413 I32And
+	0x1205414 If -64
+	0x1205416 LocalGet 3
+	0x1205418 I32Load 2, 116
+	0x120541B I32Eqz
+	0x120541C If -64
+	0x120541E LocalGet 3
+	0x1205420 Call 72345
+	0x1205424 End
+	0x1205425 End
+	0x1205426 LocalGet 24
+	0x1205428 LocalGet 29
+	0x120542A I64Store 3, 0
+	0x120542D LocalGet 25
+	0x120542F LocalGet 31
+	0x1205431 I64Store 3, 0
+	0x1205434 LocalGet 11
+	0x1205436 LocalGet 24
+	0x1205438 I64Load 3, 0
+	0x120543B I64Store 3, 0
+	0x120543E LocalGet 8
+	0x1205440 LocalGet 25
+	0x1205442 I64Load 3, 0
+	0x1205445 I64Store 3, 0
+	0x1205448 LocalGet 11
+	0x120544A LocalGet 8
+	0x120544C LocalGet 6
+	0x120544E I32Const 0
+	0x1205450 Call 56558
+	0x1205454 I32Const 1
+	0x1205456 LocalSet 3
+	0x1205458 Br 5
+	0x120545A End
+	0x120545B Br 3
+	0x120545D End
+	0x120545E Block -64
+	0x1205460 LocalGet 5
+	0x1205462 I32Const 65535
+	0x1205466 I32And
+	0x1205467 I32Const 38
+	0x1205469 I32Lt_S
+	0x120546A If -1
+	0x120546C Block -64
+	0x120546E Block -64
+	0x1205470 Block -64
+	0x1205472 Block -64
+	0x1205474 LocalGet 5
+	0x1205476 I32Const 16
+	0x1205478 I32Shl
+	0x1205479 I32Const 16
+	0x120547B I32Shr_S
+	0x120547C I32Const 34
+	0x120547E I32Sub
+	0x120547F BrTable System.UInt64[], 2
+	0x1205486 End
+	0x1205487 Br 4
+	0x1205489 End
+	0x120548A Br 1
+	0x120548C End
+	0x120548D Br 5
+	0x120548F End
+	0x1205490 I32Const 4428732
+	0x1205495 I32Load 2, 0
+	0x1205498 LocalTee 3
+	0x120549A I32Load16_S 1, 186
+	0x120549E I32Const 512
+	0x12054A1 I32And
+	0x12054A2 If -64
+	0x12054A4 LocalGet 3
+	0x12054A6 I32Load 2, 116
+	0x12054A9 I32Eqz
+	0x12054AA If -64
+	0x12054AC LocalGet 3
+	0x12054AE Call 72345
+	0x12054B2 End
+	0x12054B3 End
+	0x12054B4 LocalGet 1
+	0x12054B6 LocalGet 9
+	0x12054B8 I32Const 0
+	0x12054BA Call 56560
+	0x12054BE LocalTee 3
+	0x12054C0 I32Const 0
+	0x12054C2 I32Lt_S
+	0x12054C3 LocalGet 3
+	0x12054C5 I32Const 37
+	0x12054C7 I32Eq
+	0x12054C8 I32Or
+	0x12054C9 BrIf 8
+	0x12054CB LocalGet 0
+	0x12054CD I64Load 3, 0
+	0x12054D0 LocalSet 29
+	0x12054D2 LocalGet 27
+	0x12054D4 LocalGet 3
+	0x12054D6 I32Store16 1, 0
+	0x12054D9 LocalGet 27
+	0x12054DB I32Const 0
+	0x12054DD Call 58035
+	0x12054E1 LocalSet 5
+	0x12054E3 I32Const 4428732
+	0x12054E8 I32Load 2, 0
+	0x12054EB LocalTee 3
+	0x12054ED I32Load16_S 1, 186
+	0x12054F1 I32Const 512
+	0x12054F4 I32And
+	0x12054F5 If -64
+	0x12054F7 LocalGet 3
+	0x12054F9 I32Load 2, 116
+	0x12054FC I32Eqz
+	0x12054FD If -64
+	0x12054FF LocalGet 3
+	0x1205501 Call 72345
+	0x1205505 End
+	0x1205506 End
+	0x1205507 LocalGet 26
+	0x1205509 LocalGet 29
+	0x120550B I64Store 3, 0
+	0x120550E LocalGet 14
+	0x1205510 LocalGet 31
+	0x1205512 I64Store 3, 0
+	0x1205515 LocalGet 11
+	0x1205517 LocalGet 26
+	0x1205519 I64Load 3, 0
+	0x120551C I64Store 3, 0
+	0x120551F LocalGet 8
+	0x1205521 LocalGet 14
+	0x1205523 I64Load 3, 0
+	0x1205526 I64Store 3, 0
+	0x1205529 LocalGet 6
+	0x120552B LocalGet 11
+	0x120552D LocalGet 5
+	0x120552F LocalGet 2
+	0x1205531 LocalGet 8
+	0x1205533 I32Const 0
+	0x1205535 Call 56549
+	0x1205539 I32Const 0
+	0x120553B Call 61377
+	0x120553F Drop
+	0x1205540 I32Const 2
+	0x1205542 Else
+	0x1205543 Block -64
+	0x1205545 Block -64
+	0x1205547 Block -64
+	0x1205549 Block -64
+	0x120554B LocalGet 5
+	0x120554D I32Const 16
+	0x120554F I32Shl
+	0x1205550 I32Const 16
+	0x1205552 I32Shr_S
+	0x1205553 I32Const 39
+	0x1205555 I32Sub
+	0x1205556 BrTable System.UInt64[], 2
+	0x1205562 End
+	0x1205563 Br 4
+	0x1205565 End
+	0x1205566 Br 1
+	0x1205568 End
+	0x1205569 Br 5
+	0x120556B End
+	0x120556C LocalGet 6
+	0x120556E LocalGet 2
+	0x1205570 I32Load 2, 36
+	0x1205573 I32Const 0
+	0x1205575 Call 61377
+	0x1205579 Drop
+	0x120557A I32Const 1
+	0x120557C End
+	0x120557D LocalSet 3
+	0x120557F Br 4
+	0x1205581 End
+	0x1205582 I32Const 4427712
+	0x1205587 I32Load 2, 0
+	0x120558A Call 72556
+	0x120558E LocalTee 5
+	0x1205590 I32Const 0
+	0x1205592 Call 61640
+	0x1205596 I32Const 4428732
+	0x120559B I32Load 2, 0
+	0x120559E LocalTee 3
+	0x12055A0 I32Load16_S 1, 186
+	0x12055A4 I32Const 512
+	0x12055A7 I32And
+	0x12055A8 If -64
+	0x12055AA LocalGet 3
+	0x12055AC I32Load 2, 116
+	0x12055AF I32Eqz
+	0x12055B0 If -64
+	0x12055B2 LocalGet 3
+	0x12055B4 Call 72345
+	0x12055B8 End
+	0x12055B9 End
+	0x12055BA LocalGet 1
+	0x12055BC LocalGet 9
+	0x12055BE LocalGet 5
+	0x12055C0 I32Const 0
+	0x12055C2 Call 56559
+	0x12055C6 LocalSet 3
+	0x12055C8 LocalGet 6
+	0x12055CA LocalGet 5
+	0x12055CC I32Const 0
+	0x12055CE Call 61658
+	0x12055D2 Drop
+	0x12055D3 Else
+	0x12055D4 LocalGet 5
+	0x12055D6 I32Const 65535
+	0x12055DA I32And
+	0x12055DB I32Const 110
+	0x12055DE I32Ge_S
+	0x12055DF If -64
+	0x12055E1 LocalGet 5
+	0x12055E3 I32Const 65535
+	0x12055E7 I32And
+	0x12055E8 I32Const 117
+	0x12055EB I32Lt_S
+	0x12055EC If -64
+	0x12055EE Block -64
+	0x12055F0 Block -64
+	0x12055F2 Block -64
+	0x12055F4 Block -64
+	0x12055F6 LocalGet 5
+	0x12055F8 I32Const 16
+	0x12055FA I32Shl
+	0x12055FB I32Const 16
+	0x12055FD I32Shr_S
+	0x12055FE I32Const 115
+	0x1205601 I32Sub
+	0x1205602 BrTable System.UInt64[], 2
+	0x1205607 End
+	0x1205608 I32Const 4428732
+	0x120560D I32Load 2, 0
+	0x1205610 LocalTee 3
+	0x1205612 I32Load16_S 1, 186
+	0x1205616 I32Const 512
+	0x1205619 I32And
+	0x120561A If -64
+	0x120561C LocalGet 3
+	0x120561E I32Load 2, 116
+	0x1205621 I32Eqz
+	0x1205622 If -64
+	0x1205624 LocalGet 3
+	0x1205626 Call 72345
+	0x120562A End
+	0x120562B End
+	0x120562C LocalGet 1
+	0x120562E LocalGet 9
+	0x1205630 I32Const 115
+	0x1205633 I32Const 0
+	0x1205635 Call 56550
+	0x1205639 LocalSet 3
+	0x120563B LocalGet 6
+	0x120563D LocalGet 0
+	0x120563F I64Load 3, 0
+	0x1205642 I64Const 4611686018427387903
+	0x120564C I64And
+	0x120564D I64Const 10000000
+	0x1205652 I64Div_S
+	0x1205653 I64Const 60
+	0x1205655 I64Rem_S
+	0x1205656 I32Wrap_I64
+	0x1205657 LocalGet 3
+	0x1205659 I32Const 0
+	0x120565B Call 56551
+	0x120565F Br 8
+	0x1205661 End
+	0x1205662 Br 1
+	0x1205664 End
+	0x1205665 Br 5
+	0x1205667 End
+	0x1205668 I32Const 4428732
+	0x120566D I32Load 2, 0
+	0x1205670 LocalTee 3
+	0x1205672 I32Load16_S 1, 186
+	0x1205676 I32Const 512
+	0x1205679 I32And
+	0x120567A If -64
+	0x120567C LocalGet 3
+	0x120567E I32Load 2, 116
+	0x1205681 I32Eqz
+	0x1205682 If -64
+	0x1205684 LocalGet 3
+	0x1205686 Call 72345
+	0x120568A End
+	0x120568B End
+	0x120568C LocalGet 1
+	0x120568E LocalGet 9
+	0x1205690 I32Const 116
+	0x1205693 I32Const 0
+	0x1205695 Call 56550
+	0x1205699 LocalSet 3
+	0x120569B LocalGet 0
+	0x120569D I64Load 3, 0
+	0x12056A0 I64Const 4611686018427387903
+	0x12056AA I64And
+	0x12056AB I64Const 36000000000
+	0x12056B2 I64Div_S
+	0x12056B3 I64Const 24
+	0x12056B5 I64Rem_S
+	0x12056B6 I32Wrap_I64
+	0x12056B7 LocalSet 5
+	0x12056B9 LocalGet 3
+	0x12056BB I32Const 1
+	0x12056BD I32Ne
+	0x12056BE If -64
+	0x12056C0 LocalGet 6
+	0x12056C2 LocalGet 5
+	0x12056C4 I32Const 12
+	0x12056C6 I32Lt_S
+	0x12056C7 If -1
+	0x12056C9 LocalGet 2
+	0x12056CB I32Load 2, 28
+	0x12056CE Else
+	0x12056CF LocalGet 2
+	0x12056D1 I32Load 2, 32
+	0x12056D4 End
+	0x12056D5 I32Const 0
+	0x12056D7 Call 61377
+	0x12056DB Drop
+	0x12056DC Br 6
+	0x12056DE End
+	0x12056DF LocalGet 5
+	0x12056E1 I32Const 11
+	0x12056E3 I32Gt_S
+	0x12056E4 If -64
+	0x12056E6 LocalGet 2
+	0x12056E8 I32Load 2, 32
+	0x12056EB I32Load 2, 8
+	0x12056EE I32Const 1
+	0x12056F0 I32Lt_S
+	0x12056F1 If -64
+	0x12056F3 I32Const 1
+	0x12056F5 LocalSet 3
+	0x12056F7 Br 7
+	0x12056F9 End
+	0x12056FA LocalGet 6
+	0x12056FC LocalGet 2
+	0x12056FE I32Load 2, 32
+	0x1205701 I32Const 0
+	0x1205703 I32Const 0
+	0x1205705 Call 55658
+	0x1205709 I32Const 0
+	0x120570B Call 61633
+	0x120570F Drop
+	0x1205710 Else
+	0x1205711 LocalGet 2
+	0x1205713 I32Load 2, 28
+	0x1205716 I32Load 2, 8
+	0x1205719 I32Const 1
+	0x120571B I32Lt_S
+	0x120571C If -64
+	0x120571E I32Const 1
+	0x1205720 LocalSet 3
+	0x1205722 Br 7
+	0x1205724 End
+	0x1205725 LocalGet 6
+	0x1205727 LocalGet 2
+	0x1205729 I32Load 2, 28
+	0x120572C I32Const 0
+	0x120572E I32Const 0
+	0x1205730 Call 55658
+	0x1205734 I32Const 0
+	0x1205736 Call 61633
+	0x120573A Drop
+	0x120573B End
+	0x120573C I32Const 1
+	0x120573E LocalSet 3
+	0x1205740 Br 5
+	0x1205742 End
+	0x1205743 Block -64
+	0x1205745 Block -64
+	0x1205747 Block -64
+	0x1205749 Block -64
+	0x120574B LocalGet 5
+	0x120574D I32Const 16
+	0x120574F I32Shl
+	0x1205750 I32Const 16
+	0x1205752 I32Shr_S
+	0x1205753 I32Const 121
+	0x1205756 I32Sub
+	0x1205757 BrTable System.UInt64[], 2
+	0x120575C End
+	0x120575D Br 2
+	0x120575F End
+	0x1205760 I32Const 4428732
+	0x1205765 I32Load 2, 0
+	0x1205768 LocalTee 3
+	0x120576A I32Load16_S 1, 186
+	0x120576E I32Const 512
+	0x1205771 I32And
+	0x1205772 If -64
+	0x1205774 LocalGet 3
+	0x1205776 I32Load 2, 116
+	0x1205779 I32Eqz
+	0x120577A If -64
+	0x120577C LocalGet 3
+	0x120577E Call 72345
+	0x1205782 End
+	0x1205783 End
+	0x1205784 LocalGet 1
+	0x1205786 LocalGet 9
+	0x1205788 I32Const 122
+	0x120578B I32Const 0
+	0x120578D Call 56550
+	0x1205791 LocalSet 3
+	0x1205793 LocalGet 22
+	0x1205795 LocalGet 0
+	0x1205797 I64Load 3, 0
+	0x120579A I64Store 3, 0
+	0x120579D LocalGet 23
+	0x120579F LocalGet 31
+	0x12057A1 I64Store 3, 0
+	0x12057A4 LocalGet 11
+	0x12057A6 LocalGet 22
+	0x12057A8 I64Load 3, 0
+	0x12057AB I64Store 3, 0
+	0x12057AE LocalGet 8
+	0x12057B0 LocalGet 23
+	0x12057B2 I64Load 3, 0
+	0x12057B5 I64Store 3, 0
+	0x12057B8 LocalGet 11
+	0x12057BA LocalGet 8
+	0x12057BC LocalGet 1
+	0x12057BE LocalGet 3
+	0x12057C0 LocalGet 4
+	0x12057C2 LocalGet 6
+	0x12057C4 I32Const 0
+	0x12057C6 Call 56557
+	0x12057CA Br 6
+	0x12057CC End
+	0x12057CD Br 4
+	0x12057CF End
+	0x12057D0 LocalGet 21
+	0x12057D2 LocalGet 0
+	0x12057D4 I64Load 3, 0
+	0x12057D7 I64Store 3, 0
+	0x12057DA LocalGet 8
+	0x12057DC LocalGet 21
+	0x12057DE I64Load 3, 0
+	0x12057E1 I64Store 3, 0
+	0x12057E4 LocalGet 12
+	0x12057E6 I32Const 18
+	0x12057E8 LocalGet 10
+	0x12057EA LocalGet 8
+	0x12057EC Call 51453
+	0x12057F0 I32Store 2, 0
+	0x12057F3 I32Const 4428732
+	0x12057F8 I32Load 2, 0
+	0x12057FB LocalTee 3
+	0x12057FD I32Load16_S 1, 186
+	0x1205801 I32Const 512
+	0x1205804 I32And
+	0x1205805 If -64
+	0x1205807 LocalGet 3
+	0x1205809 I32Load 2, 116
+	0x120580C I32Eqz
+	0x120580D If -64
+	0x120580F LocalGet 3
+	0x1205811 Call 72345
+	0x1205815 End
+	0x1205816 End
+	0x1205817 LocalGet 1
+	0x1205819 LocalGet 9
+	0x120581B I32Const 121
+	0x120581E I32Const 0
+	0x1205820 Call 56550
+	0x1205824 LocalSet 3
+	0x1205826 LocalGet 2
+	0x1205828 I32Const 0
+	0x120582A Call 51668
+	0x120582E If -64
+	0x1205830 LocalGet 12
+	0x1205832 I32Load 2, 0
+	0x1205835 LocalSet 5
+	0x1205837 I32Const 4428732
+	0x120583C I32Load 2, 0
+	0x120583F LocalTee 4
+	0x1205841 I32Load16_S 1, 186
+	0x1205845 I32Const 512
+	0x1205848 I32And
+	0x1205849 If -64
+	0x120584B LocalGet 4
+	0x120584D I32Load 2, 116
+	0x1205850 I32Eqz
+	0x1205851 If -64
+	0x1205853 LocalGet 4
+	0x1205855 Call 72345
+	0x1205859 End
+	0x120585A End
+	0x120585B LocalGet 6
+	0x120585D LocalGet 5
+	0x120585F LocalGet 3
+	0x1205861 I32Const 2
+	0x1205863 I32Lt_S
+	0x1205864 If -1
+	0x1205866 LocalGet 3
+	0x1205868 Else
+	0x1205869 I32Const 2
+	0x120586B End
+	0x120586C I32Const 0
+	0x120586E Call 56551
+	0x1205872 I32Const 0
+	0x1205874 LocalSet 4
+	0x1205876 Br 5
+	0x1205878 End
+	0x1205879 I32Const 7
+	0x120587B LocalGet 10
+	0x120587D Call 29262
+	0x1205881 I32Const 8
+	0x1205883 I32Eq
+	0x1205884 If -64
+	0x1205886 LocalGet 12
+	0x1205888 I32Load 2, 0
+	0x120588B LocalSet 5
+	0x120588D I32Const 4428732
+	0x1205892 I32Load 2, 0
+	0x1205895 LocalTee 4
+	0x1205897 I32Load16_S 1, 186
+	0x120589B I32Const 512
+	0x120589E I32And
+	0x120589F If -64
+	0x12058A1 LocalGet 4
+	0x12058A3 I32Load 2, 116
+	0x12058A6 I32Eqz
+	0x12058A7 If -64
+	0x12058A9 LocalGet 4
+	0x12058AB Call 72345
+	0x12058AF End
+	0x12058B0 End
+	0x12058B1 LocalGet 6
+	0x12058B3 LocalGet 5
+	0x12058B5 I32Const 0
+	0x12058B7 Call 56552
+	0x12058BB I32Const 0
+	0x12058BD LocalSet 4
+	0x12058BF Br 5
+	0x12058C1 End
+	0x12058C2 LocalGet 3
+	0x12058C4 I32Const 2
+	0x12058C6 I32Gt_S
+	0x12058C7 If -64
+	0x12058C9 LocalGet 8
+	0x12058CB LocalGet 3
+	0x12058CD I32Store 2, 0
+	0x12058D0 I32Const 4427776
+	0x12058D5 I32Load 2, 0
+	0x12058D8 LocalGet 8
+	0x12058DA Call 73903
+	0x12058DE LocalSet 4
+	0x12058E0 I32Const 4503872
+	0x12058E5 I32Load 2, 0
+	0x12058E8 LocalGet 4
+	0x12058EA I32Const 0
+	0x12058EC Call 55904
+	0x12058F0 LocalSet 5
+	0x12058F2 I32Const 4427896
+	0x12058F7 I32Load 2, 0
+	0x12058FA LocalTee 4
+	0x12058FC I32Load16_S 1, 186
+	0x1205900 I32Const 512
+	0x1205903 I32And
+	0x1205904 If -64
+	0x1205906 LocalGet 4
+	0x1205908 I32Load 2, 116
+	0x120590B I32Eqz
+	0x120590C If -64
+	0x120590E LocalGet 4
+	0x1205910 Call 72345
+	0x1205914 End
+	0x1205915 End
+	0x1205916 LocalGet 6
+	0x1205918 LocalGet 12
+	0x120591A LocalGet 5
+	0x120591C I32Const 0
+	0x120591E Call 51249
+	0x1205922 I32Const 0
+	0x1205924 Call 54848
+	0x1205928 I32Const 0
+	0x120592A Call 61377
+	0x120592E Drop
+	0x120592F Else
+	0x1205930 LocalGet 12
+	0x1205932 I32Load 2, 0
+	0x1205935 LocalSet 5
+	0x1205937 I32Const 4428732
+	0x120593C I32Load 2, 0
+	0x120593F LocalTee 4
+	0x1205941 I32Load16_S 1, 186
+	0x1205945 I32Const 512
+	0x1205948 I32And
+	0x1205949 If -64
+	0x120594B LocalGet 4
+	0x120594D I32Load 2, 116
+	0x1205950 I32Eqz
+	0x1205951 If -64
+	0x1205953 LocalGet 4
+	0x1205955 Call 72345
+	0x1205959 End
+	0x120595A End
+	0x120595B LocalGet 6
+	0x120595D LocalGet 5
+	0x120595F I32Const 100
+	0x1205962 I32Rem_S
+	0x1205963 LocalGet 3
+	0x1205965 I32Const 0
+	0x1205967 Call 56551
+	0x120596B End
+	0x120596C I32Const 0
+	0x120596E LocalSet 4
+	0x1205970 Br 4
+	0x1205972 End
+	0x1205973 LocalGet 5
+	0x1205975 I32Const 65535
+	0x1205979 I32And
+	0x120597A I32Const 93
+	0x120597D I32Lt_S
+	0x120597E If -64
+	0x1205980 Block -64
+	0x1205982 Block -64
+	0x1205984 Block -64
+	0x1205986 Block -64
+	0x1205988 LocalGet 5
+	0x120598A I32Const 16
+	0x120598C I32Shl
+	0x120598D I32Const 16
+	0x120598F I32Shr_S
+	0x1205990 I32Const 77
+	0x1205993 I32Sub
+	0x1205994 BrTable System.UInt64[], 2
+	0x12059A7 End
+	0x12059A8 Br 2
+	0x12059AA End
+	0x12059AB I32Const 4428732
+	0x12059B0 I32Load 2, 0
+	0x12059B3 LocalTee 3
+	0x12059B5 I32Load16_S 1, 186
+	0x12059B9 I32Const 512
+	0x12059BC I32And
+	0x12059BD If -64
+	0x12059BF LocalGet 3
+	0x12059C1 I32Load 2, 116
+	0x12059C4 I32Eqz
+	0x12059C5 If -64
+	0x12059C7 LocalGet 3
+	0x12059C9 Call 72345
+	0x12059CD End
+	0x12059CE End
+	0x12059CF LocalGet 1
+	0x12059D1 LocalGet 9
+	0x12059D3 I32Const 0
+	0x12059D5 Call 56560
+	0x12059D9 LocalTee 3
+	0x12059DB I32Const 0
+	0x12059DD I32Lt_S
+	0x12059DE BrIf 9
+	0x12059E0 LocalGet 6
+	0x12059E2 LocalGet 3
+	0x12059E4 I32Const 65535
+	0x12059E8 I32And
+	0x12059E9 I32Const 0
+	0x12059EB Call 61633
+	0x12059EF Drop
+	0x12059F0 I32Const 2
+	0x12059F2 LocalSet 3
+	0x12059F4 Br 6
+	0x12059F6 End
+	0x12059F7 Br 4
+	0x12059F9 End
+	0x12059FA I32Const 4428732
+	0x12059FF I32Load 2, 0
+	0x1205A02 LocalTee 3
+	0x1205A04 I32Load16_S 1, 186
+	0x1205A08 I32Const 512
+	0x1205A0B I32And
+	0x1205A0C If -64
+	0x1205A0E LocalGet 3
+	0x1205A10 I32Load 2, 116
+	0x1205A13 I32Eqz
+	0x1205A14 If -64
+	0x1205A16 LocalGet 3
+	0x1205A18 Call 72345
+	0x1205A1C End
+	0x1205A1D End
+	0x1205A1E LocalGet 1
+	0x1205A20 LocalGet 9
+	0x1205A22 I32Const 77
+	0x1205A25 I32Const 0
+	0x1205A27 Call 56550
+	0x1205A2B LocalSet 3
+	0x1205A2D LocalGet 19
+	0x1205A2F LocalGet 0
+	0x1205A31 I64Load 3, 0
+	0x1205A34 I64Store 3, 0
+	0x1205A37 LocalGet 8
+	0x1205A39 LocalGet 19
+	0x1205A3B I64Load 3, 0
+	0x1205A3E I64Store 3, 0
+	0x1205A41 I32Const 16
+	0x1205A43 LocalGet 10
+	0x1205A45 LocalGet 8
+	0x1205A47 Call 51453
+	0x1205A4B LocalSet 4
+	0x1205A4D LocalGet 3
+	0x1205A4F I32Const 2
+	0x1205A51 I32Le_S
+	0x1205A52 If -64
+	0x1205A54 I32Const 4428732
+	0x1205A59 I32Load 2, 0
+	0x1205A5C LocalTee 5
+	0x1205A5E I32Load16_S 1, 186
+	0x1205A62 I32Const 512
+	0x1205A65 I32And
+	0x1205A66 I32Eqz
+	0x1205A67 LocalSet 7
+	0x1205A69 LocalGet 15
+	0x1205A6B If -64
+	0x1205A6D LocalGet 7
+	0x1205A6F I32Eqz
+	0x1205A70 If -64
+	0x1205A72 LocalGet 5
+	0x1205A74 I32Load 2, 116
+	0x1205A77 I32Eqz
+	0x1205A78 If -64
+	0x1205A7A LocalGet 5
+	0x1205A7C Call 72345
+	0x1205A80 End
+	0x1205A81 End
+	0x1205A82 LocalGet 6
+	0x1205A84 LocalGet 4
+	0x1205A86 I32Const 0
+	0x1205A88 Call 56552
+	0x1205A8C Else
+	0x1205A8D LocalGet 7
+	0x1205A8F I32Eqz
+	0x1205A90 If -64
+	0x1205A92 LocalGet 5
+	0x1205A94 I32Load 2, 116
+	0x1205A97 I32Eqz
+	0x1205A98 If -64
+	0x1205A9A LocalGet 5
+	0x1205A9C Call 72345
+	0x1205AA0 End
+	0x1205AA1 End
+	0x1205AA2 LocalGet 6
+	0x1205AA4 LocalGet 4
+	0x1205AA6 LocalGet 3
+	0x1205AA8 I32Const 0
+	0x1205AAA Call 56551
+	0x1205AAE End
+	0x1205AAF I32Const 0
+	0x1205AB1 LocalSet 4
+	0x1205AB3 Br 5
+	0x1205AB5 End
+	0x1205AB6 LocalGet 15
+	0x1205AB8 If -64
+	0x1205ABA LocalGet 0
+	0x1205ABC I64Load 3, 0
+	0x1205ABF LocalSet 29
+	0x1205AC1 I32Const 4428732
+	0x1205AC6 I32Load 2, 0
+	0x1205AC9 LocalTee 5
+	0x1205ACB I32Load16_S 1, 186
+	0x1205ACF I32Const 512
+	0x1205AD2 I32And
+	0x1205AD3 If -64
+	0x1205AD5 LocalGet 5
+	0x1205AD7 I32Load 2, 116
+	0x1205ADA I32Eqz
+	0x1205ADB If -64
+	0x1205ADD LocalGet 5
+	0x1205ADF Call 72345
+	0x1205AE3 End
+	0x1205AE4 End
+	0x1205AE5 LocalGet 20
+	0x1205AE7 LocalGet 29
+	0x1205AE9 I64Store 3, 0
+	0x1205AEC LocalGet 8
+	0x1205AEE LocalGet 20
+	0x1205AF0 I64Load 3, 0
+	0x1205AF3 I64Store 3, 0
+	0x1205AF6 LocalGet 6
+	0x1205AF8 LocalGet 8
+	0x1205AFA LocalGet 4
+	0x1205AFC LocalGet 3
+	0x1205AFE LocalGet 2
+	0x1205B00 I32Const 0
+	0x1205B02 Call 56554
+	0x1205B06 I32Const 0
+	0x1205B08 Call 61377
+	0x1205B0C Drop
+	0x1205B0D I32Const 0
+	0x1205B0F LocalSet 4
+	0x1205B11 Br 5
+	0x1205B13 End
+	0x1205B14 LocalGet 3
+	0x1205B16 I32Const 4
+	0x1205B18 I32Lt_S
+	0x1205B19 LocalGet 2
+	0x1205B1B I32Const 0
+	0x1205B1D Call 51652
+	0x1205B21 I32Const 1
+	0x1205B23 I32And
+	0x1205B24 I32Eqz
+	0x1205B25 I32Or
+	0x1205B26 I32Const 4428732
+	0x1205B2B I32Load 2, 0
+	0x1205B2E LocalTee 5
+	0x1205B30 I32Load16_S 1, 186
+	0x1205B34 I32Const 512
+	0x1205B37 I32And
+	0x1205B38 I32Eqz
+	0x1205B39 LocalSet 7
+	0x1205B3B If -64
+	0x1205B3D LocalGet 7
+	0x1205B3F I32Eqz
+	0x1205B40 If -64
+	0x1205B42 LocalGet 5
+	0x1205B44 I32Load 2, 116
+	0x1205B47 I32Eqz
+	0x1205B48 If -64
+	0x1205B4A LocalGet 5
+	0x1205B4C Call 72345
+	0x1205B50 End
+	0x1205B51 End
+	0x1205B52 LocalGet 6
+	0x1205B54 LocalGet 4
+	0x1205B56 LocalGet 3
+	0x1205B58 LocalGet 2
+	0x1205B5A I32Const 0
+	0x1205B5C Call 56556
+	0x1205B60 I32Const 0
+	0x1205B62 Call 61377
+	0x1205B66 Drop
+	0x1205B67 Else
+	0x1205B68 LocalGet 7
+	0x1205B6A I32Eqz
+	0x1205B6B If -64
+	0x1205B6D LocalGet 5
+	0x1205B6F I32Load 2, 116
+	0x1205B72 I32Eqz
+	0x1205B73 If -64
+	0x1205B75 LocalGet 5
+	0x1205B77 Call 72345
+	0x1205B7B End
+	0x1205B7C End
+	0x1205B7D LocalGet 6
+	0x1205B7F LocalGet 2
+	0x1205B81 LocalGet 4
+	0x1205B83 LocalGet 1
+	0x1205B85 LocalGet 9
+	0x1205B87 LocalGet 3
+	0x1205B89 I32Const 100
+	0x1205B8C I32Const 0
+	0x1205B8E Call 56555
+	0x1205B92 I32Const 1
+	0x1205B94 I32And
+	0x1205B95 I32Const 0
+	0x1205B97 I32Const 0
+	0x1205B99 Call 51655
+	0x1205B9D I32Const 0
+	0x1205B9F Call 61377
+	0x1205BA3 Drop
+	0x1205BA4 End
+	0x1205BA5 I32Const 0
+	0x1205BA7 LocalSet 4
+	0x1205BA9 Br 4
+	0x1205BAB End
+	0x1205BAC Block -64
+	0x1205BAE Block -64
+	0x1205BB0 Block -64
+	0x1205BB2 Block -64
+	0x1205BB4 Block -64
+	0x1205BB6 Block -64
+	0x1205BB8 LocalGet 3
+	0x1205BBA I32Const 100
+	0x1205BBD I32Sub
+	0x1205BBE BrTable System.UInt64[], 5
+	0x1205BC6 End
+	0x1205BC7 Br 7
+	0x1205BC9 End
+	0x1205BCA Br 5
+	0x1205BCC End
+	0x1205BCD I32Const 4428732
+	0x1205BD2 I32Load 2, 0
+	0x1205BD5 LocalTee 3
+	0x1205BD7 I32Load16_S 1, 186
+	0x1205BDB I32Const 512
+	0x1205BDE I32And
+	0x1205BDF If -64
+	0x1205BE1 LocalGet 3
+	0x1205BE3 I32Load 2, 116
+	0x1205BE6 I32Eqz
+	0x1205BE7 If -64
+	0x1205BE9 LocalGet 3
+	0x1205BEB Call 72345
+	0x1205BEF End
+	0x1205BF0 End
+	0x1205BF1 LocalGet 1
+	0x1205BF3 LocalGet 9
+	0x1205BF5 LocalGet 5
+	0x1205BF7 I32Const 0
+	0x1205BF9 Call 56550
+	0x1205BFD LocalSet 3
+	0x1205BFF LocalGet 0
+	0x1205C01 I64Load 3, 0
+	0x1205C04 LocalSet 29
+	0x1205C06 LocalGet 3
+	0x1205C08 I32Const 2
+	0x1205C0A I32Gt_S
+	0x1205C0B If -64
+	0x1205C0D LocalGet 18
+	0x1205C0F LocalGet 29
+	0x1205C11 I64Store 3, 0
+	0x1205C14 LocalGet 8
+	0x1205C16 LocalGet 18
+	0x1205C18 I64Load 3, 0
+	0x1205C1B I64Store 3, 0
+	0x1205C1E I32Const 12
+	0x1205C20 LocalGet 10
+	0x1205C22 LocalGet 8
+	0x1205C24 Call 51453
+	0x1205C28 LocalSet 5
+	0x1205C2A I32Const 4428732
+	0x1205C2F I32Load 2, 0
+	0x1205C32 LocalTee 4
+	0x1205C34 I32Load16_S 1, 186
+	0x1205C38 I32Const 512
+	0x1205C3B I32And
+	0x1205C3C If -64
+	0x1205C3E LocalGet 4
+	0x1205C40 I32Load 2, 116
+	0x1205C43 I32Eqz
+	0x1205C44 If -64
+	0x1205C46 LocalGet 4
+	0x1205C48 Call 72345
+	0x1205C4C End
+	0x1205C4D End
+	0x1205C4E LocalGet 6
+	0x1205C50 LocalGet 5
+	0x1205C52 LocalGet 3
+	0x1205C54 LocalGet 2
+	0x1205C56 I32Const 0
+	0x1205C58 Call 56553
+	0x1205C5C I32Const 0
+	0x1205C5E Call 61377
+	0x1205C62 Drop
+	0x1205C63 I32Const 0
+	0x1205C65 LocalSet 4
+	0x1205C67 Br 7
+	0x1205C69 End
+	0x1205C6A LocalGet 17
+	0x1205C6C LocalGet 29
+	0x1205C6E I64Store 3, 0
+	0x1205C71 LocalGet 8
+	0x1205C73 LocalGet 17
+	0x1205C75 I64Load 3, 0
+	0x1205C78 I64Store 3, 0
+	0x1205C7B I32Const 11
+	0x1205C7D LocalGet 10
+	0x1205C7F LocalGet 8
+	0x1205C81 Call 51453
+	0x1205C85 LocalSet 5
+	0x1205C87 I32Const 4428732
+	0x1205C8C I32Load 2, 0
+	0x1205C8F LocalTee 4
+	0x1205C91 I32Load16_S 1, 186
+	0x1205C95 I32Const 512
+	0x1205C98 I32And
+	0x1205C99 I32Eqz
+	0x1205C9A LocalSet 7
+	0x1205C9C LocalGet 15
+	0x1205C9E If -64
+	0x1205CA0 LocalGet 7
+	0x1205CA2 I32Eqz
+	0x1205CA3 If -64
+	0x1205CA5 LocalGet 4
+	0x1205CA7 I32Load 2, 116
+	0x1205CAA I32Eqz
+	0x1205CAB If -64
+	0x1205CAD LocalGet 4
+	0x1205CAF Call 72345
+	0x1205CB3 End
+	0x1205CB4 End
+	0x1205CB5 LocalGet 6
+	0x1205CB7 LocalGet 5
+	0x1205CB9 I32Const 0
+	0x1205CBB Call 56552
+	0x1205CBF Else
+	0x1205CC0 LocalGet 7
+	0x1205CC2 I32Eqz
+	0x1205CC3 If -64
+	0x1205CC5 LocalGet 4
+	0x1205CC7 I32Load 2, 116
+	0x1205CCA I32Eqz
+	0x1205CCB If -64
+	0x1205CCD LocalGet 4
+	0x1205CCF Call 72345
+	0x1205CD3 End
+	0x1205CD4 End
+	0x1205CD5 LocalGet 6
+	0x1205CD7 LocalGet 5
+	0x1205CD9 LocalGet 3
+	0x1205CDB I32Const 0
+	0x1205CDD Call 56551
+	0x1205CE1 End
+	0x1205CE2 I32Const 0
+	0x1205CE4 LocalSet 4
+	0x1205CE6 Br 6
+	0x1205CE8 End
+	0x1205CE9 I32Const 4428732
+	0x1205CEE I32Load 2, 0
+	0x1205CF1 LocalTee 3
+	0x1205CF3 I32Load16_S 1, 186
+	0x1205CF7 I32Const 512
+	0x1205CFA I32And
+	0x1205CFB If -64
+	0x1205CFD LocalGet 3
+	0x1205CFF I32Load 2, 116
+	0x1205D02 I32Eqz
+	0x1205D03 If -64
+	0x1205D05 LocalGet 3
+	0x1205D07 Call 72345
+	0x1205D0B End
+	0x1205D0C End
+	0x1205D0D LocalGet 1
+	0x1205D0F LocalGet 9
+	0x1205D11 LocalGet 5
+	0x1205D13 I32Const 0
+	0x1205D15 Call 56550
+	0x1205D19 LocalSet 3
+	0x1205D1B LocalGet 16
+	0x1205D1D LocalGet 0
+	0x1205D1F I64Load 3, 0
+	0x1205D22 I64Store 3, 0
+	0x1205D25 LocalGet 8
+	0x1205D27 LocalGet 16
+	0x1205D29 I64Load 3, 0
+	0x1205D2C I64Store 3, 0
+	0x1205D2F LocalGet 6
+	0x1205D31 LocalGet 2
+	0x1205D33 I32Const 14
+	0x1205D35 LocalGet 10
+	0x1205D37 LocalGet 8
+	0x1205D39 Call 51453
+	0x1205D3D I32Const 0
+	0x1205D3F Call 51635
+	0x1205D43 I32Const 0
+	0x1205D45 Call 61377
+	0x1205D49 Drop
+	0x1205D4A Br 5
+	0x1205D4C End
+	0x1205D4D I32Const 4428732
+	0x1205D52 I32Load 2, 0
+	0x1205D55 LocalTee 3
+	0x1205D57 I32Load16_S 1, 186
+	0x1205D5B I32Const 512
+	0x1205D5E I32And
+	0x1205D5F If -64
+	0x1205D61 LocalGet 3
+	0x1205D63 I32Load 2, 116
+	0x1205D66 I32Eqz
+	0x1205D67 If -64
+	0x1205D69 LocalGet 3
+	0x1205D6B Call 72345
+	0x1205D6F End
+	0x1205D70 End
+	0x1205D71 LocalGet 1
+	0x1205D73 LocalGet 9
+	0x1205D75 LocalGet 5
+	0x1205D77 I32Const 0
+	0x1205D79 Call 56550
+	0x1205D7D LocalSet 3
+	0x1205D7F LocalGet 0
+	0x1205D81 I64Load 3, 0
+	0x1205D84 I64Const 4611686018427387903
+	0x1205D8E I64And
+	0x1205D8F I64Const 36000000000
+	0x1205D96 I64Div_S
+	0x1205D97 I64Const 24
+	0x1205D99 I64Rem_S
+	0x1205D9A I32Wrap_I64
+	0x1205D9B I32Const 12
+	0x1205D9D I32Rem_S
+	0x1205D9E LocalSet 5
+	0x1205DA0 I32Const 4428732
+	0x1205DA5 I32Load 2, 0
+	0x1205DA8 LocalTee 7
+	0x1205DAA I32Load16_S 1, 186
+	0x1205DAE I32Const 512
+	0x1205DB1 I32And
+	0x1205DB2 If -64
+	0x1205DB4 LocalGet 7
+	0x1205DB6 I32Load 2, 116
+	0x1205DB9 I32Eqz
+	0x1205DBA If -64
+	0x1205DBC LocalGet 7
+	0x1205DBE Call 72345
+	0x1205DC2 End
+	0x1205DC3 End
+	0x1205DC4 LocalGet 6
+	0x1205DC6 LocalGet 5
+	0x1205DC8 If -1
+	0x1205DCA LocalGet 5
+	0x1205DCC Else
+	0x1205DCD I32Const 12
+	0x1205DCF End
+	0x1205DD0 LocalGet 3
+	0x1205DD2 I32Const 0
+	0x1205DD4 Call 56551
+	0x1205DD8 Br 4
+	0x1205DDA End
+	0x1205DDB LocalGet 5
+	0x1205DDD I32Const 65535
+	0x1205DE1 I32And
+	0x1205DE2 I32Const 109
+	0x1205DE5 I32Ne
+	0x1205DE6 BrIf 2
+	0x1205DE8 I32Const 4428732
+	0x1205DED I32Load 2, 0
+	0x1205DF0 LocalTee 3
+	0x1205DF2 I32Load16_S 1, 186
+	0x1205DF6 I32Const 512
+	0x1205DF9 I32And
+	0x1205DFA If -64
+	0x1205DFC LocalGet 3
+	0x1205DFE I32Load 2, 116
+	0x1205E01 I32Eqz
+	0x1205E02 If -64
+	0x1205E04 LocalGet 3
+	0x1205E06 Call 72345
+	0x1205E0A End
+	0x1205E0B End
+	0x1205E0C LocalGet 1
+	0x1205E0E LocalGet 9
+	0x1205E10 I32Const 109
+	0x1205E13 I32Const 0
+	0x1205E15 Call 56550
+	0x1205E19 LocalSet 3
+	0x1205E1B LocalGet 6
+	0x1205E1D LocalGet 0
+	0x1205E1F I64Load 3, 0
+	0x1205E22 I64Const 4611686018427387903
+	0x1205E2C I64And
+	0x1205E2D I64Const 600000000
+	0x1205E33 I64Div_S
+	0x1205E34 I64Const 60
+	0x1205E36 I64Rem_S
+	0x1205E37 I32Wrap_I64
+	0x1205E38 LocalGet 3
+	0x1205E3A I32Const 0
+	0x1205E3C Call 56551
+	0x1205E40 End
+	0x1205E41 Br 2
+	0x1205E43 End
+	0x1205E44 I32Const 4428732
+	0x1205E49 I32Load 2, 0
+	0x1205E4C LocalTee 3
+	0x1205E4E I32Load16_S 1, 186
+	0x1205E52 I32Const 512
+	0x1205E55 I32And
+	0x1205E56 If -64
+	0x1205E58 LocalGet 3
+	0x1205E5A I32Load 2, 116
+	0x1205E5D I32Eqz
+	0x1205E5E If -64
+	0x1205E60 LocalGet 3
+	0x1205E62 Call 72345
+	0x1205E66 End
+	0x1205E67 End
+	0x1205E68 LocalGet 1
+	0x1205E6A LocalGet 9
+	0x1205E6C LocalGet 5
+	0x1205E6E I32Const 0
+	0x1205E70 Call 56550
+	0x1205E74 LocalTee 3
+	0x1205E76 I32Const 7
+	0x1205E78 I32Gt_S
+	0x1205E79 BrIf 4
+	0x1205E7B LocalGet 0
+	0x1205E7D I64Load 3, 0
+	0x1205E80 I64Const 4611686018427387903
+	0x1205E8A I64And
+	0x1205E8B I64Const 10000000
+	0x1205E90 I64Rem_S
+	0x1205E91 LocalSet 29
+	0x1205E93 I32Const 4428140
+	0x1205E98 I32Load 2, 0
+	0x1205E9B LocalTee 7
+	0x1205E9D I32Load16_S 1, 186
+	0x1205EA1 I32Const 512
+	0x1205EA4 I32And
+	0x1205EA5 If -64
+	0x1205EA7 LocalGet 7
+	0x1205EA9 I32Load 2, 116
+	0x1205EAC I32Eqz
+	0x1205EAD If -64
+	0x1205EAF LocalGet 7
+	0x1205EB1 Call 72345
+	0x1205EB5 End
+	0x1205EB6 End
+	0x1205EB7 F64Const 10
+	0x1205EC0 I32Const 7
+	0x1205EC2 LocalGet 3
+	0x1205EC4 I32Sub
+	0x1205EC5 F64Convert_I32_S
+	0x1205EC6 Call 74485
+	0x1205ECA LocalTee 32
+	0x1205ECC LocalGet 32
+	0x1205ECE F64Ne
+	0x1205ECF If -2
+	0x1205ED1 I64Const -9223372036854775808
+	0x1205EDC Else
+	0x1205EDD LocalGet 32
+	0x1205EDF F64Const 9.223372036854776E+18
+	0x1205EE8 F64Ge
+	0x1205EE9 If -2
+	0x1205EEB I64Const -9223372036854775808
+	0x1205EF6 Else
+	0x1205EF7 LocalGet 32
+	0x1205EF9 F64Const -9.223372036854776E+18
+	0x1205F02 F64Le
+	0x1205F03 If -2
+	0x1205F05 I64Const -9223372036854775808
+	0x1205F10 Else
+	0x1205F11 LocalGet 32
+	0x1205F13 I64Trunc_F64_S
+	0x1205F14 End
+	0x1205F15 End
+	0x1205F16 End
+	0x1205F17 LocalTee 30
+	0x1205F19 I64Eqz
+	0x1205F1A If -2
+	0x1205F1C I64Const 0
+	0x1205F1E Else
+	0x1205F1F LocalGet 29
+	0x1205F21 I64Const -9223372036854775808
+	0x1205F2C I64Eq
+	0x1205F2D LocalGet 30
+	0x1205F2F I64Const -1
+	0x1205F31 I64Eq
+	0x1205F32 I32And
+	0x1205F33 If -2
+	0x1205F35 I64Const 0
+	0x1205F37 Else
+	0x1205F38 LocalGet 29
+	0x1205F3A LocalGet 30
+	0x1205F3C I64Div_S
+	0x1205F3D End
+	0x1205F3E End
+	0x1205F3F LocalSet 29
+	0x1205F41 LocalGet 5
+	0x1205F43 I32Const 65535
+	0x1205F47 I32And
+	0x1205F48 I32Const 102
+	0x1205F4B I32Eq
+	0x1205F4C If -64
+	0x1205F4E LocalGet 13
+	0x1205F50 LocalGet 29
+	0x1205F52 I64Store32 2, 0
+	0x1205F55 I32Const 4428732
+	0x1205F5A I32Load 2, 0
+	0x1205F5D LocalTee 5
+	0x1205F5F I32Load16_S 1, 186
+	0x1205F63 I32Const 512
+	0x1205F66 I32And
+	0x1205F67 If -64
+	0x1205F69 LocalGet 5
+	0x1205F6B I32Load 2, 116
+	0x1205F6E I32Eqz
+	0x1205F6F If -64
+	0x1205F71 LocalGet 5
+	0x1205F73 Call 72345
+	0x1205F77 I32Const 4428732
+	0x1205F7C I32Load 2, 0
+	0x1205F7F LocalSet 5
+	0x1205F81 End
+	0x1205F82 End
+	0x1205F83 LocalGet 5
+	0x1205F85 I32Load 2, 92
+	0x1205F88 I32Load 2, 12
+	0x1205F8B LocalGet 3
+	0x1205F8D I32Const 2
+	0x1205F8F I32Shl
+	0x1205F90 I32Add
+	0x1205F91 I32Const 12
+	0x1205F93 I32Add
+	0x1205F94 I32Load 2, 0
+	0x1205F97 LocalSet 7
+	0x1205F99 I32Const 4427896
+	0x1205F9E I32Load 2, 0
+	0x1205FA1 LocalTee 5
+	0x1205FA3 I32Load16_S 1, 186
+	0x1205FA7 I32Const 512
+	0x1205FAA I32And
+	0x1205FAB If -64
+	0x1205FAD LocalGet 5
+	0x1205FAF I32Load 2, 116
+	0x1205FB2 I32Eqz
+	0x1205FB3 If -64
+	0x1205FB5 LocalGet 5
+	0x1205FB7 Call 72345
+	0x1205FBB End
+	0x1205FBC End
+	0x1205FBD LocalGet 6
+	0x1205FBF LocalGet 13
+	0x1205FC1 LocalGet 7
+	0x1205FC3 I32Const 0
+	0x1205FC5 Call 51249
+	0x1205FC9 I32Const 0
+	0x1205FCB Call 54848
+	0x1205FCF I32Const 0
+	0x1205FD1 Call 61377
+	0x1205FD5 Drop
+	0x1205FD6 Br 2
+	0x1205FD8 End
+	0x1205FD9 LocalGet 3
+	0x1205FDB LocalSet 7
+	0x1205FDD Loop -64
+	0x1205FDF LocalGet 7
+	0x1205FE1 I32Const 0
+	0x1205FE3 I32Gt_S
+	0x1205FE4 LocalGet 29
+	0x1205FE6 LocalGet 29
+	0x1205FE8 LocalTee 30
+	0x1205FEA I64Const 10
+	0x1205FEC I64Div_S
+	0x1205FED LocalTee 29
+	0x1205FEF I64Const 10
+	0x1205FF1 I64Mul
+	0x1205FF2 I64Sub
+	0x1205FF3 I64Const 0
+	0x1205FF5 I64Eq
+	0x1205FF6 I32And
+	0x1205FF7 If -64
+	0x1205FF9 LocalGet 7
+	0x1205FFB I32Const 1
+	0x1205FFD I32Sub
+	0x1205FFE LocalSet 7
+	0x1206000 Br 1
+	0x1206002 End
+	0x1206003 End
+	0x1206004 LocalGet 7
+	0x1206006 I32Const 1
+	0x1206008 I32Lt_S
+	0x1206009 If -64
+	0x120600B LocalGet 6
+	0x120600D I32Load 2, 16
+	0x1206010 LocalGet 6
+	0x1206012 I32Load 2, 20
+	0x1206015 I32Add
+	0x1206016 I32Const 1
+	0x1206018 I32Lt_S
+	0x1206019 BrIf 2
+	0x120601B LocalGet 6
+	0x120601D LocalGet 6
+	0x120601F I32Load 2, 16
+	0x1206022 LocalGet 6
+	0x1206024 I32Load 2, 20
+	0x1206027 I32Add
+	0x1206028 I32Const 1
+	0x120602A I32Sub
+	0x120602B I32Const 0
+	0x120602D Call 61616
+	0x1206031 I32Const 65535
+	0x1206035 I32And
+	0x1206036 I32Const 46
+	0x1206038 I32Ne
+	0x1206039 BrIf 2
+	0x120603B LocalGet 6
+	0x120603D LocalGet 6
+	0x120603F I32Load 2, 16
+	0x1206042 LocalGet 6
+	0x1206044 I32Load 2, 20
+	0x1206047 I32Add
+	0x1206048 I32Const 1
+	0x120604A I32Sub
+	0x120604B I32Const 1
+	0x120604D I32Const 0
+	0x120604F Call 61622
+	0x1206053 Drop
+	0x1206054 Br 2
+	0x1206056 End
+	0x1206057 LocalGet 13
+	0x1206059 LocalGet 30
+	0x120605B I64Store32 2, 0
+	0x120605E I32Const 4428732
+	0x1206063 I32Load 2, 0
+	0x1206066 LocalTee 5
+	0x1206068 I32Load16_S 1, 186
+	0x120606C I32Const 512
+	0x120606F I32And
+	0x1206070 If -64
+	0x1206072 LocalGet 5
+	0x1206074 I32Load 2, 116
+	0x1206077 I32Eqz
+	0x1206078 If -64
+	0x120607A LocalGet 5
+	0x120607C Call 72345
+	0x1206080 I32Const 4428732
+	0x1206085 I32Load 2, 0
+	0x1206088 LocalSet 5
+	0x120608A End
+	0x120608B End
+	0x120608C LocalGet 5
+	0x120608E I32Load 2, 92
+	0x1206091 I32Load 2, 12
+	0x1206094 LocalGet 7
+	0x1206096 I32Const 2
+	0x1206098 I32Shl
+	0x1206099 I32Add
+	0x120609A I32Const 12
+	0x120609C I32Add
+	0x120609D I32Load 2, 0
+	0x12060A0 LocalSet 7
+	0x12060A2 I32Const 4427896
+	0x12060A7 I32Load 2, 0
+	0x12060AA LocalTee 5
+	0x12060AC I32Load16_S 1, 186
+	0x12060B0 I32Const 512
+	0x12060B3 I32And
+	0x12060B4 If -64
+	0x12060B6 LocalGet 5
+	0x12060B8 I32Load 2, 116
+	0x12060BB I32Eqz
+	0x12060BC If -64
+	0x12060BE LocalGet 5
+	0x12060C0 Call 72345
+	0x12060C4 End
+	0x12060C5 End
+	0x12060C6 LocalGet 6
+	0x12060C8 LocalGet 13
+	0x12060CA LocalGet 7
+	0x12060CC I32Const 0
+	0x12060CE Call 51249
+	0x12060D2 I32Const 0
+	0x12060D4 Call 54848
+	0x12060D8 I32Const 0
+	0x12060DA Call 61377
+	0x12060DE Drop
+	0x12060DF Br 1
+	0x12060E1 End
+	0x12060E2 LocalGet 6
+	0x12060E4 LocalGet 5
+	0x12060E6 I32Const 0
+	0x12060E8 Call 61633
+	0x12060EC Drop
+	0x12060ED I32Const 1
+	0x12060EF LocalSet 3
+	0x12060F1 End
+	0x12060F2 LocalGet 3
+	0x12060F4 LocalGet 9
+	0x12060F6 I32Add
+	0x12060F7 LocalSet 9
+	0x12060F9 Br 0
+	0x12060FB End
+	0x12060FC Unreachable
+	0x12060FD End
+	0x12060FE LocalGet 6
+	0x1206100 I32Const 0
+	0x1206102 Call 61676
+	0x1206106 LocalGet 14
+	0x1206108 GlobalSet 7
+	0x120610A Return
+	0x120610B End
+	0x120610C I32Const 4503864
+	0x1206111 I32Load 2, 0
+	0x1206114 LocalSet 0
+	0x1206116 I32Const 4428056
+	0x120611B I32Load 2, 0
+	0x120611E Call 72556
+	0x1206122 LocalTee 1
+	0x1206124 LocalGet 0
+	0x1206126 I32Const 0
+	0x1206128 Call 51323
+	0x120612C LocalGet 1
+	0x120612E I32Const 0
+	0x1206130 I32Const 4468024
+	0x1206135 I32Load 2, 0
+	0x1206138 Call 73899
+	0x120613C I32Const 0
+	0x120613E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b351
+	11 Nop
+	12 Move v12 @ S0_v698, [2D02BC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v698
+	14 Nop
+	15 Move v14 @ S1_v324, 1
+	16 Move [45B7CF], v14 @ S1_v324
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9 (System.Guid+ParseFailureKind), v1 @ G7, 104
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v23 @ S0_v11 (System.Guid+GuidResult), v1 @ G7, 96
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Add v27 @ S0_v13, v1 @ G7, 88
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Add v31 @ S0_v15, v1 @ G7, 80
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v35 @ S0_v17, v1 @ G7, 72
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Subtract v39 @ S0_v19, v1 @ G7, -64
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Add v43 @ S0_v21, v1 @ G7, 56
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Add v47 @ S0_v23, v1 @ G7, 48
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Add v51 @ S0_v25, v1 @ G7, 40
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Add v55 @ S0_v27, v1 @ G7, 32
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Add v59 @ S0_v29, v1 @ G7, 24
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Add v63 @ S0_v31, v1 @ G7, 16
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Add v67 @ S0_v33, v1 @ G7, 8
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Add v72 @ S0_v35, v1 @ G7, 116
+	74 Nop
+	75 Nop
+	76 Move [v72 @ S0_v35], 0
+	77 Nop
+	78 Nop
+	79 Add v77 @ S0_v37, v1 @ G7, 112
+	80 Nop
+	81 Nop
+	82 Move [v77 @ S0_v37], 0
+	83 Nop
+	84 Nop
+	85 Add v82 @ S0_v39, v1 @ G7, 120
+	86 Nop
+	87 Nop
+	88 Move [v82 @ S0_v39], 0
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Call StringBuilderCache.GetStringAndRelease, v91 @ S0_v43 (System.String), 16
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Call 724E, v95 @ S0_v45, 7, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+3C]
+	99 Nop
+	100 CheckEqual v97 @ S0_v46 (System.Boolean), v95 @ S0_v45, 8
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 CheckGreaterOrEqual v155 @ S0_v52 (System.Boolean), v150 @ S0_v63 (System.Char[]), [dateTime @ L1 (System.DateTime&)+8]
+	112 ConditionalJump @b352, v155 @ S0_v52 (System.Boolean)
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Call String.Split, v159 @ S0_v56 (System.String[]), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[])
+	117 Nop
+	118 Nop
+	119 And v165 @ S0_v57, v159 @ S0_v56 (System.String[]), 65535
+	120 Nop
+	121 Nop
+	122 Nop
+	123 And v169 @ S0_v59, v159 @ S0_v56 (System.String[]), 65535
+	124 Nop
+	125 CheckLess v171 @ S0_v60 (System.Boolean), v169 @ S0_v59, 76
+	126 Not v172 @ TEMP_v3 (System.Boolean), v171 @ S0_v60 (System.Boolean)
+	127 ConditionalJump @b91, v172 @ TEMP_v3 (System.Boolean)
+	128 Nop
+	129 Nop
+	130 And v177 @ S0_v585, v159 @ S0_v56 (System.String[]), 65535
+	131 Nop
+	132 CheckGreaterOrEqual v179 @ S0_v586 (System.Boolean), v177 @ S0_v585, 48
+	133 Not v180 @ TEMP_v171 (System.Boolean), v179 @ S0_v586 (System.Boolean)
+	134 ConditionalJump @b47, v180 @ TEMP_v171 (System.Boolean)
+	135 Nop
+	136 Nop
+	137 And v208 @ S0_v654, v159 @ S0_v56 (System.String[]), 65535
+	138 Nop
+	139 CheckLess v210 @ S0_v655 (System.Boolean), v208 @ S0_v654, 71
+	140 Not v211 @ TEMP_v199 (System.Boolean), v210 @ S0_v655 (System.Boolean)
+	141 ConditionalJump @b30, v211 @ TEMP_v199 (System.Boolean)
+	142 Nop
+	143 Nop
+	144 ShiftLeft v232 @ S0_v690, v159 @ S0_v56 (System.String[]), 16
+	145 Nop
+	146 ShiftRight v234 @ S0_v691, v232 @ S0_v690, 16
+	147 Nop
+	148 Subtract v236 @ S0_v692, v234 @ S0_v691, 58
+	149 CheckEqual v237 @ TEMP_v213 (System.Boolean), v234 @ S0_v691, 58
+	150 ConditionalJump @b26, v237 @ TEMP_v213 (System.Boolean)
+	151 CheckEqual v290 @ TEMP_v214 (System.Boolean), v236 @ S0_v692, 1
+	152 ConditionalJump @b27, v290 @ TEMP_v214 (System.Boolean)
+	153 CheckEqual v319 @ TEMP_v216 (System.Boolean), v236 @ S0_v692, 2
+	154 ConditionalJump @b27, v319 @ TEMP_v216 (System.Boolean)
+	155 CheckEqual v321 @ TEMP_v217 (System.Boolean), v236 @ S0_v692, 3
+	156 ConditionalJump @b27, v321 @ TEMP_v217 (System.Boolean)
+	157 CheckEqual v322 @ TEMP_v218 (System.Boolean), v236 @ S0_v692, 4
+	158 ConditionalJump @b27, v322 @ TEMP_v218 (System.Boolean)
+	159 CheckEqual v323 @ TEMP_v219 (System.Boolean), v236 @ S0_v692, 5
+	160 ConditionalJump @b27, v323 @ TEMP_v219 (System.Boolean)
+	161 CheckEqual v324 @ TEMP_v220 (System.Boolean), v236 @ S0_v692, 6
+	162 ConditionalJump @b27, v324 @ TEMP_v220 (System.Boolean)
+	163 CheckEqual v325 @ TEMP_v221 (System.Boolean), v236 @ S0_v692, 7
+	164 ConditionalJump @b27, v325 @ TEMP_v221 (System.Boolean)
+	165 CheckEqual v326 @ TEMP_v222 (System.Boolean), v236 @ S0_v692, 8
+	166 ConditionalJump @b27, v326 @ TEMP_v222 (System.Boolean)
+	167 CheckEqual v327 @ TEMP_v223 (System.Boolean), v236 @ S0_v692, 9
+	168 ConditionalJump @b27, v327 @ TEMP_v223 (System.Boolean)
+	169 CheckEqual v328 @ TEMP_v224 (System.Boolean), v236 @ S0_v692, 10
+	170 ConditionalJump @b27, v328 @ TEMP_v224 (System.Boolean)
+	171 CheckEqual v329 @ TEMP_v225 (System.Boolean), v236 @ S0_v692, 11
+	172 ConditionalJump @b27, v329 @ TEMP_v225 (System.Boolean)
+	173 CheckEqual v330 @ TEMP_v226 (System.Boolean), v236 @ S0_v692, 12
+	174 ConditionalJump @b25, v330 @ TEMP_v226 (System.Boolean)
+	175 Jump @b27
+	176 Nop
+	177 Jump @b295
+	178 Nop
+	179 Jump @b28
+	180 Nop
+	181 Jump @b343
+	182 Nop
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Call StringBuilder.AppendLine, v335 @ S0_v694 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+30]
+	188 Nop
+	189 Nop
+	190 Jump @b353
+	191 Nop
+	192 Nop
+	193 Nop
+	194 ShiftLeft v240 @ S0_v657, v159 @ S0_v56 (System.String[]), 16
+	195 Nop
+	196 ShiftRight v242 @ S0_v658, v240 @ S0_v657, 16
+	197 Nop
+	198 Subtract v244 @ S0_v659, v242 @ S0_v658, 72
+	199 CheckEqual v245 @ TEMP_v200 (System.Boolean), v242 @ S0_v658, 72
+	200 ConditionalJump @b35, v245 @ TEMP_v200 (System.Boolean)
+	201 CheckEqual v291 @ TEMP_v206 (System.Boolean), v244 @ S0_v659, 1
+	202 ConditionalJump @b46, v291 @ TEMP_v206 (System.Boolean)
+	203 CheckEqual v336 @ TEMP_v208 (System.Boolean), v244 @ S0_v659, 2
+	204 ConditionalJump @b46, v336 @ TEMP_v208 (System.Boolean)
+	205 CheckEqual v338 @ TEMP_v209 (System.Boolean), v244 @ S0_v659, 3
+	206 ConditionalJump @b41, v338 @ TEMP_v209 (System.Boolean)
+	207 Jump @b46
+	208 Nop
+	209 Nop
+	210 Move v293 @ S0_v661 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	211 Nop
+	212 Nop
+	213 Nop
+	214 And v297 @ S0_v663, [v293 @ S0_v661 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	215 CheckEqual v298 @ TEMP_v201 (System.Boolean), v297 @ S0_v663, 0
+	216 ConditionalJump @b354, v298 @ TEMP_v201 (System.Boolean)
+	217 Move v339 @ S0_v668 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	218 Nop
+	219 CheckEqual v341 @ S0_v670 (System.Boolean), [v339 @ S0_v668 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	220 Not v342 @ TEMP_v205 (System.Boolean), v341 @ S0_v670 (System.Boolean)
+	221 ConditionalJump @b354, v342 @ TEMP_v205 (System.Boolean)
+	222 Nop
+	223 CallVoid 11A99, typeof(System.DateTimeFormat)
+	224 Nop
+	225 Nop
+	226 Nop
+	227 Nop
+	228 Nop
+	229 Nop
+	230 Call DateTimeFormat.FormatDayOfWeek, v350 @ S0_v666 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), 72
+	231 Nop
+	232 Nop
+	233 Nop
+	234 Nop
+	235 Nop
+	236 Nop
+	237 Nop
+	238 Nop
+	239 Nop
+	240 Nop
+	241 Nop
+	242 Nop
+	243 Nop
+	244 Nop
+	245 Throw typeof(System.OverflowException)
+	246 Jump @b353
+	247 Nop
+	248 Nop
+	249 Nop
+	250 Nop
+	251 Nop
+	252 Move v709 @ S0_v675 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	253 Nop
+	254 Nop
+	255 Nop
+	256 And v713 @ S0_v677, [v709 @ S0_v675 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	257 CheckEqual v714 @ TEMP_v210 (System.Boolean), v713 @ S0_v677, 0
+	258 ConditionalJump @b355, v714 @ TEMP_v210 (System.Boolean)
+	259 Move v799 @ S0_v685 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	260 Nop
+	261 CheckEqual v801 @ S0_v687 (System.Boolean), [v799 @ S0_v685 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	262 Not v802 @ TEMP_v212 (System.Boolean), v801 @ S0_v687 (System.Boolean)
+	263 ConditionalJump @b355, v802 @ TEMP_v212 (System.Boolean)
+	264 Nop
+	265 CallVoid 11A99, typeof(System.DateTimeFormat)
+	266 Nop
+	267 Nop
+	268 Nop
+	269 Nop
+	270 Move [v59 @ S0_v29], [format @ L0 (System.String)]
+	271 Nop
+	272 Nop
+	273 Move [v63 @ S0_v31], [offset @ L3 (System.TimeSpan&)]
+	274 Nop
+	275 Nop
+	276 Nop
+	277 Move v23.parsedGuid (System.Guid), [v59 @ S0_v29]
+	278 Nop
+	279 Nop
+	280 Nop
+	281 Move v19.value__ (System.Int32), [v63 @ S0_v31]
+	282 Nop
+	283 Nop
+	284 Nop
+	285 Nop
+	286 CallVoid MatchNumberDelegate..ctor, v23 @ S0_v11 (System.Guid+GuidResult), v19 @ S0_v9 (System.Guid+ParseFailureKind), v91 @ S0_v43 (System.String)
+	287 Nop
+	288 Nop
+	289 Jump @b353
+	290 Nop
+	291 Jump @b343
+	292 Nop
+	293 Nop
+	294 Nop
+	295 And v214 @ S0_v588, v159 @ S0_v56 (System.String[]), 65535
+	296 Nop
+	297 CheckLess v216 @ S0_v589 (System.Boolean), v214 @ S0_v588, 38
+	298 Not v217 @ TEMP_v172 (System.Boolean), v216 @ S0_v589 (System.Boolean)
+	299 ConditionalJump @b68, v217 @ TEMP_v172 (System.Boolean)
+	300 Nop
+	301 Nop
+	302 ShiftLeft v248 @ S0_v616, v159 @ S0_v56 (System.String[]), 16
+	303 Nop
+	304 ShiftRight v250 @ S0_v617, v248 @ S0_v616, 16
+	305 Nop
+	306 Subtract v252 @ S0_v618, v250 @ S0_v617, 34
+	307 CheckEqual v253 @ TEMP_v188 (System.Boolean), v250 @ S0_v617, 34
+	308 ConditionalJump @b53, v253 @ TEMP_v188 (System.Boolean)
+	309 CheckEqual v299 @ TEMP_v189 (System.Boolean), v252 @ S0_v618, 1
+	310 ConditionalJump @b55, v299 @ TEMP_v189 (System.Boolean)
+	311 CheckEqual v351 @ TEMP_v191 (System.Boolean), v252 @ S0_v618, 2
+	312 ConditionalJump @b55, v351 @ TEMP_v191 (System.Boolean)
+	313 CheckEqual v353 @ TEMP_v192 (System.Boolean), v252 @ S0_v618, 3
+	314 ConditionalJump @b54, v353 @ TEMP_v192 (System.Boolean)
+	315 Jump @b55
+	316 Nop
+	317 Jump @b83
+	318 Nop
+	319 Jump @b56
+	320 Nop
+	321 Jump @b343
+	322 Nop
+	323 Nop
+	324 Move v817 @ S0_v620 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	325 Nop
+	326 Nop
+	327 Nop
+	328 And v821 @ S0_v622, [v817 @ S0_v620 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	329 CheckEqual v822 @ TEMP_v193 (System.Boolean), v821 @ S0_v622, 0
+	330 ConditionalJump @b356, v822 @ TEMP_v193 (System.Boolean)
+	331 Move v903 @ S0_v649 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	332 Nop
+	333 CheckEqual v905 @ S0_v651 (System.Boolean), [v903 @ S0_v649 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	334 Not v906 @ TEMP_v198 (System.Boolean), v905 @ S0_v651 (System.Boolean)
+	335 ConditionalJump @b356, v906 @ TEMP_v198 (System.Boolean)
+	336 Nop
+	337 CallVoid 11A99, typeof(System.DateTimeFormat)
+	338 Nop
+	339 Nop
+	340 Nop
+	341 Nop
+	342 Nop
+	343 Call DateTimeFormat.GetRealFormat, v913 @ S0_v625 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[])
+	344 Nop
+	345 Nop
+	346 CheckLess v983 @ S0_v626 (System.Boolean), v913 @ S0_v625 (System.String), 0
+	347 Nop
+	348 Nop
+	349 CheckEqual v986 @ S1_v286 (System.Boolean), v913 @ S0_v625 (System.String), 37
+	350 Or v987 @ S0_v627, v983 @ S0_v626 (System.Boolean), v986 @ S1_v286 (System.Boolean)
+	351 ConditionalJump @b347, v987 @ S0_v627
+	352 Nop
+	353 Nop
+	354 Nop
+	355 Nop
+	356 Nop
+	357 Move [v82 @ S0_v39], v913 @ S0_v625 (System.String)
+	358 Nop
+	359 Nop
+	360 Newobj v1116 @ S0_v632 (System.OutOfMemoryException), typeof(System.OutOfMemoryException)
+	361 Nop
+	362 Nop
+	363 Move v1232 @ S0_v634 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	364 Nop
+	365 Nop
+	366 Nop
+	367 And v1236 @ S0_v636, [v1232 @ S0_v634 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	368 CheckEqual v1237 @ TEMP_v195 (System.Boolean), v1236 @ S0_v636, 0
+	369 ConditionalJump @b357, v1237 @ TEMP_v195 (System.Boolean)
+	370 Move v1280 @ S0_v645 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	371 Nop
+	372 CheckEqual v1282 @ S0_v647 (System.Boolean), [v1280 @ S0_v645 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	373 Not v1283 @ TEMP_v197 (System.Boolean), v1282 @ S0_v647 (System.Boolean)
+	374 ConditionalJump @b357, v1283 @ TEMP_v197 (System.Boolean)
+	375 Nop
+	376 CallVoid 11A99, typeof(System.DateTimeFormat)
+	377 Nop
+	378 Nop
+	379 Nop
+	380 Nop
+	381 Move [v67 @ S0_v33], [format @ L0 (System.String)]
+	382 Nop
+	383 Nop
+	384 Move [v1 @ G7], [offset @ L3 (System.TimeSpan&)]
+	385 Nop
+	386 Nop
+	387 Nop
+	388 Move v23.parsedGuid (System.Guid), [v67 @ S0_v33]
+	389 Nop
+	390 Nop
+	391 Nop
+	392 Move v19.value__ (System.Int32), [v1 @ G7]
+	393 Nop
+	394 Nop
+	395 Nop
+	396 Nop
+	397 Nop
+	398 Nop
+	399 Call DateTimeFormat.ExpandPredefinedFormat, v1303 @ S1_v297 (System.String), v23 @ S0_v11 (System.Guid+GuidResult), v1116 @ S0_v632 (System.OutOfMemoryException), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&), v19 @ S0_v9 (System.Guid+ParseFailureKind)
+	400 Nop
+	401 Call StringBuilder.AppendLine, v1368 @ S0_v643 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v1303 @ S1_v297 (System.String)
+	402 Nop
+	403 Jump @b358
+	404 Nop
+	405 Nop
+	406 ShiftLeft v256 @ S0_v609, v159 @ S0_v56 (System.String[]), 16
+	407 Nop
+	408 ShiftRight v258 @ S0_v610, v256 @ S0_v609, 16
+	409 Nop
+	410 Subtract v260 @ S0_v611, v258 @ S0_v610, 39
+	411 CheckEqual v261 @ TEMP_v178 (System.Boolean), v258 @ S0_v610, 39
+	412 ConditionalJump @b78, v261 @ TEMP_v178 (System.Boolean)
+	413 CheckEqual v300 @ TEMP_v179 (System.Boolean), v260 @ S0_v611, 1
+	414 ConditionalJump @b80, v300 @ TEMP_v179 (System.Boolean)
+	415 CheckEqual v360 @ TEMP_v181 (System.Boolean), v260 @ S0_v611, 2
+	416 ConditionalJump @b80, v360 @ TEMP_v181 (System.Boolean)
+	417 CheckEqual v362 @ TEMP_v182 (System.Boolean), v260 @ S0_v611, 3
+	418 ConditionalJump @b80, v362 @ TEMP_v182 (System.Boolean)
+	419 CheckEqual v363 @ TEMP_v183 (System.Boolean), v260 @ S0_v611, 4
+	420 ConditionalJump @b80, v363 @ TEMP_v183 (System.Boolean)
+	421 CheckEqual v364 @ TEMP_v184 (System.Boolean), v260 @ S0_v611, 5
+	422 ConditionalJump @b80, v364 @ TEMP_v184 (System.Boolean)
+	423 CheckEqual v365 @ TEMP_v185 (System.Boolean), v260 @ S0_v611, 6
+	424 ConditionalJump @b80, v365 @ TEMP_v185 (System.Boolean)
+	425 CheckEqual v366 @ TEMP_v186 (System.Boolean), v260 @ S0_v611, 7
+	426 ConditionalJump @b80, v366 @ TEMP_v186 (System.Boolean)
+	427 CheckEqual v367 @ TEMP_v187 (System.Boolean), v260 @ S0_v611, 8
+	428 ConditionalJump @b79, v367 @ TEMP_v187 (System.Boolean)
+	429 Jump @b80
+	430 Nop
+	431 Jump @b83
+	432 Nop
+	433 Jump @b81
+	434 Nop
+	435 Jump @b343
+	436 Nop
+	437 Nop
+	438 Nop
+	439 Nop
+	440 Nop
+	441 Call StringBuilder.AppendLine, v1308 @ S0_v613 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+24]
+	442 Nop
+	443 Nop
+	444 Nop
+	445 Jump @b353
+	446 Nop
+	447 Nop
+	448 Nop
+	449 Call 11B6C, v359 @ S0_v594 (System.Text.StringBuilder), typeof(System.Text.StringBuilder)
+	450 Nop
+	451 Nop
+	452 CallVoid StringBuilderCache.Release, v359 @ S0_v594 (System.Text.StringBuilder)
+	453 Nop
+	454 Move v716 @ S0_v596 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	455 Nop
+	456 Nop
+	457 Nop
+	458 And v720 @ S0_v598, [v716 @ S0_v596 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	459 CheckEqual v721 @ TEMP_v175 (System.Boolean), v720 @ S0_v598, 0
+	460 ConditionalJump @b359, v721 @ TEMP_v175 (System.Boolean)
+	461 Move v823 @ S0_v604 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	462 Nop
+	463 CheckEqual v825 @ S0_v606 (System.Boolean), [v823 @ S0_v604 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	464 Not v826 @ TEMP_v177 (System.Boolean), v825 @ S0_v606 (System.Boolean)
+	465 ConditionalJump @b359, v826 @ TEMP_v177 (System.Boolean)
+	466 Nop
+	467 CallVoid 11A99, typeof(System.DateTimeFormat)
+	468 Nop
+	469 Nop
+	470 Nop
+	471 Nop
+	472 Nop
+	473 Nop
+	474 Newobj v834 @ S0_v601 (System.OverflowException), typeof(System.OverflowException)
+	475 Nop
+	476 Nop
+	477 Nop
+	478 Nop
+	479 Call StringBuilder.FindChunkForIndex, v918 @ S0_v603 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v359 @ S0_v594 (System.Text.StringBuilder)
+	480 Jump @b294
+	481 Nop
+	482 Nop
+	483 And v183 @ S0_v205, v159 @ S0_v56 (System.String[]), 65535
+	484 Nop
+	485 CheckGreaterOrEqual v185 @ S0_v206 (System.Boolean), v183 @ S0_v205, 110
+	486 Not v186 @ TEMP_v40 (System.Boolean), v185 @ S0_v206 (System.Boolean)
+	487 ConditionalJump @b171, v186 @ TEMP_v40 (System.Boolean)
+	488 Nop
+	489 Nop
+	490 And v220 @ S0_v429, v159 @ S0_v56 (System.String[]), 65535
+	491 Nop
+	492 CheckLess v222 @ S0_v430 (System.Boolean), v220 @ S0_v429, 117
+	493 Not v223 @ TEMP_v125 (System.Boolean), v222 @ S0_v430 (System.Boolean)
+	494 ConditionalJump @b124, v223 @ TEMP_v125 (System.Boolean)
+	495 Nop
+	496 Nop
+	497 ShiftLeft v264 @ S0_v531, v159 @ S0_v56 (System.String[]), 16
+	498 Nop
+	499 ShiftRight v266 @ S0_v532, v264 @ S0_v531, 16
+	500 Nop
+	501 Subtract v268 @ S0_v533, v266 @ S0_v532, 115
+	502 CheckEqual v269 @ TEMP_v153 (System.Boolean), v266 @ S0_v532, 115
+	503 ConditionalJump @b96, v269 @ TEMP_v153 (System.Boolean)
+	504 CheckEqual v301 @ TEMP_v159 (System.Boolean), v268 @ S0_v533, 1
+	505 ConditionalJump @b102, v301 @ TEMP_v159 (System.Boolean)
+	506 Jump @b103
+	507 Nop
+	508 Nop
+	509 Move v303 @ S0_v535 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	510 Nop
+	511 Nop
+	512 Nop
+	513 And v307 @ S0_v537, [v303 @ S0_v535 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	514 CheckEqual v308 @ TEMP_v154 (System.Boolean), v307 @ S0_v537, 0
+	515 ConditionalJump @b360, v308 @ TEMP_v154 (System.Boolean)
+	516 Move v368 @ S0_v542 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	517 Nop
+	518 CheckEqual v370 @ S0_v544 (System.Boolean), [v368 @ S0_v542 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	519 Not v371 @ TEMP_v158 (System.Boolean), v370 @ S0_v544 (System.Boolean)
+	520 ConditionalJump @b360, v371 @ TEMP_v158 (System.Boolean)
+	521 Nop
+	522 CallVoid 11A99, typeof(System.DateTimeFormat)
+	523 Nop
+	524 Nop
+	525 Nop
+	526 Nop
+	527 Nop
+	528 Nop
+	529 Call DateTimeFormat.FormatDayOfWeek, v379 @ S0_v540 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), 115
+	530 Nop
+	531 Nop
+	532 Nop
+	533 Nop
+	534 Nop
+	535 Nop
+	536 Nop
+	537 Nop
+	538 Nop
+	539 Nop
+	540 Nop
+	541 Nop
+	542 Nop
+	543 Nop
+	544 Throw typeof(System.OverflowException)
+	545 Jump @b353
+	546 Nop
+	547 Jump @b104
+	548 Nop
+	549 Jump @b343
+	550 Nop
+	551 Nop
+	552 Move v462 @ S0_v547 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	553 Nop
+	554 Nop
+	555 Nop
+	556 And v466 @ S0_v549, [v462 @ S0_v547 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	557 CheckEqual v467 @ TEMP_v160 (System.Boolean), v466 @ S0_v549, 0
+	558 ConditionalJump @b361, v467 @ TEMP_v160 (System.Boolean)
+	559 Move v722 @ S0_v580 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	560 Nop
+	561 CheckEqual v724 @ S0_v582 (System.Boolean), [v722 @ S0_v580 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	562 Not v725 @ TEMP_v170 (System.Boolean), v724 @ S0_v582 (System.Boolean)
+	563 ConditionalJump @b361, v725 @ TEMP_v170 (System.Boolean)
+	564 Nop
+	565 CallVoid 11A99, typeof(System.DateTimeFormat)
+	566 Nop
+	567 Nop
+	568 Nop
+	569 Nop
+	570 Nop
+	571 Nop
+	572 Call DateTimeFormat.FormatDayOfWeek, v731 @ S0_v552 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), 116
+	573 Nop
+	574 Nop
+	575 Nop
+	576 Nop
+	577 And v838 @ S0_v555, [format @ L0 (System.String)], 4611686018427387903
+	578 Nop
+	579 Divide v840 @ S0_v556, v838 @ S0_v555, 36000000000
+	580 Nop
+	581 Divide v842 @ TEMP_v162, v840 @ S0_v556, 24
+	582 Multiply v843 @ TEMP_v163, v842 @ TEMP_v162, 24
+	583 Subtract v844 @ S0_v557, v840 @ S0_v556, v843 @ TEMP_v163
+	584 Nop
+	585 Nop
+	586 Nop
+	587 CheckNotEqual v847 @ S0_v559 (System.Boolean), v731 @ S0_v552 (System.String), 1
+	588 Not v848 @ TEMP_v164 (System.Boolean), v847 @ S0_v559 (System.Boolean)
+	589 ConditionalJump @b113, v848 @ TEMP_v164 (System.Boolean)
+	590 Nop
+	591 Nop
+	592 Nop
+	593 CheckLess v922 @ S1_v258 (System.Boolean), v844 @ S0_v557, 12
+	594 Not v627 @ TEMP_v169 (System.Boolean), v922 @ S1_v258 (System.Boolean)
+	595 ConditionalJump @b111, v627 @ TEMP_v169 (System.Boolean)
+	596 Nop
+	597 Move v649 @ S1_v259 (System.String), [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+1C]
+	598 Jump @b362
+	599 Nop
+	600 Move v649 @ S1_v259 (System.String), [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+20]
+	601 Nop
+	602 Nop
+	603 Call StringBuilder.AppendLine, v682 @ S0_v579 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v649 @ S1_v259 (System.String)
+	604 Jump @b353
+	605 Nop
+	606 Nop
+	607 Nop
+	608 CheckGreater v925 @ S0_v561 (System.Boolean), v844 @ S0_v557, 11
+	609 Not v926 @ TEMP_v165 (System.Boolean), v925 @ S0_v561 (System.Boolean)
+	610 ConditionalJump @b119, v926 @ TEMP_v165 (System.Boolean)
+	611 Nop
+	612 Move v993 @ S0_v572, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+20]
+	613 Nop
+	614 Nop
+	615 CheckLess v995 @ S0_v574 (System.Boolean), [v993 @ S0_v572+8], 1
+	616 Not v628 @ TEMP_v168 (System.Boolean), v995 @ S0_v574 (System.Boolean)
+	617 ConditionalJump @b116, v628 @ TEMP_v168 (System.Boolean)
+	618 Nop
+	619 Nop
+	620 Jump @b353
+	621 Nop
+	622 Nop
+	623 Nop
+	624 Nop
+	625 Nop
+	626 Nop
+	627 Call String.Split, v1128 @ S1_v256 (System.String[]), [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+20], 0
+	628 Nop
+	629 Call StringBuilder.Append, v1239 @ S0_v576 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v1128 @ S1_v256 (System.String[])
+	630 Jump @b123
+	631 Nop
+	632 Move v997 @ S0_v565, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+1C]
+	633 Nop
+	634 Nop
+	635 CheckLess v999 @ S0_v567 (System.Boolean), [v997 @ S0_v565+8], 1
+	636 Not v629 @ TEMP_v167 (System.Boolean), v999 @ S0_v567 (System.Boolean)
+	637 ConditionalJump @b121, v629 @ TEMP_v167 (System.Boolean)
+	638 Nop
+	639 Nop
+	640 Jump @b353
+	641 Nop
+	642 Nop
+	643 Nop
+	644 Nop
+	645 Nop
+	646 Nop
+	647 Call String.Split, v1134 @ S1_v252 (System.String[]), [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+1C], 0
+	648 Nop
+	649 Call StringBuilder.Append, v1241 @ S0_v569 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v1134 @ S1_v252 (System.String[])
+	650 Nop
+	651 Nop
+	652 Nop
+	653 Jump @b353
+	654 Nop
+	655 Nop
+	656 Nop
+	657 ShiftLeft v272 @ S0_v432, v159 @ S0_v56 (System.String[]), 16
+	658 Nop
+	659 ShiftRight v274 @ S0_v433, v272 @ S0_v432, 16
+	660 Nop
+	661 Subtract v276 @ S0_v434, v274 @ S0_v433, 121
+	662 CheckEqual v277 @ TEMP_v126 (System.Boolean), v274 @ S0_v433, 121
+	663 ConditionalJump @b127, v277 @ TEMP_v126 (System.Boolean)
+	664 CheckEqual v309 @ TEMP_v149 (System.Boolean), v276 @ S0_v434, 1
+	665 ConditionalJump @b128, v309 @ TEMP_v149 (System.Boolean)
+	666 Jump @b134
+	667 Nop
+	668 Jump @b135
+	669 Nop
+	670 Nop
+	671 Move v381 @ S0_v515 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	672 Nop
+	673 Nop
+	674 Nop
+	675 And v385 @ S0_v517, [v381 @ S0_v515 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	676 CheckEqual v386 @ TEMP_v150 (System.Boolean), v385 @ S0_v517, 0
+	677 ConditionalJump @b363, v386 @ TEMP_v150 (System.Boolean)
+	678 Move v482 @ S0_v526 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	679 Nop
+	680 CheckEqual v484 @ S0_v528 (System.Boolean), [v482 @ S0_v526 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	681 Not v485 @ TEMP_v152 (System.Boolean), v484 @ S0_v528 (System.Boolean)
+	682 ConditionalJump @b363, v485 @ TEMP_v152 (System.Boolean)
+	683 Nop
+	684 CallVoid 11A99, typeof(System.DateTimeFormat)
+	685 Nop
+	686 Nop
+	687 Nop
+	688 Nop
+	689 Nop
+	690 Nop
+	691 Call DateTimeFormat.FormatDayOfWeek, v493 @ S0_v520 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), 122
+	692 Nop
+	693 Nop
+	694 Nop
+	695 Nop
+	696 Move [v51 @ S0_v25], [format @ L0 (System.String)]
+	697 Nop
+	698 Nop
+	699 Move [v55 @ S0_v27], [offset @ L3 (System.TimeSpan&)]
+	700 Nop
+	701 Nop
+	702 Nop
+	703 Move v23.parsedGuid (System.Guid), [v51 @ S0_v25]
+	704 Nop
+	705 Nop
+	706 Nop
+	707 Move v19.value__ (System.Int32), [v55 @ S0_v27]
+	708 Nop
+	709 Nop
+	710 Nop
+	711 Nop
+	712 Nop
+	713 Nop
+	714 Nop
+	715 CallVoid GuidResult.SetFailure, v23 @ S0_v11 (System.Guid+GuidResult), v19 @ S0_v9 (System.Guid+ParseFailureKind), dateTime @ L1 (System.DateTime&), v493 @ S0_v520 (System.String), v148 @ L4_v4 (System.String), v91 @ S0_v43 (System.String)
+	716 Jump @b353
+	717 Nop
+	718 Jump @b343
+	719 Nop
+	720 Nop
+	721 Nop
+	722 Nop
+	723 Move [v47 @ S0_v23], [format @ L0 (System.String)]
+	724 Nop
+	725 Nop
+	726 Nop
+	727 Move v19.value__ (System.Int32), [v47 @ S0_v23]
+	728 Nop
+	729 Nop
+	730 Nop
+	731 Nop
+	732 Call C8FD, v397 @ S1_v200, 18, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+3C], v19 @ S0_v9 (System.Guid+ParseFailureKind)
+	733 Move [v72 @ S0_v35], v397 @ S1_v200
+	734 Nop
+	735 Move v495 @ S0_v439 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	736 Nop
+	737 Nop
+	738 Nop
+	739 And v499 @ S0_v441, [v495 @ S0_v439 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	740 CheckEqual v500 @ TEMP_v127 (System.Boolean), v499 @ S0_v441, 0
+	741 ConditionalJump @b364, v500 @ TEMP_v127 (System.Boolean)
+	742 Move v743 @ S0_v510 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	743 Nop
+	744 CheckEqual v745 @ S0_v512 (System.Boolean), [v743 @ S0_v510 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	745 Not v746 @ TEMP_v148 (System.Boolean), v745 @ S0_v512 (System.Boolean)
+	746 ConditionalJump @b364, v746 @ TEMP_v148 (System.Boolean)
+	747 Nop
+	748 CallVoid 11A99, typeof(System.DateTimeFormat)
+	749 Nop
+	750 Nop
+	751 Nop
+	752 Nop
+	753 Nop
+	754 Nop
+	755 Call DateTimeFormat.FormatDayOfWeek, v753 @ S0_v444 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), 121
+	756 Nop
+	757 Nop
+	758 Nop
+	759 Call DateTimeFormatInfo.get_HasYearMonthAdjustment, v851 @ S0_v446 (System.Boolean), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)
+	760 Not v927 @ TEMP_v129 (System.Boolean), v851 @ S0_v446 (System.Boolean)
+	761 ConditionalJump @b149, v927 @ TEMP_v129 (System.Boolean)
+	762 Nop
+	763 Nop
+	764 Nop
+	765 Nop
+	766 Move v1003 @ S0_v500 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	767 Nop
+	768 Nop
+	769 Nop
+	770 And v1007 @ S0_v502, [v1003 @ S0_v500 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	771 CheckEqual v1008 @ TEMP_v144 (System.Boolean), v1007 @ S0_v502, 0
+	772 ConditionalJump @b365, v1008 @ TEMP_v144 (System.Boolean)
+	773 Move v1135 @ S0_v506 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	774 Nop
+	775 CheckEqual v1137 @ S0_v508 (System.Boolean), [v1135 @ S0_v506 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	776 Not v1138 @ TEMP_v147 (System.Boolean), v1137 @ S0_v508 (System.Boolean)
+	777 ConditionalJump @b365, v1138 @ TEMP_v147 (System.Boolean)
+	778 Nop
+	779 CallVoid 11A99, typeof(System.DateTimeFormat)
+	780 Nop
+	781 Nop
+	782 Nop
+	783 Nop
+	784 Nop
+	785 Nop
+	786 CheckLess v1145 @ S2_v80 (System.Boolean), v753 @ S0_v444 (System.String), 2
+	787 Not v631 @ TEMP_v146 (System.Boolean), v1145 @ S2_v80 (System.Boolean)
+	788 ConditionalJump @b366, v631 @ TEMP_v146 (System.Boolean)
+	789 Nop
+	790 Jump @b366
+	791 Nop
+	792 Nop
+	793 Nop
+	794 Throw typeof(System.OverflowException)
+	795 Nop
+	796 Nop
+	797 Jump @b353
+	798 Nop
+	799 Nop
+	800 Nop
+	801 Call 724E, v1011 @ S0_v448, 7, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+3C]
+	802 Nop
+	803 CheckEqual v1147 @ S0_v449 (System.Boolean), v1011 @ S0_v448, 8
+	804 Not v1148 @ TEMP_v130 (System.Boolean), v1147 @ S0_v449 (System.Boolean)
+	805 ConditionalJump @b156, v1148 @ TEMP_v130 (System.Boolean)
+	806 Nop
+	807 Nop
+	808 Nop
+	809 Nop
+	810 Move v1247 @ S0_v487 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	811 Nop
+	812 Nop
+	813 Nop
+	814 And v1251 @ S0_v489, [v1247 @ S0_v487 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	815 CheckEqual v1252 @ TEMP_v141 (System.Boolean), v1251 @ S0_v489, 0
+	816 ConditionalJump @b367, v1252 @ TEMP_v141 (System.Boolean)
+	817 Move v1310 @ S0_v493 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	818 Nop
+	819 CheckEqual v1312 @ S0_v495 (System.Boolean), [v1310 @ S0_v493 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	820 Not v1313 @ TEMP_v143 (System.Boolean), v1312 @ S0_v495 (System.Boolean)
+	821 ConditionalJump @b367, v1313 @ TEMP_v143 (System.Boolean)
+	822 Nop
+	823 CallVoid 11A99, typeof(System.DateTimeFormat)
+	824 Nop
+	825 Nop
+	826 Nop
+	827 Nop
+	828 Nop
+	829 Throw typeof(System.OverflowException)
+	830 Nop
+	831 Nop
+	832 Jump @b353
+	833 Nop
+	834 Nop
+	835 Nop
+	836 CheckGreater v1255 @ S0_v451 (System.Boolean), v753 @ S0_v444 (System.String), 2
+	837 Not v1256 @ TEMP_v131 (System.Boolean), v1255 @ S0_v451 (System.Boolean)
+	838 ConditionalJump @b166, v1256 @ TEMP_v131 (System.Boolean)
+	839 Nop
+	840 Nop
+	841 Move v19.value__ (System.Int32), v753 @ S0_v444 (System.String)
+	842 Nop
+	843 Nop
+	844 Nop
+	845 Call 120AF, v1322 @ S0_v469 (System.String), typeof(System.Int32), v19 @ S0_v9 (System.Guid+ParseFailureKind)
+	846 Nop
+	847 Nop
+	848 Nop
+	849 Nop
+	850 Nop
+	851 Call String.Concat, v1375 @ S0_v472 (System.String), "D", v1322 @ S0_v469 (System.String)
+	852 Nop
+	853 Nop
+	854 Move v1414 @ S0_v474 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	855 Nop
+	856 Nop
+	857 Nop
+	858 And v1418 @ S0_v476, [v1414 @ S0_v474 (Il2CppClass<System.Globalization.CultureInfo>)+BA], 512
+	859 CheckEqual v1419 @ TEMP_v138 (System.Boolean), v1418 @ S0_v476, 0
+	860 ConditionalJump @b368, v1419 @ TEMP_v138 (System.Boolean)
+	861 Move v1439 @ S0_v480 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	862 Nop
+	863 CheckEqual v1441 @ S0_v482 (System.Boolean), [v1439 @ S0_v480 (Il2CppClass<System.Globalization.CultureInfo>)+74], 0
+	864 Not v1442 @ TEMP_v140 (System.Boolean), v1441 @ S0_v482 (System.Boolean)
+	865 ConditionalJump @b368, v1442 @ TEMP_v140 (System.Boolean)
+	866 Nop
+	867 CallVoid 11A99, typeof(System.Globalization.CultureInfo)
+	868 Nop
+	869 Nop
+	870 Nop
+	871 Nop
+	872 Nop
+	873 Nop
+	874 Call CultureInfo.get_CurrentCulture, v1421 @ S3_v39 (System.Globalization.CultureInfo)
+	875 Nop
+	876 Call D640, v1424 @ S1_v216 (System.String), v72 @ S0_v35, v1375 @ S0_v472 (System.String), v1421 @ S3_v39 (System.Globalization.CultureInfo), 0
+	877 Nop
+	878 Call StringBuilder.AppendLine, v1427 @ S0_v479 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v1424 @ S1_v216 (System.String)
+	879 Jump @b170
+	880 Nop
+	881 Nop
+	882 Nop
+	883 Nop
+	884 Move v1327 @ S0_v457 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	885 Nop
+	886 Nop
+	887 Nop
+	888 And v1331 @ S0_v459, [v1327 @ S0_v457 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	889 CheckEqual v1332 @ TEMP_v133 (System.Boolean), v1331 @ S0_v459, 0
+	890 ConditionalJump @b369, v1332 @ TEMP_v133 (System.Boolean)
+	891 Move v1376 @ S0_v462 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	892 Nop
+	893 CheckEqual v1378 @ S0_v464 (System.Boolean), [v1376 @ S0_v462 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	894 Not v1379 @ TEMP_v137 (System.Boolean), v1378 @ S0_v464 (System.Boolean)
+	895 ConditionalJump @b369, v1379 @ TEMP_v137 (System.Boolean)
+	896 Nop
+	897 CallVoid 11A99, typeof(System.DateTimeFormat)
+	898 Nop
+	899 Nop
+	900 Nop
+	901 Nop
+	902 Nop
+	903 Nop
+	904 Nop
+	905 Nop
+	906 Nop
+	907 Nop
+	908 Throw typeof(System.OverflowException)
+	909 Nop
+	910 Nop
+	911 Nop
+	912 Jump @b353
+	913 Nop
+	914 Nop
+	915 Nop
+	916 And v226 @ S0_v208, v159 @ S0_v56 (System.String[]), 65535
+	917 Nop
+	918 CheckLess v228 @ S0_v209 (System.Boolean), v226 @ S0_v208, 93
+	919 Not v229 @ TEMP_v41 (System.Boolean), v228 @ S0_v209 (System.Boolean)
+	920 ConditionalJump @b237, v229 @ TEMP_v41 (System.Boolean)
+	921 Nop
+	922 Nop
+	923 ShiftLeft v280 @ S0_v329, v159 @ S0_v56 (System.String[]), 16
+	924 Nop
+	925 ShiftRight v282 @ S0_v330, v280 @ S0_v329, 16
+	926 Nop
+	927 Subtract v284 @ S0_v331, v282 @ S0_v330, 77
+	928 CheckEqual v285 @ TEMP_v81 (System.Boolean), v282 @ S0_v330, 77
+	929 ConditionalJump @b189, v285 @ TEMP_v81 (System.Boolean)
+	930 CheckEqual v310 @ TEMP_v106 (System.Boolean), v284 @ S0_v331, 1
+	931 ConditionalJump @b197, v310 @ TEMP_v106 (System.Boolean)
+	932 CheckEqual v398 @ TEMP_v108 (System.Boolean), v284 @ S0_v331, 2
+	933 ConditionalJump @b197, v398 @ TEMP_v108 (System.Boolean)
+	934 CheckEqual v400 @ TEMP_v109 (System.Boolean), v284 @ S0_v331, 3
+	935 ConditionalJump @b197, v400 @ TEMP_v109 (System.Boolean)
+	936 CheckEqual v401 @ TEMP_v110 (System.Boolean), v284 @ S0_v331, 4
+	937 ConditionalJump @b197, v401 @ TEMP_v110 (System.Boolean)
+	938 CheckEqual v402 @ TEMP_v111 (System.Boolean), v284 @ S0_v331, 5
+	939 ConditionalJump @b197, v402 @ TEMP_v111 (System.Boolean)
+	940 CheckEqual v403 @ TEMP_v112 (System.Boolean), v284 @ S0_v331, 6
+	941 ConditionalJump @b197, v403 @ TEMP_v112 (System.Boolean)
+	942 CheckEqual v404 @ TEMP_v113 (System.Boolean), v284 @ S0_v331, 7
+	943 ConditionalJump @b197, v404 @ TEMP_v113 (System.Boolean)
+	944 CheckEqual v405 @ TEMP_v114 (System.Boolean), v284 @ S0_v331, 8
+	945 ConditionalJump @b197, v405 @ TEMP_v114 (System.Boolean)
+	946 CheckEqual v406 @ TEMP_v115 (System.Boolean), v284 @ S0_v331, 9
+	947 ConditionalJump @b197, v406 @ TEMP_v115 (System.Boolean)
+	948 CheckEqual v407 @ TEMP_v116 (System.Boolean), v284 @ S0_v331, 10
+	949 ConditionalJump @b197, v407 @ TEMP_v116 (System.Boolean)
+	950 CheckEqual v408 @ TEMP_v117 (System.Boolean), v284 @ S0_v331, 11
+	951 ConditionalJump @b197, v408 @ TEMP_v117 (System.Boolean)
+	952 CheckEqual v409 @ TEMP_v118 (System.Boolean), v284 @ S0_v331, 12
+	953 ConditionalJump @b197, v409 @ TEMP_v118 (System.Boolean)
+	954 CheckEqual v410 @ TEMP_v119 (System.Boolean), v284 @ S0_v331, 13
+	955 ConditionalJump @b197, v410 @ TEMP_v119 (System.Boolean)
+	956 CheckEqual v411 @ TEMP_v120 (System.Boolean), v284 @ S0_v331, 14
+	957 ConditionalJump @b197, v411 @ TEMP_v120 (System.Boolean)
+	958 CheckEqual v412 @ TEMP_v121 (System.Boolean), v284 @ S0_v331, 15
+	959 ConditionalJump @b190, v412 @ TEMP_v121 (System.Boolean)
+	960 Jump @b197
+	961 Nop
+	962 Jump @b198
+	963 Nop
+	964 Nop
+	965 Move v1523 @ S0_v414 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	966 Nop
+	967 Nop
+	968 Nop
+	969 And v1527 @ S0_v416, [v1523 @ S0_v414 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	970 CheckEqual v1528 @ TEMP_v122 (System.Boolean), v1527 @ S0_v416, 0
+	971 ConditionalJump @b370, v1528 @ TEMP_v122 (System.Boolean)
+	972 Move v1544 @ S0_v424 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	973 Nop
+	974 CheckEqual v1546 @ S0_v426 (System.Boolean), [v1544 @ S0_v424 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	975 Not v1547 @ TEMP_v124 (System.Boolean), v1546 @ S0_v426 (System.Boolean)
+	976 ConditionalJump @b370, v1547 @ TEMP_v124 (System.Boolean)
+	977 Nop
+	978 CallVoid 11A99, typeof(System.DateTimeFormat)
+	979 Nop
+	980 Nop
+	981 Nop
+	982 Nop
+	983 Nop
+	984 Call DateTimeFormat.GetRealFormat, v1552 @ S0_v419 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[])
+	985 Nop
+	986 Nop
+	987 CheckLess v1081 @ S0_v420 (System.Boolean), v1552 @ S0_v419 (System.String), 0
+	988 ConditionalJump @b347, v1081 @ S0_v420 (System.Boolean)
+	989 Nop
+	990 Nop
+	991 Nop
+	992 And v657 @ S1_v189 (System.Int32), v1552 @ S0_v419 (System.String), 65535
+	993 Nop
+	994 Call StringBuilder.Append, v1605 @ S0_v422 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v657 @ S1_v189 (System.Int32)
+	995 Nop
+	996 Nop
+	997 Jump @b353
+	998 Nop
+	999 Jump @b343
+	1000 Nop
+	1001 Nop
+	1002 Move v414 @ S0_v333 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1003 Nop
+	1004 Nop
+	1005 Nop
+	1006 And v418 @ S0_v335, [v414 @ S0_v333 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1007 CheckEqual v419 @ TEMP_v82 (System.Boolean), v418 @ S0_v335, 0
+	1008 ConditionalJump @b371, v419 @ TEMP_v82 (System.Boolean)
+	1009 Move v501 @ S0_v409 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1010 Nop
+	1011 CheckEqual v503 @ S0_v411 (System.Boolean), [v501 @ S0_v409 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1012 Not v504 @ TEMP_v105 (System.Boolean), v503 @ S0_v411 (System.Boolean)
+	1013 ConditionalJump @b371, v504 @ TEMP_v105 (System.Boolean)
+	1014 Nop
+	1015 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1016 Nop
+	1017 Nop
+	1018 Nop
+	1019 Nop
+	1020 Nop
+	1021 Nop
+	1022 Call DateTimeFormat.FormatDayOfWeek, v512 @ S0_v338 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), 77
+	1023 Nop
+	1024 Nop
+	1025 Nop
+	1026 Nop
+	1027 Move [v39 @ S0_v19], [format @ L0 (System.String)]
+	1028 Nop
+	1029 Nop
+	1030 Nop
+	1031 Move v19.value__ (System.Int32), [v39 @ S0_v19]
+	1032 Nop
+	1033 Nop
+	1034 Nop
+	1035 Call C8FD, v763 @ S0_v342 (System.Int32), 16, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+3C], v19 @ S0_v9 (System.Guid+ParseFailureKind)
+	1036 Nop
+	1037 Nop
+	1038 Nop
+	1039 CheckLessOrEqual v855 @ S0_v344 (System.Boolean), v512 @ S0_v338 (System.String), 2
+	1040 Not v856 @ TEMP_v84 (System.Boolean), v855 @ S0_v344 (System.Boolean)
+	1041 ConditionalJump @b215, v856 @ TEMP_v84 (System.Boolean)
+	1042 Nop
+	1043 Move v929 @ S0_v386 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1044 Nop
+	1045 Nop
+	1046 Nop
+	1047 And v932 @ S0_v388, [v929 @ S0_v386 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1048 CheckEqual v933 @ S0_v389 (System.Boolean), v932 @ S0_v388, 0
+	1049 Nop
+	1050 Nop
+	1051 Not v935 @ TEMP_v97 (System.Boolean), v97 @ S0_v46 (System.Boolean)
+	1052 ConditionalJump @b210, v935 @ TEMP_v97 (System.Boolean)
+	1053 Nop
+	1054 Not v1013 @ S0_v402 (System.Boolean), v933 @ S0_v389 (System.Boolean)
+	1055 Not v1014 @ TEMP_v102 (System.Boolean), v1013 @ S0_v402 (System.Boolean)
+	1056 ConditionalJump @b372, v1014 @ TEMP_v102 (System.Boolean)
+	1057 Move v1149 @ S0_v405 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1058 Nop
+	1059 CheckEqual v1151 @ S0_v407 (System.Boolean), [v1149 @ S0_v405 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1060 Not v1152 @ TEMP_v104 (System.Boolean), v1151 @ S0_v407 (System.Boolean)
+	1061 ConditionalJump @b372, v1152 @ TEMP_v104 (System.Boolean)
+	1062 Nop
+	1063 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1064 Nop
+	1065 Nop
+	1066 Nop
+	1067 Nop
+	1068 Nop
+	1069 Throw typeof(System.OverflowException)
+	1070 Jump @b214
+	1071 Nop
+	1072 Not v1016 @ S0_v394 (System.Boolean), v933 @ S0_v389 (System.Boolean)
+	1073 Not v1017 @ TEMP_v99 (System.Boolean), v1016 @ S0_v394 (System.Boolean)
+	1074 ConditionalJump @b373, v1017 @ TEMP_v99 (System.Boolean)
+	1075 Move v1159 @ S0_v397 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1076 Nop
+	1077 CheckEqual v1161 @ S0_v399 (System.Boolean), [v1159 @ S0_v397 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1078 Not v1162 @ TEMP_v101 (System.Boolean), v1161 @ S0_v399 (System.Boolean)
+	1079 ConditionalJump @b373, v1162 @ TEMP_v101 (System.Boolean)
+	1080 Nop
+	1081 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1082 Nop
+	1083 Nop
+	1084 Nop
+	1085 Nop
+	1086 Nop
+	1087 Nop
+	1088 Throw typeof(System.OverflowException)
+	1089 Nop
+	1090 Nop
+	1091 Nop
+	1092 Jump @b353
+	1093 Nop
+	1094 Nop
+	1095 Not v937 @ TEMP_v85 (System.Boolean), v97 @ S0_v46 (System.Boolean)
+	1096 ConditionalJump @b222, v937 @ TEMP_v85 (System.Boolean)
+	1097 Nop
+	1098 Nop
+	1099 Nop
+	1100 Nop
+	1101 Move v1021 @ S0_v372 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1102 Nop
+	1103 Nop
+	1104 Nop
+	1105 And v1024 @ S0_v374, [v1021 @ S0_v372 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1106 CheckEqual v1025 @ TEMP_v94 (System.Boolean), v1024 @ S0_v374, 0
+	1107 ConditionalJump @b374, v1025 @ TEMP_v94 (System.Boolean)
+	1108 Move v1170 @ S0_v381 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1109 Nop
+	1110 CheckEqual v1172 @ S0_v383 (System.Boolean), [v1170 @ S0_v381 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1111 Not v1173 @ TEMP_v96 (System.Boolean), v1172 @ S0_v383 (System.Boolean)
+	1112 ConditionalJump @b374, v1173 @ TEMP_v96 (System.Boolean)
+	1113 Nop
+	1114 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1115 Nop
+	1116 Nop
+	1117 Nop
+	1118 Nop
+	1119 Move [v43 @ S0_v21], [format @ L0 (System.String)]
+	1120 Nop
+	1121 Nop
+	1122 Nop
+	1123 Move v19.value__ (System.Int32), [v43 @ S0_v21]
+	1124 Nop
+	1125 Nop
+	1126 Nop
+	1127 Nop
+	1128 Nop
+	1129 Nop
+	1130 Call DateTimeFormat.IsUseGenitiveForm, v659 @ S1_v180 (System.Boolean), v19 @ S0_v9 (System.Guid+ParseFailureKind), v763 @ S0_v342 (System.Int32), v512 @ S0_v338 (System.String), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)
+	1131 Nop
+	1132 Call StringBuilder.AppendLine, v1258 @ S0_v379 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v659 @ S1_v180 (System.Boolean)
+	1133 Nop
+	1134 Nop
+	1135 Jump @b353
+	1136 Nop
+	1137 Nop
+	1138 Nop
+	1139 CheckLess v1028 @ S0_v347 (System.Boolean), v512 @ S0_v338 (System.String), 4
+	1140 Nop
+	1141 Nop
+	1142 Call DateTimeFormatInfo.get_HasForceTwoDigitYears, v1031 @ S1_v162 (System.Boolean), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)
+	1143 Nop
+	1144 Nop
+	1145 CheckEqual v1186 @ S1_v164 (System.Boolean), v1031 @ S1_v162 (System.Boolean), 0
+	1146 Or v1187 @ S0_v348, v1028 @ S0_v347 (System.Boolean), v1186 @ S1_v164 (System.Boolean)
+	1147 Nop
+	1148 Move v1189 @ S1_v166 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1149 Nop
+	1150 Nop
+	1151 Nop
+	1152 And v1192 @ S1_v168, [v1189 @ S1_v166 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1153 CheckEqual v1193 @ S1_v169 (System.Boolean), v1192 @ S1_v168, 0
+	1154 Nop
+	1155 CheckEqual v1194 @ TEMP_v86 (System.Boolean), v1187 @ S0_v348, 0
+	1156 ConditionalJump @b230, v1194 @ TEMP_v86 (System.Boolean)
+	1157 Nop
+	1158 Not v1260 @ S0_v361 (System.Boolean), v1193 @ S1_v169 (System.Boolean)
+	1159 Not v1261 @ TEMP_v91 (System.Boolean), v1260 @ S0_v361 (System.Boolean)
+	1160 ConditionalJump @b375, v1261 @ TEMP_v91 (System.Boolean)
+	1161 Move v1333 @ S0_v365 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1162 Nop
+	1163 CheckEqual v1335 @ S0_v367 (System.Boolean), [v1333 @ S0_v365 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1164 Not v1336 @ TEMP_v93 (System.Boolean), v1335 @ S0_v367 (System.Boolean)
+	1165 ConditionalJump @b375, v1336 @ TEMP_v93 (System.Boolean)
+	1166 Nop
+	1167 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1168 Nop
+	1169 Nop
+	1170 Nop
+	1171 Nop
+	1172 Nop
+	1173 Nop
+	1174 Nop
+	1175 Call DateTimeFormat.ParseQuoteString, v1345 @ S1_v174 (System.Int32), v763 @ S0_v342 (System.Int32), v512 @ S0_v338 (System.String), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)
+	1176 Nop
+	1177 Call StringBuilder.AppendLine, v1392 @ S0_v364 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v1345 @ S1_v174 (System.Int32)
+	1178 Jump @b236
+	1179 Nop
+	1180 Not v1263 @ S0_v352 (System.Boolean), v1193 @ S1_v169 (System.Boolean)
+	1181 Not v1264 @ TEMP_v88 (System.Boolean), v1263 @ S0_v352 (System.Boolean)
+	1182 ConditionalJump @b376, v1264 @ TEMP_v88 (System.Boolean)
+	1183 Move v1346 @ S0_v356 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1184 Nop
+	1185 CheckEqual v1348 @ S0_v358 (System.Boolean), [v1346 @ S0_v356 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1186 Not v1349 @ TEMP_v90 (System.Boolean), v1348 @ S0_v358 (System.Boolean)
+	1187 ConditionalJump @b376, v1349 @ TEMP_v90 (System.Boolean)
+	1188 Nop
+	1189 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1190 Nop
+	1191 Nop
+	1192 Nop
+	1193 Nop
+	1194 Nop
+	1195 Nop
+	1196 Nop
+	1197 Nop
+	1198 Nop
+	1199 Nop
+	1200 Call DCEB, v1361 @ S3_v28, dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), v512 @ S0_v338 (System.String), 100, 0
+	1201 Nop
+	1202 And v1394 @ S3_v29 (System.Int32&), v1361 @ S3_v28, 1
+	1203 Nop
+	1204 Nop
+	1205 Call DateTimeFormatInfo.YearMonthAdjustment, v1397 @ S1_v172 (System.Boolean), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&), v763 @ S0_v342 (System.Int32), v1394 @ S3_v29 (System.Int32&), 0
+	1206 Nop
+	1207 Call StringBuilder.AppendLine, v1429 @ S0_v355 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v1397 @ S1_v172 (System.Boolean)
+	1208 Nop
+	1209 Nop
+	1210 Nop
+	1211 Jump @b353
+	1212 Nop
+	1213 Nop
+	1214 Nop
+	1215 Subtract v288 @ S0_v211, v165 @ S0_v57, 100
+	1216 CheckEqual v289 @ TEMP_v42 (System.Boolean), v165 @ S0_v57, 100
+	1217 ConditionalJump @b245, v289 @ TEMP_v42 (System.Boolean)
+	1218 CheckEqual v311 @ TEMP_v58 (System.Boolean), v288 @ S0_v211, 1
+	1219 ConditionalJump @b243, v311 @ TEMP_v58 (System.Boolean)
+	1220 CheckEqual v420 @ TEMP_v59 (System.Boolean), v288 @ S0_v211, 2
+	1221 ConditionalJump @b244, v420 @ TEMP_v59 (System.Boolean)
+	1222 CheckEqual v513 @ TEMP_v60 (System.Boolean), v288 @ S0_v211, 3
+	1223 ConditionalJump @b269, v513 @ TEMP_v60 (System.Boolean)
+	1224 CheckEqual v434 @ TEMP_v64 (System.Boolean), v288 @ S0_v211, 4
+	1225 ConditionalJump @b277, v434 @ TEMP_v64 (System.Boolean)
+	1226 Jump @b288
+	1227 Nop
+	1228 Jump @b343
+	1229 Nop
+	1230 Jump @b295
+	1231 Nop
+	1232 Nop
+	1233 Move v313 @ S0_v213 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1234 Nop
+	1235 Nop
+	1236 Nop
+	1237 And v317 @ S0_v215, [v313 @ S0_v213 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1238 CheckEqual v318 @ TEMP_v43 (System.Boolean), v317 @ S0_v215, 0
+	1239 ConditionalJump @b377, v318 @ TEMP_v43 (System.Boolean)
+	1240 Move v421 @ S0_v267 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1241 Nop
+	1242 CheckEqual v423 @ S0_v269 (System.Boolean), [v421 @ S0_v267 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1243 Not v424 @ TEMP_v57 (System.Boolean), v423 @ S0_v269 (System.Boolean)
+	1244 ConditionalJump @b377, v424 @ TEMP_v57 (System.Boolean)
+	1245 Nop
+	1246 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1247 Nop
+	1248 Nop
+	1249 Nop
+	1250 Nop
+	1251 Nop
+	1252 Nop
+	1253 Call DateTimeFormat.FormatDayOfWeek, v432 @ S0_v218 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), v159 @ S0_v56 (System.String[])
+	1254 Nop
+	1255 Nop
+	1256 Nop
+	1257 Nop
+	1258 Nop
+	1259 Nop
+	1260 CheckGreater v520 @ S0_v222 (System.Boolean), v432 @ S0_v218 (System.String), 2
+	1261 Not v521 @ TEMP_v45 (System.Boolean), v520 @ S0_v222 (System.Boolean)
+	1262 ConditionalJump @b257, v521 @ TEMP_v45 (System.Boolean)
+	1263 Nop
+	1264 Nop
+	1265 Move [v35 @ S0_v17], [format @ L0 (System.String)]
+	1266 Nop
+	1267 Nop
+	1268 Nop
+	1269 Move v19.value__ (System.Int32), [v35 @ S0_v17]
+	1270 Nop
+	1271 Nop
+	1272 Nop
+	1273 Call C8FD, v789 @ S0_v254 (System.Int32), 12, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+3C], v19 @ S0_v9 (System.Guid+ParseFailureKind)
+	1274 Nop
+	1275 Nop
+	1276 Move v888 @ S0_v256 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1277 Nop
+	1278 Nop
+	1279 Nop
+	1280 And v892 @ S0_v258, [v888 @ S0_v256 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1281 CheckEqual v893 @ TEMP_v54 (System.Boolean), v892 @ S0_v258, 0
+	1282 ConditionalJump @b378, v893 @ TEMP_v54 (System.Boolean)
+	1283 Move v966 @ S0_v263 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1284 Nop
+	1285 CheckEqual v968 @ S0_v265 (System.Boolean), [v966 @ S0_v263 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1286 Not v969 @ TEMP_v56 (System.Boolean), v968 @ S0_v265 (System.Boolean)
+	1287 ConditionalJump @b378, v969 @ TEMP_v56 (System.Boolean)
+	1288 Nop
+	1289 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1290 Nop
+	1291 Nop
+	1292 Nop
+	1293 Nop
+	1294 Nop
+	1295 Nop
+	1296 Nop
+	1297 Call DateTimeFormat.FormatMonth, v661 @ S1_v120 (System.String), v789 @ S0_v254 (System.Int32), v432 @ S0_v218 (System.String), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)
+	1298 Nop
+	1299 Call StringBuilder.AppendLine, v1087 @ S0_v261 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v661 @ S1_v120 (System.String)
+	1300 Nop
+	1301 Nop
+	1302 Jump @b353
+	1303 Nop
+	1304 Nop
+	1305 Nop
+	1306 Move [v31 @ S0_v15], [format @ L0 (System.String)]
+	1307 Nop
+	1308 Nop
+	1309 Nop
+	1310 Move v19.value__ (System.Int32), [v31 @ S0_v15]
+	1311 Nop
+	1312 Nop
+	1313 Nop
+	1314 Call C8FD, v798 @ S0_v226, 11, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+3C], v19 @ S0_v9 (System.Guid+ParseFailureKind)
+	1315 Nop
+	1316 Nop
+	1317 Move v895 @ S0_v228 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1318 Nop
+	1319 Nop
+	1320 Nop
+	1321 And v899 @ S0_v230, [v895 @ S0_v228 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1322 CheckEqual v900 @ S0_v231 (System.Boolean), v899 @ S0_v230, 0
+	1323 Nop
+	1324 Nop
+	1325 Not v902 @ TEMP_v46 (System.Boolean), v97 @ S0_v46 (System.Boolean)
+	1326 ConditionalJump @b264, v902 @ TEMP_v46 (System.Boolean)
+	1327 Nop
+	1328 Not v976 @ S0_v244 (System.Boolean), v900 @ S0_v231 (System.Boolean)
+	1329 Not v977 @ TEMP_v51 (System.Boolean), v976 @ S0_v244 (System.Boolean)
+	1330 ConditionalJump @b379, v977 @ TEMP_v51 (System.Boolean)
+	1331 Move v1088 @ S0_v247 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1332 Nop
+	1333 CheckEqual v1090 @ S0_v249 (System.Boolean), [v1088 @ S0_v247 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1334 Not v1091 @ TEMP_v53 (System.Boolean), v1090 @ S0_v249 (System.Boolean)
+	1335 ConditionalJump @b379, v1091 @ TEMP_v53 (System.Boolean)
+	1336 Nop
+	1337 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1338 Nop
+	1339 Nop
+	1340 Nop
+	1341 Nop
+	1342 Nop
+	1343 Throw typeof(System.OverflowException)
+	1344 Jump @b268
+	1345 Nop
+	1346 Not v979 @ S0_v236 (System.Boolean), v900 @ S0_v231 (System.Boolean)
+	1347 Not v980 @ TEMP_v48 (System.Boolean), v979 @ S0_v236 (System.Boolean)
+	1348 ConditionalJump @b380, v980 @ TEMP_v48 (System.Boolean)
+	1349 Move v1098 @ S0_v239 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1350 Nop
+	1351 CheckEqual v1100 @ S0_v241 (System.Boolean), [v1098 @ S0_v239 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1352 Not v1101 @ TEMP_v50 (System.Boolean), v1100 @ S0_v241 (System.Boolean)
+	1353 ConditionalJump @b380, v1101 @ TEMP_v50 (System.Boolean)
+	1354 Nop
+	1355 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1356 Nop
+	1357 Nop
+	1358 Nop
+	1359 Nop
+	1360 Nop
+	1361 Nop
+	1362 Throw typeof(System.OverflowException)
+	1363 Nop
+	1364 Nop
+	1365 Nop
+	1366 Jump @b353
+	1367 Nop
+	1368 Nop
+	1369 Move v765 @ S0_v272 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1370 Nop
+	1371 Nop
+	1372 Nop
+	1373 And v769 @ S0_v274, [v765 @ S0_v272 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1374 CheckEqual v770 @ TEMP_v61 (System.Boolean), v769 @ S0_v274, 0
+	1375 ConditionalJump @b381, v770 @ TEMP_v61 (System.Boolean)
+	1376 Move v864 @ S0_v282 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1377 Nop
+	1378 CheckEqual v866 @ S0_v284 (System.Boolean), [v864 @ S0_v282 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1379 Not v867 @ TEMP_v63 (System.Boolean), v866 @ S0_v284 (System.Boolean)
+	1380 ConditionalJump @b381, v867 @ TEMP_v63 (System.Boolean)
+	1381 Nop
+	1382 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1383 Nop
+	1384 Nop
+	1385 Nop
+	1386 Nop
+	1387 Nop
+	1388 Nop
+	1389 Call DateTimeFormat.FormatDayOfWeek, v874 @ S0_v277 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), v159 @ S0_v56 (System.String[])
+	1390 Nop
+	1391 Nop
+	1392 Nop
+	1393 Nop
+	1394 Move [v27 @ S0_v13], [format @ L0 (System.String)]
+	1395 Nop
+	1396 Nop
+	1397 Nop
+	1398 Move v19.value__ (System.Int32), [v27 @ S0_v13]
+	1399 Nop
+	1400 Nop
+	1401 Nop
+	1402 Nop
+	1403 Nop
+	1404 Call C8FD, v963 @ S2_v43 (System.Int32), 14, [dtfi @ L2 (System.Globalization.DateTimeFormatInfo&)+3C], v19 @ S0_v9 (System.Guid+ParseFailureKind)
+	1405 Nop
+	1406 Call DateTimeFormatInfo.GetAbbreviatedEraName, v663 @ S1_v128 (System.String), dtfi @ L2 (System.Globalization.DateTimeFormatInfo&), v963 @ S2_v43 (System.Int32)
+	1407 Nop
+	1408 Call StringBuilder.AppendLine, v696 @ S0_v281 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v663 @ S1_v128 (System.String)
+	1409 Jump @b353
+	1410 Nop
+	1411 Nop
+	1412 Move v858 @ S0_v287 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1413 Nop
+	1414 Nop
+	1415 Nop
+	1416 And v862 @ S0_v289, [v858 @ S0_v287 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1417 CheckEqual v863 @ TEMP_v65 (System.Boolean), v862 @ S0_v289, 0
+	1418 ConditionalJump @b382, v863 @ TEMP_v65 (System.Boolean)
+	1419 Move v941 @ S0_v309 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1420 Nop
+	1421 CheckEqual v943 @ S0_v311 (System.Boolean), [v941 @ S0_v309 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1422 Not v944 @ TEMP_v75 (System.Boolean), v943 @ S0_v311 (System.Boolean)
+	1423 ConditionalJump @b382, v944 @ TEMP_v75 (System.Boolean)
+	1424 Nop
+	1425 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1426 Nop
+	1427 Nop
+	1428 Nop
+	1429 Nop
+	1430 Nop
+	1431 Nop
+	1432 Call DateTimeFormat.FormatDayOfWeek, v952 @ S0_v292 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), v159 @ S0_v56 (System.String[])
+	1433 Nop
+	1434 Nop
+	1435 Nop
+	1436 Nop
+	1437 And v1042 @ S0_v295, [format @ L0 (System.String)], 4611686018427387903
+	1438 Nop
+	1439 Divide v1044 @ S0_v296, v1042 @ S0_v295, 36000000000
+	1440 Nop
+	1441 Divide v1046 @ TEMP_v67, v1044 @ S0_v296, 24
+	1442 Multiply v1047 @ TEMP_v68, v1046 @ TEMP_v67, 24
+	1443 Subtract v1048 @ S0_v297, v1044 @ S0_v296, v1047 @ TEMP_v68
+	1444 Nop
+	1445 Divide v1050 @ TEMP_v69, v1048 @ S0_v297, 12
+	1446 Multiply v1051 @ TEMP_v70, v1050 @ TEMP_v69, 12
+	1447 Subtract v1052 @ S0_v298, v1048 @ S0_v297, v1051 @ TEMP_v70
+	1448 Nop
+	1449 Nop
+	1450 Move v1054 @ S0_v300 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1451 Nop
+	1452 Nop
+	1453 Nop
+	1454 And v1057 @ S0_v302, [v1054 @ S0_v300 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1455 CheckEqual v1058 @ TEMP_v71 (System.Boolean), v1057 @ S0_v302, 0
+	1456 ConditionalJump @b383, v1058 @ TEMP_v71 (System.Boolean)
+	1457 Move v1207 @ S0_v305 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1458 Nop
+	1459 CheckEqual v1209 @ S0_v307 (System.Boolean), [v1207 @ S0_v305 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1460 Not v1210 @ TEMP_v74 (System.Boolean), v1209 @ S0_v307 (System.Boolean)
+	1461 ConditionalJump @b383, v1210 @ TEMP_v74 (System.Boolean)
+	1462 Nop
+	1463 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1464 Nop
+	1465 Nop
+	1466 Nop
+	1467 Nop
+	1468 CheckEqual v641 @ TEMP_v73 (System.Boolean), v1052 @ S0_v298, 0
+	1469 ConditionalJump @b384, v641 @ TEMP_v73 (System.Boolean)
+	1470 Nop
+	1471 Jump @b384
+	1472 Nop
+	1473 Nop
+	1474 Nop
+	1475 Nop
+	1476 Throw typeof(System.OverflowException)
+	1477 Jump @b353
+	1478 Nop
+	1479 Nop
+	1480 Nop
+	1481 And v940 @ S0_v314, v159 @ S0_v56 (System.String[]), 65535
+	1482 Nop
+	1483 CheckNotEqual v438 @ S0_v315 (System.Boolean), v940 @ S0_v314, 109
+	1484 ConditionalJump @b343, v438 @ S0_v315 (System.Boolean)
+	1485 Nop
+	1486 Move v1033 @ S0_v317 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1487 Nop
+	1488 Nop
+	1489 Nop
+	1490 And v1037 @ S0_v319, [v1033 @ S0_v317 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1491 CheckEqual v1038 @ TEMP_v76 (System.Boolean), v1037 @ S0_v319, 0
+	1492 ConditionalJump @b385, v1038 @ TEMP_v76 (System.Boolean)
+	1493 Move v1195 @ S0_v324 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1494 Nop
+	1495 CheckEqual v1197 @ S0_v326 (System.Boolean), [v1195 @ S0_v324 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1496 Not v1198 @ TEMP_v80 (System.Boolean), v1197 @ S0_v326 (System.Boolean)
+	1497 ConditionalJump @b385, v1198 @ TEMP_v80 (System.Boolean)
+	1498 Nop
+	1499 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1500 Nop
+	1501 Nop
+	1502 Nop
+	1503 Nop
+	1504 Nop
+	1505 Nop
+	1506 Call DateTimeFormat.FormatDayOfWeek, v1206 @ S0_v322 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), 109
+	1507 Nop
+	1508 Nop
+	1509 Nop
+	1510 Nop
+	1511 Nop
+	1512 Nop
+	1513 Nop
+	1514 Nop
+	1515 Nop
+	1516 Nop
+	1517 Nop
+	1518 Nop
+	1519 Nop
+	1520 Nop
+	1521 Throw typeof(System.OverflowException)
+	1522 Nop
+	1523 Jump @b353
+	1524 Nop
+	1525 Nop
+	1526 Move v775 @ S0_v78 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1527 Nop
+	1528 Nop
+	1529 Nop
+	1530 And v779 @ S0_v80, [v775 @ S0_v78 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1531 CheckEqual v780 @ TEMP_v8 (System.Boolean), v779 @ S0_v80, 0
+	1532 ConditionalJump @b386, v780 @ TEMP_v8 (System.Boolean)
+	1533 Move v875 @ S0_v199 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1534 Nop
+	1535 CheckEqual v877 @ S0_v201 (System.Boolean), [v875 @ S0_v199 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1536 Not v878 @ TEMP_v38 (System.Boolean), v877 @ S0_v201 (System.Boolean)
+	1537 ConditionalJump @b386, v878 @ TEMP_v38 (System.Boolean)
+	1538 Nop
+	1539 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1540 Nop
+	1541 Nop
+	1542 Nop
+	1543 Nop
+	1544 Nop
+	1545 Nop
+	1546 Call DateTimeFormat.FormatDayOfWeek, v886 @ S0_v83 (System.String), dateTime @ L1 (System.DateTime&), v150 @ S0_v63 (System.Char[]), v159 @ S0_v56 (System.String[])
+	1547 Nop
+	1548 Nop
+	1549 CheckGreater v965 @ S0_v84 (System.Boolean), v886 @ S0_v83 (System.String), 7
+	1550 ConditionalJump @b347, v965 @ S0_v84 (System.Boolean)
+	1551 Nop
+	1552 Nop
+	1553 Nop
+	1554 And v1062 @ S0_v87, [format @ L0 (System.String)], 4611686018427387903
+	1555 Nop
+	1556 Divide v1064 @ TEMP_v10, v1062 @ S0_v87, 10000000
+	1557 Multiply v1065 @ TEMP_v11, v1064 @ TEMP_v10, 10000000
+	1558 Subtract v1066 @ S0_v88, v1062 @ S0_v87, v1065 @ TEMP_v11
+	1559 Nop
+	1560 Nop
+	1561 Move v1069 @ S0_v90 (Il2CppClass<System.Math>), typeof(System.Math)
+	1562 Nop
+	1563 Nop
+	1564 Nop
+	1565 And v1073 @ S0_v92, [v1069 @ S0_v90 (Il2CppClass<System.Math>)+BA], 512
+	1566 CheckEqual v1074 @ TEMP_v12 (System.Boolean), v1073 @ S0_v92, 0
+	1567 ConditionalJump @b387, v1074 @ TEMP_v12 (System.Boolean)
+	1568 Move v1215 @ S0_v195 (Il2CppClass<System.Math>), typeof(System.Math)
+	1569 Nop
+	1570 CheckEqual v1217 @ S0_v197 (System.Boolean), [v1215 @ S0_v195 (Il2CppClass<System.Math>)+74], 0
+	1571 Not v1218 @ TEMP_v37 (System.Boolean), v1217 @ S0_v197 (System.Boolean)
+	1572 ConditionalJump @b387, v1218 @ TEMP_v37 (System.Boolean)
+	1573 Nop
+	1574 CallVoid 11A99, typeof(System.Math)
+	1575 Nop
+	1576 Nop
+	1577 Nop
+	1578 Nop
+	1579 Nop
+	1580 Subtract v1225 @ S1_v49, 7, v886 @ S0_v83 (System.String)
+	1581 Call 122F5, v1226 @ S0_v95 (Il2CppClass<System.String>), 10d, v1225 @ S1_v49
+	1582 Nop
+	1583 Nop
+	1584 CheckNotEqual v1276 @ S0_v96 (System.Boolean), v1226 @ S0_v95 (Il2CppClass<System.String>), v1226 @ S0_v95 (Il2CppClass<System.String>)
+	1585 Not v1277 @ TEMP_v14 (System.Boolean), v1276 @ S0_v96 (System.Boolean)
+	1586 ConditionalJump @b306, v1277 @ TEMP_v14 (System.Boolean)
+	1587 Nop
+	1588 Jump @b388
+	1589 Nop
+	1590 Nop
+	1591 CheckGreaterOrEqual v1365 @ S0_v188 (System.Boolean), v1226 @ S0_v95 (Il2CppClass<System.String>), 9.223372036854776E+18d
+	1592 Not v1366 @ TEMP_v35 (System.Boolean), v1365 @ S0_v188 (System.Boolean)
+	1593 ConditionalJump @b308, v1366 @ TEMP_v35 (System.Boolean)
+	1594 Nop
+	1595 Jump @b388
+	1596 Nop
+	1597 Nop
+	1598 CheckLessOrEqual v1409 @ S0_v190 (System.Boolean), v1226 @ S0_v95 (Il2CppClass<System.String>), -9.223372036854776E+18d
+	1599 Not v1399 @ TEMP_v36 (System.Boolean), v1409 @ S0_v190 (System.Boolean)
+	1600 ConditionalJump @b310, v1399 @ TEMP_v36 (System.Boolean)
+	1601 Nop
+	1602 Jump @b388
+	1603 Nop
+	1604 Nop
+	1605 Nop
+	1606 Nop
+	1607 Nop
+	1608 CheckEqual v1406 @ S0_v98 (System.Boolean), v1402 @ S0_v97 (Il2CppClass<System.String>), 0
+	1609 Not v1407 @ TEMP_v16 (System.Boolean), v1406 @ S0_v98 (System.Boolean)
+	1610 ConditionalJump @b312, v1407 @ TEMP_v16 (System.Boolean)
+	1611 Nop
+	1612 Jump @b391
+	1613 Nop
+	1614 Nop
+	1615 CheckEqual v1433 @ S0_v181 (System.Boolean), v1066 @ S0_v88, -9223372036854775808
+	1616 Nop
+	1617 Nop
+	1618 CheckEqual v1436 @ S1_v93 (System.Boolean), v1402 @ S0_v97 (Il2CppClass<System.String>), -1
+	1619 And v1437 @ S0_v182, v1433 @ S0_v181 (System.Boolean), v1436 @ S1_v93 (System.Boolean)
+	1620 CheckEqual v1438 @ TEMP_v34 (System.Boolean), v1437 @ S0_v182, 0
+	1621 ConditionalJump @b314, v1438 @ TEMP_v34 (System.Boolean)
+	1622 Nop
+	1623 Jump @b391
+	1624 Nop
+	1625 Nop
+	1626 Divide v1454 @ S0_v99 (Il2CppClass<System.String>), v1066 @ S0_v88, v1402 @ S0_v97 (Il2CppClass<System.String>)
+	1627 Nop
+	1628 Nop
+	1629 Nop
+	1630 Nop
+	1631 Nop
+	1632 And v1459 @ S0_v101, v159 @ S0_v56 (System.String[]), 65535
+	1633 Nop
+	1634 CheckEqual v1461 @ S0_v102 (System.Boolean), v1459 @ S0_v101, 102
+	1635 Not v1462 @ TEMP_v18 (System.Boolean), v1461 @ S0_v102 (System.Boolean)
+	1636 ConditionalJump @b325, v1462 @ TEMP_v18 (System.Boolean)
+	1637 Nop
+	1638 Nop
+	1639 Move [v77 @ S0_v37], v1454 @ S0_v99 (Il2CppClass<System.String>)
+	1640 Nop
+	1641 Move v1467 @ S0_v153 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1642 Nop
+	1643 Nop
+	1644 Nop
+	1645 And v1471 @ S0_v155, [v1467 @ S0_v153 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1646 CheckEqual v1472 @ TEMP_v28 (System.Boolean), v1471 @ S0_v155, 0
+	1647 ConditionalJump @b393, v1472 @ TEMP_v28 (System.Boolean)
+	1648 Move v1475 @ S0_v174 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1649 Nop
+	1650 CheckEqual v1477 @ S0_v176 (System.Boolean), [v1475 @ S0_v174 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1651 Not v1478 @ TEMP_v33 (System.Boolean), v1477 @ S0_v176 (System.Boolean)
+	1652 ConditionalJump @b393, v1478 @ TEMP_v33 (System.Boolean)
+	1653 Nop
+	1654 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1655 Nop
+	1656 Nop
+	1657 Nop
+	1658 Nop
+	1659 Nop
+	1660 Nop
+	1661 Nop
+	1662 Nop
+	1663 Nop
+	1664 Nop
+	1665 ShiftLeft v1489 @ S1_v86, v886 @ S0_v83 (System.String), 2
+	1666 Add v1490 @ S0_v160, v1485.fixedNumberFormats (System.String[]), v1489 @ S1_v86
+	1667 Nop
+	1668 Add v1492 @ S0_v161, v1490 @ S0_v160, 12
+	1669 Nop
+	1670 Nop
+	1671 Nop
+	1672 Move v1495 @ S0_v164 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	1673 Nop
+	1674 Nop
+	1675 Nop
+	1676 And v1498 @ S0_v166, [v1495 @ S0_v164 (Il2CppClass<System.Globalization.CultureInfo>)+BA], 512
+	1677 CheckEqual v1499 @ TEMP_v30 (System.Boolean), v1498 @ S0_v166, 0
+	1678 ConditionalJump @b399, v1499 @ TEMP_v30 (System.Boolean)
+	1679 Move v1530 @ S0_v170 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	1680 Nop
+	1681 CheckEqual v1532 @ S0_v172 (System.Boolean), [v1530 @ S0_v170 (Il2CppClass<System.Globalization.CultureInfo>)+74], 0
+	1682 Not v1533 @ TEMP_v32 (System.Boolean), v1532 @ S0_v172 (System.Boolean)
+	1683 ConditionalJump @b399, v1533 @ TEMP_v32 (System.Boolean)
+	1684 Nop
+	1685 CallVoid 11A99, typeof(System.Globalization.CultureInfo)
+	1686 Nop
+	1687 Nop
+	1688 Nop
+	1689 Nop
+	1690 Nop
+	1691 Nop
+	1692 Call CultureInfo.get_CurrentCulture, v570 @ S3_v12 (System.Globalization.CultureInfo)
+	1693 Nop
+	1694 Call D640, v666 @ S1_v90 (System.String), v77 @ S0_v37, [v1492 @ S0_v161], v570 @ S3_v12 (System.Globalization.CultureInfo), 0
+	1695 Nop
+	1696 Call StringBuilder.AppendLine, v699 @ S0_v169 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v666 @ S1_v90 (System.String)
+	1697 Jump @b353
+	1698 Nop
+	1699 Nop
+	1700 Nop
+	1701 Nop
+	1702 Nop
+	1703 Nop
+	1704 CheckGreater v1513 @ S0_v106 (System.Boolean), v533 @ L7_v5 (System.String), 0
+	1705 Nop
+	1706 Nop
+	1707 Nop
+	1708 Nop
+	1709 Divide v1517 @ S2_v14 (Il2CppClass<System.String>), v1502 @ L29_v5 (Il2CppClass<System.String>), 10
+	1710 Nop
+	1711 Nop
+	1712 Multiply v1518 @ S2_v15, v1517 @ S2_v14 (Il2CppClass<System.String>), 10
+	1713 Subtract v1519 @ S1_v58, v1502 @ L29_v5 (Il2CppClass<System.String>), v1518 @ S2_v15
+	1714 Nop
+	1715 CheckEqual v1520 @ S1_v59 (System.Boolean), v1519 @ S1_v58, 0
+	1716 And v1521 @ S0_v107, v1513 @ S0_v106 (System.Boolean), v1520 @ S1_v59 (System.Boolean)
+	1717 CheckEqual v1506 @ TEMP_v20 (System.Boolean), v1521 @ S0_v107, 0
+	1718 ConditionalJump @b327, v1506 @ TEMP_v20 (System.Boolean)
+	1719 Nop
+	1720 Nop
+	1721 Subtract v1510 @ S0_v150 (System.String), v533 @ L7_v5 (System.String), 1
+	1722 Nop
+	1723 Jump @b395
+	1724 Nop
+	1725 Nop
+	1726 Nop
+	1727 Nop
+	1728 CheckLess v1543 @ S0_v109 (System.Boolean), v533 @ L7_v5 (System.String), 1
+	1729 Not v644 @ TEMP_v21 (System.Boolean), v1543 @ S0_v109 (System.Boolean)
+	1730 ConditionalJump @b333, v644 @ TEMP_v21 (System.Boolean)
+	1731 Nop
+	1732 Nop
+	1733 Nop
+	1734 Nop
+	1735 Add v1558 @ S0_v141, [v91 @ S0_v43 (System.String)+10], [v91 @ S0_v43 (System.String)+14]
+	1736 Nop
+	1737 CheckLess v700 @ S0_v142 (System.Boolean), v1558 @ S0_v141, 1
+	1738 ConditionalJump @b353, v700 @ S0_v142 (System.Boolean)
+	1739 Nop
+	1740 Nop
+	1741 Nop
+	1742 Nop
+	1743 Nop
+	1744 Add v1573 @ S1_v74, [v91 @ S0_v43 (System.String)+10], [v91 @ S0_v43 (System.String)+14]
+	1745 Nop
+	1746 Subtract v1575 @ S1_v75 (System.String), v1573 @ S1_v74, 1
+	1747 Nop
+	1748 Call StringBuilder.Append, v1576 @ S0_v144 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v1575 @ S1_v75 (System.String)
+	1749 Nop
+	1750 And v1607 @ S0_v145, v1576 @ S0_v144 (System.Text.StringBuilder), 65535
+	1751 Nop
+	1752 CheckNotEqual v701 @ S0_v146 (System.Boolean), v1607 @ S0_v145, 46
+	1753 ConditionalJump @b353, v701 @ S0_v146 (System.Boolean)
+	1754 Nop
+	1755 Nop
+	1756 Nop
+	1757 Nop
+	1758 Nop
+	1759 Add v1624 @ S1_v80, [v91 @ S0_v43 (System.String)+10], [v91 @ S0_v43 (System.String)+14]
+	1760 Nop
+	1761 Subtract v669 @ S1_v81 (System.Int32), v1624 @ S1_v80, 1
+	1762 Nop
+	1763 Nop
+	1764 Call StringBuilder.Insert, v702 @ S0_v148 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v669 @ S1_v81 (System.Int32), 1
+	1765 Jump @b353
+	1766 Nop
+	1767 Nop
+	1768 Nop
+	1769 Move [v77 @ S0_v37], v1502 @ L29_v5 (Il2CppClass<System.String>)
+	1770 Nop
+	1771 Move v1562 @ S0_v112 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1772 Nop
+	1773 Nop
+	1774 Nop
+	1775 And v1566 @ S0_v114, [v1562 @ S0_v112 (Il2CppClass<System.DateTimeFormat>)+BA], 512
+	1776 CheckEqual v1567 @ TEMP_v22 (System.Boolean), v1566 @ S0_v114, 0
+	1777 ConditionalJump @b396, v1567 @ TEMP_v22 (System.Boolean)
+	1778 Move v1577 @ S0_v133 (Il2CppClass<System.DateTimeFormat>), typeof(System.DateTimeFormat)
+	1779 Nop
+	1780 CheckEqual v1579 @ S0_v135 (System.Boolean), [v1577 @ S0_v133 (Il2CppClass<System.DateTimeFormat>)+74], 0
+	1781 Not v1580 @ TEMP_v27 (System.Boolean), v1579 @ S0_v135 (System.Boolean)
+	1782 ConditionalJump @b396, v1580 @ TEMP_v27 (System.Boolean)
+	1783 Nop
+	1784 CallVoid 11A99, typeof(System.DateTimeFormat)
+	1785 Nop
+	1786 Nop
+	1787 Nop
+	1788 Nop
+	1789 Nop
+	1790 Nop
+	1791 Nop
+	1792 Nop
+	1793 Nop
+	1794 Nop
+	1795 ShiftLeft v1591 @ S1_v64, v533 @ L7_v5 (System.String), 2
+	1796 Add v1592 @ S0_v119, v1587.fixedNumberFormats (System.String[]), v1591 @ S1_v64
+	1797 Nop
+	1798 Add v1594 @ S0_v120, v1592 @ S0_v119, 12
+	1799 Nop
+	1800 Nop
+	1801 Nop
+	1802 Move v1597 @ S0_v123 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	1803 Nop
+	1804 Nop
+	1805 Nop
+	1806 And v1600 @ S0_v125, [v1597 @ S0_v123 (Il2CppClass<System.Globalization.CultureInfo>)+BA], 512
+	1807 CheckEqual v1601 @ TEMP_v24 (System.Boolean), v1600 @ S0_v125, 0
+	1808 ConditionalJump @b400, v1601 @ TEMP_v24 (System.Boolean)
+	1809 Move v1609 @ S0_v129 (Il2CppClass<System.Globalization.CultureInfo>), typeof(System.Globalization.CultureInfo)
+	1810 Nop
+	1811 CheckEqual v1611 @ S0_v131 (System.Boolean), [v1609 @ S0_v129 (Il2CppClass<System.Globalization.CultureInfo>)+74], 0
+	1812 Not v1612 @ TEMP_v26 (System.Boolean), v1611 @ S0_v131 (System.Boolean)
+	1813 ConditionalJump @b400, v1612 @ TEMP_v26 (System.Boolean)
+	1814 Nop
+	1815 CallVoid 11A99, typeof(System.Globalization.CultureInfo)
+	1816 Nop
+	1817 Nop
+	1818 Nop
+	1819 Nop
+	1820 Nop
+	1821 Nop
+	1822 Call CultureInfo.get_CurrentCulture, v573 @ S3_v9 (System.Globalization.CultureInfo)
+	1823 Nop
+	1824 Call D640, v670 @ S1_v68 (System.String), v77 @ S0_v37, [v1594 @ S0_v120], v573 @ S3_v9 (System.Globalization.CultureInfo), 0
+	1825 Nop
+	1826 Call StringBuilder.AppendLine, v703 @ S0_v128 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v670 @ S1_v68 (System.String)
+	1827 Jump @b353
+	1828 Nop
+	1829 Nop
+	1830 Nop
+	1831 Nop
+	1832 Call StringBuilder.Append, v442 @ S0_v74 (System.Text.StringBuilder), v91 @ S0_v43 (System.String), v159 @ S0_v56 (System.String[])
+	1833 Nop
+	1834 Nop
+	1835 Nop
+	1836 Nop
+	1837 Nop
+	1838 Add v150 @ S0_v63 (System.Char[]), v136 @ L3_v3 (System.String), v111 @ L9_v1 (System.Char[])
+	1839 Nop
+	1840 Jump @b398
+	1841 Nop
+	1842 Interrupt
+	1843 Nop
+	1844 Nop
+	1845 Nop
+	1846 Call UnicodeEncoding.GetEncoder, returnVal1 @ S0_v54 (System.String), v91 @ S0_v43 (System.String)
+	1847 Nop
+	1848 Nop
+	1849 Return returnVal1 @ S0_v54 (System.String)
+	1850 Nop
+	1851 Nop
+	1852 Nop
+	1853 Nop
+	1854 Nop
+	1855 Nop
+	1856 Call 11B6C, v1086 @ S0_v69 (System.Text.StringBuilder), typeof(System.FormatException)
+	1857 Nop
+	1858 Nop
+	1859 Nop
+	1860 CallVoid DateTimeFormat.HebrewFormatDigits, v1086 @ S0_v69 (System.Text.StringBuilder), "Input string was not in a correct format."
+	1861 Nop
+	1862 Nop
+	1863 Nop
+	1864 Nop
+	1865 CallVoid 120AB, v1086 @ S0_v69 (System.Text.StringBuilder), 0, methodof(System.DateTimeFormat::FormatCustomized)
+	1866 Nop
+	1867 Nop
+	1868 Return 0
+
+Method: System.String Format(System.DateTime dateTime, System.String format, System.Globalization.DateTimeFormatInfo dtfi)
+
+Disassembly:
+	0x1600789 I32Const 158
+	0x160078C Call 1
+	0x160078E I32Const 0
+	0x1600790 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 158
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.String Format(System.DateTime dateTime, System.String format, System.Globalization.DateTimeFormatInfo dtfi, System.TimeSpan offset)
+
+Disassembly:
+	Method threw an exception while analyzing - System.Exception: Failed to find wasm definition for Method: System.DateTimeFormat::Format
+which has params [DateTime dateTime, string format, DateTimeFormatInfo dtfi, TimeSpan offset]
+ ---> System.Exception: Can't get function with signature ijiiji, as it's not defined in the binary
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 109
+   --- End of inner exception stack trace ---
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 120
+   at Cpp2IL.Core.OutputFormats.IsilDumpOutputFormat.<>c__DisplayClass4_1.<DoOutput>b__0(TypeAnalysisContext type) in /_/Cpp2IL.Core/OutputFormats/IsilDumpOutputFormat.cs:line 53
+
+Method: System.Void InvalidFormatForLocal(System.String format, System.DateTime dateTime)
+
+Disassembly:
+	0xFA91C2 I32Const 4561428
+	0xFA91C7 I32Load8_S 0, 0
+	0xFA91CA I32Eqz
+	0xFA91CB If -64
+	0xFA91CD I32Const 3029132
+	0xFA91D2 I32Load 2, 0
+	0xFA91D5 Call 73003
+	0xFA91D9 I32Const 4561428
+	0xFA91DE I32Const 1
+	0xFA91E0 I32Store8 0, 0
+	0xFA91E3 End
+	0xFA91E4 I32Const 4427868
+	0xFA91E9 I32Load 2, 0
+	0xFA91EC Call 72556
+	0xFA91F0 LocalTee 3
+	0xFA91F2 I32Const 0
+	0xFA91F4 Call 54998
+	0xFA91F8 LocalGet 3
+	0xFA91FA I32Const 0
+	0xFA91FC I32Const 4471560
+	0xFA9201 I32Load 2, 0
+	0xFA9204 Call 73899
+	0xFA9208 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v10, [2E388C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [459A14], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.NullReferenceException), typeof(System.NotSupportedException)
+	15 Nop
+	16 Nop
+	17 CallVoid NullReferenceException..ctor, v13 @ S0_v7 (System.NullReferenceException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid ZlibStream.SetLength, v13 @ S0_v7 (System.NullReferenceException), 0
+	23 Nop
+	24 Return
+
+Method: System.Void InvalidFormatForUtc(System.String format, System.DateTime dateTime)
+
+Disassembly:
+	0xD8A7C5 I32Const 4555327
+	0xD8A7CA I32Load8_S 0, 0
+	0xD8A7CD I32Eqz
+	0xD8A7CE If -64
+	0xD8A7D0 I32Const 2948364
+	0xD8A7D5 I32Load 2, 0
+	0xD8A7D8 Call 73003
+	0xD8A7DC I32Const 4555327
+	0xD8A7E1 I32Const 1
+	0xD8A7E3 I32Store8 0, 0
+	0xD8A7E6 End
+	0xD8A7E7 I32Const 4427868
+	0xD8A7EC I32Load 2, 0
+	0xD8A7EF Call 72556
+	0xD8A7F3 LocalTee 3
+	0xD8A7F5 I32Const 0
+	0xD8A7F7 Call 54998
+	0xD8A7FB LocalGet 3
+	0xD8A7FD I32Const 0
+	0xD8A7FF I32Const 4471468
+	0xD8A804 I32Load 2, 0
+	0xD8A807 Call 73899
+	0xD8A80B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v10, [2CFD0C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45823F], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.NullReferenceException), typeof(System.NotSupportedException)
+	15 Nop
+	16 Nop
+	17 CallVoid NullReferenceException..ctor, v13 @ S0_v7 (System.NullReferenceException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid CrcCalculatorStream.set_Position, v13 @ S0_v7 (System.NullReferenceException), 0
+	23 Nop
+	24 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x10FA555 I32Const 4565947
+	0x10FA55A I32Load8_S 0, 0
+	0x10FA55D I32Eqz
+	0x10FA55E If -64
+	0x10FA560 I32Const 2965620
+	0x10FA565 I32Load 2, 0
+	0x10FA568 Call 73003
+	0x10FA56C I32Const 4565947
+	0x10FA571 I32Const 1
+	0x10FA573 I32Store8 0, 0
+	0x10FA576 End
+	0x10FA577 I32Const 0
+	0x10FA579 Call 51413
+	0x10FA57D LocalSet 0
+	0x10FA57F I32Const 4427852
+	0x10FA584 I32Load 2, 0
+	0x10FA587 I32Load 2, 92
+	0x10FA58A LocalGet 0
+	0x10FA58C I32Store 2, 0
+	0x10FA58F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v11, [2D4074]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45ABBB], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Call C8D5, v12 @ S0_v6 (System.Object), 0
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move v16.EPHEMERON_TOMBSTONE (System.Object), v12 @ S0_v6 (System.Object)
+	20 Nop
+	21 Return
+

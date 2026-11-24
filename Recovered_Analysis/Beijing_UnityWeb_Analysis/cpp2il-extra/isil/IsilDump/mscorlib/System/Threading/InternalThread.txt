@@ -1,0 +1,290 @@
+Type: System.Threading.InternalThread
+
+Method: System.Void Thread_free_internal()
+
+Disassembly:
+	0x12EE96A LocalGet 0
+	0x12EE96C LocalTee 2
+	0x12EE96E If -64
+	0x12EE970 LocalGet 2
+	0x12EE972 LocalGet 2
+	0x12EE974 I32Load 2, 0
+	0x12EE977 I32Load 2, 4
+	0x12EE97A I32Const 32767
+	0x12EE97E I32And
+	0x12EE97F I32Const 46824
+	0x12EE983 I32Add
+	0x12EE984 CallIndirect 1, 0
+	0x12EE987 End
+	0x12EE988 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), this @ L0 (System.Threading.InternalThread), 0
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Move v6 @ S1_v3 (Il2CppClass<System.Threading.InternalThread>), [this @ L0 (System.Threading.InternalThread)]
+	7 Nop
+	8 Nop
+	9 And v9 @ S1_v5, [v6 @ S1_v3 (Il2CppClass<System.Threading.InternalThread>)+4], 32767
+	10 Nop
+	11 Add v11 @ S1_v6, v9 @ S1_v5, 46824
+	12 IndirectCall v11 @ S1_v6, v12 @ SRET_v2, this @ L0 (System.Threading.InternalThread)
+	13 Nop
+	14 Nop
+	15 Return
+
+Method: System.Void Finalize()
+
+Disassembly:
+	0x12ECD60 LocalGet 0
+	0x12ECD62 Call 71861
+	0x12ECD66 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 118B5, this @ L0 (System.Threading.InternalThread)
+	2 Nop
+	3 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x12ECD6C GlobalGet 7
+	0x12ECD6E LocalSet 3
+	0x12ECD70 GlobalGet 7
+	0x12ECD72 I32Const 16
+	0x12ECD74 I32Add
+	0x12ECD75 GlobalSet 7
+	0x12ECD77 LocalGet 3
+	0x12ECD79 I32Const 8
+	0x12ECD7B I32Add
+	0x12ECD7C LocalTee 1
+	0x12ECD7E LocalTee 2
+	0x12ECD80 LocalGet 3
+	0x12ECD82 I32Store 2, 0
+	0x12ECD85 LocalGet 2
+	0x12ECD87 I32Const -1
+	0x12ECD89 I32Store 2, 4
+	0x12ECD8C I32Const 0
+	0x12ECD8E GlobalSet 9
+	0x12ECD90 I32Const 11136
+	0x12ECD94 LocalGet 0
+	0x12ECD96 I32Const 0
+	0x12ECD98 Call 36
+	0x12ECD9A GlobalGet 9
+	0x12ECD9C I32Const 0
+	0x12ECD9E GlobalSet 9
+	0x12ECDA0 I32Const 1
+	0x12ECDA2 I32And
+	0x12ECDA3 If -64
+	0x12ECDA5 I32Const 2132256
+	0x12ECDAA Call 156
+	0x12ECDAD LocalSet 2
+	0x12ECDAF GlobalGet 14
+	0x12ECDB1 I32Const 2132256
+	0x12ECDB6 Call 429
+	0x12ECDB9 I32Eq
+	0x12ECDBA If -64
+	0x12ECDBC LocalGet 2
+	0x12ECDBE Call 153
+	0x12ECDC1 I32Load 2, 0
+	0x12ECDC4 LocalSet 4
+	0x12ECDC6 Call 154
+	0x12ECDC9 Else
+	0x12ECDCA LocalGet 2
+	0x12ECDCC Call 164
+	0x12ECDCF End
+	0x12ECDD0 Else
+	0x12ECDD1 LocalGet 1
+	0x12ECDD3 I32Const 4
+	0x12ECDD5 I32Add
+	0x12ECDD6 LocalTee 5
+	0x12ECDD8 I32Load 2, 0
+	0x12ECDDB I32Const 1
+	0x12ECDDD I32Add
+	0x12ECDDE LocalSet 2
+	0x12ECDE0 LocalGet 5
+	0x12ECDE2 LocalGet 2
+	0x12ECDE4 I32Store 2, 0
+	0x12ECDE7 LocalGet 1
+	0x12ECDE9 I32Load 2, 0
+	0x12ECDEC LocalGet 2
+	0x12ECDEE I32Const 2
+	0x12ECDF0 I32Shl
+	0x12ECDF1 I32Add
+	0x12ECDF2 I32Const 15
+	0x12ECDF4 I32Store 2, 0
+	0x12ECDF7 End
+	0x12ECDF8 LocalGet 0
+	0x12ECDFA I32Const 0
+	0x12ECDFC Call 46066
+	0x12ECE00 Block -64
+	0x12ECE02 Block -64
+	0x12ECE04 LocalGet 1
+	0x12ECE06 I32Load 2, 4
+	0x12ECE09 I32Const -1
+	0x12ECE0B I32Eq
+	0x12ECE0C BrIf 0
+	0x12ECE0E LocalGet 1
+	0x12ECE10 I32Load 2, 0
+	0x12ECE13 LocalGet 1
+	0x12ECE15 I32Load 2, 4
+	0x12ECE18 I32Const 2
+	0x12ECE1A I32Shl
+	0x12ECE1B I32Add
+	0x12ECE1C I32Load 2, 0
+	0x12ECE1F I32Const 15
+	0x12ECE21 I32Ne
+	0x12ECE22 BrIf 0
+	0x12ECE24 LocalGet 1
+	0x12ECE26 I32Const 4
+	0x12ECE28 I32Add
+	0x12ECE29 LocalTee 1
+	0x12ECE2B I32Load 2, 0
+	0x12ECE2E LocalTee 0
+	0x12ECE30 I32Const -1
+	0x12ECE32 I32Gt_S
+	0x12ECE33 If -64
+	0x12ECE35 LocalGet 1
+	0x12ECE37 LocalGet 0
+	0x12ECE39 I32Const -1
+	0x12ECE3B I32Add
+	0x12ECE3C I32Store 2, 0
+	0x12ECE3F End
+	0x12ECE40 Br 1
+	0x12ECE42 End
+	0x12ECE43 LocalGet 4
+	0x12ECE45 If -64
+	0x12ECE47 LocalGet 4
+	0x12ECE49 I32Const 0
+	0x12ECE4B I32Const 0
+	0x12ECE4D Call 73899
+	0x12ECE51 End
+	0x12ECE52 End
+	0x12ECE53 LocalGet 3
+	0x12ECE55 GlobalSet 7
+	0x12ECE57 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 8
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Move [v9 @ S0_v5], v1 @ G7
+	13 Nop
+	14 Nop
+	15 Move [v9 @ S0_v5+4], -1
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid 0024, 11136, this @ L0 (System.Threading.InternalThread), 0
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Jump @b12
+	29 Nop
+	30 Call 009C, v28 @ S0_v41, 2132256
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call 01AD, v50 @ S1_v30, 2132256
+	35 CheckEqual v65 @ S0_v43 (System.Boolean), v48 @ G14, v50 @ S1_v30
+	36 Not v57 @ TEMP_v6 (System.Boolean), v65 @ S0_v43 (System.Boolean)
+	37 ConditionalJump @b10, v57 @ TEMP_v6 (System.Boolean)
+	38 Nop
+	39 Call 0099, v71 @ S0_v47, v28 @ S0_v41
+	40 Nop
+	41 Nop
+	42 CallVoid 009A
+	43 Jump @b11
+	44 Nop
+	45 CallVoid 00A4, v28 @ S0_v41
+	46 Nop
+	47 Jump @b20
+	48 Nop
+	49 Nop
+	50 Add v31 @ S0_v33, v9 @ S0_v5, 4
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Add v35 @ S0_v35, [v31 @ S0_v33], 1
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Move [v31 @ S0_v33], v35 @ S0_v35
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 ShiftLeft v43 @ S1_v27, v35 @ S0_v35, 2
+	64 Add v44 @ S0_v39, [v9 @ S0_v5], v43 @ S1_v27
+	65 Nop
+	66 Move [v44 @ S0_v39], 15
+	67 Nop
+	68 Nop
+	69 Nop
+	70 CallVoid ConditionalWeakTable`2.RehashWithoutResize, this @ L0 (System.Threading.InternalThread)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 CheckEqual v69 @ S0_v15 (System.Boolean), [v9 @ S0_v5+4], -1
+	75 ConditionalJump @b17, v69 @ S0_v15 (System.Boolean)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 ShiftLeft v78 @ S1_v16, [v9 @ S0_v5+4], 2
+	82 Add v79 @ S0_v23, [v9 @ S0_v5], v78 @ S1_v16
+	83 Nop
+	84 Nop
+	85 CheckNotEqual v82 @ S0_v25 (System.Boolean), [v79 @ S0_v23], 15
+	86 ConditionalJump @b17, v82 @ S0_v25 (System.Boolean)
+	87 Nop
+	88 Nop
+	89 Add v92 @ S0_v27, v9 @ S0_v5, 4
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 CheckGreater v97 @ S0_v29 (System.Boolean), [v92 @ S0_v27], -1
+	95 Not v98 @ TEMP_v5 (System.Boolean), v97 @ S0_v29 (System.Boolean)
+	96 ConditionalJump @b21, v98 @ TEMP_v5 (System.Boolean)
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Add v116 @ S1_v22, [v92 @ S0_v27], -1
+	101 Move [v92 @ S0_v27], v116 @ S1_v22
+	102 Nop
+	103 Jump @b22
+	104 Nop
+	105 Nop
+	106 CheckEqual v87 @ TEMP_v4 (System.Boolean), [v71 @ S0_v47], 0
+	107 ConditionalJump @b22, v87 @ TEMP_v4 (System.Boolean)
+	108 Nop
+	109 Nop
+	110 Nop
+	111 CallVoid 120AB, [v71 @ S0_v47], 0, 0
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Return
+

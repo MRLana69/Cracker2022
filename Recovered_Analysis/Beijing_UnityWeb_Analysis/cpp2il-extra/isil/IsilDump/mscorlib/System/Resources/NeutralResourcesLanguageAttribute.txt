@@ -1,0 +1,102 @@
+Type: System.Resources.NeutralResourcesLanguageAttribute
+
+Method: System.Void .ctor(System.String cultureName)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Resources.NeutralResourcesLanguageAttribute), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], cultureName @ L1 (System.String)
+	5 Nop
+	6 Return
+
+Method: System.String get_CultureName()
+
+Disassembly:
+	0xFFF137 I32Const 5381
+	0xFFF13A LocalSet 1
+	0xFFF13C Loop -64
+	0xFFF13E LocalGet 2
+	0xFFF140 LocalGet 0
+	0xFFF142 I32Load 2, 8
+	0xFFF145 I32Lt_S
+	0xFFF146 If -64
+	0xFFF148 LocalGet 1
+	0xFFF14A LocalGet 1
+	0xFFF14C I32Const 5
+	0xFFF14E I32Shl
+	0xFFF14F I32Add
+	0xFFF150 LocalGet 0
+	0xFFF152 LocalGet 2
+	0xFFF154 I32Const 0
+	0xFFF156 Call 55658
+	0xFFF15A I32Const 65535
+	0xFFF15E I32And
+	0xFFF15F I32Xor
+	0xFFF160 LocalSet 1
+	0xFFF162 LocalGet 2
+	0xFFF164 I32Const 1
+	0xFFF166 I32Add
+	0xFFF167 LocalSet 2
+	0xFFF169 Br 1
+	0xFFF16B End
+	0xFFF16C End
+	0xFFF16D LocalGet 1
+	0xFFF16F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CheckLess v25 @ S0_v4 (System.Boolean), v20 @ S0_v10 (System.Char[]), this._culture (System.String)
+	7 Not v4 @ TEMP_v2 (System.Boolean), v25 @ S0_v4 (System.Boolean)
+	8 ConditionalJump @b5, v4 @ TEMP_v2 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 ShiftLeft v29 @ S1_v5, v17 @ L1_v2 (System.String), 5
+	13 Add v30 @ S0_v7, v17 @ L1_v2 (System.String), v29 @ S1_v5
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call String.Split, v33 @ S1_v7 (System.String[]), this @ L0 (System.Resources.NeutralResourcesLanguageAttribute), v5 @ L2_v1 (System.Char[])
+	18 Nop
+	19 And v35 @ S1_v8, v33 @ S1_v7 (System.String[]), 65535
+	20 Xor v36 @ S0_v8 (System.String), v30 @ S0_v7, v35 @ S1_v8
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v20 @ S0_v10 (System.Char[]), v5 @ L2_v1 (System.Char[]), 1
+	25 Nop
+	26 Jump @b6
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Return v17 @ L1_v2 (System.String)
+
+Method: System.Resources.UltimateResourceFallbackLocation get_Location()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._culture (System.String)
+

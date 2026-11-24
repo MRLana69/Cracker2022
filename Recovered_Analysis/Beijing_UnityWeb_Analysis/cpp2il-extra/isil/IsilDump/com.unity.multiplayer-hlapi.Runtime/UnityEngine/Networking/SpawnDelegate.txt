@@ -1,0 +1,577 @@
+Type: UnityEngine.Networking.SpawnDelegate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (UnityEngine.Networking.SpawnDelegate), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: UnityEngine.GameObject Invoke(UnityEngine.Vector3 position, UnityEngine.Networking.NetworkHash128 assetId)
+
+Disassembly:
+	0x121644F Block -1
+	0x1216451 Block -64
+	0x1216453 LocalGet 2
+	0x1216455 BrIf 0
+	0x1216457 LocalGet 0
+	0x1216459 I32Load 2, 12
+	0x121645C If -1
+	0x121645E LocalGet 1
+	0x1216460 I32Const 1
+	0x1216462 I32Const 0
+	0x1216464 Call 56794
+	0x1216468 Br 1
+	0x121646A Else
+	0x121646B LocalGet 1
+	0x121646D I32Const 0
+	0x121646F I32Const 0
+	0x1216471 Call 56794
+	0x1216475 I32Const 0
+	0x1216477 End
+	0x1216478 Br 1
+	0x121647A End
+	0x121647B Block -64
+	0x121647D Block -64
+	0x121647F Block -64
+	0x1216481 Block -64
+	0x1216483 Block -64
+	0x1216485 Block -64
+	0x1216487 LocalGet 0
+	0x1216489 I32Load 2, 28
+	0x121648C BrTable System.UInt64[], 5
+	0x1216494 End
+	0x1216495 I32Const 0
+	0x1216497 Br 5
+	0x1216499 End
+	0x121649A LocalGet 0
+	0x121649C LocalGet 1
+	0x121649E I32Const 0
+	0x12164A0 Call 56852
+	0x12164A4 I32Const 1
+	0x12164A6 Br 4
+	0x12164A8 End
+	0x12164A9 LocalGet 0
+	0x12164AB LocalGet 1
+	0x12164AD I32Const 0
+	0x12164AF Call 56854
+	0x12164B3 I32Const 1
+	0x12164B5 Br 3
+	0x12164B7 End
+	0x12164B8 LocalGet 0
+	0x12164BA LocalGet 1
+	0x12164BC I32Const 0
+	0x12164BE Call 56853
+	0x12164C2 I32Const 1
+	0x12164C4 Br 2
+	0x12164C6 End
+	0x12164C7 LocalGet 0
+	0x12164C9 LocalGet 1
+	0x12164CB I32Const 0
+	0x12164CD Call 56855
+	0x12164D1 I32Const 1
+	0x12164D3 Br 1
+	0x12164D5 End
+	0x12164D6 I32Const 1
+	0x12164D8 End
+	0x12164D9 End
+
+ISIL:
+	0 Nop
+	1 ConditionalJump @b8, assetId @ L2 (UnityEngine.Networking.NetworkHash128)
+	2 Nop
+	3 Nop
+	4 CheckEqual v5 @ TEMP_v8 (System.Boolean), this.invoke_impl (System.IntPtr), 0
+	5 ConditionalJump @b6, v5 @ TEMP_v8 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid NetworkWriter.Write, position @ L1 (UnityEngine.Vector3), 1
+	10 Jump @b8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid NetworkWriter.Write, position @ L1 (UnityEngine.Vector3), 0
+	15 Nop
+	16 Nop
+	17 Jump @b24
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CheckEqual v18 @ TEMP_v3 (System.Boolean), this.extra_arg (System.IntPtr), 0
+	22 ConditionalJump @b14, v18 @ TEMP_v3 (System.Boolean)
+	23 CheckEqual v23 @ TEMP_v4 (System.Boolean), this.extra_arg (System.IntPtr), 1
+	24 ConditionalJump @b15, v23 @ TEMP_v4 (System.Boolean)
+	25 CheckEqual v26 @ TEMP_v5 (System.Boolean), this.extra_arg (System.IntPtr), 2
+	26 ConditionalJump @b17, v26 @ TEMP_v5 (System.Boolean)
+	27 CheckEqual v40 @ TEMP_v6 (System.Boolean), this.extra_arg (System.IntPtr), 3
+	28 ConditionalJump @b19, v40 @ TEMP_v6 (System.Boolean)
+	29 CheckEqual v39 @ TEMP_v7 (System.Boolean), this.extra_arg (System.IntPtr), 4
+	30 ConditionalJump @b21, v39 @ TEMP_v7 (System.Boolean)
+	31 Jump @b23
+	32 Nop
+	33 Nop
+	34 Jump @b24
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 CallVoid NetworkTransform.SerializeMode3D, this @ L0 (UnityEngine.Networking.SpawnDelegate), position @ L1 (UnityEngine.Vector3)
+	40 Nop
+	41 Jump @b24
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 CallVoid NetworkTransformVisualizer.set_visualizerPrefab, this @ L0 (UnityEngine.Networking.SpawnDelegate), position @ L1 (UnityEngine.Vector3)
+	47 Nop
+	48 Jump @b24
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 CallVoid NetworkTransform.SerializeModeCharacterController, this @ L0 (UnityEngine.Networking.SpawnDelegate), position @ L1 (UnityEngine.Vector3)
+	54 Nop
+	55 Jump @b24
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 CallVoid NetworkTransform.SerializeMode2D, this @ L0 (UnityEngine.Networking.SpawnDelegate), position @ L1 (UnityEngine.Vector3)
+	61 Nop
+	62 Jump @b24
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Return returnVal1 @ S0_v2 (UnityEngine.GameObject)
+
+Method: System.IAsyncResult BeginInvoke(UnityEngine.Vector3 position, UnityEngine.Networking.NetworkHash128 assetId, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x1213321 GlobalGet 7
+	0x1213323 LocalSet 5
+	0x1213325 GlobalGet 7
+	0x1213327 I32Const 16
+	0x1213329 I32Add
+	0x121332A GlobalSet 7
+	0x121332C I32Const 4569196
+	0x1213331 I32Load8_S 0, 0
+	0x1213334 I32Eqz
+	0x1213335 If -64
+	0x1213337 I32Const 2986356
+	0x121333C I32Load 2, 0
+	0x121333F Call 73003
+	0x1213343 I32Const 4569196
+	0x1213348 I32Const 1
+	0x121334A I32Store8 0, 0
+	0x121334D End
+	0x121334E I32Const 4435092
+	0x1213353 I32Load 2, 0
+	0x1213356 LocalTee 6
+	0x1213358 I32Load16_S 1, 186
+	0x121335C I32Const 512
+	0x121335F I32And
+	0x1213360 If -64
+	0x1213362 LocalGet 6
+	0x1213364 I32Load 2, 116
+	0x1213367 I32Eqz
+	0x1213368 If -64
+	0x121336A LocalGet 6
+	0x121336C Call 72345
+	0x1213370 End
+	0x1213371 End
+	0x1213372 LocalGet 5
+	0x1213374 I32Const 4
+	0x1213376 I32Add
+	0x1213377 LocalSet 6
+	0x1213379 Block -1
+	0x121337B Block -64
+	0x121337D I32Const 0
+	0x121337F Call 56628
+	0x1213383 LocalGet 2
+	0x1213385 I32Const 4454488
+	0x121338A I32Load 2, 0
+	0x121338D I32Load 2, 12
+	0x1213390 I32Load 2, 96
+	0x1213393 I32Load 2, 68
+	0x1213396 LocalTee 7
+	0x1213398 LocalGet 7
+	0x121339A I32Load 2, 0
+	0x121339D I32Const 8191
+	0x12133A0 I32And
+	0x12133A1 I32Const 22691
+	0x12133A5 I32Add
+	0x12133A6 CallIndirect 5, 0
+	0x12133A9 I32Const -1
+	0x12133AB I32Le_S
+	0x12133AC BrIf 0
+	0x12133AE LocalGet 0
+	0x12133B0 I32Load 2, 16
+	0x12133B3 I32Eqz
+	0x12133B4 BrIf 0
+	0x12133B6 I32Const 4435036
+	0x12133BB I32Load 2, 0
+	0x12133BE Call 72556
+	0x12133C2 LocalTee 1
+	0x12133C4 I32Const 0
+	0x12133C6 Call 56701
+	0x12133CA I32Const 5
+	0x12133CC LocalGet 3
+	0x12133CE LocalGet 1
+	0x12133D0 Call 29437
+	0x12133D4 I32Const 4435108
+	0x12133D9 I32Load 2, 0
+	0x12133DC Call 72556
+	0x12133E0 LocalTee 3
+	0x12133E2 LocalGet 1
+	0x12133E4 I32Const 0
+	0x12133E6 Call 54153
+	0x12133EA LocalGet 0
+	0x12133EC I32Load 2, 16
+	0x12133EF LocalGet 2
+	0x12133F1 LocalGet 3
+	0x12133F3 LocalGet 4
+	0x12133F5 I32Const 0
+	0x12133F7 Call 50726
+	0x12133FB Drop
+	0x12133FC I32Const 1
+	0x12133FE Br 1
+	0x1213400 End
+	0x1213401 I32Const 4435032
+	0x1213406 I32Load 2, 0
+	0x1213409 LocalTee 0
+	0x121340B I32Load16_S 1, 186
+	0x121340F I32Const 512
+	0x1213412 I32And
+	0x1213413 If -64
+	0x1213415 LocalGet 0
+	0x1213417 I32Load 2, 116
+	0x121341A I32Eqz
+	0x121341B If -64
+	0x121341D LocalGet 0
+	0x121341F Call 72345
+	0x1213423 End
+	0x1213424 End
+	0x1213425 I32Const 0
+	0x1213427 Call 50410
+	0x121342B If -64
+	0x121342D I32Const 4428060
+	0x1213432 I32Load 2, 0
+	0x1213435 I32Const 4
+	0x1213437 Call 71670
+	0x121343B LocalTee 0
+	0x121343D I32Const 4522372
+	0x1213442 I32Load 2, 0
+	0x1213445 Call 29652
+	0x1213449 LocalGet 0
+	0x121344B I32Const 16
+	0x121344D I32Add
+	0x121344E I32Const 4522372
+	0x1213453 I32Load 2, 0
+	0x1213456 I32Store 2, 0
+	0x1213459 LocalGet 5
+	0x121345B LocalGet 1
+	0x121345D I32Load 2, 52
+	0x1213460 I32Store 2, 0
+	0x1213463 LocalGet 0
+	0x1213465 I32Const 4427776
+	0x121346A I32Load 2, 0
+	0x121346D LocalGet 5
+	0x121346F Call 73903
+	0x1213473 LocalTee 1
+	0x1213475 Call 29652
+	0x1213479 LocalGet 0
+	0x121347B I32Const 20
+	0x121347D I32Add
+	0x121347E LocalGet 1
+	0x1213480 I32Store 2, 0
+	0x1213483 LocalGet 0
+	0x1213485 I32Const 4522376
+	0x121348A I32Load 2, 0
+	0x121348D Call 29652
+	0x1213491 LocalGet 0
+	0x1213493 I32Const 24
+	0x1213495 I32Add
+	0x1213496 I32Const 4522376
+	0x121349B I32Load 2, 0
+	0x121349E I32Store 2, 0
+	0x12134A1 LocalGet 6
+	0x12134A3 LocalGet 2
+	0x12134A5 I32Store16 1, 0
+	0x12134A8 LocalGet 0
+	0x12134AA I32Const 4428668
+	0x12134AF I32Load 2, 0
+	0x12134B2 LocalGet 6
+	0x12134B4 Call 73903
+	0x12134B8 LocalTee 1
+	0x12134BA Call 29652
+	0x12134BE LocalGet 0
+	0x12134C0 I32Const 28
+	0x12134C2 I32Add
+	0x12134C3 LocalGet 1
+	0x12134C5 I32Store 2, 0
+	0x12134C8 LocalGet 0
+	0x12134CA I32Const 0
+	0x12134CC Call 55906
+	0x12134D0 I32Const 4433260
+	0x12134D5 I32Load 2, 0
+	0x12134D8 LocalTee 0
+	0x12134DA I32Load16_S 1, 186
+	0x12134DE I32Const 512
+	0x12134E1 I32And
+	0x12134E2 If -64
+	0x12134E4 LocalGet 0
+	0x12134E6 I32Load 2, 116
+	0x12134E9 I32Eqz
+	0x12134EA If -64
+	0x12134EC LocalGet 0
+	0x12134EE Call 72345
+	0x12134F2 End
+	0x12134F3 End
+	0x12134F4 I32Const 0
+	0x12134F6 Call 62852
+	0x12134FA End
+	0x12134FB I32Const 0
+	0x12134FD End
+	0x12134FE LocalGet 5
+	0x1213500 GlobalSet 7
+	0x1213502 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b35
+	11 Nop
+	12 Move v12 @ S0_v71, [2D9174]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v71
+	14 Nop
+	15 Move v14 @ S1_v50, 1
+	16 Move [45B86C], v14 @ S1_v50
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v9 (Il2CppClass<UnityEngine.Networking.NetworkServer>), typeof(UnityEngine.Networking.NetworkServer)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<UnityEngine.Networking.NetworkServer>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	25 ConditionalJump @b39, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S0_v66 (Il2CppClass<UnityEngine.Networking.NetworkServer>), typeof(UnityEngine.Networking.NetworkServer)
+	27 Nop
+	28 CheckEqual v26 @ S0_v68 (System.Boolean), [v24 @ S0_v66 (Il2CppClass<UnityEngine.Networking.NetworkServer>)+74], 0
+	29 Not v27 @ TEMP_v13 (System.Boolean), v26 @ S0_v68 (System.Boolean)
+	30 ConditionalJump @b39, v27 @ TEMP_v13 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(UnityEngine.Networking.NetworkServer)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Add v33 @ S0_v14, v1 @ G7, 4
+	38 Nop
+	39 Nop
+	40 Call NetworkServer.get_hostTopology, v36 @ S0_v16 (UnityEngine.Networking.HostTopology)
+	41 Nop
+	42 Nop
+	43 Move v40 @ S2_v2 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.Int16, UnityEngine.Networking.NetworkMessageDelegate>::ContainsKey)
+	44 Move v41 @ S2_v3, [v40 @ S2_v2 (Il2CppMethodInfo)+C]
+	45 Move v42 @ S2_v4, [v41 @ S2_v3+60]
+	46 Move v43 @ S2_v5, [v42 @ S2_v4+44]
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 And v48 @ S3_v3, [v43 @ S2_v5], 8191
+	52 Nop
+	53 Add v50 @ S3_v4, v48 @ S3_v3, 22691
+	54 IndirectCall v50 @ S3_v4, v51 @ S0_v17, v36 @ S0_v16 (UnityEngine.Networking.HostTopology), assetId @ L2 (UnityEngine.Networking.NetworkHash128), v43 @ S2_v5
+	55 Nop
+	56 CheckLessOrEqual v53 @ S0_v18 (System.Boolean), v51 @ S0_v17, -1
+	57 ConditionalJump @b17, v53 @ S0_v18 (System.Boolean)
+	58 Nop
+	59 Nop
+	60 CheckEqual v57 @ S0_v54 (System.Boolean), this.m_target (System.Object), 0
+	61 ConditionalJump @b17, v57 @ S0_v54 (System.Boolean)
+	62 Nop
+	63 Nop
+	64 Call 11B6C, v68 @ S0_v57 (UnityEngine.Networking.NetworkWriter), typeof(UnityEngine.Networking.NetworkWriter)
+	65 Nop
+	66 Nop
+	67 CallVoid NetworkWriter.SeekZero, v68 @ S0_v57 (UnityEngine.Networking.NetworkWriter)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 CallVoid 72FD, 5, callback @ L3 (System.AsyncCallback), v68 @ S0_v57 (UnityEngine.Networking.NetworkWriter)
+	72 Nop
+	73 Nop
+	74 Call 11B6C, v105 @ S0_v61 (UnityEngine.Networking.NetworkReader), typeof(UnityEngine.Networking.NetworkReader)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 CallVoid NetworkReader..ctor, v105 @ S0_v61 (UnityEngine.Networking.NetworkReader), v68 @ S0_v57 (UnityEngine.Networking.NetworkWriter)
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Call NetworkConnection.SendByChannel, v144 @ S0_v64 (System.Boolean), this.m_target (System.Object), assetId @ L2 (UnityEngine.Networking.NetworkHash128), v105 @ S0_v61 (UnityEngine.Networking.NetworkReader), object @ L4 (System.Object)
+	86 Nop
+	87 Jump @b36
+	88 Nop
+	89 Nop
+	90 Move v60 @ S0_v22 (Il2CppClass<UnityEngine.Networking.LogFilter>), typeof(UnityEngine.Networking.LogFilter)
+	91 Nop
+	92 Nop
+	93 Nop
+	94 And v64 @ S0_v24, [v60 @ S0_v22 (Il2CppClass<UnityEngine.Networking.LogFilter>)+BA], 512
+	95 CheckEqual v65 @ TEMP_v5 (System.Boolean), v64 @ S0_v24, 0
+	96 ConditionalJump @b37, v65 @ TEMP_v5 (System.Boolean)
+	97 Move v69 @ S0_v48 (Il2CppClass<UnityEngine.Networking.LogFilter>), typeof(UnityEngine.Networking.LogFilter)
+	98 Nop
+	99 CheckEqual v71 @ S0_v50 (System.Boolean), [v69 @ S0_v48 (Il2CppClass<UnityEngine.Networking.LogFilter>)+74], 0
+	100 Not v72 @ TEMP_v12 (System.Boolean), v71 @ S0_v50 (System.Boolean)
+	101 ConditionalJump @b37, v72 @ TEMP_v12 (System.Boolean)
+	102 Nop
+	103 CallVoid 11A99, typeof(UnityEngine.Networking.LogFilter)
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Call LogFilter.get_logFatal, v77 @ S0_v27 (System.Boolean)
+	108 Not v80 @ TEMP_v7 (System.Boolean), v77 @ S0_v27 (System.Boolean)
+	109 ConditionalJump @b34, v80 @ TEMP_v7 (System.Boolean)
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Newobj v88 @ S0_v32 (System.OverflowException), typeof(System.OverflowException)
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Throw typeof(System.ArrayTypeMismatchException)
+	118 Nop
+	119 Nop
+	120 Add v130 @ S0_v34, v88 @ S0_v32 (System.OverflowException), 16
+	121 Nop
+	122 Nop
+	123 Move [v130 @ S0_v34], "Local invoke: Failed to find local connection to invoke handler on [connectionId="
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Move [v1 @ G7], [position @ L1 (UnityEngine.Vector3)+34]
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Call 120AF, v140 @ S1_v21, typeof(System.Int32), v1 @ G7
+	133 Nop
+	134 Throw typeof(System.ArrayTypeMismatchException)
+	135 Nop
+	136 Nop
+	137 Add v148 @ S0_v38, v88 @ S0_v32 (System.OverflowException), 20
+	138 Nop
+	139 Move [v148 @ S0_v38], v140 @ S1_v21
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Throw typeof(System.ArrayTypeMismatchException)
+	144 Nop
+	145 Nop
+	146 Add v155 @ S0_v41, v88 @ S0_v32 (System.OverflowException), 24
+	147 Nop
+	148 Nop
+	149 Move [v155 @ S0_v41], "] for MsgId:"
+	150 Nop
+	151 Nop
+	152 Move [v33 @ S0_v14], assetId @ L2 (UnityEngine.Networking.NetworkHash128)
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Call 120AF, v164 @ S1_v32, typeof(System.Int16), v33 @ S0_v14
+	158 Nop
+	159 Throw typeof(System.ArrayTypeMismatchException)
+	160 Nop
+	161 Nop
+	162 Add v167 @ S0_v45, v88 @ S0_v32 (System.OverflowException), 28
+	163 Nop
+	164 Move [v167 @ S0_v45], v164 @ S1_v32
+	165 Nop
+	166 Nop
+	167 Call String.Concat, v101 @ S0_v47 (System.String), v88 @ S0_v32 (System.OverflowException)
+	168 Nop
+	169 Move v172 @ S1_v37 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	170 Nop
+	171 Nop
+	172 Nop
+	173 And v174 @ S1_v39, [v172 @ S1_v37 (Il2CppClass<UnityEngine.Debug>)+BA], 512
+	174 CheckEqual v175 @ TEMP_v9 (System.Boolean), v174 @ S1_v39, 0
+	175 ConditionalJump @b38, v175 @ TEMP_v9 (System.Boolean)
+	176 Move v176 @ S1_v42 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	177 Nop
+	178 CheckEqual v178 @ S1_v44 (System.Boolean), [v176 @ S1_v42 (Il2CppClass<UnityEngine.Debug>)+74], 0
+	179 Not v179 @ TEMP_v11 (System.Boolean), v178 @ S1_v44 (System.Boolean)
+	180 ConditionalJump @b38, v179 @ TEMP_v11 (System.Boolean)
+	181 Nop
+	182 CallVoid 11A99, typeof(UnityEngine.Debug)
+	183 Nop
+	184 Nop
+	185 Nop
+	186 CallVoid Debug.LogException, v101 @ S0_v47 (System.String)
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Return returnVal1 @ S0_v19 (System.IAsyncResult)
+
+Method: UnityEngine.GameObject EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x121FBBB LocalGet 1
+	0x121FBBD I32Const 0
+	0x121FBBF Call 54031
+	0x121FBC3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call NetworkReader.ReadBytesAndSize, returnVal1 @ S0_v2 (UnityEngine.GameObject), result @ L1 (System.IAsyncResult)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (UnityEngine.GameObject)
+

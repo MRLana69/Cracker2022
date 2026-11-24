@@ -1,0 +1,479 @@
+Type: SYBO.Subway.Level.BackgroundCulling
+
+Method: System.Single get_CullingOffset()
+
+Disassembly:
+	0xD0818E F32Const 0.6000004
+	0xD08193 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 0.6000004f
+
+Method: System.Void Initialize(UnityEngine.Material material, System.Int32 renderQueue)
+
+Disassembly:
+	0xE50DD7 GlobalGet 7
+	0xE50DD9 LocalSet 3
+	0xE50DDB GlobalGet 7
+	0xE50DDD I32Const 32
+	0xE50DDF I32Add
+	0xE50DE0 GlobalSet 7
+	0xE50DE2 LocalGet 3
+	0xE50DE4 I32Const 12
+	0xE50DE6 I32Add
+	0xE50DE7 LocalTee 4
+	0xE50DE9 LocalGet 2
+	0xE50DEB I64Load 2, 0
+	0xE50DEE I64Store 2, 0
+	0xE50DF1 LocalGet 4
+	0xE50DF3 LocalGet 2
+	0xE50DF5 I32Load 2, 8
+	0xE50DF8 I32Store 2, 8
+	0xE50DFB LocalGet 3
+	0xE50DFD LocalGet 2
+	0xE50DFF I64Load 2, 0
+	0xE50E02 I64Store 2, 0
+	0xE50E05 LocalGet 3
+	0xE50E07 LocalGet 2
+	0xE50E09 I32Load 2, 8
+	0xE50E0C I32Store 2, 8
+	0xE50E0F LocalGet 4
+	0xE50E11 LocalGet 3
+	0xE50E13 F32Load 2, 8
+	0xE50E16 LocalGet 1
+	0xE50E18 I32Load 2, 16
+	0xE50E1B F32Convert_I32_S
+	0xE50E1C F32Sub
+	0xE50E1D F32Store 2, 8
+	0xE50E20 LocalGet 0
+	0xE50E22 LocalGet 4
+	0xE50E24 I64Load 2, 0
+	0xE50E27 I64Store 2, 0
+	0xE50E2A LocalGet 0
+	0xE50E2C LocalGet 4
+	0xE50E2E I32Load 2, 8
+	0xE50E31 I32Store 2, 8
+	0xE50E34 LocalGet 3
+	0xE50E36 GlobalSet 7
+	0xE50E38 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 12
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Move [v9 @ S0_v5], renderQueue.m_value (System.Int32)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v9 @ S0_v5+8], [renderQueue @ L2 (System.Int32)+8]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], renderQueue.m_value (System.Int32)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Move [v1 @ G7+8], [renderQueue @ L2 (System.Int32)+8]
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Subtract v29 @ S1_v13, [v1 @ G7+8], [material @ L1 (UnityEngine.Material)+10]
+	31 Move [v9 @ S0_v5+8], v29 @ S1_v13
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Move [this @ L0 (SYBO.Subway.Level.BackgroundCulling)], [v9 @ S0_v5]
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Move this.EnvironmentType (SYBO.Subway.Level.EnvironmentType), [v9 @ S0_v5+8]
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Return
+
+Method: System.Void SetCullingStartZ(System.Int32 gamePositionZ)
+
+Disassembly:
+	0xD3D5BC LocalGet 0
+	0xD3D5BE I32Const 84
+	0xD3D5C1 I32Add
+	0xD3D5C2 LocalGet 1
+	0xD3D5C4 I32Store 2, 0
+	0xD3D5C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Subway.Level.BackgroundCulling), 84
+	3 Nop
+	4 Move [v3 @ S0_v2], gamePositionZ @ L1 (System.Int32)
+	5 Nop
+	6 Return
+
+Method: System.Void SetCullingEndZ(System.Int32 gamePositionZ)
+
+Disassembly:
+	0xE4A04E GlobalGet 7
+	0xE4A050 LocalSet 2
+	0xE4A052 GlobalGet 7
+	0xE4A054 I32Const 32
+	0xE4A056 I32Add
+	0xE4A057 GlobalSet 7
+	0xE4A059 I32Const 4557914
+	0xE4A05E I32Load8_S 0, 0
+	0xE4A061 I32Eqz
+	0xE4A062 If -64
+	0xE4A064 I32Const 2937108
+	0xE4A069 I32Load 2, 0
+	0xE4A06C Call 73003
+	0xE4A070 I32Const 4557914
+	0xE4A075 I32Const 1
+	0xE4A077 I32Store8 0, 0
+	0xE4A07A End
+	0xE4A07B LocalGet 2
+	0xE4A07D I32Const 8
+	0xE4A07F I32Add
+	0xE4A080 LocalTee 3
+	0xE4A082 I64Const 0
+	0xE4A084 I64Store 3, 0
+	0xE4A087 LocalGet 0
+	0xE4A089 I32Load 2, 20
+	0xE4A08C LocalGet 3
+	0xE4A08E I32Const 8
+	0xE4A090 Call 14799
+	0xE4A093 LocalGet 3
+	0xE4A095 LocalGet 1
+	0xE4A097 I32Store 2, 0
+	0xE4A09A LocalGet 2
+	0xE4A09C LocalGet 3
+	0xE4A09E I64Load 3, 0
+	0xE4A0A1 I64Store 3, 0
+	0xE4A0A4 I32Const 4459372
+	0xE4A0A9 I32Load 2, 0
+	0xE4A0AC LocalSet 1
+	0xE4A0AE LocalGet 2
+	0xE4A0B0 I32Const 16
+	0xE4A0B2 I32Add
+	0xE4A0B3 LocalTee 3
+	0xE4A0B5 LocalGet 2
+	0xE4A0B7 I64Load 2, 0
+	0xE4A0BA I64Store 2, 0
+	0xE4A0BD LocalGet 3
+	0xE4A0BF LocalGet 1
+	0xE4A0C1 Call 38854
+	0xE4A0C5 Drop
+	0xE4A0C6 LocalGet 2
+	0xE4A0C8 GlobalSet 7
+	0xE4A0CA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v15, [2CD114]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v15
+	14 Nop
+	15 Move v14 @ S1_v13, 1
+	16 Move [458C5A], v14 @ S1_v13
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 8
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid 39CF, v19 @ S0_v9, 8
+	29 Nop
+	30 Nop
+	31 Move [v19 @ S0_v9], gamePositionZ @ L1 (System.Int32)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Move [v1 @ G7], [v19 @ S0_v9]
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Add v38 @ S1_v11 (SYBO.Subway.Level.BackgroundCulling+CullingBlock), v1 @ G7, 16
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Move v38.CullingStartGamePositionZ (System.Int32), [v1 @ G7]
+	46 Nop
+	47 Nop
+	48 Call LinkedList`1<SYBO.Subway.Level.BackgroundCulling+CullingBlock>.AddLast, v44 @ S0_v12 (System.Collections.Generic.LinkedListNode`1<SYBO.Subway.Level.BackgroundCulling+CullingBlock>), this._cullingBlocks (System.Collections.Generic.LinkedList`1<SYBO.Subway.Level.BackgroundCulling+CullingBlock>), v38 @ S1_v11 (SYBO.Subway.Level.BackgroundCulling+CullingBlock)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Return
+
+Method: System.Void UpdateCulling(System.Single gamePositionZ)
+
+Disassembly:
+	0xC1272F LocalGet 0
+	0xC12731 LocalGet 1
+	0xC12733 F32Store 2, 24
+	0xC12736 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._transform (UnityEngine.Transform), gamePositionZ @ L1 (System.Single)
+	3 Nop
+	4 Return
+
+Method: System.Void Reset()
+
+Disassembly:
+	0xE49DF1 GlobalGet 7
+	0xE49DF3 LocalSet 1
+	0xE49DF5 GlobalGet 7
+	0xE49DF7 I32Const 32
+	0xE49DF9 I32Add
+	0xE49DFA GlobalSet 7
+	0xE49DFC I32Const 4557911
+	0xE49E01 I32Load8_S 0, 0
+	0xE49E04 I32Eqz
+	0xE49E05 If -64
+	0xE49E07 I32Const 2937148
+	0xE49E0C I32Load 2, 0
+	0xE49E0F Call 73003
+	0xE49E13 I32Const 4557911
+	0xE49E18 I32Const 1
+	0xE49E1A I32Store8 0, 0
+	0xE49E1D End
+	0xE49E1E LocalGet 0
+	0xE49E20 F32Const -350
+	0xE49E25 F32Store 2, 8
+	0xE49E28 LocalGet 0
+	0xE49E2A F32Const 750
+	0xE49E2F F32Store 2, 12
+	0xE49E32 LocalGet 0
+	0xE49E34 F32Const 5
+	0xE49E39 F32Store 2, 20
+	0xE49E3C LocalGet 0
+	0xE49E3E I32Const 24
+	0xE49E40 I32Add
+	0xE49E41 I32Const 4442120
+	0xE49E46 I32Load 2, 0
+	0xE49E49 I32Const 0
+	0xE49E4B Call 71670
+	0xE49E4F I32Store 2, 0
+	0xE49E52 LocalGet 0
+	0xE49E54 F32Const 1
+	0xE49E59 F32Store 2, 28
+	0xE49E5C LocalGet 0
+	0xE49E5E F32Const 0.5
+	0xE49E63 F32Store 2, 32
+	0xE49E66 LocalGet 0
+	0xE49E68 I32Const 68
+	0xE49E6B I32Add
+	0xE49E6C I32Const 4442124
+	0xE49E71 I32Load 2, 0
+	0xE49E74 I32Const 0
+	0xE49E76 Call 71670
+	0xE49E7A I32Store 2, 0
+	0xE49E7D LocalGet 1
+	0xE49E7F I32Const 0
+	0xE49E81 Call 62762
+	0xE49E85 LocalGet 1
+	0xE49E87 I32Const 16
+	0xE49E89 I32Add
+	0xE49E8A LocalTee 2
+	0xE49E8C LocalGet 1
+	0xE49E8E I64Load 2, 0
+	0xE49E91 I64Store 2, 0
+	0xE49E94 LocalGet 2
+	0xE49E96 LocalGet 1
+	0xE49E98 I64Load 2, 8
+	0xE49E9B I64Store 2, 8
+	0xE49E9E LocalGet 0
+	0xE49EA0 I32Const 72
+	0xE49EA3 I32Add
+	0xE49EA4 LocalTee 0
+	0xE49EA6 LocalGet 2
+	0xE49EA8 I64Load 2, 0
+	0xE49EAB I64Store 2, 0
+	0xE49EAE LocalGet 0
+	0xE49EB0 LocalGet 2
+	0xE49EB2 I64Load 2, 8
+	0xE49EB5 I64Store 2, 8
+	0xE49EB8 LocalGet 1
+	0xE49EBA GlobalSet 7
+	0xE49EBC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b8
+	11 Nop
+	12 Move v12 @ S0_v26, [2CD13C]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v26
+	14 Nop
+	15 Move v14 @ S1_v27, 1
+	16 Move [458C57], v14 @ S1_v27
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move this.EnvironmentType (SYBO.Subway.Level.EnvironmentType), -350f
+	21 Nop
+	22 Nop
+	23 Move this.CullingMesh (UnityEngine.Mesh), 750f
+	24 Nop
+	25 Nop
+	26 Move this._cullingBlocks (System.Collections.Generic.LinkedList`1<SYBO.Subway.Level.BackgroundCulling+CullingBlock>), 5f
+	27 Nop
+	28 Nop
+	29 Add v26 @ S0_v12, this @ L0 (SYBO.Subway.Level.BackgroundCulling), 24
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Newobj v30 @ S1_v9 (System.OverflowException), typeof(System.OverflowException)
+	34 Move [v26 @ S0_v12], v30 @ S1_v9 (System.OverflowException)
+	35 Nop
+	36 Nop
+	37 Move this._renderer (UnityEngine.MeshRenderer), 1f
+	38 Nop
+	39 Nop
+	40 Move [this @ L0 (SYBO.Subway.Level.BackgroundCulling)+20], 0.5f
+	41 Nop
+	42 Nop
+	43 Add v37 @ S0_v16, this @ L0 (SYBO.Subway.Level.BackgroundCulling), 68
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Newobj v41 @ S1_v15 (System.OverflowException), typeof(System.OverflowException)
+	48 Move [v37 @ S0_v16], v41 @ S1_v15 (System.OverflowException)
+	49 Nop
+	50 Nop
+	51 Call Color.get_black, v44 @ SRET_v1 (UnityEngine.Color)
+	52 Nop
+	53 Nop
+	54 Add v47 @ S0_v19, v1 @ G7, 16
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Move [v47 @ S0_v19], [v1 @ G7]
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move [v47 @ S0_v19+8], [v1 @ G7+8]
+	63 Nop
+	64 Nop
+	65 Add v56 @ S0_v22, this @ L0 (SYBO.Subway.Level.BackgroundCulling), 72
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Move [v56 @ S0_v22], [v47 @ S0_v19]
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Move [v56 @ S0_v22+8], [v47 @ S0_v19+8]
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Return
+
+Method: System.Single CalculateCullingAlpha(System.Single gamePositionZ, SYBO.Subway.Level.BackgroundCulling+CullingBlock block)
+
+Disassembly:
+	0x1600254 I32Const 28
+	0x1600256 Call 1
+	0x1600258 F32Const 0
+	0x160025D End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 28
+	2 Nop
+	3 Nop
+	4 Return 0f
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE4A739 I32Const 4557918
+	0xE4A73E I32Load8_S 0, 0
+	0xE4A741 I32Eqz
+	0xE4A742 If -64
+	0xE4A744 I32Const 2937100
+	0xE4A749 I32Load 2, 0
+	0xE4A74C Call 73003
+	0xE4A750 I32Const 4557918
+	0xE4A755 I32Const 1
+	0xE4A757 I32Store8 0, 0
+	0xE4A75A End
+	0xE4A75B LocalGet 0
+	0xE4A75D I32Load 2, 20
+	0xE4A760 I32Const 4484124
+	0xE4A765 I32Load 2, 0
+	0xE4A768 Call 47774
+	0xE4A76C LocalGet 0
+	0xE4A76E I32Load 2, 28
+	0xE4A771 I32Const 0
+	0xE4A773 I32Const 0
+	0xE4A775 Call 64021
+	0xE4A779 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2CD10C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [458C5E], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CallVoid LinkedList`1<SYBO.Subway.Level.BackgroundCulling+CullingBlock>.Clear, this._cullingBlocks (System.Collections.Generic.LinkedList`1<SYBO.Subway.Level.BackgroundCulling+CullingBlock>)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid Renderer.set_shadowCastingMode, this._renderer (UnityEngine.MeshRenderer), 0
+	22 Nop
+	23 Return
+

@@ -1,0 +1,149 @@
+Type: System.Runtime.CompilerServices.DecimalConstantAttribute
+
+Method: System.Void .ctor(System.Byte scale, System.Byte sign, System.UInt32 hi, System.UInt32 mid, System.UInt32 low)
+
+Disassembly:
+	0x13060C9 I32Const 4571691
+	0x13060CE I32Load8_S 0, 0
+	0x13060D1 I32Eqz
+	0x13060D2 If -64
+	0x13060D4 I32Const 2997672
+	0x13060D9 I32Load 2, 0
+	0x13060DC Call 73003
+	0x13060E0 I32Const 4571691
+	0x13060E5 I32Const 1
+	0x13060E7 I32Store8 0, 0
+	0x13060EA End
+	0x13060EB LocalGet 0
+	0x13060ED I32Const 20
+	0x13060EF I32Add
+	0x13060F0 LocalGet 1
+	0x13060F2 I32Store 2, 0
+	0x13060F5 LocalGet 0
+	0x13060F7 I32Const 12
+	0x13060F9 I32Add
+	0x13060FA LocalGet 2
+	0x13060FC I32Store 2, 0
+	0x13060FF LocalGet 0
+	0x1306101 I32Const 16
+	0x1306103 I32Add
+	0x1306104 LocalGet 4
+	0x1306106 I32Store 2, 0
+	0x1306109 LocalGet 5
+	0x130610B If -64
+	0x130610D LocalGet 0
+	0x130610F I32Const 24
+	0x1306111 I32Add
+	0x1306112 I32Const 7
+	0x1306114 I32Const 4429848
+	0x1306119 I32Load 2, 0
+	0x130611C LocalGet 5
+	0x130611E Call 29547
+	0x1306122 I32Store 2, 0
+	0x1306125 LocalGet 0
+	0x1306127 I32Const 32
+	0x1306129 I32Add
+	0x130612A I32Const 3
+	0x130612C I32Const 4429848
+	0x1306131 I32Load 2, 0
+	0x1306134 LocalGet 5
+	0x1306136 Call 29547
+	0x130613A I32Store 2, 0
+	0x130613D End
+	0x130613E LocalGet 0
+	0x1306140 I32Load 2, 12
+	0x1306143 I32Eqz
+	0x1306144 If -64
+	0x1306146 LocalGet 0
+	0x1306148 I32Const 12
+	0x130614A I32Add
+	0x130614B I32Const 4428060
+	0x1306150 I32Load 2, 0
+	0x1306153 LocalGet 3
+	0x1306155 Call 71670
+	0x1306159 I32Store 2, 0
+	0x130615C End
+	0x130615D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v24, [2DBDA8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v24
+	8 Nop
+	9 Move v7 @ S1_v20, 1
+	10 Move [45C22B], v7 @ S1_v20
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (System.Runtime.CompilerServices.DecimalConstantAttribute), 20
+	15 Nop
+	16 Move [v14 @ S0_v6], scale @ L1 (System.Byte)
+	17 Nop
+	18 Nop
+	19 Add v19 @ S0_v8, this @ L0 (System.Runtime.CompilerServices.DecimalConstantAttribute), 12
+	20 Nop
+	21 Move [v19 @ S0_v8], sign @ L2 (System.Byte)
+	22 Nop
+	23 Nop
+	24 Add v24 @ S0_v10, this @ L0 (System.Runtime.CompilerServices.DecimalConstantAttribute), 16
+	25 Nop
+	26 Move [v24 @ S0_v10], mid @ L4 (System.UInt32)
+	27 Nop
+	28 CheckEqual v29 @ TEMP_v2 (System.Boolean), low @ L5 (System.UInt32), 0
+	29 ConditionalJump @b12, v29 @ TEMP_v2 (System.Boolean)
+	30 Nop
+	31 Nop
+	32 Add v32 @ S0_v20, this @ L0 (System.Runtime.CompilerServices.DecimalConstantAttribute), 24
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 736B, v37 @ S1_v16, 7, typeof(System.Runtime.Remoting.Messaging.IMethodMessage), low @ L5 (System.UInt32)
+	38 Move [v32 @ S0_v20], v37 @ S1_v16
+	39 Nop
+	40 Nop
+	41 Add v47 @ S0_v22, this @ L0 (System.Runtime.CompilerServices.DecimalConstantAttribute), 32
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Call 736B, v45 @ S1_v19, 3, typeof(System.Runtime.Remoting.Messaging.IMethodMessage), low @ L5 (System.UInt32)
+	47 Move [v47 @ S0_v22], v45 @ S1_v19
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CheckEqual v50 @ S0_v15 (System.Boolean), [this @ L0 (System.Runtime.CompilerServices.DecimalConstantAttribute)+C], 0
+	52 Not v51 @ TEMP_v3 (System.Boolean), v50 @ S0_v15 (System.Boolean)
+	53 ConditionalJump @b11, v51 @ TEMP_v3 (System.Boolean)
+	54 Nop
+	55 Nop
+	56 Add v58 @ S0_v18, this @ L0 (System.Runtime.CompilerServices.DecimalConstantAttribute), 12
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Newobj v63 @ S1_v13 (System.OverflowException), typeof(System.OverflowException)
+	61 Move [v58 @ S0_v18], v63 @ S1_v13 (System.OverflowException)
+	62 Nop
+	63 Nop
+	64 Return
+
+Method: System.Decimal get_Value()
+
+Disassembly:
+	0xC12227 LocalGet 0
+	0xC12229 LocalGet 1
+	0xC1222B I32Store 2, 8
+	0xC1222E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move returnVal1.lo (System.Int32), this @ L1 (System.Runtime.CompilerServices.DecimalConstantAttribute)
+	3 Nop
+	4 Return returnVal1 @ L0 (System.Decimal)
+

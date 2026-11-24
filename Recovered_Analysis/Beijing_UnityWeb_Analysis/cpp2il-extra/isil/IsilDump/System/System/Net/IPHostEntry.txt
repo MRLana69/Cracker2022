@@ -1,0 +1,152 @@
+Type: System.Net.IPHostEntry
+
+Method: System.String get_HostName()
+
+Disassembly:
+	0x111F1CC I32Const 2
+	0x111F1CE LocalGet 0
+	0x111F1D0 I32Load 2, 8
+	0x111F1D3 Call 29262
+	0x111F1D7 LocalSet 2
+	0x111F1D9 LocalGet 0
+	0x111F1DB I32Load 2, 12
+	0x111F1DE LocalGet 2
+	0x111F1E0 I32Xor
+	0x111F1E1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 724E, v4 @ S0_v2, 2, this.hostName (System.String)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Xor returnVal1 @ S0_v5 (System.String), this.aliases (System.String[]), v4 @ S0_v2
+	9 Nop
+	10 Return returnVal1 @ S0_v5 (System.String)
+
+Method: System.Void set_HostName(System.String value)
+
+Disassembly:
+	0x109BF8E I32Const 4564614
+	0x109BF93 I32Load8_S 0, 0
+	0x109BF96 I32Eqz
+	0x109BF97 If -64
+	0x109BF99 I32Const 2970788
+	0x109BF9E I32Load 2, 0
+	0x109BFA1 Call 73003
+	0x109BFA5 I32Const 4564614
+	0x109BFAA I32Const 1
+	0x109BFAC I32Store8 0, 0
+	0x109BFAF End
+	0x109BFB0 LocalGet 0
+	0x109BFB2 I32Const 2
+	0x109BFB4 I32Store 2, 20
+	0x109BFB7 LocalGet 0
+	0x109BFB9 I32Const 24
+	0x109BFBB I32Add
+	0x109BFBC I32Const 4428900
+	0x109BFC1 I32Load 2, 0
+	0x109BFC4 I32Const 8
+	0x109BFC6 Call 71670
+	0x109BFCA I32Store 2, 0
+	0x109BFCD LocalGet 0
+	0x109BFCF LocalGet 1
+	0x109BFD1 I64Extend_I32_U
+	0x109BFD2 I64Store 3, 8
+	0x109BFD5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2D54A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45A686], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this.isTrustedHost (System.Boolean), 2
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v7, this @ L0 (System.Net.IPHostEntry), 24
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v20 @ S1_v6 (System.OverflowException), typeof(System.OverflowException)
+	22 Move [v16 @ S0_v7], v20 @ S1_v6 (System.OverflowException)
+	23 Nop
+	24 Nop
+	25 Move this.hostName (System.String), value @ L1 (System.String)
+	26 Nop
+	27 Return
+
+Method: System.Void set_Aliases(System.String[] value)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Net.IPHostEntry), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.String[])
+	5 Nop
+	6 Return
+
+Method: System.Net.IPAddress[] get_AddressList()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.hostName (System.String)
+
+Method: System.Void set_AddressList(System.Net.IPAddress[] value)
+
+Disassembly:
+	0xC57CB4 LocalGet 0
+	0xC57CB6 I32Const 12
+	0xC57CB8 I32Add
+	0xC57CB9 LocalGet 1
+	0xC57CBB I32Store 2, 0
+	0xC57CBE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Net.IPHostEntry), 12
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.Net.IPAddress[])
+	5 Nop
+	6 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

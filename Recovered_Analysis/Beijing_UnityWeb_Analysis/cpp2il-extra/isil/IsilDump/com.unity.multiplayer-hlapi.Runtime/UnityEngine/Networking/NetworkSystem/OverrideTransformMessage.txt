@@ -1,0 +1,177 @@
+Type: UnityEngine.Networking.NetworkSystem.OverrideTransformMessage
+
+Method: System.Void Deserialize(UnityEngine.Networking.NetworkReader reader)
+
+Disassembly:
+	0x1215081 GlobalGet 7
+	0x1215083 LocalSet 2
+	0x1215085 GlobalGet 7
+	0x1215087 I32Const 16
+	0x1215089 I32Add
+	0x121508A GlobalSet 7
+	0x121508C LocalGet 2
+	0x121508E LocalGet 0
+	0x1215090 I32Load 2, 8
+	0x1215093 I32Store 2, 0
+	0x1215096 LocalGet 2
+	0x1215098 I32Const 4
+	0x121509A I32Add
+	0x121509B LocalTee 3
+	0x121509D LocalGet 2
+	0x121509F I32Load 2, 0
+	0x12150A2 I32Store 2, 0
+	0x12150A5 LocalGet 1
+	0x12150A7 LocalGet 3
+	0x12150A9 I32Const 0
+	0x12150AB Call 56793
+	0x12150AF LocalGet 1
+	0x12150B1 LocalGet 0
+	0x12150B3 I32Load8_S 0, 12
+	0x12150B6 I32Const 0
+	0x12150B8 I32Ne
+	0x12150B9 I32Const 0
+	0x12150BB Call 56809
+	0x12150BF LocalGet 2
+	0x12150C1 GlobalSet 7
+	0x12150C3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], this.netId (UnityEngine.Networking.NetworkInstanceId)
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6, v1 @ G7, 4
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v13 @ S0_v6], [v1 @ G7]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 CallVoid DDD9, reader @ L1 (UnityEngine.Networking.NetworkReader), v13 @ S0_v6, 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CheckNotEqual v25 @ S1_v10 (System.Boolean), this.payload (System.Byte[]), 0
+	26 Nop
+	27 CallVoid NetworkWriter.WriteBytesFull, reader @ L1 (UnityEngine.Networking.NetworkReader), v25 @ S1_v10 (System.Boolean)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Return
+
+Method: System.Void Serialize(UnityEngine.Networking.NetworkWriter writer)
+
+Disassembly:
+	0x12159FE GlobalGet 7
+	0x1215A00 LocalSet 2
+	0x1215A02 GlobalGet 7
+	0x1215A04 I32Const 16
+	0x1215A06 I32Add
+	0x1215A07 GlobalSet 7
+	0x1215A09 LocalGet 2
+	0x1215A0B LocalGet 1
+	0x1215A0D I32Const 0
+	0x1215A0F Call 54158
+	0x1215A13 I32Store 2, 0
+	0x1215A16 LocalGet 2
+	0x1215A18 I32Const 4
+	0x1215A1A I32Add
+	0x1215A1B LocalTee 3
+	0x1215A1D LocalGet 2
+	0x1215A1F I32Load 2, 0
+	0x1215A22 I32Store 2, 0
+	0x1215A25 LocalGet 0
+	0x1215A27 LocalGet 3
+	0x1215A29 I32Load 2, 0
+	0x1215A2C I32Store 2, 8
+	0x1215A2F LocalGet 0
+	0x1215A31 I32Const 12
+	0x1215A33 I32Add
+	0x1215A34 LocalGet 1
+	0x1215A36 I32Const 0
+	0x1215A38 Call 54166
+	0x1215A3C I32Store 2, 0
+	0x1215A3F LocalGet 0
+	0x1215A41 LocalGet 1
+	0x1215A43 I32Const 0
+	0x1215A45 Call 54031
+	0x1215A49 I32Const 1
+	0x1215A4B I32And
+	0x1215A4C I32Store8 0, 16
+	0x1215A4F LocalGet 0
+	0x1215A51 LocalGet 1
+	0x1215A53 I32Const 0
+	0x1215A55 Call 54029
+	0x1215A59 I32Store 2, 20
+	0x1215A5C LocalGet 2
+	0x1215A5E GlobalSet 7
+	0x1215A60 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Call D38E, v11 @ S1_v3, writer @ L1 (UnityEngine.Networking.NetworkWriter), 0
+	10 Move [v1 @ G7], v11 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Add v14 @ S0_v6, v1 @ G7, 4
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Move [v14 @ S0_v6], [v1 @ G7]
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Move this.netId (UnityEngine.Networking.NetworkInstanceId), [v14 @ S0_v6]
+	22 Nop
+	23 Nop
+	24 Add v24 @ S0_v9, this @ L0 (UnityEngine.Networking.NetworkSystem.OverrideTransformMessage), 12
+	25 Nop
+	26 Nop
+	27 Call NetworkReader.ReadTransform, v27 @ S1_v11 (UnityEngine.Transform), writer @ L1 (UnityEngine.Networking.NetworkWriter)
+	28 Move [v24 @ S0_v9], v27 @ S1_v11 (UnityEngine.Transform)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call NetworkReader.ReadBytesAndSize, v31 @ S1_v13 (System.Byte[]), writer @ L1 (UnityEngine.Networking.NetworkWriter)
+	33 Nop
+	34 And v33 @ S1_v14 (System.Boolean), v31 @ S1_v13 (System.Byte[]), 1
+	35 Move this.teleport (System.Boolean), v33 @ S1_v14 (System.Boolean)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call NetworkReader.ReadNetworkId, v37 @ S1_v16 (UnityEngine.Networking.NetworkInstanceId), writer @ L1 (UnityEngine.Networking.NetworkWriter)
+	40 Move this.time (System.Int32), v37 @ S1_v16 (UnityEngine.Networking.NetworkInstanceId)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

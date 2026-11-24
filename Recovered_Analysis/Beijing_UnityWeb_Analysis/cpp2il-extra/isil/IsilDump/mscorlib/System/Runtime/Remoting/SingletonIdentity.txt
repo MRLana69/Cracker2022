@@ -1,0 +1,256 @@
+Type: System.Runtime.Remoting.SingletonIdentity
+
+Method: System.Void .ctor(System.String objectUri, System.Runtime.Remoting.Contexts.Context context, System.Type objectType)
+
+Disassembly:
+	0x130BF5C LocalGet 0
+	0x130BF5E I32Const 8
+	0x130BF60 I32Add
+	0x130BF61 LocalGet 1
+	0x130BF63 I32Store 2, 0
+	0x130BF66 LocalGet 0
+	0x130BF68 I32Const 36
+	0x130BF6A I32Add
+	0x130BF6B LocalGet 3
+	0x130BF6D I32Store 2, 0
+	0x130BF70 LocalGet 0
+	0x130BF72 I32Const 48
+	0x130BF74 I32Add
+	0x130BF75 LocalGet 2
+	0x130BF77 I32Store 2, 0
+	0x130BF7A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.Remoting.SingletonIdentity), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], objectUri @ L1 (System.String)
+	5 Nop
+	6 Nop
+	7 Add v8 @ S0_v4, this @ L0 (System.Runtime.Remoting.SingletonIdentity), 36
+	8 Nop
+	9 Move [v8 @ S0_v4], objectType @ L3 (System.Type)
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6, this @ L0 (System.Runtime.Remoting.SingletonIdentity), 48
+	13 Nop
+	14 Move [v13 @ S0_v6], context @ L2 (System.Runtime.Remoting.Contexts.Context)
+	15 Nop
+	16 Return
+
+Method: System.MarshalByRefObject GetServerObject()
+
+Disassembly:
+	0xC1F2A5 LocalGet 0
+	0xC1F2A7 I32Load 2, 40
+	0xC1F2AA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._serverObject (System.MarshalByRefObject)
+
+Method: System.Runtime.Remoting.Messaging.IMessage SyncObjectProcessMessage(System.Runtime.Remoting.Messaging.IMessage msg)
+
+Disassembly:
+	0x1010086 I32Const 4562965
+	0x101008B I32Load8_S 0, 0
+	0x101008E I32Eqz
+	0x101008F If -64
+	0x1010091 I32Const 2943796
+	0x1010096 I32Load 2, 0
+	0x1010099 Call 73003
+	0x101009D I32Const 4562965
+	0x10100A2 I32Const 1
+	0x10100A4 I32Store8 0, 0
+	0x10100A7 End
+	0x10100A8 LocalGet 0
+	0x10100AA I32Load 2, 44
+	0x10100AD I32Eqz
+	0x10100AE If -64
+	0x10100B0 LocalGet 0
+	0x10100B2 I32Const 44
+	0x10100B4 I32Add
+	0x10100B5 LocalGet 0
+	0x10100B7 I32Load 2, 48
+	0x10100BA LocalGet 0
+	0x10100BC I32Load 2, 56
+	0x10100BF I32Const 0
+	0x10100C1 I32Ne
+	0x10100C2 LocalTee 2
+	0x10100C4 If -1
+	0x10100C6 LocalGet 0
+	0x10100C8 I32Load 2, 56
+	0x10100CB Else
+	0x10100CC LocalGet 0
+	0x10100CE I32Load 2, 40
+	0x10100D1 End
+	0x10100D2 LocalGet 2
+	0x10100D4 I32Const 0
+	0x10100D6 Call 46221
+	0x10100DA I32Store 2, 0
+	0x10100DD End
+	0x10100DE I32Const 0
+	0x10100E0 I32Const 4429800
+	0x10100E5 I32Load 2, 0
+	0x10100E8 LocalGet 0
+	0x10100EA I32Load 2, 44
+	0x10100ED LocalGet 1
+	0x10100EF Call 29786
+	0x10100F3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v14, [2CEB34]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45A015], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), this._serverSink (System.Runtime.Remoting.Messaging.IMessageSink), 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b12, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Add v18 @ S0_v12, this @ L0 (System.Runtime.Remoting.SingletonIdentity), 44
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CheckNotEqual v24 @ S2_v6 (System.Boolean), [this @ L0 (System.Runtime.Remoting.SingletonIdentity)+38], 0
+	26 Nop
+	27 Not v26 @ TEMP_v4 (System.Boolean), v24 @ S2_v6 (System.Boolean)
+	28 ConditionalJump @b7, v26 @ TEMP_v4 (System.Boolean)
+	29 Nop
+	30 Move v36 @ S2_v7 (System.Runtime.Remoting.Messaging.IMessage), [this @ L0 (System.Runtime.Remoting.SingletonIdentity)+38]
+	31 Jump @b11
+	32 Nop
+	33 Move v36 @ S2_v7 (System.Runtime.Remoting.Messaging.IMessage), this._serverObject (System.MarshalByRefObject)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call CrossContextChannel.AsyncProcessMessage, v39 @ S1_v8 (System.Runtime.Remoting.Messaging.IMessageCtrl), this._context (System.Runtime.Remoting.Contexts.Context), v36 @ S2_v7 (System.Runtime.Remoting.Messaging.IMessage), v24 @ S2_v6 (System.Boolean)
+	38 Move [v18 @ S0_v12], v39 @ S1_v8 (System.Runtime.Remoting.Messaging.IMessageCtrl)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Call 745A, returnVal1 @ S0_v10 (System.Runtime.Remoting.Messaging.IMessage), 0, typeof(System.Runtime.Remoting.Messaging.IMessageSink), this._serverSink (System.Runtime.Remoting.Messaging.IMessageSink), msg @ L1 (System.Runtime.Remoting.Messaging.IMessage)
+	47 Nop
+	48 Return returnVal1 @ S0_v10 (System.Runtime.Remoting.Messaging.IMessage)
+
+Method: System.Runtime.Remoting.Messaging.IMessageCtrl AsyncObjectProcessMessage(System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Messaging.IMessageSink replySink)
+
+Disassembly:
+	0x10101D1 I32Const 4562967
+	0x10101D6 I32Load8_S 0, 0
+	0x10101D9 I32Eqz
+	0x10101DA If -64
+	0x10101DC I32Const 2943788
+	0x10101E1 I32Load 2, 0
+	0x10101E4 Call 73003
+	0x10101E8 I32Const 4562967
+	0x10101ED I32Const 1
+	0x10101EF I32Store8 0, 0
+	0x10101F2 End
+	0x10101F3 LocalGet 0
+	0x10101F5 I32Load 2, 44
+	0x10101F8 I32Eqz
+	0x10101F9 If -64
+	0x10101FB LocalGet 0
+	0x10101FD I32Const 44
+	0x10101FF I32Add
+	0x1010200 LocalGet 0
+	0x1010202 I32Load 2, 48
+	0x1010205 LocalGet 0
+	0x1010207 I32Load 2, 56
+	0x101020A I32Const 0
+	0x101020C I32Ne
+	0x101020D LocalTee 3
+	0x101020F If -1
+	0x1010211 LocalGet 0
+	0x1010213 I32Load 2, 56
+	0x1010216 Else
+	0x1010217 LocalGet 0
+	0x1010219 I32Load 2, 40
+	0x101021C End
+	0x101021D LocalGet 3
+	0x101021F I32Const 0
+	0x1010221 Call 46221
+	0x1010225 I32Store 2, 0
+	0x1010228 End
+	0x1010229 I32Const 1
+	0x101022B I32Const 4429800
+	0x1010230 I32Load 2, 0
+	0x1010233 LocalGet 0
+	0x1010235 I32Load 2, 44
+	0x1010238 LocalGet 1
+	0x101023A LocalGet 2
+	0x101023C Call 29775
+	0x1010240 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v14, [2CEB2C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45A017], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), this._serverSink (System.Runtime.Remoting.Messaging.IMessageSink), 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b12, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Add v18 @ S0_v12, this @ L0 (System.Runtime.Remoting.SingletonIdentity), 44
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CheckNotEqual v24 @ S2_v6 (System.Boolean), [this @ L0 (System.Runtime.Remoting.SingletonIdentity)+38], 0
+	26 Nop
+	27 Not v26 @ TEMP_v4 (System.Boolean), v24 @ S2_v6 (System.Boolean)
+	28 ConditionalJump @b7, v26 @ TEMP_v4 (System.Boolean)
+	29 Nop
+	30 Move v36 @ S2_v7 (System.Runtime.Remoting.Messaging.IMessage), [this @ L0 (System.Runtime.Remoting.SingletonIdentity)+38]
+	31 Jump @b11
+	32 Nop
+	33 Move v36 @ S2_v7 (System.Runtime.Remoting.Messaging.IMessage), this._serverObject (System.MarshalByRefObject)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call CrossContextChannel.AsyncProcessMessage, v39 @ S1_v8 (System.Runtime.Remoting.Messaging.IMessageCtrl), this._context (System.Runtime.Remoting.Contexts.Context), v36 @ S2_v7 (System.Runtime.Remoting.Messaging.IMessage), v24 @ S2_v6 (System.Boolean)
+	38 Move [v18 @ S0_v12], v39 @ S1_v8 (System.Runtime.Remoting.Messaging.IMessageCtrl)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Call 744F, returnVal1 @ S0_v10 (System.Runtime.Remoting.Messaging.IMessageCtrl), 1, typeof(System.Runtime.Remoting.Messaging.IMessageSink), this._serverSink (System.Runtime.Remoting.Messaging.IMessageSink), msg @ L1 (System.Runtime.Remoting.Messaging.IMessage), replySink @ L2 (System.Runtime.Remoting.Messaging.IMessageSink)
+	48 Nop
+	49 Return returnVal1 @ S0_v10 (System.Runtime.Remoting.Messaging.IMessageCtrl)
+

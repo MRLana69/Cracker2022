@@ -1,0 +1,599 @@
+Type: UI.Generic.ButtonColor
+
+Method: System.Void OnPress(System.Boolean pressed)
+
+Disassembly:
+	0xD4522B I32Const 4554433
+	0xD45230 I32Load8_S 0, 0
+	0xD45233 I32Eqz
+	0xD45234 If -64
+	0xD45236 I32Const 3027224
+	0xD4523B I32Load 2, 0
+	0xD4523E Call 73003
+	0xD45242 I32Const 4554433
+	0xD45247 I32Const 1
+	0xD45249 I32Store8 0, 0
+	0xD4524C End
+	0xD4524D I32Const 4443880
+	0xD45252 I32Load 2, 0
+	0xD45255 LocalTee 2
+	0xD45257 I32Load16_S 1, 186
+	0xD4525B I32Const 512
+	0xD4525E I32And
+	0xD4525F If -64
+	0xD45261 LocalGet 2
+	0xD45263 I32Load 2, 116
+	0xD45266 I32Eqz
+	0xD45267 If -64
+	0xD45269 LocalGet 2
+	0xD4526B Call 72345
+	0xD4526F I32Const 4443880
+	0xD45274 I32Load 2, 0
+	0xD45277 LocalSet 2
+	0xD45279 End
+	0xD4527A End
+	0xD4527B LocalGet 2
+	0xD4527D I32Load 2, 92
+	0xD45280 I32Load8_S 0, 14
+	0xD45283 If -64
+	0xD45285 LocalGet 0
+	0xD45287 I32Const 60
+	0xD45289 I32Add
+	0xD4528A I32Const 4525964
+	0xD4528F I32Load 2, 0
+	0xD45292 I32Store 2, 0
+	0xD45295 Else
+	0xD45296 LocalGet 0
+	0xD45298 I32Const 60
+	0xD4529A I32Add
+	0xD4529B LocalGet 1
+	0xD4529D I32Const 0
+	0xD4529F Call 36021
+	0xD452A3 I32Store 2, 0
+	0xD452A6 End
+	0xD452A7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v25, [2E3118]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v25
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [457EC1], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UI.Screens.CoinScreen>), typeof(UI.Screens.CoinScreen)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UI.Screens.CoinScreen>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b14, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v18 (Il2CppClass<UI.Screens.CoinScreen>), typeof(UI.Screens.CoinScreen)
+	21 Nop
+	22 CheckEqual v20 @ S0_v20 (System.Boolean), [v18 @ S0_v18 (Il2CppClass<UI.Screens.CoinScreen>)+74], 0
+	23 Not v21 @ TEMP_v5 (System.Boolean), v20 @ S0_v20 (System.Boolean)
+	24 ConditionalJump @b14, v21 @ TEMP_v5 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UI.Screens.CoinScreen)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Not v30 @ TEMP_v4 (System.Boolean), v28.openedFromWelcomePackGetNowClick (System.Boolean)
+	36 ConditionalJump @b9, v30 @ TEMP_v4 (System.Boolean)
+	37 Nop
+	38 Nop
+	39 Add v35 @ S0_v17, this @ L0 (UI.Generic.ButtonColor), 60
+	40 Nop
+	41 Nop
+	42 Move [v35 @ S0_v17], "BoardScreen"
+	43 Jump @b13
+	44 Nop
+	45 Nop
+	46 Add v40 @ S0_v15, this @ L0 (UI.Generic.ButtonColor), 60
+	47 Nop
+	48 Nop
+	49 Call UIScreenController.get_isShowingPopup, v44 @ S1_v6 (System.Boolean), pressed @ L1 (System.Boolean)
+	50 Move [v40 @ S0_v15], v44 @ S1_v6 (System.Boolean)
+	51 Nop
+	52 Nop
+	53 Return
+
+Method: System.Void TakeNormalColorFromWidget()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (UI.Generic.ButtonColor)
+	3 Nop
+	4 Return
+
+Method: System.Void MakePressedFromNormalColor()
+
+Disassembly:
+	0xD40370 GlobalGet 7
+	0xD40372 LocalSet 1
+	0xD40374 GlobalGet 7
+	0xD40376 I32Const 32
+	0xD40378 I32Add
+	0xD40379 GlobalSet 7
+	0xD4037B I32Const 4554376
+	0xD40380 I32Load8_S 0, 0
+	0xD40383 I32Eqz
+	0xD40384 If -64
+	0xD40386 I32Const 2939256
+	0xD4038B I32Load 2, 0
+	0xD4038E Call 73003
+	0xD40392 I32Const 4554376
+	0xD40397 I32Const 1
+	0xD40399 I32Store8 0, 0
+	0xD4039C End
+	0xD4039D LocalGet 0
+	0xD4039F I32Load 2, 12
+	0xD403A2 I32Const 4433280
+	0xD403A7 I32Load 2, 0
+	0xD403AA LocalTee 2
+	0xD403AC I32Load16_S 1, 186
+	0xD403B0 I32Const 512
+	0xD403B3 I32And
+	0xD403B4 If -64
+	0xD403B6 LocalGet 2
+	0xD403B8 I32Load 2, 116
+	0xD403BB I32Eqz
+	0xD403BC If -64
+	0xD403BE LocalGet 2
+	0xD403C0 Call 72345
+	0xD403C4 End
+	0xD403C5 End
+	0xD403C6 LocalGet 1
+	0xD403C8 I32Const 16
+	0xD403CA I32Add
+	0xD403CB LocalSet 2
+	0xD403CD I32Const 0
+	0xD403CF I32Const 0
+	0xD403D1 Call 63693
+	0xD403D5 If -64
+	0xD403D7 LocalGet 1
+	0xD403D9 LocalGet 0
+	0xD403DB I32Load 2, 12
+	0xD403DE I32Const 80
+	0xD403E1 I32Add
+	0xD403E2 LocalTee 3
+	0xD403E4 I64Load 2, 0
+	0xD403E7 I64Store 2, 0
+	0xD403EA LocalGet 1
+	0xD403EC LocalGet 3
+	0xD403EE I64Load 2, 8
+	0xD403F1 I64Store 2, 8
+	0xD403F4 LocalGet 2
+	0xD403F6 LocalGet 1
+	0xD403F8 I64Load 2, 0
+	0xD403FB I64Store 2, 0
+	0xD403FE LocalGet 2
+	0xD40400 LocalGet 1
+	0xD40402 I64Load 2, 8
+	0xD40405 I64Store 2, 8
+	0xD40408 LocalGet 0
+	0xD4040A I32Const 16
+	0xD4040C I32Add
+	0xD4040D LocalTee 0
+	0xD4040F LocalGet 2
+	0xD40411 I64Load 2, 0
+	0xD40414 I64Store 2, 0
+	0xD40417 LocalGet 0
+	0xD40419 LocalGet 2
+	0xD4041B I64Load 2, 8
+	0xD4041E I64Store 2, 8
+	0xD40421 End
+	0xD40422 LocalGet 1
+	0xD40424 GlobalSet 7
+	0xD40426 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b10
+	11 Nop
+	12 Move v12 @ S0_v21, [2CD978]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v21
+	14 Nop
+	15 Move v14 @ S1_v31, 1
+	16 Move [457E88], v14 @ S1_v31
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Move v21 @ S1_v4 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 And v25 @ S1_v6, [v21 @ S1_v4 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	26 CheckEqual v26 @ TEMP_v2 (System.Boolean), v25 @ S1_v6, 0
+	27 ConditionalJump @b12, v26 @ TEMP_v2 (System.Boolean)
+	28 Move v27 @ S1_v27 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	29 Nop
+	30 CheckEqual v29 @ S1_v29 (System.Boolean), [v27 @ S1_v27 (Il2CppClass<UnityEngine.Object>)+74], 0
+	31 Not v30 @ TEMP_v5 (System.Boolean), v29 @ S1_v29 (System.Boolean)
+	32 ConditionalJump @b12, v30 @ TEMP_v5 (System.Boolean)
+	33 Nop
+	34 CallVoid 11A99, typeof(UnityEngine.Object)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Add v36 @ S1_v9, v1 @ G7, 16
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Call ComputeShader.FindKernel, v40 @ S0_v10 (System.Int32), this._widget (UIWidget), 0
+	44 CheckEqual v41 @ TEMP_v4 (System.Boolean), v40 @ S0_v10 (System.Int32), 0
+	45 ConditionalJump @b11, v41 @ TEMP_v4 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Add v46 @ S1_v14, this._widget (UIWidget), 80
+	51 Nop
+	52 Nop
+	53 Move [v1 @ G7], [v46 @ S1_v14]
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Move [v1 @ G7+8], [v46 @ S1_v14+8]
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Move [v36 @ S1_v9], [v1 @ G7]
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Move [v36 @ S1_v9+8], [v1 @ G7+8]
+	66 Nop
+	67 Nop
+	68 Add v60 @ S0_v18, this @ L0 (UI.Generic.ButtonColor), 16
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Move [v60 @ S0_v18], [v36 @ S1_v9]
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Move [v60 @ S0_v18+8], [v36 @ S1_v9+8]
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD4042E GlobalGet 7
+	0xD40430 LocalSet 1
+	0xD40432 GlobalGet 7
+	0xD40434 I32Const 32
+	0xD40436 I32Add
+	0xD40437 GlobalSet 7
+	0xD40439 I32Const 4554377
+	0xD4043E I32Load8_S 0, 0
+	0xD40441 I32Eqz
+	0xD40442 If -64
+	0xD40444 I32Const 2939252
+	0xD40449 I32Load 2, 0
+	0xD4044C Call 73003
+	0xD40450 I32Const 4554377
+	0xD40455 I32Const 1
+	0xD40457 I32Store8 0, 0
+	0xD4045A End
+	0xD4045B LocalGet 0
+	0xD4045D I32Const 16
+	0xD4045F I32Add
+	0xD40460 F32Load 2, 0
+	0xD40463 I32Const 4433348
+	0xD40468 I32Load 2, 0
+	0xD4046B LocalTee 2
+	0xD4046D I32Load16_S 1, 186
+	0xD40471 I32Const 512
+	0xD40474 I32And
+	0xD40475 If -64
+	0xD40477 LocalGet 2
+	0xD40479 I32Load 2, 116
+	0xD4047C I32Eqz
+	0xD4047D If -64
+	0xD4047F LocalGet 2
+	0xD40481 Call 72345
+	0xD40485 End
+	0xD40486 End
+	0xD40487 F32Const 0.11764706
+	0xD4048C F32Sub
+	0xD4048D LocalTee 4
+	0xD4048F F32Const 0
+	0xD40494 F32Lt
+	0xD40495 If -3
+	0xD40497 F32Const 0
+	0xD4049C Else
+	0xD4049D LocalGet 4
+	0xD4049F F32Const 1
+	0xD404A4 F32Gt
+	0xD404A5 If -3
+	0xD404A7 F32Const 1
+	0xD404AC Else
+	0xD404AD LocalGet 4
+	0xD404AF End
+	0xD404B0 End
+	0xD404B1 LocalSet 4
+	0xD404B3 LocalGet 0
+	0xD404B5 I32Const 16
+	0xD404B7 I32Add
+	0xD404B8 F32Load 2, 4
+	0xD404BB F32Const 0.11764706
+	0xD404C0 F32Sub
+	0xD404C1 LocalTee 3
+	0xD404C3 F32Const 0
+	0xD404C8 F32Lt
+	0xD404C9 If -3
+	0xD404CB F32Const 0
+	0xD404D0 Else
+	0xD404D1 LocalGet 3
+	0xD404D3 F32Const 1
+	0xD404D8 F32Gt
+	0xD404D9 If -3
+	0xD404DB F32Const 1
+	0xD404E0 Else
+	0xD404E1 LocalGet 3
+	0xD404E3 End
+	0xD404E4 End
+	0xD404E5 LocalSet 5
+	0xD404E7 LocalGet 0
+	0xD404E9 I32Const 16
+	0xD404EB I32Add
+	0xD404EC F32Load 2, 8
+	0xD404EF F32Const 0.11764706
+	0xD404F4 F32Sub
+	0xD404F5 LocalTee 3
+	0xD404F7 F32Const 0
+	0xD404FC F32Lt
+	0xD404FD If -3
+	0xD404FF F32Const 0
+	0xD40504 Else
+	0xD40505 LocalGet 3
+	0xD40507 F32Const 1
+	0xD4050C F32Gt
+	0xD4050D If -3
+	0xD4050F F32Const 1
+	0xD40514 Else
+	0xD40515 LocalGet 3
+	0xD40517 End
+	0xD40518 End
+	0xD40519 LocalSet 3
+	0xD4051B LocalGet 0
+	0xD4051D I32Const 16
+	0xD4051F I32Add
+	0xD40520 F32Load 2, 12
+	0xD40523 LocalSet 6
+	0xD40525 LocalGet 1
+	0xD40527 I64Const 0
+	0xD40529 I64Store 2, 0
+	0xD4052C LocalGet 1
+	0xD4052E I64Const 0
+	0xD40530 I64Store 2, 8
+	0xD40533 LocalGet 1
+	0xD40535 LocalGet 4
+	0xD40537 F32Store 2, 0
+	0xD4053A LocalGet 1
+	0xD4053C LocalGet 5
+	0xD4053E F32Store 2, 4
+	0xD40541 LocalGet 1
+	0xD40543 LocalGet 3
+	0xD40545 F32Store 2, 8
+	0xD40548 LocalGet 1
+	0xD4054A LocalGet 6
+	0xD4054C F32Store 2, 12
+	0xD4054F LocalGet 1
+	0xD40551 I32Const 16
+	0xD40553 I32Add
+	0xD40554 LocalTee 2
+	0xD40556 LocalGet 1
+	0xD40558 I64Load 2, 0
+	0xD4055B I64Store 2, 0
+	0xD4055E LocalGet 2
+	0xD40560 LocalGet 1
+	0xD40562 I64Load 2, 8
+	0xD40565 I64Store 2, 8
+	0xD40568 LocalGet 0
+	0xD4056A I32Const 32
+	0xD4056C I32Add
+	0xD4056D LocalTee 0
+	0xD4056F LocalGet 2
+	0xD40571 I64Load 2, 0
+	0xD40574 I64Store 2, 0
+	0xD40577 LocalGet 0
+	0xD40579 LocalGet 2
+	0xD4057B I64Load 2, 8
+	0xD4057E I64Store 2, 8
+	0xD40581 LocalGet 1
+	0xD40583 GlobalSet 7
+	0xD40585 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b20
+	11 Nop
+	12 Move v12 @ S0_v58, [2CD974]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v58
+	14 Nop
+	15 Move v14 @ S1_v44, 1
+	16 Move [457E89], v14 @ S1_v44
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v20 @ S0_v9, this @ L0 (UI.Generic.ButtonColor), 16
+	21 Nop
+	22 Nop
+	23 Move v23 @ S1_v5 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 And v27 @ S1_v7, [v23 @ S1_v5 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	28 CheckEqual v28 @ TEMP_v2 (System.Boolean), v27 @ S1_v7, 0
+	29 ConditionalJump @b27, v28 @ TEMP_v2 (System.Boolean)
+	30 Move v29 @ S1_v40 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	31 Nop
+	32 CheckEqual v31 @ S1_v42 (System.Boolean), [v29 @ S1_v40 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	33 Not v32 @ TEMP_v13 (System.Boolean), v31 @ S1_v42 (System.Boolean)
+	34 ConditionalJump @b27, v32 @ TEMP_v13 (System.Boolean)
+	35 Nop
+	36 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Subtract v49 @ S0_v13 (System.Single), [v20 @ S0_v9], 0.11764706f
+	41 Nop
+	42 Nop
+	43 CheckLess v40 @ S0_v12 (System.Boolean), v49 @ S0_v13 (System.Single), 0f
+	44 Not v41 @ TEMP_v4 (System.Boolean), v40 @ S0_v12 (System.Boolean)
+	45 ConditionalJump @b9, v41 @ TEMP_v4 (System.Boolean)
+	46 Nop
+	47 Jump @b21
+	48 Nop
+	49 Nop
+	50 CheckGreater v45 @ S0_v53 (System.Boolean), v49 @ S0_v13 (System.Single), 1f
+	51 Not v46 @ TEMP_v12 (System.Boolean), v45 @ S0_v53 (System.Boolean)
+	52 ConditionalJump @b21, v46 @ TEMP_v12 (System.Boolean)
+	53 Nop
+	54 Jump @b21
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Add v55 @ S0_v15, this @ L0 (UI.Generic.ButtonColor), 16
+	62 Nop
+	63 Nop
+	64 Subtract v70 @ S0_v19 (System.Single), [v55 @ S0_v15+4], 0.11764706f
+	65 Nop
+	66 Nop
+	67 CheckLess v61 @ S0_v18 (System.Boolean), v70 @ S0_v19 (System.Single), 0f
+	68 Not v62 @ TEMP_v6 (System.Boolean), v61 @ S0_v18 (System.Boolean)
+	69 ConditionalJump @b13, v62 @ TEMP_v6 (System.Boolean)
+	70 Nop
+	71 Jump @b23
+	72 Nop
+	73 Nop
+	74 CheckGreater v66 @ S0_v48 (System.Boolean), v70 @ S0_v19 (System.Single), 1f
+	75 Not v67 @ TEMP_v11 (System.Boolean), v66 @ S0_v48 (System.Boolean)
+	76 ConditionalJump @b23, v67 @ TEMP_v11 (System.Boolean)
+	77 Nop
+	78 Jump @b23
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Add v76 @ S0_v21, this @ L0 (UI.Generic.ButtonColor), 16
+	86 Nop
+	87 Nop
+	88 Subtract v91 @ S0_v25 (System.Single), [v76 @ S0_v21+8], 0.11764706f
+	89 Nop
+	90 Nop
+	91 CheckLess v82 @ S0_v24 (System.Boolean), v91 @ S0_v25 (System.Single), 0f
+	92 Not v83 @ TEMP_v8 (System.Boolean), v82 @ S0_v24 (System.Boolean)
+	93 ConditionalJump @b17, v83 @ TEMP_v8 (System.Boolean)
+	94 Nop
+	95 Jump @b25
+	96 Nop
+	97 Nop
+	98 CheckGreater v87 @ S0_v43 (System.Boolean), v91 @ S0_v25 (System.Single), 1f
+	99 Not v88 @ TEMP_v10 (System.Boolean), v87 @ S0_v43 (System.Boolean)
+	100 ConditionalJump @b25, v88 @ TEMP_v10 (System.Boolean)
+	101 Nop
+	102 Jump @b25
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Add v97 @ S0_v27, this @ L0 (UI.Generic.ButtonColor), 16
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Move [v1 @ G7], 0
+	115 Nop
+	116 Nop
+	117 Move [v1 @ G7+8], 0
+	118 Nop
+	119 Nop
+	120 Move [v1 @ G7], v49 @ S0_v13 (System.Single)
+	121 Nop
+	122 Nop
+	123 Move [v1 @ G7+4], v70 @ S0_v19 (System.Single)
+	124 Nop
+	125 Nop
+	126 Move [v1 @ G7+8], v91 @ S0_v25 (System.Single)
+	127 Nop
+	128 Nop
+	129 Move [v1 @ G7+C], [v97 @ S0_v27+C]
+	130 Nop
+	131 Nop
+	132 Add v114 @ S0_v36, v1 @ G7, 16
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Move [v114 @ S0_v36], [v1 @ G7]
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Move [v114 @ S0_v36+8], [v1 @ G7+8]
+	141 Nop
+	142 Nop
+	143 Add v123 @ S0_v39, this @ L0 (UI.Generic.ButtonColor), 32
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Move [v123 @ S0_v39], [v114 @ S0_v36]
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Move [v123 @ S0_v39+8], [v114 @ S0_v36+8]
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Return
+

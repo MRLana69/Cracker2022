@@ -1,0 +1,219 @@
+Type: System.Collections.Generic.Queue`1+Enumerator
+
+Method: System.Void .ctor(System.Collections.Generic.Queue`1<T> q)
+
+Disassembly:
+	0x1059801 LocalGet 1
+	0x1059803 I32Eqz
+	0x1059804 If -64
+	0x1059806 I32Const 8
+	0x1059808 I32Const 0
+	0x105980A Call 50111
+	0x105980E End
+	0x105980F LocalGet 0
+	0x1059811 I32Load 2, 12
+	0x1059814 I32Const 0
+	0x1059816 I32Gt_S
+	0x1059817 If -64
+	0x1059819 LocalGet 0
+	0x105981B I32Load 2, 8
+	0x105981E I32Const 0
+	0x1059820 LocalGet 0
+	0x1059822 I32Load 2, 12
+	0x1059825 LocalGet 1
+	0x1059827 LocalGet 2
+	0x1059829 I32Load 2, 12
+	0x105982C I32Load 2, 96
+	0x105982F I32Load 2, 184
+	0x1059833 LocalTee 3
+	0x1059835 LocalGet 3
+	0x1059837 I32Load 2, 0
+	0x105983A I32Const 2047
+	0x105983D I32And
+	0x105983E I32Const 121922
+	0x1059842 I32Add
+	0x1059843 CallIndirect 30, 0
+	0x1059846 End
+	0x1059847 End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ S0_v2 (System.Boolean), q @ L1 (System.Collections.Generic.Queue`1<T>), 0
+	2 Not v3 @ TEMP_v1 (System.Boolean), v2 @ S0_v2 (System.Boolean)
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 CallVoid ThrowHelper.ThrowArgumentException, 8
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CheckGreater v13 @ S0_v6 (System.Boolean), this._version (System.Int32), 0
+	12 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	13 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Move v23 @ S4_v3, [methodInfo @ L2 (Il2CppMethodInfo)+C]
+	22 Move v24 @ S4_v4, [v23 @ S4_v3+60]
+	23 Move v25 @ S4_v5, [v24 @ S4_v4+B8]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 And v30 @ S5_v4, [v25 @ S4_v5], 2047
+	29 Nop
+	30 Add v32 @ S5_v5, v30 @ S5_v4, 121922
+	31 IndirectCall v32 @ S5_v5, v33 @ SRET_v2, this._q (System.Collections.Generic.Queue`1<T>), 0, this._version (System.Int32), q @ L1 (System.Collections.Generic.Queue`1<T>), v25 @ S4_v5
+	32 Nop
+	33 Nop
+	34 Return
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x1448F6E LocalGet 0
+	0x1448F70 LocalGet 1
+	0x1448F72 I32Load 2, 12
+	0x1448F75 I32Load 2, 96
+	0x1448F78 I32Load 2, 8
+	0x1448F7B LocalTee 2
+	0x1448F7D LocalGet 2
+	0x1448F7F I32Load 2, 0
+	0x1448F82 I32Const 16383
+	0x1448F86 I32And
+	0x1448F87 I32Const 80504
+	0x1448F8B I32Add
+	0x1448F8C CallIndirect 4, 0
+	0x1448F8F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move v4 @ S1_v2, [methodInfo @ L1 (Il2CppMethodInfo)+C]
+	3 Move v5 @ S1_v3, [v4 @ S1_v2+60]
+	4 Move v6 @ S1_v4, [v5 @ S1_v3+8]
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 And v11 @ S2_v3, [v6 @ S1_v4], 16383
+	10 Nop
+	11 Add v13 @ S2_v4, v11 @ S2_v3, 80504
+	12 IndirectCall v13 @ S2_v4, v14 @ SRET_v1, this @ L0 (System.Collections.Generic.Queue`1<T>+Enumerator<T>), v6 @ S1_v4
+	13 Nop
+	14 Return
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x12588BF I32Const 2
+	0x12588C1 I32Const 7
+	0x12588C3 LocalGet 0
+	0x12588C5 Call 72085
+	0x12588C9 Call 29262
+	0x12588CD Call 29262
+	0x12588D1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 11995, v4 @ S2_v2, this @ L0 (System.Collections.Generic.Queue`1<T>+Enumerator<T>)
+	4 Call 724E, v5 @ S1_v2, 7, v4 @ S2_v2
+	5 Call 724E, returnVal1 @ S0_v2 (System.Boolean), 2, v5 @ S1_v2
+	6 Nop
+	7 Return returnVal1 @ S0_v2 (System.Boolean)
+
+Method: T get_Current()
+
+Disassembly:
+	0x144D560 LocalGet 0
+	0x144D562 I32Const 8
+	0x144D564 I32Add
+	0x144D565 I32Const 0
+	0x144D567 Call 67519
+	0x144D56B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Collections.Generic.Queue`1<T>+Enumerator<T>), 8
+	3 Nop
+	4 Call 107BF, returnVal1 @ S0_v3 (T), v3 @ S0_v2, 0
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (T)
+
+Method: System.Void ThrowEnumerationNotStartedOrEnded()
+
+Disassembly:
+	0x144D462 LocalGet 0
+	0x144D464 I32Const 8
+	0x144D466 I32Add
+	0x144D467 LocalTee 2
+	0x144D469 I32Const -2
+	0x144D46B I32Store 2, 8
+	0x144D46E LocalGet 2
+	0x144D470 I32Const 12
+	0x144D472 I32Add
+	0x144D473 I32Const 1
+	0x144D475 Call 14799
+	0x144D478 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Collections.Generic.Queue`1<T>+Enumerator<T>), 8
+	3 Nop
+	4 Nop
+	5 Move [v3 @ S0_v2+8], -2
+	6 Nop
+	7 Nop
+	8 Add v8 @ S0_v4, v3 @ S0_v2, 12
+	9 Nop
+	10 CallVoid 39CF, v8 @ S0_v4, 1
+	11 Nop
+	12 Return
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x144D5EC LocalGet 0
+	0x144D5EE I32Const 8
+	0x144D5F0 I32Add
+	0x144D5F1 LocalGet 1
+	0x144D5F3 Call 67524
+	0x144D5F7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Collections.Generic.Queue`1<T>+Enumerator<T>), 8
+	3 Nop
+	4 Call 107C4, returnVal1 @ S0_v3 (System.Object), v3 @ S0_v2, methodInfo @ L1 (Il2CppMethodInfo)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Object)
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x144D622 LocalGet 0
+	0x144D624 I32Const 8
+	0x144D626 I32Add
+	0x144D627 LocalGet 1
+	0x144D629 Call 67521
+	0x144D62D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Collections.Generic.Queue`1<T>+Enumerator<T>), 8
+	3 Nop
+	4 CallVoid 107C1, v3 @ S0_v2, methodInfo @ L1 (Il2CppMethodInfo)
+	5 Nop
+	6 Return
+

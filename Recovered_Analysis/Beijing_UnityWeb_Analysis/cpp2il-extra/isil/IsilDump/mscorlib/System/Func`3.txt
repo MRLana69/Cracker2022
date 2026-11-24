@@ -1,0 +1,264 @@
+Type: System.Func`3
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move [this @ L0 (System.Func`3<T1, T2, TResult>)+8], method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (System.Func`3<T1, T2, TResult>)+14], method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.Func`3<T1, T2, TResult>), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: TResult Invoke(T1 arg1, T2 arg2)
+
+Disassembly:
+	0x11491E6 GlobalGet 7
+	0x11491E8 LocalSet 4
+	0x11491EA GlobalGet 7
+	0x11491EC I32Const 16
+	0x11491EE I32Add
+	0x11491EF GlobalSet 7
+	0x11491F1 LocalGet 3
+	0x11491F3 I32Load 2, 12
+	0x11491F6 I32Load 2, 96
+	0x11491F9 I32Load 2, 68
+	0x11491FC LocalTee 3
+	0x11491FE I32Load 2, 0
+	0x1149201 LocalSet 5
+	0x1149203 LocalGet 4
+	0x1149205 LocalGet 1
+	0x1149207 I64Load 2, 0
+	0x114920A I64Store 2, 0
+	0x114920D LocalGet 4
+	0x114920F LocalGet 1
+	0x1149211 I64Load 2, 8
+	0x1149214 I64Store 2, 8
+	0x1149217 LocalGet 0
+	0x1149219 LocalGet 4
+	0x114921B LocalGet 3
+	0x114921D LocalGet 5
+	0x114921F I32Const 8191
+	0x1149222 I32And
+	0x1149223 I32Const 22691
+	0x1149227 I32Add
+	0x1149228 CallIndirect 5, 0
+	0x114922B LocalTee 1
+	0x114922D I32Const 0
+	0x114922F I32Lt_S
+	0x1149230 If -1
+	0x1149232 LocalGet 2
+	0x1149234 I32Const 4
+	0x1149236 Call 14799
+	0x1149239 I32Const 0
+	0x114923B Else
+	0x114923C LocalGet 2
+	0x114923E LocalGet 0
+	0x1149240 I32Load 2, 12
+	0x1149243 I32Const 16
+	0x1149245 I32Add
+	0x1149246 LocalGet 1
+	0x1149248 I32Const 28
+	0x114924A I32Mul
+	0x114924B I32Add
+	0x114924C I32Load 2, 24
+	0x114924F I32Store 2, 0
+	0x1149252 I32Const 1
+	0x1149254 End
+	0x1149255 LocalGet 4
+	0x1149257 GlobalSet 7
+	0x1149259 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Move v9 @ S0_v5, [methodInfo @ L3 (Il2CppMethodInfo)+C]
+	8 Move v10 @ S0_v6, [v9 @ S0_v5+60]
+	9 Move v11 @ S0_v7, [v10 @ S0_v6+44]
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v1 @ G7], [arg1 @ L1 (T1)]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7+8], [arg1 @ L1 (T1)+8]
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v28 @ S3_v2, [v11 @ S0_v7], 8191
+	27 Nop
+	28 Add v30 @ S3_v3, v28 @ S3_v2, 22691
+	29 IndirectCall v30 @ S3_v3, v31 @ S0_v12, this @ L0 (System.Func`3<T1, T2, TResult>), v1 @ G7, v11 @ S0_v7
+	30 Nop
+	31 Nop
+	32 CheckLess v34 @ S0_v13 (System.Boolean), v31 @ S0_v12, 0
+	33 Not v35 @ TEMP_v1 (System.Boolean), v34 @ S0_v13 (System.Boolean)
+	34 ConditionalJump @b5, v35 @ TEMP_v1 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 CallVoid 39CF, arg2 @ L2 (T2), 4
+	38 Nop
+	39 Jump @b6
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Add v43 @ S1_v12, [this @ L0 (System.Func`3<T1, T2, TResult>)+C], 16
+	45 Nop
+	46 Nop
+	47 Multiply v46 @ S2_v5, v31 @ S0_v12, 28
+	48 Add v47 @ S1_v13, v43 @ S1_v12, v46 @ S2_v5
+	49 Nop
+	50 Move [arg2 @ L2 (T2)], [v47 @ S1_v13+18]
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Return returnVal1 @ S0_v14 (TResult)
+
+Method: System.IAsyncResult BeginInvoke(T1 arg1, T2 arg2, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x143E116 GlobalGet 7
+	0x143E118 LocalSet 5
+	0x143E11A GlobalGet 7
+	0x143E11C I32Const 16
+	0x143E11E I32Add
+	0x143E11F GlobalSet 7
+	0x143E121 I32Const 4575032
+	0x143E126 I32Load8_S 0, 0
+	0x143E129 I32Eqz
+	0x143E12A If -64
+	0x143E12C I32Const 2946152
+	0x143E131 I32Load 2, 0
+	0x143E134 Call 73003
+	0x143E138 I32Const 4575032
+	0x143E13D I32Const 1
+	0x143E13F I32Store8 0, 0
+	0x143E142 End
+	0x143E143 LocalGet 5
+	0x143E145 I32Const 0
+	0x143E147 I32Store 2, 8
+	0x143E14A LocalGet 5
+	0x143E14C I32Const 4433344
+	0x143E151 I32Load 2, 0
+	0x143E154 LocalGet 1
+	0x143E156 Call 73903
+	0x143E15A I32Store 2, 0
+	0x143E15D LocalGet 5
+	0x143E15F I32Const 4433344
+	0x143E164 I32Load 2, 0
+	0x143E167 LocalGet 2
+	0x143E169 Call 73903
+	0x143E16D I32Store 2, 4
+	0x143E170 LocalGet 0
+	0x143E172 LocalGet 5
+	0x143E174 LocalGet 3
+	0x143E176 LocalGet 4
+	0x143E178 Call 73891
+	0x143E17C LocalGet 5
+	0x143E17E GlobalSet 7
+	0x143E180 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b8
+	11 Nop
+	12 Move v12 @ S0_v14, [2CF468]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v14
+	14 Nop
+	15 Move v14 @ S1_v12, 1
+	16 Move [45CF38], v14 @ S1_v12
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7+8], 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Call 120AF, v24 @ S1_v6, typeof(UnityEngine.Vector4), arg1 @ L1 (T1)
+	26 Move [v1 @ G7], v24 @ S1_v6
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call 120AF, v30 @ S1_v9, typeof(UnityEngine.Vector4), arg2 @ L2 (T2)
+	32 Move [v1 @ G7+4], v30 @ S1_v9
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 120A3, returnVal1 @ S0_v12 (System.IAsyncResult), this @ L0 (System.Func`3<T1, T2, TResult>), v1 @ G7, callback @ L3 (System.AsyncCallback), object @ L4 (System.Object)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Return returnVal1 @ S0_v12 (System.IAsyncResult)
+
+Method: TResult EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xED6B93 LocalGet 1
+	0xED6B95 I32Const 0
+	0xED6B97 Call 73892
+	0xED6B9B Call 29263
+	0xED6B9F I32Load8_S 0, 0
+	0xED6BA2 I32Const 0
+	0xED6BA4 I32Ne
+	0xED6BA5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Newobj v3 @ S0_v2 (System.InvalidOperationException), typeof(System.InvalidOperationException)
+	3 Throw typeof(System.NullReferenceException)
+	4 Nop
+	5 Nop
+	6 CheckNotEqual returnVal1 @ S0_v5 (System.Boolean), [v4 @ S0_v3], 0
+	7 Nop
+	8 Return returnVal1 @ S0_v5 (System.Boolean)
+

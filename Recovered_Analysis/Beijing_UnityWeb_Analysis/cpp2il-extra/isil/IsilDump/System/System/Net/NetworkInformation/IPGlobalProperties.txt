@@ -1,0 +1,290 @@
+Type: System.Net.NetworkInformation.IPGlobalProperties
+
+Method: System.Net.NetworkInformation.IPGlobalProperties GetIPGlobalProperties()
+
+Disassembly:
+	0x11217BB I32Const 0
+	0x11217BD Call 67041
+	0x11217C1 End
+
+ISIL:
+	0 Nop
+	1 Call MonoTlsSettings.get_DefaultSettings, returnVal1 @ S0_v2 (System.Net.NetworkInformation.IPGlobalProperties)
+	2 Nop
+	3 Return returnVal1 @ S0_v2 (System.Net.NetworkInformation.IPGlobalProperties)
+
+Method: System.Net.NetworkInformation.IPGlobalProperties InternalGetIPGlobalProperties()
+
+Disassembly:
+	0x1120A83 I32Const 4566292
+	0x1120A88 I32Load8_S 0, 0
+	0x1120A8B I32Eqz
+	0x1120A8C If -64
+	0x1120A8E I32Const 2970824
+	0x1120A93 I32Load 2, 0
+	0x1120A96 Call 73003
+	0x1120A9A I32Const 4566292
+	0x1120A9F I32Const 1
+	0x1120AA1 I32Store8 0, 0
+	0x1120AA4 End
+	0x1120AA5 Block -64
+	0x1120AA7 I32Const 0
+	0x1120AA9 Call 51359
+	0x1120AAD I32Load 2, 8
+	0x1120AB0 I32Const 4
+	0x1120AB2 I32Eq
+	0x1120AB3 If -1
+	0x1120AB5 I32Const 4514856
+	0x1120ABA I32Load 2, 0
+	0x1120ABD I32Const 0
+	0x1120ABF Call 58909
+	0x1120AC3 If -64
+	0x1120AC5 I32Const 4432592
+	0x1120ACA I32Load 2, 0
+	0x1120ACD Call 72556
+	0x1120AD1 LocalTee 0
+	0x1120AD3 I32Const 4514856
+	0x1120AD8 I32Load 2, 0
+	0x1120ADB I32Const 0
+	0x1120ADD Call 52126
+	0x1120AE1 LocalGet 0
+	0x1120AE3 I32Load 2, 8
+	0x1120AE6 I32Const 0
+	0x1120AE8 Call 58860
+	0x1120AEC BrIf 2
+	0x1120AEE End
+	0x1120AEF I32Const 4514860
+	0x1120AF4 I32Load 2, 0
+	0x1120AF7 I32Const 0
+	0x1120AF9 Call 58909
+	0x1120AFD If -64
+	0x1120AFF I32Const 4432592
+	0x1120B04 I32Load 2, 0
+	0x1120B07 Call 72556
+	0x1120B0B LocalTee 0
+	0x1120B0D I32Const 4514860
+	0x1120B12 I32Load 2, 0
+	0x1120B15 I32Const 0
+	0x1120B17 Call 52126
+	0x1120B1B LocalGet 0
+	0x1120B1D I32Load 2, 8
+	0x1120B20 I32Const 0
+	0x1120B22 Call 58860
+	0x1120B26 BrIf 2
+	0x1120B28 End
+	0x1120B29 I32Const 4432596
+	0x1120B2E I32Load 2, 0
+	0x1120B31 Call 72556
+	0x1120B35 Else
+	0x1120B36 I32Const 4432600
+	0x1120B3B I32Load 2, 0
+	0x1120B3E Call 72556
+	0x1120B42 End
+	0x1120B43 LocalSet 0
+	0x1120B45 End
+	0x1120B46 LocalGet 0
+	0x1120B48 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b22
+	5 Nop
+	6 Move v5 @ S0_v39, [2D54C8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v39
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [45AD14], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Call Environment.get_StackTrace, v12 @ S0_v6 (System.String)
+	14 Nop
+	15 Nop
+	16 CheckEqual v15 @ S0_v8 (System.Boolean), v12.m_stringLength (System.Int32), 4
+	17 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v8 (System.Boolean)
+	18 ConditionalJump @b20, v16 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call Directory.IsRootDirectory, v20 @ S0_v17 (System.Boolean), "/proc"
+	23 Not v24 @ TEMP_v5 (System.Boolean), v20 @ S0_v17 (System.Boolean)
+	24 ConditionalJump @b12, v24 @ TEMP_v5 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Call 11B6C, v40 @ S0_v34 (System.Collections.Specialized.HybridDictionary), typeof(System.Net.NetworkInformation.MibIPGlobalProperties)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid HybridDictionary.Remove, v40 @ S0_v34 (System.Collections.Specialized.HybridDictionary), "/proc"
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call File.GetAttributes, v48 @ S0_v37 (System.IO.FileAttributes), v40.list (System.Collections.Specialized.ListDictionary)
+	37 ConditionalJump @b23, v48 @ S0_v37 (System.IO.FileAttributes)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call Directory.IsRootDirectory, v52 @ S0_v21 (System.Boolean), "/usr/compat/linux/proc"
+	43 Not v34 @ TEMP_v6 (System.Boolean), v52 @ S0_v21 (System.Boolean)
+	44 ConditionalJump @b18, v34 @ TEMP_v6 (System.Boolean)
+	45 Nop
+	46 Nop
+	47 Call 11B6C, v69 @ S0_v28 (System.Collections.Specialized.HybridDictionary), typeof(System.Net.NetworkInformation.MibIPGlobalProperties)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CallVoid HybridDictionary.Remove, v69 @ S0_v28 (System.Collections.Specialized.HybridDictionary), "/usr/compat/linux/proc"
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Call File.GetAttributes, v61 @ S0_v31 (System.IO.FileAttributes), v69.list (System.Collections.Specialized.ListDictionary)
+	57 ConditionalJump @b23, v61 @ S0_v31 (System.IO.FileAttributes)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Call 11B6C, v35 @ S0_v11 (System.Collections.Specialized.HybridDictionary), typeof(System.Net.NetworkInformation.UnixIPGlobalProperties)
+	62 Jump @b21
+	63 Nop
+	64 Nop
+	65 Call 11B6C, v35 @ S0_v11 (System.Collections.Specialized.HybridDictionary), typeof(System.Net.NetworkInformation.Win32IPGlobalProperties)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Return v55 @ L0_v1 (System.Collections.Specialized.HybridDictionary)
+
+Method: System.String get_DomainName()
+
+Disassembly:
+	0xE5CD05 GlobalGet 7
+	0xE5CD07 LocalSet 5
+	0xE5CD09 GlobalGet 7
+	0xE5CD0B I32Const 32
+	0xE5CD0D I32Add
+	0xE5CD0E GlobalSet 7
+	0xE5CD10 LocalGet 5
+	0xE5CD12 I32Const 12
+	0xE5CD14 I32Add
+	0xE5CD15 LocalTee 6
+	0xE5CD17 LocalGet 1
+	0xE5CD19 F32Store 2, 0
+	0xE5CD1C LocalGet 5
+	0xE5CD1E I32Const 16
+	0xE5CD20 I32Add
+	0xE5CD21 LocalTee 7
+	0xE5CD23 LocalGet 2
+	0xE5CD25 I32Const 1
+	0xE5CD27 I32And
+	0xE5CD28 I32Store8 0, 0
+	0xE5CD2B I32Const 4558128
+	0xE5CD30 I32Load8_S 0, 0
+	0xE5CD33 I32Eqz
+	0xE5CD34 If -64
+	0xE5CD36 I32Const 2989120
+	0xE5CD3B I32Load 2, 0
+	0xE5CD3E Call 73003
+	0xE5CD42 I32Const 4558128
+	0xE5CD47 I32Const 1
+	0xE5CD49 I32Store8 0, 0
+	0xE5CD4C End
+	0xE5CD4D LocalGet 5
+	0xE5CD4F I32Const 0
+	0xE5CD51 I32Store 2, 8
+	0xE5CD54 LocalGet 5
+	0xE5CD56 I32Const 4428680
+	0xE5CD5B I32Load 2, 0
+	0xE5CD5E LocalGet 6
+	0xE5CD60 Call 73903
+	0xE5CD64 I32Store 2, 0
+	0xE5CD67 LocalGet 5
+	0xE5CD69 I32Const 4428456
+	0xE5CD6E I32Load 2, 0
+	0xE5CD71 LocalGet 7
+	0xE5CD73 Call 73903
+	0xE5CD77 I32Store 2, 4
+	0xE5CD7A LocalGet 0
+	0xE5CD7C LocalGet 5
+	0xE5CD7E LocalGet 3
+	0xE5CD80 LocalGet 4
+	0xE5CD82 Call 73891
+	0xE5CD86 LocalGet 5
+	0xE5CD88 GlobalSet 7
+	0xE5CD8A End
+
+ISIL:
+No ISIL was generated
+Method: System.Void .ctor()
+
+Disassembly:
+	0x1121761 I32Const 4566299
+	0x1121766 I32Load8_S 0, 0
+	0x1121769 I32Eqz
+	0x112176A If -64
+	0x112176C I32Const 3005956
+	0x1121771 I32Load 2, 0
+	0x1121774 Call 73003
+	0x1121778 I32Const 4566299
+	0x112177D I32Const 1
+	0x112177F I32Store8 0, 0
+	0x1121782 End
+	0x1121783 LocalGet 0
+	0x1121785 I32Load 2, 32
+	0x1121788 I32Eqz
+	0x1121789 If -64
+	0x112178B I32Const 4427872
+	0x1121790 I32Load 2, 0
+	0x1121793 Call 72556
+	0x1121797 LocalTee 2
+	0x1121799 I32Const 4514900
+	0x112179E I32Load 2, 0
+	0x11217A1 I32Const 0
+	0x11217A3 Call 55138
+	0x11217A7 LocalGet 2
+	0x11217A9 I32Const 0
+	0x11217AB I32Const 4489532
+	0x11217B0 I32Load 2, 0
+	0x11217B3 Call 73899
+	0x11217B7 End
+	0x11217B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v14, [2DDE04]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45AD1B], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), [this @ L0 (System.Net.NetworkInformation.IPGlobalProperties)+20], 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b8, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Call 11B6C, v18 @ S0_v11 (System.ObsoleteAttribute), typeof(System.ObjectDisposedException)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CallVoid ObsoleteAttribute..ctor, v18 @ S0_v11 (System.ObsoleteAttribute), "SslStream"
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CallVoid 120AB, v18 @ S0_v11 (System.ObsoleteAttribute), 0, methodof(System.Net.Security.SslStream::CheckDisposed)
+	30 Nop
+	31 Nop
+	32 Return
+

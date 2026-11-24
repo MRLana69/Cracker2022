@@ -1,0 +1,4840 @@
+Type: Mono.Xml.SmallXmlParser
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x1246EA5 I32Const 4569639
+	0x1246EAA I32Load8_S 0, 0
+	0x1246EAD I32Eqz
+	0x1246EAE If -64
+	0x1246EB0 I32Const 3001944
+	0x1246EB5 I32Load 2, 0
+	0x1246EB8 Call 73003
+	0x1246EBC I32Const 4569639
+	0x1246EC1 I32Const 1
+	0x1246EC3 I32Store8 0, 0
+	0x1246EC6 End
+	0x1246EC7 LocalGet 0
+	0x1246EC9 I32Const 0
+	0x1246ECB Call 57617
+	0x1246ECF I32Const 4428260
+	0x1246ED4 I32Load 2, 0
+	0x1246ED7 Call 72556
+	0x1246EDB LocalTee 1
+	0x1246EDD I32Const 0
+	0x1246EDF Call 56170
+	0x1246EE3 LocalGet 0
+	0x1246EE5 I32Const -64
+	0x1246EE7 I32Sub
+	0x1246EE8 LocalGet 1
+	0x1246EEA I32Store 2, 0
+	0x1246EED End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v12, [2DCE58]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45BA27], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid SmallXmlParser.SkipWhitespaces, this @ L0 (Mono.Xml.SmallXmlParser)
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v8 (System.Collections.Stack), typeof(System.Collections.Stack)
+	18 Nop
+	19 Nop
+	20 CallVoid Stack.Clear, v16 @ S0_v8 (System.Collections.Stack)
+	21 Nop
+	22 Nop
+	23 Subtract v21 @ S0_v10, this @ L0 (Mono.Xml.SmallXmlParser), -64
+	24 Nop
+	25 Move [v21 @ S0_v10], v16 @ S0_v8 (System.Collections.Stack)
+	26 Nop
+	27 Return
+
+Method: System.Exception Error(System.String msg)
+
+Disassembly:
+	0x12CA2AB LocalGet 0
+	0x12CA2AD I32Const 8
+	0x12CA2AF I32Add
+	0x12CA2B0 LocalGet 1
+	0x12CA2B2 I32Const 0
+	0x12CA2B4 Call 59982
+	0x12CA2B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.Xml.SmallXmlParser), 8
+	3 Nop
+	4 Nop
+	5 Call EA4E, returnVal1 @ S0_v3 (System.Exception), v3 @ S0_v2, msg @ L1 (System.String), 0
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (System.Exception)
+
+Method: System.Exception UnexpectedEndError()
+
+Disassembly:
+	0xC2696C LocalGet 0
+	0xC2696E I32Load 2, 56
+	0xC26971 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return [this @ L0 (Mono.Xml.SmallXmlParser)+38]
+
+Method: System.Boolean IsNameChar(System.Char c, System.Boolean start)
+
+Disassembly:
+	0x12B9D95 GlobalGet 7
+	0x12B9D97 LocalSet 3
+	0x12B9D99 GlobalGet 7
+	0x12B9D9B I32Const 16
+	0x12B9D9D I32Add
+	0x12B9D9E GlobalSet 7
+	0x12B9DA0 I32Const 4570884
+	0x12B9DA5 I32Load8_S 0, 0
+	0x12B9DA8 I32Eqz
+	0x12B9DA9 If -64
+	0x12B9DAB I32Const 2975860
+	0x12B9DB0 I32Load 2, 0
+	0x12B9DB3 Call 73003
+	0x12B9DB7 I32Const 4570884
+	0x12B9DBC I32Const 1
+	0x12B9DBE I32Store8 0, 0
+	0x12B9DC1 End
+	0x12B9DC2 LocalGet 3
+	0x12B9DC4 I32Const 8
+	0x12B9DC6 I32Add
+	0x12B9DC7 LocalTee 6
+	0x12B9DC9 I32Const 0
+	0x12B9DCB I32Store8 0, 0
+	0x12B9DCE GlobalGet 7
+	0x12B9DD0 LocalSet 5
+	0x12B9DD2 GlobalGet 7
+	0x12B9DD4 I32Const 16
+	0x12B9DD6 I32Add
+	0x12B9DD7 GlobalSet 7
+	0x12B9DD9 LocalGet 3
+	0x12B9DDB LocalGet 5
+	0x12B9DDD I32Store 2, 0
+	0x12B9DE0 LocalGet 3
+	0x12B9DE2 I32Const -1
+	0x12B9DE4 I32Store 2, 4
+	0x12B9DE7 LocalGet 0
+	0x12B9DE9 I32Const 0
+	0x12B9DEB Call 59692
+	0x12B9DEF I32Eqz
+	0x12B9DF0 If -64
+	0x12B9DF2 LocalGet 1
+	0x12B9DF4 I32Eqz
+	0x12B9DF5 If -64
+	0x12B9DF7 I32Const 4427772
+	0x12B9DFC I32Load 2, 0
+	0x12B9DFF I32Load 2, 92
+	0x12B9E02 I32Load 2, 0
+	0x12B9E05 LocalSet 1
+	0x12B9E07 End
+	0x12B9E08 LocalGet 0
+	0x12B9E0A I32Load 2, 20
+	0x12B9E0D LocalSet 5
+	0x12B9E0F LocalGet 6
+	0x12B9E11 I32Const 0
+	0x12B9E13 I32Store8 0, 0
+	0x12B9E16 I32Const 0
+	0x12B9E18 GlobalSet 9
+	0x12B9E1A I32Const 7482
+	0x12B9E1D LocalGet 5
+	0x12B9E1F LocalGet 6
+	0x12B9E21 I32Const 0
+	0x12B9E23 Call 40
+	0x12B9E25 GlobalGet 9
+	0x12B9E27 LocalSet 8
+	0x12B9E29 I32Const 0
+	0x12B9E2B GlobalSet 9
+	0x12B9E2D Block -64
+	0x12B9E2F Block -64
+	0x12B9E31 LocalGet 8
+	0x12B9E33 I32Const 1
+	0x12B9E35 I32And
+	0x12B9E36 BrIf 0
+	0x12B9E38 LocalGet 0
+	0x12B9E3A I32Load 2, 20
+	0x12B9E3D LocalSet 0
+	0x12B9E3F I32Const 0
+	0x12B9E41 GlobalSet 9
+	0x12B9E43 I32Const 6647
+	0x12B9E46 I32Const 22
+	0x12B9E48 LocalGet 0
+	0x12B9E4A LocalGet 1
+	0x12B9E4C Call 20
+	0x12B9E4E GlobalGet 9
+	0x12B9E50 I32Const 0
+	0x12B9E52 GlobalSet 9
+	0x12B9E54 I32Const 1
+	0x12B9E56 I32And
+	0x12B9E57 BrIf 0
+	0x12B9E59 LocalGet 3
+	0x12B9E5B I32Const 4
+	0x12B9E5D I32Add
+	0x12B9E5E LocalTee 4
+	0x12B9E60 I32Load 2, 0
+	0x12B9E63 I32Const 1
+	0x12B9E65 I32Add
+	0x12B9E66 LocalSet 1
+	0x12B9E68 LocalGet 4
+	0x12B9E6A LocalGet 1
+	0x12B9E6C I32Store 2, 0
+	0x12B9E6F LocalGet 3
+	0x12B9E71 I32Load 2, 0
+	0x12B9E74 LocalGet 1
+	0x12B9E76 I32Const 2
+	0x12B9E78 I32Shl
+	0x12B9E79 I32Add
+	0x12B9E7A I32Const 62
+	0x12B9E7C I32Store 2, 0
+	0x12B9E7F LocalSet 4
+	0x12B9E81 Br 1
+	0x12B9E83 End
+	0x12B9E84 I32Const 2132256
+	0x12B9E89 Call 156
+	0x12B9E8C LocalSet 0
+	0x12B9E8E GlobalGet 14
+	0x12B9E90 I32Const 2132256
+	0x12B9E95 Call 429
+	0x12B9E98 I32Eq
+	0x12B9E99 If -64
+	0x12B9E9B LocalGet 0
+	0x12B9E9D Call 153
+	0x12B9EA0 I32Load 2, 0
+	0x12B9EA3 LocalSet 7
+	0x12B9EA5 Call 154
+	0x12B9EA8 Else
+	0x12B9EA9 LocalGet 0
+	0x12B9EAB Call 164
+	0x12B9EAE End
+	0x12B9EAF End
+	0x12B9EB0 LocalGet 6
+	0x12B9EB2 I32Load8_S 0, 0
+	0x12B9EB5 If -64
+	0x12B9EB7 LocalGet 5
+	0x12B9EB9 Call 71862
+	0x12B9EBD End
+	0x12B9EBE Block -64
+	0x12B9EC0 Block -64
+	0x12B9EC2 LocalGet 3
+	0x12B9EC4 I32Load 2, 4
+	0x12B9EC7 I32Const -1
+	0x12B9EC9 I32Eq
+	0x12B9ECA BrIf 0
+	0x12B9ECC LocalGet 3
+	0x12B9ECE I32Load 2, 0
+	0x12B9ED1 LocalGet 3
+	0x12B9ED3 I32Load 2, 4
+	0x12B9ED6 I32Const 2
+	0x12B9ED8 I32Shl
+	0x12B9ED9 I32Add
+	0x12B9EDA I32Load 2, 0
+	0x12B9EDD I32Const 62
+	0x12B9EDF I32Ne
+	0x12B9EE0 BrIf 0
+	0x12B9EE2 LocalGet 3
+	0x12B9EE4 I32Const 4
+	0x12B9EE6 I32Add
+	0x12B9EE7 LocalTee 0
+	0x12B9EE9 I32Load 2, 0
+	0x12B9EEC LocalTee 1
+	0x12B9EEE I32Const -1
+	0x12B9EF0 I32Gt_S
+	0x12B9EF1 If -64
+	0x12B9EF3 LocalGet 0
+	0x12B9EF5 LocalGet 1
+	0x12B9EF7 I32Const -1
+	0x12B9EF9 I32Add
+	0x12B9EFA I32Store 2, 0
+	0x12B9EFD End
+	0x12B9EFE Br 1
+	0x12B9F00 End
+	0x12B9F01 LocalGet 7
+	0x12B9F03 If -64
+	0x12B9F05 LocalGet 7
+	0x12B9F07 I32Const 0
+	0x12B9F09 I32Const 0
+	0x12B9F0B Call 73899
+	0x12B9F0F End
+	0x12B9F10 End
+	0x12B9F11 LocalGet 4
+	0x12B9F13 I32Const 4427784
+	0x12B9F18 I32Load 2, 0
+	0x12B9F1B Call 29313
+	0x12B9F1F LocalTee 0
+	0x12B9F21 If -64
+	0x12B9F23 LocalGet 2
+	0x12B9F25 I32Const 1
+	0x12B9F27 I32And
+	0x12B9F28 If -1
+	0x12B9F2A I32Const 3
+	0x12B9F2C LocalGet 0
+	0x12B9F2E Call 29262
+	0x12B9F32 Else
+	0x12B9F33 LocalGet 0
+	0x12B9F35 I32Const 0
+	0x12B9F37 Call 59667
+	0x12B9F3B End
+	0x12B9F3C LocalSet 4
+	0x12B9F3E End
+	0x12B9F3F End
+	0x12B9F40 LocalGet 3
+	0x12B9F42 GlobalSet 7
+	0x12B9F44 LocalGet 4
+	0x12B9F46 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, v1 @ G7, 16
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b34
+	11 Nop
+	12 Move v12 @ S0_v84, [2D6874]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v84
+	14 Nop
+	15 Move v14 @ S1_v47, 1
+	16 Move [45BF04], v14 @ S1_v47
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 8
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Move [v1 @ G7], v5 @ S0_v3
+	33 Nop
+	34 Nop
+	35 Move [v1 @ G7+4], -1
+	36 Nop
+	37 Nop
+	38 Call UnixRegistryApi.ToUnix, v35 @ S0_v16 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	39 CheckEqual v36 @ S0_v17 (System.Boolean), v35 @ S0_v16 (System.String), 0
+	40 Not v37 @ TEMP_v2 (System.Boolean), v36 @ S0_v17 (System.Boolean)
+	41 ConditionalJump @b35, v37 @ TEMP_v2 (System.Boolean)
+	42 Nop
+	43 CheckEqual v40 @ S0_v22 (System.Boolean), v84 @ L1_v2 (System.Char), 0
+	44 Not v41 @ TEMP_v4 (System.Boolean), v40 @ S0_v22 (System.Boolean)
+	45 ConditionalJump @b36, v41 @ TEMP_v4 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Move [v19 @ S0_v9], 0
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 CallVoid 0028, 7482, this.xmlSpaces (System.Collections.Stack), v19 @ S0_v9, 0
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Jump @b9
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Call 0014, v111 @ S0_v78 (System.Boolean), 6647, 22, this.xmlSpaces (System.Collections.Stack), v81.Empty (System.String)
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Jump @b11
+	89 Nop
+	90 Nop
+	91 Add v132 @ S1_v40, v1 @ G7, 4
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Add v136 @ S1_v42, [v132 @ S1_v40], 1
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Move [v132 @ S1_v40], v136 @ S1_v42
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 ShiftLeft v144 @ S2_v18, v136 @ S1_v42, 2
+	105 Add v145 @ S1_v46, [v1 @ G7], v144 @ S2_v18
+	106 Nop
+	107 Move [v145 @ S1_v46], 62
+	108 Nop
+	109 Jump @b37
+	110 Nop
+	111 Nop
+	112 Call 009C, v122 @ S0_v67, 2132256
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Call 01AD, v129 @ S1_v35, 2132256
+	117 CheckEqual v148 @ S0_v69 (System.Boolean), v127 @ G14, v129 @ S1_v35
+	118 Not v149 @ TEMP_v12 (System.Boolean), v148 @ S0_v69 (System.Boolean)
+	119 ConditionalJump @b18, v149 @ TEMP_v12 (System.Boolean)
+	120 Nop
+	121 Call 0099, v163 @ S0_v72, v122 @ S0_v67
+	122 Nop
+	123 Nop
+	124 CallVoid 009A
+	125 Jump @b37
+	126 Nop
+	127 CallVoid 00A4, v122 @ S0_v67
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 CheckEqual v161 @ TEMP_v6 (System.Boolean), [v19 @ S0_v9], 0
+	133 ConditionalJump @b21, v161 @ TEMP_v6 (System.Boolean)
+	134 Nop
+	135 Throw typeof(System.ArgumentNullException)
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Nop
+	140 CheckEqual v169 @ S0_v39 (System.Boolean), [v1 @ G7+4], -1
+	141 ConditionalJump @b25, v169 @ S0_v39 (System.Boolean)
+	142 Nop
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Nop
+	147 ShiftLeft v175 @ S1_v26, [v1 @ G7+4], 2
+	148 Add v176 @ S0_v55, [v1 @ G7], v175 @ S1_v26
+	149 Nop
+	150 Nop
+	151 CheckNotEqual v179 @ S0_v57 (System.Boolean), [v176 @ S0_v55], 62
+	152 ConditionalJump @b25, v179 @ S0_v57 (System.Boolean)
+	153 Nop
+	154 Nop
+	155 Add v187 @ S0_v59, v1 @ G7, 4
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 CheckGreater v192 @ S0_v61 (System.Boolean), [v187 @ S0_v59], -1
+	161 Not v193 @ TEMP_v11 (System.Boolean), v192 @ S0_v61 (System.Boolean)
+	162 ConditionalJump @b38, v193 @ TEMP_v11 (System.Boolean)
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Add v209 @ S1_v32, [v187 @ S0_v59], -1
+	167 Move [v187 @ S0_v59], v209 @ S1_v32
+	168 Nop
+	169 Jump @b40
+	170 Nop
+	171 Nop
+	172 CheckEqual v184 @ TEMP_v10 (System.Boolean), [v163 @ S0_v72], 0
+	173 ConditionalJump @b40, v184 @ TEMP_v10 (System.Boolean)
+	174 Nop
+	175 Nop
+	176 Nop
+	177 CallVoid 120AB, [v163 @ S0_v72], 0, 0
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Call 7281, v75 @ S0_v42 (System.String), v50 @ L4_v2 (System.Boolean), typeof(Microsoft.Win32.ExpandString)
+	184 Nop
+	185 CheckEqual v69 @ TEMP_v8 (System.Boolean), v75 @ S0_v42 (System.String), 0
+	186 ConditionalJump @b35, v69 @ TEMP_v8 (System.Boolean)
+	187 Nop
+	188 Nop
+	189 Nop
+	190 CheckEqual v68 @ TEMP_v9 (System.Boolean), start @ L2 (System.Boolean), 0
+	191 ConditionalJump @b32, v68 @ TEMP_v9 (System.Boolean)
+	192 Nop
+	193 Nop
+	194 Call 724E, v74 @ S0_v45 (System.Boolean), 3, v75 @ S0_v42 (System.String)
+	195 Jump @b33
+	196 Nop
+	197 Nop
+	198 Call KeyHandler.VolatileKeyExists, v74 @ S0_v45 (System.Boolean), v75 @ S0_v42 (System.String)
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Return v50 @ L4_v2 (System.Boolean)
+
+Method: System.Boolean IsWhitespace(System.Int32 c)
+
+Disassembly:
+	0x12475ED I32Const 4569645
+	0x12475F2 I32Load8_S 0, 0
+	0x12475F5 I32Eqz
+	0x12475F6 If -64
+	0x12475F8 I32Const 3004096
+	0x12475FD I32Load 2, 0
+	0x1247600 Call 73003
+	0x1247604 I32Const 4569645
+	0x1247609 I32Const 1
+	0x124760B I32Store8 0, 0
+	0x124760E End
+	0x124760F LocalGet 0
+	0x1247611 I32Load 2, 44
+	0x1247614 LocalSet 2
+	0x1247616 LocalGet 0
+	0x1247618 I32Load 2, 48
+	0x124761B LocalSet 0
+	0x124761D I32Const 4428276
+	0x1247622 I32Load 2, 0
+	0x1247625 Call 72556
+	0x1247629 LocalTee 3
+	0x124762B LocalGet 1
+	0x124762D LocalGet 2
+	0x124762F LocalGet 0
+	0x1247631 I32Const 0
+	0x1247633 Call 57626
+	0x1247637 LocalGet 3
+	0x1247639 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v14, [2DD6C0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45BA2D], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call 11B6C, v20 @ S0_v11 (Mono.Globalization.Unicode.CodePointIndexer+TableRange), typeof(Mono.Xml.SmallXmlParserException)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CallVoid TableRange..ctor, v20 @ S0_v11 (Mono.Globalization.Unicode.CodePointIndexer+TableRange), c @ L1 (System.Int32), this.line (System.Int32), this.column (System.Int32)
+	27 Nop
+	28 Nop
+	29 Return v20 @ S0_v11 (Mono.Globalization.Unicode.CodePointIndexer+TableRange)
+
+Method: System.Void SkipWhitespaces()
+
+Disassembly:
+	0x1246EF1 I32Const 4569640
+	0x1246EF6 I32Load8_S 0, 0
+	0x1246EF9 I32Eqz
+	0x1246EFA If -64
+	0x1246EFC I32Const 3004152
+	0x1246F01 I32Load 2, 0
+	0x1246F04 Call 73003
+	0x1246F08 I32Const 4569640
+	0x1246F0D I32Const 1
+	0x1246F0F I32Store8 0, 0
+	0x1246F12 End
+	0x1246F13 I32Const 4428260
+	0x1246F18 I32Load 2, 0
+	0x1246F1B Call 72556
+	0x1246F1F LocalTee 1
+	0x1246F21 I32Const 0
+	0x1246F23 Call 56170
+	0x1246F27 LocalGet 0
+	0x1246F29 I32Const 16
+	0x1246F2B I32Add
+	0x1246F2C LocalGet 1
+	0x1246F2E I32Store 2, 0
+	0x1246F31 I32Const 4428260
+	0x1246F36 I32Load 2, 0
+	0x1246F39 Call 72556
+	0x1246F3D LocalTee 1
+	0x1246F3F I32Const 0
+	0x1246F41 Call 56170
+	0x1246F45 LocalGet 0
+	0x1246F47 I32Const 20
+	0x1246F49 I32Add
+	0x1246F4A LocalGet 1
+	0x1246F4C I32Store 2, 0
+	0x1246F4F I32Const 4427712
+	0x1246F54 I32Load 2, 0
+	0x1246F57 Call 72556
+	0x1246F5B LocalTee 1
+	0x1246F5D I32Const 200
+	0x1246F60 I32Const 0
+	0x1246F62 Call 61376
+	0x1246F66 LocalGet 0
+	0x1246F68 I32Const 28
+	0x1246F6A I32Add
+	0x1246F6B LocalGet 1
+	0x1246F6D I32Store 2, 0
+	0x1246F70 LocalGet 0
+	0x1246F72 I32Const 32
+	0x1246F74 I32Add
+	0x1246F75 I32Const 4427880
+	0x1246F7A I32Load 2, 0
+	0x1246F7D I32Const 30
+	0x1246F7F Call 71670
+	0x1246F83 I32Store 2, 0
+	0x1246F86 I32Const 4428272
+	0x1246F8B I32Load 2, 0
+	0x1246F8E Call 72556
+	0x1246F92 LocalTee 1
+	0x1246F94 I32Const 0
+	0x1246F96 Call 57618
+	0x1246F9A LocalGet 0
+	0x1246F9C I32Const 40
+	0x1246F9E I32Add
+	0x1246F9F LocalGet 1
+	0x1246FA1 I32Store 2, 0
+	0x1246FA4 LocalGet 0
+	0x1246FA6 I32Const 1
+	0x1246FA8 I32Store 2, 44
+	0x1246FAB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v29, [2DD6F8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v19, 1
+	10 Move [45BA28], v7 @ S1_v19
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.Stack), typeof(System.Collections.Stack)
+	15 Nop
+	16 Nop
+	17 CallVoid Stack.Clear, v13 @ S0_v7 (System.Collections.Stack)
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, this @ L0 (Mono.Xml.SmallXmlParser), 16
+	21 Nop
+	22 Move [v19 @ S0_v9], v13 @ S0_v7 (System.Collections.Stack)
+	23 Nop
+	24 Nop
+	25 Call 11B6C, v23 @ S0_v12 (System.Collections.Stack), typeof(System.Collections.Stack)
+	26 Nop
+	27 Nop
+	28 CallVoid Stack.Clear, v23 @ S0_v12 (System.Collections.Stack)
+	29 Nop
+	30 Nop
+	31 Add v28 @ S0_v14, this @ L0 (Mono.Xml.SmallXmlParser), 20
+	32 Nop
+	33 Move [v28 @ S0_v14], v23 @ S0_v12 (System.Collections.Stack)
+	34 Nop
+	35 Nop
+	36 Call 11B6C, v32 @ S0_v17 (System.Text.StringBuilder), typeof(System.Text.StringBuilder)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 CallVoid StringBuilder..ctor, v32 @ S0_v17 (System.Text.StringBuilder), 200
+	41 Nop
+	42 Nop
+	43 Add v38 @ S0_v19, this @ L0 (Mono.Xml.SmallXmlParser), 28
+	44 Nop
+	45 Move [v38 @ S0_v19], v32 @ S0_v17 (System.Text.StringBuilder)
+	46 Nop
+	47 Nop
+	48 Add v42 @ S0_v21, this @ L0 (Mono.Xml.SmallXmlParser), 32
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Newobj v46 @ S1_v14 (System.OverflowException), typeof(System.OverflowException)
+	53 Move [v42 @ S0_v21], v46 @ S1_v14 (System.OverflowException)
+	54 Nop
+	55 Nop
+	56 Call 11B6C, v49 @ S0_v24 (Mono.Globalization.Unicode.ContractionComparer), typeof(Mono.Xml.SmallXmlParser+AttrListImpl)
+	57 Nop
+	58 Nop
+	59 CallVoid ContractionComparer..ctor, v49 @ S0_v24 (Mono.Globalization.Unicode.ContractionComparer)
+	60 Nop
+	61 Nop
+	62 Add v54 @ S0_v26, this @ L0 (Mono.Xml.SmallXmlParser), 40
+	63 Nop
+	64 Move [v54 @ S0_v26], v49 @ S0_v24 (Mono.Globalization.Unicode.ContractionComparer)
+	65 Nop
+	66 Nop
+	67 Move this.line (System.Int32), 1
+	68 Nop
+	69 Return
+
+Method: System.Void HandleWhitespaces()
+
+Disassembly:
+	0x1247BE8 LocalGet 0
+	0x1247BEA I32Const 0
+	0x1247BEC I32Const 0
+	0x1247BEE Call 57641
+	0x1247BF2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid SmallXmlParser.Expect, this @ L0 (Mono.Xml.SmallXmlParser), 0
+	4 Nop
+	5 Return
+
+Method: System.Void SkipWhitespaces(System.Boolean expected)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Int32 Peek()
+
+Disassembly:
+	0x1247CAE I32Const 4569653
+	0x1247CB3 I32Load8_S 0, 0
+	0x1247CB6 I32Eqz
+	0x1247CB7 If -64
+	0x1247CB9 I32Const 3004148
+	0x1247CBE I32Load 2, 0
+	0x1247CC1 Call 73003
+	0x1247CC5 I32Const 4569653
+	0x1247CCA I32Const 1
+	0x1247CCC I32Store8 0, 0
+	0x1247CCF End
+	0x1247CD0 I32Const 8
+	0x1247CD2 LocalGet 0
+	0x1247CD4 I32Load 2, 16
+	0x1247CD7 Call 29262
+	0x1247CDB LocalSet 1
+	0x1247CDD I32Const 4427812
+	0x1247CE2 I32Load 2, 0
+	0x1247CE5 LocalGet 1
+	0x1247CE7 Call 71670
+	0x1247CEB LocalSet 1
+	0x1247CED I32Const 11
+	0x1247CEF LocalGet 0
+	0x1247CF1 I32Load 2, 16
+	0x1247CF4 LocalGet 1
+	0x1247CF6 I32Const 0
+	0x1247CF8 Call 30567
+	0x1247CFC I32Const 4502812
+	0x1247D01 I32Load 2, 0
+	0x1247D04 LocalGet 1
+	0x1247D06 I32Const 0
+	0x1247D08 Call 55812
+	0x1247D0C LocalSet 1
+	0x1247D0E LocalGet 0
+	0x1247D10 I32Const 4502808
+	0x1247D15 I32Load 2, 0
+	0x1247D18 LocalGet 1
+	0x1247D1A I32Const 0
+	0x1247D1C Call 55610
+	0x1247D20 I32Const 0
+	0x1247D22 Call 57623
+	0x1247D26 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v17, [2DD6F4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [45BA35], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call 724E, v15 @ S0_v6, 8, this.elementNames (System.Collections.Stack)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Newobj v20 @ S0_v9 (System.OverflowException), typeof(System.OverflowException)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid 7767, 11, this.elementNames (System.Collections.Stack), v20 @ S0_v9 (System.OverflowException), 0
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call String.CompareOrdinalIgnoreCaseHelper, v31 @ S0_v13 (System.Int32), ",", v20 @ S0_v9 (System.OverflowException)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call String.Format, v38 @ S1_v10 (System.String), "Unexpected end of stream. Element stack content is {0}", v31 @ S0_v13 (System.Int32)
+	40 Nop
+	41 Call SmallXmlParser.IsWhitespace, returnVal1 @ S0_v15 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser), v38 @ S1_v10 (System.String)
+	42 Nop
+	43 Return returnVal1 @ S0_v15 (System.Int32)
+
+Method: System.Int32 Read()
+
+Disassembly:
+	0x11B9628 I32Const 9
+	0x11B962A LocalGet 0
+	0x11B962C I32Load 2, 12
+	0x11B962F Call 29262
+	0x11B9633 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 724E, returnVal1 @ S0_v2 (System.Int32), 9, this.reader (System.IO.TextReader)
+	4 Nop
+	5 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Void Expect(System.Int32 c)
+
+Disassembly:
+	0x12480A0 I32Const 4569652
+	0x12480A5 I32Load8_S 0, 0
+	0x12480A8 I32Eqz
+	0x12480A9 If -64
+	0x12480AB I32Const 3004144
+	0x12480B0 I32Load 2, 0
+	0x12480B3 Call 73003
+	0x12480B7 I32Const 4569652
+	0x12480BC I32Const 1
+	0x12480BE I32Store8 0, 0
+	0x12480C1 End
+	0x12480C2 Loop -64
+	0x12480C4 Block -64
+	0x12480C6 LocalGet 0
+	0x12480C8 I32Const 0
+	0x12480CA Call 54603
+	0x12480CE LocalTee 2
+	0x12480D0 I32Const 9
+	0x12480D2 I32Sub
+	0x12480D3 I32Const 2
+	0x12480D5 I32Ge_U
+	0x12480D6 If -64
+	0x12480D8 Block -64
+	0x12480DA Block -64
+	0x12480DC Block -64
+	0x12480DE LocalGet 2
+	0x12480E0 I32Const 13
+	0x12480E2 I32Sub
+	0x12480E3 BrTable System.UInt64[], 1
+	0x12480FA End
+	0x12480FB Br 1
+	0x12480FD End
+	0x12480FE Br 2
+	0x1248100 End
+	0x1248101 End
+	0x1248102 LocalGet 0
+	0x1248104 I32Const 0
+	0x1248106 Call 57629
+	0x124810A Drop
+	0x124810B I32Const 0
+	0x124810D LocalSet 1
+	0x124810F Br 1
+	0x1248111 End
+	0x1248112 End
+	0x1248113 LocalGet 1
+	0x1248115 If -64
+	0x1248117 LocalGet 0
+	0x1248119 I32Const 4502816
+	0x124811E I32Load 2, 0
+	0x1248121 I32Const 0
+	0x1248123 Call 57623
+	0x1248127 I32Const 0
+	0x1248129 I32Const 4473032
+	0x124812E I32Load 2, 0
+	0x1248131 Call 73899
+	0x1248135 End
+	0x1248136 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b37
+	5 Nop
+	6 Move v5 @ S0_v20, [2DD6F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v14 @ S1_v12, 1
+	10 Move [45BA34], v14 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call SmallXmlParser.Read, v24 @ S0_v6 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	16 Nop
+	17 Nop
+	18 Subtract v26 @ S0_v7, v24 @ S0_v6 (System.Int32), 9
+	19 Nop
+	20 CheckGreaterOrEqual v28 @ S0_v8 (System.Boolean), v26 @ S0_v7, 2
+	21 Not v29 @ TEMP_v3 (System.Boolean), v28 @ S0_v8 (System.Boolean)
+	22 ConditionalJump @b36, v29 @ TEMP_v3 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Subtract v32 @ S0_v14, v24 @ S0_v6 (System.Int32), 13
+	26 CheckEqual v33 @ TEMP_v5 (System.Boolean), v24 @ S0_v6 (System.Int32), 13
+	27 ConditionalJump @b27, v33 @ TEMP_v5 (System.Boolean)
+	28 CheckEqual v39 @ TEMP_v7 (System.Boolean), v32 @ S0_v14, 1
+	29 ConditionalJump @b28, v39 @ TEMP_v7 (System.Boolean)
+	30 CheckEqual v41 @ TEMP_v10 (System.Boolean), v32 @ S0_v14, 2
+	31 ConditionalJump @b28, v41 @ TEMP_v10 (System.Boolean)
+	32 CheckEqual v43 @ TEMP_v11 (System.Boolean), v32 @ S0_v14, 3
+	33 ConditionalJump @b28, v43 @ TEMP_v11 (System.Boolean)
+	34 CheckEqual v44 @ TEMP_v12 (System.Boolean), v32 @ S0_v14, 4
+	35 ConditionalJump @b28, v44 @ TEMP_v12 (System.Boolean)
+	36 CheckEqual v45 @ TEMP_v13 (System.Boolean), v32 @ S0_v14, 5
+	37 ConditionalJump @b28, v45 @ TEMP_v13 (System.Boolean)
+	38 CheckEqual v46 @ TEMP_v14 (System.Boolean), v32 @ S0_v14, 6
+	39 ConditionalJump @b28, v46 @ TEMP_v14 (System.Boolean)
+	40 CheckEqual v47 @ TEMP_v15 (System.Boolean), v32 @ S0_v14, 7
+	41 ConditionalJump @b28, v47 @ TEMP_v15 (System.Boolean)
+	42 CheckEqual v48 @ TEMP_v16 (System.Boolean), v32 @ S0_v14, 8
+	43 ConditionalJump @b28, v48 @ TEMP_v16 (System.Boolean)
+	44 CheckEqual v49 @ TEMP_v17 (System.Boolean), v32 @ S0_v14, 9
+	45 ConditionalJump @b28, v49 @ TEMP_v17 (System.Boolean)
+	46 CheckEqual v50 @ TEMP_v18 (System.Boolean), v32 @ S0_v14, 10
+	47 ConditionalJump @b28, v50 @ TEMP_v18 (System.Boolean)
+	48 CheckEqual v51 @ TEMP_v19 (System.Boolean), v32 @ S0_v14, 11
+	49 ConditionalJump @b28, v51 @ TEMP_v19 (System.Boolean)
+	50 CheckEqual v52 @ TEMP_v20 (System.Boolean), v32 @ S0_v14, 12
+	51 ConditionalJump @b28, v52 @ TEMP_v20 (System.Boolean)
+	52 CheckEqual v53 @ TEMP_v21 (System.Boolean), v32 @ S0_v14, 13
+	53 ConditionalJump @b28, v53 @ TEMP_v21 (System.Boolean)
+	54 CheckEqual v54 @ TEMP_v22 (System.Boolean), v32 @ S0_v14, 14
+	55 ConditionalJump @b28, v54 @ TEMP_v22 (System.Boolean)
+	56 CheckEqual v55 @ TEMP_v23 (System.Boolean), v32 @ S0_v14, 15
+	57 ConditionalJump @b28, v55 @ TEMP_v23 (System.Boolean)
+	58 CheckEqual v56 @ TEMP_v24 (System.Boolean), v32 @ S0_v14, 16
+	59 ConditionalJump @b28, v56 @ TEMP_v24 (System.Boolean)
+	60 CheckEqual v57 @ TEMP_v25 (System.Boolean), v32 @ S0_v14, 17
+	61 ConditionalJump @b28, v57 @ TEMP_v25 (System.Boolean)
+	62 CheckEqual v58 @ TEMP_v26 (System.Boolean), v32 @ S0_v14, 18
+	63 ConditionalJump @b28, v58 @ TEMP_v26 (System.Boolean)
+	64 CheckEqual v40 @ TEMP_v27 (System.Boolean), v32 @ S0_v14, 19
+	65 ConditionalJump @b27, v40 @ TEMP_v27 (System.Boolean)
+	66 Jump @b28
+	67 Nop
+	68 Jump @b36
+	69 Nop
+	70 Jump @b31
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call SmallXmlParser.ReadName, v38 @ S0_v11 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	76 Nop
+	77 Nop
+	78 Jump @b37
+	79 Nop
+	80 Nop
+	81 Nop
+	82 CheckEqual v60 @ TEMP_v9 (System.Boolean), 0, 0
+	83 ConditionalJump @b34, v60 @ TEMP_v9 (System.Boolean)
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Call SmallXmlParser.IsWhitespace, v65 @ S0_v18 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), "Whitespace is expected."
+	89 Nop
+	90 Nop
+	91 Nop
+	92 CallVoid SmallXmlParser.SkipWhitespaces, v65 @ S0_v18 (System.Boolean), 0
+	93 Nop
+	94 Nop
+	95 Return
+
+Method: System.String ReadUntil(System.Char until, System.Boolean handleReferences)
+
+Disassembly:
+	0x1248185 I32Const 4569663
+	0x124818A I32Load8_S 0, 0
+	0x124818D I32Eqz
+	0x124818E If -64
+	0x1248190 I32Const 3004108
+	0x1248195 I32Load 2, 0
+	0x1248198 Call 73003
+	0x124819C I32Const 4569663
+	0x12481A1 I32Const 1
+	0x12481A3 I32Store8 0, 0
+	0x12481A6 End
+	0x12481A7 Block -1
+	0x12481A9 Block -64
+	0x12481AB LocalGet 1
+	0x12481AD I32Const 65535
+	0x12481B1 I32And
+	0x12481B2 I32Const 47
+	0x12481B4 I32Lt_S
+	0x12481B5 If -1
+	0x12481B7 LocalGet 1
+	0x12481B9 I32Const -45
+	0x12481BB I32Add
+	0x12481BC I32Const 16
+	0x12481BE I32Shl
+	0x12481BF I32Const 16
+	0x12481C1 I32Shr_S
+	0x12481C2 I32Const 65535
+	0x12481C6 I32And
+	0x12481C7 I32Const 2
+	0x12481C9 I32Ge_S
+	0x12481CA BrIf 1
+	0x12481CC LocalGet 2
+	0x12481CE I32Const 1
+	0x12481D0 I32Xor
+	0x12481D1 Else
+	0x12481D2 Block -64
+	0x12481D4 Block -64
+	0x12481D6 LocalGet 1
+	0x12481D8 I32Const 16
+	0x12481DA I32Shl
+	0x12481DB I32Const 16
+	0x12481DD I32Shr_S
+	0x12481DE I32Const 58
+	0x12481E0 I32Sub
+	0x12481E1 BrTable System.UInt64[], 1
+	0x124820A End
+	0x124820B I32Const 1
+	0x124820D Br 3
+	0x124820F End
+	0x1248210 LocalGet 1
+	0x1248212 I32Const 65535
+	0x1248216 I32And
+	0x1248217 I32Const 257
+	0x124821A I32Lt_S
+	0x124821B BrIf 1
+	0x124821D Block -64
+	0x124821F Block -64
+	0x1248221 LocalGet 1
+	0x1248223 I32Const 16
+	0x1248225 I32Shl
+	0x1248226 I32Const 16
+	0x1248228 I32Shr_S
+	0x1248229 I32Const 1369
+	0x124822C I32Sub
+	0x124822D BrTable System.UInt64[], 1
+	0x12483BF End
+	0x12483C0 I32Const 1
+	0x12483C2 Br 3
+	0x12483C4 End
+	0x12483C5 LocalGet 1
+	0x12483C7 I32Const -699
+	0x12483CA I32Add
+	0x12483CB I32Const 16
+	0x12483CD I32Shl
+	0x12483CE I32Const 16
+	0x12483D0 I32Shr_S
+	0x12483D1 I32Const 65535
+	0x12483D5 I32And
+	0x12483D6 I32Const 6
+	0x12483D8 I32Gt_S
+	0x12483D9 BrIf 1
+	0x12483DB I32Const 1
+	0x12483DD End
+	0x12483DE Br 1
+	0x12483E0 End
+	0x12483E1 I32Const 4427948
+	0x12483E6 I32Load 2, 0
+	0x12483E9 LocalTee 0
+	0x12483EB I32Load16_S 1, 186
+	0x12483EF I32Const 512
+	0x12483F2 I32And
+	0x12483F3 If -64
+	0x12483F5 LocalGet 0
+	0x12483F7 I32Load 2, 116
+	0x12483FA I32Eqz
+	0x12483FB If -64
+	0x12483FD LocalGet 0
+	0x12483FF Call 72345
+	0x1248403 End
+	0x1248404 End
+	0x1248405 Block -64
+	0x1248407 Block -64
+	0x1248409 Block -64
+	0x124840B LocalGet 1
+	0x124840D I32Const 0
+	0x124840F Call 57657
+	0x1248413 BrTable System.UInt64[], 2
+	0x1248420 End
+	0x1248421 I32Const 1
+	0x1248423 Br 2
+	0x1248425 End
+	0x1248426 LocalGet 2
+	0x1248428 I32Const 1
+	0x124842A I32Xor
+	0x124842B Br 1
+	0x124842D End
+	0x124842E I32Const 0
+	0x1248430 End
+	0x1248431 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b468
+	5 Nop
+	6 Move v5 @ S0_v55, [2DD6CC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v55
+	8 Nop
+	9 Move v7 @ S1_v29, 1
+	10 Move [45BA3F], v7 @ S1_v29
+	11 Nop
+	12 Nop
+	13 Nop
+	14 And v14 @ S0_v6 (System.Int32), until @ L1 (System.Char), 65535
+	15 Nop
+	16 CheckLess v16 @ S0_v7 (System.Boolean), v14 @ S0_v6 (System.Int32), 47
+	17 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v7 (System.Boolean)
+	18 ConditionalJump @b7, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Add v20 @ S0_v47, until @ L1 (System.Char), -45
+	22 Nop
+	23 ShiftLeft v22 @ S0_v48, v20 @ S0_v47, 16
+	24 Nop
+	25 ShiftRight v24 @ S0_v49, v22 @ S0_v48, 16
+	26 Nop
+	27 And v26 @ S0_v50, v24 @ S0_v49, 65535
+	28 Nop
+	29 CheckGreaterOrEqual v28 @ S0_v51 (System.Boolean), v26 @ S0_v50, 2
+	30 ConditionalJump @b450, v28 @ S0_v51 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Xor returnVal1 @ S0_v8 (System.String), handleReferences @ L2 (System.Boolean), 1
+	34 Jump @b469
+	35 Nop
+	36 Nop
+	37 ShiftLeft v31 @ S0_v27 (System.Int32), until @ L1 (System.Char), 16
+	38 Nop
+	39 ShiftRight v33 @ S0_v28 (System.Int32), v31 @ S0_v27 (System.Int32), 16
+	40 Nop
+	41 Subtract v35 @ S0_v29, v33 @ S0_v28 (System.Int32), 58
+	42 CheckEqual v36 @ TEMP_v21 (System.Boolean), v33 @ S0_v28 (System.Int32), 58
+	43 ConditionalJump @b46, v36 @ TEMP_v21 (System.Boolean)
+	44 CheckEqual v57 @ TEMP_v23 (System.Boolean), v35 @ S0_v29, 1
+	45 ConditionalJump @b47, v57 @ TEMP_v23 (System.Boolean)
+	46 CheckEqual v75 @ TEMP_v425 (System.Boolean), v35 @ S0_v29, 2
+	47 ConditionalJump @b47, v75 @ TEMP_v425 (System.Boolean)
+	48 CheckEqual v76 @ TEMP_v426 (System.Boolean), v35 @ S0_v29, 3
+	49 ConditionalJump @b47, v76 @ TEMP_v426 (System.Boolean)
+	50 CheckEqual v77 @ TEMP_v427 (System.Boolean), v35 @ S0_v29, 4
+	51 ConditionalJump @b47, v77 @ TEMP_v427 (System.Boolean)
+	52 CheckEqual v78 @ TEMP_v428 (System.Boolean), v35 @ S0_v29, 5
+	53 ConditionalJump @b47, v78 @ TEMP_v428 (System.Boolean)
+	54 CheckEqual v79 @ TEMP_v429 (System.Boolean), v35 @ S0_v29, 6
+	55 ConditionalJump @b47, v79 @ TEMP_v429 (System.Boolean)
+	56 CheckEqual v80 @ TEMP_v430 (System.Boolean), v35 @ S0_v29, 7
+	57 ConditionalJump @b47, v80 @ TEMP_v430 (System.Boolean)
+	58 CheckEqual v81 @ TEMP_v431 (System.Boolean), v35 @ S0_v29, 8
+	59 ConditionalJump @b47, v81 @ TEMP_v431 (System.Boolean)
+	60 CheckEqual v82 @ TEMP_v432 (System.Boolean), v35 @ S0_v29, 9
+	61 ConditionalJump @b47, v82 @ TEMP_v432 (System.Boolean)
+	62 CheckEqual v83 @ TEMP_v433 (System.Boolean), v35 @ S0_v29, 10
+	63 ConditionalJump @b47, v83 @ TEMP_v433 (System.Boolean)
+	64 CheckEqual v84 @ TEMP_v434 (System.Boolean), v35 @ S0_v29, 11
+	65 ConditionalJump @b47, v84 @ TEMP_v434 (System.Boolean)
+	66 CheckEqual v85 @ TEMP_v435 (System.Boolean), v35 @ S0_v29, 12
+	67 ConditionalJump @b47, v85 @ TEMP_v435 (System.Boolean)
+	68 CheckEqual v86 @ TEMP_v436 (System.Boolean), v35 @ S0_v29, 13
+	69 ConditionalJump @b47, v86 @ TEMP_v436 (System.Boolean)
+	70 CheckEqual v87 @ TEMP_v437 (System.Boolean), v35 @ S0_v29, 14
+	71 ConditionalJump @b47, v87 @ TEMP_v437 (System.Boolean)
+	72 CheckEqual v88 @ TEMP_v438 (System.Boolean), v35 @ S0_v29, 15
+	73 ConditionalJump @b47, v88 @ TEMP_v438 (System.Boolean)
+	74 CheckEqual v89 @ TEMP_v439 (System.Boolean), v35 @ S0_v29, 16
+	75 ConditionalJump @b47, v89 @ TEMP_v439 (System.Boolean)
+	76 CheckEqual v90 @ TEMP_v440 (System.Boolean), v35 @ S0_v29, 17
+	77 ConditionalJump @b47, v90 @ TEMP_v440 (System.Boolean)
+	78 CheckEqual v91 @ TEMP_v441 (System.Boolean), v35 @ S0_v29, 18
+	79 ConditionalJump @b47, v91 @ TEMP_v441 (System.Boolean)
+	80 CheckEqual v92 @ TEMP_v442 (System.Boolean), v35 @ S0_v29, 19
+	81 ConditionalJump @b47, v92 @ TEMP_v442 (System.Boolean)
+	82 CheckEqual v93 @ TEMP_v443 (System.Boolean), v35 @ S0_v29, 20
+	83 ConditionalJump @b47, v93 @ TEMP_v443 (System.Boolean)
+	84 CheckEqual v94 @ TEMP_v444 (System.Boolean), v35 @ S0_v29, 21
+	85 ConditionalJump @b47, v94 @ TEMP_v444 (System.Boolean)
+	86 CheckEqual v95 @ TEMP_v445 (System.Boolean), v35 @ S0_v29, 22
+	87 ConditionalJump @b47, v95 @ TEMP_v445 (System.Boolean)
+	88 CheckEqual v96 @ TEMP_v446 (System.Boolean), v35 @ S0_v29, 23
+	89 ConditionalJump @b47, v96 @ TEMP_v446 (System.Boolean)
+	90 CheckEqual v97 @ TEMP_v447 (System.Boolean), v35 @ S0_v29, 24
+	91 ConditionalJump @b47, v97 @ TEMP_v447 (System.Boolean)
+	92 CheckEqual v98 @ TEMP_v448 (System.Boolean), v35 @ S0_v29, 25
+	93 ConditionalJump @b47, v98 @ TEMP_v448 (System.Boolean)
+	94 CheckEqual v99 @ TEMP_v449 (System.Boolean), v35 @ S0_v29, 26
+	95 ConditionalJump @b47, v99 @ TEMP_v449 (System.Boolean)
+	96 CheckEqual v100 @ TEMP_v450 (System.Boolean), v35 @ S0_v29, 27
+	97 ConditionalJump @b47, v100 @ TEMP_v450 (System.Boolean)
+	98 CheckEqual v101 @ TEMP_v451 (System.Boolean), v35 @ S0_v29, 28
+	99 ConditionalJump @b47, v101 @ TEMP_v451 (System.Boolean)
+	100 CheckEqual v102 @ TEMP_v452 (System.Boolean), v35 @ S0_v29, 29
+	101 ConditionalJump @b47, v102 @ TEMP_v452 (System.Boolean)
+	102 CheckEqual v103 @ TEMP_v453 (System.Boolean), v35 @ S0_v29, 30
+	103 ConditionalJump @b47, v103 @ TEMP_v453 (System.Boolean)
+	104 CheckEqual v104 @ TEMP_v454 (System.Boolean), v35 @ S0_v29, 31
+	105 ConditionalJump @b47, v104 @ TEMP_v454 (System.Boolean)
+	106 CheckEqual v105 @ TEMP_v455 (System.Boolean), v35 @ S0_v29, 32
+	107 ConditionalJump @b47, v105 @ TEMP_v455 (System.Boolean)
+	108 CheckEqual v106 @ TEMP_v456 (System.Boolean), v35 @ S0_v29, 33
+	109 ConditionalJump @b47, v106 @ TEMP_v456 (System.Boolean)
+	110 CheckEqual v107 @ TEMP_v457 (System.Boolean), v35 @ S0_v29, 34
+	111 ConditionalJump @b47, v107 @ TEMP_v457 (System.Boolean)
+	112 CheckEqual v108 @ TEMP_v458 (System.Boolean), v35 @ S0_v29, 35
+	113 ConditionalJump @b47, v108 @ TEMP_v458 (System.Boolean)
+	114 CheckEqual v109 @ TEMP_v459 (System.Boolean), v35 @ S0_v29, 36
+	115 ConditionalJump @b47, v109 @ TEMP_v459 (System.Boolean)
+	116 CheckEqual v59 @ TEMP_v460 (System.Boolean), v35 @ S0_v29, 37
+	117 ConditionalJump @b46, v59 @ TEMP_v460 (System.Boolean)
+	118 Jump @b47
+	119 Nop
+	120 Nop
+	121 Jump @b470
+	122 Nop
+	123 Nop
+	124 Nop
+	125 And v112 @ S0_v32 (System.Int32), until @ L1 (System.Char), 65535
+	126 Nop
+	127 CheckLess v48 @ S0_v33 (System.Boolean), v112 @ S0_v32 (System.Int32), 257
+	128 ConditionalJump @b450, v48 @ S0_v33 (System.Boolean)
+	129 Nop
+	130 Nop
+	131 ShiftLeft v131 @ S0_v35 (System.Int32), until @ L1 (System.Char), 16
+	132 Nop
+	133 ShiftRight v133 @ S0_v36 (System.Int32), v131 @ S0_v35 (System.Int32), 16
+	134 Nop
+	135 Subtract v134 @ S0_v37, v133 @ S0_v36 (System.Int32), 1369
+	136 CheckEqual v135 @ TEMP_v25 (System.Boolean), v133 @ S0_v36 (System.Int32), 1369
+	137 ConditionalJump @b447, v135 @ TEMP_v25 (System.Boolean)
+	138 CheckEqual v139 @ TEMP_v27 (System.Boolean), v134 @ S0_v37, 1
+	139 ConditionalJump @b448, v139 @ TEMP_v27 (System.Boolean)
+	140 CheckEqual v142 @ TEMP_v29 (System.Boolean), v134 @ S0_v37, 2
+	141 ConditionalJump @b448, v142 @ TEMP_v29 (System.Boolean)
+	142 CheckEqual v143 @ TEMP_v30 (System.Boolean), v134 @ S0_v37, 3
+	143 ConditionalJump @b448, v143 @ TEMP_v30 (System.Boolean)
+	144 CheckEqual v144 @ TEMP_v31 (System.Boolean), v134 @ S0_v37, 4
+	145 ConditionalJump @b448, v144 @ TEMP_v31 (System.Boolean)
+	146 CheckEqual v145 @ TEMP_v32 (System.Boolean), v134 @ S0_v37, 5
+	147 ConditionalJump @b448, v145 @ TEMP_v32 (System.Boolean)
+	148 CheckEqual v146 @ TEMP_v33 (System.Boolean), v134 @ S0_v37, 6
+	149 ConditionalJump @b448, v146 @ TEMP_v33 (System.Boolean)
+	150 CheckEqual v147 @ TEMP_v34 (System.Boolean), v134 @ S0_v37, 7
+	151 ConditionalJump @b448, v147 @ TEMP_v34 (System.Boolean)
+	152 CheckEqual v148 @ TEMP_v35 (System.Boolean), v134 @ S0_v37, 8
+	153 ConditionalJump @b448, v148 @ TEMP_v35 (System.Boolean)
+	154 CheckEqual v149 @ TEMP_v36 (System.Boolean), v134 @ S0_v37, 9
+	155 ConditionalJump @b448, v149 @ TEMP_v36 (System.Boolean)
+	156 CheckEqual v150 @ TEMP_v37 (System.Boolean), v134 @ S0_v37, 10
+	157 ConditionalJump @b448, v150 @ TEMP_v37 (System.Boolean)
+	158 CheckEqual v151 @ TEMP_v38 (System.Boolean), v134 @ S0_v37, 11
+	159 ConditionalJump @b448, v151 @ TEMP_v38 (System.Boolean)
+	160 CheckEqual v152 @ TEMP_v39 (System.Boolean), v134 @ S0_v37, 12
+	161 ConditionalJump @b448, v152 @ TEMP_v39 (System.Boolean)
+	162 CheckEqual v153 @ TEMP_v40 (System.Boolean), v134 @ S0_v37, 13
+	163 ConditionalJump @b448, v153 @ TEMP_v40 (System.Boolean)
+	164 CheckEqual v154 @ TEMP_v41 (System.Boolean), v134 @ S0_v37, 14
+	165 ConditionalJump @b448, v154 @ TEMP_v41 (System.Boolean)
+	166 CheckEqual v155 @ TEMP_v42 (System.Boolean), v134 @ S0_v37, 15
+	167 ConditionalJump @b448, v155 @ TEMP_v42 (System.Boolean)
+	168 CheckEqual v156 @ TEMP_v43 (System.Boolean), v134 @ S0_v37, 16
+	169 ConditionalJump @b448, v156 @ TEMP_v43 (System.Boolean)
+	170 CheckEqual v157 @ TEMP_v44 (System.Boolean), v134 @ S0_v37, 17
+	171 ConditionalJump @b448, v157 @ TEMP_v44 (System.Boolean)
+	172 CheckEqual v158 @ TEMP_v45 (System.Boolean), v134 @ S0_v37, 18
+	173 ConditionalJump @b448, v158 @ TEMP_v45 (System.Boolean)
+	174 CheckEqual v159 @ TEMP_v46 (System.Boolean), v134 @ S0_v37, 19
+	175 ConditionalJump @b448, v159 @ TEMP_v46 (System.Boolean)
+	176 CheckEqual v160 @ TEMP_v47 (System.Boolean), v134 @ S0_v37, 20
+	177 ConditionalJump @b448, v160 @ TEMP_v47 (System.Boolean)
+	178 CheckEqual v161 @ TEMP_v48 (System.Boolean), v134 @ S0_v37, 21
+	179 ConditionalJump @b448, v161 @ TEMP_v48 (System.Boolean)
+	180 CheckEqual v162 @ TEMP_v49 (System.Boolean), v134 @ S0_v37, 22
+	181 ConditionalJump @b448, v162 @ TEMP_v49 (System.Boolean)
+	182 CheckEqual v163 @ TEMP_v50 (System.Boolean), v134 @ S0_v37, 23
+	183 ConditionalJump @b448, v163 @ TEMP_v50 (System.Boolean)
+	184 CheckEqual v164 @ TEMP_v51 (System.Boolean), v134 @ S0_v37, 24
+	185 ConditionalJump @b448, v164 @ TEMP_v51 (System.Boolean)
+	186 CheckEqual v165 @ TEMP_v52 (System.Boolean), v134 @ S0_v37, 25
+	187 ConditionalJump @b448, v165 @ TEMP_v52 (System.Boolean)
+	188 CheckEqual v166 @ TEMP_v53 (System.Boolean), v134 @ S0_v37, 26
+	189 ConditionalJump @b448, v166 @ TEMP_v53 (System.Boolean)
+	190 CheckEqual v167 @ TEMP_v54 (System.Boolean), v134 @ S0_v37, 27
+	191 ConditionalJump @b448, v167 @ TEMP_v54 (System.Boolean)
+	192 CheckEqual v168 @ TEMP_v55 (System.Boolean), v134 @ S0_v37, 28
+	193 ConditionalJump @b448, v168 @ TEMP_v55 (System.Boolean)
+	194 CheckEqual v169 @ TEMP_v56 (System.Boolean), v134 @ S0_v37, 29
+	195 ConditionalJump @b448, v169 @ TEMP_v56 (System.Boolean)
+	196 CheckEqual v170 @ TEMP_v57 (System.Boolean), v134 @ S0_v37, 30
+	197 ConditionalJump @b448, v170 @ TEMP_v57 (System.Boolean)
+	198 CheckEqual v171 @ TEMP_v58 (System.Boolean), v134 @ S0_v37, 31
+	199 ConditionalJump @b448, v171 @ TEMP_v58 (System.Boolean)
+	200 CheckEqual v172 @ TEMP_v59 (System.Boolean), v134 @ S0_v37, 32
+	201 ConditionalJump @b448, v172 @ TEMP_v59 (System.Boolean)
+	202 CheckEqual v173 @ TEMP_v60 (System.Boolean), v134 @ S0_v37, 33
+	203 ConditionalJump @b448, v173 @ TEMP_v60 (System.Boolean)
+	204 CheckEqual v174 @ TEMP_v61 (System.Boolean), v134 @ S0_v37, 34
+	205 ConditionalJump @b448, v174 @ TEMP_v61 (System.Boolean)
+	206 CheckEqual v175 @ TEMP_v62 (System.Boolean), v134 @ S0_v37, 35
+	207 ConditionalJump @b448, v175 @ TEMP_v62 (System.Boolean)
+	208 CheckEqual v176 @ TEMP_v63 (System.Boolean), v134 @ S0_v37, 36
+	209 ConditionalJump @b448, v176 @ TEMP_v63 (System.Boolean)
+	210 CheckEqual v177 @ TEMP_v64 (System.Boolean), v134 @ S0_v37, 37
+	211 ConditionalJump @b448, v177 @ TEMP_v64 (System.Boolean)
+	212 CheckEqual v178 @ TEMP_v65 (System.Boolean), v134 @ S0_v37, 38
+	213 ConditionalJump @b448, v178 @ TEMP_v65 (System.Boolean)
+	214 CheckEqual v179 @ TEMP_v66 (System.Boolean), v134 @ S0_v37, 39
+	215 ConditionalJump @b448, v179 @ TEMP_v66 (System.Boolean)
+	216 CheckEqual v180 @ TEMP_v67 (System.Boolean), v134 @ S0_v37, 40
+	217 ConditionalJump @b448, v180 @ TEMP_v67 (System.Boolean)
+	218 CheckEqual v181 @ TEMP_v68 (System.Boolean), v134 @ S0_v37, 41
+	219 ConditionalJump @b448, v181 @ TEMP_v68 (System.Boolean)
+	220 CheckEqual v182 @ TEMP_v69 (System.Boolean), v134 @ S0_v37, 42
+	221 ConditionalJump @b448, v182 @ TEMP_v69 (System.Boolean)
+	222 CheckEqual v183 @ TEMP_v70 (System.Boolean), v134 @ S0_v37, 43
+	223 ConditionalJump @b448, v183 @ TEMP_v70 (System.Boolean)
+	224 CheckEqual v184 @ TEMP_v71 (System.Boolean), v134 @ S0_v37, 44
+	225 ConditionalJump @b448, v184 @ TEMP_v71 (System.Boolean)
+	226 CheckEqual v185 @ TEMP_v72 (System.Boolean), v134 @ S0_v37, 45
+	227 ConditionalJump @b448, v185 @ TEMP_v72 (System.Boolean)
+	228 CheckEqual v186 @ TEMP_v73 (System.Boolean), v134 @ S0_v37, 46
+	229 ConditionalJump @b448, v186 @ TEMP_v73 (System.Boolean)
+	230 CheckEqual v187 @ TEMP_v74 (System.Boolean), v134 @ S0_v37, 47
+	231 ConditionalJump @b448, v187 @ TEMP_v74 (System.Boolean)
+	232 CheckEqual v188 @ TEMP_v75 (System.Boolean), v134 @ S0_v37, 48
+	233 ConditionalJump @b448, v188 @ TEMP_v75 (System.Boolean)
+	234 CheckEqual v189 @ TEMP_v76 (System.Boolean), v134 @ S0_v37, 49
+	235 ConditionalJump @b448, v189 @ TEMP_v76 (System.Boolean)
+	236 CheckEqual v190 @ TEMP_v77 (System.Boolean), v134 @ S0_v37, 50
+	237 ConditionalJump @b448, v190 @ TEMP_v77 (System.Boolean)
+	238 CheckEqual v191 @ TEMP_v78 (System.Boolean), v134 @ S0_v37, 51
+	239 ConditionalJump @b448, v191 @ TEMP_v78 (System.Boolean)
+	240 CheckEqual v192 @ TEMP_v79 (System.Boolean), v134 @ S0_v37, 52
+	241 ConditionalJump @b448, v192 @ TEMP_v79 (System.Boolean)
+	242 CheckEqual v193 @ TEMP_v80 (System.Boolean), v134 @ S0_v37, 53
+	243 ConditionalJump @b448, v193 @ TEMP_v80 (System.Boolean)
+	244 CheckEqual v194 @ TEMP_v81 (System.Boolean), v134 @ S0_v37, 54
+	245 ConditionalJump @b448, v194 @ TEMP_v81 (System.Boolean)
+	246 CheckEqual v195 @ TEMP_v82 (System.Boolean), v134 @ S0_v37, 55
+	247 ConditionalJump @b448, v195 @ TEMP_v82 (System.Boolean)
+	248 CheckEqual v196 @ TEMP_v83 (System.Boolean), v134 @ S0_v37, 56
+	249 ConditionalJump @b448, v196 @ TEMP_v83 (System.Boolean)
+	250 CheckEqual v197 @ TEMP_v84 (System.Boolean), v134 @ S0_v37, 57
+	251 ConditionalJump @b448, v197 @ TEMP_v84 (System.Boolean)
+	252 CheckEqual v198 @ TEMP_v85 (System.Boolean), v134 @ S0_v37, 58
+	253 ConditionalJump @b448, v198 @ TEMP_v85 (System.Boolean)
+	254 CheckEqual v199 @ TEMP_v86 (System.Boolean), v134 @ S0_v37, 59
+	255 ConditionalJump @b448, v199 @ TEMP_v86 (System.Boolean)
+	256 CheckEqual v200 @ TEMP_v87 (System.Boolean), v134 @ S0_v37, 60
+	257 ConditionalJump @b448, v200 @ TEMP_v87 (System.Boolean)
+	258 CheckEqual v201 @ TEMP_v88 (System.Boolean), v134 @ S0_v37, 61
+	259 ConditionalJump @b448, v201 @ TEMP_v88 (System.Boolean)
+	260 CheckEqual v202 @ TEMP_v89 (System.Boolean), v134 @ S0_v37, 62
+	261 ConditionalJump @b448, v202 @ TEMP_v89 (System.Boolean)
+	262 CheckEqual v203 @ TEMP_v90 (System.Boolean), v134 @ S0_v37, 63
+	263 ConditionalJump @b448, v203 @ TEMP_v90 (System.Boolean)
+	264 CheckEqual v204 @ TEMP_v91 (System.Boolean), v134 @ S0_v37, 64
+	265 ConditionalJump @b448, v204 @ TEMP_v91 (System.Boolean)
+	266 CheckEqual v205 @ TEMP_v92 (System.Boolean), v134 @ S0_v37, 65
+	267 ConditionalJump @b448, v205 @ TEMP_v92 (System.Boolean)
+	268 CheckEqual v206 @ TEMP_v93 (System.Boolean), v134 @ S0_v37, 66
+	269 ConditionalJump @b448, v206 @ TEMP_v93 (System.Boolean)
+	270 CheckEqual v207 @ TEMP_v94 (System.Boolean), v134 @ S0_v37, 67
+	271 ConditionalJump @b448, v207 @ TEMP_v94 (System.Boolean)
+	272 CheckEqual v208 @ TEMP_v95 (System.Boolean), v134 @ S0_v37, 68
+	273 ConditionalJump @b448, v208 @ TEMP_v95 (System.Boolean)
+	274 CheckEqual v209 @ TEMP_v96 (System.Boolean), v134 @ S0_v37, 69
+	275 ConditionalJump @b448, v209 @ TEMP_v96 (System.Boolean)
+	276 CheckEqual v210 @ TEMP_v97 (System.Boolean), v134 @ S0_v37, 70
+	277 ConditionalJump @b448, v210 @ TEMP_v97 (System.Boolean)
+	278 CheckEqual v211 @ TEMP_v98 (System.Boolean), v134 @ S0_v37, 71
+	279 ConditionalJump @b448, v211 @ TEMP_v98 (System.Boolean)
+	280 CheckEqual v212 @ TEMP_v99 (System.Boolean), v134 @ S0_v37, 72
+	281 ConditionalJump @b448, v212 @ TEMP_v99 (System.Boolean)
+	282 CheckEqual v213 @ TEMP_v100 (System.Boolean), v134 @ S0_v37, 73
+	283 ConditionalJump @b448, v213 @ TEMP_v100 (System.Boolean)
+	284 CheckEqual v214 @ TEMP_v101 (System.Boolean), v134 @ S0_v37, 74
+	285 ConditionalJump @b448, v214 @ TEMP_v101 (System.Boolean)
+	286 CheckEqual v215 @ TEMP_v102 (System.Boolean), v134 @ S0_v37, 75
+	287 ConditionalJump @b448, v215 @ TEMP_v102 (System.Boolean)
+	288 CheckEqual v216 @ TEMP_v103 (System.Boolean), v134 @ S0_v37, 76
+	289 ConditionalJump @b448, v216 @ TEMP_v103 (System.Boolean)
+	290 CheckEqual v217 @ TEMP_v104 (System.Boolean), v134 @ S0_v37, 77
+	291 ConditionalJump @b448, v217 @ TEMP_v104 (System.Boolean)
+	292 CheckEqual v218 @ TEMP_v105 (System.Boolean), v134 @ S0_v37, 78
+	293 ConditionalJump @b448, v218 @ TEMP_v105 (System.Boolean)
+	294 CheckEqual v219 @ TEMP_v106 (System.Boolean), v134 @ S0_v37, 79
+	295 ConditionalJump @b448, v219 @ TEMP_v106 (System.Boolean)
+	296 CheckEqual v220 @ TEMP_v107 (System.Boolean), v134 @ S0_v37, 80
+	297 ConditionalJump @b448, v220 @ TEMP_v107 (System.Boolean)
+	298 CheckEqual v221 @ TEMP_v108 (System.Boolean), v134 @ S0_v37, 81
+	299 ConditionalJump @b448, v221 @ TEMP_v108 (System.Boolean)
+	300 CheckEqual v222 @ TEMP_v109 (System.Boolean), v134 @ S0_v37, 82
+	301 ConditionalJump @b448, v222 @ TEMP_v109 (System.Boolean)
+	302 CheckEqual v223 @ TEMP_v110 (System.Boolean), v134 @ S0_v37, 83
+	303 ConditionalJump @b448, v223 @ TEMP_v110 (System.Boolean)
+	304 CheckEqual v224 @ TEMP_v111 (System.Boolean), v134 @ S0_v37, 84
+	305 ConditionalJump @b448, v224 @ TEMP_v111 (System.Boolean)
+	306 CheckEqual v225 @ TEMP_v112 (System.Boolean), v134 @ S0_v37, 85
+	307 ConditionalJump @b448, v225 @ TEMP_v112 (System.Boolean)
+	308 CheckEqual v226 @ TEMP_v113 (System.Boolean), v134 @ S0_v37, 86
+	309 ConditionalJump @b448, v226 @ TEMP_v113 (System.Boolean)
+	310 CheckEqual v227 @ TEMP_v114 (System.Boolean), v134 @ S0_v37, 87
+	311 ConditionalJump @b448, v227 @ TEMP_v114 (System.Boolean)
+	312 CheckEqual v228 @ TEMP_v115 (System.Boolean), v134 @ S0_v37, 88
+	313 ConditionalJump @b448, v228 @ TEMP_v115 (System.Boolean)
+	314 CheckEqual v229 @ TEMP_v116 (System.Boolean), v134 @ S0_v37, 89
+	315 ConditionalJump @b448, v229 @ TEMP_v116 (System.Boolean)
+	316 CheckEqual v230 @ TEMP_v117 (System.Boolean), v134 @ S0_v37, 90
+	317 ConditionalJump @b448, v230 @ TEMP_v117 (System.Boolean)
+	318 CheckEqual v231 @ TEMP_v118 (System.Boolean), v134 @ S0_v37, 91
+	319 ConditionalJump @b448, v231 @ TEMP_v118 (System.Boolean)
+	320 CheckEqual v232 @ TEMP_v119 (System.Boolean), v134 @ S0_v37, 92
+	321 ConditionalJump @b448, v232 @ TEMP_v119 (System.Boolean)
+	322 CheckEqual v233 @ TEMP_v120 (System.Boolean), v134 @ S0_v37, 93
+	323 ConditionalJump @b448, v233 @ TEMP_v120 (System.Boolean)
+	324 CheckEqual v234 @ TEMP_v121 (System.Boolean), v134 @ S0_v37, 94
+	325 ConditionalJump @b448, v234 @ TEMP_v121 (System.Boolean)
+	326 CheckEqual v235 @ TEMP_v122 (System.Boolean), v134 @ S0_v37, 95
+	327 ConditionalJump @b448, v235 @ TEMP_v122 (System.Boolean)
+	328 CheckEqual v236 @ TEMP_v123 (System.Boolean), v134 @ S0_v37, 96
+	329 ConditionalJump @b448, v236 @ TEMP_v123 (System.Boolean)
+	330 CheckEqual v237 @ TEMP_v124 (System.Boolean), v134 @ S0_v37, 97
+	331 ConditionalJump @b448, v237 @ TEMP_v124 (System.Boolean)
+	332 CheckEqual v238 @ TEMP_v125 (System.Boolean), v134 @ S0_v37, 98
+	333 ConditionalJump @b448, v238 @ TEMP_v125 (System.Boolean)
+	334 CheckEqual v239 @ TEMP_v126 (System.Boolean), v134 @ S0_v37, 99
+	335 ConditionalJump @b448, v239 @ TEMP_v126 (System.Boolean)
+	336 CheckEqual v240 @ TEMP_v127 (System.Boolean), v134 @ S0_v37, 100
+	337 ConditionalJump @b448, v240 @ TEMP_v127 (System.Boolean)
+	338 CheckEqual v241 @ TEMP_v128 (System.Boolean), v134 @ S0_v37, 101
+	339 ConditionalJump @b448, v241 @ TEMP_v128 (System.Boolean)
+	340 CheckEqual v242 @ TEMP_v129 (System.Boolean), v134 @ S0_v37, 102
+	341 ConditionalJump @b448, v242 @ TEMP_v129 (System.Boolean)
+	342 CheckEqual v243 @ TEMP_v130 (System.Boolean), v134 @ S0_v37, 103
+	343 ConditionalJump @b448, v243 @ TEMP_v130 (System.Boolean)
+	344 CheckEqual v244 @ TEMP_v131 (System.Boolean), v134 @ S0_v37, 104
+	345 ConditionalJump @b448, v244 @ TEMP_v131 (System.Boolean)
+	346 CheckEqual v245 @ TEMP_v132 (System.Boolean), v134 @ S0_v37, 105
+	347 ConditionalJump @b448, v245 @ TEMP_v132 (System.Boolean)
+	348 CheckEqual v246 @ TEMP_v133 (System.Boolean), v134 @ S0_v37, 106
+	349 ConditionalJump @b448, v246 @ TEMP_v133 (System.Boolean)
+	350 CheckEqual v247 @ TEMP_v134 (System.Boolean), v134 @ S0_v37, 107
+	351 ConditionalJump @b448, v247 @ TEMP_v134 (System.Boolean)
+	352 CheckEqual v248 @ TEMP_v135 (System.Boolean), v134 @ S0_v37, 108
+	353 ConditionalJump @b448, v248 @ TEMP_v135 (System.Boolean)
+	354 CheckEqual v249 @ TEMP_v136 (System.Boolean), v134 @ S0_v37, 109
+	355 ConditionalJump @b448, v249 @ TEMP_v136 (System.Boolean)
+	356 CheckEqual v250 @ TEMP_v137 (System.Boolean), v134 @ S0_v37, 110
+	357 ConditionalJump @b448, v250 @ TEMP_v137 (System.Boolean)
+	358 CheckEqual v251 @ TEMP_v138 (System.Boolean), v134 @ S0_v37, 111
+	359 ConditionalJump @b448, v251 @ TEMP_v138 (System.Boolean)
+	360 CheckEqual v252 @ TEMP_v139 (System.Boolean), v134 @ S0_v37, 112
+	361 ConditionalJump @b448, v252 @ TEMP_v139 (System.Boolean)
+	362 CheckEqual v253 @ TEMP_v140 (System.Boolean), v134 @ S0_v37, 113
+	363 ConditionalJump @b448, v253 @ TEMP_v140 (System.Boolean)
+	364 CheckEqual v254 @ TEMP_v141 (System.Boolean), v134 @ S0_v37, 114
+	365 ConditionalJump @b448, v254 @ TEMP_v141 (System.Boolean)
+	366 CheckEqual v255 @ TEMP_v142 (System.Boolean), v134 @ S0_v37, 115
+	367 ConditionalJump @b448, v255 @ TEMP_v142 (System.Boolean)
+	368 CheckEqual v256 @ TEMP_v143 (System.Boolean), v134 @ S0_v37, 116
+	369 ConditionalJump @b448, v256 @ TEMP_v143 (System.Boolean)
+	370 CheckEqual v257 @ TEMP_v144 (System.Boolean), v134 @ S0_v37, 117
+	371 ConditionalJump @b448, v257 @ TEMP_v144 (System.Boolean)
+	372 CheckEqual v258 @ TEMP_v145 (System.Boolean), v134 @ S0_v37, 118
+	373 ConditionalJump @b448, v258 @ TEMP_v145 (System.Boolean)
+	374 CheckEqual v259 @ TEMP_v146 (System.Boolean), v134 @ S0_v37, 119
+	375 ConditionalJump @b448, v259 @ TEMP_v146 (System.Boolean)
+	376 CheckEqual v260 @ TEMP_v147 (System.Boolean), v134 @ S0_v37, 120
+	377 ConditionalJump @b448, v260 @ TEMP_v147 (System.Boolean)
+	378 CheckEqual v261 @ TEMP_v148 (System.Boolean), v134 @ S0_v37, 121
+	379 ConditionalJump @b448, v261 @ TEMP_v148 (System.Boolean)
+	380 CheckEqual v262 @ TEMP_v149 (System.Boolean), v134 @ S0_v37, 122
+	381 ConditionalJump @b448, v262 @ TEMP_v149 (System.Boolean)
+	382 CheckEqual v263 @ TEMP_v150 (System.Boolean), v134 @ S0_v37, 123
+	383 ConditionalJump @b448, v263 @ TEMP_v150 (System.Boolean)
+	384 CheckEqual v264 @ TEMP_v151 (System.Boolean), v134 @ S0_v37, 124
+	385 ConditionalJump @b448, v264 @ TEMP_v151 (System.Boolean)
+	386 CheckEqual v265 @ TEMP_v152 (System.Boolean), v134 @ S0_v37, 125
+	387 ConditionalJump @b448, v265 @ TEMP_v152 (System.Boolean)
+	388 CheckEqual v266 @ TEMP_v153 (System.Boolean), v134 @ S0_v37, 126
+	389 ConditionalJump @b448, v266 @ TEMP_v153 (System.Boolean)
+	390 CheckEqual v267 @ TEMP_v154 (System.Boolean), v134 @ S0_v37, 127
+	391 ConditionalJump @b448, v267 @ TEMP_v154 (System.Boolean)
+	392 CheckEqual v268 @ TEMP_v155 (System.Boolean), v134 @ S0_v37, 128
+	393 ConditionalJump @b448, v268 @ TEMP_v155 (System.Boolean)
+	394 CheckEqual v269 @ TEMP_v156 (System.Boolean), v134 @ S0_v37, 129
+	395 ConditionalJump @b448, v269 @ TEMP_v156 (System.Boolean)
+	396 CheckEqual v270 @ TEMP_v157 (System.Boolean), v134 @ S0_v37, 130
+	397 ConditionalJump @b448, v270 @ TEMP_v157 (System.Boolean)
+	398 CheckEqual v271 @ TEMP_v158 (System.Boolean), v134 @ S0_v37, 131
+	399 ConditionalJump @b448, v271 @ TEMP_v158 (System.Boolean)
+	400 CheckEqual v272 @ TEMP_v159 (System.Boolean), v134 @ S0_v37, 132
+	401 ConditionalJump @b448, v272 @ TEMP_v159 (System.Boolean)
+	402 CheckEqual v273 @ TEMP_v160 (System.Boolean), v134 @ S0_v37, 133
+	403 ConditionalJump @b448, v273 @ TEMP_v160 (System.Boolean)
+	404 CheckEqual v274 @ TEMP_v161 (System.Boolean), v134 @ S0_v37, 134
+	405 ConditionalJump @b448, v274 @ TEMP_v161 (System.Boolean)
+	406 CheckEqual v275 @ TEMP_v162 (System.Boolean), v134 @ S0_v37, 135
+	407 ConditionalJump @b448, v275 @ TEMP_v162 (System.Boolean)
+	408 CheckEqual v276 @ TEMP_v163 (System.Boolean), v134 @ S0_v37, 136
+	409 ConditionalJump @b448, v276 @ TEMP_v163 (System.Boolean)
+	410 CheckEqual v277 @ TEMP_v164 (System.Boolean), v134 @ S0_v37, 137
+	411 ConditionalJump @b448, v277 @ TEMP_v164 (System.Boolean)
+	412 CheckEqual v278 @ TEMP_v165 (System.Boolean), v134 @ S0_v37, 138
+	413 ConditionalJump @b448, v278 @ TEMP_v165 (System.Boolean)
+	414 CheckEqual v279 @ TEMP_v166 (System.Boolean), v134 @ S0_v37, 139
+	415 ConditionalJump @b448, v279 @ TEMP_v166 (System.Boolean)
+	416 CheckEqual v280 @ TEMP_v167 (System.Boolean), v134 @ S0_v37, 140
+	417 ConditionalJump @b448, v280 @ TEMP_v167 (System.Boolean)
+	418 CheckEqual v281 @ TEMP_v168 (System.Boolean), v134 @ S0_v37, 141
+	419 ConditionalJump @b448, v281 @ TEMP_v168 (System.Boolean)
+	420 CheckEqual v282 @ TEMP_v169 (System.Boolean), v134 @ S0_v37, 142
+	421 ConditionalJump @b448, v282 @ TEMP_v169 (System.Boolean)
+	422 CheckEqual v283 @ TEMP_v170 (System.Boolean), v134 @ S0_v37, 143
+	423 ConditionalJump @b448, v283 @ TEMP_v170 (System.Boolean)
+	424 CheckEqual v284 @ TEMP_v171 (System.Boolean), v134 @ S0_v37, 144
+	425 ConditionalJump @b448, v284 @ TEMP_v171 (System.Boolean)
+	426 CheckEqual v285 @ TEMP_v172 (System.Boolean), v134 @ S0_v37, 145
+	427 ConditionalJump @b448, v285 @ TEMP_v172 (System.Boolean)
+	428 CheckEqual v286 @ TEMP_v173 (System.Boolean), v134 @ S0_v37, 146
+	429 ConditionalJump @b448, v286 @ TEMP_v173 (System.Boolean)
+	430 CheckEqual v287 @ TEMP_v174 (System.Boolean), v134 @ S0_v37, 147
+	431 ConditionalJump @b448, v287 @ TEMP_v174 (System.Boolean)
+	432 CheckEqual v288 @ TEMP_v175 (System.Boolean), v134 @ S0_v37, 148
+	433 ConditionalJump @b448, v288 @ TEMP_v175 (System.Boolean)
+	434 CheckEqual v289 @ TEMP_v176 (System.Boolean), v134 @ S0_v37, 149
+	435 ConditionalJump @b448, v289 @ TEMP_v176 (System.Boolean)
+	436 CheckEqual v290 @ TEMP_v177 (System.Boolean), v134 @ S0_v37, 150
+	437 ConditionalJump @b448, v290 @ TEMP_v177 (System.Boolean)
+	438 CheckEqual v291 @ TEMP_v178 (System.Boolean), v134 @ S0_v37, 151
+	439 ConditionalJump @b448, v291 @ TEMP_v178 (System.Boolean)
+	440 CheckEqual v292 @ TEMP_v179 (System.Boolean), v134 @ S0_v37, 152
+	441 ConditionalJump @b448, v292 @ TEMP_v179 (System.Boolean)
+	442 CheckEqual v293 @ TEMP_v180 (System.Boolean), v134 @ S0_v37, 153
+	443 ConditionalJump @b448, v293 @ TEMP_v180 (System.Boolean)
+	444 CheckEqual v294 @ TEMP_v181 (System.Boolean), v134 @ S0_v37, 154
+	445 ConditionalJump @b448, v294 @ TEMP_v181 (System.Boolean)
+	446 CheckEqual v295 @ TEMP_v182 (System.Boolean), v134 @ S0_v37, 155
+	447 ConditionalJump @b448, v295 @ TEMP_v182 (System.Boolean)
+	448 CheckEqual v296 @ TEMP_v183 (System.Boolean), v134 @ S0_v37, 156
+	449 ConditionalJump @b448, v296 @ TEMP_v183 (System.Boolean)
+	450 CheckEqual v297 @ TEMP_v184 (System.Boolean), v134 @ S0_v37, 157
+	451 ConditionalJump @b448, v297 @ TEMP_v184 (System.Boolean)
+	452 CheckEqual v298 @ TEMP_v185 (System.Boolean), v134 @ S0_v37, 158
+	453 ConditionalJump @b448, v298 @ TEMP_v185 (System.Boolean)
+	454 CheckEqual v299 @ TEMP_v186 (System.Boolean), v134 @ S0_v37, 159
+	455 ConditionalJump @b448, v299 @ TEMP_v186 (System.Boolean)
+	456 CheckEqual v300 @ TEMP_v187 (System.Boolean), v134 @ S0_v37, 160
+	457 ConditionalJump @b448, v300 @ TEMP_v187 (System.Boolean)
+	458 CheckEqual v301 @ TEMP_v188 (System.Boolean), v134 @ S0_v37, 161
+	459 ConditionalJump @b448, v301 @ TEMP_v188 (System.Boolean)
+	460 CheckEqual v302 @ TEMP_v189 (System.Boolean), v134 @ S0_v37, 162
+	461 ConditionalJump @b448, v302 @ TEMP_v189 (System.Boolean)
+	462 CheckEqual v303 @ TEMP_v190 (System.Boolean), v134 @ S0_v37, 163
+	463 ConditionalJump @b448, v303 @ TEMP_v190 (System.Boolean)
+	464 CheckEqual v304 @ TEMP_v191 (System.Boolean), v134 @ S0_v37, 164
+	465 ConditionalJump @b448, v304 @ TEMP_v191 (System.Boolean)
+	466 CheckEqual v305 @ TEMP_v192 (System.Boolean), v134 @ S0_v37, 165
+	467 ConditionalJump @b448, v305 @ TEMP_v192 (System.Boolean)
+	468 CheckEqual v306 @ TEMP_v193 (System.Boolean), v134 @ S0_v37, 166
+	469 ConditionalJump @b448, v306 @ TEMP_v193 (System.Boolean)
+	470 CheckEqual v307 @ TEMP_v194 (System.Boolean), v134 @ S0_v37, 167
+	471 ConditionalJump @b448, v307 @ TEMP_v194 (System.Boolean)
+	472 CheckEqual v308 @ TEMP_v195 (System.Boolean), v134 @ S0_v37, 168
+	473 ConditionalJump @b448, v308 @ TEMP_v195 (System.Boolean)
+	474 CheckEqual v309 @ TEMP_v196 (System.Boolean), v134 @ S0_v37, 169
+	475 ConditionalJump @b448, v309 @ TEMP_v196 (System.Boolean)
+	476 CheckEqual v310 @ TEMP_v197 (System.Boolean), v134 @ S0_v37, 170
+	477 ConditionalJump @b448, v310 @ TEMP_v197 (System.Boolean)
+	478 CheckEqual v311 @ TEMP_v198 (System.Boolean), v134 @ S0_v37, 171
+	479 ConditionalJump @b448, v311 @ TEMP_v198 (System.Boolean)
+	480 CheckEqual v312 @ TEMP_v199 (System.Boolean), v134 @ S0_v37, 172
+	481 ConditionalJump @b448, v312 @ TEMP_v199 (System.Boolean)
+	482 CheckEqual v313 @ TEMP_v200 (System.Boolean), v134 @ S0_v37, 173
+	483 ConditionalJump @b448, v313 @ TEMP_v200 (System.Boolean)
+	484 CheckEqual v314 @ TEMP_v201 (System.Boolean), v134 @ S0_v37, 174
+	485 ConditionalJump @b448, v314 @ TEMP_v201 (System.Boolean)
+	486 CheckEqual v315 @ TEMP_v202 (System.Boolean), v134 @ S0_v37, 175
+	487 ConditionalJump @b448, v315 @ TEMP_v202 (System.Boolean)
+	488 CheckEqual v316 @ TEMP_v203 (System.Boolean), v134 @ S0_v37, 176
+	489 ConditionalJump @b448, v316 @ TEMP_v203 (System.Boolean)
+	490 CheckEqual v317 @ TEMP_v204 (System.Boolean), v134 @ S0_v37, 177
+	491 ConditionalJump @b448, v317 @ TEMP_v204 (System.Boolean)
+	492 CheckEqual v318 @ TEMP_v205 (System.Boolean), v134 @ S0_v37, 178
+	493 ConditionalJump @b448, v318 @ TEMP_v205 (System.Boolean)
+	494 CheckEqual v319 @ TEMP_v206 (System.Boolean), v134 @ S0_v37, 179
+	495 ConditionalJump @b448, v319 @ TEMP_v206 (System.Boolean)
+	496 CheckEqual v320 @ TEMP_v207 (System.Boolean), v134 @ S0_v37, 180
+	497 ConditionalJump @b448, v320 @ TEMP_v207 (System.Boolean)
+	498 CheckEqual v321 @ TEMP_v208 (System.Boolean), v134 @ S0_v37, 181
+	499 ConditionalJump @b448, v321 @ TEMP_v208 (System.Boolean)
+	500 CheckEqual v322 @ TEMP_v209 (System.Boolean), v134 @ S0_v37, 182
+	501 ConditionalJump @b448, v322 @ TEMP_v209 (System.Boolean)
+	502 CheckEqual v323 @ TEMP_v210 (System.Boolean), v134 @ S0_v37, 183
+	503 ConditionalJump @b448, v323 @ TEMP_v210 (System.Boolean)
+	504 CheckEqual v324 @ TEMP_v211 (System.Boolean), v134 @ S0_v37, 184
+	505 ConditionalJump @b448, v324 @ TEMP_v211 (System.Boolean)
+	506 CheckEqual v325 @ TEMP_v212 (System.Boolean), v134 @ S0_v37, 185
+	507 ConditionalJump @b448, v325 @ TEMP_v212 (System.Boolean)
+	508 CheckEqual v326 @ TEMP_v213 (System.Boolean), v134 @ S0_v37, 186
+	509 ConditionalJump @b448, v326 @ TEMP_v213 (System.Boolean)
+	510 CheckEqual v327 @ TEMP_v214 (System.Boolean), v134 @ S0_v37, 187
+	511 ConditionalJump @b448, v327 @ TEMP_v214 (System.Boolean)
+	512 CheckEqual v328 @ TEMP_v215 (System.Boolean), v134 @ S0_v37, 188
+	513 ConditionalJump @b448, v328 @ TEMP_v215 (System.Boolean)
+	514 CheckEqual v329 @ TEMP_v216 (System.Boolean), v134 @ S0_v37, 189
+	515 ConditionalJump @b448, v329 @ TEMP_v216 (System.Boolean)
+	516 CheckEqual v330 @ TEMP_v217 (System.Boolean), v134 @ S0_v37, 190
+	517 ConditionalJump @b448, v330 @ TEMP_v217 (System.Boolean)
+	518 CheckEqual v331 @ TEMP_v218 (System.Boolean), v134 @ S0_v37, 191
+	519 ConditionalJump @b448, v331 @ TEMP_v218 (System.Boolean)
+	520 CheckEqual v332 @ TEMP_v219 (System.Boolean), v134 @ S0_v37, 192
+	521 ConditionalJump @b448, v332 @ TEMP_v219 (System.Boolean)
+	522 CheckEqual v333 @ TEMP_v220 (System.Boolean), v134 @ S0_v37, 193
+	523 ConditionalJump @b448, v333 @ TEMP_v220 (System.Boolean)
+	524 CheckEqual v334 @ TEMP_v221 (System.Boolean), v134 @ S0_v37, 194
+	525 ConditionalJump @b448, v334 @ TEMP_v221 (System.Boolean)
+	526 CheckEqual v335 @ TEMP_v222 (System.Boolean), v134 @ S0_v37, 195
+	527 ConditionalJump @b448, v335 @ TEMP_v222 (System.Boolean)
+	528 CheckEqual v336 @ TEMP_v223 (System.Boolean), v134 @ S0_v37, 196
+	529 ConditionalJump @b448, v336 @ TEMP_v223 (System.Boolean)
+	530 CheckEqual v337 @ TEMP_v224 (System.Boolean), v134 @ S0_v37, 197
+	531 ConditionalJump @b448, v337 @ TEMP_v224 (System.Boolean)
+	532 CheckEqual v338 @ TEMP_v225 (System.Boolean), v134 @ S0_v37, 198
+	533 ConditionalJump @b448, v338 @ TEMP_v225 (System.Boolean)
+	534 CheckEqual v339 @ TEMP_v226 (System.Boolean), v134 @ S0_v37, 199
+	535 ConditionalJump @b448, v339 @ TEMP_v226 (System.Boolean)
+	536 CheckEqual v340 @ TEMP_v227 (System.Boolean), v134 @ S0_v37, 200
+	537 ConditionalJump @b448, v340 @ TEMP_v227 (System.Boolean)
+	538 CheckEqual v341 @ TEMP_v228 (System.Boolean), v134 @ S0_v37, 201
+	539 ConditionalJump @b448, v341 @ TEMP_v228 (System.Boolean)
+	540 CheckEqual v342 @ TEMP_v229 (System.Boolean), v134 @ S0_v37, 202
+	541 ConditionalJump @b448, v342 @ TEMP_v229 (System.Boolean)
+	542 CheckEqual v343 @ TEMP_v230 (System.Boolean), v134 @ S0_v37, 203
+	543 ConditionalJump @b448, v343 @ TEMP_v230 (System.Boolean)
+	544 CheckEqual v344 @ TEMP_v231 (System.Boolean), v134 @ S0_v37, 204
+	545 ConditionalJump @b448, v344 @ TEMP_v231 (System.Boolean)
+	546 CheckEqual v345 @ TEMP_v232 (System.Boolean), v134 @ S0_v37, 205
+	547 ConditionalJump @b448, v345 @ TEMP_v232 (System.Boolean)
+	548 CheckEqual v346 @ TEMP_v233 (System.Boolean), v134 @ S0_v37, 206
+	549 ConditionalJump @b448, v346 @ TEMP_v233 (System.Boolean)
+	550 CheckEqual v347 @ TEMP_v234 (System.Boolean), v134 @ S0_v37, 207
+	551 ConditionalJump @b448, v347 @ TEMP_v234 (System.Boolean)
+	552 CheckEqual v348 @ TEMP_v235 (System.Boolean), v134 @ S0_v37, 208
+	553 ConditionalJump @b448, v348 @ TEMP_v235 (System.Boolean)
+	554 CheckEqual v349 @ TEMP_v236 (System.Boolean), v134 @ S0_v37, 209
+	555 ConditionalJump @b448, v349 @ TEMP_v236 (System.Boolean)
+	556 CheckEqual v350 @ TEMP_v237 (System.Boolean), v134 @ S0_v37, 210
+	557 ConditionalJump @b448, v350 @ TEMP_v237 (System.Boolean)
+	558 CheckEqual v351 @ TEMP_v238 (System.Boolean), v134 @ S0_v37, 211
+	559 ConditionalJump @b448, v351 @ TEMP_v238 (System.Boolean)
+	560 CheckEqual v352 @ TEMP_v239 (System.Boolean), v134 @ S0_v37, 212
+	561 ConditionalJump @b448, v352 @ TEMP_v239 (System.Boolean)
+	562 CheckEqual v353 @ TEMP_v240 (System.Boolean), v134 @ S0_v37, 213
+	563 ConditionalJump @b448, v353 @ TEMP_v240 (System.Boolean)
+	564 CheckEqual v354 @ TEMP_v241 (System.Boolean), v134 @ S0_v37, 214
+	565 ConditionalJump @b448, v354 @ TEMP_v241 (System.Boolean)
+	566 CheckEqual v355 @ TEMP_v242 (System.Boolean), v134 @ S0_v37, 215
+	567 ConditionalJump @b448, v355 @ TEMP_v242 (System.Boolean)
+	568 CheckEqual v356 @ TEMP_v243 (System.Boolean), v134 @ S0_v37, 216
+	569 ConditionalJump @b448, v356 @ TEMP_v243 (System.Boolean)
+	570 CheckEqual v357 @ TEMP_v244 (System.Boolean), v134 @ S0_v37, 217
+	571 ConditionalJump @b448, v357 @ TEMP_v244 (System.Boolean)
+	572 CheckEqual v358 @ TEMP_v245 (System.Boolean), v134 @ S0_v37, 218
+	573 ConditionalJump @b448, v358 @ TEMP_v245 (System.Boolean)
+	574 CheckEqual v359 @ TEMP_v246 (System.Boolean), v134 @ S0_v37, 219
+	575 ConditionalJump @b448, v359 @ TEMP_v246 (System.Boolean)
+	576 CheckEqual v360 @ TEMP_v247 (System.Boolean), v134 @ S0_v37, 220
+	577 ConditionalJump @b448, v360 @ TEMP_v247 (System.Boolean)
+	578 CheckEqual v361 @ TEMP_v248 (System.Boolean), v134 @ S0_v37, 221
+	579 ConditionalJump @b448, v361 @ TEMP_v248 (System.Boolean)
+	580 CheckEqual v362 @ TEMP_v249 (System.Boolean), v134 @ S0_v37, 222
+	581 ConditionalJump @b448, v362 @ TEMP_v249 (System.Boolean)
+	582 CheckEqual v363 @ TEMP_v250 (System.Boolean), v134 @ S0_v37, 223
+	583 ConditionalJump @b448, v363 @ TEMP_v250 (System.Boolean)
+	584 CheckEqual v364 @ TEMP_v251 (System.Boolean), v134 @ S0_v37, 224
+	585 ConditionalJump @b448, v364 @ TEMP_v251 (System.Boolean)
+	586 CheckEqual v365 @ TEMP_v252 (System.Boolean), v134 @ S0_v37, 225
+	587 ConditionalJump @b448, v365 @ TEMP_v252 (System.Boolean)
+	588 CheckEqual v366 @ TEMP_v253 (System.Boolean), v134 @ S0_v37, 226
+	589 ConditionalJump @b448, v366 @ TEMP_v253 (System.Boolean)
+	590 CheckEqual v367 @ TEMP_v254 (System.Boolean), v134 @ S0_v37, 227
+	591 ConditionalJump @b448, v367 @ TEMP_v254 (System.Boolean)
+	592 CheckEqual v368 @ TEMP_v255 (System.Boolean), v134 @ S0_v37, 228
+	593 ConditionalJump @b448, v368 @ TEMP_v255 (System.Boolean)
+	594 CheckEqual v369 @ TEMP_v256 (System.Boolean), v134 @ S0_v37, 229
+	595 ConditionalJump @b448, v369 @ TEMP_v256 (System.Boolean)
+	596 CheckEqual v370 @ TEMP_v257 (System.Boolean), v134 @ S0_v37, 230
+	597 ConditionalJump @b448, v370 @ TEMP_v257 (System.Boolean)
+	598 CheckEqual v371 @ TEMP_v258 (System.Boolean), v134 @ S0_v37, 231
+	599 ConditionalJump @b448, v371 @ TEMP_v258 (System.Boolean)
+	600 CheckEqual v372 @ TEMP_v259 (System.Boolean), v134 @ S0_v37, 232
+	601 ConditionalJump @b448, v372 @ TEMP_v259 (System.Boolean)
+	602 CheckEqual v373 @ TEMP_v260 (System.Boolean), v134 @ S0_v37, 233
+	603 ConditionalJump @b448, v373 @ TEMP_v260 (System.Boolean)
+	604 CheckEqual v374 @ TEMP_v261 (System.Boolean), v134 @ S0_v37, 234
+	605 ConditionalJump @b448, v374 @ TEMP_v261 (System.Boolean)
+	606 CheckEqual v375 @ TEMP_v262 (System.Boolean), v134 @ S0_v37, 235
+	607 ConditionalJump @b448, v375 @ TEMP_v262 (System.Boolean)
+	608 CheckEqual v376 @ TEMP_v263 (System.Boolean), v134 @ S0_v37, 236
+	609 ConditionalJump @b448, v376 @ TEMP_v263 (System.Boolean)
+	610 CheckEqual v377 @ TEMP_v264 (System.Boolean), v134 @ S0_v37, 237
+	611 ConditionalJump @b448, v377 @ TEMP_v264 (System.Boolean)
+	612 CheckEqual v378 @ TEMP_v265 (System.Boolean), v134 @ S0_v37, 238
+	613 ConditionalJump @b448, v378 @ TEMP_v265 (System.Boolean)
+	614 CheckEqual v379 @ TEMP_v266 (System.Boolean), v134 @ S0_v37, 239
+	615 ConditionalJump @b448, v379 @ TEMP_v266 (System.Boolean)
+	616 CheckEqual v380 @ TEMP_v267 (System.Boolean), v134 @ S0_v37, 240
+	617 ConditionalJump @b448, v380 @ TEMP_v267 (System.Boolean)
+	618 CheckEqual v381 @ TEMP_v268 (System.Boolean), v134 @ S0_v37, 241
+	619 ConditionalJump @b448, v381 @ TEMP_v268 (System.Boolean)
+	620 CheckEqual v382 @ TEMP_v269 (System.Boolean), v134 @ S0_v37, 242
+	621 ConditionalJump @b448, v382 @ TEMP_v269 (System.Boolean)
+	622 CheckEqual v383 @ TEMP_v270 (System.Boolean), v134 @ S0_v37, 243
+	623 ConditionalJump @b448, v383 @ TEMP_v270 (System.Boolean)
+	624 CheckEqual v384 @ TEMP_v271 (System.Boolean), v134 @ S0_v37, 244
+	625 ConditionalJump @b448, v384 @ TEMP_v271 (System.Boolean)
+	626 CheckEqual v385 @ TEMP_v272 (System.Boolean), v134 @ S0_v37, 245
+	627 ConditionalJump @b448, v385 @ TEMP_v272 (System.Boolean)
+	628 CheckEqual v386 @ TEMP_v273 (System.Boolean), v134 @ S0_v37, 246
+	629 ConditionalJump @b448, v386 @ TEMP_v273 (System.Boolean)
+	630 CheckEqual v387 @ TEMP_v274 (System.Boolean), v134 @ S0_v37, 247
+	631 ConditionalJump @b448, v387 @ TEMP_v274 (System.Boolean)
+	632 CheckEqual v388 @ TEMP_v275 (System.Boolean), v134 @ S0_v37, 248
+	633 ConditionalJump @b448, v388 @ TEMP_v275 (System.Boolean)
+	634 CheckEqual v389 @ TEMP_v276 (System.Boolean), v134 @ S0_v37, 249
+	635 ConditionalJump @b448, v389 @ TEMP_v276 (System.Boolean)
+	636 CheckEqual v390 @ TEMP_v277 (System.Boolean), v134 @ S0_v37, 250
+	637 ConditionalJump @b448, v390 @ TEMP_v277 (System.Boolean)
+	638 CheckEqual v391 @ TEMP_v278 (System.Boolean), v134 @ S0_v37, 251
+	639 ConditionalJump @b448, v391 @ TEMP_v278 (System.Boolean)
+	640 CheckEqual v392 @ TEMP_v279 (System.Boolean), v134 @ S0_v37, 252
+	641 ConditionalJump @b448, v392 @ TEMP_v279 (System.Boolean)
+	642 CheckEqual v393 @ TEMP_v280 (System.Boolean), v134 @ S0_v37, 253
+	643 ConditionalJump @b448, v393 @ TEMP_v280 (System.Boolean)
+	644 CheckEqual v394 @ TEMP_v281 (System.Boolean), v134 @ S0_v37, 254
+	645 ConditionalJump @b448, v394 @ TEMP_v281 (System.Boolean)
+	646 CheckEqual v395 @ TEMP_v282 (System.Boolean), v134 @ S0_v37, 255
+	647 ConditionalJump @b448, v395 @ TEMP_v282 (System.Boolean)
+	648 CheckEqual v396 @ TEMP_v283 (System.Boolean), v134 @ S0_v37, 256
+	649 ConditionalJump @b448, v396 @ TEMP_v283 (System.Boolean)
+	650 CheckEqual v397 @ TEMP_v284 (System.Boolean), v134 @ S0_v37, 257
+	651 ConditionalJump @b448, v397 @ TEMP_v284 (System.Boolean)
+	652 CheckEqual v398 @ TEMP_v285 (System.Boolean), v134 @ S0_v37, 258
+	653 ConditionalJump @b448, v398 @ TEMP_v285 (System.Boolean)
+	654 CheckEqual v399 @ TEMP_v286 (System.Boolean), v134 @ S0_v37, 259
+	655 ConditionalJump @b448, v399 @ TEMP_v286 (System.Boolean)
+	656 CheckEqual v400 @ TEMP_v287 (System.Boolean), v134 @ S0_v37, 260
+	657 ConditionalJump @b448, v400 @ TEMP_v287 (System.Boolean)
+	658 CheckEqual v401 @ TEMP_v288 (System.Boolean), v134 @ S0_v37, 261
+	659 ConditionalJump @b448, v401 @ TEMP_v288 (System.Boolean)
+	660 CheckEqual v402 @ TEMP_v289 (System.Boolean), v134 @ S0_v37, 262
+	661 ConditionalJump @b448, v402 @ TEMP_v289 (System.Boolean)
+	662 CheckEqual v403 @ TEMP_v290 (System.Boolean), v134 @ S0_v37, 263
+	663 ConditionalJump @b448, v403 @ TEMP_v290 (System.Boolean)
+	664 CheckEqual v404 @ TEMP_v291 (System.Boolean), v134 @ S0_v37, 264
+	665 ConditionalJump @b448, v404 @ TEMP_v291 (System.Boolean)
+	666 CheckEqual v405 @ TEMP_v292 (System.Boolean), v134 @ S0_v37, 265
+	667 ConditionalJump @b448, v405 @ TEMP_v292 (System.Boolean)
+	668 CheckEqual v406 @ TEMP_v293 (System.Boolean), v134 @ S0_v37, 266
+	669 ConditionalJump @b448, v406 @ TEMP_v293 (System.Boolean)
+	670 CheckEqual v407 @ TEMP_v294 (System.Boolean), v134 @ S0_v37, 267
+	671 ConditionalJump @b448, v407 @ TEMP_v294 (System.Boolean)
+	672 CheckEqual v408 @ TEMP_v295 (System.Boolean), v134 @ S0_v37, 268
+	673 ConditionalJump @b448, v408 @ TEMP_v295 (System.Boolean)
+	674 CheckEqual v409 @ TEMP_v296 (System.Boolean), v134 @ S0_v37, 269
+	675 ConditionalJump @b448, v409 @ TEMP_v296 (System.Boolean)
+	676 CheckEqual v410 @ TEMP_v297 (System.Boolean), v134 @ S0_v37, 270
+	677 ConditionalJump @b448, v410 @ TEMP_v297 (System.Boolean)
+	678 CheckEqual v411 @ TEMP_v298 (System.Boolean), v134 @ S0_v37, 271
+	679 ConditionalJump @b448, v411 @ TEMP_v298 (System.Boolean)
+	680 CheckEqual v412 @ TEMP_v299 (System.Boolean), v134 @ S0_v37, 272
+	681 ConditionalJump @b448, v412 @ TEMP_v299 (System.Boolean)
+	682 CheckEqual v413 @ TEMP_v300 (System.Boolean), v134 @ S0_v37, 273
+	683 ConditionalJump @b448, v413 @ TEMP_v300 (System.Boolean)
+	684 CheckEqual v414 @ TEMP_v301 (System.Boolean), v134 @ S0_v37, 274
+	685 ConditionalJump @b448, v414 @ TEMP_v301 (System.Boolean)
+	686 CheckEqual v415 @ TEMP_v302 (System.Boolean), v134 @ S0_v37, 275
+	687 ConditionalJump @b448, v415 @ TEMP_v302 (System.Boolean)
+	688 CheckEqual v416 @ TEMP_v303 (System.Boolean), v134 @ S0_v37, 276
+	689 ConditionalJump @b448, v416 @ TEMP_v303 (System.Boolean)
+	690 CheckEqual v417 @ TEMP_v304 (System.Boolean), v134 @ S0_v37, 277
+	691 ConditionalJump @b448, v417 @ TEMP_v304 (System.Boolean)
+	692 CheckEqual v418 @ TEMP_v305 (System.Boolean), v134 @ S0_v37, 278
+	693 ConditionalJump @b448, v418 @ TEMP_v305 (System.Boolean)
+	694 CheckEqual v419 @ TEMP_v306 (System.Boolean), v134 @ S0_v37, 279
+	695 ConditionalJump @b448, v419 @ TEMP_v306 (System.Boolean)
+	696 CheckEqual v420 @ TEMP_v307 (System.Boolean), v134 @ S0_v37, 280
+	697 ConditionalJump @b448, v420 @ TEMP_v307 (System.Boolean)
+	698 CheckEqual v421 @ TEMP_v308 (System.Boolean), v134 @ S0_v37, 281
+	699 ConditionalJump @b448, v421 @ TEMP_v308 (System.Boolean)
+	700 CheckEqual v422 @ TEMP_v309 (System.Boolean), v134 @ S0_v37, 282
+	701 ConditionalJump @b448, v422 @ TEMP_v309 (System.Boolean)
+	702 CheckEqual v423 @ TEMP_v310 (System.Boolean), v134 @ S0_v37, 283
+	703 ConditionalJump @b448, v423 @ TEMP_v310 (System.Boolean)
+	704 CheckEqual v424 @ TEMP_v311 (System.Boolean), v134 @ S0_v37, 284
+	705 ConditionalJump @b448, v424 @ TEMP_v311 (System.Boolean)
+	706 CheckEqual v425 @ TEMP_v312 (System.Boolean), v134 @ S0_v37, 285
+	707 ConditionalJump @b448, v425 @ TEMP_v312 (System.Boolean)
+	708 CheckEqual v426 @ TEMP_v313 (System.Boolean), v134 @ S0_v37, 286
+	709 ConditionalJump @b448, v426 @ TEMP_v313 (System.Boolean)
+	710 CheckEqual v427 @ TEMP_v314 (System.Boolean), v134 @ S0_v37, 287
+	711 ConditionalJump @b448, v427 @ TEMP_v314 (System.Boolean)
+	712 CheckEqual v428 @ TEMP_v315 (System.Boolean), v134 @ S0_v37, 288
+	713 ConditionalJump @b448, v428 @ TEMP_v315 (System.Boolean)
+	714 CheckEqual v429 @ TEMP_v316 (System.Boolean), v134 @ S0_v37, 289
+	715 ConditionalJump @b448, v429 @ TEMP_v316 (System.Boolean)
+	716 CheckEqual v430 @ TEMP_v317 (System.Boolean), v134 @ S0_v37, 290
+	717 ConditionalJump @b448, v430 @ TEMP_v317 (System.Boolean)
+	718 CheckEqual v431 @ TEMP_v318 (System.Boolean), v134 @ S0_v37, 291
+	719 ConditionalJump @b448, v431 @ TEMP_v318 (System.Boolean)
+	720 CheckEqual v432 @ TEMP_v319 (System.Boolean), v134 @ S0_v37, 292
+	721 ConditionalJump @b448, v432 @ TEMP_v319 (System.Boolean)
+	722 CheckEqual v433 @ TEMP_v320 (System.Boolean), v134 @ S0_v37, 293
+	723 ConditionalJump @b448, v433 @ TEMP_v320 (System.Boolean)
+	724 CheckEqual v434 @ TEMP_v321 (System.Boolean), v134 @ S0_v37, 294
+	725 ConditionalJump @b448, v434 @ TEMP_v321 (System.Boolean)
+	726 CheckEqual v435 @ TEMP_v322 (System.Boolean), v134 @ S0_v37, 295
+	727 ConditionalJump @b448, v435 @ TEMP_v322 (System.Boolean)
+	728 CheckEqual v436 @ TEMP_v323 (System.Boolean), v134 @ S0_v37, 296
+	729 ConditionalJump @b448, v436 @ TEMP_v323 (System.Boolean)
+	730 CheckEqual v437 @ TEMP_v324 (System.Boolean), v134 @ S0_v37, 297
+	731 ConditionalJump @b448, v437 @ TEMP_v324 (System.Boolean)
+	732 CheckEqual v438 @ TEMP_v325 (System.Boolean), v134 @ S0_v37, 298
+	733 ConditionalJump @b448, v438 @ TEMP_v325 (System.Boolean)
+	734 CheckEqual v439 @ TEMP_v326 (System.Boolean), v134 @ S0_v37, 299
+	735 ConditionalJump @b448, v439 @ TEMP_v326 (System.Boolean)
+	736 CheckEqual v440 @ TEMP_v327 (System.Boolean), v134 @ S0_v37, 300
+	737 ConditionalJump @b448, v440 @ TEMP_v327 (System.Boolean)
+	738 CheckEqual v441 @ TEMP_v328 (System.Boolean), v134 @ S0_v37, 301
+	739 ConditionalJump @b448, v441 @ TEMP_v328 (System.Boolean)
+	740 CheckEqual v442 @ TEMP_v329 (System.Boolean), v134 @ S0_v37, 302
+	741 ConditionalJump @b448, v442 @ TEMP_v329 (System.Boolean)
+	742 CheckEqual v443 @ TEMP_v330 (System.Boolean), v134 @ S0_v37, 303
+	743 ConditionalJump @b448, v443 @ TEMP_v330 (System.Boolean)
+	744 CheckEqual v444 @ TEMP_v331 (System.Boolean), v134 @ S0_v37, 304
+	745 ConditionalJump @b448, v444 @ TEMP_v331 (System.Boolean)
+	746 CheckEqual v445 @ TEMP_v332 (System.Boolean), v134 @ S0_v37, 305
+	747 ConditionalJump @b448, v445 @ TEMP_v332 (System.Boolean)
+	748 CheckEqual v446 @ TEMP_v333 (System.Boolean), v134 @ S0_v37, 306
+	749 ConditionalJump @b448, v446 @ TEMP_v333 (System.Boolean)
+	750 CheckEqual v447 @ TEMP_v334 (System.Boolean), v134 @ S0_v37, 307
+	751 ConditionalJump @b448, v447 @ TEMP_v334 (System.Boolean)
+	752 CheckEqual v448 @ TEMP_v335 (System.Boolean), v134 @ S0_v37, 308
+	753 ConditionalJump @b448, v448 @ TEMP_v335 (System.Boolean)
+	754 CheckEqual v449 @ TEMP_v336 (System.Boolean), v134 @ S0_v37, 309
+	755 ConditionalJump @b448, v449 @ TEMP_v336 (System.Boolean)
+	756 CheckEqual v450 @ TEMP_v337 (System.Boolean), v134 @ S0_v37, 310
+	757 ConditionalJump @b448, v450 @ TEMP_v337 (System.Boolean)
+	758 CheckEqual v451 @ TEMP_v338 (System.Boolean), v134 @ S0_v37, 311
+	759 ConditionalJump @b448, v451 @ TEMP_v338 (System.Boolean)
+	760 CheckEqual v452 @ TEMP_v339 (System.Boolean), v134 @ S0_v37, 312
+	761 ConditionalJump @b448, v452 @ TEMP_v339 (System.Boolean)
+	762 CheckEqual v453 @ TEMP_v340 (System.Boolean), v134 @ S0_v37, 313
+	763 ConditionalJump @b448, v453 @ TEMP_v340 (System.Boolean)
+	764 CheckEqual v454 @ TEMP_v341 (System.Boolean), v134 @ S0_v37, 314
+	765 ConditionalJump @b448, v454 @ TEMP_v341 (System.Boolean)
+	766 CheckEqual v455 @ TEMP_v342 (System.Boolean), v134 @ S0_v37, 315
+	767 ConditionalJump @b448, v455 @ TEMP_v342 (System.Boolean)
+	768 CheckEqual v456 @ TEMP_v343 (System.Boolean), v134 @ S0_v37, 316
+	769 ConditionalJump @b448, v456 @ TEMP_v343 (System.Boolean)
+	770 CheckEqual v457 @ TEMP_v344 (System.Boolean), v134 @ S0_v37, 317
+	771 ConditionalJump @b448, v457 @ TEMP_v344 (System.Boolean)
+	772 CheckEqual v458 @ TEMP_v345 (System.Boolean), v134 @ S0_v37, 318
+	773 ConditionalJump @b448, v458 @ TEMP_v345 (System.Boolean)
+	774 CheckEqual v459 @ TEMP_v346 (System.Boolean), v134 @ S0_v37, 319
+	775 ConditionalJump @b448, v459 @ TEMP_v346 (System.Boolean)
+	776 CheckEqual v460 @ TEMP_v347 (System.Boolean), v134 @ S0_v37, 320
+	777 ConditionalJump @b448, v460 @ TEMP_v347 (System.Boolean)
+	778 CheckEqual v461 @ TEMP_v348 (System.Boolean), v134 @ S0_v37, 321
+	779 ConditionalJump @b448, v461 @ TEMP_v348 (System.Boolean)
+	780 CheckEqual v462 @ TEMP_v349 (System.Boolean), v134 @ S0_v37, 322
+	781 ConditionalJump @b448, v462 @ TEMP_v349 (System.Boolean)
+	782 CheckEqual v463 @ TEMP_v350 (System.Boolean), v134 @ S0_v37, 323
+	783 ConditionalJump @b448, v463 @ TEMP_v350 (System.Boolean)
+	784 CheckEqual v464 @ TEMP_v351 (System.Boolean), v134 @ S0_v37, 324
+	785 ConditionalJump @b448, v464 @ TEMP_v351 (System.Boolean)
+	786 CheckEqual v465 @ TEMP_v352 (System.Boolean), v134 @ S0_v37, 325
+	787 ConditionalJump @b448, v465 @ TEMP_v352 (System.Boolean)
+	788 CheckEqual v466 @ TEMP_v353 (System.Boolean), v134 @ S0_v37, 326
+	789 ConditionalJump @b448, v466 @ TEMP_v353 (System.Boolean)
+	790 CheckEqual v467 @ TEMP_v354 (System.Boolean), v134 @ S0_v37, 327
+	791 ConditionalJump @b448, v467 @ TEMP_v354 (System.Boolean)
+	792 CheckEqual v468 @ TEMP_v355 (System.Boolean), v134 @ S0_v37, 328
+	793 ConditionalJump @b448, v468 @ TEMP_v355 (System.Boolean)
+	794 CheckEqual v469 @ TEMP_v356 (System.Boolean), v134 @ S0_v37, 329
+	795 ConditionalJump @b448, v469 @ TEMP_v356 (System.Boolean)
+	796 CheckEqual v470 @ TEMP_v357 (System.Boolean), v134 @ S0_v37, 330
+	797 ConditionalJump @b448, v470 @ TEMP_v357 (System.Boolean)
+	798 CheckEqual v471 @ TEMP_v358 (System.Boolean), v134 @ S0_v37, 331
+	799 ConditionalJump @b448, v471 @ TEMP_v358 (System.Boolean)
+	800 CheckEqual v472 @ TEMP_v359 (System.Boolean), v134 @ S0_v37, 332
+	801 ConditionalJump @b448, v472 @ TEMP_v359 (System.Boolean)
+	802 CheckEqual v473 @ TEMP_v360 (System.Boolean), v134 @ S0_v37, 333
+	803 ConditionalJump @b448, v473 @ TEMP_v360 (System.Boolean)
+	804 CheckEqual v474 @ TEMP_v361 (System.Boolean), v134 @ S0_v37, 334
+	805 ConditionalJump @b448, v474 @ TEMP_v361 (System.Boolean)
+	806 CheckEqual v475 @ TEMP_v362 (System.Boolean), v134 @ S0_v37, 335
+	807 ConditionalJump @b448, v475 @ TEMP_v362 (System.Boolean)
+	808 CheckEqual v476 @ TEMP_v363 (System.Boolean), v134 @ S0_v37, 336
+	809 ConditionalJump @b448, v476 @ TEMP_v363 (System.Boolean)
+	810 CheckEqual v477 @ TEMP_v364 (System.Boolean), v134 @ S0_v37, 337
+	811 ConditionalJump @b448, v477 @ TEMP_v364 (System.Boolean)
+	812 CheckEqual v478 @ TEMP_v365 (System.Boolean), v134 @ S0_v37, 338
+	813 ConditionalJump @b448, v478 @ TEMP_v365 (System.Boolean)
+	814 CheckEqual v479 @ TEMP_v366 (System.Boolean), v134 @ S0_v37, 339
+	815 ConditionalJump @b448, v479 @ TEMP_v366 (System.Boolean)
+	816 CheckEqual v480 @ TEMP_v367 (System.Boolean), v134 @ S0_v37, 340
+	817 ConditionalJump @b448, v480 @ TEMP_v367 (System.Boolean)
+	818 CheckEqual v481 @ TEMP_v368 (System.Boolean), v134 @ S0_v37, 341
+	819 ConditionalJump @b448, v481 @ TEMP_v368 (System.Boolean)
+	820 CheckEqual v482 @ TEMP_v369 (System.Boolean), v134 @ S0_v37, 342
+	821 ConditionalJump @b448, v482 @ TEMP_v369 (System.Boolean)
+	822 CheckEqual v483 @ TEMP_v370 (System.Boolean), v134 @ S0_v37, 343
+	823 ConditionalJump @b448, v483 @ TEMP_v370 (System.Boolean)
+	824 CheckEqual v484 @ TEMP_v371 (System.Boolean), v134 @ S0_v37, 344
+	825 ConditionalJump @b448, v484 @ TEMP_v371 (System.Boolean)
+	826 CheckEqual v485 @ TEMP_v372 (System.Boolean), v134 @ S0_v37, 345
+	827 ConditionalJump @b448, v485 @ TEMP_v372 (System.Boolean)
+	828 CheckEqual v486 @ TEMP_v373 (System.Boolean), v134 @ S0_v37, 346
+	829 ConditionalJump @b448, v486 @ TEMP_v373 (System.Boolean)
+	830 CheckEqual v487 @ TEMP_v374 (System.Boolean), v134 @ S0_v37, 347
+	831 ConditionalJump @b448, v487 @ TEMP_v374 (System.Boolean)
+	832 CheckEqual v488 @ TEMP_v375 (System.Boolean), v134 @ S0_v37, 348
+	833 ConditionalJump @b448, v488 @ TEMP_v375 (System.Boolean)
+	834 CheckEqual v489 @ TEMP_v376 (System.Boolean), v134 @ S0_v37, 349
+	835 ConditionalJump @b448, v489 @ TEMP_v376 (System.Boolean)
+	836 CheckEqual v490 @ TEMP_v377 (System.Boolean), v134 @ S0_v37, 350
+	837 ConditionalJump @b448, v490 @ TEMP_v377 (System.Boolean)
+	838 CheckEqual v491 @ TEMP_v378 (System.Boolean), v134 @ S0_v37, 351
+	839 ConditionalJump @b448, v491 @ TEMP_v378 (System.Boolean)
+	840 CheckEqual v492 @ TEMP_v379 (System.Boolean), v134 @ S0_v37, 352
+	841 ConditionalJump @b448, v492 @ TEMP_v379 (System.Boolean)
+	842 CheckEqual v493 @ TEMP_v380 (System.Boolean), v134 @ S0_v37, 353
+	843 ConditionalJump @b448, v493 @ TEMP_v380 (System.Boolean)
+	844 CheckEqual v494 @ TEMP_v381 (System.Boolean), v134 @ S0_v37, 354
+	845 ConditionalJump @b448, v494 @ TEMP_v381 (System.Boolean)
+	846 CheckEqual v495 @ TEMP_v382 (System.Boolean), v134 @ S0_v37, 355
+	847 ConditionalJump @b448, v495 @ TEMP_v382 (System.Boolean)
+	848 CheckEqual v496 @ TEMP_v383 (System.Boolean), v134 @ S0_v37, 356
+	849 ConditionalJump @b448, v496 @ TEMP_v383 (System.Boolean)
+	850 CheckEqual v497 @ TEMP_v384 (System.Boolean), v134 @ S0_v37, 357
+	851 ConditionalJump @b448, v497 @ TEMP_v384 (System.Boolean)
+	852 CheckEqual v498 @ TEMP_v385 (System.Boolean), v134 @ S0_v37, 358
+	853 ConditionalJump @b448, v498 @ TEMP_v385 (System.Boolean)
+	854 CheckEqual v499 @ TEMP_v386 (System.Boolean), v134 @ S0_v37, 359
+	855 ConditionalJump @b448, v499 @ TEMP_v386 (System.Boolean)
+	856 CheckEqual v500 @ TEMP_v387 (System.Boolean), v134 @ S0_v37, 360
+	857 ConditionalJump @b448, v500 @ TEMP_v387 (System.Boolean)
+	858 CheckEqual v501 @ TEMP_v388 (System.Boolean), v134 @ S0_v37, 361
+	859 ConditionalJump @b448, v501 @ TEMP_v388 (System.Boolean)
+	860 CheckEqual v502 @ TEMP_v389 (System.Boolean), v134 @ S0_v37, 362
+	861 ConditionalJump @b448, v502 @ TEMP_v389 (System.Boolean)
+	862 CheckEqual v503 @ TEMP_v390 (System.Boolean), v134 @ S0_v37, 363
+	863 ConditionalJump @b448, v503 @ TEMP_v390 (System.Boolean)
+	864 CheckEqual v504 @ TEMP_v391 (System.Boolean), v134 @ S0_v37, 364
+	865 ConditionalJump @b448, v504 @ TEMP_v391 (System.Boolean)
+	866 CheckEqual v505 @ TEMP_v392 (System.Boolean), v134 @ S0_v37, 365
+	867 ConditionalJump @b448, v505 @ TEMP_v392 (System.Boolean)
+	868 CheckEqual v506 @ TEMP_v393 (System.Boolean), v134 @ S0_v37, 366
+	869 ConditionalJump @b448, v506 @ TEMP_v393 (System.Boolean)
+	870 CheckEqual v507 @ TEMP_v394 (System.Boolean), v134 @ S0_v37, 367
+	871 ConditionalJump @b448, v507 @ TEMP_v394 (System.Boolean)
+	872 CheckEqual v508 @ TEMP_v395 (System.Boolean), v134 @ S0_v37, 368
+	873 ConditionalJump @b448, v508 @ TEMP_v395 (System.Boolean)
+	874 CheckEqual v509 @ TEMP_v396 (System.Boolean), v134 @ S0_v37, 369
+	875 ConditionalJump @b448, v509 @ TEMP_v396 (System.Boolean)
+	876 CheckEqual v510 @ TEMP_v397 (System.Boolean), v134 @ S0_v37, 370
+	877 ConditionalJump @b448, v510 @ TEMP_v397 (System.Boolean)
+	878 CheckEqual v511 @ TEMP_v398 (System.Boolean), v134 @ S0_v37, 371
+	879 ConditionalJump @b448, v511 @ TEMP_v398 (System.Boolean)
+	880 CheckEqual v512 @ TEMP_v399 (System.Boolean), v134 @ S0_v37, 372
+	881 ConditionalJump @b448, v512 @ TEMP_v399 (System.Boolean)
+	882 CheckEqual v513 @ TEMP_v400 (System.Boolean), v134 @ S0_v37, 373
+	883 ConditionalJump @b448, v513 @ TEMP_v400 (System.Boolean)
+	884 CheckEqual v514 @ TEMP_v401 (System.Boolean), v134 @ S0_v37, 374
+	885 ConditionalJump @b448, v514 @ TEMP_v401 (System.Boolean)
+	886 CheckEqual v515 @ TEMP_v402 (System.Boolean), v134 @ S0_v37, 375
+	887 ConditionalJump @b448, v515 @ TEMP_v402 (System.Boolean)
+	888 CheckEqual v516 @ TEMP_v403 (System.Boolean), v134 @ S0_v37, 376
+	889 ConditionalJump @b448, v516 @ TEMP_v403 (System.Boolean)
+	890 CheckEqual v517 @ TEMP_v404 (System.Boolean), v134 @ S0_v37, 377
+	891 ConditionalJump @b448, v517 @ TEMP_v404 (System.Boolean)
+	892 CheckEqual v518 @ TEMP_v405 (System.Boolean), v134 @ S0_v37, 378
+	893 ConditionalJump @b448, v518 @ TEMP_v405 (System.Boolean)
+	894 CheckEqual v519 @ TEMP_v406 (System.Boolean), v134 @ S0_v37, 379
+	895 ConditionalJump @b448, v519 @ TEMP_v406 (System.Boolean)
+	896 CheckEqual v520 @ TEMP_v407 (System.Boolean), v134 @ S0_v37, 380
+	897 ConditionalJump @b448, v520 @ TEMP_v407 (System.Boolean)
+	898 CheckEqual v521 @ TEMP_v408 (System.Boolean), v134 @ S0_v37, 381
+	899 ConditionalJump @b448, v521 @ TEMP_v408 (System.Boolean)
+	900 CheckEqual v522 @ TEMP_v409 (System.Boolean), v134 @ S0_v37, 382
+	901 ConditionalJump @b448, v522 @ TEMP_v409 (System.Boolean)
+	902 CheckEqual v523 @ TEMP_v410 (System.Boolean), v134 @ S0_v37, 383
+	903 ConditionalJump @b448, v523 @ TEMP_v410 (System.Boolean)
+	904 CheckEqual v524 @ TEMP_v411 (System.Boolean), v134 @ S0_v37, 384
+	905 ConditionalJump @b448, v524 @ TEMP_v411 (System.Boolean)
+	906 CheckEqual v525 @ TEMP_v412 (System.Boolean), v134 @ S0_v37, 385
+	907 ConditionalJump @b448, v525 @ TEMP_v412 (System.Boolean)
+	908 CheckEqual v526 @ TEMP_v413 (System.Boolean), v134 @ S0_v37, 386
+	909 ConditionalJump @b448, v526 @ TEMP_v413 (System.Boolean)
+	910 CheckEqual v527 @ TEMP_v414 (System.Boolean), v134 @ S0_v37, 387
+	911 ConditionalJump @b448, v527 @ TEMP_v414 (System.Boolean)
+	912 CheckEqual v528 @ TEMP_v415 (System.Boolean), v134 @ S0_v37, 388
+	913 ConditionalJump @b448, v528 @ TEMP_v415 (System.Boolean)
+	914 CheckEqual v529 @ TEMP_v416 (System.Boolean), v134 @ S0_v37, 389
+	915 ConditionalJump @b448, v529 @ TEMP_v416 (System.Boolean)
+	916 CheckEqual v530 @ TEMP_v417 (System.Boolean), v134 @ S0_v37, 390
+	917 ConditionalJump @b448, v530 @ TEMP_v417 (System.Boolean)
+	918 CheckEqual v531 @ TEMP_v418 (System.Boolean), v134 @ S0_v37, 391
+	919 ConditionalJump @b448, v531 @ TEMP_v418 (System.Boolean)
+	920 CheckEqual v532 @ TEMP_v419 (System.Boolean), v134 @ S0_v37, 392
+	921 ConditionalJump @b448, v532 @ TEMP_v419 (System.Boolean)
+	922 CheckEqual v533 @ TEMP_v420 (System.Boolean), v134 @ S0_v37, 393
+	923 ConditionalJump @b448, v533 @ TEMP_v420 (System.Boolean)
+	924 CheckEqual v534 @ TEMP_v421 (System.Boolean), v134 @ S0_v37, 394
+	925 ConditionalJump @b448, v534 @ TEMP_v421 (System.Boolean)
+	926 CheckEqual v535 @ TEMP_v422 (System.Boolean), v134 @ S0_v37, 395
+	927 ConditionalJump @b448, v535 @ TEMP_v422 (System.Boolean)
+	928 CheckEqual v140 @ TEMP_v423 (System.Boolean), v134 @ S0_v37, 396
+	929 ConditionalJump @b447, v140 @ TEMP_v423 (System.Boolean)
+	930 CheckEqual v141 @ TEMP_v424 (System.Boolean), v134 @ S0_v37, 397
+	931 ConditionalJump @b447, v141 @ TEMP_v424 (System.Boolean)
+	932 Jump @b448
+	933 Nop
+	934 Nop
+	935 Jump @b470
+	936 Nop
+	937 Nop
+	938 Nop
+	939 Add v538 @ S0_v40, until @ L1 (System.Char), -699
+	940 Nop
+	941 ShiftLeft v540 @ S0_v41, v538 @ S0_v40, 16
+	942 Nop
+	943 ShiftRight v542 @ S0_v42, v540 @ S0_v41, 16
+	944 Nop
+	945 And v544 @ S0_v43, v542 @ S0_v42, 65535
+	946 Nop
+	947 CheckGreater v49 @ S0_v44 (System.Boolean), v544 @ S0_v43, 6
+	948 ConditionalJump @b450, v49 @ S0_v44 (System.Boolean)
+	949 Nop
+	950 Nop
+	951 Jump @b470
+	952 Nop
+	953 Nop
+	954 Move v51 @ S0_v12 (Il2CppClass<System.Char>), typeof(System.Char)
+	955 Nop
+	956 Nop
+	957 Nop
+	958 And v55 @ S0_v14, [v51 @ S0_v12 (Il2CppClass<System.Char>)+BA], 512
+	959 CheckEqual v56 @ TEMP_v6 (System.Boolean), v55 @ S0_v14, 0
+	960 ConditionalJump @b471, v56 @ TEMP_v6 (System.Boolean)
+	961 Move v65 @ S0_v22 (Il2CppClass<System.Char>), typeof(System.Char)
+	962 Nop
+	963 CheckEqual v67 @ S0_v24 (System.Boolean), [v65 @ S0_v22 (Il2CppClass<System.Char>)+74], 0
+	964 Not v68 @ TEMP_v20 (System.Boolean), v67 @ S0_v24 (System.Boolean)
+	965 ConditionalJump @b471, v68 @ TEMP_v20 (System.Boolean)
+	966 Nop
+	967 CallVoid 11A99, typeof(System.Char)
+	968 Nop
+	969 Nop
+	970 Nop
+	971 Nop
+	972 Call Char.IsHighSurrogate, v74 @ S0_v17 (System.Boolean), until @ L1 (System.Char)
+	973 Not v128 @ TEMP_v8 (System.Boolean), v74 @ S0_v17 (System.Boolean)
+	974 ConditionalJump @b465, v128 @ TEMP_v8 (System.Boolean)
+	975 CheckEqual v136 @ TEMP_v10 (System.Boolean), v74 @ S0_v17 (System.Boolean), 1
+	976 ConditionalJump @b465, v136 @ TEMP_v10 (System.Boolean)
+	977 CheckEqual v137 @ TEMP_v11 (System.Boolean), v74 @ S0_v17 (System.Boolean), 2
+	978 ConditionalJump @b465, v137 @ TEMP_v11 (System.Boolean)
+	979 CheckEqual v545 @ TEMP_v12 (System.Boolean), v74 @ S0_v17 (System.Boolean), 3
+	980 ConditionalJump @b466, v545 @ TEMP_v12 (System.Boolean)
+	981 CheckEqual v138 @ TEMP_v14 (System.Boolean), v74 @ S0_v17 (System.Boolean), 4
+	982 ConditionalJump @b465, v138 @ TEMP_v14 (System.Boolean)
+	983 CheckEqual v546 @ TEMP_v15 (System.Boolean), v74 @ S0_v17 (System.Boolean), 5
+	984 ConditionalJump @b466, v546 @ TEMP_v15 (System.Boolean)
+	985 CheckEqual v547 @ TEMP_v16 (System.Boolean), v74 @ S0_v17 (System.Boolean), 6
+	986 ConditionalJump @b466, v547 @ TEMP_v16 (System.Boolean)
+	987 CheckEqual v548 @ TEMP_v17 (System.Boolean), v74 @ S0_v17 (System.Boolean), 7
+	988 ConditionalJump @b466, v548 @ TEMP_v17 (System.Boolean)
+	989 CheckEqual v549 @ TEMP_v18 (System.Boolean), v74 @ S0_v17 (System.Boolean), 8
+	990 ConditionalJump @b466, v549 @ TEMP_v18 (System.Boolean)
+	991 CheckEqual v119 @ TEMP_v19 (System.Boolean), v74 @ S0_v17 (System.Boolean), 9
+	992 ConditionalJump @b465, v119 @ TEMP_v19 (System.Boolean)
+	993 Jump @b467
+	994 Nop
+	995 Nop
+	996 Jump @b470
+	997 Nop
+	998 Nop
+	999 Nop
+	1000 Xor returnVal1 @ S0_v8 (System.String), handleReferences @ L2 (System.Boolean), 1
+	1001 Jump @b470
+	1002 Nop
+	1003 Nop
+	1004 Nop
+	1005 Nop
+	1006 Return returnVal1 @ S0_v8 (System.String)
+
+Method: System.String ReadName()
+
+Disassembly:
+	0x1247801 I32Const 10
+	0x1247803 LocalGet 0
+	0x1247805 I32Load 2, 12
+	0x1247808 Call 29262
+	0x124780C LocalTee 1
+	0x124780E I32Const 10
+	0x1247810 I32Eq
+	0x1247811 If -64
+	0x1247813 LocalGet 0
+	0x1247815 I32Const 1
+	0x1247817 I32Store8 0, 52
+	0x124781A I32Const 10
+	0x124781C LocalSet 1
+	0x124781E End
+	0x124781F LocalGet 0
+	0x1247821 I32Load8_S 0, 52
+	0x1247824 If -64
+	0x1247826 LocalGet 0
+	0x1247828 LocalGet 0
+	0x124782A I32Load 2, 44
+	0x124782D I32Const 1
+	0x124782F I32Add
+	0x1247830 I32Store 2, 44
+	0x1247833 LocalGet 0
+	0x1247835 I32Const 0
+	0x1247837 I32Store8 0, 52
+	0x124783A LocalGet 0
+	0x124783C I32Const 1
+	0x124783E I32Store 2, 48
+	0x1247841 Else
+	0x1247842 LocalGet 0
+	0x1247844 LocalGet 0
+	0x1247846 I32Load 2, 48
+	0x1247849 I32Const 1
+	0x124784B I32Add
+	0x124784C I32Store 2, 48
+	0x124784F End
+	0x1247850 LocalGet 1
+	0x1247852 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 724E, v4 @ S0_v2 (System.String), 10, this.reader (System.IO.TextReader)
+	4 Nop
+	5 Nop
+	6 CheckEqual v7 @ S0_v3 (System.Boolean), v4 @ S0_v2 (System.String), 10
+	7 Not v8 @ TEMP_v1 (System.Boolean), v7 @ S0_v3 (System.Boolean)
+	8 ConditionalJump @b7, v8 @ TEMP_v1 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Move this.resetColumn (System.Boolean), 1
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Not v18 @ TEMP_v2 (System.Boolean), this.resetColumn (System.Boolean)
+	18 ConditionalJump @b6, v18 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Add v23 @ S1_v11 (System.Int32), this.line (System.Int32), 1
+	24 Move this.line (System.Int32), v23 @ S1_v11 (System.Int32)
+	25 Nop
+	26 Nop
+	27 Move this.resetColumn (System.Boolean), 0
+	28 Nop
+	29 Nop
+	30 Move this.column (System.Int32), 1
+	31 Jump @b8
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v32 @ S1_v8 (System.Int32), this.column (System.Int32), 1
+	37 Move this.column (System.Int32), v32 @ S1_v8 (System.Int32)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Return v13 @ L1_v2 (System.String)
+
+Method: System.Void Parse(System.IO.TextReader input, Mono.Xml.SmallXmlParser+IContentHandler handler)
+
+Disassembly:
+	0x1248C35 I32Const 4569666
+	0x1248C3A I32Load8_S 0, 0
+	0x1248C3D I32Eqz
+	0x1248C3E If -64
+	0x1248C40 I32Const 3001940
+	0x1248C45 I32Load 2, 0
+	0x1248C48 Call 73003
+	0x1248C4C I32Const 4569666
+	0x1248C51 I32Const 1
+	0x1248C53 I32Store8 0, 0
+	0x1248C56 End
+	0x1248C57 I32Const 4427752
+	0x1248C5C I32Load 2, 0
+	0x1248C5F Call 72556
+	0x1248C63 LocalTee 3
+	0x1248C65 LocalGet 1
+	0x1248C67 I32Const 0
+	0x1248C69 Call 55676
+	0x1248C6D LocalGet 0
+	0x1248C6F I32Load 2, 56
+	0x1248C72 If -64
+	0x1248C74 I32Const 13
+	0x1248C76 LocalGet 0
+	0x1248C78 I32Const -64
+	0x1248C7A I32Sub
+	0x1248C7B I32Load 2, 0
+	0x1248C7E Call 29262
+	0x1248C82 I32Const 4427752
+	0x1248C87 I32Load 2, 0
+	0x1248C8A Call 29321
+	0x1248C8E LocalGet 3
+	0x1248C90 I32Const 0
+	0x1248C92 Call 55678
+	0x1248C96 Else
+	0x1248C97 LocalGet 0
+	0x1248C99 I32Const 56
+	0x1248C9B I32Add
+	0x1248C9C LocalGet 3
+	0x1248C9E I32Store 2, 0
+	0x1248CA1 LocalGet 0
+	0x1248CA3 I32Const 60
+	0x1248CA5 I32Add
+	0x1248CA6 LocalGet 3
+	0x1248CA8 I32Store 2, 0
+	0x1248CAB End
+	0x1248CAC I32Const 15
+	0x1248CAE LocalGet 0
+	0x1248CB0 I32Const -64
+	0x1248CB2 I32Sub
+	0x1248CB3 I32Load 2, 0
+	0x1248CB6 LocalGet 3
+	0x1248CB8 Call 29437
+	0x1248CBC LocalGet 0
+	0x1248CBE I32Const 60
+	0x1248CC0 I32Add
+	0x1248CC1 LocalGet 3
+	0x1248CC3 I32Store 2, 0
+	0x1248CC6 I32Const 0
+	0x1248CC8 I32Const 4428268
+	0x1248CCD I32Load 2, 0
+	0x1248CD0 LocalGet 2
+	0x1248CD2 Call 29547
+	0x1248CD6 LocalSet 4
+	0x1248CD8 I32Const 0
+	0x1248CDA LocalSet 1
+	0x1248CDC Loop -64
+	0x1248CDE LocalGet 1
+	0x1248CE0 LocalGet 4
+	0x1248CE2 I32Lt_S
+	0x1248CE3 If -64
+	0x1248CE5 LocalGet 0
+	0x1248CE7 I32Load 2, 60
+	0x1248CEA I32Const 1
+	0x1248CEC I32Const 4428268
+	0x1248CF1 I32Load 2, 0
+	0x1248CF4 LocalGet 2
+	0x1248CF6 LocalGet 1
+	0x1248CF8 Call 29786
+	0x1248CFC I32Const 2
+	0x1248CFE I32Const 4428268
+	0x1248D03 I32Load 2, 0
+	0x1248D06 LocalGet 2
+	0x1248D08 LocalGet 1
+	0x1248D0A Call 29786
+	0x1248D0E I32Const 4427752
+	0x1248D13 I32Load 2, 0
+	0x1248D16 LocalTee 3
+	0x1248D18 I32Load16_S 1, 186
+	0x1248D1C I32Const 512
+	0x1248D1F I32And
+	0x1248D20 If -64
+	0x1248D22 LocalGet 3
+	0x1248D24 I32Load 2, 116
+	0x1248D27 I32Eqz
+	0x1248D28 If -64
+	0x1248D2A LocalGet 3
+	0x1248D2C Call 72345
+	0x1248D30 End
+	0x1248D31 End
+	0x1248D32 I32Const 0
+	0x1248D34 Call 55696
+	0x1248D38 I32Const 0
+	0x1248D3A Call 55677
+	0x1248D3E LocalGet 1
+	0x1248D40 I32Const 1
+	0x1248D42 I32Add
+	0x1248D43 LocalSet 1
+	0x1248D45 Br 1
+	0x1248D47 End
+	0x1248D48 End
+	0x1248D49 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b23
+	5 Nop
+	6 Move v5 @ S0_v32, [2DCE54]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v32
+	8 Nop
+	9 Move v7 @ S1_v26, 1
+	10 Move [45BA42], v7 @ S1_v26
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Security.SecurityElement), typeof(System.Security.SecurityElement)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid SecurityElement.set_Text, v13 @ S0_v7 (System.Security.SecurityElement), input @ L1 (System.IO.TextReader)
+	19 Nop
+	20 Nop
+	21 CheckEqual v21 @ TEMP_v2 (System.Boolean), [this @ L0 (Mono.Xml.SmallXmlParser)+38], 0
+	22 ConditionalJump @b11, v21 @ TEMP_v2 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Subtract v25 @ S1_v21, this @ L0 (Mono.Xml.SmallXmlParser), -64
+	27 Nop
+	28 Call 724E, v27 @ S0_v29, 13, [v25 @ S1_v21]
+	29 Nop
+	30 Nop
+	31 Call 7289, v38 @ S0_v30 (System.Security.SecurityElement), v27 @ S0_v29, typeof(System.Security.SecurityElement)
+	32 Nop
+	33 Nop
+	34 CallVoid SecurityElement.set_m_strText, v38 @ S0_v30 (System.Security.SecurityElement), v13 @ S0_v7 (System.Security.SecurityElement)
+	35 Jump @b24
+	36 Nop
+	37 Nop
+	38 Add v30 @ S0_v25, this @ L0 (Mono.Xml.SmallXmlParser), 56
+	39 Nop
+	40 Move [v30 @ S0_v25], v13 @ S0_v7 (System.Security.SecurityElement)
+	41 Nop
+	42 Nop
+	43 Add v34 @ S0_v27, this @ L0 (Mono.Xml.SmallXmlParser), 60
+	44 Nop
+	45 Move [v34 @ S0_v27], v13 @ S0_v7 (System.Security.SecurityElement)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Subtract v47 @ S1_v5, this @ L0 (Mono.Xml.SmallXmlParser), -64
+	51 Nop
+	52 Nop
+	53 CallVoid 72FD, 15, [v47 @ S1_v5], v13 @ S0_v7 (System.Security.SecurityElement)
+	54 Nop
+	55 Nop
+	56 Add v52 @ S0_v13, this @ L0 (Mono.Xml.SmallXmlParser), 60
+	57 Nop
+	58 Move [v52 @ S0_v13], v13 @ S0_v7 (System.Security.SecurityElement)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Call 736B, v59 @ S0_v15, 0, typeof(Mono.Xml.SmallXmlParser+IAttrList), handler @ L2 (Mono.Xml.SmallXmlParser+IContentHandler)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 CheckLess v86 @ S0_v19 (System.Boolean), v72 @ L1_v2, v59 @ S0_v15
+	71 Not v87 @ TEMP_v4 (System.Boolean), v86 @ S0_v19 (System.Boolean)
+	72 ConditionalJump @b22, v87 @ TEMP_v4 (System.Boolean)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Call 745A, v95 @ S1_v14 (System.Text.StringBuilder&), 1, typeof(Mono.Xml.SmallXmlParser+IAttrList), handler @ L2 (Mono.Xml.SmallXmlParser+IContentHandler), v72 @ L1_v2
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Call 745A, v100 @ S2_v10 (System.String), 2, typeof(Mono.Xml.SmallXmlParser+IAttrList), handler @ L2 (Mono.Xml.SmallXmlParser+IContentHandler), v72 @ L1_v2
+	87 Nop
+	88 Move v102 @ S3_v6 (Il2CppClass<System.Security.SecurityElement>), typeof(System.Security.SecurityElement)
+	89 Nop
+	90 Nop
+	91 Nop
+	92 And v104 @ S3_v8, [v102 @ S3_v6 (Il2CppClass<System.Security.SecurityElement>)+BA], 512
+	93 CheckEqual v105 @ TEMP_v5 (System.Boolean), v104 @ S3_v8, 0
+	94 ConditionalJump @b25, v105 @ TEMP_v5 (System.Boolean)
+	95 Move v106 @ S3_v12 (Il2CppClass<System.Security.SecurityElement>), typeof(System.Security.SecurityElement)
+	96 Nop
+	97 CheckEqual v108 @ S3_v14 (System.Boolean), [v106 @ S3_v12 (Il2CppClass<System.Security.SecurityElement>)+74], 0
+	98 Not v109 @ TEMP_v7 (System.Boolean), v108 @ S3_v14 (System.Boolean)
+	99 ConditionalJump @b25, v109 @ TEMP_v7 (System.Boolean)
+	100 Nop
+	101 CallVoid 11A99, typeof(System.Security.SecurityElement)
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Call SecurityElement.Unescape, v75 @ S2_v11 (System.String), v100 @ S2_v10 (System.String)
+	106 Nop
+	107 CallVoid SecurityElement.ToXml, [this @ L0 (Mono.Xml.SmallXmlParser)+3C], v95 @ S1_v14 (System.Text.StringBuilder&), v75 @ S2_v11 (System.String)
+	108 Nop
+	109 Nop
+	110 Add v83 @ S0_v23, v72 @ L1_v2, 1
+	111 Nop
+	112 Jump @b26
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Return
+
+Method: System.Void Cleanup()
+
+Disassembly:
+	0x1247799 Loop -64
+	0x124779B LocalGet 0
+	0x124779D I32Const 0
+	0x124779F Call 54603
+	0x12477A3 LocalTee 2
+	0x12477A5 I32Const 13
+	0x12477A7 I32Eq
+	0x12477A8 LocalGet 2
+	0x12477AA I32Const 9
+	0x12477AC I32Sub
+	0x12477AD I32Const 2
+	0x12477AF I32Lt_U
+	0x12477B0 I32Or
+	0x12477B1 If -1
+	0x12477B3 I32Const 1
+	0x12477B5 Else
+	0x12477B6 LocalGet 2
+	0x12477B8 I32Const 32
+	0x12477BA I32Eq
+	0x12477BB End
+	0x12477BC If -64
+	0x12477BE LocalGet 0
+	0x12477C0 I32Load 2, 28
+	0x12477C3 LocalGet 0
+	0x12477C5 I32Const 0
+	0x12477C7 Call 57629
+	0x12477CB I32Const 65535
+	0x12477CF I32And
+	0x12477D0 I32Const 0
+	0x12477D2 Call 61633
+	0x12477D6 Drop
+	0x12477D7 Br 1
+	0x12477D9 End
+	0x12477DA End
+	0x12477DB LocalGet 0
+	0x12477DD I32Const 0
+	0x12477DF Call 54603
+	0x12477E3 I32Const 60
+	0x12477E5 I32Ne
+	0x12477E6 If -64
+	0x12477E8 LocalGet 0
+	0x12477EA I32Const 0
+	0x12477EC Call 54603
+	0x12477F0 I32Const -1
+	0x12477F2 I32Gt_S
+	0x12477F3 If -64
+	0x12477F5 LocalGet 0
+	0x12477F7 I32Const 0
+	0x12477F9 I32Store8 0, 36
+	0x12477FC End
+	0x12477FD End
+	0x12477FE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call SmallXmlParser.Read, v18 @ S0_v3 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	4 Nop
+	5 Nop
+	6 CheckEqual v20 @ S0_v4 (System.Boolean), v18 @ S0_v3 (System.Int32), 13
+	7 Nop
+	8 Nop
+	9 Subtract v23 @ S1_v5, v18 @ S0_v3 (System.Int32), 9
+	10 Nop
+	11 CheckLess v25 @ S1_v6 (System.Boolean), v23 @ S1_v5, 2
+	12 Or v26 @ S0_v5, v20 @ S0_v4 (System.Boolean), v25 @ S1_v6 (System.Boolean)
+	13 CheckEqual v27 @ TEMP_v2 (System.Boolean), v26 @ S0_v5, 0
+	14 ConditionalJump @b5, v27 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Jump @b14
+	17 Nop
+	18 Nop
+	19 CheckEqual v33 @ S0_v6 (System.Boolean), v18 @ S0_v3 (System.Int32), 32
+	20 Nop
+	21 Not v2 @ TEMP_v3 (System.Boolean), v33 @ S0_v6 (System.Boolean)
+	22 ConditionalJump @b9, v2 @ TEMP_v3 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Call SmallXmlParser.ReadName, v38 @ S1_v15 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	28 Nop
+	29 And v11 @ S1_v16 (System.Int32), v38 @ S1_v15 (System.String), 65535
+	30 Nop
+	31 Call StringBuilder.Append, v14 @ S0_v17 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), v11 @ S1_v16 (System.Int32)
+	32 Jump @b2
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call SmallXmlParser.Read, v41 @ S0_v8 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	38 Nop
+	39 CheckNotEqual v44 @ S0_v9 (System.Boolean), v41 @ S0_v8 (System.Int32), 60
+	40 Not v45 @ TEMP_v4 (System.Boolean), v44 @ S0_v9 (System.Boolean)
+	41 ConditionalJump @b15, v45 @ TEMP_v4 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Call SmallXmlParser.Read, v48 @ S0_v12 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	45 Nop
+	46 CheckGreater v56 @ S0_v13 (System.Boolean), v48 @ S0_v12 (System.Int32), -1
+	47 Not v50 @ TEMP_v6 (System.Boolean), v56 @ S0_v13 (System.Boolean)
+	48 ConditionalJump @b15, v50 @ TEMP_v6 (System.Boolean)
+	49 Nop
+	50 Nop
+	51 Move this.isWhitespace (System.Boolean), 0
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Return
+
+Method: System.Void ReadContent()
+
+Disassembly:
+	0x124763C LocalGet 0
+	0x124763E I32Const 1
+	0x1247640 I32Store 2, 44
+	0x1247643 LocalGet 0
+	0x1247645 I32Const 0
+	0x1247647 I32Store 2, 48
+	0x124764A LocalGet 0
+	0x124764C I32Const 8
+	0x124764E I32Add
+	0x124764F I32Const 0
+	0x1247651 I32Store 2, 0
+	0x1247654 LocalGet 0
+	0x1247656 I32Const 12
+	0x1247658 I32Add
+	0x1247659 I32Const 0
+	0x124765B I32Store 2, 0
+	0x124765E I32Const 9
+	0x1247660 LocalGet 0
+	0x1247662 I32Load 2, 16
+	0x1247665 Call 29286
+	0x1247669 I32Const 9
+	0x124766B LocalGet 0
+	0x124766D I32Load 2, 20
+	0x1247670 Call 29286
+	0x1247674 LocalGet 0
+	0x1247676 I32Load 2, 40
+	0x1247679 I32Const 0
+	0x124767B Call 57625
+	0x124767F LocalGet 0
+	0x1247681 I32Load 2, 28
+	0x1247684 I32Const 0
+	0x1247686 I32Const 0
+	0x1247688 Call 61623
+	0x124768C LocalGet 0
+	0x124768E I32Const 24
+	0x1247690 I32Add
+	0x1247691 I32Const 0
+	0x1247693 I32Store 2, 0
+	0x1247696 LocalGet 0
+	0x1247698 I32Const 0
+	0x124769A I32Store8 0, 36
+	0x124769D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.line (System.Int32), 1
+	3 Nop
+	4 Nop
+	5 Move this.column (System.Int32), 0
+	6 Nop
+	7 Nop
+	8 Add v7 @ S0_v4, this @ L0 (Mono.Xml.SmallXmlParser), 8
+	9 Nop
+	10 Move [v7 @ S0_v4], 0
+	11 Nop
+	12 Nop
+	13 Add v11 @ S0_v6, this @ L0 (Mono.Xml.SmallXmlParser), 12
+	14 Nop
+	15 Move [v11 @ S0_v6], 0
+	16 Nop
+	17 Nop
+	18 Nop
+	19 CallVoid 7266, 9, this.elementNames (System.Collections.Stack)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid 7266, 9, this.xmlSpaces (System.Collections.Stack)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid AttrListImpl..ctor, this.attributes (Mono.Xml.SmallXmlParser+AttrListImpl)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid StringBuilder.AppendHelper, this.buffer (System.Text.StringBuilder), 0
+	33 Nop
+	34 Nop
+	35 Add v28 @ S0_v14, this @ L0 (Mono.Xml.SmallXmlParser), 24
+	36 Nop
+	37 Move [v28 @ S0_v14], 0
+	38 Nop
+	39 Nop
+	40 Move this.isWhitespace (System.Boolean), 0
+	41 Nop
+	42 Return
+
+Method: System.Void HandleBufferedContent()
+
+Disassembly:
+	0x124714F I32Const 4569648
+	0x1247154 I32Load8_S 0, 0
+	0x1247157 I32Eqz
+	0x1247158 If -64
+	0x124715A I32Const 3004128
+	0x124715F I32Load 2, 0
+	0x1247162 Call 73003
+	0x1247166 I32Const 4569648
+	0x124716B I32Const 1
+	0x124716D I32Store8 0, 0
+	0x1247170 End
+	0x1247171 LocalGet 0
+	0x1247173 I32Const 0
+	0x1247175 Call 54603
+	0x1247179 LocalTee 1
+	0x124717B I32Const 13
+	0x124717D I32Eq
+	0x124717E LocalGet 1
+	0x1247180 I32Const 9
+	0x1247182 I32Sub
+	0x1247183 I32Const 2
+	0x1247185 I32Lt_U
+	0x1247186 I32Or
+	0x1247187 If -1
+	0x1247189 I32Const 1
+	0x124718B Else
+	0x124718C LocalGet 1
+	0x124718E I32Const 32
+	0x1247190 I32Eq
+	0x1247191 End
+	0x1247192 If -64
+	0x1247194 LocalGet 0
+	0x1247196 I32Load 2, 28
+	0x1247199 LocalTee 1
+	0x124719B I32Load 2, 16
+	0x124719E LocalGet 1
+	0x12471A0 I32Load 2, 20
+	0x12471A3 I32Add
+	0x12471A4 I32Eqz
+	0x12471A5 If -64
+	0x12471A7 LocalGet 0
+	0x12471A9 I32Const 1
+	0x12471AB I32Store8 0, 36
+	0x12471AE End
+	0x12471AF LocalGet 0
+	0x12471B1 I32Const 0
+	0x12471B3 Call 57628
+	0x12471B7 End
+	0x12471B8 Block -64
+	0x12471BA LocalGet 0
+	0x12471BC I32Const 0
+	0x12471BE Call 54603
+	0x12471C2 I32Const 60
+	0x12471C4 I32Eq
+	0x12471C5 If -64
+	0x12471C7 LocalGet 0
+	0x12471C9 I32Const 0
+	0x12471CB Call 57629
+	0x12471CF Drop
+	0x12471D0 Block -64
+	0x12471D2 Block -64
+	0x12471D4 Block -64
+	0x12471D6 Block -64
+	0x12471D8 Block -64
+	0x12471DA LocalGet 0
+	0x12471DC I32Const 0
+	0x12471DE Call 54603
+	0x12471E2 I32Const 33
+	0x12471E4 I32Sub
+	0x12471E5 BrTable System.UInt64[], 3
+	0x1247207 End
+	0x1247208 LocalGet 0
+	0x124720A I32Const 0
+	0x124720C Call 57629
+	0x1247210 Drop
+	0x1247211 LocalGet 0
+	0x1247213 I32Const 0
+	0x1247215 Call 54603
+	0x1247219 I32Const 91
+	0x124721C I32Eq
+	0x124721D If -64
+	0x124721F LocalGet 0
+	0x1247221 I32Const 0
+	0x1247223 Call 57629
+	0x1247227 Drop
+	0x1247228 LocalGet 0
+	0x124722A I32Const 0
+	0x124722C Call 57630
+	0x1247230 I32Const 4502836
+	0x1247235 I32Load 2, 0
+	0x1247238 I32Const 0
+	0x124723A Call 55817
+	0x124723E If -64
+	0x1247240 LocalGet 0
+	0x1247242 I32Const 4502840
+	0x1247247 I32Load 2, 0
+	0x124724A I32Const 0
+	0x124724C Call 57623
+	0x1247250 I32Const 0
+	0x1247252 I32Const 4473024
+	0x1247257 I32Load 2, 0
+	0x124725A Call 73899
+	0x124725E Else
+	0x124725F LocalGet 0
+	0x1247261 I32Const 91
+	0x1247264 I32Const 0
+	0x1247266 Call 57631
+	0x124726A LocalGet 0
+	0x124726C I32Const 0
+	0x124726E Call 57632
+	0x1247272 Br 7
+	0x1247274 End
+	0x1247275 End
+	0x1247276 LocalGet 0
+	0x1247278 I32Const 0
+	0x124727A Call 54603
+	0x124727E I32Const 45
+	0x1247280 I32Eq
+	0x1247281 If -64
+	0x1247283 LocalGet 0
+	0x1247285 I32Const 0
+	0x1247287 Call 57633
+	0x124728B Br 6
+	0x124728D End
+	0x124728E LocalGet 0
+	0x1247290 I32Const 0
+	0x1247292 Call 57630
+	0x1247296 I32Const 4502844
+	0x124729B I32Load 2, 0
+	0x124729E I32Const 0
+	0x12472A0 Call 55817
+	0x12472A4 If -64
+	0x12472A6 LocalGet 0
+	0x12472A8 I32Const 4502848
+	0x12472AD I32Load 2, 0
+	0x12472B0 I32Const 0
+	0x12472B2 Call 57623
+	0x12472B6 I32Const 0
+	0x12472B8 I32Const 4473024
+	0x12472BD I32Load 2, 0
+	0x12472C0 Call 73899
+	0x12472C4 Else
+	0x12472C5 LocalGet 0
+	0x12472C7 I32Const 4502852
+	0x12472CC I32Load 2, 0
+	0x12472CF I32Const 0
+	0x12472D1 Call 57623
+	0x12472D5 I32Const 0
+	0x12472D7 I32Const 4473024
+	0x12472DC I32Load 2, 0
+	0x12472DF Call 73899
+	0x12472E3 End
+	0x12472E4 Br 3
+	0x12472E6 End
+	0x12472E7 LocalGet 0
+	0x12472E9 I32Const 0
+	0x12472EB Call 57622
+	0x12472EF I32Const 8
+	0x12472F1 LocalGet 0
+	0x12472F3 I32Load 2, 16
+	0x12472F6 Call 29262
+	0x12472FA I32Eqz
+	0x12472FB If -64
+	0x12472FD LocalGet 0
+	0x12472FF I32Const 0
+	0x1247301 Call 57636
+	0x1247305 I32Const 0
+	0x1247307 I32Const 4473024
+	0x124730C I32Load 2, 0
+	0x124730F Call 73899
+	0x1247313 End
+	0x1247314 LocalGet 0
+	0x1247316 I32Const 0
+	0x1247318 Call 57629
+	0x124731C Drop
+	0x124731D LocalGet 0
+	0x124731F I32Const 0
+	0x1247321 Call 57630
+	0x1247325 LocalSet 1
+	0x1247327 LocalGet 0
+	0x1247329 I32Const 0
+	0x124732B Call 57634
+	0x124732F I32Const 14
+	0x1247331 LocalGet 0
+	0x1247333 I32Load 2, 16
+	0x1247336 Call 29262
+	0x124733A I32Const 4427772
+	0x124733F I32Load 2, 0
+	0x1247342 Call 29321
+	0x1247346 LocalSet 2
+	0x1247348 I32Const 14
+	0x124734A LocalGet 0
+	0x124734C I32Load 2, 20
+	0x124734F Call 29262
+	0x1247353 Drop
+	0x1247354 I32Const 8
+	0x1247356 LocalGet 0
+	0x1247358 I32Load 2, 20
+	0x124735B Call 29262
+	0x124735F I32Const 1
+	0x1247361 I32Lt_S
+	0x1247362 If -64
+	0x1247364 LocalGet 0
+	0x1247366 I32Const 24
+	0x1247368 I32Add
+	0x1247369 I32Const 0
+	0x124736B I32Store 2, 0
+	0x124736E Else
+	0x124736F LocalGet 0
+	0x1247371 I32Const 24
+	0x1247373 I32Add
+	0x1247374 I32Const 13
+	0x1247376 LocalGet 0
+	0x1247378 I32Load 2, 20
+	0x124737B Call 29262
+	0x124737F I32Const 4427772
+	0x1247384 I32Load 2, 0
+	0x1247387 Call 29321
+	0x124738B I32Store 2, 0
+	0x124738E End
+	0x124738F LocalGet 1
+	0x1247391 LocalGet 2
+	0x1247393 I32Const 0
+	0x1247395 Call 55817
+	0x1247399 If -64
+	0x124739B LocalGet 0
+	0x124739D I32Const 4502860
+	0x12473A2 I32Load 2, 0
+	0x12473A5 LocalGet 2
+	0x12473A7 LocalGet 1
+	0x12473A9 I32Const 0
+	0x12473AB Call 55726
+	0x12473AF I32Const 0
+	0x12473B1 Call 57623
+	0x12473B5 I32Const 0
+	0x12473B7 I32Const 4473024
+	0x12473BC I32Load 2, 0
+	0x12473BF Call 73899
+	0x12473C3 Else
+	0x12473C4 I32Const 3
+	0x12473C6 I32Const 4428280
+	0x12473CB I32Load 2, 0
+	0x12473CE LocalGet 0
+	0x12473D0 I32Load 2, 8
+	0x12473D3 LocalGet 1
+	0x12473D5 Call 29964
+	0x12473D9 LocalGet 0
+	0x12473DB I32Const 62
+	0x12473DD I32Const 0
+	0x12473DF Call 57631
+	0x12473E3 Br 5
+	0x12473E5 End
+	0x12473E6 Br 2
+	0x12473E8 End
+	0x12473E9 LocalGet 0
+	0x12473EB I32Const 0
+	0x12473ED Call 57622
+	0x12473F1 LocalGet 0
+	0x12473F3 I32Const 0
+	0x12473F5 Call 57629
+	0x12473F9 Drop
+	0x12473FA LocalGet 0
+	0x12473FC I32Const 0
+	0x12473FE Call 57630
+	0x1247402 LocalSet 2
+	0x1247404 LocalGet 0
+	0x1247406 I32Const 0
+	0x1247408 Call 57634
+	0x124740C I32Const 4427772
+	0x1247411 I32Load 2, 0
+	0x1247414 I32Load 2, 92
+	0x1247417 I32Load 2, 0
+	0x124741A LocalSet 1
+	0x124741C LocalGet 0
+	0x124741E I32Const 0
+	0x1247420 Call 54603
+	0x1247424 I32Const 63
+	0x1247426 I32Ne
+	0x1247427 If -64
+	0x1247429 Loop -64
+	0x124742B LocalGet 1
+	0x124742D LocalGet 0
+	0x124742F I32Const 63
+	0x1247431 I32Const 0
+	0x1247433 I32Const 0
+	0x1247435 Call 57635
+	0x1247439 I32Const 0
+	0x124743B Call 55680
+	0x124743F LocalSet 1
+	0x1247441 LocalGet 0
+	0x1247443 I32Const 0
+	0x1247445 Call 54603
+	0x1247449 I32Const 62
+	0x124744B I32Ne
+	0x124744C If -64
+	0x124744E LocalGet 1
+	0x1247450 I32Const 4502856
+	0x1247455 I32Load 2, 0
+	0x1247458 I32Const 0
+	0x124745A Call 55680
+	0x124745E LocalSet 1
+	0x1247460 Br 1
+	0x1247462 End
+	0x1247463 End
+	0x1247464 End
+	0x1247465 I32Const 4
+	0x1247467 I32Const 4428280
+	0x124746C I32Load 2, 0
+	0x124746F LocalGet 0
+	0x1247471 I32Load 2, 8
+	0x1247474 LocalGet 2
+	0x1247476 LocalGet 1
+	0x1247478 Call 30068
+	0x124747C LocalGet 0
+	0x124747E I32Const 62
+	0x1247480 I32Const 0
+	0x1247482 Call 57631
+	0x1247486 Br 3
+	0x1247488 End
+	0x1247489 LocalGet 0
+	0x124748B I32Const 0
+	0x124748D Call 57622
+	0x1247491 LocalGet 0
+	0x1247493 I32Const 0
+	0x1247495 Call 57630
+	0x1247499 LocalSet 1
+	0x124749B Loop -64
+	0x124749D Block -64
+	0x124749F LocalGet 0
+	0x12474A1 I32Const 0
+	0x12474A3 Call 54603
+	0x12474A7 I32Const 62
+	0x12474A9 I32Eq
+	0x12474AA BrIf 0
+	0x12474AC LocalGet 0
+	0x12474AE I32Const 0
+	0x12474B0 Call 54603
+	0x12474B4 I32Const 47
+	0x12474B6 I32Eq
+	0x12474B7 BrIf 0
+	0x12474B9 LocalGet 0
+	0x12474BB LocalGet 0
+	0x12474BD I32Load 2, 40
+	0x12474C0 I32Const 0
+	0x12474C2 Call 57637
+	0x12474C6 Br 1
+	0x12474C8 End
+	0x12474C9 End
+	0x12474CA I32Const 2
+	0x12474CC I32Const 4428280
+	0x12474D1 I32Load 2, 0
+	0x12474D4 LocalGet 0
+	0x12474D6 I32Load 2, 8
+	0x12474D9 LocalGet 1
+	0x12474DB LocalGet 0
+	0x12474DD I32Load 2, 40
+	0x12474E0 Call 30068
+	0x12474E4 LocalGet 0
+	0x12474E6 I32Load 2, 40
+	0x12474E9 I32Const 0
+	0x12474EB Call 57625
+	0x12474EF LocalGet 0
+	0x12474F1 I32Const 0
+	0x12474F3 Call 57634
+	0x12474F7 LocalGet 0
+	0x12474F9 I32Const 0
+	0x12474FB Call 54603
+	0x12474FF I32Const 47
+	0x1247501 I32Eq
+	0x1247502 If -64
+	0x1247504 LocalGet 0
+	0x1247506 I32Const 0
+	0x1247508 Call 57629
+	0x124750C Drop
+	0x124750D I32Const 3
+	0x124750F I32Const 4428280
+	0x1247514 I32Load 2, 0
+	0x1247517 LocalGet 0
+	0x1247519 I32Load 2, 8
+	0x124751C LocalGet 1
+	0x124751E Call 29964
+	0x1247522 Else
+	0x1247523 I32Const 15
+	0x1247525 LocalGet 0
+	0x1247527 I32Load 2, 16
+	0x124752A LocalGet 1
+	0x124752C Call 29437
+	0x1247530 I32Const 15
+	0x1247532 LocalGet 0
+	0x1247534 I32Load 2, 20
+	0x1247537 LocalGet 0
+	0x1247539 I32Load 2, 24
+	0x124753C Call 29437
+	0x1247540 End
+	0x1247541 LocalGet 0
+	0x1247543 I32Const 62
+	0x1247545 I32Const 0
+	0x1247547 Call 57631
+	0x124754B End
+	0x124754C Else
+	0x124754D LocalGet 0
+	0x124754F I32Const 0
+	0x1247551 Call 57638
+	0x1247555 End
+	0x1247556 End
+	0x1247557 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b135
+	5 Nop
+	6 Move v5 @ S0_v142, [2DD6E0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v142
+	8 Nop
+	9 Move v7 @ S1_v124, 1
+	10 Move [45BA30], v7 @ S1_v124
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call SmallXmlParser.Read, v14 @ S0_v6 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	15 Nop
+	16 Nop
+	17 CheckEqual v17 @ S0_v7 (System.Boolean), v14 @ S0_v6 (System.Int32), 13
+	18 Nop
+	19 Nop
+	20 Subtract v20 @ S1_v5, v14 @ S0_v6 (System.Int32), 9
+	21 Nop
+	22 CheckLess v22 @ S1_v6 (System.Boolean), v20 @ S1_v5, 2
+	23 Or v23 @ S0_v8, v17 @ S0_v7 (System.Boolean), v22 @ S1_v6 (System.Boolean)
+	24 CheckEqual v24 @ TEMP_v2 (System.Boolean), v23 @ S0_v8, 0
+	25 ConditionalJump @b7, v24 @ TEMP_v2 (System.Boolean)
+	26 Nop
+	27 Jump @b136
+	28 Nop
+	29 Nop
+	30 CheckEqual v30 @ S0_v9 (System.Boolean), v14 @ S0_v6 (System.Int32), 32
+	31 Nop
+	32 Not v31 @ TEMP_v3 (System.Boolean), v30 @ S0_v9 (System.Boolean)
+	33 ConditionalJump @b10, v31 @ TEMP_v3 (System.Boolean)
+	34 Nop
+	35 Move v33 @ S0_v131 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Add v38 @ S0_v133, v33.m_ChunkLength (System.Int32), v33.m_ChunkOffset (System.Int32)
+	41 CheckEqual v39 @ S0_v134 (System.Boolean), v38 @ S0_v133, 0
+	42 Not v40 @ TEMP_v53 (System.Boolean), v39 @ S0_v134 (System.Boolean)
+	43 ConditionalJump @b137, v40 @ TEMP_v53 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Move this.isWhitespace (System.Boolean), 1
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CallVoid SmallXmlParser.Cleanup, this @ L0 (Mono.Xml.SmallXmlParser)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Call SmallXmlParser.Read, v49 @ S0_v12 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	55 Nop
+	56 CheckEqual v55 @ S0_v13 (System.Boolean), v49 @ S0_v12 (System.Int32), 60
+	57 Not v56 @ TEMP_v5 (System.Boolean), v55 @ S0_v13 (System.Boolean)
+	58 ConditionalJump @b133, v56 @ TEMP_v5 (System.Boolean)
+	59 Nop
+	60 Nop
+	61 Call SmallXmlParser.ReadName, v59 @ S0_v17 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	62 Nop
+	63 Nop
+	64 Call SmallXmlParser.Read, v64 @ S0_v19 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	65 Nop
+	66 Subtract v108 @ S0_v20, v64 @ S0_v19 (System.Int32), 33
+	67 CheckEqual v109 @ TEMP_v7 (System.Boolean), v64 @ S0_v19 (System.Int32), 33
+	68 ConditionalJump @b46, v109 @ TEMP_v7 (System.Boolean)
+	69 CheckEqual v110 @ TEMP_v14 (System.Boolean), v108 @ S0_v20, 1
+	70 ConditionalJump @b113, v110 @ TEMP_v14 (System.Boolean)
+	71 CheckEqual v114 @ TEMP_v17 (System.Boolean), v108 @ S0_v20, 2
+	72 ConditionalJump @b113, v114 @ TEMP_v17 (System.Boolean)
+	73 CheckEqual v116 @ TEMP_v18 (System.Boolean), v108 @ S0_v20, 3
+	74 ConditionalJump @b113, v116 @ TEMP_v18 (System.Boolean)
+	75 CheckEqual v117 @ TEMP_v19 (System.Boolean), v108 @ S0_v20, 4
+	76 ConditionalJump @b113, v117 @ TEMP_v19 (System.Boolean)
+	77 CheckEqual v118 @ TEMP_v20 (System.Boolean), v108 @ S0_v20, 5
+	78 ConditionalJump @b113, v118 @ TEMP_v20 (System.Boolean)
+	79 CheckEqual v119 @ TEMP_v21 (System.Boolean), v108 @ S0_v20, 6
+	80 ConditionalJump @b113, v119 @ TEMP_v21 (System.Boolean)
+	81 CheckEqual v120 @ TEMP_v22 (System.Boolean), v108 @ S0_v20, 7
+	82 ConditionalJump @b113, v120 @ TEMP_v22 (System.Boolean)
+	83 CheckEqual v121 @ TEMP_v23 (System.Boolean), v108 @ S0_v20, 8
+	84 ConditionalJump @b113, v121 @ TEMP_v23 (System.Boolean)
+	85 CheckEqual v122 @ TEMP_v24 (System.Boolean), v108 @ S0_v20, 9
+	86 ConditionalJump @b113, v122 @ TEMP_v24 (System.Boolean)
+	87 CheckEqual v123 @ TEMP_v25 (System.Boolean), v108 @ S0_v20, 10
+	88 ConditionalJump @b113, v123 @ TEMP_v25 (System.Boolean)
+	89 CheckEqual v124 @ TEMP_v26 (System.Boolean), v108 @ S0_v20, 11
+	90 ConditionalJump @b113, v124 @ TEMP_v26 (System.Boolean)
+	91 CheckEqual v125 @ TEMP_v27 (System.Boolean), v108 @ S0_v20, 12
+	92 ConditionalJump @b113, v125 @ TEMP_v27 (System.Boolean)
+	93 CheckEqual v126 @ TEMP_v28 (System.Boolean), v108 @ S0_v20, 13
+	94 ConditionalJump @b113, v126 @ TEMP_v28 (System.Boolean)
+	95 CheckEqual v275 @ TEMP_v29 (System.Boolean), v108 @ S0_v20, 14
+	96 ConditionalJump @b72, v275 @ TEMP_v29 (System.Boolean)
+	97 CheckEqual v127 @ TEMP_v33 (System.Boolean), v108 @ S0_v20, 15
+	98 ConditionalJump @b113, v127 @ TEMP_v33 (System.Boolean)
+	99 CheckEqual v128 @ TEMP_v34 (System.Boolean), v108 @ S0_v20, 16
+	100 ConditionalJump @b113, v128 @ TEMP_v34 (System.Boolean)
+	101 CheckEqual v129 @ TEMP_v35 (System.Boolean), v108 @ S0_v20, 17
+	102 ConditionalJump @b113, v129 @ TEMP_v35 (System.Boolean)
+	103 CheckEqual v130 @ TEMP_v36 (System.Boolean), v108 @ S0_v20, 18
+	104 ConditionalJump @b113, v130 @ TEMP_v36 (System.Boolean)
+	105 CheckEqual v131 @ TEMP_v37 (System.Boolean), v108 @ S0_v20, 19
+	106 ConditionalJump @b113, v131 @ TEMP_v37 (System.Boolean)
+	107 CheckEqual v132 @ TEMP_v38 (System.Boolean), v108 @ S0_v20, 20
+	108 ConditionalJump @b113, v132 @ TEMP_v38 (System.Boolean)
+	109 CheckEqual v133 @ TEMP_v39 (System.Boolean), v108 @ S0_v20, 21
+	110 ConditionalJump @b113, v133 @ TEMP_v39 (System.Boolean)
+	111 CheckEqual v134 @ TEMP_v40 (System.Boolean), v108 @ S0_v20, 22
+	112 ConditionalJump @b113, v134 @ TEMP_v40 (System.Boolean)
+	113 CheckEqual v135 @ TEMP_v41 (System.Boolean), v108 @ S0_v20, 23
+	114 ConditionalJump @b113, v135 @ TEMP_v41 (System.Boolean)
+	115 CheckEqual v136 @ TEMP_v42 (System.Boolean), v108 @ S0_v20, 24
+	116 ConditionalJump @b113, v136 @ TEMP_v42 (System.Boolean)
+	117 CheckEqual v137 @ TEMP_v43 (System.Boolean), v108 @ S0_v20, 25
+	118 ConditionalJump @b113, v137 @ TEMP_v43 (System.Boolean)
+	119 CheckEqual v138 @ TEMP_v44 (System.Boolean), v108 @ S0_v20, 26
+	120 ConditionalJump @b113, v138 @ TEMP_v44 (System.Boolean)
+	121 CheckEqual v139 @ TEMP_v45 (System.Boolean), v108 @ S0_v20, 27
+	122 ConditionalJump @b113, v139 @ TEMP_v45 (System.Boolean)
+	123 CheckEqual v140 @ TEMP_v46 (System.Boolean), v108 @ S0_v20, 28
+	124 ConditionalJump @b113, v140 @ TEMP_v46 (System.Boolean)
+	125 CheckEqual v141 @ TEMP_v47 (System.Boolean), v108 @ S0_v20, 29
+	126 ConditionalJump @b113, v141 @ TEMP_v47 (System.Boolean)
+	127 CheckEqual v142 @ TEMP_v48 (System.Boolean), v108 @ S0_v20, 30
+	128 ConditionalJump @b98, v142 @ TEMP_v48 (System.Boolean)
+	129 Jump @b113
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Call SmallXmlParser.ReadName, v113 @ S0_v23 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	134 Nop
+	135 Nop
+	136 Call SmallXmlParser.Read, v147 @ S0_v25 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	137 Nop
+	138 CheckEqual v152 @ S0_v26 (System.Boolean), v147 @ S0_v25 (System.Int32), 91
+	139 Not v153 @ TEMP_v9 (System.Boolean), v152 @ S0_v26 (System.Boolean)
+	140 ConditionalJump @b138, v153 @ TEMP_v9 (System.Boolean)
+	141 Nop
+	142 Nop
+	143 Call SmallXmlParser.ReadName, v157 @ S0_v41 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	144 Nop
+	145 Nop
+	146 Call SmallXmlParser.ReadCharacterReference, v178 @ S0_v43 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Call String.get_Chars, v186 @ S0_v44 (System.Char), v178 @ S0_v43 (System.Int32), "CDATA"
+	151 CheckEqual v96 @ TEMP_v13 (System.Boolean), v186 @ S0_v44 (System.Char), 0
+	152 ConditionalJump @b56, v96 @ TEMP_v13 (System.Boolean)
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Call SmallXmlParser.IsWhitespace, v163 @ S0_v48 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), "Invalid declaration markup"
+	158 Nop
+	159 Nop
+	160 Nop
+	161 CallVoid 120AB, v163 @ S0_v48 (System.Boolean), 0, methodof(Mono.Xml.SmallXmlParser::ReadContent)
+	162 Jump @b138
+	163 Nop
+	164 Nop
+	165 Nop
+	166 CallVoid SmallXmlParser.ReadAttribute, this @ L0 (Mono.Xml.SmallXmlParser), 91
+	167 Nop
+	168 Nop
+	169 CallVoid SmallXmlParser.ReadComment, this @ L0 (Mono.Xml.SmallXmlParser)
+	170 Jump @b139
+	171 Nop
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Call SmallXmlParser.Read, v166 @ S0_v29 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	176 Nop
+	177 CheckEqual v180 @ S0_v30 (System.Boolean), v166 @ S0_v29 (System.Int32), 45
+	178 Not v97 @ TEMP_v11 (System.Boolean), v180 @ S0_v30 (System.Boolean)
+	179 ConditionalJump @b63, v97 @ TEMP_v11 (System.Boolean)
+	180 Nop
+	181 Nop
+	182 CallVoid AttrListImpl.Clear, this @ L0 (Mono.Xml.SmallXmlParser)
+	183 Jump @b139
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Call SmallXmlParser.ReadCharacterReference, v189 @ S0_v32 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Call String.get_Chars, v208 @ S0_v33 (System.Char), v189 @ S0_v32 (System.Int32), "DOCTYPE"
+	192 CheckEqual v218 @ TEMP_v12 (System.Boolean), v208 @ S0_v33 (System.Char), 0
+	193 ConditionalJump @b69, v218 @ TEMP_v12 (System.Boolean)
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Call SmallXmlParser.IsWhitespace, v227 @ S0_v38 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), "Invalid declaration markup."
+	199 Nop
+	200 Nop
+	201 Nop
+	202 CallVoid 120AB, v227 @ S0_v38 (System.Boolean), 0, methodof(Mono.Xml.SmallXmlParser::ReadContent)
+	203 Jump @b71
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Call SmallXmlParser.IsWhitespace, v232 @ S0_v36 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), "This parser does not support document type."
+	209 Nop
+	210 Nop
+	211 Nop
+	212 CallVoid 120AB, v232 @ S0_v36 (System.Boolean), 0, methodof(Mono.Xml.SmallXmlParser::ReadContent)
+	213 Nop
+	214 Jump @b132
+	215 Nop
+	216 Nop
+	217 Nop
+	218 CallVoid SmallXmlParser.ReadCharacters, this @ L0 (Mono.Xml.SmallXmlParser)
+	219 Nop
+	220 Nop
+	221 Nop
+	222 Call 724E, v284 @ S0_v77, 8, this.elementNames (System.Collections.Stack)
+	223 CheckEqual v285 @ S0_v78 (System.Boolean), v284 @ S0_v77, 0
+	224 Not v286 @ TEMP_v30 (System.Boolean), v285 @ S0_v78 (System.Boolean)
+	225 ConditionalJump @b77, v286 @ TEMP_v30 (System.Boolean)
+	226 Nop
+	227 Nop
+	228 Call SmallXmlParser.Peek, v289 @ S0_v105 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	229 Nop
+	230 Nop
+	231 Nop
+	232 CallVoid 120AB, v289 @ S0_v105 (System.Int32), 0, methodof(Mono.Xml.SmallXmlParser::ReadContent)
+	233 Nop
+	234 Nop
+	235 Nop
+	236 Call SmallXmlParser.ReadName, v297 @ S0_v81 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	237 Nop
+	238 Nop
+	239 Call SmallXmlParser.ReadCharacterReference, v301 @ S0_v83 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	240 Nop
+	241 Nop
+	242 Nop
+	243 CallVoid SmallXmlParser.HandleWhitespaces, this @ L0 (Mono.Xml.SmallXmlParser)
+	244 Nop
+	245 Nop
+	246 Nop
+	247 Call 724E, v307 @ S0_v86, 14, this.elementNames (System.Collections.Stack)
+	248 Nop
+	249 Nop
+	250 Call 7289, v310 @ S0_v87 (System.Int32), v307 @ S0_v86, typeof(System.String)
+	251 Nop
+	252 Nop
+	253 Nop
+	254 Nop
+	255 Call 724E, v314 @ S0_v89, 14, this.xmlSpaces (System.Collections.Stack)
+	256 Nop
+	257 Nop
+	258 Nop
+	259 Call 724E, v318 @ S0_v91, 8, this.xmlSpaces (System.Collections.Stack)
+	260 Nop
+	261 CheckLess v320 @ S0_v92 (System.Boolean), v318 @ S0_v91, 1
+	262 Not v321 @ TEMP_v31 (System.Boolean), v320 @ S0_v92 (System.Boolean)
+	263 ConditionalJump @b86, v321 @ TEMP_v31 (System.Boolean)
+	264 Nop
+	265 Nop
+	266 Add v324 @ S0_v103, this @ L0 (Mono.Xml.SmallXmlParser), 24
+	267 Nop
+	268 Move [v324 @ S0_v103], 0
+	269 Jump @b140
+	270 Nop
+	271 Nop
+	272 Add v328 @ S0_v101, this @ L0 (Mono.Xml.SmallXmlParser), 24
+	273 Nop
+	274 Nop
+	275 Nop
+	276 Call 724E, v332 @ S1_v95, 13, this.xmlSpaces (System.Collections.Stack)
+	277 Nop
+	278 Nop
+	279 Call 7289, v336 @ S1_v96, v332 @ S1_v95, typeof(System.String)
+	280 Move [v328 @ S0_v101], v336 @ S1_v96
+	281 Nop
+	282 Nop
+	283 Nop
+	284 Nop
+	285 Call String.get_Chars, v341 @ S0_v95 (System.Char), v301 @ S0_v83 (System.Int32), v310 @ S0_v87 (System.Int32)
+	286 CheckEqual v98 @ TEMP_v32 (System.Boolean), v341 @ S0_v95 (System.Char), 0
+	287 ConditionalJump @b94, v98 @ TEMP_v32 (System.Boolean)
+	288 Nop
+	289 Nop
+	290 Nop
+	291 Nop
+	292 Nop
+	293 Nop
+	294 Call String.Format, v347 @ S1_v91 (System.String), "End tag mismatch: expected {0} but found {1}", v310 @ S0_v87 (System.Int32), v301 @ S0_v83 (System.Int32)
+	295 Nop
+	296 Call SmallXmlParser.IsWhitespace, v263 @ S0_v99 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), v347 @ S1_v91 (System.String)
+	297 Nop
+	298 Nop
+	299 Nop
+	300 CallVoid 120AB, v263 @ S0_v99 (System.Boolean), 0, methodof(Mono.Xml.SmallXmlParser::ReadContent)
+	301 Jump @b97
+	302 Nop
+	303 Nop
+	304 Nop
+	305 Nop
+	306 Nop
+	307 Nop
+	308 CallVoid 750C, 3, typeof(Mono.Xml.SmallXmlParser+IContentHandler), this.handler (Mono.Xml.SmallXmlParser+IContentHandler), v301 @ S0_v83 (System.Int32)
+	309 Nop
+	310 Nop
+	311 Nop
+	312 CallVoid SmallXmlParser.ReadAttribute, this @ L0 (Mono.Xml.SmallXmlParser), 62
+	313 Jump @b139
+	314 Nop
+	315 Jump @b132
+	316 Nop
+	317 Nop
+	318 Nop
+	319 CallVoid SmallXmlParser.ReadCharacters, this @ L0 (Mono.Xml.SmallXmlParser)
+	320 Nop
+	321 Nop
+	322 Call SmallXmlParser.ReadName, v359 @ S0_v108 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	323 Nop
+	324 Nop
+	325 Call SmallXmlParser.ReadCharacterReference, v362 @ S0_v110 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	326 Nop
+	327 Nop
+	328 Nop
+	329 CallVoid SmallXmlParser.HandleWhitespaces, this @ L0 (Mono.Xml.SmallXmlParser)
+	330 Nop
+	331 Nop
+	332 Nop
+	333 Nop
+	334 Nop
+	335 Nop
+	336 Nop
+	337 Call SmallXmlParser.Read, v372 @ S0_v117 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	338 Nop
+	339 CheckNotEqual v374 @ S0_v118 (System.Boolean), v372 @ S0_v117 (System.Int32), 63
+	340 Not v375 @ TEMP_v49 (System.Boolean), v374 @ S0_v118 (System.Boolean)
+	341 ConditionalJump @b141, v375 @ TEMP_v49 (System.Boolean)
+	342 Nop
+	343 Nop
+	344 Nop
+	345 Nop
+	346 Nop
+	347 Nop
+	348 Call ContractionComparer.Compare, v393 @ S1_v113 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser), 63, 0
+	349 Nop
+	350 Call String.ConcatArray, v408 @ S0_v124 (System.String), v382 @ L1_v9 (System.String[]), v393 @ S1_v113 (System.Int32)
+	351 Nop
+	352 Nop
+	353 Nop
+	354 Call SmallXmlParser.Read, v411 @ S0_v126 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	355 Nop
+	356 CheckNotEqual v402 @ S0_v127 (System.Boolean), v411 @ S0_v126 (System.Int32), 62
+	357 Not v387 @ TEMP_v52 (System.Boolean), v402 @ S0_v127 (System.Boolean)
+	358 ConditionalJump @b141, v387 @ TEMP_v52 (System.Boolean)
+	359 Nop
+	360 Nop
+	361 Nop
+	362 Nop
+	363 Call String.ConcatArray, v389 @ S0_v129 (System.String), v408 @ S0_v124 (System.String), "?"
+	364 Nop
+	365 Jump @b104
+	366 Nop
+	367 Nop
+	368 Nop
+	369 Nop
+	370 Nop
+	371 Nop
+	372 Nop
+	373 Nop
+	374 Nop
+	375 Nop
+	376 CallVoid 7574, 4, typeof(Mono.Xml.SmallXmlParser+IContentHandler), this.handler (Mono.Xml.SmallXmlParser+IContentHandler), v362 @ S0_v110 (System.Int32), v87 @ L1_v8 (System.String)
+	377 Nop
+	378 Nop
+	379 Nop
+	380 CallVoid SmallXmlParser.ReadAttribute, this @ L0 (Mono.Xml.SmallXmlParser), 62
+	381 Jump @b139
+	382 Nop
+	383 Nop
+	384 Nop
+	385 CallVoid SmallXmlParser.ReadCharacters, this @ L0 (Mono.Xml.SmallXmlParser)
+	386 Nop
+	387 Nop
+	388 Call SmallXmlParser.ReadCharacterReference, v150 @ S0_v51 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	389 Nop
+	390 Nop
+	391 Nop
+	392 Nop
+	393 Call SmallXmlParser.Read, v175 @ S0_v54 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	394 Nop
+	395 CheckEqual v182 @ S0_v55 (System.Boolean), v175 @ S0_v54 (System.Int32), 62
+	396 ConditionalJump @b121, v182 @ S0_v55 (System.Boolean)
+	397 Nop
+	398 Nop
+	399 Call SmallXmlParser.Read, v192 @ S0_v72 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	400 Nop
+	401 CheckEqual v196 @ S0_v73 (System.Boolean), v192 @ S0_v72 (System.Int32), 47
+	402 ConditionalJump @b121, v196 @ S0_v73 (System.Boolean)
+	403 Nop
+	404 Nop
+	405 Nop
+	406 Nop
+	407 CallVoid SimpleCollator..ctor, this @ L0 (Mono.Xml.SmallXmlParser), this.attributes (Mono.Xml.SmallXmlParser+AttrListImpl)
+	408 Jump @b142
+	409 Nop
+	410 Nop
+	411 Nop
+	412 Nop
+	413 Nop
+	414 Nop
+	415 Nop
+	416 Nop
+	417 Nop
+	418 Nop
+	419 CallVoid 7574, 2, typeof(Mono.Xml.SmallXmlParser+IContentHandler), this.handler (Mono.Xml.SmallXmlParser+IContentHandler), v150 @ S0_v51 (System.Int32), this.attributes (Mono.Xml.SmallXmlParser+AttrListImpl)
+	420 Nop
+	421 Nop
+	422 Nop
+	423 CallVoid AttrListImpl..ctor, this.attributes (Mono.Xml.SmallXmlParser+AttrListImpl)
+	424 Nop
+	425 Nop
+	426 CallVoid SmallXmlParser.HandleWhitespaces, this @ L0 (Mono.Xml.SmallXmlParser)
+	427 Nop
+	428 Nop
+	429 Call SmallXmlParser.Read, v235 @ S0_v62 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	430 Nop
+	431 CheckEqual v243 @ S0_v63 (System.Boolean), v235 @ S0_v62 (System.Int32), 47
+	432 Not v244 @ TEMP_v16 (System.Boolean), v243 @ S0_v63 (System.Boolean)
+	433 ConditionalJump @b129, v244 @ TEMP_v16 (System.Boolean)
+	434 Nop
+	435 Nop
+	436 Call SmallXmlParser.ReadName, v250 @ S0_v69 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	437 Nop
+	438 Nop
+	439 Nop
+	440 Nop
+	441 Nop
+	442 Nop
+	443 CallVoid 750C, 3, typeof(Mono.Xml.SmallXmlParser+IContentHandler), this.handler (Mono.Xml.SmallXmlParser+IContentHandler), v150 @ S0_v51 (System.Int32)
+	444 Jump @b131
+	445 Nop
+	446 Nop
+	447 Nop
+	448 Nop
+	449 CallVoid 72FD, 15, this.elementNames (System.Collections.Stack), v150 @ S0_v51 (System.Int32)
+	450 Nop
+	451 Nop
+	452 Nop
+	453 Nop
+	454 Nop
+	455 CallVoid 72FD, 15, this.xmlSpaces (System.Collections.Stack), this.xmlSpace (System.String)
+	456 Nop
+	457 Nop
+	458 Nop
+	459 Nop
+	460 CallVoid SmallXmlParser.ReadAttribute, this @ L0 (Mono.Xml.SmallXmlParser), 62
+	461 Nop
+	462 Jump @b139
+	463 Nop
+	464 Nop
+	465 CallVoid SmallXmlParser.ReadReference, this @ L0 (Mono.Xml.SmallXmlParser)
+	466 Nop
+	467 Nop
+	468 Nop
+	469 Return
+
+Method: System.Void ReadCharacters()
+
+Disassembly:
+	0x124755D I32Const 4569647
+	0x1247562 I32Load8_S 0, 0
+	0x1247565 I32Eqz
+	0x1247566 If -64
+	0x1247568 I32Const 3004104
+	0x124756D I32Load 2, 0
+	0x1247570 Call 73003
+	0x1247574 I32Const 4569647
+	0x1247579 I32Const 1
+	0x124757B I32Store8 0, 0
+	0x124757E End
+	0x124757F LocalGet 0
+	0x1247581 I32Load 2, 28
+	0x1247584 LocalTee 1
+	0x1247586 I32Load 2, 16
+	0x1247589 LocalGet 1
+	0x124758B I32Load 2, 20
+	0x124758E I32Add
+	0x124758F If -64
+	0x1247591 LocalGet 0
+	0x1247593 I32Load8_S 0, 36
+	0x1247596 I32Const 0
+	0x1247598 I32Ne
+	0x1247599 LocalGet 0
+	0x124759B I32Load 2, 8
+	0x124759E LocalSet 1
+	0x12475A0 I32Const 3
+	0x12475A2 LocalGet 0
+	0x12475A4 I32Load 2, 28
+	0x12475A7 Call 29262
+	0x12475AB LocalSet 2
+	0x12475AD I32Const 4428280
+	0x12475B2 I32Load 2, 0
+	0x12475B5 LocalSet 3
+	0x12475B7 If -64
+	0x12475B9 I32Const 6
+	0x12475BB LocalGet 3
+	0x12475BD LocalGet 1
+	0x12475BF LocalGet 2
+	0x12475C1 Call 29964
+	0x12475C5 Else
+	0x12475C6 I32Const 5
+	0x12475C8 LocalGet 3
+	0x12475CA LocalGet 1
+	0x12475CC LocalGet 2
+	0x12475CE Call 29964
+	0x12475D2 End
+	0x12475D3 LocalGet 0
+	0x12475D5 I32Load 2, 28
+	0x12475D8 I32Const 0
+	0x12475DA I32Const 0
+	0x12475DC Call 61623
+	0x12475E0 LocalGet 0
+	0x12475E2 I32Const 0
+	0x12475E4 I32Store8 0, 36
+	0x12475E7 End
+	0x12475E8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v20, [2DD6C8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v17, 1
+	10 Move [45BA2F], v7 @ S1_v17
+	11 Nop
+	12 Nop
+	13 Move v13 @ S0_v6 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Add v18 @ S0_v8, v13.m_ChunkLength (System.Int32), v13.m_ChunkOffset (System.Int32)
+	19 CheckEqual v19 @ TEMP_v2 (System.Boolean), v18 @ S0_v8, 0
+	20 ConditionalJump @b13, v19 @ TEMP_v2 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CheckNotEqual v23 @ S0_v12 (System.Boolean), this.isWhitespace (System.Boolean), 0
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call 724E, v30 @ S1_v9, 3, this.buffer (System.Text.StringBuilder)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Not v47 @ TEMP_v4 (System.Boolean), v23 @ S0_v12 (System.Boolean)
+	37 ConditionalJump @b9, v47 @ TEMP_v4 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid 750C, 6, typeof(Mono.Xml.SmallXmlParser+IContentHandler), this.handler (Mono.Xml.SmallXmlParser+IContentHandler), v30 @ S1_v9
+	43 Jump @b10
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 CallVoid 750C, 5, typeof(Mono.Xml.SmallXmlParser+IContentHandler), this.handler (Mono.Xml.SmallXmlParser+IContentHandler), v30 @ S1_v9
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CallVoid StringBuilder.AppendHelper, this.buffer (System.Text.StringBuilder), 0
+	55 Nop
+	56 Nop
+	57 Move this.isWhitespace (System.Boolean), 0
+	58 Nop
+	59 Nop
+	60 Return
+
+Method: System.Void ReadReference()
+
+Disassembly:
+	0x1247E1D LocalGet 0
+	0x1247E1F I32Const 0
+	0x1247E21 I32Store8 0, 36
+	0x1247E24 Loop -64
+	0x1247E26 Block -64
+	0x1247E28 Block -64
+	0x1247E2A Block -64
+	0x1247E2C Block -64
+	0x1247E2E LocalGet 0
+	0x1247E30 I32Const 0
+	0x1247E32 Call 54603
+	0x1247E36 I32Const -1
+	0x1247E38 I32Sub
+	0x1247E39 BrTable System.UInt64[], 2
+	0x1247E7A End
+	0x1247E7B Br 2
+	0x1247E7D End
+	0x1247E7E LocalGet 0
+	0x1247E80 I32Const 0
+	0x1247E82 Call 57629
+	0x1247E86 Drop
+	0x1247E87 LocalGet 0
+	0x1247E89 I32Const 0
+	0x1247E8B Call 57639
+	0x1247E8F Br 2
+	0x1247E91 End
+	0x1247E92 LocalGet 0
+	0x1247E94 I32Load 2, 28
+	0x1247E97 LocalGet 0
+	0x1247E99 I32Const 0
+	0x1247E9B Call 57629
+	0x1247E9F I32Const 65535
+	0x1247EA3 I32And
+	0x1247EA4 I32Const 0
+	0x1247EA6 Call 61633
+	0x1247EAA Drop
+	0x1247EAB Br 1
+	0x1247EAD End
+	0x1247EAE End
+	0x1247EAF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.isWhitespace (System.Boolean), 0
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Call SmallXmlParser.Read, v18 @ S0_v4 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	7 Nop
+	8 Subtract v20 @ S0_v5, v18 @ S0_v4 (System.Int32), -1
+	9 CheckEqual v21 @ TEMP_v2 (System.Boolean), v18 @ S0_v4 (System.Int32), -1
+	10 ConditionalJump @b66, v21 @ TEMP_v2 (System.Boolean)
+	11 CheckEqual v22 @ TEMP_v4 (System.Boolean), v20 @ S0_v5, 1
+	12 ConditionalJump @b70, v22 @ TEMP_v4 (System.Boolean)
+	13 CheckEqual v25 @ TEMP_v6 (System.Boolean), v20 @ S0_v5, 2
+	14 ConditionalJump @b70, v25 @ TEMP_v6 (System.Boolean)
+	15 CheckEqual v26 @ TEMP_v7 (System.Boolean), v20 @ S0_v5, 3
+	16 ConditionalJump @b70, v26 @ TEMP_v7 (System.Boolean)
+	17 CheckEqual v27 @ TEMP_v8 (System.Boolean), v20 @ S0_v5, 4
+	18 ConditionalJump @b70, v27 @ TEMP_v8 (System.Boolean)
+	19 CheckEqual v28 @ TEMP_v9 (System.Boolean), v20 @ S0_v5, 5
+	20 ConditionalJump @b70, v28 @ TEMP_v9 (System.Boolean)
+	21 CheckEqual v29 @ TEMP_v10 (System.Boolean), v20 @ S0_v5, 6
+	22 ConditionalJump @b70, v29 @ TEMP_v10 (System.Boolean)
+	23 CheckEqual v30 @ TEMP_v11 (System.Boolean), v20 @ S0_v5, 7
+	24 ConditionalJump @b70, v30 @ TEMP_v11 (System.Boolean)
+	25 CheckEqual v31 @ TEMP_v12 (System.Boolean), v20 @ S0_v5, 8
+	26 ConditionalJump @b70, v31 @ TEMP_v12 (System.Boolean)
+	27 CheckEqual v32 @ TEMP_v13 (System.Boolean), v20 @ S0_v5, 9
+	28 ConditionalJump @b70, v32 @ TEMP_v13 (System.Boolean)
+	29 CheckEqual v33 @ TEMP_v14 (System.Boolean), v20 @ S0_v5, 10
+	30 ConditionalJump @b70, v33 @ TEMP_v14 (System.Boolean)
+	31 CheckEqual v34 @ TEMP_v15 (System.Boolean), v20 @ S0_v5, 11
+	32 ConditionalJump @b70, v34 @ TEMP_v15 (System.Boolean)
+	33 CheckEqual v35 @ TEMP_v16 (System.Boolean), v20 @ S0_v5, 12
+	34 ConditionalJump @b70, v35 @ TEMP_v16 (System.Boolean)
+	35 CheckEqual v36 @ TEMP_v17 (System.Boolean), v20 @ S0_v5, 13
+	36 ConditionalJump @b70, v36 @ TEMP_v17 (System.Boolean)
+	37 CheckEqual v37 @ TEMP_v18 (System.Boolean), v20 @ S0_v5, 14
+	38 ConditionalJump @b70, v37 @ TEMP_v18 (System.Boolean)
+	39 CheckEqual v38 @ TEMP_v19 (System.Boolean), v20 @ S0_v5, 15
+	40 ConditionalJump @b70, v38 @ TEMP_v19 (System.Boolean)
+	41 CheckEqual v39 @ TEMP_v20 (System.Boolean), v20 @ S0_v5, 16
+	42 ConditionalJump @b70, v39 @ TEMP_v20 (System.Boolean)
+	43 CheckEqual v40 @ TEMP_v21 (System.Boolean), v20 @ S0_v5, 17
+	44 ConditionalJump @b70, v40 @ TEMP_v21 (System.Boolean)
+	45 CheckEqual v41 @ TEMP_v22 (System.Boolean), v20 @ S0_v5, 18
+	46 ConditionalJump @b70, v41 @ TEMP_v22 (System.Boolean)
+	47 CheckEqual v42 @ TEMP_v23 (System.Boolean), v20 @ S0_v5, 19
+	48 ConditionalJump @b70, v42 @ TEMP_v23 (System.Boolean)
+	49 CheckEqual v43 @ TEMP_v24 (System.Boolean), v20 @ S0_v5, 20
+	50 ConditionalJump @b70, v43 @ TEMP_v24 (System.Boolean)
+	51 CheckEqual v44 @ TEMP_v25 (System.Boolean), v20 @ S0_v5, 21
+	52 ConditionalJump @b70, v44 @ TEMP_v25 (System.Boolean)
+	53 CheckEqual v45 @ TEMP_v26 (System.Boolean), v20 @ S0_v5, 22
+	54 ConditionalJump @b70, v45 @ TEMP_v26 (System.Boolean)
+	55 CheckEqual v46 @ TEMP_v27 (System.Boolean), v20 @ S0_v5, 23
+	56 ConditionalJump @b70, v46 @ TEMP_v27 (System.Boolean)
+	57 CheckEqual v47 @ TEMP_v28 (System.Boolean), v20 @ S0_v5, 24
+	58 ConditionalJump @b70, v47 @ TEMP_v28 (System.Boolean)
+	59 CheckEqual v48 @ TEMP_v29 (System.Boolean), v20 @ S0_v5, 25
+	60 ConditionalJump @b70, v48 @ TEMP_v29 (System.Boolean)
+	61 CheckEqual v49 @ TEMP_v30 (System.Boolean), v20 @ S0_v5, 26
+	62 ConditionalJump @b70, v49 @ TEMP_v30 (System.Boolean)
+	63 CheckEqual v50 @ TEMP_v31 (System.Boolean), v20 @ S0_v5, 27
+	64 ConditionalJump @b70, v50 @ TEMP_v31 (System.Boolean)
+	65 CheckEqual v51 @ TEMP_v32 (System.Boolean), v20 @ S0_v5, 28
+	66 ConditionalJump @b70, v51 @ TEMP_v32 (System.Boolean)
+	67 CheckEqual v52 @ TEMP_v33 (System.Boolean), v20 @ S0_v5, 29
+	68 ConditionalJump @b70, v52 @ TEMP_v33 (System.Boolean)
+	69 CheckEqual v53 @ TEMP_v34 (System.Boolean), v20 @ S0_v5, 30
+	70 ConditionalJump @b70, v53 @ TEMP_v34 (System.Boolean)
+	71 CheckEqual v54 @ TEMP_v35 (System.Boolean), v20 @ S0_v5, 31
+	72 ConditionalJump @b70, v54 @ TEMP_v35 (System.Boolean)
+	73 CheckEqual v55 @ TEMP_v36 (System.Boolean), v20 @ S0_v5, 32
+	74 ConditionalJump @b70, v55 @ TEMP_v36 (System.Boolean)
+	75 CheckEqual v56 @ TEMP_v37 (System.Boolean), v20 @ S0_v5, 33
+	76 ConditionalJump @b70, v56 @ TEMP_v37 (System.Boolean)
+	77 CheckEqual v57 @ TEMP_v38 (System.Boolean), v20 @ S0_v5, 34
+	78 ConditionalJump @b70, v57 @ TEMP_v38 (System.Boolean)
+	79 CheckEqual v58 @ TEMP_v39 (System.Boolean), v20 @ S0_v5, 35
+	80 ConditionalJump @b70, v58 @ TEMP_v39 (System.Boolean)
+	81 CheckEqual v59 @ TEMP_v40 (System.Boolean), v20 @ S0_v5, 36
+	82 ConditionalJump @b70, v59 @ TEMP_v40 (System.Boolean)
+	83 CheckEqual v60 @ TEMP_v41 (System.Boolean), v20 @ S0_v5, 37
+	84 ConditionalJump @b70, v60 @ TEMP_v41 (System.Boolean)
+	85 CheckEqual v61 @ TEMP_v42 (System.Boolean), v20 @ S0_v5, 38
+	86 ConditionalJump @b70, v61 @ TEMP_v42 (System.Boolean)
+	87 CheckEqual v8 @ TEMP_v43 (System.Boolean), v20 @ S0_v5, 39
+	88 ConditionalJump @b67, v8 @ TEMP_v43 (System.Boolean)
+	89 CheckEqual v62 @ TEMP_v44 (System.Boolean), v20 @ S0_v5, 40
+	90 ConditionalJump @b70, v62 @ TEMP_v44 (System.Boolean)
+	91 CheckEqual v63 @ TEMP_v45 (System.Boolean), v20 @ S0_v5, 41
+	92 ConditionalJump @b70, v63 @ TEMP_v45 (System.Boolean)
+	93 CheckEqual v64 @ TEMP_v46 (System.Boolean), v20 @ S0_v5, 42
+	94 ConditionalJump @b70, v64 @ TEMP_v46 (System.Boolean)
+	95 CheckEqual v65 @ TEMP_v47 (System.Boolean), v20 @ S0_v5, 43
+	96 ConditionalJump @b70, v65 @ TEMP_v47 (System.Boolean)
+	97 CheckEqual v66 @ TEMP_v48 (System.Boolean), v20 @ S0_v5, 44
+	98 ConditionalJump @b70, v66 @ TEMP_v48 (System.Boolean)
+	99 CheckEqual v67 @ TEMP_v49 (System.Boolean), v20 @ S0_v5, 45
+	100 ConditionalJump @b70, v67 @ TEMP_v49 (System.Boolean)
+	101 CheckEqual v68 @ TEMP_v50 (System.Boolean), v20 @ S0_v5, 46
+	102 ConditionalJump @b70, v68 @ TEMP_v50 (System.Boolean)
+	103 CheckEqual v69 @ TEMP_v51 (System.Boolean), v20 @ S0_v5, 47
+	104 ConditionalJump @b70, v69 @ TEMP_v51 (System.Boolean)
+	105 CheckEqual v70 @ TEMP_v52 (System.Boolean), v20 @ S0_v5, 48
+	106 ConditionalJump @b70, v70 @ TEMP_v52 (System.Boolean)
+	107 CheckEqual v71 @ TEMP_v53 (System.Boolean), v20 @ S0_v5, 49
+	108 ConditionalJump @b70, v71 @ TEMP_v53 (System.Boolean)
+	109 CheckEqual v72 @ TEMP_v54 (System.Boolean), v20 @ S0_v5, 50
+	110 ConditionalJump @b70, v72 @ TEMP_v54 (System.Boolean)
+	111 CheckEqual v73 @ TEMP_v55 (System.Boolean), v20 @ S0_v5, 51
+	112 ConditionalJump @b70, v73 @ TEMP_v55 (System.Boolean)
+	113 CheckEqual v74 @ TEMP_v56 (System.Boolean), v20 @ S0_v5, 52
+	114 ConditionalJump @b70, v74 @ TEMP_v56 (System.Boolean)
+	115 CheckEqual v75 @ TEMP_v57 (System.Boolean), v20 @ S0_v5, 53
+	116 ConditionalJump @b70, v75 @ TEMP_v57 (System.Boolean)
+	117 CheckEqual v76 @ TEMP_v58 (System.Boolean), v20 @ S0_v5, 54
+	118 ConditionalJump @b70, v76 @ TEMP_v58 (System.Boolean)
+	119 CheckEqual v77 @ TEMP_v59 (System.Boolean), v20 @ S0_v5, 55
+	120 ConditionalJump @b70, v77 @ TEMP_v59 (System.Boolean)
+	121 CheckEqual v78 @ TEMP_v60 (System.Boolean), v20 @ S0_v5, 56
+	122 ConditionalJump @b70, v78 @ TEMP_v60 (System.Boolean)
+	123 CheckEqual v79 @ TEMP_v61 (System.Boolean), v20 @ S0_v5, 57
+	124 ConditionalJump @b70, v79 @ TEMP_v61 (System.Boolean)
+	125 CheckEqual v80 @ TEMP_v62 (System.Boolean), v20 @ S0_v5, 58
+	126 ConditionalJump @b70, v80 @ TEMP_v62 (System.Boolean)
+	127 CheckEqual v81 @ TEMP_v63 (System.Boolean), v20 @ S0_v5, 59
+	128 ConditionalJump @b70, v81 @ TEMP_v63 (System.Boolean)
+	129 CheckEqual v82 @ TEMP_v64 (System.Boolean), v20 @ S0_v5, 60
+	130 ConditionalJump @b70, v82 @ TEMP_v64 (System.Boolean)
+	131 CheckEqual v24 @ TEMP_v65 (System.Boolean), v20 @ S0_v5, 61
+	132 ConditionalJump @b66, v24 @ TEMP_v65 (System.Boolean)
+	133 Jump @b70
+	134 Nop
+	135 Jump @b73
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Call SmallXmlParser.ReadName, v91 @ S0_v10 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	140 Nop
+	141 Nop
+	142 CallVoid SmallXmlParser.ReadCDATASection, this @ L0 (Mono.Xml.SmallXmlParser)
+	143 Jump @b74
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Nop
+	148 Nop
+	149 Call SmallXmlParser.ReadName, v87 @ S1_v6 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	150 Nop
+	151 And v12 @ S1_v7 (System.Int32), v87 @ S1_v6 (System.String), 65535
+	152 Nop
+	153 Call StringBuilder.Append, v15 @ S0_v8 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), v12 @ S1_v7 (System.Int32)
+	154 Jump @b74
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Return
+
+Method: System.Int32 ReadCharacterReference()
+
+Disassembly:
+	0x1247858 I32Const 4569658
+	0x124785D I32Load8_S 0, 0
+	0x1247860 I32Eqz
+	0x1247861 If -64
+	0x1247863 I32Const 3004132
+	0x1247868 I32Load 2, 0
+	0x124786B Call 73003
+	0x124786F I32Const 4569658
+	0x1247874 I32Const 1
+	0x1247876 I32Store8 0, 0
+	0x1247879 End
+	0x124787A LocalGet 0
+	0x124787C I32Const 0
+	0x124787E Call 54603
+	0x1247882 I32Const 0
+	0x1247884 I32Ge_S
+	0x1247885 If -64
+	0x1247887 I32Const 0
+	0x1247889 LocalGet 0
+	0x124788B I32Const 0
+	0x124788D Call 54603
+	0x1247891 I32Const 65535
+	0x1247895 I32And
+	0x1247896 I32Const 1
+	0x1247898 I32Const 0
+	0x124789A Call 57643
+	0x124789E If -64
+	0x12478A0 I32Const 0
+	0x12478A2 LocalSet 1
+	0x12478A4 Loop -64
+	0x12478A6 Block -64
+	0x12478A8 LocalGet 0
+	0x12478AA I32Const 0
+	0x12478AC Call 54603
+	0x12478B0 LocalTee 2
+	0x12478B2 I32Const 0
+	0x12478B4 I32Lt_S
+	0x12478B5 BrIf 0
+	0x12478B7 I32Const 0
+	0x12478B9 LocalGet 2
+	0x12478BB I32Const 65535
+	0x12478BF I32And
+	0x12478C0 LocalTee 3
+	0x12478C2 I32Const 0
+	0x12478C4 I32Const 0
+	0x12478C6 Call 57643
+	0x12478CA I32Eqz
+	0x12478CB BrIf 0
+	0x12478CD LocalGet 1
+	0x12478CF LocalGet 0
+	0x12478D1 I32Load 2, 32
+	0x12478D4 I32Load 2, 12
+	0x12478D7 I32Eq
+	0x12478D8 If -64
+	0x12478DA I32Const 4427880
+	0x12478DF I32Load 2, 0
+	0x12478E2 LocalGet 1
+	0x12478E4 I32Const 1
+	0x12478E6 I32Shl
+	0x12478E7 Call 71670
+	0x12478EB LocalSet 2
+	0x12478ED LocalGet 0
+	0x12478EF I32Load 2, 32
+	0x12478F2 LocalGet 2
+	0x12478F4 LocalGet 1
+	0x12478F6 I32Const 0
+	0x12478F8 Call 57644
+	0x12478FC LocalGet 0
+	0x12478FE I32Const 32
+	0x1247900 I32Add
+	0x1247901 LocalGet 2
+	0x1247903 I32Store 2, 0
+	0x1247906 End
+	0x1247907 LocalGet 0
+	0x1247909 I32Load 2, 32
+	0x124790C I32Const 16
+	0x124790E I32Add
+	0x124790F LocalGet 1
+	0x1247911 I32Const 1
+	0x1247913 I32Shl
+	0x1247914 I32Add
+	0x1247915 LocalGet 3
+	0x1247917 I32Store16 1, 0
+	0x124791A LocalGet 0
+	0x124791C I32Const 0
+	0x124791E Call 57629
+	0x1247922 Drop
+	0x1247923 LocalGet 1
+	0x1247925 I32Const 1
+	0x1247927 I32Add
+	0x1247928 LocalSet 1
+	0x124792A Br 1
+	0x124792C End
+	0x124792D End
+	0x124792E LocalGet 1
+	0x1247930 If -64
+	0x1247932 I32Const 0
+	0x1247934 LocalGet 0
+	0x1247936 I32Load 2, 32
+	0x1247939 I32Const 0
+	0x124793B LocalGet 1
+	0x124793D I32Const 0
+	0x124793F Call 55669
+	0x1247943 Return
+	0x1247944 Else
+	0x1247945 LocalGet 0
+	0x1247947 I32Const 4502828
+	0x124794C I32Load 2, 0
+	0x124794F I32Const 0
+	0x1247951 Call 57623
+	0x1247955 I32Const 0
+	0x1247957 I32Const 4467880
+	0x124795C I32Load 2, 0
+	0x124795F Call 73899
+	0x1247963 End
+	0x1247964 End
+	0x1247965 End
+	0x1247966 LocalGet 0
+	0x1247968 I32Const 4502824
+	0x124796D I32Load 2, 0
+	0x1247970 I32Const 0
+	0x1247972 Call 57623
+	0x1247976 I32Const 0
+	0x1247978 I32Const 4467880
+	0x124797D I32Load 2, 0
+	0x1247980 Call 73899
+	0x1247984 I32Const 0
+	0x1247986 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b26
+	5 Nop
+	6 Move v5 @ S0_v48, [2DD6E4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v48
+	8 Nop
+	9 Move v7 @ S1_v38, 1
+	10 Move [45BA3A], v7 @ S1_v38
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call SmallXmlParser.Read, v14 @ S0_v6 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	15 Nop
+	16 CheckGreaterOrEqual v16 @ S0_v7 (System.Boolean), v14 @ S0_v6 (System.Int32), 0
+	17 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v7 (System.Boolean)
+	18 ConditionalJump @b27, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call SmallXmlParser.Read, v21 @ S1_v9 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	23 Nop
+	24 And v40 @ S1_v10 (System.Char), v21 @ S1_v9 (System.Int32), 65535
+	25 Nop
+	26 Nop
+	27 Call SmallXmlParser.ReadUntil, v46 @ S0_v13 (System.String), 0, v40 @ S1_v10 (System.Char), 1
+	28 CheckEqual v43 @ TEMP_v4 (System.Boolean), v46 @ S0_v13 (System.String), 0
+	29 ConditionalJump @b27, v43 @ TEMP_v4 (System.Boolean)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call SmallXmlParser.Read, v92 @ S0_v17 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	36 Nop
+	37 Nop
+	38 CheckLess v94 @ S0_v18 (System.Boolean), v92 @ S0_v17 (System.Int32), 0
+	39 ConditionalJump @b18, v94 @ S0_v18 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 And v98 @ S1_v21 (System.Char), v92 @ S0_v17 (System.Int32), 65535
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Call SmallXmlParser.ReadUntil, v101 @ S0_v26 (System.String), 0, v98 @ S1_v21 (System.Char), 0
+	48 CheckEqual v105 @ S0_v27 (System.Boolean), v101 @ S0_v26 (System.String), 0
+	49 ConditionalJump @b18, v105 @ S0_v27 (System.Boolean)
+	50 Nop
+	51 Nop
+	52 Move v115 @ S1_v23 (System.Char[]), this.nameBuffer (System.Char[])
+	53 Nop
+	54 CheckEqual v117 @ S0_v29 (System.Boolean), v30 @ L1_v3 (System.Int32), v115.Length
+	55 Not v87 @ TEMP_v7 (System.Boolean), v117 @ S0_v29 (System.Boolean)
+	56 ConditionalJump @b29, v87 @ TEMP_v7 (System.Boolean)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Newobj v124 @ S0_v41 (System.OverflowException), typeof(System.OverflowException)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 CallVoid SorterObjectArray.SwapIfGreaterWithItems, this.nameBuffer (System.Char[]), v124 @ S0_v41 (System.OverflowException), v30 @ L1_v3 (System.Int32)
+	70 Nop
+	71 Nop
+	72 Add v132 @ S0_v45, this @ L0 (Mono.Xml.SmallXmlParser), 32
+	73 Nop
+	74 Move [v132 @ S0_v45], v124 @ S0_v41 (System.OverflowException)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Add v136 @ S0_v33, this.nameBuffer (System.Char[]), 16
+	80 Nop
+	81 Nop
+	82 ShiftLeft v138 @ S1_v28 (System.Int32), v30 @ L1_v3 (System.Int32), 1
+	83 Add v139 @ S0_v34, v136 @ S0_v33, v138 @ S1_v28 (System.Int32)
+	84 Nop
+	85 Move [v139 @ S0_v34], v98 @ S1_v21 (System.Char)
+	86 Nop
+	87 Nop
+	88 Call SmallXmlParser.ReadName, v143 @ S0_v36 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	89 Nop
+	90 Nop
+	91 Add v89 @ S0_v38 (System.Int32), v30 @ L1_v3 (System.Int32), 1
+	92 Nop
+	93 Jump @b30
+	94 Nop
+	95 Nop
+	96 Nop
+	97 CheckEqual v44 @ TEMP_v6 (System.Boolean), v30 @ L1_v3 (System.Int32), 0
+	98 ConditionalJump @b21, v44 @ TEMP_v6 (System.Boolean)
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Newobj returnVal2 @ S0_v24 (System.OutOfMemoryException), typeof(System.OutOfMemoryException)
+	106 Return returnVal2 @ S0_v24 (System.OutOfMemoryException)
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Call SmallXmlParser.IsWhitespace, v47 @ S0_v22 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), "Valid XML name is expected."
+	112 Nop
+	113 Nop
+	114 Nop
+	115 CallVoid 120AB, v47 @ S0_v22 (System.Boolean), 0, methodof(Mono.Xml.SmallXmlParser::ReadName)
+	116 Nop
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Call SmallXmlParser.IsWhitespace, v52 @ S0_v10 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), "XML name start character is expected."
+	124 Nop
+	125 Nop
+	126 Nop
+	127 CallVoid 120AB, v52 @ S0_v10 (System.Boolean), 0, methodof(Mono.Xml.SmallXmlParser::ReadName)
+	128 Nop
+	129 Nop
+	130 Return 0
+
+Method: System.Void ReadAttribute(Mono.Xml.SmallXmlParser+AttrListImpl a)
+
+Disassembly:
+	0x124798C GlobalGet 7
+	0x124798E LocalSet 2
+	0x1247990 GlobalGet 7
+	0x1247992 I32Const 16
+	0x1247994 I32Add
+	0x1247995 GlobalSet 7
+	0x1247997 I32Const 4569657
+	0x124799C I32Load8_S 0, 0
+	0x124799F I32Eqz
+	0x12479A0 If -64
+	0x12479A2 I32Const 3004100
+	0x12479A7 I32Load 2, 0
+	0x12479AA Call 73003
+	0x12479AE I32Const 4569657
+	0x12479B3 I32Const 1
+	0x12479B5 I32Store8 0, 0
+	0x12479B8 End
+	0x12479B9 LocalGet 0
+	0x12479BB I32Const 0
+	0x12479BD Call 57629
+	0x12479C1 LocalTee 3
+	0x12479C3 I32Const -1
+	0x12479C5 I32Le_S
+	0x12479C6 If -64
+	0x12479C8 LocalGet 0
+	0x12479CA I32Const 0
+	0x12479CC Call 57636
+	0x12479D0 I32Const 0
+	0x12479D2 I32Const 4473004
+	0x12479D7 I32Load 2, 0
+	0x12479DA Call 73899
+	0x12479DE End
+	0x12479DF LocalGet 2
+	0x12479E1 I32Const 2
+	0x12479E3 I32Add
+	0x12479E4 LocalSet 4
+	0x12479E6 LocalGet 3
+	0x12479E8 LocalGet 1
+	0x12479EA I32Eq
+	0x12479EB If -64
+	0x12479ED LocalGet 2
+	0x12479EF GlobalSet 7
+	0x12479F1 Else
+	0x12479F2 LocalGet 4
+	0x12479F4 LocalGet 1
+	0x12479F6 I32Store16 1, 0
+	0x12479F9 I32Const 4427948
+	0x12479FE I32Load 2, 0
+	0x1247A01 LocalGet 4
+	0x1247A03 Call 73903
+	0x1247A07 LocalSet 1
+	0x1247A09 LocalGet 2
+	0x1247A0B LocalGet 3
+	0x1247A0D I32Store16 1, 0
+	0x1247A10 I32Const 4427948
+	0x1247A15 I32Load 2, 0
+	0x1247A18 LocalGet 2
+	0x1247A1A Call 73903
+	0x1247A1E LocalSet 2
+	0x1247A20 LocalGet 0
+	0x1247A22 I32Const 4502820
+	0x1247A27 I32Load 2, 0
+	0x1247A2A LocalGet 1
+	0x1247A2C LocalGet 2
+	0x1247A2E I32Const 0
+	0x1247A30 Call 55726
+	0x1247A34 I32Const 0
+	0x1247A36 Call 57623
+	0x1247A3A I32Const 0
+	0x1247A3C I32Const 4473004
+	0x1247A41 I32Load 2, 0
+	0x1247A44 Call 73899
+	0x1247A48 End
+	0x1247A49 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b16
+	11 Nop
+	12 Move v12 @ S0_v31, [2DD6C4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v31
+	14 Nop
+	15 Move v14 @ S1_v19, 1
+	16 Move [45BA39], v14 @ S1_v19
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call SmallXmlParser.ReadName, v20 @ S0_v9 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	21 Nop
+	22 Nop
+	23 CheckLessOrEqual v23 @ S0_v10 (System.Boolean), v20 @ S0_v9 (System.String), -1
+	24 Not v24 @ TEMP_v2 (System.Boolean), v23 @ S0_v10 (System.Boolean)
+	25 ConditionalJump @b8, v24 @ TEMP_v2 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 Call SmallXmlParser.Peek, v27 @ S0_v29 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid SmallXmlParser.Expect, v27 @ S0_v29 (System.Int32), 0
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v36 @ S0_v13, v1 @ G7, 2
+	37 Nop
+	38 Nop
+	39 Nop
+	40 CheckEqual v41 @ S0_v15 (System.Boolean), v20 @ S0_v9 (System.String), a @ L1 (Mono.Xml.SmallXmlParser+AttrListImpl)
+	41 Not v42 @ TEMP_v3 (System.Boolean), v41 @ S0_v15 (System.Boolean)
+	42 ConditionalJump @b10, v42 @ TEMP_v3 (System.Boolean)
+	43 Nop
+	44 Nop
+	45 Jump @b15
+	46 Nop
+	47 Nop
+	48 Move [v36 @ S0_v13], a @ L1 (Mono.Xml.SmallXmlParser+AttrListImpl)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call 120AF, v51 @ S0_v20 (System.String), typeof(System.Char), v36 @ S0_v13
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move [v1 @ G7], v20 @ S0_v9 (System.String)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Call 120AF, v74 @ S0_v24 (System.Object), typeof(System.Char), v1 @ G7
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Call String.Format, v79 @ S1_v15 (System.String), "Expected '{0}' but got {1}", v51 @ S0_v20 (System.String), v74 @ S0_v24 (System.Object)
+	69 Nop
+	70 Call SmallXmlParser.IsWhitespace, v68 @ S0_v26 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), v79 @ S1_v15 (System.String)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 CallVoid SmallXmlParser.Expect, v68 @ S0_v26 (System.Boolean), 0
+	75 Nop
+	76 Nop
+	77 Return
+
+Method: System.Void ReadCDATASection()
+
+Disassembly:
+	0x1247EB5 I32Const 4569649
+	0x1247EBA I32Load8_S 0, 0
+	0x1247EBD I32Eqz
+	0x1247EBE If -64
+	0x1247EC0 I32Const 3004136
+	0x1247EC5 I32Load 2, 0
+	0x1247EC8 Call 73003
+	0x1247ECC I32Const 4569649
+	0x1247ED1 I32Const 1
+	0x1247ED3 I32Store8 0, 0
+	0x1247ED6 End
+	0x1247ED7 Block -64
+	0x1247ED9 LocalGet 0
+	0x1247EDB I32Const 0
+	0x1247EDD Call 54603
+	0x1247EE1 I32Const 35
+	0x1247EE3 I32Eq
+	0x1247EE4 If -64
+	0x1247EE6 LocalGet 0
+	0x1247EE8 I32Const 0
+	0x1247EEA Call 57629
+	0x1247EEE Drop
+	0x1247EEF LocalGet 0
+	0x1247EF1 I32Const 0
+	0x1247EF3 Call 57640
+	0x1247EF7 Drop
+	0x1247EF8 Else
+	0x1247EF9 LocalGet 0
+	0x1247EFB I32Const 0
+	0x1247EFD Call 57630
+	0x1247F01 LocalSet 2
+	0x1247F03 LocalGet 0
+	0x1247F05 I32Const 59
+	0x1247F07 I32Const 0
+	0x1247F09 Call 57631
+	0x1247F0D LocalGet 2
+	0x1247F0F I32Const 4502864
+	0x1247F14 I32Load 2, 0
+	0x1247F17 I32Const 0
+	0x1247F19 Call 55605
+	0x1247F1D If -64
+	0x1247F1F LocalGet 0
+	0x1247F21 I32Load 2, 28
+	0x1247F24 I32Const 38
+	0x1247F26 I32Const 0
+	0x1247F28 Call 61633
+	0x1247F2C Drop
+	0x1247F2D Br 2
+	0x1247F2F End
+	0x1247F30 LocalGet 2
+	0x1247F32 I32Const 4502868
+	0x1247F37 I32Load 2, 0
+	0x1247F3A I32Const 0
+	0x1247F3C Call 55605
+	0x1247F40 If -64
+	0x1247F42 LocalGet 0
+	0x1247F44 I32Load 2, 28
+	0x1247F47 I32Const 34
+	0x1247F49 I32Const 0
+	0x1247F4B Call 61633
+	0x1247F4F Drop
+	0x1247F50 Br 2
+	0x1247F52 End
+	0x1247F53 LocalGet 2
+	0x1247F55 I32Const 4502872
+	0x1247F5A I32Load 2, 0
+	0x1247F5D I32Const 0
+	0x1247F5F Call 55605
+	0x1247F63 If -64
+	0x1247F65 LocalGet 0
+	0x1247F67 I32Load 2, 28
+	0x1247F6A I32Const 39
+	0x1247F6C I32Const 0
+	0x1247F6E Call 61633
+	0x1247F72 Drop
+	0x1247F73 Br 2
+	0x1247F75 End
+	0x1247F76 LocalGet 2
+	0x1247F78 I32Const 4502876
+	0x1247F7D I32Load 2, 0
+	0x1247F80 I32Const 0
+	0x1247F82 Call 55605
+	0x1247F86 If -64
+	0x1247F88 LocalGet 0
+	0x1247F8A I32Load 2, 28
+	0x1247F8D I32Const 60
+	0x1247F8F I32Const 0
+	0x1247F91 Call 61633
+	0x1247F95 Drop
+	0x1247F96 Br 2
+	0x1247F98 End
+	0x1247F99 LocalGet 2
+	0x1247F9B I32Const 4502880
+	0x1247FA0 I32Load 2, 0
+	0x1247FA3 I32Const 0
+	0x1247FA5 Call 55605
+	0x1247FA9 If -64
+	0x1247FAB LocalGet 0
+	0x1247FAD I32Load 2, 28
+	0x1247FB0 I32Const 62
+	0x1247FB2 I32Const 0
+	0x1247FB4 Call 61633
+	0x1247FB8 Drop
+	0x1247FB9 Else
+	0x1247FBA LocalGet 0
+	0x1247FBC I32Const 4502884
+	0x1247FC1 I32Load 2, 0
+	0x1247FC4 I32Const 0
+	0x1247FC6 Call 57623
+	0x1247FCA I32Const 0
+	0x1247FCC I32Const 4473028
+	0x1247FD1 I32Load 2, 0
+	0x1247FD4 Call 73899
+	0x1247FD8 End
+	0x1247FD9 End
+	0x1247FDA End
+	0x1247FDB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b34
+	5 Nop
+	6 Move v5 @ S0_v44, [2DD6E8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v44
+	8 Nop
+	9 Move v7 @ S1_v27, 1
+	10 Move [45BA31], v7 @ S1_v27
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call SmallXmlParser.Read, v14 @ S0_v6 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	15 Nop
+	16 CheckEqual v16 @ S0_v7 (System.Boolean), v14 @ S0_v6 (System.Int32), 35
+	17 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v7 (System.Boolean)
+	18 ConditionalJump @b9, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Call SmallXmlParser.ReadName, v20 @ S0_v40 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	22 Nop
+	23 Nop
+	24 Call AttrListImpl.get_Length, v26 @ S0_v42 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	25 Jump @b36
+	26 Nop
+	27 Nop
+	28 Call SmallXmlParser.ReadCharacterReference, v23 @ S0_v10 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid SmallXmlParser.ReadAttribute, this @ L0 (Mono.Xml.SmallXmlParser), 59
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call String.op_Inequality, v35 @ S0_v13 (System.Boolean), v23 @ S0_v10 (System.Int32), "amp"
+	39 Not v54 @ TEMP_v4 (System.Boolean), v35 @ S0_v13 (System.Boolean)
+	40 ConditionalJump @b15, v54 @ TEMP_v4 (System.Boolean)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call StringBuilder.Append, v60 @ S0_v38 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), 38
+	46 Jump @b36
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call String.op_Inequality, v72 @ S0_v15 (System.Boolean), v23 @ S0_v10 (System.Int32), "quot"
+	53 Not v55 @ TEMP_v5 (System.Boolean), v72 @ S0_v15 (System.Boolean)
+	54 ConditionalJump @b19, v55 @ TEMP_v5 (System.Boolean)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call StringBuilder.Append, v61 @ S0_v35 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), 34
+	60 Jump @b36
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Call String.op_Inequality, v79 @ S0_v17 (System.Boolean), v23 @ S0_v10 (System.Int32), "apos"
+	67 Not v56 @ TEMP_v6 (System.Boolean), v79 @ S0_v17 (System.Boolean)
+	68 ConditionalJump @b23, v56 @ TEMP_v6 (System.Boolean)
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Call StringBuilder.Append, v62 @ S0_v32 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), 39
+	74 Jump @b36
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Call String.op_Inequality, v86 @ S0_v19 (System.Boolean), v23 @ S0_v10 (System.Int32), "lt"
+	81 Not v57 @ TEMP_v7 (System.Boolean), v86 @ S0_v19 (System.Boolean)
+	82 ConditionalJump @b27, v57 @ TEMP_v7 (System.Boolean)
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Call StringBuilder.Append, v63 @ S0_v29 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), 60
+	88 Jump @b36
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Call String.op_Inequality, v93 @ S0_v21 (System.Boolean), v23 @ S0_v10 (System.Int32), "gt"
+	95 Not v58 @ TEMP_v8 (System.Boolean), v93 @ S0_v21 (System.Boolean)
+	96 ConditionalJump @b31, v58 @ TEMP_v8 (System.Boolean)
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Call StringBuilder.Append, v65 @ S0_v26 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), 62
+	102 Jump @b36
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Call SmallXmlParser.IsWhitespace, v64 @ S0_v23 (System.Boolean), this @ L0 (Mono.Xml.SmallXmlParser), "General non-predefined entity reference is not supported in this parser."
+	108 Nop
+	109 Nop
+	110 Nop
+	111 CallVoid 120AB, v64 @ S0_v23 (System.Boolean), 0, methodof(Mono.Xml.SmallXmlParser::ReadReference)
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Return
+
+Method: System.Void ReadComment()
+
+Disassembly:
+	0x1247A4F I32Const 4569656
+	0x1247A54 I32Load8_S 0, 0
+	0x1247A57 I32Eqz
+	0x1247A58 If -64
+	0x1247A5A I32Const 3004120
+	0x1247A5F I32Load 2, 0
+	0x1247A62 Call 73003
+	0x1247A66 I32Const 4569656
+	0x1247A6B I32Const 1
+	0x1247A6D I32Store8 0, 0
+	0x1247A70 End
+	0x1247A71 I32Const 0
+	0x1247A73 LocalSet 1
+	0x1247A75 Block -64
+	0x1247A77 Block -64
+	0x1247A79 Loop -64
+	0x1247A7B Block -64
+	0x1247A7D LocalGet 0
+	0x1247A7F I32Const 0
+	0x1247A81 Call 54603
+	0x1247A85 I32Const -1
+	0x1247A87 I32Le_S
+	0x1247A88 BrIf 2
+	0x1247A8A Block -1
+	0x1247A8C Block -64
+	0x1247A8E Block -64
+	0x1247A90 Block -64
+	0x1247A92 LocalGet 0
+	0x1247A94 I32Const 0
+	0x1247A96 Call 57629
+	0x1247A9A I32Const 65535
+	0x1247A9E I32And
+	0x1247A9F LocalTee 4
+	0x1247AA1 I32Const 16
+	0x1247AA3 I32Shl
+	0x1247AA4 I32Const 16
+	0x1247AA6 I32Shr_S
+	0x1247AA7 I32Const 62
+	0x1247AA9 I32Sub
+	0x1247AAA BrTable System.UInt64[], 2
+	0x1247ACD End
+	0x1247ACE LocalGet 1
+	0x1247AD0 I32Const 1
+	0x1247AD2 I32Add
+	0x1247AD3 Br 2
+	0x1247AD5 End
+	0x1247AD6 LocalGet 1
+	0x1247AD8 I32Const 2
+	0x1247ADA I32Lt_S
+	0x1247ADB BrIf 0
+	0x1247ADD Br 2
+	0x1247ADF End
+	0x1247AE0 I32Const 0
+	0x1247AE2 LocalSet 2
+	0x1247AE4 Loop -64
+	0x1247AE6 LocalGet 0
+	0x1247AE8 I32Load 2, 28
+	0x1247AEB LocalSet 3
+	0x1247AED LocalGet 2
+	0x1247AEF LocalGet 1
+	0x1247AF1 I32Lt_S
+	0x1247AF2 If -64
+	0x1247AF4 LocalGet 3
+	0x1247AF6 I32Const 93
+	0x1247AF9 I32Const 0
+	0x1247AFB Call 61633
+	0x1247AFF Drop
+	0x1247B00 LocalGet 2
+	0x1247B02 I32Const 1
+	0x1247B04 I32Add
+	0x1247B05 LocalSet 2
+	0x1247B07 Br 1
+	0x1247B09 End
+	0x1247B0A End
+	0x1247B0B LocalGet 3
+	0x1247B0D LocalGet 4
+	0x1247B0F I32Const 0
+	0x1247B11 Call 61633
+	0x1247B15 Drop
+	0x1247B16 I32Const 0
+	0x1247B18 End
+	0x1247B19 LocalSet 1
+	0x1247B1B Br 1
+	0x1247B1D End
+	0x1247B1E End
+	0x1247B1F Br 1
+	0x1247B21 End
+	0x1247B22 LocalGet 0
+	0x1247B24 I32Const 0
+	0x1247B26 Call 57636
+	0x1247B2A I32Const 0
+	0x1247B2C I32Const 4473016
+	0x1247B31 I32Load 2, 0
+	0x1247B34 Call 73899
+	0x1247B38 End
+	0x1247B39 Loop -64
+	0x1247B3B LocalGet 1
+	0x1247B3D I32Const 3
+	0x1247B3F I32Ge_S
+	0x1247B40 If -64
+	0x1247B42 LocalGet 0
+	0x1247B44 I32Load 2, 28
+	0x1247B47 I32Const 93
+	0x1247B4A I32Const 0
+	0x1247B4C Call 61633
+	0x1247B50 Drop
+	0x1247B51 LocalGet 1
+	0x1247B53 I32Const 1
+	0x1247B55 I32Sub
+	0x1247B56 LocalSet 1
+	0x1247B58 Br 1
+	0x1247B5A End
+	0x1247B5B End
+	0x1247B5C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b55
+	5 Nop
+	6 Move v5 @ S0_v46, [2DD6D8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v46
+	8 Nop
+	9 Move v7 @ S1_v25, 1
+	10 Move [45BA38], v7 @ S1_v25
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call SmallXmlParser.Read, v36 @ S0_v8 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	18 Nop
+	19 CheckLessOrEqual v38 @ S0_v9 (System.Boolean), v36 @ S0_v8 (System.Int32), -1
+	20 ConditionalJump @b49, v38 @ S0_v9 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Call SmallXmlParser.ReadName, v41 @ S0_v21 (System.String), this @ L0 (Mono.Xml.SmallXmlParser)
+	24 Nop
+	25 And v46 @ S0_v22 (System.Int32), v41 @ S0_v21 (System.String), 65535
+	26 Nop
+	27 Nop
+	28 ShiftLeft v48 @ S0_v23 (System.Int32), v46 @ S0_v22 (System.Int32), 16
+	29 Nop
+	30 ShiftRight v50 @ S0_v24 (System.Int32), v48 @ S0_v23 (System.Int32), 16
+	31 Nop
+	32 Subtract v52 @ S0_v25, v50 @ S0_v24 (System.Int32), 62
+	33 CheckEqual v53 @ TEMP_v5 (System.Boolean), v50 @ S0_v24 (System.Int32), 62
+	34 ConditionalJump @b41, v53 @ TEMP_v5 (System.Boolean)
+	35 CheckEqual v57 @ TEMP_v10 (System.Boolean), v52 @ S0_v25, 1
+	36 ConditionalJump @b43, v57 @ TEMP_v10 (System.Boolean)
+	37 CheckEqual v75 @ TEMP_v11 (System.Boolean), v52 @ S0_v25, 2
+	38 ConditionalJump @b43, v75 @ TEMP_v11 (System.Boolean)
+	39 CheckEqual v78 @ TEMP_v12 (System.Boolean), v52 @ S0_v25, 3
+	40 ConditionalJump @b43, v78 @ TEMP_v12 (System.Boolean)
+	41 CheckEqual v79 @ TEMP_v13 (System.Boolean), v52 @ S0_v25, 4
+	42 ConditionalJump @b43, v79 @ TEMP_v13 (System.Boolean)
+	43 CheckEqual v80 @ TEMP_v14 (System.Boolean), v52 @ S0_v25, 5
+	44 ConditionalJump @b43, v80 @ TEMP_v14 (System.Boolean)
+	45 CheckEqual v81 @ TEMP_v15 (System.Boolean), v52 @ S0_v25, 6
+	46 ConditionalJump @b43, v81 @ TEMP_v15 (System.Boolean)
+	47 CheckEqual v82 @ TEMP_v16 (System.Boolean), v52 @ S0_v25, 7
+	48 ConditionalJump @b43, v82 @ TEMP_v16 (System.Boolean)
+	49 CheckEqual v83 @ TEMP_v17 (System.Boolean), v52 @ S0_v25, 8
+	50 ConditionalJump @b43, v83 @ TEMP_v17 (System.Boolean)
+	51 CheckEqual v84 @ TEMP_v18 (System.Boolean), v52 @ S0_v25, 9
+	52 ConditionalJump @b43, v84 @ TEMP_v18 (System.Boolean)
+	53 CheckEqual v85 @ TEMP_v19 (System.Boolean), v52 @ S0_v25, 10
+	54 ConditionalJump @b43, v85 @ TEMP_v19 (System.Boolean)
+	55 CheckEqual v86 @ TEMP_v20 (System.Boolean), v52 @ S0_v25, 11
+	56 ConditionalJump @b43, v86 @ TEMP_v20 (System.Boolean)
+	57 CheckEqual v87 @ TEMP_v21 (System.Boolean), v52 @ S0_v25, 12
+	58 ConditionalJump @b43, v87 @ TEMP_v21 (System.Boolean)
+	59 CheckEqual v88 @ TEMP_v22 (System.Boolean), v52 @ S0_v25, 13
+	60 ConditionalJump @b43, v88 @ TEMP_v22 (System.Boolean)
+	61 CheckEqual v89 @ TEMP_v23 (System.Boolean), v52 @ S0_v25, 14
+	62 ConditionalJump @b43, v89 @ TEMP_v23 (System.Boolean)
+	63 CheckEqual v90 @ TEMP_v24 (System.Boolean), v52 @ S0_v25, 15
+	64 ConditionalJump @b43, v90 @ TEMP_v24 (System.Boolean)
+	65 CheckEqual v91 @ TEMP_v25 (System.Boolean), v52 @ S0_v25, 16
+	66 ConditionalJump @b43, v91 @ TEMP_v25 (System.Boolean)
+	67 CheckEqual v92 @ TEMP_v26 (System.Boolean), v52 @ S0_v25, 17
+	68 ConditionalJump @b43, v92 @ TEMP_v26 (System.Boolean)
+	69 CheckEqual v93 @ TEMP_v27 (System.Boolean), v52 @ S0_v25, 18
+	70 ConditionalJump @b43, v93 @ TEMP_v27 (System.Boolean)
+	71 CheckEqual v94 @ TEMP_v28 (System.Boolean), v52 @ S0_v25, 19
+	72 ConditionalJump @b43, v94 @ TEMP_v28 (System.Boolean)
+	73 CheckEqual v95 @ TEMP_v29 (System.Boolean), v52 @ S0_v25, 20
+	74 ConditionalJump @b43, v95 @ TEMP_v29 (System.Boolean)
+	75 CheckEqual v96 @ TEMP_v30 (System.Boolean), v52 @ S0_v25, 21
+	76 ConditionalJump @b43, v96 @ TEMP_v30 (System.Boolean)
+	77 CheckEqual v97 @ TEMP_v31 (System.Boolean), v52 @ S0_v25, 22
+	78 ConditionalJump @b43, v97 @ TEMP_v31 (System.Boolean)
+	79 CheckEqual v98 @ TEMP_v32 (System.Boolean), v52 @ S0_v25, 23
+	80 ConditionalJump @b43, v98 @ TEMP_v32 (System.Boolean)
+	81 CheckEqual v99 @ TEMP_v33 (System.Boolean), v52 @ S0_v25, 24
+	82 ConditionalJump @b43, v99 @ TEMP_v33 (System.Boolean)
+	83 CheckEqual v100 @ TEMP_v34 (System.Boolean), v52 @ S0_v25, 25
+	84 ConditionalJump @b43, v100 @ TEMP_v34 (System.Boolean)
+	85 CheckEqual v101 @ TEMP_v35 (System.Boolean), v52 @ S0_v25, 26
+	86 ConditionalJump @b43, v101 @ TEMP_v35 (System.Boolean)
+	87 CheckEqual v102 @ TEMP_v36 (System.Boolean), v52 @ S0_v25, 27
+	88 ConditionalJump @b43, v102 @ TEMP_v36 (System.Boolean)
+	89 CheckEqual v103 @ TEMP_v37 (System.Boolean), v52 @ S0_v25, 28
+	90 ConditionalJump @b43, v103 @ TEMP_v37 (System.Boolean)
+	91 CheckEqual v104 @ TEMP_v38 (System.Boolean), v52 @ S0_v25, 29
+	92 ConditionalJump @b43, v104 @ TEMP_v38 (System.Boolean)
+	93 CheckEqual v105 @ TEMP_v39 (System.Boolean), v52 @ S0_v25, 30
+	94 ConditionalJump @b43, v105 @ TEMP_v39 (System.Boolean)
+	95 CheckEqual v106 @ TEMP_v40 (System.Boolean), v52 @ S0_v25, 31
+	96 ConditionalJump @b40, v106 @ TEMP_v40 (System.Boolean)
+	97 Jump @b43
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Add v32 @ S0_v26, v61 @ L1_v3, 1
+	102 Jump @b56
+	103 Nop
+	104 Nop
+	105 Nop
+	106 CheckLess v60 @ S0_v42 (System.Boolean), v61 @ L1_v3, 2
+	107 ConditionalJump @b43, v60 @ S0_v42 (System.Boolean)
+	108 Jump @b48
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 CheckLess v130 @ S0_v33 (System.Boolean), v21 @ L2_v1, v61 @ L1_v3
+	119 Not v123 @ TEMP_v9 (System.Boolean), v130 @ S0_v33 (System.Boolean)
+	120 ConditionalJump @b46, v123 @ TEMP_v9 (System.Boolean)
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Call StringBuilder.Append, v134 @ S0_v38 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), 93
+	125 Nop
+	126 Nop
+	127 Add v125 @ S0_v40, v21 @ L2_v1, 1
+	128 Nop
+	129 Jump @b57
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Call StringBuilder.Append, v138 @ S0_v35 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), v46 @ S0_v22 (System.Int32)
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Jump @b59
+	140 Nop
+	141 Nop
+	142 Jump @b58
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Call SmallXmlParser.Peek, v44 @ S0_v19 (System.Int32), this @ L0 (Mono.Xml.SmallXmlParser)
+	147 Nop
+	148 Nop
+	149 Nop
+	150 CallVoid 120AB, v44 @ S0_v19 (System.Int32), 0, methodof(Mono.Xml.SmallXmlParser::ReadCDATASection)
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Nop
+	155 CheckGreaterOrEqual v74 @ S0_v12 (System.Boolean), v61 @ L1_v3, 3
+	156 Not v69 @ TEMP_v4 (System.Boolean), v74 @ S0_v12 (System.Boolean)
+	157 ConditionalJump @b54, v69 @ TEMP_v4 (System.Boolean)
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Call StringBuilder.Append, v113 @ S0_v15 (System.Text.StringBuilder), this.buffer (System.Text.StringBuilder), 93
+	163 Nop
+	164 Nop
+	165 Subtract v71 @ S0_v17, v61 @ L1_v3, 1
+	166 Nop
+	167 Jump @b58
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Return
+

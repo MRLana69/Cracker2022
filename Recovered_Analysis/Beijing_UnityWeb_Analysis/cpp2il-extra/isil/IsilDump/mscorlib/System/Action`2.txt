@@ -1,0 +1,172 @@
+Type: System.Action`2
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move [this @ L0 (System.Action`2<T1, T2>)+8], method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (System.Action`2<T1, T2>)+14], method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.Action`2<T1, T2>), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke(T1 arg1, T2 arg2)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move [this @ L0 (System.Action`2<T1, T2>)+8], [arg2 @ L2 (T2)]
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (System.Action`2<T1, T2>)+14], arg2 @ L2 (T2)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.Action`2<T1, T2>), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], arg1 @ L1 (T1)
+	12 Nop
+	13 Return
+
+Method: System.IAsyncResult BeginInvoke(T1 arg1, T2 arg2, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x115D2DB GlobalGet 7
+	0x115D2DD LocalSet 5
+	0x115D2DF GlobalGet 7
+	0x115D2E1 I32Const 16
+	0x115D2E3 I32Add
+	0x115D2E4 GlobalSet 7
+	0x115D2E6 I32Const 4567031
+	0x115D2EB I32Load8_S 0, 0
+	0x115D2EE I32Eqz
+	0x115D2EF If -64
+	0x115D2F1 I32Const 2945836
+	0x115D2F6 I32Load 2, 0
+	0x115D2F9 Call 73003
+	0x115D2FD I32Const 4567031
+	0x115D302 I32Const 1
+	0x115D304 I32Store8 0, 0
+	0x115D307 End
+	0x115D308 LocalGet 5
+	0x115D30A I32Const 0
+	0x115D30C I32Store 2, 8
+	0x115D30F LocalGet 5
+	0x115D311 I32Const 4433340
+	0x115D316 I32Load 2, 0
+	0x115D319 LocalGet 1
+	0x115D31B Call 73903
+	0x115D31F I32Store 2, 0
+	0x115D322 LocalGet 5
+	0x115D324 I32Const 4433340
+	0x115D329 I32Load 2, 0
+	0x115D32C LocalGet 2
+	0x115D32E Call 73903
+	0x115D332 I32Store 2, 4
+	0x115D335 LocalGet 0
+	0x115D337 LocalGet 5
+	0x115D339 LocalGet 3
+	0x115D33B LocalGet 4
+	0x115D33D Call 73891
+	0x115D341 LocalGet 5
+	0x115D343 GlobalSet 7
+	0x115D345 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b8
+	11 Nop
+	12 Move v12 @ S0_v14, [2CF32C]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v14
+	14 Nop
+	15 Move v14 @ S1_v12, 1
+	16 Move [45AFF7], v14 @ S1_v12
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7+8], 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Call 120AF, v24 @ S1_v6, typeof(UnityEngine.Color), arg1 @ L1 (T1)
+	26 Move [v1 @ G7], v24 @ S1_v6
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call 120AF, v30 @ S1_v9, typeof(UnityEngine.Color), arg2 @ L2 (T2)
+	32 Move [v1 @ G7+4], v30 @ S1_v9
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 120A3, returnVal1 @ S0_v12 (System.IAsyncResult), this @ L0 (System.Action`2<T1, T2>), v1 @ G7, callback @ L3 (System.AsyncCallback), object @ L4 (System.Object)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Return returnVal1 @ S0_v12 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xC7FF09 LocalGet 1
+	0xC7FF0B I32Const 0
+	0xC7FF0D Call 73892
+	0xC7FF11 Drop
+	0xC7FF12 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Throw typeof(System.InvalidOperationException)
+	3 Nop
+	4 Return
+

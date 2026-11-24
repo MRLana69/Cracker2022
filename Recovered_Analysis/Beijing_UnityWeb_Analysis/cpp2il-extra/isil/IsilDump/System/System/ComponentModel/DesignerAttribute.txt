@@ -1,0 +1,157 @@
+Type: System.ComponentModel.DesignerAttribute
+
+Method: System.Void .ctor(System.String designerTypeName)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.ComponentModel.DesignerAttribute), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], designerTypeName @ L1 (System.String)
+	5 Nop
+	6 Return
+
+Method: System.Void .ctor(System.String designerTypeName, System.Type designerBaseType)
+
+Disassembly:
+	0x10915CC LocalGet 0
+	0x10915CE I32Const 1
+	0x10915D0 I32Store8 0, 36
+	0x10915D3 LocalGet 0
+	0x10915D5 I32Const 8
+	0x10915D7 I32Add
+	0x10915D8 LocalGet 1
+	0x10915DA I32Store 2, 0
+	0x10915DD LocalGet 0
+	0x10915DF I32Const 12
+	0x10915E1 I32Add
+	0x10915E2 LocalGet 2
+	0x10915E4 I32Store 2, 0
+	0x10915E7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (System.ComponentModel.DesignerAttribute)+24], 1
+	3 Nop
+	4 Nop
+	5 Add v5 @ S0_v3, this @ L0 (System.ComponentModel.DesignerAttribute), 8
+	6 Nop
+	7 Move [v5 @ S0_v3], designerTypeName @ L1 (System.String)
+	8 Nop
+	9 Nop
+	10 Add v10 @ S0_v5, this @ L0 (System.ComponentModel.DesignerAttribute), 12
+	11 Nop
+	12 Move [v10 @ S0_v5], designerBaseType @ L2 (System.Type)
+	13 Nop
+	14 Return
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x108AAB9 I32Const 4564428
+	0x108AABE I32Load8_S 0, 0
+	0x108AAC1 I32Eqz
+	0x108AAC2 If -64
+	0x108AAC4 I32Const 2952316
+	0x108AAC9 I32Load 2, 0
+	0x108AACC Call 73003
+	0x108AAD0 I32Const 4564428
+	0x108AAD5 I32Const 1
+	0x108AAD7 I32Store8 0, 0
+	0x108AADA End
+	0x108AADB LocalGet 0
+	0x108AADD LocalGet 1
+	0x108AADF I32Eq
+	0x108AAE0 If -1
+	0x108AAE2 I32Const 1
+	0x108AAE4 Else
+	0x108AAE5 LocalGet 1
+	0x108AAE7 I32Const 4432352
+	0x108AAEC I32Load 2, 0
+	0x108AAEF Call 29313
+	0x108AAF3 LocalTee 1
+	0x108AAF5 If -1
+	0x108AAF7 I32Const 4
+	0x108AAF9 LocalGet 1
+	0x108AAFB Call 29262
+	0x108AAFF I32Const 4
+	0x108AB01 LocalGet 0
+	0x108AB03 Call 29262
+	0x108AB07 I32Const 0
+	0x108AB09 Call 55605
+	0x108AB0D Else
+	0x108AB0E I32Const 0
+	0x108AB10 End
+	0x108AB11 End
+	0x108AB12 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v16, [2D0C7C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45A5CC], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v15 @ S0_v6 (System.Boolean), this @ L0 (System.ComponentModel.DesignerAttribute), obj @ L1 (System.Object)
+	15 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v6 (System.Boolean)
+	16 ConditionalJump @b6, v16 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Jump @b14
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 7281, v21 @ S0_v9, obj @ L1 (System.Object), typeof(System.ComponentModel.DescriptionAttribute)
+	23 Nop
+	24 CheckEqual v30 @ TEMP_v4 (System.Boolean), v21 @ S0_v9, 0
+	25 ConditionalJump @b12, v30 @ TEMP_v4 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 Call 724E, v36 @ S0_v12 (System.String), 4, v21 @ S0_v9
+	29 Nop
+	30 Nop
+	31 Call 724E, v28 @ S1_v8 (System.String), 4, this @ L0 (System.ComponentModel.DesignerAttribute)
+	32 Nop
+	33 Call String.op_Inequality, returnVal1 @ S0_v7 (System.Boolean), v36 @ S0_v12 (System.String), v28 @ S1_v8 (System.String)
+	34 Jump @b14
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Return returnVal1 @ S0_v7 (System.Boolean)
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x108AB15 I32Const 2
+	0x108AB17 I32Const 4
+	0x108AB19 LocalGet 0
+	0x108AB1B Call 29262
+	0x108AB1F Call 29262
+	0x108AB23 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 724E, v4 @ S1_v2, 4, this @ L0 (System.ComponentModel.DesignerAttribute)
+	4 Call 724E, returnVal1 @ S0_v2 (System.Int32), 2, v4 @ S1_v2
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Int32)
+

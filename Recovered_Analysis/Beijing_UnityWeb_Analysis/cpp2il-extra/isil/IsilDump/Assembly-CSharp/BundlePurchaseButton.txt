@@ -1,0 +1,2721 @@
+Type: BundlePurchaseButton
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (BundlePurchaseButton)
+	3 Nop
+	4 Return
+
+Method: System.Void OnClick()
+
+Disassembly:
+	0xC63AD5 LocalGet 0
+	0xC63AD7 I32Const 0
+	0xC63AD9 Call 30451
+	0xC63ADD LocalGet 0
+	0xC63ADF I32Const 0
+	0xC63AE1 Call 30452
+	0xC63AE5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid BundlePurchaseButton.OnDisable, this @ L0 (BundlePurchaseButton)
+	3 Nop
+	4 Nop
+	5 CallVoid BundlePurchaseButton.ShowBundleIcon, this @ L0 (BundlePurchaseButton)
+	6 Nop
+	7 Return
+
+Method: System.Void InitializeButton()
+
+Disassembly:
+	0xC645C3 I32Const 4551888
+	0xC645C8 I32Load8_S 0, 0
+	0xC645CB I32Eqz
+	0xC645CC If -64
+	0xC645CE I32Const 2939228
+	0xC645D3 I32Load 2, 0
+	0xC645D6 Call 73003
+	0xC645DA I32Const 4551888
+	0xC645DF I32Const 1
+	0xC645E1 I32Store8 0, 0
+	0xC645E4 End
+	0xC645E5 I32Const 4436272
+	0xC645EA I32Load 2, 0
+	0xC645ED LocalTee 1
+	0xC645EF I32Load16_S 1, 186
+	0xC645F3 I32Const 512
+	0xC645F6 I32And
+	0xC645F7 If -64
+	0xC645F9 LocalGet 1
+	0xC645FB I32Load 2, 116
+	0xC645FE I32Eqz
+	0xC645FF If -64
+	0xC64601 LocalGet 1
+	0xC64603 Call 72345
+	0xC64607 End
+	0xC64608 End
+	0xC64609 I32Const 0
+	0xC6460B Call 41557
+	0xC6460F LocalGet 0
+	0xC64611 I32Const 0
+	0xC64613 Call 30454
+	0xC64617 I32Const 4436304
+	0xC6461C I32Load 2, 0
+	0xC6461F LocalTee 1
+	0xC64621 I32Load16_S 1, 186
+	0xC64625 I32Const 512
+	0xC64628 I32And
+	0xC64629 If -64
+	0xC6462B LocalGet 1
+	0xC6462D I32Load 2, 116
+	0xC64630 I32Eqz
+	0xC64631 If -64
+	0xC64633 LocalGet 1
+	0xC64635 Call 72345
+	0xC64639 End
+	0xC6463A End
+	0xC6463B I32Const 0
+	0xC6463D Call 41489
+	0xC64641 I32Const 0
+	0xC64643 Call 41568
+	0xC64647 LocalGet 0
+	0xC64649 I32Const 0
+	0xC6464B Call 30452
+	0xC6464F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b16
+	5 Nop
+	6 Move v5 @ S0_v18, [2CD95C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v18
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [4574D0], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b18, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v13 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v15 (System.Boolean), [v18 @ S0_v13 (Il2CppClass<InApp.InAppManager>)+74], 0
+	23 Not v21 @ TEMP_v7 (System.Boolean), v20 @ S0_v15 (System.Boolean)
+	24 ConditionalJump @b18, v21 @ TEMP_v7 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(InApp.InAppManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call InAppManager.GetActiveInAppOffers, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	31 Nop
+	32 Nop
+	33 Call CelebrationBackgroundHelper.get_visible, v30 @ S1_v4 (System.Boolean), this @ L0 (BundlePurchaseButton)
+	34 Nop
+	35 Move v32 @ S2_v3 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 And v36 @ S2_v5, [v32 @ S2_v3 (Il2CppClass<InApp.InAppData>)+BA], 512
+	40 CheckEqual v37 @ TEMP_v4 (System.Boolean), v36 @ S2_v5, 0
+	41 ConditionalJump @b17, v37 @ TEMP_v4 (System.Boolean)
+	42 Move v38 @ S2_v9 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	43 Nop
+	44 CheckEqual v40 @ S2_v11 (System.Boolean), [v38 @ S2_v9 (Il2CppClass<InApp.InAppData>)+74], 0
+	45 Not v41 @ TEMP_v6 (System.Boolean), v40 @ S2_v11 (System.Boolean)
+	46 ConditionalJump @b17, v41 @ TEMP_v6 (System.Boolean)
+	47 Nop
+	48 CallVoid 11A99, typeof(InApp.InAppData)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call InAppData.GetInAppOnlineSettingsId, v46 @ S1_v5 (System.String), v30 @ S1_v4 (System.Boolean)
+	53 Nop
+	54 CallVoid InAppManager.InitFinishedCallback, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v46 @ S1_v5 (System.String)
+	55 Nop
+	56 Nop
+	57 CallVoid BundlePurchaseButton.ShowBundleIcon, this @ L0 (BundlePurchaseButton)
+	58 Nop
+	59 Return
+
+Method: System.Void OnDisable()
+
+Disassembly:
+	0xC63AEB I32Const 4551887
+	0xC63AF0 I32Load8_S 0, 0
+	0xC63AF3 I32Eqz
+	0xC63AF4 If -64
+	0xC63AF6 I32Const 2939224
+	0xC63AFB I32Load 2, 0
+	0xC63AFE Call 73003
+	0xC63B02 I32Const 4551887
+	0xC63B07 I32Const 1
+	0xC63B09 I32Store8 0, 0
+	0xC63B0C End
+	0xC63B0D I32Const 4436272
+	0xC63B12 I32Load 2, 0
+	0xC63B15 LocalTee 1
+	0xC63B17 I32Load16_S 1, 186
+	0xC63B1B I32Const 512
+	0xC63B1E I32And
+	0xC63B1F If -64
+	0xC63B21 LocalGet 1
+	0xC63B23 I32Load 2, 116
+	0xC63B26 I32Eqz
+	0xC63B27 If -64
+	0xC63B29 LocalGet 1
+	0xC63B2B Call 72345
+	0xC63B2F End
+	0xC63B30 End
+	0xC63B31 I32Const 0
+	0xC63B33 Call 41557
+	0xC63B37 I32Const 4436276
+	0xC63B3C I32Load 2, 0
+	0xC63B3F Call 72556
+	0xC63B43 LocalTee 3
+	0xC63B45 LocalTee 2
+	0xC63B47 I32Const 4470376
+	0xC63B4C I32Load 2, 0
+	0xC63B4F LocalTee 4
+	0xC63B51 I32Load 2, 0
+	0xC63B54 I32Store 2, 8
+	0xC63B57 LocalGet 2
+	0xC63B59 LocalGet 4
+	0xC63B5B I32Store 2, 20
+	0xC63B5E LocalGet 2
+	0xC63B60 I32Const 16
+	0xC63B62 I32Add
+	0xC63B63 LocalGet 0
+	0xC63B65 I32Store 2, 0
+	0xC63B68 LocalGet 3
+	0xC63B6A I32Const 0
+	0xC63B6C Call 41534
+	0xC63B70 I32Const 0
+	0xC63B72 Call 41557
+	0xC63B76 I32Const 4436308
+	0xC63B7B I32Load 2, 0
+	0xC63B7E Call 72556
+	0xC63B82 LocalTee 3
+	0xC63B84 LocalTee 2
+	0xC63B86 I32Const 4470384
+	0xC63B8B I32Load 2, 0
+	0xC63B8E LocalTee 4
+	0xC63B90 I32Load 2, 0
+	0xC63B93 I32Store 2, 8
+	0xC63B96 LocalGet 2
+	0xC63B98 LocalGet 4
+	0xC63B9A I32Store 2, 20
+	0xC63B9D LocalGet 2
+	0xC63B9F I32Const 16
+	0xC63BA1 I32Add
+	0xC63BA2 LocalGet 0
+	0xC63BA4 I32Store 2, 0
+	0xC63BA7 LocalGet 3
+	0xC63BA9 I32Const 0
+	0xC63BAB Call 41536
+	0xC63BAF I32Const 0
+	0xC63BB1 Call 41557
+	0xC63BB5 I32Const 4436312
+	0xC63BBA I32Load 2, 0
+	0xC63BBD Call 72556
+	0xC63BC1 LocalTee 3
+	0xC63BC3 LocalTee 2
+	0xC63BC5 I32Const 4470380
+	0xC63BCA I32Load 2, 0
+	0xC63BCD LocalTee 4
+	0xC63BCF I32Load 2, 0
+	0xC63BD2 I32Store 2, 8
+	0xC63BD5 LocalGet 2
+	0xC63BD7 LocalGet 4
+	0xC63BD9 I32Store 2, 20
+	0xC63BDC LocalGet 2
+	0xC63BDE I32Const 16
+	0xC63BE0 I32Add
+	0xC63BE1 LocalGet 0
+	0xC63BE3 I32Store 2, 0
+	0xC63BE6 LocalGet 3
+	0xC63BE8 I32Const 0
+	0xC63BEA Call 41538
+	0xC63BEE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v21, [2CD958]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v24, 1
+	10 Move [4574CF], v7 @ S1_v24
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b18, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v16 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v18 (System.Boolean), [v18 @ S0_v16 (Il2CppClass<InApp.InAppManager>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v18 (System.Boolean)
+	24 ConditionalJump @b18, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(InApp.InAppManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call InAppManager.GetActiveInAppOffers, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	31 Nop
+	32 Nop
+	33 Call 11B6C, v29 @ S1_v5 (InApp.InAppManager+OnProductRequestDone), typeof(InApp.InAppManager+OnProductRequestDone)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Move v33 @ S2_v2 (Il2CppMethodInfo), methodof(BundlePurchaseButton::OnProductRequestDone)
+	38 Nop
+	39 Nop
+	40 Move v29.method_ptr (System.IntPtr), [v33 @ S2_v2 (Il2CppMethodInfo)]
+	41 Nop
+	42 Nop
+	43 Move v29.method (System.IntPtr), methodof(BundlePurchaseButton::OnProductRequestDone)
+	44 Nop
+	45 Nop
+	46 Add v40 @ S1_v8, v29 @ S1_v5 (InApp.InAppManager+OnProductRequestDone), 16
+	47 Nop
+	48 Move [v40 @ S1_v8], this @ L0 (BundlePurchaseButton)
+	49 Nop
+	50 Nop
+	51 CallVoid InAppManager.remove_onProductRequestDone, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v29 @ S1_v5 (InApp.InAppManager+OnProductRequestDone)
+	52 Nop
+	53 Call InAppManager.GetActiveInAppOffers, v46 @ S0_v13 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	54 Nop
+	55 Nop
+	56 Call 11B6C, v49 @ S1_v12 (InApp.InAppManager+OnPurchaseSuccess), typeof(InApp.InAppManager+OnPurchaseSuccess)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Move v53 @ S2_v9 (Il2CppMethodInfo), methodof(BundlePurchaseButton::OnPurchaseSuccess)
+	61 Nop
+	62 Nop
+	63 Move v49.method_ptr (System.IntPtr), [v53 @ S2_v9 (Il2CppMethodInfo)]
+	64 Nop
+	65 Nop
+	66 Move v49.method (System.IntPtr), methodof(BundlePurchaseButton::OnPurchaseSuccess)
+	67 Nop
+	68 Nop
+	69 Add v60 @ S1_v15, v49 @ S1_v12 (InApp.InAppManager+OnPurchaseSuccess), 16
+	70 Nop
+	71 Move [v60 @ S1_v15], this @ L0 (BundlePurchaseButton)
+	72 Nop
+	73 Nop
+	74 CallVoid InAppManager.remove_onPurchaseSuccess, v46 @ S0_v13 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v49 @ S1_v12 (InApp.InAppManager+OnPurchaseSuccess)
+	75 Nop
+	76 Call InAppManager.GetActiveInAppOffers, v65 @ S0_v15 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	77 Nop
+	78 Nop
+	79 Call 11B6C, v68 @ S1_v19 (InApp.InAppManager+OnPurchaseFailure), typeof(InApp.InAppManager+OnPurchaseFailure)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Move v72 @ S2_v16 (Il2CppMethodInfo), methodof(BundlePurchaseButton::OnPurchaseFailure)
+	84 Nop
+	85 Nop
+	86 Move v68.method_ptr (System.IntPtr), [v72 @ S2_v16 (Il2CppMethodInfo)]
+	87 Nop
+	88 Nop
+	89 Move v68.method (System.IntPtr), methodof(BundlePurchaseButton::OnPurchaseFailure)
+	90 Nop
+	91 Nop
+	92 Add v79 @ S1_v22, v68 @ S1_v19 (InApp.InAppManager+OnPurchaseFailure), 16
+	93 Nop
+	94 Move [v79 @ S1_v22], this @ L0 (BundlePurchaseButton)
+	95 Nop
+	96 Nop
+	97 CallVoid InAppManager.remove_onPurchaseFailure, v65 @ S0_v15 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v68 @ S1_v19 (InApp.InAppManager+OnPurchaseFailure)
+	98 Nop
+	99 Return
+
+Method: System.Void UpdatePrice()
+
+Disassembly:
+	0xC64655 I32Const 4551889
+	0xC6465A I32Load8_S 0, 0
+	0xC6465D I32Eqz
+	0xC6465E If -64
+	0xC64660 I32Const 2939232
+	0xC64665 I32Load 2, 0
+	0xC64668 Call 73003
+	0xC6466C I32Const 4551889
+	0xC64671 I32Const 1
+	0xC64673 I32Store8 0, 0
+	0xC64676 End
+	0xC64677 I32Const 4436272
+	0xC6467C I32Load 2, 0
+	0xC6467F LocalTee 1
+	0xC64681 I32Load16_S 1, 186
+	0xC64685 I32Const 512
+	0xC64688 I32And
+	0xC64689 If -64
+	0xC6468B LocalGet 1
+	0xC6468D I32Load 2, 116
+	0xC64690 I32Eqz
+	0xC64691 If -64
+	0xC64693 LocalGet 1
+	0xC64695 Call 72345
+	0xC64699 End
+	0xC6469A End
+	0xC6469B I32Const 0
+	0xC6469D Call 41557
+	0xC646A1 LocalSet 1
+	0xC646A3 I32Const 4433280
+	0xC646A8 I32Load 2, 0
+	0xC646AB LocalTee 2
+	0xC646AD I32Load16_S 1, 186
+	0xC646B1 I32Const 512
+	0xC646B4 I32And
+	0xC646B5 If -64
+	0xC646B7 LocalGet 2
+	0xC646B9 I32Load 2, 116
+	0xC646BC I32Eqz
+	0xC646BD If -64
+	0xC646BF LocalGet 2
+	0xC646C1 Call 72345
+	0xC646C5 End
+	0xC646C6 End
+	0xC646C7 LocalGet 1
+	0xC646C9 I32Const 0
+	0xC646CB I32Const 0
+	0xC646CD Call 63693
+	0xC646D1 If -64
+	0xC646D3 I32Const 4436276
+	0xC646D8 I32Load 2, 0
+	0xC646DB Call 72556
+	0xC646DF LocalTee 2
+	0xC646E1 LocalTee 3
+	0xC646E3 I32Const 4470376
+	0xC646E8 I32Load 2, 0
+	0xC646EB LocalTee 4
+	0xC646ED I32Load 2, 0
+	0xC646F0 I32Store 2, 8
+	0xC646F3 LocalGet 3
+	0xC646F5 LocalGet 4
+	0xC646F7 I32Store 2, 20
+	0xC646FA LocalGet 3
+	0xC646FC I32Const 16
+	0xC646FE I32Add
+	0xC646FF LocalGet 0
+	0xC64701 I32Store 2, 0
+	0xC64704 LocalGet 1
+	0xC64706 LocalGet 2
+	0xC64708 I32Const 0
+	0xC6470A Call 41535
+	0xC6470E I32Const 4436308
+	0xC64713 I32Load 2, 0
+	0xC64716 Call 72556
+	0xC6471A LocalTee 2
+	0xC6471C LocalTee 3
+	0xC6471E I32Const 4470384
+	0xC64723 I32Load 2, 0
+	0xC64726 LocalTee 4
+	0xC64728 I32Load 2, 0
+	0xC6472B I32Store 2, 8
+	0xC6472E LocalGet 3
+	0xC64730 LocalGet 4
+	0xC64732 I32Store 2, 20
+	0xC64735 LocalGet 3
+	0xC64737 I32Const 16
+	0xC64739 I32Add
+	0xC6473A LocalGet 0
+	0xC6473C I32Store 2, 0
+	0xC6473F LocalGet 1
+	0xC64741 LocalGet 2
+	0xC64743 I32Const 0
+	0xC64745 Call 41537
+	0xC64749 I32Const 4436312
+	0xC6474E I32Load 2, 0
+	0xC64751 Call 72556
+	0xC64755 LocalTee 2
+	0xC64757 LocalTee 3
+	0xC64759 I32Const 4470380
+	0xC6475E I32Load 2, 0
+	0xC64761 LocalTee 4
+	0xC64763 I32Load 2, 0
+	0xC64766 I32Store 2, 8
+	0xC64769 LocalGet 3
+	0xC6476B LocalGet 4
+	0xC6476D I32Store 2, 20
+	0xC64770 LocalGet 3
+	0xC64772 I32Const 16
+	0xC64774 I32Add
+	0xC64775 LocalGet 0
+	0xC64777 I32Store 2, 0
+	0xC6477A LocalGet 1
+	0xC6477C LocalGet 2
+	0xC6477E I32Const 0
+	0xC64780 Call 41539
+	0xC64784 End
+	0xC64785 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b20
+	5 Nop
+	6 Move v5 @ S0_v50, [2CD960]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v50
+	8 Nop
+	9 Move v7 @ S1_v27, 1
+	10 Move [4574D1], v7 @ S1_v27
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b22, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v45 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v47 (System.Boolean), [v18 @ S0_v45 (Il2CppClass<InApp.InAppManager>)+74], 0
+	23 Not v21 @ TEMP_v8 (System.Boolean), v20 @ S0_v47 (System.Boolean)
+	24 ConditionalJump @b22, v21 @ TEMP_v8 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(InApp.InAppManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call InAppManager.GetActiveInAppOffers, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	31 Nop
+	32 Nop
+	33 Move v29 @ S0_v13 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 And v33 @ S0_v15, [v29 @ S0_v13 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	38 CheckEqual v34 @ TEMP_v4 (System.Boolean), v33 @ S0_v15, 0
+	39 ConditionalJump @b21, v34 @ TEMP_v4 (System.Boolean)
+	40 Move v35 @ S0_v41 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	41 Nop
+	42 CheckEqual v37 @ S0_v43 (System.Boolean), [v35 @ S0_v41 (Il2CppClass<UnityEngine.Object>)+74], 0
+	43 Not v38 @ TEMP_v7 (System.Boolean), v37 @ S0_v43 (System.Boolean)
+	44 ConditionalJump @b21, v38 @ TEMP_v7 (System.Boolean)
+	45 Nop
+	46 CallVoid 11A99, typeof(UnityEngine.Object)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call ComputeShader.FindKernel, v45 @ S0_v18 (System.Int32), v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), 0
+	53 CheckEqual v46 @ TEMP_v6 (System.Boolean), v45 @ S0_v18 (System.Int32), 0
+	54 ConditionalJump @b19, v46 @ TEMP_v6 (System.Boolean)
+	55 Nop
+	56 Nop
+	57 Call 11B6C, v49 @ S0_v22 (InApp.InAppManager+OnPurchaseSuccess), typeof(InApp.InAppManager+OnProductRequestDone)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Move v67 @ S1_v7 (Il2CppMethodInfo), methodof(BundlePurchaseButton::OnProductRequestDone)
+	62 Nop
+	63 Nop
+	64 Move v49.method_ptr (System.IntPtr), [v67 @ S1_v7 (Il2CppMethodInfo)]
+	65 Nop
+	66 Nop
+	67 Move v49.method (System.IntPtr), methodof(BundlePurchaseButton::OnProductRequestDone)
+	68 Nop
+	69 Nop
+	70 Add v74 @ S0_v25, v49 @ S0_v22 (InApp.InAppManager+OnPurchaseSuccess), 16
+	71 Nop
+	72 Move [v74 @ S0_v25], this @ L0 (BundlePurchaseButton)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 CallVoid InAppManager.add_onPurchaseSuccess, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v49 @ S0_v22 (InApp.InAppManager+OnPurchaseSuccess)
+	77 Nop
+	78 Nop
+	79 Call 11B6C, v82 @ S0_v29 (InApp.InAppManager+OnPurchaseFailure), typeof(InApp.InAppManager+OnPurchaseSuccess)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Move v86 @ S1_v14 (Il2CppMethodInfo), methodof(BundlePurchaseButton::OnPurchaseSuccess)
+	84 Nop
+	85 Nop
+	86 Move v82.method_ptr (System.IntPtr), [v86 @ S1_v14 (Il2CppMethodInfo)]
+	87 Nop
+	88 Nop
+	89 Move v82.method (System.IntPtr), methodof(BundlePurchaseButton::OnPurchaseSuccess)
+	90 Nop
+	91 Nop
+	92 Add v93 @ S0_v32, v82 @ S0_v29 (InApp.InAppManager+OnPurchaseFailure), 16
+	93 Nop
+	94 Move [v93 @ S0_v32], this @ L0 (BundlePurchaseButton)
+	95 Nop
+	96 Nop
+	97 Nop
+	98 CallVoid InAppManager.add_onPurchaseFailure, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v82 @ S0_v29 (InApp.InAppManager+OnPurchaseFailure)
+	99 Nop
+	100 Nop
+	101 Call 11B6C, v100 @ S0_v36 (InApp.InAppManager+OnPurchaseCanceled), typeof(InApp.InAppManager+OnPurchaseFailure)
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Move v102 @ S1_v21 (Il2CppMethodInfo), methodof(BundlePurchaseButton::OnPurchaseFailure)
+	106 Nop
+	107 Nop
+	108 Move v100.method_ptr (System.IntPtr), [v102 @ S1_v21 (Il2CppMethodInfo)]
+	109 Nop
+	110 Nop
+	111 Move v100.method (System.IntPtr), methodof(BundlePurchaseButton::OnPurchaseFailure)
+	112 Nop
+	113 Nop
+	114 Add v108 @ S0_v39, v100 @ S0_v36 (InApp.InAppManager+OnPurchaseCanceled), 16
+	115 Nop
+	116 Move [v108 @ S0_v39], this @ L0 (BundlePurchaseButton)
+	117 Nop
+	118 Nop
+	119 Nop
+	120 CallVoid InAppManager.add_onPurchaseCanceled, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v100 @ S0_v36 (InApp.InAppManager+OnPurchaseCanceled)
+	121 Nop
+	122 Nop
+	123 Return
+
+Method: System.Void OnProductRequestDone()
+
+Disassembly:
+	0xC64490 I32Const 4551884
+	0xC64495 I32Load8_S 0, 0
+	0xC64498 I32Eqz
+	0xC64499 If -64
+	0xC6449B I32Const 2939248
+	0xC644A0 I32Load 2, 0
+	0xC644A3 Call 73003
+	0xC644A7 I32Const 4551884
+	0xC644AC I32Const 1
+	0xC644AE I32Store8 0, 0
+	0xC644B1 End
+	0xC644B2 I32Const 4435468
+	0xC644B7 I32Load 2, 0
+	0xC644BA LocalTee 1
+	0xC644BC I32Load16_S 1, 186
+	0xC644C0 I32Const 512
+	0xC644C3 I32And
+	0xC644C4 If -64
+	0xC644C6 LocalGet 1
+	0xC644C8 I32Load 2, 116
+	0xC644CB I32Eqz
+	0xC644CC If -64
+	0xC644CE LocalGet 1
+	0xC644D0 Call 72345
+	0xC644D4 End
+	0xC644D5 End
+	0xC644D6 LocalGet 0
+	0xC644D8 I32Const 0
+	0xC644DA Call 37712
+	0xC644DE I32Store 2, 68
+	0xC644E1 LocalGet 0
+	0xC644E3 I32Load 2, 24
+	0xC644E6 I32Const 4436304
+	0xC644EB I32Load 2, 0
+	0xC644EE LocalTee 1
+	0xC644F0 I32Load16_S 1, 186
+	0xC644F4 I32Const 512
+	0xC644F7 I32And
+	0xC644F8 If -64
+	0xC644FA LocalGet 1
+	0xC644FC I32Load 2, 116
+	0xC644FF I32Eqz
+	0xC64500 If -64
+	0xC64502 LocalGet 1
+	0xC64504 Call 72345
+	0xC64508 I32Const 4436304
+	0xC6450D I32Load 2, 0
+	0xC64510 LocalSet 1
+	0xC64512 End
+	0xC64513 End
+	0xC64514 LocalGet 1
+	0xC64516 I32Load 2, 92
+	0xC64519 I32Load 2, 44
+	0xC6451C LocalGet 0
+	0xC6451E I32Const 0
+	0xC64520 Call 30454
+	0xC64524 I32Const 0
+	0xC64526 Call 41489
+	0xC6452A I32Const 4449952
+	0xC6452F I32Load 2, 0
+	0xC64532 Call 29792
+	0xC64536 I32Const 0
+	0xC64538 Call 41522
+	0xC6453C I32Const 0
+	0xC6453E Call 39963
+	0xC64542 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v18, [2CD970]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v18
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [4574CC], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Data.Save.UserSave>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b20, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v13 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	21 Nop
+	22 CheckEqual v20 @ S0_v15 (System.Boolean), [v18 @ S0_v13 (Il2CppClass<Data.Save.UserSave>)+74], 0
+	23 Not v21 @ TEMP_v7 (System.Boolean), v20 @ S0_v15 (System.Boolean)
+	24 ConditionalJump @b20, v21 @ TEMP_v7 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Data.Save.UserSave)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call UserSave.get_hasPaidOutFacebookReward, v28 @ S1_v4 (System.Boolean)
+	32 Move this._lastPurchasedBundle (InApp.InAppData+BundleTier), v28 @ S1_v4 (System.Boolean)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Move v32 @ S1_v6 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 And v36 @ S1_v8, [v32 @ S1_v6 (Il2CppClass<InApp.InAppData>)+BA], 512
+	41 CheckEqual v37 @ TEMP_v4 (System.Boolean), v36 @ S1_v8, 0
+	42 ConditionalJump @b18, v37 @ TEMP_v4 (System.Boolean)
+	43 Move v38 @ S1_v15 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	44 Nop
+	45 CheckEqual v40 @ S1_v17 (System.Boolean), [v38 @ S1_v15 (Il2CppClass<InApp.InAppData>)+74], 0
+	46 Not v41 @ TEMP_v6 (System.Boolean), v40 @ S1_v17 (System.Boolean)
+	47 ConditionalJump @b18, v41 @ TEMP_v6 (System.Boolean)
+	48 Nop
+	49 CallVoid 11A99, typeof(InApp.InAppData)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Call CelebrationBackgroundHelper.get_visible, v52 @ S2_v3 (System.Boolean), this @ L0 (BundlePurchaseButton)
+	61 Nop
+	62 Call InAppData.GetInAppOnlineSettingsId, v55 @ S2_v4 (System.String), v52 @ S2_v3 (System.Boolean)
+	63 Nop
+	64 Nop
+	65 Call Dictionary`2<System.String, InApp.InAppItemModel>.get_Item, v59 @ S1_v13 (InApp.InAppItemModel), v48.inAppData (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v55 @ S2_v4 (System.String)
+	66 Nop
+	67 Call InAppItemModel.Clone, v61 @ S1_v14 (InApp.InAppItemModel), v59 @ S1_v13 (InApp.InAppItemModel)
+	68 Nop
+	69 CallVoid UILabel.set_fontSize, this.priceLabel (UILabel), v61 @ S1_v14 (InApp.InAppItemModel)
+	70 Nop
+	71 Return
+
+Method: System.Void OnPurchaseSuccess(System.String productId, System.Boolean wasRestored, Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationResult validationResult)
+
+Disassembly:
+	0xD60C26 GlobalGet 7
+	0xD60C28 LocalSet 4
+	0xD60C2A GlobalGet 7
+	0xD60C2C I32Const 16
+	0xD60C2E I32Add
+	0xD60C2F GlobalSet 7
+	0xD60C31 I32Const 4554822
+	0xD60C36 I32Load8_S 0, 0
+	0xD60C39 I32Eqz
+	0xD60C3A If -64
+	0xD60C3C I32Const 3010992
+	0xD60C41 I32Load 2, 0
+	0xD60C44 Call 73003
+	0xD60C48 I32Const 4554822
+	0xD60C4D I32Const 1
+	0xD60C4F I32Store8 0, 0
+	0xD60C52 End
+	0xD60C53 LocalGet 0
+	0xD60C55 I32Const 40
+	0xD60C57 I32Add
+	0xD60C58 LocalGet 2
+	0xD60C5A I32Store 2, 0
+	0xD60C5D LocalGet 0
+	0xD60C5F I32Const 44
+	0xD60C61 I32Add
+	0xD60C62 LocalGet 3
+	0xD60C64 I32Store 2, 0
+	0xD60C67 Block -64
+	0xD60C69 Block -64
+	0xD60C6B Block -64
+	0xD60C6D Block -64
+	0xD60C6F LocalGet 1
+	0xD60C71 BrTable System.UInt64[], 2
+	0xD60C76 End
+	0xD60C77 LocalGet 0
+	0xD60C79 I32Const 0
+	0xD60C7B Call 34729
+	0xD60C7F Br 2
+	0xD60C81 End
+	0xD60C82 LocalGet 0
+	0xD60C84 I32Const 0
+	0xD60C86 Call 34730
+	0xD60C8A Br 1
+	0xD60C8C End
+	0xD60C8D LocalGet 4
+	0xD60C8F LocalGet 1
+	0xD60C91 I32Store 2, 0
+	0xD60C94 I32Const 4443772
+	0xD60C99 I32Load 2, 0
+	0xD60C9C LocalGet 4
+	0xD60C9E Call 73903
+	0xD60CA2 LocalSet 0
+	0xD60CA4 I32Const 4545936
+	0xD60CA9 I32Load 2, 0
+	0xD60CAC LocalGet 0
+	0xD60CAE I32Const 4501996
+	0xD60CB3 I32Load 2, 0
+	0xD60CB6 I32Const 0
+	0xD60CB8 Call 55905
+	0xD60CBC I32Const 0
+	0xD60CBE I32Const 0
+	0xD60CC0 Call 37913
+	0xD60CC4 End
+	0xD60CC5 LocalGet 4
+	0xD60CC7 GlobalSet 7
+	0xD60CC9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b15
+	11 Nop
+	12 Move v12 @ S0_v25, [2DF1B0]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v25
+	14 Nop
+	15 Move v14 @ S1_v14, 1
+	16 Move [458046], v14 @ S1_v14
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v20 @ S0_v9, this @ L0 (BundlePurchaseButton), 40
+	21 Nop
+	22 Move [v20 @ S0_v9], wasRestored @ L2 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Add v25 @ S0_v11, this @ L0 (BundlePurchaseButton), 44
+	26 Nop
+	27 Move [v25 @ S0_v11], validationResult @ L3 (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationResult)
+	28 Nop
+	29 CheckEqual v30 @ TEMP_v2 (System.Boolean), productId @ L1 (System.String), 0
+	30 ConditionalJump @b7, v30 @ TEMP_v2 (System.Boolean)
+	31 CheckEqual v31 @ TEMP_v4 (System.Boolean), productId @ L1 (System.String), 1
+	32 ConditionalJump @b9, v31 @ TEMP_v4 (System.Boolean)
+	33 Jump @b11
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid TopRunOfflineStateHelper.SetLoadingState, this @ L0 (BundlePurchaseButton)
+	38 Jump @b14
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid TopRunOfflineStateHelper.OnClick, this @ L0 (BundlePurchaseButton)
+	43 Jump @b14
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move [v1 @ G7], productId @ L1 (System.String)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Call 120AF, v41 @ S0_v20 (System.String), typeof(TopRunOfflineStateHelper+OfflineState), v1 @ G7
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call String.Concat, v54 @ S0_v23 (System.String), "No state found for ", v41 @ S0_v20 (System.String), "."
+	60 Nop
+	61 Nop
+	62 CallVoid SDebug.LogFormat, v54 @ S0_v23 (System.String), 0
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Return
+
+Method: System.Void OnPurchaseFailure(System.String data, InAppPurchase.PurchaseResult ressult)
+
+Disassembly:
+	0xC631E4 GlobalGet 7
+	0xC631E6 LocalSet 0
+	0xC631E8 GlobalGet 7
+	0xC631EA I32Const 16
+	0xC631EC I32Add
+	0xC631ED GlobalSet 7
+	0xC631EF I32Const 4551861
+	0xC631F4 I32Load8_S 0, 0
+	0xC631F7 I32Eqz
+	0xC631F8 If -64
+	0xC631FA I32Const 2938956
+	0xC631FF I32Load 2, 0
+	0xC63202 Call 73003
+	0xC63206 I32Const 4551861
+	0xC6320B I32Const 1
+	0xC6320D I32Store8 0, 0
+	0xC63210 End
+	0xC63211 I32Const 4433280
+	0xC63216 I32Load 2, 0
+	0xC63219 LocalTee 3
+	0xC6321B I32Load16_S 1, 186
+	0xC6321F I32Const 512
+	0xC63222 I32And
+	0xC63223 If -64
+	0xC63225 LocalGet 3
+	0xC63227 I32Load 2, 116
+	0xC6322A I32Eqz
+	0xC6322B If -64
+	0xC6322D LocalGet 3
+	0xC6322F Call 72345
+	0xC63233 End
+	0xC63234 End
+	0xC63235 LocalGet 1
+	0xC63237 I32Const 0
+	0xC63239 Call 63667
+	0xC6323D If -64
+	0xC6323F LocalGet 0
+	0xC63241 LocalGet 2
+	0xC63243 I64Load 2, 0
+	0xC63246 I64Store 2, 0
+	0xC63249 LocalGet 0
+	0xC6324B LocalGet 2
+	0xC6324D I64Load 2, 8
+	0xC63250 I64Store 2, 8
+	0xC63253 LocalGet 1
+	0xC63255 LocalGet 0
+	0xC63257 I32Const 0
+	0xC63259 Call 42627
+	0xC6325D End
+	0xC6325E LocalGet 0
+	0xC63260 GlobalSet 7
+	0xC63262 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b11
+	11 Nop
+	12 Move v12 @ S0_v25, [2CD84C]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v25
+	14 Nop
+	15 Move v14 @ S1_v11, 1
+	16 Move [4574B5], v14 @ S1_v11
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v9 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	25 ConditionalJump @b12, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S0_v20 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	27 Nop
+	28 CheckEqual v26 @ S0_v22 (System.Boolean), [v24 @ S0_v20 (Il2CppClass<UnityEngine.Object>)+74], 0
+	29 Not v27 @ TEMP_v5 (System.Boolean), v26 @ S0_v22 (System.Boolean)
+	30 ConditionalJump @b12, v27 @ TEMP_v5 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(UnityEngine.Object)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call Object.IsNativeObjectAlive, v34 @ S0_v14 (System.Boolean), data @ L1 (System.String)
+	38 Not v35 @ TEMP_v4 (System.Boolean), v34 @ S0_v14 (System.Boolean)
+	39 ConditionalJump @b10, v35 @ TEMP_v4 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move v1.value__ (System.Int32), ressult.value__ (System.Int32)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move [v1 @ G7 (UIWidget+Pivot)+8], [ressult @ L2 (InAppPurchase.PurchaseResult)+8]
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CallVoid UIWidget.set_rawPivot, data @ L1 (System.String), v1 @ G7 (UIWidget+Pivot)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Return
+
+Method: InApp.InAppData+BundleTier GetBundleToSell()
+
+Disassembly:
+	0xC63267 I32Const 4551864
+	0xC6326C I32Load8_S 0, 0
+	0xC6326F I32Eqz
+	0xC63270 If -64
+	0xC63272 I32Const 2938944
+	0xC63277 I32Load 2, 0
+	0xC6327A Call 73003
+	0xC6327E I32Const 4551864
+	0xC63283 I32Const 1
+	0xC63285 I32Store8 0, 0
+	0xC63288 End
+	0xC63289 I32Const 4436268
+	0xC6328E I32Load 2, 0
+	0xC63291 LocalTee 2
+	0xC63293 I32Load16_S 1, 186
+	0xC63297 I32Const 512
+	0xC6329A I32And
+	0xC6329B If -64
+	0xC6329D LocalGet 2
+	0xC6329F I32Load 2, 116
+	0xC632A2 I32Eqz
+	0xC632A3 If -64
+	0xC632A5 LocalGet 2
+	0xC632A7 Call 72345
+	0xC632AB End
+	0xC632AC End
+	0xC632AD I32Const 0
+	0xC632AF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v16, [2CD840]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4574B8], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UI.Screens.FirstPurchaseBonusManager>), typeof(UI.Screens.FirstPurchaseBonusManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UI.Screens.FirstPurchaseBonusManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b9, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v11 (Il2CppClass<UI.Screens.FirstPurchaseBonusManager>), typeof(UI.Screens.FirstPurchaseBonusManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v13 (System.Boolean), [v18 @ S0_v11 (Il2CppClass<UI.Screens.FirstPurchaseBonusManager>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	24 ConditionalJump @b9, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UI.Screens.FirstPurchaseBonusManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Return 0
+
+Method: System.Void UpdateButton()
+
+Disassembly:
+	0xC64788 LocalGet 0
+	0xC6478A I32Const 0
+	0xC6478C Call 30456
+	0xC64790 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid BundlePurchaseButton.OnProductRequestDone, this @ L0 (BundlePurchaseButton)
+	3 Nop
+	4 Return
+
+Method: System.Void ShowActiveContents(System.Boolean active)
+
+Disassembly:
+	0xC16A68 LocalGet 0
+	0xC16A6A I32Load 2, 12
+	0xC16A6D LocalGet 1
+	0xC16A6F I32Const 0
+	0xC16A71 Call 39963
+	0xC16A75 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid UILabel.set_fontSize, this.activeButtonContents (UnityEngine.GameObject), active @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.Void ShowBundleIcon()
+
+Disassembly:
+	0xC63BF4 I32Const 4551882
+	0xC63BF9 I32Load8_S 0, 0
+	0xC63BFC I32Eqz
+	0xC63BFD If -64
+	0xC63BFF I32Const 2939244
+	0xC63C04 I32Load 2, 0
+	0xC63C07 Call 73003
+	0xC63C0B I32Const 4551882
+	0xC63C10 I32Const 1
+	0xC63C12 I32Store8 0, 0
+	0xC63C15 End
+	0xC63C16 I32Const 4435468
+	0xC63C1B I32Load 2, 0
+	0xC63C1E LocalTee 1
+	0xC63C20 I32Load16_S 1, 186
+	0xC63C24 I32Const 512
+	0xC63C27 I32And
+	0xC63C28 If -64
+	0xC63C2A LocalGet 1
+	0xC63C2C I32Load 2, 116
+	0xC63C2F I32Eqz
+	0xC63C30 If -64
+	0xC63C32 LocalGet 1
+	0xC63C34 Call 72345
+	0xC63C38 End
+	0xC63C39 End
+	0xC63C3A LocalGet 0
+	0xC63C3C I32Const 0
+	0xC63C3E Call 37712
+	0xC63C42 I32Store 2, 68
+	0xC63C45 Block -64
+	0xC63C47 LocalGet 0
+	0xC63C49 I32Load 2, 68
+	0xC63C4C I32Const 5
+	0xC63C4E I32Eq
+	0xC63C4F If -64
+	0xC63C51 LocalGet 0
+	0xC63C53 I32Const 0
+	0xC63C55 I32Const 0
+	0xC63C57 Call 30453
+	0xC63C5B Else
+	0xC63C5C LocalGet 0
+	0xC63C5E I32Const 1
+	0xC63C60 I32Const 0
+	0xC63C62 Call 30453
+	0xC63C66 I32Const 4436304
+	0xC63C6B I32Load 2, 0
+	0xC63C6E LocalTee 1
+	0xC63C70 I32Load16_S 1, 186
+	0xC63C74 I32Const 512
+	0xC63C77 I32And
+	0xC63C78 If -64
+	0xC63C7A LocalGet 1
+	0xC63C7C I32Load 2, 116
+	0xC63C7F I32Eqz
+	0xC63C80 If -64
+	0xC63C82 LocalGet 1
+	0xC63C84 Call 72345
+	0xC63C88 I32Const 4436304
+	0xC63C8D I32Load 2, 0
+	0xC63C90 LocalSet 1
+	0xC63C92 End
+	0xC63C93 End
+	0xC63C94 LocalGet 1
+	0xC63C96 I32Load 2, 92
+	0xC63C99 I32Load 2, 44
+	0xC63C9C LocalGet 0
+	0xC63C9E I32Const 0
+	0xC63CA0 Call 30454
+	0xC63CA4 I32Const 0
+	0xC63CA6 Call 41489
+	0xC63CAA I32Const 4449952
+	0xC63CAF I32Load 2, 0
+	0xC63CB2 Call 29792
+	0xC63CB6 LocalSet 5
+	0xC63CB8 LocalGet 0
+	0xC63CBA I32Load 2, 20
+	0xC63CBD LocalGet 5
+	0xC63CBF I32Load 2, 8
+	0xC63CC2 I32Const 4435772
+	0xC63CC7 I32Load 2, 0
+	0xC63CCA LocalTee 1
+	0xC63CCC I32Load16_S 1, 186
+	0xC63CD0 I32Const 512
+	0xC63CD3 I32And
+	0xC63CD4 If -64
+	0xC63CD6 LocalGet 1
+	0xC63CD8 I32Load 2, 116
+	0xC63CDB I32Eqz
+	0xC63CDC If -64
+	0xC63CDE LocalGet 1
+	0xC63CE0 Call 72345
+	0xC63CE4 End
+	0xC63CE5 End
+	0xC63CE6 I32Const 0
+	0xC63CE8 Call 41749
+	0xC63CEC I32Const 0
+	0xC63CEE Call 39963
+	0xC63CF2 LocalGet 0
+	0xC63CF4 I32Const 0
+	0xC63CF6 Call 30455
+	0xC63CFA LocalGet 0
+	0xC63CFC I32Const 0
+	0xC63CFE Call 30456
+	0xC63D02 LocalGet 5
+	0xC63D04 I32Load 2, 36
+	0xC63D07 LocalSet 3
+	0xC63D09 I32Const 4436320
+	0xC63D0E I32Load 2, 0
+	0xC63D11 LocalTee 1
+	0xC63D13 I32Load16_S 1, 186
+	0xC63D17 I32Const 512
+	0xC63D1A I32And
+	0xC63D1B If -64
+	0xC63D1D LocalGet 1
+	0xC63D1F I32Load 2, 116
+	0xC63D22 I32Eqz
+	0xC63D23 If -64
+	0xC63D25 LocalGet 1
+	0xC63D27 Call 72345
+	0xC63D2B I32Const 4436320
+	0xC63D30 I32Load 2, 0
+	0xC63D33 LocalSet 1
+	0xC63D35 End
+	0xC63D36 End
+	0xC63D37 LocalGet 1
+	0xC63D39 I32Load 2, 92
+	0xC63D3C I32Load 2, 4
+	0xC63D3F LocalTee 1
+	0xC63D41 I32Eqz
+	0xC63D42 If -64
+	0xC63D44 I32Const 4436320
+	0xC63D49 I32Load 2, 0
+	0xC63D4C LocalTee 1
+	0xC63D4E I32Load16_S 1, 186
+	0xC63D52 I32Const 512
+	0xC63D55 I32And
+	0xC63D56 If -64
+	0xC63D58 LocalGet 1
+	0xC63D5A I32Load 2, 116
+	0xC63D5D I32Eqz
+	0xC63D5E If -64
+	0xC63D60 LocalGet 1
+	0xC63D62 Call 72345
+	0xC63D66 I32Const 4436320
+	0xC63D6B I32Load 2, 0
+	0xC63D6E LocalSet 1
+	0xC63D70 End
+	0xC63D71 End
+	0xC63D72 LocalGet 1
+	0xC63D74 I32Load 2, 92
+	0xC63D77 I32Load 2, 0
+	0xC63D7A LocalSet 4
+	0xC63D7C I32Const 4436324
+	0xC63D81 I32Load 2, 0
+	0xC63D84 Call 72556
+	0xC63D88 LocalTee 1
+	0xC63D8A LocalSet 2
+	0xC63D8C I32Const 4489848
+	0xC63D91 I32Load 2, 0
+	0xC63D94 Drop
+	0xC63D95 LocalGet 2
+	0xC63D97 I32Const 4450964
+	0xC63D9C I32Load 2, 0
+	0xC63D9F LocalTee 6
+	0xC63DA1 I32Load 2, 0
+	0xC63DA4 I32Store 2, 8
+	0xC63DA7 LocalGet 2
+	0xC63DA9 LocalGet 6
+	0xC63DAB I32Store 2, 20
+	0xC63DAE LocalGet 2
+	0xC63DB0 I32Const 16
+	0xC63DB2 I32Add
+	0xC63DB3 LocalGet 4
+	0xC63DB5 I32Store 2, 0
+	0xC63DB8 I32Const 4436320
+	0xC63DBD I32Load 2, 0
+	0xC63DC0 I32Load 2, 92
+	0xC63DC3 I32Const 4
+	0xC63DC5 I32Add
+	0xC63DC6 LocalGet 1
+	0xC63DC8 I32Store 2, 0
+	0xC63DCB End
+	0xC63DCC Block -64
+	0xC63DCE Block -64
+	0xC63DD0 LocalGet 3
+	0xC63DD2 LocalGet 1
+	0xC63DD4 I32Const 4448820
+	0xC63DD9 I32Load 2, 0
+	0xC63DDC Call 29472
+	0xC63DE0 LocalTee 1
+	0xC63DE2 I32Eqz
+	0xC63DE3 BrIf 0
+	0xC63DE5 LocalGet 1
+	0xC63DE7 I32Load 2, 12
+	0xC63DEA I32Const 1
+	0xC63DEC I32Lt_S
+	0xC63DED BrIf 0
+	0xC63DEF LocalGet 0
+	0xC63DF1 I32Load 2, 48
+	0xC63DF4 I32Const 0
+	0xC63DF6 Call 62781
+	0xC63DFA I32Const 1
+	0xC63DFC I32Const 0
+	0xC63DFE Call 63022
+	0xC63E02 LocalGet 0
+	0xC63E04 I32Load 2, 48
+	0xC63E07 I32Const 0
+	0xC63E09 LocalGet 1
+	0xC63E0B I32Load 2, 12
+	0xC63E0E I32Const 0
+	0xC63E10 Call 30457
+	0xC63E14 I32Const 0
+	0xC63E16 Call 29414
+	0xC63E1A Br 1
+	0xC63E1C End
+	0xC63E1D LocalGet 0
+	0xC63E1F I32Load 2, 48
+	0xC63E22 I32Const 0
+	0xC63E24 Call 62781
+	0xC63E28 I32Const 0
+	0xC63E2A I32Const 0
+	0xC63E2C Call 63022
+	0xC63E30 End
+	0xC63E31 LocalGet 5
+	0xC63E33 I32Load 2, 36
+	0xC63E36 LocalSet 3
+	0xC63E38 I32Const 4436320
+	0xC63E3D I32Load 2, 0
+	0xC63E40 LocalTee 1
+	0xC63E42 I32Load16_S 1, 186
+	0xC63E46 I32Const 512
+	0xC63E49 I32And
+	0xC63E4A If -64
+	0xC63E4C LocalGet 1
+	0xC63E4E I32Load 2, 116
+	0xC63E51 I32Eqz
+	0xC63E52 If -64
+	0xC63E54 LocalGet 1
+	0xC63E56 Call 72345
+	0xC63E5A I32Const 4436320
+	0xC63E5F I32Load 2, 0
+	0xC63E62 LocalSet 1
+	0xC63E64 End
+	0xC63E65 End
+	0xC63E66 LocalGet 1
+	0xC63E68 I32Load 2, 92
+	0xC63E6B I32Load 2, 8
+	0xC63E6E LocalTee 1
+	0xC63E70 I32Eqz
+	0xC63E71 If -64
+	0xC63E73 I32Const 4436320
+	0xC63E78 I32Load 2, 0
+	0xC63E7B LocalTee 1
+	0xC63E7D I32Load16_S 1, 186
+	0xC63E81 I32Const 512
+	0xC63E84 I32And
+	0xC63E85 If -64
+	0xC63E87 LocalGet 1
+	0xC63E89 I32Load 2, 116
+	0xC63E8C I32Eqz
+	0xC63E8D If -64
+	0xC63E8F LocalGet 1
+	0xC63E91 Call 72345
+	0xC63E95 I32Const 4436320
+	0xC63E9A I32Load 2, 0
+	0xC63E9D LocalSet 1
+	0xC63E9F End
+	0xC63EA0 End
+	0xC63EA1 LocalGet 1
+	0xC63EA3 I32Load 2, 92
+	0xC63EA6 I32Load 2, 0
+	0xC63EA9 LocalSet 4
+	0xC63EAB I32Const 4436324
+	0xC63EB0 I32Load 2, 0
+	0xC63EB3 Call 72556
+	0xC63EB7 LocalTee 1
+	0xC63EB9 LocalSet 2
+	0xC63EBB I32Const 4489848
+	0xC63EC0 I32Load 2, 0
+	0xC63EC3 Drop
+	0xC63EC4 LocalGet 2
+	0xC63EC6 I32Const 4450968
+	0xC63ECB I32Load 2, 0
+	0xC63ECE LocalTee 6
+	0xC63ED0 I32Load 2, 0
+	0xC63ED3 I32Store 2, 8
+	0xC63ED6 LocalGet 2
+	0xC63ED8 LocalGet 6
+	0xC63EDA I32Store 2, 20
+	0xC63EDD LocalGet 2
+	0xC63EDF I32Const 16
+	0xC63EE1 I32Add
+	0xC63EE2 LocalGet 4
+	0xC63EE4 I32Store 2, 0
+	0xC63EE7 I32Const 4436320
+	0xC63EEC I32Load 2, 0
+	0xC63EEF I32Load 2, 92
+	0xC63EF2 I32Const 8
+	0xC63EF4 I32Add
+	0xC63EF5 LocalGet 1
+	0xC63EF7 I32Store 2, 0
+	0xC63EFA End
+	0xC63EFB Block -64
+	0xC63EFD Block -64
+	0xC63EFF LocalGet 3
+	0xC63F01 LocalGet 1
+	0xC63F03 I32Const 4448820
+	0xC63F08 I32Load 2, 0
+	0xC63F0B Call 29472
+	0xC63F0F LocalTee 1
+	0xC63F11 I32Eqz
+	0xC63F12 BrIf 0
+	0xC63F14 LocalGet 1
+	0xC63F16 I32Load 2, 12
+	0xC63F19 I32Const 1
+	0xC63F1B I32Lt_S
+	0xC63F1C BrIf 0
+	0xC63F1E LocalGet 0
+	0xC63F20 I32Load 2, 52
+	0xC63F23 I32Const 0
+	0xC63F25 Call 62781
+	0xC63F29 I32Const 1
+	0xC63F2B I32Const 0
+	0xC63F2D Call 63022
+	0xC63F31 LocalGet 0
+	0xC63F33 I32Load 2, 52
+	0xC63F36 I32Const 0
+	0xC63F38 LocalGet 1
+	0xC63F3A I32Load 2, 12
+	0xC63F3D I32Const 0
+	0xC63F3F Call 30457
+	0xC63F43 I32Const 0
+	0xC63F45 Call 29414
+	0xC63F49 Br 1
+	0xC63F4B End
+	0xC63F4C LocalGet 0
+	0xC63F4E I32Load 2, 52
+	0xC63F51 I32Const 0
+	0xC63F53 Call 62781
+	0xC63F57 I32Const 0
+	0xC63F59 I32Const 0
+	0xC63F5B Call 63022
+	0xC63F5F End
+	0xC63F60 LocalGet 5
+	0xC63F62 I32Load 2, 36
+	0xC63F65 LocalSet 3
+	0xC63F67 I32Const 4436320
+	0xC63F6C I32Load 2, 0
+	0xC63F6F LocalTee 1
+	0xC63F71 I32Load16_S 1, 186
+	0xC63F75 I32Const 512
+	0xC63F78 I32And
+	0xC63F79 If -64
+	0xC63F7B LocalGet 1
+	0xC63F7D I32Load 2, 116
+	0xC63F80 I32Eqz
+	0xC63F81 If -64
+	0xC63F83 LocalGet 1
+	0xC63F85 Call 72345
+	0xC63F89 I32Const 4436320
+	0xC63F8E I32Load 2, 0
+	0xC63F91 LocalSet 1
+	0xC63F93 End
+	0xC63F94 End
+	0xC63F95 LocalGet 1
+	0xC63F97 I32Load 2, 92
+	0xC63F9A I32Load 2, 12
+	0xC63F9D LocalTee 1
+	0xC63F9F I32Eqz
+	0xC63FA0 If -64
+	0xC63FA2 I32Const 4436320
+	0xC63FA7 I32Load 2, 0
+	0xC63FAA LocalTee 1
+	0xC63FAC I32Load16_S 1, 186
+	0xC63FB0 I32Const 512
+	0xC63FB3 I32And
+	0xC63FB4 If -64
+	0xC63FB6 LocalGet 1
+	0xC63FB8 I32Load 2, 116
+	0xC63FBB I32Eqz
+	0xC63FBC If -64
+	0xC63FBE LocalGet 1
+	0xC63FC0 Call 72345
+	0xC63FC4 I32Const 4436320
+	0xC63FC9 I32Load 2, 0
+	0xC63FCC LocalSet 1
+	0xC63FCE End
+	0xC63FCF End
+	0xC63FD0 LocalGet 1
+	0xC63FD2 I32Load 2, 92
+	0xC63FD5 I32Load 2, 0
+	0xC63FD8 LocalSet 4
+	0xC63FDA I32Const 4436324
+	0xC63FDF I32Load 2, 0
+	0xC63FE2 Call 72556
+	0xC63FE6 LocalTee 1
+	0xC63FE8 LocalSet 2
+	0xC63FEA I32Const 4489848
+	0xC63FEF I32Load 2, 0
+	0xC63FF2 Drop
+	0xC63FF3 LocalGet 2
+	0xC63FF5 I32Const 4450972
+	0xC63FFA I32Load 2, 0
+	0xC63FFD LocalTee 6
+	0xC63FFF I32Load 2, 0
+	0xC64002 I32Store 2, 8
+	0xC64005 LocalGet 2
+	0xC64007 LocalGet 6
+	0xC64009 I32Store 2, 20
+	0xC6400C LocalGet 2
+	0xC6400E I32Const 16
+	0xC64010 I32Add
+	0xC64011 LocalGet 4
+	0xC64013 I32Store 2, 0
+	0xC64016 I32Const 4436320
+	0xC6401B I32Load 2, 0
+	0xC6401E I32Load 2, 92
+	0xC64021 I32Const 12
+	0xC64023 I32Add
+	0xC64024 LocalGet 1
+	0xC64026 I32Store 2, 0
+	0xC64029 End
+	0xC6402A Block -64
+	0xC6402C Block -64
+	0xC6402E LocalGet 3
+	0xC64030 LocalGet 1
+	0xC64032 I32Const 4448820
+	0xC64037 I32Load 2, 0
+	0xC6403A Call 29472
+	0xC6403E LocalTee 1
+	0xC64040 I32Eqz
+	0xC64041 BrIf 0
+	0xC64043 LocalGet 1
+	0xC64045 I32Load 2, 12
+	0xC64048 I32Const 1
+	0xC6404A I32Lt_S
+	0xC6404B BrIf 0
+	0xC6404D LocalGet 0
+	0xC6404F I32Load 2, 56
+	0xC64052 I32Const 0
+	0xC64054 Call 62781
+	0xC64058 I32Const 1
+	0xC6405A I32Const 0
+	0xC6405C Call 63022
+	0xC64060 LocalGet 0
+	0xC64062 I32Load 2, 56
+	0xC64065 I32Const 0
+	0xC64067 LocalGet 1
+	0xC64069 I32Load 2, 12
+	0xC6406C I32Const 0
+	0xC6406E Call 30457
+	0xC64072 I32Const 0
+	0xC64074 Call 29414
+	0xC64078 Br 1
+	0xC6407A End
+	0xC6407B LocalGet 0
+	0xC6407D I32Load 2, 56
+	0xC64080 I32Const 0
+	0xC64082 Call 62781
+	0xC64086 I32Const 0
+	0xC64088 I32Const 0
+	0xC6408A Call 63022
+	0xC6408E End
+	0xC6408F LocalGet 5
+	0xC64091 I32Load 2, 36
+	0xC64094 LocalSet 3
+	0xC64096 I32Const 4436320
+	0xC6409B I32Load 2, 0
+	0xC6409E LocalTee 1
+	0xC640A0 I32Load16_S 1, 186
+	0xC640A4 I32Const 512
+	0xC640A7 I32And
+	0xC640A8 If -64
+	0xC640AA LocalGet 1
+	0xC640AC I32Load 2, 116
+	0xC640AF I32Eqz
+	0xC640B0 If -64
+	0xC640B2 LocalGet 1
+	0xC640B4 Call 72345
+	0xC640B8 I32Const 4436320
+	0xC640BD I32Load 2, 0
+	0xC640C0 LocalSet 1
+	0xC640C2 End
+	0xC640C3 End
+	0xC640C4 LocalGet 1
+	0xC640C6 I32Load 2, 92
+	0xC640C9 I32Load 2, 16
+	0xC640CC LocalTee 1
+	0xC640CE I32Eqz
+	0xC640CF If -64
+	0xC640D1 Block -64
+	0xC640D3 I32Const 4436320
+	0xC640D8 I32Load 2, 0
+	0xC640DB LocalTee 1
+	0xC640DD I32Load16_S 1, 186
+	0xC640E1 I32Const 512
+	0xC640E4 I32And
+	0xC640E5 If -64
+	0xC640E7 LocalGet 1
+	0xC640E9 I32Load 2, 116
+	0xC640EC BrIf 1
+	0xC640EE LocalGet 1
+	0xC640F0 Call 72345
+	0xC640F4 I32Const 4436320
+	0xC640F9 I32Load 2, 0
+	0xC640FC LocalSet 1
+	0xC640FE End
+	0xC640FF End
+	0xC64100 LocalGet 1
+	0xC64102 I32Load 2, 92
+	0xC64105 I32Load 2, 0
+	0xC64108 LocalSet 4
+	0xC6410A I32Const 4436324
+	0xC6410F I32Load 2, 0
+	0xC64112 Call 72556
+	0xC64116 LocalTee 1
+	0xC64118 LocalSet 2
+	0xC6411A I32Const 4489848
+	0xC6411F I32Load 2, 0
+	0xC64122 Drop
+	0xC64123 LocalGet 2
+	0xC64125 I32Const 4450976
+	0xC6412A I32Load 2, 0
+	0xC6412D LocalTee 6
+	0xC6412F I32Load 2, 0
+	0xC64132 I32Store 2, 8
+	0xC64135 LocalGet 2
+	0xC64137 LocalGet 6
+	0xC64139 I32Store 2, 20
+	0xC6413C LocalGet 2
+	0xC6413E I32Const 16
+	0xC64140 I32Add
+	0xC64141 LocalGet 4
+	0xC64143 I32Store 2, 0
+	0xC64146 I32Const 4436320
+	0xC6414B I32Load 2, 0
+	0xC6414E I32Load 2, 92
+	0xC64151 I32Const 16
+	0xC64153 I32Add
+	0xC64154 LocalGet 1
+	0xC64156 I32Store 2, 0
+	0xC64159 End
+	0xC6415A Block -64
+	0xC6415C Block -64
+	0xC6415E LocalGet 3
+	0xC64160 LocalGet 1
+	0xC64162 I32Const 4448820
+	0xC64167 I32Load 2, 0
+	0xC6416A Call 29472
+	0xC6416E LocalTee 1
+	0xC64170 I32Eqz
+	0xC64171 BrIf 0
+	0xC64173 LocalGet 1
+	0xC64175 I32Load 2, 12
+	0xC64178 I32Const 1
+	0xC6417A I32Lt_S
+	0xC6417B BrIf 0
+	0xC6417D LocalGet 0
+	0xC6417F I32Load 2, 60
+	0xC64182 I32Const 0
+	0xC64184 Call 62781
+	0xC64188 I32Const 1
+	0xC6418A I32Const 0
+	0xC6418C Call 63022
+	0xC64190 LocalGet 0
+	0xC64192 I32Load 2, 60
+	0xC64195 I32Const 0
+	0xC64197 LocalGet 1
+	0xC64199 I32Load 2, 12
+	0xC6419C I32Const 0
+	0xC6419E Call 30457
+	0xC641A2 I32Const 0
+	0xC641A4 Call 29414
+	0xC641A8 Br 1
+	0xC641AA End
+	0xC641AB LocalGet 0
+	0xC641AD I32Load 2, 60
+	0xC641B0 I32Const 0
+	0xC641B2 Call 62781
+	0xC641B6 I32Const 0
+	0xC641B8 I32Const 0
+	0xC641BA Call 63022
+	0xC641BE End
+	0xC641BF LocalGet 5
+	0xC641C1 I32Load 2, 36
+	0xC641C4 LocalSet 5
+	0xC641C6 Block -64
+	0xC641C8 I32Const 4436320
+	0xC641CD I32Load 2, 0
+	0xC641D0 LocalTee 1
+	0xC641D2 I32Load16_S 1, 186
+	0xC641D6 I32Const 512
+	0xC641D9 I32And
+	0xC641DA If -64
+	0xC641DC LocalGet 1
+	0xC641DE I32Load 2, 116
+	0xC641E1 BrIf 1
+	0xC641E3 LocalGet 1
+	0xC641E5 Call 72345
+	0xC641E9 I32Const 4436320
+	0xC641EE I32Load 2, 0
+	0xC641F1 LocalSet 1
+	0xC641F3 End
+	0xC641F4 End
+	0xC641F5 LocalGet 1
+	0xC641F7 I32Load 2, 92
+	0xC641FA I32Load 2, 20
+	0xC641FD LocalTee 1
+	0xC641FF I32Eqz
+	0xC64200 If -64
+	0xC64202 Block -64
+	0xC64204 I32Const 4436320
+	0xC64209 I32Load 2, 0
+	0xC6420C LocalTee 1
+	0xC6420E I32Load16_S 1, 186
+	0xC64212 I32Const 512
+	0xC64215 I32And
+	0xC64216 If -64
+	0xC64218 LocalGet 1
+	0xC6421A I32Load 2, 116
+	0xC6421D BrIf 1
+	0xC6421F LocalGet 1
+	0xC64221 Call 72345
+	0xC64225 I32Const 4436320
+	0xC6422A I32Load 2, 0
+	0xC6422D LocalSet 1
+	0xC6422F End
+	0xC64230 End
+	0xC64231 LocalGet 1
+	0xC64233 I32Load 2, 92
+	0xC64236 I32Load 2, 0
+	0xC64239 LocalSet 3
+	0xC6423B I32Const 4436324
+	0xC64240 I32Load 2, 0
+	0xC64243 Call 72556
+	0xC64247 LocalTee 1
+	0xC64249 LocalSet 2
+	0xC6424B I32Const 4489848
+	0xC64250 I32Load 2, 0
+	0xC64253 Drop
+	0xC64254 LocalGet 2
+	0xC64256 I32Const 4450980
+	0xC6425B I32Load 2, 0
+	0xC6425E LocalTee 4
+	0xC64260 I32Load 2, 0
+	0xC64263 I32Store 2, 8
+	0xC64266 LocalGet 2
+	0xC64268 LocalGet 4
+	0xC6426A I32Store 2, 20
+	0xC6426D LocalGet 2
+	0xC6426F I32Const 16
+	0xC64271 I32Add
+	0xC64272 LocalGet 3
+	0xC64274 I32Store 2, 0
+	0xC64277 I32Const 4436320
+	0xC6427C I32Load 2, 0
+	0xC6427F I32Load 2, 92
+	0xC64282 I32Const 20
+	0xC64284 I32Add
+	0xC64285 LocalGet 1
+	0xC64287 I32Store 2, 0
+	0xC6428A End
+	0xC6428B Block -64
+	0xC6428D LocalGet 5
+	0xC6428F LocalGet 1
+	0xC64291 I32Const 4448820
+	0xC64296 I32Load 2, 0
+	0xC64299 Call 29472
+	0xC6429D LocalTee 1
+	0xC6429F If -64
+	0xC642A1 LocalGet 1
+	0xC642A3 I32Load 2, 12
+	0xC642A6 I32Const 1
+	0xC642A8 I32Lt_S
+	0xC642A9 BrIf 1
+	0xC642AB LocalGet 0
+	0xC642AD I32Const -64
+	0xC642AF I32Sub
+	0xC642B0 I32Load 2, 0
+	0xC642B3 I32Const 0
+	0xC642B5 Call 62781
+	0xC642B9 I32Const 1
+	0xC642BB I32Const 0
+	0xC642BD Call 63022
+	0xC642C1 LocalGet 0
+	0xC642C3 I32Const -64
+	0xC642C5 I32Sub
+	0xC642C6 I32Load 2, 0
+	0xC642C9 I32Const 0
+	0xC642CB LocalGet 1
+	0xC642CD I32Load 2, 12
+	0xC642D0 I32Const 0
+	0xC642D2 Call 30457
+	0xC642D6 I32Const 0
+	0xC642D8 Call 29414
+	0xC642DC Br 3
+	0xC642DE End
+	0xC642DF End
+	0xC642E0 LocalGet 0
+	0xC642E2 I32Const -64
+	0xC642E4 I32Sub
+	0xC642E5 I32Load 2, 0
+	0xC642E8 I32Const 0
+	0xC642EA Call 62781
+	0xC642EE I32Const 0
+	0xC642F0 I32Const 0
+	0xC642F2 Call 63022
+	0xC642F6 End
+	0xC642F7 End
+	0xC642F8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b116
+	5 Nop
+	6 Move v5 @ S0_v344, [2CD96C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v344
+	8 Nop
+	9 Move v7 @ S1_v125, 1
+	10 Move [4574CA], v7 @ S1_v125
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Data.Save.UserSave>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b142, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v339 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	21 Nop
+	22 CheckEqual v20 @ S0_v341 (System.Boolean), [v18 @ S0_v339 (Il2CppClass<Data.Save.UserSave>)+74], 0
+	23 Not v21 @ TEMP_v47 (System.Boolean), v20 @ S0_v341 (System.Boolean)
+	24 ConditionalJump @b142, v21 @ TEMP_v47 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Data.Save.UserSave)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call UserSave.get_hasPaidOutFacebookReward, v28 @ S1_v4 (System.Boolean)
+	32 Move this._lastPurchasedBundle (InApp.InAppData+BundleTier), v28 @ S1_v4 (System.Boolean)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v32 @ S0_v13 (System.Boolean), this._lastPurchasedBundle (InApp.InAppData+BundleTier), 5
+	37 Not v33 @ TEMP_v4 (System.Boolean), v32 @ S0_v13 (System.Boolean)
+	38 ConditionalJump @b11, v33 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid CelebrationBackgroundHelper.set_visible, this @ L0 (BundlePurchaseButton), 0
+	43 Jump @b141
+	44 Nop
+	45 Nop
+	46 Nop
+	47 CallVoid CelebrationBackgroundHelper.set_visible, this @ L0 (BundlePurchaseButton), 1
+	48 Nop
+	49 Move v41 @ S0_v17 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 And v45 @ S0_v19, [v41 @ S0_v17 (Il2CppClass<InApp.InAppData>)+BA], 512
+	54 CheckEqual v46 @ TEMP_v6 (System.Boolean), v45 @ S0_v19, 0
+	55 ConditionalJump @b117, v46 @ TEMP_v6 (System.Boolean)
+	56 Move v79 @ S0_v332 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	57 Nop
+	58 CheckEqual v81 @ S0_v334 (System.Boolean), [v79 @ S0_v332 (Il2CppClass<InApp.InAppData>)+74], 0
+	59 Not v82 @ TEMP_v46 (System.Boolean), v81 @ S0_v334 (System.Boolean)
+	60 ConditionalJump @b117, v82 @ TEMP_v46 (System.Boolean)
+	61 Nop
+	62 CallVoid 11A99, typeof(InApp.InAppData)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Call CelebrationBackgroundHelper.get_visible, v93 @ S1_v10 (System.Boolean), this @ L0 (BundlePurchaseButton)
+	74 Nop
+	75 Call InAppData.GetInAppOnlineSettingsId, v96 @ S1_v11 (System.String), v93 @ S1_v10 (System.Boolean)
+	76 Nop
+	77 Nop
+	78 Call Dictionary`2<System.String, InApp.InAppItemModel>.get_Item, v100 @ S0_v24 (InApp.InAppItemModel), v89.inAppData (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v96 @ S1_v11 (System.String)
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Move v107 @ S2_v8 (Il2CppClass<Strings>), typeof(Strings)
+	86 Nop
+	87 Nop
+	88 Nop
+	89 And v111 @ S2_v10, [v107 @ S2_v8 (Il2CppClass<Strings>)+BA], 512
+	90 CheckEqual v112 @ TEMP_v8 (System.Boolean), v111 @ S2_v10, 0
+	91 ConditionalJump @b119, v112 @ TEMP_v8 (System.Boolean)
+	92 Move v113 @ S2_v53 (Il2CppClass<Strings>), typeof(Strings)
+	93 Nop
+	94 CheckEqual v115 @ S2_v55 (System.Boolean), [v113 @ S2_v53 (Il2CppClass<Strings>)+74], 0
+	95 Not v116 @ TEMP_v45 (System.Boolean), v115 @ S2_v55 (System.Boolean)
+	96 ConditionalJump @b119, v116 @ TEMP_v45 (System.Boolean)
+	97 Nop
+	98 CallVoid 11A99, typeof(Strings)
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Call Strings.GetDefault, v121 @ S1_v14 (System.String), v100.displayName (System.String)
+	103 Nop
+	104 CallVoid UILabel.set_fontSize, this.titleLabel (UILabel), v121 @ S1_v14 (System.String)
+	105 Nop
+	106 Nop
+	107 CallVoid BundlePurchaseButton..ctor, this @ L0 (BundlePurchaseButton)
+	108 Nop
+	109 Nop
+	110 CallVoid BundlePurchaseButton.OnProductRequestDone, this @ L0 (BundlePurchaseButton)
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Move v131 @ S0_v32 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	116 Nop
+	117 Nop
+	118 Nop
+	119 And v135 @ S0_v34, [v131 @ S0_v32 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	120 CheckEqual v136 @ TEMP_v10 (System.Boolean), v135 @ S0_v34, 0
+	121 ConditionalJump @b120, v136 @ TEMP_v10 (System.Boolean)
+	122 Move v137 @ S0_v326 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	123 Nop
+	124 CheckEqual v139 @ S0_v328 (System.Boolean), [v137 @ S0_v326 (Il2CppClass<BundlePurchaseButton+<>c>)+74], 0
+	125 Not v140 @ TEMP_v44 (System.Boolean), v139 @ S0_v328 (System.Boolean)
+	126 ConditionalJump @b120, v140 @ TEMP_v44 (System.Boolean)
+	127 Nop
+	128 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 CheckEqual v150 @ S0_v39 (System.Boolean), v147.<>9__24_0 (System.Predicate`1<InApp.InAppItemModel+BundleItem>), 0
+	139 Not v151 @ TEMP_v12 (System.Boolean), v150 @ S0_v39 (System.Boolean)
+	140 ConditionalJump @b143, v151 @ TEMP_v12 (System.Boolean)
+	141 Nop
+	142 Move v154 @ S0_v300 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	143 Nop
+	144 Nop
+	145 Nop
+	146 And v158 @ S0_v302, [v154 @ S0_v300 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	147 CheckEqual v159 @ TEMP_v41 (System.Boolean), v158 @ S0_v302, 0
+	148 ConditionalJump @b122, v159 @ TEMP_v41 (System.Boolean)
+	149 Move v180 @ S0_v320 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	150 Nop
+	151 CheckEqual v182 @ S0_v322 (System.Boolean), [v180 @ S0_v320 (Il2CppClass<BundlePurchaseButton+<>c>)+74], 0
+	152 Not v183 @ TEMP_v43 (System.Boolean), v182 @ S0_v322 (System.Boolean)
+	153 ConditionalJump @b122, v183 @ TEMP_v43 (System.Boolean)
+	154 Nop
+	155 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Nop
+	167 Call 11B6C, v193 @ S0_v309, typeof(System.Predicate`1<InApp.InAppItemModel+BundleItem>)
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Nop
+	172 Nop
+	173 Nop
+	174 Move v201 @ S1_v117 (Il2CppMethodInfo), methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_0)
+	175 Nop
+	176 Nop
+	177 Move [v193 @ S0_v309+8], [v201 @ S1_v117 (Il2CppMethodInfo)]
+	178 Nop
+	179 Nop
+	180 Move [v193 @ S0_v309+14], methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_0)
+	181 Nop
+	182 Nop
+	183 Add v207 @ S0_v315, v193 @ S0_v309, 16
+	184 Nop
+	185 Move [v207 @ S0_v315], v189.<>9 (BundlePurchaseButton+<>c)
+	186 Nop
+	187 Move v210 @ S0_v317 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	188 Nop
+	189 Nop
+	190 Add v173 @ S0_v319, [v210 @ S0_v317 (Il2CppClass<BundlePurchaseButton+<>c>)+5C], 4
+	191 Nop
+	192 Move [v173 @ S0_v319], v193 @ S0_v309
+	193 Nop
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Newobj v178 @ S0_v42 (System.NullReferenceException), typeof(System.NullReferenceException)
+	199 Nop
+	200 CheckEqual v195 @ S0_v43 (System.Boolean), v178 @ S0_v42 (System.NullReferenceException), 0
+	201 ConditionalJump @b41, v195 @ S0_v43 (System.Boolean)
+	202 Nop
+	203 Nop
+	204 Nop
+	205 CheckLess v216 @ S0_v293 (System.Boolean), v178._message (System.String), 1
+	206 ConditionalJump @b41, v216 @ S0_v293 (System.Boolean)
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Call Component.get_tag, v227 @ S0_v296 (System.String), this.coinsSlot (BundleContentSlot)
+	211 Nop
+	212 Nop
+	213 CallVoid GameObject.set_tag, v227 @ S0_v296 (System.String), 1
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Nop
+	218 Nop
+	219 Nop
+	220 Call CenterOnChild.CenterOnClosestChildAtPosition, v237 @ S1_v114 (System.Boolean), 0, v178._message (System.String)
+	221 Nop
+	222 CallVoid 72E6, this.coinsSlot (BundleContentSlot), v237 @ S1_v114 (System.Boolean), 0
+	223 Jump @b43
+	224 Nop
+	225 Nop
+	226 Nop
+	227 Nop
+	228 Call Component.get_tag, v222 @ S0_v290 (System.String), this.coinsSlot (BundleContentSlot)
+	229 Nop
+	230 Nop
+	231 CallVoid GameObject.set_tag, v222 @ S0_v290 (System.String), 0
+	232 Nop
+	233 Nop
+	234 Nop
+	235 Nop
+	236 Nop
+	237 Move v244 @ S0_v48 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	238 Nop
+	239 Nop
+	240 Nop
+	241 And v248 @ S0_v50, [v244 @ S0_v48 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	242 CheckEqual v249 @ TEMP_v14 (System.Boolean), v248 @ S0_v50, 0
+	243 ConditionalJump @b124, v249 @ TEMP_v14 (System.Boolean)
+	244 Move v254 @ S0_v281 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	245 Nop
+	246 CheckEqual v256 @ S0_v283 (System.Boolean), [v254 @ S0_v281 (Il2CppClass<BundlePurchaseButton+<>c>)+74], 0
+	247 Not v257 @ TEMP_v40 (System.Boolean), v256 @ S0_v283 (System.Boolean)
+	248 ConditionalJump @b124, v257 @ TEMP_v40 (System.Boolean)
+	249 Nop
+	250 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	251 Nop
+	252 Nop
+	253 Nop
+	254 Nop
+	255 Nop
+	256 Nop
+	257 Nop
+	258 Nop
+	259 Nop
+	260 CheckEqual v267 @ S0_v55 (System.Boolean), v264.<>9__24_1 (System.Predicate`1<InApp.InAppItemModel+BundleItem>), 0
+	261 Not v268 @ TEMP_v16 (System.Boolean), v267 @ S0_v55 (System.Boolean)
+	262 ConditionalJump @b144, v268 @ TEMP_v16 (System.Boolean)
+	263 Nop
+	264 Move v271 @ S0_v255 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	265 Nop
+	266 Nop
+	267 Nop
+	268 And v275 @ S0_v257, [v271 @ S0_v255 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	269 CheckEqual v276 @ TEMP_v37 (System.Boolean), v275 @ S0_v257, 0
+	270 ConditionalJump @b126, v276 @ TEMP_v37 (System.Boolean)
+	271 Move v297 @ S0_v275 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	272 Nop
+	273 CheckEqual v299 @ S0_v277 (System.Boolean), [v297 @ S0_v275 (Il2CppClass<BundlePurchaseButton+<>c>)+74], 0
+	274 Not v300 @ TEMP_v39 (System.Boolean), v299 @ S0_v277 (System.Boolean)
+	275 ConditionalJump @b126, v300 @ TEMP_v39 (System.Boolean)
+	276 Nop
+	277 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	278 Nop
+	279 Nop
+	280 Nop
+	281 Nop
+	282 Nop
+	283 Nop
+	284 Nop
+	285 Nop
+	286 Nop
+	287 Nop
+	288 Nop
+	289 Call 11B6C, v310 @ S0_v264, typeof(System.Predicate`1<InApp.InAppItemModel+BundleItem>)
+	290 Nop
+	291 Nop
+	292 Nop
+	293 Nop
+	294 Nop
+	295 Nop
+	296 Move v318 @ S1_v100 (Il2CppMethodInfo), methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_1)
+	297 Nop
+	298 Nop
+	299 Move [v310 @ S0_v264+8], [v318 @ S1_v100 (Il2CppMethodInfo)]
+	300 Nop
+	301 Nop
+	302 Move [v310 @ S0_v264+14], methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_1)
+	303 Nop
+	304 Nop
+	305 Add v324 @ S0_v270, v310 @ S0_v264, 16
+	306 Nop
+	307 Move [v324 @ S0_v270], v306.<>9 (BundlePurchaseButton+<>c)
+	308 Nop
+	309 Move v327 @ S0_v272 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	310 Nop
+	311 Nop
+	312 Add v290 @ S0_v274, [v327 @ S0_v272 (Il2CppClass<BundlePurchaseButton+<>c>)+5C], 8
+	313 Nop
+	314 Move [v290 @ S0_v274], v310 @ S0_v264
+	315 Nop
+	316 Nop
+	317 Nop
+	318 Nop
+	319 Nop
+	320 Newobj v295 @ S0_v58 (System.NullReferenceException), typeof(System.NullReferenceException)
+	321 Nop
+	322 CheckEqual v312 @ S0_v59 (System.Boolean), v295 @ S0_v58 (System.NullReferenceException), 0
+	323 ConditionalJump @b59, v312 @ S0_v59 (System.Boolean)
+	324 Nop
+	325 Nop
+	326 Nop
+	327 CheckLess v333 @ S0_v248 (System.Boolean), v295._message (System.String), 1
+	328 ConditionalJump @b59, v333 @ S0_v248 (System.Boolean)
+	329 Nop
+	330 Nop
+	331 Nop
+	332 Call Component.get_tag, v344 @ S0_v251 (System.String), this.hoverboardsSlot (BundleContentSlot)
+	333 Nop
+	334 Nop
+	335 CallVoid GameObject.set_tag, v344 @ S0_v251 (System.String), 1
+	336 Nop
+	337 Nop
+	338 Nop
+	339 Nop
+	340 Nop
+	341 Nop
+	342 Call CenterOnChild.CenterOnClosestChildAtPosition, v354 @ S1_v97 (System.Boolean), 0, v295._message (System.String)
+	343 Nop
+	344 CallVoid 72E6, this.hoverboardsSlot (BundleContentSlot), v354 @ S1_v97 (System.Boolean), 0
+	345 Jump @b61
+	346 Nop
+	347 Nop
+	348 Nop
+	349 Nop
+	350 Call Component.get_tag, v339 @ S0_v245 (System.String), this.hoverboardsSlot (BundleContentSlot)
+	351 Nop
+	352 Nop
+	353 CallVoid GameObject.set_tag, v339 @ S0_v245 (System.String), 0
+	354 Nop
+	355 Nop
+	356 Nop
+	357 Nop
+	358 Nop
+	359 Move v361 @ S0_v64 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	360 Nop
+	361 Nop
+	362 Nop
+	363 And v365 @ S0_v66, [v361 @ S0_v64 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	364 CheckEqual v366 @ TEMP_v18 (System.Boolean), v365 @ S0_v66, 0
+	365 ConditionalJump @b128, v366 @ TEMP_v18 (System.Boolean)
+	366 Move v371 @ S0_v236 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	367 Nop
+	368 CheckEqual v373 @ S0_v238 (System.Boolean), [v371 @ S0_v236 (Il2CppClass<BundlePurchaseButton+<>c>)+74], 0
+	369 Not v374 @ TEMP_v36 (System.Boolean), v373 @ S0_v238 (System.Boolean)
+	370 ConditionalJump @b128, v374 @ TEMP_v36 (System.Boolean)
+	371 Nop
+	372 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	373 Nop
+	374 Nop
+	375 Nop
+	376 Nop
+	377 Nop
+	378 Nop
+	379 Nop
+	380 Nop
+	381 Nop
+	382 CheckEqual v384 @ S0_v71 (System.Boolean), v381.<>9__24_2 (System.Predicate`1<InApp.InAppItemModel+BundleItem>), 0
+	383 Not v385 @ TEMP_v20 (System.Boolean), v384 @ S0_v71 (System.Boolean)
+	384 ConditionalJump @b145, v385 @ TEMP_v20 (System.Boolean)
+	385 Nop
+	386 Move v388 @ S0_v210 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	387 Nop
+	388 Nop
+	389 Nop
+	390 And v392 @ S0_v212, [v388 @ S0_v210 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	391 CheckEqual v393 @ TEMP_v33 (System.Boolean), v392 @ S0_v212, 0
+	392 ConditionalJump @b130, v393 @ TEMP_v33 (System.Boolean)
+	393 Move v414 @ S0_v230 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	394 Nop
+	395 CheckEqual v416 @ S0_v232 (System.Boolean), [v414 @ S0_v230 (Il2CppClass<BundlePurchaseButton+<>c>)+74], 0
+	396 Not v417 @ TEMP_v35 (System.Boolean), v416 @ S0_v232 (System.Boolean)
+	397 ConditionalJump @b130, v417 @ TEMP_v35 (System.Boolean)
+	398 Nop
+	399 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	400 Nop
+	401 Nop
+	402 Nop
+	403 Nop
+	404 Nop
+	405 Nop
+	406 Nop
+	407 Nop
+	408 Nop
+	409 Nop
+	410 Nop
+	411 Call 11B6C, v427 @ S0_v219, typeof(System.Predicate`1<InApp.InAppItemModel+BundleItem>)
+	412 Nop
+	413 Nop
+	414 Nop
+	415 Nop
+	416 Nop
+	417 Nop
+	418 Move v435 @ S1_v83 (Il2CppMethodInfo), methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_2)
+	419 Nop
+	420 Nop
+	421 Move [v427 @ S0_v219+8], [v435 @ S1_v83 (Il2CppMethodInfo)]
+	422 Nop
+	423 Nop
+	424 Move [v427 @ S0_v219+14], methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_2)
+	425 Nop
+	426 Nop
+	427 Add v441 @ S0_v225, v427 @ S0_v219, 16
+	428 Nop
+	429 Move [v441 @ S0_v225], v423.<>9 (BundlePurchaseButton+<>c)
+	430 Nop
+	431 Move v444 @ S0_v227 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	432 Nop
+	433 Nop
+	434 Add v407 @ S0_v229, [v444 @ S0_v227 (Il2CppClass<BundlePurchaseButton+<>c>)+5C], 12
+	435 Nop
+	436 Move [v407 @ S0_v229], v427 @ S0_v219
+	437 Nop
+	438 Nop
+	439 Nop
+	440 Nop
+	441 Nop
+	442 Newobj v412 @ S0_v74 (System.NullReferenceException), typeof(System.NullReferenceException)
+	443 Nop
+	444 CheckEqual v429 @ S0_v75 (System.Boolean), v412 @ S0_v74 (System.NullReferenceException), 0
+	445 ConditionalJump @b77, v429 @ S0_v75 (System.Boolean)
+	446 Nop
+	447 Nop
+	448 Nop
+	449 CheckLess v450 @ S0_v203 (System.Boolean), v412._message (System.String), 1
+	450 ConditionalJump @b77, v450 @ S0_v203 (System.Boolean)
+	451 Nop
+	452 Nop
+	453 Nop
+	454 Call Component.get_tag, v461 @ S0_v206 (System.String), this.keysSlot (BundleContentSlot)
+	455 Nop
+	456 Nop
+	457 CallVoid GameObject.set_tag, v461 @ S0_v206 (System.String), 1
+	458 Nop
+	459 Nop
+	460 Nop
+	461 Nop
+	462 Nop
+	463 Nop
+	464 Call CenterOnChild.CenterOnClosestChildAtPosition, v471 @ S1_v80 (System.Boolean), 0, v412._message (System.String)
+	465 Nop
+	466 CallVoid 72E6, this.keysSlot (BundleContentSlot), v471 @ S1_v80 (System.Boolean), 0
+	467 Jump @b79
+	468 Nop
+	469 Nop
+	470 Nop
+	471 Nop
+	472 Call Component.get_tag, v456 @ S0_v200 (System.String), this.keysSlot (BundleContentSlot)
+	473 Nop
+	474 Nop
+	475 CallVoid GameObject.set_tag, v456 @ S0_v200 (System.String), 0
+	476 Nop
+	477 Nop
+	478 Nop
+	479 Nop
+	480 Nop
+	481 Move v478 @ S0_v80 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	482 Nop
+	483 Nop
+	484 Nop
+	485 And v482 @ S0_v82, [v478 @ S0_v80 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	486 CheckEqual v483 @ TEMP_v22 (System.Boolean), v482 @ S0_v82, 0
+	487 ConditionalJump @b132, v483 @ TEMP_v22 (System.Boolean)
+	488 Move v488 @ S0_v191 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	489 Nop
+	490 CheckEqual v490 @ S0_v193 (System.Boolean), [v488 @ S0_v191 (Il2CppClass<BundlePurchaseButton+<>c>)+74], 0
+	491 Not v491 @ TEMP_v32 (System.Boolean), v490 @ S0_v193 (System.Boolean)
+	492 ConditionalJump @b132, v491 @ TEMP_v32 (System.Boolean)
+	493 Nop
+	494 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	495 Nop
+	496 Nop
+	497 Nop
+	498 Nop
+	499 Nop
+	500 Nop
+	501 Nop
+	502 Nop
+	503 Nop
+	504 CheckEqual v501 @ S0_v87 (System.Boolean), v498.<>9__24_3 (System.Predicate`1<InApp.InAppItemModel+BundleItem>), 0
+	505 Not v502 @ TEMP_v24 (System.Boolean), v501 @ S0_v87 (System.Boolean)
+	506 ConditionalJump @b146, v502 @ TEMP_v24 (System.Boolean)
+	507 Nop
+	508 Move v505 @ S0_v166 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	509 Nop
+	510 Nop
+	511 Nop
+	512 And v509 @ S0_v168, [v505 @ S0_v166 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	513 CheckEqual v510 @ TEMP_v31 (System.Boolean), v509 @ S0_v168, 0
+	514 ConditionalJump @b135, v510 @ TEMP_v31 (System.Boolean)
+	515 Move v529 @ S0_v186 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	516 Nop
+	517 ConditionalJump @b135, [v529 @ S0_v186 (Il2CppClass<BundlePurchaseButton+<>c>)+74]
+	518 Nop
+	519 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	520 Nop
+	521 Nop
+	522 Nop
+	523 Nop
+	524 Nop
+	525 Nop
+	526 Nop
+	527 Nop
+	528 Nop
+	529 Nop
+	530 Nop
+	531 Call 11B6C, v540 @ S0_v175, typeof(System.Predicate`1<InApp.InAppItemModel+BundleItem>)
+	532 Nop
+	533 Nop
+	534 Nop
+	535 Nop
+	536 Nop
+	537 Nop
+	538 Move v548 @ S1_v66 (Il2CppMethodInfo), methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_3)
+	539 Nop
+	540 Nop
+	541 Move [v540 @ S0_v175+8], [v548 @ S1_v66 (Il2CppMethodInfo)]
+	542 Nop
+	543 Nop
+	544 Move [v540 @ S0_v175+14], methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_3)
+	545 Nop
+	546 Nop
+	547 Add v554 @ S0_v181, v540 @ S0_v175, 16
+	548 Nop
+	549 Move [v554 @ S0_v181], v536.<>9 (BundlePurchaseButton+<>c)
+	550 Nop
+	551 Move v557 @ S0_v183 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	552 Nop
+	553 Nop
+	554 Add v522 @ S0_v185, [v557 @ S0_v183 (Il2CppClass<BundlePurchaseButton+<>c>)+5C], 16
+	555 Nop
+	556 Move [v522 @ S0_v185], v540 @ S0_v175
+	557 Nop
+	558 Nop
+	559 Nop
+	560 Nop
+	561 Nop
+	562 Newobj v527 @ S0_v90 (System.NullReferenceException), typeof(System.NullReferenceException)
+	563 Nop
+	564 CheckEqual v542 @ S0_v91 (System.Boolean), v527 @ S0_v90 (System.NullReferenceException), 0
+	565 ConditionalJump @b95, v542 @ S0_v91 (System.Boolean)
+	566 Nop
+	567 Nop
+	568 Nop
+	569 CheckLess v563 @ S0_v159 (System.Boolean), v527._message (System.String), 1
+	570 ConditionalJump @b95, v563 @ S0_v159 (System.Boolean)
+	571 Nop
+	572 Nop
+	573 Nop
+	574 Call Component.get_tag, v574 @ S0_v162 (System.String), this.headstartSlot (BundleContentSlot)
+	575 Nop
+	576 Nop
+	577 CallVoid GameObject.set_tag, v574 @ S0_v162 (System.String), 1
+	578 Nop
+	579 Nop
+	580 Nop
+	581 Nop
+	582 Nop
+	583 Nop
+	584 Call CenterOnChild.CenterOnClosestChildAtPosition, v583 @ S1_v63 (System.Boolean), 0, v527._message (System.String)
+	585 Nop
+	586 CallVoid 72E6, this.headstartSlot (BundleContentSlot), v583 @ S1_v63 (System.Boolean), 0
+	587 Jump @b97
+	588 Nop
+	589 Nop
+	590 Nop
+	591 Nop
+	592 Call Component.get_tag, v569 @ S0_v156 (System.String), this.headstartSlot (BundleContentSlot)
+	593 Nop
+	594 Nop
+	595 CallVoid GameObject.set_tag, v569 @ S0_v156 (System.String), 0
+	596 Nop
+	597 Nop
+	598 Nop
+	599 Nop
+	600 Nop
+	601 Move v589 @ S0_v96 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	602 Nop
+	603 Nop
+	604 Nop
+	605 And v593 @ S0_v98, [v589 @ S0_v96 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	606 CheckEqual v594 @ TEMP_v26 (System.Boolean), v593 @ S0_v98, 0
+	607 ConditionalJump @b137, v594 @ TEMP_v26 (System.Boolean)
+	608 Move v599 @ S0_v148 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	609 Nop
+	610 ConditionalJump @b137, [v599 @ S0_v148 (Il2CppClass<BundlePurchaseButton+<>c>)+74]
+	611 Nop
+	612 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	613 Nop
+	614 Nop
+	615 Nop
+	616 Nop
+	617 Nop
+	618 Nop
+	619 Nop
+	620 Nop
+	621 Nop
+	622 CheckEqual v609 @ S0_v103 (System.Boolean), v606.<>9__24_4 (System.Predicate`1<InApp.InAppItemModel+BundleItem>), 0
+	623 Not v610 @ TEMP_v27 (System.Boolean), v609 @ S0_v103 (System.Boolean)
+	624 ConditionalJump @b147, v610 @ TEMP_v27 (System.Boolean)
+	625 Nop
+	626 Move v613 @ S0_v123 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	627 Nop
+	628 Nop
+	629 Nop
+	630 And v617 @ S0_v125, [v613 @ S0_v123 (Il2CppClass<BundlePurchaseButton+<>c>)+BA], 512
+	631 CheckEqual v618 @ TEMP_v30 (System.Boolean), v617 @ S0_v125, 0
+	632 ConditionalJump @b139, v618 @ TEMP_v30 (System.Boolean)
+	633 Move v635 @ S0_v143 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	634 Nop
+	635 ConditionalJump @b139, [v635 @ S0_v143 (Il2CppClass<BundlePurchaseButton+<>c>)+74]
+	636 Nop
+	637 CallVoid 11A99, typeof(BundlePurchaseButton+<>c)
+	638 Nop
+	639 Nop
+	640 Nop
+	641 Nop
+	642 Nop
+	643 Nop
+	644 Nop
+	645 Nop
+	646 Nop
+	647 Nop
+	648 Nop
+	649 Call 11B6C, v646 @ S0_v132, typeof(System.Predicate`1<InApp.InAppItemModel+BundleItem>)
+	650 Nop
+	651 Nop
+	652 Nop
+	653 Nop
+	654 Nop
+	655 Nop
+	656 Move v652 @ S1_v49 (Il2CppMethodInfo), methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_4)
+	657 Nop
+	658 Nop
+	659 Move [v646 @ S0_v132+8], [v652 @ S1_v49 (Il2CppMethodInfo)]
+	660 Nop
+	661 Nop
+	662 Move [v646 @ S0_v132+14], methodof(BundlePurchaseButton+<>c::<UpdateButton>b__24_4)
+	663 Nop
+	664 Nop
+	665 Add v658 @ S0_v138, v646 @ S0_v132, 16
+	666 Nop
+	667 Move [v658 @ S0_v138], v642.<>9 (BundlePurchaseButton+<>c)
+	668 Nop
+	669 Move v661 @ S0_v140 (Il2CppClass<BundlePurchaseButton+<>c>), typeof(BundlePurchaseButton+<>c)
+	670 Nop
+	671 Nop
+	672 Add v628 @ S0_v142, [v661 @ S0_v140 (Il2CppClass<BundlePurchaseButton+<>c>)+5C], 20
+	673 Nop
+	674 Move [v628 @ S0_v142], v646 @ S0_v132
+	675 Nop
+	676 Nop
+	677 Nop
+	678 Nop
+	679 Nop
+	680 Newobj v633 @ S0_v106 (System.NullReferenceException), typeof(System.NullReferenceException)
+	681 Nop
+	682 CheckEqual v75 @ TEMP_v29 (System.Boolean), v633 @ S0_v106 (System.NullReferenceException), 0
+	683 ConditionalJump @b140, v75 @ TEMP_v29 (System.Boolean)
+	684 Nop
+	685 Nop
+	686 Nop
+	687 CheckLess v667 @ S0_v114 (System.Boolean), v633._message (System.String), 1
+	688 ConditionalJump @b140, v667 @ S0_v114 (System.Boolean)
+	689 Nop
+	690 Nop
+	691 Subtract v678 @ S0_v116, this @ L0 (BundlePurchaseButton), -64
+	692 Nop
+	693 Nop
+	694 Call Component.get_tag, v681 @ S0_v118 (System.String), [v678 @ S0_v116]
+	695 Nop
+	696 Nop
+	697 CallVoid GameObject.set_tag, v681 @ S0_v118 (System.String), 1
+	698 Nop
+	699 Nop
+	700 Subtract v686 @ S0_v120, this @ L0 (BundlePurchaseButton), -64
+	701 Nop
+	702 Nop
+	703 Nop
+	704 Nop
+	705 Nop
+	706 Call CenterOnChild.CenterOnClosestChildAtPosition, v72 @ S1_v46 (System.Boolean), 0, v633._message (System.String)
+	707 Nop
+	708 CallVoid 72E6, [v686 @ S0_v120], v72 @ S1_v46 (System.Boolean), 0
+	709 Jump @b141
+	710 Nop
+	711 Nop
+	712 Nop
+	713 Nop
+	714 Subtract v672 @ S0_v109, this @ L0 (BundlePurchaseButton), -64
+	715 Nop
+	716 Nop
+	717 Call Component.get_tag, v78 @ S0_v111 (System.String), [v672 @ S0_v109]
+	718 Nop
+	719 Nop
+	720 CallVoid GameObject.set_tag, v78 @ S0_v111 (System.String), 0
+	721 Nop
+	722 Nop
+	723 Nop
+	724 Return
+
+Method: System.String GetFormattedAmount(System.Int32 amount)
+
+Disassembly:
+	0xC5C611 I32Const 4551784
+	0xC5C616 I32Load8_S 0, 0
+	0xC5C619 I32Eqz
+	0xC5C61A If -64
+	0xC5C61C I32Const 2936808
+	0xC5C621 I32Load 2, 0
+	0xC5C624 Call 73003
+	0xC5C628 I32Const 4551784
+	0xC5C62D I32Const 1
+	0xC5C62F I32Store8 0, 0
+	0xC5C632 End
+	0xC5C633 I32Const 4436176
+	0xC5C638 I32Load 2, 0
+	0xC5C63B Call 72556
+	0xC5C63F LocalTee 2
+	0xC5C641 I32Const 0
+	0xC5C643 I32Store 2, 8
+	0xC5C646 LocalGet 2
+	0xC5C648 I32Const 16
+	0xC5C64A I32Add
+	0xC5C64B LocalGet 0
+	0xC5C64D I32Store 2, 0
+	0xC5C650 LocalGet 2
+	0xC5C652 I32Const 20
+	0xC5C654 I32Add
+	0xC5C655 LocalGet 1
+	0xC5C657 I32Store 2, 0
+	0xC5C65A LocalGet 2
+	0xC5C65C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v14, [2CCFE8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [457468], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.String), typeof(AwardStarHandler+<AnimateStar>d__5)
+	15 Nop
+	16 Nop
+	17 Move v13.m_stringLength (System.Int32), 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.String), 16
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (BundlePurchaseButton)
+	23 Nop
+	24 Nop
+	25 Add v23 @ S0_v11, v13 @ S0_v7 (System.String), 20
+	26 Nop
+	27 Move [v23 @ S0_v11], amount @ L1 (System.Int32)
+	28 Nop
+	29 Nop
+	30 Return v13 @ S0_v7 (System.String)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC6440F LocalGet 0
+	0xC64411 I32Load 2, 28
+	0xC64414 I32Const 0
+	0xC64416 Call 62781
+	0xC6441A LocalGet 0
+	0xC6441C I32Load 2, 68
+	0xC6441F I32Eqz
+	0xC64420 I32Const 0
+	0xC64422 Call 63022
+	0xC64426 LocalGet 0
+	0xC64428 I32Load 2, 32
+	0xC6442B I32Const 0
+	0xC6442D Call 62781
+	0xC64431 LocalGet 0
+	0xC64433 I32Load 2, 68
+	0xC64436 I32Const 1
+	0xC64438 I32Eq
+	0xC64439 I32Const 0
+	0xC6443B Call 63022
+	0xC6443F LocalGet 0
+	0xC64441 I32Load 2, 36
+	0xC64444 I32Const 0
+	0xC64446 Call 62781
+	0xC6444A LocalGet 0
+	0xC6444C I32Load 2, 68
+	0xC6444F I32Const 2
+	0xC64451 I32Eq
+	0xC64452 I32Const 0
+	0xC64454 Call 63022
+	0xC64458 LocalGet 0
+	0xC6445A I32Load 2, 40
+	0xC6445D I32Const 0
+	0xC6445F Call 62781
+	0xC64463 LocalGet 0
+	0xC64465 I32Load 2, 68
+	0xC64468 I32Const 3
+	0xC6446A I32Eq
+	0xC6446B I32Const 0
+	0xC6446D Call 63022
+	0xC64471 LocalGet 0
+	0xC64473 I32Load 2, 44
+	0xC64476 I32Const 0
+	0xC64478 Call 62781
+	0xC6447C LocalGet 0
+	0xC6447E I32Load 2, 68
+	0xC64481 I32Const 4
+	0xC64483 I32Eq
+	0xC64484 I32Const 0
+	0xC64486 Call 63022
+	0xC6448A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call Component.get_tag, v4 @ S0_v3 (System.String), this.bundle1Icon (UISprite)
+	4 Nop
+	5 Nop
+	6 CheckEqual v7 @ S1_v4 (System.Boolean), this._lastPurchasedBundle (InApp.InAppData+BundleTier), 0
+	7 Nop
+	8 CallVoid GameObject.set_tag, v4 @ S0_v3 (System.String), v7 @ S1_v4 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Call Component.get_tag, v12 @ S0_v6 (System.String), this.bundle2Icon (UISprite)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CheckEqual v16 @ S1_v8 (System.Boolean), this._lastPurchasedBundle (InApp.InAppData+BundleTier), 1
+	17 Nop
+	18 CallVoid GameObject.set_tag, v12 @ S0_v6 (System.String), v16 @ S1_v8 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call Component.get_tag, v21 @ S0_v9 (System.String), this.bundle3Icon (UISprite)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CheckEqual v25 @ S1_v12 (System.Boolean), this._lastPurchasedBundle (InApp.InAppData+BundleTier), 2
+	27 Nop
+	28 CallVoid GameObject.set_tag, v21 @ S0_v9 (System.String), v25 @ S1_v12 (System.Boolean)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call Component.get_tag, v30 @ S0_v12 (System.String), this.bundle4Icon (UISprite)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v34 @ S1_v16 (System.Boolean), this._lastPurchasedBundle (InApp.InAppData+BundleTier), 3
+	37 Nop
+	38 CallVoid GameObject.set_tag, v30 @ S0_v12 (System.String), v34 @ S1_v16 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call Component.get_tag, v39 @ S0_v15 (System.String), this.bundle5Icon (UISprite)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 CheckEqual v43 @ S1_v20 (System.Boolean), this._lastPurchasedBundle (InApp.InAppData+BundleTier), 4
+	47 Nop
+	48 CallVoid GameObject.set_tag, v39 @ S0_v15 (System.String), v43 @ S1_v20 (System.Boolean)
+	49 Nop
+	50 Return
+

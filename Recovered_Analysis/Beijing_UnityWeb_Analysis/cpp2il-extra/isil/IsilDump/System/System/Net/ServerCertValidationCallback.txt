@@ -1,0 +1,158 @@
+Type: System.Net.ServerCertValidationCallback
+
+Method: System.Void .ctor(System.Net.Security.RemoteCertificateValidationCallback validationCallback)
+
+Disassembly:
+	0x11331B9 LocalGet 0
+	0x11331BB LocalGet 1
+	0x11331BD I32Const 1
+	0x11331BF I32And
+	0x11331C0 I32Store8 0, 10
+	0x11331C3 LocalGet 0
+	0x11331C5 I32Const 1
+	0x11331C7 I32Store8 0, 8
+	0x11331CA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2, validationCallback @ L1 (System.Net.Security.RemoteCertificateValidationCallback), 1
+	4 Move [this @ L0 (System.Net.ServerCertValidationCallback)+A], v5 @ S1_v2
+	5 Nop
+	6 Nop
+	7 Move this.m_ValidationCallback (System.Net.Security.RemoteCertificateValidationCallback), 1
+	8 Nop
+	9 Return
+
+Method: System.Void Callback(System.Object state)
+
+Disassembly:
+	0x1121F71 I32Const 4566317
+	0x1121F76 I32Load8_S 0, 0
+	0x1121F79 I32Eqz
+	0x1121F7A If -64
+	0x1121F7C I32Const 3002644
+	0x1121F81 I32Load 2, 0
+	0x1121F84 Call 73003
+	0x1121F88 I32Const 4566317
+	0x1121F8D I32Const 1
+	0x1121F8F I32Store8 0, 0
+	0x1121F92 End
+	0x1121F93 LocalGet 0
+	0x1121F95 I32Const 8
+	0x1121F97 I32Add
+	0x1121F98 LocalGet 1
+	0x1121F9A I32Store 2, 0
+	0x1121F9D I32Const 4429216
+	0x1121FA2 I32Load 2, 0
+	0x1121FA5 LocalTee 1
+	0x1121FA7 I32Load16_S 1, 186
+	0x1121FAB I32Const 512
+	0x1121FAE I32And
+	0x1121FAF If -64
+	0x1121FB1 LocalGet 1
+	0x1121FB3 I32Load 2, 116
+	0x1121FB6 I32Eqz
+	0x1121FB7 If -64
+	0x1121FB9 LocalGet 1
+	0x1121FBB Call 72345
+	0x1121FBF End
+	0x1121FC0 End
+	0x1121FC1 LocalGet 0
+	0x1121FC3 I32Const 12
+	0x1121FC5 I32Add
+	0x1121FC6 I32Const 0
+	0x1121FC8 Call 60396
+	0x1121FCC I32Store 2, 0
+	0x1121FCF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v19, [2DD114]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v19
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45AD2D], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (System.Net.ServerCertValidationCallback), 8
+	15 Nop
+	16 Move [v14 @ S0_v6], state @ L1 (System.Object)
+	17 Nop
+	18 Move v18 @ S0_v8 (Il2CppClass<System.Threading.ExecutionContext>), typeof(System.Threading.ExecutionContext)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 And v22 @ S0_v10, [v18 @ S0_v8 (Il2CppClass<System.Threading.ExecutionContext>)+BA], 512
+	23 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v10, 0
+	24 ConditionalJump @b10, v23 @ TEMP_v2 (System.Boolean)
+	25 Move v24 @ S0_v14 (Il2CppClass<System.Threading.ExecutionContext>), typeof(System.Threading.ExecutionContext)
+	26 Nop
+	27 CheckEqual v26 @ S0_v16 (System.Boolean), [v24 @ S0_v14 (Il2CppClass<System.Threading.ExecutionContext>)+74], 0
+	28 Not v27 @ TEMP_v4 (System.Boolean), v26 @ S0_v16 (System.Boolean)
+	29 ConditionalJump @b10, v27 @ TEMP_v4 (System.Boolean)
+	30 Nop
+	31 CallVoid 11A99, typeof(System.Threading.ExecutionContext)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v33 @ S0_v13, this @ L0 (System.Net.ServerCertValidationCallback), 12
+	37 Nop
+	38 Call ExecutionContext.FastCapture, v35 @ S1_v7 (System.Threading.ExecutionContext)
+	39 Move [v33 @ S0_v13], v35 @ S1_v7 (System.Threading.ExecutionContext)
+	40 Nop
+	41 Return
+
+Method: System.Boolean Invoke(System.Object request, System.Security.Cryptography.X509Certificates.X509Certificate certificate, System.Security.Cryptography.X509Certificates.X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+
+Disassembly:
+	0x10912AA GlobalGet 7
+	0x10912AC LocalSet 6
+	0x10912AE GlobalGet 7
+	0x10912B0 I32Const 16
+	0x10912B2 I32Add
+	0x10912B3 GlobalSet 7
+	0x10912B5 LocalGet 6
+	0x10912B7 I32Const 3571923
+	0x10912BC I32Store 2, 0
+	0x10912BF LocalGet 6
+	0x10912C1 I32Const 3554097
+	0x10912C6 I32Store 2, 4
+	0x10912C9 I32Const 85
+	0x10912CC LocalGet 6
+	0x10912CE Call 226
+	0x10912D1 LocalGet 6
+	0x10912D3 GlobalSet 7
+	0x10912D5 I32Const 0
+	0x10912D7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], 3571923
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7+4], 3554097
+	12 Nop
+	13 Nop
+	14 CallVoid 00E2, 85, v1 @ G7
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Return 0
+

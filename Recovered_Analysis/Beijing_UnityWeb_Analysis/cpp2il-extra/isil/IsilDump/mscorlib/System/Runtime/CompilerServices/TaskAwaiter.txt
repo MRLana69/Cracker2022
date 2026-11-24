@@ -1,0 +1,333 @@
+Type: System.Runtime.CompilerServices.TaskAwaiter
+
+Method: System.Void .ctor(System.Threading.Tasks.Task task)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.TaskAwaiter), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], task @ L1 (System.Threading.Tasks.Task)
+	5 Nop
+	6 Return
+
+Method: System.Void OnCompleted(System.Action continuation)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.TaskAwaiter), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], continuation @ L1 (System.Action)
+	5 Nop
+	6 Return
+
+Method: System.Void UnsafeOnCompleted(System.Action continuation)
+
+Disassembly:
+	0x10077A0 LocalGet 0
+	0x10077A2 I32Const 8
+	0x10077A4 I32Add
+	0x10077A5 I32Load 2, 0
+	0x10077A8 LocalGet 1
+	0x10077AA I32Const 1
+	0x10077AC I32Const 1
+	0x10077AE I32Const 0
+	0x10077B0 Call 46039
+	0x10077B4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.TaskAwaiter), 8
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CallVoid Marshal.copy_to_unmanaged, [v3 @ S0_v2], continuation @ L1 (System.Action), 1, 1
+	9 Nop
+	10 Return
+
+Method: System.Void GetResult()
+
+Disassembly:
+	0x100775B I32Const 4562872
+	0x1007760 I32Load8_S 0, 0
+	0x1007763 I32Eqz
+	0x1007764 If -64
+	0x1007766 I32Const 2999612
+	0x100776B I32Load 2, 0
+	0x100776E Call 73003
+	0x1007772 I32Const 4562872
+	0x1007777 I32Const 1
+	0x1007779 I32Store8 0, 0
+	0x100777C End
+	0x100777D I32Const 4490368
+	0x1007782 I32Load 2, 0
+	0x1007785 Call 73897
+	0x1007789 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v8, [2DC53C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [459FB8], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid 120A9, methodof(System.Runtime.CompilerServices.RuntimeWrappedException::.ctor)
+	15 Nop
+	16 Return
+
+Method: System.Void ValidateEnd(System.Threading.Tasks.Task task)
+
+Disassembly:
+	0x10072D7 LocalGet 0
+	0x10072D9 I32Const 8
+	0x10072DB I32Add
+	0x10072DC I32Const 0
+	0x10072DE Call 46043
+	0x10072E2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Throw typeof(System.OverflowException)
+	5 Nop
+	6 Return
+
+Method: System.Void HandleNonSuccessAndDebuggerNotification(System.Threading.Tasks.Task task)
+
+Disassembly:
+	0x1007158 LocalGet 0
+	0x100715A I32Load 2, 28
+	0x100715D I32Const 285212672
+	0x1007163 I32And
+	0x1007164 I32Const 16777216
+	0x1007169 I32Ne
+	0x100716A If -64
+	0x100716C LocalGet 0
+	0x100716E I32Const 0
+	0x1007170 Call 46045
+	0x1007174 End
+	0x1007175 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v4 @ S0_v3 (System.Int32), task.m_stateFlags (System.Int32), 285212672
+	4 Nop
+	5 CheckNotEqual v6 @ S0_v4 (System.Boolean), v4 @ S0_v3 (System.Int32), 16777216
+	6 Not v7 @ TEMP_v1 (System.Boolean), v6 @ S0_v4 (System.Boolean)
+	7 ConditionalJump @b4, v7 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 CallVoid TaskAwaiter.ThrowForNonSuccess, task @ L0 (System.Threading.Tasks.Task)
+	11 Nop
+	12 Nop
+	13 Return
+
+Method: System.Void ThrowForNonSuccess(System.Threading.Tasks.Task task)
+
+Disassembly:
+	0x100717A GlobalGet 7
+	0x100717C LocalSet 1
+	0x100717E GlobalGet 7
+	0x1007180 I32Const 16
+	0x1007182 I32Add
+	0x1007183 GlobalSet 7
+	0x1007185 LocalGet 1
+	0x1007187 I32Const 8
+	0x1007189 I32Add
+	0x100718A LocalSet 2
+	0x100718C LocalGet 1
+	0x100718E I32Const 4
+	0x1007190 I32Add
+	0x1007191 LocalTee 3
+	0x1007193 I32Const 0
+	0x1007195 I32Store 2, 0
+	0x1007198 LocalGet 0
+	0x100719A I32Const 0
+	0x100719C Call 60640
+	0x10071A0 I32Eqz
+	0x10071A1 If -64
+	0x10071A3 LocalGet 3
+	0x10071A5 I32Const 4
+	0x10071A7 Call 14799
+	0x10071AA LocalGet 1
+	0x10071AC LocalGet 3
+	0x10071AE I32Load 2, 0
+	0x10071B1 I32Store 2, 0
+	0x10071B4 LocalGet 2
+	0x10071B6 LocalGet 1
+	0x10071B8 I32Load 2, 0
+	0x10071BB I32Store 2, 0
+	0x10071BE LocalGet 0
+	0x10071C0 I32Const -1
+	0x10071C2 LocalGet 2
+	0x10071C4 I32Const 0
+	0x10071C6 Call 60674
+	0x10071CA Drop
+	0x10071CB End
+	0x10071CC LocalGet 0
+	0x10071CE I32Const 0
+	0x10071D0 Call 60605
+	0x10071D4 Drop
+	0x10071D5 LocalGet 0
+	0x10071D7 I32Load 2, 28
+	0x10071DA I32Const 23068672
+	0x10071DF I32And
+	0x10071E0 I32Const 16777216
+	0x10071E5 I32Ne
+	0x10071E6 If -64
+	0x10071E8 LocalGet 0
+	0x10071EA I32Const 0
+	0x10071EC Call 46046
+	0x10071F0 End
+	0x10071F1 LocalGet 1
+	0x10071F3 GlobalSet 7
+	0x10071F5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5 (System.Threading.CancellationToken), v1 @ G7, 8
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v7, v1 @ G7, 4
+	13 Nop
+	14 Nop
+	15 Move [v13 @ S0_v7], 0
+	16 Nop
+	17 Nop
+	18 Call Task.IsCompletedMethod, v19 @ S0_v9 (System.Boolean), task @ L0 (System.Threading.Tasks.Task)
+	19 Not v20 @ S0_v10 (System.Boolean), v19 @ S0_v9 (System.Boolean)
+	20 Not v21 @ TEMP_v1 (System.Boolean), v20 @ S0_v10 (System.Boolean)
+	21 ConditionalJump @b6, v21 @ TEMP_v1 (System.Boolean)
+	22 Nop
+	23 Nop
+	24 CallVoid 39CF, v13 @ S0_v7, 4
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Move [v1 @ G7], [v13 @ S0_v7]
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Move v9.m_source (System.Threading.CancellationTokenSource), [v1 @ G7]
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call Task.SpinThenBlockingWait, v33 @ S0_v25 (System.Boolean), task @ L0 (System.Threading.Tasks.Task), -1, v9 @ S0_v5 (System.Threading.CancellationToken)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call Task.get_IsWaitNotificationEnabledOrNotRanToCompletion, v36 @ S0_v13 (System.Boolean), task @ L0 (System.Threading.Tasks.Task)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v47 @ S0_v16 (System.Int32), task.m_stateFlags (System.Int32), 23068672
+	46 Nop
+	47 CheckNotEqual v49 @ S0_v17 (System.Boolean), v47 @ S0_v16 (System.Int32), 16777216
+	48 Not v50 @ TEMP_v2 (System.Boolean), v49 @ S0_v17 (System.Boolean)
+	49 ConditionalJump @b9, v50 @ TEMP_v2 (System.Boolean)
+	50 Nop
+	51 Nop
+	52 CallVoid ConfiguredTaskAwaiter.GetResult, task @ L0 (System.Threading.Tasks.Task)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Return
+
+Method: System.Void OnCompletedInternal(System.Threading.Tasks.Task task, System.Action continuation, System.Boolean continueOnCapturedContext, System.Boolean flowExecutionContext)
+
+Disassembly:
+	0x10062BA LocalGet 3
+	0x10062BC I32Eqz
+	0x10062BD If -64
+	0x10062BF LocalGet 1
+	0x10062C1 I32Const 0
+	0x10062C3 Call 45997
+	0x10062C7 LocalSet 3
+	0x10062C9 End
+	0x10062CA LocalGet 0
+	0x10062CC I32Const 8
+	0x10062CE I32Add
+	0x10062CF LocalGet 1
+	0x10062D1 I32Store 2, 0
+	0x10062D4 LocalGet 0
+	0x10062D6 I32Const 16
+	0x10062D8 I32Add
+	0x10062D9 LocalGet 3
+	0x10062DB I32Store 2, 0
+	0x10062DE LocalGet 0
+	0x10062E0 I32Const 12
+	0x10062E2 I32Add
+	0x10062E3 LocalGet 2
+	0x10062E5 I32Store 2, 0
+	0x10062E8 End
+
+ISIL:
+	0 Nop
+	1 Not v2 @ S0_v2 (System.Boolean), v8 @ L3_v1 (System.Boolean)
+	2 Not v3 @ TEMP_v1 (System.Boolean), v2 @ S0_v2 (System.Boolean)
+	3 ConditionalJump @b5, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Call ConfiguredTaskAwaiter.get_IsCompleted, v7 @ S0_v11 (System.Boolean), continuation @ L1 (System.Action)
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Add v16 @ S0_v5, task @ L0 (System.Threading.Tasks.Task), 8
+	12 Nop
+	13 Move [v16 @ S0_v5], continuation @ L1 (System.Action)
+	14 Nop
+	15 Nop
+	16 Add v20 @ S0_v7, task @ L0 (System.Threading.Tasks.Task), 16
+	17 Nop
+	18 Move [v20 @ S0_v7], v7 @ S0_v11 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Add v24 @ S0_v9, task @ L0 (System.Threading.Tasks.Task), 12
+	22 Nop
+	23 Move [v24 @ S0_v9], continueOnCapturedContext @ L2 (System.Boolean)
+	24 Nop
+	25 Return
+

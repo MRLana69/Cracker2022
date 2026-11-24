@@ -1,0 +1,78 @@
+Type: SYBO.Common.Data.Score+ValueChangedEventArgs
+
+Method: System.Single get_NewValue()
+
+Disassembly:
+	0xED7484 I32Const 0
+	0xED7486 Call 64301
+	0xED748A LocalGet 0
+	0xED748C I32Const -64
+	0xED748E I32Sub
+	0xED748F F32Load 2, 0
+	0xED7492 F32Sub
+	0xED7493 End
+
+ISIL:
+	0 Nop
+	1 Call Time.get_unscaledDeltaTime, v1 @ S0_v2 (System.Single)
+	2 Nop
+	3 Nop
+	4 Subtract v5 @ S1_v2, this @ L0 (SYBO.Common.Data.Score+ValueChangedEventArgs), -64
+	5 Nop
+	6 Subtract returnVal1 @ S0_v3 (System.Single), v1 @ S0_v2 (System.Single), [v5 @ S1_v2]
+	7 Nop
+	8 Return returnVal1 @ S0_v3 (System.Single)
+
+Method: System.Single get_OldValue()
+
+Disassembly:
+	0xC24A70 LocalGet 0
+	0xC24A72 F32Load 2, 8
+	0xC24A75 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._newValue (System.Single)
+
+Method: System.Single get_DeltaValue()
+
+Disassembly:
+	0xC11850 LocalGet 0
+	0xC11852 F32Load 2, 12
+	0xC11855 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._oldValue (System.Single)
+
+Method: System.Void .ctor(System.Single newValue, System.Single oldValue, System.Single deltaValue)
+
+Disassembly:
+	0xDAC8F1 LocalGet 0
+	0xDAC8F3 F32Const 0
+	0xDAC8F8 F32Const 0.5
+	0xDAC8FD F32Const 1
+	0xDAC902 LocalGet 1
+	0xDAC904 LocalGet 2
+	0xDAC906 LocalGet 3
+	0xDAC908 I32Const 0
+	0xDAC90A Call 35958
+	0xDAC90E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CallVoid UIRect.SetRect, this @ L0 (SYBO.Common.Data.Score+ValueChangedEventArgs), 0f, 0.5f, 1f, newValue @ L1 (System.Single)
+	9 Nop
+	10 Return
+

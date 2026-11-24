@@ -1,0 +1,155 @@
+Type: SYBO.Subway.Automation.Samplers.InGameIntervalSampler
+
+Method: System.Void .ctor(System.Single sampleInterval)
+
+Disassembly:
+	0xD5203D I32Const 4554646
+	0xD52042 I32Load8_S 0, 0
+	0xD52045 I32Eqz
+	0xD52046 If -64
+	0xD52048 I32Const 3026352
+	0xD5204D I32Load 2, 0
+	0xD52050 Call 73003
+	0xD52054 I32Const 4554646
+	0xD52059 I32Const 1
+	0xD5205B I32Store8 0, 0
+	0xD5205E End
+	0xD5205F I32Const 4435764
+	0xD52064 I32Load 2, 0
+	0xD52067 LocalTee 3
+	0xD52069 I32Load16_S 1, 186
+	0xD5206D I32Const 512
+	0xD52070 I32And
+	0xD52071 If -64
+	0xD52073 LocalGet 3
+	0xD52075 I32Load 2, 116
+	0xD52078 I32Eqz
+	0xD52079 If -64
+	0xD5207B LocalGet 3
+	0xD5207D Call 72345
+	0xD52081 End
+	0xD52082 End
+	0xD52083 I32Const 0
+	0xD52085 Call 35989
+	0xD52089 I32Const 0
+	0xD5208B Call 36018
+	0xD5208F I32Const 4529432
+	0xD52094 I32Load 2, 0
+	0xD52097 I32Const 0
+	0xD52099 Call 55706
+	0xD5209D If -64
+	0xD5209F LocalGet 0
+	0xD520A1 I32Const 1
+	0xD520A3 I32Store8 0, 8
+	0xD520A6 End
+	0xD520A7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v21, [2E2DB0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [457F96], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UIScreenController>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b14, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v16 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	21 Nop
+	22 CheckEqual v20 @ S0_v18 (System.Boolean), [v18 @ S0_v16 (Il2CppClass<UIScreenController>)+74], 0
+	23 Not v21 @ TEMP_v5 (System.Boolean), v20 @ S0_v18 (System.Boolean)
+	24 ConditionalJump @b14, v21 @ TEMP_v5 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UIScreenController)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call UIScreenController.ShouldShowOnlineScreen, v26 @ S0_v11 (System.Boolean)
+	31 Nop
+	32 Call UIScreenController.DelayHideMainCamera, v28 @ S0_v12 (System.Collections.IEnumerator), v26 @ S0_v11 (System.Boolean)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call String.Equals, v32 @ S0_v13 (System.Boolean), v28 @ S0_v12 (System.Collections.IEnumerator), "FrontScreen"
+	37 Not v33 @ TEMP_v4 (System.Boolean), v32 @ S0_v13 (System.Boolean)
+	38 ConditionalJump @b13, v33 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Move this._sampleInterval (System.Single), 1
+	42 Nop
+	43 Nop
+	44 Return
+
+Method: System.Boolean Update(System.Single unscaledDeltaTime)
+
+Disassembly:
+	0xE644BC I32Const 4558201
+	0xE644C1 I32Load8_S 0, 0
+	0xE644C4 I32Eqz
+	0xE644C5 If -64
+	0xE644C7 I32Const 2942872
+	0xE644CC I32Load 2, 0
+	0xE644CF Call 73003
+	0xE644D3 I32Const 4558201
+	0xE644D8 I32Const 1
+	0xE644DA I32Store8 0, 0
+	0xE644DD End
+	0xE644DE I32Const 4442000
+	0xE644E3 I32Load 2, 0
+	0xE644E6 Call 72556
+	0xE644EA LocalTee 2
+	0xE644EC I32Const 0
+	0xE644EE I32Store 2, 8
+	0xE644F1 LocalGet 2
+	0xE644F3 I32Const 20
+	0xE644F5 I32Add
+	0xE644F6 LocalGet 0
+	0xE644F8 I32Store 2, 0
+	0xE644FB LocalGet 2
+	0xE644FD LocalGet 1
+	0xE644FF F32Store 2, 16
+	0xE64502 LocalGet 2
+	0xE64504 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v13, [2CE798]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [458D79], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Boolean), typeof(SYBO.Subway.Characters.CharacterRendering+<TeleboardEndScale>d__147)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (System.Boolean)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.Boolean), 20
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (SYBO.Subway.Automation.Samplers.InGameIntervalSampler)
+	23 Nop
+	24 Nop
+	25 Move [v13 @ S0_v7 (System.Boolean)+10], unscaledDeltaTime @ L1 (System.Single)
+	26 Nop
+	27 Nop
+	28 Return v13 @ S0_v7 (System.Boolean)
+

@@ -1,0 +1,219 @@
+Type: SYBO.Common.Utilities.MTRandomGen
+
+Method: System.Void add_OnRandomIncrementChanged(System.Action`1<System.Int32> value)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Common.Utilities.MTRandomGen), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.Action`1<System.Int32>)
+	5 Nop
+	6 Return
+
+Method: System.Void remove_OnRandomIncrementChanged(System.Action`1<System.Int32> value)
+
+Disassembly:
+	0xE2D374 I32Const 4557496
+	0xE2D379 I32Load8_S 0, 0
+	0xE2D37C I32Eqz
+	0xE2D37D If -64
+	0xE2D37F I32Const 2979852
+	0xE2D384 I32Load 2, 0
+	0xE2D387 Call 73003
+	0xE2D38B I32Const 4557496
+	0xE2D390 I32Const 1
+	0xE2D392 I32Store8 0, 0
+	0xE2D395 End
+	0xE2D396 LocalGet 0
+	0xE2D398 I32Load 2, 8
+	0xE2D39B LocalSet 2
+	0xE2D39D Loop -64
+	0xE2D39F LocalGet 2
+	0xE2D3A1 LocalGet 1
+	0xE2D3A3 I32Const 0
+	0xE2D3A5 Call 63552
+	0xE2D3A9 I32Const 4436456
+	0xE2D3AE I32Load 2, 0
+	0xE2D3B1 Call 29321
+	0xE2D3B5 LocalSet 4
+	0xE2D3B7 LocalGet 0
+	0xE2D3B9 I32Const 8
+	0xE2D3BB I32Add
+	0xE2D3BC LocalTee 3
+	0xE2D3BE I32Load 2, 0
+	0xE2D3C1 LocalGet 3
+	0xE2D3C3 I32Load 2, 0
+	0xE2D3C6 LocalGet 2
+	0xE2D3C8 I32Eq
+	0xE2D3C9 If -64
+	0xE2D3CB LocalGet 3
+	0xE2D3CD LocalGet 4
+	0xE2D3CF I32Store 2, 0
+	0xE2D3D2 End
+	0xE2D3D3 LocalTee 3
+	0xE2D3D5 LocalGet 2
+	0xE2D3D7 I32Ne
+	0xE2D3D8 If -64
+	0xE2D3DA LocalGet 3
+	0xE2D3DC LocalSet 2
+	0xE2D3DE Br 1
+	0xE2D3E0 End
+	0xE2D3E1 End
+	0xE2D3E2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D780C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [458AB8], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.CombineImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Action`1<System.Int32>)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action`1<System.Int32>)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (SYBO.Common.Utilities.MTRandomGen), 8
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.UInt32 get_Seed()
+
+Disassembly:
+	0xDEAFCC I32Const -2147483648
+	0xDEAFD2 I32Const 2147483647
+	0xDEAFD8 I32Const 0
+	0xDEAFDA Call 63841
+	0xDEAFDE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call Random.RandomRangeInt, returnVal1 @ S0_v2 (System.UInt32), -2147483648, 2147483647
+	4 Nop
+	5 Return returnVal1 @ S0_v2 (System.UInt32)
+
+Method: System.Int32 get_SeedIncrement()
+
+Disassembly:
+	0xC1173F LocalGet 0
+	0xC11741 I32Load 2, 20
+	0xC11744 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._initialSeed (System.UInt32)
+
+Method: System.Void .ctor(System.UInt32 seed, System.Int32 increment)
+
+Disassembly:
+	0xCCB0A2 LocalGet 0
+	0xCCB0A4 I32Const 8
+	0xCCB0A6 I32Add
+	0xCCB0A7 LocalGet 1
+	0xCCB0A9 I32Store 2, 0
+	0xCCB0AC LocalGet 0
+	0xCCB0AE I32Const 12
+	0xCCB0B0 I32Add
+	0xCCB0B1 LocalGet 2
+	0xCCB0B3 I32Store 2, 0
+	0xCCB0B6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Common.Utilities.MTRandomGen), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], seed @ L1 (System.UInt32)
+	5 Nop
+	6 Nop
+	7 Add v8 @ S0_v4, this @ L0 (SYBO.Common.Utilities.MTRandomGen), 12
+	8 Nop
+	9 Move [v8 @ S0_v4], increment @ L2 (System.Int32)
+	10 Nop
+	11 Return
+
+Method: System.Void Twist()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.UInt32 NextUint()
+
+Disassembly:
+	0xC5D3C2 LocalGet 0
+	0xC5D3C4 I32Load 2, 24
+	0xC5D3C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._randomIncrement (System.Int32)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x75CCC Nop
+	0x75CCD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

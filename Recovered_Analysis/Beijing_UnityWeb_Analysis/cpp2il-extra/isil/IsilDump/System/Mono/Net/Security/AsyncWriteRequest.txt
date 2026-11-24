@@ -1,0 +1,188 @@
+Type: Mono.Net.Security.AsyncWriteRequest
+
+Method: System.Void .ctor(Mono.Net.Security.MobileAuthenticatedStream parent, System.Boolean sync, System.Byte[] buffer, System.Int32 offset, System.Int32 size)
+
+Disassembly:
+	0x110E98A LocalGet 0
+	0x110E98C LocalGet 1
+	0x110E98E LocalGet 2
+	0x110E990 LocalGet 3
+	0x110E992 LocalGet 4
+	0x110E994 LocalGet 5
+	0x110E996 I32Const 0
+	0x110E998 Call 51828
+	0x110E99C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CallVoid AsyncReadRequest..ctor, this @ L0 (Mono.Net.Security.AsyncWriteRequest), parent @ L1 (Mono.Net.Security.MobileAuthenticatedStream), sync @ L2 (System.Boolean), buffer @ L3 (System.Byte[]), offset @ L4 (System.Int32), size @ L5 (System.Int32)
+	8 Nop
+	9 Return
+
+Method: Mono.Net.Security.AsyncOperationStatus Run(Mono.Net.Security.AsyncOperationStatus status)
+
+Disassembly:
+	0x110E9A2 GlobalGet 7
+	0x110E9A4 LocalSet 1
+	0x110E9A6 GlobalGet 7
+	0x110E9A8 I32Const 16
+	0x110E9AA I32Add
+	0x110E9AB GlobalSet 7
+	0x110E9AD LocalGet 1
+	0x110E9AF I32Const 8
+	0x110E9B1 I32Add
+	0x110E9B2 LocalTee 2
+	0x110E9B4 LocalGet 0
+	0x110E9B6 I32Load 2, 8
+	0x110E9B9 LocalGet 0
+	0x110E9BB I32Load 2, 36
+	0x110E9BE I32Const 0
+	0x110E9C0 Call 51833
+	0x110E9C4 LocalGet 1
+	0x110E9C6 LocalGet 2
+	0x110E9C8 I64Load 3, 0
+	0x110E9CB I64Store 3, 0
+	0x110E9CE LocalGet 1
+	0x110E9D0 I32Load8_S 0, 4
+	0x110E9D3 I32Const 0
+	0x110E9D5 I32Ne
+	0x110E9D6 LocalSet 4
+	0x110E9D8 Block -1
+	0x110E9DA LocalGet 1
+	0x110E9DC I32Load 2, 0
+	0x110E9DF LocalTee 2
+	0x110E9E1 I32Const -1
+	0x110E9E3 I32Gt_S
+	0x110E9E4 If -64
+	0x110E9E6 LocalGet 0
+	0x110E9E8 LocalGet 2
+	0x110E9EA LocalGet 0
+	0x110E9EC I32Load 2, 40
+	0x110E9EF I32Add
+	0x110E9F0 I32Store 2, 40
+	0x110E9F3 LocalGet 0
+	0x110E9F5 I32Load 2, 36
+	0x110E9F8 LocalTee 3
+	0x110E9FA LocalGet 2
+	0x110E9FC LocalGet 3
+	0x110E9FE I32Load 2, 12
+	0x110EA01 I32Add
+	0x110EA02 I32Store 2, 12
+	0x110EA05 LocalGet 0
+	0x110EA07 I32Load 2, 36
+	0x110EA0A LocalTee 3
+	0x110EA0C LocalGet 3
+	0x110EA0E I32Load 2, 16
+	0x110EA11 LocalGet 2
+	0x110EA13 I32Sub
+	0x110EA14 I32Store 2, 16
+	0x110EA17 LocalGet 4
+	0x110EA19 If -64
+	0x110EA1B I32Const 1
+	0x110EA1D LocalGet 0
+	0x110EA1F I32Load 2, 40
+	0x110EA22 I32Eqz
+	0x110EA23 BrIf 2
+	0x110EA25 Drop
+	0x110EA26 End
+	0x110EA27 LocalGet 0
+	0x110EA29 LocalGet 0
+	0x110EA2B I32Load 2, 40
+	0x110EA2E I32Store 2, 16
+	0x110EA31 Else
+	0x110EA32 LocalGet 0
+	0x110EA34 I32Const -1
+	0x110EA36 I32Store 2, 16
+	0x110EA39 End
+	0x110EA3A I32Const 3
+	0x110EA3C End
+	0x110EA3D LocalGet 1
+	0x110EA3F GlobalSet 7
+	0x110EA41 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 8
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call MobileAuthenticatedStream.ProcessWrite, v17 @ SRET_v1 (System.ValueTuple`2<System.Int32, System.Boolean>), this.<Parent>k__BackingField (Mono.Net.Security.MobileAuthenticatedStream), this.<UserBuffer>k__BackingField (Mono.Net.Security.BufferOffsetSize)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move [v1 @ G7], [v9 @ S0_v5]
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CheckNotEqual v24 @ S0_v9 (System.Boolean), [v1 @ G7+4], 0
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CheckGreater v30 @ S0_v12 (System.Boolean), [v1 @ G7], -1
+	30 Not v31 @ TEMP_v1 (System.Boolean), v30 @ S0_v12 (System.Boolean)
+	31 ConditionalJump @b7, v31 @ TEMP_v1 (System.Boolean)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v36 @ S1_v14 (System.Int32), [v1 @ G7], this.<CurrentSize>k__BackingField (System.Int32)
+	37 Move this.<CurrentSize>k__BackingField (System.Int32), v36 @ S1_v14 (System.Int32)
+	38 Nop
+	39 Move v38 @ S0_v19 (Mono.Net.Security.BufferOffsetSize), this.<UserBuffer>k__BackingField (Mono.Net.Security.BufferOffsetSize)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Add v43 @ S1_v16 (System.Int32), [v1 @ G7], v38.Offset (System.Int32)
+	45 Move v38.Offset (System.Int32), v43 @ S1_v16 (System.Int32)
+	46 Nop
+	47 Move v45 @ S0_v21 (Mono.Net.Security.BufferOffsetSize), this.<UserBuffer>k__BackingField (Mono.Net.Security.BufferOffsetSize)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Subtract v50 @ S1_v19 (System.Int32), v45.Size (System.Int32), [v1 @ G7]
+	53 Move v45.Size (System.Int32), v50 @ S1_v19 (System.Int32)
+	54 Nop
+	55 Not v52 @ TEMP_v4 (System.Boolean), v24 @ S0_v9 (System.Boolean)
+	56 ConditionalJump @b6, v52 @ TEMP_v4 (System.Boolean)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 CheckEqual v58 @ S1_v25 (System.Boolean), this.<CurrentSize>k__BackingField (System.Int32), 0
+	61 ConditionalJump @b8, v58 @ S1_v25 (System.Boolean)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Move this.<UserResult>k__BackingField (System.Int32), this.<CurrentSize>k__BackingField (System.Int32)
+	67 Jump @b9
+	68 Nop
+	69 Nop
+	70 Move this.<UserResult>k__BackingField (System.Int32), -1
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Return returnVal1 @ S0_v15 (Mono.Net.Security.AsyncOperationStatus)
+

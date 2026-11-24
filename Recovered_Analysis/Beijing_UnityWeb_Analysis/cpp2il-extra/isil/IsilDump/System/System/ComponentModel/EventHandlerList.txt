@@ -1,0 +1,166 @@
+Type: System.ComponentModel.EventHandlerList
+
+Method: System.Delegate get_Item(System.Object key)
+
+Disassembly:
+	0x108B0B5 I32Const 4564439
+	0x108B0BA I32Load8_S 0, 0
+	0x108B0BD I32Eqz
+	0x108B0BE If -64
+	0x108B0C0 I32Const 2956084
+	0x108B0C5 I32Load 2, 0
+	0x108B0C8 Call 73003
+	0x108B0CC I32Const 4564439
+	0x108B0D1 I32Const 1
+	0x108B0D3 I32Store8 0, 0
+	0x108B0D6 End
+	0x108B0D7 LocalGet 0
+	0x108B0D9 LocalGet 1
+	0x108B0DB I32Eq
+	0x108B0DC If -1
+	0x108B0DE I32Const 1
+	0x108B0E0 Else
+	0x108B0E1 I32Const 4432372
+	0x108B0E6 I32Load 2, 0
+	0x108B0E9 LocalSet 2
+	0x108B0EB LocalGet 1
+	0x108B0ED If -1
+	0x108B0EF LocalGet 1
+	0x108B0F1 I32Load 2, 0
+	0x108B0F4 LocalGet 2
+	0x108B0F6 I32Eq
+	0x108B0F7 If -1
+	0x108B0F9 LocalGet 1
+	0x108B0FB Else
+	0x108B0FC I32Const 0
+	0x108B0FE End
+	0x108B0FF Else
+	0x108B100 I32Const 0
+	0x108B102 End
+	0x108B103 LocalTee 1
+	0x108B105 If -1
+	0x108B107 LocalGet 1
+	0x108B109 I32Load 2, 8
+	0x108B10C LocalGet 0
+	0x108B10E I32Load 2, 8
+	0x108B111 I32Eq
+	0x108B112 Else
+	0x108B113 I32Const 0
+	0x108B115 End
+	0x108B116 End
+	0x108B117 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v25, [2D1B34]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v25
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45A5D7], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v15 @ S0_v6 (System.Boolean), this @ L0 (System.ComponentModel.EventHandlerList), key @ L1 (System.Object)
+	15 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v6 (System.Boolean)
+	16 ConditionalJump @b6, v16 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Jump @b14
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CheckEqual v22 @ TEMP_v4 (System.Boolean), key @ L1 (System.Object), 0
+	24 ConditionalJump @b10, v22 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CheckEqual v38 @ S0_v19 (System.Boolean), [key @ L1 (System.Object)], typeof(System.ComponentModel.EditorBrowsableAttribute)
+	29 Not v39 @ TEMP_v7 (System.Boolean), v38 @ S0_v19 (System.Boolean)
+	30 ConditionalJump @b9, v39 @ TEMP_v7 (System.Boolean)
+	31 Nop
+	32 Jump @b15
+	33 Nop
+	34 Nop
+	35 Jump @b17
+	36 Nop
+	37 Nop
+	38 Nop
+	39 CheckEqual v31 @ TEMP_v6 (System.Boolean), v44 @ S0_v11 (System.Object), 0
+	40 ConditionalJump @b12, v31 @ TEMP_v6 (System.Boolean)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CheckEqual v34 @ S0_v15 (System.Boolean), [v44 @ S0_v11 (System.Object)+8], this.head (System.ComponentModel.EventHandlerList+ListEntry)
+	46 Jump @b14
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Return returnVal1 @ S0_v7 (System.Delegate)
+
+Method: System.ComponentModel.EventHandlerList+ListEntry Find(System.Object key)
+
+Disassembly:
+	0x108A6B2 Block -1
+	0x108A6B4 Block -64
+	0x108A6B6 LocalGet 0
+	0x108A6B8 I32Load 2, 12
+	0x108A6BB I32Eqz
+	0x108A6BC BrIf 0
+	0x108A6BE LocalGet 0
+	0x108A6C0 I32Load 2, 12
+	0x108A6C3 I32Const 0
+	0x108A6C5 Call 49149
+	0x108A6C9 BrIf 0
+	0x108A6CB I32Const 0
+	0x108A6CD Br 1
+	0x108A6CF End
+	0x108A6D0 LocalGet 0
+	0x108A6D2 LocalGet 1
+	0x108A6D4 I32Const 0
+	0x108A6D6 Call 49153
+	0x108A6DA LocalTee 0
+	0x108A6DC If -1
+	0x108A6DE LocalGet 0
+	0x108A6E0 I32Load 2, 16
+	0x108A6E3 Else
+	0x108A6E4 I32Const 0
+	0x108A6E6 End
+	0x108A6E7 End
+	0x108A6E8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), this.parent (System.ComponentModel.Component), 0
+	3 ConditionalJump @b6, v3 @ S0_v3 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Call Component.get_Site, v7 @ S0_v13 (System.ComponentModel.ISite), this.parent (System.ComponentModel.Component)
+	8 ConditionalJump @b6, v7 @ S0_v13 (System.ComponentModel.ISite)
+	9 Nop
+	10 Jump @b10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call SettingsBindableAttribute.Equals, v15 @ S0_v7 (System.Boolean), this @ L0 (System.ComponentModel.EventHandlerList), key @ L1 (System.Object)
+	16 Nop
+	17 Not v17 @ TEMP_v2 (System.Boolean), v15 @ S0_v7 (System.Boolean)
+	18 ConditionalJump @b9, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Move returnVal1 @ S0_v4 (System.ComponentModel.EventHandlerList+ListEntry), [v15 @ S0_v7 (System.Boolean)+10]
+	21 Jump @b10
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Return returnVal1 @ S0_v4 (System.ComponentModel.EventHandlerList+ListEntry)
+

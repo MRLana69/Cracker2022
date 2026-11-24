@@ -1,0 +1,84 @@
+Type: NaughtyAttributes.MinMaxSliderAttribute
+
+Method: System.Void .ctor(System.Single minValue, System.Single maxValue)
+
+Disassembly:
+	0x15710B5 LocalGet 0
+	0x15710B7 I32Const 8
+	0x15710B9 I32Add
+	0x15710BA LocalGet 1
+	0x15710BC LocalGet 2
+	0x15710BE I32Const 0
+	0x15710C0 Call 71528
+	0x15710C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (NaughtyAttributes.MinMaxSliderAttribute), 8
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CallVoid 11768, v3 @ S0_v2, minValue @ L1 (System.Single), maxValue @ L2 (System.Single), 0
+	7 Nop
+	8 Return
+
+Method: System.Single get_MinValue()
+
+Disassembly:
+	0x1570D5A I32Const 3929216
+	0x1570D5F I32Load 2, 0
+	0x1570D62 LocalTee 1
+	0x1570D64 I32Eqz
+	0x1570D65 If -64
+	0x1570D67 I32Const 3929216
+	0x1570D6C I32Const 3550425
+	0x1570D71 Call 73893
+	0x1570D75 LocalTee 1
+	0x1570D77 I32Store 2, 0
+	0x1570D7A End
+	0x1570D7B LocalGet 0
+	0x1570D7D LocalGet 1
+	0x1570D7F I32Const 255
+	0x1570D82 I32And
+	0x1570D83 I32Const 401
+	0x1570D86 I32Add
+	0x1570D87 CallIndirect 3, 0
+	0x1570D8A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF480], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3550425
+	9 Nop
+	10 Move [3BF480], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 255
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 401
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Single), this @ L0 (NaughtyAttributes.MinMaxSliderAttribute)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Single)
+
+Method: System.Single get_MaxValue()
+
+Disassembly:
+	0xC24A70 LocalGet 0
+	0xC24A72 F32Load 2, 8
+	0xC24A75 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.minValue (System.Single)
+

@@ -1,0 +1,76 @@
+Type: SYBO.Subway.Pickups.Picker.Pickers.MysteryPowerupPicker
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE32F33 LocalGet 0
+	0xE32F35 I32Const 0
+	0xE32F37 Call 39175
+	0xE32F3B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid DefaultPicker..ctor, this @ L0 (SYBO.Subway.Pickups.Picker.Pickers.MysteryPowerupPicker)
+	3 Nop
+	4 Return
+
+Method: System.Void SYBO.Subway.Pickups.Pickers.IPicker.Add(SYBO.Subway.Pickups.PickupManager pickupManager)
+
+Disassembly:
+	0xE32FEB LocalGet 0
+	0xE32FED LocalGet 1
+	0xE32FEF I32Const 2
+	0xE32FF1 I32Const 0
+	0xE32FF3 Call 39169
+	0xE32FF7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid InputEventArgs..ctor, this @ L0 (SYBO.Subway.Pickups.Picker.Pickers.MysteryPowerupPicker), pickupManager @ L1 (SYBO.Subway.Pickups.PickupManager), 2
+	5 Nop
+	6 Return
+
+Method: System.Boolean SYBO.Subway.Pickups.Pickers.IPicker.UpdatePicker()
+
+Disassembly:
+	0xE32FFA LocalGet 0
+	0xE32FFC I32Load 2, 12
+	0xE32FFF I32Const 1024
+	0xE33002 I32Const 0
+	0xE33004 Call 38346
+	0xE33008 I32Load 2, 16
+	0xE3300B If -1
+	0xE3300D I32Const 1
+	0xE3300F Else
+	0xE33010 LocalGet 0
+	0xE33012 I32Const 0
+	0xE33014 I32Const 0
+	0xE33016 Call 39170
+	0xE3301A I32Const 0
+	0xE3301C End
+	0xE3301D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call PickupManager.HasPickupDataForPickupType, v5 @ S0_v3 (System.Boolean), this._pickupManager (SYBO.Subway.Pickups.PickupManager), 1024
+	5 Nop
+	6 CheckEqual v7 @ TEMP_v1 (System.Boolean), [v5 @ S0_v3 (System.Boolean)+10], 0
+	7 ConditionalJump @b5, v7 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Jump @b7
+	10 Nop
+	11 Nop
+	12 Nop
+	13 CallVoid BasePicker.MaybeChooseSpawnPoint, this @ L0 (SYBO.Subway.Pickups.Picker.Pickers.MysteryPowerupPicker), 0
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return returnVal1 @ S0_v5 (System.Boolean)
+

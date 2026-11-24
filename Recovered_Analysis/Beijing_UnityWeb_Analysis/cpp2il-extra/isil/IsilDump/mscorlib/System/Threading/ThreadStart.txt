@@ -1,0 +1,304 @@
+Type: System.Threading.ThreadStart
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x10B4590 LocalGet 1
+	0x10B4592 LocalGet 0
+	0x10B4594 I32Load 2, 12
+	0x10B4597 LocalTee 4
+	0x10B4599 I32Const 16
+	0x10B459B I32Shr_U
+	0x10B459C I32Store 2, 0
+	0x10B459F LocalGet 2
+	0x10B45A1 LocalGet 4
+	0x10B45A3 I32Const 65535
+	0x10B45A7 I32And
+	0x10B45A8 I32Store 2, 0
+	0x10B45AB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 ShiftRight v7 @ S1_v3, this.invoke_impl (System.IntPtr), 16
+	6 Move [object @ L1 (System.Object)], v7 @ S1_v3
+	7 Nop
+	8 Nop
+	9 Nop
+	10 And v12 @ S1_v5 (System.Void*), this.invoke_impl (System.IntPtr), 65535
+	11 Move method.m_value (System.Void*), v12 @ S1_v5 (System.Void*)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke()
+
+Disassembly:
+	0x10B460E LocalGet 0
+	0x10B4610 Call 73794
+	0x10B4614 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 12042, this @ L0 (System.Threading.ThreadStart)
+	2 Nop
+	3 Return
+
+Method: System.IAsyncResult BeginInvoke(System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x10B6870 LocalGet 0
+	0x10B6872 LocalGet 1
+	0x10B6874 LocalGet 2
+	0x10B6876 I32Const 0
+	0x10B6878 I32Const 0
+	0x10B687A Call 50056
+	0x10B687E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call ThreadPool.QueueUserWorkItemHelper, returnVal1 @ S0_v2 (System.IAsyncResult), this @ L0 (System.Threading.ThreadStart), callback @ L1 (System.AsyncCallback), object @ L2 (System.Object), 0
+	6 Nop
+	7 Return returnVal1 @ S0_v2 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x10B3B3A GlobalGet 7
+	0x10B3B3C LocalSet 3
+	0x10B3B3E GlobalGet 7
+	0x10B3B40 I32Const 16
+	0x10B3B42 I32Add
+	0x10B3B43 GlobalSet 7
+	0x10B3B45 I32Const 4564920
+	0x10B3B4A I32Load8_S 0, 0
+	0x10B3B4D I32Eqz
+	0x10B3B4E If -64
+	0x10B3B50 I32Const 3009892
+	0x10B3B55 I32Load 2, 0
+	0x10B3B58 Call 73003
+	0x10B3B5C I32Const 4564920
+	0x10B3B61 I32Const 1
+	0x10B3B63 I32Store8 0, 0
+	0x10B3B66 End
+	0x10B3B67 GlobalGet 7
+	0x10B3B69 LocalSet 2
+	0x10B3B6B GlobalGet 7
+	0x10B3B6D I32Const 16
+	0x10B3B6F I32Add
+	0x10B3B70 GlobalSet 7
+	0x10B3B72 LocalGet 3
+	0x10B3B74 LocalGet 2
+	0x10B3B76 I32Store 2, 0
+	0x10B3B79 LocalGet 3
+	0x10B3B7B I32Const -1
+	0x10B3B7D I32Store 2, 4
+	0x10B3B80 I32Const 0
+	0x10B3B82 Call 49973
+	0x10B3B86 LocalGet 3
+	0x10B3B88 I32Const 4
+	0x10B3B8A I32Add
+	0x10B3B8B LocalTee 4
+	0x10B3B8D I32Load 2, 0
+	0x10B3B90 I32Const 1
+	0x10B3B92 I32Add
+	0x10B3B93 LocalSet 2
+	0x10B3B95 LocalGet 4
+	0x10B3B97 LocalGet 2
+	0x10B3B99 I32Store 2, 0
+	0x10B3B9C LocalGet 3
+	0x10B3B9E I32Load 2, 0
+	0x10B3BA1 LocalGet 2
+	0x10B3BA3 I32Const 2
+	0x10B3BA5 I32Shl
+	0x10B3BA6 I32Add
+	0x10B3BA7 I32Const 20
+	0x10B3BA9 I32Store 2, 0
+	0x10B3BAC I32Const 4431652
+	0x10B3BB1 I32Load 2, 0
+	0x10B3BB4 LocalTee 2
+	0x10B3BB6 I32Load16_S 1, 186
+	0x10B3BBA I32Const 512
+	0x10B3BBD I32And
+	0x10B3BBE If -64
+	0x10B3BC0 LocalGet 2
+	0x10B3BC2 I32Load 2, 116
+	0x10B3BC5 I32Eqz
+	0x10B3BC6 If -64
+	0x10B3BC8 LocalGet 2
+	0x10B3BCA Call 72345
+	0x10B3BCE I32Const 4431652
+	0x10B3BD3 I32Load 2, 0
+	0x10B3BD6 LocalSet 2
+	0x10B3BD8 End
+	0x10B3BD9 End
+	0x10B3BDA LocalGet 2
+	0x10B3BDC I32Load 2, 92
+	0x10B3BDF I32Load 2, 12
+	0x10B3BE2 LocalGet 0
+	0x10B3BE4 LocalGet 1
+	0x10B3BE6 I32Const 0
+	0x10B3BE8 Call 49974
+	0x10B3BEC LocalGet 3
+	0x10B3BEE I32Load 2, 4
+	0x10B3BF1 I32Const -1
+	0x10B3BF3 I32Ne
+	0x10B3BF4 If -64
+	0x10B3BF6 LocalGet 3
+	0x10B3BF8 I32Load 2, 0
+	0x10B3BFB LocalGet 3
+	0x10B3BFD I32Load 2, 4
+	0x10B3C00 I32Const 2
+	0x10B3C02 I32Shl
+	0x10B3C03 I32Add
+	0x10B3C04 I32Load 2, 0
+	0x10B3C07 I32Const 20
+	0x10B3C09 I32Eq
+	0x10B3C0A If -64
+	0x10B3C0C LocalGet 3
+	0x10B3C0E I32Const 4
+	0x10B3C10 I32Add
+	0x10B3C11 LocalTee 0
+	0x10B3C13 I32Load 2, 0
+	0x10B3C16 LocalTee 1
+	0x10B3C18 I32Const -1
+	0x10B3C1A I32Gt_S
+	0x10B3C1B If -64
+	0x10B3C1D LocalGet 0
+	0x10B3C1F LocalGet 1
+	0x10B3C21 I32Const -1
+	0x10B3C23 I32Add
+	0x10B3C24 I32Store 2, 0
+	0x10B3C27 End
+	0x10B3C28 End
+	0x10B3C29 End
+	0x10B3C2A LocalGet 3
+	0x10B3C2C GlobalSet 7
+	0x10B3C2E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, v1 @ G7, 16
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b13
+	11 Nop
+	12 Move v12 @ S0_v52, [2DED64]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v52
+	14 Nop
+	15 Move v14 @ S1_v24, 1
+	16 Move [45A7B8], v14 @ S1_v24
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], v5 @ S0_v3
+	27 Nop
+	28 Nop
+	29 Move [v1 @ G7+4], -1
+	30 Nop
+	31 CallVoid ThreadPool.NotifyWorkItemProgress
+	32 Nop
+	33 Nop
+	34 Add v30 @ S0_v15, v1 @ G7, 4
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Add v34 @ S0_v17, [v30 @ S0_v15], 1
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Move [v30 @ S0_v15], v34 @ S0_v17
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 ShiftLeft v42 @ S1_v10, v34 @ S0_v17, 2
+	48 Add v43 @ S0_v21, [v1 @ G7], v42 @ S1_v10
+	49 Nop
+	50 Move [v43 @ S0_v21], 20
+	51 Nop
+	52 Move v46 @ S0_v23 (Il2CppClass<System.Threading.ThreadPoolGlobals>), typeof(System.Threading.ThreadPoolGlobals)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 And v50 @ S0_v25, [v46 @ S0_v23 (Il2CppClass<System.Threading.ThreadPoolGlobals>)+BA], 512
+	57 CheckEqual v51 @ TEMP_v2 (System.Boolean), v50 @ S0_v25, 0
+	58 ConditionalJump @b14, v51 @ TEMP_v2 (System.Boolean)
+	59 Move v52 @ S0_v45 (Il2CppClass<System.Threading.ThreadPoolGlobals>), typeof(System.Threading.ThreadPoolGlobals)
+	60 Nop
+	61 CheckEqual v54 @ S0_v47 (System.Boolean), [v52 @ S0_v45 (Il2CppClass<System.Threading.ThreadPoolGlobals>)+74], 0
+	62 Not v55 @ TEMP_v8 (System.Boolean), v54 @ S0_v47 (System.Boolean)
+	63 ConditionalJump @b14, v55 @ TEMP_v8 (System.Boolean)
+	64 Nop
+	65 CallVoid 11A99, typeof(System.Threading.ThreadPoolGlobals)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 CallVoid QueueSegment.GetIndexes, v62.workQueue (System.Threading.ThreadPoolWorkQueue), this @ L0 (System.Threading.ThreadStart), result @ L1 (System.IAsyncResult)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 CheckNotEqual v73 @ S0_v32 (System.Boolean), [v1 @ G7+4], -1
+	82 Not v74 @ TEMP_v4 (System.Boolean), v73 @ S0_v32 (System.Boolean)
+	83 ConditionalJump @b16, v74 @ TEMP_v4 (System.Boolean)
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 ShiftLeft v81 @ S1_v18, [v1 @ G7+4], 2
+	90 Add v82 @ S0_v37, [v1 @ G7], v81 @ S1_v18
+	91 Nop
+	92 Nop
+	93 CheckEqual v85 @ S0_v39 (System.Boolean), [v82 @ S0_v37], 20
+	94 Not v86 @ TEMP_v6 (System.Boolean), v85 @ S0_v39 (System.Boolean)
+	95 ConditionalJump @b16, v86 @ TEMP_v6 (System.Boolean)
+	96 Nop
+	97 Nop
+	98 Add v105 @ S0_v41, v1 @ G7, 4
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 CheckGreater v100 @ S0_v43 (System.Boolean), [v105 @ S0_v41], -1
+	104 Not v94 @ TEMP_v7 (System.Boolean), v100 @ S0_v43 (System.Boolean)
+	105 ConditionalJump @b16, v94 @ TEMP_v7 (System.Boolean)
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Add v96 @ S1_v23, [v105 @ S0_v41], -1
+	110 Move [v105 @ S0_v41], v96 @ S1_v23
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Return
+

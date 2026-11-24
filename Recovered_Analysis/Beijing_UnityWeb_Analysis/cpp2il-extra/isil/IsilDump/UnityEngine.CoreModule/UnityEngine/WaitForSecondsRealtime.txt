@@ -1,0 +1,146 @@
+Type: UnityEngine.WaitForSecondsRealtime
+
+Method: System.Void .ctor(System.Single time)
+
+Disassembly:
+	0xC24A78 LocalGet 0
+	0xC24A7A LocalGet 1
+	0xC24A7C F32Store 2, 8
+	0xC24A7F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.<waitTime>k__BackingField (System.Single), time @ L1 (System.Single)
+	3 Nop
+	4 Return
+
+Method: System.Single get_waitTime()
+
+Disassembly:
+	0x136F432 I32Const 3925656
+	0x136F437 I32Load 2, 0
+	0x136F43A LocalTee 1
+	0x136F43C I32Eqz
+	0x136F43D If -64
+	0x136F43F I32Const 3925656
+	0x136F444 I32Const 3486801
+	0x136F449 Call 73893
+	0x136F44D LocalTee 1
+	0x136F44F I32Store 2, 0
+	0x136F452 End
+	0x136F453 LocalGet 0
+	0x136F455 LocalGet 1
+	0x136F457 I32Const 255
+	0x136F45A I32And
+	0x136F45B I32Const 401
+	0x136F45E I32Add
+	0x136F45F CallIndirect 3, 0
+	0x136F462 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE698], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3486801
+	9 Nop
+	10 Move [3BE698], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 255
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 401
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Single), this @ L0 (UnityEngine.WaitForSecondsRealtime)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Single)
+
+Method: System.Void set_waitTime(System.Single value)
+
+Disassembly:
+	0x155A1D3 LocalGet 0
+	0x155A1D5 F32Const -1
+	0x155A1DA F32Store 2, 12
+	0x155A1DD LocalGet 0
+	0x155A1DF LocalGet 1
+	0x155A1E1 F32Store 2, 8
+	0x155A1E4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.m_WaitUntilTime (System.Single), -1f
+	3 Nop
+	4 Nop
+	5 Move this.<waitTime>k__BackingField (System.Single), value @ L1 (System.Single)
+	6 Nop
+	7 Return
+
+Method: System.Boolean get_keepWaiting()
+
+Disassembly:
+	0x1556556 I32Const 4576745
+	0x155655B I32Load8_S 0, 0
+	0x155655E I32Eqz
+	0x155655F If -64
+	0x1556561 I32Const 3023432
+	0x1556566 I32Load 2, 0
+	0x1556569 Call 73003
+	0x155656D I32Const 4576745
+	0x1556572 I32Const 1
+	0x1556574 I32Store8 0, 0
+	0x1556577 End
+	0x1556578 LocalGet 0
+	0x155657A I32Load 2, 12
+	0x155657D LocalSet 1
+	0x155657F LocalGet 0
+	0x1556581 I32Load 2, 20
+	0x1556584 LocalSet 0
+	0x1556586 I32Const 4433716
+	0x155658B I32Load 2, 0
+	0x155658E Call 72556
+	0x1556592 LocalTee 2
+	0x1556594 LocalGet 1
+	0x1556596 LocalGet 0
+	0x1556598 I32Const 0
+	0x155659A Call 70686
+	0x155659E LocalGet 2
+	0x15565A0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v14, [2E2248]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45D5E9], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call 11B6C, v20 @ S0_v11 (UnityEngine.UnitySynchronizationContext), typeof(UnityEngine.UnitySynchronizationContext)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CallVoid UnitySynchronizationContext.Send, v20 @ S0_v11 (UnityEngine.UnitySynchronizationContext), this.m_WaitUntilTime (System.Single), [this @ L0 (UnityEngine.WaitForSecondsRealtime)+14]
+	26 Nop
+	27 Nop
+	28 Return v20 @ S0_v11 (UnityEngine.UnitySynchronizationContext)
+

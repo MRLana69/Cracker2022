@@ -1,0 +1,511 @@
+Type: Missions.DailyChallengesInRowAward
+
+Method: System.Void .ctor(Missions.AwardStaticData awardData, Missions.PersistentAwardProgress savedProgress, System.Action`1<Missions.Award> handler)
+
+Disassembly:
+	0xF26D5D LocalGet 0
+	0xF26D5F LocalGet 1
+	0xF26D61 LocalGet 2
+	0xF26D63 LocalGet 3
+	0xF26D65 I32Const 0
+	0xF26D67 Call 41935
+	0xF26D6B LocalGet 0
+	0xF26D6D I32Const 0
+	0xF26D6F I32Store 2, 44
+	0xF26D72 LocalGet 0
+	0xF26D74 I32Const 0
+	0xF26D76 I32Store 2, 48
+	0xF26D79 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Throw typeof(System.OverflowException)
+	6 Nop
+	7 Nop
+	8 Move [this @ L0 (Missions.DailyChallengesInRowAward)+2C], 0
+	9 Nop
+	10 Nop
+	11 Move [this @ L0 (Missions.DailyChallengesInRowAward)+30], 0
+	12 Nop
+	13 Return
+
+Method: System.Int32 GetDailyChallengesInRow()
+
+Disassembly:
+	0xF27C2B LocalGet 0
+	0xF27C2D I32Const 3
+	0xF27C2F I32Const 0
+	0xF27C31 Call 41997
+	0xF27C35 LocalSet 1
+	0xF27C37 LocalGet 0
+	0xF27C39 I32Const 2
+	0xF27C3B I32Const 0
+	0xF27C3D Call 41997
+	0xF27C41 LocalSet 2
+	0xF27C43 LocalGet 0
+	0xF27C45 I32Const 1
+	0xF27C47 I32Const 0
+	0xF27C49 Call 41997
+	0xF27C4D LocalGet 2
+	0xF27C4F I32Const 1
+	0xF27C51 I32Shl
+	0xF27C52 LocalGet 1
+	0xF27C54 I32Const 3
+	0xF27C56 I32Mul
+	0xF27C57 I32Add
+	0xF27C58 I32Add
+	0xF27C59 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call AwardsManager.ShouldInsertAwardToList, v4 @ S0_v2 (System.Boolean), this @ L0 (Missions.DailyChallengesInRowAward), 3
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call AwardsManager.ShouldInsertAwardToList, v9 @ S0_v4 (System.Boolean), this @ L0 (Missions.DailyChallengesInRowAward), 2
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Call AwardsManager.ShouldInsertAwardToList, v14 @ S0_v6 (System.Boolean), this @ L0 (Missions.DailyChallengesInRowAward), 1
+	14 Nop
+	15 Nop
+	16 ShiftLeft v17 @ S1_v5, v9 @ S0_v4 (System.Boolean), 1
+	17 Nop
+	18 Nop
+	19 Multiply v20 @ S2_v6, v4 @ S0_v2 (System.Boolean), 3
+	20 Add v21 @ S1_v6, v17 @ S1_v5, v20 @ S2_v6
+	21 Add returnVal1 @ S0_v7 (System.Int32), v14 @ S0_v6 (System.Boolean), v21 @ S1_v6
+	22 Nop
+	23 Return returnVal1 @ S0_v7 (System.Int32)
+
+Method: System.Int32 GetProgressForGoal(Missions.AwardGoal goal)
+
+Disassembly:
+	0xF2890B I32Const 4560132
+	0xF28910 I32Load8_S 0, 0
+	0xF28913 I32Eqz
+	0xF28914 If -64
+	0xF28916 I32Const 2946316
+	0xF2891B I32Load 2, 0
+	0xF2891E Call 73003
+	0xF28922 I32Const 4560132
+	0xF28927 I32Const 1
+	0xF28929 I32Store8 0, 0
+	0xF2892C End
+	0xF2892D Block -1
+	0xF2892F Block -64
+	0xF28931 LocalGet 1
+	0xF28933 I32Const 4439976
+	0xF28938 I32Load 2, 0
+	0xF2893B Call 29313
+	0xF2893F LocalTee 2
+	0xF28941 I32Eqz
+	0xF28942 BrIf 0
+	0xF28944 I32Const 5
+	0xF28946 LocalGet 0
+	0xF28948 LocalGet 1
+	0xF2894A Call 29448
+	0xF2894E LocalGet 2
+	0xF28950 I32Load 2, 8
+	0xF28953 I32Lt_S
+	0xF28954 BrIf 0
+	0xF28956 I32Const 1
+	0xF28958 Br 1
+	0xF2895A End
+	0xF2895B I32Const 0
+	0xF2895D End
+	0xF2895E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v16, [2CF50C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [459504], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call 7281, v15 @ S0_v6, goal @ L1 (Missions.AwardGoal), typeof(Missions.AwardSimpleGoal)
+	16 Nop
+	17 CheckEqual v17 @ S0_v7 (System.Boolean), v15 @ S0_v6, 0
+	18 ConditionalJump @b9, v17 @ S0_v7 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 7308, v22 @ S0_v12, 5, this @ L0 (Missions.DailyChallengesInRowAward), goal @ L1 (Missions.AwardGoal)
+	23 Nop
+	24 Nop
+	25 CheckLess v28 @ S0_v13 (System.Boolean), v22 @ S0_v12, [v15 @ S0_v6+8]
+	26 ConditionalJump @b9, v28 @ S0_v13 (System.Boolean)
+	27 Nop
+	28 Jump @b11
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Return returnVal1 @ S0_v8 (System.Int32)
+
+Method: System.Boolean IsGoalAccomplished(Missions.AwardGoal goal)
+
+Disassembly:
+	0xF2B355 I32Const 0
+	0xF2B357 I32Const 0
+	0xF2B359 Call 41988
+	0xF2B35D LocalGet 0
+	0xF2B35F I32Load 2, 28
+	0xF2B362 I32Load 2, 32
+	0xF2B365 I32Sub
+	0xF2B366 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call MissionSkip.get_name, v2 @ S0_v2 (System.String), 0
+	3 Nop
+	4 Move v5 @ S1_v3 (Missions.PersistentAwardProgress), this.savedProgress (Missions.PersistentAwardProgress)
+	5 Nop
+	6 Subtract returnVal1 @ S0_v3 (System.Boolean), v2 @ S0_v2 (System.String), v5.offset (System.Int32)
+	7 Nop
+	8 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void ActivateCurrentAwardTier()
+
+Disassembly:
+	0xF28C63 LocalGet 0
+	0xF28C65 LocalGet 0
+	0xF28C67 I32Load 2, 44
+	0xF28C6A I32Store 2, 48
+	0xF28C6D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move [this @ L0 (Missions.DailyChallengesInRowAward)+30], [this @ L0 (Missions.DailyChallengesInRowAward)+2C]
+	4 Nop
+	5 Return
+
+Method: System.Void DeactivateCurrentAwardTier()
+
+Disassembly:
+	0xF2B3C2 I32Const 4560149
+	0xF2B3C7 I32Load8_S 0, 0
+	0xF2B3CA I32Eqz
+	0xF2B3CB If -64
+	0xF2B3CD I32Const 2949488
+	0xF2B3D2 I32Load 2, 0
+	0xF2B3D5 Call 73003
+	0xF2B3D9 I32Const 4560149
+	0xF2B3DE I32Const 1
+	0xF2B3E0 I32Store8 0, 0
+	0xF2B3E3 End
+	0xF2B3E4 I32Const 4429724
+	0xF2B3E9 I32Load 2, 0
+	0xF2B3EC Call 72556
+	0xF2B3F0 LocalTee 2
+	0xF2B3F2 LocalTee 1
+	0xF2B3F4 I32Const 4472644
+	0xF2B3F9 I32Load 2, 0
+	0xF2B3FC LocalTee 3
+	0xF2B3FE I32Load 2, 0
+	0xF2B401 I32Store 2, 8
+	0xF2B404 LocalGet 1
+	0xF2B406 LocalGet 3
+	0xF2B408 I32Store 2, 20
+	0xF2B40B LocalGet 1
+	0xF2B40D I32Const 16
+	0xF2B40F I32Add
+	0xF2B410 LocalGet 0
+	0xF2B412 I32Store 2, 0
+	0xF2B415 I32Const 4437012
+	0xF2B41A I32Load 2, 0
+	0xF2B41D LocalTee 1
+	0xF2B41F I32Load16_S 1, 186
+	0xF2B423 I32Const 512
+	0xF2B426 I32And
+	0xF2B427 If -64
+	0xF2B429 LocalGet 1
+	0xF2B42B I32Load 2, 116
+	0xF2B42E I32Eqz
+	0xF2B42F If -64
+	0xF2B431 LocalGet 1
+	0xF2B433 Call 72345
+	0xF2B437 End
+	0xF2B438 End
+	0xF2B439 LocalGet 2
+	0xF2B43B I32Const 0
+	0xF2B43D Call 70197
+	0xF2B441 LocalGet 0
+	0xF2B443 I32Const 0
+	0xF2B445 Call 41950
+	0xF2B449 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v23, [2D0170]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v23
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [459515], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Action), typeof(System.Action)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move v17 @ S1_v3 (Il2CppMethodInfo), methodof(Missions.DailyChallengesInRowAward::OnDailyWordInRowChanged)
+	19 Nop
+	20 Nop
+	21 Move v13.method_ptr (System.IntPtr), [v17 @ S1_v3 (Il2CppMethodInfo)]
+	22 Nop
+	23 Nop
+	24 Move v13.method (System.IntPtr), methodof(Missions.DailyChallengesInRowAward::OnDailyWordInRowChanged)
+	25 Nop
+	26 Nop
+	27 Add v24 @ S0_v10, v13 @ S0_v7 (System.Action), 16
+	28 Nop
+	29 Move [v24 @ S0_v10], this @ L0 (Missions.DailyChallengesInRowAward)
+	30 Nop
+	31 Move v28 @ S0_v12 (Il2CppClass<WordHunt.WordHuntManager>), typeof(WordHunt.WordHuntManager)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 And v32 @ S0_v14, [v28 @ S0_v12 (Il2CppClass<WordHunt.WordHuntManager>)+BA], 512
+	36 CheckEqual v33 @ TEMP_v2 (System.Boolean), v32 @ S0_v14, 0
+	37 ConditionalJump @b12, v33 @ TEMP_v2 (System.Boolean)
+	38 Move v34 @ S0_v18 (Il2CppClass<WordHunt.WordHuntManager>), typeof(WordHunt.WordHuntManager)
+	39 Nop
+	40 CheckEqual v36 @ S0_v20 (System.Boolean), [v34 @ S0_v18 (Il2CppClass<WordHunt.WordHuntManager>)+74], 0
+	41 Not v37 @ TEMP_v4 (System.Boolean), v36 @ S0_v20 (System.Boolean)
+	42 ConditionalJump @b12, v37 @ TEMP_v4 (System.Boolean)
+	43 Nop
+	44 CallVoid 11A99, typeof(WordHunt.WordHuntManager)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid WordHuntManager.remove_OnDailyWordInRowChanged, v13 @ S0_v7 (System.Action)
+	50 Nop
+	51 Nop
+	52 CallVoid Award.RewardPayedOut, this @ L0 (Missions.DailyChallengesInRowAward)
+	53 Nop
+	54 Return
+
+Method: System.Void RecordNewOffsets()
+
+Disassembly:
+	0xF2B44F I32Const 4560150
+	0xF2B454 I32Load8_S 0, 0
+	0xF2B457 I32Eqz
+	0xF2B458 If -64
+	0xF2B45A I32Const 2949492
+	0xF2B45F I32Load 2, 0
+	0xF2B462 Call 73003
+	0xF2B466 I32Const 4560150
+	0xF2B46B I32Const 1
+	0xF2B46D I32Store8 0, 0
+	0xF2B470 End
+	0xF2B471 I32Const 4429724
+	0xF2B476 I32Load 2, 0
+	0xF2B479 Call 72556
+	0xF2B47D LocalTee 1
+	0xF2B47F LocalTee 2
+	0xF2B481 I32Const 4472644
+	0xF2B486 I32Load 2, 0
+	0xF2B489 LocalTee 3
+	0xF2B48B I32Load 2, 0
+	0xF2B48E I32Store 2, 8
+	0xF2B491 LocalGet 2
+	0xF2B493 LocalGet 3
+	0xF2B495 I32Store 2, 20
+	0xF2B498 LocalGet 2
+	0xF2B49A I32Const 16
+	0xF2B49C I32Add
+	0xF2B49D LocalGet 0
+	0xF2B49F I32Store 2, 0
+	0xF2B4A2 I32Const 4437012
+	0xF2B4A7 I32Load 2, 0
+	0xF2B4AA LocalTee 0
+	0xF2B4AC I32Load16_S 1, 186
+	0xF2B4B0 I32Const 512
+	0xF2B4B3 I32And
+	0xF2B4B4 If -64
+	0xF2B4B6 LocalGet 0
+	0xF2B4B8 I32Load 2, 116
+	0xF2B4BB I32Eqz
+	0xF2B4BC If -64
+	0xF2B4BE LocalGet 0
+	0xF2B4C0 Call 72345
+	0xF2B4C4 End
+	0xF2B4C5 End
+	0xF2B4C6 LocalGet 1
+	0xF2B4C8 I32Const 0
+	0xF2B4CA Call 70198
+	0xF2B4CE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v22, [2D0174]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [459516], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Action`1<System.Int32>), typeof(System.Action)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move v17 @ S1_v3 (Il2CppMethodInfo), methodof(Missions.DailyChallengesInRowAward::OnDailyWordInRowChanged)
+	19 Nop
+	20 Nop
+	21 Move [v13 @ S0_v7 (System.Action`1<System.Int32>)+8], [v17 @ S1_v3 (Il2CppMethodInfo)]
+	22 Nop
+	23 Nop
+	24 Move [v13 @ S0_v7 (System.Action`1<System.Int32>)+14], methodof(Missions.DailyChallengesInRowAward::OnDailyWordInRowChanged)
+	25 Nop
+	26 Nop
+	27 Add v24 @ S0_v10, v13 @ S0_v7 (System.Action`1<System.Int32>), 16
+	28 Nop
+	29 Move [v24 @ S0_v10], this @ L0 (Missions.DailyChallengesInRowAward)
+	30 Nop
+	31 Move v28 @ S0_v12 (Il2CppClass<WordHunt.WordHuntManager>), typeof(WordHunt.WordHuntManager)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 And v32 @ S0_v14, [v28 @ S0_v12 (Il2CppClass<WordHunt.WordHuntManager>)+BA], 512
+	36 CheckEqual v33 @ TEMP_v2 (System.Boolean), v32 @ S0_v14, 0
+	37 ConditionalJump @b11, v33 @ TEMP_v2 (System.Boolean)
+	38 Move v34 @ S0_v17 (Il2CppClass<WordHunt.WordHuntManager>), typeof(WordHunt.WordHuntManager)
+	39 Nop
+	40 CheckEqual v36 @ S0_v19 (System.Boolean), [v34 @ S0_v17 (Il2CppClass<WordHunt.WordHuntManager>)+74], 0
+	41 Not v37 @ TEMP_v4 (System.Boolean), v36 @ S0_v19 (System.Boolean)
+	42 ConditionalJump @b11, v37 @ TEMP_v4 (System.Boolean)
+	43 Nop
+	44 CallVoid 11A99, typeof(WordHunt.WordHuntManager)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid WordHuntManager.add_OnDailyLetterCoinsRewarded, v13 @ S0_v7 (System.Action`1<System.Int32>)
+	50 Nop
+	51 Return
+
+Method: System.Void SyncOffset()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void OnDailyWordInRowChanged()
+
+Disassembly:
+	0xF2733E I32Const 0
+	0xF27340 I32Const 0
+	0xF27342 Call 41988
+	0xF27346 LocalSet 2
+	0xF27348 Block -64
+	0xF2734A Block -64
+	0xF2734C LocalGet 0
+	0xF2734E I32Load 2, 28
+	0xF27351 I32Load 2, 32
+	0xF27354 I32Const -1
+	0xF27356 I32Eq
+	0xF27357 BrIf 0
+	0xF27359 LocalGet 0
+	0xF2735B I32Load 2, 28
+	0xF2735E I32Load 2, 32
+	0xF27361 LocalGet 2
+	0xF27363 I32Gt_S
+	0xF27364 BrIf 0
+	0xF27366 Br 1
+	0xF27368 End
+	0xF27369 LocalGet 0
+	0xF2736B I32Load 2, 28
+	0xF2736E LocalGet 2
+	0xF27370 I32Store 2, 32
+	0xF27373 End
+	0xF27374 LocalGet 0
+	0xF27376 I32Load 2, 28
+	0xF27379 I32Load 2, 32
+	0xF2737C I32Const 0
+	0xF2737E I32Lt_S
+	0xF2737F If -64
+	0xF27381 LocalGet 0
+	0xF27383 I32Load 2, 28
+	0xF27386 I32Const 0
+	0xF27388 I32Store 2, 32
+	0xF2738B End
+	0xF2738C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call MissionSkip.get_name, v2 @ S0_v2 (System.String), 0
+	3 Nop
+	4 Nop
+	5 Move v6 @ S0_v4 (Missions.PersistentAwardProgress), this.savedProgress (Missions.PersistentAwardProgress)
+	6 Nop
+	7 Nop
+	8 CheckEqual v9 @ S0_v6 (System.Boolean), v6.offset (System.Int32), -1
+	9 ConditionalJump @b6, v9 @ S0_v6 (System.Boolean)
+	10 Nop
+	11 Move v11 @ S0_v19 (Missions.PersistentAwardProgress), this.savedProgress (Missions.PersistentAwardProgress)
+	12 Nop
+	13 Nop
+	14 CheckGreater v14 @ S0_v21 (System.Boolean), v11.offset (System.Int32), v2 @ S0_v2 (System.String)
+	15 ConditionalJump @b6, v14 @ S0_v21 (System.Boolean)
+	16 Jump @b8
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v17 (Missions.PersistentAwardProgress), this.savedProgress (Missions.PersistentAwardProgress)
+	20 Nop
+	21 Move v18.offset (System.Int32), v2 @ S0_v2 (System.String)
+	22 Nop
+	23 Nop
+	24 Move v23 @ S0_v9 (Missions.PersistentAwardProgress), this.savedProgress (Missions.PersistentAwardProgress)
+	25 Nop
+	26 Nop
+	27 CheckLess v26 @ S0_v11 (System.Boolean), v23.offset (System.Int32), 0
+	28 Not v27 @ TEMP_v1 (System.Boolean), v26 @ S0_v11 (System.Boolean)
+	29 ConditionalJump @b9, v27 @ TEMP_v1 (System.Boolean)
+	30 Nop
+	31 Move v29 @ S0_v14 (Missions.PersistentAwardProgress), this.savedProgress (Missions.PersistentAwardProgress)
+	32 Nop
+	33 Move v29.offset (System.Int32), 0
+	34 Nop
+	35 Nop
+	36 Return
+

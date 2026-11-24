@@ -1,0 +1,115 @@
+Type: System.Runtime.CompilerServices.StateMachineAttribute
+
+Method: System.Void set_StateMachineType(System.Type value)
+
+Disassembly:
+	0x1007502 I32Const 4562869
+	0x1007507 I32Load8_S 0, 0
+	0x100750A I32Eqz
+	0x100750B If -64
+	0x100750D I32Const 2999608
+	0x1007512 I32Load 2, 0
+	0x1007515 Call 73003
+	0x1007519 I32Const 4562869
+	0x100751E I32Const 1
+	0x1007520 I32Store8 0, 0
+	0x1007523 End
+	0x1007524 I32Const 4509344
+	0x1007529 I32Load 2, 0
+	0x100752C LocalSet 3
+	0x100752E I32Const 4427764
+	0x1007533 I32Load 2, 0
+	0x1007536 LocalTee 2
+	0x1007538 I32Load16_S 1, 186
+	0x100753C I32Const 512
+	0x100753F I32And
+	0x1007540 If -64
+	0x1007542 LocalGet 2
+	0x1007544 I32Load 2, 116
+	0x1007547 I32Eqz
+	0x1007548 If -64
+	0x100754A LocalGet 2
+	0x100754C Call 72345
+	0x1007550 End
+	0x1007551 End
+	0x1007552 LocalGet 0
+	0x1007554 LocalGet 3
+	0x1007556 I32Const 0
+	0x1007558 Call 51388
+	0x100755C LocalGet 0
+	0x100755E I32Const -2146233026
+	0x1007564 I32Store 2, 48
+	0x1007567 LocalGet 0
+	0x1007569 I32Const 68
+	0x100756C I32Add
+	0x100756D LocalGet 1
+	0x100756F I32Store 2, 0
+	0x1007572 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v21, [2DC538]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [459FB5], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v15 @ S0_v8 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v19 @ S0_v10, [v15 @ S0_v8 (Il2CppClass<System.Exception>)+BA], 512
+	21 CheckEqual v20 @ TEMP_v2 (System.Boolean), v19 @ S0_v10, 0
+	22 ConditionalJump @b10, v20 @ TEMP_v2 (System.Boolean)
+	23 Move v21 @ S0_v16 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	24 Nop
+	25 CheckEqual v23 @ S0_v18 (System.Boolean), [v21 @ S0_v16 (Il2CppClass<System.Exception>)+74], 0
+	26 Not v24 @ TEMP_v4 (System.Boolean), v23 @ S0_v18 (System.Boolean)
+	27 ConditionalJump @b10, v24 @ TEMP_v4 (System.Boolean)
+	28 Nop
+	29 CallVoid 11A99, typeof(System.Exception)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 CallVoid Exception.SetErrorCode, this @ L0 (System.Runtime.CompilerServices.StateMachineAttribute), "An object that does not derive from System.Exception has been wrapped in a RuntimeWrappedException."
+	36 Nop
+	37 Nop
+	38 Move [this @ L0 (System.Runtime.CompilerServices.StateMachineAttribute)+30], -2146233026
+	39 Nop
+	40 Nop
+	41 Add v36 @ S0_v15, this @ L0 (System.Runtime.CompilerServices.StateMachineAttribute), 68
+	42 Nop
+	43 Move [v36 @ S0_v15], value @ L1 (System.Type)
+	44 Nop
+	45 Return
+
+Method: System.Void .ctor(System.Type stateMachineType)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.StateMachineAttribute), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], stateMachineType @ L1 (System.Type)
+	5 Nop
+	6 Return
+

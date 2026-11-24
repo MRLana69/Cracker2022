@@ -1,0 +1,176 @@
+Type: UnityEngine.DebugLogHandler
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void Internal_Log(UnityEngine.LogType level, UnityEngine.LogOption options, System.String msg, UnityEngine.Object obj)
+
+Disassembly:
+	0x13721E0 I32Const 3925860
+	0x13721E5 I32Load 2, 0
+	0x13721E8 LocalTee 4
+	0x13721EA I32Eqz
+	0x13721EB If -64
+	0x13721ED I32Const 3925860
+	0x13721F2 I32Const 3489834
+	0x13721F7 Call 73893
+	0x13721FB LocalTee 4
+	0x13721FD I32Store 2, 0
+	0x1372200 End
+	0x1372201 LocalGet 0
+	0x1372203 LocalGet 1
+	0x1372205 LocalGet 2
+	0x1372207 LocalGet 3
+	0x1372209 LocalGet 4
+	0x137220B I32Const 8191
+	0x137220E I32And
+	0x137220F I32Const 113696
+	0x1372213 I32Add
+	0x1372214 CallIndirect 8, 0
+	0x1372217 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE764], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3489834
+	9 Nop
+	10 Move [3BE764], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 And v23 @ S4_v2, v10 @ L4_v2, 8191
+	19 Nop
+	20 Add v25 @ S4_v3, v23 @ S4_v2, 113696
+	21 IndirectCall v25 @ S4_v3, v26 @ SRET_v1, level @ L0 (UnityEngine.LogType), options @ L1 (UnityEngine.LogOption), msg @ L2 (System.String), obj @ L3 (UnityEngine.Object)
+	22 Nop
+	23 Return
+
+Method: System.Void Internal_LogException(System.Exception exception, UnityEngine.Object obj)
+
+Disassembly:
+	0x137A6ED I32Const 4572997
+	0x137A6F2 I32Load8_S 0, 0
+	0x137A6F5 I32Eqz
+	0x137A6F6 If -64
+	0x137A6F8 I32Const 3001000
+	0x137A6FD I32Load 2, 0
+	0x137A700 Call 73003
+	0x137A704 I32Const 4572997
+	0x137A709 I32Const 1
+	0x137A70B I32Store8 0, 0
+	0x137A70E End
+	0x137A70F LocalGet 1
+	0x137A711 LocalGet 0
+	0x137A713 I32Load 2, 8
+	0x137A716 If -1
+	0x137A718 I32Const 0
+	0x137A71A I32Const 4433468
+	0x137A71F I32Load 2, 0
+	0x137A722 LocalGet 0
+	0x137A724 I32Load 2, 8
+	0x137A727 Call 29547
+	0x137A72B I32Const 1
+	0x137A72D I32And
+	0x137A72E Else
+	0x137A72F I32Const 0
+	0x137A731 End
+	0x137A732 I32Store8 0, 0
+	0x137A735 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v7, [2DCAA8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45C745], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckEqual v16 @ TEMP_v2 (System.Boolean), exception._className (System.String), 0
+	16 ConditionalJump @b7, v16 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 736B, v22 @ S1_v7, 0, typeof(UnityEngine.Experimental.Rendering.IScriptableRuntimeReflectionSystem), exception._className (System.String)
+	23 Nop
+	24 And v30 @ S1_v4, v22 @ S1_v7, 1
+	25 Jump @b9
+	26 Nop
+	27 Nop
+	28 Move [obj @ L1 (UnityEngine.Object)], v30 @ S1_v4
+	29 Nop
+	30 Return
+
+Method: System.Void LogFormat(UnityEngine.LogType logType, UnityEngine.Object context, System.String format, System.Object[] args)
+
+Disassembly:
+	0x153F618 LocalGet 5
+	0x153F61A Call 73274
+	0x153F61E End
+
+ISIL:
+	0 Nop
+	1 CallVoid 11E3A, methodInfo @ L5 (Il2CppMethodInfo)
+	2 Nop
+	3 Return
+
+Method: System.Void LogException(System.Exception exception, UnityEngine.Object context)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move [this @ L0 (UnityEngine.DebugLogHandler)+8], [context @ L2 (UnityEngine.Object)]
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (UnityEngine.DebugLogHandler)+14], context @ L2 (UnityEngine.Object)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (UnityEngine.DebugLogHandler), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], exception @ L1 (System.Exception)
+	12 Nop
+	13 Return
+

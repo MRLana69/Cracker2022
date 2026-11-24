@@ -1,0 +1,1011 @@
+Type: System.Security.Cryptography.AesCryptoServiceProvider
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x15511A7 I32Const 26
+	0x15511A9 LocalGet 0
+	0x15511AB I32Load 2, 44
+	0x15511AE Call 29286
+	0x15511B2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid 7266, 26, [this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)+2C]
+	4 Nop
+	5 Return
+
+Method: System.Void GenerateIV()
+
+Disassembly:
+	0x1550345 I32Const 4576718
+	0x155034A I32Load8_S 0, 0
+	0x155034D I32Eqz
+	0x155034E If -64
+	0x1550350 I32Const 2925200
+	0x1550355 I32Load 2, 0
+	0x1550358 Call 73003
+	0x155035C I32Const 4576718
+	0x1550361 I32Const 1
+	0x1550363 I32Store8 0, 0
+	0x1550366 End
+	0x1550367 I32Const 4430828
+	0x155036C I32Load 2, 0
+	0x155036F LocalTee 2
+	0x1550371 I32Load16_S 1, 186
+	0x1550375 I32Const 512
+	0x1550378 I32And
+	0x1550379 If -64
+	0x155037B LocalGet 2
+	0x155037D I32Load 2, 116
+	0x1550380 I32Eqz
+	0x1550381 If -64
+	0x1550383 LocalGet 2
+	0x1550385 Call 72345
+	0x1550389 End
+	0x155038A End
+	0x155038B LocalGet 0
+	0x155038D I32Const 0
+	0x155038F Call 49873
+	0x1550393 LocalGet 0
+	0x1550395 I32Const 8
+	0x1550397 I32Store 2, 12
+	0x155039A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v17, [2CA290]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45D5CE], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Security.Cryptography.Aes>), typeof(System.Security.Cryptography.Aes)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Security.Cryptography.Aes>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.Security.Cryptography.Aes>), typeof(System.Security.Cryptography.Aes)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.Security.Cryptography.Aes>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Security.Cryptography.Aes)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid AsymmetricAlgorithm..ctor, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)
+	32 Nop
+	33 Nop
+	34 Move this.FeedbackSizeValue (System.Int32), 8
+	35 Nop
+	36 Return
+
+Method: System.Void GenerateKey()
+
+Disassembly:
+	0x155039D LocalGet 0
+	0x155039F I32Const 16
+	0x15503A1 I32Add
+	0x15503A2 LocalGet 0
+	0x15503A4 I32Load 2, 8
+	0x15503A7 I32Const 3
+	0x15503A9 I32Shr_S
+	0x15503AA I32Const 0
+	0x15503AC Call 62325
+	0x15503B0 I32Store 2, 0
+	0x15503B3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), 16
+	3 Nop
+	4 Nop
+	5 Nop
+	6 ShiftRight v7 @ S1_v4 (Mono.Security.Cryptography.KeyPairPersistence), this.BlockSizeValue (System.Int32), 3
+	7 Nop
+	8 Call KeyPairPersistence.get_Filename, v9 @ S1_v5 (System.String), v7 @ S1_v4 (Mono.Security.Cryptography.KeyPairPersistence)
+	9 Move [v3 @ S0_v2], v9 @ S1_v5 (System.String)
+	10 Nop
+	11 Return
+
+Method: System.Security.Cryptography.ICryptoTransform CreateDecryptor(System.Byte[] key, System.Byte[] iv)
+
+Disassembly:
+	0x1550F61 I32Const 4576727
+	0x1550F66 I32Load8_S 0, 0
+	0x1550F69 I32Eqz
+	0x1550F6A If -64
+	0x1550F6C I32Const 2925212
+	0x1550F71 I32Load 2, 0
+	0x1550F74 Call 73003
+	0x1550F78 I32Const 4576727
+	0x1550F7D I32Const 1
+	0x1550F7F I32Store8 0, 0
+	0x1550F82 End
+	0x1550F83 LocalGet 1
+	0x1550F85 I32Eqz
+	0x1550F86 If -64
+	0x1550F88 I32Const 4427864
+	0x1550F8D I32Load 2, 0
+	0x1550F90 Call 72556
+	0x1550F94 LocalTee 3
+	0x1550F96 I32Const 4503472
+	0x1550F9B I32Load 2, 0
+	0x1550F9E I32Const 0
+	0x1550FA0 Call 57599
+	0x1550FA4 LocalGet 3
+	0x1550FA6 I32Const 0
+	0x1550FA8 I32Const 4467488
+	0x1550FAD I32Load 2, 0
+	0x1550FB0 Call 73899
+	0x1550FB4 End
+	0x1550FB5 LocalGet 0
+	0x1550FB7 LocalGet 1
+	0x1550FB9 I32Load 2, 12
+	0x1550FBC I32Const 3
+	0x1550FBE I32Shl
+	0x1550FBF I32Const 0
+	0x1550FC1 Call 66139
+	0x1550FC5 I32Eqz
+	0x1550FC6 If -64
+	0x1550FC8 I32Const 4517380
+	0x1550FCD I32Load 2, 0
+	0x1550FD0 LocalSet 3
+	0x1550FD2 I32Const 4427876
+	0x1550FD7 I32Load 2, 0
+	0x1550FDA Call 72556
+	0x1550FDE LocalTee 4
+	0x1550FE0 LocalGet 3
+	0x1550FE2 I32Const 4503472
+	0x1550FE7 I32Load 2, 0
+	0x1550FEA I32Const 0
+	0x1550FEC Call 57600
+	0x1550FF0 LocalGet 4
+	0x1550FF2 I32Const 0
+	0x1550FF4 I32Const 4467488
+	0x1550FF9 I32Load 2, 0
+	0x1550FFC Call 73899
+	0x1551000 End
+	0x1551001 LocalGet 2
+	0x1551003 If -64
+	0x1551005 LocalGet 2
+	0x1551007 I32Load 2, 12
+	0x155100A I32Const 3
+	0x155100C I32Shl
+	0x155100D LocalGet 0
+	0x155100F I32Load 2, 8
+	0x1551012 I32Ne
+	0x1551013 If -64
+	0x1551015 I32Const 4517384
+	0x155101A I32Load 2, 0
+	0x155101D LocalSet 3
+	0x155101F I32Const 4427876
+	0x1551024 I32Load 2, 0
+	0x1551027 Call 72556
+	0x155102B LocalTee 4
+	0x155102D LocalGet 3
+	0x155102F I32Const 4504980
+	0x1551034 I32Load 2, 0
+	0x1551037 I32Const 0
+	0x1551039 Call 57600
+	0x155103D LocalGet 4
+	0x155103F I32Const 0
+	0x1551041 I32Const 4467488
+	0x1551046 I32Load 2, 0
+	0x1551049 Call 73899
+	0x155104D End
+	0x155104E End
+	0x155104F I32Const 23
+	0x1551051 LocalGet 0
+	0x1551053 I32Load 2, 44
+	0x1551056 LocalGet 1
+	0x1551058 LocalGet 2
+	0x155105A Call 29291
+	0x155105E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b20
+	5 Nop
+	6 Move v5 @ S0_v37, [2CA29C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v37
+	8 Nop
+	9 Move v7 @ S1_v20, 1
+	10 Move [45D5D7], v7 @ S1_v20
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), key @ L1 (System.Byte[]), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Call 11B6C, v17 @ S0_v34 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid ArgumentOutOfRangeException..ctor, v17 @ S0_v34 (System.ArgumentOutOfRangeException), "key"
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v17 @ S0_v34 (System.ArgumentOutOfRangeException), 0, methodof(System.Security.Cryptography.AesManaged::CreateEncryptor)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 ShiftLeft v33 @ S1_v5 (System.Int32), key.Length, 3
+	35 Nop
+	36 Call Utils.HasAlgorithm, v35 @ S0_v9 (System.Boolean), this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), v33 @ S1_v5 (System.Int32)
+	37 Not v39 @ S0_v10 (System.Boolean), v35 @ S0_v9 (System.Boolean)
+	38 Not v40 @ TEMP_v3 (System.Boolean), v39 @ S0_v10 (System.Boolean)
+	39 ConditionalJump @b13, v40 @ TEMP_v3 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call 11B6C, v47 @ S0_v30 (System.ArgumentException), typeof(System.ArgumentException)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CallVoid ArgumentException..ctor, v47 @ S0_v30 (System.ArgumentException), "The specified key is not a valid size for this algorithm.", "key"
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 CallVoid 120AB, v47 @ S0_v30 (System.ArgumentException), 0, methodof(System.Security.Cryptography.AesManaged::CreateEncryptor)
+	57 Nop
+	58 Nop
+	59 CheckEqual v63 @ TEMP_v4 (System.Boolean), iv @ L2 (System.Byte[]), 0
+	60 ConditionalJump @b21, v63 @ TEMP_v4 (System.Boolean)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 ShiftLeft v70 @ S0_v18, iv.Length, 3
+	65 Nop
+	66 Nop
+	67 CheckNotEqual v73 @ S0_v19 (System.Boolean), v70 @ S0_v18, this.BlockSizeValue (System.Int32)
+	68 Not v74 @ TEMP_v6 (System.Boolean), v73 @ S0_v19 (System.Boolean)
+	69 ConditionalJump @b21, v74 @ TEMP_v6 (System.Boolean)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call 11B6C, v99 @ S0_v24 (System.ArgumentException), typeof(System.ArgumentException)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 CallVoid ArgumentException..ctor, v99 @ S0_v24 (System.ArgumentException), "The specified initialization vector (IV) does not match the block size for this algorithm.", "iv"
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 CallVoid 120AB, v99 @ S0_v24 (System.ArgumentException), 0, methodof(System.Security.Cryptography.AesManaged::CreateEncryptor)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Call 726B, returnVal1 @ S0_v15 (System.Security.Cryptography.ICryptoTransform), 23, [this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)+2C], key @ L1 (System.Byte[]), iv @ L2 (System.Byte[])
+	95 Nop
+	96 Return returnVal1 @ S0_v15 (System.Security.Cryptography.ICryptoTransform)
+
+Method: System.Security.Cryptography.ICryptoTransform CreateEncryptor(System.Byte[] key, System.Byte[] iv)
+
+Disassembly:
+	0x15503B7 I32Const 4576719
+	0x15503BC I32Load8_S 0, 0
+	0x15503BF I32Eqz
+	0x15503C0 If -64
+	0x15503C2 I32Const 2925192
+	0x15503C7 I32Load 2, 0
+	0x15503CA Call 73003
+	0x15503CE I32Const 4576719
+	0x15503D3 I32Const 1
+	0x15503D5 I32Store8 0, 0
+	0x15503D8 End
+	0x15503D9 I32Const 18
+	0x15503DB LocalGet 0
+	0x15503DD Call 29262
+	0x15503E1 I32Const 4
+	0x15503E3 I32Eq
+	0x15503E4 If -64
+	0x15503E6 I32Const 8
+	0x15503E8 LocalGet 0
+	0x15503EA Call 29262
+	0x15503EE I32Const 64
+	0x15503F1 I32Gt_S
+	0x15503F2 If -64
+	0x15503F4 I32Const 4428076
+	0x15503F9 I32Load 2, 0
+	0x15503FC Call 72556
+	0x1550400 LocalTee 3
+	0x1550402 I32Const 4517368
+	0x1550407 I32Load 2, 0
+	0x155040A I32Const 0
+	0x155040C Call 58518
+	0x1550410 LocalGet 3
+	0x1550412 I32Const 0
+	0x1550414 I32Const 4467476
+	0x1550419 I32Load 2, 0
+	0x155041C Call 73899
+	0x1550420 End
+	0x1550421 End
+	0x1550422 I32Const 4433236
+	0x1550427 I32Load 2, 0
+	0x155042A Call 72556
+	0x155042E LocalTee 3
+	0x1550430 LocalGet 0
+	0x1550432 I32Const 0
+	0x1550434 LocalGet 1
+	0x1550436 LocalGet 2
+	0x1550438 I32Const 0
+	0x155043A Call 70637
+	0x155043E LocalGet 3
+	0x1550440 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v21, [2CA288]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [45D5CF], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 724E, v14 @ S0_v6, 18, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)
+	15 Nop
+	16 CheckEqual v16 @ S0_v7 (System.Boolean), v14 @ S0_v6, 4
+	17 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v7 (System.Boolean)
+	18 ConditionalJump @b15, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Call 724E, v20 @ S0_v14, 8, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)
+	22 Nop
+	23 CheckGreater v34 @ S0_v15 (System.Boolean), v20 @ S0_v14, 64
+	24 Not v31 @ TEMP_v4 (System.Boolean), v34 @ S0_v15 (System.Boolean)
+	25 ConditionalJump @b15, v31 @ TEMP_v4 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 Call 11B6C, v48 @ S0_v18 (System.Security.Cryptography.CryptographicException), typeof(System.Security.Cryptography.CryptographicException)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid CryptographicException..ctor, v48 @ S0_v18 (System.Security.Cryptography.CryptographicException), "CFB with Feedbaack > 64 bits"
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CallVoid 120AB, v48 @ S0_v18 (System.Security.Cryptography.CryptographicException), 0, methodof(System.Security.Cryptography.AesCryptoServiceProvider::CreateDecryptor)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Call 11B6C, v37 @ S0_v11 (UnityEngine.StateMachineBehaviour), typeof(System.Security.Cryptography.AesTransform)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CallVoid StateMachineBehaviour.OnStateEnter, v37 @ S0_v11 (UnityEngine.StateMachineBehaviour), this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), 0, key @ L1 (System.Byte[]), iv @ L2 (System.Byte[])
+	51 Nop
+	52 Nop
+	53 Return v37 @ S0_v11 (UnityEngine.StateMachineBehaviour)
+
+Method: System.Byte[] get_IV()
+
+Disassembly:
+	0x1550F50 I32Const 22
+	0x1550F52 LocalGet 0
+	0x1550F54 I32Load 2, 44
+	0x1550F57 Call 29262
+	0x1550F5B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call 724E, returnVal1 @ S0_v2 (System.Byte[]), 22, [this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)+2C]
+	4 Nop
+	5 Return returnVal1 @ S0_v2 (System.Byte[])
+
+Method: System.Void set_IV(System.Byte[] value)
+
+Disassembly:
+	0x1551064 GlobalGet 7
+	0x1551066 LocalSet 2
+	0x1551068 GlobalGet 7
+	0x155106A I32Const 16
+	0x155106C I32Add
+	0x155106D GlobalSet 7
+	0x155106F I32Const 4576728
+	0x1551074 I32Load8_S 0, 0
+	0x1551077 I32Eqz
+	0x1551078 If -64
+	0x155107A I32Const 2925216
+	0x155107F I32Load 2, 0
+	0x1551082 Call 73003
+	0x1551086 I32Const 4576728
+	0x155108B I32Const 1
+	0x155108D I32Store8 0, 0
+	0x1551090 End
+	0x1551091 GlobalGet 7
+	0x1551093 LocalSet 3
+	0x1551095 GlobalGet 7
+	0x1551097 I32Const 16
+	0x1551099 I32Add
+	0x155109A GlobalSet 7
+	0x155109C LocalGet 2
+	0x155109E LocalGet 3
+	0x15510A0 I32Store 2, 0
+	0x15510A3 LocalGet 2
+	0x15510A5 I32Const -1
+	0x15510A7 I32Store 2, 4
+	0x15510AA Block -64
+	0x15510AC Block -64
+	0x15510AE LocalGet 1
+	0x15510B0 I32Eqz
+	0x15510B1 BrIf 0
+	0x15510B3 LocalGet 0
+	0x15510B5 I32Load 2, 44
+	0x15510B8 LocalSet 3
+	0x15510BA I32Const 4427760
+	0x15510BF I32Load 2, 0
+	0x15510C2 LocalSet 4
+	0x15510C4 I32Const 0
+	0x15510C6 GlobalSet 9
+	0x15510C8 I32Const 10519
+	0x15510CC I32Const 0
+	0x15510CE LocalGet 4
+	0x15510D0 LocalGet 3
+	0x15510D2 Call 40
+	0x15510D4 GlobalGet 9
+	0x15510D6 I32Const 0
+	0x15510D8 GlobalSet 9
+	0x15510DA I32Const 1
+	0x15510DC I32And
+	0x15510DD I32Eqz
+	0x15510DE BrIf 0
+	0x15510E0 I32Const 2132256
+	0x15510E5 Call 156
+	0x15510E8 LocalSet 3
+	0x15510EA GlobalGet 14
+	0x15510EC I32Const 2132256
+	0x15510F1 Call 429
+	0x15510F4 I32Eq
+	0x15510F5 If -64
+	0x15510F7 LocalGet 3
+	0x15510F9 Call 153
+	0x15510FC I32Load 2, 0
+	0x15510FF LocalSet 5
+	0x1551101 Call 154
+	0x1551104 Else
+	0x1551105 LocalGet 3
+	0x1551107 Call 164
+	0x155110A End
+	0x155110B Br 1
+	0x155110D End
+	0x155110E LocalGet 2
+	0x1551110 I32Const 4
+	0x1551112 I32Add
+	0x1551113 LocalTee 4
+	0x1551115 I32Load 2, 0
+	0x1551118 I32Const 1
+	0x155111A I32Add
+	0x155111B LocalSet 3
+	0x155111D LocalGet 4
+	0x155111F LocalGet 3
+	0x1551121 I32Store 2, 0
+	0x1551124 LocalGet 2
+	0x1551126 I32Load 2, 0
+	0x1551129 LocalGet 3
+	0x155112B I32Const 2
+	0x155112D I32Shl
+	0x155112E I32Add
+	0x155112F I32Const 24
+	0x1551131 I32Store 2, 0
+	0x1551134 End
+	0x1551135 LocalGet 0
+	0x1551137 LocalGet 1
+	0x1551139 I32Const 0
+	0x155113B Call 66132
+	0x155113F Block -64
+	0x1551141 Block -64
+	0x1551143 LocalGet 2
+	0x1551145 I32Load 2, 4
+	0x1551148 I32Const -1
+	0x155114A I32Eq
+	0x155114B BrIf 0
+	0x155114D LocalGet 2
+	0x155114F I32Load 2, 0
+	0x1551152 LocalGet 2
+	0x1551154 I32Load 2, 4
+	0x1551157 I32Const 2
+	0x1551159 I32Shl
+	0x155115A I32Add
+	0x155115B I32Load 2, 0
+	0x155115E I32Const 24
+	0x1551160 I32Ne
+	0x1551161 BrIf 0
+	0x1551163 LocalGet 2
+	0x1551165 I32Const 4
+	0x1551167 I32Add
+	0x1551168 LocalTee 0
+	0x155116A I32Load 2, 0
+	0x155116D LocalTee 1
+	0x155116F I32Const -1
+	0x1551171 I32Gt_S
+	0x1551172 If -64
+	0x1551174 LocalGet 0
+	0x1551176 LocalGet 1
+	0x1551178 I32Const -1
+	0x155117A I32Add
+	0x155117B I32Store 2, 0
+	0x155117E End
+	0x155117F Br 1
+	0x1551181 End
+	0x1551182 LocalGet 5
+	0x1551184 If -64
+	0x1551186 LocalGet 5
+	0x1551188 I32Const 0
+	0x155118A I32Const 0
+	0x155118C Call 73899
+	0x1551190 End
+	0x1551191 End
+	0x1551192 LocalGet 2
+	0x1551194 GlobalSet 7
+	0x1551196 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, v1 @ G7, 16
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b23
+	11 Nop
+	12 Move v12 @ S0_v64, [2CA2A0]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v64
+	14 Nop
+	15 Move v14 @ S1_v33, 1
+	16 Move [45D5D8], v14 @ S1_v33
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], v5 @ S0_v3
+	27 Nop
+	28 Nop
+	29 Move [v1 @ G7+4], -1
+	30 Nop
+	31 CheckEqual v29 @ S0_v14 (System.Boolean), value @ L1 (System.Byte[]), 0
+	32 ConditionalJump @b15, v29 @ S0_v14 (System.Boolean)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid 0028, 10519, 0, typeof(System.IDisposable), [this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)+2C]
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Jump @b15
+	53 Nop
+	54 Call 009C, v96 @ S0_v55, 2132256
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Call 01AD, v89 @ S1_v32, 2132256
+	59 CheckEqual v119 @ S0_v57 (System.Boolean), v102 @ G14, v89 @ S1_v32
+	60 Not v87 @ TEMP_v6 (System.Boolean), v119 @ S0_v57 (System.Boolean)
+	61 ConditionalJump @b13, v87 @ TEMP_v6 (System.Boolean)
+	62 Nop
+	63 Call 0099, v144 @ S0_v61, v96 @ S0_v55
+	64 Nop
+	65 Nop
+	66 CallVoid 009A
+	67 Jump @b14
+	68 Nop
+	69 CallVoid 00A4, v96 @ S0_v55
+	70 Nop
+	71 Jump @b24
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Add v59 @ S0_v38, v1 @ G7, 4
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Add v63 @ S0_v40, [v59 @ S0_v38], 1
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Move [v59 @ S0_v38], v63 @ S0_v40
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 ShiftLeft v71 @ S1_v26, v63 @ S0_v40, 2
+	89 Add v72 @ S0_v44, [v1 @ G7], v71 @ S1_v26
+	90 Nop
+	91 Move [v72 @ S0_v44], 24
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 CallVoid SymmetricAlgorithm.set_BlockSize, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), value @ L1 (System.Byte[])
+	97 Nop
+	98 Nop
+	99 Nop
+	100 CheckEqual v100 @ S0_v19 (System.Boolean), [v1 @ G7+4], -1
+	101 ConditionalJump @b20, v100 @ S0_v19 (System.Boolean)
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 ShiftLeft v109 @ S1_v14, [v1 @ G7+4], 2
+	108 Add v110 @ S0_v27, [v1 @ G7], v109 @ S1_v14
+	109 Nop
+	110 Nop
+	111 CheckNotEqual v113 @ S0_v29 (System.Boolean), [v110 @ S0_v27], 24
+	112 ConditionalJump @b20, v113 @ S0_v29 (System.Boolean)
+	113 Nop
+	114 Nop
+	115 Add v122 @ S0_v31, v1 @ G7, 4
+	116 Nop
+	117 Nop
+	118 Nop
+	119 Nop
+	120 CheckGreater v127 @ S0_v33 (System.Boolean), [v122 @ S0_v31], -1
+	121 Not v128 @ TEMP_v5 (System.Boolean), v127 @ S0_v33 (System.Boolean)
+	122 ConditionalJump @b25, v128 @ TEMP_v5 (System.Boolean)
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Add v149 @ S1_v20, [v122 @ S0_v31], -1
+	127 Move [v122 @ S0_v31], v149 @ S1_v20
+	128 Nop
+	129 Jump @b26
+	130 Nop
+	131 Nop
+	132 CheckEqual v118 @ TEMP_v4 (System.Boolean), [v144 @ S0_v61], 0
+	133 ConditionalJump @b26, v118 @ TEMP_v4 (System.Boolean)
+	134 Nop
+	135 Nop
+	136 Nop
+	137 CallVoid 120AB, [v144 @ S0_v61], 0, 0
+	138 Nop
+	139 Nop
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Return
+
+Method: System.Byte[] get_Key()
+
+Disassembly:
+	0x1550BDB LocalGet 0
+	0x1550BDD I32Const 0
+	0x1550BDF Call 66135
+	0x1550BE3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call SymmetricAlgorithm.get_Key, returnVal1 @ S0_v2 (System.Byte[]), this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.Byte[])
+
+Method: System.Void set_Key(System.Byte[] value)
+
+Disassembly:
+	0x1550BE6 LocalGet 0
+	0x1550BE8 LocalGet 1
+	0x1550BEA I32Const 0
+	0x1550BEC Call 66136
+	0x1550BF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid SymmetricAlgorithm.set_Key, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), value @ L1 (System.Byte[])
+	4 Nop
+	5 Return
+
+Method: System.Int32 get_KeySize()
+
+Disassembly:
+	0x1550BF3 LocalGet 0
+	0x1550BF5 I32Const 0
+	0x1550BF7 Call 66137
+	0x1550BFB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call SymmetricAlgorithm.get_LegalBlockSizes, returnVal1 @ S0_v2 (System.Int32), this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Void set_KeySize(System.Int32 value)
+
+Disassembly:
+	0x1550BFE LocalGet 0
+	0x1550C00 LocalGet 1
+	0x1550C02 I32Const 0
+	0x1550C04 Call 66138
+	0x1550C08 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid SymmetricAlgorithm.set_KeySize, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), value @ L1 (System.Int32)
+	4 Nop
+	5 Return
+
+Method: System.Int32 get_FeedbackSize()
+
+Disassembly:
+	0xC26354 LocalGet 0
+	0xC26356 I32Load 2, 32
+	0xC26359 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.KeySizeValue (System.Int32)
+
+Method: System.Void set_FeedbackSize(System.Int32 value)
+
+Disassembly:
+	0x1550C0B LocalGet 0
+	0x1550C0D LocalGet 1
+	0x1550C0F I32Const 0
+	0x1550C11 Call 66142
+	0x1550C15 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid SymmetricAlgorithm.set_Mode, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), value @ L1 (System.Int32)
+	4 Nop
+	5 Return
+
+Method: System.Security.Cryptography.CipherMode get_Mode()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.FeedbackSizeValue (System.Int32)
+
+Method: System.Void set_Mode(System.Security.Cryptography.CipherMode value)
+
+Disassembly:
+	0x1550C18 LocalGet 0
+	0x1550C1A LocalGet 1
+	0x1550C1C I32Const 0
+	0x1550C1E Call 66134
+	0x1550C22 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid SymmetricAlgorithm.set_IV, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), value @ L1 (System.Security.Cryptography.CipherMode)
+	4 Nop
+	5 Return
+
+Method: System.Security.Cryptography.PaddingMode get_Padding()
+
+Disassembly:
+	0xC1F290 LocalGet 0
+	0xC1F292 I32Load 2, 36
+	0xC1F295 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.ModeValue (System.Security.Cryptography.CipherMode)
+
+Method: System.Void set_Padding(System.Security.Cryptography.PaddingMode value)
+
+Disassembly:
+	0x1550C27 I32Const 4576723
+	0x1550C2C I32Load8_S 0, 0
+	0x1550C2F I32Eqz
+	0x1550C30 If -64
+	0x1550C32 I32Const 2925204
+	0x1550C37 I32Load 2, 0
+	0x1550C3A Call 73003
+	0x1550C3E I32Const 4576723
+	0x1550C43 I32Const 1
+	0x1550C45 I32Store8 0, 0
+	0x1550C48 End
+	0x1550C49 LocalGet 1
+	0x1550C4B I32Const 5
+	0x1550C4D I32Eq
+	0x1550C4E If -64
+	0x1550C50 I32Const 4428076
+	0x1550C55 I32Load 2, 0
+	0x1550C58 Call 72556
+	0x1550C5C LocalTee 3
+	0x1550C5E I32Const 4517372
+	0x1550C63 I32Load 2, 0
+	0x1550C66 I32Const 0
+	0x1550C68 Call 58518
+	0x1550C6C LocalGet 3
+	0x1550C6E I32Const 0
+	0x1550C70 I32Const 4490916
+	0x1550C75 I32Load 2, 0
+	0x1550C78 Call 73899
+	0x1550C7C Else
+	0x1550C7D LocalGet 0
+	0x1550C7F LocalGet 1
+	0x1550C81 I32Const 0
+	0x1550C83 Call 66143
+	0x1550C87 End
+	0x1550C88 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v14, [2CA294]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45D5D3], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v6 (System.Boolean), value @ L1 (System.Security.Cryptography.PaddingMode), 5
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v6 (System.Boolean)
+	16 ConditionalJump @b9, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Call 11B6C, v18 @ S0_v11 (System.Security.Cryptography.CryptographicException), typeof(System.Security.Cryptography.CryptographicException)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CallVoid CryptographicException..ctor, v18 @ S0_v11 (System.Security.Cryptography.CryptographicException), "CTS is not supported"
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CallVoid AesCryptoServiceProvider.set_Mode, v18 @ S0_v11 (System.Security.Cryptography.CryptographicException), 0
+	30 Jump @b10
+	31 Nop
+	32 Nop
+	33 Nop
+	34 CallVoid SymmetricAlgorithm.set_Padding, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), value @ L1 (System.Security.Cryptography.PaddingMode)
+	35 Nop
+	36 Nop
+	37 Return
+
+Method: System.Security.Cryptography.ICryptoTransform CreateDecryptor()
+
+Disassembly:
+	0xC1F2A5 LocalGet 0
+	0xC1F2A7 I32Load 2, 40
+	0xC1F2AA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.PaddingValue (System.Security.Cryptography.PaddingMode)
+
+Method: System.Security.Cryptography.ICryptoTransform CreateEncryptor()
+
+Disassembly:
+	0x13EAF45 I32Const 25
+	0x13EAF47 LocalGet 0
+	0x13EAF49 I32Const 12
+	0x13EAF4B LocalGet 0
+	0x13EAF4D Call 29262
+	0x13EAF51 I32Const 10
+	0x13EAF53 LocalGet 0
+	0x13EAF55 Call 29262
+	0x13EAF59 Call 29291
+	0x13EAF5D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 724E, v5 @ S2_v2, 12, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)
+	5 Nop
+	6 Nop
+	7 Call 724E, v8 @ S3_v3, 10, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider)
+	8 Call 726B, returnVal1 @ S0_v2 (System.Security.Cryptography.ICryptoTransform), 25, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), v5 @ S2_v2, v8 @ S3_v3
+	9 Nop
+	10 Return returnVal1 @ S0_v2 (System.Security.Cryptography.ICryptoTransform)
+
+Method: System.Void Dispose(System.Boolean disposing)
+
+Disassembly:
+	0x1550C8B LocalGet 0
+	0x1550C8D LocalGet 1
+	0x1550C8F I32Const 0
+	0x1550C91 Call 66144
+	0x1550C95 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid TripleDES.set_Key, this @ L0 (System.Security.Cryptography.AesCryptoServiceProvider), disposing @ L1 (System.Boolean)
+	4 Nop
+	5 Return
+

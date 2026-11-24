@@ -1,0 +1,189 @@
+Type: System.OverflowException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x13CD5C7 I32Const 4573810
+	0x13CD5CC I32Load8_S 0, 0
+	0x13CD5CF I32Eqz
+	0x13CD5D0 If -64
+	0x13CD5D2 I32Const 2989628
+	0x13CD5D7 I32Load 2, 0
+	0x13CD5DA Call 73003
+	0x13CD5DE I32Const 4573810
+	0x13CD5E3 I32Const 1
+	0x13CD5E5 I32Store8 0, 0
+	0x13CD5E8 End
+	0x13CD5E9 I32Const 4427764
+	0x13CD5EE I32Load 2, 0
+	0x13CD5F1 LocalTee 2
+	0x13CD5F3 I32Load16_S 1, 186
+	0x13CD5F7 I32Const 512
+	0x13CD5FA I32And
+	0x13CD5FB If -64
+	0x13CD5FD LocalGet 2
+	0x13CD5FF I32Load 2, 116
+	0x13CD602 I32Eqz
+	0x13CD603 If -64
+	0x13CD605 LocalGet 2
+	0x13CD607 Call 72345
+	0x13CD60B End
+	0x13CD60C End
+	0x13CD60D LocalGet 0
+	0x13CD60F I32Const 3
+	0x13CD611 I32Const 0
+	0x13CD613 Call 51402
+	0x13CD617 I32Const 0
+	0x13CD619 Call 55700
+	0x13CD61D LocalGet 0
+	0x13CD61F I32Const -2147024882
+	0x13CD625 I32Store 2, 48
+	0x13CD628 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D9E3C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45CA72], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Exception>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.Exception>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Exception)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call Exception.FixRemotingException, v29 @ S1_v4 (System.Exception), 3
+	33 Nop
+	34 CallVoid TimeoutException..ctor, this @ L0 (System.OverflowException), v29 @ S1_v4 (System.Exception)
+	35 Nop
+	36 Nop
+	37 Move this._HResult (System.Int32), -2147024882
+	38 Nop
+	39 Return
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x13CD62B LocalGet 0
+	0x13CD62D LocalGet 1
+	0x13CD62F I32Const 0
+	0x13CD631 Call 55700
+	0x13CD635 LocalGet 0
+	0x13CD637 I32Const -2147024882
+	0x13CD63D I32Store 2, 48
+	0x13CD640 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid TimeoutException..ctor, this @ L0 (System.OverflowException), message @ L1 (System.String)
+	4 Nop
+	5 Nop
+	6 Move this._HResult (System.Int32), -2147024882
+	7 Nop
+	8 Return
+
+Method: System.Void .ctor(System.String message, System.Exception innerException)
+
+Disassembly:
+	0x1007A1E GlobalGet 7
+	0x1007A20 LocalSet 3
+	0x1007A22 GlobalGet 7
+	0x1007A24 I32Const 16
+	0x1007A26 I32Add
+	0x1007A27 GlobalSet 7
+	0x1007A29 LocalGet 3
+	0x1007A2B LocalGet 2
+	0x1007A2D I64Load 2, 0
+	0x1007A30 I64Store 3, 0
+	0x1007A33 LocalGet 3
+	0x1007A35 I32Const 8
+	0x1007A37 I32Add
+	0x1007A38 LocalTee 2
+	0x1007A3A LocalGet 3
+	0x1007A3C I64Load 2, 0
+	0x1007A3F I64Store 2, 0
+	0x1007A42 LocalGet 0
+	0x1007A44 LocalGet 1
+	0x1007A46 LocalGet 2
+	0x1007A48 I32Const 0
+	0x1007A4A Call 55714
+	0x1007A4E LocalGet 3
+	0x1007A50 GlobalSet 7
+	0x1007A52 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], [innerException @ L2 (System.Exception)]
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6 (System.Runtime.Serialization.StreamingContext), v1 @ G7, 8
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v13.m_additionalContext (System.Object), [v1 @ G7]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid TimeoutException..ctor, this @ L0 (System.OverflowException), message @ L1 (System.String), v13 @ S0_v6 (System.Runtime.Serialization.StreamingContext)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Return
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x13CD69B LocalGet 0
+	0x13CD69D LocalGet 1
+	0x13CD69F LocalGet 2
+	0x13CD6A1 I32Const 0
+	0x13CD6A3 Call 57747
+	0x13CD6A7 LocalGet 0
+	0x13CD6A9 I32Const -2146233066
+	0x13CD6AF I32Store 2, 48
+	0x13CD6B2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid ArithmeticException..ctor, this @ L0 (System.OverflowException), info @ L1 (System.Runtime.Serialization.SerializationInfo), context @ L2 (System.Runtime.Serialization.StreamingContext)
+	5 Nop
+	6 Nop
+	7 Move this._HResult (System.Int32), -2146233066
+	8 Nop
+	9 Return
+

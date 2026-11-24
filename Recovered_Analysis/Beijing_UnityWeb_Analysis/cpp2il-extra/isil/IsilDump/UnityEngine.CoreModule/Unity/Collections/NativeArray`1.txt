@@ -1,0 +1,258 @@
+Type: Unity.Collections.NativeArray`1
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x13B3220 LocalGet 0
+	0x13B3222 I32Const 8
+	0x13B3224 I32Add
+	0x13B3225 LocalGet 1
+	0x13B3227 Call 64630
+	0x13B322B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Unity.Collections.NativeArray`1<T>), 8
+	3 Nop
+	4 Call FC76, returnVal1 @ S0_v3 (System.Int32), v3 @ S0_v2, methodInfo @ L1 (Il2CppMethodInfo)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Int32)
+
+Method: T get_Item(System.Int32 index)
+
+Disassembly:
+	0x13B240F LocalGet 0
+	0x13B2411 I32Const 8
+	0x13B2413 I32Add
+	0x13B2414 LocalGet 1
+	0x13B2416 LocalGet 2
+	0x13B2418 Call 64585
+	0x13B241C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Unity.Collections.NativeArray`1<T>), 8
+	3 Nop
+	4 Nop
+	5 Call FC49, returnVal1 @ S0_v3 (T), v3 @ S0_v2, index @ L1 (System.Int32), methodInfo @ L2 (Il2CppMethodInfo)
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (T)
+
+Method: System.Void set_Item(System.Int32 index, T value)
+
+Disassembly:
+	0x13B0BE4 LocalGet 0
+	0x13B0BE6 I32Const 8
+	0x13B0BE8 I32Add
+	0x13B0BE9 LocalGet 1
+	0x13B0BEB I32Store 2, 0
+	0x13B0BEE LocalGet 0
+	0x13B0BF0 LocalGet 2
+	0x13B0BF2 I32Store16 1, 12
+	0x13B0BF5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Unity.Collections.NativeArray`1<T>), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], index @ L1 (System.Int32)
+	5 Nop
+	6 Nop
+	7 Move this.m_Length (System.Int32), value @ L2 (T)
+	8 Nop
+	9 Return
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x13B2EA9 LocalGet 0
+	0x13B2EAB I32Const 8
+	0x13B2EAD I32Add
+	0x13B2EAE I32Const -1
+	0x13B2EB0 I32Store 2, 12
+	0x13B2EB3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Unity.Collections.NativeArray`1<T>), 8
+	3 Nop
+	4 Move [v3 @ S0_v2+C], -1
+	5 Nop
+	6 Return
+
+Method: Unity.Collections.NativeArray`1+Enumerator<T> GetEnumerator()
+
+Disassembly:
+	0x13B3172 LocalGet 0
+	0x13B3174 LocalGet 1
+	0x13B3176 I32Const 8
+	0x13B3178 I32Add
+	0x13B3179 LocalTee 3
+	0x13B317B I32Load 2, 0
+	0x13B317E LocalGet 3
+	0x13B3180 I32Load 2, 12
+	0x13B3183 I32Const 12
+	0x13B3185 I32Mul
+	0x13B3186 I32Add
+	0x13B3187 LocalTee 3
+	0x13B3189 I64Load 2, 0
+	0x13B318C I64Store 2, 0
+	0x13B318F LocalGet 0
+	0x13B3191 LocalGet 3
+	0x13B3193 I32Load 2, 8
+	0x13B3196 I32Store 2, 8
+	0x13B3199 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v5 @ S1_v2, this @ L1 (Unity.Collections.NativeArray`1<T>), 8
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Multiply v11 @ S2_v4, [v5 @ S1_v2+C], 12
+	10 Add v12 @ S1_v4, [v5 @ S1_v2], v11 @ S2_v4
+	11 Nop
+	12 Nop
+	13 Move [returnVal1 @ L0 (Unity.Collections.NativeArray`1<T>+Enumerator<T>)], [v12 @ S1_v4]
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Move [returnVal1 @ L0 (Unity.Collections.NativeArray`1<T>+Enumerator<T>)+8], [v12 @ S1_v4+8]
+	18 Nop
+	19 Return returnVal1 @ L0 (Unity.Collections.NativeArray`1<T>+Enumerator<T>)
+
+Method: System.Collections.Generic.IEnumerator`1<T> System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_Length (System.Int32)
+
+Method: System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+Disassembly:
+	0x13B337B LocalGet 0
+	0x13B337D I32Const 8
+	0x13B337F I32Add
+	0x13B3380 LocalGet 1
+	0x13B3382 Call 64638
+	0x13B3386 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Unity.Collections.NativeArray`1<T>), 8
+	3 Nop
+	4 Call FC7E, returnVal1 @ S0_v3 (System.Collections.IEnumerator), v3 @ S0_v2, methodInfo @ L1 (Il2CppMethodInfo)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Collections.IEnumerator)
+
+Method: System.Boolean Equals(Unity.Collections.NativeArray`1<T> other)
+
+Disassembly:
+	0x13B322E LocalGet 0
+	0x13B3230 I32Load 2, 8
+	0x13B3233 LocalGet 1
+	0x13B3235 I32Const 2
+	0x13B3237 I32Shl
+	0x13B3238 I32Add
+	0x13B3239 I32Load 2, 0
+	0x13B323C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 ShiftLeft v6 @ S1_v2, other @ L1 (Unity.Collections.NativeArray`1<T>), 2
+	5 Add v7 @ S0_v3, this.m_Buffer (System.Void*), v6 @ S1_v2
+	6 Nop
+	7 Nop
+	8 Return [v7 @ S0_v3]
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x13B33FB GlobalGet 7
+	0x13B33FD LocalSet 3
+	0x13B33FF GlobalGet 7
+	0x13B3401 I32Const 16
+	0x13B3403 I32Add
+	0x13B3404 GlobalSet 7
+	0x13B3406 LocalGet 3
+	0x13B3408 LocalGet 1
+	0x13B340A I64Load 2, 0
+	0x13B340D I64Store 2, 0
+	0x13B3410 LocalGet 3
+	0x13B3412 LocalGet 1
+	0x13B3414 I32Load 2, 8
+	0x13B3417 I32Store 2, 8
+	0x13B341A LocalGet 0
+	0x13B341C I32Const 8
+	0x13B341E I32Add
+	0x13B341F LocalGet 3
+	0x13B3421 LocalGet 2
+	0x13B3423 Call 64643
+	0x13B3427 LocalGet 3
+	0x13B3429 GlobalSet 7
+	0x13B342B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], [obj @ L1 (System.Object)]
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Move [v1 @ G7+8], [obj @ L1 (System.Object)+8]
+	14 Nop
+	15 Nop
+	16 Add v17 @ S0_v7, this @ L0 (Unity.Collections.NativeArray`1<T>), 8
+	17 Nop
+	18 Nop
+	19 Call FC83, returnVal1 @ S0_v8 (System.Boolean), v17 @ S0_v7, v1 @ G7, methodInfo @ L2 (Il2CppMethodInfo)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Return returnVal1 @ S0_v8 (System.Boolean)
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x13B33EB LocalGet 0
+	0x13B33ED I32Const 8
+	0x13B33EF I32Add
+	0x13B33F0 LocalGet 1
+	0x13B33F2 Call 64640
+	0x13B33F6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Unity.Collections.NativeArray`1<T>), 8
+	3 Nop
+	4 Call FC80, returnVal1 @ S0_v3 (System.Int32), v3 @ S0_v2, methodInfo @ L1 (Il2CppMethodInfo)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Int32)
+

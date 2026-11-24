@@ -1,0 +1,252 @@
+Type: System.Runtime.Serialization.Formatters.Binary.BinaryObjectWithMap
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void .ctor(System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum binaryHeaderEnum)
+
+Disassembly:
+	0x123FE06 LocalGet 0
+	0x123FE08 LocalGet 1
+	0x123FE0A I32Const 0
+	0x123FE0C Call 57340
+	0x123FE10 I32Const 255
+	0x123FE13 I32And
+	0x123FE14 I32Store 2, 8
+	0x123FE17 LocalGet 0
+	0x123FE19 I32Const 12
+	0x123FE1B I32Add
+	0x123FE1C LocalGet 1
+	0x123FE1E LocalGet 0
+	0x123FE20 I32Load 2, 8
+	0x123FE23 I32Const 0
+	0x123FE25 Call 57454
+	0x123FE29 I32Store 2, 0
+	0x123FE2C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call __BinaryParser.ReadChar, v5 @ S1_v2 (System.Char), binaryHeaderEnum @ L1 (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum)
+	4 Nop
+	5 And v7 @ S1_v3 (System.Int32), v5 @ S1_v2 (System.Char), 255
+	6 Move this.binaryHeaderEnum (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum), v7 @ S1_v3 (System.Int32)
+	7 Nop
+	8 Nop
+	9 Add v10 @ S0_v3, this @ L0 (System.Runtime.Serialization.Formatters.Binary.BinaryObjectWithMap), 12
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call SizedArray.get_Item, v15 @ S1_v6 (System.Object), binaryHeaderEnum @ L1 (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum), this.binaryHeaderEnum (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum)
+	15 Move [v10 @ S0_v3], v15 @ S1_v6 (System.Object)
+	16 Nop
+	17 Return
+
+Method: System.Void Set(System.Int32 objectId, System.String name, System.Int32 numMembers, System.String[] memberNames, System.Int32 assemId)
+
+Disassembly:
+	0x1246217 LocalGet 0
+	0x1246219 I32Const 1
+	0x124621B I32Store 2, 8
+	0x124621E LocalGet 0
+	0x1246220 LocalGet 1
+	0x1246222 I32Store 2, 16
+	0x1246225 LocalGet 0
+	0x1246227 LocalGet 2
+	0x1246229 I32Store 2, 20
+	0x124622C LocalGet 0
+	0x124622E LocalGet 3
+	0x1246230 I32Store 2, 24
+	0x1246233 LocalGet 0
+	0x1246235 LocalGet 4
+	0x1246237 I32Store 2, 28
+	0x124623A LocalGet 0
+	0x124623C LocalGet 5
+	0x124623E I32Store 2, 32
+	0x1246241 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.binaryHeaderEnum (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum), 1
+	3 Nop
+	4 Nop
+	5 Move this.name (System.String), objectId @ L1 (System.Int32)
+	6 Nop
+	7 Nop
+	8 Move this.numMembers (System.Int32), name @ L2 (System.String)
+	9 Nop
+	10 Nop
+	11 Move this.memberNames (System.String[]), numMembers @ L3 (System.Int32)
+	12 Nop
+	13 Nop
+	14 Move this.assemId (System.Int32), memberNames @ L4 (System.String[])
+	15 Nop
+	16 Nop
+	17 Move [this @ L0 (System.Runtime.Serialization.Formatters.Binary.BinaryObjectWithMap)+20], assemId @ L5 (System.Int32)
+	18 Nop
+	19 Return
+
+Method: System.Void Write(System.Runtime.Serialization.Formatters.Binary.__BinaryWriter sout)
+
+Disassembly:
+	0xC12227 LocalGet 0
+	0xC12229 LocalGet 1
+	0xC1222B I32Store 2, 8
+	0xC1222E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.binaryHeaderEnum (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum), sout @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryWriter)
+	3 Nop
+	4 Return
+
+Method: System.Void Read(System.Runtime.Serialization.Formatters.Binary.__BinaryParser input)
+
+Disassembly:
+	0x12452BE LocalGet 1
+	0x12452C0 LocalGet 0
+	0x12452C2 I32Load 2, 8
+	0x12452C5 I32Const 255
+	0x12452C8 I32And
+	0x12452C9 I32Const 0
+	0x12452CB Call 49439
+	0x12452CF LocalGet 1
+	0x12452D1 LocalGet 0
+	0x12452D3 I32Load 2, 12
+	0x12452D6 I32Const 0
+	0x12452D8 Call 49449
+	0x12452DC LocalGet 1
+	0x12452DE LocalGet 0
+	0x12452E0 I32Load 2, 16
+	0x12452E3 I32Const 0
+	0x12452E5 Call 49445
+	0x12452E9 LocalGet 1
+	0x12452EB LocalGet 0
+	0x12452ED I32Load 2, 20
+	0x12452F0 I32Const 0
+	0x12452F2 Call 49449
+	0x12452F6 Loop -64
+	0x12452F8 LocalGet 3
+	0x12452FA LocalGet 0
+	0x12452FC I32Load 2, 20
+	0x12452FF I32Lt_S
+	0x1245300 If -64
+	0x1245302 LocalGet 1
+	0x1245304 LocalGet 0
+	0x1245306 I32Load 2, 24
+	0x1245309 I32Const 16
+	0x124530B I32Add
+	0x124530C LocalGet 3
+	0x124530E I32Const 2
+	0x1245310 I32Shl
+	0x1245311 I32Add
+	0x1245312 I32Load 2, 0
+	0x1245315 I32Const 0
+	0x1245317 Call 49445
+	0x124531B LocalGet 3
+	0x124531D I32Const 1
+	0x124531F I32Add
+	0x1245320 LocalSet 3
+	0x1245322 Br 1
+	0x1245324 End
+	0x1245325 End
+	0x1245326 LocalGet 0
+	0x1245328 I32Load 2, 28
+	0x124532B I32Const 0
+	0x124532D I32Gt_S
+	0x124532E If -64
+	0x1245330 LocalGet 1
+	0x1245332 LocalGet 0
+	0x1245334 I32Load 2, 28
+	0x1245337 I32Const 0
+	0x1245339 Call 49449
+	0x124533D End
+	0x124533E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 And v6 @ S1_v3 (System.Byte[]), this.binaryHeaderEnum (System.Runtime.Serialization.Formatters.Binary.BinaryHeaderEnum), 255
+	5 Nop
+	6 CallVoid __BinaryWriter.WriteBytes, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), v6 @ S1_v3 (System.Byte[])
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CallVoid __BinaryWriter.WriteSByte, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), this.objectId (System.Int32)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CallVoid C125, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), this.name (System.String), 0
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid __BinaryWriter.WriteSByte, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), this.numMembers (System.Int32)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CheckLess v38 @ S0_v7 (System.Boolean), v34 @ S0_v15, this.numMembers (System.Int32)
+	27 Not v28 @ TEMP_v2 (System.Boolean), v38 @ S0_v7 (System.Boolean)
+	28 ConditionalJump @b9, v28 @ TEMP_v2 (System.Boolean)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Add v43 @ S1_v19, this.memberNames (System.String[]), 16
+	34 Nop
+	35 Nop
+	36 ShiftLeft v45 @ S2_v11, v20 @ L3_v1, 2
+	37 Add v46 @ S1_v20, v43 @ S1_v19, v45 @ S2_v11
+	38 Nop
+	39 Nop
+	40 CallVoid C125, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), [v46 @ S1_v20], 0
+	41 Nop
+	42 Nop
+	43 Add v34 @ S0_v15, v20 @ L3_v1, 1
+	44 Nop
+	45 Jump @b6
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CheckGreater v51 @ S0_v10 (System.Boolean), this.assemId (System.Int32), 0
+	52 Not v52 @ TEMP_v3 (System.Boolean), v51 @ S0_v10 (System.Boolean)
+	53 ConditionalJump @b11, v52 @ TEMP_v3 (System.Boolean)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 CallVoid __BinaryWriter.WriteSByte, input @ L1 (System.Runtime.Serialization.Formatters.Binary.__BinaryParser), this.assemId (System.Int32)
+	59 Nop
+	60 Nop
+	61 Return
+
+Method: System.Void Dump()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

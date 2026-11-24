@@ -1,0 +1,547 @@
+Type: UnityEngine.CharacterController
+
+Method: UnityEngine.CollisionFlags Move(UnityEngine.Vector3 motion)
+
+Disassembly:
+	0x155E6D0 LocalGet 0
+	0x155E6D2 LocalGet 1
+	0x155E6D4 I32Const 0
+	0x155E6D6 Call 70860
+	0x155E6DA LocalTee 0
+	0x155E6DC I32Const 0
+	0x155E6DE Call 64333
+	0x155E6E2 If -1
+	0x155E6E4 LocalGet 0
+	0x155E6E6 I32Const 0
+	0x155E6E8 Call 70884
+	0x155E6EC Else
+	0x155E6ED I32Const 0
+	0x155E6EF End
+	0x155E6F0 LocalTee 0
+	0x155E6F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call Animation.GetStateAtIndex, v5 @ S0_v2 (UnityEngine.AnimationState), this @ L0 (UnityEngine.CharacterController), motion @ L1 (UnityEngine.Vector3)
+	4 Nop
+	5 Nop
+	6 Call Object.GetInstanceID, v8 @ S0_v3 (System.Int32), v5 @ S0_v2 (UnityEngine.AnimationState)
+	7 CheckEqual v9 @ TEMP_v1 (System.Boolean), v8 @ S0_v3 (System.Int32), 0
+	8 ConditionalJump @b7, v9 @ TEMP_v1 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Call AnimationState.get_name, v12 @ S0_v7 (System.String), v5 @ S0_v2 (UnityEngine.AnimationState)
+	12 Jump @b8
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return returnVal1 @ S0_v4 (UnityEngine.CollisionFlags)
+
+Method: UnityEngine.Vector3 get_velocity()
+
+Disassembly:
+	0x1567F73 I32Const 3928792
+	0x1567F78 I32Load 2, 0
+	0x1567F7B LocalTee 2
+	0x1567F7D I32Eqz
+	0x1567F7E If -64
+	0x1567F80 I32Const 3928792
+	0x1567F85 I32Const 3542447
+	0x1567F8A Call 73893
+	0x1567F8E LocalTee 2
+	0x1567F90 I32Store 2, 0
+	0x1567F93 End
+	0x1567F94 LocalGet 0
+	0x1567F96 LocalGet 1
+	0x1567F98 LocalGet 2
+	0x1567F9A I32Const 16383
+	0x1567F9E I32And
+	0x1567F9F I32Const 80504
+	0x1567FA3 I32Add
+	0x1567FA4 CallIndirect 4, 0
+	0x1567FA7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF2D8], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3542447
+	9 Nop
+	10 Move [3BF2D8], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, returnVal1 @ L0 (UnityEngine.Vector3), this @ L1 (UnityEngine.CharacterController)
+	20 Nop
+	21 Return returnVal1 @ L0 (UnityEngine.Vector3)
+
+Method: System.Boolean get_isGrounded()
+
+Disassembly:
+	0x1567EBA I32Const 3928784
+	0x1567EBF I32Load 2, 0
+	0x1567EC2 LocalTee 1
+	0x1567EC4 I32Eqz
+	0x1567EC5 If -64
+	0x1567EC7 I32Const 3928784
+	0x1567ECC I32Const 3542357
+	0x1567ED1 Call 73893
+	0x1567ED5 LocalTee 1
+	0x1567ED7 I32Store 2, 0
+	0x1567EDA End
+	0x1567EDB LocalGet 0
+	0x1567EDD LocalGet 1
+	0x1567EDF I32Const 4095
+	0x1567EE2 I32And
+	0x1567EE3 I32Const 1797
+	0x1567EE6 I32Add
+	0x1567EE7 CallIndirect 2, 0
+	0x1567EEA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF2D0], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3542357
+	9 Nop
+	10 Move [3BF2D0], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 4095
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 1797
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Boolean), this @ L0 (UnityEngine.CharacterController)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Boolean)
+
+Method: System.Single get_height()
+
+Disassembly:
+	0x15697B5 LocalGet 0
+	0x15697B7 I32Const 8
+	0x15697B9 I32Add
+	0x15697BA F32Load 2, 28
+	0x15697BD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (UnityEngine.CharacterController), 8
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2+1C]
+
+Method: System.Void set_height(System.Single value)
+
+Disassembly:
+	0x155EC94 I32Const 3928452
+	0x155EC99 I32Load 2, 0
+	0x155EC9C LocalTee 2
+	0x155EC9E I32Eqz
+	0x155EC9F If -64
+	0x155ECA1 I32Const 3928452
+	0x155ECA6 I32Const 3536031
+	0x155ECAB Call 73893
+	0x155ECAF LocalTee 2
+	0x155ECB1 I32Store 2, 0
+	0x155ECB4 End
+	0x155ECB5 LocalGet 0
+	0x155ECB7 LocalGet 1
+	0x155ECB9 LocalGet 2
+	0x155ECBB I32Const 127
+	0x155ECBE I32And
+	0x155ECBF I32Const 79620
+	0x155ECC3 I32Add
+	0x155ECC4 CallIndirect 14, 0
+	0x155ECC7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF184], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3536031
+	9 Nop
+	10 Move [3BF184], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 127
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 79620
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.CharacterController), value @ L1 (System.Single)
+	20 Nop
+	21 Return
+
+Method: UnityEngine.Vector3 get_center()
+
+Disassembly:
+	0x1567C1C GlobalGet 7
+	0x1567C1E LocalSet 2
+	0x1567C20 GlobalGet 7
+	0x1567C22 I32Const 16
+	0x1567C24 I32Add
+	0x1567C25 GlobalSet 7
+	0x1567C27 LocalGet 2
+	0x1567C29 I64Const 0
+	0x1567C2B I64Store 2, 0
+	0x1567C2E LocalGet 2
+	0x1567C30 I32Const 0
+	0x1567C32 I32Store 2, 8
+	0x1567C35 LocalGet 1
+	0x1567C37 LocalGet 2
+	0x1567C39 I32Const 0
+	0x1567C3B Call 71230
+	0x1567C3F LocalGet 0
+	0x1567C41 LocalGet 2
+	0x1567C43 I64Load 2, 0
+	0x1567C46 I64Store 2, 0
+	0x1567C49 LocalGet 0
+	0x1567C4B LocalGet 2
+	0x1567C4D I32Load 2, 8
+	0x1567C50 I32Store 2, 8
+	0x1567C53 LocalGet 2
+	0x1567C55 GlobalSet 7
+	0x1567C57 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7 (UnityEngine.Vector3&)], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7 (UnityEngine.Vector3&)+8], 0
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid CharacterController.get_center_Injected, this @ L1 (UnityEngine.CharacterController), v1 @ G7 (UnityEngine.Vector3&)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move returnVal1.x (System.Single), [v1 @ G7 (UnityEngine.Vector3&)]
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move returnVal1.z (System.Single), [v1 @ G7 (UnityEngine.Vector3&)+8]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return returnVal1 @ L0 (UnityEngine.Vector3)
+
+Method: System.Void set_center(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x1567D2D GlobalGet 7
+	0x1567D2F LocalSet 2
+	0x1567D31 GlobalGet 7
+	0x1567D33 I32Const 16
+	0x1567D35 I32Add
+	0x1567D36 GlobalSet 7
+	0x1567D38 LocalGet 2
+	0x1567D3A I64Const 0
+	0x1567D3C I64Store 2, 0
+	0x1567D3F LocalGet 2
+	0x1567D41 I32Const 0
+	0x1567D43 I32Store 2, 8
+	0x1567D46 LocalGet 1
+	0x1567D48 LocalGet 2
+	0x1567D4A I32Const 0
+	0x1567D4C Call 71235
+	0x1567D50 LocalGet 0
+	0x1567D52 LocalGet 2
+	0x1567D54 I64Load 2, 0
+	0x1567D57 I64Store 2, 0
+	0x1567D5A LocalGet 0
+	0x1567D5C LocalGet 2
+	0x1567D5E I32Load 2, 8
+	0x1567D61 I32Store 2, 8
+	0x1567D64 LocalGet 2
+	0x1567D66 GlobalSet 7
+	0x1567D68 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7 (UnityEngine.Vector3&)], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7 (UnityEngine.Vector3&)+8], 0
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid CharacterController.set_center_Injected, value @ L1 (UnityEngine.Vector3), v1 @ G7 (UnityEngine.Vector3&)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move [this @ L0 (UnityEngine.CharacterController)], [v1 @ G7 (UnityEngine.Vector3&)]
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move this.m_CachedPtr (System.IntPtr), [v1 @ G7 (UnityEngine.Vector3&)+8]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Single get_skinWidth()
+
+Disassembly:
+	0x1567CC4 I32Const 3928752
+	0x1567CC9 I32Load 2, 0
+	0x1567CCC LocalTee 1
+	0x1567CCE I32Eqz
+	0x1567CCF If -64
+	0x1567CD1 I32Const 3928752
+	0x1567CD6 I32Const 3541897
+	0x1567CDB Call 73893
+	0x1567CDF LocalTee 1
+	0x1567CE1 I32Store 2, 0
+	0x1567CE4 End
+	0x1567CE5 LocalGet 0
+	0x1567CE7 LocalGet 1
+	0x1567CE9 I32Const 255
+	0x1567CEC I32And
+	0x1567CED I32Const 401
+	0x1567CF0 I32Add
+	0x1567CF1 CallIndirect 3, 0
+	0x1567CF4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF2B0], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3541897
+	9 Nop
+	10 Move [3BF2B0], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 255
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 401
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Single), this @ L0 (UnityEngine.CharacterController)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Single)
+
+Method: System.Void set_detectCollisions(System.Boolean value)
+
+Disassembly:
+	0x1567DA2 LocalGet 0
+	0x1567DA4 LocalGet 1
+	0x1567DA6 I32Const 0
+	0x1567DA8 Call 71237
+	0x1567DAC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call CapsuleCollider.get_center, v5 @ SRET_v1 (UnityEngine.Vector3), value @ L1 (System.Boolean)
+	4 Nop
+	5 Return
+
+Method: UnityEngine.CollisionFlags Move_Injected(ref UnityEngine.Vector3 motion)
+
+Disassembly:
+	0x1567BD9 LocalGet 0
+	0x1567BDB LocalGet 1
+	0x1567BDD I32Const 0
+	0x1567BDF Call 71228
+	0x1567BE3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call PhysicsScene.Equals, returnVal1 @ S0_v2 (UnityEngine.CollisionFlags), this @ L0 (UnityEngine.CharacterController), motion @ L1 (UnityEngine.Vector3&)
+	4 Nop
+	5 Return returnVal1 @ S0_v2 (UnityEngine.CollisionFlags)
+
+Method: System.Void get_velocity_Injected(out UnityEngine.Vector3 ret)
+
+Disassembly:
+	0x1567E19 I32Const 3928772
+	0x1567E1E I32Load 2, 0
+	0x1567E21 LocalTee 2
+	0x1567E23 I32Eqz
+	0x1567E24 If -64
+	0x1567E26 I32Const 3928772
+	0x1567E2B I32Const 3542201
+	0x1567E30 Call 73893
+	0x1567E34 LocalTee 2
+	0x1567E36 I32Store 2, 0
+	0x1567E39 End
+	0x1567E3A LocalGet 0
+	0x1567E3C LocalGet 1
+	0x1567E3E LocalGet 2
+	0x1567E40 I32Const 16383
+	0x1567E44 I32And
+	0x1567E45 I32Const 80504
+	0x1567E49 I32Add
+	0x1567E4A CallIndirect 4, 0
+	0x1567E4D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF2C4], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3542201
+	9 Nop
+	10 Move [3BF2C4], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.CharacterController), ret @ L1 (UnityEngine.Vector3&)
+	20 Nop
+	21 Return
+
+Method: System.Void get_center_Injected(out UnityEngine.Vector3 ret)
+
+Disassembly:
+	0x1567C5A I32Const 3928744
+	0x1567C5F I32Load 2, 0
+	0x1567C62 LocalTee 2
+	0x1567C64 I32Eqz
+	0x1567C65 If -64
+	0x1567C67 I32Const 3928744
+	0x1567C6C I32Const 3541770
+	0x1567C71 Call 73893
+	0x1567C75 LocalTee 2
+	0x1567C77 I32Store 2, 0
+	0x1567C7A End
+	0x1567C7B LocalGet 0
+	0x1567C7D LocalGet 1
+	0x1567C7F LocalGet 2
+	0x1567C81 I32Const 16383
+	0x1567C85 I32And
+	0x1567C86 I32Const 80504
+	0x1567C8A I32Add
+	0x1567C8B CallIndirect 4, 0
+	0x1567C8E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF2A8], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3541770
+	9 Nop
+	10 Move [3BF2A8], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.CharacterController), ret @ L1 (UnityEngine.Vector3&)
+	20 Nop
+	21 Return
+
+Method: System.Void set_center_Injected(ref UnityEngine.Vector3 value)
+
+Disassembly:
+	0x1567D6B I32Const 3928760
+	0x1567D70 I32Load 2, 0
+	0x1567D73 LocalTee 2
+	0x1567D75 I32Eqz
+	0x1567D76 If -64
+	0x1567D78 I32Const 3928760
+	0x1567D7D I32Const 3542002
+	0x1567D82 Call 73893
+	0x1567D86 LocalTee 2
+	0x1567D88 I32Store 2, 0
+	0x1567D8B End
+	0x1567D8C LocalGet 0
+	0x1567D8E LocalGet 1
+	0x1567D90 LocalGet 2
+	0x1567D92 I32Const 16383
+	0x1567D96 I32And
+	0x1567D97 I32Const 80504
+	0x1567D9B I32Add
+	0x1567D9C CallIndirect 4, 0
+	0x1567D9F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF2B8], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3542002
+	9 Nop
+	10 Move [3BF2B8], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.CharacterController), value @ L1 (UnityEngine.Vector3&)
+	20 Nop
+	21 Return
+

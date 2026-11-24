@@ -1,0 +1,521 @@
+Type: UIToggle+Validate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (UIToggle+Validate), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Boolean Invoke(System.Boolean choice)
+
+Disassembly:
+	0xDBEE8F LocalGet 1
+	0xDBEE91 I32Load 2, 8
+	0xDBEE94 LocalGet 0
+	0xDBEE96 I32Load 2, 8
+	0xDBEE99 I32Load 2, 8
+	0xDBEE9C I32Const 0
+	0xDBEE9E Call 44090
+	0xDBEEA2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move v5 @ S1_v2 (System.IntPtr), this.method_ptr (System.IntPtr)
+	4 Nop
+	5 Nop
+	6 Call Locale.op_Inequality, returnVal1 @ S0_v3 (System.Boolean), [choice @ L1 (System.Boolean)+8], [v5 @ S1_v2 (System.IntPtr)+8]
+	7 Nop
+	8 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.IAsyncResult BeginInvoke(System.Boolean choice, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0xCBF91F GlobalGet 7
+	0xCBF921 LocalSet 4
+	0xCBF923 GlobalGet 7
+	0xCBF925 I32Const 16
+	0xCBF927 I32Add
+	0xCBF928 GlobalSet 7
+	0xCBF92A LocalGet 4
+	0xCBF92C I64Const 0
+	0xCBF92E I64Store 3, 0
+	0xCBF931 LocalGet 4
+	0xCBF933 LocalGet 1
+	0xCBF935 I32Store 2, 0
+	0xCBF938 LocalGet 0
+	0xCBF93A LocalGet 4
+	0xCBF93C LocalGet 2
+	0xCBF93E LocalGet 3
+	0xCBF940 Call 73891
+	0xCBF944 LocalGet 4
+	0xCBF946 GlobalSet 7
+	0xCBF948 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], choice @ L1 (System.Boolean)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Call 120A3, returnVal1 @ S0_v7 (System.IAsyncResult), this @ L0 (UIToggle+Validate), v1 @ G7, callback @ L2 (System.AsyncCallback), object @ L3 (System.Object)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Return returnVal1 @ S0_v7 (System.IAsyncResult)
+
+Method: System.Boolean EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xED6254 GlobalGet 7
+	0xED6256 LocalSet 8
+	0xED6258 GlobalGet 7
+	0xED625A I32Const 16
+	0xED625C I32Add
+	0xED625D GlobalSet 7
+	0xED625F LocalGet 8
+	0xED6261 LocalTee 2
+	0xED6263 LocalGet 0
+	0xED6265 I32Store 2, 0
+	0xED6268 LocalGet 0
+	0xED626A I32Load 2, 52
+	0xED626D LocalTee 6
+	0xED626F If -1
+	0xED6271 LocalGet 6
+	0xED6273 I32Load 2, 12
+	0xED6276 LocalSet 9
+	0xED6278 LocalGet 6
+	0xED627A I32Const 16
+	0xED627C I32Add
+	0xED627D Else
+	0xED627E I32Const 1
+	0xED6280 LocalSet 9
+	0xED6282 LocalGet 2
+	0xED6284 End
+	0xED6285 LocalSet 6
+	0xED6287 I32Const 0
+	0xED6289 LocalSet 2
+	0xED628B Loop -64
+	0xED628D LocalGet 7
+	0xED628F LocalGet 9
+	0xED6291 I32Ne
+	0xED6292 If -64
+	0xED6294 LocalGet 6
+	0xED6296 LocalGet 7
+	0xED6298 I32Const 2
+	0xED629A I32Shl
+	0xED629B I32Add
+	0xED629C I32Load 2, 0
+	0xED629F LocalTee 2
+	0xED62A1 I32Load 2, 8
+	0xED62A4 LocalSet 4
+	0xED62A6 LocalGet 2
+	0xED62A8 I32Load 2, 16
+	0xED62AB LocalSet 3
+	0xED62AD LocalGet 2
+	0xED62AF I32Load 2, 20
+	0xED62B2 LocalTee 2
+	0xED62B4 I32Load16_S 1, 40
+	0xED62B7 I32Const -1
+	0xED62B9 I32Eq
+	0xED62BA If -64
+	0xED62BC LocalGet 2
+	0xED62BE Call 72344
+	0xED62C2 End
+	0xED62C3 LocalGet 2
+	0xED62C5 I32Load8_U 0, 42
+	0xED62C8 LocalSet 5
+	0xED62CA Block -1
+	0xED62CC LocalGet 2
+	0xED62CE I32Load16_S 1, 36
+	0xED62D1 I32Const 16
+	0xED62D3 I32And
+	0xED62D4 I32Eqz
+	0xED62D5 I32Const 1
+	0xED62D7 I32Xor
+	0xED62D8 If -1
+	0xED62DA LocalGet 5
+	0xED62DC I32Const 1
+	0xED62DE I32Eq
+	0xED62DF If -1
+	0xED62E1 LocalGet 1
+	0xED62E3 LocalGet 2
+	0xED62E5 LocalGet 4
+	0xED62E7 I32Const 16383
+	0xED62EB I32And
+	0xED62EC I32Const 6161
+	0xED62EF I32Add
+	0xED62F0 CallIndirect 0, 0
+	0xED62F3 Else
+	0xED62F4 LocalGet 3
+	0xED62F6 LocalGet 1
+	0xED62F8 LocalGet 2
+	0xED62FA LocalGet 4
+	0xED62FC I32Const 8191
+	0xED62FF I32And
+	0xED6300 I32Const 22691
+	0xED6304 I32Add
+	0xED6305 CallIndirect 5, 0
+	0xED6308 End
+	0xED6309 Else
+	0xED630A LocalGet 2
+	0xED630C I32Load16_S 1, 40
+	0xED630F I32Const -1
+	0xED6311 I32Ne
+	0xED6312 If -64
+	0xED6314 LocalGet 3
+	0xED6316 If -1
+	0xED6318 LocalGet 3
+	0xED631A I32Load 2, 0
+	0xED631D I32Load 2, 156
+	0xED6321 I32Const 256
+	0xED6324 I32And
+	0xED6325 I32Const 0
+	0xED6327 I32Ne
+	0xED6328 Else
+	0xED6329 I32Const 0
+	0xED632B End
+	0xED632C I32Eqz
+	0xED632D If -64
+	0xED632F LocalGet 0
+	0xED6331 I32Load 2, 12
+	0xED6334 If -64
+	0xED6336 LocalGet 3
+	0xED6338 I32Eqz
+	0xED6339 If -64
+	0xED633B LocalGet 1
+	0xED633D LocalGet 2
+	0xED633F LocalGet 4
+	0xED6341 I32Const 16383
+	0xED6345 I32And
+	0xED6346 I32Const 6161
+	0xED6349 I32Add
+	0xED634A CallIndirect 0, 0
+	0xED634D Br 5
+	0xED634F End
+	0xED6350 LocalGet 2
+	0xED6352 I32Load8_S 0, 43
+	0xED6355 I32Const 3
+	0xED6357 I32And
+	0xED6358 I32Const 2
+	0xED635A I32Eq
+	0xED635B LocalGet 2
+	0xED635D Call 73912
+	0xED6361 LocalSet 4
+	0xED6363 If -64
+	0xED6365 LocalGet 4
+	0xED6367 If -64
+	0xED6369 LocalGet 2
+	0xED636B LocalGet 3
+	0xED636D LocalGet 1
+	0xED636F Call 30095
+	0xED6373 Br 6
+	0xED6375 Else
+	0xED6376 LocalGet 2
+	0xED6378 LocalGet 3
+	0xED637A LocalGet 1
+	0xED637C Call 36363
+	0xED6380 Br 6
+	0xED6382 End
+	0xED6383 Unreachable
+	0xED6384 Else
+	0xED6385 LocalGet 2
+	0xED6387 I32Load16_U 1, 40
+	0xED638A LocalSet 5
+	0xED638C LocalGet 4
+	0xED638E If -64
+	0xED6390 LocalGet 5
+	0xED6392 LocalGet 2
+	0xED6394 I32Load 2, 12
+	0xED6397 LocalGet 3
+	0xED6399 LocalGet 1
+	0xED639B Call 29786
+	0xED639F Br 6
+	0xED63A1 Else
+	0xED63A2 LocalGet 5
+	0xED63A4 LocalGet 3
+	0xED63A6 LocalGet 1
+	0xED63A8 Call 29448
+	0xED63AC Br 6
+	0xED63AE End
+	0xED63AF Unreachable
+	0xED63B0 End
+	0xED63B1 Unreachable
+	0xED63B2 End
+	0xED63B3 End
+	0xED63B4 End
+	0xED63B5 LocalGet 3
+	0xED63B7 LocalGet 1
+	0xED63B9 LocalGet 2
+	0xED63BB LocalGet 4
+	0xED63BD I32Const 8191
+	0xED63C0 I32And
+	0xED63C1 I32Const 22691
+	0xED63C5 I32Add
+	0xED63C6 CallIndirect 5, 0
+	0xED63C9 End
+	0xED63CA End
+	0xED63CB LocalSet 2
+	0xED63CD LocalGet 7
+	0xED63CF I32Const 1
+	0xED63D1 I32Add
+	0xED63D2 LocalSet 7
+	0xED63D4 Br 1
+	0xED63D6 End
+	0xED63D7 End
+	0xED63D8 LocalGet 8
+	0xED63DA GlobalSet 7
+	0xED63DC LocalGet 2
+	0xED63DE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], this @ L0 (UIToggle+Validate)
+	10 Nop
+	11 Move v12 @ S0_v6 (System.Delegate[]), this.delegates (System.Delegate[])
+	12 Nop
+	13 CheckEqual v14 @ TEMP_v1 (System.Boolean), this.delegates (System.Delegate[]), 0
+	14 ConditionalJump @b4, v14 @ TEMP_v1 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v26 @ S0_v7, this.delegates (System.Delegate[]), 16
+	21 Jump @b32
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckNotEqual v61 @ S0_v11 (System.Boolean), v58 @ S0_v34, v24 @ L9_v1
+	33 Not v62 @ TEMP_v3 (System.Boolean), v61 @ S0_v11 (System.Boolean)
+	34 ConditionalJump @b31, v62 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 ShiftLeft v66 @ S1_v7, v58 @ S0_v34, 2
+	39 Add v67 @ S0_v15, v26 @ S0_v7, v66 @ S1_v7
+	40 Move v68 @ S0_v16, [v67 @ S0_v15]
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Move v73 @ S0_v19, [v68 @ S0_v16+10]
+	46 Nop
+	47 Nop
+	48 Move v75 @ S0_v21, [v68 @ S0_v16+14]
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CheckEqual v79 @ S0_v23 (System.Boolean), [v75 @ S0_v21+28], -1
+	53 Not v80 @ TEMP_v4 (System.Boolean), v79 @ S0_v23 (System.Boolean)
+	54 ConditionalJump @b7, v80 @ TEMP_v4 (System.Boolean)
+	55 Nop
+	56 CallVoid 11A98, v75 @ S0_v21
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 And v92 @ S0_v29, [v75 @ S0_v21+24], 16
+	65 CheckEqual v93 @ S0_v30 (System.Boolean), v92 @ S0_v29, 0
+	66 Nop
+	67 Xor v95 @ S0_v31, v93 @ S0_v30 (System.Boolean), 1
+	68 CheckEqual v96 @ TEMP_v5 (System.Boolean), v95 @ S0_v31, 0
+	69 ConditionalJump @b11, v96 @ TEMP_v5 (System.Boolean)
+	70 Nop
+	71 Nop
+	72 CheckEqual v99 @ S0_v73 (System.Boolean), [v75 @ S0_v21+2A], 1
+	73 Not v100 @ TEMP_v16 (System.Boolean), v99 @ S0_v73 (System.Boolean)
+	74 ConditionalJump @b10, v100 @ TEMP_v16 (System.Boolean)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 And v111 @ S2_v15, [v68 @ S0_v16+8], 16383
+	80 Nop
+	81 Add v113 @ S2_v16, v111 @ S2_v15, 6161
+	82 IndirectCall v113 @ S2_v16, v174 @ S0_v32 (System.Boolean), result @ L1 (System.IAsyncResult), v75 @ S0_v21
+	83 Jump @b33
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 And v120 @ S3_v11, [v68 @ S0_v16+8], 8191
+	90 Nop
+	91 Add v36 @ S3_v1 (System.IAsyncResult), v120 @ S3_v11, 22691
+	92 IndirectCall v36 @ S3_v1 (System.IAsyncResult), v174 @ S0_v32 (System.Boolean), [v68 @ S0_v16+10], result @ L1 (System.IAsyncResult), v75 @ S0_v21
+	93 Nop
+	94 Jump @b37
+	95 Nop
+	96 Nop
+	97 Nop
+	98 CheckNotEqual v104 @ S0_v37 (System.Boolean), [v75 @ S0_v21+28], -1
+	99 Not v105 @ TEMP_v7 (System.Boolean), v104 @ S0_v37 (System.Boolean)
+	100 ConditionalJump @b34, v105 @ TEMP_v7 (System.Boolean)
+	101 Nop
+	102 CheckEqual v125 @ TEMP_v9 (System.Boolean), [v68 @ S0_v16+10], 0
+	103 ConditionalJump @b14, v125 @ TEMP_v9 (System.Boolean)
+	104 Nop
+	105 Move v149 @ S0_v68, [v73 @ S0_v19]
+	106 Nop
+	107 Nop
+	108 And v152 @ S0_v70, [v149 @ S0_v68+9C], 256
+	109 Nop
+	110 CheckNotEqual v181 @ S0_v42 (System.Boolean), v152 @ S0_v70, 0
+	111 Jump @b35
+	112 Nop
+	113 Nop
+	114 Not v132 @ S0_v43 (System.Boolean), v181 @ S0_v42 (System.Boolean)
+	115 Not v127 @ TEMP_v10 (System.Boolean), v132 @ S0_v43 (System.Boolean)
+	116 ConditionalJump @b34, v127 @ TEMP_v10 (System.Boolean)
+	117 Nop
+	118 Nop
+	119 CheckEqual v128 @ TEMP_v11 (System.Boolean), this.invoke_impl (System.IntPtr), 0
+	120 ConditionalJump @b34, v128 @ TEMP_v11 (System.Boolean)
+	121 Nop
+	122 CheckEqual v184 @ S0_v47 (System.Boolean), [v68 @ S0_v16+10], 0
+	123 Not v165 @ TEMP_v12 (System.Boolean), v184 @ S0_v47 (System.Boolean)
+	124 ConditionalJump @b18, v165 @ TEMP_v12 (System.Boolean)
+	125 Nop
+	126 Nop
+	127 Nop
+	128 Nop
+	129 And v188 @ S2_v10, [v68 @ S0_v16+8], 16383
+	130 Nop
+	131 Add v160 @ S2_v11, v188 @ S2_v10, 6161
+	132 IndirectCall v160 @ S2_v11, v174 @ S0_v32 (System.Boolean), result @ L1 (System.IAsyncResult), v75 @ S0_v21
+	133 Jump @b37
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 And v192 @ S0_v50, [v75 @ S0_v21+2B], 3
+	139 Nop
+	140 CheckEqual v194 @ S0_v51 (System.Boolean), v192 @ S0_v50, 2
+	141 Nop
+	142 Call 120B8, v196 @ S1_v20, v75 @ S0_v21
+	143 Nop
+	144 Not v197 @ TEMP_v13 (System.Boolean), v194 @ S0_v51 (System.Boolean)
+	145 ConditionalJump @b38, v197 @ TEMP_v13 (System.Boolean)
+	146 Nop
+	147 CheckEqual v166 @ TEMP_v15 (System.Boolean), v196 @ S1_v20, 0
+	148 ConditionalJump @b23, v166 @ TEMP_v15 (System.Boolean)
+	149 Nop
+	150 Nop
+	151 Nop
+	152 Call 758F, v174 @ S0_v32 (System.Boolean), v75 @ S0_v21, [v68 @ S0_v16+10], result @ L1 (System.IAsyncResult)
+	153 Jump @b37
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Call 8E0B, v174 @ S0_v32 (System.Boolean), v75 @ S0_v21, [v68 @ S0_v16+10], result @ L1 (System.IAsyncResult)
+	158 Jump @b37
+	159 Nop
+	160 Interrupt
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Nop
+	165 CheckEqual v167 @ TEMP_v14 (System.Boolean), v196 @ S1_v20, 0
+	166 ConditionalJump @b28, v167 @ TEMP_v14 (System.Boolean)
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Nop
+	172 Call 745A, v174 @ S0_v32 (System.Boolean), [v75 @ S0_v21+28], [v75 @ S0_v21+C], [v68 @ S0_v16+10], result @ L1 (System.IAsyncResult)
+	173 Jump @b37
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Call 7308, v174 @ S0_v32 (System.Boolean), [v75 @ S0_v21+28], [v68 @ S0_v16+10], result @ L1 (System.IAsyncResult)
+	178 Jump @b37
+	179 Nop
+	180 Interrupt
+	181 Nop
+	182 Interrupt
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Nop
+	191 And v139 @ S3_v4, [v68 @ S0_v16+8], 8191
+	192 Nop
+	193 Add v36 @ S3_v1 (System.IAsyncResult), v139 @ S3_v4, 22691
+	194 IndirectCall v36 @ S3_v1 (System.IAsyncResult), v174 @ S0_v32 (System.Boolean), [v68 @ S0_v16+10], result @ L1 (System.IAsyncResult), v75 @ S0_v21
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Add v58 @ S0_v34, v30 @ L7_v1, 1
+	201 Nop
+	202 Jump @b41
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Nop
+	209 Return v53 @ L2_v3 (System.Boolean)
+

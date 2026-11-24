@@ -1,0 +1,162 @@
+Type: SYBO.Components.Analytics.Integration.MissionCompletedEvent
+
+Method: System.Void .ctor(System.String missionSet, System.Int16 missionIndex, System.Int64 sourceId)
+
+Disassembly:
+	0xDE7D86 I32Const 4556282
+	0xDE7D8B I32Load8_S 0, 0
+	0xDE7D8E I32Eqz
+	0xDE7D8F If -64
+	0xDE7D91 I32Const 2925720
+	0xDE7D96 I32Load 2, 0
+	0xDE7D99 Call 73003
+	0xDE7D9D I32Const 4556282
+	0xDE7DA2 I32Const 1
+	0xDE7DA4 I32Store8 0, 0
+	0xDE7DA7 End
+	0xDE7DA8 I32Const 4438184
+	0xDE7DAD I32Load 2, 0
+	0xDE7DB0 LocalTee 4
+	0xDE7DB2 I32Load16_S 1, 186
+	0xDE7DB6 I32Const 512
+	0xDE7DB9 I32And
+	0xDE7DBA If -64
+	0xDE7DBC LocalGet 4
+	0xDE7DBE I32Load 2, 116
+	0xDE7DC1 I32Eqz
+	0xDE7DC2 If -64
+	0xDE7DC4 LocalGet 4
+	0xDE7DC6 Call 72345
+	0xDE7DCA End
+	0xDE7DCB End
+	0xDE7DCC LocalGet 1
+	0xDE7DCE I32Const 0
+	0xDE7DD0 I32Const 0
+	0xDE7DD2 Call 35274
+	0xDE7DD6 LocalSet 1
+	0xDE7DD8 I32Const 4539652
+	0xDE7DDD I32Load 2, 0
+	0xDE7DE0 LocalGet 1
+	0xDE7DE2 I32Const 0
+	0xDE7DE4 Call 55680
+	0xDE7DE8 LocalSet 1
+	0xDE7DEA I32Const 4441088
+	0xDE7DEF I32Load 2, 0
+	0xDE7DF2 Call 72556
+	0xDE7DF6 LocalTee 4
+	0xDE7DF8 LocalGet 2
+	0xDE7DFA LocalGet 3
+	0xDE7DFC I32Const 0
+	0xDE7DFE LocalGet 1
+	0xDE7E00 I32Const 21
+	0xDE7E02 I64Const 1
+	0xDE7E04 I64Const 1
+	0xDE7E06 I32Const 0
+	0xDE7E08 Call 36799
+	0xDE7E0C LocalGet 0
+	0xDE7E0E LocalGet 4
+	0xDE7E10 I32Const 0
+	0xDE7E12 I32Const 4473572
+	0xDE7E17 I32Load 2, 0
+	0xDE7E1A Call 36736
+	0xDE7E1E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v24, [2CA498]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v24
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [4585FA], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Info.ItemInfo>), typeof(Info.ItemInfo)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Info.ItemInfo>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b14, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v19 (Il2CppClass<Info.ItemInfo>), typeof(Info.ItemInfo)
+	21 Nop
+	22 CheckEqual v20 @ S0_v21 (System.Boolean), [v18 @ S0_v19 (Il2CppClass<Info.ItemInfo>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v21 (System.Boolean)
+	24 ConditionalJump @b14, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Info.ItemInfo)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call ItemInfo.GetItemTitleId, v29 @ S0_v11 (System.String), missionSet @ L1 (System.String), 0
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call String.ConcatArray, v35 @ S0_v14 (System.String), "skipcharacter_", v29 @ S0_v11 (System.String)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call 11B6C, v39 @ S0_v17 (SYBO.Components.Analytics.Integration.SubwayItemAddedEvent), typeof(SYBO.Components.Analytics.Integration.SubwayItemAddedEvent)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CallVoid 8FBF, v39 @ S0_v17 (SYBO.Components.Analytics.Integration.SubwayItemAddedEvent), missionIndex @ L2 (System.Int16), sourceId @ L3 (System.Int64), 0, v35 @ S0_v14 (System.String), 21, 1, 1, 0
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 CallVoid AnalyticsIntegration.PostEvent, this @ L0 (SYBO.Components.Analytics.Integration.MissionCompletedEvent), v39 @ S0_v17 (SYBO.Components.Analytics.Integration.SubwayItemAddedEvent), 0
+	59 Nop
+	60 Return
+
+Method: System.String get_EventName()
+
+Disassembly:
+	0xDE85A9 I32Const 4556292
+	0xDE85AE I32Load8_S 0, 0
+	0xDE85B1 I32Eqz
+	0xDE85B2 If -64
+	0xDE85B4 I32Const 2974104
+	0xDE85B9 I32Load 2, 0
+	0xDE85BC Call 73003
+	0xDE85C0 I32Const 4556292
+	0xDE85C5 I32Const 1
+	0xDE85C7 I32Store8 0, 0
+	0xDE85CA End
+	0xDE85CB I32Const 4539688
+	0xDE85D0 I32Load 2, 0
+	0xDE85D3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v8, [2D6198]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [458604], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Return "ab_test_segment_joined"
+

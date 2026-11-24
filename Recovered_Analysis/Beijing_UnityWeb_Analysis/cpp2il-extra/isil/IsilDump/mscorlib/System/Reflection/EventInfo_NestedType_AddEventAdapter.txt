@@ -1,0 +1,96 @@
+Type: System.Reflection.EventInfo+AddEventAdapter
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x13D2F70 LocalGet 0
+	0x13D2F72 I32Const 8
+	0x13D2F74 I32Add
+	0x13D2F75 LocalGet 1
+	0x13D2F77 LocalGet 2
+	0x13D2F79 I32Const 0
+	0x13D2F7B Call 65411
+	0x13D2F7F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Throw typeof(System.IndexOutOfRangeException)
+	7 Nop
+	8 Return
+
+Method: System.Void Invoke(System.Object _this, System.Delegate dele)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), [dele @ L2 (System.Delegate)]
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), dele @ L2 (System.Delegate)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.Reflection.EventInfo+AddEventAdapter), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], _this @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.IAsyncResult BeginInvoke(System.Object _this, System.Delegate dele, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x13D0490 LocalGet 0
+	0x13D0492 LocalGet 1
+	0x13D0494 LocalGet 2
+	0x13D0496 LocalGet 3
+	0x13D0498 LocalGet 4
+	0x13D049A Call 71771
+	0x13D049E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call 1185B, returnVal1 @ S0_v2 (System.IAsyncResult), this @ L0 (System.Reflection.EventInfo+AddEventAdapter), _this @ L1 (System.Object), dele @ L2 (System.Delegate), callback @ L3 (System.AsyncCallback), object @ L4 (System.Object)
+	6 Nop
+	7 Return returnVal1 @ S0_v2 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x13D2D03 LocalGet 0
+	0x13D2D05 LocalGet 1
+	0x13D2D07 I32Const 0
+	0x13D2D09 Call 51323
+	0x13D2D0D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid DateTimeFormat.HebrewFormatDigits, this @ L0 (System.Reflection.EventInfo+AddEventAdapter), result @ L1 (System.IAsyncResult)
+	4 Nop
+	5 Return
+

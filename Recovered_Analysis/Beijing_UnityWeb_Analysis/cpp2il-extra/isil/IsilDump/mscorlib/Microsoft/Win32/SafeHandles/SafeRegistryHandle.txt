@@ -1,0 +1,97 @@
+Type: Microsoft.Win32.SafeHandles.SafeRegistryHandle
+
+Method: System.Void .ctor(System.IntPtr preexistingHandle, System.Boolean ownsHandle)
+
+Disassembly:
+	0x110837F LocalGet 0
+	0x1108381 LocalGet 2
+	0x1108383 I32Const 0
+	0x1108385 Call 59710
+	0x1108389 LocalGet 0
+	0x110838B LocalGet 1
+	0x110838D I32Store 2, 8
+	0x1108390 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid RuntimeClassHandle..ctor, this @ L0 (Microsoft.Win32.SafeHandles.SafeRegistryHandle), ownsHandle @ L2 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Move this.handle (System.IntPtr), preexistingHandle @ L1 (System.IntPtr)
+	7 Nop
+	8 Return
+
+Method: System.Boolean ReleaseHandle()
+
+Disassembly:
+	0x12BC244 I32Const 4570911
+	0x12BC249 I32Load8_S 0, 0
+	0x12BC24C I32Eqz
+	0x12BC24D If -64
+	0x12BC24F I32Const 3000228
+	0x12BC254 I32Load 2, 0
+	0x12BC257 Call 73003
+	0x12BC25B I32Const 4570911
+	0x12BC260 I32Const 1
+	0x12BC262 I32Store8 0, 0
+	0x12BC265 End
+	0x12BC266 LocalGet 0
+	0x12BC268 I32Load 2, 8
+	0x12BC26B I32Const 4427892
+	0x12BC270 I32Load 2, 0
+	0x12BC273 LocalTee 0
+	0x12BC275 I32Load16_S 1, 186
+	0x12BC279 I32Const 512
+	0x12BC27C I32And
+	0x12BC27D If -64
+	0x12BC27F LocalGet 0
+	0x12BC281 I32Load 2, 116
+	0x12BC284 I32Eqz
+	0x12BC285 If -64
+	0x12BC287 LocalGet 0
+	0x12BC289 Call 72345
+	0x12BC28D End
+	0x12BC28E End
+	0x12BC28F I32Const 0
+	0x12BC291 Call 59133
+	0x12BC295 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v9, [2DC7A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45BF1F], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S1_v3 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 And v19 @ S1_v5, [v15 @ S1_v3 (Il2CppClass<System.IO.MonoIO>)+BA], 512
+	20 CheckEqual v20 @ TEMP_v2 (System.Boolean), v19 @ S1_v5, 0
+	21 ConditionalJump @b10, v20 @ TEMP_v2 (System.Boolean)
+	22 Move v21 @ S1_v8 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	23 Nop
+	24 CheckEqual v23 @ S1_v10 (System.Boolean), [v21 @ S1_v8 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	25 Not v24 @ TEMP_v4 (System.Boolean), v23 @ S1_v10 (System.Boolean)
+	26 ConditionalJump @b10, v24 @ TEMP_v4 (System.Boolean)
+	27 Nop
+	28 CallVoid 11A99, typeof(System.IO.MonoIO)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call Path.CleanPath, returnVal1 @ S0_v7 (System.Boolean), this.handle (System.IntPtr)
+	33 Nop
+	34 Return returnVal1 @ S0_v7 (System.Boolean)
+

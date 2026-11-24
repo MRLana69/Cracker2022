@@ -1,0 +1,421 @@
+Type: UnityEngine.Light
+
+Method: UnityEngine.LightType get_type()
+
+Disassembly:
+	0x137C51C LocalGet 0
+	0x137C51E I32Const 0
+	0x137C520 Call 63110
+	0x137C524 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Material.get_shaderKeywords, returnVal1 @ S0_v2 (UnityEngine.LightType), this @ L0 (UnityEngine.Light)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (UnityEngine.LightType)
+
+Method: System.Single get_spotAngle()
+
+Disassembly:
+	0x139F636 LocalGet 0
+	0x139F638 I32Const 8
+	0x139F63A I32Add
+	0x139F63B LocalTee 2
+	0x139F63D F32Load 2, 12
+	0x139F640 LocalGet 2
+	0x139F642 F32Load 2, 4
+	0x139F645 F32Add
+	0x139F646 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (UnityEngine.Light), 8
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Add returnVal1 @ S0_v4 (System.Single), [v3 @ S0_v2+C], [v3 @ S0_v2+4]
+	8 Nop
+	9 Return returnVal1 @ S0_v4 (System.Single)
+
+Method: UnityEngine.Color get_color()
+
+Disassembly:
+	0x137C4B2 I32Const 3926260
+	0x137C4B7 I32Load 2, 0
+	0x137C4BA LocalTee 2
+	0x137C4BC I32Eqz
+	0x137C4BD If -64
+	0x137C4BF I32Const 3926260
+	0x137C4C4 I32Const 3496942
+	0x137C4C9 Call 73893
+	0x137C4CD LocalTee 2
+	0x137C4CF I32Store 2, 0
+	0x137C4D2 End
+	0x137C4D3 LocalGet 0
+	0x137C4D5 LocalGet 1
+	0x137C4D7 LocalGet 2
+	0x137C4D9 I32Const 16383
+	0x137C4DD I32And
+	0x137C4DE I32Const 80504
+	0x137C4E2 I32Add
+	0x137C4E3 CallIndirect 4, 0
+	0x137C4E6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE8F4], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3496942
+	9 Nop
+	10 Move [3BE8F4], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, returnVal1 @ L0 (UnityEngine.Color), this @ L1 (UnityEngine.Light)
+	20 Nop
+	21 Return returnVal1 @ L0 (UnityEngine.Color)
+
+Method: System.Void set_color(UnityEngine.Color value)
+
+Disassembly:
+	0x137827E GlobalGet 7
+	0x1378280 LocalSet 2
+	0x1378282 GlobalGet 7
+	0x1378284 I32Const 16
+	0x1378286 I32Add
+	0x1378287 GlobalSet 7
+	0x1378289 LocalGet 2
+	0x137828B I64Const 0
+	0x137828D I64Store 2, 0
+	0x1378290 LocalGet 2
+	0x1378292 I64Const 0
+	0x1378294 I64Store 2, 8
+	0x1378297 LocalGet 1
+	0x1378299 LocalGet 2
+	0x137829B I32Const 0
+	0x137829D Call 62943
+	0x13782A1 LocalGet 0
+	0x13782A3 LocalGet 2
+	0x13782A5 I64Load 2, 0
+	0x13782A8 I64Store 2, 0
+	0x13782AB LocalGet 0
+	0x13782AD LocalGet 2
+	0x13782AF I64Load 2, 8
+	0x13782B2 I64Store 2, 8
+	0x13782B5 LocalGet 2
+	0x13782B7 GlobalSet 7
+	0x13782B9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7 (UnityEngine.Color&)], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7 (UnityEngine.Color&)+8], 0
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid Light.set_color_Injected, value @ L1 (UnityEngine.Color), v1 @ G7 (UnityEngine.Color&)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move [this @ L0 (UnityEngine.Light)], [v1 @ G7 (UnityEngine.Color&)]
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move this.m_CachedPtr (System.IntPtr), [v1 @ G7 (UnityEngine.Color&)+8]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Single get_intensity()
+
+Disassembly:
+	0x1378584 I32Const 3926028
+	0x1378589 I32Load 2, 0
+	0x137858C LocalTee 1
+	0x137858E I32Eqz
+	0x137858F If -64
+	0x1378591 I32Const 3926028
+	0x1378596 I32Const 3492867
+	0x137859B Call 73893
+	0x137859F LocalTee 1
+	0x13785A1 I32Store 2, 0
+	0x13785A4 End
+	0x13785A5 LocalGet 0
+	0x13785A7 LocalGet 1
+	0x13785A9 I32Const 255
+	0x13785AC I32And
+	0x13785AD I32Const 401
+	0x13785B0 I32Add
+	0x13785B1 CallIndirect 3, 0
+	0x13785B4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE80C], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3492867
+	9 Nop
+	10 Move [3BE80C], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 255
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 401
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Single), this @ L0 (UnityEngine.Light)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Single)
+
+Method: System.Void set_intensity(System.Single value)
+
+Disassembly:
+	0x13A5B8F LocalGet 0
+	0x13A5B91 I32Const 0
+	0x13A5B93 Call 64138
+	0x13A5B97 LocalGet 1
+	0x13A5B99 I32Const 0
+	0x13A5B9B Call 64139
+	0x13A5B9F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Material.get_shader, v3 @ S0_v2 (UnityEngine.Shader), this @ L0 (UnityEngine.Light)
+	3 Nop
+	4 Nop
+	5 CallVoid Shader.SetGlobalFloat, v3 @ S0_v2 (UnityEngine.Shader), value @ L1 (System.Single)
+	6 Nop
+	7 Return
+
+Method: System.Single get_bounceIntensity()
+
+Disassembly:
+	0x13782BC I32Const 3926020
+	0x13782C1 I32Load 2, 0
+	0x13782C4 LocalTee 1
+	0x13782C6 I32Eqz
+	0x13782C7 If -64
+	0x13782C9 I32Const 3926020
+	0x13782CE I32Const 3492774
+	0x13782D3 Call 73893
+	0x13782D7 LocalTee 1
+	0x13782D9 I32Store 2, 0
+	0x13782DC End
+	0x13782DD LocalGet 0
+	0x13782DF LocalGet 1
+	0x13782E1 I32Const 255
+	0x13782E4 I32And
+	0x13782E5 I32Const 401
+	0x13782E8 I32Add
+	0x13782E9 CallIndirect 3, 0
+	0x13782EC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE804], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3492774
+	9 Nop
+	10 Move [3BE804], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 255
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 401
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Single), this @ L0 (UnityEngine.Light)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Single)
+
+Method: System.Single get_range()
+
+Disassembly:
+	0x13782EF I32Const 3926016
+	0x13782F4 I32Load 2, 0
+	0x13782F7 LocalTee 1
+	0x13782F9 I32Eqz
+	0x13782FA If -64
+	0x13782FC I32Const 3926016
+	0x1378301 I32Const 3492733
+	0x1378306 Call 73893
+	0x137830A LocalTee 1
+	0x137830C I32Store 2, 0
+	0x137830F End
+	0x1378310 LocalGet 0
+	0x1378312 LocalGet 1
+	0x1378314 I32Const 255
+	0x1378317 I32And
+	0x1378318 I32Const 401
+	0x137831B I32Add
+	0x137831C CallIndirect 3, 0
+	0x137831F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE800], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3492733
+	9 Nop
+	10 Move [3BE800], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 255
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 401
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Single), this @ L0 (UnityEngine.Light)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Single)
+
+Method: UnityEngine.LightShadows get_shadows()
+
+Disassembly:
+	0x13798AE I32Const 3926040
+	0x13798B3 I32Load 2, 0
+	0x13798B6 LocalTee 1
+	0x13798B8 I32Eqz
+	0x13798B9 If -64
+	0x13798BB I32Const 3926040
+	0x13798C0 I32Const 3492966
+	0x13798C5 Call 73893
+	0x13798C9 LocalTee 1
+	0x13798CB I32Store 2, 0
+	0x13798CE End
+	0x13798CF LocalGet 0
+	0x13798D1 LocalGet 1
+	0x13798D3 I32Const 4095
+	0x13798D6 I32And
+	0x13798D7 I32Const 1797
+	0x13798DA I32Add
+	0x13798DB CallIndirect 2, 0
+	0x13798DE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE818], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3492966
+	9 Nop
+	10 Move [3BE818], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 4095
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 1797
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (UnityEngine.LightShadows), this @ L0 (UnityEngine.Light)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (UnityEngine.LightShadows)
+
+Method: System.Void get_color_Injected(out UnityEngine.Color ret)
+
+Disassembly:
+	0x137B51A LocalGet 0
+	0x137B51C LocalGet 1
+	0x137B51E I32Const 0
+	0x137B520 Call 63054
+	0x137B524 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid Skybox.set_material, this @ L0 (UnityEngine.Light), ret @ L1 (UnityEngine.Color&)
+	4 Nop
+	5 Return
+
+Method: System.Void set_color_Injected(ref UnityEngine.Color value)
+
+Disassembly:
+	0x13784D0 I32Const 3926024
+	0x13784D5 I32Load 2, 0
+	0x13784D8 LocalTee 2
+	0x13784DA I32Eqz
+	0x13784DB If -64
+	0x13784DD I32Const 3926024
+	0x13784E2 I32Const 3492809
+	0x13784E7 Call 73893
+	0x13784EB LocalTee 2
+	0x13784ED I32Store 2, 0
+	0x13784F0 End
+	0x13784F1 LocalGet 0
+	0x13784F3 LocalGet 1
+	0x13784F5 LocalGet 2
+	0x13784F7 I32Const 16383
+	0x13784FB I32And
+	0x13784FC I32Const 80504
+	0x1378500 I32Add
+	0x1378501 CallIndirect 4, 0
+	0x1378504 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE808], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3492809
+	9 Nop
+	10 Move [3BE808], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Light), value @ L1 (UnityEngine.Color&)
+	20 Nop
+	21 Return
+

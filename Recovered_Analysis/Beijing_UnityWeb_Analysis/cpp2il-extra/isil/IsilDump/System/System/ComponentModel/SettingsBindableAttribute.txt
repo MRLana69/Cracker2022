@@ -1,0 +1,157 @@
+Type: System.ComponentModel.SettingsBindableAttribute
+
+Method: System.Void .ctor(System.Boolean bindable)
+
+Disassembly:
+	0xC57CB4 LocalGet 0
+	0xC57CB6 I32Const 12
+	0xC57CB8 I32Add
+	0xC57CB9 LocalGet 1
+	0xC57CBB I32Store 2, 0
+	0xC57CBE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.ComponentModel.SettingsBindableAttribute), 12
+	3 Nop
+	4 Move [v3 @ S0_v2], bindable @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.Boolean get_Bindable()
+
+Disassembly:
+	0x108A8B7 LocalGet 0
+	0x108A8B9 I32Const 0
+	0x108A8BB Call 57885
+	0x108A8BF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call AttributeUsageAttribute.get_AllowMultiple, returnVal1 @ S0_v2 (System.Boolean), this @ L0 (System.ComponentModel.SettingsBindableAttribute)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.Boolean)
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x108A6EB LocalGet 0
+	0x108A6ED I32Load 2, 8
+	0x108A6F0 LocalSet 0
+	0x108A6F2 Loop -64
+	0x108A6F4 Block -64
+	0x108A6F6 LocalGet 0
+	0x108A6F8 I32Eqz
+	0x108A6F9 If -64
+	0x108A6FB I32Const 0
+	0x108A6FD LocalSet 0
+	0x108A6FF Br 1
+	0x108A701 End
+	0x108A702 LocalGet 0
+	0x108A704 I32Load 2, 12
+	0x108A707 LocalGet 1
+	0x108A709 I32Ne
+	0x108A70A If -64
+	0x108A70C LocalGet 0
+	0x108A70E I32Load 2, 8
+	0x108A711 LocalSet 0
+	0x108A713 Br 2
+	0x108A715 End
+	0x108A716 End
+	0x108A717 End
+	0x108A718 LocalGet 0
+	0x108A71A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Not v15 @ S0_v5 (System.Boolean), v25 @ L0_v3 (System.Boolean)
+	6 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v5 (System.Boolean)
+	7 ConditionalJump @b4, v16 @ TEMP_v2 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckNotEqual v22 @ S0_v10 (System.Boolean), [v25 @ L0_v3 (System.Boolean)+C], obj @ L1 (System.Object)
+	16 Not v6 @ TEMP_v4 (System.Boolean), v22 @ S0_v10 (System.Boolean)
+	17 ConditionalJump @b7, v6 @ TEMP_v4 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Jump @b8
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return v25 @ L0_v3 (System.Boolean)
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0xC13ADF LocalGet 0
+	0xC13AE1 I32Load8_S 0, 8
+	0xC13AE4 I32Const 0
+	0xC13AE6 I32Ne
+	0xC13AE7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._bindable (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x108B228 I32Const 4564442
+	0x108B22D I32Load8_S 0, 0
+	0x108B230 I32Eqz
+	0x108B231 If -64
+	0x108B233 I32Const 2995908
+	0x108B238 I32Load 2, 0
+	0x108B23B Call 73003
+	0x108B23F I32Const 4564442
+	0x108B244 I32Const 1
+	0x108B246 I32Store8 0, 0
+	0x108B249 End
+	0x108B24A I32Const 4432380
+	0x108B24F I32Load 2, 0
+	0x108B252 I32Load 2, 92
+	0x108B255 I32Const 4513836
+	0x108B25A I32Load 2, 0
+	0x108B25D I32Store 2, 0
+	0x108B260 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v9, [2DB6C4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45A5DA], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Move v13.none (System.String), "(none)"
+	18 Nop
+	19 Return
+

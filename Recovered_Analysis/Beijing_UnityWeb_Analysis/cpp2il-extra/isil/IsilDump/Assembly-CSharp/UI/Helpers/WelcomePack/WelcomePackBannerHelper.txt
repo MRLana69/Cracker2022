@@ -1,0 +1,1952 @@
+Type: UI.Helpers.WelcomePack.WelcomePackBannerHelper
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xC1634C LocalGet 0
+	0xC1634E I32Const 0
+	0xC16350 Call 73999
+	0xC16354 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid UpgradeScreen.Start, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	3 Nop
+	4 Return
+
+Method: System.Void LoadInAppPackIfNotLoaded()
+
+Disassembly:
+	0xD44999 I32Const 4554427
+	0xD4499E I32Load8_S 0, 0
+	0xD449A1 I32Eqz
+	0xD449A2 If -64
+	0xD449A4 I32Const 3027216
+	0xD449A9 I32Load 2, 0
+	0xD449AC Call 73003
+	0xD449B0 I32Const 4554427
+	0xD449B5 I32Const 1
+	0xD449B7 I32Store8 0, 0
+	0xD449BA End
+	0xD449BB I32Const 0
+	0xD449BD Call 39642
+	0xD449C1 If -64
+	0xD449C3 LocalGet 0
+	0xD449C5 I32Const 0
+	0xD449C7 Call 34078
+	0xD449CB LocalGet 0
+	0xD449CD I32Const 0
+	0xD449CF Call 34079
+	0xD449D3 End
+	0xD449D4 I32Const 4436272
+	0xD449D9 I32Load 2, 0
+	0xD449DC LocalTee 1
+	0xD449DE I32Load16_S 1, 186
+	0xD449E2 I32Const 512
+	0xD449E5 I32And
+	0xD449E6 If -64
+	0xD449E8 LocalGet 1
+	0xD449EA I32Load 2, 116
+	0xD449ED I32Eqz
+	0xD449EE If -64
+	0xD449F0 LocalGet 1
+	0xD449F2 Call 72345
+	0xD449F6 End
+	0xD449F7 End
+	0xD449F8 I32Const 0
+	0xD449FA Call 41556
+	0xD449FE If -64
+	0xD44A00 I32Const 4436272
+	0xD44A05 I32Load 2, 0
+	0xD44A08 LocalTee 1
+	0xD44A0A I32Load16_S 1, 186
+	0xD44A0E I32Const 512
+	0xD44A11 I32And
+	0xD44A12 If -64
+	0xD44A14 LocalGet 1
+	0xD44A16 I32Load 2, 116
+	0xD44A19 I32Eqz
+	0xD44A1A If -64
+	0xD44A1C LocalGet 1
+	0xD44A1E Call 72345
+	0xD44A22 End
+	0xD44A23 End
+	0xD44A24 I32Const 0
+	0xD44A26 Call 41557
+	0xD44A2A I32Const 4436308
+	0xD44A2F I32Load 2, 0
+	0xD44A32 Call 72556
+	0xD44A36 LocalTee 3
+	0xD44A38 LocalTee 2
+	0xD44A3A I32Const 4492724
+	0xD44A3F I32Load 2, 0
+	0xD44A42 LocalTee 4
+	0xD44A44 I32Load 2, 0
+	0xD44A47 I32Store 2, 8
+	0xD44A4A LocalGet 2
+	0xD44A4C LocalGet 4
+	0xD44A4E I32Store 2, 20
+	0xD44A51 LocalGet 2
+	0xD44A53 I32Const 16
+	0xD44A55 I32Add
+	0xD44A56 LocalGet 0
+	0xD44A58 I32Store 2, 0
+	0xD44A5B LocalGet 3
+	0xD44A5D I32Const 0
+	0xD44A5F Call 41536
+	0xD44A63 End
+	0xD44A64 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b20
+	5 Nop
+	6 Move v5 @ S0_v34, [2E3110]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v34
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [457EBB], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Call WelcomePackManager.ParseFirstInstalledVersion, v12 @ S0_v6 (System.Int32)
+	14 CheckEqual v13 @ TEMP_v2 (System.Boolean), v12 @ S0_v6 (System.Int32), 0
+	15 ConditionalJump @b8, v13 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 CallVoid WelcomePackBannerHelper.Setup, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	19 Nop
+	20 Nop
+	21 CallVoid WelcomePackBannerHelper.SetupModels, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	22 Nop
+	23 Nop
+	24 Move v22 @ S0_v9 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 And v26 @ S0_v11, [v22 @ S0_v9 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	29 CheckEqual v27 @ TEMP_v3 (System.Boolean), v26 @ S0_v11, 0
+	30 ConditionalJump @b21, v27 @ TEMP_v3 (System.Boolean)
+	31 Move v28 @ S0_v27 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	32 Nop
+	33 CheckEqual v30 @ S0_v29 (System.Boolean), [v28 @ S0_v27 (Il2CppClass<InApp.InAppManager>)+74], 0
+	34 Not v31 @ TEMP_v10 (System.Boolean), v30 @ S0_v29 (System.Boolean)
+	35 ConditionalJump @b21, v31 @ TEMP_v10 (System.Boolean)
+	36 Nop
+	37 CallVoid 11A99, typeof(InApp.InAppManager)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call InAppManager.get_instance, v36 @ S0_v14 (InApp.InAppManager)
+	42 CheckEqual v37 @ TEMP_v5 (System.Boolean), v36 @ S0_v14 (InApp.InAppManager), 0
+	43 ConditionalJump @b19, v37 @ TEMP_v5 (System.Boolean)
+	44 Nop
+	45 Move v39 @ S0_v17 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 And v43 @ S0_v19, [v39 @ S0_v17 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	50 CheckEqual v44 @ TEMP_v7 (System.Boolean), v43 @ S0_v19, 0
+	51 ConditionalJump @b22, v44 @ TEMP_v7 (System.Boolean)
+	52 Move v64 @ S0_v23 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	53 Nop
+	54 CheckEqual v66 @ S0_v25 (System.Boolean), [v64 @ S0_v23 (Il2CppClass<InApp.InAppManager>)+74], 0
+	55 Not v67 @ TEMP_v9 (System.Boolean), v66 @ S0_v25 (System.Boolean)
+	56 ConditionalJump @b22, v67 @ TEMP_v9 (System.Boolean)
+	57 Nop
+	58 CallVoid 11A99, typeof(InApp.InAppManager)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Call InAppManager.GetActiveInAppOffers, v63 @ S0_v22 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	63 Nop
+	64 Nop
+	65 Call 11B6C, v73 @ S1_v8 (InApp.InAppManager+OnPurchaseSuccess), typeof(InApp.InAppManager+OnPurchaseSuccess)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Move v75 @ S2_v3 (Il2CppMethodInfo), methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnPurchaseSuccess)
+	70 Nop
+	71 Nop
+	72 Move v73.method_ptr (System.IntPtr), [v75 @ S2_v3 (Il2CppMethodInfo)]
+	73 Nop
+	74 Nop
+	75 Move v73.method (System.IntPtr), methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnPurchaseSuccess)
+	76 Nop
+	77 Nop
+	78 Add v81 @ S1_v11, v73 @ S1_v8 (InApp.InAppManager+OnPurchaseSuccess), 16
+	79 Nop
+	80 Move [v81 @ S1_v11], this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	81 Nop
+	82 Nop
+	83 CallVoid InAppManager.remove_onPurchaseSuccess, v63 @ S0_v22 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v73 @ S1_v8 (InApp.InAppManager+OnPurchaseSuccess)
+	84 Nop
+	85 Nop
+	86 Return
+
+Method: System.Void Setup()
+
+Disassembly:
+	0xD44A6A I32Const 4554430
+	0xD44A6F I32Load8_S 0, 0
+	0xD44A72 I32Eqz
+	0xD44A73 If -64
+	0xD44A75 I32Const 3027208
+	0xD44A7A I32Load 2, 0
+	0xD44A7D Call 73003
+	0xD44A81 I32Const 4554430
+	0xD44A86 I32Const 1
+	0xD44A88 I32Store8 0, 0
+	0xD44A8B End
+	0xD44A8C LocalGet 0
+	0xD44A8E I32Load 2, 68
+	0xD44A91 I32Eqz
+	0xD44A92 If -64
+	0xD44A94 I32Const 0
+	0xD44A96 Call 39639
+	0xD44A9A LocalTee 2
+	0xD44A9C If -1
+	0xD44A9E LocalGet 2
+	0xD44AA0 I32Load 2, 8
+	0xD44AA3 I32Eqz
+	0xD44AA4 Else
+	0xD44AA5 I32Const 1
+	0xD44AA7 End
+	0xD44AA8 I32Eqz
+	0xD44AA9 If -64
+	0xD44AAB I32Const 4436304
+	0xD44AB0 I32Load 2, 0
+	0xD44AB3 LocalTee 1
+	0xD44AB5 I32Load16_S 1, 186
+	0xD44AB9 I32Const 512
+	0xD44ABC I32And
+	0xD44ABD If -64
+	0xD44ABF LocalGet 1
+	0xD44AC1 I32Load 2, 116
+	0xD44AC4 I32Eqz
+	0xD44AC5 If -64
+	0xD44AC7 LocalGet 1
+	0xD44AC9 Call 72345
+	0xD44ACD I32Const 4436304
+	0xD44AD2 I32Load 2, 0
+	0xD44AD5 LocalSet 1
+	0xD44AD7 End
+	0xD44AD8 End
+	0xD44AD9 LocalGet 0
+	0xD44ADB I32Const 68
+	0xD44ADE I32Add
+	0xD44ADF LocalGet 1
+	0xD44AE1 I32Load 2, 92
+	0xD44AE4 I32Load 2, 44
+	0xD44AE7 I32Const 0
+	0xD44AE9 Call 39639
+	0xD44AED I32Const 4449952
+	0xD44AF2 I32Load 2, 0
+	0xD44AF5 Call 29792
+	0xD44AF9 I32Store 2, 0
+	0xD44AFC End
+	0xD44AFD End
+	0xD44AFE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b15
+	5 Nop
+	6 Move v5 @ S0_v31, [2E3108]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v31
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [457EBE], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), this._inAppPack (InApp.InAppItemModel), 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b19, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Call WelcomePackManager.IsWelcomePackActive, v17 @ S0_v10 (System.Boolean)
+	19 Nop
+	20 Not v38 @ TEMP_v4 (System.Boolean), v17 @ S0_v10 (System.Boolean)
+	21 ConditionalJump @b8, v38 @ TEMP_v4 (System.Boolean)
+	22 Nop
+	23 Nop
+	24 CheckEqual v43 @ S0_v11 (System.Boolean), [v17 @ S0_v10 (System.Boolean)+8], 0
+	25 Jump @b16
+	26 Nop
+	27 Nop
+	28 Not v37 @ S0_v12 (System.Boolean), v43 @ S0_v11 (System.Boolean)
+	29 Not v34 @ TEMP_v5 (System.Boolean), v37 @ S0_v12 (System.Boolean)
+	30 ConditionalJump @b19, v34 @ TEMP_v5 (System.Boolean)
+	31 Nop
+	32 Move v45 @ S0_v14 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 And v49 @ S0_v16, [v45 @ S0_v14 (Il2CppClass<InApp.InAppData>)+BA], 512
+	37 CheckEqual v50 @ TEMP_v6 (System.Boolean), v49 @ S0_v16, 0
+	38 ConditionalJump @b17, v50 @ TEMP_v6 (System.Boolean)
+	39 Move v51 @ S0_v20 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	40 Nop
+	41 CheckEqual v53 @ S0_v22 (System.Boolean), [v51 @ S0_v20 (Il2CppClass<InApp.InAppData>)+74], 0
+	42 Not v54 @ TEMP_v8 (System.Boolean), v53 @ S0_v22 (System.Boolean)
+	43 ConditionalJump @b17, v54 @ TEMP_v8 (System.Boolean)
+	44 Nop
+	45 CallVoid 11A99, typeof(InApp.InAppData)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Add v36 @ S0_v19, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), 68
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Call WelcomePackManager.IsWelcomePackActive, v20 @ S2_v3 (System.Boolean)
+	59 Nop
+	60 Nop
+	61 Call Dictionary`2<System.String, InApp.InAppItemModel>.get_Item, v31 @ S1_v8 (InApp.InAppItemModel), v61.inAppData (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v20 @ S2_v3 (System.Boolean)
+	62 Move [v36 @ S0_v19], v31 @ S1_v8 (InApp.InAppItemModel)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Return
+
+Method: System.Void SetupModels()
+
+Disassembly:
+	0xD44B01 LocalGet 0
+	0xD44B03 I32Const 0
+	0xD44B05 Call 34080
+	0xD44B09 LocalGet 0
+	0xD44B0B I32Const 0
+	0xD44B0D Call 34081
+	0xD44B11 LocalGet 0
+	0xD44B13 LocalGet 0
+	0xD44B15 I32Load 2, 68
+	0xD44B18 I32Load 2, 36
+	0xD44B1B I32Const 0
+	0xD44B1D Call 34082
+	0xD44B21 LocalGet 0
+	0xD44B23 I32Const 1
+	0xD44B25 I32Store8 0, 72
+	0xD44B28 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid WelcomePackBannerHelper.SetupTimer, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	3 Nop
+	4 Nop
+	5 CallVoid WelcomePackBannerHelper.OnDisable, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	6 Nop
+	7 Nop
+	8 Move v7 @ S1_v4 (InApp.InAppItemModel), this._inAppPack (InApp.InAppItemModel)
+	9 Nop
+	10 Nop
+	11 CallVoid WelcomePackBannerHelper.OnItemRestoreFinished, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), v7.bundleContents (System.Collections.Generic.List`1<InApp.InAppItemModel+BundleItem>)
+	12 Nop
+	13 Nop
+	14 Move this._isSetup (System.Boolean), 1
+	15 Nop
+	16 Return
+
+Method: System.Void SetupTimer()
+
+Disassembly:
+	0xD44B2B LocalGet 0
+	0xD44B2D I32Load 2, 20
+	0xD44B30 I32Const 0
+	0xD44B32 I32Const 1
+	0xD44B34 I32Const 0
+	0xD44B36 Call 32280
+	0xD44B3A LocalGet 0
+	0xD44B3C I32Load 2, 28
+	0xD44B3F I32Const 0
+	0xD44B41 I32Const 1
+	0xD44B43 I32Const 0
+	0xD44B45 Call 32280
+	0xD44B49 LocalGet 0
+	0xD44B4B I32Load 2, 36
+	0xD44B4E I32Const 0
+	0xD44B50 I32Const 1
+	0xD44B52 I32Const 0
+	0xD44B54 Call 32280
+	0xD44B58 LocalGet 0
+	0xD44B5A I32Load 2, 44
+	0xD44B5D I32Const 0
+	0xD44B5F I32Const 1
+	0xD44B61 I32Const 0
+	0xD44B63 Call 32280
+	0xD44B67 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 CallVoid CharacterPromotionPopup.OnCharacterPurchaseSuccess, this._mainCellRenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup), 0, 1
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CallVoid CharacterPromotionPopup.OnCharacterPurchaseSuccess, this._cell1RenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup), 0, 1
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 CallVoid CharacterPromotionPopup.OnCharacterPurchaseSuccess, this._cell2RenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup), 0, 1
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid CharacterPromotionPopup.OnCharacterPurchaseSuccess, this._cell3RenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup), 0, 1
+	24 Nop
+	25 Return
+
+Method: System.Void SetupLabels(System.Collections.Generic.List`1<InApp.InAppItemModel+BundleItem> content)
+
+Disassembly:
+	0xD313DA LocalGet 0
+	0xD313DC I32Load 2, 24
+	0xD313DF LocalGet 1
+	0xD313E1 I32Const 50
+	0xD313E3 I32Add
+	0xD313E4 I32Const 0
+	0xD313E6 Call 40126
+	0xD313EA LocalGet 0
+	0xD313EC I32Load 2, 28
+	0xD313EF LocalGet 1
+	0xD313F1 I32Const 50
+	0xD313F3 I32Add
+	0xD313F4 I32Const 0
+	0xD313F6 Call 40126
+	0xD313FA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v6 @ S1_v2 (System.Int32), content @ L1 (System.Collections.Generic.List`1<InApp.InAppItemModel+BundleItem>), 50
+	5 Nop
+	6 CallVoid UIPanel.set_sortingOrder, this._cell1Label (UILabel), v6 @ S1_v2 (System.Int32)
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Add v12 @ S1_v4 (System.Int32), content @ L1 (System.Collections.Generic.List`1<InApp.InAppItemModel+BundleItem>), 50
+	12 Nop
+	13 CallVoid UIPanel.set_sortingOrder, this._cell1RenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup), v12 @ S1_v4 (System.Int32)
+	14 Nop
+	15 Return
+
+Method: System.Void OnDisable()
+
+Disassembly:
+	0xD44B6D GlobalGet 7
+	0xD44B6F LocalSet 2
+	0xD44B71 GlobalGet 7
+	0xD44B73 I32Const 96
+	0xD44B76 I32Add
+	0xD44B77 GlobalSet 7
+	0xD44B79 I32Const 4554429
+	0xD44B7E I32Load8_S 0, 0
+	0xD44B81 I32Eqz
+	0xD44B82 If -64
+	0xD44B84 I32Const 3027240
+	0xD44B89 I32Load 2, 0
+	0xD44B8C Call 73003
+	0xD44B90 I32Const 4554429
+	0xD44B95 I32Const 1
+	0xD44B97 I32Store8 0, 0
+	0xD44B9A End
+	0xD44B9B LocalGet 0
+	0xD44B9D I32Load 2, 52
+	0xD44BA0 LocalSet 3
+	0xD44BA2 LocalGet 0
+	0xD44BA4 I32Load 2, 56
+	0xD44BA7 I32Const 0
+	0xD44BA9 Call 62780
+	0xD44BAD LocalSet 4
+	0xD44BAF I32Const 4433280
+	0xD44BB4 I32Load 2, 0
+	0xD44BB7 LocalTee 1
+	0xD44BB9 I32Load16_S 1, 186
+	0xD44BBD I32Const 512
+	0xD44BC0 I32And
+	0xD44BC1 If -64
+	0xD44BC3 LocalGet 1
+	0xD44BC5 I32Load 2, 116
+	0xD44BC8 I32Eqz
+	0xD44BC9 If -64
+	0xD44BCB LocalGet 1
+	0xD44BCD Call 72345
+	0xD44BD1 End
+	0xD44BD2 End
+	0xD44BD3 LocalGet 0
+	0xD44BD5 I32Const -64
+	0xD44BD7 I32Sub
+	0xD44BD8 LocalGet 3
+	0xD44BDA LocalGet 4
+	0xD44BDC I32Const 4447568
+	0xD44BE1 I32Load 2, 0
+	0xD44BE4 Call 29868
+	0xD44BE8 I32Store 2, 0
+	0xD44BEB LocalGet 0
+	0xD44BED I32Const -64
+	0xD44BEF I32Sub
+	0xD44BF0 I32Load 2, 0
+	0xD44BF3 I32Const 4436296
+	0xD44BF8 I32Load 2, 0
+	0xD44BFB LocalTee 1
+	0xD44BFD I32Load16_S 1, 186
+	0xD44C01 I32Const 512
+	0xD44C04 I32And
+	0xD44C05 If -64
+	0xD44C07 LocalGet 1
+	0xD44C09 I32Load 2, 116
+	0xD44C0C I32Eqz
+	0xD44C0D If -64
+	0xD44C0F LocalGet 1
+	0xD44C11 Call 72345
+	0xD44C15 I32Const 4436296
+	0xD44C1A I32Load 2, 0
+	0xD44C1D LocalSet 1
+	0xD44C1F End
+	0xD44C20 End
+	0xD44C21 LocalGet 2
+	0xD44C23 I32Const -64
+	0xD44C25 I32Sub
+	0xD44C26 LocalTee 3
+	0xD44C28 LocalGet 1
+	0xD44C2A I32Load 2, 92
+	0xD44C2D I32Load 2, 48
+	0xD44C30 I32Store 2, 0
+	0xD44C33 LocalGet 2
+	0xD44C35 I32Const 68
+	0xD44C38 I32Add
+	0xD44C39 LocalTee 4
+	0xD44C3B LocalGet 3
+	0xD44C3D I32Load 2, 0
+	0xD44C40 I32Store 2, 0
+	0xD44C43 LocalGet 2
+	0xD44C45 I32Const 8
+	0xD44C47 I32Add
+	0xD44C48 LocalTee 1
+	0xD44C4A LocalGet 4
+	0xD44C4C I32Load 2, 0
+	0xD44C4F I32Store 2, 0
+	0xD44C52 LocalGet 2
+	0xD44C54 I32Const 48
+	0xD44C56 I32Add
+	0xD44C57 LocalTee 4
+	0xD44C59 LocalGet 1
+	0xD44C5B I32Const 0
+	0xD44C5D Call 62776
+	0xD44C61 LocalGet 2
+	0xD44C63 I32Const 40
+	0xD44C65 I32Add
+	0xD44C66 LocalTee 3
+	0xD44C68 I32Const 4436296
+	0xD44C6D I32Load 2, 0
+	0xD44C70 I32Load 2, 92
+	0xD44C73 I32Load 2, 44
+	0xD44C76 I32Store 2, 0
+	0xD44C79 LocalGet 2
+	0xD44C7B I32Const 44
+	0xD44C7D I32Add
+	0xD44C7E LocalTee 5
+	0xD44C80 LocalGet 3
+	0xD44C82 I32Load 2, 0
+	0xD44C85 I32Store 2, 0
+	0xD44C88 LocalGet 1
+	0xD44C8A LocalGet 5
+	0xD44C8C I32Load 2, 0
+	0xD44C8F I32Store 2, 0
+	0xD44C92 LocalGet 2
+	0xD44C94 I32Const 24
+	0xD44C96 I32Add
+	0xD44C97 LocalTee 5
+	0xD44C99 LocalGet 1
+	0xD44C9B I32Const 0
+	0xD44C9D Call 62776
+	0xD44CA1 LocalGet 2
+	0xD44CA3 I32Const 72
+	0xD44CA6 I32Add
+	0xD44CA7 LocalTee 3
+	0xD44CA9 LocalGet 4
+	0xD44CAB I64Load 2, 0
+	0xD44CAE I64Store 2, 0
+	0xD44CB1 LocalGet 3
+	0xD44CB3 LocalGet 4
+	0xD44CB5 I64Load 2, 8
+	0xD44CB8 I64Store 2, 8
+	0xD44CBB LocalGet 1
+	0xD44CBD LocalGet 5
+	0xD44CBF I64Load 2, 0
+	0xD44CC2 I64Store 2, 0
+	0xD44CC5 LocalGet 1
+	0xD44CC7 LocalGet 5
+	0xD44CC9 I64Load 2, 8
+	0xD44CCC I64Store 2, 8
+	0xD44CCF LocalGet 3
+	0xD44CD1 LocalGet 1
+	0xD44CD3 I32Const 0
+	0xD44CD5 Call 34031
+	0xD44CD9 LocalGet 0
+	0xD44CDB I32Const -64
+	0xD44CDD I32Sub
+	0xD44CDE I32Load 2, 0
+	0xD44CE1 I32Const 0
+	0xD44CE3 I32Const 0
+	0xD44CE5 Call 34030
+	0xD44CE9 LocalGet 0
+	0xD44CEB I32Const -64
+	0xD44CED I32Sub
+	0xD44CEE I32Load 2, 0
+	0xD44CF1 I32Const 0
+	0xD44CF3 Call 62780
+	0xD44CF7 I32Const 4433316
+	0xD44CFC I32Load 2, 0
+	0xD44CFF LocalTee 4
+	0xD44D01 I32Load16_S 1, 186
+	0xD44D05 I32Const 512
+	0xD44D08 I32And
+	0xD44D09 If -64
+	0xD44D0B LocalGet 4
+	0xD44D0D I32Load 2, 116
+	0xD44D10 I32Eqz
+	0xD44D11 If -64
+	0xD44D13 LocalGet 4
+	0xD44D15 Call 72345
+	0xD44D19 End
+	0xD44D1A End
+	0xD44D1B LocalGet 3
+	0xD44D1D I32Const 0
+	0xD44D1F Call 70752
+	0xD44D23 LocalGet 1
+	0xD44D25 LocalGet 3
+	0xD44D27 I64Load 2, 0
+	0xD44D2A I64Store 2, 0
+	0xD44D2D LocalGet 1
+	0xD44D2F LocalGet 3
+	0xD44D31 I32Load 2, 8
+	0xD44D34 I32Store 2, 8
+	0xD44D37 LocalGet 1
+	0xD44D39 I32Const 0
+	0xD44D3B Call 64340
+	0xD44D3F LocalGet 0
+	0xD44D41 I32Const -64
+	0xD44D43 I32Sub
+	0xD44D44 I32Load 2, 0
+	0xD44D47 LocalGet 2
+	0xD44D49 I32Const 0
+	0xD44D4B Call 39640
+	0xD44D4F I64Store 3, 0
+	0xD44D52 LocalGet 1
+	0xD44D54 LocalGet 2
+	0xD44D56 I64Load 3, 0
+	0xD44D59 I64Store 3, 0
+	0xD44D5C LocalGet 1
+	0xD44D5E I32Const 0
+	0xD44D60 Call 34022
+	0xD44D64 LocalGet 2
+	0xD44D66 GlobalSet 7
+	0xD44D68 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b25
+	11 Nop
+	12 Move v12 @ S0_v39, [2E3128]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v39
+	14 Nop
+	15 Move v14 @ S1_v62, 1
+	16 Move [457EBD], v14 @ S1_v62
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Call Component.get_gameObject, v24 @ S0_v12 (UnityEngine.GameObject), this._timerContainer (UIWidget)
+	25 Nop
+	26 Nop
+	27 Move v27 @ S0_v14 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 And v31 @ S0_v16, [v27 @ S0_v14 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	32 CheckEqual v32 @ TEMP_v2 (System.Boolean), v31 @ S0_v16, 0
+	33 ConditionalJump @b26, v32 @ TEMP_v2 (System.Boolean)
+	34 Move v33 @ S0_v34 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	35 Nop
+	36 CheckEqual v35 @ S0_v36 (System.Boolean), [v33 @ S0_v34 (Il2CppClass<UnityEngine.Object>)+74], 0
+	37 Not v36 @ TEMP_v10 (System.Boolean), v35 @ S0_v36 (System.Boolean)
+	38 ConditionalJump @b26, v36 @ TEMP_v10 (System.Boolean)
+	39 Nop
+	40 CallVoid 11A99, typeof(UnityEngine.Object)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Subtract v42 @ S0_v19, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), -64
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call Object.Instantiate, v47 @ S1_v7 (UI.Generic.TimerHelper), this._timerPrefab (UI.Generic.TimerHelper), v24 @ S0_v12 (UnityEngine.GameObject)
+	51 Move [v42 @ S0_v19], v47 @ S1_v7 (UI.Generic.TimerHelper)
+	52 Nop
+	53 Nop
+	54 Subtract v50 @ S0_v21, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), -64
+	55 Nop
+	56 Nop
+	57 Move v53 @ S1_v10 (Il2CppClass<GlobalColorsGenerated>), typeof(GlobalColorsGenerated)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 And v57 @ S1_v12, [v53 @ S1_v10 (Il2CppClass<GlobalColorsGenerated>)+BA], 512
+	62 CheckEqual v58 @ TEMP_v4 (System.Boolean), v57 @ S1_v12, 0
+	63 ConditionalJump @b27, v58 @ TEMP_v4 (System.Boolean)
+	64 Move v59 @ S1_v56 (Il2CppClass<GlobalColorsGenerated>), typeof(GlobalColorsGenerated)
+	65 Nop
+	66 CheckEqual v61 @ S1_v58 (System.Boolean), [v59 @ S1_v56 (Il2CppClass<GlobalColorsGenerated>)+74], 0
+	67 Not v62 @ TEMP_v9 (System.Boolean), v61 @ S1_v58 (System.Boolean)
+	68 ConditionalJump @b27, v62 @ TEMP_v9 (System.Boolean)
+	69 Nop
+	70 CallVoid 11A99, typeof(GlobalColorsGenerated)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Subtract v70 @ S1_v15, v1 @ G7, -64
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Move [v70 @ S1_v15], v73.WEEKLYHUNT_TIMER_TEXT (UnityEngine.Color32)
+	84 Nop
+	85 Nop
+	86 Add v77 @ S1_v17, v1 @ G7, 68
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Move [v77 @ S1_v17], [v70 @ S1_v15]
+	91 Nop
+	92 Nop
+	93 Add v83 @ S1_v19 (UnityEngine.Matrix4x4), v1 @ G7, 8
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Move v83.m00 (System.Single), [v77 @ S1_v17]
+	98 Nop
+	99 Nop
+	100 Add v89 @ S1_v21, v1 @ G7, 48
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Call Matrix4x4.Inverse, v93 @ SRET_v1 (UnityEngine.Matrix4x4), v83 @ S1_v19 (UnityEngine.Matrix4x4)
+	105 Nop
+	106 Nop
+	107 Add v97 @ S1_v23, v1 @ G7, 40
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Move [v97 @ S1_v23], v101.WEEKLYHUNT_TIMER_BG (UnityEngine.Color32)
+	114 Nop
+	115 Nop
+	116 Add v105 @ S1_v25, v1 @ G7, 44
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Move [v105 @ S1_v25], [v97 @ S1_v23]
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Move v83.m00 (System.Single), [v105 @ S1_v25]
+	125 Nop
+	126 Nop
+	127 Add v114 @ S1_v28, v1 @ G7, 24
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Call Matrix4x4.Inverse, v118 @ SRET_v2 (UnityEngine.Matrix4x4), v83 @ S1_v19 (UnityEngine.Matrix4x4)
+	132 Nop
+	133 Nop
+	134 Add v122 @ S1_v30 (System.Boolean), v1 @ G7, 72
+	135 Nop
+	136 Nop
+	137 Nop
+	138 Move v122.m_value (System.Boolean), [v89 @ S1_v21]
+	139 Nop
+	140 Nop
+	141 Nop
+	142 Move [v122 @ S1_v30 (System.Boolean)+8], [v89 @ S1_v21+8]
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Move v83.m00 (System.Single), [v114 @ S1_v28]
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Move v83.m20 (System.Single), [v114 @ S1_v28+8]
+	151 Nop
+	152 Nop
+	153 Nop
+	154 CallVoid TimerHelper.AnimateClock, [v50 @ S0_v21], v122 @ S1_v30 (System.Boolean), v83 @ S1_v19 (UnityEngine.Matrix4x4)
+	155 Nop
+	156 Nop
+	157 Subtract v140 @ S0_v24, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), -64
+	158 Nop
+	159 Nop
+	160 Nop
+	161 CallVoid TimerHelper.SetTimerText, [v140 @ S0_v24], 0
+	162 Nop
+	163 Nop
+	164 Subtract v146 @ S0_v27, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), -64
+	165 Nop
+	166 Nop
+	167 Call Component.get_gameObject, v149 @ S0_v29 (UnityEngine.GameObject), [v146 @ S0_v27]
+	168 Nop
+	169 Move v151 @ S1_v40 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	170 Nop
+	171 Nop
+	172 Nop
+	173 And v155 @ S1_v42, [v151 @ S1_v40 (Il2CppClass<UnityEngine.Vector3>)+BA], 512
+	174 CheckEqual v156 @ TEMP_v6 (System.Boolean), v155 @ S1_v42, 0
+	175 ConditionalJump @b29, v156 @ TEMP_v6 (System.Boolean)
+	176 Move v157 @ S1_v52 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	177 Nop
+	178 CheckEqual v159 @ S1_v54 (System.Boolean), [v157 @ S1_v52 (Il2CppClass<UnityEngine.Vector3>)+74], 0
+	179 Not v160 @ TEMP_v8 (System.Boolean), v159 @ S1_v54 (System.Boolean)
+	180 ConditionalJump @b29, v160 @ TEMP_v8 (System.Boolean)
+	181 Nop
+	182 CallVoid 11A99, typeof(UnityEngine.Vector3)
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Call Vector3.get_one, v166 @ SRET_v3 (UnityEngine.Vector3)
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Move v83.m00 (System.Single), v122.m_value (System.Boolean)
+	192 Nop
+	193 Nop
+	194 Nop
+	195 Move v83.m20 (System.Single), [v122 @ S1_v30 (System.Boolean)+8]
+	196 Nop
+	197 Nop
+	198 Call Transform.get_eulerAngles, v175 @ SRET_v4 (UnityEngine.Vector3), v83 @ S1_v19 (UnityEngine.Matrix4x4)
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Call AnalyticsManager.GetMsTicksSinceDeviceStartup, v182 @ S2_v46 (System.Int64)
+	206 Move [v1 @ G7], v182 @ S2_v46 (System.Int64)
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Move v83.m00 (System.Single), [v1 @ G7]
+	211 Nop
+	212 Nop
+	213 Throw typeof(System.OverflowException)
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Return
+
+Method: System.Void DeactivateCells()
+
+Disassembly:
+	0xD44FC1 I32Const 4554431
+	0xD44FC6 I32Load8_S 0, 0
+	0xD44FC9 I32Eqz
+	0xD44FCA If -64
+	0xD44FCC I32Const 3027212
+	0xD44FD1 I32Load 2, 0
+	0xD44FD4 Call 73003
+	0xD44FD8 I32Const 4554431
+	0xD44FDD I32Const 1
+	0xD44FDF I32Store8 0, 0
+	0xD44FE2 End
+	0xD44FE3 I32Const 4436272
+	0xD44FE8 I32Load 2, 0
+	0xD44FEB LocalTee 1
+	0xD44FED I32Load16_S 1, 186
+	0xD44FF1 I32Const 512
+	0xD44FF4 I32And
+	0xD44FF5 If -64
+	0xD44FF7 LocalGet 1
+	0xD44FF9 I32Load 2, 116
+	0xD44FFC I32Eqz
+	0xD44FFD If -64
+	0xD44FFF LocalGet 1
+	0xD45001 Call 72345
+	0xD45005 End
+	0xD45006 End
+	0xD45007 I32Const 0
+	0xD45009 Call 41556
+	0xD4500D If -64
+	0xD4500F I32Const 4436272
+	0xD45014 I32Load 2, 0
+	0xD45017 LocalTee 1
+	0xD45019 I32Load16_S 1, 186
+	0xD4501D I32Const 512
+	0xD45020 I32And
+	0xD45021 If -64
+	0xD45023 LocalGet 1
+	0xD45025 I32Load 2, 116
+	0xD45028 I32Eqz
+	0xD45029 If -64
+	0xD4502B LocalGet 1
+	0xD4502D Call 72345
+	0xD45031 End
+	0xD45032 End
+	0xD45033 I32Const 0
+	0xD45035 Call 41557
+	0xD45039 I32Const 4436308
+	0xD4503E I32Load 2, 0
+	0xD45041 Call 72556
+	0xD45045 LocalTee 3
+	0xD45047 LocalTee 2
+	0xD45049 I32Const 4492724
+	0xD4504E I32Load 2, 0
+	0xD45051 LocalTee 4
+	0xD45053 I32Load 2, 0
+	0xD45056 I32Store 2, 8
+	0xD45059 LocalGet 2
+	0xD4505B LocalGet 4
+	0xD4505D I32Store 2, 20
+	0xD45060 LocalGet 2
+	0xD45062 I32Const 16
+	0xD45064 I32Add
+	0xD45065 LocalGet 0
+	0xD45067 I32Store 2, 0
+	0xD4506A LocalGet 3
+	0xD4506C I32Const 0
+	0xD4506E Call 41537
+	0xD45072 End
+	0xD45073 LocalGet 0
+	0xD45075 I32Load8_S 0, 72
+	0xD45078 If -64
+	0xD4507A LocalGet 0
+	0xD4507C I32Const 0
+	0xD4507E Call 34084
+	0xD45082 LocalGet 0
+	0xD45084 I32Const 0
+	0xD45086 I32Store8 0, 72
+	0xD45089 End
+	0xD4508A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b18
+	5 Nop
+	6 Move v5 @ S0_v34, [2E310C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v34
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [457EBF], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b21, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v29 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v31 (System.Boolean), [v18 @ S0_v29 (Il2CppClass<InApp.InAppManager>)+74], 0
+	23 Not v21 @ TEMP_v10 (System.Boolean), v20 @ S0_v31 (System.Boolean)
+	24 ConditionalJump @b21, v21 @ TEMP_v10 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(InApp.InAppManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call InAppManager.get_instance, v26 @ S0_v11 (InApp.InAppManager)
+	31 CheckEqual v27 @ TEMP_v4 (System.Boolean), v26 @ S0_v11 (InApp.InAppManager), 0
+	32 ConditionalJump @b15, v27 @ TEMP_v4 (System.Boolean)
+	33 Nop
+	34 Move v29 @ S0_v19 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 And v33 @ S0_v21, [v29 @ S0_v19 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	39 CheckEqual v34 @ TEMP_v7 (System.Boolean), v33 @ S0_v21, 0
+	40 ConditionalJump @b19, v34 @ TEMP_v7 (System.Boolean)
+	41 Move v58 @ S0_v25 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	42 Nop
+	43 CheckEqual v60 @ S0_v27 (System.Boolean), [v58 @ S0_v25 (Il2CppClass<InApp.InAppManager>)+74], 0
+	44 Not v61 @ TEMP_v9 (System.Boolean), v60 @ S0_v27 (System.Boolean)
+	45 ConditionalJump @b19, v61 @ TEMP_v9 (System.Boolean)
+	46 Nop
+	47 CallVoid 11A99, typeof(InApp.InAppManager)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Call InAppManager.GetActiveInAppOffers, v53 @ S0_v24 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	52 Nop
+	53 Nop
+	54 Call 11B6C, v73 @ S1_v10 (InApp.InAppManager+OnPurchaseFailure), typeof(InApp.InAppManager+OnPurchaseSuccess)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Move v75 @ S2_v3 (Il2CppMethodInfo), methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnPurchaseSuccess)
+	59 Nop
+	60 Nop
+	61 Move v73.method_ptr (System.IntPtr), [v75 @ S2_v3 (Il2CppMethodInfo)]
+	62 Nop
+	63 Nop
+	64 Move v73.method (System.IntPtr), methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnPurchaseSuccess)
+	65 Nop
+	66 Nop
+	67 Add v81 @ S1_v13, v73 @ S1_v10 (InApp.InAppManager+OnPurchaseFailure), 16
+	68 Nop
+	69 Move [v81 @ S1_v13], this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	70 Nop
+	71 Nop
+	72 CallVoid InAppManager.add_onPurchaseFailure, v53 @ S0_v24 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v73 @ S1_v10 (InApp.InAppManager+OnPurchaseFailure)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Not v57 @ TEMP_v6 (System.Boolean), this._isSetup (System.Boolean)
+	77 ConditionalJump @b20, v57 @ TEMP_v6 (System.Boolean)
+	78 Nop
+	79 Nop
+	80 CallVoid WelcomePackBannerHelper.OnPurchaseClick, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	81 Nop
+	82 Nop
+	83 Move this._isSetup (System.Boolean), 0
+	84 Nop
+	85 Nop
+	86 Return
+
+Method: System.Void OnPurchaseClick()
+
+Disassembly:
+	0xD4508D LocalGet 0
+	0xD4508F I32Load 2, 20
+	0xD45092 I32Const 0
+	0xD45094 Call 32304
+	0xD45098 LocalGet 0
+	0xD4509A I32Load 2, 28
+	0xD4509D I32Const 0
+	0xD4509F Call 32304
+	0xD450A3 LocalGet 0
+	0xD450A5 I32Load 2, 36
+	0xD450A8 I32Const 0
+	0xD450AA Call 32304
+	0xD450AE LocalGet 0
+	0xD450B0 I32Load 2, 44
+	0xD450B3 I32Const 0
+	0xD450B5 Call 32304
+	0xD450B9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid RenderTextureSetupBase.OnReleaseRenderTexture, this._mainCellRenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CallVoid RenderTextureSetupBase.OnReleaseRenderTexture, this._cell1RenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CallVoid RenderTextureSetupBase.OnReleaseRenderTexture, this._cell2RenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid RenderTextureSetupBase.OnReleaseRenderTexture, this._cell3RenderTextureSetup (UI.RenderTexture.DefaultRenderTextureSetup)
+	16 Nop
+	17 Return
+
+Method: System.Void OnItemRestoreFinished(InAppPurchase.RestoreFinishedResult result)
+
+Disassembly:
+	0xD44D6E GlobalGet 7
+	0xD44D70 LocalSet 4
+	0xD44D72 GlobalGet 7
+	0xD44D74 I32Const 16
+	0xD44D76 I32Add
+	0xD44D77 GlobalSet 7
+	0xD44D79 I32Const 4554428
+	0xD44D7E I32Load8_S 0, 0
+	0xD44D81 I32Eqz
+	0xD44D82 If -64
+	0xD44D84 I32Const 3027236
+	0xD44D89 I32Load 2, 0
+	0xD44D8C Call 73003
+	0xD44D90 I32Const 4554428
+	0xD44D95 I32Const 1
+	0xD44D97 I32Store8 0, 0
+	0xD44D9A End
+	0xD44D9B LocalGet 4
+	0xD44D9D I32Const 8
+	0xD44D9F I32Add
+	0xD44DA0 LocalTee 3
+	0xD44DA2 I32Const 0
+	0xD44DA4 I32Store 2, 0
+	0xD44DA7 LocalGet 0
+	0xD44DA9 I32Load 2, 12
+	0xD44DAC I32Const 4433280
+	0xD44DB1 I32Load 2, 0
+	0xD44DB4 LocalTee 2
+	0xD44DB6 I32Load16_S 1, 186
+	0xD44DBA I32Const 512
+	0xD44DBD I32And
+	0xD44DBE If -64
+	0xD44DC0 LocalGet 2
+	0xD44DC2 I32Load 2, 116
+	0xD44DC5 I32Eqz
+	0xD44DC6 If -64
+	0xD44DC8 LocalGet 2
+	0xD44DCA Call 72345
+	0xD44DCE End
+	0xD44DCF End
+	0xD44DD0 I32Const 0
+	0xD44DD2 I32Const 0
+	0xD44DD4 Call 63693
+	0xD44DD8 If -64
+	0xD44DDA LocalGet 0
+	0xD44DDC I32Load 2, 12
+	0xD44DDF I32Const 4435772
+	0xD44DE4 I32Load 2, 0
+	0xD44DE7 LocalTee 2
+	0xD44DE9 I32Load16_S 1, 186
+	0xD44DED I32Const 512
+	0xD44DF0 I32And
+	0xD44DF1 If -64
+	0xD44DF3 LocalGet 2
+	0xD44DF5 I32Load 2, 116
+	0xD44DF8 I32Eqz
+	0xD44DF9 If -64
+	0xD44DFB LocalGet 2
+	0xD44DFD Call 72345
+	0xD44E01 End
+	0xD44E02 End
+	0xD44E03 I32Const 4545500
+	0xD44E08 I32Load 2, 0
+	0xD44E0B I32Const 0
+	0xD44E0D Call 41749
+	0xD44E11 I32Const 0
+	0xD44E13 Call 39963
+	0xD44E17 End
+	0xD44E18 LocalGet 0
+	0xD44E1A I32Load 2, 16
+	0xD44E1D I32Const 4436352
+	0xD44E22 I32Load 2, 0
+	0xD44E25 LocalTee 2
+	0xD44E27 I32Load16_S 1, 186
+	0xD44E2B I32Const 512
+	0xD44E2E I32And
+	0xD44E2F If -64
+	0xD44E31 LocalGet 2
+	0xD44E33 I32Load 2, 116
+	0xD44E36 I32Eqz
+	0xD44E37 If -64
+	0xD44E39 LocalGet 2
+	0xD44E3B Call 72345
+	0xD44E3F I32Const 4436352
+	0xD44E44 I32Load 2, 0
+	0xD44E47 LocalSet 2
+	0xD44E49 End
+	0xD44E4A End
+	0xD44E4B LocalGet 2
+	0xD44E4D I32Load 2, 92
+	0xD44E50 I32Load 2, 0
+	0xD44E53 LocalGet 1
+	0xD44E55 I32Const 0
+	0xD44E57 I32Const 4448824
+	0xD44E5C I32Load 2, 0
+	0xD44E5F Call 29402
+	0xD44E63 I32Const 0
+	0xD44E65 Call 41531
+	0xD44E69 I32Const 4449824
+	0xD44E6E I32Load 2, 0
+	0xD44E71 Call 30083
+	0xD44E75 I32Load 2, 8
+	0xD44E78 I32Const 4435772
+	0xD44E7D I32Load 2, 0
+	0xD44E80 LocalTee 2
+	0xD44E82 I32Load16_S 1, 186
+	0xD44E86 I32Const 512
+	0xD44E89 I32And
+	0xD44E8A If -64
+	0xD44E8C LocalGet 2
+	0xD44E8E I32Load 2, 116
+	0xD44E91 I32Eqz
+	0xD44E92 If -64
+	0xD44E94 LocalGet 2
+	0xD44E96 Call 72345
+	0xD44E9A End
+	0xD44E9B End
+	0xD44E9C I32Const 0
+	0xD44E9E Call 41749
+	0xD44EA2 I32Const 0
+	0xD44EA4 Call 39963
+	0xD44EA8 LocalGet 0
+	0xD44EAA I32Load 2, 24
+	0xD44EAD LocalGet 3
+	0xD44EAF LocalGet 1
+	0xD44EB1 I32Const 1
+	0xD44EB3 I32Const 4448824
+	0xD44EB8 I32Load 2, 0
+	0xD44EBB Call 29402
+	0xD44EBF I32Load 2, 12
+	0xD44EC2 I32Store 2, 0
+	0xD44EC5 LocalGet 3
+	0xD44EC7 I32Const 0
+	0xD44EC9 Call 54843
+	0xD44ECD I32Const 0
+	0xD44ECF Call 39963
+	0xD44ED3 LocalGet 0
+	0xD44ED5 I32Load 2, 32
+	0xD44ED8 LocalGet 4
+	0xD44EDA I32Const 4
+	0xD44EDC I32Add
+	0xD44EDD LocalTee 3
+	0xD44EDF LocalGet 1
+	0xD44EE1 I32Const 2
+	0xD44EE3 I32Const 4448824
+	0xD44EE8 I32Load 2, 0
+	0xD44EEB Call 29402
+	0xD44EEF I32Load 2, 12
+	0xD44EF2 I32Store 2, 0
+	0xD44EF5 I32Const 4427776
+	0xD44EFA I32Load 2, 0
+	0xD44EFD LocalGet 3
+	0xD44EFF Call 73903
+	0xD44F03 LocalSet 3
+	0xD44F05 I32Const 4510072
+	0xD44F0A I32Load 2, 0
+	0xD44F0D LocalGet 3
+	0xD44F0F I32Const 0
+	0xD44F11 Call 55904
+	0xD44F15 I32Const 0
+	0xD44F17 Call 39963
+	0xD44F1B LocalGet 0
+	0xD44F1D I32Load 2, 40
+	0xD44F20 LocalGet 4
+	0xD44F22 LocalGet 1
+	0xD44F24 I32Const 3
+	0xD44F26 I32Const 4448824
+	0xD44F2B I32Load 2, 0
+	0xD44F2E Call 29402
+	0xD44F32 I32Load 2, 12
+	0xD44F35 I32Store 2, 0
+	0xD44F38 I32Const 4427776
+	0xD44F3D I32Load 2, 0
+	0xD44F40 LocalGet 4
+	0xD44F42 Call 73903
+	0xD44F46 LocalSet 1
+	0xD44F48 I32Const 4510072
+	0xD44F4D I32Load 2, 0
+	0xD44F50 LocalGet 1
+	0xD44F52 I32Const 0
+	0xD44F54 Call 55904
+	0xD44F58 I32Const 0
+	0xD44F5A Call 39963
+	0xD44F5E LocalGet 0
+	0xD44F60 I32Load 2, 48
+	0xD44F63 I32Const 4436304
+	0xD44F68 I32Load 2, 0
+	0xD44F6B LocalTee 0
+	0xD44F6D I32Load16_S 1, 186
+	0xD44F71 I32Const 512
+	0xD44F74 I32And
+	0xD44F75 If -64
+	0xD44F77 LocalGet 0
+	0xD44F79 I32Load 2, 116
+	0xD44F7C I32Eqz
+	0xD44F7D If -64
+	0xD44F7F LocalGet 0
+	0xD44F81 Call 72345
+	0xD44F85 I32Const 4436304
+	0xD44F8A I32Load 2, 0
+	0xD44F8D LocalSet 0
+	0xD44F8F End
+	0xD44F90 End
+	0xD44F91 LocalGet 0
+	0xD44F93 I32Load 2, 92
+	0xD44F96 I32Load 2, 44
+	0xD44F99 I32Const 0
+	0xD44F9B Call 39639
+	0xD44F9F I32Const 4449952
+	0xD44FA4 I32Load 2, 0
+	0xD44FA7 Call 29792
+	0xD44FAB I32Const 0
+	0xD44FAD Call 41522
+	0xD44FB1 I32Const 0
+	0xD44FB3 Call 39963
+	0xD44FB7 LocalGet 4
+	0xD44FB9 GlobalSet 7
+	0xD44FBB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b44
+	11 Nop
+	12 Move v12 @ S0_v28, [2E3124]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v28
+	14 Nop
+	15 Move v14 @ S1_v79, 1
+	16 Move [457EBC], v14 @ S1_v79
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 8
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move v26 @ S1_v6 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 And v30 @ S1_v8, [v26 @ S1_v6 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	32 CheckEqual v31 @ TEMP_v2 (System.Boolean), v30 @ S1_v8, 0
+	33 ConditionalJump @b51, v31 @ TEMP_v2 (System.Boolean)
+	34 Move v32 @ S1_v75 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	35 Nop
+	36 CheckEqual v34 @ S1_v77 (System.Boolean), [v32 @ S1_v75 (Il2CppClass<UnityEngine.Object>)+74], 0
+	37 Not v35 @ TEMP_v18 (System.Boolean), v34 @ S1_v77 (System.Boolean)
+	38 ConditionalJump @b51, v35 @ TEMP_v18 (System.Boolean)
+	39 Nop
+	40 CallVoid 11A99, typeof(UnityEngine.Object)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call ComputeShader.FindKernel, v41 @ S0_v12 (System.Int32), this._title (UILabel), 0
+	46 CheckEqual v42 @ TEMP_v4 (System.Boolean), v41 @ S0_v12 (System.Int32), 0
+	47 ConditionalJump @b14, v42 @ TEMP_v4 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Move v46 @ S1_v64 (Il2CppClass<Strings>), typeof(Strings)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 And v50 @ S1_v66, [v46 @ S1_v64 (Il2CppClass<Strings>)+BA], 512
+	56 CheckEqual v51 @ TEMP_v15 (System.Boolean), v50 @ S1_v66, 0
+	57 ConditionalJump @b45, v51 @ TEMP_v15 (System.Boolean)
+	58 Move v69 @ S1_v71 (Il2CppClass<Strings>), typeof(Strings)
+	59 Nop
+	60 CheckEqual v71 @ S1_v73 (System.Boolean), [v69 @ S1_v71 (Il2CppClass<Strings>)+74], 0
+	61 Not v72 @ TEMP_v17 (System.Boolean), v71 @ S1_v73 (System.Boolean)
+	62 ConditionalJump @b45, v72 @ TEMP_v17 (System.Boolean)
+	63 Nop
+	64 CallVoid 11A99, typeof(Strings)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Call Strings.GetDefault, v58 @ S1_v70 (System.String), "WELCOME_PACK_TITLE"
+	71 Nop
+	72 CallVoid UILabel.set_fontSize, this._title (UILabel), v58 @ S1_v70 (System.String)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Move v63 @ S1_v13 (Il2CppClass<Info.Boards>), typeof(Info.Boards)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 And v67 @ S1_v15, [v63 @ S1_v13 (Il2CppClass<Info.Boards>)+BA], 512
+	82 CheckEqual v68 @ TEMP_v6 (System.Boolean), v67 @ S1_v15, 0
+	83 ConditionalJump @b46, v68 @ TEMP_v6 (System.Boolean)
+	84 Move v78 @ S1_v57 (Il2CppClass<Info.Boards>), typeof(Info.Boards)
+	85 Nop
+	86 CheckEqual v80 @ S1_v59 (System.Boolean), [v78 @ S1_v57 (Il2CppClass<Info.Boards>)+74], 0
+	87 Not v81 @ TEMP_v14 (System.Boolean), v80 @ S1_v59 (System.Boolean)
+	88 ConditionalJump @b46, v81 @ TEMP_v14 (System.Boolean)
+	89 Nop
+	90 CallVoid 11A99, typeof(Info.Boards)
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Call List`1<InApp.InAppItemModel+BundleItem>.get_Item, v95 @ S2_v6 (InApp.InAppItemModel+BundleItem), result @ L1 (InAppPurchase.RestoreFinishedResult), 0
+	104 Nop
+	105 Call BundleItem.get_themeIdentifier, v98 @ S2_v7 (Info.Boards+BoardId), v95 @ S2_v6 (InApp.InAppItemModel+BundleItem)
+	106 Nop
+	107 Nop
+	108 Call Dictionary`2<Info.Boards+BoardId, Info.Boards+Board>.get_Item, v102 @ S1_v20 (Info.Boards+Board), v88.boardData (System.Collections.Generic.Dictionary`2<Info.Boards+BoardId, Info.Boards+Board>), v98 @ S2_v7 (Info.Boards+BoardId)
+	109 Nop
+	110 Nop
+	111 Move v105 @ S2_v9 (Il2CppClass<Strings>), typeof(Strings)
+	112 Nop
+	113 Nop
+	114 Nop
+	115 And v109 @ S2_v11, [v105 @ S2_v9 (Il2CppClass<Strings>)+BA], 512
+	116 CheckEqual v110 @ TEMP_v8 (System.Boolean), v109 @ S2_v11, 0
+	117 ConditionalJump @b48, v110 @ TEMP_v8 (System.Boolean)
+	118 Move v111 @ S2_v38 (Il2CppClass<Strings>), typeof(Strings)
+	119 Nop
+	120 CheckEqual v113 @ S2_v40 (System.Boolean), [v111 @ S2_v38 (Il2CppClass<Strings>)+74], 0
+	121 Not v114 @ TEMP_v13 (System.Boolean), v113 @ S2_v40 (System.Boolean)
+	122 ConditionalJump @b48, v114 @ TEMP_v13 (System.Boolean)
+	123 Nop
+	124 CallVoid 11A99, typeof(Strings)
+	125 Nop
+	126 Nop
+	127 Nop
+	128 Call Strings.GetDefault, v119 @ S1_v22 (System.String), v102.name (System.String)
+	129 Nop
+	130 CallVoid UILabel.set_fontSize, this._boardName (UILabel), v119 @ S1_v22 (System.String)
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 Call List`1<InApp.InAppItemModel+BundleItem>.get_Item, v128 @ S2_v16 (InApp.InAppItemModel+BundleItem), result @ L1 (InAppPurchase.RestoreFinishedResult), 1
+	139 Nop
+	140 Move [v19 @ S0_v9], v128.<amount>k__BackingField (System.Int32)
+	141 Nop
+	142 Nop
+	143 Call D63B, v132 @ S1_v25 (System.Int32), v19 @ S0_v9, 0
+	144 Nop
+	145 CallVoid UILabel.set_fontSize, this._cell1Label (UILabel), v132 @ S1_v25 (System.Int32)
+	146 Nop
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Add v138 @ S1_v27, v1 @ G7, 4
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Call List`1<InApp.InAppItemModel+BundleItem>.get_Item, v144 @ S2_v22 (InApp.InAppItemModel+BundleItem), result @ L1 (InAppPurchase.RestoreFinishedResult), 2
+	157 Nop
+	158 Move [v138 @ S1_v27], v144.<amount>k__BackingField (System.Int32)
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Call 120AF, v149 @ S1_v30 (System.String), typeof(System.Int32), v138 @ S1_v27
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Nop
+	167 Nop
+	168 Call String.Concat, v155 @ S1_v33 (System.String), "x", v149 @ S1_v30 (System.String)
+	169 Nop
+	170 CallVoid UILabel.set_fontSize, this._cell2Label (UILabel), v155 @ S1_v33 (System.String)
+	171 Nop
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Call List`1<InApp.InAppItemModel+BundleItem>.get_Item, v164 @ S2_v28 (InApp.InAppItemModel+BundleItem), result @ L1 (InAppPurchase.RestoreFinishedResult), 3
+	179 Nop
+	180 Move [v1 @ G7], v164.<amount>k__BackingField (System.Int32)
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Call 120AF, v169 @ S1_v37 (System.String), typeof(System.Int32), v1 @ G7
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Call String.Concat, v175 @ S1_v40 (System.String), "x", v169 @ S1_v37 (System.String)
+	191 Nop
+	192 CallVoid UILabel.set_fontSize, this._cell3Label (UILabel), v175 @ S1_v40 (System.String)
+	193 Nop
+	194 Nop
+	195 Nop
+	196 Move v180 @ S1_v42 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	197 Nop
+	198 Nop
+	199 Nop
+	200 And v184 @ S1_v44, [v180 @ S1_v42 (Il2CppClass<InApp.InAppData>)+BA], 512
+	201 CheckEqual v185 @ TEMP_v10 (System.Boolean), v184 @ S1_v44, 0
+	202 ConditionalJump @b49, v185 @ TEMP_v10 (System.Boolean)
+	203 Move v186 @ S1_v51 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	204 Nop
+	205 CheckEqual v188 @ S1_v53 (System.Boolean), [v186 @ S1_v51 (Il2CppClass<InApp.InAppData>)+74], 0
+	206 Not v189 @ TEMP_v12 (System.Boolean), v188 @ S1_v53 (System.Boolean)
+	207 ConditionalJump @b49, v189 @ TEMP_v12 (System.Boolean)
+	208 Nop
+	209 CallVoid 11A99, typeof(InApp.InAppData)
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Nop
+	218 Nop
+	219 Call WelcomePackManager.IsWelcomePackActive, v199 @ S2_v35 (System.Boolean)
+	220 Nop
+	221 Nop
+	222 Call Dictionary`2<System.String, InApp.InAppItemModel>.get_Item, v203 @ S1_v49 (InApp.InAppItemModel), v196.inAppData (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v199 @ S2_v35 (System.Boolean)
+	223 Nop
+	224 Call InAppItemModel.Clone, v206 @ S1_v50 (InApp.InAppItemModel), v203 @ S1_v49 (InApp.InAppItemModel)
+	225 Nop
+	226 CallVoid UILabel.set_fontSize, this._buyButtonLabel (UILabel), v206 @ S1_v50 (InApp.InAppItemModel)
+	227 Nop
+	228 Nop
+	229 Nop
+	230 Return
+
+Method: System.Void OnPurchaseClickInPopup(UIScreenController uiScreenController)
+
+Disassembly:
+	0xD452AD I32Const 4554435
+	0xD452B2 I32Load8_S 0, 0
+	0xD452B5 I32Eqz
+	0xD452B6 If -64
+	0xD452B8 I32Const 3027220
+	0xD452BD I32Load 2, 0
+	0xD452C0 Call 73003
+	0xD452C4 I32Const 4554435
+	0xD452C9 I32Const 1
+	0xD452CB I32Store8 0, 0
+	0xD452CE End
+	0xD452CF I32Const 4436272
+	0xD452D4 I32Load 2, 0
+	0xD452D7 LocalTee 1
+	0xD452D9 I32Load16_S 1, 186
+	0xD452DD I32Const 512
+	0xD452E0 I32And
+	0xD452E1 If -64
+	0xD452E3 LocalGet 1
+	0xD452E5 I32Load 2, 116
+	0xD452E8 I32Eqz
+	0xD452E9 If -64
+	0xD452EB LocalGet 1
+	0xD452ED Call 72345
+	0xD452F1 End
+	0xD452F2 End
+	0xD452F3 I32Const 0
+	0xD452F5 Call 41557
+	0xD452F9 I32Const 4437964
+	0xD452FE I32Load 2, 0
+	0xD45301 Call 72556
+	0xD45305 LocalTee 2
+	0xD45307 LocalTee 3
+	0xD45309 I32Const 4492720
+	0xD4530E I32Load 2, 0
+	0xD45311 LocalTee 4
+	0xD45313 I32Load 2, 0
+	0xD45316 I32Store 2, 8
+	0xD45319 LocalGet 3
+	0xD4531B LocalGet 4
+	0xD4531D I32Store 2, 20
+	0xD45320 LocalGet 3
+	0xD45322 I32Const 16
+	0xD45324 I32Add
+	0xD45325 LocalGet 0
+	0xD45327 I32Store 2, 0
+	0xD4532A LocalGet 2
+	0xD4532C I32Const 0
+	0xD4532E Call 41551
+	0xD45332 I32Const 0
+	0xD45334 Call 41557
+	0xD45338 I32Const 0
+	0xD4533A Call 39639
+	0xD4533E I32Const 0
+	0xD45340 Call 41568
+	0xD45344 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v19, [2E3114]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v19
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [457EC3], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b15, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v14 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v16 (System.Boolean), [v18 @ S0_v14 (Il2CppClass<InApp.InAppManager>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v16 (System.Boolean)
+	24 ConditionalJump @b15, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(InApp.InAppManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call InAppManager.GetActiveInAppOffers, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	31 Nop
+	32 Nop
+	33 Call 11B6C, v29 @ S1_v5 (System.String), typeof(InApp.InAppManager+OnItemRestoreFinished)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Move v33 @ S2_v2 (Il2CppMethodInfo), methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnItemRestoreFinished)
+	38 Nop
+	39 Nop
+	40 Move v29.m_stringLength (System.Int32), [v33 @ S2_v2 (Il2CppMethodInfo)]
+	41 Nop
+	42 Nop
+	43 Move [v29 @ S1_v5 (System.String)+14], methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnItemRestoreFinished)
+	44 Nop
+	45 Nop
+	46 Add v40 @ S1_v8, v29 @ S1_v5 (System.String), 16
+	47 Nop
+	48 Move [v40 @ S1_v8], this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	49 Nop
+	50 Nop
+	51 CallVoid InAppManager.StartPurchase, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v29 @ S1_v5 (System.String)
+	52 Nop
+	53 Call InAppManager.GetActiveInAppOffers, v46 @ S0_v13 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	54 Nop
+	55 Call WelcomePackManager.IsWelcomePackActive, v48 @ S1_v11 (System.Boolean)
+	56 Nop
+	57 CallVoid InAppManager.InitFinishedCallback, v46 @ S0_v13 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v48 @ S1_v11 (System.Boolean)
+	58 Nop
+	59 Return
+
+Method: System.Void OnPurchaseSuccess(System.String productId, System.Boolean wasRestored, Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationResult validationResult)
+
+Disassembly:
+	0xD19C06 LocalGet 0
+	0xD19C08 I32Const 12
+	0xD19C0A I32Add
+	0xD19C0B LocalGet 1
+	0xD19C0D I32Store 2, 0
+	0xD19C10 LocalGet 0
+	0xD19C12 I32Const 8
+	0xD19C14 I32Add
+	0xD19C15 LocalGet 2
+	0xD19C17 I32Store 2, 0
+	0xD19C1A LocalGet 0
+	0xD19C1C I32Const 20
+	0xD19C1E I32Add
+	0xD19C1F LocalGet 3
+	0xD19C21 I32Store 2, 0
+	0xD19C24 LocalGet 0
+	0xD19C26 I32Const 0
+	0xD19C28 Call 33366
+	0xD19C2C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), 12
+	3 Nop
+	4 Move [v3 @ S0_v2], productId @ L1 (System.String)
+	5 Nop
+	6 Nop
+	7 Add v8 @ S0_v4, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), 8
+	8 Nop
+	9 Move [v8 @ S0_v4], wasRestored @ L2 (System.Boolean)
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), 20
+	13 Nop
+	14 Move [v13 @ S0_v6], validationResult @ L3 (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationResult)
+	15 Nop
+	16 Nop
+	17 CallVoid BackBtnBehaviour.Update, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	18 Nop
+	19 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD450BF I32Const 4554432
+	0xD450C4 I32Load8_S 0, 0
+	0xD450C7 I32Eqz
+	0xD450C8 If -64
+	0xD450CA I32Const 3027228
+	0xD450CF I32Load 2, 0
+	0xD450D2 Call 73003
+	0xD450D6 I32Const 4554432
+	0xD450DB I32Const 1
+	0xD450DD I32Store8 0, 0
+	0xD450E0 End
+	0xD450E1 I32Const 4436272
+	0xD450E6 I32Load 2, 0
+	0xD450E9 LocalTee 1
+	0xD450EB I32Load16_S 1, 186
+	0xD450EF I32Const 512
+	0xD450F2 I32And
+	0xD450F3 If -64
+	0xD450F5 LocalGet 1
+	0xD450F7 I32Load 2, 116
+	0xD450FA I32Eqz
+	0xD450FB If -64
+	0xD450FD LocalGet 1
+	0xD450FF Call 72345
+	0xD45103 End
+	0xD45104 End
+	0xD45105 I32Const 0
+	0xD45107 Call 41557
+	0xD4510B I32Const 4437964
+	0xD45110 I32Load 2, 0
+	0xD45113 Call 72556
+	0xD45117 LocalTee 2
+	0xD45119 LocalTee 3
+	0xD4511B I32Const 4492720
+	0xD45120 I32Load 2, 0
+	0xD45123 LocalTee 4
+	0xD45125 I32Load 2, 0
+	0xD45128 I32Store 2, 8
+	0xD4512B LocalGet 3
+	0xD4512D LocalGet 4
+	0xD4512F I32Store 2, 20
+	0xD45132 LocalGet 3
+	0xD45134 I32Const 16
+	0xD45136 I32Add
+	0xD45137 LocalGet 0
+	0xD45139 I32Store 2, 0
+	0xD4513C LocalGet 2
+	0xD4513E I32Const 0
+	0xD45140 Call 41550
+	0xD45144 I32Const 0
+	0xD45146 Call 41557
+	0xD4514A I32Const 4436304
+	0xD4514F I32Load 2, 0
+	0xD45152 LocalTee 1
+	0xD45154 I32Load16_S 1, 186
+	0xD45158 I32Const 512
+	0xD4515B I32And
+	0xD4515C If -64
+	0xD4515E LocalGet 1
+	0xD45160 I32Load 2, 116
+	0xD45163 I32Eqz
+	0xD45164 If -64
+	0xD45166 LocalGet 1
+	0xD45168 Call 72345
+	0xD4516C End
+	0xD4516D End
+	0xD4516E I32Const 0
+	0xD45170 Call 34086
+	0xD45174 I32Const 0
+	0xD45176 I32Const 0
+	0xD45178 Call 41582
+	0xD4517C Drop
+	0xD4517D I32Const 4435764
+	0xD45182 I32Load 2, 0
+	0xD45185 LocalTee 1
+	0xD45187 I32Load16_S 1, 186
+	0xD4518B I32Const 512
+	0xD4518E I32And
+	0xD4518F If -64
+	0xD45191 LocalGet 1
+	0xD45193 I32Load 2, 116
+	0xD45196 I32Eqz
+	0xD45197 If -64
+	0xD45199 LocalGet 1
+	0xD4519B Call 72345
+	0xD4519F End
+	0xD451A0 End
+	0xD451A1 I32Const 0
+	0xD451A3 Call 35989
+	0xD451A7 LocalTee 1
+	0xD451A9 I32Const 0
+	0xD451AB Call 36022
+	0xD451AF If -64
+	0xD451B1 LocalGet 0
+	0xD451B3 LocalGet 1
+	0xD451B5 I32Const 0
+	0xD451B7 Call 34087
+	0xD451BB Else
+	0xD451BC LocalGet 0
+	0xD451BE I32Const 60
+	0xD451C0 I32Add
+	0xD451C1 LocalGet 1
+	0xD451C3 I32Const 0
+	0xD451C5 Call 36018
+	0xD451C9 I32Store 2, 0
+	0xD451CC End
+	0xD451CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b26
+	5 Nop
+	6 Move v5 @ S0_v36, [2E311C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v36
+	8 Nop
+	9 Move v7 @ S1_v28, 1
+	10 Move [457EC0], v7 @ S1_v28
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b30, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v31 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v33 (System.Boolean), [v18 @ S0_v31 (Il2CppClass<InApp.InAppManager>)+74], 0
+	23 Not v21 @ TEMP_v11 (System.Boolean), v20 @ S0_v33 (System.Boolean)
+	24 ConditionalJump @b30, v21 @ TEMP_v11 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(InApp.InAppManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call InAppManager.GetActiveInAppOffers, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	31 Nop
+	32 Nop
+	33 Call 11B6C, v29 @ S1_v5 (InApp.InAppManager+OnItemRestoreFinished), typeof(InApp.InAppManager+OnItemRestoreFinished)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Move v33 @ S2_v2 (Il2CppMethodInfo), methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnItemRestoreFinished)
+	38 Nop
+	39 Nop
+	40 Move v29.method_ptr (System.IntPtr), [v33 @ S2_v2 (Il2CppMethodInfo)]
+	41 Nop
+	42 Nop
+	43 Move v29.method (System.IntPtr), methodof(UI.Helpers.WelcomePack.WelcomePackBannerHelper::OnItemRestoreFinished)
+	44 Nop
+	45 Nop
+	46 Add v40 @ S1_v8, v29 @ S1_v5 (InApp.InAppManager+OnItemRestoreFinished), 16
+	47 Nop
+	48 Move [v40 @ S1_v8], this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper)
+	49 Nop
+	50 Nop
+	51 CallVoid InAppManager.remove_onItemRestoreFinished, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v29 @ S1_v5 (InApp.InAppManager+OnItemRestoreFinished)
+	52 Nop
+	53 Call InAppManager.GetActiveInAppOffers, v46 @ S0_v13 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	54 Nop
+	55 Move v48 @ S1_v11 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 And v52 @ S1_v13, [v48 @ S1_v11 (Il2CppClass<InApp.InAppData>)+BA], 512
+	60 CheckEqual v53 @ TEMP_v4 (System.Boolean), v52 @ S1_v13, 0
+	61 ConditionalJump @b27, v53 @ TEMP_v4 (System.Boolean)
+	62 Move v54 @ S1_v24 (Il2CppClass<InApp.InAppData>), typeof(InApp.InAppData)
+	63 Nop
+	64 CheckEqual v56 @ S1_v26 (System.Boolean), [v54 @ S1_v24 (Il2CppClass<InApp.InAppData>)+74], 0
+	65 Not v57 @ TEMP_v10 (System.Boolean), v56 @ S1_v26 (System.Boolean)
+	66 ConditionalJump @b27, v57 @ TEMP_v10 (System.Boolean)
+	67 Nop
+	68 CallVoid 11A99, typeof(InApp.InAppData)
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Call 8526, v62 @ S1_v16 (System.String), 0
+	73 Nop
+	74 Nop
+	75 Call InAppManager.GetItemPayoutAmount, v65 @ S0_v14 (System.Int32), v46 @ S0_v13 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), v62 @ S1_v16 (System.String), 0
+	76 Nop
+	77 Move v67 @ S0_v16 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 And v71 @ S0_v18, [v67 @ S0_v16 (Il2CppClass<UIScreenController>)+BA], 512
+	82 CheckEqual v72 @ TEMP_v6 (System.Boolean), v71 @ S0_v18, 0
+	83 ConditionalJump @b28, v72 @ TEMP_v6 (System.Boolean)
+	84 Move v73 @ S0_v27 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	85 Nop
+	86 CheckEqual v75 @ S0_v29 (System.Boolean), [v73 @ S0_v27 (Il2CppClass<UIScreenController>)+74], 0
+	87 Not v76 @ TEMP_v9 (System.Boolean), v75 @ S0_v29 (System.Boolean)
+	88 ConditionalJump @b28, v76 @ TEMP_v9 (System.Boolean)
+	89 Nop
+	90 CallVoid 11A99, typeof(UIScreenController)
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Call UIScreenController.ShouldShowOnlineScreen, v81 @ S0_v21 (System.Boolean)
+	95 Nop
+	96 Nop
+	97 Call UIScreenController.IsPopupQueueEmpty, v84 @ S0_v22 (System.Boolean), v81 @ S0_v21 (System.Boolean)
+	98 Not v85 @ TEMP_v8 (System.Boolean), v84 @ S0_v22 (System.Boolean)
+	99 ConditionalJump @b24, v85 @ TEMP_v8 (System.Boolean)
+	100 Nop
+	101 Nop
+	102 Nop
+	103 CallVoid ButtonColor.OnPress, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), v81 @ S0_v21 (System.Boolean)
+	104 Jump @b29
+	105 Nop
+	106 Nop
+	107 Add v91 @ S0_v25, this @ L0 (UI.Helpers.WelcomePack.WelcomePackBannerHelper), 60
+	108 Nop
+	109 Nop
+	110 Call UIScreenController.DelayHideMainCamera, v94 @ S1_v22 (System.Collections.IEnumerator), v81 @ S0_v21 (System.Boolean)
+	111 Move [v91 @ S0_v25], v94 @ S1_v22 (System.Collections.IEnumerator)
+	112 Nop
+	113 Nop
+	114 Return
+

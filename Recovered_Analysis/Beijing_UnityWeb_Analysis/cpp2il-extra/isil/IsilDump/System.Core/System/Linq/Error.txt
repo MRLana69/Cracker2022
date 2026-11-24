@@ -1,0 +1,203 @@
+Type: System.Linq.Error
+
+Method: System.Exception ArgumentNull(System.String s)
+
+Disassembly:
+	0x13EAF2A I32Const 23
+	0x13EAF2C LocalGet 0
+	0x13EAF2E I32Const 12
+	0x13EAF30 LocalGet 0
+	0x13EAF32 Call 29262
+	0x13EAF36 I32Const 10
+	0x13EAF38 LocalGet 0
+	0x13EAF3A Call 29262
+	0x13EAF3E Call 29291
+	0x13EAF42 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 724E, v5 @ S2_v2, 12, s @ L0 (System.String)
+	5 Nop
+	6 Nop
+	7 Call 724E, v8 @ S3_v3, 10, s @ L0 (System.String)
+	8 Call 726B, returnVal1 @ S0_v2 (System.Exception), 23, s @ L0 (System.String), v5 @ S2_v2, v8 @ S3_v3
+	9 Nop
+	10 Return returnVal1 @ S0_v2 (System.Exception)
+
+Method: System.Exception ArgumentOutOfRange(System.String s)
+
+Disassembly:
+	0x154FEB6 I32Const 4576712
+	0x154FEBB I32Load8_S 0, 0
+	0x154FEBE I32Eqz
+	0x154FEBF If -64
+	0x154FEC1 I32Const 2960456
+	0x154FEC6 I32Load 2, 0
+	0x154FEC9 Call 73003
+	0x154FECD I32Const 4576712
+	0x154FED2 I32Const 1
+	0x154FED4 I32Store8 0, 0
+	0x154FED7 End
+	0x154FED8 I32Const 4427864
+	0x154FEDD I32Load 2, 0
+	0x154FEE0 Call 72556
+	0x154FEE4 LocalTee 2
+	0x154FEE6 LocalGet 0
+	0x154FEE8 I32Const 0
+	0x154FEEA Call 57599
+	0x154FEEE LocalGet 2
+	0x154FEF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2D2C48]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45D5C8], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid ArgumentOutOfRangeException..ctor, v13 @ S0_v7 (System.ArgumentOutOfRangeException), s @ L0 (System.String)
+	19 Nop
+	20 Nop
+	21 Return v13 @ S0_v7 (System.ArgumentOutOfRangeException)
+
+Method: System.Exception MoreThanOneMatch()
+
+Disassembly:
+	0x153AB8B I32Const 4576535
+	0x153AB90 I32Load8_S 0, 0
+	0x153AB93 I32Eqz
+	0x153AB94 If -64
+	0x153AB96 I32Const 3022740
+	0x153AB9B I32Load 2, 0
+	0x153AB9E Call 73003
+	0x153ABA2 I32Const 4576535
+	0x153ABA7 I32Const 1
+	0x153ABA9 I32Store8 0, 0
+	0x153ABAC End
+	0x153ABAD I32Const 4434984
+	0x153ABB2 I32Load 2, 0
+	0x153ABB5 LocalTee 0
+	0x153ABB7 I32Load16_S 1, 186
+	0x153ABBB I32Const 512
+	0x153ABBE I32And
+	0x153ABBF If -64
+	0x153ABC1 LocalGet 0
+	0x153ABC3 I32Load 2, 116
+	0x153ABC6 I32Eqz
+	0x153ABC7 If -64
+	0x153ABC9 LocalGet 0
+	0x153ABCB Call 72345
+	0x153ABCF I32Const 4434984
+	0x153ABD4 I32Load 2, 0
+	0x153ABD7 LocalSet 0
+	0x153ABD9 End
+	0x153ABDA End
+	0x153ABDB LocalGet 0
+	0x153ABDD I32Load 2, 92
+	0x153ABE0 I32Load 2, 0
+	0x153ABE3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v20, [2E1F94]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45D517], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Networking.UNETWebSocketLib>), typeof(UnityEngine.Networking.UNETWebSocketLib)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Networking.UNETWebSocketLib>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v13 (Il2CppClass<UnityEngine.Networking.UNETWebSocketLib>), typeof(UnityEngine.Networking.UNETWebSocketLib)
+	21 Nop
+	22 CheckEqual v20 @ S0_v15 (System.Boolean), [v18 @ S0_v13 (Il2CppClass<UnityEngine.Networking.UNETWebSocketLib>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v15 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Networking.UNETWebSocketLib)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Return v28.instance (UnityEngine.Networking.UNETWebSocketLib)
+
+Method: System.Exception NoElements()
+
+Disassembly:
+	0x1550300 I32Const 4576717
+	0x1550305 I32Load8_S 0, 0
+	0x1550308 I32Eqz
+	0x1550309 If -64
+	0x155030B I32Const 2960468
+	0x1550310 I32Load 2, 0
+	0x1550313 Call 73003
+	0x1550317 I32Const 4576717
+	0x155031C I32Const 1
+	0x155031E I32Store8 0, 0
+	0x1550321 End
+	0x1550322 I32Const 4428404
+	0x1550327 I32Load 2, 0
+	0x155032A Call 72556
+	0x155032E LocalTee 1
+	0x1550330 I32Const 4517360
+	0x1550335 I32Load 2, 0
+	0x1550338 I32Const 0
+	0x155033A Call 54737
+	0x155033E LocalGet 1
+	0x1550340 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2D2C54]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45D5CD], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.InvalidProgramException), typeof(System.InvalidOperationException)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 CallVoid InvalidProgramException..ctor, v13 @ S0_v7 (System.InvalidProgramException), "Sequence contains more than one matching element"
+	20 Nop
+	21 Nop
+	22 Return v13 @ S0_v7 (System.InvalidProgramException)
+

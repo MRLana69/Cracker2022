@@ -1,0 +1,790 @@
+Type: Missions.ScorePointsSingleRunNoJumpOrRollAward
+
+Method: System.Void .ctor(Missions.AwardStaticData awardData, Missions.PersistentAwardProgress savedProgress, System.Action`1<Missions.Award> handler)
+
+Disassembly:
+	0xF26D4C LocalGet 0
+	0xF26D4E LocalGet 1
+	0xF26D50 LocalGet 2
+	0xF26D52 LocalGet 3
+	0xF26D54 I32Const 0
+	0xF26D56 Call 41935
+	0xF26D5A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Throw typeof(System.OverflowException)
+	6 Nop
+	7 Return
+
+Method: System.Int32 GetProgressForGoal(Missions.AwardGoal goal)
+
+Disassembly:
+	0xF361B5 I32Const 4560195
+	0xF361BA I32Load8_S 0, 0
+	0xF361BD I32Eqz
+	0xF361BE If -64
+	0xF361C0 I32Const 3000924
+	0xF361C5 I32Load 2, 0
+	0xF361C8 Call 73003
+	0xF361CC I32Const 4560195
+	0xF361D1 I32Const 1
+	0xF361D3 I32Store8 0, 0
+	0xF361D6 End
+	0xF361D7 Block -1
+	0xF361D9 Block -64
+	0xF361DB LocalGet 1
+	0xF361DD I32Const 4439976
+	0xF361E2 I32Load 2, 0
+	0xF361E5 Call 29313
+	0xF361E9 LocalTee 2
+	0xF361EB I32Eqz
+	0xF361EC BrIf 0
+	0xF361EE I32Const 5
+	0xF361F0 LocalGet 0
+	0xF361F2 LocalGet 1
+	0xF361F4 Call 29448
+	0xF361F8 LocalGet 2
+	0xF361FA I32Load 2, 8
+	0xF361FD I32Lt_S
+	0xF361FE BrIf 0
+	0xF36200 I32Const 1
+	0xF36202 Br 1
+	0xF36204 End
+	0xF36205 I32Const 0
+	0xF36207 End
+	0xF36208 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v16, [2DCA5C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [459543], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call 7281, v15 @ S0_v6, goal @ L1 (Missions.AwardGoal), typeof(Missions.AwardSimpleGoal)
+	16 Nop
+	17 CheckEqual v17 @ S0_v7 (System.Boolean), v15 @ S0_v6, 0
+	18 ConditionalJump @b9, v17 @ S0_v7 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 7308, v22 @ S0_v12, 5, this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward), goal @ L1 (Missions.AwardGoal)
+	23 Nop
+	24 Nop
+	25 CheckLess v28 @ S0_v13 (System.Boolean), v22 @ S0_v12, [v15 @ S0_v6+8]
+	26 ConditionalJump @b9, v28 @ S0_v13 (System.Boolean)
+	27 Nop
+	28 Jump @b11
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Return returnVal1 @ S0_v8 (System.Int32)
+
+Method: System.Boolean IsGoalAccomplished(Missions.AwardGoal goal)
+
+Disassembly:
+	0xF361A3 I32Const 0
+	0xF361A5 Call 31185
+	0xF361A9 I32Load 2, 116
+	0xF361AC LocalGet 0
+	0xF361AE I32Load 2, 44
+	0xF361B1 I32Sub
+	0xF361B2 End
+
+ISIL:
+	0 Nop
+	1 Call Globals.GetPrivacyPolicyUrl, v1 @ S0_v2 (System.String)
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Subtract returnVal1 @ S0_v4 (System.Boolean), [v1 @ S0_v2 (System.String)+74], this._offset (System.Int32)
+	6 Nop
+	7 Return returnVal1 @ S0_v4 (System.Boolean)
+
+Method: System.Void ActivateCurrentAwardTier()
+
+Disassembly:
+	0xF288F0 LocalGet 0
+	0xF288F2 I32Const 0
+	0xF288F4 Call 41950
+	0xF288F8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid Award.RewardPayedOut, this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	3 Nop
+	4 Return
+
+Method: System.Void DeactivateCurrentAwardTier()
+
+Disassembly:
+	0xF364FF I32Const 4560199
+	0xF36504 I32Load8_S 0, 0
+	0xF36507 I32Eqz
+	0xF36508 If -64
+	0xF3650A I32Const 3000928
+	0xF3650F I32Load 2, 0
+	0xF36512 Call 73003
+	0xF36516 I32Const 4560199
+	0xF3651B I32Const 1
+	0xF3651D I32Store8 0, 0
+	0xF36520 End
+	0xF36521 I32Const 0
+	0xF36523 Call 31185
+	0xF36527 I32Const 4429724
+	0xF3652C I32Load 2, 0
+	0xF3652F Call 72556
+	0xF36533 LocalTee 3
+	0xF36535 LocalTee 2
+	0xF36537 I32Const 4472716
+	0xF3653C I32Load 2, 0
+	0xF3653F LocalTee 4
+	0xF36541 I32Load 2, 0
+	0xF36544 I32Store 2, 8
+	0xF36547 LocalGet 2
+	0xF36549 LocalGet 4
+	0xF3654B I32Store 2, 20
+	0xF3654E LocalGet 2
+	0xF36550 I32Const 16
+	0xF36552 I32Add
+	0xF36553 LocalGet 0
+	0xF36555 I32Store 2, 0
+	0xF36558 LocalGet 3
+	0xF3655A I32Const 0
+	0xF3655C Call 31058
+	0xF36560 I32Const 0
+	0xF36562 Call 31185
+	0xF36566 I32Const 4429724
+	0xF3656B I32Load 2, 0
+	0xF3656E Call 72556
+	0xF36572 LocalTee 3
+	0xF36574 LocalTee 2
+	0xF36576 I32Const 4472700
+	0xF3657B I32Load 2, 0
+	0xF3657E LocalTee 4
+	0xF36580 I32Load 2, 0
+	0xF36583 I32Store 2, 8
+	0xF36586 LocalGet 2
+	0xF36588 LocalGet 4
+	0xF3658A I32Store 2, 20
+	0xF3658D LocalGet 2
+	0xF3658F I32Const 16
+	0xF36591 I32Add
+	0xF36592 LocalGet 0
+	0xF36594 I32Store 2, 0
+	0xF36597 LocalGet 3
+	0xF36599 I32Const 0
+	0xF3659B Call 31060
+	0xF3659F I32Const 0
+	0xF365A1 Call 31185
+	0xF365A5 I32Const 4429724
+	0xF365AA I32Load 2, 0
+	0xF365AD Call 72556
+	0xF365B1 LocalTee 3
+	0xF365B3 LocalTee 2
+	0xF365B5 I32Const 4472704
+	0xF365BA I32Load 2, 0
+	0xF365BD LocalTee 4
+	0xF365BF I32Load 2, 0
+	0xF365C2 I32Store 2, 8
+	0xF365C5 LocalGet 2
+	0xF365C7 LocalGet 4
+	0xF365C9 I32Store 2, 20
+	0xF365CC LocalGet 2
+	0xF365CE I32Const 16
+	0xF365D0 I32Add
+	0xF365D1 LocalGet 0
+	0xF365D3 I32Store 2, 0
+	0xF365D6 LocalGet 3
+	0xF365D8 I32Const 0
+	0xF365DA Call 31062
+	0xF365DE I32Const 4429724
+	0xF365E3 I32Load 2, 0
+	0xF365E6 Call 72556
+	0xF365EA LocalTee 3
+	0xF365EC LocalTee 1
+	0xF365EE I32Const 4472712
+	0xF365F3 I32Load 2, 0
+	0xF365F6 LocalTee 2
+	0xF365F8 I32Load 2, 0
+	0xF365FB I32Store 2, 8
+	0xF365FE LocalGet 1
+	0xF36600 LocalGet 2
+	0xF36602 I32Store 2, 20
+	0xF36605 LocalGet 1
+	0xF36607 I32Const 16
+	0xF36609 I32Add
+	0xF3660A LocalGet 0
+	0xF3660C I32Store 2, 0
+	0xF3660F I32Const 4435864
+	0xF36614 I32Load 2, 0
+	0xF36617 LocalTee 1
+	0xF36619 I32Load16_S 1, 186
+	0xF3661D I32Const 512
+	0xF36620 I32And
+	0xF36621 If -64
+	0xF36623 LocalGet 1
+	0xF36625 I32Load 2, 116
+	0xF36628 I32Eqz
+	0xF36629 If -64
+	0xF3662B LocalGet 1
+	0xF3662D Call 72345
+	0xF36631 End
+	0xF36632 End
+	0xF36633 LocalGet 3
+	0xF36635 I32Const 0
+	0xF36637 Call 39473
+	0xF3663B I32Const 4429724
+	0xF36640 I32Load 2, 0
+	0xF36643 Call 72556
+	0xF36647 LocalTee 1
+	0xF36649 LocalTee 3
+	0xF3664B I32Const 4472708
+	0xF36650 I32Load 2, 0
+	0xF36653 LocalTee 2
+	0xF36655 I32Load 2, 0
+	0xF36658 I32Store 2, 8
+	0xF3665B LocalGet 3
+	0xF3665D LocalGet 2
+	0xF3665F I32Store 2, 20
+	0xF36662 LocalGet 3
+	0xF36664 I32Const 16
+	0xF36666 I32Add
+	0xF36667 LocalGet 0
+	0xF36669 I32Store 2, 0
+	0xF3666C LocalGet 1
+	0xF3666E I32Const 0
+	0xF36670 Call 39487
+	0xF36674 LocalGet 0
+	0xF36676 I32Const 0
+	0xF36678 Call 41950
+	0xF3667C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b22
+	5 Nop
+	6 Move v5 @ S0_v36, [2DCA60]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v36
+	8 Nop
+	9 Move v7 @ S1_v39, 1
+	10 Move [459547], v7 @ S1_v39
+	11 Nop
+	12 Nop
+	13 Call Globals.GetPrivacyPolicyUrl, v12 @ S0_v6 (System.String)
+	14 Nop
+	15 Nop
+	16 Call 11B6C, v15 @ S1_v4 (System.Action), typeof(System.Action)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move v19 @ S2_v2 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnScoreChanged)
+	21 Nop
+	22 Nop
+	23 Move v15.method_ptr (System.IntPtr), [v19 @ S2_v2 (Il2CppMethodInfo)]
+	24 Nop
+	25 Nop
+	26 Move v15.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnScoreChanged)
+	27 Nop
+	28 Nop
+	29 Add v26 @ S1_v7, v15 @ S1_v4 (System.Action), 16
+	30 Nop
+	31 Move [v26 @ S1_v7], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	32 Nop
+	33 Nop
+	34 CallVoid GameStats.remove_OnScoreChanged, v12 @ S0_v6 (System.String), v15 @ S1_v4 (System.Action)
+	35 Nop
+	36 Call Globals.GetPrivacyPolicyUrl, v32 @ S0_v8 (System.String)
+	37 Nop
+	38 Nop
+	39 Call 11B6C, v35 @ S1_v11 (System.Action), typeof(System.Action)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move v39 @ S2_v9 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnJumpsChanged)
+	44 Nop
+	45 Nop
+	46 Move v35.method_ptr (System.IntPtr), [v39 @ S2_v9 (Il2CppMethodInfo)]
+	47 Nop
+	48 Nop
+	49 Move v35.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnJumpsChanged)
+	50 Nop
+	51 Nop
+	52 Add v46 @ S1_v14, v35 @ S1_v11 (System.Action), 16
+	53 Nop
+	54 Move [v46 @ S1_v14], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	55 Nop
+	56 Nop
+	57 CallVoid GameStats.remove_OnJumpsChanged, v32 @ S0_v8 (System.String), v35 @ S1_v11 (System.Action)
+	58 Nop
+	59 Call Globals.GetPrivacyPolicyUrl, v51 @ S0_v10 (System.String)
+	60 Nop
+	61 Nop
+	62 Call 11B6C, v54 @ S1_v18 (System.Action), typeof(System.Action)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Move v58 @ S2_v16 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRollsChanged)
+	67 Nop
+	68 Nop
+	69 Move v54.method_ptr (System.IntPtr), [v58 @ S2_v16 (Il2CppMethodInfo)]
+	70 Nop
+	71 Nop
+	72 Move v54.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRollsChanged)
+	73 Nop
+	74 Nop
+	75 Add v65 @ S1_v21, v54 @ S1_v18 (System.Action), 16
+	76 Nop
+	77 Move [v65 @ S1_v21], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	78 Nop
+	79 Nop
+	80 CallVoid GameStats.remove_OnRollsChanged, v51 @ S0_v10 (System.String), v54 @ S1_v18 (System.Action)
+	81 Nop
+	82 Nop
+	83 Call 11B6C, v71 @ S0_v13 (System.Action), typeof(System.Action)
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Move v75 @ S1_v24 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunStarted)
+	88 Nop
+	89 Nop
+	90 Move v71.method_ptr (System.IntPtr), [v75 @ S1_v24 (Il2CppMethodInfo)]
+	91 Nop
+	92 Nop
+	93 Move v71.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunStarted)
+	94 Nop
+	95 Nop
+	96 Add v82 @ S0_v16, v71 @ S0_v13 (System.Action), 16
+	97 Nop
+	98 Move [v82 @ S0_v16], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	99 Nop
+	100 Move v85 @ S0_v18 (Il2CppClass<SYBO.Subway.Game>), typeof(SYBO.Subway.Game)
+	101 Nop
+	102 Nop
+	103 Nop
+	104 And v89 @ S0_v20, [v85 @ S0_v18 (Il2CppClass<SYBO.Subway.Game>)+BA], 512
+	105 CheckEqual v90 @ TEMP_v2 (System.Boolean), v89 @ S0_v20, 0
+	106 ConditionalJump @b23, v90 @ TEMP_v2 (System.Boolean)
+	107 Move v91 @ S0_v31 (Il2CppClass<SYBO.Subway.Game>), typeof(SYBO.Subway.Game)
+	108 Nop
+	109 CheckEqual v93 @ S0_v33 (System.Boolean), [v91 @ S0_v31 (Il2CppClass<SYBO.Subway.Game>)+74], 0
+	110 Not v94 @ TEMP_v4 (System.Boolean), v93 @ S0_v33 (System.Boolean)
+	111 ConditionalJump @b23, v94 @ TEMP_v4 (System.Boolean)
+	112 Nop
+	113 CallVoid 11A99, typeof(SYBO.Subway.Game)
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 CallVoid Game.remove_OnGameStarted, v71 @ S0_v13 (System.Action)
+	119 Nop
+	120 Nop
+	121 Call 11B6C, v102 @ S0_v25 (System.Action), typeof(System.Action)
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Move v106 @ S1_v32 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunEnded)
+	126 Nop
+	127 Nop
+	128 Move v102.method_ptr (System.IntPtr), [v106 @ S1_v32 (Il2CppMethodInfo)]
+	129 Nop
+	130 Nop
+	131 Move v102.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunEnded)
+	132 Nop
+	133 Nop
+	134 Add v113 @ S0_v28, v102 @ S0_v25 (System.Action), 16
+	135 Nop
+	136 Move [v113 @ S0_v28], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	137 Nop
+	138 Nop
+	139 CallVoid Game.remove_OnMenuScreenShown, v102 @ S0_v25 (System.Action)
+	140 Nop
+	141 Nop
+	142 CallVoid Award.RewardPayedOut, this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	143 Nop
+	144 Return
+
+Method: System.Void RecordNewOffsets()
+
+Disassembly:
+	0xF36682 I32Const 4560200
+	0xF36687 I32Load8_S 0, 0
+	0xF3668A I32Eqz
+	0xF3668B If -64
+	0xF3668D I32Const 3000932
+	0xF36692 I32Load 2, 0
+	0xF36695 Call 73003
+	0xF36699 I32Const 4560200
+	0xF3669E I32Const 1
+	0xF366A0 I32Store8 0, 0
+	0xF366A3 End
+	0xF366A4 I32Const 0
+	0xF366A6 Call 31185
+	0xF366AA I32Const 4429724
+	0xF366AF I32Load 2, 0
+	0xF366B2 Call 72556
+	0xF366B6 LocalTee 3
+	0xF366B8 LocalTee 2
+	0xF366BA I32Const 4472716
+	0xF366BF I32Load 2, 0
+	0xF366C2 LocalTee 4
+	0xF366C4 I32Load 2, 0
+	0xF366C7 I32Store 2, 8
+	0xF366CA LocalGet 2
+	0xF366CC LocalGet 4
+	0xF366CE I32Store 2, 20
+	0xF366D1 LocalGet 2
+	0xF366D3 I32Const 16
+	0xF366D5 I32Add
+	0xF366D6 LocalGet 0
+	0xF366D8 I32Store 2, 0
+	0xF366DB LocalGet 3
+	0xF366DD I32Const 0
+	0xF366DF Call 31059
+	0xF366E3 I32Const 0
+	0xF366E5 Call 31185
+	0xF366E9 I32Const 4429724
+	0xF366EE I32Load 2, 0
+	0xF366F1 Call 72556
+	0xF366F5 LocalTee 3
+	0xF366F7 LocalTee 2
+	0xF366F9 I32Const 4472700
+	0xF366FE I32Load 2, 0
+	0xF36701 LocalTee 4
+	0xF36703 I32Load 2, 0
+	0xF36706 I32Store 2, 8
+	0xF36709 LocalGet 2
+	0xF3670B LocalGet 4
+	0xF3670D I32Store 2, 20
+	0xF36710 LocalGet 2
+	0xF36712 I32Const 16
+	0xF36714 I32Add
+	0xF36715 LocalGet 0
+	0xF36717 I32Store 2, 0
+	0xF3671A LocalGet 3
+	0xF3671C I32Const 0
+	0xF3671E Call 31061
+	0xF36722 I32Const 0
+	0xF36724 Call 31185
+	0xF36728 I32Const 4429724
+	0xF3672D I32Load 2, 0
+	0xF36730 Call 72556
+	0xF36734 LocalTee 3
+	0xF36736 LocalTee 2
+	0xF36738 I32Const 4472704
+	0xF3673D I32Load 2, 0
+	0xF36740 LocalTee 4
+	0xF36742 I32Load 2, 0
+	0xF36745 I32Store 2, 8
+	0xF36748 LocalGet 2
+	0xF3674A LocalGet 4
+	0xF3674C I32Store 2, 20
+	0xF3674F LocalGet 2
+	0xF36751 I32Const 16
+	0xF36753 I32Add
+	0xF36754 LocalGet 0
+	0xF36756 I32Store 2, 0
+	0xF36759 LocalGet 3
+	0xF3675B I32Const 0
+	0xF3675D Call 31063
+	0xF36761 I32Const 4429724
+	0xF36766 I32Load 2, 0
+	0xF36769 Call 72556
+	0xF3676D LocalTee 3
+	0xF3676F LocalTee 1
+	0xF36771 I32Const 4472712
+	0xF36776 I32Load 2, 0
+	0xF36779 LocalTee 2
+	0xF3677B I32Load 2, 0
+	0xF3677E I32Store 2, 8
+	0xF36781 LocalGet 1
+	0xF36783 LocalGet 2
+	0xF36785 I32Store 2, 20
+	0xF36788 LocalGet 1
+	0xF3678A I32Const 16
+	0xF3678C I32Add
+	0xF3678D LocalGet 0
+	0xF3678F I32Store 2, 0
+	0xF36792 I32Const 4435864
+	0xF36797 I32Load 2, 0
+	0xF3679A LocalTee 1
+	0xF3679C I32Load16_S 1, 186
+	0xF367A0 I32Const 512
+	0xF367A3 I32And
+	0xF367A4 If -64
+	0xF367A6 LocalGet 1
+	0xF367A8 I32Load 2, 116
+	0xF367AB I32Eqz
+	0xF367AC If -64
+	0xF367AE LocalGet 1
+	0xF367B0 Call 72345
+	0xF367B4 End
+	0xF367B5 End
+	0xF367B6 LocalGet 3
+	0xF367B8 I32Const 0
+	0xF367BA Call 39474
+	0xF367BE I32Const 4429724
+	0xF367C3 I32Load 2, 0
+	0xF367C6 Call 72556
+	0xF367CA LocalTee 1
+	0xF367CC LocalTee 3
+	0xF367CE I32Const 4472708
+	0xF367D3 I32Load 2, 0
+	0xF367D6 LocalTee 2
+	0xF367D8 I32Load 2, 0
+	0xF367DB I32Store 2, 8
+	0xF367DE LocalGet 3
+	0xF367E0 LocalGet 2
+	0xF367E2 I32Store 2, 20
+	0xF367E5 LocalGet 3
+	0xF367E7 I32Const 16
+	0xF367E9 I32Add
+	0xF367EA LocalGet 0
+	0xF367EC I32Store 2, 0
+	0xF367EF LocalGet 1
+	0xF367F1 I32Const 0
+	0xF367F3 Call 39488
+	0xF367F7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b21
+	5 Nop
+	6 Move v5 @ S0_v35, [2DCA64]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v35
+	8 Nop
+	9 Move v7 @ S1_v38, 1
+	10 Move [459548], v7 @ S1_v38
+	11 Nop
+	12 Nop
+	13 Call Globals.GetPrivacyPolicyUrl, v12 @ S0_v6 (System.String)
+	14 Nop
+	15 Nop
+	16 Call 11B6C, v15 @ S1_v4 (System.Action), typeof(System.Action)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move v19 @ S2_v2 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnScoreChanged)
+	21 Nop
+	22 Nop
+	23 Move v15.method_ptr (System.IntPtr), [v19 @ S2_v2 (Il2CppMethodInfo)]
+	24 Nop
+	25 Nop
+	26 Move v15.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnScoreChanged)
+	27 Nop
+	28 Nop
+	29 Add v26 @ S1_v7, v15 @ S1_v4 (System.Action), 16
+	30 Nop
+	31 Move [v26 @ S1_v7], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	32 Nop
+	33 Nop
+	34 CallVoid GameStats.add_OnJumpsChanged, v12 @ S0_v6 (System.String), v15 @ S1_v4 (System.Action)
+	35 Nop
+	36 Call Globals.GetPrivacyPolicyUrl, v32 @ S0_v8 (System.String)
+	37 Nop
+	38 Nop
+	39 Call 11B6C, v35 @ S1_v11 (System.Action), typeof(System.Action)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move v39 @ S2_v9 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnJumpsChanged)
+	44 Nop
+	45 Nop
+	46 Move v35.method_ptr (System.IntPtr), [v39 @ S2_v9 (Il2CppMethodInfo)]
+	47 Nop
+	48 Nop
+	49 Move v35.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnJumpsChanged)
+	50 Nop
+	51 Nop
+	52 Add v46 @ S1_v14, v35 @ S1_v11 (System.Action), 16
+	53 Nop
+	54 Move [v46 @ S1_v14], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	55 Nop
+	56 Nop
+	57 CallVoid GameStats.add_OnRollsChanged, v32 @ S0_v8 (System.String), v35 @ S1_v11 (System.Action)
+	58 Nop
+	59 Call Globals.GetPrivacyPolicyUrl, v51 @ S0_v10 (System.String)
+	60 Nop
+	61 Nop
+	62 Call 11B6C, v54 @ S1_v18 (System.Action`1<Info.UpgradeType>), typeof(System.Action)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Move v58 @ S2_v16 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRollsChanged)
+	67 Nop
+	68 Nop
+	69 Move [v54 @ S1_v18 (System.Action`1<Info.UpgradeType>)+8], [v58 @ S2_v16 (Il2CppMethodInfo)]
+	70 Nop
+	71 Nop
+	72 Move [v54 @ S1_v18 (System.Action`1<Info.UpgradeType>)+14], methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRollsChanged)
+	73 Nop
+	74 Nop
+	75 Add v65 @ S1_v21, v54 @ S1_v18 (System.Action`1<Info.UpgradeType>), 16
+	76 Nop
+	77 Move [v65 @ S1_v21], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	78 Nop
+	79 Nop
+	80 CallVoid GameStats.add_PowerupTriggered, v51 @ S0_v10 (System.String), v54 @ S1_v18 (System.Action`1<Info.UpgradeType>)
+	81 Nop
+	82 Nop
+	83 Call 11B6C, v71 @ S0_v13 (System.Action`4<System.Boolean, System.Boolean, System.Boolean, System.Boolean>), typeof(System.Action)
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Move v75 @ S1_v24 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunStarted)
+	88 Nop
+	89 Nop
+	90 Move [v71 @ S0_v13 (System.Action`4<System.Boolean, System.Boolean, System.Boolean, System.Boolean>)+8], [v75 @ S1_v24 (Il2CppMethodInfo)]
+	91 Nop
+	92 Nop
+	93 Move [v71 @ S0_v13 (System.Action`4<System.Boolean, System.Boolean, System.Boolean, System.Boolean>)+14], methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunStarted)
+	94 Nop
+	95 Nop
+	96 Add v82 @ S0_v16, v71 @ S0_v13 (System.Action`4<System.Boolean, System.Boolean, System.Boolean, System.Boolean>), 16
+	97 Nop
+	98 Move [v82 @ S0_v16], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	99 Nop
+	100 Move v85 @ S0_v18 (Il2CppClass<SYBO.Subway.Game>), typeof(SYBO.Subway.Game)
+	101 Nop
+	102 Nop
+	103 Nop
+	104 And v89 @ S0_v20, [v85 @ S0_v18 (Il2CppClass<SYBO.Subway.Game>)+BA], 512
+	105 CheckEqual v90 @ TEMP_v2 (System.Boolean), v89 @ S0_v20, 0
+	106 ConditionalJump @b22, v90 @ TEMP_v2 (System.Boolean)
+	107 Move v91 @ S0_v30 (Il2CppClass<SYBO.Subway.Game>), typeof(SYBO.Subway.Game)
+	108 Nop
+	109 CheckEqual v93 @ S0_v32 (System.Boolean), [v91 @ S0_v30 (Il2CppClass<SYBO.Subway.Game>)+74], 0
+	110 Not v94 @ TEMP_v4 (System.Boolean), v93 @ S0_v32 (System.Boolean)
+	111 ConditionalJump @b22, v94 @ TEMP_v4 (System.Boolean)
+	112 Nop
+	113 CallVoid 11A99, typeof(SYBO.Subway.Game)
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 CallVoid Game.add_OnRunStarted, v71 @ S0_v13 (System.Action`4<System.Boolean, System.Boolean, System.Boolean, System.Boolean>)
+	119 Nop
+	120 Nop
+	121 Call 11B6C, v102 @ S0_v25 (System.Action), typeof(System.Action)
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Move v106 @ S1_v32 (Il2CppMethodInfo), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunEnded)
+	126 Nop
+	127 Nop
+	128 Move v102.method_ptr (System.IntPtr), [v106 @ S1_v32 (Il2CppMethodInfo)]
+	129 Nop
+	130 Nop
+	131 Move v102.method (System.IntPtr), methodof(Missions.ScorePointsSingleRunNoJumpOrRollAward::OnRunEnded)
+	132 Nop
+	133 Nop
+	134 Add v113 @ S0_v28, v102 @ S0_v25 (System.Action), 16
+	135 Nop
+	136 Move [v113 @ S0_v28], this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	137 Nop
+	138 Nop
+	139 CallVoid Game.add_OnGameDestroyed, v102 @ S0_v25 (System.Action)
+	140 Nop
+	141 Return
+
+Method: System.Void OnRunStarted()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void OnRunEnded()
+
+Disassembly:
+	0xF3649C LocalGet 0
+	0xF3649E I32Const 0
+	0xF364A0 I32Store 2, 44
+	0xF364A3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._offset (System.Int32), 0
+	3 Nop
+	4 Return
+
+Method: System.Void OnScoreChanged()
+
+Disassembly:
+	0xF3648B LocalGet 0
+	0xF3648D I32Const 0
+	0xF3648F Call 31185
+	0xF36493 I32Load 2, 116
+	0xF36496 I32Store 2, 44
+	0xF36499 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Globals.GetPrivacyPolicyUrl, v3 @ S1_v2 (System.String)
+	3 Nop
+	4 Move this._offset (System.Int32), [v3 @ S1_v2 (System.String)+74]
+	5 Nop
+	6 Return
+
+Method: System.Void OnJumpsChanged()
+
+Disassembly:
+	0xF288F0 LocalGet 0
+	0xF288F2 I32Const 0
+	0xF288F4 Call 41950
+	0xF288F8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid Award.RewardPayedOut, this @ L0 (Missions.ScorePointsSingleRunNoJumpOrRollAward)
+	3 Nop
+	4 Return
+
+Method: System.Void OnRollsChanged()
+
+Disassembly:
+	0xF3648B LocalGet 0
+	0xF3648D I32Const 0
+	0xF3648F Call 31185
+	0xF36493 I32Load 2, 116
+	0xF36496 I32Store 2, 44
+	0xF36499 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Globals.GetPrivacyPolicyUrl, v3 @ S1_v2 (System.String)
+	3 Nop
+	4 Move this._offset (System.Int32), [v3 @ S1_v2 (System.String)+74]
+	5 Nop
+	6 Return
+

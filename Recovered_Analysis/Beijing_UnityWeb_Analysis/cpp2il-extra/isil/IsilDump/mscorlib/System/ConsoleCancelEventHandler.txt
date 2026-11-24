@@ -1,0 +1,94 @@
+Type: System.ConsoleCancelEventHandler
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x1255099 I32Const 0
+	0x125509B I32Const 0
+	0x125509D I32Const 0
+	0x125509F I32Const 0
+	0x12550A1 Call 58076
+	0x12550A5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Throw typeof(System.OverflowException)
+	5 Nop
+	6 Return
+
+Method: System.Void Invoke(System.Object sender, System.ConsoleCancelEventArgs e)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), [e @ L2 (System.ConsoleCancelEventArgs)]
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), e @ L2 (System.ConsoleCancelEventArgs)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.ConsoleCancelEventHandler), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], sender @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.IAsyncResult BeginInvoke(System.Object sender, System.ConsoleCancelEventArgs e, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x1252A7B LocalGet 0
+	0x1252A7D LocalGet 1
+	0x1252A7F LocalGet 2
+	0x1252A81 LocalGet 3
+	0x1252A83 LocalGet 4
+	0x1252A85 Call 71911
+	0x1252A89 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Newobj returnVal1 @ S0_v2 (System.ArgumentNullException), typeof(System.ArgumentNullException)
+	6 Nop
+	7 Return returnVal1 @ S0_v2 (System.ArgumentNullException)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xC5FB8A LocalGet 0
+	0xC5FB8C LocalGet 1
+	0xC5FB8E I32Const 1
+	0xC5FB90 I32And
+	0xC5FB91 I32Store8 0, 8
+	0xC5FB94 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.IntPtr), result @ L1 (System.IAsyncResult), 1
+	4 Move this.method_ptr (System.IntPtr), v5 @ S1_v2 (System.IntPtr)
+	5 Nop
+	6 Return
+

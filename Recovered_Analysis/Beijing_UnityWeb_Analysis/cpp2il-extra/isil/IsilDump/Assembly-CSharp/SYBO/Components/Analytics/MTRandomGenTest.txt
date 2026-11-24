@@ -1,0 +1,131 @@
+Type: SYBO.Components.Analytics.MTRandomGenTest
+
+Method: System.String TestIncrement()
+
+Disassembly:
+	0xDEAE28 GlobalGet 7
+	0xDEAE2A LocalSet 0
+	0xDEAE2C GlobalGet 7
+	0xDEAE2E I32Const 16
+	0xDEAE30 I32Add
+	0xDEAE31 GlobalSet 7
+	0xDEAE33 I32Const 4556329
+	0xDEAE38 I32Load8_S 0, 0
+	0xDEAE3B I32Eqz
+	0xDEAE3C If -64
+	0xDEAE3E I32Const 3007940
+	0xDEAE43 I32Load 2, 0
+	0xDEAE46 Call 73003
+	0xDEAE4A I32Const 4556329
+	0xDEAE4F I32Const 1
+	0xDEAE51 I32Store8 0, 0
+	0xDEAE54 End
+	0xDEAE55 LocalGet 0
+	0xDEAE57 I64Const 0
+	0xDEAE59 I64Store 3, 0
+	0xDEAE5C I32Const 4428064
+	0xDEAE61 I32Load 2, 0
+	0xDEAE64 LocalTee 1
+	0xDEAE66 I32Load16_S 1, 186
+	0xDEAE6A I32Const 512
+	0xDEAE6D I32And
+	0xDEAE6E If -64
+	0xDEAE70 LocalGet 1
+	0xDEAE72 I32Load 2, 116
+	0xDEAE75 I32Eqz
+	0xDEAE76 If -64
+	0xDEAE78 LocalGet 1
+	0xDEAE7A Call 72345
+	0xDEAE7E End
+	0xDEAE7F End
+	0xDEAE80 LocalGet 0
+	0xDEAE82 I32Const 0
+	0xDEAE84 Call 56522
+	0xDEAE88 I64Store 3, 0
+	0xDEAE8B LocalGet 0
+	0xDEAE8D I64Load 3, 0
+	0xDEAE90 I64Const 4611686018427387903
+	0xDEAE9A I64And
+	0xDEAE9B LocalSet 2
+	0xDEAE9D I32Const 4435452
+	0xDEAEA2 I32Load 2, 0
+	0xDEAEA5 Call 72556
+	0xDEAEA9 LocalTee 1
+	0xDEAEAB LocalGet 2
+	0xDEAEAD I64Const 4294967295
+	0xDEAEB3 I64Rem_S
+	0xDEAEB4 I32Wrap_I64
+	0xDEAEB5 I32Const 0
+	0xDEAEB7 I32Const 0
+	0xDEAEB9 Call 36854
+	0xDEAEBD LocalGet 0
+	0xDEAEBF GlobalSet 7
+	0xDEAEC1 LocalGet 1
+	0xDEAEC3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b11
+	11 Nop
+	12 Move v12 @ S0_v28, [2DE5C4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v28
+	14 Nop
+	15 Move v14 @ S1_v10, 1
+	16 Move [458629], v14 @ S1_v10
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Move v20 @ S0_v10 (Il2CppClass<System.DateTime>), typeof(System.DateTime)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v24 @ S0_v12, [v20 @ S0_v10 (Il2CppClass<System.DateTime>)+BA], 512
+	27 CheckEqual v25 @ TEMP_v2 (System.Boolean), v24 @ S0_v12, 0
+	28 ConditionalJump @b12, v25 @ TEMP_v2 (System.Boolean)
+	29 Move v26 @ S0_v23 (Il2CppClass<System.DateTime>), typeof(System.DateTime)
+	30 Nop
+	31 CheckEqual v28 @ S0_v25 (System.Boolean), [v26 @ S0_v23 (Il2CppClass<System.DateTime>)+74], 0
+	32 Not v29 @ TEMP_v6 (System.Boolean), v28 @ S0_v25 (System.Boolean)
+	33 ConditionalJump @b12, v29 @ TEMP_v6 (System.Boolean)
+	34 Nop
+	35 CallVoid 11A99, typeof(System.DateTime)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call DateTime.get_UtcNow, v35 @ S1_v6 (System.DateTime)
+	41 Move [v1 @ G7], v35 @ S1_v6 (System.DateTime)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v39 @ S0_v17, [v1 @ G7], 4611686018427387903
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Call 11B6C, v43 @ S0_v20 (SYBO.Components.Analytics.Integration.AggregatedDataTracking), typeof(SYBO.Components.Analytics.MTRandomGen)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Divide v47 @ TEMP_v4, v39 @ S0_v17, 4294967295
+	54 Multiply v48 @ TEMP_v5, v47 @ TEMP_v4, 4294967295
+	55 Subtract v49 @ S1_v9 (System.Boolean), v39 @ S0_v17, v48 @ TEMP_v5
+	56 Nop
+	57 Nop
+	58 CallVoid AggregatedDataTracking.Initialize, v43 @ S0_v20 (SYBO.Components.Analytics.Integration.AggregatedDataTracking), v49 @ S1_v9 (System.Boolean), 0
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Return v43 @ S0_v20 (SYBO.Components.Analytics.Integration.AggregatedDataTracking)
+

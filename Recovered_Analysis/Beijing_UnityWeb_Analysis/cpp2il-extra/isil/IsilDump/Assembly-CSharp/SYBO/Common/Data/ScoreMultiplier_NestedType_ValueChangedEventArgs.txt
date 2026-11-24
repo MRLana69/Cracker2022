@@ -1,0 +1,112 @@
+Type: SYBO.Common.Data.ScoreMultiplier+ValueChangedEventArgs
+
+Method: System.Single get_NewValue()
+
+Disassembly:
+	0xC24A82 LocalGet 0
+	0xC24A84 F32Load 2, 16
+	0xC24A87 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return [this @ L0 (SYBO.Common.Data.ScoreMultiplier+ValueChangedEventArgs)+10]
+
+Method: System.Single get_OldValue()
+
+Disassembly:
+	0xC24A70 LocalGet 0
+	0xC24A72 F32Load 2, 8
+	0xC24A75 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._newValue (System.Single)
+
+Method: System.Void .ctor(System.Single newValue, System.Single oldValue)
+
+Disassembly:
+	0xDAC81F I32Const 4555668
+	0xDAC824 I32Load8_S 0, 0
+	0xDAC827 I32Eqz
+	0xDAC828 If -64
+	0xDAC82A I32Const 2925988
+	0xDAC82F I32Load 2, 0
+	0xDAC832 Call 73003
+	0xDAC836 I32Const 4555668
+	0xDAC83B I32Const 1
+	0xDAC83D I32Store8 0, 0
+	0xDAC840 End
+	0xDAC841 LocalGet 0
+	0xDAC843 LocalGet 1
+	0xDAC845 F32Store 2, 12
+	0xDAC848 I32Const 4433348
+	0xDAC84D I32Load 2, 0
+	0xDAC850 LocalTee 4
+	0xDAC852 I32Load16_S 1, 186
+	0xDAC856 I32Const 512
+	0xDAC859 I32And
+	0xDAC85A If -64
+	0xDAC85C LocalGet 4
+	0xDAC85E I32Load 2, 116
+	0xDAC861 I32Eqz
+	0xDAC862 If -64
+	0xDAC864 LocalGet 4
+	0xDAC866 Call 72345
+	0xDAC86A End
+	0xDAC86B End
+	0xDAC86C LocalGet 0
+	0xDAC86E LocalGet 2
+	0xDAC870 F32Const 0.5
+	0xDAC875 F32Add
+	0xDAC876 I32Const 0
+	0xDAC878 Call 63151
+	0xDAC87C I32Store 2, 16
+	0xDAC87F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v17, [2CA5A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [458394], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this._oldValue (System.Single), newValue @ L1 (System.Single)
+	15 Nop
+	16 Move v16 @ S0_v7 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v20 @ S0_v9, [v16 @ S0_v7 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	21 CheckEqual v21 @ TEMP_v2 (System.Boolean), v20 @ S0_v9, 0
+	22 ConditionalJump @b10, v21 @ TEMP_v2 (System.Boolean)
+	23 Move v22 @ S0_v12 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	24 Nop
+	25 CheckEqual v24 @ S0_v14 (System.Boolean), [v22 @ S0_v12 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	26 Not v25 @ TEMP_v4 (System.Boolean), v24 @ S0_v14 (System.Boolean)
+	27 ConditionalJump @b10, v25 @ TEMP_v4 (System.Boolean)
+	28 Nop
+	29 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Add v33 @ S1_v5 (System.Single), oldValue @ L2 (System.Single), 0.5f
+	36 Nop
+	37 Call Mathf.RoundToInt, v35 @ S1_v6 (System.Int32), v33 @ S1_v5 (System.Single)
+	38 Move [this @ L0 (SYBO.Common.Data.ScoreMultiplier+ValueChangedEventArgs)+10], v35 @ S1_v6 (System.Int32)
+	39 Nop
+	40 Return
+

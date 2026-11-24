@@ -1,0 +1,846 @@
+Type: InAppPurchase.Internal.EditorPurchaseProvider
+
+Method: System.Void Init(InAppPurchase.IInAppManager inAppManager, Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer purchaseValidationServer)
+
+Disassembly:
+	0xF04F7D I32Const 4559902
+	0xF04F82 I32Load8_S 0, 0
+	0xF04F85 I32Eqz
+	0xF04F86 If -64
+	0xF04F88 I32Const 2926264
+	0xF04F8D I32Load 2, 0
+	0xF04F90 Call 73003
+	0xF04F94 I32Const 4559902
+	0xF04F99 I32Const 1
+	0xF04F9B I32Store8 0, 0
+	0xF04F9E End
+	0xF04F9F LocalGet 1
+	0xF04FA1 If -64
+	0xF04FA3 LocalGet 1
+	0xF04FA5 LocalGet 2
+	0xF04FA7 I32Const 4475588
+	0xF04FAC I32Load 2, 0
+	0xF04FAF Call 30551
+	0xF04FB3 End
+	0xF04FB4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v9, [2CA6B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45941E], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), inAppManager @ L1 (InAppPurchase.IInAppManager), 0
+	14 ConditionalJump @b6, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 CallVoid Action`1<System.String>.Invoke, inAppManager @ L1 (InAppPurchase.IInAppManager), purchaseValidationServer @ L2 (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer)
+	20 Nop
+	21 Nop
+	22 Return
+
+Method: System.Boolean get_IsValidationServerSpecified()
+
+Disassembly:
+	0x7CF6F I32Const 0
+	0x7CF71 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 0
+
+Method: System.Boolean CanMakePurchases()
+
+Disassembly:
+	0xF05202 LocalGet 0
+	0xF05204 I32Load 2, 24
+	0xF05207 I32Const 0
+	0xF05209 I32Ne
+	0xF0520A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._purchaseValidationServer (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void RequestProductInfo(System.String[] productIds)
+
+Disassembly:
+	0xD77AC6 LocalGet 1
+	0xD77AC8 If -64
+	0xD77ACA LocalGet 1
+	0xD77ACC I32Const 0
+	0xD77ACE Call 30903
+	0xD77AD2 End
+	0xD77AD3 End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ TEMP_v1 (System.Boolean), productIds @ L1 (System.String[]), 0
+	2 ConditionalJump @b4, v2 @ TEMP_v1 (System.Boolean)
+	3 Nop
+	4 Nop
+	5 CallVoid 78B7, productIds @ L1 (System.String[]), 0
+	6 Nop
+	7 Nop
+	8 Return
+
+Method: System.Boolean StartPurchase(System.String productId)
+
+Disassembly:
+	0xF04C3B GlobalGet 7
+	0xF04C3D LocalSet 2
+	0xF04C3F GlobalGet 7
+	0xF04C41 I32Const 16
+	0xF04C43 I32Add
+	0xF04C44 GlobalSet 7
+	0xF04C46 LocalGet 2
+	0xF04C48 I32Const 0
+	0xF04C4A I32Store 2, 0
+	0xF04C4D Block -64
+	0xF04C4F LocalGet 1
+	0xF04C51 LocalGet 2
+	0xF04C53 I32Const 0
+	0xF04C55 Call 54854
+	0xF04C59 If -64
+	0xF04C5B Block -64
+	0xF04C5D Block -64
+	0xF04C5F Block -64
+	0xF04C61 Block -64
+	0xF04C63 Block -64
+	0xF04C65 LocalGet 2
+	0xF04C67 I32Load 2, 0
+	0xF04C6A LocalTee 0
+	0xF04C6C BrTable System.UInt64[], 4
+	0xF04C74 End
+	0xF04C75 Br 5
+	0xF04C77 End
+	0xF04C78 Br 4
+	0xF04C7A End
+	0xF04C7B Br 3
+	0xF04C7D End
+	0xF04C7E Br 2
+	0xF04C80 End
+	0xF04C81 End
+	0xF04C82 I32Const 1
+	0xF04C84 LocalSet 0
+	0xF04C86 End
+	0xF04C87 LocalGet 2
+	0xF04C89 GlobalSet 7
+	0xF04C8B LocalGet 0
+	0xF04C8D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7 (System.IFormatProvider)], 0
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Call Int32.System.IConvertible.ToBoolean, v13 @ S0_v6 (System.Boolean), productId @ L1 (System.String), v1 @ G7 (System.IFormatProvider)
+	13 Not v14 @ TEMP_v1 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	14 ConditionalJump @b15, v14 @ TEMP_v1 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CheckEqual v18 @ TEMP_v4 (System.Boolean), [v1 @ G7 (System.IFormatProvider)], 0
+	19 ConditionalJump @b10, v18 @ TEMP_v4 (System.Boolean)
+	20 CheckEqual v22 @ TEMP_v5 (System.Boolean), [v1 @ G7 (System.IFormatProvider)], 1
+	21 ConditionalJump @b15, v22 @ TEMP_v5 (System.Boolean)
+	22 CheckEqual v29 @ TEMP_v6 (System.Boolean), [v1 @ G7 (System.IFormatProvider)], 2
+	23 ConditionalJump @b12, v29 @ TEMP_v6 (System.Boolean)
+	24 CheckEqual v30 @ TEMP_v7 (System.Boolean), [v1 @ G7 (System.IFormatProvider)], 3
+	25 ConditionalJump @b13, v30 @ TEMP_v7 (System.Boolean)
+	26 CheckEqual v23 @ TEMP_v8 (System.Boolean), [v1 @ G7 (System.IFormatProvider)], 4
+	27 ConditionalJump @b11, v23 @ TEMP_v8 (System.Boolean)
+	28 Jump @b15
+	29 Nop
+	30 Jump @b16
+	31 Nop
+	32 Jump @b16
+	33 Nop
+	34 Jump @b16
+	35 Nop
+	36 Jump @b16
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Return v27 @ L0_v1 (Il2CppClass<System.IFormatProvider>)
+
+Method: System.Boolean StartPurchase(System.String productId, System.String cookie)
+
+Disassembly:
+	0xF04201 GlobalGet 7
+	0xF04203 LocalSet 3
+	0xF04205 GlobalGet 7
+	0xF04207 I32Const 16
+	0xF04209 I32Add
+	0xF0420A GlobalSet 7
+	0xF0420C I32Const 4559891
+	0xF04211 I32Load8_S 0, 0
+	0xF04214 I32Eqz
+	0xF04215 If -64
+	0xF04217 I32Const 2926328
+	0xF0421C I32Load 2, 0
+	0xF0421F Call 73003
+	0xF04223 I32Const 4559891
+	0xF04228 I32Const 1
+	0xF0422A I32Store8 0, 0
+	0xF0422D End
+	0xF0422E LocalGet 3
+	0xF04230 I32Const 0
+	0xF04232 I32Store 2, 0
+	0xF04235 I32Const 4438024
+	0xF0423A I32Load 2, 0
+	0xF0423D LocalTee 0
+	0xF0423F I32Load16_S 1, 186
+	0xF04243 I32Const 512
+	0xF04246 I32And
+	0xF04247 If -64
+	0xF04249 LocalGet 0
+	0xF0424B I32Load 2, 116
+	0xF0424E I32Eqz
+	0xF0424F If -64
+	0xF04251 LocalGet 0
+	0xF04253 Call 72345
+	0xF04257 I32Const 4438024
+	0xF0425C I32Load 2, 0
+	0xF0425F LocalSet 0
+	0xF04261 End
+	0xF04262 End
+	0xF04263 Block -1
+	0xF04265 Block -64
+	0xF04267 LocalGet 1
+	0xF04269 LocalGet 0
+	0xF0426B I32Load 2, 92
+	0xF0426E I32Load 2, 0
+	0xF04271 I32Const 0
+	0xF04273 Call 55822
+	0xF04277 LocalTee 0
+	0xF04279 I32Const 12
+	0xF0427B I32Add
+	0xF0427C LocalTee 1
+	0xF0427E I32Load 2, 0
+	0xF04281 I32Const 1
+	0xF04283 I32Lt_S
+	0xF04284 BrIf 0
+	0xF04286 LocalGet 0
+	0xF04288 I32Const 16
+	0xF0428A I32Add
+	0xF0428B I32Load 2, 0
+	0xF0428E LocalGet 3
+	0xF04290 I32Const 0
+	0xF04292 Call 54854
+	0xF04296 I32Eqz
+	0xF04297 BrIf 0
+	0xF04299 LocalGet 1
+	0xF0429B I32Load 2, 0
+	0xF0429E LocalGet 3
+	0xF042A0 I32Load 2, 0
+	0xF042A3 I32Const 2
+	0xF042A5 I32Shl
+	0xF042A6 I32Const 1
+	0xF042A8 I32Add
+	0xF042A9 I32Ne
+	0xF042AA BrIf 0
+	0xF042AC I32Const 4438040
+	0xF042B1 I32Load 2, 0
+	0xF042B4 LocalGet 3
+	0xF042B6 I32Load 2, 0
+	0xF042B9 Call 71670
+	0xF042BD LocalSet 5
+	0xF042BF I32Const 0
+	0xF042C1 LocalSet 1
+	0xF042C3 Loop -64
+	0xF042C5 LocalGet 1
+	0xF042C7 LocalGet 3
+	0xF042C9 I32Load 2, 0
+	0xF042CC I32Lt_S
+	0xF042CD If -64
+	0xF042CF LocalGet 0
+	0xF042D1 I32Const 16
+	0xF042D3 I32Add
+	0xF042D4 LocalGet 1
+	0xF042D6 I32Const 2
+	0xF042D8 I32Shl
+	0xF042D9 I32Const 1
+	0xF042DB I32Add
+	0xF042DC LocalTee 4
+	0xF042DE I32Const 2
+	0xF042E0 I32Shl
+	0xF042E1 I32Add
+	0xF042E2 I32Load 2, 0
+	0xF042E5 LocalSet 6
+	0xF042E7 LocalGet 0
+	0xF042E9 LocalGet 4
+	0xF042EB I32Const 2
+	0xF042ED I32Shl
+	0xF042EE I32Add
+	0xF042EF I32Const 20
+	0xF042F1 I32Add
+	0xF042F2 I32Load 2, 0
+	0xF042F5 LocalSet 7
+	0xF042F7 LocalGet 0
+	0xF042F9 LocalGet 4
+	0xF042FB I32Const 2
+	0xF042FD I32Shl
+	0xF042FE I32Add
+	0xF042FF I32Const 24
+	0xF04301 I32Add
+	0xF04302 I32Load 2, 0
+	0xF04305 LocalSet 8
+	0xF04307 LocalGet 0
+	0xF04309 LocalGet 4
+	0xF0430B I32Const 2
+	0xF0430D I32Shl
+	0xF0430E I32Add
+	0xF0430F I32Const 28
+	0xF04311 I32Add
+	0xF04312 I32Load 2, 0
+	0xF04315 LocalSet 9
+	0xF04317 LocalGet 5
+	0xF04319 I32Const 16
+	0xF0431B I32Add
+	0xF0431C LocalGet 1
+	0xF0431E I32Const 4
+	0xF04320 I32Shl
+	0xF04321 I32Add
+	0xF04322 LocalTee 4
+	0xF04324 LocalGet 6
+	0xF04326 I32Store 2, 0
+	0xF04329 LocalGet 4
+	0xF0432B I32Const 4
+	0xF0432D I32Add
+	0xF0432E LocalGet 7
+	0xF04330 I32Store 2, 0
+	0xF04333 LocalGet 4
+	0xF04335 I32Const 8
+	0xF04337 I32Add
+	0xF04338 LocalGet 8
+	0xF0433A I32Store 2, 0
+	0xF0433D LocalGet 4
+	0xF0433F I32Const 12
+	0xF04341 I32Add
+	0xF04342 LocalGet 9
+	0xF04344 I32Store 2, 0
+	0xF04347 LocalGet 1
+	0xF04349 I32Const 1
+	0xF0434B I32Add
+	0xF0434C LocalSet 1
+	0xF0434E Br 1
+	0xF04350 End
+	0xF04351 End
+	0xF04352 LocalGet 2
+	0xF04354 LocalGet 5
+	0xF04356 I32Store 2, 0
+	0xF04359 I32Const 1
+	0xF0435B Br 1
+	0xF0435D End
+	0xF0435E LocalGet 2
+	0xF04360 I32Const 4438040
+	0xF04365 I32Load 2, 0
+	0xF04368 I32Const 0
+	0xF0436A Call 71670
+	0xF0436E I32Store 2, 0
+	0xF04371 I32Const 0
+	0xF04373 End
+	0xF04374 LocalGet 3
+	0xF04376 GlobalSet 7
+	0xF04378 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b18
+	11 Nop
+	12 Move v12 @ S0_v74, [2CA6F8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v74
+	14 Nop
+	15 Move v14 @ S1_v53, 1
+	16 Move [459413], v14 @ S1_v53
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7 (System.IFormatProvider)], 0
+	21 Nop
+	22 Move v20 @ S0_v10 (Il2CppClass<InAppPurchase.Internal.AndroidPurchaseProvider>), typeof(InAppPurchase.Internal.AndroidPurchaseProvider)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v24 @ S0_v12, [v20 @ S0_v10 (Il2CppClass<InAppPurchase.Internal.AndroidPurchaseProvider>)+BA], 512
+	27 CheckEqual v25 @ TEMP_v2 (System.Boolean), v24 @ S0_v12, 0
+	28 ConditionalJump @b22, v25 @ TEMP_v2 (System.Boolean)
+	29 Move v26 @ S0_v67 (Il2CppClass<InAppPurchase.Internal.AndroidPurchaseProvider>), typeof(InAppPurchase.Internal.AndroidPurchaseProvider)
+	30 Nop
+	31 CheckEqual v28 @ S0_v69 (System.Boolean), [v26 @ S0_v67 (Il2CppClass<InAppPurchase.Internal.AndroidPurchaseProvider>)+74], 0
+	32 Not v29 @ TEMP_v7 (System.Boolean), v28 @ S0_v69 (System.Boolean)
+	33 ConditionalJump @b22, v29 @ TEMP_v7 (System.Boolean)
+	34 Nop
+	35 CallVoid 11A99, typeof(InAppPurchase.Internal.AndroidPurchaseProvider)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Call String.Substring, v41 @ S0_v15 (System.String), productId @ L1 (System.String), v38.SEPARATOR_FOR_STRING_SPLIT (System.Char[])
+	47 Nop
+	48 Nop
+	49 Add v45 @ S0_v16, v41 @ S0_v15 (System.String), 12
+	50 Nop
+	51 Nop
+	52 Nop
+	53 CheckLess v49 @ S0_v18 (System.Boolean), [v45 @ S0_v16], 1
+	54 ConditionalJump @b16, v49 @ S0_v18 (System.Boolean)
+	55 Nop
+	56 Nop
+	57 Add v53 @ S0_v24, v41 @ S0_v15 (System.String), 16
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Call Int32.System.IConvertible.ToBoolean, v57 @ S0_v26 (System.Boolean), [v53 @ S0_v24], v1 @ G7 (System.IFormatProvider)
+	62 Not v63 @ S0_v27 (System.Boolean), v57 @ S0_v26 (System.Boolean)
+	63 ConditionalJump @b16, v63 @ S0_v27 (System.Boolean)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 ShiftLeft v77 @ S1_v20, [v1 @ G7 (System.IFormatProvider)], 2
+	70 Nop
+	71 Add v61 @ S1_v21, v77 @ S1_v20, 1
+	72 CheckNotEqual v64 @ S0_v30 (System.Boolean), [v45 @ S0_v16], v61 @ S1_v21
+	73 ConditionalJump @b16, v64 @ S0_v30 (System.Boolean)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Newobj v112 @ S0_v33 (System.OverflowException), typeof(System.OverflowException)
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 CheckLess v130 @ S0_v37 (System.Boolean), v99 @ L1_v4, [v1 @ G7 (System.IFormatProvider)]
+	87 Not v101 @ TEMP_v6 (System.Boolean), v130 @ S0_v37 (System.Boolean)
+	88 ConditionalJump @b15, v101 @ TEMP_v6 (System.Boolean)
+	89 Nop
+	90 Nop
+	91 Add v133 @ S0_v41, v41 @ S0_v15 (System.String), 16
+	92 Nop
+	93 Nop
+	94 ShiftLeft v136 @ S1_v30, v99 @ L1_v4, 2
+	95 Nop
+	96 Add v138 @ S1_v31, v136 @ S1_v30, 1
+	97 Nop
+	98 Nop
+	99 ShiftLeft v141 @ S1_v32, v138 @ S1_v31, 2
+	100 Add v142 @ S0_v42, v133 @ S0_v41, v141 @ S1_v32
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Nop
+	106 ShiftLeft v147 @ S1_v34, v138 @ S1_v31, 2
+	107 Add v148 @ S0_v45, v41 @ S0_v15 (System.String), v147 @ S1_v34
+	108 Nop
+	109 Add v150 @ S0_v46, v148 @ S0_v45, 20
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 ShiftLeft v155 @ S1_v37, v138 @ S1_v31, 2
+	116 Add v156 @ S0_v49, v41 @ S0_v15 (System.String), v155 @ S1_v37
+	117 Nop
+	118 Add v158 @ S0_v50, v156 @ S0_v49, 24
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 ShiftLeft v163 @ S1_v40, v138 @ S1_v31, 2
+	125 Add v164 @ S0_v53, v41 @ S0_v15 (System.String), v163 @ S1_v40
+	126 Nop
+	127 Add v166 @ S0_v54, v164 @ S0_v53, 28
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Add v170 @ S0_v57, v112 @ S0_v33 (System.OverflowException), 16
+	133 Nop
+	134 Nop
+	135 ShiftLeft v172 @ S1_v44, v99 @ L1_v4, 4
+	136 Add v173 @ S0_v58, v170 @ S0_v57, v172 @ S1_v44
+	137 Nop
+	138 Nop
+	139 Move [v173 @ S0_v58], [v142 @ S0_v42]
+	140 Nop
+	141 Nop
+	142 Add v177 @ S0_v60, v173 @ S0_v58, 4
+	143 Nop
+	144 Move [v177 @ S0_v60], [v150 @ S0_v46]
+	145 Nop
+	146 Nop
+	147 Add v181 @ S0_v62, v173 @ S0_v58, 8
+	148 Nop
+	149 Move [v181 @ S0_v62], [v158 @ S0_v50]
+	150 Nop
+	151 Nop
+	152 Add v185 @ S0_v64, v173 @ S0_v58, 12
+	153 Nop
+	154 Move [v185 @ S0_v64], [v166 @ S0_v54]
+	155 Nop
+	156 Nop
+	157 Add v126 @ S0_v66, v99 @ L1_v4, 1
+	158 Nop
+	159 Jump @b20
+	160 Nop
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Move [cookie @ L2 (System.String)], v112 @ S0_v33 (System.OverflowException)
+	165 Nop
+	166 Jump @b21
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Nop
+	172 Newobj v70 @ S1_v15 (System.OverflowException), typeof(System.OverflowException)
+	173 Move [cookie @ L2 (System.String)], v70 @ S1_v15 (System.OverflowException)
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Nop
+	179 Return returnVal1 @ S0_v19 (System.Boolean)
+
+Method: System.Void FinishPurchase(System.String productId, System.String transactionId, System.String purchaseToken)
+
+Disassembly:
+	0xF046E0 LocalGet 0
+	0xF046E2 I32Load 2, 24
+	0xF046E5 LocalTee 5
+	0xF046E7 If -64
+	0xF046E9 LocalGet 5
+	0xF046EB LocalGet 1
+	0xF046ED LocalGet 2
+	0xF046EF LocalGet 3
+	0xF046F1 I32Const 0
+	0xF046F3 I32Const 0
+	0xF046F5 Call 35168
+	0xF046F9 End
+	0xF046FA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v4 @ TEMP_v1 (System.Boolean), this._purchaseValidationServer (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer), 0
+	4 ConditionalJump @b4, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CallVoid 8960, this._purchaseValidationServer (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer), productId @ L1 (System.String), transactionId @ L2 (System.String), purchaseToken @ L3 (System.String), 0, 0
+	12 Nop
+	13 Nop
+	14 Return
+
+Method: System.Boolean RestoreNonConsumablePurchases(System.String[] productIds)
+
+Disassembly:
+	0xF05274 LocalGet 0
+	0xF05276 LocalGet 1
+	0xF05278 I32Const 0
+	0xF0527A I32Const 0
+	0xF0527C Call 41703
+	0xF05280 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call IOSPurchaseProvider.StartPurchase, returnVal1 @ S0_v2 (System.Boolean), this @ L0 (InAppPurchase.Internal.EditorPurchaseProvider), productIds @ L1 (System.String[]), 0
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Boolean)
+
+Method: System.Collections.IEnumerator ProductRequestCoroutine(System.String[] productIds)
+
+Disassembly:
+	0xF052F7 LocalGet 0
+	0xF052F9 I32Load 2, 32
+	0xF052FC LocalGet 0
+	0xF052FE LocalGet 1
+	0xF05300 I32Const 0
+	0xF05302 Call 41706
+	0xF05306 I32Const 0
+	0xF05308 Call 63610
+	0xF0530C Drop
+	0xF0530D I32Const 1
+	0xF0530F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call IOSPurchaseProvider.StartPurchase, v7 @ S1_v2 (System.Boolean), this @ L0 (InAppPurchase.Internal.EditorPurchaseProvider), productIds @ L1 (System.String[])
+	6 Nop
+	7 Call MonoBehaviour.StartCoroutine_Auto, v9 @ S0_v3 (UnityEngine.Coroutine), this._coroutineBehaviour (UnityEngine.MonoBehaviour), v7 @ S1_v2 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 Return 1
+
+Method: System.Collections.IEnumerator PurchaseCoroutine(System.String productId)
+
+Disassembly:
+	0xF05226 I32Const 4559904
+	0xF0522B I32Load8_S 0, 0
+	0xF0522E I32Eqz
+	0xF0522F If -64
+	0xF05231 I32Const 2956124
+	0xF05236 I32Load 2, 0
+	0xF05239 Call 73003
+	0xF0523D I32Const 4559904
+	0xF05242 I32Const 1
+	0xF05244 I32Store8 0, 0
+	0xF05247 End
+	0xF05248 I32Const 4438084
+	0xF0524D I32Load 2, 0
+	0xF05250 Call 72556
+	0xF05254 LocalTee 2
+	0xF05256 I32Const 0
+	0xF05258 I32Store 2, 8
+	0xF0525B LocalGet 2
+	0xF0525D I32Const 20
+	0xF0525F I32Add
+	0xF05260 LocalGet 0
+	0xF05262 I32Store 2, 0
+	0xF05265 LocalGet 2
+	0xF05267 I32Const 16
+	0xF05269 I32Add
+	0xF0526A LocalGet 1
+	0xF0526C I32Store 2, 0
+	0xF0526F LocalGet 2
+	0xF05271 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v14, [2D1B5C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [459420], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.IEnumerator), typeof(InAppPurchase.Internal.EditorPurchaseProvider+<ProductRequestCoroutine>d__24)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (System.Collections.IEnumerator)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.Collections.IEnumerator), 20
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (InAppPurchase.Internal.EditorPurchaseProvider)
+	23 Nop
+	24 Nop
+	25 Add v23 @ S0_v11, v13 @ S0_v7 (System.Collections.IEnumerator), 16
+	26 Nop
+	27 Move [v23 @ S0_v11], productId @ L1 (System.String)
+	28 Nop
+	29 Nop
+	30 Return v13 @ S0_v7 (System.Collections.IEnumerator)
+
+Method: System.Collections.IEnumerator RestoreCoroutine(System.String[] productIds)
+
+Disassembly:
+	0xF052A9 I32Const 4559905
+	0xF052AE I32Load8_S 0, 0
+	0xF052B1 I32Eqz
+	0xF052B2 If -64
+	0xF052B4 I32Const 2956128
+	0xF052B9 I32Load 2, 0
+	0xF052BC Call 73003
+	0xF052C0 I32Const 4559905
+	0xF052C5 I32Const 1
+	0xF052C7 I32Store8 0, 0
+	0xF052CA End
+	0xF052CB I32Const 4438088
+	0xF052D0 I32Load 2, 0
+	0xF052D3 Call 72556
+	0xF052D7 LocalTee 2
+	0xF052D9 I32Const 0
+	0xF052DB I32Store 2, 8
+	0xF052DE LocalGet 2
+	0xF052E0 I32Const 20
+	0xF052E2 I32Add
+	0xF052E3 LocalGet 0
+	0xF052E5 I32Store 2, 0
+	0xF052E8 LocalGet 2
+	0xF052EA I32Const 24
+	0xF052EC I32Add
+	0xF052ED LocalGet 1
+	0xF052EF I32Store 2, 0
+	0xF052F2 LocalGet 2
+	0xF052F4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v14, [2D1B60]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [459421], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.IEnumerator), typeof(InAppPurchase.Internal.EditorPurchaseProvider+<PurchaseCoroutine>d__25)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (System.Collections.IEnumerator)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.Collections.IEnumerator), 20
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (InAppPurchase.Internal.EditorPurchaseProvider)
+	23 Nop
+	24 Nop
+	25 Add v23 @ S0_v11, v13 @ S0_v7 (System.Collections.IEnumerator), 24
+	26 Nop
+	27 Move [v23 @ S0_v11], productIds @ L1 (System.String[])
+	28 Nop
+	29 Nop
+	30 Return v13 @ S0_v7 (System.Collections.IEnumerator)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid F4C1, this @ L0 (InAppPurchase.Internal.EditorPurchaseProvider), 0
+	3 Nop
+	4 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0xF04E93 I32Const 4559901
+	0xF04E98 I32Load8_S 0, 0
+	0xF04E9B I32Eqz
+	0xF04E9C If -64
+	0xF04E9E I32Const 2926336
+	0xF04EA3 I32Load 2, 0
+	0xF04EA6 Call 73003
+	0xF04EAA I32Const 4559901
+	0xF04EAF I32Const 1
+	0xF04EB1 I32Store8 0, 0
+	0xF04EB4 End
+	0xF04EB5 I32Const 4427880
+	0xF04EBA I32Load 2, 0
+	0xF04EBD I32Const 1
+	0xF04EBF Call 71670
+	0xF04EC3 LocalTee 0
+	0xF04EC5 I32Const 16
+	0xF04EC7 I32Add
+	0xF04EC8 I32Const 59
+	0xF04ECA I32Store16 1, 0
+	0xF04ECD I32Const 4438024
+	0xF04ED2 I32Load 2, 0
+	0xF04ED5 I32Load 2, 92
+	0xF04ED8 LocalGet 0
+	0xF04EDA I32Store 2, 0
+	0xF04EDD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v13, [2CA700]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45941D], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Newobj v14 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	16 Nop
+	17 Nop
+	18 Add v17 @ S0_v8, v14 @ S0_v7 (System.OverflowException), 16
+	19 Nop
+	20 Move [v17 @ S0_v8], 59
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Move v21.SEPARATOR_FOR_STRING_SPLIT (System.Char[]), v14 @ S0_v7 (System.OverflowException)
+	26 Nop
+	27 Return
+

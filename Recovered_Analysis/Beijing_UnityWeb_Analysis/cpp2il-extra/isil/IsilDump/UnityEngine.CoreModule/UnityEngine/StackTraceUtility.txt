@@ -1,0 +1,307 @@
+Type: UnityEngine.StackTraceUtility
+
+Method: System.Void SetProjectFolder(System.String folder)
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.String ExtractStackTrace()
+
+Disassembly:
+	0x13A58D7 GlobalGet 7
+	0x13A58D9 LocalSet 0
+	0x13A58DB GlobalGet 7
+	0x13A58DD I32Const 16
+	0x13A58DF I32Add
+	0x13A58E0 GlobalSet 7
+	0x13A58E2 LocalGet 0
+	0x13A58E4 I32Const 0
+	0x13A58E6 I32Store 2, 0
+	0x13A58E9 LocalGet 0
+	0x13A58EB I32Const 4
+	0x13A58ED Call 14799
+	0x13A58F0 LocalGet 0
+	0x13A58F2 I32Const 42
+	0x13A58F4 I32Store 2, 0
+	0x13A58F7 LocalGet 0
+	0x13A58F9 I32Const 4
+	0x13A58FB I32Add
+	0x13A58FC LocalTee 1
+	0x13A58FE LocalGet 0
+	0x13A5900 I32Load 2, 0
+	0x13A5903 I32Store 2, 0
+	0x13A5906 LocalGet 1
+	0x13A5908 I32Load 2, 0
+	0x13A590B I32Const 42
+	0x13A590D I32Eq
+	0x13A590E LocalGet 0
+	0x13A5910 GlobalSet 7
+	0x13A5912 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], 0
+	9 Nop
+	10 Nop
+	11 CallVoid 39CF, v1 @ G7, 4
+	12 Nop
+	13 Nop
+	14 Move [v1 @ G7], 42
+	15 Nop
+	16 Nop
+	17 Add v15 @ S0_v8, v1 @ G7, 4
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Move [v15 @ S0_v8], [v1 @ G7]
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CheckEqual returnVal1 @ S0_v11 (System.Boolean), [v15 @ S0_v8], 42
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Return returnVal1 @ S0_v11 (System.Boolean)
+
+Method: System.Boolean IsSystemStacktraceType(System.Object name)
+
+Disassembly:
+	0x13A574F LocalGet 0
+	0x13A5751 I32Const 1
+	0x13A5753 I32Const 0
+	0x13A5755 Call 64125
+	0x13A5759 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call StackTraceUtility.PostprocessStacktrace, returnVal1 @ S0_v2 (System.Boolean), name @ L0 (System.Object), 1
+	4 Nop
+	5 Return returnVal1 @ S0_v2 (System.Boolean)
+
+Method: System.Void ExtractStringFromExceptionInternal(System.Object exceptiono, out System.String message, out System.String stackTrace)
+
+Disassembly:
+	0xC6BF78 LocalGet 0
+	0xC6BF7A I32Const 8
+	0xC6BF7C I32Add
+	0xC6BF7D LocalTee 4
+	0xC6BF7F LocalGet 1
+	0xC6BF81 I32Store 2, 0
+	0xC6BF84 LocalGet 4
+	0xC6BF86 LocalGet 2
+	0xC6BF88 I32Store 2, 4
+	0xC6BF8B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, exceptiono @ L0 (System.Object), 8
+	3 Nop
+	4 Nop
+	5 Move [v3 @ S0_v2], message @ L1 (System.String&)
+	6 Nop
+	7 Nop
+	8 Move [v3 @ S0_v2+4], stackTrace @ L2 (System.String&)
+	9 Nop
+	10 Return
+
+Method: System.String PostprocessStacktrace(System.String oldString, System.Boolean stripEngineInternalInformation)
+
+Disassembly:
+	0x13A575C I32Const 3927008
+	0x13A5761 I32Load 2, 0
+	0x13A5764 LocalTee 2
+	0x13A5766 I32Eqz
+	0x13A5767 If -64
+	0x13A5769 I32Const 3927008
+	0x13A576E I32Const 3509993
+	0x13A5773 Call 73893
+	0x13A5777 LocalTee 2
+	0x13A5779 I32Store 2, 0
+	0x13A577C End
+	0x13A577D LocalGet 0
+	0x13A577F LocalGet 1
+	0x13A5781 LocalGet 2
+	0x13A5783 I32Const 16383
+	0x13A5787 I32And
+	0x13A5788 I32Const 6161
+	0x13A578B I32Add
+	0x13A578C CallIndirect 0, 0
+	0x13A578F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BEBE0], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3509993
+	9 Nop
+	10 Move [3BEBE0], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 6161
+	19 IndirectCall v21 @ S2_v3, returnVal1 @ S0_v6 (System.String), oldString @ L0 (System.String), stripEngineInternalInformation @ L1 (System.Boolean)
+	20 Nop
+	21 Return returnVal1 @ S0_v6 (System.String)
+
+Method: System.String ExtractFormattedStackTrace(System.Diagnostics.StackTrace stackTrace)
+
+Disassembly:
+	0x13A6CA2 I32Const 4573451
+	0x13A6CA7 I32Load8_S 0, 0
+	0x13A6CAA I32Eqz
+	0x13A6CAB If -64
+	0x13A6CAD I32Const 3006076
+	0x13A6CB2 I32Load 2, 0
+	0x13A6CB5 Call 73003
+	0x13A6CB9 I32Const 4573451
+	0x13A6CBE I32Const 1
+	0x13A6CC0 I32Store8 0, 0
+	0x13A6CC3 End
+	0x13A6CC4 LocalGet 0
+	0x13A6CC6 I32Const 4427772
+	0x13A6CCB I32Load 2, 0
+	0x13A6CCE Call 29321
+	0x13A6CD2 LocalTee 0
+	0x13A6CD4 I32Const 4517724
+	0x13A6CD9 I32Load 2, 0
+	0x13A6CDC I32Const 0
+	0x13A6CDE Call 55877
+	0x13A6CE2 If -1
+	0x13A6CE4 I32Const 1
+	0x13A6CE6 Else
+	0x13A6CE7 LocalGet 0
+	0x13A6CE9 I32Const 4517728
+	0x13A6CEE I32Load 2, 0
+	0x13A6CF1 I32Const 0
+	0x13A6CF3 Call 55877
+	0x13A6CF7 If -1
+	0x13A6CF9 I32Const 1
+	0x13A6CFB Else
+	0x13A6CFC LocalGet 0
+	0x13A6CFE I32Const 4510664
+	0x13A6D03 I32Load 2, 0
+	0x13A6D06 I32Const 0
+	0x13A6D08 Call 55877
+	0x13A6D0C If -1
+	0x13A6D0E I32Const 1
+	0x13A6D10 Else
+	0x13A6D11 LocalGet 0
+	0x13A6D13 I32Const 4517732
+	0x13A6D18 I32Load 2, 0
+	0x13A6D1B I32Const 0
+	0x13A6D1D Call 55877
+	0x13A6D21 If -1
+	0x13A6D23 I32Const 1
+	0x13A6D25 Else
+	0x13A6D26 LocalGet 0
+	0x13A6D28 I32Const 4517736
+	0x13A6D2D I32Load 2, 0
+	0x13A6D30 I32Const 0
+	0x13A6D32 Call 55877
+	0x13A6D36 End
+	0x13A6D37 End
+	0x13A6D38 End
+	0x13A6D39 End
+	0x13A6D3A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v22, [2DDE7C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [45C90B], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call 7289, v15 @ S0_v6 (System.String), stackTrace @ L0 (System.Diagnostics.StackTrace), typeof(System.String)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call String.ToLower, v20 @ S0_v7 (System.String), v15 @ S0_v6 (System.String), "UnityEditor."
+	21 CheckEqual v21 @ TEMP_v2 (System.Boolean), v20 @ S0_v7 (System.String), 0
+	22 ConditionalJump @b8, v21 @ TEMP_v2 (System.Boolean)
+	23 Nop
+	24 Jump @b20
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Call String.ToLower, v27 @ S0_v10 (System.String), v15 @ S0_v6 (System.String), "UnityEngine."
+	30 CheckEqual v37 @ TEMP_v4 (System.Boolean), v27 @ S0_v10 (System.String), 0
+	31 ConditionalJump @b11, v37 @ TEMP_v4 (System.Boolean)
+	32 Nop
+	33 Jump @b20
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call String.ToLower, v47 @ S0_v12 (System.String), v15 @ S0_v6 (System.String), "System."
+	39 CheckEqual v38 @ TEMP_v5 (System.Boolean), v47 @ S0_v12 (System.String), 0
+	40 ConditionalJump @b14, v38 @ TEMP_v5 (System.Boolean)
+	41 Nop
+	42 Jump @b20
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Call String.ToLower, v50 @ S0_v14 (System.String), v15 @ S0_v6 (System.String), "UnityScript.Lang."
+	48 CheckEqual v39 @ TEMP_v6 (System.Boolean), v50 @ S0_v14 (System.String), 0
+	49 ConditionalJump @b17, v39 @ TEMP_v6 (System.Boolean)
+	50 Nop
+	51 Jump @b20
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Call String.ToLower, returnVal1 @ S0_v8 (System.String), v15 @ S0_v6 (System.String), "Boo.Lang."
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Return returnVal1 @ S0_v8 (System.String)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x75CCC Nop
+	0x75CCD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

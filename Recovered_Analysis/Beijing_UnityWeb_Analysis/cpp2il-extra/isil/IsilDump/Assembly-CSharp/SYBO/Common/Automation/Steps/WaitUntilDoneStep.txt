@@ -1,0 +1,76 @@
+Type: SYBO.Common.Automation.Steps.WaitUntilDoneStep
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE217F6 LocalGet 0
+	0xE217F8 F32Const 0
+	0xE217FD F32Store 2, 16
+	0xE21800 LocalGet 0
+	0xE21802 I32Const 0
+	0xE21804 I32Store8 0, 8
+	0xE21807 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (SYBO.Common.Automation.Steps.WaitUntilDoneStep)+10], 0f
+	3 Nop
+	4 Nop
+	5 Move this.<IsDone>k__BackingField (System.Boolean), 0
+	6 Nop
+	7 Return
+
+Method: System.Void Update(System.Single unscaledDeltaTime)
+
+Disassembly:
+	0xE2180A LocalGet 0
+	0xE2180C LocalGet 0
+	0xE2180E F32Load 2, 16
+	0xE21811 LocalGet 1
+	0xE21813 F32Add
+	0xE21814 F32Store 2, 16
+	0xE21817 LocalGet 0
+	0xE21819 F32Load 2, 16
+	0xE2181C LocalGet 0
+	0xE2181E F32Load 2, 12
+	0xE21821 F32Ge
+	0xE21822 If -64
+	0xE21824 LocalGet 0
+	0xE21826 I32Const 1
+	0xE21828 I32Store8 0, 8
+	0xE2182B End
+	0xE2182C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v6 @ S1_v3 (System.Single), [this @ L0 (SYBO.Common.Automation.Steps.WaitUntilDoneStep)+10], unscaledDeltaTime @ L1 (System.Single)
+	5 Move [this @ L0 (SYBO.Common.Automation.Steps.WaitUntilDoneStep)+10], v6 @ S1_v3 (System.Single)
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 CheckGreaterOrEqual v11 @ S0_v4 (System.Boolean), [this @ L0 (SYBO.Common.Automation.Steps.WaitUntilDoneStep)+10], [this @ L0 (SYBO.Common.Automation.Steps.WaitUntilDoneStep)+C]
+	11 Not v12 @ TEMP_v1 (System.Boolean), v11 @ S0_v4 (System.Boolean)
+	12 ConditionalJump @b4, v12 @ TEMP_v1 (System.Boolean)
+	13 Nop
+	14 Nop
+	15 Move this.<IsDone>k__BackingField (System.Boolean), 1
+	16 Nop
+	17 Nop
+	18 Return
+
+Method: System.Void MarkAsDone()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

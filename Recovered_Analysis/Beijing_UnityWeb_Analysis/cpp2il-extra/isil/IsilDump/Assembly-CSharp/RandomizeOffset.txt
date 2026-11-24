@@ -1,0 +1,636 @@
+Type: RandomizeOffset
+
+Method: RandomizeOffset+RandomOffsetsData get_RandomOffsets()
+
+Disassembly:
+	0xEBA717 I32Const 4559034
+	0xEBA71C I32Load8_S 0, 0
+	0xEBA71F I32Eqz
+	0xEBA720 If -64
+	0xEBA722 I32Const 2976592
+	0xEBA727 I32Load 2, 0
+	0xEBA72A Call 73003
+	0xEBA72E I32Const 4559034
+	0xEBA733 I32Const 1
+	0xEBA735 I32Store8 0, 0
+	0xEBA738 End
+	0xEBA739 LocalGet 0
+	0xEBA73B I32Const 0
+	0xEBA73D Call 63052
+	0xEBA741 LocalTee 1
+	0xEBA743 I32Const -1
+	0xEBA745 I32Eq
+	0xEBA746 If -64
+	0xEBA748 I32Const 4535856
+	0xEBA74D I32Load 2, 0
+	0xEBA750 LocalGet 0
+	0xEBA752 I32Const 4504124
+	0xEBA757 I32Load 2, 0
+	0xEBA75A I32Const 0
+	0xEBA75C Call 55683
+	0xEBA760 I32Const 0
+	0xEBA762 I32Const 0
+	0xEBA764 Call 37913
+	0xEBA768 I32Const -1
+	0xEBA76A LocalSet 1
+	0xEBA76C End
+	0xEBA76D LocalGet 1
+	0xEBA76F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v15, [2D6B50]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [4590BA], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call MonoBehaviour.IsInvoking, v14 @ S0_v6 (System.Boolean), this @ L0 (RandomizeOffset)
+	15 Nop
+	16 Nop
+	17 CheckEqual v17 @ S0_v7 (System.Boolean), v14 @ S0_v6 (System.Boolean), -1
+	18 Not v18 @ TEMP_v2 (System.Boolean), v17 @ S0_v7 (System.Boolean)
+	19 ConditionalJump @b10, v18 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Call String.System.IConvertible.ToType, v25 @ S0_v12 (System.Object), "Could not find layer '", this @ L0 (RandomizeOffset), "'."
+	27 Nop
+	28 Nop
+	29 CallVoid SDebug.LogFormat, v25 @ S0_v12 (System.Object), 0
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Return v31 @ L1_v2 (System.Boolean)
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xF373F1 GlobalGet 7
+	0xF373F3 LocalSet 1
+	0xF373F5 GlobalGet 7
+	0xF373F7 I32Const 32
+	0xF373F9 I32Add
+	0xF373FA GlobalSet 7
+	0xF373FC I32Const 4560216
+	0xF37401 I32Load8_S 0, 0
+	0xF37404 I32Eqz
+	0xF37405 If -64
+	0xF37407 I32Const 2983192
+	0xF3740C I32Load 2, 0
+	0xF3740F Call 73003
+	0xF37413 I32Const 4560216
+	0xF37418 I32Const 1
+	0xF3741A I32Store8 0, 0
+	0xF3741D End
+	0xF3741E I32Const 4433316
+	0xF37423 I32Load 2, 0
+	0xF37426 LocalTee 2
+	0xF37428 I32Load16_S 1, 186
+	0xF3742C I32Const 512
+	0xF3742F I32And
+	0xF37430 If -64
+	0xF37432 LocalGet 2
+	0xF37434 I32Load 2, 116
+	0xF37437 I32Eqz
+	0xF37438 If -64
+	0xF3743A LocalGet 2
+	0xF3743C Call 72345
+	0xF37440 End
+	0xF37441 End
+	0xF37442 LocalGet 1
+	0xF37444 I32Const 0
+	0xF37446 Call 70752
+	0xF3744A LocalGet 1
+	0xF3744C I32Const 12
+	0xF3744E I32Add
+	0xF3744F LocalTee 2
+	0xF37451 LocalGet 1
+	0xF37453 I64Load 2, 0
+	0xF37456 I64Store 2, 0
+	0xF37459 LocalGet 2
+	0xF3745B LocalGet 1
+	0xF3745D I32Load 2, 8
+	0xF37460 I32Store 2, 8
+	0xF37463 LocalGet 0
+	0xF37465 I32Const 12
+	0xF37467 I32Add
+	0xF37468 LocalTee 3
+	0xF3746A LocalGet 2
+	0xF3746C I64Load 2, 0
+	0xF3746F I64Store 2, 0
+	0xF37472 LocalGet 3
+	0xF37474 LocalGet 2
+	0xF37476 I32Load 2, 8
+	0xF37479 I32Store 2, 8
+	0xF3747C LocalGet 0
+	0xF3747E F32Const 1
+	0xF37483 F32Store 2, 24
+	0xF37486 LocalGet 0
+	0xF37488 F32Const 1
+	0xF3748D F32Store 2, 28
+	0xF37490 LocalGet 0
+	0xF37492 F32Const 1
+	0xF37497 F32Store 2, 40
+	0xF3749A LocalGet 0
+	0xF3749C I32Const 0
+	0xF3749E Call 62657
+	0xF374A2 LocalGet 1
+	0xF374A4 GlobalSet 7
+	0xF374A6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b10
+	11 Nop
+	12 Move v12 @ S0_v30, [2D8518]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v30
+	14 Nop
+	15 Move v14 @ S1_v19, 1
+	16 Move [459558], v14 @ S1_v19
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v9 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<UnityEngine.Vector3>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	25 ConditionalJump @b11, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S0_v25 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	27 Nop
+	28 CheckEqual v26 @ S0_v27 (System.Boolean), [v24 @ S0_v25 (Il2CppClass<UnityEngine.Vector3>)+74], 0
+	29 Not v27 @ TEMP_v4 (System.Boolean), v26 @ S0_v27 (System.Boolean)
+	30 ConditionalJump @b11, v27 @ TEMP_v4 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(UnityEngine.Vector3)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call Vector3.get_one, v33 @ SRET_v1 (UnityEngine.Vector3)
+	38 Nop
+	39 Nop
+	40 Add v36 @ S0_v15, v1 @ G7, 12
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Move [v36 @ S0_v15], [v1 @ G7]
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Move [v36 @ S0_v15+8], [v1 @ G7+8]
+	49 Nop
+	50 Nop
+	51 Add v46 @ S0_v18, this @ L0 (RandomizeOffset), 12
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Move [v46 @ S0_v18], [v36 @ S0_v15]
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Move [v46 @ S0_v18+8], [v36 @ S0_v15+8]
+	60 Nop
+	61 Nop
+	62 Move [this @ L0 (RandomizeOffset)+18], 1f
+	63 Nop
+	64 Nop
+	65 Move [this @ L0 (RandomizeOffset)+1C], 1f
+	66 Nop
+	67 Nop
+	68 Move [this @ L0 (RandomizeOffset)+28], 1f
+	69 Nop
+	70 Nop
+	71 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (RandomizeOffset)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Return
+
+Method: System.Void ChooseRandomOffset()
+
+Disassembly:
+	0xCCE7B6 LocalGet 0
+	0xCCE7B8 I32Const 0
+	0xCCE7BA Call 32098
+	0xCCE7BE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid RandomizeOffset..ctor, this @ L0 (RandomizeOffset)
+	3 Nop
+	4 Return
+
+Method: System.Void SetRandomOffsetsData(RandomizeOffset+RandomOffsetsData newRandomOffsetsData)
+
+Disassembly:
+	0xF37112 GlobalGet 7
+	0xF37114 LocalSet 2
+	0xF37116 GlobalGet 7
+	0xF37118 I32Const 32
+	0xF3711A I32Add
+	0xF3711B GlobalSet 7
+	0xF3711D LocalGet 2
+	0xF3711F I32Const 12
+	0xF37121 I32Add
+	0xF37122 LocalTee 3
+	0xF37124 LocalGet 1
+	0xF37126 I64Load 2, 0
+	0xF37129 I64Store 2, 0
+	0xF3712C LocalGet 3
+	0xF3712E LocalGet 1
+	0xF37130 I32Load 2, 8
+	0xF37133 I32Store 2, 8
+	0xF37136 LocalGet 0
+	0xF37138 I32Const 48
+	0xF3713A I32Add
+	0xF3713B LocalTee 1
+	0xF3713D LocalGet 3
+	0xF3713F I64Load 2, 0
+	0xF37142 I64Store 2, 0
+	0xF37145 LocalGet 1
+	0xF37147 LocalGet 3
+	0xF37149 I32Load 2, 8
+	0xF3714C I32Store 2, 8
+	0xF3714F LocalGet 0
+	0xF37151 I32Const 0
+	0xF37153 Call 62780
+	0xF37157 LocalGet 2
+	0xF37159 LocalGet 0
+	0xF3715B I32Const 48
+	0xF3715D I32Add
+	0xF3715E LocalTee 0
+	0xF37160 I64Load 2, 0
+	0xF37163 I64Store 2, 0
+	0xF37166 LocalGet 2
+	0xF37168 LocalGet 0
+	0xF3716A I32Load 2, 8
+	0xF3716D I32Store 2, 8
+	0xF37170 LocalGet 3
+	0xF37172 LocalGet 2
+	0xF37174 I64Load 2, 0
+	0xF37177 I64Store 2, 0
+	0xF3717A LocalGet 3
+	0xF3717C LocalGet 2
+	0xF3717E I32Load 2, 8
+	0xF37181 I32Store 2, 8
+	0xF37184 LocalGet 3
+	0xF37186 I32Const 0
+	0xF37188 Call 64340
+	0xF3718C LocalGet 2
+	0xF3718E GlobalSet 7
+	0xF37190 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5 (UnityEngine.Transform), v1 @ G7, 12
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Move [v9 @ S0_v5 (UnityEngine.Transform)], [newRandomOffsetsData @ L1 (RandomizeOffset+RandomOffsetsData)]
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v9.m_CachedPtr (System.IntPtr), newRandomOffsetsData.left (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Add v20 @ S0_v8, this @ L0 (RandomizeOffset), 48
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move [v20 @ S0_v8], [v9 @ S0_v5 (UnityEngine.Transform)]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move [v20 @ S0_v8+8], v9.m_CachedPtr (System.IntPtr)
+	28 Nop
+	29 Nop
+	30 Call Component.get_gameObject, v29 @ S0_v11 (UnityEngine.GameObject), this @ L0 (RandomizeOffset)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Add v33 @ S2_v2, this @ L0 (RandomizeOffset), 48
+	35 Nop
+	36 Nop
+	37 Move [v1 @ G7], [v33 @ S2_v2]
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Move [v1 @ G7+8], [v33 @ S2_v2+8]
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Move [v9 @ S0_v5 (UnityEngine.Transform)], [v1 @ G7]
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Move v9.m_CachedPtr (System.IntPtr), [v1 @ G7+8]
+	50 Nop
+	51 Nop
+	52 Call Transform.get_eulerAngles, v47 @ SRET_v1 (UnityEngine.Vector3), v9 @ S0_v5 (UnityEngine.Transform)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xCCE7C4 GlobalGet 7
+	0xCCE7C6 LocalSet 1
+	0xCCE7C8 GlobalGet 7
+	0xCCE7CA I32Const 48
+	0xCCE7CC I32Add
+	0xCCE7CD GlobalSet 7
+	0xCCE7CF I32Const 4553034
+	0xCCE7D4 I32Load8_S 0, 0
+	0xCCE7D7 I32Eqz
+	0xCCE7D8 If -64
+	0xCCE7DA I32Const 2995008
+	0xCCE7DF I32Load 2, 0
+	0xCCE7E2 Call 73003
+	0xCCE7E6 I32Const 4553034
+	0xCCE7EB I32Const 1
+	0xCCE7ED I32Store8 0, 0
+	0xCCE7F0 End
+	0xCCE7F1 LocalGet 1
+	0xCCE7F3 I32Const 12
+	0xCCE7F5 I32Add
+	0xCCE7F6 LocalTee 2
+	0xCCE7F8 I64Const 0
+	0xCCE7FA I64Store 2, 0
+	0xCCE7FD LocalGet 2
+	0xCCE7FF I32Const 0
+	0xCCE801 I32Store 2, 8
+	0xCCE804 LocalGet 0
+	0xCCE806 I32Load 2, 16
+	0xCCE809 I32Const 4486256
+	0xCCE80E I32Load 2, 0
+	0xCCE811 Call 29307
+	0xCCE815 LocalGet 0
+	0xCCE817 I32Load 2, 12
+	0xCCE81A I32Load8_S 0, 8
+	0xCCE81D If -64
+	0xCCE81F LocalGet 0
+	0xCCE821 I32Load 2, 16
+	0xCCE824 F32Const -20
+	0xCCE829 I32Const 4486252
+	0xCCE82E I32Load 2, 0
+	0xCCE831 Call 32099
+	0xCCE835 End
+	0xCCE836 LocalGet 0
+	0xCCE838 I32Load 2, 12
+	0xCCE83B I32Load8_S 0, 9
+	0xCCE83E If -64
+	0xCCE840 LocalGet 0
+	0xCCE842 I32Load 2, 16
+	0xCCE845 F32Const 0
+	0xCCE84A I32Const 4486252
+	0xCCE84F I32Load 2, 0
+	0xCCE852 Call 32099
+	0xCCE856 End
+	0xCCE857 LocalGet 0
+	0xCCE859 I32Load 2, 12
+	0xCCE85C I32Load8_S 0, 10
+	0xCCE85F If -64
+	0xCCE861 LocalGet 0
+	0xCCE863 I32Load 2, 16
+	0xCCE866 F32Const 20
+	0xCCE86B I32Const 4486252
+	0xCCE870 I32Load 2, 0
+	0xCCE873 Call 32099
+	0xCCE877 End
+	0xCCE878 LocalGet 1
+	0xCCE87A I32Const 24
+	0xCCE87C I32Add
+	0xCCE87D LocalSet 3
+	0xCCE87F I32Const 4463288
+	0xCCE884 I32Load 2, 0
+	0xCCE887 Drop
+	0xCCE888 LocalGet 0
+	0xCCE88A I32Load 2, 16
+	0xCCE88D I32Load 2, 12
+	0xCCE890 I32Const 0
+	0xCCE892 I32Gt_S
+	0xCCE893 If -64
+	0xCCE895 LocalGet 1
+	0xCCE897 LocalGet 0
+	0xCCE899 I32Const 0
+	0xCCE89B Call 62780
+	0xCCE89F I32Const 0
+	0xCCE8A1 Call 64338
+	0xCCE8A5 LocalGet 2
+	0xCCE8A7 LocalGet 1
+	0xCCE8A9 I64Load 2, 0
+	0xCCE8AC I64Store 2, 0
+	0xCCE8AF LocalGet 2
+	0xCCE8B1 LocalGet 1
+	0xCCE8B3 I32Load 2, 8
+	0xCCE8B6 I32Store 2, 8
+	0xCCE8B9 LocalGet 2
+	0xCCE8BB LocalGet 0
+	0xCCE8BD I32Load 2, 16
+	0xCCE8C0 I32Const 0
+	0xCCE8C2 I32Const 4463288
+	0xCCE8C7 I32Load 2, 0
+	0xCCE8CA Drop
+	0xCCE8CB LocalGet 0
+	0xCCE8CD I32Load 2, 16
+	0xCCE8D0 I32Load 2, 12
+	0xCCE8D3 I32Const 0
+	0xCCE8D5 Call 63841
+	0xCCE8D9 I32Const 4449152
+	0xCCE8DE I32Load 2, 0
+	0xCCE8E1 Call 32100
+	0xCCE8E5 F32Store 2, 0
+	0xCCE8E8 LocalGet 0
+	0xCCE8EA I32Const 0
+	0xCCE8EC Call 62780
+	0xCCE8F0 LocalGet 3
+	0xCCE8F2 LocalGet 2
+	0xCCE8F4 I64Load 2, 0
+	0xCCE8F7 I64Store 2, 0
+	0xCCE8FA LocalGet 3
+	0xCCE8FC LocalGet 2
+	0xCCE8FE I32Load 2, 8
+	0xCCE901 I32Store 2, 8
+	0xCCE904 LocalGet 3
+	0xCCE906 I32Const 0
+	0xCCE908 Call 64340
+	0xCCE90C End
+	0xCCE90D LocalGet 1
+	0xCCE90F GlobalSet 7
+	0xCCE911 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b19
+	11 Nop
+	12 Move v12 @ S0_v48, [2DB340]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v48
+	14 Nop
+	15 Move v14 @ S1_v30, 1
+	16 Move [45794A], v14 @ S1_v30
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7 (UnityEngine.Transform), 12
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Move [v19 @ S0_v9+8], 0
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Throw typeof(System.IndexOutOfRangeException)
+	32 Nop
+	33 Move v30 @ S0_v14 (RandomizeOffset+RandomOffsetsData), this.randomOffsets (RandomizeOffset+RandomOffsetsData)
+	34 Nop
+	35 Not v32 @ TEMP_v2 (System.Boolean), v30.left (System.Boolean)
+	36 ConditionalJump @b7, v32 @ TEMP_v2 (System.Boolean)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid List`1<System.Single>.Add, this._offsets (System.Collections.Generic.List`1<System.Single>), -20f
+	43 Nop
+	44 Nop
+	45 Move v43 @ S0_v18 (RandomizeOffset+RandomOffsetsData), this.randomOffsets (RandomizeOffset+RandomOffsetsData)
+	46 Nop
+	47 Not v45 @ TEMP_v3 (System.Boolean), v43.mid (System.Boolean)
+	48 ConditionalJump @b9, v45 @ TEMP_v3 (System.Boolean)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CallVoid List`1<System.Single>.Add, this._offsets (System.Collections.Generic.List`1<System.Single>), 0f
+	55 Nop
+	56 Nop
+	57 Move v55 @ S0_v22 (RandomizeOffset+RandomOffsetsData), this.randomOffsets (RandomizeOffset+RandomOffsetsData)
+	58 Nop
+	59 Not v57 @ TEMP_v4 (System.Boolean), v55.right (System.Boolean)
+	60 ConditionalJump @b11, v57 @ TEMP_v4 (System.Boolean)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 CallVoid List`1<System.Single>.Add, this._offsets (System.Collections.Generic.List`1<System.Single>), 20f
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Add v68 @ S0_v26 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 24
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Move v73 @ S0_v30 (System.Collections.Generic.List`1<System.Single>), this._offsets (System.Collections.Generic.List`1<System.Single>)
+	76 Nop
+	77 Nop
+	78 CheckGreater v76 @ S0_v32 (System.Boolean), [v73 @ S0_v30 (System.Collections.Generic.List`1<System.Single>)+C], 0
+	79 Not v77 @ TEMP_v5 (System.Boolean), v76 @ S0_v32 (System.Boolean)
+	80 ConditionalJump @b18, v77 @ TEMP_v5 (System.Boolean)
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Call Component.get_gameObject, v81 @ S1_v15 (UnityEngine.GameObject), this @ L0 (RandomizeOffset)
+	85 Nop
+	86 CallVoid Transform.set_localPosition, v1 @ G7 (UnityEngine.Transform), v81 @ S1_v15 (UnityEngine.GameObject)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Move [v19 @ S0_v9], [v1 @ G7 (UnityEngine.Transform)]
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Move [v19 @ S0_v9+8], v1.m_CachedPtr (System.IntPtr)
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Move v113 @ S3_v5 (System.Collections.Generic.List`1<System.Single>), this._offsets (System.Collections.Generic.List`1<System.Single>)
+	103 Nop
+	104 Nop
+	105 Call Random.RandomRangeInt, v115 @ S2_v8 (System.Int32), 0, [v113 @ S3_v5 (System.Collections.Generic.List`1<System.Single>)+C]
+	106 Nop
+	107 Nop
+	108 Call List`1<System.Single>.get_Item, v117 @ S1_v22 (System.Single), this._offsets (System.Collections.Generic.List`1<System.Single>), v115 @ S2_v8 (System.Int32)
+	109 Move [v19 @ S0_v9], v117 @ S1_v22 (System.Single)
+	110 Nop
+	111 Nop
+	112 Call Component.get_gameObject, v96 @ S0_v40 (UnityEngine.GameObject), this @ L0 (RandomizeOffset)
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Move [v68 @ S0_v26 (UnityEngine.Transform)], [v19 @ S0_v9]
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Move v68.m_CachedPtr (System.IntPtr), [v19 @ S0_v9+8]
+	121 Nop
+	122 Nop
+	123 Call Transform.get_eulerAngles, v83 @ SRET_v2 (UnityEngine.Vector3), v68 @ S0_v26 (UnityEngine.Transform)
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Nop
+	128 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x75CCC Nop
+	0x75CCD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

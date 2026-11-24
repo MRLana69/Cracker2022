@@ -1,0 +1,389 @@
+Type: UnityEngine.Networking.PlayerController
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x121B2F7 LocalGet 0
+	0x121B2F9 I32Load 2, 8
+	0x121B2FC LocalTee 0
+	0x121B2FE I32Load 2, 8
+	0x121B301 I32Const 16
+	0x121B303 I32Add
+	0x121B304 LocalGet 0
+	0x121B306 I32Load 2, 12
+	0x121B309 I32Const 4
+	0x121B30B I32Sub
+	0x121B30C LocalTee 1
+	0x121B30E I32Store8 0, 0
+	0x121B311 LocalGet 0
+	0x121B313 I32Load 2, 8
+	0x121B316 I32Const 17
+	0x121B318 I32Add
+	0x121B319 LocalGet 1
+	0x121B31B I32Const 8
+	0x121B31D I32Shr_U
+	0x121B31E I32Store8 0, 0
+	0x121B321 End
+
+ISIL:
+	0 Nop
+	1 Move v2 @ S0_v2 (System.Int16), this.playerControllerId (System.Int16)
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v4, [v2 @ S0_v2 (System.Int16)+8], 16
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Subtract v10 @ S1_v4, [v2 @ S0_v2 (System.Int16)+C], 4
+	10 Nop
+	11 Move [v6 @ S0_v4], v10 @ S1_v4
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Add v15 @ S0_v7, [v2 @ S0_v2 (System.Int16)+8], 17
+	16 Nop
+	17 Nop
+	18 ShiftRight v18 @ S1_v7, v10 @ S1_v4, 8
+	19 Move [v15 @ S0_v7], v18 @ S1_v7
+	20 Nop
+	21 Return
+
+Method: System.Boolean get_IsValid()
+
+Disassembly:
+	0x121E1D6 GlobalGet 7
+	0x121E1D8 LocalSet 1
+	0x121E1DA GlobalGet 7
+	0x121E1DC I32Const 32
+	0x121E1DE I32Add
+	0x121E1DF GlobalSet 7
+	0x121E1E1 I32Const 4569265
+	0x121E1E6 I32Load8_S 0, 0
+	0x121E1E9 I32Eqz
+	0x121E1EA If -64
+	0x121E1EC I32Const 2986948
+	0x121E1F1 I32Load 2, 0
+	0x121E1F4 Call 73003
+	0x121E1F8 I32Const 4569265
+	0x121E1FD I32Const 1
+	0x121E1FF I32Store8 0, 0
+	0x121E202 End
+	0x121E203 LocalGet 1
+	0x121E205 I32Const 12
+	0x121E207 I32Add
+	0x121E208 LocalTee 2
+	0x121E20A I64Const 0
+	0x121E20C I64Store 2, 0
+	0x121E20F LocalGet 2
+	0x121E211 I32Const 0
+	0x121E213 I32Store 2, 8
+	0x121E216 LocalGet 1
+	0x121E218 LocalGet 0
+	0x121E21A I32Const 0
+	0x121E21C Call 56682
+	0x121E220 LocalGet 2
+	0x121E222 LocalGet 1
+	0x121E224 I64Load 2, 0
+	0x121E227 I64Store 2, 0
+	0x121E22A LocalGet 2
+	0x121E22C LocalGet 1
+	0x121E22E I32Load 2, 8
+	0x121E231 I32Store 2, 8
+	0x121E234 I32Const 4449676
+	0x121E239 I32Load 2, 0
+	0x121E23C Drop
+	0x121E23D LocalGet 2
+	0x121E23F I32Load 2, 0
+	0x121E242 LocalGet 1
+	0x121E244 GlobalSet 7
+	0x121E246 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b6
+	11 Nop
+	12 Move v12 @ S0_v19, [2D93C4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v19
+	14 Nop
+	15 Move v14 @ S1_v12, 1
+	16 Move [45B8B1], v14 @ S1_v12
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7 (UnityEngine.Networking.NetworkWriter), 12
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Move [v19 @ S0_v9+8], 0
+	27 Nop
+	28 Nop
+	29 Nop
+	30 CallVoid NetworkWriter.WritePackedUInt32, v1 @ G7 (UnityEngine.Networking.NetworkWriter), this @ L0 (UnityEngine.Networking.PlayerController)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Move [v19 @ S0_v9], [v1 @ G7 (UnityEngine.Networking.NetworkWriter)]
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Move [v19 @ S0_v9+8], v1.m_Buffer (UnityEngine.Networking.NetBuffer)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Return [v19 @ S0_v9]
+
+Method: System.Void .ctor(UnityEngine.GameObject go, System.Int16 playerControllerId)
+
+Disassembly:
+	0x12148CE GlobalGet 7
+	0x12148D0 LocalSet 3
+	0x12148D2 GlobalGet 7
+	0x12148D4 I32Const 16
+	0x12148D6 I32Add
+	0x12148D7 GlobalSet 7
+	0x12148D9 I32Const 4569213
+	0x12148DE I32Load8_S 0, 0
+	0x12148E1 I32Eqz
+	0x12148E2 If -64
+	0x12148E4 I32Const 2986956
+	0x12148E9 I32Load 2, 0
+	0x12148EC Call 73003
+	0x12148F0 I32Const 4569213
+	0x12148F5 I32Const 1
+	0x12148F7 I32Store8 0, 0
+	0x12148FA End
+	0x12148FB Block -64
+	0x12148FD LocalGet 1
+	0x12148FF I32Eqz
+	0x1214900 LocalGet 2
+	0x1214902 I32Eqz
+	0x1214903 I32Or
+	0x1214904 If -64
+	0x1214906 LocalGet 0
+	0x1214908 I32Const 0
+	0x121490A I32Const 0
+	0x121490C Call 56789
+	0x1214910 Else
+	0x1214911 LocalGet 2
+	0x1214913 I32Const 65535
+	0x1214917 I32Le_S
+	0x1214918 If -64
+	0x121491A LocalGet 0
+	0x121491C LocalGet 2
+	0x121491E I32Const 65535
+	0x1214922 I32And
+	0x1214923 LocalTee 2
+	0x1214925 I32Const 0
+	0x1214927 Call 56789
+	0x121492B LocalGet 0
+	0x121492D I32Load 2, 8
+	0x1214930 LocalGet 1
+	0x1214932 LocalGet 2
+	0x1214934 I32Const 0
+	0x1214936 Call 50426
+	0x121493A Br 2
+	0x121493C End
+	0x121493D I32Const 4435032
+	0x1214942 I32Load 2, 0
+	0x1214945 LocalTee 0
+	0x1214947 I32Load16_S 1, 186
+	0x121494B I32Const 512
+	0x121494E I32And
+	0x121494F If -64
+	0x1214951 LocalGet 0
+	0x1214953 I32Load 2, 116
+	0x1214956 I32Eqz
+	0x1214957 If -64
+	0x1214959 LocalGet 0
+	0x121495B Call 72345
+	0x121495F End
+	0x1214960 End
+	0x1214961 I32Const 0
+	0x1214963 Call 50410
+	0x1214967 If -64
+	0x1214969 LocalGet 3
+	0x121496B LocalGet 2
+	0x121496D I32Store 2, 0
+	0x1214970 I32Const 4427776
+	0x1214975 I32Load 2, 0
+	0x1214978 LocalGet 3
+	0x121497A Call 73903
+	0x121497E LocalSet 0
+	0x1214980 I32Const 4522580
+	0x1214985 I32Load 2, 0
+	0x1214988 LocalGet 0
+	0x121498A I32Const 4522576
+	0x121498F I32Load 2, 0
+	0x1214992 I32Const 0
+	0x1214994 Call 55905
+	0x1214998 I32Const 4433260
+	0x121499D I32Load 2, 0
+	0x12149A0 LocalTee 0
+	0x12149A2 I32Load16_S 1, 186
+	0x12149A6 I32Const 512
+	0x12149A9 I32And
+	0x12149AA If -64
+	0x12149AC LocalGet 0
+	0x12149AE I32Load 2, 116
+	0x12149B1 I32Eqz
+	0x12149B2 If -64
+	0x12149B4 LocalGet 0
+	0x12149B6 Call 72345
+	0x12149BA End
+	0x12149BB End
+	0x12149BC I32Const 0
+	0x12149BE Call 62852
+	0x12149C2 End
+	0x12149C3 End
+	0x12149C4 End
+	0x12149C5 LocalGet 3
+	0x12149C7 GlobalSet 7
+	0x12149C9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b23
+	11 Nop
+	12 Move v12 @ S0_v38, [2D93CC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v38
+	14 Nop
+	15 Move v14 @ S1_v25, 1
+	16 Move [45B87D], v14 @ S1_v25
+	17 Nop
+	18 Nop
+	19 CheckEqual v19 @ S0_v9 (System.Boolean), go @ L1 (UnityEngine.GameObject), 0
+	20 Nop
+	21 CheckEqual v22 @ S1_v4 (System.Boolean), playerControllerId @ L2 (System.Int16), 0
+	22 Or v23 @ S0_v10, v19 @ S0_v9 (System.Boolean), v22 @ S1_v4 (System.Boolean)
+	23 CheckEqual v24 @ TEMP_v2 (System.Boolean), v23 @ S0_v10, 0
+	24 ConditionalJump @b7, v24 @ TEMP_v2 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid DDD5, this @ L0 (UnityEngine.Networking.PlayerController), 0, 0
+	29 Jump @b25
+	30 Nop
+	31 Nop
+	32 CheckLessOrEqual v31 @ S0_v14 (System.Boolean), playerControllerId @ L2 (System.Int16), 65535
+	33 Not v32 @ TEMP_v4 (System.Boolean), v31 @ S0_v14 (System.Boolean)
+	34 ConditionalJump @b11, v32 @ TEMP_v4 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 And v36 @ S1_v22 (System.Int32), playerControllerId @ L2 (System.Int16), 65535
+	39 Nop
+	40 Nop
+	41 CallVoid DDD5, this @ L0 (UnityEngine.Networking.PlayerController), v36 @ S1_v22 (System.Int32), 0
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 CallVoid NetworkClient.Connect, this.playerControllerId (System.Int16), go @ L1 (UnityEngine.GameObject), v36 @ S1_v22 (System.Int32)
+	48 Jump @b25
+	49 Nop
+	50 Nop
+	51 Move v40 @ S0_v16 (Il2CppClass<UnityEngine.Networking.LogFilter>), typeof(UnityEngine.Networking.LogFilter)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 And v44 @ S0_v18, [v40 @ S0_v16 (Il2CppClass<UnityEngine.Networking.LogFilter>)+BA], 512
+	56 CheckEqual v45 @ TEMP_v5 (System.Boolean), v44 @ S0_v18, 0
+	57 ConditionalJump @b26, v45 @ TEMP_v5 (System.Boolean)
+	58 Move v70 @ S0_v29 (Il2CppClass<UnityEngine.Networking.LogFilter>), typeof(UnityEngine.Networking.LogFilter)
+	59 Nop
+	60 CheckEqual v72 @ S0_v31 (System.Boolean), [v70 @ S0_v29 (Il2CppClass<UnityEngine.Networking.LogFilter>)+74], 0
+	61 Not v73 @ TEMP_v11 (System.Boolean), v72 @ S0_v31 (System.Boolean)
+	62 ConditionalJump @b26, v73 @ TEMP_v11 (System.Boolean)
+	63 Nop
+	64 CallVoid 11A99, typeof(UnityEngine.Networking.LogFilter)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Call LogFilter.get_logFatal, v66 @ S0_v21 (System.Boolean)
+	69 Not v59 @ TEMP_v7 (System.Boolean), v66 @ S0_v21 (System.Boolean)
+	70 ConditionalJump @b25, v59 @ TEMP_v7 (System.Boolean)
+	71 Nop
+	72 Nop
+	73 Move [v1 @ G7], playerControllerId @ L2 (System.Int16)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Call 120AF, v83 @ S0_v25 (System.String), typeof(System.Int32), v1 @ G7
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Call String.Concat, v65 @ S0_v28 (System.String), "NetworkWriter WriteBytesAndSize: buffer is too large (", v83 @ S0_v25 (System.String), ") bytes. The maximum buffer size is 64K bytes."
+	86 Nop
+	87 Move v91 @ S1_v12 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	88 Nop
+	89 Nop
+	90 Nop
+	91 And v93 @ S1_v14, [v91 @ S1_v12 (Il2CppClass<UnityEngine.Debug>)+BA], 512
+	92 CheckEqual v94 @ TEMP_v8 (System.Boolean), v93 @ S1_v14, 0
+	93 ConditionalJump @b27, v94 @ TEMP_v8 (System.Boolean)
+	94 Move v95 @ S1_v17 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	95 Nop
+	96 CheckEqual v97 @ S1_v19 (System.Boolean), [v95 @ S1_v17 (Il2CppClass<UnityEngine.Debug>)+74], 0
+	97 Not v98 @ TEMP_v10 (System.Boolean), v97 @ S1_v19 (System.Boolean)
+	98 ConditionalJump @b27, v98 @ TEMP_v10 (System.Boolean)
+	99 Nop
+	100 CallVoid 11A99, typeof(UnityEngine.Debug)
+	101 Nop
+	102 Nop
+	103 Nop
+	104 CallVoid Debug.LogException, v65 @ S0_v28 (System.String)
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Return
+
+Method: System.String ToString()
+
+Disassembly:
+	0x120CEB5 LocalGet 0
+	0x120CEB7 I32Load16_U 1, 8
+	0x120CEBA I32Const 65535
+	0x120CEBE I32Ne
+	0x120CEBF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.playerControllerId (System.Int16), 65535
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+

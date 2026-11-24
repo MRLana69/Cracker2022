@@ -1,0 +1,79 @@
+Type: Unity.Collections.LowLevel.Unsafe.NativeArrayUnsafeUtility
+
+Method: Unity.Collections.NativeArray`1<T> ConvertExistingDataToNativeArray(System.Void* dataPointer, System.Int32 length, Unity.Collections.Allocator allocator)
+
+Disassembly:
+	0x106FFDF GlobalGet 7
+	0x106FFE1 LocalSet 4
+	0x106FFE3 GlobalGet 7
+	0x106FFE5 I32Const 16
+	0x106FFE7 I32Add
+	0x106FFE8 GlobalSet 7
+	0x106FFEA LocalGet 4
+	0x106FFEC I64Const 0
+	0x106FFEE I64Store 2, 0
+	0x106FFF1 LocalGet 4
+	0x106FFF3 I32Const 0
+	0x106FFF5 I32Store 2, 8
+	0x106FFF8 LocalGet 4
+	0x106FFFA I32Const 12
+	0x106FFFC Call 14799
+	0x106FFFF LocalGet 4
+	0x1070001 LocalGet 1
+	0x1070003 I32Store 2, 0
+	0x1070006 LocalGet 4
+	0x1070008 LocalGet 2
+	0x107000A I32Store 2, 4
+	0x107000D LocalGet 4
+	0x107000F LocalGet 3
+	0x1070011 I32Store 2, 8
+	0x1070014 LocalGet 0
+	0x1070016 LocalGet 4
+	0x1070018 I64Load 2, 0
+	0x107001B I64Store 2, 0
+	0x107001E LocalGet 0
+	0x1070020 LocalGet 4
+	0x1070022 I32Load 2, 8
+	0x1070025 I32Store 2, 8
+	0x1070028 LocalGet 4
+	0x107002A GlobalSet 7
+	0x107002C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7+8], 0
+	12 Nop
+	13 Nop
+	14 CallVoid 39CF, v1 @ G7, 12
+	15 Nop
+	16 Nop
+	17 Move [v1 @ G7], dataPointer @ L1 (System.Void*)
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7+4], length @ L2 (System.Int32)
+	21 Nop
+	22 Nop
+	23 Move [v1 @ G7+8], allocator @ L3 (Unity.Collections.Allocator)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move [returnVal1 @ L0 (Unity.Collections.NativeArray`1<T>)], [v1 @ G7]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move returnVal1.m_Buffer (System.Void*), [v1 @ G7+8]
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Return returnVal1 @ L0 (Unity.Collections.NativeArray`1<T>)
+

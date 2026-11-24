@@ -1,0 +1,40 @@
+BEIJING WEBGL BUILD — ANÁLISE E RECONSTRUÇÃO
+================================================
+
+VERSÃO DA BUILD
+Produto: Subway Surfers
+Versão indicada no build.json: 1.94.0
+Unity: 2019.2.0f1
+Formato: WebGL / WebAssembly
+
+RESULTADOS GERADOS
+1. Cpp2IL Diffable C#: 4.286 arquivos C# reconstruídos, dos quais 1.830 pertencem à assembly Assembly-CSharp.
+   Diretório: cpp2il-diffable-cs/DiffableCs/
+   O log registra 14.475 ocorrências de métodos cujo corpo foi lido como 0 bytes; esses trechos podem estar ausentes/incompletos.
+2. Cpp2IL IL Recovery: DLLs auxiliares com tentativa de recuperação de IL.
+   Diretório: cpp2il-extra/dll_il_recovery/
+   É uma saída de análise/reconstrução; não restaura IL original onde não há informação suficiente.
+3. Cpp2IL ISIL: dump intermediário de instruções WebAssembly e representações analisadas.
+   Diretório: cpp2il-extra/isil/
+   O processamento avisou que determinadas assinaturas/importações não puderam ser associadas e que métodos grandes foram ignorados.
+4. Cpp2IL WASM Method Mappings: mapeamento de métodos reconhecidos para posições/instruções no módulo.
+   Arquivo: cpp2il-extra/wasmmappings/wasm_mappings.txt
+   Inclui avisos sobre assinaturas não resolvidas; mapeamento não equivale à lógica-fonte original.
+5. Il2CppDumper: dump.cs, script.json, stringliteral.json, il2cpp.h e DummyDlls (metadados/stubs).
+   O log informa Metadata Version 24.2 e Il2Cpp Version 24.2.
+6. WABT wasm-decompile: gerou wasm/Beijing_2.pseudocode.dcmp (80.358.299 bytes). É pseudocódigo WebAssembly estruturado, não C# original.
+7. WABT wasm-objdump: wasm/wasm-structure.txt lista as seções do módulo.
+8. O contêiner .data.unityweb foi extraído: 7 itens, incluindo global-metadata.dat e data.unity3d.
+9. UnityPy contou 46.719 objetos serializados em data.unity3d; veja asset-inventory.txt. Os itens extraídos estão em data-extracted/.
+10. Os quatro arquivos originais do diretório Build estão preservados em original-inputs/Build/.
+11. AssetRipper 2.0.0.0 importou a pasta data-extracted e exportou 1.864 objetos para assetripper-export/ExportedProject/ (projeto destino Unity 2019.2.0f1).
+    Veja assetripper-export/ASSET_RIPPER_REPORT.txt, ASSET_RIPPER_INVENTORY.txt e AssetRipper.log.
+
+LIMITAÇÕES IMPORTANTES
+Isto é uma tentativa abrangente de análise e reconstrução, não uma descompilação perfeita nem restauração do projeto-fonte original. O IL2CPP converteu o código C# em código nativo/WebAssembly; nomes, tipos, estrutura de alto nível e informação de editor podem ter sido perdidos na compilação. As ferramentas podem reconstruir metadados, assinaturas, instruções aproximadas e trechos de lógica, mas não recuperar informação eliminada.
+
+O Cpp2IL registrou 14.475 ocorrências de métodos sem corpo lido e, nas saídas adicionais, avisos sobre assinaturas WASM não associadas e métodos grandes ignorados. O pseudocódigo WASM não é C# equivalente ou fonte original. Os DummyDlls do Il2CppDumper preservam assinaturas/metadados e não contêm a lógica original completa. Os formatos adicionais não eliminam essas lacunas nem permitem garantir “sem erros e nada faltando”.
+
+A build e o projeto exportado não foram abertos, recompilados ou validados no Unity Editor. A exportação do AssetRipper não é um projeto Unity integral reconstituído; o log indica backend de scripts “Unknown” e contém avisos de conversão de áudio. Os scripts auxiliares exportados não recuperam a lógica completa.
+
+Os dados foram mantidos localmente neste pacote. Nada foi publicado no GitHub e o projeto atual não foi alterado.

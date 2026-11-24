@@ -1,0 +1,181 @@
+Type: SYBO.Subway.Level.RandomizerHold
+
+Method: System.Void Initialize()
+
+Disassembly:
+	0xC25672 LocalGet 0
+	0xC25674 I32Const 0
+	0xC25676 Call 29258
+	0xC2567A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid 724A, this @ L0 (SYBO.Subway.Level.RandomizerHold), 0
+	3 Nop
+	4 Return
+
+Method: System.Void PerformSelection(System.Collections.Generic.List`1<UnityEngine.GameObject> objectsToVisit)
+
+Disassembly:
+	0xE55859 I32Const 4558040
+	0xE5585E I32Load8_S 0, 0
+	0xE55861 I32Eqz
+	0xE55862 If -64
+	0xE55864 I32Const 2995044
+	0xE55869 I32Load 2, 0
+	0xE5586C Call 73003
+	0xE55870 I32Const 4558040
+	0xE55875 I32Const 1
+	0xE55877 I32Store8 0, 0
+	0xE5587A End
+	0xE5587B LocalGet 0
+	0xE5587D I32Const 0
+	0xE5587F I32Const 0
+	0xE55881 Call 39055
+	0xE55885 I32Const 0
+	0xE55887 LocalGet 0
+	0xE55889 I32Load 2, 16
+	0xE5588C I32Const 0
+	0xE5588E Call 64389
+	0xE55892 I32Const 0
+	0xE55894 Call 63841
+	0xE55898 LocalSet 4
+	0xE5589A I32Const 0
+	0xE5589C LocalSet 2
+	0xE5589E Loop -64
+	0xE558A0 LocalGet 2
+	0xE558A2 LocalGet 0
+	0xE558A4 I32Load 2, 16
+	0xE558A7 I32Const 0
+	0xE558A9 Call 64389
+	0xE558AD I32Lt_S
+	0xE558AE If -64
+	0xE558B0 LocalGet 0
+	0xE558B2 I32Load 2, 16
+	0xE558B5 LocalGet 2
+	0xE558B7 I32Const 0
+	0xE558B9 Call 64405
+	0xE558BD I32Const 0
+	0xE558BF Call 62781
+	0xE558C3 LocalSet 3
+	0xE558C5 LocalGet 2
+	0xE558C7 LocalGet 4
+	0xE558C9 I32Eq
+	0xE558CA If -64
+	0xE558CC LocalGet 1
+	0xE558CE LocalGet 3
+	0xE558D0 I32Const 4487076
+	0xE558D5 I32Load 2, 0
+	0xE558D8 Call 29305
+	0xE558DC Else
+	0xE558DD LocalGet 3
+	0xE558DF I32Const 0
+	0xE558E1 Call 63023
+	0xE558E5 If -64
+	0xE558E7 LocalGet 3
+	0xE558E9 I32Const 0
+	0xE558EB I32Const 0
+	0xE558ED Call 63022
+	0xE558F1 End
+	0xE558F2 End
+	0xE558F3 LocalGet 2
+	0xE558F5 I32Const 1
+	0xE558F7 I32Add
+	0xE558F8 LocalSet 2
+	0xE558FA Br 1
+	0xE558FC End
+	0xE558FD End
+	0xE558FE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v26, [2DB364]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v26
+	8 Nop
+	9 Move v7 @ S1_v18, 1
+	10 Move [458CD8], v7 @ S1_v18
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid Activity.Prepare, this @ L0 (SYBO.Subway.Level.RandomizerHold), 0
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call Transform.GetSiblingIndex, v19 @ S1_v5 (System.Int32), this._transform (UnityEngine.Transform)
+	21 Nop
+	22 Call Random.RandomRangeInt, v21 @ S0_v7 (System.Int32), 0, v19 @ S1_v5 (System.Int32)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call Transform.GetSiblingIndex, v42 @ S1_v9 (System.Int32), this._transform (UnityEngine.Transform)
+	32 CheckLess v43 @ S0_v11 (System.Boolean), v28 @ L2_v2 (UnityEngine.Sprite), v42 @ S1_v9 (System.Int32)
+	33 Not v44 @ TEMP_v3 (System.Boolean), v43 @ S0_v11 (System.Boolean)
+	34 ConditionalJump @b18, v44 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call SpriteAtlas.CanBindTo, v49 @ S0_v14 (System.Boolean), this._transform (UnityEngine.Transform), v28 @ L2_v2 (UnityEngine.Sprite)
+	40 Nop
+	41 Call Component.get_tag, v51 @ S0_v15 (System.String), v49 @ S0_v14 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CheckEqual v54 @ S0_v17 (System.Boolean), v28 @ L2_v2 (UnityEngine.Sprite), v21 @ S0_v7 (System.Int32)
+	46 Not v55 @ TEMP_v4 (System.Boolean), v54 @ S0_v17 (System.Boolean)
+	47 ConditionalJump @b14, v55 @ TEMP_v4 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CallVoid List`1<UnityEngine.GameObject>.Add, objectsToVisit @ L1 (System.Collections.Generic.List`1<UnityEngine.GameObject>), v51 @ S0_v15 (System.String)
+	53 Jump @b20
+	54 Nop
+	55 Nop
+	56 Call GameObject.get_activeInHierarchy, v63 @ S0_v22 (System.Boolean), v51 @ S0_v15 (System.String)
+	57 Not v64 @ TEMP_v6 (System.Boolean), v63 @ S0_v22 (System.Boolean)
+	58 ConditionalJump @b20, v64 @ TEMP_v6 (System.Boolean)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 CallVoid GameObject.set_tag, v51 @ S0_v15 (System.String), 0
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Add v37 @ S0_v20 (UnityEngine.Sprite), v28 @ L2_v2 (UnityEngine.Sprite), 1
+	68 Nop
+	69 Jump @b21
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE55920 LocalGet 0
+	0xE55922 I32Const 0
+	0xE55924 Call 39058
+	0xE55928 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid Selector.InitializeCheck, this @ L0 (SYBO.Subway.Level.RandomizerHold)
+	3 Nop
+	4 Return
+

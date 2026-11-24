@@ -1,0 +1,161 @@
+Type: System.ArraySpec
+
+Method: System.Void .ctor(System.Int32 dimensions, System.Boolean bound)
+
+Disassembly:
+	0x11EC879 LocalGet 2
+	0x11EC87B I32Const 0
+	0x11EC87D LocalGet 1
+	0x11EC87F LocalGet 2
+	0x11EC881 I32Load 2, 0
+	0x11EC884 I32Const 0
+	0x11EC886 Call 55964
+	0x11EC88A I32Load 2, 8
+	0x11EC88D I32Const 1
+	0x11EC88F I32Add
+	0x11EC890 LocalGet 2
+	0x11EC892 I32Load 2, 0
+	0x11EC895 I32Add
+	0x11EC896 I32Store 2, 0
+	0x11EC899 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Call TermInfoReader.GetStringBytes, v8 @ S1_v2 (System.Byte[]), 0, dimensions @ L1 (System.Int32), bound.m_value (System.Boolean)
+	7 Nop
+	8 Nop
+	9 Add v11 @ S1_v4, [v8 @ S1_v2 (System.Byte[])+8], 1
+	10 Nop
+	11 Nop
+	12 Add v14 @ S1_v5 (System.Boolean), v11 @ S1_v4, bound.m_value (System.Boolean)
+	13 Move bound.m_value (System.Boolean), v14 @ S1_v5 (System.Boolean)
+	14 Nop
+	15 Return
+
+Method: System.Type Resolve(System.Type type)
+
+Disassembly:
+	0x153003C I32Const 4576368
+	0x1530041 I32Load8_S 0, 0
+	0x1530044 I32Eqz
+	0x1530045 If -64
+	0x1530047 I32Const 2923252
+	0x153004C I32Load 2, 0
+	0x153004F Call 73003
+	0x1530053 I32Const 4576368
+	0x1530058 I32Const 1
+	0x153005A I32Store8 0, 0
+	0x153005D End
+	0x153005E LocalGet 0
+	0x1530060 LocalGet 1
+	0x1530062 I32Const 4431800
+	0x1530067 I32Load 2, 0
+	0x153006A Call 73902
+	0x153006E I32Const 0
+	0x1530070 Call 69771
+	0x1530074 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v8, [2C9AF4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45D470], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Call 120AE, v17 @ S1_v3 (System.Object), type @ L1 (System.Type), typeof(System.TypeName)
+	17 Nop
+	18 Call ATypeName.Equals, returnVal1 @ S0_v6 (System.Type), this @ L0 (System.ArraySpec), v17 @ S1_v3 (System.Object)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Type)
+
+Method: System.Text.StringBuilder Append(System.Text.StringBuilder sb)
+
+Disassembly:
+	0x124FB0F LocalGet 0
+	0x124FB11 I32Load8_S 0, 12
+	0x124FB14 If -1
+	0x124FB16 I32Const 20
+	0x124FB18 LocalGet 1
+	0x124FB1A I32Const 1
+	0x124FB1C Call 29448
+	0x124FB20 Else
+	0x124FB21 LocalGet 0
+	0x124FB23 I32Load 2, 8
+	0x124FB26 I32Const 1
+	0x124FB28 I32Eq
+	0x124FB29 If -1
+	0x124FB2B I32Const 19
+	0x124FB2D LocalGet 1
+	0x124FB2F Call 29262
+	0x124FB33 Else
+	0x124FB34 I32Const 20
+	0x124FB36 LocalGet 1
+	0x124FB38 LocalGet 0
+	0x124FB3A I32Load 2, 8
+	0x124FB3D Call 29448
+	0x124FB41 End
+	0x124FB42 End
+	0x124FB43 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Not v3 @ TEMP_v1 (System.Boolean), this.bound (System.Boolean)
+	3 ConditionalJump @b5, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Call 7308, returnVal1 @ S0_v3 (System.Text.StringBuilder), 20, sb @ L1 (System.Text.StringBuilder), 1
+	8 Jump @b10
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CheckEqual v12 @ S0_v6 (System.Boolean), this.dimensions (System.Int32), 1
+	13 Not v13 @ TEMP_v3 (System.Boolean), v12 @ S0_v6 (System.Boolean)
+	14 ConditionalJump @b8, v13 @ TEMP_v3 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Call 724E, returnVal1 @ S0_v3 (System.Text.StringBuilder), 19, sb @ L1 (System.Text.StringBuilder)
+	18 Jump @b10
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call 7308, returnVal1 @ S0_v3 (System.Text.StringBuilder), 20, sb @ L1 (System.Text.StringBuilder), this.dimensions (System.Int32)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return returnVal1 @ S0_v3 (System.Text.StringBuilder)
+
+Method: System.String ToString()
+
+Disassembly:
+	0x152DD48 LocalGet 0
+	0x152DD4A I32Load 2, 8
+	0x152DD4D I32Const 0
+	0x152DD4F Call 69745
+	0x152DD53 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call TypeSpec.ParsedTypeIdentifier, returnVal1 @ S0_v3 (System.String), this.dimensions (System.Int32)
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.String)
+

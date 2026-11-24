@@ -1,0 +1,469 @@
+Type: UI.DebugPopup.FreeMemoryButton
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (UI.DebugPopup.FreeMemoryButton)
+	3 Nop
+	4 Return
+
+Method: System.Void Click()
+
+Disassembly:
+	0xD32B67 I32Const 4554217
+	0xD32B6C I32Load8_S 0, 0
+	0xD32B6F I32Eqz
+	0xD32B70 If -64
+	0xD32B72 I32Const 2964764
+	0xD32B77 I32Load 2, 0
+	0xD32B7A Call 73003
+	0xD32B7E I32Const 4554217
+	0xD32B83 I32Const 1
+	0xD32B85 I32Store8 0, 0
+	0xD32B88 End
+	0xD32B89 I32Const 0
+	0xD32B8B Call 33769
+	0xD32B8F LocalSet 1
+	0xD32B91 I32Const 4433280
+	0xD32B96 I32Load 2, 0
+	0xD32B99 LocalTee 2
+	0xD32B9B I32Load16_S 1, 186
+	0xD32B9F I32Const 512
+	0xD32BA2 I32And
+	0xD32BA3 If -64
+	0xD32BA5 LocalGet 2
+	0xD32BA7 I32Load 2, 116
+	0xD32BAA I32Eqz
+	0xD32BAB If -64
+	0xD32BAD LocalGet 2
+	0xD32BAF Call 72345
+	0xD32BB3 End
+	0xD32BB4 End
+	0xD32BB5 LocalGet 1
+	0xD32BB7 I32Const 0
+	0xD32BB9 I32Const 0
+	0xD32BBB Call 63693
+	0xD32BBF If -64
+	0xD32BC1 LocalGet 0
+	0xD32BC3 LocalGet 1
+	0xD32BC5 I32Const 0
+	0xD32BC7 Call 62781
+	0xD32BCB I32Const 0
+	0xD32BCD Call 63024
+	0xD32BD1 I32Const 1
+	0xD32BD3 I32And
+	0xD32BD4 I32Store8 0, 16
+	0xD32BD7 End
+	0xD32BD8 LocalGet 0
+	0xD32BDA LocalGet 0
+	0xD32BDC I32Load8_S 0, 16
+	0xD32BDF I32Const 0
+	0xD32BE1 I32Ne
+	0xD32BE2 I32Const 0
+	0xD32BE4 Call 33770
+	0xD32BE8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v22, [2D3D1C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [457DE9], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Call 83E9, v12 @ S0_v6 (UnityEngine.ComputeShader), 0
+	14 Nop
+	15 Nop
+	16 Move v15 @ S0_v8 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v19 @ S0_v10, [v15 @ S0_v8 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	21 CheckEqual v20 @ TEMP_v2 (System.Boolean), v19 @ S0_v10, 0
+	22 ConditionalJump @b15, v20 @ TEMP_v2 (System.Boolean)
+	23 Move v21 @ S0_v17 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	24 Nop
+	25 CheckEqual v23 @ S0_v19 (System.Boolean), [v21 @ S0_v17 (Il2CppClass<UnityEngine.Object>)+74], 0
+	26 Not v24 @ TEMP_v5 (System.Boolean), v23 @ S0_v19 (System.Boolean)
+	27 ConditionalJump @b15, v24 @ TEMP_v5 (System.Boolean)
+	28 Nop
+	29 CallVoid 11A99, typeof(UnityEngine.Object)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call ComputeShader.FindKernel, v31 @ S0_v13 (System.Int32), v12 @ S0_v6 (UnityEngine.ComputeShader), 0
+	36 CheckEqual v32 @ TEMP_v4 (System.Boolean), v31 @ S0_v13 (System.Int32), 0
+	37 ConditionalJump @b16, v32 @ TEMP_v4 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call Component.get_tag, v37 @ S1_v9 (System.String), v12 @ S0_v6 (UnityEngine.ComputeShader)
+	42 Nop
+	43 Call GameObject.get_tag, v50 @ S1_v10 (System.String), v37 @ S1_v9 (System.String)
+	44 Nop
+	45 And v41 @ S1_v11 (System.Boolean), v50 @ S1_v10 (System.String), 1
+	46 Move this._showingCounter (System.Boolean), v41 @ S1_v11 (System.Boolean)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CheckNotEqual v47 @ S1_v7 (System.Boolean), this._showingCounter (System.Boolean), 0
+	53 Nop
+	54 CallVoid OkButtonHelper.add_OkButtonClicked, this @ L0 (UI.DebugPopup.FreeMemoryButton), v47 @ S1_v7 (System.Boolean)
+	55 Nop
+	56 Return
+
+Method: System.Void SetupButton(System.Boolean enabled)
+
+Disassembly:
+	0xD32A17 I32Const 4554214
+	0xD32A1C I32Load8_S 0, 0
+	0xD32A1F I32Eqz
+	0xD32A20 If -64
+	0xD32A22 I32Const 2961660
+	0xD32A27 I32Load 2, 0
+	0xD32A2A Call 73003
+	0xD32A2E I32Const 4554214
+	0xD32A33 I32Const 1
+	0xD32A35 I32Store8 0, 0
+	0xD32A38 End
+	0xD32A39 LocalGet 0
+	0xD32A3B I32Load 2, 12
+	0xD32A3E LocalSet 3
+	0xD32A40 LocalGet 1
+	0xD32A42 If -64
+	0xD32A44 LocalGet 3
+	0xD32A46 I32Const 4546228
+	0xD32A4B I32Load 2, 0
+	0xD32A4E I32Const 0
+	0xD32A50 Call 39963
+	0xD32A54 Else
+	0xD32A55 LocalGet 3
+	0xD32A57 I32Const 4546232
+	0xD32A5C I32Load 2, 0
+	0xD32A5F I32Const 0
+	0xD32A61 Call 39963
+	0xD32A65 End
+	0xD32A66 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v12, [2D30FC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [457DE6], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Not v17 @ TEMP_v2 (System.Boolean), enabled @ L1 (System.Boolean)
+	17 ConditionalJump @b7, v17 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid UILabel.set_fontSize, this._titleLabel (UILabel), "FPS Counter: ON"
+	23 Jump @b8
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid UILabel.set_fontSize, this._titleLabel (UILabel), "FPS Counter: OFF"
+	29 Nop
+	30 Nop
+	31 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD32C75 I32Const 4554220
+	0xD32C7A I32Load8_S 0, 0
+	0xD32C7D I32Eqz
+	0xD32C7E If -64
+	0xD32C80 I32Const 2964760
+	0xD32C85 I32Load 2, 0
+	0xD32C88 Call 73003
+	0xD32C8C I32Const 4554220
+	0xD32C91 I32Const 1
+	0xD32C93 I32Store8 0, 0
+	0xD32C96 End
+	0xD32C97 I32Const 0
+	0xD32C99 Call 33769
+	0xD32C9D LocalSet 1
+	0xD32C9F I32Const 4433280
+	0xD32CA4 I32Load 2, 0
+	0xD32CA7 LocalTee 2
+	0xD32CA9 I32Load16_S 1, 186
+	0xD32CAD I32Const 512
+	0xD32CB0 I32And
+	0xD32CB1 I32Eqz
+	0xD32CB2 LocalSet 3
+	0xD32CB4 LocalGet 0
+	0xD32CB6 I32Load8_S 0, 16
+	0xD32CB9 If -64
+	0xD32CBB LocalGet 3
+	0xD32CBD I32Eqz
+	0xD32CBE If -64
+	0xD32CC0 LocalGet 2
+	0xD32CC2 I32Load 2, 116
+	0xD32CC5 I32Eqz
+	0xD32CC6 If -64
+	0xD32CC8 LocalGet 2
+	0xD32CCA Call 72345
+	0xD32CCE End
+	0xD32CCF End
+	0xD32CD0 LocalGet 1
+	0xD32CD2 I32Const 0
+	0xD32CD4 I32Const 0
+	0xD32CD6 Call 63693
+	0xD32CDA If -64
+	0xD32CDC LocalGet 1
+	0xD32CDE I32Const 0
+	0xD32CE0 I32Const 0
+	0xD32CE2 Call 32545
+	0xD32CE6 LocalGet 0
+	0xD32CE8 I32Const 0
+	0xD32CEA I32Store8 0, 16
+	0xD32CED End
+	0xD32CEE Else
+	0xD32CEF LocalGet 3
+	0xD32CF1 I32Eqz
+	0xD32CF2 If -64
+	0xD32CF4 LocalGet 2
+	0xD32CF6 I32Load 2, 116
+	0xD32CF9 I32Eqz
+	0xD32CFA If -64
+	0xD32CFC LocalGet 2
+	0xD32CFE Call 72345
+	0xD32D02 End
+	0xD32D03 End
+	0xD32D04 LocalGet 1
+	0xD32D06 I32Const 0
+	0xD32D08 I32Const 0
+	0xD32D0A Call 63629
+	0xD32D0E If -64
+	0xD32D10 I32Const 4435764
+	0xD32D15 I32Load 2, 0
+	0xD32D18 LocalTee 1
+	0xD32D1A I32Load16_S 1, 186
+	0xD32D1E I32Const 512
+	0xD32D21 I32And
+	0xD32D22 If -64
+	0xD32D24 LocalGet 1
+	0xD32D26 I32Load 2, 116
+	0xD32D29 I32Eqz
+	0xD32D2A If -64
+	0xD32D2C LocalGet 1
+	0xD32D2E Call 72345
+	0xD32D32 End
+	0xD32D33 End
+	0xD32D34 I32Const 0
+	0xD32D36 Call 35989
+	0xD32D3A I32Load 2, 20
+	0xD32D3D I32Const 0
+	0xD32D3F Call 32544
+	0xD32D43 LocalSet 1
+	0xD32D45 End
+	0xD32D46 I32Const 4433280
+	0xD32D4B I32Load 2, 0
+	0xD32D4E LocalTee 2
+	0xD32D50 I32Load16_S 1, 186
+	0xD32D54 I32Const 512
+	0xD32D57 I32And
+	0xD32D58 If -64
+	0xD32D5A LocalGet 2
+	0xD32D5C I32Load 2, 116
+	0xD32D5F I32Eqz
+	0xD32D60 If -64
+	0xD32D62 LocalGet 2
+	0xD32D64 Call 72345
+	0xD32D68 End
+	0xD32D69 End
+	0xD32D6A LocalGet 1
+	0xD32D6C I32Const 0
+	0xD32D6E I32Const 0
+	0xD32D70 Call 63693
+	0xD32D74 If -64
+	0xD32D76 LocalGet 1
+	0xD32D78 I32Const 1
+	0xD32D7A I32Const 0
+	0xD32D7C Call 32545
+	0xD32D80 LocalGet 0
+	0xD32D82 I32Const 1
+	0xD32D84 I32Store8 0, 16
+	0xD32D87 End
+	0xD32D88 End
+	0xD32D89 LocalGet 0
+	0xD32D8B LocalGet 0
+	0xD32D8D I32Load8_S 0, 16
+	0xD32D90 I32Const 0
+	0xD32D92 I32Ne
+	0xD32D93 I32Const 0
+	0xD32D95 Call 33770
+	0xD32D99 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b31
+	5 Nop
+	6 Move v5 @ S0_v65, [2D3D18]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v65
+	8 Nop
+	9 Move v7 @ S1_v19, 1
+	10 Move [457DEC], v7 @ S1_v19
+	11 Nop
+	12 Nop
+	13 Call 83E9, v12 @ S0_v6 (UnityEngine.ComputeShader), 0
+	14 Nop
+	15 Nop
+	16 Move v15 @ S0_v8 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v19 @ S0_v10, [v15 @ S0_v8 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	21 CheckEqual v20 @ S0_v11 (System.Boolean), v19 @ S0_v10, 0
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Not v25 @ TEMP_v2 (System.Boolean), this._showingCounter (System.Boolean)
+	26 ConditionalJump @b13, v25 @ TEMP_v2 (System.Boolean)
+	27 Nop
+	28 Not v27 @ S0_v53 (System.Boolean), v20 @ S0_v11 (System.Boolean)
+	29 Not v28 @ TEMP_v16 (System.Boolean), v27 @ S0_v53 (System.Boolean)
+	30 ConditionalJump @b32, v28 @ TEMP_v16 (System.Boolean)
+	31 Move v32 @ S0_v60 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	32 Nop
+	33 CheckEqual v34 @ S0_v62 (System.Boolean), [v32 @ S0_v60 (Il2CppClass<UnityEngine.Object>)+74], 0
+	34 Not v35 @ TEMP_v19 (System.Boolean), v34 @ S0_v62 (System.Boolean)
+	35 ConditionalJump @b32, v35 @ TEMP_v19 (System.Boolean)
+	36 Nop
+	37 CallVoid 11A99, typeof(UnityEngine.Object)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Call ComputeShader.FindKernel, v42 @ S0_v56 (System.Int32), v12 @ S0_v6 (UnityEngine.ComputeShader), 0
+	44 CheckEqual v54 @ TEMP_v18 (System.Boolean), v42 @ S0_v56 (System.Int32), 0
+	45 ConditionalJump @b33, v54 @ TEMP_v18 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid BoardSelectButton.SetSticker, v12 @ S0_v6 (UnityEngine.ComputeShader), 0
+	50 Nop
+	51 Nop
+	52 Move this._showingCounter (System.Boolean), 0
+	53 Nop
+	54 Jump @b38
+	55 Nop
+	56 Not v30 @ S0_v17 (System.Boolean), v20 @ S0_v11 (System.Boolean)
+	57 Not v31 @ TEMP_v4 (System.Boolean), v30 @ S0_v17 (System.Boolean)
+	58 ConditionalJump @b34, v31 @ TEMP_v4 (System.Boolean)
+	59 Move v43 @ S0_v48 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	60 Nop
+	61 CheckEqual v45 @ S0_v50 (System.Boolean), [v43 @ S0_v48 (Il2CppClass<UnityEngine.Object>)+74], 0
+	62 Not v46 @ TEMP_v15 (System.Boolean), v45 @ S0_v50 (System.Boolean)
+	63 ConditionalJump @b34, v46 @ TEMP_v15 (System.Boolean)
+	64 Nop
+	65 CallVoid 11A99, typeof(UnityEngine.Object)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Call Object.op_Inequality, v53 @ S0_v20 (System.Boolean), v12 @ S0_v6 (UnityEngine.ComputeShader), 0
+	72 Not v55 @ TEMP_v6 (System.Boolean), v53 @ S0_v20 (System.Boolean)
+	73 ConditionalJump @b35, v55 @ TEMP_v6 (System.Boolean)
+	74 Nop
+	75 Move v65 @ S0_v36 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 And v69 @ S0_v38, [v65 @ S0_v36 (Il2CppClass<UIScreenController>)+BA], 512
+	80 CheckEqual v70 @ TEMP_v12 (System.Boolean), v69 @ S0_v38, 0
+	81 ConditionalJump @b36, v70 @ TEMP_v12 (System.Boolean)
+	82 Move v105 @ S0_v44 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	83 Nop
+	84 CheckEqual v107 @ S0_v46 (System.Boolean), [v105 @ S0_v44 (Il2CppClass<UIScreenController>)+74], 0
+	85 Not v108 @ TEMP_v14 (System.Boolean), v107 @ S0_v46 (System.Boolean)
+	86 ConditionalJump @b36, v108 @ TEMP_v14 (System.Boolean)
+	87 Nop
+	88 CallVoid 11A99, typeof(UIScreenController)
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Call UIScreenController.ShouldShowOnlineScreen, v112 @ S0_v41 (System.Boolean)
+	93 Nop
+	94 Nop
+	95 Call AwardCellHelper.GetNbToAnimate, v78 @ S0_v43 (System.Int32), [v112 @ S0_v41 (System.Boolean)+14]
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Move v80 @ S0_v23 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	100 Nop
+	101 Nop
+	102 Nop
+	103 And v84 @ S0_v25, [v80 @ S0_v23 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	104 CheckEqual v85 @ TEMP_v8 (System.Boolean), v84 @ S0_v25, 0
+	105 ConditionalJump @b39, v85 @ TEMP_v8 (System.Boolean)
+	106 Move v113 @ S0_v31 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	107 Nop
+	108 CheckEqual v115 @ S0_v33 (System.Boolean), [v113 @ S0_v31 (Il2CppClass<UnityEngine.Object>)+74], 0
+	109 Not v116 @ TEMP_v11 (System.Boolean), v115 @ S0_v33 (System.Boolean)
+	110 ConditionalJump @b39, v116 @ TEMP_v11 (System.Boolean)
+	111 Nop
+	112 CallVoid 11A99, typeof(UnityEngine.Object)
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Call ComputeShader.FindKernel, v98 @ S0_v28 (System.Int32), v71 @ L1_v3 (UnityEngine.ComputeShader), 0
+	119 CheckEqual v95 @ TEMP_v10 (System.Boolean), v98 @ S0_v28 (System.Int32), 0
+	120 ConditionalJump @b38, v95 @ TEMP_v10 (System.Boolean)
+	121 Nop
+	122 Nop
+	123 Nop
+	124 CallVoid BoardSelectButton.SetSticker, v71 @ L1_v3 (UnityEngine.ComputeShader), 1
+	125 Nop
+	126 Nop
+	127 Move this._showingCounter (System.Boolean), 1
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 CheckNotEqual v103 @ S1_v6 (System.Boolean), this._showingCounter (System.Boolean), 0
+	135 Nop
+	136 CallVoid OkButtonHelper.add_OkButtonClicked, this @ L0 (UI.DebugPopup.FreeMemoryButton), v103 @ S1_v6 (System.Boolean)
+	137 Nop
+	138 Return
+

@@ -1,0 +1,1323 @@
+Type: UI.Pages.MissionsPageInternal.MissionSetProgress
+
+Method: System.Void SetMissionSetProgress(System.Int32 progress)
+
+Disassembly:
+	0xD20A7B GlobalGet 7
+	0xD20A7D LocalSet 2
+	0xD20A7F GlobalGet 7
+	0xD20A81 I32Const 48
+	0xD20A83 I32Add
+	0xD20A84 GlobalSet 7
+	0xD20A86 LocalGet 0
+	0xD20A88 I32Load 2, 96
+	0xD20A8B LocalGet 2
+	0xD20A8D LocalGet 1
+	0xD20A8F I64Load 2, 0
+	0xD20A92 I64Store 2, 0
+	0xD20A95 LocalGet 2
+	0xD20A97 LocalGet 1
+	0xD20A99 I64Load 2, 8
+	0xD20A9C I64Store 2, 8
+	0xD20A9F LocalGet 2
+	0xD20AA1 LocalGet 1
+	0xD20AA3 I64Load 2, 16
+	0xD20AA6 I64Store 2, 16
+	0xD20AA9 LocalGet 2
+	0xD20AAB LocalGet 1
+	0xD20AAD I64Load 2, 24
+	0xD20AB0 I64Store 2, 24
+	0xD20AB3 LocalGet 2
+	0xD20AB5 LocalGet 1
+	0xD20AB7 I64Load 2, 32
+	0xD20ABA I64Store 2, 32
+	0xD20ABD LocalGet 2
+	0xD20ABF Call 33412
+	0xD20AC3 LocalGet 0
+	0xD20AC5 I32Const 0
+	0xD20AC7 Call 33419
+	0xD20ACB LocalGet 2
+	0xD20ACD GlobalSet 7
+	0xD20ACF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], progress.m_value (System.Int32)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move [v1 @ G7+8], [progress @ L1 (System.Int32)+8]
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move [v1 @ G7+10], [progress @ L1 (System.Int32)+10]
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move [v1 @ G7+18], [progress @ L1 (System.Int32)+18]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move [v1 @ G7+20], [progress @ L1 (System.Int32)+20]
+	28 Nop
+	29 CallVoid 8284, [this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)+60], v1 @ G7
+	30 Nop
+	31 Nop
+	32 CallVoid MissionCell.RefreshState, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Return
+
+Method: System.Void BounceNextProgressDot(System.Action callback = null)
+
+Disassembly:
+	0xD1E927 GlobalGet 7
+	0xD1E929 LocalSet 2
+	0xD1E92B GlobalGet 7
+	0xD1E92D I32Const 32
+	0xD1E92F I32Add
+	0xD1E930 GlobalSet 7
+	0xD1E932 I32Const 4553983
+	0xD1E937 I32Load8_S 0, 0
+	0xD1E93A I32Eqz
+	0xD1E93B If -64
+	0xD1E93D I32Const 2982064
+	0xD1E942 I32Load 2, 0
+	0xD1E945 Call 73003
+	0xD1E949 I32Const 4553983
+	0xD1E94E I32Const 1
+	0xD1E950 I32Store8 0, 0
+	0xD1E953 End
+	0xD1E954 LocalGet 2
+	0xD1E956 I32Const 12
+	0xD1E958 I32Add
+	0xD1E959 LocalSet 6
+	0xD1E95B LocalGet 0
+	0xD1E95D I32Load 2, 32
+	0xD1E960 I32Const 4440476
+	0xD1E965 I32Load 2, 0
+	0xD1E968 Call 72556
+	0xD1E96C LocalTee 4
+	0xD1E96E LocalSet 5
+	0xD1E970 I32Const 4475664
+	0xD1E975 I32Load 2, 0
+	0xD1E978 Drop
+	0xD1E979 LocalGet 5
+	0xD1E97B I32Const 4495420
+	0xD1E980 I32Load 2, 0
+	0xD1E983 LocalTee 7
+	0xD1E985 I32Load 2, 0
+	0xD1E988 I32Store 2, 8
+	0xD1E98B LocalGet 5
+	0xD1E98D LocalGet 7
+	0xD1E98F I32Store 2, 20
+	0xD1E992 LocalGet 5
+	0xD1E994 I32Const 16
+	0xD1E996 I32Add
+	0xD1E997 I32Const 0
+	0xD1E999 I32Store 2, 0
+	0xD1E99C LocalGet 4
+	0xD1E99E I32Const 4487084
+	0xD1E9A3 I32Load 2, 0
+	0xD1E9A6 Call 69553
+	0xD1E9AA LocalGet 0
+	0xD1E9AC I32Load 2, 32
+	0xD1E9AF I32Const 4487080
+	0xD1E9B4 I32Load 2, 0
+	0xD1E9B7 Call 29307
+	0xD1E9BB I32Const 0
+	0xD1E9BD LocalSet 3
+	0xD1E9BF Loop -64
+	0xD1E9C1 I32Const 4463480
+	0xD1E9C6 I32Load 2, 0
+	0xD1E9C9 Drop
+	0xD1E9CA LocalGet 3
+	0xD1E9CC LocalGet 0
+	0xD1E9CE I32Load 2, 12
+	0xD1E9D1 I32Load 2, 12
+	0xD1E9D4 I32Lt_S
+	0xD1E9D5 If -64
+	0xD1E9D7 LocalGet 0
+	0xD1E9D9 I32Load 2, 12
+	0xD1E9DC LocalGet 3
+	0xD1E9DE I32Const 4449296
+	0xD1E9E3 I32Load 2, 0
+	0xD1E9E6 Call 29402
+	0xD1E9EA LocalSet 4
+	0xD1E9EC I32Const 4546492
+	0xD1E9F1 I32Load 2, 0
+	0xD1E9F4 LocalSet 5
+	0xD1E9F6 I32Const 4546488
+	0xD1E9FB I32Load 2, 0
+	0xD1E9FE LocalSet 7
+	0xD1EA00 LocalGet 4
+	0xD1EA02 LocalGet 3
+	0xD1EA04 LocalGet 1
+	0xD1EA06 I32Lt_S
+	0xD1EA07 If -1
+	0xD1EA09 LocalGet 5
+	0xD1EA0B Else
+	0xD1EA0C LocalGet 7
+	0xD1EA0E End
+	0xD1EA0F I32Const 0
+	0xD1EA11 Call 42591
+	0xD1EA15 LocalGet 4
+	0xD1EA17 I32Const 0
+	0xD1EA19 Call 62780
+	0xD1EA1D I32Const 4433316
+	0xD1EA22 I32Load 2, 0
+	0xD1EA25 LocalTee 4
+	0xD1EA27 I32Load16_S 1, 186
+	0xD1EA2B I32Const 512
+	0xD1EA2E I32And
+	0xD1EA2F If -64
+	0xD1EA31 LocalGet 4
+	0xD1EA33 I32Load 2, 116
+	0xD1EA36 I32Eqz
+	0xD1EA37 If -64
+	0xD1EA39 LocalGet 4
+	0xD1EA3B Call 72345
+	0xD1EA3F End
+	0xD1EA40 End
+	0xD1EA41 LocalGet 2
+	0xD1EA43 I32Const 0
+	0xD1EA45 Call 70766
+	0xD1EA49 LocalGet 6
+	0xD1EA4B LocalGet 2
+	0xD1EA4D I64Load 2, 0
+	0xD1EA50 I64Store 2, 0
+	0xD1EA53 LocalGet 6
+	0xD1EA55 LocalGet 2
+	0xD1EA57 I32Load 2, 8
+	0xD1EA5A I32Store 2, 8
+	0xD1EA5D LocalGet 6
+	0xD1EA5F I32Const 0
+	0xD1EA61 Call 64359
+	0xD1EA65 LocalGet 3
+	0xD1EA67 I32Const 1
+	0xD1EA69 I32Add
+	0xD1EA6A LocalSet 3
+	0xD1EA6C Br 1
+	0xD1EA6E End
+	0xD1EA6F End
+	0xD1EA70 LocalGet 2
+	0xD1EA72 GlobalSet 7
+	0xD1EA74 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b20
+	11 Nop
+	12 Move v12 @ S0_v34, [2D80B0]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v34
+	14 Nop
+	15 Move v14 @ S1_v41, 1
+	16 Move [457CFF], v14 @ S1_v41
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9 (UnityEngine.Transform), v1 @ G7, 12
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Call 11B6C, v26 @ S1_v6 (System.Collections.Generic.List`1), typeof(System.Action`1<UnityEngine.GameObject>)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Move v33 @ S2_v2 (Il2CppMethodInfo), methodof(UnityEngine.Object::Destroy)
+	34 Nop
+	35 Nop
+	36 Move v26._items (T[]), [v33 @ S2_v2 (Il2CppMethodInfo)]
+	37 Nop
+	38 Nop
+	39 Move v26._syncRoot (System.Object), methodof(UnityEngine.Object::Destroy)
+	40 Nop
+	41 Nop
+	42 Add v40 @ S1_v12, v26 @ S1_v6 (System.Collections.Generic.List`1), 16
+	43 Nop
+	44 Move [v40 @ S1_v12], 0
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Call List`1.GetEnumerator, v45 @ SRET_v1 (System.Collections.Generic.List`1<T>+Enumerator<T>), v26 @ S1_v6 (System.Collections.Generic.List`1)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Throw typeof(System.IndexOutOfRangeException)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Move v74 @ S1_v18 (System.Collections.Generic.List`1<UISprite>), this._fillSprites (System.Collections.Generic.List`1<UISprite>)
+	62 Nop
+	63 CheckLess v76 @ S0_v19 (System.Boolean), v52 @ L3_v2 (System.Int32), v74._size (System.Int32)
+	64 Not v77 @ TEMP_v3 (System.Boolean), v76 @ S0_v19 (System.Boolean)
+	65 ConditionalJump @b19, v77 @ TEMP_v3 (System.Boolean)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Call List`1<UISprite>.get_Item, v83 @ S0_v23 (UISprite), this._fillSprites (System.Collections.Generic.List`1<UISprite>), v52 @ L3_v2 (System.Int32)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 CheckLess v95 @ S1_v22 (System.Boolean), v52 @ L3_v2 (System.Int32), callback @ L1 (System.Action)
+	83 Not v96 @ TEMP_v4 (System.Boolean), v95 @ S1_v22 (System.Boolean)
+	84 ConditionalJump @b11, v96 @ TEMP_v4 (System.Boolean)
+	85 Nop
+	86 Jump @b21
+	87 Nop
+	88 Nop
+	89 Nop
+	90 CallVoid UISprite.set_fillCenter, v83 @ S0_v23 (UISprite), v99 @ S1_v23 (System.Boolean)
+	91 Nop
+	92 Nop
+	93 Call Component.get_gameObject, v103 @ S0_v30 (UnityEngine.GameObject), v83 @ S0_v23 (UISprite)
+	94 Nop
+	95 Move v105 @ S1_v26 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	96 Nop
+	97 Nop
+	98 Nop
+	99 And v108 @ S1_v28, [v105 @ S1_v26 (Il2CppClass<UnityEngine.Vector3>)+BA], 512
+	100 CheckEqual v109 @ TEMP_v5 (System.Boolean), v108 @ S1_v28, 0
+	101 ConditionalJump @b22, v109 @ TEMP_v5 (System.Boolean)
+	102 Move v110 @ S1_v35 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	103 Nop
+	104 CheckEqual v112 @ S1_v37 (System.Boolean), [v110 @ S1_v35 (Il2CppClass<UnityEngine.Vector3>)+74], 0
+	105 Not v113 @ TEMP_v7 (System.Boolean), v112 @ S1_v37 (System.Boolean)
+	106 ConditionalJump @b22, v113 @ TEMP_v7 (System.Boolean)
+	107 Nop
+	108 CallVoid 11A99, typeof(UnityEngine.Vector3)
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Call Vector3.get_forward, v55 @ SRET_v3 (UnityEngine.Vector3)
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Move [v19 @ S0_v9 (UnityEngine.Transform)], [v1 @ G7]
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Move v19.m_CachedPtr (System.IntPtr), [v1 @ G7+8]
+	122 Nop
+	123 Nop
+	124 CallVoid Transform.set_parent, v103 @ S0_v30 (UnityEngine.GameObject), v19 @ S0_v9 (UnityEngine.Transform)
+	125 Nop
+	126 Nop
+	127 Add v69 @ S0_v32 (System.Int32), v52 @ L3_v2 (System.Int32), 1
+	128 Nop
+	129 Jump @b23
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Return
+
+Method: System.Void BounceReward()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)
+	3 Nop
+	4 Return
+
+Method: System.Void ChangeToMysteryBoxReward(System.Boolean animate = False)
+
+Disassembly:
+	0xD1FCA6 I32Const 4554011
+	0xD1FCAB I32Load8_S 0, 0
+	0xD1FCAE I32Eqz
+	0xD1FCAF If -64
+	0xD1FCB1 I32Const 2982048
+	0xD1FCB6 I32Load 2, 0
+	0xD1FCB9 Call 73003
+	0xD1FCBD I32Const 4554011
+	0xD1FCC2 I32Const 1
+	0xD1FCC4 I32Store8 0, 0
+	0xD1FCC7 End
+	0xD1FCC8 LocalGet 0
+	0xD1FCCA I32Load 2, 12
+	0xD1FCCD I32Const 4444156
+	0xD1FCD2 I32Load 2, 0
+	0xD1FCD5 LocalTee 2
+	0xD1FCD7 I32Load16_S 1, 186
+	0xD1FCDB I32Const 512
+	0xD1FCDE I32And
+	0xD1FCDF If -64
+	0xD1FCE1 LocalGet 2
+	0xD1FCE3 I32Load 2, 116
+	0xD1FCE6 I32Eqz
+	0xD1FCE7 If -64
+	0xD1FCE9 LocalGet 2
+	0xD1FCEB Call 72345
+	0xD1FCEF I32Const 4444156
+	0xD1FCF4 I32Load 2, 0
+	0xD1FCF7 LocalSet 2
+	0xD1FCF9 End
+	0xD1FCFA End
+	0xD1FCFB LocalGet 2
+	0xD1FCFD I32Load 2, 92
+	0xD1FD00 I32Load 2, 4
+	0xD1FD03 LocalTee 2
+	0xD1FD05 I32Eqz
+	0xD1FD06 If -64
+	0xD1FD08 I32Const 4444156
+	0xD1FD0D I32Load 2, 0
+	0xD1FD10 LocalTee 2
+	0xD1FD12 I32Load16_S 1, 186
+	0xD1FD16 I32Const 512
+	0xD1FD19 I32And
+	0xD1FD1A If -64
+	0xD1FD1C LocalGet 2
+	0xD1FD1E I32Load 2, 116
+	0xD1FD21 I32Eqz
+	0xD1FD22 If -64
+	0xD1FD24 LocalGet 2
+	0xD1FD26 Call 72345
+	0xD1FD2A I32Const 4444156
+	0xD1FD2F I32Load 2, 0
+	0xD1FD32 LocalSet 2
+	0xD1FD34 End
+	0xD1FD35 End
+	0xD1FD36 LocalGet 2
+	0xD1FD38 I32Load 2, 92
+	0xD1FD3B I32Load 2, 0
+	0xD1FD3E LocalSet 5
+	0xD1FD40 I32Const 4444160
+	0xD1FD45 I32Load 2, 0
+	0xD1FD48 Call 72556
+	0xD1FD4C LocalTee 2
+	0xD1FD4E LocalSet 3
+	0xD1FD50 I32Const 4488756
+	0xD1FD55 I32Load 2, 0
+	0xD1FD58 Drop
+	0xD1FD59 LocalGet 3
+	0xD1FD5B I32Const 4457436
+	0xD1FD60 I32Load 2, 0
+	0xD1FD63 LocalTee 6
+	0xD1FD65 I32Load 2, 0
+	0xD1FD68 I32Store 2, 8
+	0xD1FD6B LocalGet 3
+	0xD1FD6D LocalGet 6
+	0xD1FD6F I32Store 2, 20
+	0xD1FD72 LocalGet 3
+	0xD1FD74 I32Const 16
+	0xD1FD76 I32Add
+	0xD1FD77 LocalGet 5
+	0xD1FD79 I32Store 2, 0
+	0xD1FD7C I32Const 4444156
+	0xD1FD81 I32Load 2, 0
+	0xD1FD84 I32Load 2, 92
+	0xD1FD87 I32Const 4
+	0xD1FD89 I32Add
+	0xD1FD8A LocalGet 2
+	0xD1FD8C I32Store 2, 0
+	0xD1FD8F End
+	0xD1FD90 LocalGet 2
+	0xD1FD92 I32Const 4464116
+	0xD1FD97 I32Load 2, 0
+	0xD1FD9A Call 45193
+	0xD1FD9E LocalSet 2
+	0xD1FDA0 LocalGet 0
+	0xD1FDA2 I32Load 2, 12
+	0xD1FDA5 LocalGet 2
+	0xD1FDA7 I32Const 4451268
+	0xD1FDAC I32Load 2, 0
+	0xD1FDAF Call 66756
+	0xD1FDB3 If -64
+	0xD1FDB5 LocalGet 0
+	0xD1FDB7 I32Load 2, 12
+	0xD1FDBA LocalGet 2
+	0xD1FDBC I32Const 4449296
+	0xD1FDC1 I32Load 2, 0
+	0xD1FDC4 Call 29402
+	0xD1FDC8 LocalTee 2
+	0xD1FDCA I32Const 4546492
+	0xD1FDCF I32Load 2, 0
+	0xD1FDD2 I32Const 0
+	0xD1FDD4 Call 42591
+	0xD1FDD8 LocalGet 0
+	0xD1FDDA LocalGet 0
+	0xD1FDDC LocalGet 2
+	0xD1FDDE LocalGet 0
+	0xD1FDE0 F32Load 2, 20
+	0xD1FDE3 LocalGet 1
+	0xD1FDE5 I32Const 0
+	0xD1FDE7 Call 33438
+	0xD1FDEB I32Const 0
+	0xD1FDED Call 63610
+	0xD1FDF1 Drop
+	0xD1FDF2 End
+	0xD1FDF3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b20
+	5 Nop
+	6 Move v5 @ S0_v18, [2D80A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v18
+	8 Nop
+	9 Move v7 @ S1_v53, 1
+	10 Move [457D1B], v7 @ S1_v53
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S1_v3 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>), typeof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 And v19 @ S1_v5, [v15 @ S1_v3 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>)+BA], 512
+	20 CheckEqual v20 @ TEMP_v2 (System.Boolean), v19 @ S1_v5, 0
+	21 ConditionalJump @b24, v20 @ TEMP_v2 (System.Boolean)
+	22 Move v21 @ S1_v47 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>), typeof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	23 Nop
+	24 CheckEqual v23 @ S1_v49 (System.Boolean), [v21 @ S1_v47 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>)+74], 0
+	25 Not v24 @ TEMP_v10 (System.Boolean), v23 @ S1_v49 (System.Boolean)
+	26 ConditionalJump @b24, v24 @ TEMP_v10 (System.Boolean)
+	27 Nop
+	28 CallVoid 11A99, typeof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CheckEqual v34 @ S1_v10 (System.Boolean), v31.<>9__9_0 (System.Func`2<UISprite, System.Boolean>), 0
+	39 Not v35 @ TEMP_v4 (System.Boolean), v34 @ S1_v10 (System.Boolean)
+	40 ConditionalJump @b25, v35 @ TEMP_v4 (System.Boolean)
+	41 Nop
+	42 Move v38 @ S1_v21 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>), typeof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 And v42 @ S1_v23, [v38 @ S1_v21 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>)+BA], 512
+	47 CheckEqual v43 @ TEMP_v7 (System.Boolean), v42 @ S1_v23, 0
+	48 ConditionalJump @b22, v43 @ TEMP_v7 (System.Boolean)
+	49 Move v66 @ S1_v41 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>), typeof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	50 Nop
+	51 CheckEqual v68 @ S1_v43 (System.Boolean), [v66 @ S1_v41 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>)+74], 0
+	52 Not v69 @ TEMP_v9 (System.Boolean), v68 @ S1_v43 (System.Boolean)
+	53 ConditionalJump @b22, v69 @ TEMP_v9 (System.Boolean)
+	54 Nop
+	55 CallVoid 11A99, typeof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Call 11B6C, v79 @ S1_v30 (System.Func`2<UISprite, System.Boolean>), typeof(System.Func`2<UISprite, System.Boolean>)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Move v92 @ S2_v15 (Il2CppMethodInfo), methodof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c::<BounceNextProgressDot>b__9_0)
+	75 Nop
+	76 Nop
+	77 Move [v79 @ S1_v30 (System.Func`2<UISprite, System.Boolean>)+8], [v92 @ S2_v15 (Il2CppMethodInfo)]
+	78 Nop
+	79 Nop
+	80 Move [v79 @ S1_v30 (System.Func`2<UISprite, System.Boolean>)+14], methodof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c::<BounceNextProgressDot>b__9_0)
+	81 Nop
+	82 Nop
+	83 Add v98 @ S1_v36, v79 @ S1_v30 (System.Func`2<UISprite, System.Boolean>), 16
+	84 Nop
+	85 Move [v98 @ S1_v36], v75.<>9 (UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	86 Nop
+	87 Move v101 @ S1_v38 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>), typeof(UI.Pages.MissionsPageInternal.MissionSetProgress+<>c)
+	88 Nop
+	89 Nop
+	90 Add v58 @ S1_v40, [v101 @ S1_v38 (Il2CppClass<UI.Pages.MissionsPageInternal.MissionSetProgress+<>c>)+5C], 4
+	91 Nop
+	92 Move [v58 @ S1_v40], v79 @ S1_v30 (System.Func`2<UISprite, System.Boolean>)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Call Enumerable.Count, v64 @ S0_v7 (System.Int32), this._fillSprites (System.Collections.Generic.List`1<UISprite>), v55 @ L2_v4 (System.Func`2<UISprite, System.Boolean>)
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Call ExpiredLimitedBoardEventManager.GetEventValue, v86 @ S0_v10 (T), this._fillSprites (System.Collections.Generic.List`1<UISprite>), v64 @ S0_v7 (System.Int32)
+	105 CheckEqual v104 @ TEMP_v6 (System.Boolean), v86 @ S0_v10 (T), 0
+	106 ConditionalJump @b19, v104 @ TEMP_v6 (System.Boolean)
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Call List`1<UISprite>.get_Item, v111 @ S0_v14 (UISprite), this._fillSprites (System.Collections.Generic.List`1<UISprite>), v64 @ S0_v7 (System.Int32)
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 CallVoid UISprite.set_fillCenter, v111 @ S0_v14 (UISprite), "mission_progress_dot_completed"
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Call CelebrationPopup.RotateGameObject, v126 @ S1_v19 (System.Collections.IEnumerator), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v111 @ S0_v14 (UISprite), this._bounceEffectDuration (System.Single), animate @ L1 (System.Boolean)
+	126 Nop
+	127 Call MonoBehaviour.StartCoroutine_Auto, v128 @ S0_v16 (UnityEngine.Coroutine), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v126 @ S1_v19 (System.Collections.IEnumerator)
+	128 Nop
+	129 Nop
+	130 Return
+
+Method: System.Single GetBounceDuration()
+
+Disassembly:
+	0xD1FFB1 LocalGet 0
+	0xD1FFB3 F32Load 2, 76
+	0xD1FFB6 LocalGet 0
+	0xD1FFB8 F32Load 2, 60
+	0xD1FFBB F32Add
+	0xD1FFBC LocalGet 0
+	0xD1FFBE F32Load 2, 124
+	0xD1FFC1 F32Add
+	0xD1FFC2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, [this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)+4C], [this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)+3C]
+	5 Nop
+	6 Nop
+	7 Add returnVal1 @ S0_v4 (System.Single), v5 @ S0_v3, [this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)+7C]
+	8 Nop
+	9 Return returnVal1 @ S0_v4 (System.Single)
+
+Method: System.Collections.IEnumerator BounceObject(UISprite spriteToBounce, System.Single duration, System.Action callWhenFinished = null)
+
+Disassembly:
+	0xDB5D4E GlobalGet 7
+	0xDB5D50 LocalSet 0
+	0xDB5D52 GlobalGet 7
+	0xDB5D54 I32Const 16
+	0xDB5D56 I32Add
+	0xDB5D57 GlobalSet 7
+	0xDB5D59 I32Const 4555786
+	0xDB5D5E I32Load8_S 0, 0
+	0xDB5D61 I32Eqz
+	0xDB5D62 If -64
+	0xDB5D64 I32Const 3021080
+	0xDB5D69 I32Load 2, 0
+	0xDB5D6C Call 73003
+	0xDB5D70 I32Const 4555786
+	0xDB5D75 I32Const 1
+	0xDB5D77 I32Store8 0, 0
+	0xDB5D7A End
+	0xDB5D7B I32Const 4445356
+	0xDB5D80 I32Load 2, 0
+	0xDB5D83 Call 72556
+	0xDB5D87 LocalTee 4
+	0xDB5D89 I32Const 0
+	0xDB5D8B I32Store 2, 8
+	0xDB5D8E LocalGet 4
+	0xDB5D90 I32Const 16
+	0xDB5D92 I32Add
+	0xDB5D93 LocalGet 1
+	0xDB5D95 I32Store 2, 0
+	0xDB5D98 LocalGet 4
+	0xDB5D9A LocalGet 2
+	0xDB5D9C F32Store 2, 20
+	0xDB5D9F LocalGet 0
+	0xDB5DA1 LocalGet 3
+	0xDB5DA3 I64Load 2, 0
+	0xDB5DA6 I64Store 2, 0
+	0xDB5DA9 LocalGet 0
+	0xDB5DAB LocalGet 3
+	0xDB5DAD I32Load 2, 8
+	0xDB5DB0 I32Store 2, 8
+	0xDB5DB3 LocalGet 4
+	0xDB5DB5 I32Const 24
+	0xDB5DB7 I32Add
+	0xDB5DB8 LocalTee 1
+	0xDB5DBA LocalGet 0
+	0xDB5DBC I64Load 2, 0
+	0xDB5DBF I64Store 2, 0
+	0xDB5DC2 LocalGet 1
+	0xDB5DC4 LocalGet 0
+	0xDB5DC6 I32Load 2, 8
+	0xDB5DC9 I32Store 2, 8
+	0xDB5DCC LocalGet 0
+	0xDB5DCE GlobalSet 7
+	0xDB5DD0 LocalGet 4
+	0xDB5DD2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b6
+	11 Nop
+	12 Move v12 @ S0_v22, [2E1918]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v22
+	14 Nop
+	15 Move v14 @ S1_v16, 1
+	16 Move [45840A], v14 @ S1_v16
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call 11B6C, v19 @ S0_v10 (System.Collections.IEnumerator), typeof(UIScreenController+<MoveTransform>d__159)
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v10 (System.Collections.IEnumerator)+8], 0
+	24 Nop
+	25 Nop
+	26 Add v24 @ S0_v12, v19 @ S0_v10 (System.Collections.IEnumerator), 16
+	27 Nop
+	28 Move [v24 @ S0_v12], spriteToBounce @ L1 (UISprite)
+	29 Nop
+	30 Nop
+	31 Move [v19 @ S0_v10 (System.Collections.IEnumerator)+14], duration @ L2 (System.Single)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Move [v1 @ G7], [callWhenFinished @ L3 (System.Action)]
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Move [v1 @ G7+8], callWhenFinished.method_ptr (System.IntPtr)
+	40 Nop
+	41 Nop
+	42 Add v39 @ S0_v17, v19 @ S0_v10 (System.Collections.IEnumerator), 24
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Move [v39 @ S0_v17], [v1 @ G7]
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Move [v39 @ S0_v17+8], [v1 @ G7+8]
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Return v19 @ S0_v10 (System.Collections.IEnumerator)
+
+Method: System.Void TestBounce1()
+
+Disassembly:
+	0xD1FDF6 I32Const 4554010
+	0xD1FDFB I32Load8_S 0, 0
+	0xD1FDFE I32Eqz
+	0xD1FDFF If -64
+	0xD1FE01 I32Const 2982056
+	0xD1FE06 I32Load 2, 0
+	0xD1FE09 Call 73003
+	0xD1FE0D I32Const 4554010
+	0xD1FE12 I32Const 1
+	0xD1FE14 I32Store8 0, 0
+	0xD1FE17 End
+	0xD1FE18 LocalGet 0
+	0xD1FE1A LocalGet 0
+	0xD1FE1C LocalGet 0
+	0xD1FE1E I32Load 2, 24
+	0xD1FE21 I32Const 4447236
+	0xD1FE26 I32Load 2, 0
+	0xD1FE29 Call 29300
+	0xD1FE2D LocalGet 0
+	0xD1FE2F F32Load 2, 20
+	0xD1FE32 I32Const 0
+	0xD1FE34 I32Const 0
+	0xD1FE36 Call 33438
+	0xD1FE3A I32Const 0
+	0xD1FE3C Call 63610
+	0xD1FE40 Drop
+	0xD1FE41 LocalGet 0
+	0xD1FE43 LocalGet 0
+	0xD1FE45 LocalGet 0
+	0xD1FE47 I32Load 2, 28
+	0xD1FE4A I32Const 4447236
+	0xD1FE4F I32Load 2, 0
+	0xD1FE52 Call 29300
+	0xD1FE56 LocalGet 0
+	0xD1FE58 F32Load 2, 20
+	0xD1FE5B I32Const 0
+	0xD1FE5D I32Const 0
+	0xD1FE5F Call 33438
+	0xD1FE63 I32Const 0
+	0xD1FE65 Call 63610
+	0xD1FE69 Drop
+	0xD1FE6A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v10, [2D80A8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [457D1A], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call GameObject.GetComponent, v18 @ S2_v3 (UISprite), this._mysteryBoxIcon (UnityEngine.GameObject)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call CelebrationPopup.RotateGameObject, v23 @ S1_v3 (System.Collections.IEnumerator), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v18 @ S2_v3 (UISprite), this._bounceEffectDuration (System.Single), 0
+	24 Nop
+	25 Call MonoBehaviour.StartCoroutine_Auto, v25 @ S0_v6 (UnityEngine.Coroutine), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v23 @ S1_v3 (System.Collections.IEnumerator)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call GameObject.GetComponent, v32 @ S2_v7 (UISprite), this._starIcon (UnityEngine.GameObject)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call CelebrationPopup.RotateGameObject, v37 @ S1_v5 (System.Collections.IEnumerator), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v32 @ S2_v7 (UISprite), this._bounceEffectDuration (System.Single), 0
+	38 Nop
+	39 Call MonoBehaviour.StartCoroutine_Auto, v39 @ S0_v8 (UnityEngine.Coroutine), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v37 @ S1_v5 (System.Collections.IEnumerator)
+	40 Nop
+	41 Return
+
+Method: System.Void TestBounce2()
+
+Disassembly:
+	0xD21933 I32Const 4554030
+	0xD21938 I32Load8_S 0, 0
+	0xD2193B I32Eqz
+	0xD2193C If -64
+	0xD2193E I32Const 2982068
+	0xD21943 I32Load 2, 0
+	0xD21946 Call 73003
+	0xD2194A I32Const 4554030
+	0xD2194F I32Const 1
+	0xD21951 I32Store8 0, 0
+	0xD21954 End
+	0xD21955 LocalGet 0
+	0xD21957 LocalGet 0
+	0xD21959 I32Load 2, 12
+	0xD2195C I32Const 0
+	0xD2195E I32Const 4449296
+	0xD21963 I32Load 2, 0
+	0xD21966 Call 29402
+	0xD2196A I32Const 0
+	0xD2196C Call 33509
+	0xD21970 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v7, [2D80B4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [457D2E], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call List`1<UISprite>.get_Item, v18 @ S1_v4 (UISprite), this._fillSprites (System.Collections.Generic.List`1<UISprite>), 0
+	19 Nop
+	20 CallVoid FinalDayHelper.SetupDay, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v18 @ S1_v4 (UISprite)
+	21 Nop
+	22 Return
+
+Method: System.Void TestBounce3()
+
+Disassembly:
+	0xD219CB I32Const 4554032
+	0xD219D0 I32Load8_S 0, 0
+	0xD219D3 I32Eqz
+	0xD219D4 If -64
+	0xD219D6 I32Const 2982072
+	0xD219DB I32Load 2, 0
+	0xD219DE Call 73003
+	0xD219E2 I32Const 4554032
+	0xD219E7 I32Const 1
+	0xD219E9 I32Store8 0, 0
+	0xD219EC End
+	0xD219ED LocalGet 0
+	0xD219EF LocalGet 0
+	0xD219F1 I32Load 2, 12
+	0xD219F4 I32Const 1
+	0xD219F6 I32Const 4449296
+	0xD219FB I32Load 2, 0
+	0xD219FE Call 29402
+	0xD21A02 I32Const 0
+	0xD21A04 Call 33509
+	0xD21A08 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v7, [2D80B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [457D30], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call List`1<UISprite>.get_Item, v18 @ S1_v4 (UISprite), this._fillSprites (System.Collections.Generic.List`1<UISprite>), 1
+	19 Nop
+	20 CallVoid FinalDayHelper.SetupDay, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v18 @ S1_v4 (UISprite)
+	21 Nop
+	22 Return
+
+Method: System.Void TestBounce(UISprite sprite)
+
+Disassembly:
+	0xD1EA77 I32Const 4553981
+	0xD1EA7C I32Load8_S 0, 0
+	0xD1EA7F I32Eqz
+	0xD1EA80 If -64
+	0xD1EA82 I32Const 2982060
+	0xD1EA87 I32Load 2, 0
+	0xD1EA8A Call 73003
+	0xD1EA8E I32Const 4553981
+	0xD1EA93 I32Const 1
+	0xD1EA95 I32Store8 0, 0
+	0xD1EA98 End
+	0xD1EA99 LocalGet 0
+	0xD1EA9B I32Load 2, 28
+	0xD1EA9E I32Const 0
+	0xD1EAA0 I32Const 0
+	0xD1EAA2 Call 63022
+	0xD1EAA6 LocalGet 0
+	0xD1EAA8 I32Load 2, 24
+	0xD1EAAB I32Const 1
+	0xD1EAAD I32Const 0
+	0xD1EAAF Call 63022
+	0xD1EAB3 LocalGet 1
+	0xD1EAB5 If -64
+	0xD1EAB7 LocalGet 0
+	0xD1EAB9 LocalGet 0
+	0xD1EABB LocalGet 0
+	0xD1EABD I32Load 2, 24
+	0xD1EAC0 I32Const 4447236
+	0xD1EAC5 I32Load 2, 0
+	0xD1EAC8 Call 29300
+	0xD1EACC LocalGet 0
+	0xD1EACE F32Load 2, 20
+	0xD1EAD1 I32Const 0
+	0xD1EAD3 I32Const 0
+	0xD1EAD5 Call 33438
+	0xD1EAD9 I32Const 0
+	0xD1EADB Call 63610
+	0xD1EADF Drop
+	0xD1EAE0 End
+	0xD1EAE1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v14, [2D80AC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [457CFD], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CallVoid GameObject.set_tag, this._starIcon (UnityEngine.GameObject), 0
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid GameObject.set_tag, this._mysteryBoxIcon (UnityEngine.GameObject), 1
+	22 Nop
+	23 CheckEqual v22 @ TEMP_v2 (System.Boolean), sprite @ L1 (UISprite), 0
+	24 ConditionalJump @b10, v22 @ TEMP_v2 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call GameObject.GetComponent, v29 @ S2_v6 (UISprite), this._mysteryBoxIcon (UnityEngine.GameObject)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call CelebrationPopup.RotateGameObject, v42 @ S1_v6 (System.Collections.IEnumerator), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v29 @ S2_v6 (UISprite), this._bounceEffectDuration (System.Single), 0
+	37 Nop
+	38 Call MonoBehaviour.StartCoroutine_Auto, v44 @ S0_v12 (UnityEngine.Coroutine), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v42 @ S1_v6 (System.Collections.IEnumerator)
+	39 Nop
+	40 Nop
+	41 Return
+
+Method: System.Void TestMysteryBoxBounce()
+
+Disassembly:
+	0xD21A0B I32Const 4554033
+	0xD21A10 I32Load8_S 0, 0
+	0xD21A13 I32Eqz
+	0xD21A14 If -64
+	0xD21A16 I32Const 2982076
+	0xD21A1B I32Load 2, 0
+	0xD21A1E Call 73003
+	0xD21A22 I32Const 4554033
+	0xD21A27 I32Const 1
+	0xD21A29 I32Store8 0, 0
+	0xD21A2C End
+	0xD21A2D LocalGet 0
+	0xD21A2F LocalGet 0
+	0xD21A31 I32Load 2, 12
+	0xD21A34 I32Const 2
+	0xD21A36 I32Const 4449296
+	0xD21A3B I32Load 2, 0
+	0xD21A3E Call 29402
+	0xD21A42 I32Const 0
+	0xD21A44 Call 33509
+	0xD21A48 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v7, [2D80BC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [457D31], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call List`1<UISprite>.get_Item, v18 @ S1_v4 (UISprite), this._fillSprites (System.Collections.Generic.List`1<UISprite>), 2
+	19 Nop
+	20 CallVoid FinalDayHelper.SetupDay, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v18 @ S1_v4 (UISprite)
+	21 Nop
+	22 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD21A4E I32Const 4554034
+	0xD21A53 I32Load8_S 0, 0
+	0xD21A56 I32Eqz
+	0xD21A57 If -64
+	0xD21A59 I32Const 2982084
+	0xD21A5E I32Load 2, 0
+	0xD21A61 Call 73003
+	0xD21A65 I32Const 4554034
+	0xD21A6A I32Const 1
+	0xD21A6C I32Store8 0, 0
+	0xD21A6F End
+	0xD21A70 I32Const 4429724
+	0xD21A75 I32Load 2, 0
+	0xD21A78 Call 72556
+	0xD21A7C LocalTee 2
+	0xD21A7E LocalTee 1
+	0xD21A80 I32Const 4492844
+	0xD21A85 I32Load 2, 0
+	0xD21A88 LocalTee 3
+	0xD21A8A I32Load 2, 0
+	0xD21A8D I32Store 2, 8
+	0xD21A90 LocalGet 1
+	0xD21A92 LocalGet 3
+	0xD21A94 I32Store 2, 20
+	0xD21A97 LocalGet 1
+	0xD21A99 I32Const 16
+	0xD21A9B I32Add
+	0xD21A9C LocalGet 0
+	0xD21A9E I32Store 2, 0
+	0xD21AA1 F32Const 0.21
+	0xD21AA6 LocalGet 2
+	0xD21AA8 I32Const 0
+	0xD21AAA Call 44310
+	0xD21AAE LocalGet 0
+	0xD21AB0 LocalGet 0
+	0xD21AB2 LocalGet 0
+	0xD21AB4 I32Load 2, 24
+	0xD21AB7 I32Const 4447236
+	0xD21ABC I32Load 2, 0
+	0xD21ABF Call 29300
+	0xD21AC3 LocalGet 0
+	0xD21AC5 F32Load 2, 20
+	0xD21AC8 I32Const 0
+	0xD21ACA I32Const 0
+	0xD21ACC Call 33438
+	0xD21AD0 I32Const 0
+	0xD21AD2 Call 63610
+	0xD21AD6 Drop
+	0xD21AD7 LocalGet 0
+	0xD21AD9 LocalGet 0
+	0xD21ADB LocalGet 0
+	0xD21ADD I32Load 2, 28
+	0xD21AE0 I32Const 4447236
+	0xD21AE5 I32Load 2, 0
+	0xD21AE8 Call 29300
+	0xD21AEC LocalGet 0
+	0xD21AEE F32Load 2, 20
+	0xD21AF1 I32Const 0
+	0xD21AF3 I32Const 0
+	0xD21AF5 Call 33438
+	0xD21AF9 I32Const 0
+	0xD21AFB Call 63610
+	0xD21AFF Drop
+	0xD21B00 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v17, [2D80C4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [457D32], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7, typeof(System.Action)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move v17 @ S1_v3 (Il2CppMethodInfo), methodof(UI.Pages.MissionsPageInternal.MissionSetProgress::<TestMysteryBoxBounce>b__18_0)
+	19 Nop
+	20 Nop
+	21 Move [v13 @ S0_v7+8], [v17 @ S1_v3 (Il2CppMethodInfo)]
+	22 Nop
+	23 Nop
+	24 Move [v13 @ S0_v7+14], methodof(UI.Pages.MissionsPageInternal.MissionSetProgress::<TestMysteryBoxBounce>b__18_0)
+	25 Nop
+	26 Nop
+	27 Add v24 @ S0_v10, v13 @ S0_v7, 16
+	28 Nop
+	29 Move [v24 @ S0_v10], this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Throw typeof(System.OverflowException)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call GameObject.GetComponent, v36 @ S2_v4 (UISprite), this._mysteryBoxIcon (UnityEngine.GameObject)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call CelebrationPopup.RotateGameObject, v41 @ S1_v10 (System.Collections.IEnumerator), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v36 @ S2_v4 (UISprite), this._bounceEffectDuration (System.Single), 0
+	46 Nop
+	47 Call MonoBehaviour.StartCoroutine_Auto, v43 @ S0_v13 (UnityEngine.Coroutine), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v41 @ S1_v10 (System.Collections.IEnumerator)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Call GameObject.GetComponent, v50 @ S2_v8 (UISprite), this._starIcon (UnityEngine.GameObject)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call CelebrationPopup.RotateGameObject, v55 @ S1_v12 (System.Collections.IEnumerator), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v50 @ S2_v8 (UISprite), this._bounceEffectDuration (System.Single), 0
+	60 Nop
+	61 Call MonoBehaviour.StartCoroutine_Auto, v57 @ S0_v15 (UnityEngine.Coroutine), this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), v55 @ S1_v12 (System.Collections.IEnumerator)
+	62 Nop
+	63 Return
+
+Method: System.Void <TestMysteryBoxBounce>b__18_0()
+
+Disassembly:
+	0xD21B03 I32Const 4554035
+	0xD21B08 I32Load8_S 0, 0
+	0xD21B0B I32Eqz
+	0xD21B0C If -64
+	0xD21B0E I32Const 2982088
+	0xD21B13 I32Load 2, 0
+	0xD21B16 Call 73003
+	0xD21B1A I32Const 4554035
+	0xD21B1F I32Const 1
+	0xD21B21 I32Store8 0, 0
+	0xD21B24 End
+	0xD21B25 I32Const 4436888
+	0xD21B2A I32Load 2, 0
+	0xD21B2D Call 72556
+	0xD21B31 LocalTee 1
+	0xD21B33 I32Const 4486836
+	0xD21B38 I32Load 2, 0
+	0xD21B3B Call 29311
+	0xD21B3F LocalGet 0
+	0xD21B41 I32Const 12
+	0xD21B43 I32Add
+	0xD21B44 LocalGet 1
+	0xD21B46 I32Store 2, 0
+	0xD21B49 I32Const 4434292
+	0xD21B4E I32Load 2, 0
+	0xD21B51 Call 72556
+	0xD21B55 LocalTee 1
+	0xD21B57 I32Const 3
+	0xD21B59 I32Const 4487072
+	0xD21B5E I32Load 2, 0
+	0xD21B61 Call 47994
+	0xD21B65 LocalGet 0
+	0xD21B67 I32Const 32
+	0xD21B69 I32Add
+	0xD21B6A LocalGet 1
+	0xD21B6C I32Store 2, 0
+	0xD21B6F LocalGet 0
+	0xD21B71 I32Const 0
+	0xD21B73 Call 62657
+	0xD21B77 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D80C8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [457D33], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.Generic.List`1<UISprite>), typeof(System.Collections.Generic.List`1<UISprite>)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid List`1<UISprite>..ctor, v13 @ S0_v7 (System.Collections.Generic.List`1<UISprite>)
+	19 Nop
+	20 Nop
+	21 Add v20 @ S0_v9, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), 12
+	22 Nop
+	23 Move [v20 @ S0_v9], v13 @ S0_v7 (System.Collections.Generic.List`1<UISprite>)
+	24 Nop
+	25 Nop
+	26 Call 11B6C, v24 @ S0_v12 (System.Collections.Generic.List`1), typeof(System.Collections.Generic.List`1<UnityEngine.GameObject>)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid List`1..ctor, v24 @ S0_v12 (System.Collections.Generic.List`1), 3
+	32 Nop
+	33 Nop
+	34 Add v31 @ S0_v14, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress), 32
+	35 Nop
+	36 Move [v31 @ S0_v14], v24 @ S0_v12 (System.Collections.Generic.List`1)
+	37 Nop
+	38 Nop
+	39 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (UI.Pages.MissionsPageInternal.MissionSetProgress)
+	40 Nop
+	41 Return
+

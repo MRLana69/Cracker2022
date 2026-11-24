@@ -1,0 +1,1158 @@
+Type: TrackObject
+
+Method: UnityEngine.Transform get_Transform()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._debugActivateOnStart (System.Boolean)
+
+Method: System.Boolean get_Active()
+
+Disassembly:
+	0xD65847 LocalGet 0
+	0xD65849 I32Const 0
+	0xD6584B Call 34792
+	0xD6584F LocalGet 0
+	0xD65851 I32Load 2, 16
+	0xD65854 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid TrackObject.ActivateChildren, this @ L0 (TrackObject)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Return this._transform (UnityEngine.Transform)
+
+Method: System.Void add_OnActivate(System.Action value)
+
+Disassembly:
+	0xCCE951 LocalGet 0
+	0xCCE953 I32Const 12
+	0xCCE955 I32Add
+	0xCCE956 LocalGet 1
+	0xCCE958 I32Store 2, 0
+	0xCCE95B LocalGet 0
+	0xCCE95D I32Const 0
+	0xCCE95F Call 32098
+	0xCCE963 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (TrackObject), 12
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.Action)
+	5 Nop
+	6 Nop
+	7 CallVoid RandomizeOffset..ctor, this @ L0 (TrackObject)
+	8 Nop
+	9 Return
+
+Method: System.Void remove_OnActivate(System.Action value)
+
+Disassembly:
+	0xD6587C I32Const 4554871
+	0xD65881 I32Load8_S 0, 0
+	0xD65884 I32Eqz
+	0xD65885 If -64
+	0xD65887 I32Const 3011484
+	0xD6588C I32Load 2, 0
+	0xD6588F Call 73003
+	0xD65893 I32Const 4554871
+	0xD65898 I32Const 1
+	0xD6589A I32Store8 0, 0
+	0xD6589D End
+	0xD6589E LocalGet 0
+	0xD658A0 I32Load 2, 28
+	0xD658A3 LocalSet 2
+	0xD658A5 Loop -64
+	0xD658A7 LocalGet 2
+	0xD658A9 LocalGet 1
+	0xD658AB I32Const 0
+	0xD658AD Call 63552
+	0xD658B1 I32Const 4429724
+	0xD658B6 I32Load 2, 0
+	0xD658B9 Call 29321
+	0xD658BD LocalSet 4
+	0xD658BF LocalGet 0
+	0xD658C1 I32Const 28
+	0xD658C3 I32Add
+	0xD658C4 LocalTee 3
+	0xD658C6 I32Load 2, 0
+	0xD658C9 LocalGet 3
+	0xD658CB I32Load 2, 0
+	0xD658CE LocalGet 2
+	0xD658D0 I32Eq
+	0xD658D1 If -64
+	0xD658D3 LocalGet 3
+	0xD658D5 LocalGet 4
+	0xD658D7 I32Store 2, 0
+	0xD658DA End
+	0xD658DB LocalTee 3
+	0xD658DD LocalGet 2
+	0xD658DF I32Ne
+	0xD658E0 If -64
+	0xD658E2 LocalGet 3
+	0xD658E4 LocalSet 2
+	0xD658E6 Br 1
+	0xD658E8 End
+	0xD658E9 End
+	0xD658EA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2DF39C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [458077], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.CombineImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Action)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (TrackObject), 28
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void add_OnDeactivate(System.Action value)
+
+Disassembly:
+	0xD658EF I32Const 4554872
+	0xD658F4 I32Load8_S 0, 0
+	0xD658F7 I32Eqz
+	0xD658F8 If -64
+	0xD658FA I32Const 3011492
+	0xD658FF I32Load 2, 0
+	0xD65902 Call 73003
+	0xD65906 I32Const 4554872
+	0xD6590B I32Const 1
+	0xD6590D I32Store8 0, 0
+	0xD65910 End
+	0xD65911 LocalGet 0
+	0xD65913 I32Load 2, 28
+	0xD65916 LocalSet 2
+	0xD65918 Loop -64
+	0xD6591A LocalGet 2
+	0xD6591C LocalGet 1
+	0xD6591E I32Const 0
+	0xD65920 Call 63555
+	0xD65924 I32Const 4429724
+	0xD65929 I32Load 2, 0
+	0xD6592C Call 29321
+	0xD65930 LocalSet 4
+	0xD65932 LocalGet 0
+	0xD65934 I32Const 28
+	0xD65936 I32Add
+	0xD65937 LocalTee 3
+	0xD65939 I32Load 2, 0
+	0xD6593C LocalGet 3
+	0xD6593E I32Load 2, 0
+	0xD65941 LocalGet 2
+	0xD65943 I32Eq
+	0xD65944 If -64
+	0xD65946 LocalGet 3
+	0xD65948 LocalGet 4
+	0xD6594A I32Store 2, 0
+	0xD6594D End
+	0xD6594E LocalTee 3
+	0xD65950 LocalGet 2
+	0xD65952 I32Ne
+	0xD65953 If -64
+	0xD65955 LocalGet 3
+	0xD65957 LocalSet 2
+	0xD65959 Br 1
+	0xD6595B End
+	0xD6595C End
+	0xD6595D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2DF3A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [458078], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.RemoveImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Action)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (TrackObject), 28
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void remove_OnDeactivate(System.Action value)
+
+Disassembly:
+	0xD65962 I32Const 4554873
+	0xD65967 I32Load8_S 0, 0
+	0xD6596A I32Eqz
+	0xD6596B If -64
+	0xD6596D I32Const 3011488
+	0xD65972 I32Load 2, 0
+	0xD65975 Call 73003
+	0xD65979 I32Const 4554873
+	0xD6597E I32Const 1
+	0xD65980 I32Store8 0, 0
+	0xD65983 End
+	0xD65984 LocalGet 0
+	0xD65986 I32Load 2, 32
+	0xD65989 LocalSet 2
+	0xD6598B Loop -64
+	0xD6598D LocalGet 2
+	0xD6598F LocalGet 1
+	0xD65991 I32Const 0
+	0xD65993 Call 63552
+	0xD65997 I32Const 4429724
+	0xD6599C I32Load 2, 0
+	0xD6599F Call 29321
+	0xD659A3 LocalSet 4
+	0xD659A5 LocalGet 0
+	0xD659A7 I32Const 32
+	0xD659A9 I32Add
+	0xD659AA LocalTee 3
+	0xD659AC I32Load 2, 0
+	0xD659AF LocalGet 3
+	0xD659B1 I32Load 2, 0
+	0xD659B4 LocalGet 2
+	0xD659B6 I32Eq
+	0xD659B7 If -64
+	0xD659B9 LocalGet 3
+	0xD659BB LocalGet 4
+	0xD659BD I32Store 2, 0
+	0xD659C0 End
+	0xD659C1 LocalTee 3
+	0xD659C3 LocalGet 2
+	0xD659C5 I32Ne
+	0xD659C6 If -64
+	0xD659C8 LocalGet 3
+	0xD659CA LocalSet 2
+	0xD659CC Br 1
+	0xD659CE End
+	0xD659CF End
+	0xD659D0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2DF3A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [458079], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.CombineImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Action)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (TrackObject), 32
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Boolean get_PropagateActivationStateToChildren()
+
+Disassembly:
+	0xC765EA LocalGet 0
+	0xC765EC I32Load8_S 0, 20
+	0xC765EF I32Const 0
+	0xC765F1 I32Ne
+	0xC765F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._active (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_PropagateActivationStateToChildren(System.Boolean value)
+
+Disassembly:
+	0xD659D5 I32Const 4554874
+	0xD659DA I32Load8_S 0, 0
+	0xD659DD I32Eqz
+	0xD659DE If -64
+	0xD659E0 I32Const 3011496
+	0xD659E5 I32Load 2, 0
+	0xD659E8 Call 73003
+	0xD659EC I32Const 4554874
+	0xD659F1 I32Const 1
+	0xD659F3 I32Store8 0, 0
+	0xD659F6 End
+	0xD659F7 LocalGet 0
+	0xD659F9 I32Load 2, 32
+	0xD659FC LocalSet 2
+	0xD659FE Loop -64
+	0xD65A00 LocalGet 2
+	0xD65A02 LocalGet 1
+	0xD65A04 I32Const 0
+	0xD65A06 Call 63555
+	0xD65A0A I32Const 4429724
+	0xD65A0F I32Load 2, 0
+	0xD65A12 Call 29321
+	0xD65A16 LocalSet 4
+	0xD65A18 LocalGet 0
+	0xD65A1A I32Const 32
+	0xD65A1C I32Add
+	0xD65A1D LocalTee 3
+	0xD65A1F I32Load 2, 0
+	0xD65A22 LocalGet 3
+	0xD65A24 I32Load 2, 0
+	0xD65A27 LocalGet 2
+	0xD65A29 I32Eq
+	0xD65A2A If -64
+	0xD65A2C LocalGet 3
+	0xD65A2E LocalGet 4
+	0xD65A30 I32Store 2, 0
+	0xD65A33 End
+	0xD65A34 LocalTee 3
+	0xD65A36 LocalGet 2
+	0xD65A38 I32Ne
+	0xD65A39 If -64
+	0xD65A3B LocalGet 3
+	0xD65A3D LocalSet 2
+	0xD65A3F Br 1
+	0xD65A41 End
+	0xD65A42 End
+	0xD65A43 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2DF3A8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45807A], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.RemoveImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (TrackObject), 32
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void Hack_PropagateActivationStateToChildrenImmediately()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (TrackObject)
+	3 Nop
+	4 Return
+
+Method: System.Void Awake()
+
+Disassembly:
+	0xD65B64 LocalGet 0
+	0xD65B66 I32Const 0
+	0xD65B68 I32Const 0
+	0xD65B6A Call 34797
+	0xD65B6E LocalGet 0
+	0xD65B70 I32Const 1
+	0xD65B72 I32Const 0
+	0xD65B74 Call 34797
+	0xD65B78 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid Tunnel.OnTriggerEnter, this @ L0 (TrackObject), 0
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CallVoid Tunnel.OnTriggerEnter, this @ L0 (TrackObject), 1
+	8 Nop
+	9 Return
+
+Method: System.Void Start()
+
+Disassembly:
+	0xD65B7B LocalGet 0
+	0xD65B7D I32Const 0
+	0xD65B7F Call 34792
+	0xD65B83 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid TrackObject.ActivateChildren, this @ L0 (TrackObject)
+	3 Nop
+	4 Return
+
+Method: System.Void InitializeCheck()
+
+Disassembly:
+	0xD65B89 I32Const 4554876
+	0xD65B8E I32Load8_S 0, 0
+	0xD65B91 I32Eqz
+	0xD65B92 If -64
+	0xD65B94 I32Const 3011480
+	0xD65B99 I32Load 2, 0
+	0xD65B9C Call 73003
+	0xD65BA0 I32Const 4554876
+	0xD65BA5 I32Const 1
+	0xD65BA7 I32Store8 0, 0
+	0xD65BAA End
+	0xD65BAB I32Const 4433260
+	0xD65BB0 I32Load 2, 0
+	0xD65BB3 LocalTee 2
+	0xD65BB5 I32Load16_S 1, 186
+	0xD65BB9 I32Const 512
+	0xD65BBC I32And
+	0xD65BBD If -64
+	0xD65BBF LocalGet 2
+	0xD65BC1 I32Load 2, 116
+	0xD65BC4 I32Eqz
+	0xD65BC5 If -64
+	0xD65BC7 LocalGet 2
+	0xD65BC9 Call 72345
+	0xD65BCD End
+	0xD65BCE End
+	0xD65BCF Block -64
+	0xD65BD1 Block -64
+	0xD65BD3 I32Const 0
+	0xD65BD5 Call 62861
+	0xD65BD9 BrIf 0
+	0xD65BDB Br 1
+	0xD65BDD End
+	0xD65BDE LocalGet 0
+	0xD65BE0 I32Load8_S 0, 12
+	0xD65BE3 If -64
+	0xD65BE5 LocalGet 0
+	0xD65BE7 I32Const 1
+	0xD65BE9 I32Store8 0, 36
+	0xD65BEC LocalGet 0
+	0xD65BEE I32Const 0
+	0xD65BF0 Call 62781
+	0xD65BF4 I32Const 0
+	0xD65BF6 Call 63024
+	0xD65BFA If -64
+	0xD65BFC LocalGet 0
+	0xD65BFE I32Load8_S 0, 20
+	0xD65C01 I32Eqz
+	0xD65C02 If -64
+	0xD65C04 LocalGet 0
+	0xD65C06 I32Const 0
+	0xD65C08 Call 34799
+	0xD65C0C End
+	0xD65C0D End
+	0xD65C0E End
+	0xD65C0F End
+	0xD65C10 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v28, [2DF398]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45807C], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Debug>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b21, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v23 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	21 Nop
+	22 CheckEqual v20 @ S0_v25 (System.Boolean), [v18 @ S0_v23 (Il2CppClass<UnityEngine.Debug>)+74], 0
+	23 Not v21 @ TEMP_v8 (System.Boolean), v20 @ S0_v25 (System.Boolean)
+	24 ConditionalJump @b21, v21 @ TEMP_v8 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Debug)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call Lightmapping.GetDelegate, v26 @ S0_v11 (UnityEngine.Experimental.GlobalIllumination.Lightmapping+RequestLightsDelegate)
+	31 ConditionalJump @b10, v26 @ S0_v11 (UnityEngine.Experimental.GlobalIllumination.Lightmapping+RequestLightsDelegate)
+	32 Jump @b18
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Not v30 @ TEMP_v5 (System.Boolean), this._debugActivateOnStart (System.Boolean)
+	37 ConditionalJump @b18, v30 @ TEMP_v5 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Move this._propagateActivationStateToChildren (System.Boolean), 1
+	41 Nop
+	42 Nop
+	43 Call Component.get_tag, v45 @ S0_v17 (System.String), this @ L0 (TrackObject)
+	44 Nop
+	45 Call GameObject.get_tag, v38 @ S0_v18 (System.String), v45 @ S0_v17 (System.String)
+	46 CheckEqual v35 @ TEMP_v6 (System.Boolean), v38 @ S0_v18 (System.String), 0
+	47 ConditionalJump @b18, v35 @ TEMP_v6 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Not v40 @ S0_v21 (System.Boolean), this._active (System.Boolean)
+	51 Not v36 @ TEMP_v7 (System.Boolean), v40 @ S0_v21 (System.Boolean)
+	52 ConditionalJump @b18, v36 @ TEMP_v7 (System.Boolean)
+	53 Nop
+	54 Nop
+	55 CallVoid TrackObject.Deactivate, this @ L0 (TrackObject)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Return
+
+Method: System.Void ActivateChildren()
+
+Disassembly:
+	0xD65857 LocalGet 0
+	0xD65859 I32Load8_S 0, 13
+	0xD6585C I32Eqz
+	0xD6585D If -64
+	0xD6585F LocalGet 0
+	0xD65861 I32Const 16
+	0xD65863 I32Add
+	0xD65864 LocalGet 0
+	0xD65866 I32Const 0
+	0xD65868 Call 62780
+	0xD6586C I32Store 2, 0
+	0xD6586F LocalGet 0
+	0xD65871 I32Const 1
+	0xD65873 I32Store8 0, 13
+	0xD65876 End
+	0xD65877 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Not v3 @ S0_v3 (System.Boolean), this._initialized (System.Boolean)
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Add v7 @ S0_v6, this @ L0 (TrackObject), 16
+	8 Nop
+	9 Nop
+	10 Call Component.get_gameObject, v10 @ S1_v4 (UnityEngine.GameObject), this @ L0 (TrackObject)
+	11 Move [v7 @ S0_v6], v10 @ S1_v4 (UnityEngine.GameObject)
+	12 Nop
+	13 Nop
+	14 Move this._initialized (System.Boolean), 1
+	15 Nop
+	16 Nop
+	17 Return
+
+Method: System.Void DeactivateChildren()
+
+Disassembly:
+	0xD65A7C I32Const 4554875
+	0xD65A81 I32Load8_S 0, 0
+	0xD65A84 I32Eqz
+	0xD65A85 If -64
+	0xD65A87 I32Const 3011472
+	0xD65A8C I32Load 2, 0
+	0xD65A8F Call 73003
+	0xD65A93 I32Const 4554875
+	0xD65A98 I32Const 1
+	0xD65A9A I32Store8 0, 0
+	0xD65A9D End
+	0xD65A9E LocalGet 0
+	0xD65AA0 I32Const 24
+	0xD65AA2 I32Add
+	0xD65AA3 LocalGet 0
+	0xD65AA5 I32Const 1
+	0xD65AA7 I32Const 4447824
+	0xD65AAC I32Load 2, 0
+	0xD65AAF Call 29257
+	0xD65AB3 I32Store 2, 0
+	0xD65AB6 I32Const 0
+	0xD65AB8 LocalSet 1
+	0xD65ABA Loop -64
+	0xD65ABC LocalGet 1
+	0xD65ABE LocalGet 0
+	0xD65AC0 I32Load 2, 24
+	0xD65AC3 I32Load 2, 12
+	0xD65AC6 I32Lt_S
+	0xD65AC7 If -64
+	0xD65AC9 LocalGet 0
+	0xD65ACB I32Load 2, 24
+	0xD65ACE I32Const 16
+	0xD65AD0 I32Add
+	0xD65AD1 LocalGet 1
+	0xD65AD3 I32Const 2
+	0xD65AD5 I32Shl
+	0xD65AD6 I32Add
+	0xD65AD7 I32Load 2, 0
+	0xD65ADA I32Const 4433280
+	0xD65ADF I32Load 2, 0
+	0xD65AE2 LocalTee 2
+	0xD65AE4 I32Load16_S 1, 186
+	0xD65AE8 I32Const 512
+	0xD65AEB I32And
+	0xD65AEC If -64
+	0xD65AEE LocalGet 2
+	0xD65AF0 I32Load 2, 116
+	0xD65AF3 I32Eqz
+	0xD65AF4 If -64
+	0xD65AF6 LocalGet 2
+	0xD65AF8 Call 72345
+	0xD65AFC End
+	0xD65AFD End
+	0xD65AFE LocalGet 0
+	0xD65B00 I32Const 0
+	0xD65B02 Call 63693
+	0xD65B06 If -64
+	0xD65B08 LocalGet 0
+	0xD65B0A I32Load 2, 24
+	0xD65B0D I32Const 16
+	0xD65B0F I32Add
+	0xD65B10 LocalGet 1
+	0xD65B12 I32Const 2
+	0xD65B14 I32Shl
+	0xD65B15 I32Add
+	0xD65B16 I32Load 2, 0
+	0xD65B19 I32Const 0
+	0xD65B1B Call 34799
+	0xD65B1F End
+	0xD65B20 LocalGet 1
+	0xD65B22 I32Const 1
+	0xD65B24 I32Add
+	0xD65B25 LocalSet 1
+	0xD65B27 Br 1
+	0xD65B29 End
+	0xD65B2A End
+	0xD65B2B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v26, [2DF390]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v26
+	8 Nop
+	9 Move v7 @ S1_v28, 1
+	10 Move [45807B], v7 @ S1_v28
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (TrackObject), 24
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Component.GetComponentsInChildren, v19 @ S1_v4 (TrackObject[]), this @ L0 (TrackObject), 1
+	20 Move [v14 @ S0_v6], v19 @ S1_v4 (TrackObject[])
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move v37 @ S1_v7 (TrackObject[]), this._childTrackObjects (TrackObject[])
+	27 Nop
+	28 CheckLess v39 @ S0_v10 (System.Boolean), v27 @ L1_v2, v37.Length
+	29 Not v40 @ TEMP_v3 (System.Boolean), v39 @ S0_v10 (System.Boolean)
+	30 ConditionalJump @b13, v40 @ TEMP_v3 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Add v44 @ S0_v13, this._childTrackObjects (TrackObject[]), 16
+	35 Nop
+	36 Nop
+	37 ShiftLeft v47 @ S1_v11, v27 @ L1_v2, 2
+	38 Add v48 @ S0_v14, v44 @ S0_v13, v47 @ S1_v11
+	39 Nop
+	40 Nop
+	41 Move v51 @ S1_v13 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v54 @ S1_v15, [v51 @ S1_v13 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	46 CheckEqual v55 @ TEMP_v4 (System.Boolean), v54 @ S1_v15, 0
+	47 ConditionalJump @b15, v55 @ TEMP_v4 (System.Boolean)
+	48 Move v56 @ S1_v24 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	49 Nop
+	50 CheckEqual v58 @ S1_v26 (System.Boolean), [v56 @ S1_v24 (Il2CppClass<UnityEngine.Object>)+74], 0
+	51 Not v59 @ TEMP_v7 (System.Boolean), v58 @ S1_v26 (System.Boolean)
+	52 ConditionalJump @b15, v59 @ TEMP_v7 (System.Boolean)
+	53 Nop
+	54 CallVoid 11A99, typeof(UnityEngine.Object)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call ComputeShader.FindKernel, v65 @ S0_v16 (System.Int32), [v48 @ S0_v14], this @ L0 (TrackObject)
+	60 CheckEqual v32 @ TEMP_v6 (System.Boolean), v65 @ S0_v16 (System.Int32), 0
+	61 ConditionalJump @b12, v32 @ TEMP_v6 (System.Boolean)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Add v69 @ S0_v22, this._childTrackObjects (TrackObject[]), 16
+	66 Nop
+	67 Nop
+	68 ShiftLeft v72 @ S1_v22, v27 @ L1_v2, 2
+	69 Add v73 @ S0_v23, v69 @ S0_v22, v72 @ S1_v22
+	70 Nop
+	71 Nop
+	72 CallVoid TrackObject.Deactivate, [v73 @ S0_v23]
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Add v34 @ S0_v19, v27 @ L1_v2, 1
+	77 Nop
+	78 Jump @b16
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Return
+
+Method: System.Void Activate()
+
+Disassembly:
+	0xD65C16 I32Const 4554877
+	0xD65C1B I32Load8_S 0, 0
+	0xD65C1E I32Eqz
+	0xD65C1F If -64
+	0xD65C21 I32Const 3011476
+	0xD65C26 I32Load 2, 0
+	0xD65C29 Call 73003
+	0xD65C2D I32Const 4554877
+	0xD65C32 I32Const 1
+	0xD65C34 I32Store8 0, 0
+	0xD65C37 End
+	0xD65C38 LocalGet 0
+	0xD65C3A I32Const 24
+	0xD65C3C I32Add
+	0xD65C3D LocalGet 0
+	0xD65C3F I32Const 1
+	0xD65C41 I32Const 4447824
+	0xD65C46 I32Load 2, 0
+	0xD65C49 Call 29257
+	0xD65C4D I32Store 2, 0
+	0xD65C50 I32Const 0
+	0xD65C52 LocalSet 1
+	0xD65C54 Loop -64
+	0xD65C56 LocalGet 1
+	0xD65C58 LocalGet 0
+	0xD65C5A I32Load 2, 24
+	0xD65C5D I32Load 2, 12
+	0xD65C60 I32Lt_S
+	0xD65C61 If -64
+	0xD65C63 LocalGet 0
+	0xD65C65 I32Load 2, 24
+	0xD65C68 I32Const 16
+	0xD65C6A I32Add
+	0xD65C6B LocalGet 1
+	0xD65C6D I32Const 2
+	0xD65C6F I32Shl
+	0xD65C70 I32Add
+	0xD65C71 I32Load 2, 0
+	0xD65C74 I32Const 4433280
+	0xD65C79 I32Load 2, 0
+	0xD65C7C LocalTee 2
+	0xD65C7E I32Load16_S 1, 186
+	0xD65C82 I32Const 512
+	0xD65C85 I32And
+	0xD65C86 If -64
+	0xD65C88 LocalGet 2
+	0xD65C8A I32Load 2, 116
+	0xD65C8D I32Eqz
+	0xD65C8E If -64
+	0xD65C90 LocalGet 2
+	0xD65C92 Call 72345
+	0xD65C96 End
+	0xD65C97 End
+	0xD65C98 LocalGet 0
+	0xD65C9A I32Const 0
+	0xD65C9C Call 63693
+	0xD65CA0 If -64
+	0xD65CA2 LocalGet 0
+	0xD65CA4 I32Load 2, 24
+	0xD65CA7 I32Const 16
+	0xD65CA9 I32Add
+	0xD65CAA LocalGet 1
+	0xD65CAC I32Const 2
+	0xD65CAE I32Shl
+	0xD65CAF I32Add
+	0xD65CB0 I32Load 2, 0
+	0xD65CB3 I32Const 0
+	0xD65CB5 Call 34804
+	0xD65CB9 End
+	0xD65CBA LocalGet 1
+	0xD65CBC I32Const 1
+	0xD65CBE I32Add
+	0xD65CBF LocalSet 1
+	0xD65CC1 Br 1
+	0xD65CC3 End
+	0xD65CC4 End
+	0xD65CC5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v26, [2DF394]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v26
+	8 Nop
+	9 Move v7 @ S1_v28, 1
+	10 Move [45807D], v7 @ S1_v28
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (TrackObject), 24
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Component.GetComponentsInChildren, v19 @ S1_v4 (TrackObject[]), this @ L0 (TrackObject), 1
+	20 Move [v14 @ S0_v6], v19 @ S1_v4 (TrackObject[])
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move v37 @ S1_v7 (TrackObject[]), this._childTrackObjects (TrackObject[])
+	27 Nop
+	28 CheckLess v39 @ S0_v10 (System.Boolean), v27 @ L1_v2, v37.Length
+	29 Not v40 @ TEMP_v3 (System.Boolean), v39 @ S0_v10 (System.Boolean)
+	30 ConditionalJump @b13, v40 @ TEMP_v3 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Add v44 @ S0_v13, this._childTrackObjects (TrackObject[]), 16
+	35 Nop
+	36 Nop
+	37 ShiftLeft v47 @ S1_v11, v27 @ L1_v2, 2
+	38 Add v48 @ S0_v14, v44 @ S0_v13, v47 @ S1_v11
+	39 Nop
+	40 Nop
+	41 Move v51 @ S1_v13 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v54 @ S1_v15, [v51 @ S1_v13 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	46 CheckEqual v55 @ TEMP_v4 (System.Boolean), v54 @ S1_v15, 0
+	47 ConditionalJump @b15, v55 @ TEMP_v4 (System.Boolean)
+	48 Move v56 @ S1_v24 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	49 Nop
+	50 CheckEqual v58 @ S1_v26 (System.Boolean), [v56 @ S1_v24 (Il2CppClass<UnityEngine.Object>)+74], 0
+	51 Not v59 @ TEMP_v7 (System.Boolean), v58 @ S1_v26 (System.Boolean)
+	52 ConditionalJump @b15, v59 @ TEMP_v7 (System.Boolean)
+	53 Nop
+	54 CallVoid 11A99, typeof(UnityEngine.Object)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call ComputeShader.FindKernel, v65 @ S0_v16 (System.Int32), [v48 @ S0_v14], this @ L0 (TrackObject)
+	60 CheckEqual v32 @ TEMP_v6 (System.Boolean), v65 @ S0_v16 (System.Int32), 0
+	61 ConditionalJump @b12, v32 @ TEMP_v6 (System.Boolean)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Add v69 @ S0_v22, this._childTrackObjects (TrackObject[]), 16
+	66 Nop
+	67 Nop
+	68 ShiftLeft v72 @ S1_v22, v27 @ L1_v2, 2
+	69 Add v73 @ S0_v23, v69 @ S0_v22, v72 @ S1_v22
+	70 Nop
+	71 Nop
+	72 CallVoid TrackObject..ctor, [v73 @ S0_v23]
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Add v34 @ S0_v19, v27 @ L1_v2, 1
+	77 Nop
+	78 Jump @b16
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Return
+
+Method: System.Void Deactivate()
+
+Disassembly:
+	0xD65B2E LocalGet 0
+	0xD65B30 I32Load8_S 0, 20
+	0xD65B33 I32Eqz
+	0xD65B34 If -64
+	0xD65B36 LocalGet 0
+	0xD65B38 I32Load 2, 28
+	0xD65B3B If -64
+	0xD65B3D LocalGet 0
+	0xD65B3F I32Load 2, 28
+	0xD65B42 I32Const 0
+	0xD65B44 Call 30903
+	0xD65B48 End
+	0xD65B49 LocalGet 0
+	0xD65B4B I32Load8_S 0, 36
+	0xD65B4E If -64
+	0xD65B50 LocalGet 0
+	0xD65B52 I32Const 0
+	0xD65B54 Call 34798
+	0xD65B58 End
+	0xD65B59 LocalGet 0
+	0xD65B5B I32Const 1
+	0xD65B5D I32Store8 0, 20
+	0xD65B60 End
+	0xD65B61 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Not v3 @ S0_v3 (System.Boolean), this._active (System.Boolean)
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b8, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 CheckEqual v7 @ TEMP_v3 (System.Boolean), this.OnActivate (System.Action), 0
+	8 ConditionalJump @b5, v7 @ TEMP_v3 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CallVoid 78B7, this.OnActivate (System.Action), 0
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Not v12 @ TEMP_v4 (System.Boolean), this._propagateActivationStateToChildren (System.Boolean)
+	17 ConditionalJump @b7, v12 @ TEMP_v4 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 CallVoid TrackObject.DeactivateChildren, this @ L0 (TrackObject)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Move this._active (System.Boolean), 1
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD65CC8 LocalGet 0
+	0xD65CCA I32Load8_S 0, 20
+	0xD65CCD If -64
+	0xD65CCF LocalGet 0
+	0xD65CD1 I32Const 0
+	0xD65CD3 I32Store8 0, 20
+	0xD65CD6 LocalGet 0
+	0xD65CD8 I32Load 2, 32
+	0xD65CDB If -64
+	0xD65CDD LocalGet 0
+	0xD65CDF I32Load 2, 32
+	0xD65CE2 I32Const 0
+	0xD65CE4 Call 30903
+	0xD65CE8 End
+	0xD65CE9 LocalGet 0
+	0xD65CEB I32Load8_S 0, 36
+	0xD65CEE If -64
+	0xD65CF0 LocalGet 0
+	0xD65CF2 I32Const 0
+	0xD65CF4 Call 34803
+	0xD65CF8 End
+	0xD65CF9 End
+	0xD65CFA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Not v3 @ TEMP_v1 (System.Boolean), this._active (System.Boolean)
+	3 ConditionalJump @b8, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Move this._active (System.Boolean), 0
+	7 Nop
+	8 Nop
+	9 CheckEqual v8 @ TEMP_v3 (System.Boolean), this.OnDeactivate (System.Action), 0
+	10 ConditionalJump @b5, v8 @ TEMP_v3 (System.Boolean)
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid 78B7, this.OnDeactivate (System.Action), 0
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Not v14 @ TEMP_v4 (System.Boolean), this._propagateActivationStateToChildren (System.Boolean)
+	19 ConditionalJump @b8, v14 @ TEMP_v4 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 CallVoid TrackObject.Activate, this @ L0 (TrackObject)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Return
+

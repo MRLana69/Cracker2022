@@ -1,0 +1,387 @@
+Type: System.Runtime.Serialization.ObjectHolderList
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x109DED0 I32Const 4564641
+	0x109DED5 I32Load8_S 0, 0
+	0x109DED8 I32Eqz
+	0x109DED9 If -64
+	0x109DEDB I32Const 2979548
+	0x109DEE0 I32Load 2, 0
+	0x109DEE3 Call 73003
+	0x109DEE7 I32Const 4564641
+	0x109DEEC I32Const 1
+	0x109DEEE I32Store8 0, 0
+	0x109DEF1 End
+	0x109DEF2 I32Const 4430156
+	0x109DEF7 I32Load 2, 0
+	0x109DEFA LocalGet 0
+	0x109DEFC I32Load 2, 8
+	0x109DEFF I32Load 2, 12
+	0x109DF02 I32Const 1
+	0x109DF04 I32Shl
+	0x109DF05 LocalTee 1
+	0x109DF07 I32Const -1
+	0x109DF09 I32Gt_S
+	0x109DF0A If -1
+	0x109DF0C LocalGet 1
+	0x109DF0E Else
+	0x109DF0F I32Const 2147483647
+	0x109DF15 End
+	0x109DF16 Call 71670
+	0x109DF1A LocalSet 1
+	0x109DF1C LocalGet 0
+	0x109DF1E I32Load 2, 8
+	0x109DF21 LocalGet 1
+	0x109DF23 LocalGet 0
+	0x109DF25 I32Load 2, 12
+	0x109DF28 I32Const 0
+	0x109DF2A Call 57644
+	0x109DF2E LocalGet 0
+	0x109DF30 I32Const 8
+	0x109DF32 I32Add
+	0x109DF33 LocalGet 1
+	0x109DF35 I32Store 2, 0
+	0x109DF38 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v13, [2D76DC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45A6A1], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S1_v3 (System.Runtime.Serialization.ObjectHolder[]), this.m_values (System.Runtime.Serialization.ObjectHolder[])
+	16 Nop
+	17 Nop
+	18 ShiftLeft v18 @ S1_v5, v15.Length, 1
+	19 Nop
+	20 Nop
+	21 CheckGreater v21 @ S1_v6 (System.Boolean), v18 @ S1_v5, -1
+	22 Not v22 @ TEMP_v2 (System.Boolean), v21 @ S1_v6 (System.Boolean)
+	23 ConditionalJump @b10, v22 @ TEMP_v2 (System.Boolean)
+	24 Nop
+	25 Jump @b10
+	26 Nop
+	27 Nop
+	28 Newobj v26 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CallVoid SorterObjectArray.SwapIfGreaterWithItems, this.m_values (System.Runtime.Serialization.ObjectHolder[]), v26 @ S0_v7 (System.OverflowException), this.m_count (System.Int32)
+	37 Nop
+	38 Nop
+	39 Add v36 @ S0_v11, this @ L0 (System.Runtime.Serialization.ObjectHolderList), 8
+	40 Nop
+	41 Move [v36 @ S0_v11], v26 @ S0_v7 (System.OverflowException)
+	42 Nop
+	43 Return
+
+Method: System.Void .ctor(System.Int32 startingSize)
+
+Disassembly:
+	0x109DE3A I32Const 4564640
+	0x109DE3F I32Load8_S 0, 0
+	0x109DE42 I32Eqz
+	0x109DE43 If -64
+	0x109DE45 I32Const 2979552
+	0x109DE4A I32Load 2, 0
+	0x109DE4D Call 73003
+	0x109DE51 I32Const 4564640
+	0x109DE56 I32Const 1
+	0x109DE58 I32Store8 0, 0
+	0x109DE5B End
+	0x109DE5C LocalGet 0
+	0x109DE5E I32Const 0
+	0x109DE60 I32Store 2, 12
+	0x109DE63 LocalGet 0
+	0x109DE65 I32Const 0
+	0x109DE67 I32Store 2, 16
+	0x109DE6A LocalGet 0
+	0x109DE6C I32Const 8
+	0x109DE6E I32Add
+	0x109DE6F I32Const 4430156
+	0x109DE74 I32Load 2, 0
+	0x109DE77 LocalGet 1
+	0x109DE79 Call 71670
+	0x109DE7D I32Store 2, 0
+	0x109DE80 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v10, [2D76E0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45A6A0], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this.m_count (System.Int32), 0
+	15 Nop
+	16 Nop
+	17 Move [this @ L0 (System.Runtime.Serialization.ObjectHolderList)+10], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v8, this @ L0 (System.Runtime.Serialization.ObjectHolderList), 8
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Newobj v23 @ S1_v7 (System.OverflowException), typeof(System.OverflowException)
+	25 Move [v18 @ S0_v8], v23 @ S1_v7 (System.OverflowException)
+	26 Nop
+	27 Return
+
+Method: System.Void Add(System.Runtime.Serialization.ObjectHolder value)
+
+Disassembly:
+	0x109F8AA I32Const 4564661
+	0x109F8AF I32Load8_S 0, 0
+	0x109F8B2 I32Eqz
+	0x109F8B3 If -64
+	0x109F8B5 I32Const 2988476
+	0x109F8BA I32Load 2, 0
+	0x109F8BD Call 73003
+	0x109F8C1 I32Const 4564661
+	0x109F8C6 I32Const 1
+	0x109F8C8 I32Store8 0, 0
+	0x109F8CB End
+	0x109F8CC LocalGet 0
+	0x109F8CE I32Const 0
+	0x109F8D0 I32Store 2, 12
+	0x109F8D3 LocalGet 0
+	0x109F8D5 I32Const 8
+	0x109F8D7 I32Add
+	0x109F8D8 I32Const 4430672
+	0x109F8DD I32Load 2, 0
+	0x109F8E0 LocalGet 1
+	0x109F8E2 Call 71670
+	0x109F8E6 I32Store 2, 0
+	0x109F8E9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2D99BC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [45A6B5], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this.m_count (System.Int32), 0
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v7, this @ L0 (System.Runtime.Serialization.ObjectHolderList), 8
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v21 @ S1_v6 (System.OverflowException), typeof(System.OverflowException)
+	22 Move [v16 @ S0_v7], v21 @ S1_v6 (System.OverflowException)
+	23 Nop
+	24 Return
+
+Method: System.Runtime.Serialization.ObjectHolderListEnumerator GetFixupEnumerator()
+
+Disassembly:
+	0x109DF47 Loop -64
+	0x109DF49 Block -64
+	0x109DF4B LocalGet 0
+	0x109DF4D LocalGet 0
+	0x109DF4F I32Load 2, 20
+	0x109DF52 I32Const 1
+	0x109DF54 I32Add
+	0x109DF55 LocalTee 2
+	0x109DF57 I32Store 2, 20
+	0x109DF5A LocalGet 2
+	0x109DF5C LocalGet 0
+	0x109DF5E I32Load 2, 16
+	0x109DF61 I32Ge_S
+	0x109DF62 BrIf 0
+	0x109DF64 LocalGet 0
+	0x109DF66 I32Load 2, 8
+	0x109DF69 I32Const 16
+	0x109DF6B I32Add
+	0x109DF6C LocalGet 0
+	0x109DF6E I32Load 2, 20
+	0x109DF71 I32Const 3
+	0x109DF73 I32Shl
+	0x109DF74 I32Add
+	0x109DF75 I64Load 3, 0
+	0x109DF78 I64Const -1
+	0x109DF7A I64Eq
+	0x109DF7B BrIf 1
+	0x109DF7D End
+	0x109DF7E End
+	0x109DF7F LocalGet 0
+	0x109DF81 I32Load 2, 20
+	0x109DF84 LocalGet 0
+	0x109DF86 I32Load 2, 16
+	0x109DF89 I32Ne
+	0x109DF8A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Add v17 @ S1_v4, [this @ L0 (System.Runtime.Serialization.ObjectHolderList)+14], 1
+	6 Nop
+	7 Move [this @ L0 (System.Runtime.Serialization.ObjectHolderList)+14], v17 @ S1_v4
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CheckGreaterOrEqual v21 @ S0_v4 (System.Boolean), v17 @ S1_v4, [this @ L0 (System.Runtime.Serialization.ObjectHolderList)+10]
+	12 ConditionalJump @b4, v21 @ S0_v4 (System.Boolean)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Add v25 @ S0_v11, this.m_values (System.Runtime.Serialization.ObjectHolder[]), 16
+	17 Nop
+	18 Nop
+	19 Nop
+	20 ShiftLeft v28 @ S1_v13, [this @ L0 (System.Runtime.Serialization.ObjectHolderList)+14], 3
+	21 Add v29 @ S0_v12, v25 @ S0_v11, v28 @ S1_v13
+	22 Nop
+	23 Nop
+	24 CheckEqual v11 @ S0_v14 (System.Boolean), [v29 @ S0_v12], -1
+	25 ConditionalJump @b2, v11 @ S0_v14 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckNotEqual returnVal1 @ S0_v8 (System.Boolean), [this @ L0 (System.Runtime.Serialization.ObjectHolderList)+14], [this @ L0 (System.Runtime.Serialization.ObjectHolderList)+10]
+	33 Nop
+	34 Return returnVal1 @ S0_v8 (System.Boolean)
+
+Method: System.Void EnlargeArray()
+
+Disassembly:
+	0x109F89D LocalGet 0
+	0x109F89F I32Const 8
+	0x109F8A1 I32Const 0
+	0x109F8A3 Call 49526
+	0x109F8A7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid ObjectHolderList.Add, this @ L0 (System.Runtime.Serialization.ObjectHolderList), 8
+	4 Nop
+	5 Return
+
+Method: System.Int32 get_Version()
+
+Disassembly:
+	0x109FA5D I32Const 4564663
+	0x109FA62 I32Load8_S 0, 0
+	0x109FA65 I32Eqz
+	0x109FA66 If -64
+	0x109FA68 I32Const 2988472
+	0x109FA6D I32Load 2, 0
+	0x109FA70 Call 73003
+	0x109FA74 I32Const 4564663
+	0x109FA79 I32Const 1
+	0x109FA7B I32Store8 0, 0
+	0x109FA7E End
+	0x109FA7F I32Const 4430676
+	0x109FA84 I32Load 2, 0
+	0x109FA87 Call 72556
+	0x109FA8B LocalTee 2
+	0x109FA8D LocalTee 1
+	0x109FA8F I32Const 12
+	0x109FA91 I32Add
+	0x109FA92 LocalGet 0
+	0x109FA94 I32Store 2, 0
+	0x109FA97 LocalGet 1
+	0x109FA99 LocalGet 1
+	0x109FA9B I32Load 2, 12
+	0x109FA9E I32Load 2, 12
+	0x109FAA1 I32Store 2, 16
+	0x109FAA4 LocalGet 1
+	0x109FAA6 I32Const -1
+	0x109FAA8 I32Store 2, 20
+	0x109FAAB LocalGet 1
+	0x109FAAD I32Const 1
+	0x109FAAF I32Store8 0, 8
+	0x109FAB2 LocalGet 2
+	0x109FAB4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v14, [2D99B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45A6B7], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Int32), typeof(System.Runtime.Serialization.ObjectHolderListEnumerator)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Add v17 @ S0_v8, v13 @ S0_v7 (System.Int32), 12
+	19 Nop
+	20 Move [v17 @ S0_v8], this @ L0 (System.Runtime.Serialization.ObjectHolderList)
+	21 Nop
+	22 Nop
+	23 Move v22 @ S1_v5, [v13 @ S0_v7 (System.Int32)+C]
+	24 Nop
+	25 Move [v13 @ S0_v7 (System.Int32)+10], [v22 @ S1_v5+C]
+	26 Nop
+	27 Nop
+	28 Move [v13 @ S0_v7 (System.Int32)+14], -1
+	29 Nop
+	30 Nop
+	31 Move [v13 @ S0_v7 (System.Int32)+8], 1
+	32 Nop
+	33 Nop
+	34 Return v13 @ S0_v7 (System.Int32)
+
+Method: System.Int32 get_Count()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_count (System.Int32)
+

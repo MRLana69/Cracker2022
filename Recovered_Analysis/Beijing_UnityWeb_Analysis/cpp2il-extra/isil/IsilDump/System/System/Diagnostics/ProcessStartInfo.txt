@@ -1,0 +1,2577 @@
+Type: System.Diagnostics.ProcessStartInfo
+
+Method: System.Void .ctor(System.Diagnostics.Process parent)
+
+Disassembly:
+	0x1091200 I32Const 4564479
+	0x1091205 I32Load8_S 0, 0
+	0x1091208 I32Eqz
+	0x1091209 If -64
+	0x109120B I32Const 2993376
+	0x1091210 I32Load 2, 0
+	0x1091213 Call 73003
+	0x1091217 I32Const 4564479
+	0x109121C I32Const 1
+	0x109121E I32Store8 0, 0
+	0x1091221 End
+	0x1091222 LocalGet 0
+	0x1091224 I32Const 0
+	0x1091226 Call 49243
+	0x109122A I32Load 2, 8
+	0x109122D If -64
+	0x109122F LocalGet 1
+	0x1091231 I32Const 12
+	0x1091233 I32Add
+	0x1091234 LocalGet 0
+	0x1091236 I32Const 0
+	0x1091238 Call 49243
+	0x109123C I32Store 2, 0
+	0x109123F LocalGet 1
+	0x1091241 I32Const 16
+	0x1091243 I32Add
+	0x1091244 LocalGet 0
+	0x1091246 I32Const 0
+	0x1091248 Call 49244
+	0x109124C I32Store 2, 0
+	0x109124F LocalGet 0
+	0x1091251 I32Load 2, 48
+	0x1091254 If -64
+	0x1091256 LocalGet 0
+	0x1091258 I32Load 2, 48
+	0x109125B LocalSet 3
+	0x109125D I32Const 4427904
+	0x1091262 I32Load 2, 0
+	0x1091265 LocalTee 2
+	0x1091267 I32Load16_S 1, 186
+	0x109126B I32Const 512
+	0x109126E I32And
+	0x109126F If -64
+	0x1091271 LocalGet 2
+	0x1091273 I32Load 2, 116
+	0x1091276 I32Eqz
+	0x1091277 If -64
+	0x1091279 LocalGet 2
+	0x109127B Call 72345
+	0x109127F End
+	0x1091280 End
+	0x1091281 LocalGet 1
+	0x1091283 LocalGet 3
+	0x1091285 I32Const 0
+	0x1091287 Call 46126
+	0x109128B I32Store 2, 20
+	0x109128E Else
+	0x109128F LocalGet 1
+	0x1091291 I32Const 0
+	0x1091293 I32Store 2, 20
+	0x1091296 End
+	0x1091297 LocalGet 1
+	0x1091299 LocalGet 0
+	0x109129B I32Load8_S 0, 56
+	0x109129E I32Const 0
+	0x10912A0 I32Ne
+	0x10912A1 I32Store8 0, 24
+	0x10912A4 End
+	0x10912A5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b15
+	5 Nop
+	6 Move v5 @ S0_v31, [2DACE0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v31
+	8 Nop
+	9 Move v7 @ S1_v18, 1
+	10 Move [45A5FF], v7 @ S1_v18
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call ProcessStartInfo.get_Password, v14 @ S0_v6 (System.Security.SecureString), this @ L0 (System.Diagnostics.ProcessStartInfo)
+	15 Nop
+	16 CheckEqual v16 @ TEMP_v2 (System.Boolean), v14.length (System.Int32), 0
+	17 ConditionalJump @b16, v16 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Add v20 @ S0_v10, parent @ L1 (System.Diagnostics.Process), 12
+	21 Nop
+	22 Nop
+	23 Call ProcessStartInfo.get_Password, v23 @ S1_v6 (System.Security.SecureString), this @ L0 (System.Diagnostics.ProcessStartInfo)
+	24 Move [v20 @ S0_v10], v23 @ S1_v6 (System.Security.SecureString)
+	25 Nop
+	26 Nop
+	27 Add v41 @ S0_v12, parent @ L1 (System.Diagnostics.Process), 16
+	28 Nop
+	29 Nop
+	30 Call ProcessStartInfo.get_LoadUserProfile, v44 @ S1_v9 (System.Boolean), this @ L0 (System.Diagnostics.ProcessStartInfo)
+	31 Move [v41 @ S0_v12], v44 @ S1_v9 (System.Boolean)
+	32 Nop
+	33 Nop
+	34 CheckEqual v47 @ TEMP_v4 (System.Boolean), this.password (System.Security.SecureString), 0
+	35 ConditionalJump @b14, v47 @ TEMP_v4 (System.Boolean)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move v52 @ S0_v21 (Il2CppClass<System.Runtime.InteropServices.Marshal>), typeof(System.Runtime.InteropServices.Marshal)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 And v56 @ S0_v23, [v52 @ S0_v21 (Il2CppClass<System.Runtime.InteropServices.Marshal>)+BA], 512
+	45 CheckEqual v57 @ TEMP_v6 (System.Boolean), v56 @ S0_v23, 0
+	46 ConditionalJump @b17, v57 @ TEMP_v6 (System.Boolean)
+	47 Move v60 @ S0_v26 (Il2CppClass<System.Runtime.InteropServices.Marshal>), typeof(System.Runtime.InteropServices.Marshal)
+	48 Nop
+	49 CheckEqual v62 @ S0_v28 (System.Boolean), [v60 @ S0_v26 (Il2CppClass<System.Runtime.InteropServices.Marshal>)+74], 0
+	50 Not v63 @ TEMP_v8 (System.Boolean), v62 @ S0_v28 (System.Boolean)
+	51 ConditionalJump @b17, v63 @ TEMP_v8 (System.Boolean)
+	52 Nop
+	53 CallVoid 11A99, typeof(System.Runtime.InteropServices.Marshal)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call Marshal.GetFunctionPointerForDelegateInternal, v70 @ S1_v17 (System.IntPtr), this.password (System.Security.SecureString)
+	60 Move parent.haveProcessId (System.Boolean), v70 @ S1_v17 (System.IntPtr)
+	61 Jump @b18
+	62 Nop
+	63 Nop
+	64 Move parent.haveProcessId (System.Boolean), 0
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 CheckNotEqual v34 @ S1_v13 (System.Boolean), this.loadUserProfile (System.Boolean), 0
+	71 Move parent.processId (System.Int32), v34 @ S1_v13 (System.Boolean)
+	72 Nop
+	73 Nop
+	74 Return
+
+Method: System.Void .ctor(System.String fileName)
+
+Disassembly:
+	0x108EEC4 I32Const 4564470
+	0x108EEC9 I32Load8_S 0, 0
+	0x108EECC I32Eqz
+	0x108EECD If -64
+	0x108EECF I32Const 2993324
+	0x108EED4 I32Load 2, 0
+	0x108EED7 Call 73003
+	0x108EEDB I32Const 4564470
+	0x108EEE0 I32Const 1
+	0x108EEE2 I32Store8 0, 0
+	0x108EEE5 End
+	0x108EEE6 LocalGet 0
+	0x108EEE8 I32Const 1
+	0x108EEEA I32Store8 0, 36
+	0x108EEED I32Const 4429952
+	0x108EEF2 I32Load 2, 0
+	0x108EEF5 Call 72556
+	0x108EEF9 LocalTee 2
+	0x108EEFB LocalGet 1
+	0x108EEFD I32Const 0
+	0x108EEFF Call 69969
+	0x108EF03 LocalGet 0
+	0x108EF05 I32Const 72
+	0x108EF08 I32Add
+	0x108EF09 LocalGet 2
+	0x108EF0B I32Store 2, 0
+	0x108EF0E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v12, [2DACAC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45A5F6], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this.useShellExecute (System.Boolean), 1
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v8 (System.WeakReference), typeof(System.WeakReference)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid WeakReference.set_Target, v16 @ S0_v8 (System.WeakReference), fileName @ L1 (System.String)
+	22 Nop
+	23 Nop
+	24 Add v23 @ S0_v10, this @ L0 (System.Diagnostics.ProcessStartInfo), 72
+	25 Nop
+	26 Move [v23 @ S0_v10], v16 @ S0_v8 (System.WeakReference)
+	27 Nop
+	28 Return
+
+Method: System.Void .ctor(System.String fileName, System.String arguments)
+
+Disassembly:
+	0x1090FC2 GlobalGet 7
+	0x1090FC4 LocalSet 3
+	0x1090FC6 GlobalGet 7
+	0x1090FC8 I32Const 16
+	0x1090FCA I32Add
+	0x1090FCB GlobalSet 7
+	0x1090FCD I32Const 4564482
+	0x1090FD2 I32Load8_S 0, 0
+	0x1090FD5 I32Eqz
+	0x1090FD6 If -64
+	0x1090FD8 I32Const 2993364
+	0x1090FDD I32Load 2, 0
+	0x1090FE0 Call 73003
+	0x1090FE4 I32Const 4564482
+	0x1090FE9 I32Const 1
+	0x1090FEB I32Store8 0, 0
+	0x1090FEE End
+	0x1090FEF LocalGet 3
+	0x1090FF1 I32Const 4
+	0x1090FF3 I32Add
+	0x1090FF4 LocalTee 5
+	0x1090FF6 I32Const 0
+	0x1090FF8 I32Store 2, 0
+	0x1090FFB LocalGet 3
+	0x1090FFD I32Const 0
+	0x1090FFF I32Store 2, 0
+	0x1091002 I32Const 4427892
+	0x1091007 I32Load 2, 0
+	0x109100A LocalTee 4
+	0x109100C I32Load16_S 1, 186
+	0x1091010 I32Const 512
+	0x1091013 I32And
+	0x1091014 If -64
+	0x1091016 LocalGet 4
+	0x1091018 I32Load 2, 116
+	0x109101B I32Eqz
+	0x109101C If -64
+	0x109101E LocalGet 4
+	0x1091020 Call 72345
+	0x1091024 End
+	0x1091025 End
+	0x1091026 LocalGet 0
+	0x1091028 LocalGet 1
+	0x109102A LocalGet 5
+	0x109102C I32Const 0
+	0x109102E Call 59137
+	0x1091032 I32Eqz
+	0x1091033 If -64
+	0x1091035 LocalGet 5
+	0x1091037 I32Load 2, 0
+	0x109103A I32Const 4427892
+	0x109103F I32Load 2, 0
+	0x1091042 LocalTee 4
+	0x1091044 I32Load16_S 1, 186
+	0x1091048 I32Const 512
+	0x109104B I32And
+	0x109104C If -64
+	0x109104E LocalGet 4
+	0x1091050 I32Load 2, 116
+	0x1091053 I32Eqz
+	0x1091054 If -64
+	0x1091056 LocalGet 4
+	0x1091058 Call 72345
+	0x109105C End
+	0x109105D End
+	0x109105E I32Const 0
+	0x1091060 Call 58891
+	0x1091064 I32Const 0
+	0x1091066 I32Const 4488292
+	0x109106B I32Load 2, 0
+	0x109106E Call 73899
+	0x1091072 End
+	0x1091073 Block -64
+	0x1091075 I32Const 0
+	0x1091077 Call 49245
+	0x109107B If -64
+	0x109107D LocalGet 3
+	0x109107F LocalGet 2
+	0x1091081 If -1
+	0x1091083 LocalGet 1
+	0x1091085 Else
+	0x1091086 LocalGet 0
+	0x1091088 End
+	0x1091089 I32Load 2, 0
+	0x109108C I32Store 2, 0
+	0x109108F I32Const 0
+	0x1091091 Call 49230
+	0x1091095 I32Const 0
+	0x1091097 Call 49217
+	0x109109B Drop
+	0x109109C I32Const 0
+	0x109109E Call 49230
+	0x10910A2 I32Const 0
+	0x10910A4 Call 49217
+	0x10910A8 Drop
+	0x10910A9 I32Const 4427892
+	0x10910AE I32Load 2, 0
+	0x10910B1 LocalTee 4
+	0x10910B3 I32Load16_S 1, 186
+	0x10910B7 I32Const 512
+	0x10910BA I32And
+	0x10910BB If -64
+	0x10910BD LocalGet 4
+	0x10910BF I32Load 2, 116
+	0x10910C2 I32Eqz
+	0x10910C3 If -64
+	0x10910C5 LocalGet 4
+	0x10910C7 Call 72345
+	0x10910CB End
+	0x10910CC End
+	0x10910CD GlobalGet 7
+	0x10910CF LocalSet 4
+	0x10910D1 GlobalGet 7
+	0x10910D3 I32Const 16
+	0x10910D5 I32Add
+	0x10910D6 GlobalSet 7
+	0x10910D8 LocalGet 4
+	0x10910DA I32Const 3571923
+	0x10910DF I32Store 2, 0
+	0x10910E2 LocalGet 4
+	0x10910E4 I32Const 3561339
+	0x10910E9 I32Store 2, 4
+	0x10910EC I32Const 85
+	0x10910EF LocalGet 4
+	0x10910F1 Call 226
+	0x10910F4 LocalGet 4
+	0x10910F6 GlobalSet 7
+	0x10910F8 I32Const 1
+	0x10910FA If -64
+	0x10910FC LocalGet 5
+	0x10910FE I32Load 2, 0
+	0x1091101 I32Const 4427892
+	0x1091106 I32Load 2, 0
+	0x1091109 LocalTee 4
+	0x109110B I32Load16_S 1, 186
+	0x109110F I32Const 512
+	0x1091112 I32And
+	0x1091113 If -64
+	0x1091115 LocalGet 4
+	0x1091117 I32Load 2, 116
+	0x109111A I32Eqz
+	0x109111B If -64
+	0x109111D LocalGet 4
+	0x109111F Call 72345
+	0x1091123 End
+	0x1091124 End
+	0x1091125 I32Const 0
+	0x1091127 Call 58891
+	0x109112B I32Const 0
+	0x109112D I32Const 4488292
+	0x1091132 I32Load 2, 0
+	0x1091135 Call 73899
+	0x1091139 End
+	0x109113A I32Const 4427892
+	0x109113F I32Load 2, 0
+	0x1091142 LocalTee 4
+	0x1091144 I32Load16_S 1, 186
+	0x1091148 I32Const 512
+	0x109114B I32And
+	0x109114C I32Eqz
+	0x109114D LocalSet 6
+	0x109114F LocalGet 2
+	0x1091151 If -64
+	0x1091153 LocalGet 6
+	0x1091155 I32Eqz
+	0x1091156 If -64
+	0x1091158 LocalGet 4
+	0x109115A I32Load 2, 116
+	0x109115D I32Eqz
+	0x109115E If -64
+	0x1091160 LocalGet 4
+	0x1091162 Call 72345
+	0x1091166 End
+	0x1091167 End
+	0x1091168 LocalGet 1
+	0x109116A I32Load 2, 0
+	0x109116D LocalGet 5
+	0x109116F I32Const 0
+	0x1091171 Call 58926
+	0x1091175 If -64
+	0x1091177 LocalGet 1
+	0x1091179 LocalGet 3
+	0x109117B I32Load 2, 0
+	0x109117E I32Store 2, 0
+	0x1091181 Br 3
+	0x1091183 End
+	0x1091184 Else
+	0x1091185 LocalGet 6
+	0x1091187 I32Eqz
+	0x1091188 If -64
+	0x109118A LocalGet 4
+	0x109118C I32Load 2, 116
+	0x109118F I32Eqz
+	0x1091190 If -64
+	0x1091192 LocalGet 4
+	0x1091194 Call 72345
+	0x1091198 End
+	0x1091199 End
+	0x109119A LocalGet 0
+	0x109119C I32Load 2, 0
+	0x109119F LocalGet 5
+	0x10911A1 I32Const 0
+	0x10911A3 Call 58926
+	0x10911A7 If -64
+	0x10911A9 LocalGet 0
+	0x10911AB LocalGet 3
+	0x10911AD I32Load 2, 0
+	0x10911B0 I32Store 2, 0
+	0x10911B3 Br 3
+	0x10911B5 End
+	0x10911B6 End
+	0x10911B7 LocalGet 5
+	0x10911B9 I32Load 2, 0
+	0x10911BC I32Const 4427892
+	0x10911C1 I32Load 2, 0
+	0x10911C4 LocalTee 0
+	0x10911C6 I32Load16_S 1, 186
+	0x10911CA I32Const 512
+	0x10911CD I32And
+	0x10911CE If -64
+	0x10911D0 LocalGet 0
+	0x10911D2 I32Load 2, 116
+	0x10911D5 I32Eqz
+	0x10911D6 If -64
+	0x10911D8 LocalGet 0
+	0x10911DA Call 72345
+	0x10911DE End
+	0x10911DF End
+	0x10911E0 I32Const 0
+	0x10911E2 Call 58891
+	0x10911E6 I32Const 0
+	0x10911E8 I32Const 4488292
+	0x10911ED I32Load 2, 0
+	0x10911F0 Call 73899
+	0x10911F4 End
+	0x10911F5 End
+	0x10911F6 LocalGet 3
+	0x10911F8 GlobalSet 7
+	0x10911FA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, v1 @ G7, 16
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b52
+	11 Nop
+	12 Move v12 @ S0_v92, [2DACD4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v92
+	14 Nop
+	15 Move v14 @ S1_v64, 1
+	16 Move [45A602], v14 @ S1_v64
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9 (System.String), v1 @ G7, 4
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9 (System.String)], 0
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], 0
+	27 Nop
+	28 Move v25 @ S0_v12 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 And v29 @ S0_v14, [v25 @ S0_v12 (Il2CppClass<System.IO.MonoIO>)+BA], 512
+	33 CheckEqual v30 @ TEMP_v2 (System.Boolean), v29 @ S0_v14, 0
+	34 ConditionalJump @b61, v30 @ TEMP_v2 (System.Boolean)
+	35 Move v31 @ S0_v87 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	36 Nop
+	37 CheckEqual v33 @ S0_v89 (System.Boolean), [v31 @ S0_v87 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	38 Not v34 @ TEMP_v33 (System.Boolean), v33 @ S0_v89 (System.Boolean)
+	39 ConditionalJump @b61, v34 @ TEMP_v33 (System.Boolean)
+	40 Nop
+	41 CallVoid 11A99, typeof(System.IO.MonoIO)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Call Path.Combine, v44 @ S0_v17 (System.String), this @ L0 (System.Diagnostics.ProcessStartInfo), fileName @ L1 (System.String), v19 @ S0_v9 (System.String)
+	49 CheckEqual v45 @ S0_v18 (System.Boolean), v44 @ S0_v17 (System.String), 0
+	50 Not v46 @ TEMP_v4 (System.Boolean), v45 @ S0_v18 (System.Boolean)
+	51 ConditionalJump @b14, v46 @ TEMP_v4 (System.Boolean)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Move v50 @ S1_v54 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 And v54 @ S1_v56, [v50 @ S1_v54 (Il2CppClass<System.IO.MonoIO>)+BA], 512
+	60 CheckEqual v55 @ TEMP_v30 (System.Boolean), v54 @ S1_v56, 0
+	61 ConditionalJump @b53, v55 @ TEMP_v30 (System.Boolean)
+	62 Move v67 @ S1_v60 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	63 Nop
+	64 CheckEqual v69 @ S1_v62 (System.Boolean), [v67 @ S1_v60 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	65 Not v70 @ TEMP_v32 (System.Boolean), v69 @ S1_v62 (System.Boolean)
+	66 ConditionalJump @b53, v70 @ TEMP_v32 (System.Boolean)
+	67 Nop
+	68 CallVoid 11A99, typeof(System.IO.MonoIO)
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Call MonoIO.GetCurrentDirectory, v64 @ S0_v86 (System.String), [v19 @ S0_v9 (System.String)]
+	73 Nop
+	74 Nop
+	75 Nop
+	76 CallVoid 120AB, v64 @ S0_v86 (System.String), 0, methodof(System.Diagnostics.Process::CreatePipe)
+	77 Nop
+	78 Nop
+	79 Call X509Chain.Create, v66 @ S0_v21 (System.Security.Cryptography.X509Certificates.X509Chain)
+	80 CheckEqual v74 @ TEMP_v6 (System.Boolean), v66 @ S0_v21 (System.Security.Cryptography.X509Certificates.X509Chain), 0
+	81 ConditionalJump @b58, v74 @ TEMP_v6 (System.Boolean)
+	82 Nop
+	83 Nop
+	84 CheckEqual v79 @ TEMP_v8 (System.Boolean), arguments @ L2 (System.String), 0
+	85 ConditionalJump @b18, v79 @ TEMP_v8 (System.Boolean)
+	86 Nop
+	87 Jump @b54
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Move [v1 @ G7], [v109 @ S1_v11 (System.Diagnostics.ProcessStartInfo)]
+	92 Nop
+	93 Call Process.get_IsWindows, v112 @ S0_v26 (System.Boolean)
+	94 Nop
+	95 Call Process.get_StartInfo, v114 @ S0_v27 (System.Diagnostics.ProcessStartInfo), v112 @ S0_v26 (System.Boolean)
+	96 Nop
+	97 Call Process.get_IsWindows, v116 @ S0_v29 (System.Boolean)
+	98 Nop
+	99 Call Process.get_StartInfo, v118 @ S0_v30 (System.Diagnostics.ProcessStartInfo), v116 @ S0_v29 (System.Boolean)
+	100 Nop
+	101 Move v120 @ S0_v32 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	102 Nop
+	103 Nop
+	104 Nop
+	105 And v124 @ S0_v34, [v120 @ S0_v32 (Il2CppClass<System.IO.MonoIO>)+BA], 512
+	106 CheckEqual v125 @ TEMP_v9 (System.Boolean), v124 @ S0_v34, 0
+	107 ConditionalJump @b55, v125 @ TEMP_v9 (System.Boolean)
+	108 Move v126 @ S0_v80 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	109 Nop
+	110 CheckEqual v128 @ S0_v82 (System.Boolean), [v126 @ S0_v80 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	111 Not v129 @ TEMP_v29 (System.Boolean), v128 @ S0_v82 (System.Boolean)
+	112 ConditionalJump @b55, v129 @ TEMP_v29 (System.Boolean)
+	113 Nop
+	114 CallVoid 11A99, typeof(System.IO.MonoIO)
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Move [v5 @ S0_v3], 3571923
+	126 Nop
+	127 Nop
+	128 Move [v5 @ S0_v3+4], 3561339
+	129 Nop
+	130 Nop
+	131 CallVoid 00E2, 85, v5 @ S0_v3
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Jump @b27
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Move v151 @ S1_v41 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	141 Nop
+	142 Nop
+	143 Nop
+	144 And v155 @ S1_v43, [v151 @ S1_v41 (Il2CppClass<System.IO.MonoIO>)+BA], 512
+	145 CheckEqual v156 @ TEMP_v26 (System.Boolean), v155 @ S1_v43, 0
+	146 ConditionalJump @b56, v156 @ TEMP_v26 (System.Boolean)
+	147 Move v174 @ S1_v47 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	148 Nop
+	149 CheckEqual v176 @ S1_v49 (System.Boolean), [v174 @ S1_v47 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	150 Not v177 @ TEMP_v28 (System.Boolean), v176 @ S1_v49 (System.Boolean)
+	151 ConditionalJump @b56, v177 @ TEMP_v28 (System.Boolean)
+	152 Nop
+	153 CallVoid 11A99, typeof(System.IO.MonoIO)
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Call MonoIO.GetCurrentDirectory, v165 @ S0_v79 (System.String), [v19 @ S0_v9 (System.String)]
+	158 Nop
+	159 Nop
+	160 Nop
+	161 CallVoid 120AB, v165 @ S0_v79 (System.String), 0, methodof(System.Diagnostics.Process::CreatePipe)
+	162 Nop
+	163 Nop
+	164 Move v167 @ S0_v46 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	165 Nop
+	166 Nop
+	167 Nop
+	168 And v170 @ S0_v48, [v167 @ S0_v46 (Il2CppClass<System.IO.MonoIO>)+BA], 512
+	169 CheckEqual v171 @ S0_v49 (System.Boolean), v170 @ S0_v48, 0
+	170 Nop
+	171 Nop
+	172 CheckEqual v173 @ TEMP_v13 (System.Boolean), arguments @ L2 (System.String), 0
+	173 ConditionalJump @b40, v173 @ TEMP_v13 (System.Boolean)
+	174 Nop
+	175 Not v182 @ S0_v67 (System.Boolean), v171 @ S0_v49 (System.Boolean)
+	176 Not v183 @ TEMP_v22 (System.Boolean), v182 @ S0_v67 (System.Boolean)
+	177 ConditionalJump @b57, v183 @ TEMP_v22 (System.Boolean)
+	178 Move v188 @ S0_v73 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	179 Nop
+	180 CheckEqual v190 @ S0_v75 (System.Boolean), [v188 @ S0_v73 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	181 Not v191 @ TEMP_v25 (System.Boolean), v190 @ S0_v75 (System.Boolean)
+	182 ConditionalJump @b57, v191 @ TEMP_v25 (System.Boolean)
+	183 Nop
+	184 CallVoid 11A99, typeof(System.IO.MonoIO)
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Call MonoIO.RemapPath, v198 @ S0_v71 (System.Boolean), [fileName @ L1 (System.String)], v19 @ S0_v9 (System.String)
+	192 Not v92 @ TEMP_v24 (System.Boolean), v198 @ S0_v71 (System.Boolean)
+	193 ConditionalJump @b39, v92 @ TEMP_v24 (System.Boolean)
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Move [fileName @ L1 (System.String)], [v1 @ G7]
+	198 Jump @b58
+	199 Nop
+	200 Jump @b59
+	201 Nop
+	202 Not v185 @ S0_v56 (System.Boolean), v171 @ S0_v49 (System.Boolean)
+	203 Not v186 @ TEMP_v18 (System.Boolean), v185 @ S0_v56 (System.Boolean)
+	204 ConditionalJump @b60, v186 @ TEMP_v18 (System.Boolean)
+	205 Move v199 @ S0_v62 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	206 Nop
+	207 CheckEqual v201 @ S0_v64 (System.Boolean), [v199 @ S0_v62 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	208 Not v202 @ TEMP_v21 (System.Boolean), v201 @ S0_v64 (System.Boolean)
+	209 ConditionalJump @b60, v202 @ TEMP_v21 (System.Boolean)
+	210 Nop
+	211 CallVoid 11A99, typeof(System.IO.MonoIO)
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Nop
+	218 Call MonoIO.RemapPath, v209 @ S0_v60 (System.Boolean), [this @ L0 (System.Diagnostics.ProcessStartInfo)], v19 @ S0_v9 (System.String)
+	219 Not v93 @ TEMP_v20 (System.Boolean), v209 @ S0_v60 (System.Boolean)
+	220 ConditionalJump @b59, v93 @ TEMP_v20 (System.Boolean)
+	221 Nop
+	222 Nop
+	223 Nop
+	224 Move [this @ L0 (System.Diagnostics.ProcessStartInfo)], [v1 @ G7]
+	225 Jump @b58
+	226 Nop
+	227 Nop
+	228 Nop
+	229 Nop
+	230 Nop
+	231 Move v219 @ S1_v24 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	232 Nop
+	233 Nop
+	234 Nop
+	235 And v222 @ S1_v26, [v219 @ S1_v24 (Il2CppClass<System.IO.MonoIO>)+BA], 512
+	236 CheckEqual v223 @ TEMP_v15 (System.Boolean), v222 @ S1_v26, 0
+	237 ConditionalJump @b62, v223 @ TEMP_v15 (System.Boolean)
+	238 Move v224 @ S1_v30 (Il2CppClass<System.IO.MonoIO>), typeof(System.IO.MonoIO)
+	239 Nop
+	240 CheckEqual v226 @ S1_v32 (System.Boolean), [v224 @ S1_v30 (Il2CppClass<System.IO.MonoIO>)+74], 0
+	241 Not v227 @ TEMP_v17 (System.Boolean), v226 @ S1_v32 (System.Boolean)
+	242 ConditionalJump @b62, v227 @ TEMP_v17 (System.Boolean)
+	243 Nop
+	244 CallVoid 11A99, typeof(System.IO.MonoIO)
+	245 Nop
+	246 Nop
+	247 Nop
+	248 Call MonoIO.GetCurrentDirectory, v104 @ S0_v54 (System.String), [v19 @ S0_v9 (System.String)]
+	249 Nop
+	250 Nop
+	251 Nop
+	252 CallVoid 120AB, v104 @ S0_v54 (System.String), 0, methodof(System.Diagnostics.Process::CreatePipe)
+	253 Nop
+	254 Nop
+	255 Nop
+	256 Nop
+	257 Nop
+	258 Return
+
+Method: System.String get_Arguments()
+
+Disassembly:
+	0x10917A6 GlobalGet 7
+	0x10917A8 LocalSet 4
+	0x10917AA GlobalGet 7
+	0x10917AC I32Const 16
+	0x10917AE I32Add
+	0x10917AF GlobalSet 7
+	0x10917B1 I32Const 4564490
+	0x10917B6 I32Load8_S 0, 0
+	0x10917B9 I32Eqz
+	0x10917BA If -64
+	0x10917BC I32Const 2993436
+	0x10917C1 I32Load 2, 0
+	0x10917C4 Call 73003
+	0x10917C8 I32Const 4564490
+	0x10917CD I32Const 1
+	0x10917CF I32Store8 0, 0
+	0x10917D2 End
+	0x10917D3 GlobalGet 7
+	0x10917D5 LocalSet 1
+	0x10917D7 GlobalGet 7
+	0x10917D9 I32Const 16
+	0x10917DB I32Add
+	0x10917DC GlobalSet 7
+	0x10917DE LocalGet 4
+	0x10917E0 LocalGet 1
+	0x10917E2 I32Store 2, 0
+	0x10917E5 LocalGet 4
+	0x10917E7 I32Const -1
+	0x10917E9 I32Store 2, 4
+	0x10917EC Block -64
+	0x10917EE LocalGet 0
+	0x10917F0 I32Load 2, 132
+	0x10917F4 I32Eqz
+	0x10917F5 If -64
+	0x10917F7 I32Const 0
+	0x10917F9 GlobalSet 9
+	0x10917FB I32Const 5671
+	0x10917FE LocalGet 0
+	0x1091800 I32Const 1024
+	0x1091803 I32Const 0
+	0x1091805 Call 20
+	0x1091807 LocalSet 1
+	0x1091809 GlobalGet 9
+	0x109180B LocalSet 3
+	0x109180D I32Const 0
+	0x109180F GlobalSet 9
+	0x1091811 Block -64
+	0x1091813 Block -64
+	0x1091815 LocalGet 3
+	0x1091817 I32Const 1
+	0x1091819 I32And
+	0x109181A If -1
+	0x109181C I32Const 0
+	0x109181E LocalSet 1
+	0x1091820 Br 1
+	0x1091822 Else
+	0x1091823 I32Const 0
+	0x1091825 GlobalSet 9
+	0x1091827 I32Const 11334
+	0x109182B LocalGet 1
+	0x109182D I32Const 0
+	0x109182F Call 19
+	0x1091831 LocalSet 3
+	0x1091833 GlobalGet 9
+	0x1091835 I32Const 0
+	0x1091837 GlobalSet 9
+	0x1091839 I32Const 1
+	0x109183B I32And
+	0x109183C BrIf 1
+	0x109183E LocalGet 0
+	0x1091840 I32Const 132
+	0x1091843 I32Add
+	0x1091844 LocalGet 3
+	0x1091846 I32Store 2, 0
+	0x1091849 LocalGet 0
+	0x109184B I32Load 2, 132
+	0x109184F I32Eqz
+	0x1091850 If -64
+	0x1091852 I32Const 4428404
+	0x1091857 I32Load 2, 0
+	0x109185A LocalSet 3
+	0x109185C I32Const 0
+	0x109185E GlobalSet 9
+	0x1091860 I32Const 2631
+	0x1091863 LocalGet 3
+	0x1091865 Call 17
+	0x1091867 LocalSet 3
+	0x1091869 GlobalGet 9
+	0x109186B I32Const 0
+	0x109186D GlobalSet 9
+	0x109186F I32Const 1
+	0x1091871 I32And
+	0x1091872 I32Eqz
+	0x1091873 If -64
+	0x1091875 I32Const 4514192
+	0x109187A I32Load 2, 0
+	0x109187D LocalSet 2
+	0x109187F I32Const 0
+	0x1091881 GlobalSet 9
+	0x1091883 I32Const 7064
+	0x1091886 LocalGet 3
+	0x1091888 LocalGet 2
+	0x109188A I32Const 0
+	0x109188C Call 40
+	0x109188E GlobalGet 9
+	0x1091890 I32Const 0
+	0x1091892 GlobalSet 9
+	0x1091894 I32Const 1
+	0x1091896 I32And
+	0x1091897 I32Eqz
+	0x1091898 If -64
+	0x109189A I32Const 4468032
+	0x109189F I32Load 2, 0
+	0x10918A2 LocalSet 2
+	0x10918A4 I32Const 0
+	0x10918A6 GlobalSet 9
+	0x10918A8 I32Const 10491
+	0x10918AC LocalGet 3
+	0x10918AE I32Const 0
+	0x10918B0 LocalGet 2
+	0x10918B2 Call 40
+	0x10918B4 I32Const 0
+	0x10918B6 GlobalSet 9
+	0x10918B8 End
+	0x10918B9 End
+	0x10918BA Br 2
+	0x10918BC End
+	0x10918BD LocalGet 0
+	0x10918BF I32Load 2, 132
+	0x10918C3 LocalSet 3
+	0x10918C5 I32Const 4514196
+	0x10918CA I32Load 2, 0
+	0x10918CD LocalSet 2
+	0x10918CF I32Const 0
+	0x10918D1 GlobalSet 9
+	0x10918D3 I32Const 4700
+	0x10918D6 LocalGet 3
+	0x10918D8 LocalGet 2
+	0x10918DA I32Const 0
+	0x10918DC Call 20
+	0x10918DE LocalSet 3
+	0x10918E0 GlobalGet 9
+	0x10918E2 I32Const 0
+	0x10918E4 GlobalSet 9
+	0x10918E6 I32Const 1
+	0x10918E8 I32And
+	0x10918E9 BrIf 1
+	0x10918EB Block -64
+	0x10918ED Block -64
+	0x10918EF LocalGet 3
+	0x10918F1 BrIf 0
+	0x10918F3 LocalGet 0
+	0x10918F5 I32Load 2, 132
+	0x10918F9 LocalSet 3
+	0x10918FB I32Const 4514200
+	0x1091900 I32Load 2, 0
+	0x1091903 LocalSet 2
+	0x1091905 I32Const 0
+	0x1091907 GlobalSet 9
+	0x1091909 I32Const 4700
+	0x109190C LocalGet 3
+	0x109190E LocalGet 2
+	0x1091910 I32Const 0
+	0x1091912 Call 20
+	0x1091914 GlobalGet 9
+	0x1091916 I32Const 0
+	0x1091918 GlobalSet 9
+	0x109191A I32Const 1
+	0x109191C I32And
+	0x109191D BrIf 3
+	0x109191F BrIf 0
+	0x1091921 LocalGet 0
+	0x1091923 I32Load 2, 132
+	0x1091927 LocalSet 3
+	0x1091929 I32Const 4514204
+	0x109192E I32Load 2, 0
+	0x1091931 LocalSet 2
+	0x1091933 I32Const 0
+	0x1091935 GlobalSet 9
+	0x1091937 I32Const 4700
+	0x109193A LocalGet 3
+	0x109193C LocalGet 2
+	0x109193E I32Const 0
+	0x1091940 Call 20
+	0x1091942 GlobalGet 9
+	0x1091944 I32Const 0
+	0x1091946 GlobalSet 9
+	0x1091948 I32Const 1
+	0x109194A I32And
+	0x109194B BrIf 3
+	0x109194D BrIf 0
+	0x109194F Br 1
+	0x1091951 End
+	0x1091952 LocalGet 0
+	0x1091954 I32Load 2, 132
+	0x1091958 LocalSet 3
+	0x109195A LocalGet 0
+	0x109195C I32Load 2, 132
+	0x1091960 LocalSet 2
+	0x1091962 I32Const 0
+	0x1091964 GlobalSet 9
+	0x1091966 I32Const 13542
+	0x109196A LocalGet 2
+	0x109196C I32Const 0
+	0x109196E Call 19
+	0x1091970 LocalSet 2
+	0x1091972 GlobalGet 9
+	0x1091974 I32Const 0
+	0x1091976 GlobalSet 9
+	0x1091978 I32Const 1
+	0x109197A I32And
+	0x109197B BrIf 2
+	0x109197D I32Const 0
+	0x109197F GlobalSet 9
+	0x1091981 I32Const 5466
+	0x1091984 LocalGet 3
+	0x1091986 I32Const 0
+	0x1091988 LocalGet 2
+	0x109198A I32Const 4
+	0x109198C I32Sub
+	0x109198D I32Const 0
+	0x109198F Call 22
+	0x1091991 LocalSet 3
+	0x1091993 GlobalGet 9
+	0x1091995 I32Const 0
+	0x1091997 GlobalSet 9
+	0x1091999 I32Const 1
+	0x109199B I32And
+	0x109199C BrIf 2
+	0x109199E LocalGet 0
+	0x10919A0 I32Const 132
+	0x10919A3 I32Add
+	0x10919A4 LocalGet 3
+	0x10919A6 I32Store 2, 0
+	0x10919A9 End
+	0x10919AA LocalGet 4
+	0x10919AC I32Const 4
+	0x10919AE I32Add
+	0x10919AF LocalTee 2
+	0x10919B1 I32Load 2, 0
+	0x10919B4 I32Const 1
+	0x10919B6 I32Add
+	0x10919B7 LocalSet 5
+	0x10919B9 LocalGet 2
+	0x10919BB LocalGet 5
+	0x10919BD I32Store 2, 0
+	0x10919C0 LocalGet 4
+	0x10919C2 I32Load 2, 0
+	0x10919C5 LocalGet 5
+	0x10919C7 I32Const 2
+	0x10919C9 I32Shl
+	0x10919CA I32Add
+	0x10919CB I32Const 151
+	0x10919CE I32Store 2, 0
+	0x10919D1 LocalGet 1
+	0x10919D3 End
+	0x10919D4 LocalSet 5
+	0x10919D6 Br 1
+	0x10919D8 End
+	0x10919D9 I32Const 2132256
+	0x10919DE Call 156
+	0x10919E1 LocalSet 3
+	0x10919E3 GlobalGet 14
+	0x10919E5 I32Const 2132256
+	0x10919EA Call 429
+	0x10919ED I32Eq
+	0x10919EE If -64
+	0x10919F0 LocalGet 3
+	0x10919F2 Call 153
+	0x10919F5 I32Load 2, 0
+	0x10919F8 LocalSet 6
+	0x10919FA Call 154
+	0x10919FD LocalGet 1
+	0x10919FF LocalSet 5
+	0x1091A01 Else
+	0x1091A02 LocalGet 3
+	0x1091A04 Call 164
+	0x1091A07 End
+	0x1091A08 End
+	0x1091A09 LocalGet 0
+	0x1091A0B LocalGet 5
+	0x1091A0D I32Const 0
+	0x1091A0F Call 49213
+	0x1091A13 LocalGet 4
+	0x1091A15 I32Load 2, 4
+	0x1091A18 I32Const -1
+	0x1091A1A I32Ne
+	0x1091A1B If -64
+	0x1091A1D LocalGet 4
+	0x1091A1F I32Load 2, 0
+	0x1091A22 LocalGet 4
+	0x1091A24 I32Load 2, 4
+	0x1091A27 I32Const 2
+	0x1091A29 I32Shl
+	0x1091A2A I32Add
+	0x1091A2B I32Load 2, 0
+	0x1091A2E I32Const 151
+	0x1091A31 I32Eq
+	0x1091A32 If -64
+	0x1091A34 LocalGet 4
+	0x1091A36 I32Const 4
+	0x1091A38 I32Add
+	0x1091A39 LocalTee 1
+	0x1091A3B I32Load 2, 0
+	0x1091A3E LocalTee 5
+	0x1091A40 I32Const -1
+	0x1091A42 I32Gt_S
+	0x1091A43 If -64
+	0x1091A45 LocalGet 1
+	0x1091A47 LocalGet 5
+	0x1091A49 I32Const -1
+	0x1091A4B I32Add
+	0x1091A4C I32Store 2, 0
+	0x1091A4F End
+	0x1091A50 Br 3
+	0x1091A52 End
+	0x1091A53 End
+	0x1091A54 LocalGet 6
+	0x1091A56 If -64
+	0x1091A58 LocalGet 6
+	0x1091A5A I32Const 0
+	0x1091A5C I32Const 0
+	0x1091A5E Call 73899
+	0x1091A62 End
+	0x1091A63 End
+	0x1091A64 End
+	0x1091A65 LocalGet 0
+	0x1091A67 I32Load 2, 132
+	0x1091A6B LocalGet 4
+	0x1091A6D GlobalSet 7
+	0x1091A6F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, v1 @ G7, 16
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b47
+	11 Nop
+	12 Move v12 @ S0_v139, [2DAD1C]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v139
+	14 Nop
+	15 Move v14 @ S1_v65, 1
+	16 Move [45A60A], v14 @ S1_v65
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], v5 @ S0_v3
+	27 Nop
+	28 Nop
+	29 Move [v1 @ G7+4], -1
+	30 Nop
+	31 Nop
+	32 CheckEqual v30 @ S0_v15 (System.Boolean), [this @ L0 (System.Diagnostics.ProcessStartInfo)+84], 0
+	33 Not v31 @ TEMP_v2 (System.Boolean), v30 @ S0_v15 (System.Boolean)
+	34 ConditionalJump @b55, v31 @ TEMP_v2 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call 0014, v38 @ S0_v21 (System.Boolean), 5671, this @ L0 (System.Diagnostics.ProcessStartInfo), 1024, 0
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Jump @b8
+	52 Nop
+	53 Nop
+	54 Jump @b32
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Call 0013, v100 @ S0_v57, 11334, v38 @ S0_v21 (System.Boolean), 0
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Jump @b10
+	68 Nop
+	69 Nop
+	70 Add v170 @ S0_v61, this @ L0 (System.Diagnostics.ProcessStartInfo), 132
+	71 Nop
+	72 Move [v170 @ S0_v61], v100 @ S0_v57
+	73 Nop
+	74 Nop
+	75 CheckEqual v174 @ S0_v64 (System.Boolean), [this @ L0 (System.Diagnostics.ProcessStartInfo)+84], 0
+	76 Not v141 @ TEMP_v13 (System.Boolean), v174 @ S0_v64 (System.Boolean)
+	77 ConditionalJump @b17, v141 @ TEMP_v13 (System.Boolean)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Call 0011, v184 @ S0_v120, 2631, typeof(System.InvalidOperationException)
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Jump @b48
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 CallVoid 0028, 7064, v184 @ S0_v120, "Process has exited or is inaccessible, so the requested information is not available.", 0
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Jump @b48
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 CallVoid 0028, 10491, v184 @ S0_v120, 0, methodof(System.Diagnostics.Process::get_ProcessName)
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Jump @b32
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Nop
+	141 Call 0014, v194 @ S0_v71, 4700, [this @ L0 (System.Diagnostics.ProcessStartInfo)+84], ".exe", 0
+	142 Nop
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Nop
+	148 Jump @b19
+	149 Nop
+	150 ConditionalJump @b27, v194 @ S0_v71
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Nop
+	163 Call 0014, v154 @ S0_v108, 4700, [this @ L0 (System.Diagnostics.ProcessStartInfo)+84], ".bat", 0
+	164 Nop
+	165 Nop
+	166 Nop
+	167 Nop
+	168 Nop
+	169 Jump @b22
+	170 ConditionalJump @b27, v154 @ S0_v108
+	171 Nop
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Call 0014, v155 @ S0_v115, 4700, [this @ L0 (System.Diagnostics.ProcessStartInfo)+84], ".com", 0
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 Jump @b25
+	190 ConditionalJump @b27, v155 @ S0_v115
+	191 Jump @b50
+	192 Nop
+	193 Nop
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Call 0013, v279 @ S0_v92, 13542, [this @ L0 (System.Diagnostics.ProcessStartInfo)+84], 0
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Jump @b29
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Nop
+	218 Nop
+	219 Subtract v123 @ S3_v9, v279 @ S0_v92, 4
+	220 Nop
+	221 Call 0016, v314 @ S0_v97, 5466, [this @ L0 (System.Diagnostics.ProcessStartInfo)+84], 0, v123 @ S3_v9, 0
+	222 Nop
+	223 Nop
+	224 Nop
+	225 Nop
+	226 Nop
+	227 Nop
+	228 Jump @b31
+	229 Nop
+	230 Nop
+	231 Add v334 @ S0_v101, this @ L0 (System.Diagnostics.ProcessStartInfo), 132
+	232 Nop
+	233 Move [v334 @ S0_v101], v314 @ S0_v97
+	234 Nop
+	235 Nop
+	236 Nop
+	237 Add v342 @ S0_v77, v1 @ G7, 4
+	238 Nop
+	239 Nop
+	240 Nop
+	241 Add v345 @ S0_v79, [v342 @ S0_v77], 1
+	242 Nop
+	243 Nop
+	244 Nop
+	245 Move [v342 @ S0_v77], v345 @ S0_v79
+	246 Nop
+	247 Nop
+	248 Nop
+	249 Nop
+	250 ShiftLeft v352 @ S1_v40, v345 @ S0_v79, 2
+	251 Add v353 @ S0_v83, [v1 @ G7], v352 @ S1_v40
+	252 Nop
+	253 Move [v353 @ S0_v83], 151
+	254 Nop
+	255 Nop
+	256 Nop
+	257 Jump @b54
+	258 Nop
+	259 Nop
+	260 Call 009C, v160 @ S0_v47, 2132256
+	261 Nop
+	262 Nop
+	263 Nop
+	264 Call 01AD, v167 @ S1_v26, 2132256
+	265 CheckEqual v175 @ S0_v49 (System.Boolean), v165 @ G14, v167 @ S1_v26
+	266 Not v176 @ TEMP_v12 (System.Boolean), v175 @ S0_v49 (System.Boolean)
+	267 ConditionalJump @b38, v176 @ TEMP_v12 (System.Boolean)
+	268 Nop
+	269 Call 0099, v196 @ S0_v52, v160 @ S0_v47
+	270 Nop
+	271 Nop
+	272 CallVoid 009A
+	273 Nop
+	274 Nop
+	275 Jump @b54
+	276 Nop
+	277 CallVoid 00A4, v160 @ S0_v47
+	278 Nop
+	279 Nop
+	280 Nop
+	281 Nop
+	282 Nop
+	283 CallVoid Process.Dispose, this @ L0 (System.Diagnostics.ProcessStartInfo), v42 @ L5_v2 (System.Boolean)
+	284 Nop
+	285 Nop
+	286 Nop
+	287 CheckNotEqual v250 @ S0_v30 (System.Boolean), [v1 @ G7+4], -1
+	288 Not v251 @ TEMP_v6 (System.Boolean), v250 @ S0_v30 (System.Boolean)
+	289 ConditionalJump @b51, v251 @ TEMP_v6 (System.Boolean)
+	290 Nop
+	291 Nop
+	292 Nop
+	293 Nop
+	294 Nop
+	295 ShiftLeft v285 @ S1_v17, [v1 @ G7+4], 2
+	296 Add v286 @ S0_v36, [v1 @ G7], v285 @ S1_v17
+	297 Nop
+	298 Nop
+	299 CheckEqual v289 @ S0_v38 (System.Boolean), [v286 @ S0_v36], 151
+	300 Not v290 @ TEMP_v9 (System.Boolean), v289 @ S0_v38 (System.Boolean)
+	301 ConditionalJump @b51, v290 @ TEMP_v9 (System.Boolean)
+	302 Nop
+	303 Nop
+	304 Add v304 @ S0_v40, v1 @ G7, 4
+	305 Nop
+	306 Nop
+	307 Nop
+	308 Nop
+	309 CheckGreater v307 @ S0_v42 (System.Boolean), [v304 @ S0_v40], -1
+	310 Not v70 @ TEMP_v10 (System.Boolean), v307 @ S0_v42 (System.Boolean)
+	311 ConditionalJump @b52, v70 @ TEMP_v10 (System.Boolean)
+	312 Nop
+	313 Nop
+	314 Nop
+	315 Add v318 @ S1_v23, [v304 @ S0_v40], -1
+	316 Move [v304 @ S0_v40], v318 @ S1_v23
+	317 Nop
+	318 Jump @b55
+	319 Nop
+	320 Nop
+	321 Nop
+	322 CheckEqual v71 @ TEMP_v8 (System.Boolean), [v196 @ S0_v52], 0
+	323 ConditionalJump @b55, v71 @ TEMP_v8 (System.Boolean)
+	324 Nop
+	325 Nop
+	326 Nop
+	327 CallVoid 120AB, [v196 @ S0_v52], 0, 0
+	328 Nop
+	329 Nop
+	330 Nop
+	331 Nop
+	332 Nop
+	333 Nop
+	334 Nop
+	335 Nop
+	336 Return [this @ L0 (System.Diagnostics.ProcessStartInfo)+84]
+
+Method: System.Collections.Specialized.StringDictionary get_EnvironmentVariables()
+
+Disassembly:
+	0x10912DA I32Const 4564478
+	0x10912DF I32Load8_S 0, 0
+	0x10912E2 I32Eqz
+	0x10912E3 If -64
+	0x10912E5 I32Const 2993328
+	0x10912EA I32Load 2, 0
+	0x10912ED Call 73003
+	0x10912F1 I32Const 4564478
+	0x10912F6 I32Const 1
+	0x10912F8 I32Store8 0, 0
+	0x10912FB End
+	0x10912FC LocalGet 0
+	0x10912FE I32Load 2, 12
+	0x1091301 If -1
+	0x1091303 LocalGet 0
+	0x1091305 I32Load 2, 12
+	0x1091308 Else
+	0x1091309 I32Const 4427772
+	0x109130E I32Load 2, 0
+	0x1091311 I32Load 2, 92
+	0x1091314 I32Load 2, 0
+	0x1091317 End
+	0x1091318 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v15, [2DACB0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45A5FE], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.arguments (System.String), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Move returnVal1 @ S0_v7 (System.Collections.Specialized.StringDictionary), this.arguments (System.String)
+	18 Jump @b8
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move returnVal1 @ S0_v7 (System.Collections.Specialized.StringDictionary), v19.Empty (System.String)
+	23 Nop
+	24 Nop
+	25 Return returnVal1 @ S0_v7 (System.Collections.Specialized.StringDictionary)
+
+Method: System.Boolean get_RedirectStandardInput()
+
+Disassembly:
+	0x1090CBE GlobalGet 7
+	0x1090CC0 LocalSet 1
+	0x1090CC2 GlobalGet 7
+	0x1090CC4 I32Const 16
+	0x1090CC6 I32Add
+	0x1090CC7 GlobalSet 7
+	0x1090CC9 I32Const 4564483
+	0x1090CCE I32Load8_S 0, 0
+	0x1090CD1 I32Eqz
+	0x1090CD2 If -64
+	0x1090CD4 I32Const 2993336
+	0x1090CD9 I32Load 2, 0
+	0x1090CDC Call 73003
+	0x1090CE0 I32Const 4564483
+	0x1090CE5 I32Const 1
+	0x1090CE7 I32Store8 0, 0
+	0x1090CEA End
+	0x1090CEB LocalGet 1
+	0x1090CED I64Const 0
+	0x1090CEF I64Store 3, 0
+	0x1090CF2 GlobalGet 7
+	0x1090CF4 LocalSet 2
+	0x1090CF6 GlobalGet 7
+	0x1090CF8 I32Const 16
+	0x1090CFA I32Add
+	0x1090CFB GlobalSet 7
+	0x1090CFD LocalGet 1
+	0x1090CFF I32Const 8
+	0x1090D01 I32Add
+	0x1090D02 LocalTee 5
+	0x1090D04 LocalTee 3
+	0x1090D06 LocalGet 2
+	0x1090D08 I32Store 2, 0
+	0x1090D0B LocalGet 3
+	0x1090D0D I32Const -1
+	0x1090D0F I32Store 2, 4
+	0x1090D12 Block -64
+	0x1090D14 LocalGet 0
+	0x1090D16 I32Load 2, 76
+	0x1090D19 I32Eqz
+	0x1090D1A If -64
+	0x1090D1C I32Const 4432416
+	0x1090D21 I32Load 2, 0
+	0x1090D24 Call 72556
+	0x1090D28 LocalTee 2
+	0x1090D2A I32Const 0
+	0x1090D2C Call 49048
+	0x1090D30 LocalGet 0
+	0x1090D32 I32Const 76
+	0x1090D35 I32Add
+	0x1090D36 LocalGet 2
+	0x1090D38 I32Store 2, 0
+	0x1090D3B LocalGet 0
+	0x1090D3D I32Load 2, 72
+	0x1090D40 If -64
+	0x1090D42 I32Const 5
+	0x1090D44 LocalGet 0
+	0x1090D46 I32Load 2, 72
+	0x1090D49 Call 29262
+	0x1090D4D If -64
+	0x1090D4F I32Const 8
+	0x1090D51 I32Const 6
+	0x1090D53 LocalGet 0
+	0x1090D55 I32Load 2, 72
+	0x1090D58 Call 29262
+	0x1090D5C I32Const 4432332
+	0x1090D61 I32Load 2, 0
+	0x1090D64 Call 29968
+	0x1090D68 Call 29262
+	0x1090D6C If -64
+	0x1090D6E I32Const 8
+	0x1090D70 I32Const 6
+	0x1090D72 LocalGet 0
+	0x1090D74 I32Load 2, 72
+	0x1090D77 Call 29262
+	0x1090D7B I32Const 4432332
+	0x1090D80 I32Load 2, 0
+	0x1090D83 Call 29968
+	0x1090D87 Call 29262
+	0x1090D8B LocalSet 2
+	0x1090D8D I32Const 1
+	0x1090D8F I32Const 4432324
+	0x1090D94 I32Load 2, 0
+	0x1090D97 LocalGet 2
+	0x1090D99 Call 29547
+	0x1090D9D BrIf 4
+	0x1090D9F End
+	0x1090DA0 End
+	0x1090DA1 End
+	0x1090DA2 I32Const 0
+	0x1090DA4 Call 51369
+	0x1090DA8 LocalSet 2
+	0x1090DAA I32Const 4
+	0x1090DAC I32Const 4428224
+	0x1090DB1 I32Load 2, 0
+	0x1090DB4 LocalGet 2
+	0x1090DB6 Call 29547
+	0x1090DBA LocalSet 7
+	0x1090DBC Block -64
+	0x1090DBE Block -64
+	0x1090DC0 Block -64
+	0x1090DC2 Loop -64
+	0x1090DC4 I32Const 4427756
+	0x1090DC9 I32Load 2, 0
+	0x1090DCC LocalSet 2
+	0x1090DCE I32Const 0
+	0x1090DD0 GlobalSet 9
+	0x1090DD2 I32Const 6523
+	0x1090DD5 I32Const 0
+	0x1090DD7 LocalGet 2
+	0x1090DD9 LocalGet 7
+	0x1090DDB Call 20
+	0x1090DDD GlobalGet 9
+	0x1090DDF I32Const 0
+	0x1090DE1 GlobalSet 9
+	0x1090DE3 I32Const 1
+	0x1090DE5 I32And
+	0x1090DE6 BrIf 2
+	0x1090DE8 I32Eqz
+	0x1090DE9 BrIf 1
+	0x1090DEB I32Const 4427756
+	0x1090DF0 I32Load 2, 0
+	0x1090DF3 LocalSet 2
+	0x1090DF5 I32Const 0
+	0x1090DF7 GlobalSet 9
+	0x1090DF9 I32Const 6533
+	0x1090DFC I32Const 1
+	0x1090DFE LocalGet 2
+	0x1090E00 LocalGet 7
+	0x1090E02 Call 20
+	0x1090E04 LocalSet 2
+	0x1090E06 GlobalGet 9
+	0x1090E08 I32Const 0
+	0x1090E0A GlobalSet 9
+	0x1090E0C I32Const 1
+	0x1090E0E I32And
+	0x1090E0F BrIf 2
+	0x1090E11 I32Const 4427820
+	0x1090E16 I32Load 2, 0
+	0x1090E19 LocalSet 3
+	0x1090E1B I32Const 0
+	0x1090E1D GlobalSet 9
+	0x1090E1F I32Const 13584
+	0x1090E23 LocalGet 2
+	0x1090E25 LocalGet 3
+	0x1090E27 Call 19
+	0x1090E29 LocalSet 2
+	0x1090E2B GlobalGet 9
+	0x1090E2D I32Const 0
+	0x1090E2F GlobalSet 9
+	0x1090E31 I32Const 1
+	0x1090E33 I32And
+	0x1090E34 BrIf 2
+	0x1090E36 LocalGet 1
+	0x1090E38 LocalGet 2
+	0x1090E3A I64Load 2, 0
+	0x1090E3D I64Store 3, 0
+	0x1090E40 LocalGet 0
+	0x1090E42 I32Load 2, 76
+	0x1090E45 LocalSet 2
+	0x1090E47 I32Const 0
+	0x1090E49 GlobalSet 9
+	0x1090E4B I32Const 13586
+	0x1090E4F LocalGet 1
+	0x1090E51 I32Const 0
+	0x1090E53 Call 19
+	0x1090E55 LocalSet 3
+	0x1090E57 GlobalGet 9
+	0x1090E59 I32Const 0
+	0x1090E5B GlobalSet 9
+	0x1090E5D I32Const 1
+	0x1090E5F I32And
+	0x1090E60 BrIf 2
+	0x1090E62 I32Const 0
+	0x1090E64 GlobalSet 9
+	0x1090E66 I32Const 13585
+	0x1090E6A LocalGet 1
+	0x1090E6C I32Const 0
+	0x1090E6E Call 19
+	0x1090E70 LocalSet 6
+	0x1090E72 GlobalGet 9
+	0x1090E74 I32Const 0
+	0x1090E76 GlobalSet 9
+	0x1090E78 I32Const 1
+	0x1090E7A I32And
+	0x1090E7B BrIf 2
+	0x1090E7D I32Const 4427772
+	0x1090E82 I32Load 2, 0
+	0x1090E85 LocalSet 4
+	0x1090E87 I32Const 0
+	0x1090E89 GlobalSet 9
+	0x1090E8B I32Const 13594
+	0x1090E8F LocalGet 3
+	0x1090E91 LocalGet 4
+	0x1090E93 Call 19
+	0x1090E95 LocalSet 3
+	0x1090E97 GlobalGet 9
+	0x1090E99 I32Const 0
+	0x1090E9B GlobalSet 9
+	0x1090E9D I32Const 1
+	0x1090E9F I32And
+	0x1090EA0 BrIf 2
+	0x1090EA2 I32Const 4427772
+	0x1090EA7 I32Load 2, 0
+	0x1090EAA LocalSet 4
+	0x1090EAC I32Const 0
+	0x1090EAE GlobalSet 9
+	0x1090EB0 I32Const 13594
+	0x1090EB4 LocalGet 6
+	0x1090EB6 LocalGet 4
+	0x1090EB8 Call 19
+	0x1090EBA LocalSet 6
+	0x1090EBC GlobalGet 9
+	0x1090EBE I32Const 0
+	0x1090EC0 GlobalSet 9
+	0x1090EC2 I32Const 1
+	0x1090EC4 I32And
+	0x1090EC5 BrIf 2
+	0x1090EC7 I32Const 0
+	0x1090EC9 GlobalSet 9
+	0x1090ECB I32Const 5551
+	0x1090ECE I32Const 5
+	0x1090ED0 LocalGet 2
+	0x1090ED2 LocalGet 3
+	0x1090ED4 LocalGet 6
+	0x1090ED6 Call 42
+	0x1090ED8 GlobalGet 9
+	0x1090EDA I32Const 0
+	0x1090EDC GlobalSet 9
+	0x1090EDE I32Const 1
+	0x1090EE0 I32And
+	0x1090EE1 I32Eqz
+	0x1090EE2 BrIf 0
+	0x1090EE4 End
+	0x1090EE5 Br 1
+	0x1090EE7 End
+	0x1090EE8 LocalGet 5
+	0x1090EEA I32Const 4
+	0x1090EEC I32Add
+	0x1090EED LocalTee 3
+	0x1090EEF I32Load 2, 0
+	0x1090EF2 I32Const 1
+	0x1090EF4 I32Add
+	0x1090EF5 LocalSet 2
+	0x1090EF7 LocalGet 3
+	0x1090EF9 LocalGet 2
+	0x1090EFB I32Store 2, 0
+	0x1090EFE LocalGet 5
+	0x1090F00 I32Load 2, 0
+	0x1090F03 LocalGet 2
+	0x1090F05 I32Const 2
+	0x1090F07 I32Shl
+	0x1090F08 I32Add
+	0x1090F09 I32Const 181
+	0x1090F0C I32Store 2, 0
+	0x1090F0F Br 1
+	0x1090F11 End
+	0x1090F12 I32Const 2132256
+	0x1090F17 Call 156
+	0x1090F1A LocalSet 2
+	0x1090F1C GlobalGet 14
+	0x1090F1E I32Const 2132256
+	0x1090F23 Call 429
+	0x1090F26 I32Eq
+	0x1090F27 If -64
+	0x1090F29 LocalGet 2
+	0x1090F2B Call 153
+	0x1090F2E I32Load 2, 0
+	0x1090F31 LocalSet 8
+	0x1090F33 Call 154
+	0x1090F36 Else
+	0x1090F37 LocalGet 2
+	0x1090F39 Call 164
+	0x1090F3C End
+	0x1090F3D End
+	0x1090F3E LocalGet 7
+	0x1090F40 I32Const 4427760
+	0x1090F45 I32Load 2, 0
+	0x1090F48 Call 73902
+	0x1090F4C LocalTee 2
+	0x1090F4E If -64
+	0x1090F50 I32Const 0
+	0x1090F52 I32Const 4427760
+	0x1090F57 I32Load 2, 0
+	0x1090F5A LocalGet 2
+	0x1090F5C Call 29725
+	0x1090F60 End
+	0x1090F61 LocalGet 5
+	0x1090F63 I32Load 2, 4
+	0x1090F66 I32Const -1
+	0x1090F68 I32Ne
+	0x1090F69 If -64
+	0x1090F6B LocalGet 5
+	0x1090F6D I32Load 2, 0
+	0x1090F70 LocalGet 5
+	0x1090F72 I32Load 2, 4
+	0x1090F75 I32Const 2
+	0x1090F77 I32Shl
+	0x1090F78 I32Add
+	0x1090F79 I32Load 2, 0
+	0x1090F7C I32Const 181
+	0x1090F7F I32Eq
+	0x1090F80 If -64
+	0x1090F82 LocalGet 5
+	0x1090F84 I32Const 4
+	0x1090F86 I32Add
+	0x1090F87 LocalTee 5
+	0x1090F89 I32Load 2, 0
+	0x1090F8C LocalTee 2
+	0x1090F8E I32Const -1
+	0x1090F90 I32Gt_S
+	0x1090F91 If -64
+	0x1090F93 LocalGet 5
+	0x1090F95 LocalGet 2
+	0x1090F97 I32Const -1
+	0x1090F99 I32Add
+	0x1090F9A I32Store 2, 0
+	0x1090F9D End
+	0x1090F9E Br 3
+	0x1090FA0 End
+	0x1090FA1 End
+	0x1090FA2 LocalGet 8
+	0x1090FA4 If -64
+	0x1090FA6 LocalGet 8
+	0x1090FA8 I32Const 0
+	0x1090FAA I32Const 0
+	0x1090FAC Call 73899
+	0x1090FB0 End
+	0x1090FB1 End
+	0x1090FB2 End
+	0x1090FB3 LocalGet 0
+	0x1090FB5 I32Load 2, 76
+	0x1090FB8 LocalGet 1
+	0x1090FBA GlobalSet 7
+	0x1090FBC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, v1 @ G7, 16
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b57
+	11 Nop
+	12 Move v12 @ S0_v134, [2DACB8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v134
+	14 Nop
+	15 Move v14 @ S1_v80, 1
+	16 Move [45A603], v14 @ S1_v80
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Add v27 @ S0_v13, v1 @ G7, 8
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Move [v27 @ S0_v13], v5 @ S0_v3
+	34 Nop
+	35 Nop
+	36 Move [v27 @ S0_v13+4], -1
+	37 Nop
+	38 Nop
+	39 CheckEqual v36 @ S0_v17 (System.Boolean), this.environmentVariables (System.Collections.Specialized.StringDictionary), 0
+	40 Not v37 @ TEMP_v2 (System.Boolean), v36 @ S0_v17 (System.Boolean)
+	41 ConditionalJump @b60, v37 @ TEMP_v2 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Call 11B6C, v40 @ S0_v23 (System.Collections.Specialized.HybridDictionary), typeof(System.Collections.Specialized.CaseSensitiveStringDictionary)
+	45 Nop
+	46 Nop
+	47 CallVoid HybridDictionary..ctor, v40 @ S0_v23 (System.Collections.Specialized.HybridDictionary)
+	48 Nop
+	49 Nop
+	50 Add v98 @ S0_v25, this @ L0 (System.Diagnostics.ProcessStartInfo), 76
+	51 Nop
+	52 Move [v98 @ S0_v25], v40 @ S0_v23 (System.Collections.Specialized.HybridDictionary)
+	53 Nop
+	54 Nop
+	55 CheckEqual v102 @ TEMP_v4 (System.Boolean), this.weakParentProcess (System.WeakReference), 0
+	56 ConditionalJump @b58, v102 @ TEMP_v4 (System.Boolean)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Call 724E, v106 @ S0_v126, 5, this.weakParentProcess (System.WeakReference)
+	61 CheckEqual v111 @ TEMP_v14 (System.Boolean), v106 @ S0_v126, 0
+	62 ConditionalJump @b58, v111 @ TEMP_v14 (System.Boolean)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Call 724E, v128 @ S1_v73, 6, this.weakParentProcess (System.WeakReference)
+	68 Nop
+	69 Nop
+	70 Call 7510, v113 @ S1_v74, v128 @ S1_v73, typeof(System.ComponentModel.Component)
+	71 Call 724E, v115 @ S0_v128, 8, v113 @ S1_v74
+	72 CheckEqual v77 @ TEMP_v15 (System.Boolean), v115 @ S0_v128, 0
+	73 ConditionalJump @b58, v77 @ TEMP_v15 (System.Boolean)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Call 724E, v213 @ S1_v76, 6, this.weakParentProcess (System.WeakReference)
+	79 Nop
+	80 Nop
+	81 Call 7510, v246 @ S1_v77, v213 @ S1_v76, typeof(System.ComponentModel.Component)
+	82 Call 724E, v263 @ S0_v130, 8, v246 @ S1_v77
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Call 736B, v86 @ S0_v132, 1, typeof(System.ComponentModel.ISite), v263 @ S0_v130
+	89 ConditionalJump @b60, v86 @ S0_v132
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Call Environment.get_Is64BitProcess, v117 @ S0_v30 (System.Boolean)
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Call 736B, v123 @ S0_v32, 4, typeof(System.Collections.IDictionary), v117 @ S0_v30 (System.Boolean)
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Call 0014, v159 @ S0_v38, 6523, 0, typeof(System.Collections.IEnumerator), v123 @ S0_v32
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Jump @b23
+	119 CheckEqual v165 @ S0_v70 (System.Boolean), v159 @ S0_v38, 0
+	120 ConditionalJump @b39, v165 @ S0_v70 (System.Boolean)
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Call 0014, v221 @ S0_v83, 6533, 1, typeof(System.Collections.IEnumerator), v123 @ S0_v32
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Jump @b26
+	138 Nop
+	139 Nop
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Call 0013, v270 @ S0_v90, 13584, v221 @ S0_v83, typeof(System.Collections.DictionaryEntry)
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Nop
+	152 Nop
+	153 Jump @b28
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Move [v1 @ G7], [v270 @ S0_v90]
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Call 0013, v299 @ S0_v98, 13586, v1 @ G7, 0
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Nop
+	172 Nop
+	173 Jump @b30
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Nop
+	179 Call 0013, v325 @ S0_v103, 13585, v1 @ G7, 0
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Jump @b32
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Nop
+	194 Nop
+	195 Call 0013, v338 @ S0_v110, 13594, v299 @ S0_v98, typeof(System.String)
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Jump @b34
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Call 0013, v347 @ S0_v117, 13594, v325 @ S0_v103, typeof(System.String)
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Nop
+	218 Jump @b36
+	219 Nop
+	220 Nop
+	221 Nop
+	222 Nop
+	223 Nop
+	224 Nop
+	225 Nop
+	226 CallVoid 002A, 5551, 5, this.environmentVariables (System.Collections.Specialized.StringDictionary), v338 @ S0_v110, v347 @ S0_v117
+	227 Nop
+	228 Nop
+	229 Nop
+	230 Nop
+	231 Nop
+	232 Nop
+	233 Jump @b61
+	234 Nop
+	235 Jump @b40
+	236 Nop
+	237 Nop
+	238 Nop
+	239 Add v224 @ S0_v72, v27 @ S0_v13, 4
+	240 Nop
+	241 Nop
+	242 Nop
+	243 Add v228 @ S0_v74, [v224 @ S0_v72], 1
+	244 Nop
+	245 Nop
+	246 Nop
+	247 Move [v224 @ S0_v72], v228 @ S0_v74
+	248 Nop
+	249 Nop
+	250 Nop
+	251 Nop
+	252 ShiftLeft v236 @ S1_v45, v228 @ S0_v74, 2
+	253 Add v237 @ S0_v78, [v27 @ S0_v13], v236 @ S1_v45
+	254 Nop
+	255 Move [v237 @ S0_v78], 181
+	256 Jump @b62
+	257 Nop
+	258 Nop
+	259 Call 009C, v208 @ S0_v63, 2132256
+	260 Nop
+	261 Nop
+	262 Nop
+	263 Call 01AD, v243 @ S1_v40, 2132256
+	264 CheckEqual v262 @ S0_v65 (System.Boolean), v241 @ G14, v243 @ S1_v40
+	265 Not v253 @ TEMP_v13 (System.Boolean), v262 @ S0_v65 (System.Boolean)
+	266 ConditionalJump @b46, v253 @ TEMP_v13 (System.Boolean)
+	267 Nop
+	268 Call 0099, v273 @ S0_v68, v208 @ S0_v63
+	269 Nop
+	270 Nop
+	271 CallVoid 009A
+	272 Jump @b62
+	273 Nop
+	274 CallVoid 00A4, v208 @ S0_v63
+	275 Nop
+	276 Nop
+	277 Nop
+	278 Nop
+	279 Nop
+	280 Call 120AE, v261 @ S0_v41, v123 @ S0_v32, typeof(System.IDisposable)
+	281 Nop
+	282 CheckEqual v271 @ TEMP_v7 (System.Boolean), v261 @ S0_v41, 0
+	283 ConditionalJump @b50, v271 @ TEMP_v7 (System.Boolean)
+	284 Nop
+	285 Nop
+	286 Nop
+	287 Nop
+	288 CallVoid 741D, 0, typeof(System.IDisposable), v261 @ S0_v41
+	289 Nop
+	290 Nop
+	291 Nop
+	292 Nop
+	293 CheckNotEqual v288 @ S0_v45 (System.Boolean), [v27 @ S0_v13+4], -1
+	294 Not v289 @ TEMP_v8 (System.Boolean), v288 @ S0_v45 (System.Boolean)
+	295 ConditionalJump @b63, v289 @ TEMP_v8 (System.Boolean)
+	296 Nop
+	297 Nop
+	298 Nop
+	299 Nop
+	300 Nop
+	301 ShiftLeft v305 @ S1_v29, [v27 @ S0_v13+4], 2
+	302 Add v306 @ S0_v51, [v27 @ S0_v13], v305 @ S1_v29
+	303 Nop
+	304 Nop
+	305 CheckEqual v309 @ S0_v53 (System.Boolean), [v306 @ S0_v51], 181
+	306 Not v310 @ TEMP_v11 (System.Boolean), v309 @ S0_v53 (System.Boolean)
+	307 ConditionalJump @b63, v310 @ TEMP_v11 (System.Boolean)
+	308 Nop
+	309 Nop
+	310 Add v317 @ S0_v55, v27 @ S0_v13, 4
+	311 Nop
+	312 Nop
+	313 Nop
+	314 Nop
+	315 CheckGreater v320 @ S0_v57 (System.Boolean), [v317 @ S0_v55], -1
+	316 Not v78 @ TEMP_v12 (System.Boolean), v320 @ S0_v57 (System.Boolean)
+	317 ConditionalJump @b64, v78 @ TEMP_v12 (System.Boolean)
+	318 Nop
+	319 Nop
+	320 Nop
+	321 Add v329 @ S1_v35, [v317 @ S0_v55], -1
+	322 Move [v317 @ S0_v55], v329 @ S1_v35
+	323 Nop
+	324 Jump @b60
+	325 Nop
+	326 Nop
+	327 Nop
+	328 CheckEqual v79 @ TEMP_v10 (System.Boolean), [v273 @ S0_v68], 0
+	329 ConditionalJump @b60, v79 @ TEMP_v10 (System.Boolean)
+	330 Nop
+	331 Nop
+	332 Nop
+	333 CallVoid 120AB, [v273 @ S0_v68], 0, 0
+	334 Nop
+	335 Nop
+	336 Nop
+	337 Nop
+	338 Nop
+	339 Nop
+	340 Nop
+	341 Nop
+	342 Return this.environmentVariables (System.Collections.Specialized.StringDictionary)
+
+Method: System.Boolean get_RedirectStandardOutput()
+
+Disassembly:
+	0xD6E139 LocalGet 0
+	0xD6E13B I32Load8_S 0, 57
+	0xD6E13E I32Const 0
+	0xD6E140 I32Ne
+	0xD6E141 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.redirectStandardInput (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Boolean get_RedirectStandardError()
+
+Disassembly:
+	0x1091BFF LocalGet 0
+	0x1091C01 I32Load8_S 0, 58
+	0x1091C04 I32Const 0
+	0x1091C06 I32Ne
+	0x1091C07 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.redirectStandardOutput (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Text.Encoding get_StandardErrorEncoding()
+
+Disassembly:
+	0x1091C0A LocalGet 0
+	0x1091C0C I32Load8_S 0, 59
+	0x1091C0F I32Const 0
+	0x1091C11 I32Ne
+	0x1091C12 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.redirectStandardError (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Text.Encoding get_StandardOutputEncoding()
+
+Disassembly:
+	0xC314A5 LocalGet 0
+	0xC314A7 I32Const -64
+	0xC314A9 I32Sub
+	0xC314AA I32Load 2, 0
+	0xC314AD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Subtract v3 @ S0_v2, this @ L0 (System.Diagnostics.ProcessStartInfo), -64
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2]
+
+Method: System.Boolean get_UseShellExecute()
+
+Disassembly:
+	0xC26974 LocalGet 0
+	0xC26976 I32Load 2, 60
+	0xC26979 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.standardOutputEncoding (System.Text.Encoding)
+
+Method: System.String get_UserName()
+
+Disassembly:
+	0xC9C353 LocalGet 0
+	0xC9C355 I32Load8_S 0, 36
+	0xC9C358 I32Const 0
+	0xC9C35A I32Ne
+	0xC9C35B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.useShellExecute (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Security.SecureString get_Password()
+
+Disassembly:
+	0x10913B7 I32Const 4564481
+	0x10913BC I32Load8_S 0, 0
+	0x10913BF I32Eqz
+	0x10913C0 If -64
+	0x10913C2 I32Const 2993344
+	0x10913C7 I32Load 2, 0
+	0x10913CA Call 73003
+	0x10913CE I32Const 4564481
+	0x10913D3 I32Const 1
+	0x10913D5 I32Store8 0, 0
+	0x10913D8 End
+	0x10913D9 LocalGet 0
+	0x10913DB I32Load 2, 40
+	0x10913DE If -1
+	0x10913E0 LocalGet 0
+	0x10913E2 I32Load 2, 40
+	0x10913E5 Else
+	0x10913E6 I32Const 4427772
+	0x10913EB I32Load 2, 0
+	0x10913EE I32Load 2, 92
+	0x10913F1 I32Load 2, 0
+	0x10913F4 End
+	0x10913F5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v15, [2DACC0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45A601], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.userName (System.String), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Move returnVal1 @ S0_v7 (System.Security.SecureString), this.userName (System.String)
+	18 Jump @b8
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move returnVal1 @ S0_v7 (System.Security.SecureString), v19.Empty (System.String)
+	23 Nop
+	24 Nop
+	25 Return returnVal1 @ S0_v7 (System.Security.SecureString)
+
+Method: System.String get_Domain()
+
+Disassembly:
+	0xC888F0 LocalGet 0
+	0xC888F2 I32Load 2, 48
+	0xC888F5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.password (System.Security.SecureString)
+
+Method: System.Boolean get_LoadUserProfile()
+
+Disassembly:
+	0x10913F8 I32Const 4564480
+	0x10913FD I32Load8_S 0, 0
+	0x1091400 I32Eqz
+	0x1091401 If -64
+	0x1091403 I32Const 2993332
+	0x1091408 I32Load 2, 0
+	0x109140B Call 73003
+	0x109140F I32Const 4564480
+	0x1091414 I32Const 1
+	0x1091416 I32Store8 0, 0
+	0x1091419 End
+	0x109141A LocalGet 0
+	0x109141C I32Load 2, 44
+	0x109141F If -1
+	0x1091421 LocalGet 0
+	0x1091423 I32Load 2, 44
+	0x1091426 Else
+	0x1091427 I32Const 4427772
+	0x109142C I32Load 2, 0
+	0x109142F I32Load 2, 92
+	0x1091432 I32Load 2, 0
+	0x1091435 End
+	0x1091436 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v15, [2DACB4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45A600], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.domain (System.String), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Move returnVal1 @ S0_v7 (System.Boolean), this.domain (System.String)
+	18 Jump @b8
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move returnVal1 @ S0_v7 (System.Boolean), v19.Empty (System.String)
+	23 Nop
+	24 Nop
+	25 Return returnVal1 @ S0_v7 (System.Boolean)
+
+Method: System.String get_FileName()
+
+Disassembly:
+	0xD64A3C LocalGet 0
+	0xD64A3E I32Load8_S 0, 56
+	0xD64A41 I32Const 0
+	0xD64A43 I32Ne
+	0xD64A44 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.loadUserProfile (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.String get_WorkingDirectory()
+
+Disassembly:
+	0x108F3F2 I32Const 4564485
+	0x108F3F7 I32Load8_S 0, 0
+	0x108F3FA I32Eqz
+	0x108F3FB If -64
+	0x108F3FD I32Const 2993340
+	0x108F402 I32Load 2, 0
+	0x108F405 Call 73003
+	0x108F409 I32Const 4564485
+	0x108F40E I32Const 1
+	0x108F410 I32Store8 0, 0
+	0x108F413 End
+	0x108F414 LocalGet 0
+	0x108F416 I32Load 2, 8
+	0x108F419 If -1
+	0x108F41B LocalGet 0
+	0x108F41D I32Load 2, 8
+	0x108F420 Else
+	0x108F421 I32Const 4427772
+	0x108F426 I32Load 2, 0
+	0x108F429 I32Load 2, 92
+	0x108F42C I32Load 2, 0
+	0x108F42F End
+	0x108F430 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v15, [2DACBC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45A605], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.fileName (System.String), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Move returnVal1 @ S0_v7 (System.String), this.fileName (System.String)
+	18 Jump @b8
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move returnVal1 @ S0_v7 (System.String), v19.Empty (System.String)
+	23 Nop
+	24 Nop
+	25 Return returnVal1 @ S0_v7 (System.String)
+
+Method: System.Boolean get_HaveEnvVars()
+
+Disassembly:
+	0x109131B I32Const 4564477
+	0x1091320 I32Load8_S 0, 0
+	0x1091323 I32Eqz
+	0x1091324 If -64
+	0x1091326 I32Const 2993348
+	0x109132B I32Load 2, 0
+	0x109132E Call 73003
+	0x1091332 I32Const 4564477
+	0x1091337 I32Const 1
+	0x1091339 I32Store8 0, 0
+	0x109133C End
+	0x109133D LocalGet 0
+	0x109133F I32Load 2, 16
+	0x1091342 If -1
+	0x1091344 LocalGet 0
+	0x1091346 I32Load 2, 16
+	0x1091349 Else
+	0x109134A I32Const 4427772
+	0x109134F I32Load 2, 0
+	0x1091352 I32Load 2, 92
+	0x1091355 I32Load 2, 0
+	0x1091358 End
+	0x1091359 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v15, [2DACC4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45A5FD], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.directory (System.String), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Move returnVal1 @ S0_v7 (System.Boolean), this.directory (System.String)
+	18 Jump @b8
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move returnVal1 @ S0_v7 (System.Boolean), v19.Empty (System.String)
+	23 Nop
+	24 Nop
+	25 Return returnVal1 @ S0_v7 (System.Boolean)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x1262C16 GlobalGet 7
+	0x1262C18 LocalSet 0
+	0x1262C1A GlobalGet 7
+	0x1262C1C I32Const 16
+	0x1262C1E I32Add
+	0x1262C1F GlobalSet 7
+	0x1262C21 I32Const 4570059
+	0x1262C26 I32Load8_S 0, 0
+	0x1262C29 I32Eqz
+	0x1262C2A If -64
+	0x1262C2C I32Const 2996404
+	0x1262C31 I32Load 2, 0
+	0x1262C34 Call 73003
+	0x1262C38 I32Const 4570059
+	0x1262C3D I32Const 1
+	0x1262C3F I32Store8 0, 0
+	0x1262C42 End
+	0x1262C43 I32Const 4427832
+	0x1262C48 I32Load 2, 0
+	0x1262C4B I32Const 128
+	0x1262C4E Call 71670
+	0x1262C52 LocalSet 1
+	0x1262C54 LocalGet 0
+	0x1262C56 I32Const 4500880
+	0x1262C5B I32Load 2, 0
+	0x1262C5E I32Store 2, 0
+	0x1262C61 LocalGet 0
+	0x1262C63 I32Const 4
+	0x1262C65 I32Add
+	0x1262C66 LocalTee 2
+	0x1262C68 LocalGet 0
+	0x1262C6A I32Load 2, 0
+	0x1262C6D I32Store 2, 0
+	0x1262C70 LocalGet 1
+	0x1262C72 LocalGet 2
+	0x1262C74 I32Const 0
+	0x1262C76 Call 46053
+	0x1262C7A I32Const 4432976
+	0x1262C7F I32Load 2, 0
+	0x1262C82 I32Load 2, 92
+	0x1262C85 LocalGet 1
+	0x1262C87 I32Store 2, 0
+	0x1262C8A LocalGet 0
+	0x1262C8C GlobalSet 7
+	0x1262C8E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v20, [2DB8B4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v20
+	14 Nop
+	15 Move v14 @ S1_v11, 1
+	16 Move [45BBCB], v14 @ S1_v11
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v20 @ S0_v10 (System.OverflowException), typeof(System.OverflowException)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], fieldof(<PrivateImplementationDetails>.CCEEADA43268372341F81AE0C9208C6856441C04)
+	27 Nop
+	28 Nop
+	29 Add v27 @ S0_v13 (System.Runtime.InteropServices.CallingConvention), v1 @ G7, 4
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Move v27.value__ (System.Int32), [v1 @ G7]
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid UnmanagedFunctionPointerAttribute..ctor, v20 @ S0_v10 (System.OverflowException), v27 @ S0_v13 (System.Runtime.InteropServices.CallingConvention)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Move v36._category (System.Byte[]), v20 @ S0_v10 (System.OverflowException)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Return
+

@@ -1,0 +1,612 @@
+Type: UnityEngine.Rigidbody2D
+
+Method: UnityEngine.Vector2 get_position()
+
+Disassembly:
+	0x1565F65 GlobalGet 7
+	0x1565F67 LocalSet 3
+	0x1565F69 GlobalGet 7
+	0x1565F6B I32Const 16
+	0x1565F6D I32Add
+	0x1565F6E GlobalSet 7
+	0x1565F70 LocalGet 3
+	0x1565F72 LocalGet 1
+	0x1565F74 I32Const 8
+	0x1565F76 I32Add
+	0x1565F77 I64Load 2, 16
+	0x1565F7A I64Store 2, 0
+	0x1565F7D LocalGet 0
+	0x1565F7F LocalGet 3
+	0x1565F81 I64Load 3, 0
+	0x1565F84 I64Store 2, 0
+	0x1565F87 LocalGet 3
+	0x1565F89 GlobalSet 7
+	0x1565F8B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Add v11 @ S1_v3, this @ L1 (UnityEngine.Rigidbody2D), 8
+	10 Nop
+	11 Move [v1 @ G7], [v11 @ S1_v3+10]
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move returnVal1.x (System.Single), [v1 @ G7]
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Return returnVal1 @ L0 (UnityEngine.Vector2)
+
+Method: System.Void set_position(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x1566009 GlobalGet 7
+	0x156600B LocalSet 3
+	0x156600D GlobalGet 7
+	0x156600F I32Const 16
+	0x1566011 I32Add
+	0x1566012 GlobalSet 7
+	0x1566014 LocalGet 3
+	0x1566016 I64Const 0
+	0x1566018 I64Store 3, 0
+	0x156601B LocalGet 1
+	0x156601D LocalGet 3
+	0x156601F I32Const 0
+	0x1566021 Call 71173
+	0x1566025 LocalGet 0
+	0x1566027 LocalGet 3
+	0x1566029 I64Load 3, 0
+	0x156602C I64Store 2, 0
+	0x156602F LocalGet 3
+	0x1566031 GlobalSet 7
+	0x1566033 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7 (UnityEngine.Vector2&)], 0
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CallVoid Rigidbody2D.set_position_Injected, value @ L1 (UnityEngine.Vector2), v1 @ G7 (UnityEngine.Vector2&)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [this @ L0 (UnityEngine.Rigidbody2D)], [v1 @ G7 (UnityEngine.Vector2&)]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Return
+
+Method: System.Single get_rotation()
+
+Disassembly:
+	0x1565F8E LocalGet 0
+	0x1565F90 I32Const 8
+	0x1565F92 I32Add
+	0x1565F93 F32Load 2, 24
+	0x1565F96 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (UnityEngine.Rigidbody2D), 8
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2+18]
+
+Method: System.Void set_rotation(System.Single value)
+
+Disassembly:
+	0x1567BA3 I32Const 3928736
+	0x1567BA8 I32Load 2, 0
+	0x1567BAB LocalTee 2
+	0x1567BAD I32Eqz
+	0x1567BAE If -64
+	0x1567BB0 I32Const 3928736
+	0x1567BB5 I32Const 3541646
+	0x1567BBA Call 73893
+	0x1567BBE LocalTee 2
+	0x1567BC0 I32Store 2, 0
+	0x1567BC3 End
+	0x1567BC4 LocalGet 0
+	0x1567BC6 LocalGet 1
+	0x1567BC8 LocalGet 2
+	0x1567BCA I32Const 127
+	0x1567BCD I32And
+	0x1567BCE I32Const 79620
+	0x1567BD2 I32Add
+	0x1567BD3 CallIndirect 14, 0
+	0x1567BD6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF2A0], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3541646
+	9 Nop
+	10 Move [3BF2A0], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 127
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 79620
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Rigidbody2D), value @ L1 (System.Single)
+	20 Nop
+	21 Return
+
+Method: System.Void MoveRotation(System.Single angle)
+
+Disassembly:
+	0x15660E4 I32Const 3928680
+	0x15660E9 I32Load 2, 0
+	0x15660EC LocalTee 2
+	0x15660EE I32Eqz
+	0x15660EF If -64
+	0x15660F1 I32Const 3928680
+	0x15660F6 I32Const 3540774
+	0x15660FB Call 73893
+	0x15660FF LocalTee 2
+	0x1566101 I32Store 2, 0
+	0x1566104 End
+	0x1566105 LocalGet 0
+	0x1566107 LocalGet 1
+	0x1566109 LocalGet 2
+	0x156610B I32Const 127
+	0x156610E I32And
+	0x156610F I32Const 79620
+	0x1566113 I32Add
+	0x1566114 CallIndirect 14, 0
+	0x1566117 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF268], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3540774
+	9 Nop
+	10 Move [3BF268], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 127
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 79620
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Rigidbody2D), angle @ L1 (System.Single)
+	20 Nop
+	21 Return
+
+Method: System.Void MoveRotation_Angle(System.Single angle)
+
+Disassembly:
+	0x156611A LocalGet 0
+	0x156611C LocalGet 1
+	0x156611E I32Const 0
+	0x1566120 Call 71179
+	0x1566124 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid Rigidbody2D.set_angularVelocity, this @ L0 (UnityEngine.Rigidbody2D), angle @ L1 (System.Single)
+	4 Nop
+	5 Return
+
+Method: UnityEngine.Vector2 get_velocity()
+
+Disassembly:
+	0x156606D LocalGet 0
+	0x156606F LocalGet 1
+	0x1566071 I32Const 0
+	0x1566073 Call 71175
+	0x1566077 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid Rigidbody2D.get_velocity_Injected, returnVal1 @ L0 (UnityEngine.Vector2), this @ L1 (UnityEngine.Rigidbody2D)
+	4 Nop
+	5 Return returnVal1 @ L0 (UnityEngine.Vector2)
+
+Method: System.Void set_velocity(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x156615F GlobalGet 7
+	0x1566161 LocalSet 3
+	0x1566163 GlobalGet 7
+	0x1566165 I32Const 16
+	0x1566167 I32Add
+	0x1566168 GlobalSet 7
+	0x156616A LocalGet 3
+	0x156616C I64Const 0
+	0x156616E I64Store 3, 0
+	0x1566171 LocalGet 1
+	0x1566173 LocalGet 3
+	0x1566175 I32Const 0
+	0x1566177 Call 71181
+	0x156617B LocalGet 0
+	0x156617D LocalGet 3
+	0x156617F I64Load 3, 0
+	0x1566182 I64Store 2, 0
+	0x1566185 LocalGet 3
+	0x1566187 GlobalSet 7
+	0x1566189 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7 (UnityEngine.Vector2&)], 0
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CallVoid Rigidbody2D.set_velocity_Injected, value @ L1 (UnityEngine.Vector2), v1 @ G7 (UnityEngine.Vector2&)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [this @ L0 (UnityEngine.Rigidbody2D)], [v1 @ G7 (UnityEngine.Vector2&)]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Return
+
+Method: System.Single get_angularVelocity()
+
+Disassembly:
+	0x15660B1 I32Const 3928676
+	0x15660B6 I32Load 2, 0
+	0x15660B9 LocalTee 1
+	0x15660BB I32Eqz
+	0x15660BC If -64
+	0x15660BE I32Const 3928676
+	0x15660C3 I32Const 3540734
+	0x15660C8 Call 73893
+	0x15660CC LocalTee 1
+	0x15660CE I32Store 2, 0
+	0x15660D1 End
+	0x15660D2 LocalGet 0
+	0x15660D4 LocalGet 1
+	0x15660D6 I32Const 255
+	0x15660D9 I32And
+	0x15660DA I32Const 401
+	0x15660DD I32Add
+	0x15660DE CallIndirect 3, 0
+	0x15660E1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF264], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v6, 3540734
+	9 Nop
+	10 Move [3BF264], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v17 @ S1_v3, v10 @ L1_v2, 255
+	16 Nop
+	17 Add v19 @ S1_v4, v17 @ S1_v3, 401
+	18 IndirectCall v19 @ S1_v4, returnVal1 @ S0_v6 (System.Single), this @ L0 (UnityEngine.Rigidbody2D)
+	19 Nop
+	20 Return returnVal1 @ S0_v6 (System.Single)
+
+Method: System.Void set_angularVelocity(System.Single value)
+
+Disassembly:
+	0x1566127 I32Const 3928684
+	0x156612C I32Load 2, 0
+	0x156612F LocalTee 2
+	0x1566131 I32Eqz
+	0x1566132 If -64
+	0x1566134 I32Const 3928684
+	0x1566139 I32Const 3540827
+	0x156613E Call 73893
+	0x1566142 LocalTee 2
+	0x1566144 I32Store 2, 0
+	0x1566147 End
+	0x1566148 LocalGet 0
+	0x156614A LocalGet 1
+	0x156614C LocalGet 2
+	0x156614E I32Const 127
+	0x1566151 I32And
+	0x1566152 I32Const 79620
+	0x1566156 I32Add
+	0x1566157 CallIndirect 14, 0
+	0x156615A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF26C], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3540827
+	9 Nop
+	10 Move [3BF26C], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 127
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 79620
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Rigidbody2D), value @ L1 (System.Single)
+	20 Nop
+	21 Return
+
+Method: System.Void set_bodyType(UnityEngine.RigidbodyType2D value)
+
+Disassembly:
+	0x15661C3 LocalGet 0
+	0x15661C5 LocalGet 1
+	0x15661C7 I32Const 0
+	0x15661C9 Call 71183
+	0x15661CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid Collider2D.set_isTrigger, this @ L0 (UnityEngine.Rigidbody2D), value @ L1 (UnityEngine.RigidbodyType2D)
+	4 Nop
+	5 Return
+
+Method: System.Void set_isKinematic(System.Boolean value)
+
+Disassembly:
+	0x1566270 I32Const 3928704
+	0x1566275 I32Load 2, 0
+	0x1566278 LocalTee 2
+	0x156627A I32Eqz
+	0x156627B If -64
+	0x156627D I32Const 3928704
+	0x1566282 I32Const 3541131
+	0x1566287 Call 73893
+	0x156628B LocalTee 2
+	0x156628D I32Store 2, 0
+	0x1566290 End
+	0x1566291 LocalGet 0
+	0x1566293 LocalGet 1
+	0x1566295 LocalGet 2
+	0x1566297 I32Const 16383
+	0x156629B I32And
+	0x156629C I32Const 80504
+	0x15662A0 I32Add
+	0x15662A1 CallIndirect 4, 0
+	0x15662A4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF280], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3541131
+	9 Nop
+	10 Move [3BF280], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Rigidbody2D), value @ L1 (System.Boolean)
+	20 Nop
+	21 Return
+
+Method: System.Void get_position_Injected(out UnityEngine.Vector2 ret)
+
+Disassembly:
+	0x15662A7 LocalGet 0
+	0x15662A9 LocalGet 1
+	0x15662AB I32Const 1
+	0x15662AD I32And
+	0x15662AE I32Const 0
+	0x15662B0 Call 71186
+	0x15662B4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.Boolean), ret @ L1 (UnityEngine.Vector2&), 1
+	4 Nop
+	5 CallVoid Rigidbody2D.set_isKinematic, this @ L0 (UnityEngine.Rigidbody2D), v5 @ S1_v2 (System.Boolean)
+	6 Nop
+	7 Return
+
+Method: System.Void set_position_Injected(ref UnityEngine.Vector2 value)
+
+Disassembly:
+	0x1566036 I32Const 3928668
+	0x156603B I32Load 2, 0
+	0x156603E LocalTee 2
+	0x1566040 I32Eqz
+	0x1566041 If -64
+	0x1566043 I32Const 3928668
+	0x1566048 I32Const 3540596
+	0x156604D Call 73893
+	0x1566051 LocalTee 2
+	0x1566053 I32Store 2, 0
+	0x1566056 End
+	0x1566057 LocalGet 0
+	0x1566059 LocalGet 1
+	0x156605B LocalGet 2
+	0x156605D I32Const 16383
+	0x1566061 I32And
+	0x1566062 I32Const 80504
+	0x1566066 I32Add
+	0x1566067 CallIndirect 4, 0
+	0x156606A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF25C], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3540596
+	9 Nop
+	10 Move [3BF25C], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Rigidbody2D), value @ L1 (UnityEngine.Vector2&)
+	20 Nop
+	21 Return
+
+Method: System.Void get_velocity_Injected(out UnityEngine.Vector2 ret)
+
+Disassembly:
+	0x156607A I32Const 3928672
+	0x156607F I32Load 2, 0
+	0x1566082 LocalTee 2
+	0x1566084 I32Eqz
+	0x1566085 If -64
+	0x1566087 I32Const 3928672
+	0x156608C I32Const 3540665
+	0x1566091 Call 73893
+	0x1566095 LocalTee 2
+	0x1566097 I32Store 2, 0
+	0x156609A End
+	0x156609B LocalGet 0
+	0x156609D LocalGet 1
+	0x156609F LocalGet 2
+	0x15660A1 I32Const 16383
+	0x15660A5 I32And
+	0x15660A6 I32Const 80504
+	0x15660AA I32Add
+	0x15660AB CallIndirect 4, 0
+	0x15660AE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF260], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3540665
+	9 Nop
+	10 Move [3BF260], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Rigidbody2D), ret @ L1 (UnityEngine.Vector2&)
+	20 Nop
+	21 Return
+
+Method: System.Void set_velocity_Injected(ref UnityEngine.Vector2 value)
+
+Disassembly:
+	0x156618C I32Const 3928688
+	0x1566191 I32Load 2, 0
+	0x1566194 LocalTee 2
+	0x1566196 I32Eqz
+	0x1566197 If -64
+	0x1566199 I32Const 3928688
+	0x156619E I32Const 3540886
+	0x15661A3 Call 73893
+	0x15661A7 LocalTee 2
+	0x15661A9 I32Store 2, 0
+	0x15661AC End
+	0x15661AD LocalGet 0
+	0x15661AF LocalGet 1
+	0x15661B1 LocalGet 2
+	0x15661B3 I32Const 16383
+	0x15661B7 I32And
+	0x15661B8 I32Const 80504
+	0x15661BC I32Add
+	0x15661BD CallIndirect 4, 0
+	0x15661C0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BF270], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3540886
+	9 Nop
+	10 Move [3BF270], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.Rigidbody2D), value @ L1 (UnityEngine.Vector2&)
+	20 Nop
+	21 Return
+

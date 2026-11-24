@@ -1,0 +1,143 @@
+Type: SYBO.Subway.Level.CheckpointTrigger
+
+Method: System.Void Awake()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (SYBO.Subway.Level.CheckpointTrigger)
+	3 Nop
+	4 Return
+
+Method: System.Void Handler_OnCharacterEnter(System.Object sender, System.EventArgs e)
+
+Disassembly:
+	0xE4CAE6 LocalGet 1
+	0xE4CAE8 I32Load8_S 0, 12
+	0xE4CAEB I32Eqz
+	0xE4CAEC If -64
+	0xE4CAEE LocalGet 1
+	0xE4CAF0 I32Const 0
+	0xE4CAF2 Call 62781
+	0xE4CAF6 LocalGet 2
+	0xE4CAF8 I32Const 0
+	0xE4CAFA Call 63022
+	0xE4CAFE End
+	0xE4CAFF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), [sender @ L1 (System.Object)+C], 0
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Call Component.get_tag, v7 @ S0_v6 (System.String), sender @ L1 (System.Object)
+	8 Nop
+	9 Nop
+	10 CallVoid GameObject.set_tag, v7 @ S0_v6 (System.String), e @ L2 (System.EventArgs)
+	11 Nop
+	12 Nop
+	13 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE4B238 I32Const 4557929
+	0xE4B23D I32Load8_S 0, 0
+	0xE4B240 I32Eqz
+	0xE4B241 If -64
+	0xE4B243 I32Const 2943748
+	0xE4B248 I32Load 2, 0
+	0xE4B24B Call 73003
+	0xE4B24F I32Const 4557929
+	0xE4B254 I32Const 1
+	0xE4B256 I32Store8 0, 0
+	0xE4B259 End
+	0xE4B25A LocalGet 0
+	0xE4B25C I32Const 12
+	0xE4B25E I32Add
+	0xE4B25F LocalGet 0
+	0xE4B261 I32Const 4445976
+	0xE4B266 I32Load 2, 0
+	0xE4B269 Call 29285
+	0xE4B26D I32Store 2, 0
+	0xE4B270 LocalGet 0
+	0xE4B272 I32Load 2, 12
+	0xE4B275 I32Const 4428376
+	0xE4B27A I32Load 2, 0
+	0xE4B27D Call 72556
+	0xE4B281 LocalTee 3
+	0xE4B283 LocalTee 2
+	0xE4B285 I32Const 4474488
+	0xE4B28A I32Load 2, 0
+	0xE4B28D LocalTee 4
+	0xE4B28F I32Load 2, 0
+	0xE4B292 I32Store 2, 8
+	0xE4B295 LocalGet 2
+	0xE4B297 LocalGet 4
+	0xE4B299 I32Store 2, 20
+	0xE4B29C LocalGet 2
+	0xE4B29E I32Const 16
+	0xE4B2A0 I32Add
+	0xE4B2A1 LocalGet 0
+	0xE4B2A3 I32Store 2, 0
+	0xE4B2A6 LocalGet 3
+	0xE4B2A8 I32Const 0
+	0xE4B2AA Call 38874
+	0xE4B2AE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v10, [2CEB04]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [458C69], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (SYBO.Subway.Level.CheckpointTrigger), 12
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call Component.GetComponent, v18 @ S1_v4 (SYBO.Subway.Level.CharacterCollisionTrigger), this @ L0 (SYBO.Subway.Level.CheckpointTrigger)
+	19 Move [v14 @ S0_v6], v18 @ S1_v4 (SYBO.Subway.Level.CharacterCollisionTrigger)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Call 11B6C, v23 @ S1_v7 (System.EventHandler), typeof(System.EventHandler)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Move v27 @ S2_v4 (Il2CppMethodInfo), methodof(SYBO.Subway.Level.CheckpointTrigger::Handler_OnCharacterEnter)
+	29 Nop
+	30 Nop
+	31 Move v23.method_ptr (System.IntPtr), [v27 @ S2_v4 (Il2CppMethodInfo)]
+	32 Nop
+	33 Nop
+	34 Move v23.method (System.IntPtr), methodof(SYBO.Subway.Level.CheckpointTrigger::Handler_OnCharacterEnter)
+	35 Nop
+	36 Nop
+	37 Add v34 @ S1_v10, v23 @ S1_v7 (System.EventHandler), 16
+	38 Nop
+	39 Move [v34 @ S1_v10], this @ L0 (SYBO.Subway.Level.CheckpointTrigger)
+	40 Nop
+	41 Nop
+	42 CallVoid CharacterCollisionTrigger.remove_OnCharacterEnter, this._trigger (SYBO.Subway.Level.CharacterCollisionTrigger), v23 @ S1_v7 (System.EventHandler)
+	43 Nop
+	44 Return
+

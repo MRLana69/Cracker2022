@@ -1,0 +1,155 @@
+Type: SYBO.Common.Automation.Steps.CompoundAutomationStep
+
+Method: System.Void .ctor(SYBO.Common.Automation.IAutomationStep[] steps)
+
+Disassembly:
+	0xC5FB8A LocalGet 0
+	0xC5FB8C LocalGet 1
+	0xC5FB8E I32Const 1
+	0xC5FB90 I32And
+	0xC5FB91 I32Store8 0, 8
+	0xC5FB94 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (SYBO.Common.Automation.IAutomationStep[]), steps @ L1 (SYBO.Common.Automation.IAutomationStep[]), 1
+	4 Move this._steps (SYBO.Common.Automation.IAutomationStep[]), v5 @ S1_v2 (SYBO.Common.Automation.IAutomationStep[])
+	5 Nop
+	6 Return
+
+Method: System.Void Initialize()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void Cleanup()
+
+Disassembly:
+	0xE21652 I32Const 4557328
+	0xE21657 I32Load8_S 0, 0
+	0xE2165A I32Eqz
+	0xE2165B If -64
+	0xE2165D I32Const 2946392
+	0xE21662 I32Load 2, 0
+	0xE21665 Call 73003
+	0xE21669 I32Const 4557328
+	0xE2166E I32Const 1
+	0xE21670 I32Store8 0, 0
+	0xE21673 End
+	0xE21674 I32Const 0
+	0xE21676 LocalSet 1
+	0xE21678 Loop -64
+	0xE2167A LocalGet 1
+	0xE2167C LocalGet 0
+	0xE2167E I32Load 2, 8
+	0xE21681 I32Load 2, 12
+	0xE21684 I32Lt_S
+	0xE21685 If -64
+	0xE21687 I32Const 1
+	0xE21689 I32Const 4440496
+	0xE2168E I32Load 2, 0
+	0xE21691 LocalGet 0
+	0xE21693 I32Load 2, 8
+	0xE21696 I32Const 16
+	0xE21698 I32Add
+	0xE21699 LocalGet 1
+	0xE2169B I32Const 2
+	0xE2169D I32Shl
+	0xE2169E I32Add
+	0xE2169F I32Load 2, 0
+	0xE216A2 Call 29725
+	0xE216A6 LocalGet 1
+	0xE216A8 I32Const 1
+	0xE216AA I32Add
+	0xE216AB LocalSet 1
+	0xE216AD Br 1
+	0xE216AF End
+	0xE216B0 End
+	0xE216B1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v13, [2CF558]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [458A10], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Move v33 @ S1_v4 (SYBO.Common.Automation.IAutomationStep[]), this._steps (SYBO.Common.Automation.IAutomationStep[])
+	18 Nop
+	19 CheckLess v35 @ S0_v8 (System.Boolean), v13 @ L1_v2, v33.Length
+	20 Not v27 @ TEMP_v3 (System.Boolean), v35 @ S0_v8 (System.Boolean)
+	21 ConditionalJump @b7, v27 @ TEMP_v3 (System.Boolean)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Add v42 @ S2_v4, this._steps (SYBO.Common.Automation.IAutomationStep[]), 16
+	29 Nop
+	30 Nop
+	31 ShiftLeft v20 @ S3_v4, v13 @ L1_v2, 2
+	32 Add v44 @ S2_v5, v42 @ S2_v4, v20 @ S3_v4
+	33 Nop
+	34 CallVoid 741D, 1, typeof(SYBO.Common.Automation.IAutomationStep), [v44 @ S2_v5]
+	35 Nop
+	36 Nop
+	37 Add v29 @ S0_v11, v13 @ L1_v2, 1
+	38 Nop
+	39 Jump @b9
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Return
+
+Method: System.Boolean get_IsDone()
+
+Disassembly:
+	0xC13ADF LocalGet 0
+	0xC13AE1 I32Load8_S 0, 8
+	0xC13AE4 I32Const 0
+	0xC13AE6 I32Ne
+	0xC13AE7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._steps (SYBO.Common.Automation.IAutomationStep[]), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void Update(System.Single unscaledDeltaTime)
+
+Disassembly:
+	0xC24A78 LocalGet 0
+	0xC24A7A LocalGet 1
+	0xC24A7C F32Store 2, 8
+	0xC24A7F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._steps (SYBO.Common.Automation.IAutomationStep[]), unscaledDeltaTime @ L1 (System.Single)
+	3 Nop
+	4 Return
+

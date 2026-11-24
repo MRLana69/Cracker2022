@@ -1,0 +1,131 @@
+Type: SYBO.Common.Utilities.MTRandomGenTest
+
+Method: System.String TestIncrement()
+
+Disassembly:
+	0xE31676 GlobalGet 7
+	0xE31678 LocalSet 0
+	0xE3167A GlobalGet 7
+	0xE3167C I32Const 16
+	0xE3167E I32Add
+	0xE3167F GlobalSet 7
+	0xE31681 I32Const 4557527
+	0xE31686 I32Load8_S 0, 0
+	0xE31689 I32Eqz
+	0xE3168A If -64
+	0xE3168C I32Const 3007944
+	0xE31691 I32Load 2, 0
+	0xE31694 Call 73003
+	0xE31698 I32Const 4557527
+	0xE3169D I32Const 1
+	0xE3169F I32Store8 0, 0
+	0xE316A2 End
+	0xE316A3 LocalGet 0
+	0xE316A5 I64Const 0
+	0xE316A7 I64Store 3, 0
+	0xE316AA I32Const 4428064
+	0xE316AF I32Load 2, 0
+	0xE316B2 LocalTee 1
+	0xE316B4 I32Load16_S 1, 186
+	0xE316B8 I32Const 512
+	0xE316BB I32And
+	0xE316BC If -64
+	0xE316BE LocalGet 1
+	0xE316C0 I32Load 2, 116
+	0xE316C3 I32Eqz
+	0xE316C4 If -64
+	0xE316C6 LocalGet 1
+	0xE316C8 Call 72345
+	0xE316CC End
+	0xE316CD End
+	0xE316CE LocalGet 0
+	0xE316D0 I32Const 0
+	0xE316D2 Call 56522
+	0xE316D6 I64Store 3, 0
+	0xE316D9 LocalGet 0
+	0xE316DB I64Load 3, 0
+	0xE316DE I64Const 4611686018427387903
+	0xE316E8 I64And
+	0xE316E9 LocalSet 2
+	0xE316EB I32Const 4440648
+	0xE316F0 I32Load 2, 0
+	0xE316F3 Call 72556
+	0xE316F7 LocalTee 1
+	0xE316F9 LocalGet 2
+	0xE316FB I64Const 4294967295
+	0xE31701 I64Rem_S
+	0xE31702 I32Wrap_I64
+	0xE31703 I32Const 0
+	0xE31705 I32Const 0
+	0xE31707 Call 38254
+	0xE3170B LocalGet 0
+	0xE3170D GlobalSet 7
+	0xE3170F LocalGet 1
+	0xE31711 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b11
+	11 Nop
+	12 Move v12 @ S0_v28, [2DE5C8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v28
+	14 Nop
+	15 Move v14 @ S1_v10, 1
+	16 Move [458AD7], v14 @ S1_v10
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Move v20 @ S0_v10 (Il2CppClass<System.DateTime>), typeof(System.DateTime)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v24 @ S0_v12, [v20 @ S0_v10 (Il2CppClass<System.DateTime>)+BA], 512
+	27 CheckEqual v25 @ TEMP_v2 (System.Boolean), v24 @ S0_v12, 0
+	28 ConditionalJump @b12, v25 @ TEMP_v2 (System.Boolean)
+	29 Move v26 @ S0_v23 (Il2CppClass<System.DateTime>), typeof(System.DateTime)
+	30 Nop
+	31 CheckEqual v28 @ S0_v25 (System.Boolean), [v26 @ S0_v23 (Il2CppClass<System.DateTime>)+74], 0
+	32 Not v29 @ TEMP_v6 (System.Boolean), v28 @ S0_v25 (System.Boolean)
+	33 ConditionalJump @b12, v29 @ TEMP_v6 (System.Boolean)
+	34 Nop
+	35 CallVoid 11A99, typeof(System.DateTime)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call DateTime.get_UtcNow, v35 @ S1_v6 (System.DateTime)
+	41 Move [v1 @ G7], v35 @ S1_v6 (System.DateTime)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v39 @ S0_v17, [v1 @ G7], 4611686018427387903
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Call 11B6C, v43 @ S0_v20 (SYBO.Common.Managers.TimeScaleManager), typeof(SYBO.Common.Utilities.MTRandomGen)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Divide v47 @ TEMP_v4, v39 @ S0_v17, 4294967295
+	54 Multiply v48 @ TEMP_v5, v47 @ TEMP_v4, 4294967295
+	55 Subtract v49 @ S1_v9 (System.Object), v39 @ S0_v17, v48 @ TEMP_v5
+	56 Nop
+	57 Nop
+	58 CallVoid TimeScaleManager.InputManager_OnInputEvent, v43 @ S0_v20 (SYBO.Common.Managers.TimeScaleManager), v49 @ S1_v9 (System.Object), 0
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Return v43 @ S0_v20 (SYBO.Common.Managers.TimeScaleManager)
+

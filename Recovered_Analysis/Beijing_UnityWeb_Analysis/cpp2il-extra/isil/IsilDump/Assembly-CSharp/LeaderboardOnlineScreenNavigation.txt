@@ -1,0 +1,157 @@
+Type: LeaderboardOnlineScreenNavigation
+
+Method: System.Void Update()
+
+Disassembly:
+	0xC964C1 I32Const 4552396
+	0xC964C6 I32Load8_S 0, 0
+	0xC964C9 I32Eqz
+	0xC964CA If -64
+	0xC964CC I32Const 2969780
+	0xC964D1 I32Load 2, 0
+	0xC964D4 Call 73003
+	0xC964D8 I32Const 4552396
+	0xC964DD I32Const 1
+	0xC964DF I32Store8 0, 0
+	0xC964E2 End
+	0xC964E3 I32Const 4437688
+	0xC964E8 I32Load 2, 0
+	0xC964EB Call 72556
+	0xC964EF LocalTee 1
+	0xC964F1 I32Const 4486860
+	0xC964F6 I32Load 2, 0
+	0xC964F9 Call 29311
+	0xC964FD LocalGet 0
+	0xC964FF I32Const 16
+	0xC96501 I32Add
+	0xC96502 LocalGet 1
+	0xC96504 I32Store 2, 0
+	0xC96507 LocalGet 0
+	0xC96509 I32Const 2
+	0xC9650B I32Store 2, 20
+	0xC9650E LocalGet 0
+	0xC96510 I32Const 0
+	0xC96512 Call 62657
+	0xC96516 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v13, [2D50B4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [4576CC], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.Generic.List`1<UITexture>), typeof(System.Collections.Generic.List`1<UITexture>)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid List`1<UITexture>..ctor, v13 @ S0_v7 (System.Collections.Generic.List`1<UITexture>)
+	19 Nop
+	20 Nop
+	21 Add v20 @ S0_v9, this @ L0 (LeaderboardOnlineScreenNavigation), 16
+	22 Nop
+	23 Move [v20 @ S0_v9], v13 @ S0_v7 (System.Collections.Generic.List`1<UITexture>)
+	24 Nop
+	25 Nop
+	26 Move [this @ L0 (LeaderboardOnlineScreenNavigation)+14], 2
+	27 Nop
+	28 Nop
+	29 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (LeaderboardOnlineScreenNavigation)
+	30 Nop
+	31 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xEBAB07 I32Const 274
+	0xEBAB0A I32Const 0
+	0xEBAB0C Call 71422
+	0xEBAB10 If -64
+	0xEBAB12 LocalGet 0
+	0xEBAB14 I32Load 2, 12
+	0xEBAB17 LocalGet 0
+	0xEBAB19 I32Load 2, 12
+	0xEBAB1C I32Const 0
+	0xEBAB1E Call 35894
+	0xEBAB22 F32Const 2
+	0xEBAB27 I32Const 0
+	0xEBAB29 Call 64300
+	0xEBAB2D F32Mul
+	0xEBAB2E F32Add
+	0xEBAB2F I32Const 1
+	0xEBAB31 I32Const 0
+	0xEBAB33 Call 35893
+	0xEBAB37 End
+	0xEBAB38 I32Const 273
+	0xEBAB3B I32Const 0
+	0xEBAB3D Call 71422
+	0xEBAB41 If -64
+	0xEBAB43 LocalGet 0
+	0xEBAB45 I32Load 2, 12
+	0xEBAB48 LocalGet 0
+	0xEBAB4A I32Load 2, 12
+	0xEBAB4D I32Const 0
+	0xEBAB4F Call 35894
+	0xEBAB53 F32Const 2
+	0xEBAB58 I32Const 0
+	0xEBAB5A Call 64300
+	0xEBAB5E F32Mul
+	0xEBAB5F F32Sub
+	0xEBAB60 I32Const 1
+	0xEBAB62 I32Const 0
+	0xEBAB64 Call 35893
+	0xEBAB68 End
+	0xEBAB69 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Input.GetKeyUp, v2 @ S0_v2 (System.Boolean), 274
+	3 Not v3 @ TEMP_v1 (System.Boolean), v2 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b7, v3 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Call UIProgressBar.get_alpha, v10 @ S1_v11 (System.Single), this.scrollbar (UIScrollBar)
+	11 Nop
+	12 Nop
+	13 Call Time.get_unscaledTime, v25 @ S3_v7 (System.Single)
+	14 Multiply v27 @ S2_v9 (System.Single), 2f, v25 @ S3_v7 (System.Single)
+	15 Add v18 @ S1_v12 (System.Single), v10 @ S1_v11 (System.Single), v27 @ S2_v9 (System.Single)
+	16 Nop
+	17 Nop
+	18 CallVoid TweenAlpha.OnUpdate, this.scrollbar (UIScrollBar), v18 @ S1_v12 (System.Single), 1
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call Input.GetKeyUp, v22 @ S0_v5 (System.Boolean), 273
+	23 Not v26 @ TEMP_v2 (System.Boolean), v22 @ S0_v5 (System.Boolean)
+	24 ConditionalJump @b12, v26 @ TEMP_v2 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call UIProgressBar.get_alpha, v33 @ S1_v7 (System.Single), this.scrollbar (UIScrollBar)
+	31 Nop
+	32 Nop
+	33 Call Time.get_unscaledTime, v43 @ S3_v4 (System.Single)
+	34 Multiply v44 @ S2_v5 (System.Single), 2f, v43 @ S3_v4 (System.Single)
+	35 Subtract v39 @ S1_v8 (System.Single), v33 @ S1_v7 (System.Single), v44 @ S2_v5 (System.Single)
+	36 Nop
+	37 Nop
+	38 CallVoid TweenAlpha.OnUpdate, this.scrollbar (UIScrollBar), v39 @ S1_v8 (System.Single), 1
+	39 Nop
+	40 Nop
+	41 Return
+

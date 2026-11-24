@@ -1,0 +1,132 @@
+Type: UnityEngine.LayerMask
+
+Method: System.Int32 op_Implicit(UnityEngine.LayerMask mask)
+
+Disassembly:
+	0xF7916A LocalGet 0
+	0xF7916C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return mask @ L0 (UnityEngine.LayerMask)
+
+Method: UnityEngine.LayerMask op_Implicit(System.Int32 intVal)
+
+Disassembly:
+	0xC41A3D LocalGet 0
+	0xC41A3F I32Load 2, 0
+	0xC41A42 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return intVal.m_value (System.Int32)
+
+Method: System.Int32 get_value()
+
+Disassembly:
+	0xD89CD4 GlobalGet 7
+	0xD89CD6 LocalSet 1
+	0xD89CD8 GlobalGet 7
+	0xD89CDA I32Const 16
+	0xD89CDC I32Add
+	0xD89CDD GlobalSet 7
+	0xD89CDF LocalGet 1
+	0xD89CE1 I32Const 0
+	0xD89CE3 I32Store 2, 0
+	0xD89CE6 LocalGet 1
+	0xD89CE8 LocalGet 0
+	0xD89CEA I32Store 2, 0
+	0xD89CED LocalGet 1
+	0xD89CEF I32Load 2, 0
+	0xD89CF2 LocalGet 1
+	0xD89CF4 GlobalSet 7
+	0xD89CF6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], this @ L0 (UnityEngine.LayerMask)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return [v1 @ G7]
+
+Method: System.Void set_value(System.Int32 value)
+
+Disassembly:
+	0x137AB12 I32Const 3926096
+	0x137AB17 I32Load 2, 0
+	0x137AB1A LocalTee 2
+	0x137AB1C I32Eqz
+	0x137AB1D If -64
+	0x137AB1F I32Const 3926096
+	0x137AB24 I32Const 3494355
+	0x137AB29 Call 73893
+	0x137AB2D LocalTee 2
+	0x137AB2F I32Store 2, 0
+	0x137AB32 End
+	0x137AB33 LocalGet 0
+	0x137AB35 LocalGet 1
+	0x137AB37 LocalGet 2
+	0x137AB39 I32Const 16383
+	0x137AB3D I32And
+	0x137AB3E I32Const 80504
+	0x137AB42 I32Add
+	0x137AB43 CallIndirect 4, 0
+	0x137AB46 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE850], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3494355
+	9 Nop
+	10 Move [3BE850], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.LayerMask), value @ L1 (System.Int32)
+	20 Nop
+	21 Return
+
+Method: System.Int32 NameToLayer(System.String layerName)
+
+Disassembly:
+	0xFFF9B0 LocalGet 0
+	0xFFF9B2 I32Const 8
+	0xFFF9B4 I32Add
+	0xFFF9B5 I32Load 2, 0
+	0xFFF9B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, layerName @ L0 (System.String), 8
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2]
+

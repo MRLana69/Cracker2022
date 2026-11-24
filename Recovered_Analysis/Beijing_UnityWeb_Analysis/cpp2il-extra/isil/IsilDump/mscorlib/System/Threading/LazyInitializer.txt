@@ -1,0 +1,79 @@
+Type: System.Threading.LazyInitializer
+
+Method: T EnsureInitialized(ref T target, System.Func`1<T> valueFactory)
+
+Disassembly:
+	0x115D394 LocalGet 0
+	0x115D396 I32Load 2, 8
+	0x115D399 I32Const 16
+	0x115D39B I32Add
+	0x115D39C LocalGet 1
+	0x115D39E I32Const 2
+	0x115D3A0 I32Shl
+	0x115D3A1 I32Add
+	0x115D3A2 I32Load 2, 0
+	0x115D3A5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v4 @ S0_v3, [target @ L0 (T&)+8], 16
+	4 Nop
+	5 Nop
+	6 ShiftLeft v8 @ S1_v3, valueFactory @ L1 (System.Func`1<T>), 2
+	7 Add v9 @ S0_v4, v4 @ S0_v3, v8 @ S1_v3
+	8 Nop
+	9 Nop
+	10 Return [v9 @ S0_v4]
+
+Method: T EnsureInitializedCore(ref T target, System.Func`1<T> valueFactory)
+
+Disassembly:
+	0x106A8C9 LocalGet 0
+	0x106A8CB I32Load 2, 0
+	0x106A8CE If -1
+	0x106A8D0 LocalGet 0
+	0x106A8D2 I32Load 2, 0
+	0x106A8D5 Else
+	0x106A8D6 LocalGet 0
+	0x106A8D8 LocalGet 1
+	0x106A8DA LocalGet 2
+	0x106A8DC I32Load 2, 24
+	0x106A8DF I32Load 2, 8
+	0x106A8E2 LocalTee 0
+	0x106A8E4 LocalGet 0
+	0x106A8E6 I32Load 2, 0
+	0x106A8E9 I32Const 8191
+	0x106A8EC I32And
+	0x106A8ED I32Const 22691
+	0x106A8F1 I32Add
+	0x106A8F2 CallIndirect 5, 0
+	0x106A8F5 End
+	0x106A8F6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), [target @ L0 (T&)], 0
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Move returnVal1 @ S0_v3 (T), [target @ L0 (T&)]
+	6 Jump @b5
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Move v11 @ S2_v3, [methodInfo @ L2 (Il2CppMethodInfo)+18]
+	11 Move v12 @ S2_v4, [v11 @ S2_v3+8]
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v17 @ S3_v4, [v12 @ S2_v4], 8191
+	17 Nop
+	18 Add v19 @ S3_v5, v17 @ S3_v4, 22691
+	19 IndirectCall v19 @ S3_v5, returnVal1 @ S0_v3 (T), target @ L0 (T&), valueFactory @ L1 (System.Func`1<T>), v12 @ S2_v4
+	20 Nop
+	21 Nop
+	22 Return returnVal1 @ S0_v3 (T)
+

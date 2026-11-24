@@ -1,0 +1,92 @@
+Type: System.Runtime.Serialization.ValueTypeFixupInfo
+
+Method: System.Void .ctor(System.Int64 containerID, System.Reflection.FieldInfo member, System.Int32[] parentIndex)
+
+Disassembly:
+	0x12342BF LocalGet 0
+	0x12342C1 LocalGet 1
+	0x12342C3 I64Store 3, 8
+	0x12342C6 LocalGet 0
+	0x12342C8 I32Const 16
+	0x12342CA I32Add
+	0x12342CB LocalGet 2
+	0x12342CD I32Store 2, 0
+	0x12342D0 LocalGet 0
+	0x12342D2 LocalGet 3
+	0x12342D4 I32Store 2, 20
+	0x12342D7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.m_containerID (System.Int64), containerID @ L1 (System.Int64)
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v3, this @ L0 (System.Runtime.Serialization.ValueTypeFixupInfo), 16
+	6 Nop
+	7 Move [v6 @ S0_v3], member @ L2 (System.Reflection.FieldInfo)
+	8 Nop
+	9 Nop
+	10 Move this.m_parentIndex (System.Int32[]), parentIndex @ L3 (System.Int32[])
+	11 Nop
+	12 Return
+
+Method: System.Int64 get_ContainerID()
+
+Disassembly:
+	0x109DF8D LocalGet 0
+	0x109DF8F I32Load 2, 8
+	0x109DF92 I32Const 16
+	0x109DF94 I32Add
+	0x109DF95 LocalGet 0
+	0x109DF97 I32Load 2, 20
+	0x109DF9A I32Const 3
+	0x109DF9C I32Shl
+	0x109DF9D I32Add
+	0x109DF9E I64Load 3, 0
+	0x109DFA1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v4 @ S0_v3, this.m_containerID (System.Int64), 16
+	4 Nop
+	5 Nop
+	6 Nop
+	7 ShiftLeft v8 @ S1_v4, this.m_parentIndex (System.Int32[]), 3
+	8 Add v9 @ S0_v4, v4 @ S0_v3, v8 @ S1_v4
+	9 Nop
+	10 Nop
+	11 Return [v9 @ S0_v4]
+
+Method: System.Reflection.FieldInfo get_ParentField()
+
+Disassembly:
+	0xFFF9A5 LocalGet 0
+	0xFFF9A7 I32Const 8
+	0xFFF9A9 I32Add
+	0xFFF9AA I32Load 2, 4
+	0xFFF9AD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.Serialization.ValueTypeFixupInfo), 8
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2+4]
+
+Method: System.Int32[] get_ParentIndex()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_parentField (System.Reflection.FieldInfo)
+

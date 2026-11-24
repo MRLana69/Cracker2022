@@ -1,0 +1,90 @@
+Type: <PrivateImplementationDetails>
+
+Method: System.UInt32 ComputeStringHash(System.String s)
+
+Disassembly:
+	0x12CF378 I32Const 4571094
+	0x12CF37D I32Load8_S 0, 0
+	0x12CF380 I32Eqz
+	0x12CF381 If -64
+	0x12CF383 I32Const 2922788
+	0x12CF388 I32Load 2, 0
+	0x12CF38B Call 73003
+	0x12CF38F I32Const 4571094
+	0x12CF394 I32Const 1
+	0x12CF396 I32Store8 0, 0
+	0x12CF399 End
+	0x12CF39A I32Const 4435508
+	0x12CF39F I32Load 2, 0
+	0x12CF3A2 LocalTee 1
+	0x12CF3A4 I32Load16_S 1, 186
+	0x12CF3A8 I32Const 512
+	0x12CF3AB I32And
+	0x12CF3AC If -64
+	0x12CF3AE LocalGet 1
+	0x12CF3B0 I32Load 2, 116
+	0x12CF3B3 I32Eqz
+	0x12CF3B4 If -64
+	0x12CF3B6 LocalGet 1
+	0x12CF3B8 Call 72345
+	0x12CF3BC I32Const 4435508
+	0x12CF3C1 I32Load 2, 0
+	0x12CF3C4 LocalSet 1
+	0x12CF3C6 End
+	0x12CF3C7 End
+	0x12CF3C8 LocalGet 1
+	0x12CF3CA I32Load 2, 92
+	0x12CF3CD I32Load 2, 4
+	0x12CF3D0 LocalGet 0
+	0x12CF3D2 I32Const 4449940
+	0x12CF3D7 I32Load 2, 0
+	0x12CF3DA Call 29792
+	0x12CF3DE I32Const 0
+	0x12CF3E0 Call 60013
+	0x12CF3E4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v22, [2C9924]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45BFD6], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<ABTest.ABTestManager>), typeof(ABTest.ABTestManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<ABTest.ABTestManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b12, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v15 (Il2CppClass<ABTest.ABTestManager>), typeof(ABTest.ABTestManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v17 (System.Boolean), [v18 @ S0_v15 (Il2CppClass<ABTest.ABTestManager>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v17 (System.Boolean)
+	24 ConditionalJump @b12, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(ABTest.ABTestManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call Dictionary`2<System.String, ABTest.ABTest>.get_Item, v34 @ S0_v13 (ABTest.ABTest), v28._tests (System.Collections.Generic.Dictionary`2<System.String, ABTest.ABTest>), s @ L0 (System.String)
+	39 Nop
+	40 Call ABTestManager.IsActive, returnVal1 @ S0_v14 (System.UInt32), v34 @ S0_v13 (ABTest.ABTest)
+	41 Nop
+	42 Return returnVal1 @ S0_v14 (System.UInt32)
+

@@ -1,0 +1,324 @@
+Type: SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent
+
+Method: TrackEventTrigger get_Trigger()
+
+Disassembly:
+	0xC765EA LocalGet 0
+	0xC765EC I32Load8_S 0, 20
+	0xC765EF I32Const 0
+	0xC765F1 I32Ne
+	0xC765F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._trackObject (TrackObject), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void Initialize()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent)
+	3 Nop
+	4 Return
+
+Method: System.Void OnDestroy()
+
+Disassembly:
+	0xE56BDE I32Const 4558055
+	0xE56BE3 I32Load8_S 0, 0
+	0xE56BE6 I32Eqz
+	0xE56BE7 If -64
+	0xE56BE9 I32Const 2943344
+	0xE56BEE I32Load 2, 0
+	0xE56BF1 Call 73003
+	0xE56BF5 I32Const 4558055
+	0xE56BFA I32Const 1
+	0xE56BFC I32Store8 0, 0
+	0xE56BFF End
+	0xE56C00 LocalGet 0
+	0xE56C02 I32Const 0
+	0xE56C04 Call 39084
+	0xE56C08 LocalGet 0
+	0xE56C0A I32Const 16
+	0xE56C0C I32Add
+	0xE56C0D LocalGet 0
+	0xE56C0F I32Const 0
+	0xE56C11 Call 62780
+	0xE56C15 I32Store 2, 0
+	0xE56C18 LocalGet 0
+	0xE56C1A I32Load 2, 36
+	0xE56C1D I32Const 4428376
+	0xE56C22 I32Load 2, 0
+	0xE56C25 Call 72556
+	0xE56C29 LocalTee 3
+	0xE56C2B LocalTee 2
+	0xE56C2D I32Const 4474556
+	0xE56C32 I32Load 2, 0
+	0xE56C35 LocalTee 4
+	0xE56C37 I32Load 2, 0
+	0xE56C3A I32Store 2, 8
+	0xE56C3D LocalGet 2
+	0xE56C3F LocalGet 4
+	0xE56C41 I32Store 2, 20
+	0xE56C44 LocalGet 2
+	0xE56C46 I32Const 16
+	0xE56C48 I32Add
+	0xE56C49 LocalGet 0
+	0xE56C4B I32Store 2, 0
+	0xE56C4E LocalGet 3
+	0xE56C50 I32Const 0
+	0xE56C52 Call 35721
+	0xE56C56 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v11, [2CE970]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [458CE7], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid TrackEvent.Start, this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent)
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v7, this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent), 16
+	18 Nop
+	19 Nop
+	20 Call Component.get_gameObject, v19 @ S1_v5 (UnityEngine.GameObject), this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent)
+	21 Move [v16 @ S0_v7], v19 @ S1_v5 (UnityEngine.GameObject)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Call 11B6C, v24 @ S1_v8 (System.EventHandler), typeof(System.EventHandler)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Move v28 @ S2_v3 (Il2CppMethodInfo), methodof(SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent::CharacterPassTrigger_Triggered)
+	31 Nop
+	32 Nop
+	33 Move v24.method_ptr (System.IntPtr), [v28 @ S2_v3 (Il2CppMethodInfo)]
+	34 Nop
+	35 Nop
+	36 Move v24.method (System.IntPtr), methodof(SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent::CharacterPassTrigger_Triggered)
+	37 Nop
+	38 Nop
+	39 Add v35 @ S1_v11, v24 @ S1_v8 (System.EventHandler), 16
+	40 Nop
+	41 Move [v35 @ S1_v11], this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent)
+	42 Nop
+	43 Nop
+	44 CallVoid CharacterPassTrigger.remove_Triggered, this._trigger (CharacterPassTrigger), v24 @ S1_v8 (System.EventHandler)
+	45 Nop
+	46 Return
+
+Method: System.Void CharacterPassTrigger_Triggered(System.Object sender, System.EventArgs e)
+
+Disassembly:
+	0xE56033 I32Const 4558051
+	0xE56038 I32Load8_S 0, 0
+	0xE5603B I32Eqz
+	0xE5603C If -64
+	0xE5603E I32Const 3002144
+	0xE56043 I32Load 2, 0
+	0xE56046 Call 73003
+	0xE5604A I32Const 4558051
+	0xE5604F I32Const 1
+	0xE56051 I32Store8 0, 0
+	0xE56054 End
+	0xE56055 I32Const 7
+	0xE56057 LocalGet 0
+	0xE56059 LocalGet 1
+	0xE5605B Call 29437
+	0xE5605F LocalGet 0
+	0xE56061 I32Load 2, 20
+	0xE56064 If -64
+	0xE56066 LocalGet 0
+	0xE56068 I32Load 2, 20
+	0xE5606B LocalGet 2
+	0xE5606D I32Const 4475556
+	0xE56072 I32Load 2, 0
+	0xE56075 Call 31842
+	0xE56079 End
+	0xE5607A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v12, [2DCF20]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [458CE3], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid 72FD, 7, this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent), sender @ L1 (System.Object)
+	16 Nop
+	17 Nop
+	18 CheckEqual v18 @ TEMP_v2 (System.Boolean), this._trackObject (TrackObject), 0
+	19 ConditionalJump @b7, v18 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CallVoid 7C62, this._trackObject (TrackObject), e @ L2 (System.EventArgs), methodof(System.Action`1<System.Collections.Generic.List`1<SYBO.Subway.Level.Selector>>::Invoke)
+	26 Nop
+	27 Nop
+	28 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE56D26 I32Const 4558057
+	0xE56D2B I32Load8_S 0, 0
+	0xE56D2E I32Eqz
+	0xE56D2F If -64
+	0xE56D31 I32Const 2943348
+	0xE56D36 I32Load 2, 0
+	0xE56D39 Call 73003
+	0xE56D3D I32Const 4558057
+	0xE56D42 I32Const 1
+	0xE56D44 I32Store8 0, 0
+	0xE56D47 End
+	0xE56D48 LocalGet 0
+	0xE56D4A I32Const 0
+	0xE56D4C Call 39086
+	0xE56D50 LocalGet 0
+	0xE56D52 I32Load 2, 36
+	0xE56D55 I32Const 4433280
+	0xE56D5A I32Load 2, 0
+	0xE56D5D LocalTee 1
+	0xE56D5F I32Load16_S 1, 186
+	0xE56D63 I32Const 512
+	0xE56D66 I32And
+	0xE56D67 If -64
+	0xE56D69 LocalGet 1
+	0xE56D6B I32Load 2, 116
+	0xE56D6E I32Eqz
+	0xE56D6F If -64
+	0xE56D71 LocalGet 1
+	0xE56D73 Call 72345
+	0xE56D77 End
+	0xE56D78 End
+	0xE56D79 I32Const 0
+	0xE56D7B I32Const 0
+	0xE56D7D Call 63693
+	0xE56D81 If -64
+	0xE56D83 LocalGet 0
+	0xE56D85 I32Load 2, 36
+	0xE56D88 I32Const 4428376
+	0xE56D8D I32Load 2, 0
+	0xE56D90 Call 72556
+	0xE56D94 LocalTee 2
+	0xE56D96 LocalTee 3
+	0xE56D98 I32Const 4474556
+	0xE56D9D I32Load 2, 0
+	0xE56DA0 LocalTee 4
+	0xE56DA2 I32Load 2, 0
+	0xE56DA5 I32Store 2, 8
+	0xE56DA8 LocalGet 3
+	0xE56DAA LocalGet 4
+	0xE56DAC I32Store 2, 20
+	0xE56DAF LocalGet 3
+	0xE56DB1 I32Const 16
+	0xE56DB3 I32Add
+	0xE56DB4 LocalGet 0
+	0xE56DB6 I32Store 2, 0
+	0xE56DB9 LocalGet 2
+	0xE56DBB I32Const 0
+	0xE56DBD Call 35722
+	0xE56DC1 End
+	0xE56DC2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v13, [2CE974]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [458CE9], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid TrackEvent.EvaluateAndLaunchEvent, this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move v17 @ S1_v4 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 And v21 @ S1_v6, [v17 @ S1_v4 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	23 CheckEqual v22 @ TEMP_v2 (System.Boolean), v21 @ S1_v6, 0
+	24 ConditionalJump @b14, v22 @ TEMP_v2 (System.Boolean)
+	25 Move v23 @ S1_v17 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	26 Nop
+	27 CheckEqual v25 @ S1_v19 (System.Boolean), [v23 @ S1_v17 (Il2CppClass<UnityEngine.Object>)+74], 0
+	28 Not v26 @ TEMP_v5 (System.Boolean), v25 @ S1_v19 (System.Boolean)
+	29 ConditionalJump @b14, v26 @ TEMP_v5 (System.Boolean)
+	30 Nop
+	31 CallVoid 11A99, typeof(UnityEngine.Object)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call ComputeShader.FindKernel, v32 @ S0_v8 (System.Int32), this._trigger (CharacterPassTrigger), 0
+	37 CheckEqual v33 @ TEMP_v4 (System.Boolean), v32 @ S0_v8 (System.Int32), 0
+	38 ConditionalJump @b12, v33 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Call 11B6C, v38 @ S1_v12 (UnityEngine.Collider), typeof(System.EventHandler)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move v54 @ S2_v5 (Il2CppMethodInfo), methodof(SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent::CharacterPassTrigger_Triggered)
+	48 Nop
+	49 Nop
+	50 Move v38.m_CachedPtr (System.IntPtr), [v54 @ S2_v5 (Il2CppMethodInfo)]
+	51 Nop
+	52 Nop
+	53 Move [v38 @ S1_v12 (UnityEngine.Collider)+14], methodof(SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent::CharacterPassTrigger_Triggered)
+	54 Nop
+	55 Nop
+	56 Add v60 @ S1_v15, v38 @ S1_v12 (UnityEngine.Collider), 16
+	57 Nop
+	58 Move [v60 @ S1_v15], this @ L0 (SYBO.Subway.Level.TrackEvents.CharacterTriggeredTrackEvent)
+	59 Nop
+	60 Nop
+	61 CallVoid CharacterPassTrigger.OnTriggerEnter, this._trigger (CharacterPassTrigger), v38 @ S1_v12 (UnityEngine.Collider)
+	62 Nop
+	63 Nop
+	64 Return
+

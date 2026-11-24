@@ -1,0 +1,928 @@
+Type: System.Collections.Generic.LongEnumEqualityComparer`1
+
+Method: System.Boolean Equals(T x, T y)
+
+Disassembly:
+	0xB04E0 LocalGet 0
+	0xB04E2 LocalGet 1
+	0xB04E4 LocalGet 2
+	0xB04E6 LocalGet 3
+	0xB04E8 Call 8554
+	0xB04EB LocalGet 0
+	0xB04ED I32Const 1
+	0xB04EF I32Store8 0, 140
+	0xB04F3 I32Eqz
+	0xB04F4 If -64
+	0xB04F6 I32Const 0
+	0xB04F8 Return
+	0xB04F9 End
+	0xB04FA LocalGet 0
+	0xB04FC Call 822
+	0xB04FF I32Const 1
+	0xB0501 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 216A, v8 @ S0_v2, this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>), x @ L1 (T), y @ L2 (T), methodInfo @ L3 (Il2CppMethodInfo)
+	5 Nop
+	6 Nop
+	7 Move [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8C], 1
+	8 CheckEqual v11 @ S0_v3 (System.Boolean), v8 @ S0_v2, 0
+	9 Not v12 @ TEMP_v1 (System.Boolean), v11 @ S0_v3 (System.Boolean)
+	10 ConditionalJump @b5, v12 @ TEMP_v1 (System.Boolean)
+	11 Nop
+	12 Return 0
+	13 Nop
+	14 Nop
+	15 CallVoid 0336, this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)
+	16 Nop
+	17 Nop
+	18 Return 1
+
+Method: System.Int32 GetHashCode(T obj)
+
+Disassembly:
+	0x2EFF3D GlobalGet 7
+	0x2EFF3F LocalSet 0
+	0x2EFF41 GlobalGet 7
+	0x2EFF43 I32Const 16
+	0x2EFF45 I32Add
+	0x2EFF46 GlobalSet 7
+	0x2EFF48 LocalGet 0
+	0x2EFF4A LocalGet 2
+	0x2EFF4C I64Load 3, 0
+	0x2EFF4F I64Const -621355968000000000
+	0x2EFF59 I64Add
+	0x2EFF5A I64Const 10000000
+	0x2EFF5F I64Div_S
+	0x2EFF60 I64Store32 2, 0
+	0x2EFF63 LocalGet 0
+	0x2EFF65 I32Const 4
+	0x2EFF67 I32Add
+	0x2EFF68 LocalGet 2
+	0x2EFF6A I64Load 3, 0
+	0x2EFF6D I64Const -621355968000000000
+	0x2EFF77 I64Add
+	0x2EFF78 I64Const 10000000
+	0x2EFF7D I64Div_S
+	0x2EFF7E I64Store32 2, 0
+	0x2EFF81 LocalGet 1
+	0x2EFF83 LocalGet 0
+	0x2EFF85 Call 461
+	0x2EFF88 I32Eqz
+	0x2EFF89 LocalGet 0
+	0x2EFF8B GlobalSet 7
+	0x2EFF8D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Add v12 @ S1_v4, [methodInfo @ L2 (Il2CppMethodInfo)], -621355968000000000
+	11 Nop
+	12 Divide v14 @ S1_v5, v12 @ S1_v4, 10000000
+	13 Move [v1 @ G7], v14 @ S1_v5
+	14 Nop
+	15 Nop
+	16 Add v17 @ S0_v6, v1 @ G7, 4
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v21 @ S1_v9, [methodInfo @ L2 (Il2CppMethodInfo)], -621355968000000000
+	21 Nop
+	22 Divide v23 @ S1_v10, v21 @ S1_v9, 10000000
+	23 Move [v17 @ S0_v6], v23 @ S1_v10
+	24 Nop
+	25 Nop
+	26 Call 01CD, v27 @ S0_v8, obj @ L1 (T), v1 @ G7
+	27 CheckEqual returnVal1 @ S0_v9 (System.Boolean), v27 @ S0_v8, 0
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Return returnVal1 @ S0_v9 (System.Boolean)
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x14973EA GlobalGet 7
+	0x14973EC LocalSet 3
+	0x14973EE GlobalGet 7
+	0x14973F0 I32Const -64
+	0x14973F2 I32Sub
+	0x14973F3 GlobalSet 7
+	0x14973F5 LocalGet 1
+	0x14973F7 I32Eqz
+	0x14973F8 If -64
+	0x14973FA I32Const 8
+	0x14973FC I32Const 0
+	0x14973FE Call 50111
+	0x1497402 End
+	0x1497403 LocalGet 3
+	0x1497405 I32Const 48
+	0x1497407 I32Add
+	0x1497408 LocalSet 6
+	0x149740A LocalGet 3
+	0x149740C I32Const 32
+	0x149740E I32Add
+	0x149740F LocalSet 4
+	0x1497411 LocalGet 3
+	0x1497413 I32Const 16
+	0x1497415 I32Add
+	0x1497416 LocalSet 8
+	0x1497418 LocalGet 2
+	0x149741A I32Const 12
+	0x149741C I32Add
+	0x149741D LocalSet 9
+	0x149741F Loop -64
+	0x1497421 Block -64
+	0x1497423 LocalGet 5
+	0x1497425 LocalGet 0
+	0x1497427 I32Load 2, 12
+	0x149742A I32Ge_S
+	0x149742B BrIf 0
+	0x149742D LocalGet 3
+	0x149742F LocalGet 0
+	0x1497431 I32Load 2, 8
+	0x1497434 I32Const 16
+	0x1497436 I32Add
+	0x1497437 LocalGet 5
+	0x1497439 I32Const 4
+	0x149743B I32Shl
+	0x149743C I32Add
+	0x149743D LocalTee 2
+	0x149743F I64Load 2, 0
+	0x1497442 I64Store 2, 0
+	0x1497445 LocalGet 3
+	0x1497447 LocalGet 2
+	0x1497449 I64Load 2, 8
+	0x149744C I64Store 2, 8
+	0x149744F LocalGet 9
+	0x1497451 I32Load 2, 0
+	0x1497454 I32Load 2, 96
+	0x1497457 I32Const 108
+	0x149745A I32Add
+	0x149745B LocalTee 2
+	0x149745D I32Load 2, 0
+	0x1497460 I32Load 2, 0
+	0x1497463 LocalSet 7
+	0x1497465 LocalGet 4
+	0x1497467 LocalGet 3
+	0x1497469 I64Load 2, 0
+	0x149746C I64Store 2, 0
+	0x149746F LocalGet 4
+	0x1497471 LocalGet 3
+	0x1497473 I64Load 2, 8
+	0x1497476 I64Store 2, 8
+	0x1497479 LocalGet 2
+	0x149747B I32Load 2, 0
+	0x149747E LocalSet 2
+	0x1497480 LocalGet 6
+	0x1497482 LocalGet 4
+	0x1497484 I64Load 2, 0
+	0x1497487 I64Store 2, 0
+	0x149748A LocalGet 6
+	0x149748C LocalGet 4
+	0x149748E I64Load 2, 8
+	0x1497491 I64Store 2, 8
+	0x1497494 LocalGet 1
+	0x1497496 LocalGet 6
+	0x1497498 LocalGet 2
+	0x149749A LocalGet 7
+	0x149749C I32Const 8191
+	0x149749F I32And
+	0x14974A0 I32Const 22691
+	0x14974A4 I32Add
+	0x14974A5 CallIndirect 5, 0
+	0x14974A8 BrIf 0
+	0x14974AA LocalGet 5
+	0x14974AC I32Const 1
+	0x14974AE I32Add
+	0x14974AF LocalSet 5
+	0x14974B1 Br 1
+	0x14974B3 End
+	0x14974B4 End
+	0x14974B5 LocalGet 5
+	0x14974B7 LocalGet 0
+	0x14974B9 I32Load 2, 12
+	0x14974BC I32Lt_S
+	0x14974BD If -1
+	0x14974BF LocalGet 5
+	0x14974C1 I32Const 1
+	0x14974C3 I32Add
+	0x14974C4 LocalSet 2
+	0x14974C6 Loop -64
+	0x14974C8 Block -64
+	0x14974CA Loop -64
+	0x14974CC LocalGet 2
+	0x14974CE LocalGet 0
+	0x14974D0 I32Load 2, 12
+	0x14974D3 I32Ge_S
+	0x14974D4 BrIf 1
+	0x14974D6 Loop -64
+	0x14974D8 Block -64
+	0x14974DA LocalGet 2
+	0x14974DC LocalGet 0
+	0x14974DE I32Load 2, 12
+	0x14974E1 I32Ge_S
+	0x14974E2 BrIf 0
+	0x14974E4 LocalGet 3
+	0x14974E6 LocalGet 0
+	0x14974E8 I32Load 2, 8
+	0x14974EB I32Const 16
+	0x14974ED I32Add
+	0x14974EE LocalGet 2
+	0x14974F0 I32Const 4
+	0x14974F2 I32Shl
+	0x14974F3 I32Add
+	0x14974F4 LocalTee 4
+	0x14974F6 I64Load 2, 0
+	0x14974F9 I64Store 2, 0
+	0x14974FC LocalGet 3
+	0x14974FE LocalGet 4
+	0x1497500 I64Load 2, 8
+	0x1497503 I64Store 2, 8
+	0x1497506 LocalGet 9
+	0x1497508 I32Load 2, 0
+	0x149750B I32Load 2, 96
+	0x149750E I32Const 108
+	0x1497511 I32Add
+	0x1497512 LocalTee 4
+	0x1497514 I32Load 2, 0
+	0x1497517 I32Load 2, 0
+	0x149751A LocalSet 7
+	0x149751C LocalGet 8
+	0x149751E LocalGet 3
+	0x1497520 I64Load 2, 0
+	0x1497523 I64Store 2, 0
+	0x1497526 LocalGet 8
+	0x1497528 LocalGet 3
+	0x149752A I64Load 2, 8
+	0x149752D I64Store 2, 8
+	0x1497530 LocalGet 4
+	0x1497532 I32Load 2, 0
+	0x1497535 LocalSet 4
+	0x1497537 LocalGet 6
+	0x1497539 LocalGet 8
+	0x149753B I64Load 2, 0
+	0x149753E I64Store 2, 0
+	0x1497541 LocalGet 6
+	0x1497543 LocalGet 8
+	0x1497545 I64Load 2, 8
+	0x1497548 I64Store 2, 8
+	0x149754B LocalGet 1
+	0x149754D LocalGet 6
+	0x149754F LocalGet 4
+	0x1497551 LocalGet 7
+	0x1497553 I32Const 8191
+	0x1497556 I32And
+	0x1497557 I32Const 22691
+	0x149755B I32Add
+	0x149755C CallIndirect 5, 0
+	0x149755F I32Eqz
+	0x1497560 BrIf 0
+	0x1497562 LocalGet 2
+	0x1497564 I32Const 1
+	0x1497566 I32Add
+	0x1497567 LocalSet 2
+	0x1497569 Br 1
+	0x149756B End
+	0x149756C End
+	0x149756D LocalGet 2
+	0x149756F LocalGet 0
+	0x1497571 I32Load 2, 12
+	0x1497574 I32Ge_S
+	0x1497575 BrIf 0
+	0x1497577 End
+	0x1497578 LocalGet 0
+	0x149757A I32Load 2, 8
+	0x149757D LocalGet 3
+	0x149757F LocalGet 0
+	0x1497581 I32Load 2, 8
+	0x1497584 I32Const 16
+	0x1497586 I32Add
+	0x1497587 LocalGet 2
+	0x1497589 I32Const 4
+	0x149758B I32Shl
+	0x149758C I32Add
+	0x149758D LocalTee 7
+	0x149758F I64Load 2, 0
+	0x1497592 I64Store 2, 0
+	0x1497595 LocalGet 3
+	0x1497597 LocalGet 7
+	0x1497599 I64Load 2, 8
+	0x149759C I64Store 2, 8
+	0x149759F LocalGet 6
+	0x14975A1 LocalGet 3
+	0x14975A3 I64Load 2, 0
+	0x14975A6 I64Store 2, 0
+	0x14975A9 LocalGet 6
+	0x14975AB LocalGet 3
+	0x14975AD I64Load 2, 8
+	0x14975B0 I64Store 2, 8
+	0x14975B3 I32Const 16
+	0x14975B5 I32Add
+	0x14975B6 LocalGet 5
+	0x14975B8 I32Const 4
+	0x14975BA I32Shl
+	0x14975BB I32Add
+	0x14975BC LocalTee 4
+	0x14975BE LocalGet 6
+	0x14975C0 I64Load 2, 0
+	0x14975C3 I64Store 2, 0
+	0x14975C6 LocalGet 4
+	0x14975C8 LocalGet 6
+	0x14975CA I64Load 2, 8
+	0x14975CD I64Store 2, 8
+	0x14975D0 LocalGet 5
+	0x14975D2 I32Const 1
+	0x14975D4 I32Add
+	0x14975D5 LocalSet 5
+	0x14975D7 LocalGet 2
+	0x14975D9 I32Const 1
+	0x14975DB I32Add
+	0x14975DC LocalSet 2
+	0x14975DE Br 1
+	0x14975E0 End
+	0x14975E1 End
+	0x14975E2 LocalGet 0
+	0x14975E4 I32Load 2, 8
+	0x14975E7 LocalGet 5
+	0x14975E9 LocalGet 0
+	0x14975EB I32Load 2, 12
+	0x14975EE LocalGet 5
+	0x14975F0 I32Sub
+	0x14975F1 I32Const 0
+	0x14975F3 Call 57762
+	0x14975F7 LocalGet 0
+	0x14975F9 I32Load 2, 12
+	0x14975FC LocalGet 0
+	0x14975FE LocalGet 5
+	0x1497600 I32Store 2, 12
+	0x1497603 LocalGet 0
+	0x1497605 LocalGet 0
+	0x1497607 I32Load 2, 16
+	0x149760A I32Const 1
+	0x149760C I32Add
+	0x149760D I32Store 2, 16
+	0x1497610 LocalGet 5
+	0x1497612 I32Sub
+	0x1497613 Else
+	0x1497614 I32Const 0
+	0x1497616 End
+	0x1497617 LocalGet 3
+	0x1497619 GlobalSet 7
+	0x149761B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CheckEqual v9 @ S0_v5 (System.Boolean), obj @ L1 (System.Object), 0
+	8 Not v10 @ TEMP_v1 (System.Boolean), v9 @ S0_v5 (System.Boolean)
+	9 ConditionalJump @b4, v10 @ TEMP_v1 (System.Boolean)
+	10 Nop
+	11 Nop
+	12 CallVoid ThrowHelper.ThrowArgumentException, 8
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Add v17 @ S0_v8, v1 @ G7, 48
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v21 @ S0_v10, v1 @ G7, 32
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v25 @ S0_v12, v1 @ G7, 16
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Add v30 @ S0_v14, methodInfo @ L2 (Il2CppMethodInfo), 12
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 CheckGreaterOrEqual v57 @ S0_v17 (System.Boolean), v118 @ L5_v3 (System.Int32), [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C]
+	35 ConditionalJump @b7, v57 @ S0_v17 (System.Boolean)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Add v62 @ S1_v62, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8], 16
+	41 Nop
+	42 Nop
+	43 ShiftLeft v65 @ S2_v32 (System.Int32), v118 @ L5_v3 (System.Int32), 4
+	44 Add v66 @ S1_v63, v62 @ S1_v62, v65 @ S2_v32 (System.Int32)
+	45 Nop
+	46 Nop
+	47 Move [v1 @ G7], [v66 @ S1_v63]
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Move [v1 @ G7+8], [v66 @ S1_v63+8]
+	52 Nop
+	53 Move v73 @ S0_v70, [v30 @ S0_v14]
+	54 Nop
+	55 Nop
+	56 Add v76 @ S0_v72, [v73 @ S0_v70+60], 108
+	57 Nop
+	58 Move v78 @ S0_v73, [v76 @ S0_v72]
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Move [v21 @ S0_v10], [v1 @ G7]
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Move [v21 @ S0_v10+8], [v1 @ G7+8]
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Move [v17 @ S0_v8], [v21 @ S0_v10]
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Move [v17 @ S0_v8+8], [v21 @ S0_v10+8]
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 And v98 @ S3_v19, [v78 @ S0_v73], 8191
+	86 Nop
+	87 Add v130 @ S3_v9, v98 @ S3_v19, 22691
+	88 IndirectCall v130 @ S3_v9, v99 @ S0_v82, obj @ L1 (System.Object), v17 @ S0_v8, [v76 @ S0_v72]
+	89 ConditionalJump @b7, v99 @ S0_v82
+	90 Nop
+	91 Nop
+	92 Add v52 @ S0_v84 (System.Int32), v118 @ L5_v3 (System.Int32), 1
+	93 Nop
+	94 Jump @b17
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 CheckLess v110 @ S0_v20 (System.Boolean), v118 @ L5_v3 (System.Int32), [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C]
+	101 Not v111 @ TEMP_v2 (System.Boolean), v110 @ S0_v20 (System.Boolean)
+	102 ConditionalJump @b16, v111 @ TEMP_v2 (System.Boolean)
+	103 Nop
+	104 Nop
+	105 Add v115 @ S0_v24, v118 @ L5_v3 (System.Int32), 1
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 CheckGreaterOrEqual v147 @ S0_v27 (System.Boolean), v127 @ L2_v6, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C]
+	113 ConditionalJump @b14, v147 @ S0_v27 (System.Boolean)
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 CheckGreaterOrEqual v181 @ S0_v35 (System.Boolean), v127 @ L2_v6, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C]
+	119 ConditionalJump @b12, v181 @ S0_v35 (System.Boolean)
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Add v194 @ S1_v44, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8], 16
+	125 Nop
+	126 Nop
+	127 ShiftLeft v197 @ S2_v28, v127 @ L2_v6, 4
+	128 Add v198 @ S1_v45, v194 @ S1_v44, v197 @ S2_v28
+	129 Nop
+	130 Nop
+	131 Move [v1 @ G7], [v198 @ S1_v45]
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Move [v1 @ G7+8], [v198 @ S1_v45+8]
+	136 Nop
+	137 Move v205 @ S0_v51, [v30 @ S0_v14]
+	138 Nop
+	139 Nop
+	140 Add v208 @ S0_v53, [v205 @ S0_v51+60], 108
+	141 Nop
+	142 Move v210 @ S0_v54, [v208 @ S0_v53]
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Nop
+	148 Move [v25 @ S0_v12], [v1 @ G7]
+	149 Nop
+	150 Nop
+	151 Nop
+	152 Move [v25 @ S0_v12+8], [v1 @ G7+8]
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Move [v17 @ S0_v8], [v25 @ S0_v12]
+	160 Nop
+	161 Nop
+	162 Nop
+	163 Move [v17 @ S0_v8+8], [v25 @ S0_v12+8]
+	164 Nop
+	165 Nop
+	166 Nop
+	167 Nop
+	168 Nop
+	169 And v230 @ S3_v15, [v210 @ S0_v54], 8191
+	170 Nop
+	171 Add v130 @ S3_v9, v230 @ S3_v15, 22691
+	172 IndirectCall v130 @ S3_v9, v231 @ S0_v63, obj @ L1 (System.Object), v17 @ S0_v8, [v208 @ S0_v53]
+	173 CheckEqual v232 @ S0_v64 (System.Boolean), v231 @ S0_v63, 0
+	174 ConditionalJump @b12, v232 @ S0_v64 (System.Boolean)
+	175 Nop
+	176 Nop
+	177 Add v177 @ S0_v66, v127 @ L2_v6, 1
+	178 Nop
+	179 Jump @b9
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Nop
+	185 CheckGreaterOrEqual v142 @ S0_v38 (System.Boolean), v127 @ L2_v6, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C]
+	186 ConditionalJump @b18, v142 @ S0_v38 (System.Boolean)
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Nop
+	194 Add v251 @ S2_v16, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8], 16
+	195 Nop
+	196 Nop
+	197 ShiftLeft v130 @ S3_v9, v127 @ L2_v6, 4
+	198 Add v253 @ S2_v17, v251 @ S2_v16, v130 @ S3_v9
+	199 Nop
+	200 Nop
+	201 Move [v1 @ G7], [v253 @ S2_v17]
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Move [v1 @ G7+8], [v253 @ S2_v17+8]
+	206 Nop
+	207 Nop
+	208 Nop
+	209 Move [v17 @ S0_v8], [v1 @ G7]
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Move [v17 @ S0_v8+8], [v1 @ G7+8]
+	214 Nop
+	215 Add v265 @ S0_v41, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8], 16
+	216 Nop
+	217 Nop
+	218 ShiftLeft v267 @ S1_v35 (System.Int32), v118 @ L5_v3 (System.Int32), 4
+	219 Add v268 @ S0_v42, v265 @ S0_v41, v267 @ S1_v35 (System.Int32)
+	220 Nop
+	221 Nop
+	222 Nop
+	223 Move [v268 @ S0_v42], [v17 @ S0_v8]
+	224 Nop
+	225 Nop
+	226 Nop
+	227 Move [v268 @ S0_v42+8], [v17 @ S0_v8+8]
+	228 Nop
+	229 Nop
+	230 Add v276 @ S0_v45 (System.Int32), v118 @ L5_v3 (System.Int32), 1
+	231 Nop
+	232 Nop
+	233 Nop
+	234 Add v143 @ S0_v47, v127 @ L2_v6, 1
+	235 Nop
+	236 Jump @b18
+	237 Nop
+	238 Nop
+	239 Nop
+	240 Nop
+	241 Nop
+	242 Nop
+	243 Nop
+	244 Nop
+	245 Subtract v188 @ S2_v7 (System.Int32), [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C], v118 @ L5_v3 (System.Int32)
+	246 Nop
+	247 CallVoid Array.ClearInternal, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8], v118 @ L5_v3 (System.Int32), v188 @ S2_v7 (System.Int32)
+	248 Nop
+	249 Nop
+	250 Nop
+	251 Nop
+	252 Move [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C], v118 @ L5_v3 (System.Int32)
+	253 Nop
+	254 Nop
+	255 Nop
+	256 Nop
+	257 Add v155 @ S2_v11, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+10], 1
+	258 Move [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+10], v155 @ S2_v11
+	259 Nop
+	260 Subtract returnVal1 @ S0_v21 (System.Boolean), [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C], v118 @ L5_v3 (System.Int32)
+	261 Jump @b20
+	262 Nop
+	263 Nop
+	264 Nop
+	265 Nop
+	266 Nop
+	267 Return returnVal1 @ S0_v21 (System.Boolean)
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x105984C LocalGet 0
+	0x105984E I32Load 2, 12
+	0x1059851 LocalSet 2
+	0x1059853 LocalGet 1
+	0x1059855 I32Load 2, 12
+	0x1059858 I32Load 2, 96
+	0x105985B I32Load 2, 4
+	0x105985E Call 29253
+	0x1059862 LocalGet 2
+	0x1059864 Call 71670
+	0x1059868 LocalSet 1
+	0x105986A LocalGet 0
+	0x105986C I32Load 2, 8
+	0x105986F I32Const 0
+	0x1059871 LocalGet 1
+	0x1059873 I32Const 0
+	0x1059875 LocalGet 0
+	0x1059877 I32Load 2, 12
+	0x105987A I32Const 0
+	0x105987C Call 57646
+	0x1059880 LocalGet 1
+	0x1059882 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Move v6 @ S0_v4, [methodInfo @ L1 (Il2CppMethodInfo)+C]
+	5 Move v7 @ S0_v5, [v6 @ S0_v4+60]
+	6 Nop
+	7 Call 7245, v9 @ S0_v7, [v7 @ S0_v5+4]
+	8 Nop
+	9 Newobj v11 @ S0_v8 (System.OverflowException), typeof(System.OverflowException)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 CallVoid Array.ConstrainedCopy, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8], 0, v11 @ S0_v8 (System.OverflowException), 0, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C]
+	20 Nop
+	21 Nop
+	22 Return v11 @ S0_v8 (System.OverflowException)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x10596EE LocalGet 0
+	0x10596F0 I32Const 0
+	0x10596F2 LocalGet 0
+	0x10596F4 LocalGet 1
+	0x10596F6 I32Const 12
+	0x10596F8 I32Add
+	0x10596F9 LocalTee 0
+	0x10596FB I32Load 2, 0
+	0x10596FE I32Load 2, 96
+	0x1059701 I32Load 2, 52
+	0x1059704 LocalTee 1
+	0x1059706 LocalGet 1
+	0x1059708 I32Load 2, 0
+	0x105970B I32Const 16383
+	0x105970F I32And
+	0x1059710 I32Const 6161
+	0x1059713 I32Add
+	0x1059714 CallIndirect 0, 0
+	0x1059717 I32Const 0
+	0x1059719 LocalGet 0
+	0x105971B I32Load 2, 0
+	0x105971E I32Load 2, 96
+	0x1059721 I32Load 2, 176
+	0x1059725 LocalTee 0
+	0x1059727 LocalGet 0
+	0x1059729 I32Load 2, 0
+	0x105972C I32Const 2047
+	0x105972F I32And
+	0x1059730 I32Const 121922
+	0x1059734 I32Add
+	0x1059735 CallIndirect 30, 0
+	0x1059738 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Add v7 @ S3_v2, methodInfo @ L1 (Il2CppMethodInfo), 12
+	6 Nop
+	7 Move v9 @ S3_v3, [v7 @ S3_v2]
+	8 Move v10 @ S3_v4, [v9 @ S3_v3+60]
+	9 Move v11 @ S3_v5, [v10 @ S3_v4+34]
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 And v16 @ S4_v4, [v11 @ S3_v5], 16383
+	15 Nop
+	16 Add v18 @ S4_v5, v16 @ S4_v4, 6161
+	17 IndirectCall v18 @ S4_v5, v19 @ S2_v2, this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>), v11 @ S3_v5
+	18 Nop
+	19 Nop
+	20 Move v22 @ S4_v7, [v7 @ S3_v2]
+	21 Move v23 @ S4_v8, [v22 @ S4_v7+60]
+	22 Move v24 @ S4_v9, [v23 @ S4_v8+B0]
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 And v29 @ S5_v5, [v24 @ S4_v9], 2047
+	28 Nop
+	29 Add v31 @ S5_v6, v29 @ S5_v5, 121922
+	30 IndirectCall v31 @ S5_v6, v32 @ SRET_v1, this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>), 0, v19 @ S2_v2, 0, v24 @ S4_v9
+	31 Nop
+	32 Return
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo information, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x105967B LocalGet 1
+	0x105967D I32Const 0
+	0x105967F I32Lt_S
+	0x1059680 If -64
+	0x1059682 I32Const 13
+	0x1059684 I32Const 4
+	0x1059686 I32Const 0
+	0x1059688 Call 50114
+	0x105968C End
+	0x105968D LocalGet 2
+	0x105968F I32Const 0
+	0x1059691 I32Lt_S
+	0x1059692 If -64
+	0x1059694 I32Const 16
+	0x1059696 I32Const 4
+	0x1059698 I32Const 0
+	0x105969A Call 50114
+	0x105969E End
+	0x105969F LocalGet 0
+	0x10596A1 I32Load 2, 12
+	0x10596A4 LocalGet 1
+	0x10596A6 I32Sub
+	0x10596A7 LocalGet 2
+	0x10596A9 I32Lt_S
+	0x10596AA If -64
+	0x10596AC I32Const 23
+	0x10596AE I32Const 0
+	0x10596B0 Call 50118
+	0x10596B4 Else
+	0x10596B5 LocalGet 0
+	0x10596B7 I32Load 2, 8
+	0x10596BA LocalGet 1
+	0x10596BC LocalGet 2
+	0x10596BE LocalGet 3
+	0x10596C0 I32Load 2, 12
+	0x10596C3 I32Load 2, 96
+	0x10596C6 I32Load 2, 172
+	0x10596CA LocalTee 4
+	0x10596CC LocalGet 4
+	0x10596CE I32Load 2, 0
+	0x10596D1 I32Const 8191
+	0x10596D4 I32And
+	0x10596D5 I32Const 113696
+	0x10596D9 I32Add
+	0x10596DA CallIndirect 8, 0
+	0x10596DD LocalGet 0
+	0x10596DF LocalGet 0
+	0x10596E1 I32Load 2, 16
+	0x10596E4 I32Const 1
+	0x10596E6 I32Add
+	0x10596E7 I32Store 2, 16
+	0x10596EA End
+	0x10596EB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckLess v3 @ S0_v2 (System.Boolean), information @ L1 (System.Runtime.Serialization.SerializationInfo), 0
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b4, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CallVoid Array.System.Collections.IList.Remove, 13, 4
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CheckLess v15 @ S0_v5 (System.Boolean), context @ L2 (System.Runtime.Serialization.StreamingContext), 0
+	13 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v5 (System.Boolean)
+	14 ConditionalJump @b6, v16 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid Array.System.Collections.IList.Remove, 16, 4
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Subtract v27 @ S0_v9, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+C], information @ L1 (System.Runtime.Serialization.SerializationInfo)
+	24 Nop
+	25 CheckLess v29 @ S0_v10 (System.Boolean), v27 @ S0_v9, context @ L2 (System.Runtime.Serialization.StreamingContext)
+	26 Not v30 @ TEMP_v3 (System.Boolean), v29 @ S0_v10 (System.Boolean)
+	27 ConditionalJump @b9, v30 @ TEMP_v3 (System.Boolean)
+	28 Nop
+	29 Nop
+	30 CallVoid ThrowHelper.ThrowInvalidOperationException, 23
+	31 Jump @b10
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Move v39 @ S3_v3, [methodInfo @ L3 (Il2CppMethodInfo)+C]
+	38 Move v40 @ S3_v4, [v39 @ S3_v3+60]
+	39 Move v41 @ S3_v5, [v40 @ S3_v4+AC]
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 And v46 @ S4_v4, [v41 @ S3_v5], 8191
+	45 Nop
+	46 Add v48 @ S4_v5, v46 @ S4_v4, 113696
+	47 IndirectCall v48 @ S4_v5, v49 @ SRET_v2, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+8], information @ L1 (System.Runtime.Serialization.SerializationInfo), context @ L2 (System.Runtime.Serialization.StreamingContext), v41 @ S3_v5
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Add v54 @ S1_v11, [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+10], 1
+	53 Move [this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>)+10], v54 @ S1_v11
+	54 Nop
+	55 Nop
+	56 Return
+
+Method: System.Void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x149FAC0 LocalGet 0
+	0x149FAC2 LocalGet 3
+	0x149FAC4 I32Load 2, 12
+	0x149FAC7 I32Load 2, 96
+	0x149FACA I32Load 2, 8
+	0x149FACD LocalTee 4
+	0x149FACF LocalGet 4
+	0x149FAD1 I32Load 2, 0
+	0x149FAD4 I32Const 16383
+	0x149FAD8 I32And
+	0x149FAD9 I32Const 80504
+	0x149FADD I32Add
+	0x149FADE CallIndirect 4, 0
+	0x149FAE1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move v4 @ S1_v2, [methodInfo @ L3 (Il2CppMethodInfo)+C]
+	3 Move v5 @ S1_v3, [v4 @ S1_v2+60]
+	4 Move v6 @ S1_v4, [v5 @ S1_v3+8]
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 And v11 @ S2_v3, [v6 @ S1_v4], 16383
+	10 Nop
+	11 Add v13 @ S2_v4, v11 @ S2_v3, 80504
+	12 IndirectCall v13 @ S2_v4, v14 @ SRET_v1, this @ L0 (System.Collections.Generic.LongEnumEqualityComparer`1<T>), v6 @ S1_v4
+	13 Nop
+	14 Return
+

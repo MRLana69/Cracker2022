@@ -1,0 +1,145 @@
+Type: HouseKeeper+OnLateUpdate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (HouseKeeper+OnLateUpdate), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke()
+
+Disassembly:
+	0xCFF23D I32Const 4553607
+	0xCFF242 I32Load8_S 0, 0
+	0xCFF245 I32Eqz
+	0xCFF246 If -64
+	0xCFF248 I32Const 3014432
+	0xCFF24D I32Load 2, 0
+	0xCFF250 Call 73003
+	0xCFF254 I32Const 4553607
+	0xCFF259 I32Const 1
+	0xCFF25B I32Store8 0, 0
+	0xCFF25E End
+	0xCFF25F I32Const 4427868
+	0xCFF264 I32Load 2, 0
+	0xCFF267 Call 72556
+	0xCFF26B LocalTee 2
+	0xCFF26D I32Const 0
+	0xCFF26F Call 54998
+	0xCFF273 LocalGet 2
+	0xCFF275 I32Const 0
+	0xCFF277 I32Const 4470976
+	0xCFF27C I32Load 2, 0
+	0xCFF27F Call 73899
+	0xCFF283 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v10, [2DFF20]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [457B87], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.NullReferenceException), typeof(System.NotSupportedException)
+	15 Nop
+	16 Nop
+	17 CallVoid NullReferenceException..ctor, v13 @ S0_v7 (System.NullReferenceException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid 120AB, v13 @ S0_v7 (System.NullReferenceException), 0, methodof(FollowingGuard+<HitByTrainSequenceCoroutine>d__75::System.Collections.IEnumerator.Reset)
+	23 Nop
+	24 Return
+
+Method: System.IAsyncResult BeginInvoke(System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0xC7FEE4 GlobalGet 7
+	0xC7FEE6 LocalSet 3
+	0xC7FEE8 GlobalGet 7
+	0xC7FEEA I32Const 16
+	0xC7FEEC I32Add
+	0xC7FEED GlobalSet 7
+	0xC7FEEF LocalGet 3
+	0xC7FEF1 I32Const 0
+	0xC7FEF3 I32Store 2, 0
+	0xC7FEF6 LocalGet 0
+	0xC7FEF8 LocalGet 3
+	0xC7FEFA LocalGet 1
+	0xC7FEFC LocalGet 2
+	0xC7FEFE Call 73891
+	0xC7FF02 LocalGet 3
+	0xC7FF04 GlobalSet 7
+	0xC7FF06 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], 0
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Call 120A3, returnVal1 @ S0_v6 (System.IAsyncResult), this @ L0 (HouseKeeper+OnLateUpdate), v1 @ G7, callback @ L1 (System.AsyncCallback), object @ L2 (System.Object)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return returnVal1 @ S0_v6 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xC12227 LocalGet 0
+	0xC12229 LocalGet 1
+	0xC1222B I32Store 2, 8
+	0xC1222E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.method_ptr (System.IntPtr), result @ L1 (System.IAsyncResult)
+	3 Nop
+	4 Return
+

@@ -1,0 +1,272 @@
+Type: UISoundVolume
+
+Method: System.Void Awake()
+
+Disassembly:
+	0xDB9917 LocalGet 0
+	0xDB9919 F32Const 1
+	0xDB991E F32Store 2, 68
+	0xDB9921 LocalGet 0
+	0xDB9923 I32Const 2
+	0xDB9925 I32Store 2, 72
+	0xDB9928 LocalGet 0
+	0xDB992A I32Const 0
+	0xDB992C Call 35919
+	0xDB9930 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (UISoundVolume)+44], 1f
+	3 Nop
+	4 Nop
+	5 Move [this @ L0 (UISoundVolume)+48], 2
+	6 Nop
+	7 Nop
+	8 CallVoid UISavedOption.Awake, this @ L0 (UISoundVolume)
+	9 Nop
+	10 Return
+
+Method: System.Void OnChange()
+
+Disassembly:
+	0xDBEC6E I32Const 4555879
+	0xDBEC73 I32Load8_S 0, 0
+	0xDBEC76 I32Eqz
+	0xDBEC77 If -64
+	0xDBEC79 I32Const 3021796
+	0xDBEC7E I32Load 2, 0
+	0xDBEC81 Call 73003
+	0xDBEC85 I32Const 4555879
+	0xDBEC8A I32Const 1
+	0xDBEC8C I32Store8 0, 0
+	0xDBEC8F End
+	0xDBEC90 LocalGet 0
+	0xDBEC92 I32Const 4446248
+	0xDBEC97 I32Load 2, 0
+	0xDBEC9A Call 48481
+	0xDBEC9E LocalSet 1
+	0xDBECA0 I32Const 4435588
+	0xDBECA5 I32Load 2, 0
+	0xDBECA8 LocalTee 2
+	0xDBECAA I32Load16_S 1, 186
+	0xDBECAE I32Const 512
+	0xDBECB1 I32And
+	0xDBECB2 If -64
+	0xDBECB4 LocalGet 2
+	0xDBECB6 I32Load 2, 116
+	0xDBECB9 I32Eqz
+	0xDBECBA If -64
+	0xDBECBC LocalGet 2
+	0xDBECBE Call 72345
+	0xDBECC2 End
+	0xDBECC3 End
+	0xDBECC4 LocalGet 1
+	0xDBECC6 I32Const 0
+	0xDBECC8 Call 46954
+	0xDBECCC I32Const 0
+	0xDBECCE Call 35891
+	0xDBECD2 LocalGet 1
+	0xDBECD4 I32Load 2, 60
+	0xDBECD7 I32Const 4436348
+	0xDBECDC I32Load 2, 0
+	0xDBECDF Call 72556
+	0xDBECE3 LocalTee 2
+	0xDBECE5 LocalTee 3
+	0xDBECE7 I32Const 4494260
+	0xDBECEC I32Load 2, 0
+	0xDBECEF LocalTee 4
+	0xDBECF1 I32Load 2, 0
+	0xDBECF4 I32Store 2, 8
+	0xDBECF7 LocalGet 3
+	0xDBECF9 LocalGet 4
+	0xDBECFB I32Store 2, 20
+	0xDBECFE LocalGet 3
+	0xDBED00 I32Const 16
+	0xDBED02 I32Add
+	0xDBED03 LocalGet 0
+	0xDBED05 I32Store 2, 0
+	0xDBED08 I32Const 4435580
+	0xDBED0D I32Load 2, 0
+	0xDBED10 LocalTee 0
+	0xDBED12 I32Load16_S 1, 186
+	0xDBED16 I32Const 512
+	0xDBED19 I32And
+	0xDBED1A If -64
+	0xDBED1C LocalGet 0
+	0xDBED1E I32Load 2, 116
+	0xDBED21 I32Eqz
+	0xDBED22 If -64
+	0xDBED24 LocalGet 0
+	0xDBED26 Call 72345
+	0xDBED2A End
+	0xDBED2B End
+	0xDBED2C LocalGet 2
+	0xDBED2E I32Const 0
+	0xDBED30 Call 32639
+	0xDBED34 Drop
+	0xDBED35 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b16
+	5 Nop
+	6 Move v5 @ S0_v21, [2E1BE4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v23, 1
+	10 Move [458467], v7 @ S1_v23
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call Component.GetComponentInChildren, v15 @ S0_v6 (T), this @ L0 (UISoundVolume)
+	16 Nop
+	17 Nop
+	18 Move v18 @ S0_v8 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 And v22 @ S0_v10, [v18 @ S0_v8 (Il2CppClass<NGUITools>)+BA], 512
+	23 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v10, 0
+	24 ConditionalJump @b17, v23 @ TEMP_v2 (System.Boolean)
+	25 Move v24 @ S0_v16 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	26 Nop
+	27 CheckEqual v26 @ S0_v18 (System.Boolean), [v24 @ S0_v16 (Il2CppClass<NGUITools>)+74], 0
+	28 Not v27 @ TEMP_v7 (System.Boolean), v26 @ S0_v18 (System.Boolean)
+	29 ConditionalJump @b17, v27 @ TEMP_v7 (System.Boolean)
+	30 Nop
+	31 CallVoid 11A99, typeof(NGUITools)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call RealTime.get_time, v33 @ S1_v6 (System.Single)
+	37 Nop
+	38 CallVoid UIProgressBar.set_alpha, v15 @ S0_v6 (T), v33 @ S1_v6 (System.Single)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Call 11B6C, v39 @ S1_v9 (EventDelegate+Callback), typeof(EventDelegate+Callback)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move v43 @ S2_v3 (Il2CppMethodInfo), methodof(UISoundVolume::OnChange)
+	48 Nop
+	49 Nop
+	50 Move v39.method_ptr (System.IntPtr), [v43 @ S2_v3 (Il2CppMethodInfo)]
+	51 Nop
+	52 Nop
+	53 Move v39.method (System.IntPtr), methodof(UISoundVolume::OnChange)
+	54 Nop
+	55 Nop
+	56 Add v50 @ S1_v12, v39 @ S1_v9 (EventDelegate+Callback), 16
+	57 Nop
+	58 Move [v50 @ S1_v12], this @ L0 (UISoundVolume)
+	59 Nop
+	60 Move v53 @ S1_v14 (Il2CppClass<EventDelegate>), typeof(EventDelegate)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 And v57 @ S1_v16, [v53 @ S1_v14 (Il2CppClass<EventDelegate>)+BA], 512
+	65 CheckEqual v58 @ TEMP_v4 (System.Boolean), v57 @ S1_v16, 0
+	66 ConditionalJump @b18, v58 @ TEMP_v4 (System.Boolean)
+	67 Move v59 @ S1_v19 (Il2CppClass<EventDelegate>), typeof(EventDelegate)
+	68 Nop
+	69 CheckEqual v61 @ S1_v21 (System.Boolean), [v59 @ S1_v19 (Il2CppClass<EventDelegate>)+74], 0
+	70 Not v62 @ TEMP_v6 (System.Boolean), v61 @ S1_v21 (System.Boolean)
+	71 ConditionalJump @b18, v62 @ TEMP_v6 (System.Boolean)
+	72 Nop
+	73 CallVoid 11A99, typeof(EventDelegate)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Call EventDelegate.Remove, v68 @ S0_v15 (System.Boolean), [v15 @ S0_v6 (T)+3C], v39 @ S1_v9 (EventDelegate+Callback)
+	79 Nop
+	80 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xDBED3A I32Const 4555880
+	0xDBED3F I32Load8_S 0, 0
+	0xDBED42 I32Eqz
+	0xDBED43 If -64
+	0xDBED45 I32Const 3021800
+	0xDBED4A I32Load 2, 0
+	0xDBED4D Call 73003
+	0xDBED51 I32Const 4555880
+	0xDBED56 I32Const 1
+	0xDBED58 I32Store8 0, 0
+	0xDBED5B End
+	0xDBED5C I32Const 4445228
+	0xDBED61 I32Load 2, 0
+	0xDBED64 I32Load 2, 92
+	0xDBED67 I32Load 2, 0
+	0xDBED6A I32Const 0
+	0xDBED6C Call 35894
+	0xDBED70 I32Const 4435588
+	0xDBED75 I32Load 2, 0
+	0xDBED78 LocalTee 0
+	0xDBED7A I32Load16_S 1, 186
+	0xDBED7E I32Const 512
+	0xDBED81 I32And
+	0xDBED82 If -64
+	0xDBED84 LocalGet 0
+	0xDBED86 I32Load 2, 116
+	0xDBED89 I32Eqz
+	0xDBED8A If -64
+	0xDBED8C LocalGet 0
+	0xDBED8E Call 72345
+	0xDBED92 End
+	0xDBED93 End
+	0xDBED94 I32Const 0
+	0xDBED96 Call 46955
+	0xDBED9A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v11, [2E1BE8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [458468], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call UIProgressBar.get_alpha, v16 @ S0_v9 (System.Single), v13.current (UIProgressBar)
+	18 Nop
+	19 Move v18 @ S1_v4 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S1_v6, [v18 @ S1_v4 (Il2CppClass<NGUITools>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S1_v6, 0
+	25 ConditionalJump @b11, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S1_v9 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	27 Nop
+	28 CheckEqual v26 @ S1_v11 (System.Boolean), [v24 @ S1_v9 (Il2CppClass<NGUITools>)+74], 0
+	29 Not v27 @ TEMP_v4 (System.Boolean), v26 @ S1_v11 (System.Boolean)
+	30 ConditionalJump @b11, v27 @ TEMP_v4 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(NGUITools)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CallVoid ProgressBarUtility.ClearProgressBarAfterDelay, v16 @ S0_v9 (System.Single)
+	37 Nop
+	38 Return
+

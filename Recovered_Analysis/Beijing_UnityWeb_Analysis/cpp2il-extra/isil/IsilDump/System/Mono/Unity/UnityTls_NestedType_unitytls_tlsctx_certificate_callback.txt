@@ -1,0 +1,312 @@
+Type: Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke(System.Void* userData, Mono.Unity.UnityTls+unitytls_tlsctx* ctx, System.Byte* cn, System.IntPtr cnLen, Mono.Unity.UnityTls+unitytls_x509name* caList, System.IntPtr caListLen, Mono.Unity.UnityTls+unitytls_x509list_ref* chain, Mono.Unity.UnityTls+unitytls_key_ref* key, Mono.Unity.UnityTls+unitytls_errorstate* errorState)
+
+Disassembly:
+	0x1007F2C LocalGet 0
+	0x1007F2E I32Const 8
+	0x1007F30 I32Add
+	0x1007F31 LocalGet 1
+	0x1007F33 I32Store 2, 0
+	0x1007F36 LocalGet 0
+	0x1007F38 I32Const 12
+	0x1007F3A I32Add
+	0x1007F3B LocalGet 2
+	0x1007F3D I32Store 2, 0
+	0x1007F40 LocalGet 0
+	0x1007F42 LocalGet 3
+	0x1007F44 I32Store 2, 16
+	0x1007F47 LocalGet 0
+	0x1007F49 LocalGet 4
+	0x1007F4B I32Const 1
+	0x1007F4D I32And
+	0x1007F4E I32Store8 0, 21
+	0x1007F51 LocalGet 0
+	0x1007F53 LocalGet 5
+	0x1007F55 I32Const 1
+	0x1007F57 I32And
+	0x1007F58 I32Store8 0, 20
+	0x1007F5B LocalGet 0
+	0x1007F5D LocalGet 6
+	0x1007F5F I32Const 1
+	0x1007F61 I32And
+	0x1007F62 I32Store8 0, 22
+	0x1007F65 LocalGet 0
+	0x1007F67 LocalGet 7
+	0x1007F69 I32Store 2, 24
+	0x1007F6C LocalGet 0
+	0x1007F6E LocalGet 8
+	0x1007F70 I32Const 1
+	0x1007F72 I32And
+	0x1007F73 I32Store8 0, 28
+	0x1007F76 LocalGet 0
+	0x1007F78 LocalGet 9
+	0x1007F7A I32Const 1
+	0x1007F7C I32And
+	0x1007F7D I32Store8 0, 29
+	0x1007F80 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], userData @ L1 (System.Void*)
+	5 Nop
+	6 Nop
+	7 Add v8 @ S0_v4, this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback), 12
+	8 Nop
+	9 Move [v8 @ S0_v4], ctx @ L2 (unitytls_tlsctx*)
+	10 Nop
+	11 Nop
+	12 Move this.m_target (System.Object), cn @ L3 (System.Byte*)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v18 @ S1_v7, cnLen @ L4 (System.IntPtr), 1
+	17 Move [this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback)+15], v18 @ S1_v7
+	18 Nop
+	19 Nop
+	20 Nop
+	21 And v23 @ S1_v9 (System.IntPtr), caList @ L5 (unitytls_x509name*), 1
+	22 Move this.method (System.IntPtr), v23 @ S1_v9 (System.IntPtr)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v28 @ S1_v11, caListLen @ L6 (System.IntPtr), 1
+	27 Move [this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback)+16], v28 @ S1_v11
+	28 Nop
+	29 Nop
+	30 Move this.delegate_trampoline (System.IntPtr), chain @ L7 (unitytls_x509list_ref*)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 And v36 @ S1_v14 (System.IntPtr), key @ L8 (unitytls_key_ref*), 1
+	35 Move this.extra_arg (System.IntPtr), v36 @ S1_v14 (System.IntPtr)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 And v41 @ S1_v16, errorState @ L9 (unitytls_errorstate*), 1
+	40 Move [this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback)+1D], v41 @ S1_v16
+	41 Nop
+	42 Return
+
+Method: System.IAsyncResult BeginInvoke(System.Void* userData, Mono.Unity.UnityTls+unitytls_tlsctx* ctx, System.Byte* cn, System.IntPtr cnLen, Mono.Unity.UnityTls+unitytls_x509name* caList, System.IntPtr caListLen, Mono.Unity.UnityTls+unitytls_x509list_ref* chain, Mono.Unity.UnityTls+unitytls_key_ref* key, Mono.Unity.UnityTls+unitytls_errorstate* errorState, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x10FC9F8 I32Const 4565962
+	0x10FC9FD I32Load8_S 0, 0
+	0x10FCA00 I32Eqz
+	0x10FCA01 If -64
+	0x10FCA03 I32Const 2948740
+	0x10FCA08 I32Load 2, 0
+	0x10FCA0B Call 73003
+	0x10FCA0F I32Const 4565962
+	0x10FCA14 I32Const 1
+	0x10FCA16 I32Store8 0, 0
+	0x10FCA19 End
+	0x10FCA1A LocalGet 0
+	0x10FCA1C LocalTee 13
+	0x10FCA1E If -1
+	0x10FCA20 LocalGet 13
+	0x10FCA22 I32Load 2, 8
+	0x10FCA25 I32Eqz
+	0x10FCA26 Else
+	0x10FCA27 I32Const 1
+	0x10FCA29 End
+	0x10FCA2A If -64
+	0x10FCA2C I32Const 0
+	0x10FCA2E Call 51440
+	0x10FCA32 LocalSet 12
+	0x10FCA34 Else
+	0x10FCA35 I32Const 4428916
+	0x10FCA3A I32Load 2, 0
+	0x10FCA3D Call 72556
+	0x10FCA41 LocalTee 12
+	0x10FCA43 I32Const 48
+	0x10FCA45 I32Add
+	0x10FCA46 LocalGet 13
+	0x10FCA48 I32Store 2, 0
+	0x10FCA4B LocalGet 12
+	0x10FCA4D LocalGet 2
+	0x10FCA4F I32Const 0
+	0x10FCA51 Call 51447
+	0x10FCA55 LocalGet 12
+	0x10FCA57 LocalGet 1
+	0x10FCA59 I32Const 1
+	0x10FCA5B I32And
+	0x10FCA5C I32Store8 0, 52
+	0x10FCA5F LocalGet 12
+	0x10FCA61 LocalGet 3
+	0x10FCA63 I32Store 2, 56
+	0x10FCA66 LocalGet 12
+	0x10FCA68 LocalGet 4
+	0x10FCA6A I32Store 2, 60
+	0x10FCA6D LocalGet 12
+	0x10FCA6F I32Const 44
+	0x10FCA71 I32Add
+	0x10FCA72 LocalGet 5
+	0x10FCA74 I32Store 2, 0
+	0x10FCA77 LocalGet 12
+	0x10FCA79 I32Const -64
+	0x10FCA7B I32Sub
+	0x10FCA7C LocalGet 6
+	0x10FCA7E I32Store 2, 0
+	0x10FCA81 LocalGet 12
+	0x10FCA83 LocalGet 7
+	0x10FCA85 I32Store 2, 68
+	0x10FCA88 LocalGet 12
+	0x10FCA8A LocalGet 8
+	0x10FCA8C I32Store 2, 72
+	0x10FCA8F LocalGet 12
+	0x10FCA91 LocalGet 9
+	0x10FCA93 I32Store 2, 76
+	0x10FCA96 LocalGet 12
+	0x10FCA98 LocalGet 10
+	0x10FCA9A I32Const 1
+	0x10FCA9C I32And
+	0x10FCA9D I32Store8 0, 80
+	0x10FCAA0 LocalGet 12
+	0x10FCAA2 I32Const 84
+	0x10FCAA5 I32Add
+	0x10FCAA6 LocalGet 11
+	0x10FCAA8 I32Store 2, 0
+	0x10FCAAB End
+	0x10FCAAC LocalGet 12
+	0x10FCAAE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v34, [2CFE84]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v34
+	8 Nop
+	9 Move v7 @ S1_v21, 1
+	10 Move [45ABCA], v7 @ S1_v21
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 CheckEqual v19 @ S0_v6 (System.Boolean), this.method_ptr (System.IntPtr), 0
+	19 Jump @b13
+	20 Nop
+	21 Nop
+	22 Not v20 @ TEMP_v3 (System.Boolean), v19 @ S0_v6 (System.Boolean)
+	23 ConditionalJump @b9, v20 @ TEMP_v3 (System.Boolean)
+	24 Nop
+	25 Call EncodingTable.GetNumEncodingItems, v22 @ S0_v28 (System.Int32)
+	26 Nop
+	27 Jump @b14
+	28 Nop
+	29 Nop
+	30 Call 11B6C, v25 @ S0_v11 (System.Globalization.CultureData), typeof(System.Globalization.CultureData)
+	31 Nop
+	32 Nop
+	33 Add v29 @ S0_v12, v25 @ S0_v11 (System.Globalization.CultureData), 48
+	34 Nop
+	35 Move [v29 @ S0_v12], this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_certificate_callback)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 CallVoid CultureData.GetNFIValues, v25 @ S0_v11 (System.Globalization.CultureData), ctx @ L2 (unitytls_tlsctx*)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 And v48 @ S1_v7 (System.Boolean), userData @ L1 (System.Void*), 1
+	44 Move v25.bUseOverrides (System.Boolean), v48 @ S1_v7 (System.Boolean)
+	45 Nop
+	46 Nop
+	47 Move v25.calendarId (System.Int32), cn @ L3 (System.Byte*)
+	48 Nop
+	49 Nop
+	50 Move v25.numberIndex (System.Int32), cnLen @ L4 (System.IntPtr)
+	51 Nop
+	52 Nop
+	53 Add v57 @ S0_v18, v25 @ S0_v11 (System.Globalization.CultureData), 44
+	54 Nop
+	55 Move [v57 @ S0_v18], caList @ L5 (unitytls_x509name*)
+	56 Nop
+	57 Nop
+	58 Subtract v62 @ S0_v20, v25 @ S0_v11 (System.Globalization.CultureData), -64
+	59 Nop
+	60 Move [v62 @ S0_v20], caListLen @ L6 (System.IntPtr)
+	61 Nop
+	62 Nop
+	63 Move v25.iDefaultOemCodePage (System.Int32), chain @ L7 (unitytls_x509list_ref*)
+	64 Nop
+	65 Nop
+	66 Move v25.iDefaultMacCodePage (System.Int32), key @ L8 (unitytls_key_ref*)
+	67 Nop
+	68 Nop
+	69 Move v25.iDefaultEbcdicCodePage (System.Int32), errorState @ L9 (unitytls_errorstate*)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 And v77 @ S1_v18 (System.Boolean), callback @ L10 (System.AsyncCallback), 1
+	74 Move v25.isRightToLeft (System.Boolean), v77 @ S1_v18 (System.Boolean)
+	75 Nop
+	76 Nop
+	77 Add v42 @ S0_v26, v25 @ S0_v11 (System.Globalization.CultureData), 84
+	78 Nop
+	79 Move [v42 @ S0_v26], object @ L11 (System.Object)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Return v38 @ L12_v1 (System.Globalization.CultureData)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xC7FF09 LocalGet 1
+	0xC7FF0B I32Const 0
+	0xC7FF0D Call 73892
+	0xC7FF11 Drop
+	0xC7FF12 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Throw typeof(System.InvalidOperationException)
+	3 Nop
+	4 Return
+

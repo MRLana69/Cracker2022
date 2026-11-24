@@ -1,0 +1,1376 @@
+Type: System.Security.Cryptography.TailStream
+
+Method: System.Void .ctor(System.Int32 bufferSize)
+
+Disassembly:
+	0x1280FB0 I32Const 4570306
+	0x1280FB5 I32Load8_S 0, 0
+	0x1280FB8 I32Eqz
+	0x1280FB9 If -64
+	0x1280FBB I32Const 2979604
+	0x1280FC0 I32Load 2, 0
+	0x1280FC3 Call 73003
+	0x1280FC7 I32Const 4570306
+	0x1280FCC I32Const 1
+	0x1280FCE I32Store8 0, 0
+	0x1280FD1 End
+	0x1280FD2 LocalGet 1
+	0x1280FD4 If -64
+	0x1280FD6 LocalGet 0
+	0x1280FD8 I32Load 2, 44
+	0x1280FDB If -64
+	0x1280FDD LocalGet 0
+	0x1280FDF I32Load 2, 44
+	0x1280FE2 I32Const 0
+	0x1280FE4 Call 66131
+	0x1280FE8 End
+	0x1280FE9 LocalGet 0
+	0x1280FEB I32Load 2, 28
+	0x1280FEE If -64
+	0x1280FF0 I32Const 0
+	0x1280FF2 I32Const 4427760
+	0x1280FF7 I32Load 2, 0
+	0x1280FFA LocalGet 0
+	0x1280FFC I32Load 2, 28
+	0x1280FFF Call 29725
+	0x1281003 End
+	0x1281004 LocalGet 0
+	0x1281006 I32Load 2, 32
+	0x1281009 If -64
+	0x128100B LocalGet 0
+	0x128100D I32Load 2, 32
+	0x1281010 I32Const 0
+	0x1281012 Call 58579
+	0x1281016 End
+	0x1281017 LocalGet 0
+	0x1281019 I32Load 2, 36
+	0x128101C If -64
+	0x128101E LocalGet 0
+	0x1281020 I32Load 2, 36
+	0x1281023 I32Const 0
+	0x1281025 Call 58579
+	0x1281029 End
+	0x128102A End
+	0x128102B LocalGet 0
+	0x128102D LocalGet 1
+	0x128102F I32Const 0
+	0x1281031 Call 58707
+	0x1281035 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b15
+	5 Nop
+	6 Move v5 @ S0_v27, [2D7714]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v27
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45BCC2], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), bufferSize @ L1 (System.Int32), 0
+	14 ConditionalJump @b16, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 CheckEqual v17 @ TEMP_v4 (System.Boolean), [this @ L0 (System.Security.Cryptography.TailStream)+2C], 0
+	18 ConditionalJump @b7, v17 @ TEMP_v4 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid TripleDES..ctor, [this @ L0 (System.Security.Cryptography.TailStream)+2C]
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CheckEqual v39 @ TEMP_v5 (System.Boolean), this._BufferIndex (System.Int32), 0
+	27 ConditionalJump @b9, v39 @ TEMP_v5 (System.Boolean)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid 741D, 0, typeof(System.IDisposable), this._BufferIndex (System.Int32)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Not v49 @ TEMP_v6 (System.Boolean), this._BufferFull (System.Boolean)
+	38 ConditionalJump @b11, v49 @ TEMP_v6 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid E4D3, this._BufferFull (System.Boolean), 0
+	43 Nop
+	44 Nop
+	45 Nop
+	46 CheckEqual v25 @ TEMP_v7 (System.Boolean), [this @ L0 (System.Security.Cryptography.TailStream)+24], 0
+	47 ConditionalJump @b16, v25 @ TEMP_v7 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CallVoid E4D3, [this @ L0 (System.Security.Cryptography.TailStream)+24], 0
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 CallVoid KeyedHashAlgorithm.set_Key, this @ L0 (System.Security.Cryptography.TailStream), bufferSize @ L1 (System.Int32)
+	58 Nop
+	59 Return
+
+Method: System.Void Clear()
+
+Disassembly:
+	0xDC05EF LocalGet 0
+	0xDC05F1 I32Const 28
+	0xDC05F3 I32Add
+	0xDC05F4 I32Const 0
+	0xDC05F6 I32Store 2, 0
+	0xDC05F9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Security.Cryptography.TailStream), 28
+	3 Nop
+	4 Move [v3 @ S0_v2], 0
+	5 Nop
+	6 Return
+
+Method: System.Void Dispose(System.Boolean disposing)
+
+Disassembly:
+	0x13EAF62 I32Const 4574405
+	0x13EAF67 I32Load8_S 0, 0
+	0x13EAF6A I32Eqz
+	0x13EAF6B If -64
+	0x13EAF6D I32Const 3008380
+	0x13EAF72 I32Load 2, 0
+	0x13EAF75 Call 73003
+	0x13EAF79 I32Const 4574405
+	0x13EAF7E I32Const 1
+	0x13EAF80 I32Store8 0, 0
+	0x13EAF83 End
+	0x13EAF84 I32Const 4428624
+	0x13EAF89 I32Load 2, 0
+	0x13EAF8C LocalTee 3
+	0x13EAF8E I32Load16_S 1, 186
+	0x13EAF92 I32Const 512
+	0x13EAF95 I32And
+	0x13EAF96 If -64
+	0x13EAF98 LocalGet 3
+	0x13EAF9A I32Load 2, 116
+	0x13EAF9D I32Eqz
+	0x13EAF9E If -64
+	0x13EAFA0 LocalGet 3
+	0x13EAFA2 Call 72345
+	0x13EAFA6 End
+	0x13EAFA7 End
+	0x13EAFA8 LocalGet 0
+	0x13EAFAA I32Const 20
+	0x13EAFAC I32Add
+	0x13EAFAD I32Const 4427832
+	0x13EAFB2 I32Load 2, 0
+	0x13EAFB5 LocalGet 1
+	0x13EAFB7 Call 71670
+	0x13EAFBB I32Store 2, 0
+	0x13EAFBE LocalGet 0
+	0x13EAFC0 LocalGet 1
+	0x13EAFC2 I32Store 2, 24
+	0x13EAFC5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v18, [2DE77C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v18
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45CCC5], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.IO.Stream>), typeof(System.IO.Stream)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.IO.Stream>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v13 (Il2CppClass<System.IO.Stream>), typeof(System.IO.Stream)
+	21 Nop
+	22 CheckEqual v20 @ S0_v15 (System.Boolean), [v18 @ S0_v13 (Il2CppClass<System.IO.Stream>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v15 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.IO.Stream)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Add v28 @ S0_v11, this @ L0 (System.Security.Cryptography.TailStream), 20
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Newobj v33 @ S1_v6 (System.OverflowException), typeof(System.OverflowException)
+	36 Move [v28 @ S0_v11], v33 @ S1_v6 (System.OverflowException)
+	37 Nop
+	38 Nop
+	39 Move this._BufferSize (System.Int32), disposing @ L1 (System.Boolean)
+	40 Nop
+	41 Return
+
+Method: System.Byte[] get_Buffer()
+
+Disassembly:
+	0x1280EE3 I32Const 4570305
+	0x1280EE8 I32Load8_S 0, 0
+	0x1280EEB I32Eqz
+	0x1280EEC If -64
+	0x1280EEE I32Const 2979612
+	0x1280EF3 I32Load 2, 0
+	0x1280EF6 Call 73003
+	0x1280EFA I32Const 4570305
+	0x1280EFF I32Const 1
+	0x1280F01 I32Store8 0, 0
+	0x1280F04 End
+	0x1280F05 LocalGet 0
+	0x1280F07 I32Load 2, 28
+	0x1280F0A I32Eqz
+	0x1280F0B If -64
+	0x1280F0D I32Const 13
+	0x1280F0F LocalGet 0
+	0x1280F11 I32Load 2, 44
+	0x1280F14 I32Const 21
+	0x1280F16 LocalGet 0
+	0x1280F18 Call 29262
+	0x1280F1C Call 29437
+	0x1280F20 LocalGet 0
+	0x1280F22 I32Const 28
+	0x1280F24 I32Add
+	0x1280F25 I32Const 22
+	0x1280F27 LocalGet 0
+	0x1280F29 I32Load 2, 44
+	0x1280F2C Call 29262
+	0x1280F30 I32Store 2, 0
+	0x1280F33 I32Const 6
+	0x1280F35 LocalGet 0
+	0x1280F37 I32Load 2, 44
+	0x1280F3A Call 29262
+	0x1280F3E LocalSet 1
+	0x1280F40 I32Const 4430992
+	0x1280F45 I32Load 2, 0
+	0x1280F48 Call 72556
+	0x1280F4C LocalTee 2
+	0x1280F4E LocalGet 1
+	0x1280F50 I32Const 8
+	0x1280F52 I32Div_S
+	0x1280F53 I32Const 0
+	0x1280F55 Call 66149
+	0x1280F59 LocalGet 0
+	0x1280F5B I32Const 36
+	0x1280F5D I32Add
+	0x1280F5E LocalGet 2
+	0x1280F60 I32Store 2, 0
+	0x1280F63 LocalGet 0
+	0x1280F65 I32Load 2, 36
+	0x1280F68 LocalSet 1
+	0x1280F6A LocalGet 0
+	0x1280F6C I32Load 2, 28
+	0x1280F6F LocalSet 2
+	0x1280F71 I32Const 4430948
+	0x1280F76 I32Load 2, 0
+	0x1280F79 Call 72556
+	0x1280F7D LocalTee 3
+	0x1280F7F LocalGet 1
+	0x1280F81 LocalGet 2
+	0x1280F83 I32Const 1
+	0x1280F85 I32Const 0
+	0x1280F87 Call 58564
+	0x1280F8B LocalGet 0
+	0x1280F8D I32Const 32
+	0x1280F8F I32Add
+	0x1280F90 LocalGet 3
+	0x1280F92 I32Store 2, 0
+	0x1280F95 End
+	0x1280F96 LocalGet 0
+	0x1280F98 I32Load 2, 32
+	0x1280F9B I32Const 0
+	0x1280F9D Call 58569
+	0x1280FA1 LocalGet 0
+	0x1280FA3 I32Load 2, 36
+	0x1280FA6 I32Const 0
+	0x1280FA8 Call 66151
+	0x1280FAC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b16
+	5 Nop
+	6 Move v5 @ S0_v34, [2D771C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v34
+	8 Nop
+	9 Move v7 @ S1_v19, 1
+	10 Move [45BCC1], v7 @ S1_v19
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), this._BufferIndex (System.Int32), 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b17, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 724E, v21 @ S2_v3, 21, this @ L0 (System.Security.Cryptography.TailStream)
+	23 CallVoid 72FD, 13, [this @ L0 (System.Security.Cryptography.TailStream)+2C], v21 @ S2_v3
+	24 Nop
+	25 Nop
+	26 Add v53 @ S0_v16, this @ L0 (System.Security.Cryptography.TailStream), 28
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call 724E, v57 @ S1_v9, 22, [this @ L0 (System.Security.Cryptography.TailStream)+2C]
+	31 Move [v53 @ S0_v16], v57 @ S1_v9
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call 724E, v61 @ S0_v18, 6, [this @ L0 (System.Security.Cryptography.TailStream)+2C]
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call 11B6C, v65 @ S0_v21 (System.Security.Cryptography.TailStream), typeof(System.Security.Cryptography.TailStream)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Divide v69 @ S1_v13 (System.Boolean), v61 @ S0_v18, 8
+	44 Nop
+	45 CallVoid TailStream.Dispose, v65 @ S0_v21 (System.Security.Cryptography.TailStream), v69 @ S1_v13 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Add v73 @ S0_v23, this @ L0 (System.Security.Cryptography.TailStream), 36
+	49 Nop
+	50 Move [v73 @ S0_v23], v65 @ S0_v21 (System.Security.Cryptography.TailStream)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call 11B6C, v81 @ S0_v30 (System.Security.Cryptography.CryptoStream), typeof(System.Security.Cryptography.CryptoStream)
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 CallVoid CryptoStream.Write, v81 @ S0_v30 (System.Security.Cryptography.CryptoStream), [this @ L0 (System.Security.Cryptography.TailStream)+24], this._BufferIndex (System.Int32), 1
+	66 Nop
+	67 Nop
+	68 Add v43 @ S0_v32, this @ L0 (System.Security.Cryptography.TailStream), 32
+	69 Nop
+	70 Move [v43 @ S0_v32], v81 @ S0_v30 (System.Security.Cryptography.CryptoStream)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 CallVoid CryptoStream.Flush, this._BufferFull (System.Boolean)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Call TailStream.get_CanRead, returnVal1 @ S0_v13 (System.Byte[]), [this @ L0 (System.Security.Cryptography.TailStream)+24]
+	80 Nop
+	81 Return returnVal1 @ S0_v13 (System.Byte[])
+
+Method: System.Boolean get_CanRead()
+
+Disassembly:
+	0x13EB0E4 I32Const 4574406
+	0x13EB0E9 I32Load8_S 0, 0
+	0x13EB0EC I32Eqz
+	0x13EB0ED If -64
+	0x13EB0EF I32Const 3008384
+	0x13EB0F4 I32Load 2, 0
+	0x13EB0F7 Call 73003
+	0x13EB0FB I32Const 4574406
+	0x13EB100 I32Const 1
+	0x13EB102 I32Store8 0, 0
+	0x13EB105 End
+	0x13EB106 LocalGet 0
+	0x13EB108 I32Load 2, 20
+	0x13EB10B Call 73007
+	0x13EB10F I32Const 4427832
+	0x13EB114 I32Load 2, 0
+	0x13EB117 Call 33276
+	0x13EB11B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2DE780]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45CCC6], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Newobj v14 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	15 Nop
+	16 Nop
+	17 Call 81FC, returnVal1 @ S0_v8 (System.Boolean), v14 @ S0_v7 (System.OverflowException), typeof(System.Byte[])
+	18 Nop
+	19 Return returnVal1 @ S0_v8 (System.Boolean)
+
+Method: System.Boolean get_CanSeek()
+
+Disassembly:
+	0x7CF6F I32Const 0
+	0x7CF71 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 0
+
+Method: System.Boolean get_CanWrite()
+
+Disassembly:
+	0x7CF6F I32Const 0
+	0x7CF71 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 0
+
+Method: System.Int64 get_Length()
+
+Disassembly:
+	0x127B6CA LocalGet 0
+	0x127B6CC I32Const 17
+	0x127B6CE I32Add
+	0x127B6CF I32Load8_U 0, 0
+	0x127B6D2 I64Extend_I32_U
+	0x127B6D3 I64Const 48
+	0x127B6D5 I64Shl
+	0x127B6D6 LocalGet 0
+	0x127B6D8 I32Const 16
+	0x127B6DA I32Add
+	0x127B6DB I32Load8_U 0, 0
+	0x127B6DE I64Extend_I32_U
+	0x127B6DF I64Const 56
+	0x127B6E1 I64Shl
+	0x127B6E2 I64Or
+	0x127B6E3 LocalGet 0
+	0x127B6E5 I32Const 18
+	0x127B6E7 I32Add
+	0x127B6E8 I32Load8_U 0, 0
+	0x127B6EB I64Extend_I32_U
+	0x127B6EC I64Const 40
+	0x127B6EE I64Shl
+	0x127B6EF I64Or
+	0x127B6F0 LocalGet 0
+	0x127B6F2 I32Const 19
+	0x127B6F4 I32Add
+	0x127B6F5 I32Load8_U 0, 0
+	0x127B6F8 I64Extend_I32_U
+	0x127B6F9 I64Const 32
+	0x127B6FB I64Shl
+	0x127B6FC I64Or
+	0x127B6FD LocalGet 0
+	0x127B6FF I32Const 20
+	0x127B701 I32Add
+	0x127B702 I32Load8_U 0, 0
+	0x127B705 I64Extend_I32_U
+	0x127B706 I64Const 24
+	0x127B708 I64Shl
+	0x127B709 I64Or
+	0x127B70A LocalGet 0
+	0x127B70C I32Const 21
+	0x127B70E I32Add
+	0x127B70F I32Load8_U 0, 0
+	0x127B712 I64Extend_I32_U
+	0x127B713 I64Const 16
+	0x127B715 I64Shl
+	0x127B716 I64Or
+	0x127B717 LocalGet 0
+	0x127B719 I32Const 22
+	0x127B71B I32Add
+	0x127B71C I32Load8_U 0, 0
+	0x127B71F I64Extend_I32_U
+	0x127B720 I64Const 8
+	0x127B722 I64Shl
+	0x127B723 I64Or
+	0x127B724 LocalGet 0
+	0x127B726 I32Const 23
+	0x127B728 I32Add
+	0x127B729 I32Load8_U 0, 0
+	0x127B72C I64Extend_I32_U
+	0x127B72D I64Or
+	0x127B72E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Security.Cryptography.TailStream), 17
+	3 Nop
+	4 Nop
+	5 ShiftLeft v6 @ S0_v4, [v3 @ S0_v2], 48
+	6 Nop
+	7 Nop
+	8 Add v9 @ S1_v4, this @ L0 (System.Security.Cryptography.TailStream), 16
+	9 Nop
+	10 Nop
+	11 ShiftLeft v12 @ S1_v6, [v9 @ S1_v4], 56
+	12 Or v13 @ S0_v5, v6 @ S0_v4, v12 @ S1_v6
+	13 Nop
+	14 Nop
+	15 Add v16 @ S1_v8, this @ L0 (System.Security.Cryptography.TailStream), 18
+	16 Nop
+	17 Nop
+	18 ShiftLeft v19 @ S1_v10, [v16 @ S1_v8], 40
+	19 Or v20 @ S0_v6, v13 @ S0_v5, v19 @ S1_v10
+	20 Nop
+	21 Nop
+	22 Add v23 @ S1_v12, this @ L0 (System.Security.Cryptography.TailStream), 19
+	23 Nop
+	24 Nop
+	25 ShiftLeft v26 @ S1_v14, [v23 @ S1_v12], 32
+	26 Or v27 @ S0_v7, v20 @ S0_v6, v26 @ S1_v14
+	27 Nop
+	28 Nop
+	29 Add v30 @ S1_v16, this @ L0 (System.Security.Cryptography.TailStream), 20
+	30 Nop
+	31 Nop
+	32 ShiftLeft v33 @ S1_v18, [v30 @ S1_v16], 24
+	33 Or v34 @ S0_v8, v27 @ S0_v7, v33 @ S1_v18
+	34 Nop
+	35 Nop
+	36 Add v37 @ S1_v20, this @ L0 (System.Security.Cryptography.TailStream), 21
+	37 Nop
+	38 Nop
+	39 ShiftLeft v40 @ S1_v22, [v37 @ S1_v20], 16
+	40 Or v41 @ S0_v9, v34 @ S0_v8, v40 @ S1_v22
+	41 Nop
+	42 Nop
+	43 Add v44 @ S1_v24, this @ L0 (System.Security.Cryptography.TailStream), 22
+	44 Nop
+	45 Nop
+	46 ShiftLeft v47 @ S1_v26, [v44 @ S1_v24], 8
+	47 Or v48 @ S0_v10, v41 @ S0_v9, v47 @ S1_v26
+	48 Nop
+	49 Nop
+	50 Add v51 @ S1_v28, this @ L0 (System.Security.Cryptography.TailStream), 23
+	51 Nop
+	52 Or returnVal1 @ S0_v11 (System.Int64), v48 @ S0_v10, [v51 @ S1_v28]
+	53 Nop
+	54 Return returnVal1 @ S0_v11 (System.Int64)
+
+Method: System.Int64 get_Position()
+
+Disassembly:
+	0x13EB11E I32Const 4574407
+	0x13EB123 I32Load8_S 0, 0
+	0x13EB126 I32Eqz
+	0x13EB127 If -64
+	0x13EB129 I32Const 3008388
+	0x13EB12E I32Load 2, 0
+	0x13EB131 Call 73003
+	0x13EB135 I32Const 4574407
+	0x13EB13A I32Const 1
+	0x13EB13C I32Store8 0, 0
+	0x13EB13F End
+	0x13EB140 I32Const 4511180
+	0x13EB145 I32Load 2, 0
+	0x13EB148 LocalSet 0
+	0x13EB14A I32Const 4427868
+	0x13EB14F I32Load 2, 0
+	0x13EB152 Call 72556
+	0x13EB156 LocalTee 1
+	0x13EB158 LocalGet 0
+	0x13EB15A I32Const 0
+	0x13EB15C Call 54749
+	0x13EB160 LocalGet 1
+	0x13EB162 I32Const 0
+	0x13EB164 I32Const 4465208
+	0x13EB169 I32Load 2, 0
+	0x13EB16C Call 73899
+	0x13EB170 I64Const 0
+	0x13EB172 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v13, [2DE784]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45CCC7], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v9 (System.NullReferenceException), typeof(System.NotSupportedException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid NullReferenceException..ctor, v16 @ S0_v9 (System.NullReferenceException), "Stream does not support seeking."
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CallVoid 120AB, v16 @ S0_v9 (System.NullReferenceException), 0, methodof(System.Security.Cryptography.TailStream::get_Length)
+	27 Nop
+	28 Nop
+	29 Return 0
+
+Method: System.Void set_Position(System.Int64 value)
+
+Disassembly:
+	0x127735C I32Const 4570198
+	0x1277361 I32Load8_S 0, 0
+	0x1277364 I32Eqz
+	0x1277365 If -64
+	0x1277367 I32Const 2948596
+	0x127736C I32Load 2, 0
+	0x127736F Call 73003
+	0x1277373 I32Const 4570198
+	0x1277378 I32Const 1
+	0x127737A I32Store8 0, 0
+	0x127737D End
+	0x127737E I32Const 4511180
+	0x1277383 I32Load 2, 0
+	0x1277386 LocalSet 0
+	0x1277388 I32Const 4427868
+	0x127738D I32Load 2, 0
+	0x1277390 Call 72556
+	0x1277394 LocalTee 2
+	0x1277396 LocalGet 0
+	0x1277398 I32Const 0
+	0x127739A Call 54749
+	0x127739E LocalGet 2
+	0x12773A0 I32Const 0
+	0x12773A2 I32Const 4490972
+	0x12773A7 I32Load 2, 0
+	0x12773AA Call 73899
+	0x12773AE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v12, [2CFDF4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45BC56], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v9 (System.NullReferenceException), typeof(System.NotSupportedException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid NullReferenceException..ctor, v16 @ S0_v9 (System.NullReferenceException), "Stream does not support seeking."
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CallVoid CryptoStream.SetLength, v16 @ S0_v9 (System.NullReferenceException), 0
+	27 Nop
+	28 Return
+
+Method: System.Void Flush()
+
+Disassembly:
+	0x1278487 I32Const 13
+	0x1278489 LocalGet 0
+	0x127848B Call 29286
+	0x127848F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid 7266, 13, this @ L0 (System.Security.Cryptography.TailStream)
+	3 Nop
+	4 Return
+
+Method: System.Int64 Seek(System.Int64 offset, System.IO.SeekOrigin origin)
+
+Disassembly:
+	0x1277305 I32Const 4570197
+	0x127730A I32Load8_S 0, 0
+	0x127730D I32Eqz
+	0x127730E If -64
+	0x1277310 I32Const 2948592
+	0x1277315 I32Load 2, 0
+	0x1277318 Call 73003
+	0x127731C I32Const 4570197
+	0x1277321 I32Const 1
+	0x1277323 I32Store8 0, 0
+	0x1277326 End
+	0x1277327 I32Const 4511180
+	0x127732C I32Load 2, 0
+	0x127732F LocalSet 0
+	0x1277331 I32Const 4427868
+	0x1277336 I32Load 2, 0
+	0x1277339 Call 72556
+	0x127733D LocalTee 2
+	0x127733F LocalGet 0
+	0x1277341 I32Const 0
+	0x1277343 Call 54749
+	0x1277347 LocalGet 2
+	0x1277349 I32Const 0
+	0x127734B I32Const 4465192
+	0x1277350 I32Load 2, 0
+	0x1277353 Call 73899
+	0x1277357 I64Const 0
+	0x1277359 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v13, [2CFDF0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45BC55], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v9 (System.NullReferenceException), typeof(System.NotSupportedException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid NullReferenceException..ctor, v16 @ S0_v9 (System.NullReferenceException), "Stream does not support seeking."
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CallVoid 120AB, v16 @ S0_v9 (System.NullReferenceException), 0, methodof(System.Security.Cryptography.CryptoStream::Seek)
+	27 Nop
+	28 Nop
+	29 Return 0
+
+Method: System.Void SetLength(System.Int64 value)
+
+Disassembly:
+	0x13EB1CC I32Const 4574409
+	0x13EB1D1 I32Load8_S 0, 0
+	0x13EB1D4 I32Eqz
+	0x13EB1D5 If -64
+	0x13EB1D7 I32Const 3008396
+	0x13EB1DC I32Load 2, 0
+	0x13EB1DF Call 73003
+	0x13EB1E3 I32Const 4574409
+	0x13EB1E8 I32Const 1
+	0x13EB1EA I32Store8 0, 0
+	0x13EB1ED End
+	0x13EB1EE I32Const 4511180
+	0x13EB1F3 I32Load 2, 0
+	0x13EB1F6 LocalSet 0
+	0x13EB1F8 I32Const 4427868
+	0x13EB1FD I32Load 2, 0
+	0x13EB200 Call 72556
+	0x13EB204 LocalTee 2
+	0x13EB206 LocalGet 0
+	0x13EB208 I32Const 0
+	0x13EB20A Call 54749
+	0x13EB20E LocalGet 2
+	0x13EB210 I32Const 0
+	0x13EB212 I32Const 4491284
+	0x13EB217 I32Load 2, 0
+	0x13EB21A Call 73899
+	0x13EB21E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v12, [2DE78C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45CCC9], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v9 (System.NullReferenceException), typeof(System.NotSupportedException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid NullReferenceException..ctor, v16 @ S0_v9 (System.NullReferenceException), "Stream does not support seeking."
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CallVoid TailStream.set_Position, v16 @ S0_v9 (System.NullReferenceException), 0
+	27 Nop
+	28 Return
+
+Method: System.Int32 Read(System.Byte[] buffer, System.Int32 offset, System.Int32 count)
+
+Disassembly:
+	0x12802E1 I32Const 4570284
+	0x12802E6 I32Load8_S 0, 0
+	0x12802E9 I32Eqz
+	0x12802EA If -64
+	0x12802EC I32Const 2969232
+	0x12802F1 I32Load 2, 0
+	0x12802F4 Call 73003
+	0x12802F8 I32Const 4570284
+	0x12802FD I32Const 1
+	0x12802FF I32Store8 0, 0
+	0x1280302 End
+	0x1280303 LocalGet 1
+	0x1280305 I32Eqz
+	0x1280306 If -64
+	0x1280308 I32Const 4427864
+	0x128030D I32Load 2, 0
+	0x1280310 Call 72556
+	0x1280314 LocalTee 4
+	0x1280316 I32Const 4502032
+	0x128031B I32Load 2, 0
+	0x128031E I32Const 0
+	0x1280320 Call 57599
+	0x1280324 LocalGet 4
+	0x1280326 I32Const 0
+	0x1280328 I32Const 4458020
+	0x128032D I32Load 2, 0
+	0x1280330 Call 73899
+	0x1280334 End
+	0x1280335 LocalGet 2
+	0x1280337 I32Const -1
+	0x1280339 I32Le_S
+	0x128033A If -64
+	0x128033C I32Const 4503076
+	0x1280341 I32Load 2, 0
+	0x1280344 LocalSet 4
+	0x1280346 I32Const 4427992
+	0x128034B I32Load 2, 0
+	0x128034E Call 72556
+	0x1280352 LocalTee 5
+	0x1280354 I32Const 4502036
+	0x1280359 I32Load 2, 0
+	0x128035C LocalGet 4
+	0x128035E I32Const 0
+	0x1280360 Call 57647
+	0x1280364 LocalGet 5
+	0x1280366 I32Const 0
+	0x1280368 I32Const 4458020
+	0x128036D I32Load 2, 0
+	0x1280370 Call 73899
+	0x1280374 End
+	0x1280375 LocalGet 3
+	0x1280377 I32Const 0
+	0x1280379 I32Ge_S
+	0x128037A If -64
+	0x128037C LocalGet 1
+	0x128037E I32Load 2, 12
+	0x1280381 LocalTee 4
+	0x1280383 LocalGet 3
+	0x1280385 I32Ge_S
+	0x1280386 If -64
+	0x1280388 LocalGet 4
+	0x128038A LocalGet 3
+	0x128038C I32Sub
+	0x128038D LocalGet 2
+	0x128038F I32Lt_S
+	0x1280390 If -64
+	0x1280392 I32Const 4503080
+	0x1280397 I32Load 2, 0
+	0x128039A LocalSet 4
+	0x128039C I32Const 4427876
+	0x12803A1 I32Load 2, 0
+	0x12803A4 Call 72556
+	0x12803A8 LocalTee 5
+	0x12803AA LocalGet 4
+	0x12803AC I32Const 0
+	0x12803AE Call 57610
+	0x12803B2 LocalGet 5
+	0x12803B4 I32Const 0
+	0x12803B6 I32Const 4458020
+	0x12803BB I32Load 2, 0
+	0x12803BE Call 73899
+	0x12803C2 End
+	0x12803C3 LocalGet 0
+	0x12803C5 I32Load8_S 0, 20
+	0x12803C8 If -64
+	0x12803CA I32Const 4427872
+	0x12803CF I32Load 2, 0
+	0x12803D2 Call 72556
+	0x12803D6 LocalTee 4
+	0x12803D8 I32Const 0
+	0x12803DA I32Const 0
+	0x12803DC Call 55138
+	0x12803E0 LocalGet 4
+	0x12803E2 I32Const 0
+	0x12803E4 I32Const 4458020
+	0x12803E9 I32Load 2, 0
+	0x12803EC Call 73899
+	0x12803F0 End
+	0x12803F1 I32Const 19
+	0x12803F3 LocalGet 0
+	0x12803F5 LocalGet 1
+	0x12803F7 LocalGet 2
+	0x12803F9 LocalGet 3
+	0x12803FB Call 32013
+	0x12803FF LocalGet 0
+	0x1280401 I32Const 12
+	0x1280403 I32Add
+	0x1280404 I32Const 20
+	0x1280406 LocalGet 0
+	0x1280408 Call 29262
+	0x128040C I32Store 2, 0
+	0x128040F LocalGet 3
+	0x1280411 If -64
+	0x1280413 LocalGet 1
+	0x1280415 LocalGet 2
+	0x1280417 I32Const 4427832
+	0x128041C I32Load 2, 0
+	0x128041F LocalGet 3
+	0x1280421 Call 71670
+	0x1280425 LocalTee 1
+	0x1280427 I32Const 0
+	0x1280429 LocalGet 3
+	0x128042B I32Const 0
+	0x128042D Call 57966
+	0x1280431 Drop
+	0x1280432 Else
+	0x1280433 I32Const 4429064
+	0x1280438 I32Load 2, 0
+	0x128043B LocalTee 1
+	0x128043D I32Load16_S 1, 186
+	0x1280441 I32Const 512
+	0x1280444 I32And
+	0x1280445 If -64
+	0x1280447 LocalGet 1
+	0x1280449 I32Load 2, 116
+	0x128044C I32Eqz
+	0x128044D If -64
+	0x128044F LocalGet 1
+	0x1280451 Call 72345
+	0x1280455 I32Const 4429064
+	0x128045A I32Load 2, 0
+	0x128045D LocalSet 1
+	0x128045F End
+	0x1280460 End
+	0x1280461 LocalGet 1
+	0x1280463 I32Load 2, 92
+	0x1280466 I32Load 2, 0
+	0x1280469 LocalSet 1
+	0x128046B End
+	0x128046C LocalGet 0
+	0x128046E I32Const 0
+	0x1280470 I32Store 2, 16
+	0x1280473 LocalGet 1
+	0x1280475 Return
+	0x1280476 End
+	0x1280477 End
+	0x1280478 I32Const 4511176
+	0x128047D I32Load 2, 0
+	0x1280480 LocalSet 0
+	0x1280482 I32Const 4427876
+	0x1280487 I32Load 2, 0
+	0x128048A Call 72556
+	0x128048E LocalTee 1
+	0x1280490 LocalGet 0
+	0x1280492 I32Const 0
+	0x1280494 Call 57610
+	0x1280498 LocalGet 1
+	0x128049A I32Const 0
+	0x128049C I32Const 4458020
+	0x12804A1 I32Load 2, 0
+	0x12804A4 Call 73899
+	0x12804A8 I32Const 0
+	0x12804AA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b36
+	5 Nop
+	6 Move v5 @ S0_v76, [2D4E90]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v76
+	8 Nop
+	9 Move v7 @ S1_v33, 1
+	10 Move [45BCAC], v7 @ S1_v33
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), buffer @ L1 (System.Byte[]), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Call 11B6C, v17 @ S0_v73 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid ArgumentOutOfRangeException..ctor, v17 @ S0_v73 (System.ArgumentOutOfRangeException), "inputBuffer"
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v17 @ S0_v73 (System.ArgumentOutOfRangeException), 0, methodof(System.Security.Cryptography.HashAlgorithm::TransformFinalBlock)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckLessOrEqual v31 @ S0_v9 (System.Boolean), offset @ L2 (System.Int32), -1
+	33 Not v32 @ TEMP_v3 (System.Boolean), v31 @ S0_v9 (System.Boolean)
+	34 ConditionalJump @b12, v32 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call 11B6C, v41 @ S0_v69 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 CallVoid ArgumentOutOfRangeException.GetObjectData, v41 @ S0_v69 (System.ArgumentOutOfRangeException), "inputOffset", "Non-negative number required."
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CallVoid 120AB, v41 @ S0_v69 (System.ArgumentOutOfRangeException), 0, methodof(System.Security.Cryptography.HashAlgorithm::TransformFinalBlock)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 CheckGreaterOrEqual v58 @ S0_v12 (System.Boolean), count @ L3 (System.Int32), 0
+	56 Not v59 @ TEMP_v4 (System.Boolean), v58 @ S0_v12 (System.Boolean)
+	57 ConditionalJump @b37, v59 @ TEMP_v4 (System.Boolean)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 CheckGreaterOrEqual v68 @ S0_v23 (System.Boolean), buffer.Length, count @ L3 (System.Int32)
+	63 Not v69 @ TEMP_v6 (System.Boolean), v68 @ S0_v23 (System.Boolean)
+	64 ConditionalJump @b37, v69 @ TEMP_v6 (System.Boolean)
+	65 Nop
+	66 Nop
+	67 Subtract v83 @ S0_v25, buffer.Length, count @ L3 (System.Int32)
+	68 Nop
+	69 CheckLess v85 @ S0_v26 (System.Boolean), v83 @ S0_v25, offset @ L2 (System.Int32)
+	70 Not v86 @ TEMP_v7 (System.Boolean), v85 @ S0_v26 (System.Boolean)
+	71 ConditionalJump @b18, v86 @ TEMP_v7 (System.Boolean)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Call 11B6C, v95 @ S0_v62 (System.ArgumentNullException), typeof(System.ArgumentException)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 CallVoid ArgumentNullException..ctor, v95 @ S0_v62 (System.ArgumentNullException), "Offset and length were out of bounds for the array or count is greater than the number of elements from index to the end of the source collection."
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 CallVoid 120AB, v95 @ S0_v62 (System.ArgumentNullException), 0, methodof(System.Security.Cryptography.HashAlgorithm::TransformFinalBlock)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 CheckEqual v108 @ TEMP_v8 (System.Boolean), this._Buffer (System.Byte[]), 0
+	91 ConditionalJump @b22, v108 @ TEMP_v8 (System.Boolean)
+	92 Nop
+	93 Nop
+	94 Call 11B6C, v117 @ S0_v56 (System.ObsoleteAttribute), typeof(System.ObjectDisposedException)
+	95 Nop
+	96 Nop
+	97 Nop
+	98 CallVoid ObsoleteAttribute..ctor, v117 @ S0_v56 (System.ObsoleteAttribute), 0
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 CallVoid 120AB, v117 @ S0_v56 (System.ObsoleteAttribute), 0, methodof(System.Security.Cryptography.HashAlgorithm::TransformFinalBlock)
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 CallVoid 7D0D, 19, this @ L0 (System.Security.Cryptography.TailStream), buffer @ L1 (System.Byte[]), offset @ L2 (System.Int32), count @ L3 (System.Int32)
+	111 Nop
+	112 Nop
+	113 Add v137 @ S0_v33, this @ L0 (System.Security.Cryptography.TailStream), 12
+	114 Nop
+	115 Nop
+	116 Call 724E, v140 @ S1_v17, 20, this @ L0 (System.Security.Cryptography.TailStream)
+	117 Move [v137 @ S0_v33], v140 @ S1_v17
+	118 Nop
+	119 CheckEqual v164 @ TEMP_v9 (System.Boolean), count @ L3 (System.Int32), 0
+	120 ConditionalJump @b28, v164 @ TEMP_v9 (System.Boolean)
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Newobj v170 @ S2_v13 (System.OverflowException), typeof(System.OverflowException)
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Call ConsoleCancelEventHandler.BeginInvoke, v182 @ S0_v53 (System.IAsyncResult), buffer @ L1 (System.Byte[]), offset @ L2 (System.Int32), v170 @ S2_v13 (System.OverflowException), 0, count @ L3 (System.Int32)
+	132 Jump @b38
+	133 Nop
+	134 Move v172 @ S0_v39 (Il2CppClass<System.EmptyArray`1<System.Byte>>), typeof(System.EmptyArray`1<System.Byte>)
+	135 Nop
+	136 Nop
+	137 Nop
+	138 And v176 @ S0_v41, [v172 @ S0_v39 (Il2CppClass<System.EmptyArray`1<System.Byte>>)+BA], 512
+	139 CheckEqual v177 @ TEMP_v11 (System.Boolean), v176 @ S0_v41, 0
+	140 ConditionalJump @b39, v177 @ TEMP_v11 (System.Boolean)
+	141 Move v183 @ S0_v46 (Il2CppClass<System.EmptyArray`1<System.Byte>>), typeof(System.EmptyArray`1<System.Byte>)
+	142 Nop
+	143 CheckEqual v185 @ S0_v48 (System.Boolean), [v183 @ S0_v46 (Il2CppClass<System.EmptyArray`1<System.Byte>>)+74], 0
+	144 Not v186 @ TEMP_v13 (System.Boolean), v185 @ S0_v48 (System.Boolean)
+	145 ConditionalJump @b39, v186 @ TEMP_v13 (System.Boolean)
+	146 Nop
+	147 CallVoid 11A99, typeof(System.EmptyArray`1<System.Byte>)
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Move this._asyncActiveSemaphore (System.Threading.SemaphoreSlim), 0
+	161 Nop
+	162 Return v146 @ L1_v2 (System.OverflowException)
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Nop
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Call 11B6C, v79 @ S0_v18 (System.ArgumentNullException), typeof(System.ArgumentException)
+	171 Nop
+	172 Nop
+	173 Nop
+	174 CallVoid ArgumentNullException..ctor, v79 @ S0_v18 (System.ArgumentNullException), "Value was invalid."
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Nop
+	179 CallVoid 120AB, v79 @ S0_v18 (System.ArgumentNullException), 0, methodof(System.Security.Cryptography.HashAlgorithm::TransformFinalBlock)
+	180 Nop
+	181 Nop
+	182 Return 0
+
+Method: System.Void Write(System.Byte[] buffer, System.Int32 offset, System.Int32 count)
+
+Disassembly:
+	0x1280E19 I32Const 4570304
+	0x1280E1E I32Load8_S 0, 0
+	0x1280E21 I32Eqz
+	0x1280E22 If -64
+	0x1280E24 I32Const 2979608
+	0x1280E29 I32Load 2, 0
+	0x1280E2C Call 73003
+	0x1280E30 I32Const 4570304
+	0x1280E35 I32Const 1
+	0x1280E37 I32Store8 0, 0
+	0x1280E3A End
+	0x1280E3B LocalGet 0
+	0x1280E3D I32Load 2, 28
+	0x1280E40 I32Eqz
+	0x1280E41 If -64
+	0x1280E43 I32Const 13
+	0x1280E45 LocalGet 0
+	0x1280E47 I32Load 2, 44
+	0x1280E4A I32Const 21
+	0x1280E4C LocalGet 0
+	0x1280E4E Call 29262
+	0x1280E52 Call 29437
+	0x1280E56 LocalGet 0
+	0x1280E58 I32Const 28
+	0x1280E5A I32Add
+	0x1280E5B I32Const 22
+	0x1280E5D LocalGet 0
+	0x1280E5F I32Load 2, 44
+	0x1280E62 Call 29262
+	0x1280E66 I32Store 2, 0
+	0x1280E69 I32Const 6
+	0x1280E6B LocalGet 0
+	0x1280E6D I32Load 2, 44
+	0x1280E70 Call 29262
+	0x1280E74 LocalSet 4
+	0x1280E76 I32Const 4430992
+	0x1280E7B I32Load 2, 0
+	0x1280E7E Call 72556
+	0x1280E82 LocalTee 5
+	0x1280E84 LocalGet 4
+	0x1280E86 I32Const 8
+	0x1280E88 I32Div_S
+	0x1280E89 I32Const 0
+	0x1280E8B Call 66149
+	0x1280E8F LocalGet 0
+	0x1280E91 I32Const 36
+	0x1280E93 I32Add
+	0x1280E94 LocalGet 5
+	0x1280E96 I32Store 2, 0
+	0x1280E99 LocalGet 0
+	0x1280E9B I32Load 2, 36
+	0x1280E9E LocalSet 4
+	0x1280EA0 LocalGet 0
+	0x1280EA2 I32Load 2, 28
+	0x1280EA5 LocalSet 5
+	0x1280EA7 I32Const 4430948
+	0x1280EAC I32Load 2, 0
+	0x1280EAF Call 72556
+	0x1280EB3 LocalTee 6
+	0x1280EB5 LocalGet 4
+	0x1280EB7 LocalGet 5
+	0x1280EB9 I32Const 1
+	0x1280EBB I32Const 0
+	0x1280EBD Call 58564
+	0x1280EC1 LocalGet 0
+	0x1280EC3 I32Const 32
+	0x1280EC5 I32Add
+	0x1280EC6 LocalGet 6
+	0x1280EC8 I32Store 2, 0
+	0x1280ECB End
+	0x1280ECC I32Const 27
+	0x1280ECE LocalGet 0
+	0x1280ED0 I32Load 2, 32
+	0x1280ED3 LocalGet 1
+	0x1280ED5 LocalGet 2
+	0x1280ED7 LocalGet 3
+	0x1280ED9 Call 32013
+	0x1280EDD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b15
+	5 Nop
+	6 Move v5 @ S0_v30, [2D7718]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v30
+	8 Nop
+	9 Move v7 @ S1_v19, 1
+	10 Move [45BCC0], v7 @ S1_v19
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), this._BufferIndex (System.Int32), 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b16, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 724E, v21 @ S2_v4, 21, this @ L0 (System.Security.Cryptography.TailStream)
+	23 CallVoid 72FD, 13, [this @ L0 (System.Security.Cryptography.TailStream)+2C], v21 @ S2_v4
+	24 Nop
+	25 Nop
+	26 Add v55 @ S0_v12, this @ L0 (System.Security.Cryptography.TailStream), 28
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call 724E, v59 @ S1_v9, 22, [this @ L0 (System.Security.Cryptography.TailStream)+2C]
+	31 Move [v55 @ S0_v12], v59 @ S1_v9
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call 724E, v63 @ S0_v14, 6, [this @ L0 (System.Security.Cryptography.TailStream)+2C]
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Call 11B6C, v67 @ S0_v17 (System.Security.Cryptography.TailStream), typeof(System.Security.Cryptography.TailStream)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Divide v71 @ S1_v13 (System.Boolean), v63 @ S0_v14, 8
+	44 Nop
+	45 CallVoid TailStream.Dispose, v67 @ S0_v17 (System.Security.Cryptography.TailStream), v71 @ S1_v13 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Add v75 @ S0_v19, this @ L0 (System.Security.Cryptography.TailStream), 36
+	49 Nop
+	50 Move [v75 @ S0_v19], v67 @ S0_v17 (System.Security.Cryptography.TailStream)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Call 11B6C, v83 @ S0_v26 (System.Security.Cryptography.CryptoStream), typeof(System.Security.Cryptography.CryptoStream)
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 CallVoid CryptoStream.Write, v83 @ S0_v26 (System.Security.Cryptography.CryptoStream), [this @ L0 (System.Security.Cryptography.TailStream)+24], this._BufferIndex (System.Int32), 1
+	66 Nop
+	67 Nop
+	68 Add v43 @ S0_v28, this @ L0 (System.Security.Cryptography.TailStream), 32
+	69 Nop
+	70 Move [v43 @ S0_v28], v83 @ S0_v26 (System.Security.Cryptography.CryptoStream)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 CallVoid 7D0D, 27, this._BufferFull (System.Boolean), buffer @ L1 (System.Byte[]), offset @ L2 (System.Int32), count @ L3 (System.Int32)
+	79 Nop
+	80 Return
+

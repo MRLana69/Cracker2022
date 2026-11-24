@@ -1,0 +1,112 @@
+Type: TopRun.TournamentChangedEventArgs
+
+Method: System.Boolean get_tournamentDidChange()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.<tournamentDidChange>k__BackingField (System.Boolean)
+
+Method: System.Void set_tournamentDidChange(System.Boolean value)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (TopRun.TournamentChangedEventArgs), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.Boolean get_tournamentWasUpdated()
+
+Disassembly:
+	0xC13ADF LocalGet 0
+	0xC13AE1 I32Load8_S 0, 8
+	0xC13AE4 I32Const 0
+	0xC13AE6 I32Ne
+	0xC13AE7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.<tournamentDidChange>k__BackingField (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_tournamentWasUpdated(System.Boolean value)
+
+Disassembly:
+	0xC5FB8A LocalGet 0
+	0xC5FB8C LocalGet 1
+	0xC5FB8E I32Const 1
+	0xC5FB90 I32And
+	0xC5FB91 I32Store8 0, 8
+	0xC5FB94 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Move this.<tournamentDidChange>k__BackingField (System.Boolean), value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xDCE6C0 I32Const 4556034
+	0xDCE6C5 I32Load8_S 0, 0
+	0xDCE6C8 I32Eqz
+	0xDCE6C9 If -64
+	0xDCE6CB I32Const 3011276
+	0xDCE6D0 I32Load 2, 0
+	0xDCE6D3 Call 73003
+	0xDCE6D7 I32Const 4556034
+	0xDCE6DC I32Const 1
+	0xDCE6DE I32Store8 0, 0
+	0xDCE6E1 End
+	0xDCE6E2 I32Const 4436512
+	0xDCE6E7 I32Load 2, 0
+	0xDCE6EA I32Load 2, 92
+	0xDCE6ED LocalGet 0
+	0xDCE6EF I32Store 2, 0
+	0xDCE6F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v9, [2DF2CC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [458502], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v13.<manager>k__BackingField (TopRun.IManager), this @ L0 (TopRun.TournamentChangedEventArgs)
+	17 Nop
+	18 Return
+

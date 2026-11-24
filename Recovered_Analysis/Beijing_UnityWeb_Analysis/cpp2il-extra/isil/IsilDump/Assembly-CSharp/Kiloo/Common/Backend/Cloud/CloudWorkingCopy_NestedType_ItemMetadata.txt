@@ -1,0 +1,2016 @@
+Type: Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata
+
+Method: System.String get_revision()
+
+Disassembly:
+	0xC1173F LocalGet 0
+	0xC11741 I32Load 2, 20
+	0xC11744 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)+14]
+
+Method: System.Void set_revision(System.String value)
+
+Disassembly:
+	0xC7FF09 LocalGet 1
+	0xC7FF0B I32Const 0
+	0xC7FF0D Call 73892
+	0xC7FF11 Drop
+	0xC7FF12 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Throw typeof(System.InvalidOperationException)
+	3 Nop
+	4 Return
+
+Method: System.Nullable`1<System.DateTime> get_lastModified()
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, returnVal1 @ L0 (System.Nullable`1<System.DateTime>), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], this @ L1 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+	5 Nop
+	6 Return returnVal1 @ L0 (System.Nullable`1<System.DateTime>)
+
+Method: System.Void set_lastModified(System.Nullable`1<System.DateTime> value)
+
+Disassembly:
+	0xF3A4A6 LocalGet 0
+	0xF3A4A8 LocalGet 1
+	0xF3A4AA I32Const 16
+	0xF3A4AC I32Add
+	0xF3A4AD LocalTee 3
+	0xF3A4AF I64Load 3, 0
+	0xF3A4B2 I64Store 3, 0
+	0xF3A4B5 LocalGet 0
+	0xF3A4B7 LocalGet 3
+	0xF3A4B9 I64Load 3, 8
+	0xF3A4BC I64Store 3, 8
+	0xF3A4BF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v5 @ S1_v2, value @ L1 (System.Nullable`1<System.DateTime>), 16
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)], [v5 @ S1_v2]
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Move this.<revision>k__BackingField (System.String), [v5 @ S1_v2+8]
+	11 Nop
+	12 Return
+
+Method: System.Boolean get_isOutOfDate()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.<revision>k__BackingField (System.String)
+
+Method: System.Void set_isOutOfDate(System.Boolean value)
+
+Disassembly:
+	0xF3A4C2 GlobalGet 7
+	0xF3A4C4 LocalSet 2
+	0xF3A4C6 GlobalGet 7
+	0xF3A4C8 I32Const 16
+	0xF3A4CA I32Add
+	0xF3A4CB GlobalSet 7
+	0xF3A4CD LocalGet 2
+	0xF3A4CF LocalGet 1
+	0xF3A4D1 I64Load 3, 0
+	0xF3A4D4 I64Store 3, 0
+	0xF3A4D7 LocalGet 2
+	0xF3A4D9 LocalGet 1
+	0xF3A4DB I64Load 3, 8
+	0xF3A4DE I64Store 3, 8
+	0xF3A4E1 LocalGet 0
+	0xF3A4E3 I32Const 16
+	0xF3A4E5 I32Add
+	0xF3A4E6 LocalTee 0
+	0xF3A4E8 LocalGet 2
+	0xF3A4EA I64Load 3, 0
+	0xF3A4ED I64Store 3, 0
+	0xF3A4F0 LocalGet 0
+	0xF3A4F2 LocalGet 2
+	0xF3A4F4 I64Load 3, 8
+	0xF3A4F7 I64Store 3, 8
+	0xF3A4FA LocalGet 2
+	0xF3A4FC GlobalSet 7
+	0xF3A4FE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], value.m_value (System.Boolean)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Move [v1 @ G7+8], [value @ L1 (System.Boolean)+8]
+	14 Nop
+	15 Nop
+	16 Add v17 @ S0_v7, this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata), 16
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v17 @ S0_v7], [v1 @ G7]
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Move [v17 @ S0_v7+8], [v1 @ G7+8]
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Return
+
+Method: System.Boolean get_isModified()
+
+Disassembly:
+	0xC1F278 LocalGet 0
+	0xC1F27A I32Load8_S 0, 32
+	0xC1F27D I32Const 0
+	0xC1F27F I32Ne
+	0xC1F280 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.<isOutOfDate>k__BackingField (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_isModified(System.Boolean value)
+
+Disassembly:
+	0xC1F283 LocalGet 0
+	0xC1F285 LocalGet 1
+	0xC1F287 I32Const 1
+	0xC1F289 I32And
+	0xC1F28A I32Store8 0, 32
+	0xC1F28D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Move this.<isOutOfDate>k__BackingField (System.Boolean), value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.Int32 get_serverDataVersion()
+
+Disassembly:
+	0xC9C332 LocalGet 0
+	0xC9C334 I32Load8_S 0, 33
+	0xC9C337 I32Const 0
+	0xC9C339 I32Ne
+	0xC9C33A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.<isModified>k__BackingField (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_serverDataVersion(System.Int32 value)
+
+Disassembly:
+	0xF22AE0 LocalGet 0
+	0xF22AE2 LocalGet 1
+	0xF22AE4 I32Const 1
+	0xF22AE6 I32And
+	0xF22AE7 I32Store8 0, 33
+	0xF22AEA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.Int32), value @ L1 (System.Int32), 1
+	4 Move this.<isModified>k__BackingField (System.Boolean), v5 @ S1_v2 (System.Int32)
+	5 Nop
+	6 Return
+
+Method: System.Int32 get_pristineCrc32()
+
+Disassembly:
+	0xC1F290 LocalGet 0
+	0xC1F292 I32Load 2, 36
+	0xC1F295 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.<serverDataVersion>k__BackingField (System.Int32)
+
+Method: System.Void set_pristineCrc32(System.Int32 value)
+
+Disassembly:
+	0xE38484 LocalGet 0
+	0xE38486 LocalGet 1
+	0xE38488 I32Store 2, 36
+	0xE3848B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.<serverDataVersion>k__BackingField (System.Int32), value @ L1 (System.Int32)
+	3 Nop
+	4 Return
+
+Method: System.Collections.Generic.Dictionary`2<System.String, System.String> get_userData()
+
+Disassembly:
+	0xC1F2A5 LocalGet 0
+	0xC1F2A7 I32Load 2, 40
+	0xC1F2AA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.<pristineCrc32>k__BackingField (System.Int32)
+
+Method: System.Void set_userData(System.Collections.Generic.Dictionary`2<System.String, System.String> value)
+
+Disassembly:
+	0xCF0E1A LocalGet 0
+	0xCF0E1C LocalGet 1
+	0xCF0E1E I32Store 2, 40
+	0xCF0E21 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.<pristineCrc32>k__BackingField (System.Int32), value @ L1 (System.Collections.Generic.Dictionary`2<System.String, System.String>)
+	3 Nop
+	4 Return
+
+Method: System.Void .ctor(System.String revision = null, System.Nullable`1<System.DateTime> lastModified = null, System.Boolean isOutOfDate = False, System.Boolean isModified = False, System.Int32 serverDataVersion = 0, System.Int32 pristineCrc32 = 0, System.Collections.Generic.Dictionary`2<System.String, System.String> userData = null)
+
+Disassembly:
+	0xE289F8 GlobalGet 7
+	0xE289FA LocalSet 9
+	0xE289FC GlobalGet 7
+	0xE289FE I32Const 80
+	0xE28A01 I32Add
+	0xE28A02 GlobalSet 7
+	0xE28A04 I32Const 4557437
+	0xE28A09 I32Load8_S 0, 0
+	0xE28A0C I32Eqz
+	0xE28A0D If -64
+	0xE28A0F I32Const 2980756
+	0xE28A14 I32Load 2, 0
+	0xE28A17 Call 73003
+	0xE28A1B I32Const 4557437
+	0xE28A20 I32Const 1
+	0xE28A22 I32Store8 0, 0
+	0xE28A25 End
+	0xE28A26 I32Const 4433436
+	0xE28A2B I32Load 2, 0
+	0xE28A2E LocalTee 8
+	0xE28A30 I32Load16_S 1, 186
+	0xE28A34 I32Const 512
+	0xE28A37 I32And
+	0xE28A38 If -64
+	0xE28A3A LocalGet 8
+	0xE28A3C I32Load 2, 116
+	0xE28A3F I32Eqz
+	0xE28A40 If -64
+	0xE28A42 LocalGet 8
+	0xE28A44 Call 72345
+	0xE28A48 End
+	0xE28A49 End
+	0xE28A4A LocalGet 9
+	0xE28A4C I32Const 48
+	0xE28A4E I32Add
+	0xE28A4F LocalTee 8
+	0xE28A51 I32Const 0
+	0xE28A53 Call 63811
+	0xE28A57 LocalGet 0
+	0xE28A59 LocalGet 8
+	0xE28A5B I64Load 2, 0
+	0xE28A5E I64Store 2, 0
+	0xE28A61 LocalGet 0
+	0xE28A63 LocalGet 8
+	0xE28A65 I64Load 2, 8
+	0xE28A68 I64Store 2, 8
+	0xE28A6B I32Const 4433316
+	0xE28A70 I32Load 2, 0
+	0xE28A73 LocalTee 8
+	0xE28A75 I32Load16_S 1, 186
+	0xE28A79 I32Const 512
+	0xE28A7C I32And
+	0xE28A7D If -64
+	0xE28A7F LocalGet 8
+	0xE28A81 I32Load 2, 116
+	0xE28A84 I32Eqz
+	0xE28A85 If -64
+	0xE28A87 LocalGet 8
+	0xE28A89 Call 72345
+	0xE28A8D End
+	0xE28A8E End
+	0xE28A8F LocalGet 9
+	0xE28A91 I32Const 36
+	0xE28A93 I32Add
+	0xE28A94 LocalTee 8
+	0xE28A96 I32Const 0
+	0xE28A98 Call 70752
+	0xE28A9C LocalGet 1
+	0xE28A9E LocalGet 8
+	0xE28AA0 I64Load 2, 0
+	0xE28AA3 I64Store 2, 0
+	0xE28AA6 LocalGet 1
+	0xE28AA8 LocalGet 8
+	0xE28AAA I32Load 2, 8
+	0xE28AAD I32Store 2, 8
+	0xE28AB0 I32Const 4440584
+	0xE28AB5 I32Load 2, 0
+	0xE28AB8 LocalTee 8
+	0xE28ABA I32Load16_S 1, 186
+	0xE28ABE I32Const 512
+	0xE28AC1 I32And
+	0xE28AC2 If -64
+	0xE28AC4 LocalGet 8
+	0xE28AC6 I32Load 2, 116
+	0xE28AC9 I32Eqz
+	0xE28ACA If -64
+	0xE28ACC LocalGet 8
+	0xE28ACE Call 72345
+	0xE28AD2 I32Const 4440584
+	0xE28AD7 I32Load 2, 0
+	0xE28ADA LocalSet 8
+	0xE28ADC End
+	0xE28ADD End
+	0xE28ADE LocalGet 8
+	0xE28AE0 I32Load 2, 92
+	0xE28AE3 I32Load 2, 4
+	0xE28AE6 LocalGet 9
+	0xE28AE8 I32Const -64
+	0xE28AEA I32Sub
+	0xE28AEB LocalTee 8
+	0xE28AED LocalGet 4
+	0xE28AEF I64Load 2, 0
+	0xE28AF2 I64Store 2, 0
+	0xE28AF5 LocalGet 8
+	0xE28AF7 LocalGet 4
+	0xE28AF9 I64Load 2, 8
+	0xE28AFC I64Store 2, 8
+	0xE28AFF LocalGet 8
+	0xE28B01 I32Const 0
+	0xE28B03 Call 64346
+	0xE28B07 I32Const 4440584
+	0xE28B0C I32Load 2, 0
+	0xE28B0F I32Load 2, 92
+	0xE28B12 I32Load 2, 4
+	0xE28B15 LocalGet 8
+	0xE28B17 LocalGet 5
+	0xE28B19 I64Load 2, 0
+	0xE28B1C I64Store 2, 0
+	0xE28B1F LocalGet 8
+	0xE28B21 LocalGet 5
+	0xE28B23 I32Load 2, 8
+	0xE28B26 I32Store 2, 8
+	0xE28B29 LocalGet 8
+	0xE28B2B I32Const 0
+	0xE28B2D Call 64336
+	0xE28B31 I32Const 4440584
+	0xE28B36 I32Load 2, 0
+	0xE28B39 I32Load 2, 92
+	0xE28B3C I32Load 2, 4
+	0xE28B3F LocalGet 9
+	0xE28B41 I32Const 24
+	0xE28B43 I32Add
+	0xE28B44 LocalTee 4
+	0xE28B46 I32Const 0
+	0xE28B48 Call 70766
+	0xE28B4C LocalGet 8
+	0xE28B4E LocalGet 4
+	0xE28B50 I64Load 2, 0
+	0xE28B53 I64Store 2, 0
+	0xE28B56 LocalGet 8
+	0xE28B58 LocalGet 4
+	0xE28B5A I32Load 2, 8
+	0xE28B5D I32Store 2, 8
+	0xE28B60 LocalGet 8
+	0xE28B62 I32Const 0
+	0xE28B64 Call 64359
+	0xE28B68 I32Const 4440584
+	0xE28B6D I32Load 2, 0
+	0xE28B70 I32Load 2, 92
+	0xE28B73 I32Load 2, 0
+	0xE28B76 LocalGet 8
+	0xE28B78 LocalGet 6
+	0xE28B7A I64Load 2, 0
+	0xE28B7D I64Store 2, 0
+	0xE28B80 LocalGet 8
+	0xE28B82 LocalGet 6
+	0xE28B84 I64Load 2, 8
+	0xE28B87 I64Store 2, 8
+	0xE28B8A LocalGet 8
+	0xE28B8C I32Const 0
+	0xE28B8E Call 64346
+	0xE28B92 I32Const 4440584
+	0xE28B97 I32Load 2, 0
+	0xE28B9A I32Load 2, 92
+	0xE28B9D I32Load 2, 0
+	0xE28BA0 LocalGet 8
+	0xE28BA2 LocalGet 7
+	0xE28BA4 I64Load 2, 0
+	0xE28BA7 I64Store 2, 0
+	0xE28BAA LocalGet 8
+	0xE28BAC LocalGet 7
+	0xE28BAE I32Load 2, 8
+	0xE28BB1 I32Store 2, 8
+	0xE28BB4 LocalGet 8
+	0xE28BB6 I32Const 0
+	0xE28BB8 Call 64336
+	0xE28BBC I32Const 4440584
+	0xE28BC1 I32Load 2, 0
+	0xE28BC4 I32Load 2, 92
+	0xE28BC7 I32Load 2, 0
+	0xE28BCA LocalGet 9
+	0xE28BCC I32Const 12
+	0xE28BCE I32Add
+	0xE28BCF LocalTee 4
+	0xE28BD1 I32Const 0
+	0xE28BD3 Call 70766
+	0xE28BD7 LocalGet 8
+	0xE28BD9 LocalGet 4
+	0xE28BDB I64Load 2, 0
+	0xE28BDE I64Store 2, 0
+	0xE28BE1 LocalGet 8
+	0xE28BE3 LocalGet 4
+	0xE28BE5 I32Load 2, 8
+	0xE28BE8 I32Store 2, 8
+	0xE28BEB LocalGet 8
+	0xE28BED I32Const 0
+	0xE28BEF Call 64359
+	0xE28BF3 I32Const 4440584
+	0xE28BF8 I32Load 2, 0
+	0xE28BFB I32Load 2, 92
+	0xE28BFE I32Load 2, 4
+	0xE28C01 LocalGet 8
+	0xE28C03 LocalGet 2
+	0xE28C05 I64Load 2, 0
+	0xE28C08 I64Store 2, 0
+	0xE28C0B LocalGet 8
+	0xE28C0D LocalGet 2
+	0xE28C0F I64Load 2, 8
+	0xE28C12 I64Store 2, 8
+	0xE28C15 LocalGet 8
+	0xE28C17 I32Const 0
+	0xE28C19 Call 64346
+	0xE28C1D I32Const 4440584
+	0xE28C22 I32Load 2, 0
+	0xE28C25 I32Load 2, 92
+	0xE28C28 I32Load 2, 4
+	0xE28C2B LocalGet 8
+	0xE28C2D LocalGet 3
+	0xE28C2F I64Load 2, 0
+	0xE28C32 I64Store 2, 0
+	0xE28C35 LocalGet 8
+	0xE28C37 LocalGet 3
+	0xE28C39 I32Load 2, 8
+	0xE28C3C I32Store 2, 8
+	0xE28C3F LocalGet 8
+	0xE28C41 I32Const 0
+	0xE28C43 Call 64336
+	0xE28C47 LocalGet 8
+	0xE28C49 I32Const 4440584
+	0xE28C4E I32Load 2, 0
+	0xE28C51 I32Load 2, 92
+	0xE28C54 I32Load 2, 0
+	0xE28C57 I32Const 0
+	0xE28C59 Call 64343
+	0xE28C5D LocalGet 0
+	0xE28C5F LocalGet 8
+	0xE28C61 I64Load 2, 0
+	0xE28C64 I64Store 2, 0
+	0xE28C67 LocalGet 0
+	0xE28C69 LocalGet 8
+	0xE28C6B I64Load 2, 8
+	0xE28C6E I64Store 2, 8
+	0xE28C71 LocalGet 9
+	0xE28C73 I32Const 4440584
+	0xE28C78 I32Load 2, 0
+	0xE28C7B I32Load 2, 92
+	0xE28C7E I32Load 2, 0
+	0xE28C81 I32Const 0
+	0xE28C83 Call 64334
+	0xE28C87 LocalGet 1
+	0xE28C89 LocalGet 9
+	0xE28C8B I64Load 2, 0
+	0xE28C8E I64Store 2, 0
+	0xE28C91 LocalGet 1
+	0xE28C93 LocalGet 9
+	0xE28C95 I32Load 2, 8
+	0xE28C98 I32Store 2, 8
+	0xE28C9B LocalGet 9
+	0xE28C9D GlobalSet 7
+	0xE28C9F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b28
+	11 Nop
+	12 Move v12 @ S0_v84, [2D7B94]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v84
+	14 Nop
+	15 Move v14 @ S1_v63, 1
+	16 Move [458A7D], v14 @ S1_v63
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v9 (Il2CppClass<UnityEngine.Quaternion>), typeof(UnityEngine.Quaternion)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<UnityEngine.Quaternion>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	25 ConditionalJump @b32, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S0_v79 (Il2CppClass<UnityEngine.Quaternion>), typeof(UnityEngine.Quaternion)
+	27 Nop
+	28 CheckEqual v26 @ S0_v81 (System.Boolean), [v24 @ S0_v79 (Il2CppClass<UnityEngine.Quaternion>)+74], 0
+	29 Not v27 @ TEMP_v10 (System.Boolean), v26 @ S0_v81 (System.Boolean)
+	30 ConditionalJump @b32, v27 @ TEMP_v10 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(UnityEngine.Quaternion)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Add v33 @ S0_v14, v1 @ G7 (UnityEngine.Transform), 48
+	38 Nop
+	39 Nop
+	40 Call Vector2.get_zero, v36 @ SRET_v1 (UnityEngine.Vector2)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Move [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)], [v33 @ S0_v14]
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Move this.<revision>k__BackingField (System.String), [v33 @ S0_v14+8]
+	49 Nop
+	50 Move v45 @ S0_v18 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 And v49 @ S0_v20, [v45 @ S0_v18 (Il2CppClass<UnityEngine.Vector3>)+BA], 512
+	55 CheckEqual v50 @ TEMP_v4 (System.Boolean), v49 @ S0_v20, 0
+	56 ConditionalJump @b29, v50 @ TEMP_v4 (System.Boolean)
+	57 Move v51 @ S0_v75 (Il2CppClass<UnityEngine.Vector3>), typeof(UnityEngine.Vector3)
+	58 Nop
+	59 CheckEqual v53 @ S0_v77 (System.Boolean), [v51 @ S0_v75 (Il2CppClass<UnityEngine.Vector3>)+74], 0
+	60 Not v54 @ TEMP_v9 (System.Boolean), v53 @ S0_v77 (System.Boolean)
+	61 ConditionalJump @b29, v54 @ TEMP_v9 (System.Boolean)
+	62 Nop
+	63 CallVoid 11A99, typeof(UnityEngine.Vector3)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Add v60 @ S0_v23, v1 @ G7 (UnityEngine.Transform), 36
+	69 Nop
+	70 Nop
+	71 Call Vector3.get_one, v63 @ SRET_v2 (UnityEngine.Vector3)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Move [revision @ L1 (System.String)], [v60 @ S0_v23]
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Move revision.m_stringLength (System.Int32), [v60 @ S0_v23+8]
+	80 Nop
+	81 Move v72 @ S0_v27 (Il2CppClass<SYBO.Common.Math3D>), typeof(SYBO.Common.Math3D)
+	82 Nop
+	83 Nop
+	84 Nop
+	85 And v76 @ S0_v29, [v72 @ S0_v27 (Il2CppClass<SYBO.Common.Math3D>)+BA], 512
+	86 CheckEqual v77 @ TEMP_v6 (System.Boolean), v76 @ S0_v29, 0
+	87 ConditionalJump @b30, v77 @ TEMP_v6 (System.Boolean)
+	88 Move v78 @ S0_v69 (Il2CppClass<SYBO.Common.Math3D>), typeof(SYBO.Common.Math3D)
+	89 Nop
+	90 CheckEqual v80 @ S0_v71 (System.Boolean), [v78 @ S0_v69 (Il2CppClass<SYBO.Common.Math3D>)+74], 0
+	91 Not v81 @ TEMP_v8 (System.Boolean), v80 @ S0_v71 (System.Boolean)
+	92 ConditionalJump @b30, v81 @ TEMP_v8 (System.Boolean)
+	93 Nop
+	94 CallVoid 11A99, typeof(SYBO.Common.Math3D)
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Subtract v92 @ S1_v19 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), -64
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Move [v92 @ S1_v19 (UnityEngine.Transform)], isModified.m_value (System.Boolean)
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Move v92.m_CachedPtr (System.IntPtr), [isModified @ L4 (System.Boolean)+8]
+	114 Nop
+	115 Nop
+	116 Call Transform.get_localRotation, v102 @ SRET_v3 (UnityEngine.Quaternion), v92 @ S1_v19 (UnityEngine.Transform)
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Move [v92 @ S1_v19 (UnityEngine.Transform)], serverDataVersion.m_value (System.Int32)
+	125 Nop
+	126 Nop
+	127 Nop
+	128 Move v92.m_CachedPtr (System.IntPtr), [serverDataVersion @ L5 (System.Int32)+8]
+	129 Nop
+	130 Nop
+	131 Call Transform.get_localPosition, v117 @ SRET_v4 (UnityEngine.Vector3), v92 @ S1_v19 (UnityEngine.Transform)
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 Add v125 @ S1_v26, v1 @ G7 (UnityEngine.Transform), 24
+	139 Nop
+	140 Nop
+	141 Call Vector3.get_forward, v128 @ SRET_v5 (UnityEngine.Vector3)
+	142 Nop
+	143 Nop
+	144 Nop
+	145 Move [v92 @ S1_v19 (UnityEngine.Transform)], [v125 @ S1_v26]
+	146 Nop
+	147 Nop
+	148 Nop
+	149 Move v92.m_CachedPtr (System.IntPtr), [v125 @ S1_v26+8]
+	150 Nop
+	151 Nop
+	152 CallVoid Transform.set_parent, v121.tempParent (UnityEngine.Transform), v92 @ S1_v19 (UnityEngine.Transform)
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Move [v92 @ S1_v19 (UnityEngine.Transform)], pristineCrc32.m_value (System.Int32)
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Move v92.m_CachedPtr (System.IntPtr), [pristineCrc32 @ L6 (System.Int32)+8]
+	165 Nop
+	166 Nop
+	167 Call Transform.get_localRotation, v150 @ SRET_v6 (UnityEngine.Quaternion), v92 @ S1_v19 (UnityEngine.Transform)
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Nop
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Move [v92 @ S1_v19 (UnityEngine.Transform)], [userData @ L7 (System.Collections.Generic.Dictionary`2<System.String, System.String>)]
+	176 Nop
+	177 Nop
+	178 Nop
+	179 Move v92.m_CachedPtr (System.IntPtr), userData.buckets (System.Int32[])
+	180 Nop
+	181 Nop
+	182 Call Transform.get_localPosition, v164 @ SRET_v7 (UnityEngine.Vector3), v92 @ S1_v19 (UnityEngine.Transform)
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 Add v171 @ S1_v37, v1 @ G7 (UnityEngine.Transform), 12
+	190 Nop
+	191 Nop
+	192 Call Vector3.get_forward, v174 @ SRET_v8 (UnityEngine.Vector3)
+	193 Nop
+	194 Nop
+	195 Nop
+	196 Move [v92 @ S1_v19 (UnityEngine.Transform)], [v171 @ S1_v37]
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Move v92.m_CachedPtr (System.IntPtr), [v171 @ S1_v37+8]
+	201 Nop
+	202 Nop
+	203 CallVoid Transform.set_parent, v167.tempChild (UnityEngine.Transform), v92 @ S1_v19 (UnityEngine.Transform)
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Move [v92 @ S1_v19 (UnityEngine.Transform)], [lastModified @ L2 (System.Nullable`1<System.DateTime>)]
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Move v92.m_CachedPtr (System.IntPtr), [lastModified @ L2 (System.Nullable`1<System.DateTime>)+8]
+	216 Nop
+	217 Nop
+	218 Call Transform.get_localRotation, v196 @ SRET_v9 (UnityEngine.Quaternion), v92 @ S1_v19 (UnityEngine.Transform)
+	219 Nop
+	220 Nop
+	221 Nop
+	222 Nop
+	223 Nop
+	224 Nop
+	225 Nop
+	226 Move [v92 @ S1_v19 (UnityEngine.Transform)], isOutOfDate.m_value (System.Boolean)
+	227 Nop
+	228 Nop
+	229 Nop
+	230 Move v92.m_CachedPtr (System.IntPtr), [isOutOfDate @ L3 (System.Boolean)+8]
+	231 Nop
+	232 Nop
+	233 Call Transform.get_localPosition, v210 @ SRET_v10 (UnityEngine.Vector3), v92 @ S1_v19 (UnityEngine.Transform)
+	234 Nop
+	235 Nop
+	236 Nop
+	237 Nop
+	238 Nop
+	239 Nop
+	240 CallVoid Transform.set_rotation, v92 @ S1_v19 (UnityEngine.Transform), v214.tempChild (UnityEngine.Transform)
+	241 Nop
+	242 Nop
+	243 Nop
+	244 Move [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)], [v92 @ S1_v19 (UnityEngine.Transform)]
+	245 Nop
+	246 Nop
+	247 Nop
+	248 Move this.<revision>k__BackingField (System.String), v92.m_CachedPtr (System.IntPtr)
+	249 Nop
+	250 Nop
+	251 Nop
+	252 Nop
+	253 Nop
+	254 Nop
+	255 CallVoid Transform.set_position, v1 @ G7 (UnityEngine.Transform), v226.tempChild (UnityEngine.Transform)
+	256 Nop
+	257 Nop
+	258 Nop
+	259 Move [revision @ L1 (System.String)], [v1 @ G7 (UnityEngine.Transform)]
+	260 Nop
+	261 Nop
+	262 Nop
+	263 Move revision.m_stringLength (System.Int32), v1.m_CachedPtr (System.IntPtr)
+	264 Nop
+	265 Nop
+	266 Nop
+	267 Return
+
+Method: System.Void .ctor(Kiloo.Common.Backend.Cloud.ICloudItem cloudItem, System.Int32 pristineCrc32 = 0)
+
+Disassembly:
+	0xD782BD GlobalGet 7
+	0xD782BF LocalSet 9
+	0xD782C1 GlobalGet 7
+	0xD782C3 I32Const 16
+	0xD782C5 I32Add
+	0xD782C6 GlobalSet 7
+	0xD782C8 LocalGet 9
+	0xD782CA LocalTee 3
+	0xD782CC LocalGet 0
+	0xD782CE I32Store 2, 0
+	0xD782D1 LocalGet 0
+	0xD782D3 I32Load 2, 52
+	0xD782D6 LocalTee 4
+	0xD782D8 If -1
+	0xD782DA LocalGet 4
+	0xD782DC I32Const 16
+	0xD782DE I32Add
+	0xD782DF LocalSet 3
+	0xD782E1 LocalGet 4
+	0xD782E3 I32Load 2, 12
+	0xD782E6 Else
+	0xD782E7 I32Const 1
+	0xD782E9 End
+	0xD782EA LocalSet 10
+	0xD782EC Loop -64
+	0xD782EE LocalGet 8
+	0xD782F0 LocalGet 10
+	0xD782F2 I32Ne
+	0xD782F3 If -64
+	0xD782F5 LocalGet 3
+	0xD782F7 LocalGet 8
+	0xD782F9 I32Const 2
+	0xD782FB I32Shl
+	0xD782FC I32Add
+	0xD782FD I32Load 2, 0
+	0xD78300 LocalTee 4
+	0xD78302 I32Load 2, 8
+	0xD78305 LocalSet 6
+	0xD78307 LocalGet 4
+	0xD78309 I32Load 2, 16
+	0xD7830C LocalSet 5
+	0xD7830E LocalGet 4
+	0xD78310 I32Load 2, 20
+	0xD78313 LocalTee 4
+	0xD78315 I32Load16_S 1, 40
+	0xD78318 I32Const -1
+	0xD7831A I32Eq
+	0xD7831B If -64
+	0xD7831D LocalGet 4
+	0xD7831F Call 72344
+	0xD78323 End
+	0xD78324 LocalGet 4
+	0xD78326 I32Load8_U 0, 42
+	0xD78329 LocalSet 7
+	0xD7832B Block -64
+	0xD7832D LocalGet 4
+	0xD7832F I32Load16_S 1, 36
+	0xD78332 I32Const 16
+	0xD78334 I32And
+	0xD78335 I32Eqz
+	0xD78336 I32Const 1
+	0xD78338 I32Xor
+	0xD78339 If -64
+	0xD7833B LocalGet 7
+	0xD7833D I32Const 2
+	0xD7833F I32Eq
+	0xD78340 If -64
+	0xD78342 LocalGet 1
+	0xD78344 LocalGet 2
+	0xD78346 LocalGet 4
+	0xD78348 LocalGet 6
+	0xD7834A I32Const 16383
+	0xD7834E I32And
+	0xD7834F I32Const 97173
+	0xD78353 I32Add
+	0xD78354 CallIndirect 9, 0
+	0xD78357 Else
+	0xD78358 LocalGet 5
+	0xD7835A LocalGet 1
+	0xD7835C LocalGet 2
+	0xD7835E LocalGet 4
+	0xD78360 LocalGet 6
+	0xD78362 I32Const 8191
+	0xD78365 I32And
+	0xD78366 I32Const 113696
+	0xD7836A I32Add
+	0xD7836B CallIndirect 8, 0
+	0xD7836E End
+	0xD7836F Else
+	0xD78370 LocalGet 4
+	0xD78372 I32Load16_S 1, 40
+	0xD78375 I32Const -1
+	0xD78377 I32Ne
+	0xD78378 If -64
+	0xD7837A LocalGet 5
+	0xD7837C If -1
+	0xD7837E LocalGet 5
+	0xD78380 I32Load 2, 0
+	0xD78383 I32Load 2, 156
+	0xD78387 I32Const 256
+	0xD7838A I32And
+	0xD7838B I32Const 0
+	0xD7838D I32Ne
+	0xD7838E Else
+	0xD7838F I32Const 0
+	0xD78391 End
+	0xD78392 I32Eqz
+	0xD78393 If -64
+	0xD78395 LocalGet 0
+	0xD78397 I32Load 2, 12
+	0xD7839A If -64
+	0xD7839C LocalGet 5
+	0xD7839E I32Eqz
+	0xD7839F If -64
+	0xD783A1 LocalGet 1
+	0xD783A3 LocalGet 2
+	0xD783A5 LocalGet 4
+	0xD783A7 LocalGet 6
+	0xD783A9 I32Const 16383
+	0xD783AD I32And
+	0xD783AE I32Const 97173
+	0xD783B2 I32Add
+	0xD783B3 CallIndirect 9, 0
+	0xD783B6 Br 5
+	0xD783B8 End
+	0xD783B9 LocalGet 4
+	0xD783BB I32Load8_S 0, 43
+	0xD783BE I32Const 3
+	0xD783C0 I32And
+	0xD783C1 I32Const 2
+	0xD783C3 I32Eq
+	0xD783C4 LocalGet 4
+	0xD783C6 Call 73912
+	0xD783CA LocalSet 6
+	0xD783CC If -64
+	0xD783CE LocalGet 6
+	0xD783D0 If -64
+	0xD783D2 LocalGet 4
+	0xD783D4 LocalGet 5
+	0xD783D6 LocalGet 1
+	0xD783D8 LocalGet 2
+	0xD783DA Call 31351
+	0xD783DE Else
+	0xD783DF LocalGet 4
+	0xD783E1 LocalGet 5
+	0xD783E3 LocalGet 1
+	0xD783E5 LocalGet 2
+	0xD783E7 Call 31352
+	0xD783EB End
+	0xD783EC Else
+	0xD783ED LocalGet 4
+	0xD783EF I32Load16_U 1, 40
+	0xD783F2 LocalSet 7
+	0xD783F4 LocalGet 6
+	0xD783F6 If -64
+	0xD783F8 LocalGet 7
+	0xD783FA LocalGet 4
+	0xD783FC I32Load 2, 12
+	0xD783FF LocalGet 5
+	0xD78401 LocalGet 1
+	0xD78403 LocalGet 2
+	0xD78405 Call 30068
+	0xD78409 Else
+	0xD7840A LocalGet 7
+	0xD7840C LocalGet 5
+	0xD7840E LocalGet 1
+	0xD78410 LocalGet 2
+	0xD78412 Call 30567
+	0xD78416 End
+	0xD78417 End
+	0xD78418 Br 4
+	0xD7841A End
+	0xD7841B End
+	0xD7841C End
+	0xD7841D LocalGet 5
+	0xD7841F LocalGet 1
+	0xD78421 LocalGet 2
+	0xD78423 LocalGet 4
+	0xD78425 LocalGet 6
+	0xD78427 I32Const 8191
+	0xD7842A I32And
+	0xD7842B I32Const 113696
+	0xD7842F I32Add
+	0xD78430 CallIndirect 8, 0
+	0xD78433 End
+	0xD78434 End
+	0xD78435 LocalGet 8
+	0xD78437 I32Const 1
+	0xD78439 I32Add
+	0xD7843A LocalSet 8
+	0xD7843C Br 1
+	0xD7843E End
+	0xD7843F End
+	0xD78440 LocalGet 9
+	0xD78442 GlobalSet 7
+	0xD78444 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+	10 Nop
+	11 Move v12 @ S0_v6, [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)+34]
+	12 Nop
+	13 CheckEqual v14 @ TEMP_v1 (System.Boolean), [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)+34], 0
+	14 ConditionalJump @b4, v14 @ TEMP_v1 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Add v17 @ S0_v74, [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)+34], 16
+	18 Nop
+	19 Nop
+	20 Move v24 @ S0_v7, [v12 @ S0_v6+C]
+	21 Jump @b40
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CheckNotEqual v63 @ S0_v10 (System.Boolean), v60 @ S0_v32, v24 @ S0_v7
+	29 Not v64 @ TEMP_v3 (System.Boolean), v63 @ S0_v10 (System.Boolean)
+	30 ConditionalJump @b31, v64 @ TEMP_v3 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 ShiftLeft v68 @ S1_v7, v60 @ S0_v32, 2
+	35 Add v69 @ S0_v13, v22 @ L3_v2, v68 @ S1_v7
+	36 Move v70 @ S0_v14, [v69 @ S0_v13]
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Move v75 @ S0_v17, [v70 @ S0_v14+10]
+	42 Nop
+	43 Nop
+	44 Move v77 @ S0_v19, [v70 @ S0_v14+14]
+	45 Nop
+	46 Nop
+	47 Nop
+	48 CheckEqual v80 @ S0_v21 (System.Boolean), [v77 @ S0_v19+28], -1
+	49 Not v81 @ TEMP_v4 (System.Boolean), v80 @ S0_v21 (System.Boolean)
+	50 ConditionalJump @b7, v81 @ TEMP_v4 (System.Boolean)
+	51 Nop
+	52 CallVoid 11A98, v77 @ S0_v19
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 And v92 @ S0_v27, [v77 @ S0_v19+24], 16
+	61 CheckEqual v93 @ S0_v28 (System.Boolean), v92 @ S0_v27, 0
+	62 Nop
+	63 Xor v95 @ S0_v29, v93 @ S0_v28 (System.Boolean), 1
+	64 CheckEqual v96 @ TEMP_v5 (System.Boolean), v95 @ S0_v29, 0
+	65 ConditionalJump @b11, v96 @ TEMP_v5 (System.Boolean)
+	66 Nop
+	67 Nop
+	68 CheckEqual v99 @ S0_v67 (System.Boolean), [v77 @ S0_v19+2A], 2
+	69 Not v100 @ TEMP_v17 (System.Boolean), v99 @ S0_v67 (System.Boolean)
+	70 ConditionalJump @b10, v100 @ TEMP_v17 (System.Boolean)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 And v113 @ S3_v16, [v70 @ S0_v14+8], 16383
+	77 Nop
+	78 Add v115 @ S3_v17, v113 @ S3_v16, 97173
+	79 IndirectCall v115 @ S3_v17, v32 @ SRET_v1, cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32), v77 @ S0_v19
+	80 Jump @b33
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 And v123 @ S4_v12, [v70 @ S0_v14+8], 8191
+	88 Nop
+	89 Add v164 @ S4_v6 (System.Int32), v123 @ S4_v12, 113696
+	90 IndirectCall v164 @ S4_v6 (System.Int32), v32 @ SRET_v1, [v70 @ S0_v14+10], cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32), v77 @ S0_v19
+	91 Nop
+	92 Jump @b36
+	93 Nop
+	94 Nop
+	95 Nop
+	96 CheckNotEqual v104 @ S0_v35 (System.Boolean), [v77 @ S0_v19+28], -1
+	97 Not v105 @ TEMP_v7 (System.Boolean), v104 @ S0_v35 (System.Boolean)
+	98 ConditionalJump @b34, v105 @ TEMP_v7 (System.Boolean)
+	99 Nop
+	100 CheckEqual v128 @ TEMP_v9 (System.Boolean), [v70 @ S0_v14+10], 0
+	101 ConditionalJump @b14, v128 @ TEMP_v9 (System.Boolean)
+	102 Nop
+	103 Move v155 @ S0_v62, [v75 @ S0_v17]
+	104 Nop
+	105 Nop
+	106 And v158 @ S0_v64, [v155 @ S0_v62+9C], 256
+	107 Nop
+	108 CheckNotEqual v180 @ S0_v39 (System.Boolean), v158 @ S0_v64, 0
+	109 Jump @b35
+	110 Nop
+	111 Nop
+	112 Not v135 @ S0_v40 (System.Boolean), v180 @ S0_v39 (System.Boolean)
+	113 Not v130 @ TEMP_v10 (System.Boolean), v135 @ S0_v40 (System.Boolean)
+	114 ConditionalJump @b34, v130 @ TEMP_v10 (System.Boolean)
+	115 Nop
+	116 Nop
+	117 CheckEqual v131 @ TEMP_v11 (System.Boolean), [this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)+C], 0
+	118 ConditionalJump @b34, v131 @ TEMP_v11 (System.Boolean)
+	119 Nop
+	120 CheckEqual v183 @ S0_v44 (System.Boolean), [v70 @ S0_v14+10], 0
+	121 Not v171 @ TEMP_v12 (System.Boolean), v183 @ S0_v44 (System.Boolean)
+	122 ConditionalJump @b18, v171 @ TEMP_v12 (System.Boolean)
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Nop
+	128 And v186 @ S3_v11, [v70 @ S0_v14+8], 16383
+	129 Nop
+	130 Add v165 @ S3_v12, v186 @ S3_v11, 97173
+	131 IndirectCall v165 @ S3_v12, v32 @ SRET_v1, cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32), v77 @ S0_v19
+	132 Jump @b36
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 And v190 @ S0_v47, [v77 @ S0_v19+2B], 3
+	138 Nop
+	139 CheckEqual v192 @ S0_v48 (System.Boolean), v190 @ S0_v47, 2
+	140 Nop
+	141 Call 120B8, v194 @ S1_v20, v77 @ S0_v19
+	142 Nop
+	143 Not v195 @ TEMP_v13 (System.Boolean), v192 @ S0_v48 (System.Boolean)
+	144 ConditionalJump @b25, v195 @ TEMP_v13 (System.Boolean)
+	145 Nop
+	146 CheckEqual v197 @ TEMP_v16 (System.Boolean), v194 @ S1_v20, 0
+	147 ConditionalJump @b23, v197 @ TEMP_v16 (System.Boolean)
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Nop
+	152 CallVoid 7A77, v77 @ S0_v19, [v70 @ S0_v14+10], cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32)
+	153 Jump @b24
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 CallVoid 7A78, v77 @ S0_v19, [v70 @ S0_v14+10], cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32)
+	159 Nop
+	160 Jump @b37
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Nop
+	165 CheckEqual v202 @ TEMP_v15 (System.Boolean), v194 @ S1_v20, 0
+	166 ConditionalJump @b28, v202 @ TEMP_v15 (System.Boolean)
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Nop
+	172 Nop
+	173 CallVoid 7574, [v77 @ S0_v19+28], [v77 @ S0_v19+C], [v70 @ S0_v14+10], cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32)
+	174 Jump @b37
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Nop
+	179 CallVoid 7767, [v77 @ S0_v19+28], [v70 @ S0_v14+10], cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32)
+	180 Nop
+	181 Nop
+	182 Jump @b36
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Nop
+	192 And v143 @ S4_v4, [v70 @ S0_v14+8], 8191
+	193 Nop
+	194 Add v164 @ S4_v6 (System.Int32), v143 @ S4_v4, 113696
+	195 IndirectCall v164 @ S4_v6 (System.Int32), v32 @ SRET_v1, [v70 @ S0_v14+10], cloudItem @ L1 (Kiloo.Common.Backend.Cloud.ICloudItem), pristineCrc32 @ L2 (System.Int32), v77 @ S0_v19
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Add v60 @ S0_v32, v26 @ L8_v1, 1
+	201 Nop
+	202 Jump @b40
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Return
+
+Method: Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata WithRevision(System.String newRevision)
+
+Disassembly:
+	0xF84C31 I32Const 4561067
+	0xF84C36 I32Load8_S 0, 0
+	0xF84C39 I32Eqz
+	0xF84C3A If -64
+	0xF84C3C I32Const 2946684
+	0xF84C41 I32Load 2, 0
+	0xF84C44 Call 73003
+	0xF84C48 I32Const 4561067
+	0xF84C4D I32Const 1
+	0xF84C4F I32Store8 0, 0
+	0xF84C52 End
+	0xF84C53 I32Const 9
+	0xF84C55 I32Const 4436844
+	0xF84C5A I32Load 2, 0
+	0xF84C5D LocalGet 0
+	0xF84C5F I32Load 2, 8
+	0xF84C62 Call 29547
+	0xF84C66 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v8, [2CF67C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4598AB], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call 736B, returnVal1 @ S0_v6 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata), 9, typeof(Kiloo.Common.Backend.Cloud.ICloudItem), this.<revision>k__BackingField (System.String)
+	18 Nop
+	19 Return returnVal1 @ S0_v6 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+
+Method: Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata WithIsOutOfDate(System.Boolean newIsOutOfDate)
+
+Disassembly:
+	0xF825A7 GlobalGet 7
+	0xF825A9 LocalSet 2
+	0xF825AB GlobalGet 7
+	0xF825AD I32Const 32
+	0xF825AF I32Add
+	0xF825B0 GlobalSet 7
+	0xF825B2 I32Const 4561025
+	0xF825B7 I32Load8_S 0, 0
+	0xF825BA I32Eqz
+	0xF825BB If -64
+	0xF825BD I32Const 2973944
+	0xF825C2 I32Load 2, 0
+	0xF825C5 Call 73003
+	0xF825C9 I32Const 4561025
+	0xF825CE I32Const 1
+	0xF825D0 I32Store8 0, 0
+	0xF825D3 End
+	0xF825D4 LocalGet 2
+	0xF825D6 LocalGet 0
+	0xF825D8 I32Const 16
+	0xF825DA I32Add
+	0xF825DB LocalTee 3
+	0xF825DD I64Load 3, 0
+	0xF825E0 I64Store 3, 0
+	0xF825E3 LocalGet 2
+	0xF825E5 LocalGet 3
+	0xF825E7 I64Load 3, 8
+	0xF825EA I64Store 3, 8
+	0xF825ED LocalGet 0
+	0xF825EF I32Load8_S 0, 32
+	0xF825F2 I32Const 0
+	0xF825F4 I32Ne
+	0xF825F5 LocalSet 4
+	0xF825F7 LocalGet 0
+	0xF825F9 I32Load8_S 0, 33
+	0xF825FC I32Const 0
+	0xF825FE I32Ne
+	0xF825FF LocalSet 5
+	0xF82601 LocalGet 0
+	0xF82603 I32Load 2, 36
+	0xF82606 LocalSet 6
+	0xF82608 LocalGet 0
+	0xF8260A I32Load 2, 40
+	0xF8260D LocalSet 7
+	0xF8260F LocalGet 0
+	0xF82611 I32Load 2, 44
+	0xF82614 LocalSet 8
+	0xF82616 I32Const 4438816
+	0xF8261B I32Load 2, 0
+	0xF8261E Call 72556
+	0xF82622 LocalSet 0
+	0xF82624 LocalGet 2
+	0xF82626 I32Const 16
+	0xF82628 I32Add
+	0xF82629 LocalTee 3
+	0xF8262B LocalGet 2
+	0xF8262D I64Load 3, 0
+	0xF82630 I64Store 3, 0
+	0xF82633 LocalGet 3
+	0xF82635 LocalGet 2
+	0xF82637 I64Load 3, 8
+	0xF8263A I64Store 3, 8
+	0xF8263D LocalGet 0
+	0xF8263F LocalGet 1
+	0xF82641 LocalGet 3
+	0xF82643 LocalGet 4
+	0xF82645 LocalGet 5
+	0xF82647 LocalGet 6
+	0xF82649 LocalGet 7
+	0xF8264B LocalGet 8
+	0xF8264D I32Const 0
+	0xF8264F Call 43191
+	0xF82653 LocalGet 2
+	0xF82655 GlobalSet 7
+	0xF82657 LocalGet 0
+	0xF82659 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v32, [2D60F8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v32
+	14 Nop
+	15 Move v14 @ S1_v16, 1
+	16 Move [459881], v14 @ S1_v16
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Add v21 @ S1_v4, this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata), 16
+	22 Nop
+	23 Nop
+	24 Move [v1 @ G7], [v21 @ S1_v4]
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Move [v1 @ G7+8], [v21 @ S1_v4+8]
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckNotEqual v30 @ S0_v12 (System.Boolean), this.<isOutOfDate>k__BackingField (System.Boolean), 0
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CheckNotEqual v35 @ S0_v15 (System.Boolean), this.<isModified>k__BackingField (System.Boolean), 0
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call 11B6C, v48 @ S0_v24 (System.IO.FileSystemEnumerableIterator`1), typeof(Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Add v52 @ S0_v26 (System.String), v1 @ G7, 16
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Move [v52 @ S0_v26 (System.String)], [v1 @ G7]
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move v52.m_stringLength (System.Int32), [v1 @ G7+8]
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 CallVoid FileSystemEnumerableIterator`1..ctor, v48 @ S0_v24 (System.IO.FileSystemEnumerableIterator`1), newIsOutOfDate @ L1 (System.Boolean), v52 @ S0_v26 (System.String), v30 @ S0_v12 (System.Boolean), v35 @ S0_v15 (System.Boolean), this.<serverDataVersion>k__BackingField (System.Int32), this.<pristineCrc32>k__BackingField (System.Int32), this.<userData>k__BackingField (System.Collections.Generic.Dictionary`2<System.String, System.String>)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Return v48 @ S0_v24 (System.IO.FileSystemEnumerableIterator`1)
+
+Method: Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata WithIsModified(System.Boolean newIsModified)
+
+Disassembly:
+	0xF8243A GlobalGet 7
+	0xF8243C LocalSet 2
+	0xF8243E GlobalGet 7
+	0xF82440 I32Const 32
+	0xF82442 I32Add
+	0xF82443 GlobalSet 7
+	0xF82445 I32Const 4561027
+	0xF8244A I32Load8_S 0, 0
+	0xF8244D I32Eqz
+	0xF8244E If -64
+	0xF82450 I32Const 2973940
+	0xF82455 I32Load 2, 0
+	0xF82458 Call 73003
+	0xF8245C I32Const 4561027
+	0xF82461 I32Const 1
+	0xF82463 I32Store8 0, 0
+	0xF82466 End
+	0xF82467 LocalGet 0
+	0xF82469 I32Load 2, 8
+	0xF8246C LocalSet 4
+	0xF8246E LocalGet 2
+	0xF82470 LocalGet 0
+	0xF82472 I32Const 16
+	0xF82474 I32Add
+	0xF82475 LocalTee 3
+	0xF82477 I64Load 3, 0
+	0xF8247A I64Store 3, 0
+	0xF8247D LocalGet 2
+	0xF8247F LocalGet 3
+	0xF82481 I64Load 3, 8
+	0xF82484 I64Store 3, 8
+	0xF82487 LocalGet 0
+	0xF82489 I32Load8_S 0, 33
+	0xF8248C I32Const 0
+	0xF8248E I32Ne
+	0xF8248F LocalSet 5
+	0xF82491 LocalGet 0
+	0xF82493 I32Load 2, 36
+	0xF82496 LocalSet 6
+	0xF82498 LocalGet 0
+	0xF8249A I32Load 2, 40
+	0xF8249D LocalSet 7
+	0xF8249F LocalGet 0
+	0xF824A1 I32Load 2, 44
+	0xF824A4 LocalSet 8
+	0xF824A6 I32Const 4438816
+	0xF824AB I32Load 2, 0
+	0xF824AE Call 72556
+	0xF824B2 LocalSet 0
+	0xF824B4 LocalGet 2
+	0xF824B6 I32Const 16
+	0xF824B8 I32Add
+	0xF824B9 LocalTee 3
+	0xF824BB LocalGet 2
+	0xF824BD I64Load 3, 0
+	0xF824C0 I64Store 3, 0
+	0xF824C3 LocalGet 3
+	0xF824C5 LocalGet 2
+	0xF824C7 I64Load 3, 8
+	0xF824CA I64Store 3, 8
+	0xF824CD LocalGet 0
+	0xF824CF LocalGet 4
+	0xF824D1 LocalGet 3
+	0xF824D3 LocalGet 1
+	0xF824D5 LocalGet 5
+	0xF824D7 LocalGet 6
+	0xF824D9 LocalGet 7
+	0xF824DB LocalGet 8
+	0xF824DD I32Const 0
+	0xF824DF Call 43191
+	0xF824E3 LocalGet 2
+	0xF824E5 GlobalSet 7
+	0xF824E7 LocalGet 0
+	0xF824E9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v31, [2D60F4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v31
+	14 Nop
+	15 Move v14 @ S1_v15, 1
+	16 Move [459883], v14 @ S1_v15
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v24 @ S1_v4, this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata), 16
+	25 Nop
+	26 Nop
+	27 Move [v1 @ G7], [v24 @ S1_v4]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v1 @ G7+8], [v24 @ S1_v4+8]
+	32 Nop
+	33 Nop
+	34 Nop
+	35 CheckNotEqual v33 @ S0_v14 (System.Boolean), this.<isModified>k__BackingField (System.Boolean), 0
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Call 11B6C, v46 @ S0_v23 (System.IO.FileSystemEnumerableIterator`1), typeof(Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Add v50 @ S0_v25 (System.String), v1 @ G7, 16
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move [v50 @ S0_v25 (System.String)], [v1 @ G7]
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Move v50.m_stringLength (System.Int32), [v1 @ G7+8]
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 CallVoid FileSystemEnumerableIterator`1..ctor, v46 @ S0_v23 (System.IO.FileSystemEnumerableIterator`1), this.<revision>k__BackingField (System.String), v50 @ S0_v25 (System.String), newIsModified @ L1 (System.Boolean), v33 @ S0_v14 (System.Boolean), this.<serverDataVersion>k__BackingField (System.Int32), this.<pristineCrc32>k__BackingField (System.Int32), this.<userData>k__BackingField (System.Collections.Generic.Dictionary`2<System.String, System.String>)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Return v46 @ S0_v23 (System.IO.FileSystemEnumerableIterator`1)
+
+Method: Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata WithServerDataVersion(System.Int32 newServerDataVersion)
+
+Disassembly:
+	0xF7FE84 GlobalGet 7
+	0xF7FE86 LocalSet 2
+	0xF7FE88 GlobalGet 7
+	0xF7FE8A I32Const 32
+	0xF7FE8C I32Add
+	0xF7FE8D GlobalSet 7
+	0xF7FE8F I32Const 4561002
+	0xF7FE94 I32Load8_S 0, 0
+	0xF7FE97 I32Eqz
+	0xF7FE98 If -64
+	0xF7FE9A I32Const 2973936
+	0xF7FE9F I32Load 2, 0
+	0xF7FEA2 Call 73003
+	0xF7FEA6 I32Const 4561002
+	0xF7FEAB I32Const 1
+	0xF7FEAD I32Store8 0, 0
+	0xF7FEB0 End
+	0xF7FEB1 LocalGet 0
+	0xF7FEB3 I32Load 2, 8
+	0xF7FEB6 LocalSet 4
+	0xF7FEB8 LocalGet 2
+	0xF7FEBA LocalGet 0
+	0xF7FEBC I32Const 16
+	0xF7FEBE I32Add
+	0xF7FEBF LocalTee 3
+	0xF7FEC1 I64Load 3, 0
+	0xF7FEC4 I64Store 3, 0
+	0xF7FEC7 LocalGet 2
+	0xF7FEC9 LocalGet 3
+	0xF7FECB I64Load 3, 8
+	0xF7FECE I64Store 3, 8
+	0xF7FED1 LocalGet 0
+	0xF7FED3 I32Load8_S 0, 32
+	0xF7FED6 I32Const 0
+	0xF7FED8 I32Ne
+	0xF7FED9 LocalSet 5
+	0xF7FEDB LocalGet 0
+	0xF7FEDD I32Load 2, 36
+	0xF7FEE0 LocalSet 6
+	0xF7FEE2 LocalGet 0
+	0xF7FEE4 I32Load 2, 40
+	0xF7FEE7 LocalSet 7
+	0xF7FEE9 LocalGet 0
+	0xF7FEEB I32Load 2, 44
+	0xF7FEEE LocalSet 8
+	0xF7FEF0 I32Const 4438816
+	0xF7FEF5 I32Load 2, 0
+	0xF7FEF8 Call 72556
+	0xF7FEFC LocalSet 0
+	0xF7FEFE LocalGet 2
+	0xF7FF00 I32Const 16
+	0xF7FF02 I32Add
+	0xF7FF03 LocalTee 3
+	0xF7FF05 LocalGet 2
+	0xF7FF07 I64Load 3, 0
+	0xF7FF0A I64Store 3, 0
+	0xF7FF0D LocalGet 3
+	0xF7FF0F LocalGet 2
+	0xF7FF11 I64Load 3, 8
+	0xF7FF14 I64Store 3, 8
+	0xF7FF17 LocalGet 0
+	0xF7FF19 LocalGet 4
+	0xF7FF1B LocalGet 3
+	0xF7FF1D LocalGet 5
+	0xF7FF1F LocalGet 1
+	0xF7FF21 LocalGet 6
+	0xF7FF23 LocalGet 7
+	0xF7FF25 LocalGet 8
+	0xF7FF27 I32Const 0
+	0xF7FF29 Call 43191
+	0xF7FF2D LocalGet 2
+	0xF7FF2F GlobalSet 7
+	0xF7FF31 LocalGet 0
+	0xF7FF33 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v31, [2D60F0]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v31
+	14 Nop
+	15 Move v14 @ S1_v15, 1
+	16 Move [45986A], v14 @ S1_v15
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v24 @ S1_v4, this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata), 16
+	25 Nop
+	26 Nop
+	27 Move [v1 @ G7], [v24 @ S1_v4]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v1 @ G7+8], [v24 @ S1_v4+8]
+	32 Nop
+	33 Nop
+	34 Nop
+	35 CheckNotEqual v33 @ S0_v14 (System.Boolean), this.<isOutOfDate>k__BackingField (System.Boolean), 0
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Call 11B6C, v46 @ S0_v23 (System.IO.FileSystemEnumerableIterator`1), typeof(Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Add v50 @ S0_v25 (System.String), v1 @ G7, 16
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move [v50 @ S0_v25 (System.String)], [v1 @ G7]
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Move v50.m_stringLength (System.Int32), [v1 @ G7+8]
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 CallVoid FileSystemEnumerableIterator`1..ctor, v46 @ S0_v23 (System.IO.FileSystemEnumerableIterator`1), this.<revision>k__BackingField (System.String), v50 @ S0_v25 (System.String), v33 @ S0_v14 (System.Boolean), newServerDataVersion @ L1 (System.Int32), this.<serverDataVersion>k__BackingField (System.Int32), this.<pristineCrc32>k__BackingField (System.Int32), this.<userData>k__BackingField (System.Collections.Generic.Dictionary`2<System.String, System.String>)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Return v46 @ S0_v23 (System.IO.FileSystemEnumerableIterator`1)
+
+Method: Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata WithUserData(System.String key, System.String value)
+
+Disassembly:
+	0xFC62F8 GlobalGet 7
+	0xFC62FA LocalSet 0
+	0xFC62FC GlobalGet 7
+	0xFC62FE I32Const 32
+	0xFC6300 I32Add
+	0xFC6301 GlobalSet 7
+	0xFC6303 LocalGet 0
+	0xFC6305 I32Const 8
+	0xFC6307 I32Add
+	0xFC6308 LocalTee 3
+	0xFC630A LocalGet 2
+	0xFC630C I32Const 0
+	0xFC630E Call 44369
+	0xFC6312 I64Store 3, 0
+	0xFC6315 LocalGet 0
+	0xFC6317 LocalGet 1
+	0xFC6319 I32Const 0
+	0xFC631B Call 44369
+	0xFC631F I64Store 3, 0
+	0xFC6322 LocalGet 0
+	0xFC6324 I32Const 16
+	0xFC6326 I32Add
+	0xFC6327 LocalTee 1
+	0xFC6329 LocalGet 0
+	0xFC632B I64Load 3, 0
+	0xFC632E I64Store 3, 0
+	0xFC6331 LocalGet 3
+	0xFC6333 I64Load 3, 0
+	0xFC6336 I64Const 4611686018427387903
+	0xFC6340 I64And
+	0xFC6341 LocalTee 4
+	0xFC6343 LocalGet 1
+	0xFC6345 I64Load 3, 0
+	0xFC6348 I64Const 4611686018427387903
+	0xFC6352 I64And
+	0xFC6353 LocalTee 5
+	0xFC6355 I64Gt_S
+	0xFC6356 If -1
+	0xFC6358 I32Const 1
+	0xFC635A Else
+	0xFC635B LocalGet 4
+	0xFC635D LocalGet 5
+	0xFC635F I64Lt_S
+	0xFC6360 I32Const 31
+	0xFC6362 I32Shl
+	0xFC6363 I32Const 31
+	0xFC6365 I32Shr_S
+	0xFC6366 End
+	0xFC6367 LocalGet 0
+	0xFC6369 GlobalSet 7
+	0xFC636B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 8
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Call AD51, v14 @ S1_v4, value @ L2 (System.String), 0
+	13 Move [v9 @ S0_v5], v14 @ S1_v4
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call AD51, v19 @ S1_v6, key @ L1 (System.String), 0
+	18 Move [v1 @ G7], v19 @ S1_v6
+	19 Nop
+	20 Nop
+	21 Add v22 @ S0_v8, v1 @ G7, 16
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Move [v22 @ S0_v8], [v1 @ G7]
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v29 @ S0_v11, [v9 @ S0_v5], 4611686018427387903
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 And v34 @ S1_v13, [v22 @ S0_v8], 4611686018427387903
+	35 Nop
+	36 CheckGreater v36 @ S0_v12 (System.Boolean), v29 @ S0_v11, v34 @ S1_v13
+	37 Not v37 @ TEMP_v1 (System.Boolean), v36 @ S0_v12 (System.Boolean)
+	38 ConditionalJump @b6, v37 @ TEMP_v1 (System.Boolean)
+	39 Nop
+	40 Jump @b7
+	41 Nop
+	42 Nop
+	43 CheckLess v41 @ S0_v15 (System.Boolean), v29 @ S0_v11, v34 @ S1_v13
+	44 Nop
+	45 ShiftLeft v43 @ S0_v16, v41 @ S0_v15 (System.Boolean), 31
+	46 Nop
+	47 ShiftRight returnVal1 @ S0_v13 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata), v43 @ S0_v16, 31
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Return returnVal1 @ S0_v13 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+
+Method: Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata WithUserData(System.Collections.Generic.Dictionary`2<System.String, System.String> newUserData)
+
+Disassembly:
+	0xF824EF GlobalGet 7
+	0xF824F1 LocalSet 2
+	0xF824F3 GlobalGet 7
+	0xF824F5 I32Const 32
+	0xF824F7 I32Add
+	0xF824F8 GlobalSet 7
+	0xF824FA I32Const 4561026
+	0xF824FF I32Load8_S 0, 0
+	0xF82502 I32Eqz
+	0xF82503 If -64
+	0xF82505 I32Const 2973948
+	0xF8250A I32Load 2, 0
+	0xF8250D Call 73003
+	0xF82511 I32Const 4561026
+	0xF82516 I32Const 1
+	0xF82518 I32Store8 0, 0
+	0xF8251B End
+	0xF8251C LocalGet 0
+	0xF8251E I32Load 2, 8
+	0xF82521 LocalSet 4
+	0xF82523 LocalGet 2
+	0xF82525 LocalGet 0
+	0xF82527 I32Const 16
+	0xF82529 I32Add
+	0xF8252A LocalTee 3
+	0xF8252C I64Load 3, 0
+	0xF8252F I64Store 3, 0
+	0xF82532 LocalGet 2
+	0xF82534 LocalGet 3
+	0xF82536 I64Load 3, 8
+	0xF82539 I64Store 3, 8
+	0xF8253C LocalGet 0
+	0xF8253E I32Load8_S 0, 32
+	0xF82541 I32Const 0
+	0xF82543 I32Ne
+	0xF82544 LocalSet 5
+	0xF82546 LocalGet 0
+	0xF82548 I32Load8_S 0, 33
+	0xF8254B I32Const 0
+	0xF8254D I32Ne
+	0xF8254E LocalSet 6
+	0xF82550 LocalGet 0
+	0xF82552 I32Load 2, 40
+	0xF82555 LocalSet 7
+	0xF82557 LocalGet 0
+	0xF82559 I32Load 2, 44
+	0xF8255C LocalSet 8
+	0xF8255E I32Const 4438816
+	0xF82563 I32Load 2, 0
+	0xF82566 Call 72556
+	0xF8256A LocalSet 0
+	0xF8256C LocalGet 2
+	0xF8256E I32Const 16
+	0xF82570 I32Add
+	0xF82571 LocalTee 3
+	0xF82573 LocalGet 2
+	0xF82575 I64Load 3, 0
+	0xF82578 I64Store 3, 0
+	0xF8257B LocalGet 3
+	0xF8257D LocalGet 2
+	0xF8257F I64Load 3, 8
+	0xF82582 I64Store 3, 8
+	0xF82585 LocalGet 0
+	0xF82587 LocalGet 4
+	0xF82589 LocalGet 3
+	0xF8258B LocalGet 5
+	0xF8258D LocalGet 6
+	0xF8258F LocalGet 1
+	0xF82591 LocalGet 7
+	0xF82593 LocalGet 8
+	0xF82595 I32Const 0
+	0xF82597 Call 43191
+	0xF8259B LocalGet 2
+	0xF8259D GlobalSet 7
+	0xF8259F LocalGet 0
+	0xF825A1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v32, [2D60FC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v32
+	14 Nop
+	15 Move v14 @ S1_v16, 1
+	16 Move [459882], v14 @ S1_v16
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v24 @ S1_v4, this @ L0 (Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata), 16
+	25 Nop
+	26 Nop
+	27 Move [v1 @ G7], [v24 @ S1_v4]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v1 @ G7+8], [v24 @ S1_v4+8]
+	32 Nop
+	33 Nop
+	34 Nop
+	35 CheckNotEqual v33 @ S0_v14 (System.Boolean), this.<isOutOfDate>k__BackingField (System.Boolean), 0
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 CheckNotEqual v38 @ S0_v17 (System.Boolean), this.<isModified>k__BackingField (System.Boolean), 0
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call 11B6C, v48 @ S0_v24 (System.IO.FileSystemEnumerableIterator`1), typeof(Kiloo.Common.Backend.Cloud.CloudWorkingCopy+ItemMetadata)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Add v52 @ S0_v26 (System.String), v1 @ G7, 16
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Move [v52 @ S0_v26 (System.String)], [v1 @ G7]
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move v52.m_stringLength (System.Int32), [v1 @ G7+8]
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 CallVoid FileSystemEnumerableIterator`1..ctor, v48 @ S0_v24 (System.IO.FileSystemEnumerableIterator`1), this.<revision>k__BackingField (System.String), v52 @ S0_v26 (System.String), v33 @ S0_v14 (System.Boolean), v38 @ S0_v17 (System.Boolean), newUserData @ L1 (System.Collections.Generic.Dictionary`2<System.String, System.String>), this.<pristineCrc32>k__BackingField (System.Int32), this.<userData>k__BackingField (System.Collections.Generic.Dictionary`2<System.String, System.String>)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Return v48 @ S0_v24 (System.IO.FileSystemEnumerableIterator`1)
+

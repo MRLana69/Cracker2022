@@ -1,0 +1,188 @@
+Type: System.Collections.Generic.InternalStringComparer
+
+Method: System.Int32 GetHashCode(System.String obj)
+
+Disassembly:
+	0x1258889 I32Const 4569973
+	0x125888E I32Load8_S 0, 0
+	0x1258891 I32Eqz
+	0x1258892 If -64
+	0x1258894 I32Const 2939300
+	0x1258899 I32Load 2, 0
+	0x125889C Call 73003
+	0x12588A0 I32Const 4569973
+	0x12588A5 I32Const 1
+	0x12588A7 I32Store8 0, 0
+	0x12588AA End
+	0x12588AB LocalGet 1
+	0x12588AD I32Const 4428512
+	0x12588B2 I32Load 2, 0
+	0x12588B5 Call 29313
+	0x12588B9 I32Const 0
+	0x12588BB I32Ne
+	0x12588BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2CD9A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45BB75], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call 7281, v15 @ S0_v6, obj @ L1 (System.String), typeof(System.Collections.Generic.ByteEqualityComparer)
+	16 Nop
+	17 CheckNotEqual returnVal1 @ S0_v7 (System.Boolean), v15 @ S0_v6, 0
+	18 Nop
+	19 Return returnVal1 @ S0_v7 (System.Boolean)
+
+Method: System.Boolean Equals(System.String x, System.String y)
+
+Disassembly:
+	0x12586D9 LocalGet 1
+	0x12586DB I32Const 255
+	0x12586DE I32And
+	0x12586DF LocalGet 2
+	0x12586E1 I32Const 255
+	0x12586E4 I32And
+	0x12586E5 I32Eq
+	0x12586E6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 And v3 @ S0_v2, x @ L1 (System.String), 255
+	3 Nop
+	4 Nop
+	5 And v7 @ S1_v3, y @ L2 (System.String), 255
+	6 CheckEqual returnVal1 @ S0_v3 (System.Boolean), v3 @ S0_v2, v7 @ S1_v3
+	7 Nop
+	8 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Int32 IndexOf(System.String[] array, System.String value, System.Int32 startIndex, System.Int32 count)
+
+Disassembly:
+	0x1258848 LocalGet 3
+	0x125884A LocalGet 4
+	0x125884C I32Sub
+	0x125884D I32Const 1
+	0x125884F I32Add
+	0x1258850 LocalSet 0
+	0x1258852 Loop -64
+	0x1258854 Block -64
+	0x1258856 LocalGet 3
+	0x1258858 LocalGet 0
+	0x125885A I32Lt_S
+	0x125885B If -64
+	0x125885D I32Const -1
+	0x125885F LocalSet 3
+	0x1258861 Br 1
+	0x1258863 End
+	0x1258864 LocalGet 1
+	0x1258866 I32Const 16
+	0x1258868 I32Add
+	0x1258869 LocalGet 3
+	0x125886B I32Add
+	0x125886C I32Load8_U 0, 0
+	0x125886F LocalGet 2
+	0x1258871 I32Const 255
+	0x1258874 I32And
+	0x1258875 I32Ne
+	0x1258876 If -64
+	0x1258878 LocalGet 3
+	0x125887A I32Const 1
+	0x125887C I32Sub
+	0x125887D LocalSet 3
+	0x125887F Br 2
+	0x1258881 End
+	0x1258882 End
+	0x1258883 End
+	0x1258884 LocalGet 3
+	0x1258886 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Subtract v4 @ S0_v2, v39 @ L3_v2 (System.Int32), count @ L4 (System.Int32)
+	3 Nop
+	4 Add v6 @ S0_v3, v4 @ S0_v2, 1
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CheckLess v22 @ S0_v6 (System.Boolean), v39 @ L3_v2 (System.Int32), v6 @ S0_v3
+	10 Not v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v6 (System.Boolean)
+	11 ConditionalJump @b4, v23 @ TEMP_v2 (System.Boolean)
+	12 Nop
+	13 Nop
+	14 Jump @b7
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Add v29 @ S0_v10, array @ L1 (System.String[]), 16
+	19 Nop
+	20 Add v31 @ S0_v11, v29 @ S0_v10, v39 @ L3_v2 (System.Int32)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 And v35 @ S1_v9, value @ L2 (System.String), 255
+	25 CheckNotEqual v36 @ S0_v13 (System.Boolean), [v31 @ S0_v11], v35 @ S1_v9
+	26 Not v10 @ TEMP_v4 (System.Boolean), v36 @ S0_v13 (System.Boolean)
+	27 ConditionalJump @b7, v10 @ TEMP_v4 (System.Boolean)
+	28 Nop
+	29 Nop
+	30 Subtract v19 @ S0_v15 (System.Int32), v39 @ L3_v2 (System.Int32), 1
+	31 Nop
+	32 Jump @b8
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Return v39 @ L3_v2 (System.Int32)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x12588D4 I32Const 4569974
+	0x12588D9 I32Load8_S 0, 0
+	0x12588DC I32Eqz
+	0x12588DD If -64
+	0x12588DF I32Const 2939308
+	0x12588E4 I32Load 2, 0
+	0x12588E7 Call 73003
+	0x12588EB I32Const 4569974
+	0x12588F0 I32Const 1
+	0x12588F2 I32Store8 0, 0
+	0x12588F5 End
+	0x12588F6 I32Const 4483736
+	0x12588FB I32Load 2, 0
+	0x12588FE Drop
+	0x12588FF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v8, [2CD9AC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45BB76], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Return
+

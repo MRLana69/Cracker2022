@@ -1,0 +1,153 @@
+Type: Kiloo.Plugins.Facebook.FacebookSession+StatusChangedHandler
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x11D3193 LocalGet 0
+	0x11D3195 I32Load8_S 0, 8
+	0x11D3198 I32Eqz
+	0x11D3199 If -64
+	0x11D319B LocalGet 0
+	0x11D319D I32Load 2, 12
+	0x11D31A0 I32Const 20
+	0x11D31A2 I32Add
+	0x11D31A3 LocalGet 1
+	0x11D31A5 I32Store 2, 0
+	0x11D31A8 LocalGet 0
+	0x11D31AA I32Load 2, 12
+	0x11D31AD I32Const 16
+	0x11D31AF I32Add
+	0x11D31B0 LocalGet 2
+	0x11D31B2 I32Store 2, 0
+	0x11D31B5 End
+	0x11D31B6 LocalGet 0
+	0x11D31B8 I32Const 0
+	0x11D31BA I32Store8 0, 16
+	0x11D31BD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), this.method_ptr (System.IntPtr), 0
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b4, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v8 @ S0_v8, this.invoke_impl (System.IntPtr), 20
+	9 Nop
+	10 Move [v8 @ S0_v8], object @ L1 (System.Object)
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v11, this.invoke_impl (System.IntPtr), 16
+	15 Nop
+	16 Move [v14 @ S0_v11], method @ L2 (System.IntPtr)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move this.m_target (System.Object), 0
+	21 Nop
+	22 Return
+
+Method: System.Void Invoke(Kiloo.Plugins.Facebook.FacebookSession+State status, Kiloo.Plugins.Facebook.FacebookError error)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), [error @ L2 (Kiloo.Plugins.Facebook.FacebookError)]
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), error @ L2 (Kiloo.Plugins.Facebook.FacebookError)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (Kiloo.Plugins.Facebook.FacebookSession+StatusChangedHandler), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], status @ L1 (Kiloo.Plugins.Facebook.FacebookSession+State)
+	12 Nop
+	13 Return
+
+Method: System.IAsyncResult BeginInvoke(Kiloo.Plugins.Facebook.FacebookSession+State status, Kiloo.Plugins.Facebook.FacebookError error, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0xC9E82A GlobalGet 7
+	0xC9E82C LocalSet 5
+	0xC9E82E GlobalGet 7
+	0xC9E830 I32Const 16
+	0xC9E832 I32Add
+	0xC9E833 GlobalSet 7
+	0xC9E835 LocalGet 5
+	0xC9E837 I32Const 0
+	0xC9E839 I32Store 2, 8
+	0xC9E83C LocalGet 5
+	0xC9E83E LocalGet 1
+	0xC9E840 I32Store 2, 0
+	0xC9E843 LocalGet 5
+	0xC9E845 LocalGet 2
+	0xC9E847 I32Store 2, 4
+	0xC9E84A LocalGet 0
+	0xC9E84C LocalGet 5
+	0xC9E84E LocalGet 3
+	0xC9E850 LocalGet 4
+	0xC9E852 Call 73891
+	0xC9E856 LocalGet 5
+	0xC9E858 GlobalSet 7
+	0xC9E85A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7+8], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], status @ L1 (Kiloo.Plugins.Facebook.FacebookSession+State)
+	12 Nop
+	13 Nop
+	14 Move [v1 @ G7+4], error @ L2 (Kiloo.Plugins.Facebook.FacebookError)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call 120A3, returnVal1 @ S0_v8 (System.IAsyncResult), this @ L0 (Kiloo.Plugins.Facebook.FacebookSession+StatusChangedHandler), v1 @ G7, callback @ L3 (System.AsyncCallback), object @ L4 (System.Object)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Return returnVal1 @ S0_v8 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xC12227 LocalGet 0
+	0xC12229 LocalGet 1
+	0xC1222B I32Store 2, 8
+	0xC1222E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.method_ptr (System.IntPtr), result @ L1 (System.IAsyncResult)
+	3 Nop
+	4 Return
+

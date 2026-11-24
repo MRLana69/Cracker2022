@@ -1,0 +1,444 @@
+Type: System.Reflection.MonoModule
+
+Method: System.Reflection.Assembly get_Assembly()
+
+Disassembly:
+	0x197E46 I32Const 1
+	0x197E48 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 1
+
+Method: System.String get_ScopeName()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.assembly (System.Reflection.Assembly)
+
+Method: System.Guid get_ModuleVersionId()
+
+Disassembly:
+	0x13D7A42 GlobalGet 7
+	0x13D7A44 LocalSet 2
+	0x13D7A46 GlobalGet 7
+	0x13D7A48 I32Const 32
+	0x13D7A4A I32Add
+	0x13D7A4B GlobalSet 7
+	0x13D7A4D LocalGet 2
+	0x13D7A4F I64Const 0
+	0x13D7A51 I64Store 2, 0
+	0x13D7A54 LocalGet 2
+	0x13D7A56 I64Const 0
+	0x13D7A58 I64Store 2, 8
+	0x13D7A5B LocalGet 2
+	0x13D7A5D I32Const 0
+	0x13D7A5F I32Store 2, 16
+	0x13D7A62 LocalGet 1
+	0x13D7A64 LocalGet 2
+	0x13D7A66 I32Const 0
+	0x13D7A68 Call 65660
+	0x13D7A6C LocalGet 0
+	0x13D7A6E LocalGet 2
+	0x13D7A70 I64Load 2, 0
+	0x13D7A73 I64Store 2, 0
+	0x13D7A76 LocalGet 0
+	0x13D7A78 LocalGet 2
+	0x13D7A7A I64Load 2, 8
+	0x13D7A7D I64Store 2, 8
+	0x13D7A80 LocalGet 0
+	0x13D7A82 LocalGet 2
+	0x13D7A84 I32Load 2, 16
+	0x13D7A87 I32Store 2, 16
+	0x13D7A8A LocalGet 2
+	0x13D7A8C GlobalSet 7
+	0x13D7A8E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move v1.m_value (System.Void*), 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7 (System.IntPtr)+8], 0
+	12 Nop
+	13 Nop
+	14 Move [v1 @ G7 (System.IntPtr)+10], 0
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call MonoMethodInfo.GetMethodInfo, v17 @ SRET_v1 (System.Reflection.MonoMethodInfo), v1 @ G7 (System.IntPtr)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move returnVal1._a (System.Int32), v1.m_value (System.Void*)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move returnVal1._d (System.Byte), [v1 @ G7 (System.IntPtr)+8]
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Move [returnVal1 @ L0 (System.Guid)+10], [v1 @ G7 (System.IntPtr)+10]
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Return returnVal1 @ L0 (System.Guid)
+
+Method: System.Boolean IsResource()
+
+Disassembly:
+	0xC5D3C2 LocalGet 0
+	0xC5D3C4 I32Load 2, 24
+	0xC5D3C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.scopename (System.String)
+
+Method: System.Object[] GetCustomAttributes(System.Type attributeType, System.Boolean inherit)
+
+Disassembly:
+	0x13D8242 I32Const 4574099
+	0x13D8247 I32Load8_S 0, 0
+	0x13D824A I32Eqz
+	0x13D824B If -64
+	0x13D824D I32Const 2982708
+	0x13D8252 I32Load 2, 0
+	0x13D8255 Call 73003
+	0x13D8259 I32Const 4574099
+	0x13D825E I32Const 1
+	0x13D8260 I32Store8 0, 0
+	0x13D8263 End
+	0x13D8264 I32Const 4428428
+	0x13D8269 I32Load 2, 0
+	0x13D826C LocalTee 4
+	0x13D826E I32Load16_S 1, 186
+	0x13D8272 I32Const 512
+	0x13D8275 I32And
+	0x13D8276 If -64
+	0x13D8278 LocalGet 4
+	0x13D827A I32Load 2, 116
+	0x13D827D I32Eqz
+	0x13D827E If -64
+	0x13D8280 LocalGet 4
+	0x13D8282 Call 72345
+	0x13D8286 End
+	0x13D8287 End
+	0x13D8288 LocalGet 0
+	0x13D828A LocalGet 1
+	0x13D828C LocalGet 2
+	0x13D828E I32Const 0
+	0x13D8290 Call 55060
+	0x13D8294 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v17, [2D8334]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45CB93], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.MonoCustomAttrs>), typeof(System.MonoCustomAttrs)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.MonoCustomAttrs>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.MonoCustomAttrs>), typeof(System.MonoCustomAttrs)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.MonoCustomAttrs>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.MonoCustomAttrs)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Call MonoCustomAttrs.IsDefined, returnVal1 @ S0_v11 (System.Object[]), this @ L0 (System.Reflection.MonoModule), attributeType @ L1 (System.Type), inherit @ L2 (System.Boolean)
+	34 Nop
+	35 Return returnVal1 @ S0_v11 (System.Object[])
+
+Method: System.Boolean IsDefined(System.Type attributeType, System.Boolean inherit)
+
+Disassembly:
+	0x13D9787 I32Const 4574122
+	0x13D978C I32Load8_S 0, 0
+	0x13D978F I32Eqz
+	0x13D9790 If -64
+	0x13D9792 I32Const 2983016
+	0x13D9797 I32Load 2, 0
+	0x13D979A Call 73003
+	0x13D979E I32Const 4574122
+	0x13D97A3 I32Const 1
+	0x13D97A5 I32Store8 0, 0
+	0x13D97A8 End
+	0x13D97A9 I32Const 4428428
+	0x13D97AE I32Load 2, 0
+	0x13D97B1 LocalTee 4
+	0x13D97B3 I32Load16_S 1, 186
+	0x13D97B7 I32Const 512
+	0x13D97BA I32And
+	0x13D97BB If -64
+	0x13D97BD LocalGet 4
+	0x13D97BF I32Load 2, 116
+	0x13D97C2 I32Eqz
+	0x13D97C3 If -64
+	0x13D97C5 LocalGet 4
+	0x13D97C7 Call 72345
+	0x13D97CB End
+	0x13D97CC End
+	0x13D97CD LocalGet 0
+	0x13D97CF LocalGet 1
+	0x13D97D1 LocalGet 2
+	0x13D97D3 I32Const 0
+	0x13D97D5 Call 55060
+	0x13D97D9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v17, [2D8468]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45CBAA], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.MonoCustomAttrs>), typeof(System.MonoCustomAttrs)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.MonoCustomAttrs>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.MonoCustomAttrs>), typeof(System.MonoCustomAttrs)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.MonoCustomAttrs>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.MonoCustomAttrs)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Call MonoCustomAttrs.IsDefined, returnVal1 @ S0_v11 (System.Boolean), this @ L0 (System.Reflection.MonoModule), attributeType @ L1 (System.Type), inherit @ L2 (System.Boolean)
+	34 Nop
+	35 Return returnVal1 @ S0_v11 (System.Boolean)
+
+Method: System.Void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x13DB7A3 I32Const 4574165
+	0x13DB7A8 I32Load8_S 0, 0
+	0x13DB7AB I32Eqz
+	0x13DB7AC If -64
+	0x13DB7AE I32Const 2999064
+	0x13DB7B3 I32Load 2, 0
+	0x13DB7B6 Call 73003
+	0x13DB7BA I32Const 4574165
+	0x13DB7BF I32Const 1
+	0x13DB7C1 I32Store8 0, 0
+	0x13DB7C4 End
+	0x13DB7C5 LocalGet 1
+	0x13DB7C7 If -64
+	0x13DB7C9 LocalGet 1
+	0x13DB7CB I32Const 7
+	0x13DB7CD LocalGet 0
+	0x13DB7CF Call 29262
+	0x13DB7D3 LocalGet 0
+	0x13DB7D5 I32Const 0
+	0x13DB7D7 Call 65812
+	0x13DB7DB I32Const 3
+	0x13DB7DD LocalGet 0
+	0x13DB7DF Call 29262
+	0x13DB7E3 LocalGet 0
+	0x13DB7E5 I32Const 0
+	0x13DB7E7 Call 65608
+	0x13DB7EB I32Const 1
+	0x13DB7ED I32Const 0
+	0x13DB7EF I32Const 0
+	0x13DB7F1 Call 65603
+	0x13DB7F5 Else
+	0x13DB7F6 I32Const 4427864
+	0x13DB7FB I32Load 2, 0
+	0x13DB7FE Call 72556
+	0x13DB802 LocalTee 4
+	0x13DB804 I32Const 4502928
+	0x13DB809 I32Load 2, 0
+	0x13DB80C I32Const 0
+	0x13DB80E Call 57599
+	0x13DB812 LocalGet 4
+	0x13DB814 I32Const 0
+	0x13DB816 I32Const 4490076
+	0x13DB81B I32Load 2, 0
+	0x13DB81E Call 73899
+	0x13DB822 End
+	0x13DB823 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b15
+	5 Nop
+	6 Move v5 @ S0_v13, [2DC318]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45CBD5], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), info @ L1 (System.Runtime.Serialization.SerializationInfo), 0
+	14 ConditionalJump @b11, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Call 724E, v18 @ S1_v7 (Mono.MonoAssemblyName*), 7, this @ L0 (System.Reflection.MonoModule)
+	19 Nop
+	20 Nop
+	21 Call RuntimeConstructorInfo.SerializationToString, v24 @ S2_v7 (System.String), this @ L0 (System.Reflection.MonoModule)
+	22 Nop
+	23 Nop
+	24 Call 724E, v31 @ S3_v4 (System.Boolean), 3, this @ L0 (System.Reflection.MonoModule)
+	25 Nop
+	26 Nop
+	27 Call MonoCMethod.GetMethodImplementationFlags, v38 @ S4_v4 (System.Reflection.MethodImplAttributes), this @ L0 (System.Reflection.MonoModule)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid AssemblyName.FillName, info @ L1 (System.Runtime.Serialization.SerializationInfo), v18 @ S1_v7 (Mono.MonoAssemblyName*), v24 @ S2_v7 (System.String), v31 @ S3_v4 (System.Boolean), v38 @ S4_v4 (System.Reflection.MethodImplAttributes), 1, 0
+	32 Jump @b14
+	33 Nop
+	34 Nop
+	35 Call 11B6C, v21 @ S0_v9 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 CallVoid ArgumentOutOfRangeException..ctor, v21 @ S0_v9 (System.ArgumentOutOfRangeException), "info"
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid 120AB, v21 @ S0_v9 (System.ArgumentOutOfRangeException), 0, methodof(System.Reflection.RuntimeConstructorInfo::GetObjectData)
+	46 Nop
+	47 Nop
+	48 Return
+
+Method: System.Reflection.RuntimeAssembly GetRuntimeAssembly()
+
+Disassembly:
+	0xD0347F LocalGet 0
+	0xD03481 I32Load8_S 0, 28
+	0xD03484 I32Const 0
+	0xD03486 I32Ne
+	0xD03487 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.is_resource (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x13D98E9 I32Const 4574126
+	0x13D98EE I32Load8_S 0, 0
+	0x13D98F1 I32Eqz
+	0x13D98F2 If -64
+	0x13D98F4 I32Const 2999216
+	0x13D98F9 I32Load 2, 0
+	0x13D98FC Call 73003
+	0x13D9900 I32Const 4574126
+	0x13D9905 I32Const 1
+	0x13D9907 I32Store8 0, 0
+	0x13D990A End
+	0x13D990B I32Const 4429560
+	0x13D9910 I32Load 2, 0
+	0x13D9913 LocalTee 2
+	0x13D9915 I32Load16_S 1, 186
+	0x13D9919 I32Const 512
+	0x13D991C I32And
+	0x13D991D If -64
+	0x13D991F LocalGet 2
+	0x13D9921 I32Load 2, 116
+	0x13D9924 I32Eqz
+	0x13D9925 If -64
+	0x13D9927 LocalGet 2
+	0x13D9929 Call 72345
+	0x13D992D End
+	0x13D992E End
+	0x13D992F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v15, [2DC3B0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45CBAE], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Reflection.Module>), typeof(System.Reflection.Module)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Reflection.Module>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b9, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v10 (Il2CppClass<System.Reflection.Module>), typeof(System.Reflection.Module)
+	21 Nop
+	22 CheckEqual v20 @ S0_v12 (System.Boolean), [v18 @ S0_v10 (Il2CppClass<System.Reflection.Module>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v12 (System.Boolean)
+	24 ConditionalJump @b9, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Reflection.Module)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Return
+

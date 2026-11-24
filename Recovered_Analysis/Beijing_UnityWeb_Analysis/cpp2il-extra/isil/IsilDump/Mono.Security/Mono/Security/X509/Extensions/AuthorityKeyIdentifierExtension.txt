@@ -1,0 +1,497 @@
+Type: Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension
+
+Method: System.Void .ctor(Mono.Security.X509.X509Extension extension)
+
+Disassembly:
+	0x1566374 I32Const 4576898
+	0x1566379 I32Load8_S 0, 0
+	0x156637C I32Eqz
+	0x156637D If -64
+	0x156637F I32Const 3028692
+	0x1566384 I32Load 2, 0
+	0x1566387 Call 73003
+	0x156638B I32Const 4576898
+	0x1566390 I32Const 1
+	0x1566392 I32Store8 0, 0
+	0x1566395 End
+	0x1566396 LocalGet 0
+	0x1566398 I32Const 0
+	0x156639A Call 54287
+	0x156639E LocalGet 0
+	0x15663A0 I32Const 1
+	0x15663A2 I32Store8 0, 12
+	0x15663A5 Block -64
+	0x15663A7 LocalGet 1
+	0x15663A9 If -64
+	0x15663AB LocalGet 1
+	0x15663AD I32Load8_U 0, 8
+	0x15663B0 I32Const 48
+	0x15663B2 I32Ne
+	0x15663B3 If -64
+	0x15663B5 I32Const 4427764
+	0x15663BA I32Load 2, 0
+	0x15663BD Call 72556
+	0x15663C1 LocalTee 2
+	0x15663C3 I32Const 4502804
+	0x15663C8 I32Load 2, 0
+	0x15663CB I32Const 0
+	0x15663CD Call 51388
+	0x15663D1 LocalGet 2
+	0x15663D3 I32Const 0
+	0x15663D5 I32Const 4472980
+	0x15663DA I32Load 2, 0
+	0x15663DD Call 73899
+	0x15663E1 End
+	0x15663E2 I32Const 0
+	0x15663E4 LocalSet 2
+	0x15663E6 Loop -64
+	0x15663E8 LocalGet 2
+	0x15663EA LocalGet 1
+	0x15663EC I32Const 0
+	0x15663EE Call 59996
+	0x15663F2 I32Ge_S
+	0x15663F3 BrIf 2
+	0x15663F5 LocalGet 1
+	0x15663F7 LocalGet 2
+	0x15663F9 I32Const 0
+	0x15663FB Call 66978
+	0x15663FF LocalSet 3
+	0x1566401 I32Const 4432928
+	0x1566406 I32Load 2, 0
+	0x1566409 Call 72556
+	0x156640D LocalTee 4
+	0x156640F LocalGet 3
+	0x1566411 I32Const 0
+	0x1566413 Call 71190
+	0x1566417 I32Const 25
+	0x1566419 LocalGet 0
+	0x156641B I32Const 0
+	0x156641D Call 57597
+	0x1566421 LocalGet 4
+	0x1566423 Call 29448
+	0x1566427 Drop
+	0x1566428 LocalGet 2
+	0x156642A I32Const 1
+	0x156642C I32Add
+	0x156642D LocalSet 2
+	0x156642F Br 0
+	0x1566431 End
+	0x1566432 Unreachable
+	0x1566433 End
+	0x1566434 End
+	0x1566435 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v31, [2E36D4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v31
+	8 Nop
+	9 Move v7 @ S1_v18, 1
+	10 Move [45D682], v7 @ S1_v18
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid AuthorityKeyIdentifierExtension.Decode, this @ L0 (Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension)
+	15 Nop
+	16 Nop
+	17 Move this.extnCritical (System.Boolean), 1
+	18 Nop
+	19 CheckEqual v18 @ TEMP_v2 (System.Boolean), extension @ L1 (Mono.Security.X509.X509Extension), 0
+	20 ConditionalJump @b21, v18 @ TEMP_v2 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CheckNotEqual v22 @ S0_v11 (System.Boolean), extension.extnOid (System.String), 48
+	25 Not v23 @ TEMP_v4 (System.Boolean), v22 @ S0_v11 (System.Boolean)
+	26 ConditionalJump @b10, v23 @ TEMP_v4 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Call 11B6C, v43 @ S0_v28 (System.Exception), typeof(System.Exception)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 CallVoid Exception.SetErrorCode, v43 @ S0_v28 (System.Exception), "Invalid extensions format"
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 CallVoid X509ExtensionCollection..ctor, v43 @ S0_v28 (System.Exception), 0
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Call EA5C, v37 @ S1_v9, extension @ L1 (Mono.Security.X509.X509Extension), 0
+	48 CheckGreaterOrEqual v40 @ S0_v16 (System.Boolean), v34 @ L2_v4 (Mono.Security.PKCS7+EncryptedData), v37 @ S1_v9
+	49 ConditionalJump @b21, v40 @ S0_v16 (System.Boolean)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Call PKCS12.Decrypt, v72 @ S0_v18 (System.Byte[]), extension @ L1 (Mono.Security.X509.X509Extension), v34 @ L2_v4 (Mono.Security.PKCS7+EncryptedData)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Call 11B6C, v75 @ S0_v21 (Mono.Security.X509.X509Extension), typeof(Mono.Security.X509.X509Extension)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 CallVoid X509Extension..ctor, v75 @ S0_v21 (Mono.Security.X509.X509Extension), v72 @ S0_v18 (System.Byte[])
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Call CollectionBase.get_Count, v81 @ S1_v13 (System.Int32), this @ L0 (Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension)
+	66 Nop
+	67 Call 7308, v82 @ S0_v23, 25, v81 @ S1_v13 (System.Int32), v75 @ S0_v21 (Mono.Security.X509.X509Extension)
+	68 Nop
+	69 Nop
+	70 Add v65 @ S0_v25 (Mono.Security.PKCS7+EncryptedData), v34 @ L2_v4 (Mono.Security.PKCS7+EncryptedData), 1
+	71 Nop
+	72 Jump @b22
+	73 Nop
+	74 Interrupt
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Return
+
+Method: System.Void Decode()
+
+Disassembly:
+	0x11A307E LocalGet 0
+	0x11A3080 I32Const 0
+	0x11A3082 Call 57594
+	0x11A3086 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid CollectionBase.Clear, this @ L0 (Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension)
+	3 Nop
+	4 Return
+
+Method: System.Void Encode()
+
+Disassembly:
+	0x14316E5 I32Const 4574946
+	0x14316EA I32Load8_S 0, 0
+	0x14316ED I32Eqz
+	0x14316EE If -64
+	0x14316F0 I32Const 2936500
+	0x14316F5 I32Load 2, 0
+	0x14316F8 Call 73003
+	0x14316FC I32Const 4574946
+	0x1431701 I32Const 1
+	0x1431703 I32Store8 0, 0
+	0x1431706 End
+	0x1431707 LocalGet 0
+	0x1431709 I32Load 2, 16
+	0x143170C I32Const 0
+	0x143170E Call 66975
+	0x1431712 LocalSet 1
+	0x1431714 I32Const 4432812
+	0x1431719 I32Load 2, 0
+	0x143171C Call 72556
+	0x1431720 LocalTee 2
+	0x1431722 LocalGet 1
+	0x1431724 I32Const 0
+	0x1431726 Call 66971
+	0x143172A LocalGet 2
+	0x143172C I32Load8_U 0, 8
+	0x143172F I32Const 48
+	0x1431731 I32Ne
+	0x1431732 If -64
+	0x1431734 I32Const 4427876
+	0x1431739 I32Load 2, 0
+	0x143173C Call 72556
+	0x1431740 LocalTee 1
+	0x1431742 I32Const 4517304
+	0x1431747 I32Load 2, 0
+	0x143174A I32Const 0
+	0x143174C Call 57610
+	0x1431750 LocalGet 1
+	0x1431752 I32Const 0
+	0x1431754 I32Const 4472908
+	0x1431759 I32Load 2, 0
+	0x143175C Call 73899
+	0x1431760 End
+	0x1431761 I32Const 0
+	0x1431763 LocalSet 1
+	0x1431765 Loop -64
+	0x1431767 LocalGet 1
+	0x1431769 LocalGet 2
+	0x143176B I32Const 0
+	0x143176D Call 59996
+	0x1431771 I32Lt_S
+	0x1431772 If -64
+	0x1431774 LocalGet 2
+	0x1431776 LocalGet 1
+	0x1431778 I32Const 0
+	0x143177A Call 66978
+	0x143177E LocalTee 3
+	0x1431780 I32Load8_U 0, 8
+	0x1431783 I32Const 128
+	0x1431786 I32Eq
+	0x1431787 If -64
+	0x1431789 LocalGet 0
+	0x143178B I32Const 20
+	0x143178D I32Add
+	0x143178E LocalGet 3
+	0x1431790 I32Const 0
+	0x1431792 Call 66975
+	0x1431796 I32Store 2, 0
+	0x1431799 End
+	0x143179A LocalGet 1
+	0x143179C I32Const 1
+	0x143179E I32Add
+	0x143179F LocalSet 1
+	0x14317A1 Br 1
+	0x14317A3 End
+	0x14317A4 End
+	0x14317A5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b18
+	5 Nop
+	6 Move v5 @ S0_v33, [2CCEB4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v33
+	8 Nop
+	9 Move v7 @ S1_v19, 1
+	10 Move [45CEE2], v7 @ S1_v19
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call ASN1.GetBytes, v15 @ S0_v7 (System.Byte[]), this.extnValue (Mono.Security.ASN1)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call 11B6C, v19 @ S0_v10 (Mono.Security.ASN1), typeof(Mono.Security.ASN1)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid ASN1.set_Value, v19 @ S0_v10 (Mono.Security.ASN1), v15 @ S0_v7 (System.Byte[])
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CheckNotEqual v26 @ S0_v13 (System.Boolean), v19.m_nTag (System.Byte), 48
+	28 Not v27 @ TEMP_v2 (System.Boolean), v26 @ S0_v13 (System.Boolean)
+	29 ConditionalJump @b11, v27 @ TEMP_v2 (System.Boolean)
+	30 Nop
+	31 Nop
+	32 Call 11B6C, v30 @ S0_v30 (System.ArgumentNullException), typeof(System.ArgumentException)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid ArgumentNullException..ctor, v30 @ S0_v30 (System.ArgumentNullException), "Invalid AuthorityKeyIdentifier extension"
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid 120AB, v30 @ S0_v30 (System.ArgumentNullException), 0, methodof(Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension::Decode)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call ASN1.get_Tag, v60 @ S1_v8 (System.Byte), v19 @ S0_v10 (Mono.Security.ASN1)
+	51 CheckLess v62 @ S0_v18 (System.Boolean), v49 @ L1_v4 (Mono.Security.PKCS7+EncryptedData), v60 @ S1_v8 (System.Byte)
+	52 Not v63 @ TEMP_v4 (System.Boolean), v62 @ S0_v18 (System.Boolean)
+	53 ConditionalJump @b17, v63 @ TEMP_v4 (System.Boolean)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Call PKCS12.Decrypt, v67 @ S0_v20 (System.Byte[]), v19 @ S0_v10 (Mono.Security.ASN1), v49 @ L1_v4 (Mono.Security.PKCS7+EncryptedData)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 CheckEqual v70 @ S0_v22 (System.Boolean), [v67 @ S0_v20 (System.Byte[])+8], 128
+	62 Not v54 @ TEMP_v5 (System.Boolean), v70 @ S0_v22 (System.Boolean)
+	63 ConditionalJump @b19, v54 @ TEMP_v5 (System.Boolean)
+	64 Nop
+	65 Nop
+	66 Add v73 @ S0_v27, this @ L0 (Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension), 20
+	67 Nop
+	68 Nop
+	69 Call ASN1.GetBytes, v76 @ S1_v15 (System.Byte[]), v67 @ S0_v20 (System.Byte[])
+	70 Move [v73 @ S0_v27], v76 @ S1_v15 (System.Byte[])
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Add v56 @ S0_v25 (Mono.Security.PKCS7+EncryptedData), v49 @ L1_v4 (Mono.Security.PKCS7+EncryptedData), 1
+	75 Nop
+	76 Jump @b20
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Return
+
+Method: System.Byte[] get_Identifier()
+
+Disassembly:
+	0x156732D I32Const 4576911
+	0x1567332 I32Load8_S 0, 0
+	0x1567335 I32Eqz
+	0x1567336 If -64
+	0x1567338 I32Const 3028920
+	0x156733D I32Load 2, 0
+	0x1567340 Call 73003
+	0x1567344 I32Const 4576911
+	0x1567349 I32Const 1
+	0x156734B I32Store8 0, 0
+	0x156734E End
+	0x156734F LocalGet 0
+	0x1567351 I32Load8_S 0, 20
+	0x1567354 I32Eqz
+	0x1567355 If -64
+	0x1567357 I32Const 4428048
+	0x156735C I32Load 2, 0
+	0x156735F Call 72556
+	0x1567363 LocalTee 2
+	0x1567365 I32Const 0
+	0x1567367 Call 57595
+	0x156736B LocalGet 0
+	0x156736D I32Const 16
+	0x156736F I32Add
+	0x1567370 LocalGet 2
+	0x1567372 I32Store 2, 0
+	0x1567375 End
+	0x1567376 LocalGet 0
+	0x1567378 I32Load 2, 16
+	0x156737B I32Eqz
+	0x156737C If -64
+	0x156737E LocalGet 0
+	0x1567380 I32Const 16
+	0x1567382 I32Add
+	0x1567383 LocalGet 0
+	0x1567385 LocalGet 0
+	0x1567387 I32Load 2, 8
+	0x156738A I32Const 0
+	0x156738C Call 71206
+	0x1567390 I32Store 2, 0
+	0x1567393 End
+	0x1567394 LocalGet 0
+	0x1567396 I32Load 2, 16
+	0x1567399 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v23, [2E37B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v23
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [45D68F], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), this.aki (System.Byte[]), 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b12, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Call 11B6C, v18 @ S0_v19 (System.Collections.ArrayList), typeof(System.Collections.ArrayList)
+	20 Nop
+	21 Nop
+	22 CallVoid ArrayList.Clear, v18 @ S0_v19 (System.Collections.ArrayList)
+	23 Nop
+	24 Nop
+	25 Add v25 @ S0_v21, this @ L0 (Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension), 16
+	26 Nop
+	27 Move [v25 @ S0_v21], v18 @ S0_v19 (System.Collections.ArrayList)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CheckEqual v28 @ S0_v11 (System.Boolean), this.extnValue (Mono.Security.ASN1), 0
+	32 Not v29 @ TEMP_v3 (System.Boolean), v28 @ S0_v11 (System.Boolean)
+	33 ConditionalJump @b11, v29 @ TEMP_v3 (System.Boolean)
+	34 Nop
+	35 Nop
+	36 Add v33 @ S0_v16, this @ L0 (Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension), 16
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call CertificateValidationHelper.GetInternalValidator, v38 @ S1_v6 (Mono.Security.Interface.ICertificateValidator2), this @ L0 (Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension), this.extnOid (System.String)
+	42 Move [v33 @ S0_v16], v38 @ S1_v6 (Mono.Security.Interface.ICertificateValidator2)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Return this.extnValue (Mono.Security.ASN1)
+
+Method: System.String ToString()
+
+Disassembly:
+	0x143188D I32Const 4574948
+	0x1431892 I32Load8_S 0, 0
+	0x1431895 I32Eqz
+	0x1431896 If -64
+	0x1431898 I32Const 2936512
+	0x143189D I32Load 2, 0
+	0x14318A0 Call 73003
+	0x14318A4 I32Const 4574948
+	0x14318A9 I32Const 1
+	0x14318AB I32Store8 0, 0
+	0x14318AE End
+	0x14318AF LocalGet 0
+	0x14318B1 I32Load 2, 20
+	0x14318B4 If -1
+	0x14318B6 LocalGet 0
+	0x14318B8 I32Load 2, 20
+	0x14318BB Call 73007
+	0x14318BF I32Const 4427832
+	0x14318C4 I32Load 2, 0
+	0x14318C7 Call 33276
+	0x14318CB Else
+	0x14318CC I32Const 0
+	0x14318CE End
+	0x14318CF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v14, [2CCEC0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45CEE4], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.aki (System.Byte[]), 0
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Newobj v17 @ S0_v11 (System.OverflowException), typeof(System.OverflowException)
+	19 Nop
+	20 Nop
+	21 Call 81FC, returnVal1 @ S0_v7 (System.String), v17 @ S0_v11 (System.OverflowException), typeof(System.Byte[])
+	22 Jump @b10
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Return returnVal1 @ S0_v7 (System.String)
+

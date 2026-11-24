@@ -1,0 +1,100 @@
+Type: AudioClipInfo
+
+Method: System.String ToString()
+
+Disassembly:
+	0xECED3F I32Const 4559320
+	0xECED44 I32Load8_S 0, 0
+	0xECED47 I32Eqz
+	0xECED48 If -64
+	0xECED4A I32Const 2935588
+	0xECED4F I32Load 2, 0
+	0xECED52 Call 73003
+	0xECED56 I32Const 4559320
+	0xECED5B I32Const 1
+	0xECED5D I32Store8 0, 0
+	0xECED60 End
+	0xECED61 I32Const 4435468
+	0xECED66 I32Load 2, 0
+	0xECED69 LocalTee 2
+	0xECED6B I32Load16_S 1, 186
+	0xECED6F I32Const 512
+	0xECED72 I32And
+	0xECED73 If -64
+	0xECED75 LocalGet 2
+	0xECED77 I32Load 2, 116
+	0xECED7A I32Eqz
+	0xECED7B If -64
+	0xECED7D LocalGet 2
+	0xECED7F Call 72345
+	0xECED83 End
+	0xECED84 End
+	0xECED85 I32Const 0
+	0xECED87 Call 37718
+	0xECED8B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v17, [2CCB24]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4591D8], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Data.Save.UserSave>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<Data.Save.UserSave>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Data.Save.UserSave)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call UserSave.get_characterOutfitsSeen, returnVal1 @ S0_v11 (System.String)
+	31 Nop
+	32 Return returnVal1 @ S0_v11 (System.String)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xECE6EF LocalGet 0
+	0xECE6F1 I32Load 2, 12
+	0xECE6F4 I32Const 0
+	0xECE6F6 Call 58860
+	0xECE6FA If -64
+	0xECE6FC LocalGet 0
+	0xECE6FE I32Load 2, 12
+	0xECE701 I32Const 0
+	0xECE703 Call 58908
+	0xECE707 End
+	0xECE708 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call File.GetAttributes, v4 @ S0_v3 (System.IO.FileAttributes), this.minPitch (System.Single)
+	4 CheckEqual v5 @ TEMP_v1 (System.Boolean), v4 @ S0_v3 (System.IO.FileAttributes), 0
+	5 ConditionalJump @b5, v5 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid FileStream.ExposeHandle, this.minPitch (System.Single)
+	10 Nop
+	11 Nop
+	12 Return
+

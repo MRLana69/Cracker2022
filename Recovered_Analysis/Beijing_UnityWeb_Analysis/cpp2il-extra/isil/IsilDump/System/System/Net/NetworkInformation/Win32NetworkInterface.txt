@@ -1,0 +1,121 @@
+Type: System.Net.NetworkInformation.Win32NetworkInterface
+
+Method: System.Int32 GetNetworkParams(System.IntPtr ptr, ref System.Int32 size)
+
+Disassembly:
+	0x112074A I32Const 3925424
+	0x112074F I32Load 2, 0
+	0x1120752 LocalTee 2
+	0x1120754 If -64
+	0x1120756 LocalGet 2
+	0x1120758 LocalSet 3
+	0x112075A Else
+	0x112075B I32Const 3925424
+	0x1120760 I32Const 3518022
+	0x1120765 I32Const 3480972
+	0x112076A I32Const 0
+	0x112076C I32Const 2
+	0x112076E I32Const 8
+	0x1120770 I32Const 0
+	0x1120772 Call 52122
+	0x1120776 LocalTee 2
+	0x1120778 I32Store 2, 0
+	0x112077B LocalGet 2
+	0x112077D If -64
+	0x112077F LocalGet 2
+	0x1120781 LocalSet 3
+	0x1120783 Else
+	0x1120784 I32Const 3480986
+	0x1120789 Call 72499
+	0x112078D I32Const 0
+	0x112078F I32Const 0
+	0x1120791 Call 73899
+	0x1120795 End
+	0x1120796 End
+	0x1120797 LocalGet 0
+	0x1120799 If -1
+	0x112079B I32Const 3925424
+	0x11207A0 I32Load 2, 0
+	0x11207A3 LocalSet 3
+	0x11207A5 LocalGet 0
+	0x11207A7 I32Const 16
+	0x11207A9 I32Add
+	0x11207AA Else
+	0x11207AB I32Const 0
+	0x11207AD End
+	0x11207AE LocalTee 0
+	0x11207B0 LocalGet 1
+	0x11207B2 LocalGet 3
+	0x11207B4 I32Const 16383
+	0x11207B8 I32And
+	0x11207B9 I32Const 6161
+	0x11207BC I32Add
+	0x11207BD CallIndirect 0, 0
+	0x11207C0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ TEMP_v1 (System.Boolean), [3BE5B0], 0
+	4 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Jump @b12
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call CB9A, v13 @ S1_v6, 3518022, 3480972, 0, 2, 8, 0
+	16 Nop
+	17 Move [3BE5B0], v13 @ S1_v6
+	18 Nop
+	19 CheckEqual v32 @ TEMP_v4 (System.Boolean), v13 @ S1_v6, 0
+	20 ConditionalJump @b7, v32 @ TEMP_v4 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Jump @b12
+	24 Nop
+	25 Newobj v36 @ S0_v15 (System.NotSupportedException), typeof(System.NotSupportedException)
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v36 @ S0_v15 (System.NotSupportedException), 0, 0
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v40 @ TEMP_v3 (System.Boolean), ptr @ L0 (System.IntPtr), 0
+	33 ConditionalJump @b11, v40 @ TEMP_v3 (System.Boolean)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Add v52 @ S0_v5, ptr @ L0 (System.IntPtr), 16
+	40 Jump @b13
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 And v58 @ S2_v3, v51 @ L3_v2, 16383
+	48 Nop
+	49 Add v60 @ S2_v4, v58 @ S2_v3, 6161
+	50 IndirectCall v60 @ S2_v4, returnVal1 @ S0_v6 (System.Int32), v52 @ S0_v5, size @ L1 (System.Int32&)
+	51 Nop
+	52 Return returnVal1 @ S0_v6 (System.Int32)
+
+Method: System.Net.NetworkInformation.Win32_FIXED_INFO get_FixedInfo()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return returnVal1 @ L0 (System.Net.NetworkInformation.Win32_FIXED_INFO)
+

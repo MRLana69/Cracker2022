@@ -1,0 +1,356 @@
+Type: System.Collections.Generic.CollectionExtensions
+
+Method: TValue GetValueOrDefault(System.Collections.Generic.IReadOnlyDictionary`2<TKey, TValue> dictionary, TKey key)
+
+Disassembly:
+	0x104F59C LocalGet 0
+	0x104F59E I32Const 2147483647
+	0x104F5A4 I32And
+	0x104F5A5 LocalSet 0
+	0x104F5A7 LocalGet 1
+	0x104F5A9 If -1
+	0x104F5AB LocalGet 0
+	0x104F5AD LocalGet 1
+	0x104F5AF I32Rem_S
+	0x104F5B0 Else
+	0x104F5B1 I32Const 0
+	0x104F5B3 End
+	0x104F5B4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 And v3 @ S0_v2, dictionary @ L0 (System.Collections.Generic.IReadOnlyDictionary`2<TKey, TValue>), 2147483647
+	3 Nop
+	4 Nop
+	5 CheckEqual v7 @ TEMP_v1 (System.Boolean), key @ L1 (TKey), 0
+	6 ConditionalJump @b4, v7 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Nop
+	9 Divide v10 @ TEMP_v3, v3 @ S0_v2, key @ L1 (TKey)
+	10 Multiply v11 @ TEMP_v4, v10 @ TEMP_v3, key @ L1 (TKey)
+	11 Subtract returnVal1 @ S0_v4 (TValue), v3 @ S0_v2, v11 @ TEMP_v4
+	12 Jump @b5
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Return returnVal1 @ S0_v4 (TValue)
+
+Method: TValue GetValueOrDefault(System.Collections.Generic.IReadOnlyDictionary`2<TKey, TValue> dictionary, TKey key, TValue defaultValue)
+
+Disassembly:
+	0x104DCAF GlobalGet 7
+	0x104DCB1 LocalSet 5
+	0x104DCB3 GlobalGet 7
+	0x104DCB5 I32Const 16
+	0x104DCB7 I32Add
+	0x104DCB8 GlobalSet 7
+	0x104DCBA I32Const 4563593
+	0x104DCBF I32Load8_S 0, 0
+	0x104DCC2 I32Eqz
+	0x104DCC3 If -64
+	0x104DCC5 I32Const 2946448
+	0x104DCCA I32Load 2, 0
+	0x104DCCD Call 73003
+	0x104DCD1 I32Const 4563593
+	0x104DCD6 I32Const 1
+	0x104DCD8 I32Store8 0, 0
+	0x104DCDB End
+	0x104DCDC LocalGet 5
+	0x104DCDE I32Const 0
+	0x104DCE0 I32Store 2, 0
+	0x104DCE3 LocalGet 1
+	0x104DCE5 I32Eqz
+	0x104DCE6 If -64
+	0x104DCE8 LocalGet 3
+	0x104DCEA I32Const 12
+	0x104DCEC I32Add
+	0x104DCED LocalTee 4
+	0x104DCEF I32Load 2, 0
+	0x104DCF2 I32Load 2, 96
+	0x104DCF5 I32Load 2, 8
+	0x104DCF8 Call 29253
+	0x104DCFC I32Load16_S 1, 186
+	0x104DD00 I32Const 512
+	0x104DD03 I32And
+	0x104DD04 If -64
+	0x104DD06 LocalGet 4
+	0x104DD08 I32Load 2, 0
+	0x104DD0B I32Load 2, 96
+	0x104DD0E I32Load 2, 8
+	0x104DD11 Call 29253
+	0x104DD15 I32Load 2, 116
+	0x104DD18 I32Eqz
+	0x104DD19 If -64
+	0x104DD1B LocalGet 4
+	0x104DD1D I32Load 2, 0
+	0x104DD20 I32Load 2, 96
+	0x104DD23 I32Load 2, 8
+	0x104DD26 Call 29253
+	0x104DD2A Call 72345
+	0x104DD2E End
+	0x104DD2F End
+	0x104DD30 LocalGet 4
+	0x104DD32 I32Load 2, 0
+	0x104DD35 I32Load 2, 96
+	0x104DD38 I32Load 2, 40
+	0x104DD3B LocalTee 4
+	0x104DD3D LocalGet 4
+	0x104DD3F I32Load 2, 0
+	0x104DD42 I32Const 32767
+	0x104DD46 I32And
+	0x104DD47 I32Const 46824
+	0x104DD4B I32Add
+	0x104DD4C CallIndirect 1, 0
+	0x104DD4F End
+	0x104DD50 LocalGet 2
+	0x104DD52 I32Eqz
+	0x104DD53 If -64
+	0x104DD55 I32Const 4427864
+	0x104DD5A I32Load 2, 0
+	0x104DD5D Call 72556
+	0x104DD61 LocalTee 4
+	0x104DD63 I32Const 4549280
+	0x104DD68 I32Load 2, 0
+	0x104DD6B I32Const 0
+	0x104DD6D Call 57599
+	0x104DD71 LocalGet 4
+	0x104DD73 I32Const 0
+	0x104DD75 I32Const 4500164
+	0x104DD7A I32Load 2, 0
+	0x104DD7D Call 73899
+	0x104DD81 End
+	0x104DD82 LocalGet 0
+	0x104DD84 I32Load 2, 12
+	0x104DD87 LocalSet 4
+	0x104DD89 LocalGet 0
+	0x104DD8B LocalGet 1
+	0x104DD8D I32Const 1
+	0x104DD8F LocalGet 3
+	0x104DD91 I32Const 12
+	0x104DD93 I32Add
+	0x104DD94 LocalTee 6
+	0x104DD96 I32Load 2, 0
+	0x104DD99 I32Load 2, 96
+	0x104DD9C I32Load 2, 44
+	0x104DD9F Call 29253
+	0x104DDA3 LocalGet 4
+	0x104DDA5 LocalGet 1
+	0x104DDA7 Call 29786
+	0x104DDAB LocalTee 4
+	0x104DDAD LocalGet 5
+	0x104DDAF LocalGet 6
+	0x104DDB1 I32Load 2, 0
+	0x104DDB4 I32Load 2, 96
+	0x104DDB7 I32Load 2, 80
+	0x104DDBA LocalTee 3
+	0x104DDBC LocalGet 3
+	0x104DDBE I32Load 2, 0
+	0x104DDC1 I32Const 2047
+	0x104DDC4 I32And
+	0x104DDC5 I32Const 39195
+	0x104DDC9 I32Add
+	0x104DDCA CallIndirect 23, 0
+	0x104DDCD I32Eqz
+	0x104DDCE If -64
+	0x104DDD0 LocalGet 0
+	0x104DDD2 LocalGet 1
+	0x104DDD4 LocalGet 4
+	0x104DDD6 LocalGet 2
+	0x104DDD8 LocalGet 1
+	0x104DDDA LocalGet 6
+	0x104DDDC I32Load 2, 0
+	0x104DDDF I32Load 2, 96
+	0x104DDE2 I32Load 2, 144
+	0x104DDE6 LocalTee 0
+	0x104DDE8 LocalGet 0
+	0x104DDEA I32Load 2, 0
+	0x104DDED I32Const 8191
+	0x104DDF0 I32And
+	0x104DDF1 I32Const 22691
+	0x104DDF5 I32Add
+	0x104DDF6 CallIndirect 5, 0
+	0x104DDF9 I32Const 0
+	0x104DDFB I32Const 1
+	0x104DDFD LocalGet 5
+	0x104DDFF LocalGet 6
+	0x104DE01 I32Load 2, 0
+	0x104DE04 I32Load 2, 96
+	0x104DE07 I32Load 2, 48
+	0x104DE0A LocalTee 0
+	0x104DE0C LocalGet 0
+	0x104DE0E I32Load 2, 0
+	0x104DE11 I32Const 255
+	0x104DE14 I32And
+	0x104DE15 I32Const 42847
+	0x104DE19 I32Add
+	0x104DE1A CallIndirect 33, 0
+	0x104DE1D Drop
+	0x104DE1E End
+	0x104DE1F LocalGet 5
+	0x104DE21 I32Load 2, 0
+	0x104DE24 LocalGet 5
+	0x104DE26 GlobalSet 7
+	0x104DE28 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b19
+	11 Nop
+	12 Move v12 @ S0_v55, [2CF590]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v55
+	14 Nop
+	15 Move v14 @ S1_v19, 1
+	16 Move [45A289], v14 @ S1_v19
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 CheckEqual v21 @ S0_v10 (System.Boolean), key @ L1 (TKey), 0
+	23 Not v22 @ TEMP_v2 (System.Boolean), v21 @ S0_v10 (System.Boolean)
+	24 ConditionalJump @b22, v22 @ TEMP_v2 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Add v26 @ S0_v30, methodInfo @ L3 (Il2CppMethodInfo), 12
+	28 Nop
+	29 Move v28 @ S0_v31, [v26 @ S0_v30]
+	30 Move v29 @ S0_v32, [v28 @ S0_v31+60]
+	31 Nop
+	32 Call 7245, v31 @ S0_v34, [v29 @ S0_v32+8]
+	33 Nop
+	34 Nop
+	35 And v53 @ S0_v36, [v31 @ S0_v34+BA], 512
+	36 CheckEqual v54 @ TEMP_v6 (System.Boolean), v53 @ S0_v36, 0
+	37 ConditionalJump @b20, v54 @ TEMP_v6 (System.Boolean)
+	38 Nop
+	39 Move v82 @ S0_v43, [v26 @ S0_v30]
+	40 Move v83 @ S0_v44, [v82 @ S0_v43+60]
+	41 Nop
+	42 Call 7245, v85 @ S0_v46, [v83 @ S0_v44+8]
+	43 Nop
+	44 CheckEqual v89 @ S0_v48 (System.Boolean), [v85 @ S0_v46+74], 0
+	45 Not v86 @ TEMP_v8 (System.Boolean), v89 @ S0_v48 (System.Boolean)
+	46 ConditionalJump @b20, v86 @ TEMP_v8 (System.Boolean)
+	47 Nop
+	48 Move v122 @ S0_v50, [v26 @ S0_v30]
+	49 Move v123 @ S0_v51, [v122 @ S0_v50+60]
+	50 Nop
+	51 Call 7245, v88 @ S0_v53, [v123 @ S0_v51+8]
+	52 CallVoid 11A99, v88 @ S0_v53
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move v91 @ S0_v39, [v26 @ S0_v30]
+	57 Move v92 @ S0_v40, [v91 @ S0_v39+60]
+	58 Move v46 @ S0_v41, [v92 @ S0_v40+28]
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 And v96 @ S1_v17, [v46 @ S0_v41], 32767
+	64 Nop
+	65 Add v44 @ S1_v18, v96 @ S1_v17, 46824
+	66 IndirectCall v44 @ S1_v18, v33 @ SRET_v2, v46 @ S0_v41
+	67 Nop
+	68 Nop
+	69 CheckEqual v49 @ S0_v13 (System.Boolean), defaultValue @ L2 (TValue), 0
+	70 Not v50 @ TEMP_v4 (System.Boolean), v49 @ S0_v13 (System.Boolean)
+	71 ConditionalJump @b15, v50 @ TEMP_v4 (System.Boolean)
+	72 Nop
+	73 Nop
+	74 Call 11B6C, v57 @ S0_v27 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 CallVoid ArgumentOutOfRangeException..ctor, v57 @ S0_v27 (System.ArgumentOutOfRangeException), "valueFactory"
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 CallVoid 120AB, v57 @ S0_v27 (System.ArgumentOutOfRangeException), 0, methodof(System.Collections.Concurrent.ConcurrentDictionary`2<System.Object, System.Object>::GetOrAdd)
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Add v75 @ S3_v2, methodInfo @ L3 (Il2CppMethodInfo), 12
+	95 Nop
+	96 Move v77 @ S3_v3, [v75 @ S3_v2]
+	97 Move v78 @ S3_v4, [v77 @ S3_v3+60]
+	98 Nop
+	99 Call 7245, v80 @ S3_v6, [v78 @ S3_v4+2C]
+	100 Nop
+	101 Nop
+	102 Call 745A, v102 @ S2_v4, 1, v80 @ S3_v6, [dictionary @ L0 (System.Collections.Generic.IReadOnlyDictionary`2<TKey, TValue>)+C], key @ L1 (TKey)
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Move v108 @ S4_v4, [v75 @ S3_v2]
+	107 Move v109 @ S4_v5, [v108 @ S4_v4+60]
+	108 Move v110 @ S4_v6, [v109 @ S4_v5+50]
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 And v115 @ S5_v4, [v110 @ S4_v6], 2047
+	114 Nop
+	115 Add v117 @ S5_v5, v115 @ S5_v4, 39195
+	116 IndirectCall v117 @ S5_v5, v118 @ S0_v18, dictionary @ L0 (System.Collections.Generic.IReadOnlyDictionary`2<TKey, TValue>), key @ L1 (TKey), v102 @ S2_v4, v1 @ G7, v110 @ S4_v6
+	117 CheckEqual v119 @ S0_v19 (System.Boolean), v118 @ S0_v18, 0
+	118 Not v120 @ TEMP_v5 (System.Boolean), v119 @ S0_v19 (System.Boolean)
+	119 ConditionalJump @b21, v120 @ TEMP_v5 (System.Boolean)
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Move v131 @ S5_v8, [v75 @ S3_v2]
+	127 Move v132 @ S5_v9, [v131 @ S5_v8+60]
+	128 Move v133 @ S5_v10, [v132 @ S5_v9+90]
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 And v138 @ S6_v6, [v133 @ S5_v10], 8191
+	134 Nop
+	135 Add v140 @ S6_v7, v138 @ S6_v6, 22691
+	136 IndirectCall v140 @ S6_v7, v141 @ S3_v10, defaultValue @ L2 (TValue), key @ L1 (TKey), v133 @ S5_v10
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Nop
+	141 Move v146 @ S7_v5, [v75 @ S3_v2]
+	142 Move v147 @ S7_v6, [v146 @ S7_v5+60]
+	143 Move v148 @ S7_v7, [v147 @ S7_v6+30]
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Nop
+	148 And v153 @ S8_v4, [v148 @ S7_v7], 255
+	149 Nop
+	150 Add v155 @ S8_v5, v153 @ S8_v4, 42847
+	151 IndirectCall v155 @ S8_v5, v156 @ S0_v24, dictionary @ L0 (System.Collections.Generic.IReadOnlyDictionary`2<TKey, TValue>), key @ L1 (TKey), v102 @ S2_v4, v141 @ S3_v10, 0, 1, v1 @ G7, v148 @ S7_v7
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Return [v1 @ G7]
+

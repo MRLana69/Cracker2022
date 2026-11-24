@@ -1,0 +1,79 @@
+Type: System.Net.Configuration.BypassElement
+
+Method: System.Configuration.ConfigurationPropertyCollection get_Properties()
+
+Disassembly:
+	0x1107F41 LocalGet 0
+	0x1107F43 If -64
+	0x1107F45 I32Const -2128831035
+	0x1107F4B LocalSet 1
+	0x1107F4D Loop -64
+	0x1107F4F LocalGet 2
+	0x1107F51 LocalGet 0
+	0x1107F53 I32Load 2, 8
+	0x1107F56 I32Lt_S
+	0x1107F57 If -64
+	0x1107F59 LocalGet 1
+	0x1107F5B LocalGet 0
+	0x1107F5D LocalGet 2
+	0x1107F5F I32Const 0
+	0x1107F61 Call 55658
+	0x1107F65 I32Const 65535
+	0x1107F69 I32And
+	0x1107F6A I32Xor
+	0x1107F6B I32Const 16777619
+	0x1107F70 I32Mul
+	0x1107F71 LocalSet 1
+	0x1107F73 LocalGet 2
+	0x1107F75 I32Const 1
+	0x1107F77 I32Add
+	0x1107F78 LocalSet 2
+	0x1107F7A Br 1
+	0x1107F7C End
+	0x1107F7D End
+	0x1107F7E Else
+	0x1107F7F I32Const 0
+	0x1107F81 LocalSet 1
+	0x1107F83 End
+	0x1107F84 LocalGet 1
+	0x1107F86 End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ TEMP_v1 (System.Boolean), this @ L0 (System.Net.Configuration.BypassElement), 0
+	2 ConditionalJump @b7, v2 @ TEMP_v1 (System.Boolean)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CheckLess v28 @ S0_v8 (System.Boolean), v24 @ S0_v13 (System.Char[]), [this @ L0 (System.Net.Configuration.BypassElement)+8]
+	10 Not v22 @ TEMP_v4 (System.Boolean), v28 @ S0_v8 (System.Boolean)
+	11 ConditionalJump @b6, v22 @ TEMP_v4 (System.Boolean)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Call String.Split, v40 @ S1_v6 (System.String[]), this @ L0 (System.Net.Configuration.BypassElement), v7 @ L2_v2 (System.Char[])
+	17 Nop
+	18 And v41 @ S1_v7, v40 @ S1_v6 (System.String[]), 65535
+	19 Xor v42 @ S0_v10, v33 @ L1_v1 (System.Configuration.ConfigurationPropertyCollection), v41 @ S1_v7
+	20 Nop
+	21 Multiply v44 @ S0_v11 (System.Configuration.ConfigurationPropertyCollection), v42 @ S0_v10, 16777619
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Add v24 @ S0_v13 (System.Char[]), v7 @ L2_v2 (System.Char[]), 1
+	26 Nop
+	27 Jump @b8
+	28 Nop
+	29 Nop
+	30 Jump @b9
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Return v33 @ L1_v1 (System.Configuration.ConfigurationPropertyCollection)
+

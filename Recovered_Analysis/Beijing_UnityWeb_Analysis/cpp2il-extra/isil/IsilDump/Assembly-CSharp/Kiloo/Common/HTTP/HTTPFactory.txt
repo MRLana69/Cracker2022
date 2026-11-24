@@ -1,0 +1,900 @@
+Type: Kiloo.Common.HTTP.HTTPFactory
+
+Method: Kiloo.Common.HTTP.IRequest CreateGet(System.Uri uri)
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return uri.m_String (System.String)
+
+Method: Kiloo.Common.HTTP.IRequest CreatePost(System.Uri uri)
+
+Disassembly:
+	0xF4C4AE I32Const 4560442
+	0xF4C4B3 I32Load8_S 0, 0
+	0xF4C4B6 I32Eqz
+	0xF4C4B7 If -64
+	0xF4C4B9 I32Const 2969112
+	0xF4C4BE I32Load 2, 0
+	0xF4C4C1 Call 73003
+	0xF4C4C5 I32Const 4560442
+	0xF4C4CA I32Const 1
+	0xF4C4CC I32Store8 0, 0
+	0xF4C4CF End
+	0xF4C4D0 I32Const 4514440
+	0xF4C4D5 I32Load 2, 0
+	0xF4C4D8 LocalGet 0
+	0xF4C4DA I32Const 0
+	0xF4C4DC I32Const 0
+	0xF4C4DE Call 42236
+	0xF4C4E2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2D4E18]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45963A], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call HTTPFactory.CreateRequest, returnVal1 @ S0_v7 (Kiloo.Common.HTTP.IRequest), "GET", uri @ L0 (System.Uri), 0
+	18 Nop
+	19 Return returnVal1 @ S0_v7 (Kiloo.Common.HTTP.IRequest)
+
+Method: Kiloo.Common.HTTP.IRequest CreatePut(System.Uri uri)
+
+Disassembly:
+	0xF4C4E5 I32Const 4560443
+	0xF4C4EA I32Load8_S 0, 0
+	0xF4C4ED I32Eqz
+	0xF4C4EE If -64
+	0xF4C4F0 I32Const 2969116
+	0xF4C4F5 I32Load 2, 0
+	0xF4C4F8 Call 73003
+	0xF4C4FC I32Const 4560443
+	0xF4C501 I32Const 1
+	0xF4C503 I32Store8 0, 0
+	0xF4C506 End
+	0xF4C507 I32Const 4518712
+	0xF4C50C I32Load 2, 0
+	0xF4C50F LocalGet 0
+	0xF4C511 I32Const 0
+	0xF4C513 I32Const 0
+	0xF4C515 Call 42236
+	0xF4C519 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2D4E1C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45963B], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call HTTPFactory.CreateRequest, returnVal1 @ S0_v7 (Kiloo.Common.HTTP.IRequest), "POST", uri @ L0 (System.Uri), 0
+	18 Nop
+	19 Return returnVal1 @ S0_v7 (Kiloo.Common.HTTP.IRequest)
+
+Method: Kiloo.Common.HTTP.IRequest CreateDelete(System.Uri uri)
+
+Disassembly:
+	0xF4C51C I32Const 4560444
+	0xF4C521 I32Load8_S 0, 0
+	0xF4C524 I32Eqz
+	0xF4C525 If -64
+	0xF4C527 I32Const 2969120
+	0xF4C52C I32Load 2, 0
+	0xF4C52F Call 73003
+	0xF4C533 I32Const 4560444
+	0xF4C538 I32Const 1
+	0xF4C53A I32Store8 0, 0
+	0xF4C53D End
+	0xF4C53E I32Const 4518716
+	0xF4C543 I32Load 2, 0
+	0xF4C546 LocalGet 0
+	0xF4C548 I32Const 0
+	0xF4C54A I32Const 0
+	0xF4C54C Call 42236
+	0xF4C550 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2D4E20]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45963C], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call HTTPFactory.CreateRequest, returnVal1 @ S0_v7 (Kiloo.Common.HTTP.IRequest), "PUT", uri @ L0 (System.Uri), 0
+	18 Nop
+	19 Return returnVal1 @ S0_v7 (Kiloo.Common.HTTP.IRequest)
+
+Method: Kiloo.Common.HTTP.IRequest CreateRequest(System.String method, System.Uri uri, System.Byte[] bytes = null)
+
+Disassembly:
+	0xF3ECFD GlobalGet 7
+	0xF3ECFF LocalSet 3
+	0xF3ED01 GlobalGet 7
+	0xF3ED03 I32Const 16
+	0xF3ED05 I32Add
+	0xF3ED06 GlobalSet 7
+	0xF3ED08 I32Const 4560270
+	0xF3ED0D I32Load8_S 0, 0
+	0xF3ED10 I32Eqz
+	0xF3ED11 If -64
+	0xF3ED13 I32Const 2969624
+	0xF3ED18 I32Load 2, 0
+	0xF3ED1B Call 73003
+	0xF3ED1F I32Const 4560270
+	0xF3ED24 I32Const 1
+	0xF3ED26 I32Store8 0, 0
+	0xF3ED29 End
+	0xF3ED2A GlobalGet 7
+	0xF3ED2C LocalSet 4
+	0xF3ED2E GlobalGet 7
+	0xF3ED30 I32Const 16
+	0xF3ED32 I32Add
+	0xF3ED33 GlobalSet 7
+	0xF3ED35 LocalGet 3
+	0xF3ED37 LocalGet 4
+	0xF3ED39 I32Store 2, 0
+	0xF3ED3C LocalGet 3
+	0xF3ED3E I32Const -1
+	0xF3ED40 I32Store 2, 4
+	0xF3ED43 I32Const 4439136
+	0xF3ED48 I32Load 2, 0
+	0xF3ED4B LocalTee 4
+	0xF3ED4D I32Load16_S 1, 186
+	0xF3ED51 I32Const 512
+	0xF3ED54 I32And
+	0xF3ED55 If -64
+	0xF3ED57 LocalGet 4
+	0xF3ED59 I32Load 2, 116
+	0xF3ED5C I32Eqz
+	0xF3ED5D If -64
+	0xF3ED5F LocalGet 4
+	0xF3ED61 Call 72345
+	0xF3ED65 End
+	0xF3ED66 End
+	0xF3ED67 LocalGet 1
+	0xF3ED69 I32Const 0
+	0xF3ED6B Call 42223
+	0xF3ED6F LocalSet 7
+	0xF3ED71 I32Const 4427792
+	0xF3ED76 I32Load 2, 0
+	0xF3ED79 Call 72556
+	0xF3ED7D LocalTee 5
+	0xF3ED7F I32Const 4486260
+	0xF3ED84 I32Load 2, 0
+	0xF3ED87 Call 29311
+	0xF3ED8B I32Const 0
+	0xF3ED8D I32Const 4432776
+	0xF3ED92 I32Load 2, 0
+	0xF3ED95 LocalGet 2
+	0xF3ED97 Call 29547
+	0xF3ED9B LocalSet 1
+	0xF3ED9D Block -64
+	0xF3ED9F Block -64
+	0xF3EDA1 Block -64
+	0xF3EDA3 Loop -64
+	0xF3EDA5 I32Const 4427756
+	0xF3EDAA I32Load 2, 0
+	0xF3EDAD LocalSet 2
+	0xF3EDAF I32Const 0
+	0xF3EDB1 GlobalSet 9
+	0xF3EDB3 I32Const 6523
+	0xF3EDB6 I32Const 0
+	0xF3EDB8 LocalGet 2
+	0xF3EDBA LocalGet 1
+	0xF3EDBC Call 20
+	0xF3EDBE GlobalGet 9
+	0xF3EDC0 I32Const 0
+	0xF3EDC2 GlobalSet 9
+	0xF3EDC4 I32Const 1
+	0xF3EDC6 I32And
+	0xF3EDC7 BrIf 2
+	0xF3EDC9 I32Eqz
+	0xF3EDCA BrIf 1
+	0xF3EDCC I32Const 4432780
+	0xF3EDD1 I32Load 2, 0
+	0xF3EDD4 LocalSet 2
+	0xF3EDD6 I32Const 0
+	0xF3EDD8 GlobalSet 9
+	0xF3EDDA I32Const 6522
+	0xF3EDDD I32Const 0
+	0xF3EDDF LocalGet 2
+	0xF3EDE1 LocalGet 1
+	0xF3EDE3 Call 20
+	0xF3EDE5 LocalSet 2
+	0xF3EDE7 GlobalGet 9
+	0xF3EDE9 I32Const 0
+	0xF3EDEB GlobalSet 9
+	0xF3EDED I32Const 1
+	0xF3EDEF I32And
+	0xF3EDF0 BrIf 2
+	0xF3EDF2 I32Const 4486272
+	0xF3EDF7 I32Load 2, 0
+	0xF3EDFA LocalSet 4
+	0xF3EDFC I32Const 0
+	0xF3EDFE GlobalSet 9
+	0xF3EE00 I32Const 10493
+	0xF3EE04 LocalGet 5
+	0xF3EE06 LocalGet 2
+	0xF3EE08 LocalGet 4
+	0xF3EE0A Call 40
+	0xF3EE0C GlobalGet 9
+	0xF3EE0E I32Const 0
+	0xF3EE10 GlobalSet 9
+	0xF3EE12 I32Const 1
+	0xF3EE14 I32And
+	0xF3EE15 I32Eqz
+	0xF3EE16 BrIf 0
+	0xF3EE18 End
+	0xF3EE19 Br 1
+	0xF3EE1B End
+	0xF3EE1C LocalGet 3
+	0xF3EE1E I32Const 4
+	0xF3EE20 I32Add
+	0xF3EE21 LocalTee 4
+	0xF3EE23 I32Load 2, 0
+	0xF3EE26 I32Const 1
+	0xF3EE28 I32Add
+	0xF3EE29 LocalSet 2
+	0xF3EE2B LocalGet 4
+	0xF3EE2D LocalGet 2
+	0xF3EE2F I32Store 2, 0
+	0xF3EE32 LocalGet 3
+	0xF3EE34 I32Load 2, 0
+	0xF3EE37 LocalGet 2
+	0xF3EE39 I32Const 2
+	0xF3EE3B I32Shl
+	0xF3EE3C I32Add
+	0xF3EE3D I32Const 57
+	0xF3EE3F I32Store 2, 0
+	0xF3EE42 Br 1
+	0xF3EE44 End
+	0xF3EE45 I32Const 2132256
+	0xF3EE4A Call 156
+	0xF3EE4D LocalSet 2
+	0xF3EE4F GlobalGet 14
+	0xF3EE51 I32Const 2132256
+	0xF3EE56 Call 429
+	0xF3EE59 I32Eq
+	0xF3EE5A If -64
+	0xF3EE5C LocalGet 2
+	0xF3EE5E Call 153
+	0xF3EE61 I32Load 2, 0
+	0xF3EE64 LocalSet 6
+	0xF3EE66 Call 154
+	0xF3EE69 Else
+	0xF3EE6A LocalGet 2
+	0xF3EE6C Call 164
+	0xF3EE6F End
+	0xF3EE70 End
+	0xF3EE71 LocalGet 1
+	0xF3EE73 If -64
+	0xF3EE75 I32Const 0
+	0xF3EE77 I32Const 4427760
+	0xF3EE7C I32Load 2, 0
+	0xF3EE7F LocalGet 1
+	0xF3EE81 Call 29725
+	0xF3EE85 End
+	0xF3EE86 Block -64
+	0xF3EE88 Block -64
+	0xF3EE8A LocalGet 3
+	0xF3EE8C I32Load 2, 4
+	0xF3EE8F I32Const -1
+	0xF3EE91 I32Eq
+	0xF3EE92 BrIf 0
+	0xF3EE94 LocalGet 3
+	0xF3EE96 I32Load 2, 0
+	0xF3EE99 LocalGet 3
+	0xF3EE9B I32Load 2, 4
+	0xF3EE9E I32Const 2
+	0xF3EEA0 I32Shl
+	0xF3EEA1 I32Add
+	0xF3EEA2 I32Load 2, 0
+	0xF3EEA5 I32Const 57
+	0xF3EEA7 I32Ne
+	0xF3EEA8 BrIf 0
+	0xF3EEAA LocalGet 3
+	0xF3EEAC I32Const 4
+	0xF3EEAE I32Add
+	0xF3EEAF LocalTee 1
+	0xF3EEB1 I32Load 2, 0
+	0xF3EEB4 LocalTee 2
+	0xF3EEB6 I32Const -1
+	0xF3EEB8 I32Gt_S
+	0xF3EEB9 If -64
+	0xF3EEBB LocalGet 1
+	0xF3EEBD LocalGet 2
+	0xF3EEBF I32Const -1
+	0xF3EEC1 I32Add
+	0xF3EEC2 I32Store 2, 0
+	0xF3EEC5 End
+	0xF3EEC6 Br 1
+	0xF3EEC8 End
+	0xF3EEC9 LocalGet 6
+	0xF3EECB If -64
+	0xF3EECD LocalGet 6
+	0xF3EECF I32Const 0
+	0xF3EED1 I32Const 0
+	0xF3EED3 Call 73899
+	0xF3EED7 End
+	0xF3EED8 End
+	0xF3EED9 LocalGet 0
+	0xF3EEDB I32Load 2, 8
+	0xF3EEDE LocalGet 7
+	0xF3EEE0 LocalGet 5
+	0xF3EEE2 I32Const 1
+	0xF3EEE4 I32Const 4482996
+	0xF3EEE9 I32Load 2, 0
+	0xF3EEEC I32Load 2, 12
+	0xF3EEEF I32Load 2, 96
+	0xF3EEF2 I32Load 2, 72
+	0xF3EEF5 LocalTee 1
+	0xF3EEF7 LocalGet 1
+	0xF3EEF9 I32Load 2, 0
+	0xF3EEFC I32Const 2047
+	0xF3EEFF I32And
+	0xF3EF00 I32Const 39195
+	0xF3EF04 I32Add
+	0xF3EF05 CallIndirect 23, 0
+	0xF3EF08 Drop
+	0xF3EF09 LocalGet 3
+	0xF3EF0B GlobalSet 7
+	0xF3EF0D LocalGet 0
+	0xF3EF0F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S0_v3, v1 @ G7, 16
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b36
+	11 Nop
+	12 Move v12 @ S0_v95, [2D5018]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v95
+	14 Nop
+	15 Move v14 @ S1_v49, 1
+	16 Move [45958E], v14 @ S1_v49
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], v5 @ S0_v3
+	27 Nop
+	28 Nop
+	29 Move [v1 @ G7+4], -1
+	30 Nop
+	31 Move v28 @ S0_v14 (Il2CppClass<Kiloo.Common.HTTP.Headers>), typeof(Kiloo.Common.HTTP.Headers)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 And v32 @ S0_v16, [v28 @ S0_v14 (Il2CppClass<Kiloo.Common.HTTP.Headers>)+BA], 512
+	36 CheckEqual v33 @ TEMP_v2 (System.Boolean), v32 @ S0_v16, 0
+	37 ConditionalJump @b40, v33 @ TEMP_v2 (System.Boolean)
+	38 Move v34 @ S0_v90 (Il2CppClass<Kiloo.Common.HTTP.Headers>), typeof(Kiloo.Common.HTTP.Headers)
+	39 Nop
+	40 CheckEqual v36 @ S0_v92 (System.Boolean), [v34 @ S0_v90 (Il2CppClass<Kiloo.Common.HTTP.Headers>)+74], 0
+	41 Not v37 @ TEMP_v10 (System.Boolean), v36 @ S0_v92 (System.Boolean)
+	42 ConditionalJump @b40, v37 @ TEMP_v10 (System.Boolean)
+	43 Nop
+	44 CallVoid 11A99, typeof(Kiloo.Common.HTTP.Headers)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Call Headers.get_contentType, v44 @ S0_v19 (Kiloo.Common.HTTP.ContentType), uri @ L1 (System.Uri)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Call 11B6C, v48 @ S0_v22 (System.Collections.Generic.List`1<System.String>), typeof(System.Collections.Generic.List`1<System.String>)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 CallVoid List`1<System.String>..ctor, v48 @ S0_v22 (System.Collections.Generic.List`1<System.String>)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Call 736B, v57 @ S0_v24, 0, typeof(System.Collections.Generic.IEnumerable`1<System.String>), bytes @ L2 (System.Byte[])
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Call 0014, v84 @ S0_v30, 6523, 0, typeof(System.Collections.IEnumerator), v57 @ S0_v24
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Jump @b13
+	81 CheckEqual v90 @ S0_v67 (System.Boolean), v84 @ S0_v30, 0
+	82 ConditionalJump @b19, v90 @ S0_v67 (System.Boolean)
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Call 0014, v112 @ S0_v80, 6522, 0, typeof(System.Collections.Generic.IEnumerator`1<System.String>), v57 @ S0_v24
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Jump @b16
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 CallVoid 0028, 10493, v48 @ S0_v22 (System.Collections.Generic.List`1<System.String>), v112 @ S0_v80, methodof(System.Collections.Generic.List`1<System.String>::Add)
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Jump @b37
+	117 Nop
+	118 Jump @b20
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Add v115 @ S0_v69, v1 @ G7, 4
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Add v119 @ S0_v71, [v115 @ S0_v69], 1
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Move [v115 @ S0_v69], v119 @ S0_v71
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 ShiftLeft v127 @ S1_v41, v119 @ S0_v71, 2
+	136 Add v128 @ S0_v75, [v1 @ G7], v127 @ S1_v41
+	137 Nop
+	138 Move [v128 @ S0_v75], 57
+	139 Jump @b38
+	140 Nop
+	141 Nop
+	142 Call 009C, v104 @ S0_v60, 2132256
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Call 01AD, v134 @ S1_v36, 2132256
+	147 CheckEqual v153 @ S0_v62 (System.Boolean), v132 @ G14, v134 @ S1_v36
+	148 Not v146 @ TEMP_v9 (System.Boolean), v153 @ S0_v62 (System.Boolean)
+	149 ConditionalJump @b26, v146 @ TEMP_v9 (System.Boolean)
+	150 Nop
+	151 Call 0099, v172 @ S0_v65, v104 @ S0_v60
+	152 Nop
+	153 Nop
+	154 CallVoid 009A
+	155 Jump @b38
+	156 Nop
+	157 CallVoid 00A4, v104 @ S0_v60
+	158 Nop
+	159 Nop
+	160 Nop
+	161 CheckEqual v152 @ TEMP_v5 (System.Boolean), v57 @ S0_v24, 0
+	162 ConditionalJump @b29, v152 @ TEMP_v5 (System.Boolean)
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Nop
+	167 CallVoid 741D, 0, typeof(System.IDisposable), v57 @ S0_v24
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Nop
+	172 CheckEqual v170 @ S0_v36 (System.Boolean), [v1 @ G7+4], -1
+	173 ConditionalJump @b33, v170 @ S0_v36 (System.Boolean)
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Nop
+	179 ShiftLeft v181 @ S1_v25, [v1 @ G7+4], 2
+	180 Add v182 @ S0_v48, [v1 @ G7], v181 @ S1_v25
+	181 Nop
+	182 Nop
+	183 CheckNotEqual v185 @ S0_v50 (System.Boolean), [v182 @ S0_v48], 57
+	184 ConditionalJump @b33, v185 @ S0_v50 (System.Boolean)
+	185 Nop
+	186 Nop
+	187 Add v193 @ S0_v52, v1 @ G7, 4
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Nop
+	192 CheckGreater v198 @ S0_v54 (System.Boolean), [v193 @ S0_v52], -1
+	193 Not v199 @ TEMP_v8 (System.Boolean), v198 @ S0_v54 (System.Boolean)
+	194 ConditionalJump @b39, v199 @ TEMP_v8 (System.Boolean)
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Add v237 @ S1_v31, [v193 @ S0_v52], -1
+	199 Move [v193 @ S0_v52], v237 @ S1_v31
+	200 Nop
+	201 Jump @b41
+	202 Nop
+	203 Nop
+	204 CheckEqual v190 @ TEMP_v7 (System.Boolean), [v172 @ S0_v65], 0
+	205 ConditionalJump @b41, v190 @ TEMP_v7 (System.Boolean)
+	206 Nop
+	207 Nop
+	208 Nop
+	209 CallVoid 120AB, [v172 @ S0_v65], 0, 0
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Nop
+	218 Move v219 @ S4_v2 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.String, System.Collections.Generic.List`1<System.String>>::set_Item)
+	219 Move v220 @ S4_v3, [v219 @ S4_v2 (Il2CppMethodInfo)+C]
+	220 Move v221 @ S4_v4, [v220 @ S4_v3+60]
+	221 Move v222 @ S4_v5, [v221 @ S4_v4+48]
+	222 Nop
+	223 Nop
+	224 Nop
+	225 Nop
+	226 And v227 @ S5_v3, [v222 @ S4_v5], 2047
+	227 Nop
+	228 Add v229 @ S5_v4, v227 @ S5_v3, 39195
+	229 IndirectCall v229 @ S5_v4, v230 @ S0_v40, method.m_stringLength (System.Int32), v44 @ S0_v19 (Kiloo.Common.HTTP.ContentType), v48 @ S0_v22 (System.Collections.Generic.List`1<System.String>), 1, v222 @ S4_v5
+	230 Nop
+	231 Nop
+	232 Nop
+	233 Nop
+	234 Return method @ L0 (System.String)
+
+Method: Kiloo.Common.HTTP.IRequest CreateRequest(System.String method, System.String uri, System.Byte[] bytes = null)
+
+Disassembly:
+	0xF4042C I32Const 4560308
+	0xF40431 I32Load8_S 0, 0
+	0xF40434 I32Eqz
+	0xF40435 If -64
+	0xF40437 I32Const 2969124
+	0xF4043C I32Load 2, 0
+	0xF4043F Call 73003
+	0xF40443 I32Const 4560308
+	0xF40448 I32Const 1
+	0xF4044A I32Store8 0, 0
+	0xF4044D End
+	0xF4044E I32Const 4439128
+	0xF40453 I32Load 2, 0
+	0xF40456 Call 72556
+	0xF4045A LocalTee 4
+	0xF4045C LocalGet 0
+	0xF4045E LocalGet 1
+	0xF40460 LocalGet 2
+	0xF40462 I32Const 0
+	0xF40464 Call 42248
+	0xF40468 LocalGet 4
+	0xF4046A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2D4E24]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [4595B4], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (Kiloo.Common.HTTP.IRequest), typeof(Kiloo.Common.HTTP.Internal.UnityRequest)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 CallVoid A508, v13 @ S0_v7 (Kiloo.Common.HTTP.IRequest), method @ L0 (System.String), uri @ L1 (System.String), bytes @ L2 (System.Byte[]), 0
+	21 Nop
+	22 Nop
+	23 Return v13 @ S0_v7 (Kiloo.Common.HTTP.IRequest)
+
+Method: Kiloo.Common.HTTP.IResponse CreateResponse(Kiloo.Common.HTTP.Headers headers, System.Byte[] bytes)
+
+Disassembly:
+	0xF401F3 GlobalGet 7
+	0xF401F5 LocalSet 0
+	0xF401F7 GlobalGet 7
+	0xF401F9 I32Const 16
+	0xF401FB I32Add
+	0xF401FC GlobalSet 7
+	0xF401FE I32Const 4560288
+	0xF40203 I32Load8_S 0, 0
+	0xF40206 I32Eqz
+	0xF40207 If -64
+	0xF40209 I32Const 2969576
+	0xF4020E I32Load 2, 0
+	0xF40211 Call 73003
+	0xF40215 I32Const 4560288
+	0xF4021A I32Const 1
+	0xF4021C I32Store8 0, 0
+	0xF4021F End
+	0xF40220 LocalGet 0
+	0xF40222 I64Const 0
+	0xF40224 I64Store 3, 0
+	0xF40227 I32Const 4428064
+	0xF4022C I32Load 2, 0
+	0xF4022F LocalSet 2
+	0xF40231 LocalGet 1
+	0xF40233 If -1
+	0xF40235 LocalGet 1
+	0xF40237 I32Load 2, 0
+	0xF4023A LocalGet 2
+	0xF4023C I32Eq
+	0xF4023D If -1
+	0xF4023F LocalGet 1
+	0xF40241 Else
+	0xF40242 I32Const 0
+	0xF40244 End
+	0xF40245 Else
+	0xF40246 I32Const 0
+	0xF40248 End
+	0xF40249 If -1
+	0xF4024B LocalGet 0
+	0xF4024D LocalGet 1
+	0xF4024F I32Const 4428064
+	0xF40254 I32Load 2, 0
+	0xF40257 Call 30193
+	0xF4025B I64Load 3, 0
+	0xF4025E I64Store 3, 0
+	0xF40261 LocalGet 0
+	0xF40263 LocalGet 0
+	0xF40265 I32Const 0
+	0xF40267 Call 56539
+	0xF4026B I64Store 3, 0
+	0xF4026E I32Const 4428724
+	0xF40273 I32Load 2, 0
+	0xF40276 LocalTee 1
+	0xF40278 I32Load16_S 1, 186
+	0xF4027C I32Const 512
+	0xF4027F I32And
+	0xF40280 If -64
+	0xF40282 LocalGet 1
+	0xF40284 I32Load 2, 116
+	0xF40287 I32Eqz
+	0xF40288 If -64
+	0xF4028A LocalGet 1
+	0xF4028C Call 72345
+	0xF40290 End
+	0xF40291 End
+	0xF40292 LocalGet 0
+	0xF40294 I32Const 0
+	0xF40296 Call 51630
+	0xF4029A I32Const 0
+	0xF4029C Call 51641
+	0xF402A0 I32Const 0
+	0xF402A2 Call 56565
+	0xF402A6 Else
+	0xF402A7 I32Const 3
+	0xF402A9 LocalGet 1
+	0xF402AB Call 29262
+	0xF402AF End
+	0xF402B0 LocalGet 0
+	0xF402B2 GlobalSet 7
+	0xF402B4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b20
+	11 Nop
+	12 Move v12 @ S0_v37, [2D4FE8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v37
+	14 Nop
+	15 Move v14 @ S1_v18, 1
+	16 Move [4595A0], v14 @ S1_v18
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CheckEqual v24 @ TEMP_v2 (System.Boolean), bytes @ L1 (Kiloo.Common.HTTP.Headers), 0
+	26 ConditionalJump @b8, v24 @ TEMP_v2 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 CheckEqual v28 @ S0_v32 (System.Boolean), [bytes @ L1 (Kiloo.Common.HTTP.Headers)], typeof(System.DateTime)
+	31 Not v29 @ TEMP_v9 (System.Boolean), v28 @ S0_v32 (System.Boolean)
+	32 ConditionalJump @b7, v29 @ TEMP_v9 (System.Boolean)
+	33 Nop
+	34 Jump @b21
+	35 Nop
+	36 Nop
+	37 Jump @b23
+	38 Nop
+	39 Nop
+	40 CheckEqual v37 @ TEMP_v4 (System.Boolean), v35 @ S0_v12 (Kiloo.Common.HTTP.Headers), 0
+	41 ConditionalJump @b18, v37 @ TEMP_v4 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Throw typeof(System.NullReferenceException)
+	47 Nop
+	48 Move [v1 @ G7], [v42 @ S1_v9]
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call DCDB, v50 @ S1_v12, v1 @ G7, 0
+	53 Move [v1 @ G7], v50 @ S1_v12
+	54 Nop
+	55 Move v65 @ S0_v19 (Il2CppClass<System.Globalization.DateTimeFormatInfo>), typeof(System.Globalization.DateTimeFormatInfo)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 And v68 @ S0_v21, [v65 @ S0_v19 (Il2CppClass<System.Globalization.DateTimeFormatInfo>)+BA], 512
+	60 CheckEqual v69 @ TEMP_v6 (System.Boolean), v68 @ S0_v21, 0
+	61 ConditionalJump @b22, v69 @ TEMP_v6 (System.Boolean)
+	62 Move v70 @ S0_v25 (Il2CppClass<System.Globalization.DateTimeFormatInfo>), typeof(System.Globalization.DateTimeFormatInfo)
+	63 Nop
+	64 CheckEqual v72 @ S0_v27 (System.Boolean), [v70 @ S0_v25 (Il2CppClass<System.Globalization.DateTimeFormatInfo>)+74], 0
+	65 Not v73 @ TEMP_v8 (System.Boolean), v72 @ S0_v27 (System.Boolean)
+	66 ConditionalJump @b22, v73 @ TEMP_v8 (System.Boolean)
+	67 Nop
+	68 CallVoid 11A99, typeof(System.Globalization.DateTimeFormatInfo)
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Call DateTimeFormatInfo.get_CurrentInfo, v78 @ S1_v15 (System.Globalization.DateTimeFormatInfo)
+	74 Nop
+	75 Call DateTimeFormatInfo.get_ShortDatePattern, v59 @ S1_v16 (System.String), v78 @ S1_v15 (System.Globalization.DateTimeFormatInfo)
+	76 Nop
+	77 Call DCF5, returnVal1 @ S0_v13 (Kiloo.Common.HTTP.IResponse), v1 @ G7, v59 @ S1_v16 (System.String), 0
+	78 Jump @b19
+	79 Nop
+	80 Nop
+	81 Call 724E, returnVal1 @ S0_v13 (Kiloo.Common.HTTP.IResponse), 3, bytes @ L1 (Kiloo.Common.HTTP.Headers)
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Return returnVal1 @ S0_v13 (Kiloo.Common.HTTP.IResponse)
+
+Method: Kiloo.Common.HTTP.IResponse CreateResponse(System.Int32 status, System.String message, Kiloo.Common.HTTP.Headers headers, System.Byte[] bytes)
+
+Disassembly:
+	0xFB76C9 I32Const 4561630
+	0xFB76CE I32Load8_S 0, 0
+	0xFB76D1 I32Eqz
+	0xFB76D2 If -64
+	0xFB76D4 I32Const 2978916
+	0xFB76D9 I32Load 2, 0
+	0xFB76DC Call 73003
+	0xFB76E0 I32Const 4561630
+	0xFB76E5 I32Const 1
+	0xFB76E7 I32Store8 0, 0
+	0xFB76EA End
+	0xFB76EB I32Const 4439296
+	0xFB76F0 I32Load 2, 0
+	0xFB76F3 Call 72556
+	0xFB76F7 LocalTee 5
+	0xFB76F9 LocalGet 0
+	0xFB76FB LocalGet 1
+	0xFB76FD LocalGet 2
+	0xFB76FF LocalGet 3
+	0xFB7701 I32Const 0
+	0xFB7703 Call 44091
+	0xFB7707 LocalGet 5
+	0xFB7709 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2D7464]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [459ADE], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (Kiloo.Common.HTTP.IResponse), typeof(Kiloo.Common.LocalizationManager.Locale)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Headers.Get, v24 @ SRET_v1 (System.Nullable`1<System.DateTime>), status @ L0 (System.Int32), message @ L1 (System.String), headers @ L2 (Kiloo.Common.HTTP.Headers), bytes @ L3 (System.Byte[])
+	22 Nop
+	23 Nop
+	24 Return v13 @ S0_v7 (Kiloo.Common.HTTP.IResponse)
+

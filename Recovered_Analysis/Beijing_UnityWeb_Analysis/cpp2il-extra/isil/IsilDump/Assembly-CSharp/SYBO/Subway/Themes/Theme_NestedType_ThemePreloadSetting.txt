@@ -1,0 +1,149 @@
+Type: SYBO.Subway.Themes.Theme+ThemePreloadSetting
+
+Method: UnityEngine.Transform get_Prefab()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._prefab (UnityEngine.Transform)
+
+Method: System.Void .ctor(UnityEngine.Transform prefab)
+
+Disassembly:
+	0xC141B6 LocalGet 0
+	0xC141B8 LocalGet 1
+	0xC141BA I32Const 8
+	0xC141BC I32Add
+	0xC141BD LocalTee 3
+	0xC141BF I64Load 2, 0
+	0xC141C2 I64Store 2, 0
+	0xC141C5 LocalGet 0
+	0xC141C7 LocalGet 3
+	0xC141C9 I64Load 2, 8
+	0xC141CC I64Store 2, 8
+	0xC141CF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v5 @ S1_v2, prefab @ L1 (UnityEngine.Transform), 8
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (SYBO.Subway.Themes.Theme+ThemePreloadSetting)], [v5 @ S1_v2]
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Move this._prefabName (System.String), [v5 @ S1_v2+8]
+	11 Nop
+	12 Return
+
+Method: System.Void SetPreloadAmount(DeviceInfo+PerformanceLevel perfLevel, System.Int32 amount)
+
+Disassembly:
+	0xE2CA3A LocalGet 0
+	0xE2CA3C I32Const 8
+	0xE2CA3E I32Add
+	0xE2CA3F LocalTee 4
+	0xE2CA41 LocalGet 1
+	0xE2CA43 I32Store 2, 0
+	0xE2CA46 LocalGet 4
+	0xE2CA48 I32Const 0
+	0xE2CA4A I32Store 2, 4
+	0xE2CA4D LocalGet 4
+	0xE2CA4F LocalGet 2
+	0xE2CA51 I32Store 2, 8
+	0xE2CA54 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Subway.Themes.Theme+ThemePreloadSetting), 8
+	3 Nop
+	4 Nop
+	5 Move [v3 @ S0_v2], perfLevel @ L1 (DeviceInfo+PerformanceLevel)
+	6 Nop
+	7 Nop
+	8 Move [v3 @ S0_v2+4], 0
+	9 Nop
+	10 Nop
+	11 Move [v3 @ S0_v2+8], amount @ L2 (System.Int32)
+	12 Nop
+	13 Return
+
+Method: System.Int32 GetPreloadAmount(DeviceInfo+PerformanceLevel perfLevel)
+
+Disassembly:
+	0xDDB46B I32Const 4556216
+	0xDDB470 I32Load8_S 0, 0
+	0xDDB473 I32Eqz
+	0xDDB474 If -64
+	0xDDB476 I32Const 3015852
+	0xDDB47B I32Load 2, 0
+	0xDDB47E Call 73003
+	0xDDB482 I32Const 4556216
+	0xDDB487 I32Const 1
+	0xDDB489 I32Store8 0, 0
+	0xDDB48C End
+	0xDDB48D I32Const 4427948
+	0xDDB492 I32Load 2, 0
+	0xDDB495 LocalTee 3
+	0xDDB497 I32Load16_S 1, 186
+	0xDDB49B I32Const 512
+	0xDDB49E I32And
+	0xDDB49F If -64
+	0xDDB4A1 LocalGet 3
+	0xDDB4A3 I32Load 2, 116
+	0xDDB4A6 I32Eqz
+	0xDDB4A7 If -64
+	0xDDB4A9 LocalGet 3
+	0xDDB4AB Call 72345
+	0xDDB4AF End
+	0xDDB4B0 End
+	0xDDB4B1 LocalGet 1
+	0xDDB4B3 I32Const 0
+	0xDDB4B5 Call 58041
+	0xDDB4B9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v17, [2E04AC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4585B8], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Char>), typeof(System.Char)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Char>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.Char>), typeof(System.Char)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.Char>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Char)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call Char.CheckLetter, returnVal1 @ S0_v11 (System.Int32), perfLevel @ L1 (DeviceInfo+PerformanceLevel)
+	32 Nop
+	33 Return returnVal1 @ S0_v11 (System.Int32)
+

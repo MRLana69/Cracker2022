@@ -1,0 +1,161 @@
+Type: System.Collections.Generic.Dictionary`2+KeyCollection+Enumerator
+
+Method: System.Void .ctor(System.Collections.Generic.Dictionary`2<TKey, TValue> dictionary)
+
+Disassembly:
+	0x101C07E LocalGet 0
+	0x101C080 LocalGet 1
+	0x101C082 I32Const 8
+	0x101C084 I32Add
+	0x101C085 LocalGet 2
+	0x101C087 Call 46525
+	0x101C08B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v5 @ S1_v2, dictionary @ L1 (System.Collections.Generic.Dictionary`2<TKey, TValue>), 8
+	4 Nop
+	5 CallVoid B5BD, this @ L0 (System.Collections.Generic.Dictionary`2<TKey, TValue>+KeyCollection<TKey, TValue>+Enumerator<TKey, TValue>), v5 @ S1_v2, methodInfo @ L2 (Il2CppMethodInfo)
+	6 Nop
+	7 Return
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x101C8B9 LocalGet 0
+	0x101C8BB I32Const 8
+	0x101C8BD I32Add
+	0x101C8BE I32Load 2, 12
+	0x101C8C1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Collections.Generic.Dictionary`2<TKey, TValue>+KeyCollection<TKey, TValue>+Enumerator<TKey, TValue>), 8
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2+C]
+
+Method: TKey get_Current()
+
+Disassembly:
+	0x114756E LocalGet 0
+	0x1147570 I32Load 2, 36
+	0x1147573 I32Eqz
+	0x1147574 If -64
+	0x1147576 LocalGet 1
+	0x1147578 I32Const 12
+	0x114757A I32Add
+	0x114757B LocalTee 1
+	0x114757D I32Load 2, 0
+	0x1147580 I32Load 2, 96
+	0x1147583 I32Load 2, 52
+	0x1147586 Call 29253
+	0x114758A Call 72556
+	0x114758E LocalTee 2
+	0x1147590 LocalGet 0
+	0x1147592 LocalGet 1
+	0x1147594 I32Load 2, 0
+	0x1147597 I32Load 2, 96
+	0x114759A I32Load 2, 56
+	0x114759D LocalTee 1
+	0x114759F LocalGet 1
+	0x11475A1 I32Load 2, 0
+	0x11475A4 I32Const 16383
+	0x11475A8 I32And
+	0x11475A9 I32Const 97173
+	0x11475AD I32Add
+	0x11475AE CallIndirect 9, 0
+	0x11475B1 LocalGet 0
+	0x11475B3 I32Const 36
+	0x11475B5 I32Add
+	0x11475B6 LocalGet 2
+	0x11475B8 I32Store 2, 0
+	0x11475BB End
+	0x11475BC LocalGet 0
+	0x11475BE I32Load 2, 36
+	0x11475C1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), [this @ L0 (System.Collections.Generic.Dictionary`2<TKey, TValue>+KeyCollection<TKey, TValue>+Enumerator<TKey, TValue>)+24], 0
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b6, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Add v8 @ S0_v8, methodInfo @ L1 (Il2CppMethodInfo), 12
+	8 Nop
+	9 Move v10 @ S0_v9, [v8 @ S0_v8]
+	10 Move v11 @ S0_v10, [v10 @ S0_v9+60]
+	11 Nop
+	12 Call 7245, v13 @ S0_v12, [v11 @ S0_v10+34]
+	13 Call 11B6C, v38 @ S0_v13, v13 @ S0_v12
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Move v41 @ S2_v3, [v8 @ S0_v8]
+	18 Move v42 @ S2_v4, [v41 @ S2_v3+60]
+	19 Move v24 @ S2_v5, [v42 @ S2_v4+38]
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 And v46 @ S3_v4, [v24 @ S2_v5], 16383
+	25 Nop
+	26 Add v21 @ S3_v5, v46 @ S3_v4, 97173
+	27 IndirectCall v21 @ S3_v5, v15 @ SRET_v2, v38 @ S0_v13, this @ L0 (System.Collections.Generic.Dictionary`2<TKey, TValue>+KeyCollection<TKey, TValue>+Enumerator<TKey, TValue>), v24 @ S2_v5
+	28 Nop
+	29 Nop
+	30 Add v35 @ S0_v15, this @ L0 (System.Collections.Generic.Dictionary`2<TKey, TValue>+KeyCollection<TKey, TValue>+Enumerator<TKey, TValue>), 36
+	31 Nop
+	32 Move [v35 @ S0_v15], v38 @ S0_v13
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Return [this @ L0 (System.Collections.Generic.Dictionary`2<TKey, TValue>+KeyCollection<TKey, TValue>+Enumerator<TKey, TValue>)+24]
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x101C37E LocalGet 0
+	0x101C380 I32Const 8
+	0x101C382 I32Add
+	0x101C383 I32Const 0
+	0x101C385 Call 46534
+	0x101C389 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Collections.Generic.Dictionary`2<TKey, TValue>+KeyCollection<TKey, TValue>+Enumerator<TKey, TValue>), 8
+	3 Nop
+	4 Call B5C6, returnVal1 @ S0_v3 (System.Object), v3 @ S0_v2, 0
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Object)
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

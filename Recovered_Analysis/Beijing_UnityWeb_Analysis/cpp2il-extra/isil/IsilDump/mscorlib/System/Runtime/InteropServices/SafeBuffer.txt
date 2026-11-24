@@ -1,0 +1,99 @@
+Type: System.Runtime.InteropServices.SafeBuffer
+
+Method: System.Void AcquirePointer(ref System.Byte* pointer)
+
+Disassembly:
+	0x10081FD LocalGet 0
+	0x10081FF I32Const 8
+	0x1008201 I32Add
+	0x1008202 LocalGet 1
+	0x1008204 I32Const 0
+	0x1008206 Call 46087
+	0x100820A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Throw typeof(System.ArgumentException)
+	6 Nop
+	7 Return
+
+Method: System.Void ReleasePointer()
+
+Disassembly:
+	0x10088CF I32Const 4562891
+	0x10088D4 I32Load8_S 0, 0
+	0x10088D7 I32Eqz
+	0x10088D8 If -64
+	0x10088DA I32Const 2980400
+	0x10088DF I32Load 2, 0
+	0x10088E2 Call 73003
+	0x10088E6 I32Const 4562891
+	0x10088EB I32Const 1
+	0x10088ED I32Store8 0, 0
+	0x10088F0 End
+	0x10088F1 I32Const 4427904
+	0x10088F6 I32Load 2, 0
+	0x10088F9 LocalTee 2
+	0x10088FB I32Load16_S 1, 186
+	0x10088FF I32Const 512
+	0x1008902 I32And
+	0x1008903 If -64
+	0x1008905 LocalGet 2
+	0x1008907 I32Load 2, 116
+	0x100890A I32Eqz
+	0x100890B If -64
+	0x100890D LocalGet 2
+	0x100890F Call 72345
+	0x1008913 End
+	0x1008914 End
+	0x1008915 LocalGet 0
+	0x1008917 I32Const 0
+	0x1008919 Call 46113
+	0x100891D LocalGet 0
+	0x100891F I32Const 0
+	0x1008921 Call 46111
+	0x1008925 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D7A30]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [459FCB], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Runtime.InteropServices.Marshal>), typeof(System.Runtime.InteropServices.Marshal)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Runtime.InteropServices.Marshal>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.Runtime.InteropServices.Marshal>), typeof(System.Runtime.InteropServices.Marshal)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.Runtime.InteropServices.Marshal>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Runtime.InteropServices.Marshal)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid Marshal.ZeroFreeBSTR, this @ L0 (System.Runtime.InteropServices.SafeBuffer)
+	32 Nop
+	33 Nop
+	34 CallVoid Marshal.FreeHGlobal, this @ L0 (System.Runtime.InteropServices.SafeBuffer)
+	35 Nop
+	36 Return
+

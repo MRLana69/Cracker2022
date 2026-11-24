@@ -1,0 +1,1062 @@
+Type: AppRefresh.AppRefreshHandler
+
+Method: System.Boolean get_refreshInProgress()
+
+Disassembly:
+	0xED4BFD I32Const 4559400
+	0xED4C02 I32Load8_S 0, 0
+	0xED4C05 I32Eqz
+	0xED4C06 If -64
+	0xED4C08 I32Const 2936416
+	0xED4C0D I32Load 2, 0
+	0xED4C10 Call 73003
+	0xED4C14 I32Const 4559400
+	0xED4C19 I32Const 1
+	0xED4C1B I32Store8 0, 0
+	0xED4C1E End
+	0xED4C1F I32Const 4436008
+	0xED4C24 I32Load 2, 0
+	0xED4C27 LocalTee 0
+	0xED4C29 I32Load16_S 1, 186
+	0xED4C2D I32Const 512
+	0xED4C30 I32And
+	0xED4C31 If -64
+	0xED4C33 LocalGet 0
+	0xED4C35 I32Load 2, 116
+	0xED4C38 I32Eqz
+	0xED4C39 If -64
+	0xED4C3B LocalGet 0
+	0xED4C3D Call 72345
+	0xED4C41 End
+	0xED4C42 End
+	0xED4C43 I32Const 0
+	0xED4C45 Call 30971
+	0xED4C49 If -1
+	0xED4C4B I32Const 4436004
+	0xED4C50 I32Load 2, 0
+	0xED4C53 LocalTee 0
+	0xED4C55 I32Load16_S 1, 186
+	0xED4C59 I32Const 512
+	0xED4C5C I32And
+	0xED4C5D If -64
+	0xED4C5F LocalGet 0
+	0xED4C61 I32Load 2, 116
+	0xED4C64 I32Eqz
+	0xED4C65 If -64
+	0xED4C67 LocalGet 0
+	0xED4C69 Call 72345
+	0xED4C6D End
+	0xED4C6E End
+	0xED4C6F I32Const 0
+	0xED4C71 Call 41018
+	0xED4C75 I32Const 0
+	0xED4C77 Call 41030
+	0xED4C7B I32Const 0
+	0xED4C7D Call 44381
+	0xED4C81 Else
+	0xED4C82 I32Const 0
+	0xED4C84 End
+	0xED4C85 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v32, [2CCE60]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v32
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [459228], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Cloud.CloudSave>), typeof(Cloud.CloudSave)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Cloud.CloudSave>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b20, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v27 (Il2CppClass<Cloud.CloudSave>), typeof(Cloud.CloudSave)
+	21 Nop
+	22 CheckEqual v20 @ S0_v29 (System.Boolean), [v18 @ S0_v27 (Il2CppClass<Cloud.CloudSave>)+74], 0
+	23 Not v21 @ TEMP_v9 (System.Boolean), v20 @ S0_v29 (System.Boolean)
+	24 ConditionalJump @b20, v21 @ TEMP_v9 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Cloud.CloudSave)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call 78FB, v26 @ S0_v11, 0
+	31 CheckEqual v27 @ TEMP_v4 (System.Boolean), v26 @ S0_v11, 0
+	32 ConditionalJump @b16, v27 @ TEMP_v4 (System.Boolean)
+	33 Nop
+	34 Move v29 @ S0_v15 (Il2CppClass<Authentication.Auth>), typeof(Authentication.Auth)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 And v33 @ S0_v17, [v29 @ S0_v15 (Il2CppClass<Authentication.Auth>)+BA], 512
+	39 CheckEqual v34 @ TEMP_v6 (System.Boolean), v33 @ S0_v17, 0
+	40 ConditionalJump @b18, v34 @ TEMP_v6 (System.Boolean)
+	41 Move v36 @ S0_v23 (Il2CppClass<Authentication.Auth>), typeof(Authentication.Auth)
+	42 Nop
+	43 CheckEqual v38 @ S0_v25 (System.Boolean), [v36 @ S0_v23 (Il2CppClass<Authentication.Auth>)+74], 0
+	44 Not v39 @ TEMP_v8 (System.Boolean), v38 @ S0_v25 (System.Boolean)
+	45 ConditionalJump @b18, v39 @ TEMP_v8 (System.Boolean)
+	46 Nop
+	47 CallVoid 11A99, typeof(Authentication.Auth)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Call Auth.get_kilooTag, v44 @ S0_v20 (System.String)
+	52 Nop
+	53 Call Auth.InitNativeAndLoginAsync, v52 @ S0_v21 (System.Collections.IEnumerator), v44 @ S0_v20 (System.String)
+	54 Nop
+	55 Call CoroutineUtil.WaitForAll, v50 @ S0_v22 (UnityEngine.Coroutine), v52 @ S0_v21 (System.Collections.IEnumerator)
+	56 Jump @b19
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Return returnVal1 @ S0_v12 (System.Boolean)
+
+Method: System.Void set_refreshInProgress(System.Boolean value)
+
+Disassembly:
+	0xC578E9 I32Const 4551739
+	0xC578EE I32Load8_S 0, 0
+	0xC578F1 I32Eqz
+	0xC578F2 If -64
+	0xC578F4 I32Const 2984524
+	0xC578F9 I32Load 2, 0
+	0xC578FC Call 73003
+	0xC57900 I32Const 4551739
+	0xC57905 I32Const 1
+	0xC57907 I32Store8 0, 0
+	0xC5790A End
+	0xC5790B Block -64
+	0xC5790D Block -64
+	0xC5790F Block -64
+	0xC57911 I32Const 0
+	0xC57913 Call 62541
+	0xC57917 I32Const 8
+	0xC57919 I32Sub
+	0xC5791A BrTable System.UInt64[], 2
+	0xC57921 End
+	0xC57922 I32Const 4436112
+	0xC57927 I32Load 2, 0
+	0xC5792A Call 72556
+	0xC5792E LocalTee 1
+	0xC57930 I32Const 0
+	0xC57932 Call 41055
+	0xC57936 LocalGet 0
+	0xC57938 I32Const 8
+	0xC5793A I32Add
+	0xC5793B LocalGet 1
+	0xC5793D I32Store 2, 0
+	0xC57940 Br 1
+	0xC57942 End
+	0xC57943 I32Const 4436108
+	0xC57948 I32Load 2, 0
+	0xC5794B Call 72556
+	0xC5794F LocalTee 1
+	0xC57951 I32Const 0
+	0xC57953 Call 41063
+	0xC57957 LocalGet 0
+	0xC57959 I32Const 8
+	0xC5795B I32Add
+	0xC5795C LocalGet 1
+	0xC5795E I32Store 2, 0
+	0xC57961 End
+	0xC57962 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b16
+	5 Nop
+	6 Move v5 @ S0_v20, [2D8A4C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [45743B], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Call Application.get_dataPath, v12 @ S0_v6 (System.String)
+	14 Nop
+	15 Subtract v14 @ S0_v7, v12 @ S0_v6 (System.String), 8
+	16 CheckEqual v15 @ TEMP_v2 (System.Boolean), v12 @ S0_v6 (System.String), 8
+	17 ConditionalJump @b10, v15 @ TEMP_v2 (System.Boolean)
+	18 CheckEqual v16 @ TEMP_v4 (System.Boolean), v14 @ S0_v7, 1
+	19 ConditionalJump @b17, v16 @ TEMP_v4 (System.Boolean)
+	20 CheckEqual v20 @ TEMP_v5 (System.Boolean), v14 @ S0_v7, 2
+	21 ConditionalJump @b17, v20 @ TEMP_v5 (System.Boolean)
+	22 CheckEqual v29 @ TEMP_v6 (System.Boolean), v14 @ S0_v7, 3
+	23 ConditionalJump @b13, v29 @ TEMP_v6 (System.Boolean)
+	24 Jump @b17
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Call 11B6C, v19 @ S0_v11 (Authentication.Internal.GoogleLogin), typeof(Authentication.Internal.GameCenterLogin)
+	29 Nop
+	30 Nop
+	31 CallVoid GoogleLogin..ctor, v19 @ S0_v11 (Authentication.Internal.GoogleLogin)
+	32 Nop
+	33 Nop
+	34 Add v32 @ S0_v13, value @ L0 (System.Boolean), 8
+	35 Nop
+	36 Move [v32 @ S0_v13], v19 @ S0_v11 (Authentication.Internal.GoogleLogin)
+	37 Jump @b17
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call 11B6C, v39 @ S0_v16 (Authentication.Internal.NativeLogin), typeof(Authentication.Internal.GoogleLogin)
+	42 Nop
+	43 Nop
+	44 CallVoid NativeLogin..ctor, v39 @ S0_v16 (Authentication.Internal.NativeLogin)
+	45 Nop
+	46 Nop
+	47 Add v31 @ S0_v18, value @ L0 (System.Boolean), 8
+	48 Nop
+	49 Move [v31 @ S0_v18], v39 @ S0_v16 (Authentication.Internal.NativeLogin)
+	50 Nop
+	51 Nop
+	52 Return
+
+Method: System.Boolean HasFlag(AppRefresh.RefreshType obj, AppRefresh.RefreshType flag)
+
+Disassembly:
+	0xC2F8E0 I32Const 4551467
+	0xC2F8E5 I32Load8_S 0, 0
+	0xC2F8E8 I32Eqz
+	0xC2F8E9 If -64
+	0xC2F8EB I32Const 3024344
+	0xC2F8F0 I32Load 2, 0
+	0xC2F8F3 Call 73003
+	0xC2F8F7 I32Const 4551467
+	0xC2F8FC I32Const 1
+	0xC2F8FE I32Store8 0, 0
+	0xC2F901 End
+	0xC2F902 LocalGet 0
+	0xC2F904 LocalGet 1
+	0xC2F906 I32Const 4455092
+	0xC2F90B I32Load 2, 0
+	0xC2F90E I32Load 2, 12
+	0xC2F911 I32Load 2, 96
+	0xC2F914 I32Load 2, 68
+	0xC2F917 LocalTee 3
+	0xC2F919 LocalGet 3
+	0xC2F91B I32Load 2, 0
+	0xC2F91E I32Const 8191
+	0xC2F921 I32And
+	0xC2F922 I32Const 22691
+	0xC2F926 I32Add
+	0xC2F927 CallIndirect 5, 0
+	0xC2F92A I32Const -1
+	0xC2F92C I32Gt_S
+	0xC2F92D If -1
+	0xC2F92F LocalGet 0
+	0xC2F931 LocalGet 1
+	0xC2F933 I32Const 4449996
+	0xC2F938 I32Load 2, 0
+	0xC2F93B Call 29792
+	0xC2F93F Else
+	0xC2F940 I32Const 4501924
+	0xC2F945 I32Load 2, 0
+	0xC2F948 End
+	0xC2F949 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v14, [2E25D8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45732B], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v16 @ S2_v2 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.String, System.String>::ContainsKey)
+	16 Move v17 @ S2_v3, [v16 @ S2_v2 (Il2CppMethodInfo)+C]
+	17 Move v18 @ S2_v4, [v17 @ S2_v3+60]
+	18 Move v19 @ S2_v5, [v18 @ S2_v4+44]
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v24 @ S3_v3, [v19 @ S2_v5], 8191
+	24 Nop
+	25 Add v26 @ S3_v4, v24 @ S3_v3, 22691
+	26 IndirectCall v26 @ S3_v4, v27 @ S0_v6, obj @ L0 (AppRefresh.RefreshType), flag @ L1 (AppRefresh.RefreshType), v19 @ S2_v5
+	27 Nop
+	28 CheckGreater v29 @ S0_v7 (System.Boolean), v27 @ S0_v6, -1
+	29 Not v30 @ TEMP_v2 (System.Boolean), v29 @ S0_v7 (System.Boolean)
+	30 ConditionalJump @b7, v30 @ TEMP_v2 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call Dictionary`2<System.String, System.String>.get_Item, v35 @ S0_v12 (System.String), obj @ L0 (AppRefresh.RefreshType), flag @ L1 (AppRefresh.RefreshType)
+	36 Jump @b9
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Return returnVal1 @ S0_v8 (System.Boolean)
+
+Method: System.Void add_willRefresh(System.Action`1<AppRefresh.RefreshType> value)
+
+Disassembly:
+	0xEC9F5C I32Const 4559263
+	0xEC9F61 I32Load8_S 0, 0
+	0xEC9F64 I32Eqz
+	0xEC9F65 If -64
+	0xEC9F67 I32Const 2926784
+	0xEC9F6C I32Load 2, 0
+	0xEC9F6F Call 73003
+	0xEC9F73 I32Const 4559263
+	0xEC9F78 I32Const 1
+	0xEC9F7A I32Store8 0, 0
+	0xEC9F7D End
+	0xEC9F7E I32Const 4435828
+	0xEC9F83 I32Load 2, 0
+	0xEC9F86 I32Load 2, 92
+	0xEC9F89 LocalGet 0
+	0xEC9F8B I32Const 1
+	0xEC9F8D I32And
+	0xEC9F8E I32Store8 0, 0
+	0xEC9F91 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v9, [2CA8C0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45919F], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v17 @ S1_v3 (System.Boolean), value @ L0 (System.Action`1<AppRefresh.RefreshType>), 1
+	18 Move v13.<refreshInProgress>k__BackingField (System.Boolean), v17 @ S1_v3 (System.Boolean)
+	19 Nop
+	20 Return
+
+Method: System.Void remove_willRefresh(System.Action`1<AppRefresh.RefreshType> value)
+
+Disassembly:
+	0xEC9FA2 I32Const 4559264
+	0xEC9FA7 I32Load8_S 0, 0
+	0xEC9FAA I32Eqz
+	0xEC9FAB If -64
+	0xEC9FAD I32Const 2926756
+	0xEC9FB2 I32Load 2, 0
+	0xEC9FB5 Call 73003
+	0xEC9FB9 I32Const 4559264
+	0xEC9FBE I32Const 1
+	0xEC9FC0 I32Store8 0, 0
+	0xEC9FC3 End
+	0xEC9FC4 I32Const 4435828
+	0xEC9FC9 I32Load 2, 0
+	0xEC9FCC I32Load 2, 92
+	0xEC9FCF I32Load 2, 4
+	0xEC9FD2 LocalSet 1
+	0xEC9FD4 Loop -64
+	0xEC9FD6 LocalGet 1
+	0xEC9FD8 LocalGet 0
+	0xEC9FDA I32Const 0
+	0xEC9FDC Call 63552
+	0xEC9FE0 I32Const 4435512
+	0xEC9FE5 I32Load 2, 0
+	0xEC9FE8 Call 29321
+	0xEC9FEC LocalSet 3
+	0xEC9FEE I32Const 4435828
+	0xEC9FF3 I32Load 2, 0
+	0xEC9FF6 I32Load 2, 92
+	0xEC9FF9 I32Const 4
+	0xEC9FFB I32Add
+	0xEC9FFC LocalTee 2
+	0xEC9FFE I32Load 2, 0
+	0xECA001 LocalGet 2
+	0xECA003 I32Load 2, 0
+	0xECA006 LocalGet 1
+	0xECA008 I32Eq
+	0xECA009 If -64
+	0xECA00B LocalGet 2
+	0xECA00D LocalGet 3
+	0xECA00F I32Store 2, 0
+	0xECA012 End
+	0xECA013 LocalTee 2
+	0xECA015 LocalGet 1
+	0xECA017 I32Ne
+	0xECA018 If -64
+	0xECA01A LocalGet 2
+	0xECA01C LocalSet 1
+	0xECA01E Br 1
+	0xECA020 End
+	0xECA021 End
+	0xECA022 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v21, [2CA8A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4591A0], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Delegate.CombineImpl, v37 @ S0_v11 (System.Delegate), v16 @ L1_v2 (System.Delegate), value @ L0 (System.Action`1<AppRefresh.RefreshType>)
+	22 Nop
+	23 Nop
+	24 Call 7289, v40 @ S0_v12, v37 @ S0_v11 (System.Delegate), typeof(System.Action`1<AppRefresh.RefreshType>)
+	25 Nop
+	26 Nop
+	27 Move v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>), typeof(AppRefresh.AppRefreshHandler)
+	28 Nop
+	29 Nop
+	30 Add v45 @ S0_v16, [v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>)+5C], 4
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v51 @ S1_v9 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	37 Not v52 @ TEMP_v3 (System.Boolean), v51 @ S1_v9 (System.Boolean)
+	38 ConditionalJump @b11, v52 @ TEMP_v3 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Move [v45 @ S0_v16], v40 @ S0_v12
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CheckNotEqual v56 @ S0_v18 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	46 Not v30 @ TEMP_v4 (System.Boolean), v56 @ S0_v18 (System.Boolean)
+	47 ConditionalJump @b9, v30 @ TEMP_v4 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Jump @b12
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Return
+
+Method: System.Void add_refresh(System.Action`1<AppRefresh.RefreshType> value)
+
+Disassembly:
+	0xECA028 I32Const 4559265
+	0xECA02D I32Load8_S 0, 0
+	0xECA030 I32Eqz
+	0xECA031 If -64
+	0xECA033 I32Const 2926776
+	0xECA038 I32Load 2, 0
+	0xECA03B Call 73003
+	0xECA03F I32Const 4559265
+	0xECA044 I32Const 1
+	0xECA046 I32Store8 0, 0
+	0xECA049 End
+	0xECA04A I32Const 4435828
+	0xECA04F I32Load 2, 0
+	0xECA052 I32Load 2, 92
+	0xECA055 I32Load 2, 4
+	0xECA058 LocalSet 1
+	0xECA05A Loop -64
+	0xECA05C LocalGet 1
+	0xECA05E LocalGet 0
+	0xECA060 I32Const 0
+	0xECA062 Call 63555
+	0xECA066 I32Const 4435512
+	0xECA06B I32Load 2, 0
+	0xECA06E Call 29321
+	0xECA072 LocalSet 3
+	0xECA074 I32Const 4435828
+	0xECA079 I32Load 2, 0
+	0xECA07C I32Load 2, 92
+	0xECA07F I32Const 4
+	0xECA081 I32Add
+	0xECA082 LocalTee 2
+	0xECA084 I32Load 2, 0
+	0xECA087 LocalGet 2
+	0xECA089 I32Load 2, 0
+	0xECA08C LocalGet 1
+	0xECA08E I32Eq
+	0xECA08F If -64
+	0xECA091 LocalGet 2
+	0xECA093 LocalGet 3
+	0xECA095 I32Store 2, 0
+	0xECA098 End
+	0xECA099 LocalTee 2
+	0xECA09B LocalGet 1
+	0xECA09D I32Ne
+	0xECA09E If -64
+	0xECA0A0 LocalGet 2
+	0xECA0A2 LocalSet 1
+	0xECA0A4 Br 1
+	0xECA0A6 End
+	0xECA0A7 End
+	0xECA0A8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v21, [2CA8B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4591A1], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Delegate.RemoveImpl, v37 @ S0_v11 (System.Delegate), v16 @ L1_v2 (System.Delegate), value @ L0 (System.Action`1<AppRefresh.RefreshType>)
+	22 Nop
+	23 Nop
+	24 Call 7289, v40 @ S0_v12, v37 @ S0_v11 (System.Delegate), typeof(System.Action`1<AppRefresh.RefreshType>)
+	25 Nop
+	26 Nop
+	27 Move v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>), typeof(AppRefresh.AppRefreshHandler)
+	28 Nop
+	29 Nop
+	30 Add v45 @ S0_v16, [v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>)+5C], 4
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v51 @ S1_v9 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	37 Not v52 @ TEMP_v3 (System.Boolean), v51 @ S1_v9 (System.Boolean)
+	38 ConditionalJump @b11, v52 @ TEMP_v3 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Move [v45 @ S0_v16], v40 @ S0_v12
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CheckNotEqual v56 @ S0_v18 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	46 Not v30 @ TEMP_v4 (System.Boolean), v56 @ S0_v18 (System.Boolean)
+	47 ConditionalJump @b9, v30 @ TEMP_v4 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Jump @b12
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Return
+
+Method: System.Void remove_refresh(System.Action`1<AppRefresh.RefreshType> value)
+
+Disassembly:
+	0xECA0AE I32Const 4559266
+	0xECA0B3 I32Load8_S 0, 0
+	0xECA0B6 I32Eqz
+	0xECA0B7 If -64
+	0xECA0B9 I32Const 2926752
+	0xECA0BE I32Load 2, 0
+	0xECA0C1 Call 73003
+	0xECA0C5 I32Const 4559266
+	0xECA0CA I32Const 1
+	0xECA0CC I32Store8 0, 0
+	0xECA0CF End
+	0xECA0D0 I32Const 4435828
+	0xECA0D5 I32Load 2, 0
+	0xECA0D8 I32Load 2, 92
+	0xECA0DB I32Load 2, 8
+	0xECA0DE LocalSet 1
+	0xECA0E0 Loop -64
+	0xECA0E2 LocalGet 1
+	0xECA0E4 LocalGet 0
+	0xECA0E6 I32Const 0
+	0xECA0E8 Call 63552
+	0xECA0EC I32Const 4435512
+	0xECA0F1 I32Load 2, 0
+	0xECA0F4 Call 29321
+	0xECA0F8 LocalSet 3
+	0xECA0FA I32Const 4435828
+	0xECA0FF I32Load 2, 0
+	0xECA102 I32Load 2, 92
+	0xECA105 I32Const 8
+	0xECA107 I32Add
+	0xECA108 LocalTee 2
+	0xECA10A I32Load 2, 0
+	0xECA10D LocalGet 2
+	0xECA10F I32Load 2, 0
+	0xECA112 LocalGet 1
+	0xECA114 I32Eq
+	0xECA115 If -64
+	0xECA117 LocalGet 2
+	0xECA119 LocalGet 3
+	0xECA11B I32Store 2, 0
+	0xECA11E End
+	0xECA11F LocalTee 2
+	0xECA121 LocalGet 1
+	0xECA123 I32Ne
+	0xECA124 If -64
+	0xECA126 LocalGet 2
+	0xECA128 LocalSet 1
+	0xECA12A Br 1
+	0xECA12C End
+	0xECA12D End
+	0xECA12E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v21, [2CA8A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4591A2], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Delegate.CombineImpl, v37 @ S0_v11 (System.Delegate), v16 @ L1_v2 (System.Delegate), value @ L0 (System.Action`1<AppRefresh.RefreshType>)
+	22 Nop
+	23 Nop
+	24 Call 7289, v40 @ S0_v12, v37 @ S0_v11 (System.Delegate), typeof(System.Action`1<AppRefresh.RefreshType>)
+	25 Nop
+	26 Nop
+	27 Move v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>), typeof(AppRefresh.AppRefreshHandler)
+	28 Nop
+	29 Nop
+	30 Add v45 @ S0_v16, [v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>)+5C], 8
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v51 @ S1_v9 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	37 Not v52 @ TEMP_v3 (System.Boolean), v51 @ S1_v9 (System.Boolean)
+	38 ConditionalJump @b11, v52 @ TEMP_v3 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Move [v45 @ S0_v16], v40 @ S0_v12
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CheckNotEqual v56 @ S0_v18 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	46 Not v30 @ TEMP_v4 (System.Boolean), v56 @ S0_v18 (System.Boolean)
+	47 ConditionalJump @b9, v30 @ TEMP_v4 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Jump @b12
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Return
+
+Method: System.Void add_hasRefreshed(System.Action`1<AppRefresh.RefreshType> value)
+
+Disassembly:
+	0xECA134 I32Const 4559267
+	0xECA139 I32Load8_S 0, 0
+	0xECA13C I32Eqz
+	0xECA13D If -64
+	0xECA13F I32Const 2926772
+	0xECA144 I32Load 2, 0
+	0xECA147 Call 73003
+	0xECA14B I32Const 4559267
+	0xECA150 I32Const 1
+	0xECA152 I32Store8 0, 0
+	0xECA155 End
+	0xECA156 I32Const 4435828
+	0xECA15B I32Load 2, 0
+	0xECA15E I32Load 2, 92
+	0xECA161 I32Load 2, 8
+	0xECA164 LocalSet 1
+	0xECA166 Loop -64
+	0xECA168 LocalGet 1
+	0xECA16A LocalGet 0
+	0xECA16C I32Const 0
+	0xECA16E Call 63555
+	0xECA172 I32Const 4435512
+	0xECA177 I32Load 2, 0
+	0xECA17A Call 29321
+	0xECA17E LocalSet 3
+	0xECA180 I32Const 4435828
+	0xECA185 I32Load 2, 0
+	0xECA188 I32Load 2, 92
+	0xECA18B I32Const 8
+	0xECA18D I32Add
+	0xECA18E LocalTee 2
+	0xECA190 I32Load 2, 0
+	0xECA193 LocalGet 2
+	0xECA195 I32Load 2, 0
+	0xECA198 LocalGet 1
+	0xECA19A I32Eq
+	0xECA19B If -64
+	0xECA19D LocalGet 2
+	0xECA19F LocalGet 3
+	0xECA1A1 I32Store 2, 0
+	0xECA1A4 End
+	0xECA1A5 LocalTee 2
+	0xECA1A7 LocalGet 1
+	0xECA1A9 I32Ne
+	0xECA1AA If -64
+	0xECA1AC LocalGet 2
+	0xECA1AE LocalSet 1
+	0xECA1B0 Br 1
+	0xECA1B2 End
+	0xECA1B3 End
+	0xECA1B4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v21, [2CA8B4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4591A3], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Delegate.RemoveImpl, v37 @ S0_v11 (System.Delegate), v16 @ L1_v2 (System.Delegate), value @ L0 (System.Action`1<AppRefresh.RefreshType>)
+	22 Nop
+	23 Nop
+	24 Call 7289, v40 @ S0_v12, v37 @ S0_v11 (System.Delegate), typeof(System.Action`1<AppRefresh.RefreshType>)
+	25 Nop
+	26 Nop
+	27 Move v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>), typeof(AppRefresh.AppRefreshHandler)
+	28 Nop
+	29 Nop
+	30 Add v45 @ S0_v16, [v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>)+5C], 8
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v51 @ S1_v9 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	37 Not v52 @ TEMP_v3 (System.Boolean), v51 @ S1_v9 (System.Boolean)
+	38 ConditionalJump @b11, v52 @ TEMP_v3 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Move [v45 @ S0_v16], v40 @ S0_v12
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CheckNotEqual v56 @ S0_v18 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	46 Not v30 @ TEMP_v4 (System.Boolean), v56 @ S0_v18 (System.Boolean)
+	47 ConditionalJump @b9, v30 @ TEMP_v4 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Jump @b12
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Return
+
+Method: System.Void remove_hasRefreshed(System.Action`1<AppRefresh.RefreshType> value)
+
+Disassembly:
+	0xEC6114 I32Const 4559168
+	0xEC6119 I32Load8_S 0, 0
+	0xEC611C I32Eqz
+	0xEC611D If -64
+	0xEC611F I32Const 2926748
+	0xEC6124 I32Load 2, 0
+	0xEC6127 Call 73003
+	0xEC612B I32Const 4559168
+	0xEC6130 I32Const 1
+	0xEC6132 I32Store8 0, 0
+	0xEC6135 End
+	0xEC6136 I32Const 4435828
+	0xEC613B I32Load 2, 0
+	0xEC613E I32Load 2, 92
+	0xEC6141 I32Load 2, 12
+	0xEC6144 LocalSet 1
+	0xEC6146 Loop -64
+	0xEC6148 LocalGet 1
+	0xEC614A LocalGet 0
+	0xEC614C I32Const 0
+	0xEC614E Call 63552
+	0xEC6152 I32Const 4435512
+	0xEC6157 I32Load 2, 0
+	0xEC615A Call 29321
+	0xEC615E LocalSet 3
+	0xEC6160 I32Const 4435828
+	0xEC6165 I32Load 2, 0
+	0xEC6168 I32Load 2, 92
+	0xEC616B I32Const 12
+	0xEC616D I32Add
+	0xEC616E LocalTee 2
+	0xEC6170 I32Load 2, 0
+	0xEC6173 LocalGet 2
+	0xEC6175 I32Load 2, 0
+	0xEC6178 LocalGet 1
+	0xEC617A I32Eq
+	0xEC617B If -64
+	0xEC617D LocalGet 2
+	0xEC617F LocalGet 3
+	0xEC6181 I32Store 2, 0
+	0xEC6184 End
+	0xEC6185 LocalTee 2
+	0xEC6187 LocalGet 1
+	0xEC6189 I32Ne
+	0xEC618A If -64
+	0xEC618C LocalGet 2
+	0xEC618E LocalSet 1
+	0xEC6190 Br 1
+	0xEC6192 End
+	0xEC6193 End
+	0xEC6194 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v21, [2CA89C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [459140], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Delegate.CombineImpl, v37 @ S0_v11 (System.Delegate), v16 @ L1_v2 (System.Delegate), value @ L0 (System.Action`1<AppRefresh.RefreshType>)
+	22 Nop
+	23 Nop
+	24 Call 7289, v40 @ S0_v12, v37 @ S0_v11 (System.Delegate), typeof(System.Action`1<AppRefresh.RefreshType>)
+	25 Nop
+	26 Nop
+	27 Move v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>), typeof(AppRefresh.AppRefreshHandler)
+	28 Nop
+	29 Nop
+	30 Add v45 @ S0_v16, [v42 @ S0_v14 (Il2CppClass<AppRefresh.AppRefreshHandler>)+5C], 12
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckEqual v51 @ S1_v9 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	37 Not v52 @ TEMP_v3 (System.Boolean), v51 @ S1_v9 (System.Boolean)
+	38 ConditionalJump @b11, v52 @ TEMP_v3 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Move [v45 @ S0_v16], v40 @ S0_v12
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CheckNotEqual v56 @ S0_v18 (System.Boolean), [v45 @ S0_v16], v16 @ L1_v2 (System.Delegate)
+	46 Not v30 @ TEMP_v4 (System.Boolean), v56 @ S0_v18 (System.Boolean)
+	47 ConditionalJump @b9, v30 @ TEMP_v4 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Jump @b12
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Return
+
+Method: System.Void StartRefresh(AppRefresh.RefreshType restartType, System.Action callback = null)
+
+Disassembly:
+	0xC57AC5 I32Const 4551744
+	0xC57ACA I32Load8_S 0, 0
+	0xC57ACD I32Eqz
+	0xC57ACE If -64
+	0xC57AD0 I32Const 2984512
+	0xC57AD5 I32Load 2, 0
+	0xC57AD8 Call 73003
+	0xC57ADC I32Const 4551744
+	0xC57AE1 I32Const 1
+	0xC57AE3 I32Store8 0, 0
+	0xC57AE6 End
+	0xC57AE7 I32Const 4525880
+	0xC57AEC I32Load 2, 0
+	0xC57AEF LocalGet 0
+	0xC57AF1 I32Const 0
+	0xC57AF3 Call 55680
+	0xC57AF7 LocalGet 1
+	0xC57AF9 I32Const 0
+	0xC57AFB Call 37913
+	0xC57AFF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v9, [2D8A40]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [457440], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Call String.ConcatArray, v16 @ S0_v7 (System.String), "[NativeLogin] ", restartType @ L0 (AppRefresh.RefreshType)
+	17 Nop
+	18 Nop
+	19 CallVoid SDebug.LogFormat, v16 @ S0_v7 (System.String), callback @ L1 (System.Action)
+	20 Nop
+	21 Return
+
+Method: System.Collections.IEnumerator PerformRefresh(AppRefresh.RefreshType restartType, System.Action callback = null)
+
+Disassembly:
+	0xEC9F94 LocalGet 1
+	0xEC9F96 LocalGet 0
+	0xEC9F98 I32And
+	0xEC9F99 LocalGet 1
+	0xEC9F9B I32Eq
+	0xEC9F9C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 And v4 @ S0_v2, callback @ L1 (System.Action), restartType @ L0 (AppRefresh.RefreshType)
+	3 Nop
+	4 CheckEqual returnVal1 @ S0_v3 (System.Boolean), v4 @ S0_v2, callback @ L1 (System.Action)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void InvokeIfFlagged(System.Action`1<AppRefresh.RefreshType> action, AppRefresh.RefreshType requestedType, AppRefresh.RefreshType flag)
+
+Disassembly:
+	0xED5930 I32Const 4559425
+	0xED5935 I32Load8_S 0, 0
+	0xED5938 I32Eqz
+	0xED5939 If -64
+	0xED593B I32Const 2966576
+	0xED5940 I32Load 2, 0
+	0xED5943 Call 73003
+	0xED5947 I32Const 4559425
+	0xED594C I32Const 1
+	0xED594E I32Store8 0, 0
+	0xED5951 End
+	0xED5952 LocalGet 0
+	0xED5954 I32Const 8
+	0xED5956 I32Add
+	0xED5957 I32Const 4436032
+	0xED595C I32Load 2, 0
+	0xED595F LocalTee 0
+	0xED5961 I32Load16_S 1, 186
+	0xED5965 I32Const 512
+	0xED5968 I32And
+	0xED5969 If -64
+	0xED596B LocalGet 0
+	0xED596D I32Load 2, 116
+	0xED5970 I32Eqz
+	0xED5971 If -64
+	0xED5973 LocalGet 0
+	0xED5975 Call 72345
+	0xED5979 End
+	0xED597A End
+	0xED597B I32Const 0
+	0xED597D Call 55219
+	0xED5981 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v8, [2D4430]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [459241], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6 (Kiloo.GameCenter.GameCenterPlugin+GenerateIdentityVerificationSignatureCompletionHandler), action @ L0 (System.Action`1<AppRefresh.RefreshType>), 8
+	15 Nop
+	16 Move v16 @ S1_v4 (Il2CppClass<Kiloo.GameCenter.GameCenterPlugin>), typeof(Kiloo.GameCenter.GameCenterPlugin)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v20 @ S1_v6, [v16 @ S1_v4 (Il2CppClass<Kiloo.GameCenter.GameCenterPlugin>)+BA], 512
+	21 CheckEqual v21 @ TEMP_v2 (System.Boolean), v20 @ S1_v6, 0
+	22 ConditionalJump @b10, v21 @ TEMP_v2 (System.Boolean)
+	23 Move v22 @ S1_v9 (Il2CppClass<Kiloo.GameCenter.GameCenterPlugin>), typeof(Kiloo.GameCenter.GameCenterPlugin)
+	24 Nop
+	25 CheckEqual v24 @ S1_v11 (System.Boolean), [v22 @ S1_v9 (Il2CppClass<Kiloo.GameCenter.GameCenterPlugin>)+74], 0
+	26 Not v25 @ TEMP_v4 (System.Boolean), v24 @ S1_v11 (System.Boolean)
+	27 ConditionalJump @b10, v25 @ TEMP_v4 (System.Boolean)
+	28 Nop
+	29 CallVoid 11A99, typeof(Kiloo.GameCenter.GameCenterPlugin)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid GameCenterPlugin.GenerateIdentityVerificationSignature, v14 @ S0_v6 (Kiloo.GameCenter.GameCenterPlugin+GenerateIdentityVerificationSignatureCompletionHandler)
+	34 Nop
+	35 Return
+

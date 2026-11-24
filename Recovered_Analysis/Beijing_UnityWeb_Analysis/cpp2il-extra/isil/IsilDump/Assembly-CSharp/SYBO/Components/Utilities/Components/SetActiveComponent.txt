@@ -1,0 +1,87 @@
+Type: SYBO.Components.Utilities.Components.SetActiveComponent
+
+Method: System.Void Awake()
+
+Disassembly:
+	0xFFA0F8 I32Const 4562686
+	0xFFA0FD I32Load8_S 0, 0
+	0xFFA100 I32Eqz
+	0xFFA101 If -64
+	0xFFA103 I32Const 2988040
+	0xFFA108 I32Load 2, 0
+	0xFFA10B Call 73003
+	0xFFA10F I32Const 4562686
+	0xFFA114 I32Const 1
+	0xFFA116 I32Store8 0, 0
+	0xFFA119 End
+	0xFFA11A LocalGet 0
+	0xFFA11C I32Const 12
+	0xFFA11E I32Add
+	0xFFA11F I32Const 4501932
+	0xFFA124 I32Load 2, 0
+	0xFFA127 I32Store 2, 0
+	0xFFA12A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v8, [2D9808]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [459EFE], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (SYBO.Components.Utilities.Components.SetActiveComponent), 12
+	15 Nop
+	16 Nop
+	17 Move [v14 @ S0_v6], ""
+	18 Nop
+	19 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xFF9E6B LocalGet 0
+	0xFF9E6D I32Const 0
+	0xFF9E6F Call 62781
+	0xFF9E73 LocalGet 0
+	0xFF9E75 I32Load8_S 0, 12
+	0xFF9E78 I32Const 0
+	0xFF9E7A I32Ne
+	0xFF9E7B I32Const 0
+	0xFF9E7D Call 63022
+	0xFF9E81 LocalGet 0
+	0xFF9E83 LocalGet 0
+	0xFF9E85 I32Load8_S 0, 12
+	0xFF9E88 I32Const 0
+	0xFF9E8A I32Ne
+	0xFF9E8B I32Const 0
+	0xFF9E8D Call 62610
+	0xFF9E91 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Component.get_tag, v3 @ S0_v2 (System.String), this @ L0 (SYBO.Components.Utilities.Components.SetActiveComponent)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CheckNotEqual v7 @ S1_v4 (System.Boolean), this._isActiveOnAwake (System.Boolean), 0
+	7 Nop
+	8 CallVoid GameObject.set_tag, v3 @ S0_v2 (System.String), v7 @ S1_v4 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 CheckNotEqual v13 @ S1_v7 (System.Boolean), this._isActiveOnAwake (System.Boolean), 0
+	14 Nop
+	15 CallVoid Component.set_tag, this @ L0 (SYBO.Components.Utilities.Components.SetActiveComponent), v13 @ S1_v7 (System.Boolean)
+	16 Nop
+	17 Return
+

@@ -1,0 +1,258 @@
+Type: Info.Upgrade
+
+Method: System.String GetName()
+
+Disassembly:
+	0xD83609 I32Const 4555244
+	0xD8360E I32Load8_S 0, 0
+	0xD83611 I32Eqz
+	0xD83612 If -64
+	0xD83614 I32Const 3011824
+	0xD83619 I32Load 2, 0
+	0xD8361C Call 73003
+	0xD83620 I32Const 4555244
+	0xD83625 I32Const 1
+	0xD83627 I32Store8 0, 0
+	0xD8362A End
+	0xD8362B I32Const 4438252
+	0xD83630 I32Load 2, 0
+	0xD83633 LocalTee 1
+	0xD83635 I32Load16_S 1, 186
+	0xD83639 I32Const 512
+	0xD8363C I32And
+	0xD8363D If -64
+	0xD8363F LocalGet 1
+	0xD83641 I32Load 2, 116
+	0xD83644 I32Eqz
+	0xD83645 If -64
+	0xD83647 LocalGet 1
+	0xD83649 Call 72345
+	0xD8364D End
+	0xD8364E End
+	0xD8364F LocalGet 0
+	0xD83651 I32Const 0
+	0xD83653 Call 35366
+	0xD83657 LocalSet 1
+	0xD83659 I32Const 4436180
+	0xD8365E I32Load 2, 0
+	0xD83661 LocalTee 0
+	0xD83663 I32Load16_S 1, 186
+	0xD83667 I32Const 512
+	0xD8366A I32And
+	0xD8366B If -64
+	0xD8366D LocalGet 0
+	0xD8366F I32Load 2, 116
+	0xD83672 I32Eqz
+	0xD83673 If -64
+	0xD83675 LocalGet 0
+	0xD83677 Call 72345
+	0xD8367B End
+	0xD8367C End
+	0xD8367D I32Const 0
+	0xD8367F Call 41973
+	0xD83683 LocalGet 1
+	0xD83685 I32Const 0
+	0xD83687 Call 42001
+	0xD8368B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v29, [2DF4F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [4581EC], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Info.Trophies>), typeof(Info.Trophies)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Info.Trophies>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b16, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v24 (Il2CppClass<Info.Trophies>), typeof(Info.Trophies)
+	21 Nop
+	22 CheckEqual v20 @ S0_v26 (System.Boolean), [v18 @ S0_v24 (Il2CppClass<Info.Trophies>)+74], 0
+	23 Not v21 @ TEMP_v7 (System.Boolean), v20 @ S0_v26 (System.Boolean)
+	24 ConditionalJump @b16, v21 @ TEMP_v7 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Info.Trophies)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call Trophies.ShouldSpawnTrophy, v28 @ S0_v11 (System.Boolean), this @ L0 (Info.Upgrade)
+	32 Nop
+	33 Nop
+	34 Move v31 @ S0_v13 (Il2CppClass<Missions.AwardsManager>), typeof(Missions.AwardsManager)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 And v35 @ S0_v15, [v31 @ S0_v13 (Il2CppClass<Missions.AwardsManager>)+BA], 512
+	39 CheckEqual v36 @ TEMP_v4 (System.Boolean), v35 @ S0_v15, 0
+	40 ConditionalJump @b15, v36 @ TEMP_v4 (System.Boolean)
+	41 Move v37 @ S0_v20 (Il2CppClass<Missions.AwardsManager>), typeof(Missions.AwardsManager)
+	42 Nop
+	43 CheckEqual v39 @ S0_v22 (System.Boolean), [v37 @ S0_v20 (Il2CppClass<Missions.AwardsManager>)+74], 0
+	44 Not v40 @ TEMP_v6 (System.Boolean), v39 @ S0_v22 (System.Boolean)
+	45 ConditionalJump @b15, v40 @ TEMP_v6 (System.Boolean)
+	46 Nop
+	47 CallVoid 11A99, typeof(Missions.AwardsManager)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Call MissionsManager.get_Instance, v45 @ S0_v18 (Missions.MissionsManager)
+	52 Nop
+	53 Nop
+	54 Call CollectCoinsSingleRun.GetProgressForGoal, returnVal1 @ S0_v19 (System.String), v45 @ S0_v18 (Missions.MissionsManager), v28 @ S0_v11 (System.Boolean)
+	55 Nop
+	56 Return returnVal1 @ S0_v19 (System.String)
+
+Method: System.Int32 GetPrice(System.Int32 tier)
+
+Disassembly:
+	0xD81D61 I32Const 4555203
+	0xD81D66 I32Load8_S 0, 0
+	0xD81D69 I32Eqz
+	0xD81D6A If -64
+	0xD81D6C I32Const 2989652
+	0xD81D71 I32Load 2, 0
+	0xD81D74 Call 73003
+	0xD81D78 I32Const 4555203
+	0xD81D7D I32Const 1
+	0xD81D7F I32Store8 0, 0
+	0xD81D82 End
+	0xD81D83 I32Const 4438220
+	0xD81D88 I32Load 2, 0
+	0xD81D8B Call 72556
+	0xD81D8F LocalTee 2
+	0xD81D91 I32Const 8
+	0xD81D93 I32Add
+	0xD81D94 LocalGet 1
+	0xD81D96 I32Store 2, 0
+	0xD81D99 LocalGet 0
+	0xD81D9B I32Load 2, 8
+	0xD81D9E If -1
+	0xD81DA0 LocalGet 0
+	0xD81DA2 I32Load 2, 8
+	0xD81DA5 I32Load 2, 12
+	0xD81DA8 If -1
+	0xD81DAA LocalGet 0
+	0xD81DAC I32Load 2, 8
+	0xD81DAF I32Const 4438224
+	0xD81DB4 I32Load 2, 0
+	0xD81DB7 Call 72556
+	0xD81DBB LocalTee 1
+	0xD81DBD LocalSet 3
+	0xD81DBF I32Const 4488560
+	0xD81DC4 I32Load 2, 0
+	0xD81DC7 Drop
+	0xD81DC8 LocalGet 3
+	0xD81DCA I32Const 4451068
+	0xD81DCF I32Load 2, 0
+	0xD81DD2 LocalTee 4
+	0xD81DD4 I32Load 2, 0
+	0xD81DD7 I32Store 2, 8
+	0xD81DDA LocalGet 3
+	0xD81DDC LocalGet 4
+	0xD81DDE I32Store 2, 20
+	0xD81DE1 LocalGet 3
+	0xD81DE3 I32Const 16
+	0xD81DE5 I32Add
+	0xD81DE6 LocalGet 2
+	0xD81DE8 I32Store 2, 0
+	0xD81DEB LocalGet 1
+	0xD81DED I32Const 4456708
+	0xD81DF2 I32Load 2, 0
+	0xD81DF5 Call 37209
+	0xD81DF9 Else
+	0xD81DFA I32Const 0
+	0xD81DFC End
+	0xD81DFD Else
+	0xD81DFE I32Const 0
+	0xD81E00 End
+	0xD81E01 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v22, [2D9E54]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v16, 1
+	10 Move [4581C3], v7 @ S1_v16
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7, typeof(Info.OutfitSet+<>c__DisplayClass2_0)
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v8, v13 @ S0_v7, 8
+	18 Nop
+	19 Move [v16 @ S0_v8], tier @ L1 (System.Int32)
+	20 Nop
+	21 Nop
+	22 CheckEqual v22 @ TEMP_v2 (System.Boolean), this.name (System.String), 0
+	23 ConditionalJump @b11, v22 @ TEMP_v2 (System.Boolean)
+	24 Nop
+	25 Move v24 @ S0_v14 (System.String), this.name (System.String)
+	26 Nop
+	27 CheckEqual v26 @ TEMP_v4 (System.Boolean), v24.m_firstChar (System.Char), 0
+	28 ConditionalJump @b10, v26 @ TEMP_v4 (System.Boolean)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Call 11B6C, v32 @ S1_v8 (System.Func`2<TSource, System.Boolean>), typeof(System.Func`2<Info.Outfit, System.Boolean>)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move v56 @ S2_v4 (Il2CppMethodInfo), methodof(Info.OutfitSet+<>c__DisplayClass2_0::<HasOutfitWithName>b__0)
+	41 Nop
+	42 Nop
+	43 Move [v32 @ S1_v8 (System.Func`2<TSource, System.Boolean>)+8], [v56 @ S2_v4 (Il2CppMethodInfo)]
+	44 Nop
+	45 Nop
+	46 Move [v32 @ S1_v8 (System.Func`2<TSource, System.Boolean>)+14], methodof(Info.OutfitSet+<>c__DisplayClass2_0::<HasOutfitWithName>b__0)
+	47 Nop
+	48 Nop
+	49 Add v63 @ S1_v14, v32 @ S1_v8 (System.Func`2<TSource, System.Boolean>), 16
+	50 Nop
+	51 Move [v63 @ S1_v14], v13 @ S0_v7
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Call Enumerable.All, v68 @ S0_v20 (System.Boolean), this.name (System.String), v32 @ S1_v8 (System.Func`2<TSource, System.Boolean>)
+	56 Jump @b13
+	57 Nop
+	58 Nop
+	59 Jump @b14
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Return returnVal1 @ S0_v11 (System.Int32)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

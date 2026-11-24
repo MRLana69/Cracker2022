@@ -1,0 +1,246 @@
+Type: System.EventHandler`1
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x104B347 LocalGet 0
+	0x104B349 I32Const 8
+	0x104B34B I32Add
+	0x104B34C LocalGet 1
+	0x104B34E LocalGet 2
+	0x104B350 I32Const 0
+	0x104B352 Call 47545
+	0x104B356 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.EventHandler`1<TEventArgs>), 8
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CallVoid B9B9, v3 @ S0_v2, object @ L1 (System.Object), method @ L2 (System.IntPtr), 0
+	7 Nop
+	8 Return
+
+Method: System.Void Invoke(System.Object sender, TEventArgs e)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move [this @ L0 (System.EventHandler`1<TEventArgs>)+8], [e @ L2 (TEventArgs)]
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (System.EventHandler`1<TEventArgs>)+14], e @ L2 (TEventArgs)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.EventHandler`1<TEventArgs>), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], sender @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.IAsyncResult BeginInvoke(System.Object sender, TEventArgs e, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0xC9E82A GlobalGet 7
+	0xC9E82C LocalSet 5
+	0xC9E82E GlobalGet 7
+	0xC9E830 I32Const 16
+	0xC9E832 I32Add
+	0xC9E833 GlobalSet 7
+	0xC9E835 LocalGet 5
+	0xC9E837 I32Const 0
+	0xC9E839 I32Store 2, 8
+	0xC9E83C LocalGet 5
+	0xC9E83E LocalGet 1
+	0xC9E840 I32Store 2, 0
+	0xC9E843 LocalGet 5
+	0xC9E845 LocalGet 2
+	0xC9E847 I32Store 2, 4
+	0xC9E84A LocalGet 0
+	0xC9E84C LocalGet 5
+	0xC9E84E LocalGet 3
+	0xC9E850 LocalGet 4
+	0xC9E852 Call 73891
+	0xC9E856 LocalGet 5
+	0xC9E858 GlobalSet 7
+	0xC9E85A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7+8], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], sender @ L1 (System.Object)
+	12 Nop
+	13 Nop
+	14 Move [v1 @ G7+4], e @ L2 (TEventArgs)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call 120A3, returnVal1 @ S0_v8 (System.IAsyncResult), this @ L0 (System.EventHandler`1<TEventArgs>), v1 @ G7, callback @ L3 (System.AsyncCallback), object @ L4 (System.Object)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Return returnVal1 @ S0_v8 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x1049E11 GlobalGet 7
+	0x1049E13 LocalSet 2
+	0x1049E15 GlobalGet 7
+	0x1049E17 I32Const 48
+	0x1049E19 I32Add
+	0x1049E1A GlobalSet 7
+	0x1049E1C LocalGet 2
+	0x1049E1E I32Const 24
+	0x1049E20 I32Add
+	0x1049E21 LocalTee 3
+	0x1049E23 LocalGet 1
+	0x1049E25 I64Load 2, 0
+	0x1049E28 I64Store 2, 0
+	0x1049E2B LocalGet 3
+	0x1049E2D LocalGet 1
+	0x1049E2F I32Load 2, 8
+	0x1049E32 I32Store 2, 8
+	0x1049E35 LocalGet 0
+	0x1049E37 I32Const 8
+	0x1049E39 I32Add
+	0x1049E3A LocalGet 3
+	0x1049E3C I32Load 2, 0
+	0x1049E3F I32Store 2, 0
+	0x1049E42 LocalGet 2
+	0x1049E44 I32Const 12
+	0x1049E46 I32Add
+	0x1049E47 LocalTee 3
+	0x1049E49 LocalGet 1
+	0x1049E4B I64Load 2, 0
+	0x1049E4E I64Store 2, 0
+	0x1049E51 LocalGet 3
+	0x1049E53 LocalGet 1
+	0x1049E55 I32Load 2, 8
+	0x1049E58 I32Store 2, 8
+	0x1049E5B LocalGet 0
+	0x1049E5D LocalGet 3
+	0x1049E5F I32Load 2, 4
+	0x1049E62 I32Store 2, 12
+	0x1049E65 LocalGet 0
+	0x1049E67 I32Load 2, 12
+	0x1049E6A LocalSet 3
+	0x1049E6C LocalGet 2
+	0x1049E6E LocalGet 1
+	0x1049E70 I64Load 2, 0
+	0x1049E73 I64Store 2, 0
+	0x1049E76 LocalGet 2
+	0x1049E78 LocalGet 1
+	0x1049E7A I32Load 2, 8
+	0x1049E7D I32Store 2, 8
+	0x1049E80 LocalGet 0
+	0x1049E82 LocalGet 2
+	0x1049E84 I32Load 2, 8
+	0x1049E87 LocalGet 3
+	0x1049E89 I32Add
+	0x1049E8A I32Store 2, 16
+	0x1049E8D LocalGet 0
+	0x1049E8F LocalGet 0
+	0x1049E91 I32Load 2, 12
+	0x1049E94 I32Const 1
+	0x1049E96 I32Sub
+	0x1049E97 I32Store 2, 20
+	0x1049E9A LocalGet 2
+	0x1049E9C GlobalSet 7
+	0x1049E9E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 24
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Move [v9 @ S0_v5], [result @ L1 (System.IAsyncResult)]
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v9 @ S0_v5+8], [result @ L1 (System.IAsyncResult)+8]
+	17 Nop
+	18 Nop
+	19 Add v20 @ S0_v8, this @ L0 (System.EventHandler`1<TEventArgs>), 8
+	20 Nop
+	21 Nop
+	22 Move [v20 @ S0_v8], [v9 @ S0_v5]
+	23 Nop
+	24 Nop
+	25 Add v25 @ S0_v10, v1 @ G7, 12
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Move [v25 @ S0_v10], [result @ L1 (System.IAsyncResult)]
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Move [v25 @ S0_v10+8], [result @ L1 (System.IAsyncResult)+8]
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Move [this @ L0 (System.EventHandler`1<TEventArgs>)+C], [v25 @ S0_v10+4]
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Move [v1 @ G7], [result @ L1 (System.IAsyncResult)]
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Move [v1 @ G7+8], [result @ L1 (System.IAsyncResult)+8]
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Add v48 @ S1_v23, [v1 @ G7+8], [this @ L0 (System.EventHandler`1<TEventArgs>)+C]
+	54 Move [this @ L0 (System.EventHandler`1<TEventArgs>)+10], v48 @ S1_v23
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Subtract v53 @ S1_v26, [this @ L0 (System.EventHandler`1<TEventArgs>)+C], 1
+	60 Move [this @ L0 (System.EventHandler`1<TEventArgs>)+14], v53 @ S1_v26
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Return
+

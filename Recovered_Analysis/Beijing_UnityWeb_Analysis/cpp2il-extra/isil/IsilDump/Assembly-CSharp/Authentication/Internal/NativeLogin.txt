@@ -1,0 +1,377 @@
+Type: Authentication.Internal.NativeLogin
+
+Method: System.Boolean get_isInitialized()
+
+Disassembly:
+	0xED5D0E I32Const 4559433
+	0xED5D13 I32Load8_S 0, 0
+	0xED5D16 I32Eqz
+	0xED5D17 If -64
+	0xED5D19 I32Const 2968304
+	0xED5D1E I32Load 2, 0
+	0xED5D21 Call 73003
+	0xED5D25 I32Const 4559433
+	0xED5D2A I32Const 1
+	0xED5D2C I32Store8 0, 0
+	0xED5D2F End
+	0xED5D30 I32Const 4436084
+	0xED5D35 I32Load 2, 0
+	0xED5D38 Call 72556
+	0xED5D3C LocalTee 1
+	0xED5D3E I32Const 0
+	0xED5D40 I32Store 2, 8
+	0xED5D43 LocalGet 1
+	0xED5D45 I32Const 16
+	0xED5D47 I32Add
+	0xED5D48 LocalGet 0
+	0xED5D4A I32Store 2, 0
+	0xED5D4D LocalGet 1
+	0xED5D4F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v12, [2D4AF0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [459249], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Boolean), typeof(Authentication.Internal.GoogleLogin+<Logout>d__9)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (System.Boolean)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.Boolean), 16
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (Authentication.Internal.NativeLogin)
+	23 Nop
+	24 Nop
+	25 Return v13 @ S0_v7 (System.Boolean)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xED5BCA I32Const 0
+	0xED5BCC Call 55329
+	0xED5BD0 LocalGet 0
+	0xED5BD2 I32Const 8
+	0xED5BD4 I32Add
+	0xED5BD5 I32Const 0
+	0xED5BD7 Call 41064
+	0xED5BDB I32Store 2, 0
+	0xED5BDE End
+
+ISIL:
+	0 Nop
+	1 CallVoid GameCenterPlugin._GameCenterShowLoginView
+	2 Nop
+	3 Nop
+	4 Add v4 @ S0_v3, this @ L0 (Authentication.Internal.NativeLogin), 8
+	5 Nop
+	6 Call A068, v6 @ S1_v3, 0
+	7 Move [v4 @ S0_v3], v6 @ S1_v3
+	8 Nop
+	9 Return
+
+Method: System.Boolean get_isLoggedIn()
+
+Disassembly:
+	0xC578DE LocalGet 0
+	0xC578E0 I32Load 2, 8
+	0xC578E3 I32Const 0
+	0xC578E5 I32Ne
+	0xC578E6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._service (Authentication.Internal.ILoginService), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.String get_displayName()
+
+Disassembly:
+	0xC57965 I32Const 4551740
+	0xC5796A I32Load8_S 0, 0
+	0xC5796D I32Eqz
+	0xC5796E If -64
+	0xC57970 I32Const 2984532
+	0xC57975 I32Load 2, 0
+	0xC57978 Call 73003
+	0xC5797C I32Const 4551740
+	0xC57981 I32Const 1
+	0xC57983 I32Store8 0, 0
+	0xC57986 End
+	0xC57987 LocalGet 0
+	0xC57989 I32Load 2, 8
+	0xC5798C If -1
+	0xC5798E I32Const 0
+	0xC57990 I32Const 4436120
+	0xC57995 I32Load 2, 0
+	0xC57998 LocalGet 0
+	0xC5799A I32Load 2, 8
+	0xC5799D Call 29547
+	0xC579A1 Else
+	0xC579A2 I32Const 0
+	0xC579A4 End
+	0xC579A5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v12, [2D8A54]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45743C], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this._service (Authentication.Internal.ILoginService), 0
+	15 ConditionalJump @b7, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call 736B, returnVal1 @ S0_v7 (System.String), 0, typeof(Authentication.Internal.ILoginService), this._service (Authentication.Internal.ILoginService)
+	22 Jump @b9
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Return returnVal1 @ S0_v7 (System.String)
+
+Method: UnityEngine.Coroutine LoginAsync()
+
+Disassembly:
+	0xC579AA I32Const 4551741
+	0xC579AF I32Load8_S 0, 0
+	0xC579B2 I32Eqz
+	0xC579B3 If -64
+	0xC579B5 I32Const 2984528
+	0xC579BA I32Load 2, 0
+	0xC579BD Call 73003
+	0xC579C1 I32Const 4551741
+	0xC579C6 I32Const 1
+	0xC579C8 I32Store8 0, 0
+	0xC579CB End
+	0xC579CC LocalGet 0
+	0xC579CE I32Const 0
+	0xC579D0 Call 30228
+	0xC579D4 If -1
+	0xC579D6 I32Const 0
+	0xC579D8 Call 62541
+	0xC579DC I32Const 8
+	0xC579DE I32Eq
+	0xC579DF LocalGet 0
+	0xC579E1 I32Load 2, 8
+	0xC579E4 LocalSet 0
+	0xC579E6 I32Const 4436120
+	0xC579EB I32Load 2, 0
+	0xC579EE LocalSet 1
+	0xC579F0 If -1
+	0xC579F2 I32Const 2
+	0xC579F4 LocalGet 1
+	0xC579F6 LocalGet 0
+	0xC579F8 Call 29547
+	0xC579FC Else
+	0xC579FD I32Const 1
+	0xC579FF LocalGet 1
+	0xC57A01 LocalGet 0
+	0xC57A03 Call 29547
+	0xC57A07 End
+	0xC57A08 Else
+	0xC57A09 I32Const 4427772
+	0xC57A0E I32Load 2, 0
+	0xC57A11 I32Load 2, 92
+	0xC57A14 I32Load 2, 0
+	0xC57A17 End
+	0xC57A18 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v21, [2D8A50]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45743D], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call NativeLogin.get_displayName, v14 @ S0_v6 (System.String), this @ L0 (Authentication.Internal.NativeLogin)
+	15 CheckEqual v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v6 (System.String), 0
+	16 ConditionalJump @b12, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Call Application.get_dataPath, v17 @ S0_v13 (System.String)
+	19 Nop
+	20 CheckEqual v23 @ S0_v14 (System.Boolean), v17 @ S0_v13 (System.String), 8
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Not v30 @ TEMP_v4 (System.Boolean), v23 @ S0_v14 (System.Boolean)
+	28 ConditionalJump @b10, v30 @ TEMP_v4 (System.Boolean)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call 736B, returnVal1 @ S0_v7 (UnityEngine.Coroutine), 2, typeof(Authentication.Internal.ILoginService), this._service (Authentication.Internal.ILoginService)
+	33 Jump @b11
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 736B, returnVal1 @ S0_v7 (UnityEngine.Coroutine), 1, typeof(Authentication.Internal.ILoginService), this._service (Authentication.Internal.ILoginService)
+	38 Nop
+	39 Jump @b14
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move returnVal1 @ S0_v7 (UnityEngine.Coroutine), v20.Empty (System.String)
+	44 Nop
+	45 Nop
+	46 Return returnVal1 @ S0_v7 (UnityEngine.Coroutine)
+
+Method: UnityEngine.Coroutine LogoutAsync()
+
+Disassembly:
+	0xC57A1B LocalGet 0
+	0xC57A1D I32Const 0
+	0xC57A1F Call 30231
+	0xC57A23 I32Const 0
+	0xC57A25 Call 44381
+	0xC57A29 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call NativeLogin.LogoutRoutine, v3 @ S0_v2 (System.Collections.IEnumerator), this @ L0 (Authentication.Internal.NativeLogin)
+	3 Nop
+	4 Call CoroutineUtil.WaitForAll, returnVal1 @ S0_v3 (UnityEngine.Coroutine), v3 @ S0_v2 (System.Collections.IEnumerator)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (UnityEngine.Coroutine)
+
+Method: System.Collections.IEnumerator LoginRoutine()
+
+Disassembly:
+	0xC57A70 LocalGet 0
+	0xC57A72 I32Const 0
+	0xC57A74 Call 30233
+	0xC57A78 I32Const 0
+	0xC57A7A Call 44381
+	0xC57A7E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call AnimationPlayAfterDelay.PlayAnimationAfterDelay, v3 @ S0_v2 (System.Collections.IEnumerator), this @ L0 (Authentication.Internal.NativeLogin)
+	3 Nop
+	4 Call CoroutineUtil.WaitForAll, returnVal1 @ S0_v3 (System.Collections.IEnumerator), v3 @ S0_v2 (System.Collections.IEnumerator)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Collections.IEnumerator)
+
+Method: System.Collections.IEnumerator LogoutRoutine()
+
+Disassembly:
+	0xC57A2C I32Const 4551742
+	0xC57A31 I32Load8_S 0, 0
+	0xC57A34 I32Eqz
+	0xC57A35 If -64
+	0xC57A37 I32Const 2984516
+	0xC57A3C I32Load 2, 0
+	0xC57A3F Call 73003
+	0xC57A43 I32Const 4551742
+	0xC57A48 I32Const 1
+	0xC57A4A I32Store8 0, 0
+	0xC57A4D End
+	0xC57A4E I32Const 4436124
+	0xC57A53 I32Load 2, 0
+	0xC57A56 Call 72556
+	0xC57A5A LocalTee 1
+	0xC57A5C I32Const 0
+	0xC57A5E I32Store 2, 8
+	0xC57A61 LocalGet 1
+	0xC57A63 I32Const 16
+	0xC57A65 I32Add
+	0xC57A66 LocalGet 0
+	0xC57A68 I32Store 2, 0
+	0xC57A6B LocalGet 1
+	0xC57A6D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v12, [2D8A44]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45743E], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.IEnumerator), typeof(Authentication.Internal.NativeLogin+<LoginRoutine>d__11)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (System.Collections.IEnumerator)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.Collections.IEnumerator), 16
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (Authentication.Internal.NativeLogin)
+	23 Nop
+	24 Nop
+	25 Return v13 @ S0_v7 (System.Collections.IEnumerator)
+
+Method: System.Void Log(System.String msg, UnityEngine.Object obj = null)
+
+Disassembly:
+	0xC5FB8A LocalGet 0
+	0xC5FB8C LocalGet 1
+	0xC5FB8E I32Const 1
+	0xC5FB90 I32And
+	0xC5FB91 I32Store8 0, 8
+	0xC5FB94 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.Int32), obj @ L1 (UnityEngine.Object), 1
+	4 Move msg.m_stringLength (System.Int32), v5 @ S1_v2 (System.Int32)
+	5 Nop
+	6 Return
+
+Method: System.Void LogError(System.String msg, UnityEngine.Object obj = null)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

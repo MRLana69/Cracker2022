@@ -1,0 +1,90 @@
+Type: System.Net.UnsafeNclNativeMethods+SecureStringHelper
+
+Method: System.Security.SecureString CreateSecureString(System.String plainString)
+
+Disassembly:
+	0x1132A82 I32Const 4566496
+	0x1132A87 I32Load8_S 0, 0
+	0x1132A8A I32Eqz
+	0x1132A8B If -64
+	0x1132A8D I32Const 3026728
+	0x1132A92 I32Load 2, 0
+	0x1132A95 Call 73003
+	0x1132A99 I32Const 4566496
+	0x1132A9E I32Const 1
+	0x1132AA0 I32Store8 0, 0
+	0x1132AA3 End
+	0x1132AA4 LocalGet 0
+	0x1132AA6 If -64
+	0x1132AA8 LocalGet 0
+	0x1132AAA I32Load 2, 8
+	0x1132AAD If -64
+	0x1132AAF I32Const 4513532
+	0x1132AB4 I32Load 2, 0
+	0x1132AB7 LocalGet 0
+	0x1132AB9 I32Const 0
+	0x1132ABB Call 55680
+	0x1132ABF LocalSet 1
+	0x1132AC1 I32Const 4431892
+	0x1132AC6 I32Load 2, 0
+	0x1132AC9 Call 72556
+	0x1132ACD LocalTee 0
+	0x1132ACF LocalGet 1
+	0x1132AD1 I32Const 0
+	0x1132AD3 Call 58432
+	0x1132AD7 Else
+	0x1132AD8 I32Const 0
+	0x1132ADA LocalSet 0
+	0x1132ADC End
+	0x1132ADD Else
+	0x1132ADE I32Const 0
+	0x1132AE0 LocalSet 0
+	0x1132AE2 End
+	0x1132AE3 LocalGet 0
+	0x1132AE5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v20, [2E2F28]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45ADE0], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), plainString @ L0 (System.String), 0
+	14 ConditionalJump @b11, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 CheckEqual v16 @ TEMP_v4 (System.Boolean), plainString.m_stringLength (System.Int32), 0
+	18 ConditionalJump @b10, v16 @ TEMP_v4 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call String.ConcatArray, v23 @ S0_v15 (System.String), "http://", plainString @ L0 (System.String)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Call 11B6C, v43 @ S0_v18 (System.Uri), typeof(System.Uri)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid Uri.CreateThisFromUri, v43 @ S0_v18 (System.Uri), v23 @ S0_v15 (System.String)
+	32 Jump @b13
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Jump @b14
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Return v26 @ L0_v1 (System.Security.SecureString)
+

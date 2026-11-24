@@ -1,0 +1,405 @@
+Type: UI.Popups.QuitApplicationPopup
+
+Method: System.Void Init()
+
+Disassembly:
+	0xC1634C LocalGet 0
+	0xC1634E I32Const 0
+	0xC16350 Call 73999
+	0xC16354 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid UpgradeScreen.Start, this @ L0 (UI.Popups.QuitApplicationPopup)
+	3 Nop
+	4 Return
+
+Method: System.Void NoClicked()
+
+Disassembly:
+	0xCB4B23 I32Const 4552765
+	0xCB4B28 I32Load8_S 0, 0
+	0xCB4B2B I32Eqz
+	0xCB4B2C If -64
+	0xCB4B2E I32Const 2994296
+	0xCB4B33 I32Load 2, 0
+	0xCB4B36 Call 73003
+	0xCB4B3A I32Const 4552765
+	0xCB4B3F I32Const 1
+	0xCB4B41 I32Store8 0, 0
+	0xCB4B44 End
+	0xCB4B45 LocalGet 0
+	0xCB4B47 I32Const 0
+	0xCB4B49 Call 41445
+	0xCB4B4D LocalGet 0
+	0xCB4B4F I32Load 2, 40
+	0xCB4B52 I32Const 4435772
+	0xCB4B57 I32Load 2, 0
+	0xCB4B5A LocalTee 1
+	0xCB4B5C I32Load16_S 1, 186
+	0xCB4B60 I32Const 512
+	0xCB4B63 I32And
+	0xCB4B64 If -64
+	0xCB4B66 LocalGet 1
+	0xCB4B68 I32Load 2, 116
+	0xCB4B6B I32Eqz
+	0xCB4B6C If -64
+	0xCB4B6E LocalGet 1
+	0xCB4B70 Call 72345
+	0xCB4B74 End
+	0xCB4B75 End
+	0xCB4B76 I32Const 4544648
+	0xCB4B7B I32Load 2, 0
+	0xCB4B7E I32Const 0
+	0xCB4B80 Call 41749
+	0xCB4B84 I32Const 0
+	0xCB4B86 Call 39963
+	0xCB4B8A LocalGet 0
+	0xCB4B8C I32Load 2, 44
+	0xCB4B8F I32Const 4544636
+	0xCB4B94 I32Load 2, 0
+	0xCB4B97 I32Const 0
+	0xCB4B99 Call 41749
+	0xCB4B9D I32Const 0
+	0xCB4B9F Call 39963
+	0xCB4BA3 LocalGet 0
+	0xCB4BA5 I32Load 2, 48
+	0xCB4BA8 I32Const 4544640
+	0xCB4BAD I32Load 2, 0
+	0xCB4BB0 I32Const 0
+	0xCB4BB2 Call 41749
+	0xCB4BB6 I32Const 0
+	0xCB4BB8 Call 39963
+	0xCB4BBC LocalGet 0
+	0xCB4BBE I32Load 2, 56
+	0xCB4BC1 I32Const 4544644
+	0xCB4BC6 I32Load 2, 0
+	0xCB4BC9 I32Const 0
+	0xCB4BCB Call 41749
+	0xCB4BCF I32Const 0
+	0xCB4BD1 Call 39963
+	0xCB4BD5 LocalGet 0
+	0xCB4BD7 I32Load 2, 52
+	0xCB4BDA I32Const 4544652
+	0xCB4BDF I32Load 2, 0
+	0xCB4BE2 I32Const 0
+	0xCB4BE4 Call 41749
+	0xCB4BE8 I32Const 0
+	0xCB4BEA Call 39963
+	0xCB4BEE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v17, [2DB078]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v27, 1
+	10 Move [45783D], v7 @ S1_v27
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid UIScreen.ShowIfInactive, this @ L0 (UI.Popups.QuitApplicationPopup)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move v17 @ S1_v4 (Il2CppClass<Strings>), typeof(Strings)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 And v21 @ S1_v6, [v17 @ S1_v4 (Il2CppClass<Strings>)+BA], 512
+	23 CheckEqual v22 @ TEMP_v2 (System.Boolean), v21 @ S1_v6, 0
+	24 ConditionalJump @b20, v22 @ TEMP_v2 (System.Boolean)
+	25 Move v23 @ S1_v23 (Il2CppClass<Strings>), typeof(Strings)
+	26 Nop
+	27 CheckEqual v25 @ S1_v25 (System.Boolean), [v23 @ S1_v23 (Il2CppClass<Strings>)+74], 0
+	28 Not v26 @ TEMP_v4 (System.Boolean), v25 @ S1_v25 (System.Boolean)
+	29 ConditionalJump @b20, v26 @ TEMP_v4 (System.Boolean)
+	30 Nop
+	31 CallVoid 11A99, typeof(Strings)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call Strings.GetDefault, v33 @ S1_v10 (System.String), "QUIT_APPLICATION_POPUP_TITLE"
+	38 Nop
+	39 CallVoid UILabel.set_fontSize, this._title (UILabel), v33 @ S1_v10 (System.String)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call Strings.GetDefault, v40 @ S1_v13 (System.String), "QUIT_APPLICATION_POPUP_DESCRIPTION"
+	46 Nop
+	47 CallVoid UILabel.set_fontSize, this._description (UILabel), v40 @ S1_v13 (System.String)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Call Strings.GetDefault, v47 @ S1_v16 (System.String), "QUIT_APPLICATION_POPUP_DESCRIPTION_SUB"
+	54 Nop
+	55 CallVoid UILabel.set_fontSize, this._subDescription (UILabel), v47 @ S1_v16 (System.String)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Call Strings.GetDefault, v54 @ S1_v19 (System.String), "QUIT_APPLICATION_POPUP_NO"
+	62 Nop
+	63 CallVoid UILabel.set_fontSize, this._noLabel (UILabel), v54 @ S1_v19 (System.String)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Call Strings.GetDefault, v61 @ S1_v22 (System.String), "QUIT_APPLICATION_POPUP_YES"
+	70 Nop
+	71 CallVoid UILabel.set_fontSize, this._yesLabel (UILabel), v61 @ S1_v22 (System.String)
+	72 Nop
+	73 Return
+
+Method: System.Void YesClicked()
+
+Disassembly:
+	0xCB4BF3 I32Const 4552766
+	0xCB4BF8 I32Load8_S 0, 0
+	0xCB4BFB I32Eqz
+	0xCB4BFC If -64
+	0xCB4BFE I32Const 2994300
+	0xCB4C03 I32Load 2, 0
+	0xCB4C06 Call 73003
+	0xCB4C0A I32Const 4552766
+	0xCB4C0F I32Const 1
+	0xCB4C11 I32Store8 0, 0
+	0xCB4C14 End
+	0xCB4C15 I32Const 4435764
+	0xCB4C1A I32Load 2, 0
+	0xCB4C1D LocalTee 2
+	0xCB4C1F I32Load16_S 1, 186
+	0xCB4C23 I32Const 512
+	0xCB4C26 I32And
+	0xCB4C27 If -64
+	0xCB4C29 LocalGet 2
+	0xCB4C2B I32Load 2, 116
+	0xCB4C2E I32Eqz
+	0xCB4C2F If -64
+	0xCB4C31 LocalGet 2
+	0xCB4C33 Call 72345
+	0xCB4C37 End
+	0xCB4C38 End
+	0xCB4C39 I32Const 0
+	0xCB4C3B Call 35989
+	0xCB4C3F LocalGet 0
+	0xCB4C41 I32Load 2, 32
+	0xCB4C44 I32Const 0
+	0xCB4C46 Call 36085
+	0xCB4C4A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2DB07C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45783E], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UIScreenController>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<UIScreenController>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UIScreenController)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call UIScreenController.ShouldShowOnlineScreen, v26 @ S0_v11 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 CallVoid UIScreenController.ClosePopup, v26 @ S0_v11 (System.Boolean), this.screenName (System.String)
+	35 Nop
+	36 Return
+
+Method: System.Void Update()
+
+Disassembly:
+	0xCB4C50 I32Const 4552767
+	0xCB4C55 I32Load8_S 0, 0
+	0xCB4C58 I32Eqz
+	0xCB4C59 If -64
+	0xCB4C5B I32Const 2994304
+	0xCB4C60 I32Load 2, 0
+	0xCB4C63 Call 73003
+	0xCB4C67 I32Const 4552767
+	0xCB4C6C I32Const 1
+	0xCB4C6E I32Store8 0, 0
+	0xCB4C71 End
+	0xCB4C72 I32Const 4496332
+	0xCB4C77 I32Load 2, 0
+	0xCB4C7A Call 53430
+	0xCB4C7E I32Const 0
+	0xCB4C80 Call 41000
+	0xCB4C84 I32Const 4435764
+	0xCB4C89 I32Load 2, 0
+	0xCB4C8C LocalTee 1
+	0xCB4C8E I32Load16_S 1, 186
+	0xCB4C92 I32Const 512
+	0xCB4C95 I32And
+	0xCB4C96 If -64
+	0xCB4C98 LocalGet 1
+	0xCB4C9A I32Load 2, 116
+	0xCB4C9D I32Eqz
+	0xCB4C9E If -64
+	0xCB4CA0 LocalGet 1
+	0xCB4CA2 Call 72345
+	0xCB4CA6 End
+	0xCB4CA7 End
+	0xCB4CA8 I32Const 0
+	0xCB4CAA Call 35989
+	0xCB4CAE I32Const 1
+	0xCB4CB0 I32Store8 0, 133
+	0xCB4CB4 I32Const 0
+	0xCB4CB6 Call 35989
+	0xCB4CBA LocalGet 0
+	0xCB4CBC I32Load 2, 32
+	0xCB4CBF I32Const 0
+	0xCB4CC1 Call 36085
+	0xCB4CC5 I32Const 4429724
+	0xCB4CCA I32Load 2, 0
+	0xCB4CCD Call 72556
+	0xCB4CD1 LocalTee 0
+	0xCB4CD3 LocalTee 1
+	0xCB4CD5 I32Const 4494344
+	0xCB4CDA I32Load 2, 0
+	0xCB4CDD LocalTee 2
+	0xCB4CDF I32Load 2, 0
+	0xCB4CE2 I32Store 2, 8
+	0xCB4CE5 LocalGet 1
+	0xCB4CE7 LocalGet 2
+	0xCB4CE9 I32Store 2, 20
+	0xCB4CEC LocalGet 1
+	0xCB4CEE I32Const 16
+	0xCB4CF0 I32Add
+	0xCB4CF1 I32Const 0
+	0xCB4CF3 I32Store 2, 0
+	0xCB4CF6 LocalGet 0
+	0xCB4CF8 I32Const 0
+	0xCB4CFA Call 44311
+	0xCB4CFE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b15
+	5 Nop
+	6 Move v5 @ S0_v29, [2DB080]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [45783F], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call SingletonMonoBehaviour`1.Instantiate, v13 @ S0_v7 (T)
+	15 Nop
+	16 CallVoid AudioStateLoop.OnSfxSettingChanged, v13 @ S0_v7 (T)
+	17 Nop
+	18 Move v16 @ S0_v9 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 And v20 @ S0_v11, [v16 @ S0_v9 (Il2CppClass<UIScreenController>)+BA], 512
+	23 CheckEqual v21 @ TEMP_v2 (System.Boolean), v20 @ S0_v11, 0
+	24 ConditionalJump @b16, v21 @ TEMP_v2 (System.Boolean)
+	25 Move v22 @ S0_v24 (Il2CppClass<UIScreenController>), typeof(UIScreenController)
+	26 Nop
+	27 CheckEqual v24 @ S0_v26 (System.Boolean), [v22 @ S0_v24 (Il2CppClass<UIScreenController>)+74], 0
+	28 Not v25 @ TEMP_v4 (System.Boolean), v24 @ S0_v26 (System.Boolean)
+	29 ConditionalJump @b16, v25 @ TEMP_v4 (System.Boolean)
+	30 Nop
+	31 CallVoid 11A99, typeof(UIScreenController)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call UIScreenController.ShouldShowOnlineScreen, v30 @ S0_v14 (System.Boolean)
+	36 Nop
+	37 Move [v30 @ S0_v14 (System.Boolean)+85], 1
+	38 Nop
+	39 Call UIScreenController.ShouldShowOnlineScreen, v33 @ S0_v16 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 CallVoid UIScreenController.ClosePopup, v33 @ S0_v16 (System.Boolean), this.screenName (System.String)
+	44 Nop
+	45 Nop
+	46 Call 11B6C, v40 @ S0_v19 (System.String), typeof(System.Action)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Move v44 @ S1_v8 (Il2CppMethodInfo), methodof(UnityEngine.Application::Quit)
+	51 Nop
+	52 Nop
+	53 Move v40.m_stringLength (System.Int32), [v44 @ S1_v8 (Il2CppMethodInfo)]
+	54 Nop
+	55 Nop
+	56 Move [v40 @ S0_v19 (System.String)+14], methodof(UnityEngine.Application::Quit)
+	57 Nop
+	58 Nop
+	59 Add v51 @ S0_v22, v40 @ S0_v19 (System.String), 16
+	60 Nop
+	61 Move [v51 @ S0_v22], 0
+	62 Nop
+	63 Nop
+	64 CallVoid Timer.Log, v40 @ S0_v19 (System.String)
+	65 Nop
+	66 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xCB4D01 I32Const 27
+	0xCB4D03 I32Const 0
+	0xCB4D05 Call 71424
+	0xCB4D09 If -64
+	0xCB4D0B LocalGet 0
+	0xCB4D0D I32Const 0
+	0xCB4D0F Call 31711
+	0xCB4D13 End
+	0xCB4D14 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Input.GetKeyDown, v2 @ S0_v2 (System.Boolean), 27
+	3 Not v3 @ TEMP_v1 (System.Boolean), v2 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b5, v3 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 CallVoid QuitApplicationPopup.YesClicked, this @ L0 (UI.Popups.QuitApplicationPopup)
+	8 Nop
+	9 Nop
+	10 Return
+

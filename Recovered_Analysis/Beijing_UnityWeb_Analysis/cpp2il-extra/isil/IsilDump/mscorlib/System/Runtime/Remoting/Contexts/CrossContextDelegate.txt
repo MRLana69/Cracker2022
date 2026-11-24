@@ -1,0 +1,113 @@
+Type: System.Runtime.Remoting.Contexts.CrossContextDelegate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.Runtime.Remoting.Contexts.CrossContextDelegate), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.IAsyncResult BeginInvoke(System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x1014999 I32Const 4563019
+	0x101499E I32Load8_S 0, 0
+	0x10149A1 I32Eqz
+	0x10149A2 If -64
+	0x10149A4 I32Const 2947356
+	0x10149A9 I32Load 2, 0
+	0x10149AC Call 73003
+	0x10149B0 I32Const 4563019
+	0x10149B5 I32Const 1
+	0x10149B7 I32Store8 0, 0
+	0x10149BA End
+	0x10149BB I32Const 4427868
+	0x10149C0 I32Load 2, 0
+	0x10149C3 Call 72556
+	0x10149C7 LocalTee 4
+	0x10149C9 I32Const 0
+	0x10149CB Call 54998
+	0x10149CF LocalGet 4
+	0x10149D1 I32Const 0
+	0x10149D3 I32Const 4467248
+	0x10149D8 I32Load 2, 0
+	0x10149DB Call 73899
+	0x10149DF I32Const 0
+	0x10149E1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v11, [2CF91C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45A04B], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.NullReferenceException), typeof(System.NotSupportedException)
+	15 Nop
+	16 Nop
+	17 CallVoid NullReferenceException..ctor, v13 @ S0_v7 (System.NullReferenceException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid 120AB, v13 @ S0_v7 (System.NullReferenceException), 0, methodof(System.Runtime.Remoting.Contexts.CrossContextChannel+ContextRestoreSink::AsyncProcessMessage)
+	23 Nop
+	24 Nop
+	25 Return 0
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

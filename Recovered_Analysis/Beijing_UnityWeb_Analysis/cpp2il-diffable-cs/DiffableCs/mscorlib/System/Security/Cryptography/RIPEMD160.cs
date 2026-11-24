@@ -1,0 +1,13 @@
+namespace System.Security.Cryptography;
+
+public abstract class RIPEMD160 : HashAlgorithm
+{
+
+	protected RIPEMD160() { }
+
+	public static RIPEMD160 Create() { }
+
+	public static RIPEMD160 Create(string hashName) { }
+
+}
+

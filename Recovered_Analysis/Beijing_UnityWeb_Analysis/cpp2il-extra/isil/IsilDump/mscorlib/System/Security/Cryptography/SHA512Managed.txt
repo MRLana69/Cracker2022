@@ -1,0 +1,2491 @@
+Type: System.Security.Cryptography.SHA512Managed
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x13DF1CA LocalGet 0
+	0x13DF1CC I32Const 512
+	0x13DF1CF I32Store 2, 8
+	0x13DF1D2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.HashSizeValue (System.Int32), 512
+	3 Nop
+	4 Return
+
+Method: System.Void Initialize()
+
+Disassembly:
+	0x13DF151 I32Const 4574240
+	0x13DF156 I32Load8_S 0, 0
+	0x13DF159 I32Eqz
+	0x13DF15A If -64
+	0x13DF15C I32Const 2999892
+	0x13DF161 I32Load 2, 0
+	0x13DF164 Call 73003
+	0x13DF168 I32Const 4574240
+	0x13DF16D I32Const 1
+	0x13DF16F I32Store8 0, 0
+	0x13DF172 End
+	0x13DF173 LocalGet 0
+	0x13DF175 I32Const 512
+	0x13DF178 I32Store 2, 8
+	0x13DF17B LocalGet 0
+	0x13DF17D I32Const 40
+	0x13DF17F I32Add
+	0x13DF180 I32Const 4430168
+	0x13DF185 I32Load 2, 0
+	0x13DF188 I32Const 8
+	0x13DF18A Call 71670
+	0x13DF18E I32Store 2, 0
+	0x13DF191 LocalGet 0
+	0x13DF193 I32Const 24
+	0x13DF195 I32Add
+	0x13DF196 I32Const 4427832
+	0x13DF19B I32Load 2, 0
+	0x13DF19E I32Const 128
+	0x13DF1A1 Call 71670
+	0x13DF1A5 I32Store 2, 0
+	0x13DF1A8 LocalGet 0
+	0x13DF1AA I32Const 44
+	0x13DF1AC I32Add
+	0x13DF1AD I32Const 4430168
+	0x13DF1B2 I32Load 2, 0
+	0x13DF1B5 I32Const 80
+	0x13DF1B8 Call 71670
+	0x13DF1BC I32Store 2, 0
+	0x13DF1BF LocalGet 0
+	0x13DF1C1 I32Const 0
+	0x13DF1C3 Call 65916
+	0x13DF1C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v14, [2DC654]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v16, 1
+	10 Move [45CC20], v7 @ S1_v16
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this.HashSizeValue (System.Int32), 512
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v7, this @ L0 (System.Security.Cryptography.SHA512Managed), 40
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v20 @ S1_v6 (System.OverflowException), typeof(System.OverflowException)
+	22 Move [v16 @ S0_v7], v20 @ S1_v6 (System.OverflowException)
+	23 Nop
+	24 Nop
+	25 Add v23 @ S0_v9, this @ L0 (System.Security.Cryptography.SHA512Managed), 24
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Newobj v27 @ S1_v10 (System.OverflowException), typeof(System.OverflowException)
+	30 Move [v23 @ S0_v9], v27 @ S1_v10 (System.OverflowException)
+	31 Nop
+	32 Nop
+	33 Add v30 @ S0_v11, this @ L0 (System.Security.Cryptography.SHA512Managed), 44
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Newobj v34 @ S1_v14 (System.OverflowException), typeof(System.OverflowException)
+	38 Move [v30 @ S0_v11], v34 @ S1_v14 (System.OverflowException)
+	39 Nop
+	40 Nop
+	41 CallVoid SHA512Managed.SHA512Expand, this @ L0 (System.Security.Cryptography.SHA512Managed)
+	42 Nop
+	43 Return
+
+Method: System.Void HashCore(System.Byte[] rgb, System.Int32 ibStart, System.Int32 cbSize)
+
+Disassembly:
+	0x13E8E6C I32Const 4574369
+	0x13E8E71 I32Load8_S 0, 0
+	0x13E8E74 I32Eqz
+	0x13E8E75 If -64
+	0x13E8E77 I32Const 2999836
+	0x13E8E7C I32Load 2, 0
+	0x13E8E7F Call 73003
+	0x13E8E83 I32Const 4574369
+	0x13E8E88 I32Const 1
+	0x13E8E8A I32Store8 0, 0
+	0x13E8E8D End
+	0x13E8E8E LocalGet 0
+	0x13E8E90 I64Load 3, 32
+	0x13E8E93 LocalGet 0
+	0x13E8E95 LocalGet 3
+	0x13E8E97 I64Extend_I32_S
+	0x13E8E98 LocalGet 0
+	0x13E8E9A I64Load 3, 32
+	0x13E8E9D I64Add
+	0x13E8E9E I64Store 3, 32
+	0x13E8EA1 LocalGet 0
+	0x13E8EA3 I32Load 2, 40
+	0x13E8EA6 LocalTee 4
+	0x13E8EA8 If -1
+	0x13E8EAA LocalGet 4
+	0x13E8EAC I32Load 2, 12
+	0x13E8EAF If -1
+	0x13E8EB1 LocalGet 4
+	0x13E8EB3 I32Const 16
+	0x13E8EB5 I32Add
+	0x13E8EB6 Else
+	0x13E8EB7 I32Const 0
+	0x13E8EB9 End
+	0x13E8EBA Else
+	0x13E8EBB I32Const 0
+	0x13E8EBD End
+	0x13E8EBE LocalSet 5
+	0x13E8EC0 LocalGet 0
+	0x13E8EC2 I32Load 2, 24
+	0x13E8EC5 LocalTee 4
+	0x13E8EC7 If -1
+	0x13E8EC9 LocalGet 4
+	0x13E8ECB I32Load 2, 12
+	0x13E8ECE If -1
+	0x13E8ED0 LocalGet 4
+	0x13E8ED2 I32Const 16
+	0x13E8ED4 I32Add
+	0x13E8ED5 Else
+	0x13E8ED6 I32Const 0
+	0x13E8ED8 End
+	0x13E8ED9 Else
+	0x13E8EDA I32Const 0
+	0x13E8EDC End
+	0x13E8EDD LocalSet 6
+	0x13E8EDF LocalGet 0
+	0x13E8EE1 I32Load 2, 44
+	0x13E8EE4 LocalTee 4
+	0x13E8EE6 If -1
+	0x13E8EE8 LocalGet 4
+	0x13E8EEA I32Load 2, 12
+	0x13E8EED If -1
+	0x13E8EEF LocalGet 4
+	0x13E8EF1 I32Const 16
+	0x13E8EF3 I32Add
+	0x13E8EF4 Else
+	0x13E8EF5 I32Const 0
+	0x13E8EF7 End
+	0x13E8EF8 Else
+	0x13E8EF9 I32Const 0
+	0x13E8EFB End
+	0x13E8EFC LocalSet 7
+	0x13E8EFE I32Wrap_I64
+	0x13E8EFF I32Const 127
+	0x13E8F02 I32And
+	0x13E8F03 LocalTee 4
+	0x13E8F05 If -64
+	0x13E8F07 LocalGet 3
+	0x13E8F09 LocalGet 4
+	0x13E8F0B I32Add
+	0x13E8F0C I32Const 128
+	0x13E8F0F I32Ge_S
+	0x13E8F10 If -64
+	0x13E8F12 LocalGet 1
+	0x13E8F14 LocalGet 2
+	0x13E8F16 LocalGet 0
+	0x13E8F18 I32Load 2, 24
+	0x13E8F1B LocalGet 4
+	0x13E8F1D I32Const 128
+	0x13E8F20 LocalGet 4
+	0x13E8F22 I32Sub
+	0x13E8F23 I32Const 0
+	0x13E8F25 Call 57966
+	0x13E8F29 Drop
+	0x13E8F2A I32Const 128
+	0x13E8F2D LocalGet 4
+	0x13E8F2F I32Sub
+	0x13E8F30 LocalGet 2
+	0x13E8F32 I32Add
+	0x13E8F33 LocalSet 2
+	0x13E8F35 LocalGet 3
+	0x13E8F37 I32Const 128
+	0x13E8F3A LocalGet 4
+	0x13E8F3C I32Sub
+	0x13E8F3D I32Sub
+	0x13E8F3E LocalSet 3
+	0x13E8F40 I32Const 4430936
+	0x13E8F45 I32Load 2, 0
+	0x13E8F48 LocalTee 4
+	0x13E8F4A I32Load16_S 1, 186
+	0x13E8F4E I32Const 512
+	0x13E8F51 I32And
+	0x13E8F52 If -64
+	0x13E8F54 LocalGet 4
+	0x13E8F56 I32Load 2, 116
+	0x13E8F59 I32Eqz
+	0x13E8F5A If -64
+	0x13E8F5C LocalGet 4
+	0x13E8F5E Call 72345
+	0x13E8F62 End
+	0x13E8F63 End
+	0x13E8F64 LocalGet 7
+	0x13E8F66 LocalGet 5
+	0x13E8F68 LocalGet 6
+	0x13E8F6A I32Const 0
+	0x13E8F6C Call 66101
+	0x13E8F70 I32Const 0
+	0x13E8F72 LocalSet 4
+	0x13E8F74 End
+	0x13E8F75 Else
+	0x13E8F76 I32Const 0
+	0x13E8F78 LocalSet 4
+	0x13E8F7A End
+	0x13E8F7B Loop -64
+	0x13E8F7D LocalGet 3
+	0x13E8F7F I32Const 128
+	0x13E8F82 I32Ge_S
+	0x13E8F83 If -64
+	0x13E8F85 LocalGet 1
+	0x13E8F87 LocalGet 2
+	0x13E8F89 LocalGet 0
+	0x13E8F8B I32Load 2, 24
+	0x13E8F8E I32Const 0
+	0x13E8F90 I32Const 128
+	0x13E8F93 I32Const 0
+	0x13E8F95 Call 57966
+	0x13E8F99 Drop
+	0x13E8F9A LocalGet 2
+	0x13E8F9C I32Const 128
+	0x13E8F9F I32Add
+	0x13E8FA0 LocalSet 2
+	0x13E8FA2 LocalGet 3
+	0x13E8FA4 I32Const 128
+	0x13E8FA7 I32Sub
+	0x13E8FA8 LocalSet 3
+	0x13E8FAA I32Const 4430936
+	0x13E8FAF I32Load 2, 0
+	0x13E8FB2 LocalTee 8
+	0x13E8FB4 I32Load16_S 1, 186
+	0x13E8FB8 I32Const 512
+	0x13E8FBB I32And
+	0x13E8FBC If -64
+	0x13E8FBE LocalGet 8
+	0x13E8FC0 I32Load 2, 116
+	0x13E8FC3 I32Eqz
+	0x13E8FC4 If -64
+	0x13E8FC6 LocalGet 8
+	0x13E8FC8 Call 72345
+	0x13E8FCC End
+	0x13E8FCD End
+	0x13E8FCE LocalGet 7
+	0x13E8FD0 LocalGet 5
+	0x13E8FD2 LocalGet 6
+	0x13E8FD4 I32Const 0
+	0x13E8FD6 Call 66101
+	0x13E8FDA Br 1
+	0x13E8FDC End
+	0x13E8FDD End
+	0x13E8FDE LocalGet 3
+	0x13E8FE0 I32Const 0
+	0x13E8FE2 I32Gt_S
+	0x13E8FE3 If -64
+	0x13E8FE5 LocalGet 1
+	0x13E8FE7 LocalGet 2
+	0x13E8FE9 LocalGet 0
+	0x13E8FEB I32Load 2, 24
+	0x13E8FEE LocalGet 4
+	0x13E8FF0 LocalGet 3
+	0x13E8FF2 I32Const 0
+	0x13E8FF4 Call 57966
+	0x13E8FF8 Drop
+	0x13E8FF9 End
+	0x13E8FFA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b34
+	5 Nop
+	6 Move v5 @ S0_v56, [2DC61C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v56
+	8 Nop
+	9 Move v7 @ S1_v54, 1
+	10 Move [45CCA1], v7 @ S1_v54
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Add v19 @ S2_v2 (System.UInt64), v122 @ L3_v1 (System.Int32), this._count (System.UInt64)
+	19 Move this._count (System.UInt64), v19 @ S2_v2 (System.UInt64)
+	20 Nop
+	21 Move v21 @ S1_v4 (System.UInt64[]), this._stateSHA512 (System.UInt64[])
+	22 Nop
+	23 CheckEqual v23 @ TEMP_v2 (System.Boolean), this._stateSHA512 (System.UInt64[]), 0
+	24 ConditionalJump @b8, v23 @ TEMP_v2 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 CheckEqual v26 @ TEMP_v22 (System.Boolean), v21.Length, 0
+	28 ConditionalJump @b7, v26 @ TEMP_v22 (System.Boolean)
+	29 Nop
+	30 Nop
+	31 Add v34 @ S1_v5 (System.UInt64*), this._stateSHA512 (System.UInt64[]), 16
+	32 Jump @b35
+	33 Nop
+	34 Nop
+	35 Jump @b42
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move v39 @ S1_v7 (System.Byte[]), this._buffer (System.Byte[])
+	41 Nop
+	42 CheckEqual v41 @ TEMP_v4 (System.Boolean), this._buffer (System.Byte[]), 0
+	43 ConditionalJump @b12, v41 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 CheckEqual v44 @ TEMP_v21 (System.Boolean), v39.Length, 0
+	47 ConditionalJump @b11, v44 @ TEMP_v21 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Add v52 @ S1_v8 (System.Byte*), this._buffer (System.Byte[]), 16
+	51 Jump @b36
+	52 Nop
+	53 Nop
+	54 Jump @b43
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Move v57 @ S1_v10 (System.UInt64[]), this._W (System.UInt64[])
+	60 Nop
+	61 CheckEqual v59 @ TEMP_v6 (System.Boolean), this._W (System.UInt64[]), 0
+	62 ConditionalJump @b16, v59 @ TEMP_v6 (System.Boolean)
+	63 Nop
+	64 Nop
+	65 CheckEqual v62 @ TEMP_v20 (System.Boolean), v57.Length, 0
+	66 ConditionalJump @b15, v62 @ TEMP_v20 (System.Boolean)
+	67 Nop
+	68 Nop
+	69 Add v70 @ S1_v11 (System.UInt64*), this._W (System.UInt64[]), 16
+	70 Jump @b37
+	71 Nop
+	72 Nop
+	73 Jump @b44
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 And v75 @ S0_v7 (System.Int64), this._count (System.UInt64), 127
+	79 Nop
+	80 CheckEqual v77 @ TEMP_v8 (System.Boolean), v75 @ S0_v7 (System.Int64), 0
+	81 ConditionalJump @b24, v77 @ TEMP_v8 (System.Boolean)
+	82 Nop
+	83 Nop
+	84 Add v80 @ S0_v34, v122 @ L3_v1 (System.Int32), v75 @ S0_v7 (System.Int64)
+	85 Nop
+	86 CheckGreaterOrEqual v82 @ S0_v35 (System.Boolean), v80 @ S0_v34, 128
+	87 Not v83 @ TEMP_v15 (System.Boolean), v82 @ S0_v35 (System.Boolean)
+	88 ConditionalJump @b38, v83 @ TEMP_v15 (System.Boolean)
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Subtract v95 @ S4_v7 (System.Object), 128, v75 @ S0_v7 (System.Int64)
+	97 Nop
+	98 Call ConsoleCancelEventHandler.BeginInvoke, v97 @ S0_v38 (System.IAsyncResult), rgb @ L1 (System.Byte[]), v124 @ L2_v1 (System.Int32), this._buffer (System.Byte[]), v75 @ S0_v7 (System.Int64), v95 @ S4_v7 (System.Object)
+	99 Nop
+	100 Nop
+	101 Subtract v146 @ S0_v40, 128, v75 @ S0_v7 (System.Int64)
+	102 Nop
+	103 Add v148 @ S0_v41 (System.Int32), v146 @ S0_v40, v124 @ L2_v1 (System.Int32)
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Subtract v152 @ S1_v30, 128, v75 @ S0_v7 (System.Int64)
+	109 Subtract v153 @ S0_v43 (System.Int32), v122 @ L3_v1 (System.Int32), v152 @ S1_v30
+	110 Nop
+	111 Nop
+	112 Move v155 @ S0_v45 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	113 Nop
+	114 Nop
+	115 Nop
+	116 And v159 @ S0_v47, [v155 @ S0_v45 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+BA], 512
+	117 CheckEqual v160 @ TEMP_v17 (System.Boolean), v159 @ S0_v47, 0
+	118 ConditionalJump @b39, v160 @ TEMP_v17 (System.Boolean)
+	119 Move v171 @ S0_v51 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	120 Nop
+	121 CheckEqual v173 @ S0_v53 (System.Boolean), [v171 @ S0_v51 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+74], 0
+	122 Not v174 @ TEMP_v19 (System.Boolean), v173 @ S0_v53 (System.Boolean)
+	123 ConditionalJump @b39, v174 @ TEMP_v19 (System.Boolean)
+	124 Nop
+	125 CallVoid 11A99, typeof(System.Security.Cryptography.SHA384Managed)
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 CallVoid SHA512Managed.SHATransform, v70 @ S1_v11 (System.UInt64*), v34 @ S1_v5 (System.UInt64*), v52 @ S1_v8 (System.Byte*)
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Jump @b41
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Nop
+	141 Nop
+	142 Nop
+	143 CheckGreaterOrEqual v142 @ S0_v10 (System.Boolean), v122 @ L3_v1 (System.Int32), 128
+	144 Not v143 @ TEMP_v10 (System.Boolean), v142 @ S0_v10 (System.Boolean)
+	145 ConditionalJump @b31, v143 @ TEMP_v10 (System.Boolean)
+	146 Nop
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Nop
+	152 Nop
+	153 Call ConsoleCancelEventHandler.BeginInvoke, v166 @ S0_v17 (System.IAsyncResult), rgb @ L1 (System.Byte[]), v124 @ L2_v1 (System.Int32), this._buffer (System.Byte[]), 0, 128
+	154 Nop
+	155 Nop
+	156 Add v180 @ S0_v19 (System.Int32), v124 @ L2_v1 (System.Int32), 128
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Subtract v183 @ S0_v21 (System.Int32), v122 @ L3_v1 (System.Int32), 128
+	161 Nop
+	162 Nop
+	163 Move v185 @ S0_v23 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	164 Nop
+	165 Nop
+	166 Nop
+	167 And v188 @ S0_v25, [v185 @ S0_v23 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+BA], 512
+	168 CheckEqual v189 @ TEMP_v12 (System.Boolean), v188 @ S0_v25, 0
+	169 ConditionalJump @b40, v189 @ TEMP_v12 (System.Boolean)
+	170 Move v204 @ S0_v28 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	171 Nop
+	172 CheckEqual v206 @ S0_v30 (System.Boolean), [v204 @ S0_v28 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+74], 0
+	173 Not v207 @ TEMP_v14 (System.Boolean), v206 @ S0_v30 (System.Boolean)
+	174 ConditionalJump @b40, v207 @ TEMP_v14 (System.Boolean)
+	175 Nop
+	176 CallVoid 11A99, typeof(System.Security.Cryptography.SHA384Managed)
+	177 Nop
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Nop
+	183 CallVoid SHA512Managed.SHATransform, v70 @ S1_v11 (System.UInt64*), v34 @ S1_v5 (System.UInt64*), v52 @ S1_v8 (System.Byte*)
+	184 Jump @b41
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 CheckGreater v169 @ S0_v12 (System.Boolean), v122 @ L3_v1 (System.Int32), 0
+	190 Not v170 @ TEMP_v11 (System.Boolean), v169 @ S0_v12 (System.Boolean)
+	191 ConditionalJump @b33, v170 @ TEMP_v11 (System.Boolean)
+	192 Nop
+	193 Nop
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Call ConsoleCancelEventHandler.BeginInvoke, v197 @ S0_v15 (System.IAsyncResult), rgb @ L1 (System.Byte[]), v124 @ L2_v1 (System.Int32), this._buffer (System.Byte[]), v121 @ L4_v5 (System.AsyncCallback), v122 @ L3_v1 (System.Int32)
+	200 Nop
+	201 Nop
+	202 Return
+
+Method: System.Byte[] HashFinal()
+
+Disassembly:
+	0x13E9B4B I32Const 4574378
+	0x13E9B50 I32Load8_S 0, 0
+	0x13E9B53 I32Eqz
+	0x13E9B54 If -64
+	0x13E9B56 I32Const 2999904
+	0x13E9B5B I32Load 2, 0
+	0x13E9B5E Call 73003
+	0x13E9B62 I32Const 4574378
+	0x13E9B67 I32Const 1
+	0x13E9B69 I32Store8 0, 0
+	0x13E9B6C End
+	0x13E9B6D LocalGet 0
+	0x13E9B6F I32Const 0
+	0x13E9B71 Call 58521
+	0x13E9B75 I32Const 4428136
+	0x13E9B7A I32Load 2, 0
+	0x13E9B7D Call 29968
+	0x13E9B81 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v9, [2DC660]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45CCAA], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call CryptoConfig.MapNameToOID, v14 @ S0_v6 (System.String), this @ L0 (System.Security.Cryptography.SHA512Managed)
+	15 Nop
+	16 Nop
+	17 Call 7510, returnVal1 @ S0_v7 (System.Byte[]), v14 @ S0_v6 (System.String), typeof(System.Security.Cryptography.SHA512)
+	18 Nop
+	19 Return returnVal1 @ S0_v7 (System.Byte[])
+
+Method: System.Void InitializeState()
+
+Disassembly:
+	0x13E9B84 LocalGet 0
+	0x13E9B86 I32Const 0
+	0x13E9B88 Call 65916
+	0x13E9B8C LocalGet 0
+	0x13E9B8E I32Load 2, 24
+	0x13E9B91 I32Const 0
+	0x13E9B93 LocalGet 0
+	0x13E9B95 I32Load 2, 24
+	0x13E9B98 I32Load 2, 12
+	0x13E9B9B I32Const 0
+	0x13E9B9D Call 57762
+	0x13E9BA1 LocalGet 0
+	0x13E9BA3 I32Load 2, 44
+	0x13E9BA6 I32Const 0
+	0x13E9BA8 LocalGet 0
+	0x13E9BAA I32Load 2, 44
+	0x13E9BAD I32Load 2, 12
+	0x13E9BB0 I32Const 0
+	0x13E9BB2 Call 57762
+	0x13E9BB6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid SHA512Managed.SHA512Expand, this @ L0 (System.Security.Cryptography.SHA512Managed)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Move v7 @ S2_v2 (System.Byte[]), this._buffer (System.Byte[])
+	8 Nop
+	9 Nop
+	10 CallVoid Array.ClearInternal, this._buffer (System.Byte[]), 0, v7.Length
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v14 @ S2_v5 (System.UInt64[]), this._W (System.UInt64[])
+	16 Nop
+	17 Nop
+	18 CallVoid Array.ClearInternal, this._W (System.UInt64[]), 0, v14.Length
+	19 Nop
+	20 Return
+
+Method: System.Void _HashData(System.Byte[] partIn, System.Int32 ibStart, System.Int32 cbSize)
+
+Disassembly:
+	0x13E9BB9 LocalGet 0
+	0x13E9BBB LocalGet 1
+	0x13E9BBD LocalGet 2
+	0x13E9BBF LocalGet 3
+	0x13E9BC1 I32Const 0
+	0x13E9BC3 Call 66118
+	0x13E9BC7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 CallVoid DESTransform.Permutation, this @ L0 (System.Security.Cryptography.SHA512Managed), partIn @ L1 (System.Byte[]), ibStart @ L2 (System.Int32), cbSize @ L3 (System.Int32)
+	6 Nop
+	7 Return
+
+Method: System.Byte[] _EndHash()
+
+Disassembly:
+	0x13EA4ED LocalGet 0
+	0x13EA4EF I32Const 0
+	0x13EA4F1 Call 66126
+	0x13EA4F5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call SignatureDescription.get_KeyAlgorithm, returnVal1 @ S0_v2 (System.Byte[]), this @ L0 (System.Security.Cryptography.SHA512Managed)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.Byte[])
+
+Method: System.Void SHATransform(System.UInt64* expandedBuffer, System.UInt64* state, System.Byte* block)
+
+Disassembly:
+	0x13E9000 I32Const 4574370
+	0x13E9005 I32Load8_S 0, 0
+	0x13E9008 I32Eqz
+	0x13E9009 If -64
+	0x13E900B I32Const 2999820
+	0x13E9010 I32Load 2, 0
+	0x13E9013 Call 73003
+	0x13E9017 I32Const 4574370
+	0x13E901C I32Const 1
+	0x13E901E I32Store8 0, 0
+	0x13E9021 End
+	0x13E9022 LocalGet 1
+	0x13E9024 I64Load 3, 0
+	0x13E9027 LocalSet 4
+	0x13E9029 LocalGet 1
+	0x13E902B I32Const 8
+	0x13E902D I32Add
+	0x13E902E I64Load 3, 0
+	0x13E9031 LocalSet 5
+	0x13E9033 LocalGet 1
+	0x13E9035 I32Const 16
+	0x13E9037 I32Add
+	0x13E9038 I64Load 3, 0
+	0x13E903B LocalSet 6
+	0x13E903D LocalGet 1
+	0x13E903F I32Const 24
+	0x13E9041 I32Add
+	0x13E9042 I64Load 3, 0
+	0x13E9045 LocalSet 7
+	0x13E9047 LocalGet 1
+	0x13E9049 I32Const 32
+	0x13E904B I32Add
+	0x13E904C I64Load 3, 0
+	0x13E904F LocalSet 11
+	0x13E9051 LocalGet 1
+	0x13E9053 I32Const 40
+	0x13E9055 I32Add
+	0x13E9056 I64Load 3, 0
+	0x13E9059 LocalSet 8
+	0x13E905B LocalGet 1
+	0x13E905D I32Const 48
+	0x13E905F I32Add
+	0x13E9060 I64Load 3, 0
+	0x13E9063 LocalSet 9
+	0x13E9065 LocalGet 1
+	0x13E9067 I32Const 56
+	0x13E9069 I32Add
+	0x13E906A I64Load 3, 0
+	0x13E906D LocalSet 10
+	0x13E906F I32Const 4430956
+	0x13E9074 I32Load 2, 0
+	0x13E9077 LocalTee 3
+	0x13E9079 I32Load16_S 1, 186
+	0x13E907D I32Const 512
+	0x13E9080 I32And
+	0x13E9081 If -64
+	0x13E9083 LocalGet 3
+	0x13E9085 I32Load 2, 116
+	0x13E9088 I32Eqz
+	0x13E9089 If -64
+	0x13E908B LocalGet 3
+	0x13E908D Call 72345
+	0x13E9091 End
+	0x13E9092 End
+	0x13E9093 LocalGet 0
+	0x13E9095 I32Const 16
+	0x13E9097 LocalGet 2
+	0x13E9099 I32Const 0
+	0x13E909B Call 66102
+	0x13E909F I32Const 4430936
+	0x13E90A4 I32Load 2, 0
+	0x13E90A7 LocalTee 2
+	0x13E90A9 I32Load16_S 1, 186
+	0x13E90AD I32Const 512
+	0x13E90B0 I32And
+	0x13E90B1 If -64
+	0x13E90B3 LocalGet 2
+	0x13E90B5 I32Load 2, 116
+	0x13E90B8 I32Eqz
+	0x13E90B9 If -64
+	0x13E90BB LocalGet 2
+	0x13E90BD Call 72345
+	0x13E90C1 End
+	0x13E90C2 End
+	0x13E90C3 LocalGet 0
+	0x13E90C5 I32Const 0
+	0x13E90C7 Call 66103
+	0x13E90CB I32Const 0
+	0x13E90CD LocalSet 2
+	0x13E90CF Loop -64
+	0x13E90D1 LocalGet 2
+	0x13E90D3 I32Const 79
+	0x13E90D6 I32Le_S
+	0x13E90D7 If -64
+	0x13E90D9 I32Const 4430936
+	0x13E90DE I32Load 2, 0
+	0x13E90E1 LocalTee 3
+	0x13E90E3 I32Load16_S 1, 186
+	0x13E90E7 I32Const 512
+	0x13E90EA I32And
+	0x13E90EB If -64
+	0x13E90ED LocalGet 3
+	0x13E90EF I32Load 2, 116
+	0x13E90F2 I32Eqz
+	0x13E90F3 If -64
+	0x13E90F5 LocalGet 3
+	0x13E90F7 Call 72345
+	0x13E90FB End
+	0x13E90FC End
+	0x13E90FD LocalGet 11
+	0x13E90FF I32Const 0
+	0x13E9101 Call 66104
+	0x13E9105 LocalSet 12
+	0x13E9107 LocalGet 2
+	0x13E9109 I32Const 3
+	0x13E910B I32Shl
+	0x13E910C LocalGet 0
+	0x13E910E I32Add
+	0x13E910F I64Load 3, 0
+	0x13E9112 I32Const 4430936
+	0x13E9117 I32Load 2, 0
+	0x13E911A I32Load 2, 92
+	0x13E911D I32Load 2, 0
+	0x13E9120 I32Const 16
+	0x13E9122 I32Add
+	0x13E9123 LocalGet 2
+	0x13E9125 I32Const 3
+	0x13E9127 I32Shl
+	0x13E9128 I32Add
+	0x13E9129 I64Load 3, 0
+	0x13E912C LocalGet 11
+	0x13E912E I64Const -1
+	0x13E9130 I64Xor
+	0x13E9131 LocalGet 9
+	0x13E9133 I64And
+	0x13E9134 LocalGet 8
+	0x13E9136 LocalGet 11
+	0x13E9138 I64And
+	0x13E9139 I64Xor
+	0x13E913A LocalGet 12
+	0x13E913C LocalGet 10
+	0x13E913E I64Add
+	0x13E913F I64Add
+	0x13E9140 I64Add
+	0x13E9141 I64Add
+	0x13E9142 LocalTee 10
+	0x13E9144 LocalGet 7
+	0x13E9146 I64Add
+	0x13E9147 LocalSet 7
+	0x13E9149 LocalGet 6
+	0x13E914B LocalGet 5
+	0x13E914D I64Xor
+	0x13E914E LocalGet 4
+	0x13E9150 I64And
+	0x13E9151 LocalGet 6
+	0x13E9153 LocalGet 5
+	0x13E9155 I64And
+	0x13E9156 I64Xor
+	0x13E9157 LocalGet 4
+	0x13E9159 I32Const 0
+	0x13E915B Call 66106
+	0x13E915F LocalGet 10
+	0x13E9161 I64Add
+	0x13E9162 I64Add
+	0x13E9163 LocalSet 10
+	0x13E9165 LocalGet 7
+	0x13E9167 I32Const 0
+	0x13E9169 Call 66104
+	0x13E916D LocalSet 12
+	0x13E916F I32Const 4430936
+	0x13E9174 I32Load 2, 0
+	0x13E9177 I32Load 2, 92
+	0x13E917A I32Load 2, 0
+	0x13E917D I32Const 16
+	0x13E917F I32Add
+	0x13E9180 LocalGet 2
+	0x13E9182 I32Const 1
+	0x13E9184 I32Add
+	0x13E9185 LocalTee 2
+	0x13E9187 I32Const 3
+	0x13E9189 I32Shl
+	0x13E918A I32Add
+	0x13E918B I64Load 3, 0
+	0x13E918E LocalSet 13
+	0x13E9190 LocalGet 2
+	0x13E9192 I32Const 3
+	0x13E9194 I32Shl
+	0x13E9195 LocalGet 0
+	0x13E9197 I32Add
+	0x13E9198 I64Load 3, 0
+	0x13E919B LocalGet 13
+	0x13E919D LocalGet 7
+	0x13E919F I64Const -1
+	0x13E91A1 I64Xor
+	0x13E91A2 LocalGet 8
+	0x13E91A4 I64And
+	0x13E91A5 LocalGet 11
+	0x13E91A7 LocalGet 7
+	0x13E91A9 I64And
+	0x13E91AA I64Xor
+	0x13E91AB LocalGet 12
+	0x13E91AD LocalGet 9
+	0x13E91AF I64Add
+	0x13E91B0 I64Add
+	0x13E91B1 I64Add
+	0x13E91B2 I64Add
+	0x13E91B3 LocalTee 9
+	0x13E91B5 LocalGet 6
+	0x13E91B7 I64Add
+	0x13E91B8 LocalSet 6
+	0x13E91BA LocalGet 5
+	0x13E91BC LocalGet 4
+	0x13E91BE I64Xor
+	0x13E91BF LocalGet 10
+	0x13E91C1 I64And
+	0x13E91C2 LocalGet 5
+	0x13E91C4 LocalGet 4
+	0x13E91C6 I64And
+	0x13E91C7 I64Xor
+	0x13E91C8 LocalGet 10
+	0x13E91CA I32Const 0
+	0x13E91CC Call 66106
+	0x13E91D0 LocalGet 9
+	0x13E91D2 I64Add
+	0x13E91D3 I64Add
+	0x13E91D4 LocalSet 9
+	0x13E91D6 LocalGet 6
+	0x13E91D8 I32Const 0
+	0x13E91DA Call 66104
+	0x13E91DE LocalSet 12
+	0x13E91E0 I32Const 4430936
+	0x13E91E5 I32Load 2, 0
+	0x13E91E8 I32Load 2, 92
+	0x13E91EB I32Load 2, 0
+	0x13E91EE I32Const 16
+	0x13E91F0 I32Add
+	0x13E91F1 LocalGet 2
+	0x13E91F3 I32Const 1
+	0x13E91F5 I32Add
+	0x13E91F6 LocalTee 2
+	0x13E91F8 I32Const 3
+	0x13E91FA I32Shl
+	0x13E91FB I32Add
+	0x13E91FC I64Load 3, 0
+	0x13E91FF LocalSet 13
+	0x13E9201 LocalGet 2
+	0x13E9203 I32Const 3
+	0x13E9205 I32Shl
+	0x13E9206 LocalGet 0
+	0x13E9208 I32Add
+	0x13E9209 I64Load 3, 0
+	0x13E920C LocalGet 13
+	0x13E920E LocalGet 6
+	0x13E9210 I64Const -1
+	0x13E9212 I64Xor
+	0x13E9213 LocalGet 11
+	0x13E9215 I64And
+	0x13E9216 LocalGet 7
+	0x13E9218 LocalGet 6
+	0x13E921A I64And
+	0x13E921B I64Xor
+	0x13E921C LocalGet 12
+	0x13E921E LocalGet 8
+	0x13E9220 I64Add
+	0x13E9221 I64Add
+	0x13E9222 I64Add
+	0x13E9223 I64Add
+	0x13E9224 LocalTee 8
+	0x13E9226 LocalGet 5
+	0x13E9228 I64Add
+	0x13E9229 LocalSet 5
+	0x13E922B LocalGet 4
+	0x13E922D LocalGet 10
+	0x13E922F I64Xor
+	0x13E9230 LocalGet 9
+	0x13E9232 I64And
+	0x13E9233 LocalGet 4
+	0x13E9235 LocalGet 10
+	0x13E9237 I64And
+	0x13E9238 I64Xor
+	0x13E9239 LocalGet 9
+	0x13E923B I32Const 0
+	0x13E923D Call 66106
+	0x13E9241 LocalGet 8
+	0x13E9243 I64Add
+	0x13E9244 I64Add
+	0x13E9245 LocalSet 8
+	0x13E9247 LocalGet 5
+	0x13E9249 I32Const 0
+	0x13E924B Call 66104
+	0x13E924F LocalSet 12
+	0x13E9251 I32Const 4430936
+	0x13E9256 I32Load 2, 0
+	0x13E9259 I32Load 2, 92
+	0x13E925C I32Load 2, 0
+	0x13E925F I32Const 16
+	0x13E9261 I32Add
+	0x13E9262 LocalGet 2
+	0x13E9264 I32Const 1
+	0x13E9266 I32Add
+	0x13E9267 LocalTee 2
+	0x13E9269 I32Const 3
+	0x13E926B I32Shl
+	0x13E926C I32Add
+	0x13E926D I64Load 3, 0
+	0x13E9270 LocalSet 13
+	0x13E9272 LocalGet 4
+	0x13E9274 LocalSet 14
+	0x13E9276 LocalGet 2
+	0x13E9278 I32Const 3
+	0x13E927A I32Shl
+	0x13E927B LocalGet 0
+	0x13E927D I32Add
+	0x13E927E I64Load 3, 0
+	0x13E9281 LocalGet 13
+	0x13E9283 LocalGet 5
+	0x13E9285 I64Const -1
+	0x13E9287 I64Xor
+	0x13E9288 LocalGet 7
+	0x13E928A I64And
+	0x13E928B LocalGet 6
+	0x13E928D LocalGet 5
+	0x13E928F I64And
+	0x13E9290 I64Xor
+	0x13E9291 LocalGet 12
+	0x13E9293 LocalGet 11
+	0x13E9295 I64Add
+	0x13E9296 I64Add
+	0x13E9297 I64Add
+	0x13E9298 I64Add
+	0x13E9299 LocalTee 4
+	0x13E929B LocalGet 14
+	0x13E929D I64Add
+	0x13E929E LocalSet 11
+	0x13E92A0 LocalGet 10
+	0x13E92A2 LocalGet 9
+	0x13E92A4 I64Xor
+	0x13E92A5 LocalGet 8
+	0x13E92A7 I64And
+	0x13E92A8 LocalGet 10
+	0x13E92AA LocalGet 9
+	0x13E92AC I64And
+	0x13E92AD I64Xor
+	0x13E92AE LocalGet 8
+	0x13E92B0 I32Const 0
+	0x13E92B2 Call 66106
+	0x13E92B6 LocalGet 4
+	0x13E92B8 I64Add
+	0x13E92B9 I64Add
+	0x13E92BA LocalSet 4
+	0x13E92BC LocalGet 11
+	0x13E92BE I32Const 0
+	0x13E92C0 Call 66104
+	0x13E92C4 LocalSet 12
+	0x13E92C6 I32Const 4430936
+	0x13E92CB I32Load 2, 0
+	0x13E92CE I32Load 2, 92
+	0x13E92D1 I32Load 2, 0
+	0x13E92D4 I32Const 16
+	0x13E92D6 I32Add
+	0x13E92D7 LocalGet 2
+	0x13E92D9 I32Const 1
+	0x13E92DB I32Add
+	0x13E92DC LocalTee 2
+	0x13E92DE I32Const 3
+	0x13E92E0 I32Shl
+	0x13E92E1 I32Add
+	0x13E92E2 I64Load 3, 0
+	0x13E92E5 LocalSet 13
+	0x13E92E7 LocalGet 2
+	0x13E92E9 I32Const 3
+	0x13E92EB I32Shl
+	0x13E92EC LocalGet 0
+	0x13E92EE I32Add
+	0x13E92EF I64Load 3, 0
+	0x13E92F2 LocalGet 13
+	0x13E92F4 LocalGet 11
+	0x13E92F6 I64Const -1
+	0x13E92F8 I64Xor
+	0x13E92F9 LocalGet 6
+	0x13E92FB I64And
+	0x13E92FC LocalGet 5
+	0x13E92FE LocalGet 11
+	0x13E9300 I64And
+	0x13E9301 I64Xor
+	0x13E9302 LocalGet 12
+	0x13E9304 LocalGet 7
+	0x13E9306 I64Add
+	0x13E9307 I64Add
+	0x13E9308 I64Add
+	0x13E9309 I64Add
+	0x13E930A LocalTee 7
+	0x13E930C LocalGet 10
+	0x13E930E I64Add
+	0x13E930F LocalSet 10
+	0x13E9311 LocalGet 9
+	0x13E9313 LocalGet 8
+	0x13E9315 I64Xor
+	0x13E9316 LocalGet 4
+	0x13E9318 I64And
+	0x13E9319 LocalGet 9
+	0x13E931B LocalGet 8
+	0x13E931D I64And
+	0x13E931E I64Xor
+	0x13E931F LocalGet 4
+	0x13E9321 I32Const 0
+	0x13E9323 Call 66106
+	0x13E9327 LocalGet 7
+	0x13E9329 I64Add
+	0x13E932A I64Add
+	0x13E932B LocalSet 7
+	0x13E932D LocalGet 10
+	0x13E932F I32Const 0
+	0x13E9331 Call 66104
+	0x13E9335 LocalSet 12
+	0x13E9337 I32Const 4430936
+	0x13E933C I32Load 2, 0
+	0x13E933F I32Load 2, 92
+	0x13E9342 I32Load 2, 0
+	0x13E9345 I32Const 16
+	0x13E9347 I32Add
+	0x13E9348 LocalGet 2
+	0x13E934A I32Const 1
+	0x13E934C I32Add
+	0x13E934D LocalTee 2
+	0x13E934F I32Const 3
+	0x13E9351 I32Shl
+	0x13E9352 I32Add
+	0x13E9353 I64Load 3, 0
+	0x13E9356 LocalSet 13
+	0x13E9358 LocalGet 2
+	0x13E935A I32Const 3
+	0x13E935C I32Shl
+	0x13E935D LocalGet 0
+	0x13E935F I32Add
+	0x13E9360 I64Load 3, 0
+	0x13E9363 LocalGet 13
+	0x13E9365 LocalGet 10
+	0x13E9367 I64Const -1
+	0x13E9369 I64Xor
+	0x13E936A LocalGet 5
+	0x13E936C I64And
+	0x13E936D LocalGet 11
+	0x13E936F LocalGet 10
+	0x13E9371 I64And
+	0x13E9372 I64Xor
+	0x13E9373 LocalGet 12
+	0x13E9375 LocalGet 6
+	0x13E9377 I64Add
+	0x13E9378 I64Add
+	0x13E9379 I64Add
+	0x13E937A I64Add
+	0x13E937B LocalTee 6
+	0x13E937D LocalGet 9
+	0x13E937F I64Add
+	0x13E9380 LocalSet 9
+	0x13E9382 LocalGet 8
+	0x13E9384 LocalGet 4
+	0x13E9386 I64Xor
+	0x13E9387 LocalGet 7
+	0x13E9389 I64And
+	0x13E938A LocalGet 8
+	0x13E938C LocalGet 4
+	0x13E938E I64And
+	0x13E938F I64Xor
+	0x13E9390 LocalGet 7
+	0x13E9392 I32Const 0
+	0x13E9394 Call 66106
+	0x13E9398 LocalGet 6
+	0x13E939A I64Add
+	0x13E939B I64Add
+	0x13E939C LocalSet 6
+	0x13E939E LocalGet 9
+	0x13E93A0 I32Const 0
+	0x13E93A2 Call 66104
+	0x13E93A6 LocalSet 12
+	0x13E93A8 I32Const 4430936
+	0x13E93AD I32Load 2, 0
+	0x13E93B0 I32Load 2, 92
+	0x13E93B3 I32Load 2, 0
+	0x13E93B6 I32Const 16
+	0x13E93B8 I32Add
+	0x13E93B9 LocalGet 2
+	0x13E93BB I32Const 1
+	0x13E93BD I32Add
+	0x13E93BE LocalTee 2
+	0x13E93C0 I32Const 3
+	0x13E93C2 I32Shl
+	0x13E93C3 I32Add
+	0x13E93C4 I64Load 3, 0
+	0x13E93C7 LocalSet 13
+	0x13E93C9 LocalGet 2
+	0x13E93CB I32Const 3
+	0x13E93CD I32Shl
+	0x13E93CE LocalGet 0
+	0x13E93D0 I32Add
+	0x13E93D1 I64Load 3, 0
+	0x13E93D4 LocalGet 13
+	0x13E93D6 LocalGet 9
+	0x13E93D8 I64Const -1
+	0x13E93DA I64Xor
+	0x13E93DB LocalGet 11
+	0x13E93DD I64And
+	0x13E93DE LocalGet 10
+	0x13E93E0 LocalGet 9
+	0x13E93E2 I64And
+	0x13E93E3 I64Xor
+	0x13E93E4 LocalGet 12
+	0x13E93E6 LocalGet 5
+	0x13E93E8 I64Add
+	0x13E93E9 I64Add
+	0x13E93EA I64Add
+	0x13E93EB I64Add
+	0x13E93EC LocalTee 5
+	0x13E93EE LocalGet 8
+	0x13E93F0 I64Add
+	0x13E93F1 LocalSet 8
+	0x13E93F3 LocalGet 4
+	0x13E93F5 LocalGet 7
+	0x13E93F7 I64Xor
+	0x13E93F8 LocalGet 6
+	0x13E93FA I64And
+	0x13E93FB LocalGet 4
+	0x13E93FD LocalGet 7
+	0x13E93FF I64And
+	0x13E9400 I64Xor
+	0x13E9401 LocalGet 6
+	0x13E9403 I32Const 0
+	0x13E9405 Call 66106
+	0x13E9409 LocalGet 5
+	0x13E940B I64Add
+	0x13E940C I64Add
+	0x13E940D LocalSet 5
+	0x13E940F LocalGet 8
+	0x13E9411 I32Const 0
+	0x13E9413 Call 66104
+	0x13E9417 LocalSet 12
+	0x13E9419 I32Const 4430936
+	0x13E941E I32Load 2, 0
+	0x13E9421 I32Load 2, 92
+	0x13E9424 I32Load 2, 0
+	0x13E9427 I32Const 16
+	0x13E9429 I32Add
+	0x13E942A LocalGet 2
+	0x13E942C I32Const 1
+	0x13E942E I32Add
+	0x13E942F LocalTee 2
+	0x13E9431 I32Const 3
+	0x13E9433 I32Shl
+	0x13E9434 I32Add
+	0x13E9435 I64Load 3, 0
+	0x13E9438 LocalSet 13
+	0x13E943A LocalGet 4
+	0x13E943C LocalSet 14
+	0x13E943E LocalGet 2
+	0x13E9440 I32Const 3
+	0x13E9442 I32Shl
+	0x13E9443 LocalGet 0
+	0x13E9445 I32Add
+	0x13E9446 I64Load 3, 0
+	0x13E9449 LocalGet 13
+	0x13E944B LocalGet 8
+	0x13E944D I64Const -1
+	0x13E944F I64Xor
+	0x13E9450 LocalGet 10
+	0x13E9452 I64And
+	0x13E9453 LocalGet 9
+	0x13E9455 LocalGet 8
+	0x13E9457 I64And
+	0x13E9458 I64Xor
+	0x13E9459 LocalGet 12
+	0x13E945B LocalGet 11
+	0x13E945D I64Add
+	0x13E945E I64Add
+	0x13E945F I64Add
+	0x13E9460 I64Add
+	0x13E9461 LocalTee 4
+	0x13E9463 LocalGet 14
+	0x13E9465 I64Add
+	0x13E9466 LocalSet 11
+	0x13E9468 LocalGet 7
+	0x13E946A LocalGet 6
+	0x13E946C I64Xor
+	0x13E946D LocalGet 5
+	0x13E946F I64And
+	0x13E9470 LocalGet 7
+	0x13E9472 LocalGet 6
+	0x13E9474 I64And
+	0x13E9475 I64Xor
+	0x13E9476 LocalGet 5
+	0x13E9478 I32Const 0
+	0x13E947A Call 66106
+	0x13E947E LocalGet 4
+	0x13E9480 I64Add
+	0x13E9481 I64Add
+	0x13E9482 LocalSet 4
+	0x13E9484 LocalGet 2
+	0x13E9486 I32Const 1
+	0x13E9488 I32Add
+	0x13E9489 LocalSet 2
+	0x13E948B Br 1
+	0x13E948D End
+	0x13E948E End
+	0x13E948F LocalGet 1
+	0x13E9491 LocalGet 4
+	0x13E9493 LocalGet 1
+	0x13E9495 I64Load 3, 0
+	0x13E9498 I64Add
+	0x13E9499 I64Store 3, 0
+	0x13E949C LocalGet 1
+	0x13E949E I32Const 8
+	0x13E94A0 I32Add
+	0x13E94A1 LocalTee 0
+	0x13E94A3 LocalGet 5
+	0x13E94A5 LocalGet 0
+	0x13E94A7 I64Load 3, 0
+	0x13E94AA I64Add
+	0x13E94AB I64Store 3, 0
+	0x13E94AE LocalGet 1
+	0x13E94B0 I32Const 16
+	0x13E94B2 I32Add
+	0x13E94B3 LocalTee 0
+	0x13E94B5 LocalGet 6
+	0x13E94B7 LocalGet 0
+	0x13E94B9 I64Load 3, 0
+	0x13E94BC I64Add
+	0x13E94BD I64Store 3, 0
+	0x13E94C0 LocalGet 1
+	0x13E94C2 I32Const 24
+	0x13E94C4 I32Add
+	0x13E94C5 LocalTee 0
+	0x13E94C7 LocalGet 7
+	0x13E94C9 LocalGet 0
+	0x13E94CB I64Load 3, 0
+	0x13E94CE I64Add
+	0x13E94CF I64Store 3, 0
+	0x13E94D2 LocalGet 1
+	0x13E94D4 I32Const 32
+	0x13E94D6 I32Add
+	0x13E94D7 LocalTee 0
+	0x13E94D9 LocalGet 11
+	0x13E94DB LocalGet 0
+	0x13E94DD I64Load 3, 0
+	0x13E94E0 I64Add
+	0x13E94E1 I64Store 3, 0
+	0x13E94E4 LocalGet 1
+	0x13E94E6 I32Const 40
+	0x13E94E8 I32Add
+	0x13E94E9 LocalTee 0
+	0x13E94EB LocalGet 8
+	0x13E94ED LocalGet 0
+	0x13E94EF I64Load 3, 0
+	0x13E94F2 I64Add
+	0x13E94F3 I64Store 3, 0
+	0x13E94F6 LocalGet 1
+	0x13E94F8 I32Const 48
+	0x13E94FA I32Add
+	0x13E94FB LocalTee 0
+	0x13E94FD LocalGet 9
+	0x13E94FF LocalGet 0
+	0x13E9501 I64Load 3, 0
+	0x13E9504 I64Add
+	0x13E9505 I64Store 3, 0
+	0x13E9508 LocalGet 1
+	0x13E950A I32Const 56
+	0x13E950C I32Add
+	0x13E950D LocalTee 0
+	0x13E950F LocalGet 10
+	0x13E9511 LocalGet 0
+	0x13E9513 I64Load 3, 0
+	0x13E9516 I64Add
+	0x13E9517 I64Store 3, 0
+	0x13E951A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b34
+	5 Nop
+	6 Move v5 @ S0_v234, [2DC60C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v234
+	8 Nop
+	9 Move v7 @ S1_v178, 1
+	10 Move [45CCA2], v7 @ S1_v178
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Add v17 @ S0_v8, state @ L1 (System.UInt64*), 8
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Add v22 @ S0_v11, state @ L1 (System.UInt64*), 16
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Add v27 @ S0_v14, state @ L1 (System.UInt64*), 24
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Add v32 @ S0_v17, state @ L1 (System.UInt64*), 32
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Add v37 @ S0_v20, state @ L1 (System.UInt64*), 40
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Add v42 @ S0_v23, state @ L1 (System.UInt64*), 48
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Add v47 @ S0_v26, state @ L1 (System.UInt64*), 56
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Move v51 @ S0_v29 (Il2CppClass<System.Security.Cryptography.Utils>), typeof(System.Security.Cryptography.Utils)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 And v55 @ S0_v31, [v51 @ S0_v29 (Il2CppClass<System.Security.Cryptography.Utils>)+BA], 512
+	56 CheckEqual v56 @ TEMP_v2 (System.Boolean), v55 @ S0_v31, 0
+	57 ConditionalJump @b38, v56 @ TEMP_v2 (System.Boolean)
+	58 Move v57 @ S0_v229 (Il2CppClass<System.Security.Cryptography.Utils>), typeof(System.Security.Cryptography.Utils)
+	59 Nop
+	60 CheckEqual v59 @ S0_v231 (System.Boolean), [v57 @ S0_v229 (Il2CppClass<System.Security.Cryptography.Utils>)+74], 0
+	61 Not v60 @ TEMP_v12 (System.Boolean), v59 @ S0_v231 (System.Boolean)
+	62 ConditionalJump @b38, v60 @ TEMP_v12 (System.Boolean)
+	63 Nop
+	64 CallVoid 11A99, typeof(System.Security.Cryptography.Utils)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 CallVoid Utils.QuadWordToBigEndian, expandedBuffer @ L0 (System.UInt64*), 16, block @ L2 (System.Byte*)
+	72 Nop
+	73 Move v71 @ S0_v35 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 And v75 @ S0_v37, [v71 @ S0_v35 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+BA], 512
+	78 CheckEqual v76 @ TEMP_v4 (System.Boolean), v75 @ S0_v37, 0
+	79 ConditionalJump @b35, v76 @ TEMP_v4 (System.Boolean)
+	80 Move v77 @ S0_v225 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	81 Nop
+	82 CheckEqual v79 @ S0_v227 (System.Boolean), [v77 @ S0_v225 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+74], 0
+	83 Not v80 @ TEMP_v11 (System.Boolean), v79 @ S0_v227 (System.Boolean)
+	84 ConditionalJump @b35, v80 @ TEMP_v11 (System.Boolean)
+	85 Nop
+	86 CallVoid 11A99, typeof(System.Security.Cryptography.SHA384Managed)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 CallVoid SHA512..ctor, expandedBuffer @ L0 (System.UInt64*)
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 CheckLessOrEqual v132 @ S0_v43 (System.Boolean), v122 @ L2_v3, 79
+	98 Not v133 @ TEMP_v7 (System.Boolean), v132 @ S0_v43 (System.Boolean)
+	99 ConditionalJump @b33, v133 @ TEMP_v7 (System.Boolean)
+	100 Nop
+	101 Move v135 @ S0_v60 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	102 Nop
+	103 Nop
+	104 Nop
+	105 And v138 @ S0_v62, [v135 @ S0_v60 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+BA], 512
+	106 CheckEqual v139 @ TEMP_v8 (System.Boolean), v138 @ S0_v62, 0
+	107 ConditionalJump @b36, v139 @ TEMP_v8 (System.Boolean)
+	108 Move v201 @ S0_v221 (Il2CppClass<System.Security.Cryptography.SHA384Managed>), typeof(System.Security.Cryptography.SHA384Managed)
+	109 Nop
+	110 CheckEqual v203 @ S0_v223 (System.Boolean), [v201 @ S0_v221 (Il2CppClass<System.Security.Cryptography.SHA384Managed>)+74], 0
+	111 Not v204 @ TEMP_v10 (System.Boolean), v203 @ S0_v223 (System.Boolean)
+	112 ConditionalJump @b36, v204 @ TEMP_v10 (System.Boolean)
+	113 Nop
+	114 CallVoid 11A99, typeof(System.Security.Cryptography.SHA384Managed)
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Nop
+	119 Call 10238, v209 @ S0_v65, v88 @ L11_v2, 0
+	120 Nop
+	121 Nop
+	122 Nop
+	123 ShiftLeft v213 @ S0_v67, v122 @ L2_v3, 3
+	124 Nop
+	125 Add v215 @ S0_v68, v213 @ S0_v67, expandedBuffer @ L0 (System.UInt64*)
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Add v222 @ S1_v46, v219._K (System.UInt64[]), 16
+	133 Nop
+	134 Nop
+	135 ShiftLeft v225 @ S2_v21, v122 @ L2_v3, 3
+	136 Add v226 @ S1_v47, v222 @ S1_v46, v225 @ S2_v21
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Xor v230 @ S2_v23, v88 @ L11_v2, -1
+	141 Nop
+	142 And v232 @ S2_v24, v230 @ S2_v23, v101 @ L9_v2
+	143 Nop
+	144 Nop
+	145 And v235 @ S3_v7, v97 @ L8_v2, v88 @ L11_v2
+	146 Xor v236 @ S2_v25, v232 @ S2_v24, v235 @ S3_v7
+	147 Nop
+	148 Nop
+	149 Add v239 @ S3_v9, v209 @ S0_v65, v108 @ L10_v2
+	150 Add v240 @ S2_v26, v236 @ S2_v25, v239 @ S3_v9
+	151 Add v241 @ S1_v49, [v226 @ S1_v47], v240 @ S2_v26
+	152 Add v242 @ S0_v70, [v215 @ S0_v68], v241 @ S1_v49
+	153 Nop
+	154 Nop
+	155 Add v245 @ S0_v71, v242 @ S0_v70, v106 @ L7_v2
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Xor v249 @ S0_v73, v99 @ L6_v2, v95 @ L5_v2
+	160 Nop
+	161 And v251 @ S0_v74, v249 @ S0_v73, v90 @ L4_v2 (Il2CppClass<System.UInt64*>)
+	162 Nop
+	163 Nop
+	164 And v254 @ S1_v54, v99 @ L6_v2, v95 @ L5_v2
+	165 Xor v255 @ S0_v75, v251 @ S0_v74, v254 @ S1_v54
+	166 Nop
+	167 Nop
+	168 Call 1023A, v258 @ S1_v56, v90 @ L4_v2 (Il2CppClass<System.UInt64*>), 0
+	169 Nop
+	170 Add v260 @ S1_v57, v258 @ S1_v56, v242 @ S0_v70
+	171 Add v261 @ S0_v76, v255 @ S0_v75, v260 @ S1_v57
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Call 10238, v265 @ S0_v78, v245 @ S0_v71, 0
+	176 Nop
+	177 Nop
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Add v272 @ S0_v83, v269._K (System.UInt64[]), 16
+	183 Nop
+	184 Nop
+	185 Add v275 @ S1_v61, v122 @ L2_v3, 1
+	186 Nop
+	187 Nop
+	188 ShiftLeft v278 @ S1_v62, v275 @ S1_v61, 3
+	189 Add v279 @ S0_v84, v272 @ S0_v83, v278 @ S1_v62
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Nop
+	194 ShiftLeft v284 @ S0_v87, v275 @ S1_v61, 3
+	195 Nop
+	196 Add v286 @ S0_v88, v284 @ S0_v87, expandedBuffer @ L0 (System.UInt64*)
+	197 Nop
+	198 Nop
+	199 Nop
+	200 Nop
+	201 Xor v291 @ S2_v33, v245 @ S0_v71, -1
+	202 Nop
+	203 And v293 @ S2_v34, v291 @ S2_v33, v97 @ L8_v2
+	204 Nop
+	205 Nop
+	206 And v296 @ S3_v13, v88 @ L11_v2, v245 @ S0_v71
+	207 Xor v297 @ S2_v35, v293 @ S2_v34, v296 @ S3_v13
+	208 Nop
+	209 Nop
+	210 Add v300 @ S3_v15, v265 @ S0_v78, v101 @ L9_v2
+	211 Add v301 @ S2_v36, v297 @ S2_v35, v300 @ S3_v15
+	212 Add v302 @ S1_v66, [v279 @ S0_v84], v301 @ S2_v36
+	213 Add v303 @ S0_v90, [v286 @ S0_v88], v302 @ S1_v66
+	214 Nop
+	215 Nop
+	216 Add v306 @ S0_v91, v303 @ S0_v90, v99 @ L6_v2
+	217 Nop
+	218 Nop
+	219 Nop
+	220 Xor v310 @ S0_v93, v95 @ L5_v2, v90 @ L4_v2 (Il2CppClass<System.UInt64*>)
+	221 Nop
+	222 And v312 @ S0_v94, v310 @ S0_v93, v261 @ S0_v76
+	223 Nop
+	224 Nop
+	225 And v315 @ S1_v71, v95 @ L5_v2, v90 @ L4_v2 (Il2CppClass<System.UInt64*>)
+	226 Xor v316 @ S0_v95, v312 @ S0_v94, v315 @ S1_v71
+	227 Nop
+	228 Nop
+	229 Call 1023A, v319 @ S1_v73, v261 @ S0_v76, 0
+	230 Nop
+	231 Add v321 @ S1_v74, v319 @ S1_v73, v303 @ S0_v90
+	232 Add v322 @ S0_v96, v316 @ S0_v95, v321 @ S1_v74
+	233 Nop
+	234 Nop
+	235 Nop
+	236 Call 10238, v326 @ S0_v98, v306 @ S0_v91, 0
+	237 Nop
+	238 Nop
+	239 Nop
+	240 Nop
+	241 Nop
+	242 Nop
+	243 Add v333 @ S0_v103, v330._K (System.UInt64[]), 16
+	244 Nop
+	245 Nop
+	246 Add v336 @ S1_v78, v275 @ S1_v61, 1
+	247 Nop
+	248 Nop
+	249 ShiftLeft v339 @ S1_v79, v336 @ S1_v78, 3
+	250 Add v340 @ S0_v104, v333 @ S0_v103, v339 @ S1_v79
+	251 Nop
+	252 Nop
+	253 Nop
+	254 Nop
+	255 ShiftLeft v345 @ S0_v107, v336 @ S1_v78, 3
+	256 Nop
+	257 Add v347 @ S0_v108, v345 @ S0_v107, expandedBuffer @ L0 (System.UInt64*)
+	258 Nop
+	259 Nop
+	260 Nop
+	261 Nop
+	262 Xor v352 @ S2_v43, v306 @ S0_v91, -1
+	263 Nop
+	264 And v354 @ S2_v44, v352 @ S2_v43, v88 @ L11_v2
+	265 Nop
+	266 Nop
+	267 And v357 @ S3_v19, v245 @ S0_v71, v306 @ S0_v91
+	268 Xor v358 @ S2_v45, v354 @ S2_v44, v357 @ S3_v19
+	269 Nop
+	270 Nop
+	271 Add v361 @ S3_v21, v326 @ S0_v98, v97 @ L8_v2
+	272 Add v362 @ S2_v46, v358 @ S2_v45, v361 @ S3_v21
+	273 Add v363 @ S1_v83, [v340 @ S0_v104], v362 @ S2_v46
+	274 Add v364 @ S0_v110, [v347 @ S0_v108], v363 @ S1_v83
+	275 Nop
+	276 Nop
+	277 Add v367 @ S0_v111, v364 @ S0_v110, v95 @ L5_v2
+	278 Nop
+	279 Nop
+	280 Nop
+	281 Xor v371 @ S0_v113, v90 @ L4_v2 (Il2CppClass<System.UInt64*>), v261 @ S0_v76
+	282 Nop
+	283 And v373 @ S0_v114, v371 @ S0_v113, v322 @ S0_v96
+	284 Nop
+	285 Nop
+	286 And v376 @ S1_v88, v90 @ L4_v2 (Il2CppClass<System.UInt64*>), v261 @ S0_v76
+	287 Xor v377 @ S0_v115, v373 @ S0_v114, v376 @ S1_v88
+	288 Nop
+	289 Nop
+	290 Call 1023A, v380 @ S1_v90, v322 @ S0_v96, 0
+	291 Nop
+	292 Add v382 @ S1_v91, v380 @ S1_v90, v364 @ S0_v110
+	293 Add v383 @ S0_v116, v377 @ S0_v115, v382 @ S1_v91
+	294 Nop
+	295 Nop
+	296 Nop
+	297 Call 10238, v387 @ S0_v118, v367 @ S0_v111, 0
+	298 Nop
+	299 Nop
+	300 Nop
+	301 Nop
+	302 Nop
+	303 Nop
+	304 Add v394 @ S0_v123, v391._K (System.UInt64[]), 16
+	305 Nop
+	306 Nop
+	307 Add v397 @ S1_v95, v336 @ S1_v78, 1
+	308 Nop
+	309 Nop
+	310 ShiftLeft v400 @ S1_v96, v397 @ S1_v95, 3
+	311 Add v401 @ S0_v124, v394 @ S0_v123, v400 @ S1_v96
+	312 Nop
+	313 Nop
+	314 Nop
+	315 Nop
+	316 Nop
+	317 Nop
+	318 ShiftLeft v408 @ S0_v128, v397 @ S1_v95, 3
+	319 Nop
+	320 Add v410 @ S0_v129, v408 @ S0_v128, expandedBuffer @ L0 (System.UInt64*)
+	321 Nop
+	322 Nop
+	323 Nop
+	324 Nop
+	325 Xor v415 @ S2_v53, v367 @ S0_v111, -1
+	326 Nop
+	327 And v417 @ S2_v54, v415 @ S2_v53, v245 @ S0_v71
+	328 Nop
+	329 Nop
+	330 And v420 @ S3_v25, v306 @ S0_v91, v367 @ S0_v111
+	331 Xor v421 @ S2_v55, v417 @ S2_v54, v420 @ S3_v25
+	332 Nop
+	333 Nop
+	334 Add v424 @ S3_v27, v387 @ S0_v118, v88 @ L11_v2
+	335 Add v425 @ S2_v56, v421 @ S2_v55, v424 @ S3_v27
+	336 Add v426 @ S1_v100, [v401 @ S0_v124], v425 @ S2_v56
+	337 Add v427 @ S0_v131, [v410 @ S0_v129], v426 @ S1_v100
+	338 Nop
+	339 Nop
+	340 Add v430 @ S0_v132, v427 @ S0_v131, v90 @ L4_v2 (Il2CppClass<System.UInt64*>)
+	341 Nop
+	342 Nop
+	343 Nop
+	344 Xor v434 @ S0_v134, v261 @ S0_v76, v322 @ S0_v96
+	345 Nop
+	346 And v436 @ S0_v135, v434 @ S0_v134, v383 @ S0_v116
+	347 Nop
+	348 Nop
+	349 And v439 @ S1_v105, v261 @ S0_v76, v322 @ S0_v96
+	350 Xor v440 @ S0_v136, v436 @ S0_v135, v439 @ S1_v105
+	351 Nop
+	352 Nop
+	353 Call 1023A, v443 @ S1_v107, v383 @ S0_v116, 0
+	354 Nop
+	355 Add v445 @ S1_v108, v443 @ S1_v107, v427 @ S0_v131
+	356 Add v446 @ S0_v137, v440 @ S0_v136, v445 @ S1_v108
+	357 Nop
+	358 Nop
+	359 Nop
+	360 Call 10238, v450 @ S0_v139, v430 @ S0_v132, 0
+	361 Nop
+	362 Nop
+	363 Nop
+	364 Nop
+	365 Nop
+	366 Nop
+	367 Add v457 @ S0_v144, v454._K (System.UInt64[]), 16
+	368 Nop
+	369 Nop
+	370 Add v460 @ S1_v112, v397 @ S1_v95, 1
+	371 Nop
+	372 Nop
+	373 ShiftLeft v463 @ S1_v113, v460 @ S1_v112, 3
+	374 Add v464 @ S0_v145, v457 @ S0_v144, v463 @ S1_v113
+	375 Nop
+	376 Nop
+	377 Nop
+	378 Nop
+	379 ShiftLeft v469 @ S0_v148, v460 @ S1_v112, 3
+	380 Nop
+	381 Add v471 @ S0_v149, v469 @ S0_v148, expandedBuffer @ L0 (System.UInt64*)
+	382 Nop
+	383 Nop
+	384 Nop
+	385 Nop
+	386 Xor v476 @ S2_v63, v430 @ S0_v132, -1
+	387 Nop
+	388 And v478 @ S2_v64, v476 @ S2_v63, v306 @ S0_v91
+	389 Nop
+	390 Nop
+	391 And v481 @ S3_v31, v367 @ S0_v111, v430 @ S0_v132
+	392 Xor v482 @ S2_v65, v478 @ S2_v64, v481 @ S3_v31
+	393 Nop
+	394 Nop
+	395 Add v485 @ S3_v33, v450 @ S0_v139, v245 @ S0_v71
+	396 Add v486 @ S2_v66, v482 @ S2_v65, v485 @ S3_v33
+	397 Add v487 @ S1_v117, [v464 @ S0_v145], v486 @ S2_v66
+	398 Add v488 @ S0_v151, [v471 @ S0_v149], v487 @ S1_v117
+	399 Nop
+	400 Nop
+	401 Add v491 @ S0_v152, v488 @ S0_v151, v261 @ S0_v76
+	402 Nop
+	403 Nop
+	404 Nop
+	405 Xor v494 @ S0_v154, v322 @ S0_v96, v383 @ S0_v116
+	406 Nop
+	407 And v496 @ S0_v155, v494 @ S0_v154, v446 @ S0_v137
+	408 Nop
+	409 Nop
+	410 And v499 @ S1_v122, v322 @ S0_v96, v383 @ S0_v116
+	411 Xor v500 @ S0_v156, v496 @ S0_v155, v499 @ S1_v122
+	412 Nop
+	413 Nop
+	414 Call 1023A, v503 @ S1_v124, v446 @ S0_v137, 0
+	415 Nop
+	416 Add v505 @ S1_v125, v503 @ S1_v124, v488 @ S0_v151
+	417 Add v506 @ S0_v157, v500 @ S0_v156, v505 @ S1_v125
+	418 Nop
+	419 Nop
+	420 Nop
+	421 Call 10238, v509 @ S0_v159, v491 @ S0_v152, 0
+	422 Nop
+	423 Nop
+	424 Nop
+	425 Nop
+	426 Nop
+	427 Nop
+	428 Add v516 @ S0_v164, v513._K (System.UInt64[]), 16
+	429 Nop
+	430 Nop
+	431 Add v519 @ S1_v129, v460 @ S1_v112, 1
+	432 Nop
+	433 Nop
+	434 ShiftLeft v522 @ S1_v130, v519 @ S1_v129, 3
+	435 Add v523 @ S0_v165, v516 @ S0_v164, v522 @ S1_v130
+	436 Nop
+	437 Nop
+	438 Nop
+	439 Nop
+	440 ShiftLeft v528 @ S0_v168, v519 @ S1_v129, 3
+	441 Nop
+	442 Add v530 @ S0_v169, v528 @ S0_v168, expandedBuffer @ L0 (System.UInt64*)
+	443 Nop
+	444 Nop
+	445 Nop
+	446 Nop
+	447 Xor v535 @ S2_v73, v491 @ S0_v152, -1
+	448 Nop
+	449 And v537 @ S2_v74, v535 @ S2_v73, v367 @ S0_v111
+	450 Nop
+	451 Nop
+	452 And v540 @ S3_v37, v430 @ S0_v132, v491 @ S0_v152
+	453 Xor v541 @ S2_v75, v537 @ S2_v74, v540 @ S3_v37
+	454 Nop
+	455 Nop
+	456 Add v544 @ S3_v39, v509 @ S0_v159, v306 @ S0_v91
+	457 Add v545 @ S2_v76, v541 @ S2_v75, v544 @ S3_v39
+	458 Add v546 @ S1_v134, [v523 @ S0_v165], v545 @ S2_v76
+	459 Add v547 @ S0_v171, [v530 @ S0_v169], v546 @ S1_v134
+	460 Nop
+	461 Nop
+	462 Add v550 @ S0_v172, v547 @ S0_v171, v322 @ S0_v96
+	463 Nop
+	464 Nop
+	465 Nop
+	466 Xor v553 @ S0_v174, v383 @ S0_v116, v446 @ S0_v137
+	467 Nop
+	468 And v555 @ S0_v175, v553 @ S0_v174, v506 @ S0_v157
+	469 Nop
+	470 Nop
+	471 And v558 @ S1_v139, v383 @ S0_v116, v446 @ S0_v137
+	472 Xor v559 @ S0_v176, v555 @ S0_v175, v558 @ S1_v139
+	473 Nop
+	474 Nop
+	475 Call 1023A, v562 @ S1_v141, v506 @ S0_v157, 0
+	476 Nop
+	477 Add v564 @ S1_v142, v562 @ S1_v141, v547 @ S0_v171
+	478 Add v565 @ S0_v177, v559 @ S0_v176, v564 @ S1_v142
+	479 Nop
+	480 Nop
+	481 Nop
+	482 Call 10238, v568 @ S0_v179, v550 @ S0_v172, 0
+	483 Nop
+	484 Nop
+	485 Nop
+	486 Nop
+	487 Nop
+	488 Nop
+	489 Add v575 @ S0_v184, v572._K (System.UInt64[]), 16
+	490 Nop
+	491 Nop
+	492 Add v578 @ S1_v146, v519 @ S1_v129, 1
+	493 Nop
+	494 Nop
+	495 ShiftLeft v581 @ S1_v147, v578 @ S1_v146, 3
+	496 Add v582 @ S0_v185, v575 @ S0_v184, v581 @ S1_v147
+	497 Nop
+	498 Nop
+	499 Nop
+	500 Nop
+	501 ShiftLeft v587 @ S0_v188, v578 @ S1_v146, 3
+	502 Nop
+	503 Add v589 @ S0_v189, v587 @ S0_v188, expandedBuffer @ L0 (System.UInt64*)
+	504 Nop
+	505 Nop
+	506 Nop
+	507 Nop
+	508 Xor v594 @ S2_v83, v550 @ S0_v172, -1
+	509 Nop
+	510 And v596 @ S2_v84, v594 @ S2_v83, v430 @ S0_v132
+	511 Nop
+	512 Nop
+	513 And v599 @ S3_v43, v491 @ S0_v152, v550 @ S0_v172
+	514 Xor v600 @ S2_v85, v596 @ S2_v84, v599 @ S3_v43
+	515 Nop
+	516 Nop
+	517 Add v603 @ S3_v45, v568 @ S0_v179, v367 @ S0_v111
+	518 Add v604 @ S2_v86, v600 @ S2_v85, v603 @ S3_v45
+	519 Add v605 @ S1_v151, [v582 @ S0_v185], v604 @ S2_v86
+	520 Add v606 @ S0_v191, [v589 @ S0_v189], v605 @ S1_v151
+	521 Nop
+	522 Nop
+	523 Add v609 @ S0_v192, v606 @ S0_v191, v383 @ S0_v116
+	524 Nop
+	525 Nop
+	526 Nop
+	527 Xor v612 @ S0_v194, v446 @ S0_v137, v506 @ S0_v157
+	528 Nop
+	529 And v614 @ S0_v195, v612 @ S0_v194, v565 @ S0_v177
+	530 Nop
+	531 Nop
+	532 And v617 @ S1_v156, v446 @ S0_v137, v506 @ S0_v157
+	533 Xor v618 @ S0_v196, v614 @ S0_v195, v617 @ S1_v156
+	534 Nop
+	535 Nop
+	536 Call 1023A, v621 @ S1_v158, v565 @ S0_v177, 0
+	537 Nop
+	538 Add v623 @ S1_v159, v621 @ S1_v158, v606 @ S0_v191
+	539 Add v624 @ S0_v197, v618 @ S0_v196, v623 @ S1_v159
+	540 Nop
+	541 Nop
+	542 Nop
+	543 Call 10238, v627 @ S0_v199, v609 @ S0_v192, 0
+	544 Nop
+	545 Nop
+	546 Nop
+	547 Nop
+	548 Nop
+	549 Nop
+	550 Add v633 @ S0_v204, v630._K (System.UInt64[]), 16
+	551 Nop
+	552 Nop
+	553 Add v636 @ S1_v163, v578 @ S1_v146, 1
+	554 Nop
+	555 Nop
+	556 ShiftLeft v639 @ S1_v164, v636 @ S1_v163, 3
+	557 Add v640 @ S0_v205, v633 @ S0_v204, v639 @ S1_v164
+	558 Nop
+	559 Nop
+	560 Nop
+	561 Nop
+	562 Nop
+	563 Nop
+	564 ShiftLeft v645 @ S0_v209, v636 @ S1_v163, 3
+	565 Nop
+	566 Add v647 @ S0_v210, v645 @ S0_v209, expandedBuffer @ L0 (System.UInt64*)
+	567 Nop
+	568 Nop
+	569 Nop
+	570 Nop
+	571 Xor v652 @ S2_v93, v609 @ S0_v192, -1
+	572 Nop
+	573 And v654 @ S2_v94, v652 @ S2_v93, v491 @ S0_v152
+	574 Nop
+	575 Nop
+	576 And v657 @ S3_v49, v550 @ S0_v172, v609 @ S0_v192
+	577 Xor v658 @ S2_v95, v654 @ S2_v94, v657 @ S3_v49
+	578 Nop
+	579 Nop
+	580 Add v114 @ S3_v51, v627 @ S0_v199, v430 @ S0_v132
+	581 Add v660 @ S2_v96, v658 @ S2_v95, v114 @ S3_v51
+	582 Add v661 @ S1_v168, [v640 @ S0_v205], v660 @ S2_v96
+	583 Add v662 @ S0_v212, [v647 @ S0_v210], v661 @ S1_v168
+	584 Nop
+	585 Nop
+	586 Add v665 @ S0_v213, v662 @ S0_v212, v446 @ S0_v137
+	587 Nop
+	588 Nop
+	589 Nop
+	590 Xor v668 @ S0_v215, v506 @ S0_v157, v565 @ S0_v177
+	591 Nop
+	592 And v670 @ S0_v216, v668 @ S0_v215, v624 @ S0_v197
+	593 Nop
+	594 Nop
+	595 And v673 @ S1_v173, v506 @ S0_v157, v565 @ S0_v177
+	596 Xor v674 @ S0_v217, v670 @ S0_v216, v673 @ S1_v173
+	597 Nop
+	598 Nop
+	599 Call 1023A, v677 @ S1_v175, v624 @ S0_v197, 0
+	600 Nop
+	601 Add v678 @ S1_v176, v677 @ S1_v175, v662 @ S0_v212
+	602 Add v679 @ S0_v218 (Il2CppClass<System.UInt64*>), v674 @ S0_v217, v678 @ S1_v176
+	603 Nop
+	604 Nop
+	605 Nop
+	606 Add v129 @ S0_v220, v636 @ S1_v163, 1
+	607 Nop
+	608 Jump @b37
+	609 Nop
+	610 Nop
+	611 Nop
+	612 Nop
+	613 Nop
+	614 Nop
+	615 Add v144 @ S1_v16, v90 @ L4_v2 (Il2CppClass<System.UInt64*>), [state @ L1 (System.UInt64*)]
+	616 Move [state @ L1 (System.UInt64*)], v144 @ S1_v16
+	617 Nop
+	618 Nop
+	619 Add v147 @ S0_v46, state @ L1 (System.UInt64*), 8
+	620 Nop
+	621 Nop
+	622 Nop
+	623 Nop
+	624 Add v152 @ S1_v19, v95 @ L5_v2, [v147 @ S0_v46]
+	625 Move [v147 @ S0_v46], v152 @ S1_v19
+	626 Nop
+	627 Nop
+	628 Add v155 @ S0_v48, state @ L1 (System.UInt64*), 16
+	629 Nop
+	630 Nop
+	631 Nop
+	632 Nop
+	633 Add v160 @ S1_v22, v99 @ L6_v2, [v155 @ S0_v48]
+	634 Move [v155 @ S0_v48], v160 @ S1_v22
+	635 Nop
+	636 Nop
+	637 Add v163 @ S0_v50, state @ L1 (System.UInt64*), 24
+	638 Nop
+	639 Nop
+	640 Nop
+	641 Nop
+	642 Add v168 @ S1_v25, v106 @ L7_v2, [v163 @ S0_v50]
+	643 Move [v163 @ S0_v50], v168 @ S1_v25
+	644 Nop
+	645 Nop
+	646 Add v171 @ S0_v52, state @ L1 (System.UInt64*), 32
+	647 Nop
+	648 Nop
+	649 Nop
+	650 Nop
+	651 Add v176 @ S1_v28, v88 @ L11_v2, [v171 @ S0_v52]
+	652 Move [v171 @ S0_v52], v176 @ S1_v28
+	653 Nop
+	654 Nop
+	655 Add v179 @ S0_v54, state @ L1 (System.UInt64*), 40
+	656 Nop
+	657 Nop
+	658 Nop
+	659 Nop
+	660 Add v184 @ S1_v31, v97 @ L8_v2, [v179 @ S0_v54]
+	661 Move [v179 @ S0_v54], v184 @ S1_v31
+	662 Nop
+	663 Nop
+	664 Add v187 @ S0_v56, state @ L1 (System.UInt64*), 48
+	665 Nop
+	666 Nop
+	667 Nop
+	668 Nop
+	669 Add v192 @ S1_v34, v101 @ L9_v2, [v187 @ S0_v56]
+	670 Move [v187 @ S0_v56], v192 @ S1_v34
+	671 Nop
+	672 Nop
+	673 Add v195 @ S0_v58, state @ L1 (System.UInt64*), 56
+	674 Nop
+	675 Nop
+	676 Nop
+	677 Nop
+	678 Add v200 @ S1_v37, v108 @ L10_v2, [v195 @ S0_v58]
+	679 Move [v195 @ S0_v58], v200 @ S1_v37
+	680 Nop
+	681 Return
+
+Method: System.UInt64 RotateRight(System.UInt64 x, System.Int32 n)
+
+Disassembly:
+	0x9BD4B GlobalGet 7
+	0x9BD4D LocalSet 3
+	0x9BD4F GlobalGet 7
+	0x9BD51 I32Const 16
+	0x9BD53 I32Add
+	0x9BD54 GlobalSet 7
+	0x9BD56 LocalGet 3
+	0x9BD58 LocalGet 0
+	0x9BD5A I32Load 2, 4
+	0x9BD5D I32Store 2, 0
+	0x9BD60 LocalGet 3
+	0x9BD62 I32Const 4
+	0x9BD64 I32Add
+	0x9BD65 LocalTee 0
+	0x9BD67 LocalGet 3
+	0x9BD69 I32Load 2, 0
+	0x9BD6C I32Store 2, 0
+	0x9BD6F LocalGet 1
+	0x9BD71 LocalGet 2
+	0x9BD73 LocalGet 0
+	0x9BD75 I32Const 0
+	0x9BD77 I32Const 3039199
+	0x9BD7C I32Const 30
+	0x9BD7E Call 4604
+	0x9BD81 LocalGet 3
+	0x9BD83 GlobalSet 7
+	0x9BD85 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], [x @ L0 (System.UInt64)+4]
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6, v1 @ G7, 4
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v13 @ S0_v6], [v1 @ G7]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call 11FC, returnVal1 @ S0_v8 (System.UInt64), n @ L1 (System.Int32), methodInfo @ L2 (Il2CppMethodInfo), v13 @ S0_v6, 0, 3039199, 30
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return returnVal1 @ S0_v8 (System.UInt64)
+
+Method: System.UInt64 Ch(System.UInt64 x, System.UInt64 y, System.UInt64 z)
+
+Disassembly:
+	0xAC4A6 LocalGet 0
+	0xAC4A8 LocalGet 1
+	0xAC4AA LocalGet 2
+	0xAC4AC LocalGet 3
+	0xAC4AE Call 834
+	0xAC4B1 I32Eqz
+	0xAC4B2 If -64
+	0xAC4B4 I32Const 0
+	0xAC4B6 Return
+	0xAC4B7 End
+	0xAC4B8 LocalGet 0
+	0xAC4BA I32Load 2, 176
+	0xAC4BE I32Const 1
+	0xAC4C0 I32Shr_U
+	0xAC4C1 LocalGet 0
+	0xAC4C3 I32Load 2, 24
+	0xAC4C6 I32Load 2, 24
+	0xAC4C9 LocalTee 4
+	0xAC4CB I32Lt_U
+	0xAC4CC If -64
+	0xAC4CE LocalGet 0
+	0xAC4D0 I32Const 164
+	0xAC4D3 I32Add
+	0xAC4D4 LocalGet 4
+	0xAC4D6 I32Const 4
+	0xAC4D8 I32Const 4
+	0xAC4DA Call 4731
+	0xAC4DD End
+	0xAC4DE LocalGet 0
+	0xAC4E0 I32Load 2, 192
+	0xAC4E4 I32Const 1
+	0xAC4E6 I32Shr_U
+	0xAC4E7 LocalGet 4
+	0xAC4E9 I32Ge_U
+	0xAC4EA If -64
+	0xAC4EC I32Const 1
+	0xAC4EE Return
+	0xAC4EF End
+	0xAC4F0 LocalGet 0
+	0xAC4F2 I32Const 180
+	0xAC4F5 I32Add
+	0xAC4F6 LocalGet 4
+	0xAC4F8 I32Const 4
+	0xAC4FA I32Const 4
+	0xAC4FC Call 4731
+	0xAC4FF I32Const 1
+	0xAC501 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 0342, v8 @ S0_v2, x @ L0 (System.UInt64), y @ L1 (System.UInt64), z @ L2 (System.UInt64), methodInfo @ L3 (Il2CppMethodInfo)
+	5 CheckEqual v9 @ S0_v3 (System.Boolean), v8 @ S0_v2, 0
+	6 Not v10 @ TEMP_v1 (System.Boolean), v9 @ S0_v3 (System.Boolean)
+	7 ConditionalJump @b5, v10 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Return 0
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 ShiftRight v15 @ S0_v6, [x @ L0 (System.UInt64)+B0], 1
+	15 Nop
+	16 Move v17 @ S1_v4, [x @ L0 (System.UInt64)+18]
+	17 Nop
+	18 Nop
+	19 CheckLess v20 @ S0_v7 (System.Boolean), v15 @ S0_v6, [v17 @ S1_v4+18]
+	20 Not v21 @ TEMP_v2 (System.Boolean), v20 @ S0_v7 (System.Boolean)
+	21 ConditionalJump @b7, v21 @ TEMP_v2 (System.Boolean)
+	22 Nop
+	23 Nop
+	24 Add v40 @ S0_v18, x @ L0 (System.UInt64), 164
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid 127B, v40 @ S0_v18, [v17 @ S1_v4+18], 4, 4
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 ShiftRight v49 @ S0_v11, [x @ L0 (System.UInt64)+C0], 1
+	34 Nop
+	35 CheckGreaterOrEqual v50 @ S0_v12 (System.Boolean), v49 @ S0_v11, [v17 @ S1_v4+18]
+	36 Not v25 @ TEMP_v3 (System.Boolean), v50 @ S0_v12 (System.Boolean)
+	37 ConditionalJump @b9, v25 @ TEMP_v3 (System.Boolean)
+	38 Nop
+	39 Return 1
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Add v53 @ S0_v14, x @ L0 (System.UInt64), 180
+	44 Nop
+	45 Nop
+	46 Nop
+	47 CallVoid 127B, v53 @ S0_v14, [v17 @ S1_v4+18], 4, 4
+	48 Nop
+	49 Nop
+	50 Return 1
+
+Method: System.UInt64 Maj(System.UInt64 x, System.UInt64 y, System.UInt64 z)
+
+Disassembly:
+	0xB04E0 LocalGet 0
+	0xB04E2 LocalGet 1
+	0xB04E4 LocalGet 2
+	0xB04E6 LocalGet 3
+	0xB04E8 Call 8554
+	0xB04EB LocalGet 0
+	0xB04ED I32Const 1
+	0xB04EF I32Store8 0, 140
+	0xB04F3 I32Eqz
+	0xB04F4 If -64
+	0xB04F6 I32Const 0
+	0xB04F8 Return
+	0xB04F9 End
+	0xB04FA LocalGet 0
+	0xB04FC Call 822
+	0xB04FF I32Const 1
+	0xB0501 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 216A, v8 @ S0_v2, x @ L0 (System.UInt64), y @ L1 (System.UInt64), z @ L2 (System.UInt64), methodInfo @ L3 (Il2CppMethodInfo)
+	5 Nop
+	6 Nop
+	7 Move [x @ L0 (System.UInt64)+8C], 1
+	8 CheckEqual v11 @ S0_v3 (System.Boolean), v8 @ S0_v2, 0
+	9 Not v12 @ TEMP_v1 (System.Boolean), v11 @ S0_v3 (System.Boolean)
+	10 ConditionalJump @b5, v12 @ TEMP_v1 (System.Boolean)
+	11 Nop
+	12 Return 0
+	13 Nop
+	14 Nop
+	15 CallVoid 0336, x @ L0 (System.UInt64)
+	16 Nop
+	17 Nop
+	18 Return 1
+
+Method: System.UInt64 Sigma_0(System.UInt64 x)
+
+Disassembly:
+	0x15FB24 LocalGet 1
+	0x15FB26 I32Const 316
+	0x15FB29 I32Add
+	0x15FB2A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add returnVal1 @ S0_v2 (System.UInt64), methodInfo @ L1 (Il2CppMethodInfo), 316
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.UInt64)
+
+Method: System.UInt64 Sigma_1(System.UInt64 x)
+
+Disassembly:
+	0x1603B5 LocalGet 0
+	0x1603B7 I32Load 2, 132
+	0x1603BB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return [x @ L0 (System.UInt64)+84]
+
+Method: System.UInt64 sigma_0(System.UInt64 x)
+
+Disassembly:
+	0x18646F LocalGet 0
+	0x186471 I32Load 2, 4
+	0x186474 LocalGet 1
+	0x186476 I32Eq
+	0x186477 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual returnVal1 @ S0_v3 (System.Boolean), [x @ L0 (System.UInt64)+4], methodInfo @ L1 (Il2CppMethodInfo)
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.UInt64 sigma_1(System.UInt64 x)
+
+Disassembly:
+	0x18647A LocalGet 1
+	0x18647C I32Eqz
+	0x18647D If -64
+	0x18647F I32Const 0
+	0x186481 Return
+	0x186482 End
+	0x186483 LocalGet 1
+	0x186485 I32Load 2, 104
+	0x186488 LocalGet 0
+	0x18648A I32Load 2, 4
+	0x18648D I32Eq
+	0x18648E End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ S0_v2 (System.Boolean), methodInfo @ L1 (Il2CppMethodInfo), 0
+	2 Not v3 @ TEMP_v1 (System.Boolean), v2 @ S0_v2 (System.Boolean)
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Return 0
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CheckEqual returnVal2 @ S0_v5 (System.Boolean), [methodInfo @ L1 (Il2CppMethodInfo)+68], [x @ L0 (System.UInt64)+4]
+	12 Nop
+	13 Return returnVal2 @ S0_v5 (System.Boolean)
+
+Method: System.Void SHA512Expand(System.UInt64* x)
+
+Disassembly:
+	0x13DF1D6 LocalGet 0
+	0x13DF1D8 I64Const 0
+	0x13DF1DA I64Store 3, 32
+	0x13DF1DD LocalGet 0
+	0x13DF1DF I32Load 2, 40
+	0x13DF1E2 I32Const 16
+	0x13DF1E4 I32Add
+	0x13DF1E5 I64Const 7640891576956012808
+	0x13DF1F0 I64Store 3, 0
+	0x13DF1F3 LocalGet 0
+	0x13DF1F5 I32Load 2, 40
+	0x13DF1F8 I32Const 24
+	0x13DF1FA I32Add
+	0x13DF1FB I64Const -4942790177534073029
+	0x13DF206 I64Store 3, 0
+	0x13DF209 LocalGet 0
+	0x13DF20B I32Load 2, 40
+	0x13DF20E I32Const 32
+	0x13DF210 I32Add
+	0x13DF211 I64Const 4354685564936845355
+	0x13DF21B I64Store 3, 0
+	0x13DF21E LocalGet 0
+	0x13DF220 I32Load 2, 40
+	0x13DF223 I32Const 40
+	0x13DF225 I32Add
+	0x13DF226 I64Const -6534734903238641935
+	0x13DF231 I64Store 3, 0
+	0x13DF234 LocalGet 0
+	0x13DF236 I32Load 2, 40
+	0x13DF239 I32Const 48
+	0x13DF23B I32Add
+	0x13DF23C I64Const 5840696475078001361
+	0x13DF247 I64Store 3, 0
+	0x13DF24A LocalGet 0
+	0x13DF24C I32Load 2, 40
+	0x13DF24F I32Const 56
+	0x13DF251 I32Add
+	0x13DF252 I64Const -7276294671716946913
+	0x13DF25D I64Store 3, 0
+	0x13DF260 LocalGet 0
+	0x13DF262 I32Load 2, 40
+	0x13DF265 I32Const -64
+	0x13DF267 I32Sub
+	0x13DF268 I64Const 2270897969802886507
+	0x13DF272 I64Store 3, 0
+	0x13DF275 LocalGet 0
+	0x13DF277 I32Load 2, 40
+	0x13DF27A I32Const 72
+	0x13DF27D I32Add
+	0x13DF27E I64Const 6620516959819538809
+	0x13DF289 I64Store 3, 0
+	0x13DF28C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [x @ L0 (System.UInt64*)+20], 0
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Add v6 @ S0_v4, [x @ L0 (System.UInt64*)+28], 16
+	7 Nop
+	8 Move [v6 @ S0_v4], 7640891576956012808
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Add v11 @ S0_v7, [x @ L0 (System.UInt64*)+28], 24
+	13 Nop
+	14 Move [v11 @ S0_v7], -4942790177534073029
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Add v16 @ S0_v10, [x @ L0 (System.UInt64*)+28], 32
+	19 Nop
+	20 Move [v16 @ S0_v10], 4354685564936845355
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v21 @ S0_v13, [x @ L0 (System.UInt64*)+28], 40
+	25 Nop
+	26 Move [v21 @ S0_v13], -6534734903238641935
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Add v26 @ S0_v16, [x @ L0 (System.UInt64*)+28], 48
+	31 Nop
+	32 Move [v26 @ S0_v16], 5840696475078001361
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v31 @ S0_v19, [x @ L0 (System.UInt64*)+28], 56
+	37 Nop
+	38 Move [v31 @ S0_v19], -7276294671716946913
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Subtract v36 @ S0_v22, [x @ L0 (System.UInt64*)+28], -64
+	43 Nop
+	44 Move [v36 @ S0_v22], 2270897969802886507
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Add v41 @ S0_v25, [x @ L0 (System.UInt64*)+28], 72
+	49 Nop
+	50 Move [v41 @ S0_v25], 6620516959819538809
+	51 Nop
+	52 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x13E9AD0 GlobalGet 7
+	0x13E9AD2 LocalSet 0
+	0x13E9AD4 GlobalGet 7
+	0x13E9AD6 I32Const 16
+	0x13E9AD8 I32Add
+	0x13E9AD9 GlobalSet 7
+	0x13E9ADB I32Const 4574377
+	0x13E9AE0 I32Load8_S 0, 0
+	0x13E9AE3 I32Eqz
+	0x13E9AE4 If -64
+	0x13E9AE6 I32Const 2999840
+	0x13E9AEB I32Load 2, 0
+	0x13E9AEE Call 73003
+	0x13E9AF2 I32Const 4574377
+	0x13E9AF7 I32Const 1
+	0x13E9AF9 I32Store8 0, 0
+	0x13E9AFC End
+	0x13E9AFD I32Const 4430168
+	0x13E9B02 I32Load 2, 0
+	0x13E9B05 I32Const 80
+	0x13E9B08 Call 71670
+	0x13E9B0C LocalSet 1
+	0x13E9B0E LocalGet 0
+	0x13E9B10 I32Const 4501480
+	0x13E9B15 I32Load 2, 0
+	0x13E9B18 I32Store 2, 0
+	0x13E9B1B LocalGet 0
+	0x13E9B1D I32Const 4
+	0x13E9B1F I32Add
+	0x13E9B20 LocalTee 2
+	0x13E9B22 LocalGet 0
+	0x13E9B24 I32Load 2, 0
+	0x13E9B27 I32Store 2, 0
+	0x13E9B2A LocalGet 1
+	0x13E9B2C LocalGet 2
+	0x13E9B2E I32Const 0
+	0x13E9B30 Call 46053
+	0x13E9B34 I32Const 4430936
+	0x13E9B39 I32Load 2, 0
+	0x13E9B3C I32Load 2, 92
+	0x13E9B3F LocalGet 1
+	0x13E9B41 I32Store 2, 0
+	0x13E9B44 LocalGet 0
+	0x13E9B46 GlobalSet 7
+	0x13E9B48 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v20, [2DC620]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v20
+	14 Nop
+	15 Move v14 @ S1_v11, 1
+	16 Move [45CCA9], v14 @ S1_v11
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v20 @ S0_v10 (System.OverflowException), typeof(System.OverflowException)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], fieldof(<PrivateImplementationDetails>.90A0542282A011472F94E97CEAE59F8B3B1A3291)
+	27 Nop
+	28 Nop
+	29 Add v27 @ S0_v13 (System.Runtime.InteropServices.CallingConvention), v1 @ G7, 4
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Move v27.value__ (System.Int32), [v1 @ G7]
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid UnmanagedFunctionPointerAttribute..ctor, v20 @ S0_v10 (System.OverflowException), v27 @ S0_v13 (System.Runtime.InteropServices.CallingConvention)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Move v36._K (System.UInt64[]), v20 @ S0_v10 (System.OverflowException)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Return
+

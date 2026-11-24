@@ -1,0 +1,82 @@
+Type: System.Collections.DictionaryEntry
+
+Method: System.Void .ctor(System.Object key, System.Object value)
+
+Disassembly:
+	0x10088BB LocalGet 0
+	0x10088BD LocalGet 1
+	0x10088BF I32Const 0
+	0x10088C1 Call 54961
+	0x10088C5 LocalGet 2
+	0x10088C7 I32Store8 0, 0
+	0x10088CA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call MarshalByRefObject.CreateObjRef, v5 @ S0_v2 (System.Runtime.Remoting.ObjRef), this @ L0 (System.Collections.DictionaryEntry), key @ L1 (System.Object)
+	4 Nop
+	5 Move [v5 @ S0_v2 (System.Runtime.Remoting.ObjRef)], value @ L2 (System.Object)
+	6 Nop
+	7 Return
+
+Method: System.Object get_Key()
+
+Disassembly:
+	0x1008CFD I32Const 4562896
+	0x1008D02 I32Load8_S 0, 0
+	0x1008D05 I32Eqz
+	0x1008D06 If -64
+	0x1008D08 I32Const 2980316
+	0x1008D0D I32Load 2, 0
+	0x1008D10 Call 73003
+	0x1008D14 I32Const 4562896
+	0x1008D19 I32Const 1
+	0x1008D1B I32Store8 0, 0
+	0x1008D1E End
+	0x1008D1F LocalGet 0
+	0x1008D21 Call 73007
+	0x1008D25 I32Const 4429784
+	0x1008D2A I32Load 2, 0
+	0x1008D2D Call 29321
+	0x1008D31 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v9, [2D79DC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [459FD0], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Newobj v13 @ S0_v6 (System.OverflowException), typeof(System.OverflowException)
+	14 Nop
+	15 Nop
+	16 Call 7289, returnVal1 @ S0_v7 (System.Object), v13 @ S0_v6 (System.OverflowException), typeof(System.Runtime.InteropServices.MarshalAsAttribute)
+	17 Nop
+	18 Return returnVal1 @ S0_v7 (System.Object)
+
+Method: System.Object get_Value()
+
+Disassembly:
+	0xFFF9B0 LocalGet 0
+	0xFFF9B2 I32Const 8
+	0xFFF9B4 I32Add
+	0xFFF9B5 I32Load 2, 0
+	0xFFF9B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Collections.DictionaryEntry), 8
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2]
+

@@ -1,0 +1,228 @@
+Type: Factories+AssetBundleMapping
+
+Method: System.String[] GetAllAssetBundleNames()
+
+Disassembly:
+	0xECA5FA I32Const 4559275
+	0xECA5FF I32Load8_S 0, 0
+	0xECA602 I32Eqz
+	0xECA603 If -64
+	0xECA605 I32Const 2939168
+	0xECA60A I32Load 2, 0
+	0xECA60D Call 73003
+	0xECA611 I32Const 4559275
+	0xECA616 I32Const 1
+	0xECA618 I32Store8 0, 0
+	0xECA61B End
+	0xECA61C I32Const 4427792
+	0xECA621 I32Load 2, 0
+	0xECA624 Call 72556
+	0xECA628 LocalTee 2
+	0xECA62A I32Const 4486260
+	0xECA62F I32Load 2, 0
+	0xECA632 Call 29311
+	0xECA636 I32Const 0
+	0xECA638 LocalGet 0
+	0xECA63A I32Load 2, 16
+	0xECA63D I32Const 0
+	0xECA63F Call 63668
+	0xECA643 LocalGet 2
+	0xECA645 I32Const 0
+	0xECA647 Call 40872
+	0xECA64B I32Const 0
+	0xECA64D LocalGet 0
+	0xECA64F I32Load 2, 20
+	0xECA652 I32Const 0
+	0xECA654 Call 63668
+	0xECA658 LocalGet 2
+	0xECA65A I32Const 0
+	0xECA65C Call 40872
+	0xECA660 LocalGet 2
+	0xECA662 I32Const 4500420
+	0xECA667 I32Load 2, 0
+	0xECA66A Call 29703
+	0xECA66E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v13, [2CD920]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [4591AB], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.Generic.List`1<System.String>), typeof(System.Collections.Generic.List`1<System.String>)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid List`1<System.String>..ctor, v13 @ S0_v7 (System.Collections.Generic.List`1<System.String>)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call Object.Instantiate, v22 @ S1_v6 (UnityEngine.Object), this.DefaultAssetBundleNames (System.String[])
+	24 Nop
+	25 Nop
+	26 CallVoid CharacterMaterialInfo..ctor, 0, v22 @ S1_v6 (UnityEngine.Object), v13 @ S0_v7 (System.Collections.Generic.List`1<System.String>)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call Object.Instantiate, v29 @ S1_v9 (UnityEngine.Object), this.OutfitAssetBundleNames (StringArray[])
+	32 Nop
+	33 Nop
+	34 CallVoid CharacterMaterialInfo..ctor, 0, v29 @ S1_v9 (UnityEngine.Object), v13 @ S0_v7 (System.Collections.Generic.List`1<System.String>)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Newobj returnVal1 @ S0_v11 (System.OverflowException), typeof(System.OverflowException)
+	39 Nop
+	40 Return returnVal1 @ S0_v11 (System.OverflowException)
+
+Method: System.String[] GetAssetBundleNamesForOutfit(System.Int32 outfit, System.Boolean includeIdles)
+
+Disassembly:
+	0xED12F5 GlobalGet 7
+	0xED12F7 LocalSet 0
+	0xED12F9 GlobalGet 7
+	0xED12FB I32Const 16
+	0xED12FD I32Add
+	0xED12FE GlobalSet 7
+	0xED1300 LocalGet 0
+	0xED1302 LocalGet 1
+	0xED1304 I32Const 0
+	0xED1306 Call 30770
+	0xED130A I32Store 2, 0
+	0xED130D LocalGet 2
+	0xED130F I32Const 0
+	0xED1311 Call 30770
+	0xED1315 LocalSet 1
+	0xED1317 LocalGet 0
+	0xED1319 I32Load 2, 0
+	0xED131C LocalTee 2
+	0xED131E LocalGet 1
+	0xED1320 I32Lt_S
+	0xED1321 If -1
+	0xED1323 I32Const -1
+	0xED1325 Else
+	0xED1326 LocalGet 2
+	0xED1328 LocalGet 1
+	0xED132A I32Gt_S
+	0xED132B End
+	0xED132C LocalGet 0
+	0xED132E GlobalSet 7
+	0xED1330 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Call <ActivateStars>d__14.MoveNext, v11 @ S1_v3 (System.Boolean), outfit @ L1 (System.Int32)
+	10 Move [v1 @ G7], v11 @ S1_v3 (System.Boolean)
+	11 Nop
+	12 Nop
+	13 Call <ActivateStars>d__14.MoveNext, v15 @ S0_v6 (System.Boolean), includeIdles @ L2 (System.Boolean)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 CheckLess v21 @ S0_v9 (System.Boolean), [v1 @ G7], v15 @ S0_v6 (System.Boolean)
+	20 Not v22 @ TEMP_v1 (System.Boolean), v21 @ S0_v9 (System.Boolean)
+	21 ConditionalJump @b6, v22 @ TEMP_v1 (System.Boolean)
+	22 Nop
+	23 Jump @b7
+	24 Nop
+	25 Nop
+	26 CheckGreater v26 @ S0_v12 (System.Boolean), [v1 @ G7], v15 @ S0_v6 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Return returnVal1 @ S0_v10 (System.String[])
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC6C59D I32Const 4551971
+	0xC6C5A2 I32Load8_S 0, 0
+	0xC6C5A5 I32Eqz
+	0xC6C5A6 If -64
+	0xC6C5A8 I32Const 2989636
+	0xC6C5AD I32Load 2, 0
+	0xC6C5B0 Call 73003
+	0xC6C5B4 I32Const 4551971
+	0xC6C5B9 I32Const 1
+	0xC6C5BB I32Store8 0, 0
+	0xC6C5BE End
+	0xC6C5BF LocalGet 0
+	0xC6C5C1 I32Const 8
+	0xC6C5C3 I32Add
+	0xC6C5C4 I32Const 4427772
+	0xC6C5C9 I32Load 2, 0
+	0xC6C5CC I32Load 2, 92
+	0xC6C5CF I32Load 2, 0
+	0xC6C5D2 I32Store 2, 0
+	0xC6C5D5 I32Const 4436144
+	0xC6C5DA I32Load 2, 0
+	0xC6C5DD Call 72556
+	0xC6C5E1 LocalTee 1
+	0xC6C5E3 I32Const 4486888
+	0xC6C5E8 I32Load 2, 0
+	0xC6C5EB Call 29311
+	0xC6C5EF LocalGet 0
+	0xC6C5F1 I32Const 20
+	0xC6C5F3 I32Add
+	0xC6C5F4 LocalGet 1
+	0xC6C5F6 I32Store 2, 0
+	0xC6C5F9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v13, [2D9E44]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [457523], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (Factories+AssetBundleMapping), 8
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move [v14 @ S0_v6], v17.Empty (System.String)
+	20 Nop
+	21 Nop
+	22 Call 11B6C, v21 @ S0_v9 (System.Collections.Generic.List`1<UnityEngine.AnimationClip>), typeof(System.Collections.Generic.List`1<UnityEngine.AnimationClip>)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CallVoid List`1<UnityEngine.AnimationClip>..ctor, v21 @ S0_v9 (System.Collections.Generic.List`1<UnityEngine.AnimationClip>)
+	27 Nop
+	28 Nop
+	29 Add v27 @ S0_v11, this @ L0 (Factories+AssetBundleMapping), 20
+	30 Nop
+	31 Move [v27 @ S0_v11], v21 @ S0_v9 (System.Collections.Generic.List`1<UnityEngine.AnimationClip>)
+	32 Nop
+	33 Return
+

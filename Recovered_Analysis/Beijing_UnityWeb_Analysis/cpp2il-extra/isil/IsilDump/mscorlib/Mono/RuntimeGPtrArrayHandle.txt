@@ -1,0 +1,132 @@
+Type: Mono.RuntimeGPtrArrayHandle
+
+Method: System.Void .ctor(System.IntPtr ptr)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.RuntimeGPtrArrayHandle), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], ptr @ L1 (System.IntPtr)
+	5 Nop
+	6 Return
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0xFFF9B0 LocalGet 0
+	0xFFF9B2 I32Const 8
+	0xFFF9B4 I32Add
+	0xFFF9B5 I32Load 2, 0
+	0xFFF9B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.RuntimeGPtrArrayHandle), 8
+	3 Nop
+	4 Nop
+	5 Return [v3 @ S0_v2]
+
+Method: System.IntPtr get_Item(System.Int32 i)
+
+Disassembly:
+	0x12CA1DE LocalGet 0
+	0x12CA1E0 I32Const 8
+	0x12CA1E2 I32Add
+	0x12CA1E3 LocalGet 1
+	0x12CA1E5 I32Const 0
+	0x12CA1E7 Call 59974
+	0x12CA1EB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Newobj returnVal1 @ S0_v3 (System.NullReferenceException), typeof(System.NullReferenceException)
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (System.NullReferenceException)
+
+Method: System.IntPtr Lookup(System.Int32 i)
+
+Disassembly:
+	0x12C9D1F LocalGet 0
+	0x12C9D21 I32Const 8
+	0x12C9D23 I32Add
+	0x12C9D24 LocalGet 1
+	0x12C9D26 I32Const 0
+	0x12C9D28 Call 59954
+	0x12C9D2C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.RuntimeGPtrArrayHandle), 8
+	3 Nop
+	4 Nop
+	5 Call EA32, returnVal1 @ S0_v3 (System.IntPtr), v3 @ S0_v2, i @ L1 (System.Int32), 0
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (System.IntPtr)
+
+Method: System.Void GPtrArrayFree(Mono.RuntimeStructs+GPtrArray* value)
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void DestroyAndFree(ref Mono.RuntimeGPtrArrayHandle h)
+
+Disassembly:
+	0x12C9D3F LocalGet 0
+	0x12C9D41 If -64
+	0x12C9D43 LocalGet 0
+	0x12C9D45 I32Load 2, 0
+	0x12C9D48 LocalTee 1
+	0x12C9D4A If -64
+	0x12C9D4C LocalGet 1
+	0x12C9D4E Call 74277
+	0x12C9D52 LocalGet 0
+	0x12C9D54 I32Const 0
+	0x12C9D56 I32Store 2, 0
+	0x12C9D59 End
+	0x12C9D5A LocalGet 0
+	0x12C9D5C Call 74277
+	0x12C9D60 End
+	0x12C9D61 End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ TEMP_v1 (System.Boolean), h @ L0 (Mono.RuntimeGPtrArrayHandle&), 0
+	2 ConditionalJump @b6, v2 @ TEMP_v1 (System.Boolean)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CheckEqual v6 @ TEMP_v3 (System.Boolean), [h @ L0 (Mono.RuntimeGPtrArrayHandle&)], 0
+	7 ConditionalJump @b7, v6 @ TEMP_v3 (System.Boolean)
+	8 Nop
+	9 CallVoid 12225, [h @ L0 (Mono.RuntimeGPtrArrayHandle&)]
+	10 Nop
+	11 Nop
+	12 Move [h @ L0 (Mono.RuntimeGPtrArrayHandle&)], 0
+	13 Nop
+	14 Nop
+	15 CallVoid 12225, h @ L0 (Mono.RuntimeGPtrArrayHandle&)
+	16 Nop
+	17 Nop
+	18 Return
+

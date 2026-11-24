@@ -1,0 +1,394 @@
+Type: Kiloo.Common.Utility.Wait+Config
+
+Method: System.Boolean get_didTimeout()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._timeOption (Kiloo.Common.Utility.TimeOption)
+
+Method: System.Void set_didTimeout(System.Boolean value)
+
+Disassembly:
+	0x11CCA80 I32Const 4568135
+	0x11CCA85 I32Load8_S 0, 0
+	0x11CCA88 I32Eqz
+	0x11CCA89 If -64
+	0x11CCA8B I32Const 3016616
+	0x11CCA90 I32Load 2, 0
+	0x11CCA93 Call 73003
+	0x11CCA97 I32Const 4568135
+	0x11CCA9C I32Const 1
+	0x11CCA9E I32Store8 0, 0
+	0x11CCAA1 End
+	0x11CCAA2 Loop -64
+	0x11CCAA4 LocalGet 0
+	0x11CCAA6 I32Const 20
+	0x11CCAA8 I32Add
+	0x11CCAA9 LocalTee 2
+	0x11CCAAB LocalGet 2
+	0x11CCAAD I32Load 2, 0
+	0x11CCAB0 I32Const 1
+	0x11CCAB2 I32Add
+	0x11CCAB3 LocalTee 2
+	0x11CCAB5 I32Store 2, 0
+	0x11CCAB8 LocalGet 2
+	0x11CCABA I32Const 1
+	0x11CCABC I32Sub
+	0x11CCABD LocalTee 2
+	0x11CCABF LocalGet 0
+	0x11CCAC1 I32Load 2, 24
+	0x11CCAC4 I32Lt_S
+	0x11CCAC5 If -64
+	0x11CCAC7 LocalGet 0
+	0x11CCAC9 I32Load 2, 8
+	0x11CCACC LocalGet 0
+	0x11CCACE I32Load 2, 12
+	0x11CCAD1 LocalGet 0
+	0x11CCAD3 I32Load 2, 16
+	0x11CCAD6 I32Ge_S
+	0x11CCAD7 If -64
+	0x11CCAD9 LocalGet 0
+	0x11CCADB I32Load 2, 12
+	0x11CCADE LocalGet 2
+	0x11CCAE0 I32Sub
+	0x11CCAE1 I32Const 1
+	0x11CCAE3 I32Sub
+	0x11CCAE4 LocalSet 2
+	0x11CCAE6 End
+	0x11CCAE7 LocalGet 2
+	0x11CCAE9 LocalGet 1
+	0x11CCAEB I32Const 4475792
+	0x11CCAF0 I32Load 2, 0
+	0x11CCAF3 Call 35159
+	0x11CCAF7 Br 1
+	0x11CCAF9 End
+	0x11CCAFA End
+	0x11CCAFB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v13, [2E07A8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v17 @ S1_v18, 1
+	10 Move [45B447], v17 @ S1_v18
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Add v27 @ S0_v6, this @ L0 (Kiloo.Common.Utility.Wait+Config), 20
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v32 @ S1_v5, [v27 @ S0_v6], 1
+	21 Nop
+	22 Move [v27 @ S0_v6], v32 @ S1_v5
+	23 Nop
+	24 Nop
+	25 Subtract v36 @ S0_v8, v32 @ S1_v5, 1
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CheckLess v40 @ S0_v9 (System.Boolean), v36 @ S0_v8, this._thenInvokeAction (System.Action)
+	30 Not v41 @ TEMP_v3 (System.Boolean), v40 @ S0_v9 (System.Boolean)
+	31 ConditionalJump @b8, v41 @ TEMP_v3 (System.Boolean)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CheckGreaterOrEqual v47 @ S1_v11 (System.Boolean), this._timeOption (Kiloo.Common.Utility.TimeOption), this._whileCondition (System.Func`1<System.Boolean>)
+	39 Not v20 @ TEMP_v4 (System.Boolean), v47 @ S1_v11 (System.Boolean)
+	40 ConditionalJump @b10, v20 @ TEMP_v4 (System.Boolean)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Subtract v51 @ S1_v16, this._timeOption (Kiloo.Common.Utility.TimeOption), v36 @ S0_v8
+	45 Nop
+	46 Subtract v53 @ S1_v17, v51 @ S1_v16, 1
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 CallVoid 8957, this._time (System.Single), v10 @ L2_v5, value @ L1 (System.Boolean), methodof(System.Action`2<System.Int32, Kiloo.Common.Utility.ThreadPooling+ProgressDelegate>::Invoke)
+	54 Jump @b11
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Return
+
+Method: System.Boolean get_isDone()
+
+Disassembly:
+	0xC1F278 LocalGet 0
+	0xC1F27A I32Load8_S 0, 32
+	0xC1F27D I32Const 0
+	0xC1F27F I32Ne
+	0xC1F280 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.<didTimeout>k__BackingField (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_isDone(System.Boolean value)
+
+Disassembly:
+	0xC1F283 LocalGet 0
+	0xC1F285 LocalGet 1
+	0xC1F287 I32Const 1
+	0xC1F289 I32And
+	0xC1F28A I32Store8 0, 32
+	0xC1F28D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Move this.<didTimeout>k__BackingField (System.Boolean), value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: Kiloo.Common.Utility.Wait+Config+TimeConfig For(System.Single time)
+
+Disassembly:
+	0xF40684 I32Const 4560300
+	0xF40689 I32Load8_S 0, 0
+	0xF4068C I32Eqz
+	0xF4068D If -64
+	0xF4068F I32Const 2997308
+	0xF40694 I32Load 2, 0
+	0xF40697 Call 73003
+	0xF4069B I32Const 4560300
+	0xF406A0 I32Const 1
+	0xF406A2 I32Store8 0, 0
+	0xF406A5 End
+	0xF406A6 I32Const 26
+	0xF406A8 I32Const 4435948
+	0xF406AD I32Load 2, 0
+	0xF406B0 LocalGet 0
+	0xF406B2 LocalGet 1
+	0xF406B4 Call 37990
+	0xF406B8 LocalGet 0
+	0xF406BA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v8, [2DBC3C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4595AC], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 CallVoid 9466, 26, typeof(Kiloo.Common.HTTP.IRequest), this @ L0 (Kiloo.Common.Utility.Wait+Config), time @ L1 (System.Single)
+	18 Nop
+	19 Nop
+	20 Return this @ L0 (Kiloo.Common.Utility.Wait+Config)
+
+Method: Kiloo.Common.Utility.Wait+Config While(System.Func`1<System.Boolean> condition)
+
+Disassembly:
+	0xFC8C09 I32Const 4561955
+	0xFC8C0E I32Load8_S 0, 0
+	0xFC8C11 I32Eqz
+	0xFC8C12 If -64
+	0xFC8C14 I32Const 3016176
+	0xFC8C19 I32Load 2, 0
+	0xFC8C1C Call 73003
+	0xFC8C20 I32Const 4561955
+	0xFC8C25 I32Const 1
+	0xFC8C27 I32Store8 0, 0
+	0xFC8C2A End
+	0xFC8C2B LocalGet 1
+	0xFC8C2D I32Const 4501744
+	0xFC8C32 I32Load 2, 0
+	0xFC8C35 I32Const 4
+	0xFC8C37 I32Const 0
+	0xFC8C39 Call 55732
+	0xFC8C3D I32Eqz
+	0xFC8C3E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2E05F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [459C23], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call String.EndsWith, v17 @ S0_v6 (System.Boolean), condition @ L1 (System.Func`1<System.Boolean>), "..", 4
+	18 Not returnVal1 @ S0_v7 (System.Boolean), v17 @ S0_v6 (System.Boolean)
+	19 Nop
+	20 Return returnVal1 @ S0_v7 (System.Boolean)
+
+Method: Kiloo.Common.Utility.Wait+Config PauseWhile(System.Func`1<System.Boolean> condition)
+
+Disassembly:
+	0x11CDC8C LocalGet 0
+	0x11CDC8E I32Const 16
+	0x11CDC90 I32Add
+	0x11CDC91 LocalGet 1
+	0x11CDC93 I32Store 2, 0
+	0x11CDC96 LocalGet 0
+	0x11CDC98 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Kiloo.Common.Utility.Wait+Config), 16
+	3 Nop
+	4 Move [v3 @ S0_v2], condition @ L1 (System.Func`1<System.Boolean>)
+	5 Nop
+	6 Nop
+	7 Return this @ L0 (Kiloo.Common.Utility.Wait+Config)
+
+Method: Kiloo.Common.Utility.Wait+Config ThenInvoke(System.Action action)
+
+Disassembly:
+	0x11CDC9B LocalGet 0
+	0x11CDC9D I32Const 20
+	0x11CDC9F I32Add
+	0x11CDCA0 LocalGet 1
+	0x11CDCA2 I32Store 2, 0
+	0x11CDCA5 LocalGet 0
+	0x11CDCA7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Kiloo.Common.Utility.Wait+Config), 20
+	3 Nop
+	4 Move [v3 @ S0_v2], action @ L1 (System.Action)
+	5 Nop
+	6 Nop
+	7 Return this @ L0 (Kiloo.Common.Utility.Wait+Config)
+
+Method: Kiloo.Common.Utility.Wait+Config ThenInvoke(System.Action`1<Kiloo.Common.Utility.Wait+Config> action)
+
+Disassembly:
+	0x11CDCAA LocalGet 0
+	0x11CDCAC I32Const 24
+	0x11CDCAE I32Add
+	0x11CDCAF LocalGet 1
+	0x11CDCB1 I32Store 2, 0
+	0x11CDCB4 LocalGet 0
+	0x11CDCB6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Kiloo.Common.Utility.Wait+Config), 24
+	3 Nop
+	4 Move [v3 @ S0_v2], action @ L1 (System.Action`1<Kiloo.Common.Utility.Wait+Config>)
+	5 Nop
+	6 Nop
+	7 Return this @ L0 (Kiloo.Common.Utility.Wait+Config)
+
+Method: UnityEngine.Coroutine StartCoroutine()
+
+Disassembly:
+	0xC9C332 LocalGet 0
+	0xC9C334 I32Load8_S 0, 33
+	0xC9C337 I32Const 0
+	0xC9C339 I32Ne
+	0xC9C33A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this.<isDone>k__BackingField (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: UnityEngine.Coroutine StartCoroutineOn(UnityEngine.MonoBehaviour proxy)
+
+Disassembly:
+	0x11CDCB9 LocalGet 0
+	0x11CDCBB I32Const 28
+	0x11CDCBD I32Add
+	0x11CDCBE LocalGet 1
+	0x11CDCC0 I32Store 2, 0
+	0x11CDCC3 LocalGet 0
+	0x11CDCC5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Kiloo.Common.Utility.Wait+Config), 28
+	3 Nop
+	4 Move [v3 @ S0_v2], proxy @ L1 (UnityEngine.MonoBehaviour)
+	5 Nop
+	6 Nop
+	7 Return this @ L0 (Kiloo.Common.Utility.Wait+Config)
+
+Method: System.Collections.IEnumerator WaitCoroutine()
+
+Disassembly:
+	0x11CDCC8 LocalGet 0
+	0x11CDCCA I32Const 0
+	0x11CDCCC Call 55180
+	0x11CDCD0 I32Const 0
+	0x11CDCD2 Call 44381
+	0x11CDCD6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call <GetEnumerator>d__23.MoveNext, v3 @ S0_v2 (System.Boolean), this @ L0 (Kiloo.Common.Utility.Wait+Config)
+	3 Nop
+	4 Call CoroutineUtil.WaitForAll, returnVal1 @ S0_v3 (System.Collections.IEnumerator), v3 @ S0_v2 (System.Boolean)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Collections.IEnumerator)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

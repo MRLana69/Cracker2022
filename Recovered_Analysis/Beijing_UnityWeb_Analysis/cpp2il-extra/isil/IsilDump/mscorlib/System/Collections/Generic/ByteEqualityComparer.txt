@@ -1,0 +1,492 @@
+Type: System.Collections.Generic.ByteEqualityComparer
+
+Method: System.Boolean Equals(System.Byte x, System.Byte y)
+
+Disassembly:
+	0x11F297E LocalGet 1
+	0x11F2980 I32Eqz
+	0x11F2981 LocalTee 3
+	0x11F2983 LocalGet 2
+	0x11F2985 I32Eqz
+	0x11F2986 LocalTee 4
+	0x11F2988 I32And
+	0x11F2989 LocalSet 0
+	0x11F298B LocalGet 3
+	0x11F298D LocalGet 4
+	0x11F298F I32Or
+	0x11F2990 I32Eqz
+	0x11F2991 If -64
+	0x11F2993 I32Const 0
+	0x11F2995 LocalGet 1
+	0x11F2997 LocalGet 2
+	0x11F2999 Call 29448
+	0x11F299D LocalSet 0
+	0x11F299F End
+	0x11F29A0 LocalGet 0
+	0x11F29A2 End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ S0_v2 (System.Boolean), x @ L1 (System.Byte), 0
+	2 Nop
+	3 Nop
+	4 CheckEqual v6 @ S1_v2 (System.Boolean), y @ L2 (System.Byte), 0
+	5 Nop
+	6 And v8 @ S0_v3 (System.Boolean), v2 @ S0_v2 (System.Boolean), v6 @ S1_v2 (System.Boolean)
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Or v12 @ S0_v5, v2 @ S0_v2 (System.Boolean), v6 @ S1_v2 (System.Boolean)
+	11 CheckEqual v13 @ S0_v6 (System.Boolean), v12 @ S0_v5, 0
+	12 Not v14 @ TEMP_v1 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	13 ConditionalJump @b5, v14 @ TEMP_v1 (System.Boolean)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Call 7308, v18 @ S0_v10 (System.Boolean), 0, x @ L1 (System.Byte), y @ L2 (System.Byte)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Return v21 @ L0_v2 (System.Boolean)
+
+Method: System.Int32 GetHashCode(System.Byte b)
+
+Disassembly:
+	0x11F273D LocalGet 1
+	0x11F273F If -1
+	0x11F2741 I32Const 2
+	0x11F2743 LocalGet 1
+	0x11F2745 Call 29262
+	0x11F2749 Else
+	0x11F274A I32Const 0
+	0x11F274C End
+	0x11F274D End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ TEMP_v1 (System.Boolean), b @ L1 (System.Byte), 0
+	2 ConditionalJump @b5, v2 @ TEMP_v1 (System.Boolean)
+	3 Nop
+	4 Nop
+	5 Call 724E, returnVal1 @ S0_v2 (System.Int32), 2, b @ L1 (System.Byte)
+	6 Jump @b6
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Int32 IndexOf(System.Byte[] array, System.Byte value, System.Int32 startIndex, System.Int32 count)
+
+Disassembly:
+	0x11F31CB LocalGet 3
+	0x11F31CD I32Const 25
+	0x11F31CF LocalGet 0
+	0x11F31D1 LocalGet 1
+	0x11F31D3 Call 29448
+	0x11F31D7 I32Const 2147483647
+	0x11F31DD I32And
+	0x11F31DE LocalTee 0
+	0x11F31E0 I32Store 2, 0
+	0x11F31E3 LocalGet 0
+	0x11F31E5 I32Const 101
+	0x11F31E8 I32Mul
+	0x11F31E9 LocalSet 1
+	0x11F31EB LocalGet 4
+	0x11F31ED LocalGet 2
+	0x11F31EF I32Const 1
+	0x11F31F1 I32Sub
+	0x11F31F2 LocalTee 2
+	0x11F31F4 If -1
+	0x11F31F6 LocalGet 1
+	0x11F31F8 LocalGet 2
+	0x11F31FA I32Rem_U
+	0x11F31FB Else
+	0x11F31FC I32Const 0
+	0x11F31FE End
+	0x11F31FF I32Const 1
+	0x11F3201 I32Add
+	0x11F3202 I32Store 2, 0
+	0x11F3205 LocalGet 0
+	0x11F3207 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 7308, v7 @ S1_v2, 25, this @ L0 (System.Collections.Generic.ByteEqualityComparer), array @ L1 (System.Byte[])
+	5 Nop
+	6 And v9 @ S1_v3 (System.Int32), v7 @ S1_v2, 2147483647
+	7 Nop
+	8 Move startIndex.m_value (System.Int32), v9 @ S1_v3 (System.Int32)
+	9 Nop
+	10 Nop
+	11 Multiply v13 @ S0_v3, v9 @ S1_v3 (System.Int32), 101
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Subtract v20 @ S1_v6, value @ L2 (System.Byte), 1
+	17 Nop
+	18 CheckEqual v22 @ TEMP_v1 (System.Boolean), value @ L2 (System.Byte), 1
+	19 ConditionalJump @b5, v22 @ TEMP_v1 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Divide v25 @ TEMP_v3, v13 @ S0_v3, v20 @ S1_v6
+	23 Multiply v26 @ TEMP_v4, v25 @ TEMP_v3, v20 @ S1_v6
+	24 Subtract v31 @ S1_v7, v13 @ S0_v3, v26 @ TEMP_v4
+	25 Jump @b6
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Add v33 @ S1_v8 (System.Int32), v31 @ S1_v7, 1
+	30 Move count.m_value (System.Int32), v33 @ S1_v8 (System.Int32)
+	31 Nop
+	32 Nop
+	33 Return v9 @ S1_v3 (System.Int32)
+
+Method: System.Int32 LastIndexOf(System.Byte[] array, System.Byte value, System.Int32 startIndex, System.Int32 count)
+
+Disassembly:
+	0x125870A I32Const 4569972
+	0x125870F I32Load8_S 0, 0
+	0x1258712 I32Eqz
+	0x1258713 If -64
+	0x1258715 I32Const 2939304
+	0x125871A I32Load 2, 0
+	0x125871D Call 73003
+	0x1258721 I32Const 4569972
+	0x1258726 I32Const 1
+	0x1258728 I32Store8 0, 0
+	0x125872B End
+	0x125872C LocalGet 1
+	0x125872E I32Eqz
+	0x125872F If -64
+	0x1258731 I32Const 4427864
+	0x1258736 I32Load 2, 0
+	0x1258739 Call 72556
+	0x125873D LocalTee 0
+	0x125873F I32Const 4503036
+	0x1258744 I32Load 2, 0
+	0x1258747 I32Const 0
+	0x1258749 Call 57599
+	0x125874D LocalGet 0
+	0x125874F I32Const 0
+	0x1258751 I32Const 4462536
+	0x1258756 I32Load 2, 0
+	0x1258759 Call 73899
+	0x125875D End
+	0x125875E LocalGet 3
+	0x1258760 I32Const -1
+	0x1258762 I32Le_S
+	0x1258763 If -64
+	0x1258765 I32Const 4503096
+	0x125876A I32Load 2, 0
+	0x125876D LocalSet 0
+	0x125876F I32Const 4427992
+	0x1258774 I32Load 2, 0
+	0x1258777 Call 72556
+	0x125877B LocalTee 5
+	0x125877D I32Const 4503092
+	0x1258782 I32Load 2, 0
+	0x1258785 LocalGet 0
+	0x1258787 I32Const 0
+	0x1258789 Call 57647
+	0x125878D LocalGet 5
+	0x125878F I32Const 0
+	0x1258791 I32Const 4462536
+	0x1258796 I32Load 2, 0
+	0x1258799 Call 73899
+	0x125879D End
+	0x125879E LocalGet 4
+	0x12587A0 I32Const -1
+	0x12587A2 I32Le_S
+	0x12587A3 If -64
+	0x12587A5 I32Const 4503104
+	0x12587AA I32Load 2, 0
+	0x12587AD LocalSet 0
+	0x12587AF I32Const 4427992
+	0x12587B4 I32Load 2, 0
+	0x12587B7 Call 72556
+	0x12587BB LocalTee 5
+	0x12587BD I32Const 4503100
+	0x12587C2 I32Load 2, 0
+	0x12587C5 LocalGet 0
+	0x12587C7 I32Const 0
+	0x12587C9 Call 57647
+	0x12587CD LocalGet 5
+	0x12587CF I32Const 0
+	0x12587D1 I32Const 4462536
+	0x12587D6 I32Load 2, 0
+	0x12587D9 Call 73899
+	0x12587DD End
+	0x12587DE LocalGet 1
+	0x12587E0 I32Const 12
+	0x12587E2 I32Add
+	0x12587E3 LocalTee 0
+	0x12587E5 I32Load 2, 0
+	0x12587E8 LocalGet 3
+	0x12587EA I32Sub
+	0x12587EB LocalGet 4
+	0x12587ED I32Lt_S
+	0x12587EE If -64
+	0x12587F0 I32Const 4503080
+	0x12587F5 I32Load 2, 0
+	0x12587F8 LocalSet 5
+	0x12587FA I32Const 4427876
+	0x12587FF I32Load 2, 0
+	0x1258802 Call 72556
+	0x1258806 LocalTee 6
+	0x1258808 LocalGet 5
+	0x125880A I32Const 0
+	0x125880C Call 57610
+	0x1258810 LocalGet 6
+	0x1258812 I32Const 0
+	0x1258814 I32Const 4462536
+	0x1258819 I32Load 2, 0
+	0x125881C Call 73899
+	0x1258820 End
+	0x1258821 LocalGet 4
+	0x1258823 If -1
+	0x1258825 LocalGet 0
+	0x1258827 I32Load 2, 0
+	0x125882A If -1
+	0x125882C LocalGet 1
+	0x125882E I32Const 16
+	0x1258830 I32Add
+	0x1258831 Else
+	0x1258832 I32Const 0
+	0x1258834 End
+	0x1258835 LocalGet 2
+	0x1258837 LocalGet 3
+	0x1258839 LocalGet 4
+	0x125883B I32Const 0
+	0x125883D Call 57967
+	0x1258841 Else
+	0x1258842 I32Const -1
+	0x1258844 End
+	0x1258845 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b26
+	5 Nop
+	6 Move v5 @ S0_v53, [2CD9A8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v53
+	8 Nop
+	9 Move v7 @ S1_v26, 1
+	10 Move [45BB74], v7 @ S1_v26
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), array @ L1 (System.Byte[]), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Call 11B6C, v17 @ S0_v50 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid ArgumentOutOfRangeException..ctor, v17 @ S0_v50 (System.ArgumentOutOfRangeException), "array"
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v17 @ S0_v50 (System.ArgumentOutOfRangeException), 0, methodof(System.Collections.Generic.ByteEqualityComparer::IndexOf)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckLessOrEqual v31 @ S0_v9 (System.Boolean), startIndex @ L3 (System.Int32), -1
+	33 Not v32 @ TEMP_v3 (System.Boolean), v31 @ S0_v9 (System.Boolean)
+	34 ConditionalJump @b12, v32 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call 11B6C, v41 @ S0_v46 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 CallVoid ArgumentOutOfRangeException.GetObjectData, v41 @ S0_v46 (System.ArgumentOutOfRangeException), "startIndex", "Index was out of range. Must be non-negative and less than the size of the collection."
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CallVoid 120AB, v41 @ S0_v46 (System.ArgumentOutOfRangeException), 0, methodof(System.Collections.Generic.ByteEqualityComparer::IndexOf)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 CheckLessOrEqual v58 @ S0_v12 (System.Boolean), count @ L4 (System.Int32), -1
+	56 Not v59 @ TEMP_v4 (System.Boolean), v58 @ S0_v12 (System.Boolean)
+	57 ConditionalJump @b16, v59 @ TEMP_v4 (System.Boolean)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Call 11B6C, v69 @ S0_v40 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 CallVoid ArgumentOutOfRangeException.GetObjectData, v69 @ S0_v40 (System.ArgumentOutOfRangeException), "count", "Count must be positive and count must refer to a location within the string/array/collection."
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 CallVoid 120AB, v69 @ S0_v40 (System.ArgumentOutOfRangeException), 0, methodof(System.Collections.Generic.ByteEqualityComparer::IndexOf)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Add v83 @ S0_v15, array @ L1 (System.Byte[]), 12
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Subtract v87 @ S0_v17, [v83 @ S0_v15], startIndex @ L3 (System.Int32)
+	83 Nop
+	84 CheckLess v89 @ S0_v18 (System.Boolean), v87 @ S0_v17, count @ L4 (System.Int32)
+	85 Not v90 @ TEMP_v5 (System.Boolean), v89 @ S0_v18 (System.Boolean)
+	86 ConditionalJump @b20, v90 @ TEMP_v5 (System.Boolean)
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Call 11B6C, v100 @ S0_v34 (System.ArgumentNullException), typeof(System.ArgumentException)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 CallVoid ArgumentNullException..ctor, v100 @ S0_v34 (System.ArgumentNullException), "Offset and length were out of bounds for the array or count is greater than the number of elements from index to the end of the source collection."
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 CallVoid 120AB, v100 @ S0_v34 (System.ArgumentNullException), 0, methodof(System.Collections.Generic.ByteEqualityComparer::IndexOf)
+	102 Nop
+	103 Nop
+	104 CheckEqual v112 @ TEMP_v6 (System.Boolean), count @ L4 (System.Int32), 0
+	105 ConditionalJump @b25, v112 @ TEMP_v6 (System.Boolean)
+	106 Nop
+	107 Nop
+	108 CheckEqual v118 @ TEMP_v8 (System.Boolean), [v83 @ S0_v15], 0
+	109 ConditionalJump @b23, v118 @ TEMP_v8 (System.Boolean)
+	110 Nop
+	111 Nop
+	112 Add v138 @ S0_v25 (System.Byte[]), array @ L1 (System.Byte[]), 16
+	113 Jump @b27
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Call Convert.ToBase64String, v136 @ S0_v26 (System.String), v138 @ S0_v25 (System.Byte[]), value @ L2 (System.Byte), startIndex @ L3 (System.Int32), count @ L4 (System.Int32)
+	121 Jump @b28
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Return returnVal1 @ S0_v21 (System.Int32)
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x12586E9 GlobalGet 7
+	0x12586EB LocalSet 0
+	0x12586ED GlobalGet 7
+	0x12586EF I32Const 16
+	0x12586F1 I32Add
+	0x12586F2 GlobalSet 7
+	0x12586F4 LocalGet 0
+	0x12586F6 LocalGet 1
+	0x12586F8 I32Store8 0, 0
+	0x12586FB LocalGet 0
+	0x12586FD I32Load8_U 0, 0
+	0x1258700 LocalGet 0
+	0x1258702 GlobalSet 7
+	0x1258704 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], obj @ L1 (System.Object)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Return [v1 @ G7]
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x11F27E2 I32Const 0
+	0x11F27E4 LocalSet 1
+	0x11F27E6 Loop -64
+	0x11F27E8 LocalGet 0
+	0x11F27EA I32Const 1
+	0x11F27EC I32Ge_S
+	0x11F27ED If -64
+	0x11F27EF LocalGet 0
+	0x11F27F1 I32Const 1
+	0x11F27F3 I32Shr_U
+	0x11F27F4 LocalSet 0
+	0x11F27F6 LocalGet 1
+	0x11F27F8 I32Const 1
+	0x11F27FA I32Add
+	0x11F27FB LocalSet 1
+	0x11F27FD Br 1
+	0x11F27FF End
+	0x11F2800 End
+	0x11F2801 LocalGet 1
+	0x11F2803 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 CheckGreaterOrEqual v17 @ S0_v4 (System.Boolean), v20 @ S0_v7 (System.Collections.Generic.ByteEqualityComparer), 1
+	6 Not v4 @ TEMP_v2 (System.Boolean), v17 @ S0_v4 (System.Boolean)
+	7 ConditionalJump @b4, v4 @ TEMP_v2 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 ShiftRight v20 @ S0_v7 (System.Collections.Generic.ByteEqualityComparer), v5 @ L0_v1 (System.Collections.Generic.ByteEqualityComparer), 1
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v9 (System.Int32), v11 @ L1_v2 (System.Int32), 1
+	15 Nop
+	16 Jump @b5
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Return v11 @ L1_v2 (System.Int32)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

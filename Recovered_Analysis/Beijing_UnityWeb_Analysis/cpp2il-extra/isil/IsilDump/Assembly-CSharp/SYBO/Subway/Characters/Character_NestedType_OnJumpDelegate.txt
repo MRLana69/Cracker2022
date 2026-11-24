@@ -1,0 +1,91 @@
+Type: SYBO.Subway.Characters.Character+OnJumpDelegate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (SYBO.Subway.Characters.Character+OnJumpDelegate), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke(System.Single jumpHeight, System.Boolean willPlaySound)
+
+Disassembly:
+	0xFBE293 LocalGet 0
+	0xFBE295 LocalGet 1
+	0xFBE297 F32Store 2, 12
+	0xFBE29A LocalGet 0
+	0xFBE29C LocalGet 2
+	0xFBE29E I32Const 1
+	0xFBE2A0 I32And
+	0xFBE2A1 I32Store8 0, 8
+	0xFBE2A4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.invoke_impl (System.IntPtr), jumpHeight @ L1 (System.Single)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Move this.method_ptr (System.IntPtr), willPlaySound @ L2 (System.Boolean)
+	8 Nop
+	9 Return
+
+Method: System.IAsyncResult BeginInvoke(System.Single jumpHeight, System.Boolean willPlaySound, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x160045F I32Const 77
+	0x1600462 Call 1
+	0x1600464 I32Const 0
+	0x1600466 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 77
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xC7FF09 LocalGet 1
+	0xC7FF0B I32Const 0
+	0xC7FF0D Call 73892
+	0xC7FF11 Drop
+	0xC7FF12 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Throw typeof(System.InvalidOperationException)
+	3 Nop
+	4 Return
+

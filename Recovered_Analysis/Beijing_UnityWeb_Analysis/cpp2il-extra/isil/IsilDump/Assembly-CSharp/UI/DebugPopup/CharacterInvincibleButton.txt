@@ -1,0 +1,146 @@
+Type: UI.DebugPopup.CharacterInvincibleButton
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (UI.DebugPopup.CharacterInvincibleButton)
+	3 Nop
+	4 Return
+
+Method: System.Void Click()
+
+Disassembly:
+	0xD328D1 LocalGet 0
+	0xD328D3 LocalGet 0
+	0xD328D5 I32Load8_S 0, 16
+	0xD328D8 I32Const 0
+	0xD328DA I32Ne
+	0xD328DB I32Const 0
+	0xD328DD Call 33762
+	0xD328E1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CheckNotEqual v5 @ S1_v3 (System.Boolean), this._enabled (System.Boolean), 0
+	5 Nop
+	6 CallVoid FPSCounterButton.SetupButton, this @ L0 (UI.DebugPopup.CharacterInvincibleButton), v5 @ S1_v3 (System.Boolean)
+	7 Nop
+	8 Return
+
+Method: System.Void SetupButton(System.Boolean enabled)
+
+Disassembly:
+	0xD32849 I32Const 4554211
+	0xD3284E I32Load8_S 0, 0
+	0xD32851 I32Eqz
+	0xD32852 If -64
+	0xD32854 I32Const 2941656
+	0xD32859 I32Load 2, 0
+	0xD3285C Call 73003
+	0xD32860 I32Const 4554211
+	0xD32865 I32Const 1
+	0xD32867 I32Store8 0, 0
+	0xD3286A End
+	0xD3286B LocalGet 0
+	0xD3286D I32Load 2, 12
+	0xD32870 LocalSet 3
+	0xD32872 LocalGet 1
+	0xD32874 If -64
+	0xD32876 LocalGet 3
+	0xD32878 I32Const 4546212
+	0xD3287D I32Load 2, 0
+	0xD32880 I32Const 0
+	0xD32882 Call 39963
+	0xD32886 Else
+	0xD32887 LocalGet 3
+	0xD32889 I32Const 4546216
+	0xD3288E I32Load 2, 0
+	0xD32891 I32Const 0
+	0xD32893 Call 39963
+	0xD32897 End
+	0xD32898 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v12, [2CE2D8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [457DE3], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Not v17 @ TEMP_v2 (System.Boolean), enabled @ L1 (System.Boolean)
+	17 ConditionalJump @b7, v17 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid UILabel.set_fontSize, this._titleLabel (UILabel), "Ignore Obstacles: ON"
+	23 Jump @b8
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid UILabel.set_fontSize, this._titleLabel (UILabel), "Ignore Obstacles: OFF"
+	29 Nop
+	30 Nop
+	31 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD32938 LocalGet 0
+	0xD3293A LocalGet 0
+	0xD3293C I32Load8_S 0, 16
+	0xD3293F I32Const 0
+	0xD32941 I32Ne
+	0xD32942 I32Const 1
+	0xD32944 I32Xor
+	0xD32945 I32Store8 0, 16
+	0xD32948 LocalGet 0
+	0xD3294A LocalGet 0
+	0xD3294C I32Load8_S 0, 16
+	0xD3294F I32Const 0
+	0xD32951 I32Ne
+	0xD32952 I32Const 0
+	0xD32954 Call 33762
+	0xD32958 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CheckNotEqual v5 @ S1_v3 (System.Boolean), this._enabled (System.Boolean), 0
+	5 Nop
+	6 Xor v7 @ S1_v4 (System.Boolean), v5 @ S1_v3 (System.Boolean), 1
+	7 Move this._enabled (System.Boolean), v7 @ S1_v4 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CheckNotEqual v12 @ S1_v7 (System.Boolean), this._enabled (System.Boolean), 0
+	13 Nop
+	14 CallVoid FPSCounterButton.SetupButton, this @ L0 (UI.DebugPopup.CharacterInvincibleButton), v12 @ S1_v7 (System.Boolean)
+	15 Nop
+	16 Return
+

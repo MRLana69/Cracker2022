@@ -1,0 +1,179 @@
+Type: System.Security.Cryptography.OidEnumerator
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x119FF01 I32Const 4567605
+	0x119FF06 I32Load8_S 0, 0
+	0x119FF09 I32Eqz
+	0x119FF0A If -64
+	0x119FF0C I32Const 2989032
+	0x119FF11 I32Load 2, 0
+	0x119FF14 Call 73003
+	0x119FF18 I32Const 4567605
+	0x119FF1D I32Const 1
+	0x119FF1F I32Store8 0, 0
+	0x119FF22 End
+	0x119FF23 I32Const 4428048
+	0x119FF28 I32Load 2, 0
+	0x119FF2B Call 72556
+	0x119FF2F LocalTee 1
+	0x119FF31 I32Const 0
+	0x119FF33 Call 57595
+	0x119FF37 LocalGet 0
+	0x119FF39 I32Const 8
+	0x119FF3B I32Add
+	0x119FF3C LocalGet 1
+	0x119FF3E I32Store 2, 0
+	0x119FF41 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v11, [2D9BE8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45B235], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.ArrayList), typeof(System.Collections.ArrayList)
+	15 Nop
+	16 Nop
+	17 CallVoid ArrayList.Clear, v13 @ S0_v7 (System.Collections.ArrayList)
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, this @ L0 (System.Security.Cryptography.OidEnumerator), 8
+	21 Nop
+	22 Move [v19 @ S0_v9], v13 @ S0_v7 (System.Collections.ArrayList)
+	23 Nop
+	24 Return
+
+Method: System.Void .ctor(System.Security.Cryptography.OidCollection oids)
+
+Disassembly:
+	0x119FECB LocalGet 0
+	0x119FECD I32Const 12
+	0x119FECF I32Add
+	0x119FED0 LocalGet 1
+	0x119FED2 I32Store 2, 0
+	0x119FED5 LocalGet 0
+	0x119FED7 I32Load 2, 12
+	0x119FEDA If -64
+	0x119FEDC I32Const 2
+	0x119FEDE LocalGet 0
+	0x119FEE0 I32Load 2, 12
+	0x119FEE3 LocalGet 0
+	0x119FEE5 I32Load 2, 16
+	0x119FEE8 I32Const 0
+	0x119FEEA Call 54212
+	0x119FEEE LocalTee 3
+	0x119FEF0 If -64
+	0x119FEF2 LocalGet 0
+	0x119FEF4 I32Const 8
+	0x119FEF6 I32Add
+	0x119FEF7 LocalGet 3
+	0x119FEF9 I32Store 2, 0
+	0x119FEFC End
+	0x119FEFD End
+	0x119FEFE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Security.Cryptography.OidEnumerator), 12
+	3 Nop
+	4 Move [v3 @ S0_v2], oids @ L1 (System.Security.Cryptography.OidCollection)
+	5 Nop
+	6 Nop
+	7 CheckEqual v8 @ TEMP_v1 (System.Boolean), this.m_current (System.Int32), 0
+	8 ConditionalJump @b6, v8 @ TEMP_v1 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call X509Certificate2.GetNameInfo, v15 @ S0_v7 (System.String), 2, this.m_current (System.Int32), [this @ L0 (System.Security.Cryptography.OidEnumerator)+10]
+	16 Nop
+	17 CheckEqual v24 @ TEMP_v3 (System.Boolean), v15 @ S0_v7 (System.String), 0
+	18 ConditionalJump @b6, v24 @ TEMP_v3 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Add v28 @ S0_v9, this @ L0 (System.Security.Cryptography.OidEnumerator), 8
+	22 Nop
+	23 Move [v28 @ S0_v9], v15 @ S0_v7 (System.String)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Security.Cryptography.Oid get_Current()
+
+Disassembly:
+	0xF7916A LocalGet 0
+	0xF7916C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return this @ L0 (System.Security.Cryptography.OidEnumerator)
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x11A041E LocalGet 0
+	0x11A0420 I32Load 2, 8
+	0x11A0423 LocalGet 0
+	0x11A0425 I32Load 2, 12
+	0x11A0428 I32Const 0
+	0x11A042A Call 54221
+	0x11A042E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call OidCollection.get_Item, returnVal1 @ S0_v3 (System.Object), this.m_oids (System.Security.Cryptography.OidCollection), this.m_current (System.Int32)
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (System.Object)
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x11A041E LocalGet 0
+	0x11A0420 I32Load 2, 8
+	0x11A0423 LocalGet 0
+	0x11A0425 I32Load 2, 12
+	0x11A0428 I32Const 0
+	0x11A042A Call 54221
+	0x11A042E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call OidCollection.get_Item, returnVal1 @ S0_v3 (System.Boolean), this.m_oids (System.Security.Cryptography.OidCollection), this.m_current (System.Int32)
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

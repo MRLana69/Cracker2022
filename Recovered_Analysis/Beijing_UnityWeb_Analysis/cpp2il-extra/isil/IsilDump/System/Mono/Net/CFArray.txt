@@ -1,0 +1,422 @@
+Type: Mono.Net.CFArray
+
+Method: System.Void .ctor(System.IntPtr handle, System.Boolean own)
+
+Disassembly:
+	0x11085E1 LocalGet 0
+	0x11085E3 LocalGet 1
+	0x11085E5 I32Store 2, 8
+	0x11085E8 LocalGet 2
+	0x11085EA I32Eqz
+	0x11085EB If -64
+	0x11085ED LocalGet 0
+	0x11085EF I32Const 0
+	0x11085F1 Call 51694
+	0x11085F5 End
+	0x11085F6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.<Handle>k__BackingField (System.IntPtr), handle @ L1 (System.IntPtr)
+	3 Nop
+	4 Not v6 @ S0_v3 (System.Boolean), own @ L2 (System.Boolean)
+	5 Not v7 @ TEMP_v1 (System.Boolean), v6 @ S0_v3 (System.Boolean)
+	6 ConditionalJump @b4, v7 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Nop
+	9 CallVoid CFObject.CFRelease, this @ L0 (Mono.Net.CFArray)
+	10 Nop
+	11 Nop
+	12 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x11F29A5 I32Const 4568719
+	0x11F29AA I32Load8_S 0, 0
+	0x11F29AD I32Eqz
+	0x11F29AE If -64
+	0x11F29B0 I32Const 2988464
+	0x11F29B5 I32Load 2, 0
+	0x11F29B8 Call 73003
+	0x11F29BC I32Const 4568719
+	0x11F29C1 I32Const 1
+	0x11F29C3 I32Store8 0, 0
+	0x11F29C6 End
+	0x11F29C7 I32Const 4428524
+	0x11F29CC I32Load 2, 0
+	0x11F29CF Call 72556
+	0x11F29D3 LocalSet 0
+	0x11F29D5 I32Const 4428524
+	0x11F29DA I32Load 2, 0
+	0x11F29DD I32Load 2, 92
+	0x11F29E0 LocalGet 0
+	0x11F29E2 I32Store 2, 0
+	0x11F29E5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v12, [2D99B0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45B68F], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.Generic.ObjectEqualityComparer), typeof(System.Collections.Generic.ObjectEqualityComparer)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move v17.Default (System.Collections.Generic.ObjectEqualityComparer), v13 @ S0_v7 (System.Collections.Generic.ObjectEqualityComparer)
+	21 Nop
+	22 Return
+
+Method: System.IntPtr CFArrayGetCount(System.IntPtr handle)
+
+Disassembly:
+	0x110860A I32Const 3925332
+	0x110860F I32Load 2, 0
+	0x1108612 LocalTee 1
+	0x1108614 If -64
+	0x1108616 LocalGet 1
+	0x1108618 LocalSet 2
+	0x110861A Else
+	0x110861B I32Const 3925332
+	0x1108620 I32Const 3478879
+	0x1108625 I32Const 3478946
+	0x110862A I32Const 0
+	0x110862C I32Const 2
+	0x110862E I32Const 4
+	0x1108630 I32Const 0
+	0x1108632 Call 51696
+	0x1108636 LocalTee 1
+	0x1108638 I32Store 2, 0
+	0x110863B LocalGet 1
+	0x110863D If -64
+	0x110863F LocalGet 1
+	0x1108641 LocalSet 2
+	0x1108643 Else
+	0x1108644 I32Const 3478955
+	0x1108649 Call 72499
+	0x110864D I32Const 0
+	0x110864F I32Const 0
+	0x1108651 Call 73899
+	0x1108655 End
+	0x1108656 End
+	0x1108657 LocalGet 0
+	0x1108659 LocalGet 2
+	0x110865B I32Const 4095
+	0x110865E I32And
+	0x110865F I32Const 1797
+	0x1108662 I32Add
+	0x1108663 CallIndirect 2, 0
+	0x1108666 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ TEMP_v1 (System.Boolean), [3BE554], 0
+	4 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Jump @b10
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call C9F0, v13 @ S1_v6, 3478879, 3478946, 0, 2, 4, 0
+	16 Nop
+	17 Move [3BE554], v13 @ S1_v6
+	18 Nop
+	19 CheckEqual v32 @ TEMP_v3 (System.Boolean), v13 @ S1_v6, 0
+	20 ConditionalJump @b7, v32 @ TEMP_v3 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Jump @b10
+	24 Nop
+	25 Newobj v36 @ S0_v9 (System.NotSupportedException), typeof(System.NotSupportedException)
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v36 @ S0_v9 (System.NotSupportedException), 0, 0
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 And v42 @ S1_v3, v28 @ L2_v1, 4095
+	35 Nop
+	36 Add v44 @ S1_v4, v42 @ S1_v3, 1797
+	37 IndirectCall v44 @ S1_v4, returnVal1 @ S0_v5 (System.IntPtr), handle @ L0 (System.IntPtr)
+	38 Nop
+	39 Return returnVal1 @ S0_v5 (System.IntPtr)
+
+Method: System.Int32 get_Count()
+
+Disassembly:
+	0x1108A60 I32Const 3925348
+	0x1108A65 I32Load 2, 0
+	0x1108A68 LocalTee 1
+	0x1108A6A If -64
+	0x1108A6C LocalGet 1
+	0x1108A6E LocalSet 2
+	0x1108A70 Else
+	0x1108A71 I32Const 3925348
+	0x1108A76 I32Const 3478879
+	0x1108A7B I32Const 3479183
+	0x1108A80 I32Const 0
+	0x1108A82 I32Const 2
+	0x1108A84 I32Const 4
+	0x1108A86 I32Const 0
+	0x1108A88 Call 51706
+	0x1108A8C LocalTee 1
+	0x1108A8E I32Store 2, 0
+	0x1108A91 LocalGet 1
+	0x1108A93 If -64
+	0x1108A95 LocalGet 1
+	0x1108A97 LocalSet 2
+	0x1108A99 Else
+	0x1108A9A I32Const 3479199
+	0x1108A9F Call 72499
+	0x1108AA3 I32Const 0
+	0x1108AA5 I32Const 0
+	0x1108AA7 Call 73899
+	0x1108AAB End
+	0x1108AAC End
+	0x1108AAD LocalGet 0
+	0x1108AAF LocalGet 2
+	0x1108AB1 I32Const 4095
+	0x1108AB4 I32And
+	0x1108AB5 I32Const 1797
+	0x1108AB8 I32Add
+	0x1108AB9 CallIndirect 2, 0
+	0x1108ABC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ TEMP_v1 (System.Boolean), [3BE564], 0
+	4 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Jump @b10
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call C9FA, v13 @ S1_v6, 3478879, 3479183, 0, 2, 4, 0
+	16 Nop
+	17 Move [3BE564], v13 @ S1_v6
+	18 Nop
+	19 CheckEqual v32 @ TEMP_v3 (System.Boolean), v13 @ S1_v6, 0
+	20 ConditionalJump @b7, v32 @ TEMP_v3 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Jump @b10
+	24 Nop
+	25 Newobj v36 @ S0_v9 (System.NotSupportedException), typeof(System.NotSupportedException)
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v36 @ S0_v9 (System.NotSupportedException), 0, 0
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 And v42 @ S1_v3, v28 @ L2_v1, 4095
+	35 Nop
+	36 Add v44 @ S1_v4, v42 @ S1_v3, 1797
+	37 IndirectCall v44 @ S1_v4, returnVal1 @ S0_v5 (System.Int32), this @ L0 (Mono.Net.CFArray)
+	38 Nop
+	39 Return returnVal1 @ S0_v5 (System.Int32)
+
+Method: System.IntPtr CFArrayGetValueAtIndex(System.IntPtr handle, System.IntPtr index)
+
+Disassembly:
+	0x110BF76 I32Const 4566141
+	0x110BF7B I32Load8_S 0, 0
+	0x110BF7E I32Eqz
+	0x110BF7F If -64
+	0x110BF81 I32Const 2939628
+	0x110BF86 I32Load 2, 0
+	0x110BF89 Call 73003
+	0x110BF8D I32Const 4566141
+	0x110BF92 I32Const 1
+	0x110BF94 I32Store8 0, 0
+	0x110BF97 End
+	0x110BF98 LocalGet 0
+	0x110BF9A LocalGet 1
+	0x110BF9C I32Const 0
+	0x110BF9E Call 51702
+	0x110BFA2 LocalTee 1
+	0x110BFA4 If -1
+	0x110BFA6 I32Const 4427904
+	0x110BFAB I32Load 2, 0
+	0x110BFAE LocalTee 0
+	0x110BFB0 I32Load16_S 1, 186
+	0x110BFB4 I32Const 512
+	0x110BFB7 I32And
+	0x110BFB8 If -64
+	0x110BFBA LocalGet 0
+	0x110BFBC I32Load 2, 116
+	0x110BFBF I32Eqz
+	0x110BFC0 If -64
+	0x110BFC2 LocalGet 0
+	0x110BFC4 Call 72345
+	0x110BFC8 End
+	0x110BFC9 End
+	0x110BFCA LocalGet 1
+	0x110BFCC I32Const 0
+	0x110BFCE Call 46123
+	0x110BFD2 Else
+	0x110BFD3 I32Const 0
+	0x110BFD5 End
+	0x110BFD6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v21, [2CDAEC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45AC7D], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call CFObject.GetIndirect, v16 @ S0_v6 (System.IntPtr), handle @ L0 (System.IntPtr), index @ L1 (System.IntPtr)
+	16 Nop
+	17 CheckEqual v18 @ TEMP_v2 (System.Boolean), v16 @ S0_v6 (System.IntPtr), 0
+	18 ConditionalJump @b11, v18 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Move v20 @ S0_v10 (Il2CppClass<System.Runtime.InteropServices.Marshal>), typeof(System.Runtime.InteropServices.Marshal)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 And v24 @ S0_v12, [v20 @ S0_v10 (Il2CppClass<System.Runtime.InteropServices.Marshal>)+BA], 512
+	25 CheckEqual v25 @ TEMP_v4 (System.Boolean), v24 @ S0_v12, 0
+	26 ConditionalJump @b13, v25 @ TEMP_v4 (System.Boolean)
+	27 Move v27 @ S0_v16 (Il2CppClass<System.Runtime.InteropServices.Marshal>), typeof(System.Runtime.InteropServices.Marshal)
+	28 Nop
+	29 CheckEqual v29 @ S0_v18 (System.Boolean), [v27 @ S0_v16 (Il2CppClass<System.Runtime.InteropServices.Marshal>)+74], 0
+	30 Not v30 @ TEMP_v6 (System.Boolean), v29 @ S0_v18 (System.Boolean)
+	31 ConditionalJump @b13, v30 @ TEMP_v6 (System.Boolean)
+	32 Nop
+	33 CallVoid 11A99, typeof(System.Runtime.InteropServices.Marshal)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call Marshal.ReleaseInternal, v36 @ S0_v15 (System.Int32), v16 @ S0_v6 (System.IntPtr)
+	39 Jump @b14
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Return returnVal1 @ S0_v7 (System.IntPtr)
+
+Method: System.IntPtr get_Item(System.Int32 index)
+
+Disassembly:
+	0x1108B70 I32Const 3925352
+	0x1108B75 I32Load 2, 0
+	0x1108B78 LocalTee 2
+	0x1108B7A If -64
+	0x1108B7C LocalGet 2
+	0x1108B7E LocalSet 3
+	0x1108B80 Else
+	0x1108B81 I32Const 3925352
+	0x1108B86 I32Const 3478879
+	0x1108B8B I32Const 3479253
+	0x1108B90 I32Const 0
+	0x1108B92 I32Const 2
+	0x1108B94 I32Const 8
+	0x1108B96 I32Const 0
+	0x1108B98 Call 51709
+	0x1108B9C LocalTee 2
+	0x1108B9E I32Store 2, 0
+	0x1108BA1 LocalGet 2
+	0x1108BA3 If -64
+	0x1108BA5 LocalGet 2
+	0x1108BA7 LocalSet 3
+	0x1108BA9 Else
+	0x1108BAA I32Const 3479276
+	0x1108BAF Call 72499
+	0x1108BB3 I32Const 0
+	0x1108BB5 I32Const 0
+	0x1108BB7 Call 73899
+	0x1108BBB End
+	0x1108BBC End
+	0x1108BBD LocalGet 0
+	0x1108BBF LocalGet 1
+	0x1108BC1 LocalGet 3
+	0x1108BC3 I32Const 16383
+	0x1108BC7 I32And
+	0x1108BC8 I32Const 6161
+	0x1108BCB I32Add
+	0x1108BCC CallIndirect 0, 0
+	0x1108BCF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ TEMP_v1 (System.Boolean), [3BE568], 0
+	4 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Jump @b10
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call C9FD, v13 @ S1_v4, 3478879, 3479253, 0, 2, 8, 0
+	16 Nop
+	17 Move [3BE568], v13 @ S1_v4
+	18 Nop
+	19 CheckEqual v32 @ TEMP_v3 (System.Boolean), v13 @ S1_v4, 0
+	20 ConditionalJump @b7, v32 @ TEMP_v3 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Jump @b10
+	24 Nop
+	25 Newobj v36 @ S0_v9 (System.NotSupportedException), typeof(System.NotSupportedException)
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v36 @ S0_v9 (System.NotSupportedException), 0, 0
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 And v44 @ S2_v3, v28 @ L3_v1, 16383
+	36 Nop
+	37 Add v46 @ S2_v4, v44 @ S2_v3, 6161
+	38 IndirectCall v46 @ S2_v4, returnVal1 @ S0_v5 (System.IntPtr), this @ L0 (Mono.Net.CFArray), index @ L1 (System.Int32)
+	39 Nop
+	40 Return returnVal1 @ S0_v5 (System.IntPtr)
+

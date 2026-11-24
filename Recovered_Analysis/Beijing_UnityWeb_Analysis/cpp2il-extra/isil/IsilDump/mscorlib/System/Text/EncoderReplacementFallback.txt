@@ -1,0 +1,221 @@
+Type: System.Text.EncoderReplacementFallback
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD41AD4 LocalGet 0
+	0xD41AD6 I32Const 0
+	0xD41AD8 I32Store8 0, 24
+	0xD41ADB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (System.Text.EncoderReplacementFallback)+18], 0
+	3 Nop
+	4 Return
+
+Method: System.Void .ctor(System.String replacement)
+
+Disassembly:
+	0x132AD6B LocalGet 0
+	0x132AD6D I32Const 20
+	0x132AD6F I32Add
+	0x132AD70 LocalGet 1
+	0x132AD72 I32Store 2, 0
+	0x132AD75 LocalGet 0
+	0x132AD77 I32Const 8
+	0x132AD79 I32Add
+	0x132AD7A LocalGet 0
+	0x132AD7C I32Load 2, 20
+	0x132AD7F I32Load 2, 20
+	0x132AD82 I32Store 2, 0
+	0x132AD85 I32Const 4
+	0x132AD87 LocalGet 0
+	0x132AD89 Call 29286
+	0x132AD8D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Text.EncoderReplacementFallback), 20
+	3 Nop
+	4 Move [v3 @ S0_v2], replacement @ L1 (System.String)
+	5 Nop
+	6 Nop
+	7 Add v8 @ S0_v4, this @ L0 (System.Text.EncoderReplacementFallback), 8
+	8 Nop
+	9 Move v10 @ S1_v5, [this @ L0 (System.Text.EncoderReplacementFallback)+14]
+	10 Nop
+	11 Move [v8 @ S0_v4], [v10 @ S1_v5+14]
+	12 Nop
+	13 Nop
+	14 CallVoid 7266, 4, this @ L0 (System.Text.EncoderReplacementFallback)
+	15 Nop
+	16 Return
+
+Method: System.String get_DefaultString()
+
+Disassembly:
+	0xCEECBD LocalGet 0
+	0xCEECBF I32Load8_S 0, 24
+	0xCEECC2 I32Const 0
+	0xCEECC4 I32Ne
+	0xCEECC5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), [this @ L0 (System.Text.EncoderReplacementFallback)+18], 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Text.EncoderFallbackBuffer CreateFallbackBuffer()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.strDefault (System.String)
+
+Method: System.Int32 get_MaxCharCount()
+
+Disassembly:
+	0x132B30D I32Const 4572025
+	0x132B312 I32Load8_S 0, 0
+	0x132B315 I32Eqz
+	0x132B316 If -64
+	0x132B318 I32Const 2957024
+	0x132B31D I32Load 2, 0
+	0x132B320 Call 73003
+	0x132B324 I32Const 4572025
+	0x132B329 I32Const 1
+	0x132B32B I32Store8 0, 0
+	0x132B32E End
+	0x132B32F I32Const 4431228
+	0x132B334 I32Load 2, 0
+	0x132B337 Call 72556
+	0x132B33B LocalTee 2
+	0x132B33D LocalGet 0
+	0x132B33F I32Const 0
+	0x132B341 Call 61447
+	0x132B345 LocalGet 2
+	0x132B347 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v10, [2D1EE0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45C379], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Text.Encoding), typeof(System.Text.EncoderReplacementFallbackBuffer)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid Encoding..ctor, v13 @ S0_v7 (System.Text.Encoding), this @ L0 (System.Text.EncoderReplacementFallback)
+	19 Nop
+	20 Nop
+	21 Return v13 @ S0_v7 (System.Text.Encoding)
+
+Method: System.Boolean Equals(System.Object value)
+
+Disassembly:
+	0x132A0D0 I32Const 4572011
+	0x132A0D5 I32Load8_S 0, 0
+	0x132A0D8 I32Eqz
+	0x132A0D9 If -64
+	0x132A0DB I32Const 2956960
+	0x132A0E0 I32Load 2, 0
+	0x132A0E3 Call 73003
+	0x132A0E7 I32Const 4572011
+	0x132A0EC I32Const 1
+	0x132A0EE I32Store8 0, 0
+	0x132A0F1 End
+	0x132A0F2 I32Const 4431216
+	0x132A0F7 I32Load 2, 0
+	0x132A0FA LocalSet 0
+	0x132A0FC LocalGet 1
+	0x132A0FE If -1
+	0x132A100 LocalGet 1
+	0x132A102 I32Load 2, 0
+	0x132A105 LocalGet 0
+	0x132A107 I32Eq
+	0x132A108 If -1
+	0x132A10A LocalGet 1
+	0x132A10C Else
+	0x132A10D I32Const 0
+	0x132A10F End
+	0x132A110 Else
+	0x132A111 I32Const 0
+	0x132A113 End
+	0x132A114 I32Const 0
+	0x132A116 I32Ne
+	0x132A117 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v18, [2D1EA0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v18
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45C36B], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CheckEqual v16 @ TEMP_v2 (System.Boolean), value @ L1 (System.Object), 0
+	17 ConditionalJump @b8, v16 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CheckEqual v20 @ S0_v13 (System.Boolean), [value @ L1 (System.Object)], typeof(System.Text.EncoderExceptionFallback)
+	22 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	23 ConditionalJump @b7, v21 @ TEMP_v4 (System.Boolean)
+	24 Nop
+	25 Jump @b10
+	26 Nop
+	27 Nop
+	28 Jump @b11
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckNotEqual returnVal1 @ S0_v9 (System.Boolean), v27 @ S0_v8 (System.Object), 0
+	33 Nop
+	34 Return returnVal1 @ S0_v9 (System.Boolean)
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0xF21E11 LocalGet 0
+	0xF21E13 I32Load 2, 12
+	0xF21E16 I32Load 2, 8
+	0xF21E19 End
+
+ISIL:
+	0 Nop
+	1 Move v2 @ S0_v2 (System.String), this.strDefault (System.String)
+	2 Nop
+	3 Nop
+	4 Return v2.m_stringLength (System.Int32)
+

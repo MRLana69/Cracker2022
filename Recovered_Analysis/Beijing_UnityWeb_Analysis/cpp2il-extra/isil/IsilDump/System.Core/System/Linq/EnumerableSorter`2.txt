@@ -1,0 +1,258 @@
+Type: System.Linq.EnumerableSorter`2
+
+Method: System.Void .ctor(System.Func`2<TElement, TKey> keySelector, System.Collections.Generic.IComparer`1<TKey> comparer, System.Boolean descending, System.Linq.EnumerableSorter`1<TElement> next)
+
+Disassembly:
+	0x1057E63 LocalGet 0
+	0x1057E65 I32Load 2, 12
+	0x1057E68 LocalGet 1
+	0x1057E6A I32Sub
+	0x1057E6B LocalGet 4
+	0x1057E6D I32Lt_S
+	0x1057E6E If -64
+	0x1057E70 I32Const 23
+	0x1057E72 I32Const 0
+	0x1057E74 Call 50118
+	0x1057E78 Else
+	0x1057E79 LocalGet 0
+	0x1057E7B I32Load 2, 8
+	0x1057E7E LocalGet 1
+	0x1057E80 LocalGet 2
+	0x1057E82 LocalGet 3
+	0x1057E84 LocalGet 4
+	0x1057E86 I32Const 0
+	0x1057E88 Call 57646
+	0x1057E8C End
+	0x1057E8D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Subtract v5 @ S0_v3, this.comparer (System.Collections.Generic.IComparer`1<TKey>), keySelector @ L1 (System.Func`2<TElement, TKey>)
+	4 Nop
+	5 CheckLess v8 @ S0_v4 (System.Boolean), v5 @ S0_v3, next @ L4 (System.Linq.EnumerableSorter`1<TElement>)
+	6 Not v9 @ TEMP_v1 (System.Boolean), v8 @ S0_v4 (System.Boolean)
+	7 ConditionalJump @b5, v9 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 CallVoid ThrowHelper.ThrowInvalidOperationException, 23
+	11 Jump @b6
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 CallVoid Array.ConstrainedCopy, this.keySelector (System.Func`2<TElement, TKey>), keySelector @ L1 (System.Func`2<TElement, TKey>), comparer @ L2 (System.Collections.Generic.IComparer`1<TKey>), descending @ L3 (System.Boolean), next @ L4 (System.Linq.EnumerableSorter`1<TElement>)
+	20 Nop
+	21 Nop
+	22 Return
+
+Method: System.Void ComputeKeys(TElement[] elements, System.Int32 count)
+
+Disassembly:
+	0x1445B16 LocalGet 0
+	0x1445B18 LocalGet 3
+	0x1445B1A I32Load 2, 12
+	0x1445B1D I32Load 2, 96
+	0x1445B20 I32Load 2, 0
+	0x1445B23 LocalTee 3
+	0x1445B25 LocalGet 3
+	0x1445B27 I32Load 2, 0
+	0x1445B2A I32Const 16383
+	0x1445B2E I32And
+	0x1445B2F I32Const 80504
+	0x1445B33 I32Add
+	0x1445B34 CallIndirect 4, 0
+	0x1445B37 LocalGet 0
+	0x1445B39 I32Const 24
+	0x1445B3B I32Add
+	0x1445B3C LocalGet 1
+	0x1445B3E I32Store 2, 0
+	0x1445B41 LocalGet 0
+	0x1445B43 I32Const 28
+	0x1445B45 I32Add
+	0x1445B46 LocalGet 2
+	0x1445B48 I32Store 2, 0
+	0x1445B4B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move v4 @ S1_v2, [methodInfo @ L3 (Il2CppMethodInfo)+C]
+	3 Move v5 @ S1_v3, [v4 @ S1_v2+60]
+	4 Move v6 @ S1_v4, [v5 @ S1_v3]
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 And v11 @ S2_v3, [v6 @ S1_v4], 16383
+	10 Nop
+	11 Add v13 @ S2_v4, v11 @ S2_v3, 80504
+	12 IndirectCall v13 @ S2_v4, v14 @ SRET_v1, this @ L0 (System.Linq.EnumerableSorter`2<TElement, TKey>), v6 @ S1_v4
+	13 Nop
+	14 Nop
+	15 Add v17 @ S0_v3, this @ L0 (System.Linq.EnumerableSorter`2<TElement, TKey>), 24
+	16 Nop
+	17 Move [v17 @ S0_v3], elements @ L1 (TElement[])
+	18 Nop
+	19 Nop
+	20 Add v22 @ S0_v5, this @ L0 (System.Linq.EnumerableSorter`2<TElement, TKey>), 28
+	21 Nop
+	22 Move [v22 @ S0_v5], count @ L2 (System.Int32)
+	23 Nop
+	24 Return
+
+Method: System.Int32 CompareKeys(System.Int32 index1, System.Int32 index2)
+
+Disassembly:
+	0x13B8DCF I32Const 4573662
+	0x13B8DD4 I32Load8_S 0, 0
+	0x13B8DD7 I32Eqz
+	0x13B8DD8 If -64
+	0x13B8DDA I32Const 2957824
+	0x13B8DDF I32Load 2, 0
+	0x13B8DE2 Call 73003
+	0x13B8DE6 I32Const 4573662
+	0x13B8DEB I32Const 1
+	0x13B8DED I32Store8 0, 0
+	0x13B8DF0 End
+	0x13B8DF1 I32Const 4
+	0x13B8DF3 LocalGet 0
+	0x13B8DF5 LocalGet 1
+	0x13B8DF7 LocalGet 2
+	0x13B8DF9 Call 30567
+	0x13B8DFD I32Const 4427960
+	0x13B8E02 I32Load 2, 0
+	0x13B8E05 LocalGet 2
+	0x13B8E07 Call 71670
+	0x13B8E0B LocalSet 4
+	0x13B8E0D I32Const 0
+	0x13B8E0F LocalSet 1
+	0x13B8E11 Loop -64
+	0x13B8E13 LocalGet 1
+	0x13B8E15 LocalGet 2
+	0x13B8E17 I32Lt_S
+	0x13B8E18 If -64
+	0x13B8E1A LocalGet 4
+	0x13B8E1C I32Const 16
+	0x13B8E1E I32Add
+	0x13B8E1F LocalGet 1
+	0x13B8E21 I32Const 2
+	0x13B8E23 I32Shl
+	0x13B8E24 I32Add
+	0x13B8E25 LocalGet 1
+	0x13B8E27 I32Store 2, 0
+	0x13B8E2A LocalGet 1
+	0x13B8E2C I32Const 1
+	0x13B8E2E I32Add
+	0x13B8E2F LocalSet 1
+	0x13B8E31 Br 1
+	0x13B8E33 End
+	0x13B8E34 End
+	0x13B8E35 LocalGet 3
+	0x13B8E37 I32Const 12
+	0x13B8E39 I32Add
+	0x13B8E3A LocalTee 1
+	0x13B8E3C I32Load 2, 0
+	0x13B8E3F I32Load 2, 96
+	0x13B8E42 I32Load 2, 4
+	0x13B8E45 I32Load 2, 0
+	0x13B8E48 LocalSet 3
+	0x13B8E4A LocalGet 0
+	0x13B8E4C LocalGet 4
+	0x13B8E4E I32Const 0
+	0x13B8E50 LocalGet 2
+	0x13B8E52 I32Const 1
+	0x13B8E54 I32Sub
+	0x13B8E55 LocalGet 1
+	0x13B8E57 I32Load 2, 0
+	0x13B8E5A I32Load 2, 96
+	0x13B8E5D I32Load 2, 4
+	0x13B8E60 LocalGet 3
+	0x13B8E62 I32Const 2047
+	0x13B8E65 I32And
+	0x13B8E66 I32Const 121922
+	0x13B8E6A I32Add
+	0x13B8E6B CallIndirect 30, 0
+	0x13B8E6E LocalGet 4
+	0x13B8E70 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v27, [2D2200]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v27
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45C9DE], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CallVoid 7767, 4, this @ L0 (System.Linq.EnumerableSorter`2<TElement, TKey>), index1 @ L1 (System.Int32), index2 @ L2 (System.Int32)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Newobj v21 @ S0_v8 (System.OverflowException), typeof(System.OverflowException)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CheckLess v37 @ S0_v12 (System.Boolean), v27 @ L1_v2, index2 @ L2 (System.Int32)
+	28 Not v32 @ TEMP_v3 (System.Boolean), v37 @ S0_v12 (System.Boolean)
+	29 ConditionalJump @b8, v32 @ TEMP_v3 (System.Boolean)
+	30 Nop
+	31 Nop
+	32 Add v40 @ S0_v22, v21 @ S0_v8 (System.OverflowException), 16
+	33 Nop
+	34 Nop
+	35 ShiftLeft v42 @ S1_v10, v27 @ L1_v2, 2
+	36 Add v43 @ S0_v23, v40 @ S0_v22, v42 @ S1_v10
+	37 Nop
+	38 Move [v43 @ S0_v23], v27 @ L1_v2
+	39 Nop
+	40 Nop
+	41 Add v34 @ S0_v25, v27 @ L1_v2, 1
+	42 Nop
+	43 Jump @b10
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Add v49 @ S0_v14, methodInfo @ L3 (Il2CppMethodInfo), 12
+	49 Nop
+	50 Move v51 @ S0_v15, [v49 @ S0_v14]
+	51 Move v52 @ S0_v16, [v51 @ S0_v15+60]
+	52 Move v53 @ S0_v17, [v52 @ S0_v16+4]
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Subtract v61 @ S3_v3, index2 @ L2 (System.Int32), 1
+	61 Nop
+	62 Move v63 @ S4_v3, [v49 @ S0_v14]
+	63 Move v64 @ S4_v4, [v63 @ S4_v3+60]
+	64 Nop
+	65 Nop
+	66 Nop
+	67 And v68 @ S5_v2, [v53 @ S0_v17], 2047
+	68 Nop
+	69 Add v70 @ S5_v3, v68 @ S5_v2, 121922
+	70 IndirectCall v70 @ S5_v3, v71 @ SRET_v1, this @ L0 (System.Linq.EnumerableSorter`2<TElement, TKey>), v21 @ S0_v8 (System.OverflowException), 0, v61 @ S3_v3, [v64 @ S4_v4+4]
+	71 Nop
+	72 Nop
+	73 Return v21 @ S0_v8 (System.OverflowException)
+

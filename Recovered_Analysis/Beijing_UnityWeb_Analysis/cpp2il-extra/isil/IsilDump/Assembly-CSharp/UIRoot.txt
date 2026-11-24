@@ -1,0 +1,2438 @@
+Type: UIRoot
+
+Method: UIRoot+Constraint get_constraint()
+
+Disassembly:
+	0xEA288F I32Const 4558727
+	0xEA2894 I32Load8_S 0, 0
+	0xEA2897 I32Eqz
+	0xEA2898 If -64
+	0xEA289A I32Const 3020180
+	0xEA289F I32Load 2, 0
+	0xEA28A2 Call 73003
+	0xEA28A6 I32Const 4558727
+	0xEA28AB I32Const 1
+	0xEA28AD I32Store8 0, 0
+	0xEA28B0 End
+	0xEA28B1 I32Const 4440212
+	0xEA28B6 I32Load 2, 0
+	0xEA28B9 LocalTee 2
+	0xEA28BB I32Load16_S 1, 186
+	0xEA28BF I32Const 512
+	0xEA28C2 I32And
+	0xEA28C3 If -64
+	0xEA28C5 LocalGet 2
+	0xEA28C7 I32Load 2, 116
+	0xEA28CA I32Eqz
+	0xEA28CB If -64
+	0xEA28CD LocalGet 2
+	0xEA28CF Call 72345
+	0xEA28D3 End
+	0xEA28D4 End
+	0xEA28D5 LocalGet 0
+	0xEA28D7 I32Const 0
+	0xEA28D9 I32Const -1
+	0xEA28DB I32Const 0
+	0xEA28DD Call 40183
+	0xEA28E1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v17, [2E1594]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [458F87], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UIPanel>), typeof(UIPanel)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UIPanel>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<UIPanel>), typeof(UIPanel)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<UIPanel>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UIPanel)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Call InAppPurchaseProvider.TryGetLatestRequestedProductInfoForProductId, returnVal1 @ S0_v11 (UIRoot+Constraint), this @ L0 (UIRoot), 0, -1
+	34 Nop
+	35 Return returnVal1 @ S0_v11 (UIRoot+Constraint)
+
+Method: UIRoot+Scaling get_activeScaling()
+
+Disassembly:
+	0xDACE60 LocalGet 0
+	0xDACE62 I32Load8_S 0, 32
+	0xDACE65 I32Const 0
+	0xDACE67 I32Ne
+	0xDACE68 LocalGet 0
+	0xDACE6A I32Load8_S 0, 33
+	0xDACE6D I32Const 0
+	0xDACE6F I32Ne
+	0xDACE70 LocalSet 0
+	0xDACE72 If -1
+	0xDACE74 LocalGet 0
+	0xDACE76 If -1
+	0xDACE78 I32Const 0
+	0xDACE7A Else
+	0xDACE7B I32Const 2
+	0xDACE7D End
+	0xDACE7E Else
+	0xDACE7F LocalGet 0
+	0xDACE81 If -1
+	0xDACE83 I32Const 3
+	0xDACE85 Else
+	0xDACE86 I32Const 1
+	0xDACE88 End
+	0xDACE89 End
+	0xDACE8A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual v4 @ S0_v3 (System.Boolean), this.fitWidth (System.Boolean), 0
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CheckNotEqual v8 @ S1_v4 (System.Boolean), this.fitHeight (System.Boolean), 0
+	8 Nop
+	9 Not v10 @ TEMP_v1 (System.Boolean), v4 @ S0_v3 (System.Boolean)
+	10 ConditionalJump @b6, v10 @ TEMP_v1 (System.Boolean)
+	11 Nop
+	12 Not v12 @ TEMP_v4 (System.Boolean), v8 @ S1_v4 (System.Boolean)
+	13 ConditionalJump @b5, v12 @ TEMP_v4 (System.Boolean)
+	14 Nop
+	15 Jump @b9
+	16 Nop
+	17 Nop
+	18 Jump @b11
+	19 Nop
+	20 Not v14 @ TEMP_v3 (System.Boolean), v8 @ S1_v4 (System.Boolean)
+	21 ConditionalJump @b8, v14 @ TEMP_v3 (System.Boolean)
+	22 Nop
+	23 Jump @b11
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Return returnVal1 @ S0_v4 (UIRoot+Scaling)
+
+Method: System.Int32 get_activeHeight()
+
+Disassembly:
+	0xDACE8F LocalGet 0
+	0xDACE91 I32Load 2, 12
+	0xDACE94 LocalTee 2
+	0xDACE96 I32Const 2
+	0xDACE98 I32Eq
+	0xDACE99 If -1
+	0xDACE9B I32Const 0
+	0xDACE9D Else
+	0xDACE9E LocalGet 2
+	0xDACEA0 End
+	0xDACEA1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CheckEqual v5 @ S0_v3 (System.Boolean), this.scalingStyle (UIRoot+Scaling), 2
+	5 Not v6 @ TEMP_v1 (System.Boolean), v5 @ S0_v3 (System.Boolean)
+	6 ConditionalJump @b4, v6 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Jump @b5
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Return returnVal1 @ S0_v4 (System.Int32)
+
+Method: System.Single get_pixelSizeAdjustment()
+
+Disassembly:
+	0xE9D978 GlobalGet 7
+	0xE9D97A LocalSet 1
+	0xE9D97C GlobalGet 7
+	0xE9D97E I32Const 16
+	0xE9D980 I32Add
+	0xE9D981 GlobalSet 7
+	0xE9D983 LocalGet 1
+	0xE9D985 LocalGet 0
+	0xE9D987 I32Const 0
+	0xE9D989 Call 40121
+	0xE9D98D LocalGet 1
+	0xE9D98F F32Load 2, 4
+	0xE9D992 LocalGet 1
+	0xE9D994 GlobalSet 7
+	0xE9D996 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid UIRoot.UpdateScale, v1 @ G7 (UIRoot), this @ L0 (UIRoot)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Return [v1 @ G7 (UIRoot)+4]
+
+Method: System.Single GetPixelSizeAdjustment(UnityEngine.GameObject go)
+
+Disassembly:
+	0xDAD1CE GlobalGet 7
+	0xDAD1D0 LocalSet 1
+	0xDAD1D2 GlobalGet 7
+	0xDAD1D4 I32Const 16
+	0xDAD1D6 I32Add
+	0xDAD1D7 GlobalSet 7
+	0xDAD1D9 I32Const 4555675
+	0xDAD1DE I32Load8_S 0, 0
+	0xDAD1E1 I32Eqz
+	0xDAD1E2 If -64
+	0xDAD1E4 I32Const 3020884
+	0xDAD1E9 I32Load 2, 0
+	0xDAD1EC Call 73003
+	0xDAD1F0 I32Const 4555675
+	0xDAD1F5 I32Const 1
+	0xDAD1F7 I32Store8 0, 0
+	0xDAD1FA End
+	0xDAD1FB I32Const 4435588
+	0xDAD200 I32Load 2, 0
+	0xDAD203 LocalTee 2
+	0xDAD205 I32Load16_S 1, 186
+	0xDAD209 I32Const 512
+	0xDAD20C I32And
+	0xDAD20D If -64
+	0xDAD20F LocalGet 2
+	0xDAD211 I32Load 2, 116
+	0xDAD214 I32Eqz
+	0xDAD215 If -64
+	0xDAD217 LocalGet 2
+	0xDAD219 Call 72345
+	0xDAD21D End
+	0xDAD21E End
+	0xDAD21F LocalGet 1
+	0xDAD221 I32Const 0
+	0xDAD223 Call 47029
+	0xDAD227 LocalGet 1
+	0xDAD229 F32Load 2, 4
+	0xDAD22C I32Const 4433348
+	0xDAD231 I32Load 2, 0
+	0xDAD234 LocalTee 2
+	0xDAD236 I32Load16_S 1, 186
+	0xDAD23A I32Const 512
+	0xDAD23D I32And
+	0xDAD23E If -64
+	0xDAD240 LocalGet 2
+	0xDAD242 I32Load 2, 116
+	0xDAD245 I32Eqz
+	0xDAD246 If -64
+	0xDAD248 LocalGet 2
+	0xDAD24A Call 72345
+	0xDAD24E End
+	0xDAD24F End
+	0xDAD250 I32Const 0
+	0xDAD252 Call 63152
+	0xDAD256 LocalTee 2
+	0xDAD258 I32Const -1
+	0xDAD25A I32Eq
+	0xDAD25B If -3
+	0xDAD25D F32Const 1
+	0xDAD262 Else
+	0xDAD263 LocalGet 0
+	0xDAD265 LocalGet 2
+	0xDAD267 I32Const 0
+	0xDAD269 Call 35966
+	0xDAD26D End
+	0xDAD26E LocalGet 1
+	0xDAD270 GlobalSet 7
+	0xDAD272 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b16
+	11 Nop
+	12 Move v12 @ S0_v27, [2E1854]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v27
+	14 Nop
+	15 Move v14 @ S1_v19, 1
+	16 Move [45839B], v14 @ S1_v19
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v9 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<NGUITools>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	25 ConditionalJump @b18, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S0_v22 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	27 Nop
+	28 CheckEqual v26 @ S0_v24 (System.Boolean), [v24 @ S0_v22 (Il2CppClass<NGUITools>)+74], 0
+	29 Not v27 @ TEMP_v8 (System.Boolean), v26 @ S0_v24 (System.Boolean)
+	30 ConditionalJump @b18, v27 @ TEMP_v8 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(NGUITools)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid PropertyBinding.Start, v1 @ G7 (PropertyBinding)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Move v36 @ S1_v6 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v40 @ S1_v8, [v36 @ S1_v6 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	46 CheckEqual v41 @ TEMP_v4 (System.Boolean), v40 @ S1_v8, 0
+	47 ConditionalJump @b17, v41 @ TEMP_v4 (System.Boolean)
+	48 Move v42 @ S1_v15 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	49 Nop
+	50 CheckEqual v44 @ S1_v17 (System.Boolean), [v42 @ S1_v15 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	51 Not v45 @ TEMP_v7 (System.Boolean), v44 @ S1_v17 (System.Boolean)
+	52 ConditionalJump @b17, v45 @ TEMP_v7 (System.Boolean)
+	53 Nop
+	54 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Call GUILayout.Width, v50 @ S0_v16 (UnityEngine.GUILayoutOption), [v1 @ G7 (PropertyBinding)+4]
+	59 Nop
+	60 Nop
+	61 CheckEqual v53 @ S0_v17 (System.Boolean), v50 @ S0_v16 (UnityEngine.GUILayoutOption), -1
+	62 Not v54 @ TEMP_v6 (System.Boolean), v53 @ S0_v17 (System.Boolean)
+	63 ConditionalJump @b14, v54 @ TEMP_v6 (System.Boolean)
+	64 Nop
+	65 Jump @b15
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Call Math3D.AngleVectorPlane, returnVal1 @ S0_v18 (System.Single), go @ L0 (UnityEngine.GameObject), v50 @ S0_v16 (UnityEngine.GUILayoutOption)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Return returnVal1 @ S0_v18 (System.Single)
+
+Method: System.Single GetPixelSizeAdjustment(System.Int32 height)
+
+Disassembly:
+	0xE9F025 I32Const 4558704
+	0xE9F02A I32Load8_S 0, 0
+	0xE9F02D I32Eqz
+	0xE9F02E If -64
+	0xE9F030 I32Const 3020152
+	0xE9F035 I32Load 2, 0
+	0xE9F038 Call 73003
+	0xE9F03C I32Const 4558704
+	0xE9F041 I32Const 1
+	0xE9F043 I32Store8 0, 0
+	0xE9F046 End
+	0xE9F047 LocalGet 0
+	0xE9F049 I32Load 2, 272
+	0xE9F04D LocalGet 1
+	0xE9F04F I32Ne
+	0xE9F050 If -64
+	0xE9F052 LocalGet 0
+	0xE9F054 LocalGet 1
+	0xE9F056 I32Store 2, 272
+	0xE9F05A LocalGet 0
+	0xE9F05C I32Const 0
+	0xE9F05E Call 35927
+	0xE9F062 LocalSet 3
+	0xE9F064 LocalGet 0
+	0xE9F066 I32Const 0
+	0xE9F068 Call 35927
+	0xE9F06C LocalSet 4
+	0xE9F06E I32Const 4433280
+	0xE9F073 I32Load 2, 0
+	0xE9F076 LocalTee 2
+	0xE9F078 I32Load16_S 1, 186
+	0xE9F07C I32Const 512
+	0xE9F07F I32And
+	0xE9F080 If -64
+	0xE9F082 LocalGet 2
+	0xE9F084 I32Load 2, 116
+	0xE9F087 I32Eqz
+	0xE9F088 If -64
+	0xE9F08A LocalGet 2
+	0xE9F08C Call 72345
+	0xE9F090 End
+	0xE9F091 End
+	0xE9F092 LocalGet 0
+	0xE9F094 LocalGet 4
+	0xE9F096 I32Const 0
+	0xE9F098 I32Const 0
+	0xE9F09A Call 63693
+	0xE9F09E If -3
+	0xE9F0A0 I32Const 9
+	0xE9F0A2 LocalGet 3
+	0xE9F0A4 LocalGet 1
+	0xE9F0A6 Call 40150
+	0xE9F0AA LocalGet 0
+	0xE9F0AC F32Load 2, 212
+	0xE9F0B0 F32Mul
+	0xE9F0B1 Else
+	0xE9F0B2 LocalGet 0
+	0xE9F0B4 F32Load 2, 212
+	0xE9F0B8 End
+	0xE9F0B9 F32Store 2, 76
+	0xE9F0BC End
+	0xE9F0BD LocalGet 0
+	0xE9F0BF F32Load 2, 76
+	0xE9F0C2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b15
+	5 Nop
+	6 Move v5 @ S0_v27, [2E1578]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v27
+	8 Nop
+	9 Move v7 @ S1_v16, 1
+	10 Move [458F70], v7 @ S1_v16
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckNotEqual v16 @ S0_v7 (System.Boolean), [this @ L0 (UIRoot)+110], height @ L1 (System.Int32)
+	16 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v7 (System.Boolean)
+	17 ConditionalJump @b18, v17 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Move [this @ L0 (UIRoot)+110], height @ L1 (System.Int32)
+	21 Nop
+	22 Nop
+	23 Call UIRect.get_root, v22 @ S0_v13 (UIRoot), this @ L0 (UIRoot)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Call UIRect.get_root, v48 @ S0_v15 (UIRoot), this @ L0 (UIRoot)
+	28 Nop
+	29 Nop
+	30 Move v50 @ S0_v17 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 And v53 @ S0_v19, [v50 @ S0_v17 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	35 CheckEqual v54 @ TEMP_v4 (System.Boolean), v53 @ S0_v19, 0
+	36 ConditionalJump @b16, v54 @ TEMP_v4 (System.Boolean)
+	37 Move v55 @ S0_v22 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	38 Nop
+	39 CheckEqual v57 @ S0_v24 (System.Boolean), [v55 @ S0_v22 (Il2CppClass<UnityEngine.Object>)+74], 0
+	40 Not v58 @ TEMP_v7 (System.Boolean), v57 @ S0_v24 (System.Boolean)
+	41 ConditionalJump @b16, v58 @ TEMP_v7 (System.Boolean)
+	42 Nop
+	43 CallVoid 11A99, typeof(UnityEngine.Object)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call ComputeShader.FindKernel, v65 @ S1_v9 (System.Int32), v48 @ S0_v15 (UIRoot), 0
+	51 CheckEqual v41 @ TEMP_v6 (System.Boolean), v65 @ S1_v9 (System.Int32), 0
+	52 ConditionalJump @b14, v41 @ TEMP_v6 (System.Boolean)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Call 9CD6, v69 @ S1_v14, 9, v22 @ S0_v13 (UIRoot), height @ L1 (System.Int32)
+	57 Nop
+	58 Nop
+	59 Multiply v39 @ S1_v10, v69 @ S1_v14, [this @ L0 (UIRoot)+D4]
+	60 Jump @b17
+	61 Nop
+	62 Move v39 @ S1_v10, [this @ L0 (UIRoot)+D4]
+	63 Nop
+	64 Move [this @ L0 (UIRoot)+4C], v39 @ S1_v10
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Return [this @ L0 (UIRoot)+4C]
+
+Method: System.Void Awake()
+
+Disassembly:
+	0xEA2A4E GlobalGet 7
+	0xEA2A50 LocalSet 3
+	0xEA2A52 GlobalGet 7
+	0xEA2A54 I32Const 208
+	0xEA2A57 I32Add
+	0xEA2A58 GlobalSet 7
+	0xEA2A5A I32Const 4558730
+	0xEA2A5F I32Load8_S 0, 0
+	0xEA2A62 I32Eqz
+	0xEA2A63 If -64
+	0xEA2A65 I32Const 3020276
+	0xEA2A6A I32Load 2, 0
+	0xEA2A6D Call 73003
+	0xEA2A71 I32Const 4558730
+	0xEA2A76 I32Const 1
+	0xEA2A78 I32Store8 0, 0
+	0xEA2A7B End
+	0xEA2A7C LocalGet 0
+	0xEA2A7E I32Const 1
+	0xEA2A80 I32Store8 0, 84
+	0xEA2A83 LocalGet 0
+	0xEA2A85 I32Const 1
+	0xEA2A87 I32Store8 0, 93
+	0xEA2A8A LocalGet 0
+	0xEA2A8C I32Const 1
+	0xEA2A8E I32Store8 0, 96
+	0xEA2A91 LocalGet 0
+	0xEA2A93 I32Const 3000
+	0xEA2A96 I32Store 2, 104
+	0xEA2A99 I32Const 4445272
+	0xEA2A9E I32Load 2, 0
+	0xEA2AA1 Call 72556
+	0xEA2AA5 LocalTee 1
+	0xEA2AA7 I32Const 4486868
+	0xEA2AAC I32Load 2, 0
+	0xEA2AAF Call 47993
+	0xEA2AB3 LocalGet 0
+	0xEA2AB5 I32Const 108
+	0xEA2AB8 I32Add
+	0xEA2AB9 LocalGet 1
+	0xEA2ABB I32Store 2, 0
+	0xEA2ABE I32Const 4445276
+	0xEA2AC3 I32Load 2, 0
+	0xEA2AC6 Call 72556
+	0xEA2ACA LocalTee 1
+	0xEA2ACC I32Const 4486772
+	0xEA2AD1 I32Load 2, 0
+	0xEA2AD4 Call 47993
+	0xEA2AD8 LocalGet 0
+	0xEA2ADA I32Const 112
+	0xEA2ADD I32Add
+	0xEA2ADE LocalGet 1
+	0xEA2AE0 I32Store 2, 0
+	0xEA2AE3 I32Const 4433488
+	0xEA2AE8 I32Load 2, 0
+	0xEA2AEB LocalTee 1
+	0xEA2AED I32Load16_S 1, 186
+	0xEA2AF1 I32Const 512
+	0xEA2AF4 I32And
+	0xEA2AF5 If -64
+	0xEA2AF7 LocalGet 1
+	0xEA2AF9 I32Load 2, 116
+	0xEA2AFC I32Eqz
+	0xEA2AFD If -64
+	0xEA2AFF LocalGet 1
+	0xEA2B01 Call 72345
+	0xEA2B05 End
+	0xEA2B06 End
+	0xEA2B07 LocalGet 3
+	0xEA2B09 I32Const 72
+	0xEA2B0C I32Add
+	0xEA2B0D LocalTee 2
+	0xEA2B0F I32Const 0
+	0xEA2B11 Call 63206
+	0xEA2B15 LocalGet 3
+	0xEA2B17 I32Const 136
+	0xEA2B1A I32Add
+	0xEA2B1B LocalTee 1
+	0xEA2B1D LocalGet 2
+	0xEA2B1F I64Load 2, 0
+	0xEA2B22 I64Store 2, 0
+	0xEA2B25 LocalGet 1
+	0xEA2B27 LocalGet 2
+	0xEA2B29 I64Load 2, 8
+	0xEA2B2C I64Store 2, 8
+	0xEA2B2F LocalGet 1
+	0xEA2B31 LocalGet 2
+	0xEA2B33 I64Load 2, 16
+	0xEA2B36 I64Store 2, 16
+	0xEA2B39 LocalGet 1
+	0xEA2B3B LocalGet 2
+	0xEA2B3D I64Load 2, 24
+	0xEA2B40 I64Store 2, 24
+	0xEA2B43 LocalGet 1
+	0xEA2B45 LocalGet 2
+	0xEA2B47 I64Load 2, 32
+	0xEA2B4A I64Store 2, 32
+	0xEA2B4D LocalGet 1
+	0xEA2B4F LocalGet 2
+	0xEA2B51 I64Load 2, 40
+	0xEA2B54 I64Store 2, 40
+	0xEA2B57 LocalGet 1
+	0xEA2B59 LocalGet 2
+	0xEA2B5B I64Load 2, 48
+	0xEA2B5E I64Store 2, 48
+	0xEA2B61 LocalGet 1
+	0xEA2B63 LocalGet 2
+	0xEA2B65 I64Load 2, 56
+	0xEA2B68 I64Store 2, 56
+	0xEA2B6B LocalGet 0
+	0xEA2B6D LocalGet 1
+	0xEA2B6F Call 40154
+	0xEA2B73 LocalGet 3
+	0xEA2B75 I32Const 56
+	0xEA2B77 I32Add
+	0xEA2B78 LocalTee 2
+	0xEA2B7A I64Const 0
+	0xEA2B7C I64Store 2, 0
+	0xEA2B7F LocalGet 2
+	0xEA2B81 I64Const 0
+	0xEA2B83 I64Store 2, 8
+	0xEA2B86 LocalGet 2
+	0xEA2B88 F32Const 0
+	0xEA2B8D F32Store 2, 0
+	0xEA2B90 LocalGet 2
+	0xEA2B92 F32Const 0
+	0xEA2B97 F32Store 2, 4
+	0xEA2B9A LocalGet 2
+	0xEA2B9C F32Const 1
+	0xEA2BA1 F32Store 2, 8
+	0xEA2BA4 LocalGet 2
+	0xEA2BA6 F32Const 1
+	0xEA2BAB F32Store 2, 12
+	0xEA2BAE LocalGet 1
+	0xEA2BB0 LocalGet 2
+	0xEA2BB2 I64Load 2, 0
+	0xEA2BB5 I64Store 2, 0
+	0xEA2BB8 LocalGet 1
+	0xEA2BBA LocalGet 2
+	0xEA2BBC I64Load 2, 8
+	0xEA2BBF I64Store 2, 8
+	0xEA2BC2 LocalGet 0
+	0xEA2BC4 I32Const 180
+	0xEA2BC7 I32Add
+	0xEA2BC8 LocalTee 2
+	0xEA2BCA LocalGet 1
+	0xEA2BCC I64Load 2, 0
+	0xEA2BCF I64Store 2, 0
+	0xEA2BD2 LocalGet 2
+	0xEA2BD4 LocalGet 1
+	0xEA2BD6 I64Load 2, 8
+	0xEA2BD9 I64Store 2, 8
+	0xEA2BDC LocalGet 0
+	0xEA2BDE F32Const 1
+	0xEA2BE3 F32Store 2, 212
+	0xEA2BE7 LocalGet 3
+	0xEA2BE9 I32Const 40
+	0xEA2BEB I32Add
+	0xEA2BEC LocalTee 2
+	0xEA2BEE I64Const 0
+	0xEA2BF0 I64Store 2, 0
+	0xEA2BF3 LocalGet 2
+	0xEA2BF5 I64Const 0
+	0xEA2BF7 I64Store 2, 8
+	0xEA2BFA LocalGet 2
+	0xEA2BFC F32Const 0
+	0xEA2C01 F32Store 2, 0
+	0xEA2C04 LocalGet 2
+	0xEA2C06 F32Const 0
+	0xEA2C0B F32Store 2, 4
+	0xEA2C0E LocalGet 2
+	0xEA2C10 F32Const 300
+	0xEA2C15 F32Store 2, 8
+	0xEA2C18 LocalGet 2
+	0xEA2C1A F32Const 200
+	0xEA2C1F F32Store 2, 12
+	0xEA2C22 LocalGet 1
+	0xEA2C24 LocalGet 2
+	0xEA2C26 I64Load 2, 0
+	0xEA2C29 I64Store 2, 0
+	0xEA2C2C LocalGet 1
+	0xEA2C2E LocalGet 2
+	0xEA2C30 I64Load 2, 8
+	0xEA2C33 I64Store 2, 8
+	0xEA2C36 LocalGet 0
+	0xEA2C38 I32Const 220
+	0xEA2C3B I32Add
+	0xEA2C3C LocalTee 2
+	0xEA2C3E LocalGet 1
+	0xEA2C40 I64Load 2, 0
+	0xEA2C43 I64Store 2, 0
+	0xEA2C46 LocalGet 2
+	0xEA2C48 LocalGet 1
+	0xEA2C4A I64Load 2, 8
+	0xEA2C4D I64Store 2, 8
+	0xEA2C50 LocalGet 3
+	0xEA2C52 I64Const 0
+	0xEA2C54 I64Store 3, 0
+	0xEA2C57 LocalGet 3
+	0xEA2C59 F32Const 4
+	0xEA2C5E F32Store 2, 0
+	0xEA2C61 LocalGet 3
+	0xEA2C63 F32Const 4
+	0xEA2C68 F32Store 2, 4
+	0xEA2C6B LocalGet 3
+	0xEA2C6D I32Const 32
+	0xEA2C6F I32Add
+	0xEA2C70 LocalTee 2
+	0xEA2C72 LocalGet 3
+	0xEA2C74 I64Load 3, 0
+	0xEA2C77 I64Store 3, 0
+	0xEA2C7A LocalGet 1
+	0xEA2C7C LocalGet 2
+	0xEA2C7E I64Load 2, 0
+	0xEA2C81 I64Store 2, 0
+	0xEA2C84 LocalGet 0
+	0xEA2C86 LocalGet 1
+	0xEA2C88 I64Load 2, 0
+	0xEA2C8B I64Store 2, 236
+	0xEA2C8F I32Const 4433328
+	0xEA2C94 I32Load 2, 0
+	0xEA2C97 LocalTee 2
+	0xEA2C99 I32Load16_S 1, 186
+	0xEA2C9D I32Const 512
+	0xEA2CA0 I32And
+	0xEA2CA1 If -64
+	0xEA2CA3 LocalGet 2
+	0xEA2CA5 I32Load 2, 116
+	0xEA2CA8 I32Eqz
+	0xEA2CA9 If -64
+	0xEA2CAB LocalGet 2
+	0xEA2CAD Call 72345
+	0xEA2CB1 End
+	0xEA2CB2 End
+	0xEA2CB3 LocalGet 3
+	0xEA2CB5 I32Const 24
+	0xEA2CB7 I32Add
+	0xEA2CB8 LocalTee 2
+	0xEA2CBA I32Const 0
+	0xEA2CBC Call 70727
+	0xEA2CC0 LocalGet 1
+	0xEA2CC2 LocalGet 2
+	0xEA2CC4 I64Load 2, 0
+	0xEA2CC7 I64Store 2, 0
+	0xEA2CCA LocalGet 0
+	0xEA2CCC LocalGet 1
+	0xEA2CCE I64Load 2, 0
+	0xEA2CD1 I64Store 2, 260
+	0xEA2CD5 LocalGet 0
+	0xEA2CD7 I32Const -1
+	0xEA2CD9 I32Store 2, 268
+	0xEA2CDD LocalGet 0
+	0xEA2CDF I32Const -1
+	0xEA2CE1 I32Store 2, 276
+	0xEA2CE5 LocalGet 3
+	0xEA2CE7 I32Const 16
+	0xEA2CE9 I32Add
+	0xEA2CEA LocalTee 2
+	0xEA2CEC I32Const 0
+	0xEA2CEE Call 70727
+	0xEA2CF2 LocalGet 1
+	0xEA2CF4 LocalGet 2
+	0xEA2CF6 I64Load 2, 0
+	0xEA2CF9 I64Store 2, 0
+	0xEA2CFC LocalGet 0
+	0xEA2CFE LocalGet 1
+	0xEA2D00 I64Load 2, 0
+	0xEA2D03 I64Store 2, 280
+	0xEA2D07 LocalGet 3
+	0xEA2D09 I32Const 8
+	0xEA2D0B I32Add
+	0xEA2D0C LocalTee 2
+	0xEA2D0E I32Const 0
+	0xEA2D10 Call 70727
+	0xEA2D14 LocalGet 1
+	0xEA2D16 LocalGet 2
+	0xEA2D18 I64Load 2, 0
+	0xEA2D1B I64Store 2, 0
+	0xEA2D1E LocalGet 0
+	0xEA2D20 LocalGet 1
+	0xEA2D22 I64Load 2, 0
+	0xEA2D25 I64Store 2, 288
+	0xEA2D29 I32Const 4445264
+	0xEA2D2E I32Load 2, 0
+	0xEA2D31 LocalTee 1
+	0xEA2D33 I32Load16_S 1, 186
+	0xEA2D37 I32Const 512
+	0xEA2D3A I32And
+	0xEA2D3B If -64
+	0xEA2D3D LocalGet 1
+	0xEA2D3F I32Load 2, 116
+	0xEA2D42 I32Eqz
+	0xEA2D43 If -64
+	0xEA2D45 LocalGet 1
+	0xEA2D47 Call 72345
+	0xEA2D4B End
+	0xEA2D4C End
+	0xEA2D4D LocalGet 0
+	0xEA2D4F I32Const 0
+	0xEA2D51 Call 35953
+	0xEA2D55 LocalGet 3
+	0xEA2D57 GlobalSet 7
+	0xEA2D59 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b24
+	11 Nop
+	12 Move v12 @ S0_v110, [2E15F4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v110
+	14 Nop
+	15 Move v14 @ S1_v102, 1
+	16 Move [458F8A], v14 @ S1_v102
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [this @ L0 (UIRoot)+54], 1
+	21 Nop
+	22 Nop
+	23 Move [this @ L0 (UIRoot)+5D], 1
+	24 Nop
+	25 Nop
+	26 Move [this @ L0 (UIRoot)+60], 1
+	27 Nop
+	28 Nop
+	29 Move [this @ L0 (UIRoot)+68], 3000
+	30 Nop
+	31 Nop
+	32 Call 11B6C, v28 @ S0_v14, typeof(System.Collections.Generic.List`1<UIWidget>)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CallVoid BB79, v28 @ S0_v14, methodof(System.Collections.Generic.List`1<UIWidget>::.ctor)
+	37 Nop
+	38 Nop
+	39 Add v34 @ S0_v16, this @ L0 (UIRoot), 108
+	40 Nop
+	41 Move [v34 @ S0_v16], v28 @ S0_v14
+	42 Nop
+	43 Nop
+	44 Call 11B6C, v38 @ S0_v19, typeof(System.Collections.Generic.List`1<UIDrawCall>)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 CallVoid BB79, v38 @ S0_v19, methodof(System.Collections.Generic.List`1<UIDrawCall>::.ctor)
+	49 Nop
+	50 Nop
+	51 Add v44 @ S0_v21, this @ L0 (UIRoot), 112
+	52 Nop
+	53 Move [v44 @ S0_v21], v38 @ S0_v19
+	54 Nop
+	55 Move v47 @ S0_v23 (Il2CppClass<UnityEngine.Matrix4x4>), typeof(UnityEngine.Matrix4x4)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 And v51 @ S0_v25, [v47 @ S0_v23 (Il2CppClass<UnityEngine.Matrix4x4>)+BA], 512
+	60 CheckEqual v52 @ TEMP_v2 (System.Boolean), v51 @ S0_v25, 0
+	61 ConditionalJump @b25, v52 @ TEMP_v2 (System.Boolean)
+	62 Move v53 @ S0_v105 (Il2CppClass<UnityEngine.Matrix4x4>), typeof(UnityEngine.Matrix4x4)
+	63 Nop
+	64 CheckEqual v55 @ S0_v107 (System.Boolean), [v53 @ S0_v105 (Il2CppClass<UnityEngine.Matrix4x4>)+74], 0
+	65 Not v56 @ TEMP_v10 (System.Boolean), v55 @ S0_v107 (System.Boolean)
+	66 ConditionalJump @b25, v56 @ TEMP_v10 (System.Boolean)
+	67 Nop
+	68 CallVoid 11A99, typeof(UnityEngine.Matrix4x4)
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Add v62 @ S0_v28 (UnityEngine.Vector3), v1 @ G7, 72
+	74 Nop
+	75 Nop
+	76 CallVoid Vector3.Normalize, v62 @ S0_v28 (UnityEngine.Vector3)
+	77 Nop
+	78 Nop
+	79 Add v67 @ S0_v30, v1 @ G7, 136
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Move [v67 @ S0_v30], v62.x (System.Single)
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Move [v67 @ S0_v30+8], v62.z (System.Single)
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Move [v67 @ S0_v30+10], [v62 @ S0_v28 (UnityEngine.Vector3)+10]
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Move [v67 @ S0_v30+18], [v62 @ S0_v28 (UnityEngine.Vector3)+18]
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Move [v67 @ S0_v30+20], [v62 @ S0_v28 (UnityEngine.Vector3)+20]
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Move [v67 @ S0_v30+28], [v62 @ S0_v28 (UnityEngine.Vector3)+28]
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Move [v67 @ S0_v30+30], [v62 @ S0_v28 (UnityEngine.Vector3)+30]
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Move [v67 @ S0_v30+38], [v62 @ S0_v28 (UnityEngine.Vector3)+38]
+	112 Nop
+	113 Nop
+	114 CallVoid 9CDA, this @ L0 (UIRoot), v67 @ S0_v30
+	115 Nop
+	116 Nop
+	117 Add v96 @ S0_v40, v1 @ G7, 56
+	118 Nop
+	119 Nop
+	120 Move [v96 @ S0_v40], 0
+	121 Nop
+	122 Nop
+	123 Move [v96 @ S0_v40+8], 0
+	124 Nop
+	125 Nop
+	126 Move [v96 @ S0_v40], 0f
+	127 Nop
+	128 Nop
+	129 Move [v96 @ S0_v40+4], 0f
+	130 Nop
+	131 Nop
+	132 Move [v96 @ S0_v40+8], 1f
+	133 Nop
+	134 Nop
+	135 Move [v96 @ S0_v40+C], 1f
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Move [v67 @ S0_v30], [v96 @ S0_v40]
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Move [v67 @ S0_v30+8], [v96 @ S0_v40+8]
+	144 Nop
+	145 Nop
+	146 Add v117 @ S0_v49, this @ L0 (UIRoot), 180
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Move [v117 @ S0_v49], [v67 @ S0_v30]
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Move [v117 @ S0_v49+8], [v67 @ S0_v30+8]
+	155 Nop
+	156 Nop
+	157 Move [this @ L0 (UIRoot)+D4], 1f
+	158 Nop
+	159 Nop
+	160 Add v128 @ S0_v53, v1 @ G7, 40
+	161 Nop
+	162 Nop
+	163 Move [v128 @ S0_v53], 0
+	164 Nop
+	165 Nop
+	166 Move [v128 @ S0_v53+8], 0
+	167 Nop
+	168 Nop
+	169 Move [v128 @ S0_v53], 0f
+	170 Nop
+	171 Nop
+	172 Move [v128 @ S0_v53+4], 0f
+	173 Nop
+	174 Nop
+	175 Move [v128 @ S0_v53+8], 300f
+	176 Nop
+	177 Nop
+	178 Move [v128 @ S0_v53+C], 200f
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Move [v67 @ S0_v30], [v128 @ S0_v53]
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Move [v67 @ S0_v30+8], [v128 @ S0_v53+8]
+	187 Nop
+	188 Nop
+	189 Add v149 @ S0_v62, this @ L0 (UIRoot), 220
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Move [v149 @ S0_v62], [v67 @ S0_v30]
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Move [v149 @ S0_v62+8], [v67 @ S0_v30+8]
+	198 Nop
+	199 Nop
+	200 Move [v1 @ G7], 0
+	201 Nop
+	202 Nop
+	203 Move [v1 @ G7], 4f
+	204 Nop
+	205 Nop
+	206 Move [v1 @ G7+4], 4f
+	207 Nop
+	208 Nop
+	209 Add v164 @ S0_v68, v1 @ G7, 32
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Move [v164 @ S0_v68], [v1 @ G7]
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Move [v67 @ S0_v30], [v164 @ S0_v68]
+	218 Nop
+	219 Nop
+	220 Nop
+	221 Move [this @ L0 (UIRoot)+EC], [v67 @ S0_v30]
+	222 Nop
+	223 Move v175 @ S0_v72 (Il2CppClass<UnityEngine.Vector2>), typeof(UnityEngine.Vector2)
+	224 Nop
+	225 Nop
+	226 Nop
+	227 And v179 @ S0_v74, [v175 @ S0_v72 (Il2CppClass<UnityEngine.Vector2>)+BA], 512
+	228 CheckEqual v180 @ TEMP_v4 (System.Boolean), v179 @ S0_v74, 0
+	229 ConditionalJump @b26, v180 @ TEMP_v4 (System.Boolean)
+	230 Move v181 @ S0_v101 (Il2CppClass<UnityEngine.Vector2>), typeof(UnityEngine.Vector2)
+	231 Nop
+	232 CheckEqual v183 @ S0_v103 (System.Boolean), [v181 @ S0_v101 (Il2CppClass<UnityEngine.Vector2>)+74], 0
+	233 Not v184 @ TEMP_v9 (System.Boolean), v183 @ S0_v103 (System.Boolean)
+	234 ConditionalJump @b26, v184 @ TEMP_v9 (System.Boolean)
+	235 Nop
+	236 CallVoid 11A99, typeof(UnityEngine.Vector2)
+	237 Nop
+	238 Nop
+	239 Nop
+	240 Nop
+	241 Add v190 @ S0_v77, v1 @ G7, 24
+	242 Nop
+	243 Nop
+	244 Call Vector2.get_one, v193 @ SRET_v1 (UnityEngine.Vector2)
+	245 Nop
+	246 Nop
+	247 Nop
+	248 Move [v67 @ S0_v30], [v190 @ S0_v77]
+	249 Nop
+	250 Nop
+	251 Nop
+	252 Move [this @ L0 (UIRoot)+104], [v67 @ S0_v30]
+	253 Nop
+	254 Nop
+	255 Move [this @ L0 (UIRoot)+10C], -1
+	256 Nop
+	257 Nop
+	258 Move [this @ L0 (UIRoot)+114], -1
+	259 Nop
+	260 Nop
+	261 Add v206 @ S0_v83, v1 @ G7, 16
+	262 Nop
+	263 Nop
+	264 Call Vector2.get_one, v209 @ SRET_v2 (UnityEngine.Vector2)
+	265 Nop
+	266 Nop
+	267 Nop
+	268 Move [v67 @ S0_v30], [v206 @ S0_v83]
+	269 Nop
+	270 Nop
+	271 Nop
+	272 Move [this @ L0 (UIRoot)+118], [v67 @ S0_v30]
+	273 Nop
+	274 Nop
+	275 Add v218 @ S0_v87, v1 @ G7, 8
+	276 Nop
+	277 Nop
+	278 Call Vector2.get_one, v221 @ SRET_v3 (UnityEngine.Vector2)
+	279 Nop
+	280 Nop
+	281 Nop
+	282 Move [v67 @ S0_v30], [v218 @ S0_v87]
+	283 Nop
+	284 Nop
+	285 Nop
+	286 Move [this @ L0 (UIRoot)+120], [v67 @ S0_v30]
+	287 Nop
+	288 Move v229 @ S0_v91 (Il2CppClass<UIRect>), typeof(UIRect)
+	289 Nop
+	290 Nop
+	291 Nop
+	292 And v233 @ S0_v93, [v229 @ S0_v91 (Il2CppClass<UIRect>)+BA], 512
+	293 CheckEqual v234 @ TEMP_v6 (System.Boolean), v233 @ S0_v93, 0
+	294 ConditionalJump @b27, v234 @ TEMP_v6 (System.Boolean)
+	295 Move v235 @ S0_v97 (Il2CppClass<UIRect>), typeof(UIRect)
+	296 Nop
+	297 CheckEqual v237 @ S0_v99 (System.Boolean), [v235 @ S0_v97 (Il2CppClass<UIRect>)+74], 0
+	298 Not v238 @ TEMP_v8 (System.Boolean), v237 @ S0_v99 (System.Boolean)
+	299 ConditionalJump @b27, v238 @ TEMP_v8 (System.Boolean)
+	300 Nop
+	301 CallVoid 11A99, typeof(UIRect)
+	302 Nop
+	303 Nop
+	304 Nop
+	305 Nop
+	306 CallVoid UISnapshotPoint.Start, this @ L0 (UIRoot)
+	307 Nop
+	308 Nop
+	309 Nop
+	310 Return
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xDAD3BF LocalGet 0
+	0xDAD3C1 I32Const 36
+	0xDAD3C3 I32Add
+	0xDAD3C4 LocalGet 0
+	0xDAD3C6 I32Const 0
+	0xDAD3C8 Call 62780
+	0xDAD3CC I32Store 2, 0
+	0xDAD3CF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (UIRoot), 36
+	3 Nop
+	4 Nop
+	5 Call Component.get_gameObject, v6 @ S1_v3 (UnityEngine.GameObject), this @ L0 (UIRoot)
+	6 Move [v3 @ S0_v2], v6 @ S1_v3 (UnityEngine.GameObject)
+	7 Nop
+	8 Return
+
+Method: System.Void OnDisable()
+
+Disassembly:
+	0xDAD3D2 I32Const 4555678
+	0xDAD3D7 I32Load8_S 0, 0
+	0xDAD3DA I32Eqz
+	0xDAD3DB If -64
+	0xDAD3DD I32Const 3020864
+	0xDAD3E2 I32Load 2, 0
+	0xDAD3E5 Call 73003
+	0xDAD3E9 I32Const 4555678
+	0xDAD3EE I32Const 1
+	0xDAD3F0 I32Store8 0, 0
+	0xDAD3F3 End
+	0xDAD3F4 I32Const 4439124
+	0xDAD3F9 I32Load 2, 0
+	0xDAD3FC LocalTee 1
+	0xDAD3FE I32Load16_S 1, 186
+	0xDAD402 I32Const 512
+	0xDAD405 I32And
+	0xDAD406 If -64
+	0xDAD408 LocalGet 1
+	0xDAD40A I32Load 2, 116
+	0xDAD40D I32Eqz
+	0xDAD40E If -64
+	0xDAD410 LocalGet 1
+	0xDAD412 Call 72345
+	0xDAD416 I32Const 4439124
+	0xDAD41B I32Load 2, 0
+	0xDAD41E LocalSet 1
+	0xDAD420 End
+	0xDAD421 End
+	0xDAD422 LocalGet 1
+	0xDAD424 I32Load 2, 92
+	0xDAD427 I32Load 2, 0
+	0xDAD42A LocalGet 0
+	0xDAD42C I32Const 4486832
+	0xDAD431 I32Load 2, 0
+	0xDAD434 Call 69491
+	0xDAD438 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v20, [2E1840]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45839E], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UIRoot>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v13 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	21 Nop
+	22 CheckEqual v20 @ S0_v15 (System.Boolean), [v18 @ S0_v13 (Il2CppClass<UIRoot>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v15 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UIRoot)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CallVoid 10F73, v28.list (System.Collections.Generic.List`1<UIRoot>), this @ L0 (UIRoot), methodof(System.Collections.Generic.List`1<UIRoot>::Add)
+	39 Nop
+	40 Return
+
+Method: System.Void Start()
+
+Disassembly:
+	0xDAD43B I32Const 4555679
+	0xDAD440 I32Load8_S 0, 0
+	0xDAD443 I32Eqz
+	0xDAD444 If -64
+	0xDAD446 I32Const 3020860
+	0xDAD44B I32Load 2, 0
+	0xDAD44E Call 73003
+	0xDAD452 I32Const 4555679
+	0xDAD457 I32Const 1
+	0xDAD459 I32Store8 0, 0
+	0xDAD45C End
+	0xDAD45D I32Const 4439124
+	0xDAD462 I32Load 2, 0
+	0xDAD465 LocalTee 1
+	0xDAD467 I32Load16_S 1, 186
+	0xDAD46B I32Const 512
+	0xDAD46E I32And
+	0xDAD46F If -64
+	0xDAD471 LocalGet 1
+	0xDAD473 I32Load 2, 116
+	0xDAD476 I32Eqz
+	0xDAD477 If -64
+	0xDAD479 LocalGet 1
+	0xDAD47B Call 72345
+	0xDAD47F I32Const 4439124
+	0xDAD484 I32Load 2, 0
+	0xDAD487 LocalSet 1
+	0xDAD489 End
+	0xDAD48A End
+	0xDAD48B LocalGet 1
+	0xDAD48D I32Load 2, 92
+	0xDAD490 I32Load 2, 0
+	0xDAD493 LocalGet 0
+	0xDAD495 I32Const 4456428
+	0xDAD49A I32Load 2, 0
+	0xDAD49D Call 69261
+	0xDAD4A1 Drop
+	0xDAD4A2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v21, [2E183C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45839F], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UIRoot>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v14 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	21 Nop
+	22 CheckEqual v20 @ S0_v16 (System.Boolean), [v18 @ S0_v14 (Il2CppClass<UIRoot>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v16 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UIRoot)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call 10E8D, v34 @ S0_v13, v28.list (System.Collections.Generic.List`1<UIRoot>), this @ L0 (UIRoot), methodof(System.Collections.Generic.List`1<UIRoot>::Remove)
+	39 Nop
+	40 Return
+
+Method: System.Void Update()
+
+Disassembly:
+	0xDAD4A8 I32Const 4555680
+	0xDAD4AD I32Load8_S 0, 0
+	0xDAD4B0 I32Eqz
+	0xDAD4B1 If -64
+	0xDAD4B3 I32Const 3020868
+	0xDAD4B8 I32Load 2, 0
+	0xDAD4BB Call 73003
+	0xDAD4BF I32Const 4555680
+	0xDAD4C4 I32Const 1
+	0xDAD4C6 I32Store8 0, 0
+	0xDAD4C9 End
+	0xDAD4CA LocalGet 0
+	0xDAD4CC I32Const 4446452
+	0xDAD4D1 I32Load 2, 0
+	0xDAD4D4 Call 48482
+	0xDAD4D8 LocalSet 1
+	0xDAD4DA I32Const 4433280
+	0xDAD4DF I32Load 2, 0
+	0xDAD4E2 LocalTee 2
+	0xDAD4E4 I32Load16_S 1, 186
+	0xDAD4E8 I32Const 512
+	0xDAD4EB I32And
+	0xDAD4EC If -64
+	0xDAD4EE LocalGet 2
+	0xDAD4F0 I32Load 2, 116
+	0xDAD4F3 I32Eqz
+	0xDAD4F4 If -64
+	0xDAD4F6 LocalGet 2
+	0xDAD4F8 Call 72345
+	0xDAD4FC End
+	0xDAD4FD End
+	0xDAD4FE LocalGet 1
+	0xDAD500 I32Const 0
+	0xDAD502 I32Const 0
+	0xDAD504 Call 63693
+	0xDAD508 If -64
+	0xDAD50A I32Const 4433260
+	0xDAD50F I32Load 2, 0
+	0xDAD512 LocalTee 0
+	0xDAD514 I32Load16_S 1, 186
+	0xDAD518 I32Const 512
+	0xDAD51B I32And
+	0xDAD51C If -64
+	0xDAD51E LocalGet 0
+	0xDAD520 I32Load 2, 116
+	0xDAD523 I32Eqz
+	0xDAD524 If -64
+	0xDAD526 LocalGet 0
+	0xDAD528 Call 72345
+	0xDAD52C End
+	0xDAD52D End
+	0xDAD52E I32Const 4548324
+	0xDAD533 I32Load 2, 0
+	0xDAD536 LocalGet 1
+	0xDAD538 I32Const 0
+	0xDAD53A Call 62858
+	0xDAD53E LocalGet 1
+	0xDAD540 I32Const 0
+	0xDAD542 Call 62781
+	0xDAD546 I32Const 4447268
+	0xDAD54B I32Load 2, 0
+	0xDAD54E Call 29300
+	0xDAD552 LocalSet 0
+	0xDAD554 LocalGet 1
+	0xDAD556 I32Const 0
+	0xDAD558 I32Const 0
+	0xDAD55A Call 62610
+	0xDAD55E I32Const 4433280
+	0xDAD563 I32Load 2, 0
+	0xDAD566 LocalTee 1
+	0xDAD568 I32Load16_S 1, 186
+	0xDAD56C I32Const 512
+	0xDAD56F I32And
+	0xDAD570 If -64
+	0xDAD572 LocalGet 1
+	0xDAD574 I32Load 2, 116
+	0xDAD577 I32Eqz
+	0xDAD578 If -64
+	0xDAD57A LocalGet 1
+	0xDAD57C Call 72345
+	0xDAD580 End
+	0xDAD581 End
+	0xDAD582 LocalGet 0
+	0xDAD584 I32Const 0
+	0xDAD586 I32Const 0
+	0xDAD588 Call 63693
+	0xDAD58C If -64
+	0xDAD58E LocalGet 0
+	0xDAD590 F32Const 1
+	0xDAD595 I32Const 0
+	0xDAD597 Call 62665
+	0xDAD59B End
+	0xDAD59C Else
+	0xDAD59D LocalGet 0
+	0xDAD59F I32Const 0
+	0xDAD5A1 I32Const 0
+	0xDAD5A3 Call 35972
+	0xDAD5A7 End
+	0xDAD5A8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b26
+	5 Nop
+	6 Move v5 @ S0_v49, [2E1844]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v49
+	8 Nop
+	9 Move v7 @ S1_v18, 1
+	10 Move [4583A0], v7 @ S1_v18
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call Component.GetComponentsInChildren, v15 @ S0_v6 (T[]), this @ L0 (UIRoot)
+	16 Nop
+	17 Nop
+	18 Move v18 @ S0_v8 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 And v22 @ S0_v10, [v18 @ S0_v8 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	23 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v10, 0
+	24 ConditionalJump @b27, v23 @ TEMP_v2 (System.Boolean)
+	25 Move v24 @ S0_v44 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	26 Nop
+	27 CheckEqual v26 @ S0_v46 (System.Boolean), [v24 @ S0_v44 (Il2CppClass<UnityEngine.Object>)+74], 0
+	28 Not v27 @ TEMP_v13 (System.Boolean), v26 @ S0_v46 (System.Boolean)
+	29 ConditionalJump @b27, v27 @ TEMP_v13 (System.Boolean)
+	30 Nop
+	31 CallVoid 11A99, typeof(UnityEngine.Object)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call ComputeShader.FindKernel, v34 @ S0_v13 (System.Int32), v15 @ S0_v6 (T[]), 0
+	38 CheckEqual v35 @ TEMP_v4 (System.Boolean), v34 @ S0_v13 (System.Int32), 0
+	39 ConditionalJump @b24, v35 @ TEMP_v4 (System.Boolean)
+	40 Nop
+	41 Move v37 @ S0_v17 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v41 @ S0_v19, [v37 @ S0_v17 (Il2CppClass<UnityEngine.Debug>)+BA], 512
+	46 CheckEqual v42 @ TEMP_v6 (System.Boolean), v41 @ S0_v19, 0
+	47 ConditionalJump @b28, v42 @ TEMP_v6 (System.Boolean)
+	48 Move v46 @ S0_v40 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	49 Nop
+	50 CheckEqual v48 @ S0_v42 (System.Boolean), [v46 @ S0_v40 (Il2CppClass<UnityEngine.Debug>)+74], 0
+	51 Not v49 @ TEMP_v12 (System.Boolean), v48 @ S0_v42 (System.Boolean)
+	52 ConditionalJump @b28, v49 @ TEMP_v12 (System.Boolean)
+	53 Nop
+	54 CallVoid 11A99, typeof(UnityEngine.Debug)
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 CallVoid Debug.LogWarningFormat, "UIRoot should not be active at the same time as UIOrthoCamera. Disabling UIOrthoCamera.", v15 @ S0_v6 (T[])
+	62 Nop
+	63 Nop
+	64 Call Component.get_tag, v71 @ S0_v24 (System.String), v15 @ S0_v6 (T[])
+	65 Nop
+	66 Nop
+	67 Call GameObject.GetComponent, v74 @ S0_v25 (UnityEngine.Camera), v71 @ S0_v24 (System.String)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 CallVoid Component.set_tag, v15 @ S0_v6 (T[]), 0
+	73 Nop
+	74 Move v79 @ S0_v28 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 And v82 @ S0_v30, [v79 @ S0_v28 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	79 CheckEqual v83 @ TEMP_v8 (System.Boolean), v82 @ S0_v30, 0
+	80 ConditionalJump @b29, v83 @ TEMP_v8 (System.Boolean)
+	81 Move v84 @ S0_v36 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	82 Nop
+	83 CheckEqual v86 @ S0_v38 (System.Boolean), [v84 @ S0_v36 (Il2CppClass<UnityEngine.Object>)+74], 0
+	84 Not v87 @ TEMP_v11 (System.Boolean), v86 @ S0_v38 (System.Boolean)
+	85 ConditionalJump @b29, v87 @ TEMP_v11 (System.Boolean)
+	86 Nop
+	87 CallVoid 11A99, typeof(UnityEngine.Object)
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Call ComputeShader.FindKernel, v94 @ S0_v33 (System.Int32), v74 @ S0_v25 (UnityEngine.Camera), 0
+	94 CheckEqual v66 @ TEMP_v10 (System.Boolean), v94 @ S0_v33 (System.Int32), 0
+	95 ConditionalJump @b23, v66 @ TEMP_v10 (System.Boolean)
+	96 Nop
+	97 Nop
+	98 Nop
+	99 CallVoid Camera.set_depth, v74 @ S0_v25 (UnityEngine.Camera), 1f
+	100 Nop
+	101 Jump @b25
+	102 Nop
+	103 Nop
+	104 Nop
+	105 CallVoid UIRoot.Broadcast, this @ L0 (UIRoot), 0
+	106 Nop
+	107 Nop
+	108 Return
+
+Method: System.Void UpdateScale(System.Boolean updateAnchors = True)
+
+Disassembly:
+	0xE9D436 I32Const 4558688
+	0xE9D43B I32Load8_S 0, 0
+	0xE9D43E I32Eqz
+	0xE9D43F If -64
+	0xE9D441 I32Const 3020196
+	0xE9D446 I32Load 2, 0
+	0xE9D449 Call 73003
+	0xE9D44D I32Const 4558688
+	0xE9D452 I32Const 1
+	0xE9D454 I32Store8 0, 0
+	0xE9D457 End
+	0xE9D458 LocalGet 1
+	0xE9D45A I32Load 2, 216
+	0xE9D45E If -64
+	0xE9D460 LocalGet 1
+	0xE9D462 I32Const 220
+	0xE9D465 I32Add
+	0xE9D466 F32Load 2, 8
+	0xE9D469 LocalSet 3
+	0xE9D46B LocalGet 1
+	0xE9D46D I32Const 220
+	0xE9D470 I32Add
+	0xE9D471 F32Load 2, 12
+	0xE9D474 LocalSet 4
+	0xE9D476 LocalGet 0
+	0xE9D478 I64Const 0
+	0xE9D47A I64Store 2, 0
+	0xE9D47D LocalGet 0
+	0xE9D47F LocalGet 3
+	0xE9D481 F32Store 2, 0
+	0xE9D484 LocalGet 0
+	0xE9D486 LocalGet 4
+	0xE9D488 F32Store 2, 4
+	0xE9D48B Else
+	0xE9D48C I32Const 4435588
+	0xE9D491 I32Load 2, 0
+	0xE9D494 LocalTee 1
+	0xE9D496 I32Load16_S 1, 186
+	0xE9D49A I32Const 512
+	0xE9D49D I32And
+	0xE9D49E If -64
+	0xE9D4A0 LocalGet 1
+	0xE9D4A2 I32Load 2, 116
+	0xE9D4A5 I32Eqz
+	0xE9D4A6 If -64
+	0xE9D4A8 LocalGet 1
+	0xE9D4AA Call 72345
+	0xE9D4AE End
+	0xE9D4AF End
+	0xE9D4B0 LocalGet 0
+	0xE9D4B2 I32Const 0
+	0xE9D4B4 Call 47029
+	0xE9D4B8 End
+	0xE9D4B9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v28, [2E15A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [458F60], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), [updateAnchors @ L1 (System.Boolean)+D8], 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Add v17 @ S0_v19, updateAnchors @ L1 (System.Boolean), 220
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Add v22 @ S0_v22, updateAnchors @ L1 (System.Boolean), 220
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Move [this @ L0 (UIRoot)], 0
+	29 Nop
+	30 Nop
+	31 Move [this @ L0 (UIRoot)], [v17 @ S0_v19+8]
+	32 Nop
+	33 Nop
+	34 Move [this @ L0 (UIRoot)+4], [v22 @ S0_v22+C]
+	35 Jump @b10
+	36 Nop
+	37 Move v33 @ S0_v9 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 And v37 @ S0_v11, [v33 @ S0_v9 (Il2CppClass<NGUITools>)+BA], 512
+	42 CheckEqual v38 @ TEMP_v4 (System.Boolean), v37 @ S0_v11, 0
+	43 ConditionalJump @b12, v38 @ TEMP_v4 (System.Boolean)
+	44 Move v50 @ S0_v14 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	45 Nop
+	46 CheckEqual v52 @ S0_v16 (System.Boolean), [v50 @ S0_v14 (Il2CppClass<NGUITools>)+74], 0
+	47 Not v53 @ TEMP_v6 (System.Boolean), v52 @ S0_v16 (System.Boolean)
+	48 ConditionalJump @b12, v53 @ TEMP_v6 (System.Boolean)
+	49 Nop
+	50 CallVoid 11A99, typeof(NGUITools)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 CallVoid PropertyBinding.Start, this @ L0 (UIRoot)
+	56 Nop
+	57 Nop
+	58 Return
+
+Method: System.Void Broadcast(System.String funcName)
+
+Disassembly:
+	0xDAD7AB LocalGet 0
+	0xDAD7AD I32Const 1
+	0xDAD7AF I32Const 0
+	0xDAD7B1 Call 35972
+	0xDAD7B5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid UIRoot.Broadcast, funcName @ L0 (System.String), 1
+	4 Nop
+	5 Return
+
+Method: System.Void Broadcast(System.String funcName, System.Object param)
+
+Disassembly:
+	0xDAD5B0 GlobalGet 7
+	0xDAD5B2 LocalSet 2
+	0xDAD5B4 GlobalGet 7
+	0xDAD5B6 I32Const 48
+	0xDAD5B8 I32Add
+	0xDAD5B9 GlobalSet 7
+	0xDAD5BB I32Const 4555681
+	0xDAD5C0 I32Load8_S 0, 0
+	0xDAD5C3 I32Eqz
+	0xDAD5C4 If -64
+	0xDAD5C6 I32Const 3020872
+	0xDAD5CB I32Load 2, 0
+	0xDAD5CE Call 73003
+	0xDAD5D2 I32Const 4555681
+	0xDAD5D7 I32Const 1
+	0xDAD5D9 I32Store8 0, 0
+	0xDAD5DC End
+	0xDAD5DD LocalGet 2
+	0xDAD5DF I32Const 12
+	0xDAD5E1 I32Add
+	0xDAD5E2 LocalTee 4
+	0xDAD5E4 I64Const 0
+	0xDAD5E6 I64Store 2, 0
+	0xDAD5E9 LocalGet 4
+	0xDAD5EB I32Const 0
+	0xDAD5ED I32Store 2, 8
+	0xDAD5F0 LocalGet 0
+	0xDAD5F2 I32Load 2, 36
+	0xDAD5F5 LocalSet 5
+	0xDAD5F7 I32Const 4433280
+	0xDAD5FC I32Load 2, 0
+	0xDAD5FF LocalTee 3
+	0xDAD601 I32Load16_S 1, 186
+	0xDAD605 I32Const 512
+	0xDAD608 I32And
+	0xDAD609 If -64
+	0xDAD60B LocalGet 3
+	0xDAD60D I32Load 2, 116
+	0xDAD610 I32Eqz
+	0xDAD611 If -64
+	0xDAD613 LocalGet 3
+	0xDAD615 Call 72345
+	0xDAD619 End
+	0xDAD61A End
+	0xDAD61B LocalGet 2
+	0xDAD61D I32Const 24
+	0xDAD61F I32Add
+	0xDAD620 LocalSet 3
+	0xDAD622 Block -64
+	0xDAD624 LocalGet 5
+	0xDAD626 I32Const 0
+	0xDAD628 I32Const 0
+	0xDAD62A Call 63693
+	0xDAD62E If -64
+	0xDAD630 LocalGet 0
+	0xDAD632 I32Const 0
+	0xDAD634 Call 35964
+	0xDAD638 LocalTee 6
+	0xDAD63A I32Const 0
+	0xDAD63C I32Gt_S
+	0xDAD63D If -64
+	0xDAD63F LocalGet 3
+	0xDAD641 LocalGet 0
+	0xDAD643 I32Load 2, 36
+	0xDAD646 I32Const 0
+	0xDAD648 Call 64357
+	0xDAD64C LocalGet 4
+	0xDAD64E LocalGet 3
+	0xDAD650 I64Load 2, 0
+	0xDAD653 I64Store 2, 0
+	0xDAD656 LocalGet 4
+	0xDAD658 LocalGet 3
+	0xDAD65A I32Load 2, 8
+	0xDAD65D I32Store 2, 8
+	0xDAD660 LocalGet 2
+	0xDAD662 LocalGet 3
+	0xDAD664 I64Load 2, 0
+	0xDAD667 I64Store 2, 0
+	0xDAD66A LocalGet 2
+	0xDAD66C LocalGet 3
+	0xDAD66E I32Load 2, 8
+	0xDAD671 I32Store 2, 8
+	0xDAD674 LocalGet 2
+	0xDAD676 F32Load 2, 0
+	0xDAD679 I32Const 4433348
+	0xDAD67E I32Load 2, 0
+	0xDAD681 LocalTee 5
+	0xDAD683 I32Load16_S 1, 186
+	0xDAD687 I32Const 512
+	0xDAD68A I32And
+	0xDAD68B If -64
+	0xDAD68D LocalGet 5
+	0xDAD68F I32Load 2, 116
+	0xDAD692 I32Eqz
+	0xDAD693 If -64
+	0xDAD695 LocalGet 5
+	0xDAD697 Call 72345
+	0xDAD69B End
+	0xDAD69C End
+	0xDAD69D F32Const 2
+	0xDAD6A2 LocalGet 6
+	0xDAD6A4 F32Convert_I32_S
+	0xDAD6A5 F32Div
+	0xDAD6A6 LocalTee 7
+	0xDAD6A8 F32Sub
+	0xDAD6A9 F32Abs
+	0xDAD6AA F32Const 1E-45
+	0xDAD6AF F32Le
+	0xDAD6B0 If -64
+	0xDAD6B2 LocalGet 3
+	0xDAD6B4 LocalGet 4
+	0xDAD6B6 I64Load 2, 0
+	0xDAD6B9 I64Store 2, 0
+	0xDAD6BC LocalGet 3
+	0xDAD6BE LocalGet 4
+	0xDAD6C0 I32Load 2, 8
+	0xDAD6C3 I32Store 2, 8
+	0xDAD6C6 LocalGet 3
+	0xDAD6C8 F32Load 2, 4
+	0xDAD6CB I32Const 4433348
+	0xDAD6D0 I32Load 2, 0
+	0xDAD6D3 LocalTee 5
+	0xDAD6D5 I32Load16_S 1, 186
+	0xDAD6D9 I32Const 512
+	0xDAD6DC I32And
+	0xDAD6DD If -64
+	0xDAD6DF LocalGet 5
+	0xDAD6E1 I32Load 2, 116
+	0xDAD6E4 I32Eqz
+	0xDAD6E5 If -64
+	0xDAD6E7 LocalGet 5
+	0xDAD6E9 Call 72345
+	0xDAD6ED End
+	0xDAD6EE End
+	0xDAD6EF LocalGet 7
+	0xDAD6F1 F32Sub
+	0xDAD6F2 F32Abs
+	0xDAD6F3 F32Const 1E-45
+	0xDAD6F8 F32Le
+	0xDAD6F9 If -64
+	0xDAD6FB LocalGet 3
+	0xDAD6FD LocalGet 4
+	0xDAD6FF I64Load 2, 0
+	0xDAD702 I64Store 2, 0
+	0xDAD705 LocalGet 3
+	0xDAD707 LocalGet 4
+	0xDAD709 I32Load 2, 8
+	0xDAD70C I32Store 2, 8
+	0xDAD70F LocalGet 3
+	0xDAD711 F32Load 2, 8
+	0xDAD714 I32Const 4433348
+	0xDAD719 I32Load 2, 0
+	0xDAD71C LocalTee 4
+	0xDAD71E I32Load16_S 1, 186
+	0xDAD722 I32Const 512
+	0xDAD725 I32And
+	0xDAD726 If -64
+	0xDAD728 LocalGet 4
+	0xDAD72A I32Load 2, 116
+	0xDAD72D I32Eqz
+	0xDAD72E If -64
+	0xDAD730 LocalGet 4
+	0xDAD732 Call 72345
+	0xDAD736 End
+	0xDAD737 End
+	0xDAD738 LocalGet 7
+	0xDAD73A F32Sub
+	0xDAD73B F32Abs
+	0xDAD73C F32Const 1E-45
+	0xDAD741 F32Le
+	0xDAD742 BrIf 4
+	0xDAD744 End
+	0xDAD745 End
+	0xDAD746 LocalGet 0
+	0xDAD748 I32Load 2, 36
+	0xDAD74B LocalGet 2
+	0xDAD74D I64Const 0
+	0xDAD74F I64Store 2, 0
+	0xDAD752 LocalGet 2
+	0xDAD754 I32Const 0
+	0xDAD756 I32Store 2, 8
+	0xDAD759 LocalGet 2
+	0xDAD75B LocalGet 7
+	0xDAD75D F32Store 2, 0
+	0xDAD760 LocalGet 2
+	0xDAD762 LocalGet 7
+	0xDAD764 F32Store 2, 4
+	0xDAD767 LocalGet 2
+	0xDAD769 LocalGet 7
+	0xDAD76B F32Store 2, 8
+	0xDAD76E LocalGet 3
+	0xDAD770 LocalGet 2
+	0xDAD772 I64Load 2, 0
+	0xDAD775 I64Store 2, 0
+	0xDAD778 LocalGet 3
+	0xDAD77A LocalGet 2
+	0xDAD77C I32Load 2, 8
+	0xDAD77F I32Store 2, 8
+	0xDAD782 LocalGet 3
+	0xDAD784 I32Const 0
+	0xDAD786 Call 64359
+	0xDAD78A LocalGet 1
+	0xDAD78C If -64
+	0xDAD78E LocalGet 0
+	0xDAD790 I32Const 4530424
+	0xDAD795 I32Load 2, 0
+	0xDAD798 I32Const 1
+	0xDAD79A I32Const 0
+	0xDAD79C Call 62804
+	0xDAD7A0 End
+	0xDAD7A1 End
+	0xDAD7A2 End
+	0xDAD7A3 End
+	0xDAD7A4 LocalGet 2
+	0xDAD7A6 GlobalSet 7
+	0xDAD7A8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b31
+	11 Nop
+	12 Move v12 @ S0_v61, [2E1848]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v61
+	14 Nop
+	15 Move v14 @ S1_v75, 1
+	16 Move [4583A1], v14 @ S1_v75
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 12
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Move [v19 @ S0_v9+8], 0
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move v29 @ S0_v14 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 And v33 @ S0_v16, [v29 @ S0_v14 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	36 CheckEqual v34 @ TEMP_v2 (System.Boolean), v33 @ S0_v16, 0
+	37 ConditionalJump @b39, v34 @ TEMP_v2 (System.Boolean)
+	38 Move v35 @ S0_v56 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	39 Nop
+	40 CheckEqual v37 @ S0_v58 (System.Boolean), [v35 @ S0_v56 (Il2CppClass<UnityEngine.Object>)+74], 0
+	41 Not v38 @ TEMP_v20 (System.Boolean), v37 @ S0_v58 (System.Boolean)
+	42 ConditionalJump @b39, v38 @ TEMP_v20 (System.Boolean)
+	43 Nop
+	44 CallVoid 11A99, typeof(UnityEngine.Object)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Add v44 @ S0_v19 (UnityEngine.Transform), v1 @ G7, 24
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Call ComputeShader.FindKernel, v49 @ S0_v21 (System.Int32), [funcName @ L0 (System.String)+24], 0
+	55 CheckEqual v50 @ TEMP_v4 (System.Boolean), v49 @ S0_v21 (System.Int32), 0
+	56 ConditionalJump @b38, v50 @ TEMP_v4 (System.Boolean)
+	57 Nop
+	58 Nop
+	59 Call UISprite.get_mainTexture, v53 @ S0_v25 (UnityEngine.Texture), funcName @ L0 (System.String)
+	60 Nop
+	61 Nop
+	62 CheckGreater v84 @ S0_v26 (System.Boolean), v53 @ S0_v25 (UnityEngine.Texture), 0
+	63 Not v75 @ TEMP_v6 (System.Boolean), v84 @ S0_v26 (System.Boolean)
+	64 ConditionalJump @b38, v75 @ TEMP_v6 (System.Boolean)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 CallVoid Transform.set_localScale, v44 @ S0_v19 (UnityEngine.Transform), [funcName @ L0 (System.String)+24]
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Move [v19 @ S0_v9], [v44 @ S0_v19 (UnityEngine.Transform)]
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Move [v19 @ S0_v9+8], v44.m_CachedPtr (System.IntPtr)
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Move [v1 @ G7], [v44 @ S0_v19 (UnityEngine.Transform)]
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Move [v1 @ G7+8], v44.m_CachedPtr (System.IntPtr)
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Move v108 @ S1_v23 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	90 Nop
+	91 Nop
+	92 Nop
+	93 And v112 @ S1_v25, [v108 @ S1_v23 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	94 CheckEqual v113 @ TEMP_v7 (System.Boolean), v112 @ S1_v25, 0
+	95 ConditionalJump @b34, v113 @ TEMP_v7 (System.Boolean)
+	96 Move v114 @ S1_v71 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	97 Nop
+	98 CheckEqual v116 @ S1_v73 (System.Boolean), [v114 @ S1_v71 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	99 Not v117 @ TEMP_v19 (System.Boolean), v116 @ S1_v73 (System.Boolean)
+	100 ConditionalJump @b34, v117 @ TEMP_v19 (System.Boolean)
+	101 Nop
+	102 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Divide v123 @ S1_v28 (System.Single), 2f, v53 @ S0_v25 (UnityEngine.Texture)
+	108 Nop
+	109 Subtract v124 @ S0_v34 (System.Single), [v1 @ G7], v123 @ S1_v28 (System.Single)
+	110 Call Math.Abs, v125 @ S0_v35 (System.Single), v124 @ S0_v34 (System.Single)
+	111 Nop
+	112 CheckLessOrEqual v127 @ S0_v36 (System.Boolean), v125 @ S0_v35 (System.Single), 1E-45f
+	113 Not v128 @ TEMP_v9 (System.Boolean), v127 @ S0_v36 (System.Boolean)
+	114 ConditionalJump @b35, v128 @ TEMP_v9 (System.Boolean)
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Move [v44 @ S0_v19 (UnityEngine.Transform)], [v19 @ S0_v9]
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Move v44.m_CachedPtr (System.IntPtr), [v19 @ S0_v9+8]
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Move v138 @ S1_v46 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	127 Nop
+	128 Nop
+	129 Nop
+	130 And v141 @ S1_v48, [v138 @ S1_v46 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	131 CheckEqual v142 @ TEMP_v12 (System.Boolean), v141 @ S1_v48, 0
+	132 ConditionalJump @b36, v142 @ TEMP_v12 (System.Boolean)
+	133 Move v168 @ S1_v67 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	134 Nop
+	135 CheckEqual v170 @ S1_v69 (System.Boolean), [v168 @ S1_v67 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	136 Not v171 @ TEMP_v18 (System.Boolean), v170 @ S1_v69 (System.Boolean)
+	137 ConditionalJump @b36, v171 @ TEMP_v18 (System.Boolean)
+	138 Nop
+	139 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Subtract v176 @ S0_v46 (System.Single), [v44 @ S0_v19 (UnityEngine.Transform)+4], v123 @ S1_v28 (System.Single)
+	144 Call Math.Abs, v177 @ S0_v47 (System.Single), v176 @ S0_v46 (System.Single)
+	145 Nop
+	146 CheckLessOrEqual v149 @ S0_v48 (System.Boolean), v177 @ S0_v47 (System.Single), 1E-45f
+	147 Not v145 @ TEMP_v14 (System.Boolean), v149 @ S0_v48 (System.Boolean)
+	148 ConditionalJump @b35, v145 @ TEMP_v14 (System.Boolean)
+	149 Nop
+	150 Nop
+	151 Nop
+	152 Move [v44 @ S0_v19 (UnityEngine.Transform)], [v19 @ S0_v9]
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Move v44.m_CachedPtr (System.IntPtr), [v19 @ S0_v9+8]
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Move v189 @ S1_v57 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	161 Nop
+	162 Nop
+	163 Nop
+	164 And v191 @ S1_v59, [v189 @ S1_v57 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	165 CheckEqual v192 @ TEMP_v15 (System.Boolean), v191 @ S1_v59, 0
+	166 ConditionalJump @b37, v192 @ TEMP_v15 (System.Boolean)
+	167 Move v193 @ S1_v63 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	168 Nop
+	169 CheckEqual v195 @ S1_v65 (System.Boolean), [v193 @ S1_v63 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	170 Not v196 @ TEMP_v17 (System.Boolean), v195 @ S1_v65 (System.Boolean)
+	171 ConditionalJump @b37, v196 @ TEMP_v17 (System.Boolean)
+	172 Nop
+	173 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Subtract v200 @ S0_v53 (System.Single), v44.m_CachedPtr (System.IntPtr), v123 @ S1_v28 (System.Single)
+	178 Call Math.Abs, v201 @ S0_v54 (System.Single), v200 @ S0_v53 (System.Single)
+	179 Nop
+	180 CheckLessOrEqual v83 @ S0_v55 (System.Boolean), v201 @ S0_v54 (System.Single), 1E-45f
+	181 ConditionalJump @b38, v83 @ S0_v55 (System.Boolean)
+	182 Nop
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Move [v1 @ G7], 0
+	189 Nop
+	190 Nop
+	191 Move [v1 @ G7+8], 0
+	192 Nop
+	193 Nop
+	194 Move [v1 @ G7], v123 @ S1_v28 (System.Single)
+	195 Nop
+	196 Nop
+	197 Move [v1 @ G7+4], v123 @ S1_v28 (System.Single)
+	198 Nop
+	199 Nop
+	200 Move [v1 @ G7+8], v123 @ S1_v28 (System.Single)
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Move [v44 @ S0_v19 (UnityEngine.Transform)], [v1 @ G7]
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Move v44.m_CachedPtr (System.IntPtr), [v1 @ G7+8]
+	209 Nop
+	210 Nop
+	211 CallVoid Transform.set_parent, [funcName @ L0 (System.String)+24], v44 @ S0_v19 (UnityEngine.Transform)
+	212 Nop
+	213 CheckEqual v76 @ TEMP_v11 (System.Boolean), param @ L1 (System.Object), 0
+	214 ConditionalJump @b38, v76 @ TEMP_v11 (System.Boolean)
+	215 Nop
+	216 Nop
+	217 Nop
+	218 Nop
+	219 Nop
+	220 CallVoid GameObject..ctor, funcName @ L0 (System.String), "UpdateAnchors", 1
+	221 Nop
+	222 Nop
+	223 Nop
+	224 Nop
+	225 Nop
+	226 Nop
+	227 Nop
+	228 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xDAD7BB I32Const 4555682
+	0xDAD7C0 I32Load8_S 0, 0
+	0xDAD7C3 I32Eqz
+	0xDAD7C4 If -64
+	0xDAD7C6 I32Const 3020848
+	0xDAD7CB I32Load 2, 0
+	0xDAD7CE Call 73003
+	0xDAD7D2 I32Const 4555682
+	0xDAD7D7 I32Const 1
+	0xDAD7D9 I32Store8 0, 0
+	0xDAD7DC End
+	0xDAD7DD I32Const 4439124
+	0xDAD7E2 I32Load 2, 0
+	0xDAD7E5 LocalTee 1
+	0xDAD7E7 I32Load16_S 1, 186
+	0xDAD7EB I32Const 512
+	0xDAD7EE I32And
+	0xDAD7EF If -64
+	0xDAD7F1 LocalGet 1
+	0xDAD7F3 I32Load 2, 116
+	0xDAD7F6 I32Eqz
+	0xDAD7F7 If -64
+	0xDAD7F9 LocalGet 1
+	0xDAD7FB Call 72345
+	0xDAD7FF I32Const 4439124
+	0xDAD804 I32Load 2, 0
+	0xDAD807 LocalSet 1
+	0xDAD809 End
+	0xDAD80A End
+	0xDAD80B I32Const 4463476
+	0xDAD810 I32Load 2, 0
+	0xDAD813 Drop
+	0xDAD814 LocalGet 1
+	0xDAD816 I32Load 2, 92
+	0xDAD819 I32Load 2, 0
+	0xDAD81C I32Load 2, 12
+	0xDAD81F LocalSet 4
+	0xDAD821 Loop -64
+	0xDAD823 LocalGet 2
+	0xDAD825 LocalGet 4
+	0xDAD827 I32Lt_S
+	0xDAD828 If -64
+	0xDAD82A I32Const 4439124
+	0xDAD82F I32Load 2, 0
+	0xDAD832 LocalTee 1
+	0xDAD834 I32Load16_S 1, 186
+	0xDAD838 I32Const 512
+	0xDAD83B I32And
+	0xDAD83C If -64
+	0xDAD83E LocalGet 1
+	0xDAD840 I32Load 2, 116
+	0xDAD843 I32Eqz
+	0xDAD844 If -64
+	0xDAD846 LocalGet 1
+	0xDAD848 Call 72345
+	0xDAD84C I32Const 4439124
+	0xDAD851 I32Load 2, 0
+	0xDAD854 LocalSet 1
+	0xDAD856 End
+	0xDAD857 End
+	0xDAD858 LocalGet 1
+	0xDAD85A I32Load 2, 92
+	0xDAD85D I32Load 2, 0
+	0xDAD860 LocalGet 2
+	0xDAD862 I32Const 4449292
+	0xDAD867 I32Load 2, 0
+	0xDAD86A Call 29402
+	0xDAD86E LocalSet 1
+	0xDAD870 I32Const 4433280
+	0xDAD875 I32Load 2, 0
+	0xDAD878 LocalTee 3
+	0xDAD87A I32Load16_S 1, 186
+	0xDAD87E I32Const 512
+	0xDAD881 I32And
+	0xDAD882 If -64
+	0xDAD884 LocalGet 3
+	0xDAD886 I32Load 2, 116
+	0xDAD889 I32Eqz
+	0xDAD88A If -64
+	0xDAD88C LocalGet 3
+	0xDAD88E Call 72345
+	0xDAD892 End
+	0xDAD893 End
+	0xDAD894 LocalGet 1
+	0xDAD896 I32Const 0
+	0xDAD898 I32Const 0
+	0xDAD89A Call 63693
+	0xDAD89E If -64
+	0xDAD8A0 LocalGet 1
+	0xDAD8A2 LocalGet 0
+	0xDAD8A4 I32Const 1
+	0xDAD8A6 I32Const 0
+	0xDAD8A8 Call 62804
+	0xDAD8AC End
+	0xDAD8AD LocalGet 2
+	0xDAD8AF I32Const 1
+	0xDAD8B1 I32Add
+	0xDAD8B2 LocalSet 2
+	0xDAD8B4 Br 1
+	0xDAD8B6 End
+	0xDAD8B7 End
+	0xDAD8B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b20
+	5 Nop
+	6 Move v5 @ S0_v56, [2E1830]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v56
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [4583A2], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UIRoot>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b26, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v49 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	21 Nop
+	22 CheckEqual v20 @ S0_v51 (System.Boolean), [v18 @ S0_v49 (Il2CppClass<UIRoot>)+74], 0
+	23 Not v21 @ TEMP_v13 (System.Boolean), v20 @ S0_v51 (System.Boolean)
+	24 ConditionalJump @b26, v21 @ TEMP_v13 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UIRoot)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Move v31 @ S0_v14 (System.Collections.Generic.List`1<UIRoot>), v30.list (System.Collections.Generic.List`1<UIRoot>)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CheckLess v57 @ S0_v18 (System.Boolean), v54 @ S0_v37 (System.Int32), v31._size (System.Int32)
+	43 Not v58 @ TEMP_v5 (System.Boolean), v57 @ S0_v18 (System.Boolean)
+	44 ConditionalJump @b19, v58 @ TEMP_v5 (System.Boolean)
+	45 Nop
+	46 Move v61 @ S0_v20 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 And v65 @ S0_v22, [v61 @ S0_v20 (Il2CppClass<UIRoot>)+BA], 512
+	51 CheckEqual v66 @ TEMP_v6 (System.Boolean), v65 @ S0_v22, 0
+	52 ConditionalJump @b22, v66 @ TEMP_v6 (System.Boolean)
+	53 Move v67 @ S0_v43 (Il2CppClass<UIRoot>), typeof(UIRoot)
+	54 Nop
+	55 CheckEqual v69 @ S0_v45 (System.Boolean), [v67 @ S0_v43 (Il2CppClass<UIRoot>)+74], 0
+	56 Not v70 @ TEMP_v12 (System.Boolean), v69 @ S0_v45 (System.Boolean)
+	57 ConditionalJump @b22, v70 @ TEMP_v12 (System.Boolean)
+	58 Nop
+	59 CallVoid 11A99, typeof(UIRoot)
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Call List`1<UIRoot>.get_Item, v82 @ S0_v27 (UIRoot), v77.list (System.Collections.Generic.List`1<UIRoot>), v54 @ S0_v37 (System.Int32)
+	72 Nop
+	73 Nop
+	74 Move v85 @ S0_v29 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 And v88 @ S0_v31, [v85 @ S0_v29 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	79 CheckEqual v89 @ TEMP_v8 (System.Boolean), v88 @ S0_v31, 0
+	80 ConditionalJump @b24, v89 @ TEMP_v8 (System.Boolean)
+	81 Move v91 @ S0_v39 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	82 Nop
+	83 CheckEqual v93 @ S0_v41 (System.Boolean), [v91 @ S0_v39 (Il2CppClass<UnityEngine.Object>)+74], 0
+	84 Not v94 @ TEMP_v11 (System.Boolean), v93 @ S0_v41 (System.Boolean)
+	85 ConditionalJump @b24, v94 @ TEMP_v11 (System.Boolean)
+	86 Nop
+	87 CallVoid 11A99, typeof(UnityEngine.Object)
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Call ComputeShader.FindKernel, v101 @ S0_v34 (System.Int32), v82 @ S0_v27 (UIRoot), 0
+	94 CheckEqual v52 @ TEMP_v10 (System.Boolean), v101 @ S0_v34 (System.Int32), 0
+	95 ConditionalJump @b18, v52 @ TEMP_v10 (System.Boolean)
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 CallVoid GameObject..ctor, v82 @ S0_v27 (UIRoot), this @ L0 (UIRoot), 1
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Add v54 @ S0_v37 (System.Int32), v35 @ L2_v1 (System.Int32), 1
+	105 Nop
+	106 Jump @b25
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0xEA2D5D I32Const 4558731
+	0xEA2D62 I32Load8_S 0, 0
+	0xEA2D65 I32Eqz
+	0xEA2D66 If -64
+	0xEA2D68 I32Const 3020272
+	0xEA2D6D I32Load 2, 0
+	0xEA2D70 Call 73003
+	0xEA2D74 I32Const 4558731
+	0xEA2D79 I32Const 1
+	0xEA2D7B I32Store8 0, 0
+	0xEA2D7E End
+	0xEA2D7F I32Const 4445280
+	0xEA2D84 I32Load 2, 0
+	0xEA2D87 Call 72556
+	0xEA2D8B LocalTee 0
+	0xEA2D8D I32Const 4486808
+	0xEA2D92 I32Load 2, 0
+	0xEA2D95 Call 47993
+	0xEA2D99 I32Const 4440212
+	0xEA2D9E I32Load 2, 0
+	0xEA2DA1 I32Load 2, 92
+	0xEA2DA4 LocalGet 0
+	0xEA2DA6 I32Store 2, 0
+	0xEA2DA9 I32Const 4430164
+	0xEA2DAE I32Load 2, 0
+	0xEA2DB1 I32Const 4
+	0xEA2DB3 Call 71670
+	0xEA2DB7 LocalSet 0
+	0xEA2DB9 I32Const 4440212
+	0xEA2DBE I32Load 2, 0
+	0xEA2DC1 I32Load 2, 92
+	0xEA2DC4 I32Const 4
+	0xEA2DC6 I32Add
+	0xEA2DC7 LocalGet 0
+	0xEA2DC9 I32Store 2, 0
+	0xEA2DCC I32Const 4434008
+	0xEA2DD1 I32Load 2, 0
+	0xEA2DD4 I32Const 4
+	0xEA2DD6 Call 71670
+	0xEA2DDA LocalSet 0
+	0xEA2DDC I32Const 4440212
+	0xEA2DE1 I32Load 2, 0
+	0xEA2DE4 I32Load 2, 92
+	0xEA2DE7 I32Const 8
+	0xEA2DE9 I32Add
+	0xEA2DEA LocalGet 0
+	0xEA2DEC I32Store 2, 0
+	0xEA2DEF I32Const 4440212
+	0xEA2DF4 I32Load 2, 0
+	0xEA2DF7 I32Load 2, 92
+	0xEA2DFA I32Const -1
+	0xEA2DFC I32Store 2, 12
+	0xEA2DFF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v29, [2E15F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [458F8B], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Collections.Generic.List`1<UIPanel>), typeof(System.Collections.Generic.List`1<UIPanel>)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid BB79, v13 @ S0_v7 (System.Collections.Generic.List`1<UIPanel>), methodof(System.Collections.Generic.List`1<UIPanel>::.ctor)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move v19.list (System.Collections.Generic.List`1<UIPanel>), v13 @ S0_v7 (System.Collections.Generic.List`1<UIPanel>)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Newobj v24 @ S0_v13 (System.OverflowException), typeof(System.OverflowException)
+	28 Nop
+	29 Nop
+	30 Move v27 @ S0_v15 (Il2CppClass<UIPanel>), typeof(UIPanel)
+	31 Nop
+	32 Nop
+	33 Add v30 @ S0_v17, [v27 @ S0_v15 (Il2CppClass<UIPanel>)+5C], 4
+	34 Nop
+	35 Move [v30 @ S0_v17], v24 @ S0_v13 (System.OverflowException)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Newobj v35 @ S0_v20 (System.OverflowException), typeof(System.OverflowException)
+	40 Nop
+	41 Nop
+	42 Move v38 @ S0_v22 (Il2CppClass<UIPanel>), typeof(UIPanel)
+	43 Nop
+	44 Nop
+	45 Add v41 @ S0_v24, [v38 @ S0_v22 (Il2CppClass<UIPanel>)+5C], 8
+	46 Nop
+	47 Move [v41 @ S0_v24], v35 @ S0_v20 (System.OverflowException)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Move v45.mUpdateFrame (System.Int32), -1
+	53 Nop
+	54 Return
+

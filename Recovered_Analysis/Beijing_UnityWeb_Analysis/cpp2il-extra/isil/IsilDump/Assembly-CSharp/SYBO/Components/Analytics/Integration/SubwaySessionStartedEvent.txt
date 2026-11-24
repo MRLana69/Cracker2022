@@ -1,0 +1,85 @@
+Type: SYBO.Components.Analytics.Integration.SubwaySessionStartedEvent
+
+Method: System.Int32 get_SessionEventId()
+
+Disassembly:
+	0xC2696C LocalGet 0
+	0xC2696E I32Load 2, 56
+	0xC26971 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return [this @ L0 (SYBO.Components.Analytics.Integration.SubwaySessionStartedEvent)+38]
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xDDDD16 I32Const 4556225
+	0xDDDD1B I32Load8_S 0, 0
+	0xDDDD1E I32Eqz
+	0xDDDD1F If -64
+	0xDDDD21 I32Const 3007504
+	0xDDDD26 I32Load 2, 0
+	0xDDDD29 Call 73003
+	0xDDDD2D I32Const 4556225
+	0xDDDD32 I32Const 1
+	0xDDDD34 I32Store8 0, 0
+	0xDDDD37 End
+	0xDDDD38 I32Const 4440856
+	0xDDDD3D I32Load 2, 0
+	0xDDDD40 LocalTee 2
+	0xDDDD42 I32Load16_S 1, 186
+	0xDDDD46 I32Const 512
+	0xDDDD49 I32And
+	0xDDDD4A If -64
+	0xDDDD4C LocalGet 2
+	0xDDDD4E I32Load 2, 116
+	0xDDDD51 I32Eqz
+	0xDDDD52 If -64
+	0xDDDD54 LocalGet 2
+	0xDDDD56 Call 72345
+	0xDDDD5A End
+	0xDDDD5B End
+	0xDDDD5C LocalGet 0
+	0xDDDD5E I32Const 0
+	0xDDDD60 Call 36595
+	0xDDDD64 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v16, [2DE410]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4585C1], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>), typeof(SYBO.Components.Analytics.BaseSessionEvent)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v11 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>), typeof(SYBO.Components.Analytics.BaseSessionEvent)
+	21 Nop
+	22 CheckEqual v20 @ S0_v13 (System.Boolean), [v18 @ S0_v11 (Il2CppClass<SYBO.Components.Analytics.BaseSessionEvent>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(SYBO.Components.Analytics.BaseSessionEvent)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid BaseSessionEvent.InitializeCommon, this @ L0 (SYBO.Components.Analytics.Integration.SubwaySessionStartedEvent)
+	32 Nop
+	33 Return
+

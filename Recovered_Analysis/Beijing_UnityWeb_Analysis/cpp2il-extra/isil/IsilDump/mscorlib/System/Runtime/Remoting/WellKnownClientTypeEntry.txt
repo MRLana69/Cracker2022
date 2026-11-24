@@ -1,0 +1,95 @@
+Type: System.Runtime.Remoting.WellKnownClientTypeEntry
+
+Method: System.Void .ctor(System.String typeName, System.String assemblyName, System.String objectUrl)
+
+Disassembly:
+	0x130BC01 LocalGet 0
+	0x130BC03 LocalTee 5
+	0x130BC05 I32Const 8
+	0x130BC07 I32Add
+	0x130BC08 LocalGet 1
+	0x130BC0A I32Store 2, 0
+	0x130BC0D LocalGet 5
+	0x130BC0F I32Const 36
+	0x130BC11 I32Add
+	0x130BC12 LocalGet 3
+	0x130BC14 I32Store 2, 0
+	0x130BC17 LocalGet 5
+	0x130BC19 I32Const 48
+	0x130BC1B I32Add
+	0x130BC1C LocalGet 2
+	0x130BC1E I32Store 2, 0
+	0x130BC21 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v4 @ S0_v2, this @ L0 (System.Runtime.Remoting.WellKnownClientTypeEntry), 8
+	4 Nop
+	5 Move [v4 @ S0_v2], typeName @ L1 (System.String)
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v4, this @ L0 (System.Runtime.Remoting.WellKnownClientTypeEntry), 36
+	9 Nop
+	10 Move [v9 @ S0_v4], objectUrl @ L3 (System.String)
+	11 Nop
+	12 Nop
+	13 Add v14 @ S0_v6, this @ L0 (System.Runtime.Remoting.WellKnownClientTypeEntry), 48
+	14 Nop
+	15 Move [v14 @ S0_v6], assemblyName @ L2 (System.String)
+	16 Nop
+	17 Return
+
+Method: System.String get_ApplicationUrl()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.assembly_name (System.String)
+
+Method: System.Type get_ObjectType()
+
+Disassembly:
+	0xC5D3C2 LocalGet 0
+	0xC5D3C4 I32Load 2, 24
+	0xC5D3C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.app_url (System.String)
+
+Method: System.String get_ObjectUrl()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.obj_type (System.Type)
+
+Method: System.String ToString()
+
+Disassembly:
+	0xC1173F LocalGet 0
+	0xC11741 I32Load 2, 20
+	0xC11744 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.obj_url (System.String)
+

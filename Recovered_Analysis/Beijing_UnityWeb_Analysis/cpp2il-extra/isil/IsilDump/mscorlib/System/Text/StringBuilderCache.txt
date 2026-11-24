@@ -1,0 +1,153 @@
+Type: System.Text.StringBuilderCache
+
+Method: System.Text.StringBuilder Acquire(System.Int32 capacity = 16)
+
+Disassembly:
+	0x133568B LocalGet 0
+	0x133568D I32Const 0
+	0x133568F Call 51357
+	0x1335693 I32Const 0
+	0x1335695 Call 61377
+	0x1335699 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Environment.get_Platform, v3 @ S1_v2 (System.PlatformID)
+	3 Nop
+	4 Call StringBuilder.AppendLine, returnVal1 @ S0_v2 (System.Text.StringBuilder), capacity @ L0 (System.Int32), v3 @ S1_v2 (System.PlatformID)
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Text.StringBuilder)
+
+Method: System.Void Release(System.Text.StringBuilder sb)
+
+Disassembly:
+	0x1334EB8 LocalGet 0
+	0x1334EBA I32Const 16
+	0x1334EBC I32Const 0
+	0x1334EBE Call 61376
+	0x1334EC2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid StringBuilder..ctor, sb @ L0 (System.Text.StringBuilder), 16
+	4 Nop
+	5 Return
+
+Method: System.String GetStringAndRelease(System.Text.StringBuilder sb)
+
+Disassembly:
+	0x1336CF2 I32Const 4572157
+	0x1336CF7 I32Load8_S 0, 0
+	0x1336CFA I32Eqz
+	0x1336CFB If -64
+	0x1336CFD I32Const 3006700
+	0x1336D02 I32Load 2, 0
+	0x1336D05 Call 73003
+	0x1336D09 I32Const 4572157
+	0x1336D0E I32Const 1
+	0x1336D10 I32Store8 0, 0
+	0x1336D13 End
+	0x1336D14 Block -1
+	0x1336D16 Block -64
+	0x1336D18 LocalGet 0
+	0x1336D1A I32Const 360
+	0x1336D1D I32Gt_S
+	0x1336D1E BrIf 0
+	0x1336D20 I32Const 4431280
+	0x1336D25 I32Load 2, 0
+	0x1336D28 Call 73895
+	0x1336D2C I32Load 2, 0
+	0x1336D2F LocalTee 1
+	0x1336D31 I32Eqz
+	0x1336D32 BrIf 0
+	0x1336D34 LocalGet 1
+	0x1336D36 I32Load 2, 20
+	0x1336D39 LocalGet 1
+	0x1336D3B I32Load 2, 8
+	0x1336D3E I32Load 2, 12
+	0x1336D41 I32Add
+	0x1336D42 LocalGet 0
+	0x1336D44 I32Lt_S
+	0x1336D45 BrIf 0
+	0x1336D47 I32Const 4431280
+	0x1336D4C I32Load 2, 0
+	0x1336D4F Call 73895
+	0x1336D53 I32Const 0
+	0x1336D55 I32Store 2, 0
+	0x1336D58 LocalGet 1
+	0x1336D5A I32Const 0
+	0x1336D5C Call 61646
+	0x1336D60 Drop
+	0x1336D61 LocalGet 1
+	0x1336D63 Br 1
+	0x1336D65 End
+	0x1336D66 I32Const 4427712
+	0x1336D6B I32Load 2, 0
+	0x1336D6E Call 72556
+	0x1336D72 LocalTee 1
+	0x1336D74 LocalGet 0
+	0x1336D76 I32Const 0
+	0x1336D78 Call 61376
+	0x1336D7C LocalGet 1
+	0x1336D7E End
+	0x1336D7F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v29, [2DE0EC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45C3FD], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckGreater v14 @ S0_v6 (System.Boolean), sb @ L0 (System.Text.StringBuilder), 360
+	15 ConditionalJump @b11, v14 @ S0_v6 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Call 120A7, v17 @ S0_v15, typeof(System.Text.StringBuilderCache)
+	19 Move v29 @ S0_v16 (System.Text.StringBuilder), [v17 @ S0_v15]
+	20 Nop
+	21 CheckEqual v24 @ S0_v17 (System.Boolean), [v17 @ S0_v15], 0
+	22 ConditionalJump @b11, v24 @ S0_v17 (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move v36 @ S1_v7 (System.Char[]), v29.m_ChunkChars (System.Char[])
+	27 Nop
+	28 Add v38 @ S0_v20, v29.m_ChunkOffset (System.Int32), v36.Length
+	29 Nop
+	30 CheckLess v25 @ S0_v21 (System.Boolean), v38 @ S0_v20, sb @ L0 (System.Text.StringBuilder)
+	31 ConditionalJump @b11, v25 @ S0_v21 (System.Boolean)
+	32 Nop
+	33 Nop
+	34 Call 120A7, v42 @ S0_v24, typeof(System.Text.StringBuilderCache)
+	35 Nop
+	36 Move [v42 @ S0_v24], 0
+	37 Nop
+	38 Nop
+	39 Call StringBuilder.get_Length, v52 @ S0_v26 (System.Int32), [v17 @ S0_v15]
+	40 Nop
+	41 Jump @b15
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call 11B6C, v28 @ S0_v11 (System.Text.StringBuilder), typeof(System.Text.StringBuilder)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid StringBuilder..ctor, v28 @ S0_v11 (System.Text.StringBuilder), sb @ L0 (System.Text.StringBuilder)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Return returnVal1 @ S0_v7 (System.String)
+

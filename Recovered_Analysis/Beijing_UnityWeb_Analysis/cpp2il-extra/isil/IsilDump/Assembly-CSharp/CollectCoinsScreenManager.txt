@@ -1,0 +1,756 @@
+Type: CollectCoinsScreenManager
+
+Method: CollectCoinsScreenManager+CollectCoinsScreenState get_screenState()
+
+Disassembly:
+	0xC61329 I32Const 4551848
+	0xC6132E I32Load8_S 0, 0
+	0xC61331 I32Eqz
+	0xC61332 If -64
+	0xC61334 I32Const 2938868
+	0xC61339 I32Load 2, 0
+	0xC6133C Call 73003
+	0xC61340 I32Const 4551848
+	0xC61345 I32Const 1
+	0xC61347 I32Store8 0, 0
+	0xC6134A End
+	0xC6134B I32Const 4436252
+	0xC61350 I32Load 2, 0
+	0xC61353 Call 72556
+	0xC61357 LocalTee 1
+	0xC61359 I32Const 0
+	0xC6135B I32Store 2, 8
+	0xC6135E LocalGet 1
+	0xC61360 I32Const 16
+	0xC61362 I32Add
+	0xC61363 LocalGet 0
+	0xC61365 I32Store 2, 0
+	0xC61368 LocalGet 1
+	0xC6136A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v12, [2CD7F4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [4574A8], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (CollectCoinsScreenManager+CollectCoinsScreenState), typeof(BragCelebrationHandler+<UpdateUI>d__26)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (CollectCoinsScreenManager+CollectCoinsScreenState)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (CollectCoinsScreenManager+CollectCoinsScreenState), 16
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (CollectCoinsScreenManager)
+	23 Nop
+	24 Nop
+	25 Return v13 @ S0_v7 (CollectCoinsScreenManager+CollectCoinsScreenState)
+
+Method: System.Void set_screenState(CollectCoinsScreenManager+CollectCoinsScreenState value)
+
+Disassembly:
+	0xC61488 LocalGet 0
+	0xC6148A I32Load 2, 12
+	0xC6148D I32Const 0
+	0xC6148F I32Const 0
+	0xC61491 Call 63022
+	0xC61495 LocalGet 0
+	0xC61497 I32Load 2, 16
+	0xC6149A I32Const 0
+	0xC6149C I32Const 0
+	0xC6149E Call 63022
+	0xC614A2 LocalGet 0
+	0xC614A4 I32Load 2, 20
+	0xC614A7 I32Const 0
+	0xC614A9 I32Const 0
+	0xC614AB Call 63022
+	0xC614AF LocalGet 1
+	0xC614B1 I32Const 1
+	0xC614B3 I32Const 0
+	0xC614B5 Call 63022
+	0xC614B9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid GameObject.set_tag, this._screenState (CollectCoinsScreenManager+CollectCoinsScreenState), 0
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid GameObject.set_tag, [this @ L0 (CollectCoinsScreenManager)+10], 0
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid GameObject.set_tag, [this @ L0 (CollectCoinsScreenManager)+14], 0
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid GameObject.set_tag, value @ L1 (CollectCoinsScreenManager+CollectCoinsScreenState), 1
+	19 Nop
+	20 Return
+
+Method: System.Void ScreenStateChanged(CollectCoinsScreenManager+CollectCoinsScreenState newState)
+
+Disassembly:
+	0xC340BE LocalGet 0
+	0xC340C0 I32Load 2, 12
+	0xC340C3 LocalGet 1
+	0xC340C5 I32Ne
+	0xC340C6 If -64
+	0xC340C8 LocalGet 0
+	0xC340CA LocalGet 1
+	0xC340CC I32Store 2, 12
+	0xC340CF LocalGet 0
+	0xC340D1 LocalGet 0
+	0xC340D3 I32Load 2, 12
+	0xC340D6 I32Const 0
+	0xC340D8 Call 29903
+	0xC340DC End
+	0xC340DD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual v5 @ S0_v3 (System.Boolean), this._screenState (CollectCoinsScreenManager+CollectCoinsScreenState), newState @ L1 (CollectCoinsScreenManager+CollectCoinsScreenState)
+	4 Not v6 @ TEMP_v1 (System.Boolean), v5 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b4, v6 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Move this._screenState (CollectCoinsScreenManager+CollectCoinsScreenState), newState @ L1 (CollectCoinsScreenManager+CollectCoinsScreenState)
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 CallVoid DebugSettingsPopup.ScrollToLastIndex, this @ L0 (CollectCoinsScreenManager), this._screenState (CollectCoinsScreenManager+CollectCoinsScreenState)
+	14 Nop
+	15 Nop
+	16 Return
+
+Method: CollectCoinsScreenManager get_Instance()
+
+Disassembly:
+	0xCD05BF I32Const 4553052
+	0xCD05C4 I32Load8_S 0, 0
+	0xCD05C7 I32Eqz
+	0xCD05C8 If -64
+	0xCD05CA I32Const 2997168
+	0xCD05CF I32Load 2, 0
+	0xCD05D2 Call 73003
+	0xCD05D6 I32Const 4553052
+	0xCD05DB I32Const 1
+	0xCD05DD I32Store8 0, 0
+	0xCD05E0 End
+	0xCD05E1 I32Const 4440376
+	0xCD05E6 I32Load 2, 0
+	0xCD05E9 I32Load 2, 92
+	0xCD05EC I32Load 2, 0
+	0xCD05EF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v10, [2DBBB0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [45795C], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return v13._instance (RenderTextureManager)
+
+Method: System.Boolean get_isInitialized()
+
+Disassembly:
+	0xC34124 I32Const 4551523
+	0xC34129 I32Load8_S 0, 0
+	0xC3412C I32Eqz
+	0xC3412D If -64
+	0xC3412F I32Const 2945568
+	0xC34134 I32Load 2, 0
+	0xC34137 Call 73003
+	0xC3413B I32Const 4551523
+	0xC34140 I32Const 1
+	0xC34142 I32Store8 0, 0
+	0xC34145 End
+	0xC34146 I32Const 4436936
+	0xC3414B I32Load 2, 0
+	0xC3414E LocalTee 0
+	0xC34150 I32Load16_S 1, 186
+	0xC34154 I32Const 512
+	0xC34157 I32And
+	0xC34158 If -64
+	0xC3415A LocalGet 0
+	0xC3415C I32Load 2, 116
+	0xC3415F I32Eqz
+	0xC34160 If -64
+	0xC34162 LocalGet 0
+	0xC34164 Call 72345
+	0xC34168 I32Const 4436936
+	0xC3416D I32Load 2, 0
+	0xC34170 LocalSet 0
+	0xC34172 End
+	0xC34173 End
+	0xC34174 LocalGet 0
+	0xC34176 I32Load 2, 92
+	0xC34179 I32Load 2, 0
+	0xC3417C I32Eqz
+	0xC3417D If -64
+	0xC3417F I32Const 4436936
+	0xC34184 I32Load 2, 0
+	0xC34187 Call 72556
+	0xC3418B LocalSet 1
+	0xC3418D I32Const 4436936
+	0xC34192 I32Load 2, 0
+	0xC34195 LocalTee 0
+	0xC34197 I32Load16_S 1, 186
+	0xC3419B I32Const 512
+	0xC3419E I32And
+	0xC3419F If -64
+	0xC341A1 LocalGet 0
+	0xC341A3 I32Load 2, 116
+	0xC341A6 I32Eqz
+	0xC341A7 If -64
+	0xC341A9 LocalGet 0
+	0xC341AB Call 72345
+	0xC341AF I32Const 4436936
+	0xC341B4 I32Load 2, 0
+	0xC341B7 LocalSet 0
+	0xC341B9 End
+	0xC341BA End
+	0xC341BB LocalGet 0
+	0xC341BD I32Load 2, 92
+	0xC341C0 LocalGet 1
+	0xC341C2 I32Store 2, 0
+	0xC341C5 End
+	0xC341C6 I32Const 4436936
+	0xC341CB I32Load 2, 0
+	0xC341CE LocalTee 0
+	0xC341D0 I32Load16_S 1, 186
+	0xC341D4 I32Const 512
+	0xC341D7 I32And
+	0xC341D8 If -64
+	0xC341DA LocalGet 0
+	0xC341DC I32Load 2, 116
+	0xC341DF I32Eqz
+	0xC341E0 If -64
+	0xC341E2 LocalGet 0
+	0xC341E4 Call 72345
+	0xC341E8 I32Const 4436936
+	0xC341ED I32Load 2, 0
+	0xC341F0 LocalSet 0
+	0xC341F2 End
+	0xC341F3 End
+	0xC341F4 LocalGet 0
+	0xC341F6 I32Load 2, 92
+	0xC341F9 I32Load 2, 0
+	0xC341FC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b16
+	5 Nop
+	6 Move v5 @ S0_v52, [2CF220]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v52
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [457363], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<CollectCoinsScreenManager>), typeof(CollectCoinsScreenManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<CollectCoinsScreenManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b21, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v45 (Il2CppClass<CollectCoinsScreenManager>), typeof(CollectCoinsScreenManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v47 (System.Boolean), [v18 @ S0_v45 (Il2CppClass<CollectCoinsScreenManager>)+74], 0
+	23 Not v21 @ TEMP_v12 (System.Boolean), v20 @ S0_v47 (System.Boolean)
+	24 ConditionalJump @b21, v21 @ TEMP_v12 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(CollectCoinsScreenManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 CheckEqual v30 @ S0_v13 (System.Boolean), v28._instance (CollectCoinsScreenManager), 0
+	36 Not v31 @ TEMP_v4 (System.Boolean), v30 @ S0_v13 (System.Boolean)
+	37 ConditionalJump @b23, v31 @ TEMP_v4 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Call 11B6C, v35 @ S0_v31 (CollectCoinsScreenManager), typeof(CollectCoinsScreenManager)
+	41 Nop
+	42 Nop
+	43 Move v56 @ S0_v33 (Il2CppClass<CollectCoinsScreenManager>), typeof(CollectCoinsScreenManager)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 And v60 @ S0_v35, [v56 @ S0_v33 (Il2CppClass<CollectCoinsScreenManager>)+BA], 512
+	48 CheckEqual v61 @ TEMP_v9 (System.Boolean), v60 @ S0_v35, 0
+	49 ConditionalJump @b18, v61 @ TEMP_v9 (System.Boolean)
+	50 Move v74 @ S0_v39 (Il2CppClass<CollectCoinsScreenManager>), typeof(CollectCoinsScreenManager)
+	51 Nop
+	52 CheckEqual v76 @ S0_v41 (System.Boolean), [v74 @ S0_v39 (Il2CppClass<CollectCoinsScreenManager>)+74], 0
+	53 Not v77 @ TEMP_v11 (System.Boolean), v76 @ S0_v41 (System.Boolean)
+	54 ConditionalJump @b18, v77 @ TEMP_v11 (System.Boolean)
+	55 Nop
+	56 CallVoid 11A99, typeof(CollectCoinsScreenManager)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Move v46._instance (CollectCoinsScreenManager), v35 @ S0_v31 (CollectCoinsScreenManager)
+	66 Nop
+	67 Nop
+	68 Move v48 @ S0_v16 (Il2CppClass<CollectCoinsScreenManager>), typeof(CollectCoinsScreenManager)
+	69 Nop
+	70 Nop
+	71 Nop
+	72 And v52 @ S0_v18, [v48 @ S0_v16 (Il2CppClass<CollectCoinsScreenManager>)+BA], 512
+	73 CheckEqual v53 @ TEMP_v6 (System.Boolean), v52 @ S0_v18, 0
+	74 ConditionalJump @b22, v53 @ TEMP_v6 (System.Boolean)
+	75 Move v62 @ S0_v23 (Il2CppClass<CollectCoinsScreenManager>), typeof(CollectCoinsScreenManager)
+	76 Nop
+	77 CheckEqual v64 @ S0_v25 (System.Boolean), [v62 @ S0_v23 (Il2CppClass<CollectCoinsScreenManager>)+74], 0
+	78 Not v65 @ TEMP_v8 (System.Boolean), v64 @ S0_v25 (System.Boolean)
+	79 ConditionalJump @b22, v65 @ TEMP_v8 (System.Boolean)
+	80 Nop
+	81 CallVoid 11A99, typeof(CollectCoinsScreenManager)
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Return v72._instance (CollectCoinsScreenManager)
+
+Method: System.Void UpdateScreenState()
+
+Disassembly:
+	0xDA0843 LocalGet 0
+	0xDA0845 F32Const 90
+	0xDA084A F32Store 2, 24
+	0xDA084D LocalGet 0
+	0xDA084F F32Const 225
+	0xDA0854 F32Store 2, 28
+	0xDA0857 LocalGet 0
+	0xDA0859 F32Const 56
+	0xDA085E F32Store 2, 32
+	0xDA0861 LocalGet 0
+	0xDA0863 F32Const 1
+	0xDA0868 F32Store 2, 36
+	0xDA086B LocalGet 0
+	0xDA086D F32Const 450
+	0xDA0872 F32Store 2, 40
+	0xDA0875 LocalGet 0
+	0xDA0877 I32Const 0
+	0xDA0879 Call 62657
+	0xDA087D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (CollectCoinsScreenManager)+18], 90f
+	3 Nop
+	4 Nop
+	5 Move [this @ L0 (CollectCoinsScreenManager)+1C], 225f
+	6 Nop
+	7 Nop
+	8 Move [this @ L0 (CollectCoinsScreenManager)+20], 56f
+	9 Nop
+	10 Nop
+	11 Move [this @ L0 (CollectCoinsScreenManager)+24], 1f
+	12 Nop
+	13 Nop
+	14 Move [this @ L0 (CollectCoinsScreenManager)+28], 450f
+	15 Nop
+	16 Nop
+	17 CallVoid F4C1, this @ L0 (CollectCoinsScreenManager), 0
+	18 Nop
+	19 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC33F8C I32Const 4551521
+	0xC33F91 I32Load8_S 0, 0
+	0xC33F94 I32Eqz
+	0xC33F95 If -64
+	0xC33F97 I32Const 2945564
+	0xC33F9C I32Load 2, 0
+	0xC33F9F Call 73003
+	0xC33FA3 I32Const 4551521
+	0xC33FA8 I32Const 1
+	0xC33FAA I32Store8 0, 0
+	0xC33FAD End
+	0xC33FAE I32Const 4435480
+	0xC33FB3 I32Load 2, 0
+	0xC33FB6 LocalTee 1
+	0xC33FB8 I32Load16_S 1, 186
+	0xC33FBC I32Const 512
+	0xC33FBF I32And
+	0xC33FC0 If -64
+	0xC33FC2 LocalGet 1
+	0xC33FC4 I32Load 2, 116
+	0xC33FC7 I32Eqz
+	0xC33FC8 If -64
+	0xC33FCA LocalGet 1
+	0xC33FCC Call 72345
+	0xC33FD0 End
+	0xC33FD1 End
+	0xC33FD2 I32Const 0
+	0xC33FD4 Call 31213
+	0xC33FD8 LocalSet 2
+	0xC33FDA I32Const 4436248
+	0xC33FDF I32Load 2, 0
+	0xC33FE2 LocalTee 1
+	0xC33FE4 I32Load16_S 1, 186
+	0xC33FE8 I32Const 512
+	0xC33FEB I32And
+	0xC33FEC If -64
+	0xC33FEE LocalGet 1
+	0xC33FF0 I32Load 2, 116
+	0xC33FF3 I32Eqz
+	0xC33FF4 If -64
+	0xC33FF6 LocalGet 1
+	0xC33FF8 Call 72345
+	0xC33FFC End
+	0xC33FFD End
+	0xC33FFE Block -64
+	0xC34000 Block -64
+	0xC34002 Block -64
+	0xC34004 I32Const 0
+	0xC34006 Call 29709
+	0xC3400A I32Load 2, 112
+	0xC3400D LocalTee 3
+	0xC3400F LocalGet 2
+	0xC34011 I32Const 2
+	0xC34013 I32Or
+	0xC34014 I32Const 3
+	0xC34016 I32Eq
+	0xC34017 I32And
+	0xC34018 If -64
+	0xC3401A LocalGet 3
+	0xC3401C I32Const 1
+	0xC3401E I32Shr_U
+	0xC3401F LocalGet 2
+	0xC34021 I32Const 1
+	0xC34023 I32Or
+	0xC34024 I32Const 3
+	0xC34026 I32Eq
+	0xC34027 I32And
+	0xC34028 I32Eqz
+	0xC34029 BrIf 2
+	0xC3402B Br 1
+	0xC3402D Else
+	0xC3402E I32Const 4435480
+	0xC34033 I32Load 2, 0
+	0xC34036 LocalTee 1
+	0xC34038 I32Load16_S 1, 186
+	0xC3403C I32Const 512
+	0xC3403F I32And
+	0xC34040 If -64
+	0xC34042 LocalGet 1
+	0xC34044 I32Load 2, 116
+	0xC34047 I32Eqz
+	0xC34048 If -64
+	0xC3404A LocalGet 1
+	0xC3404C Call 72345
+	0xC34050 I32Const 4435480
+	0xC34055 I32Load 2, 0
+	0xC34058 LocalSet 1
+	0xC3405A End
+	0xC3405B End
+	0xC3405C LocalGet 3
+	0xC3405E I32Const 1
+	0xC34060 I32Shr_U
+	0xC34061 LocalGet 2
+	0xC34063 I32Const 1
+	0xC34065 I32Or
+	0xC34066 I32Const 3
+	0xC34068 I32Eq
+	0xC34069 I32And
+	0xC3406A I32Const 0
+	0xC3406C I32Ne
+	0xC3406D LocalSet 2
+	0xC3406F LocalGet 1
+	0xC34071 I32Load 2, 92
+	0xC34074 I32Load8_S 0, 30
+	0xC34077 If -64
+	0xC34079 LocalGet 2
+	0xC3407B If -64
+	0xC3407D Br 3
+	0xC3407F Else
+	0xC34080 Br 4
+	0xC34082 End
+	0xC34083 Unreachable
+	0xC34084 End
+	0xC34085 LocalGet 2
+	0xC34087 If -64
+	0xC34089 LocalGet 0
+	0xC3408B I32Const 2
+	0xC3408D I32Const 0
+	0xC3408F Call 29902
+	0xC34093 Else
+	0xC34094 LocalGet 0
+	0xC34096 I32Const 0
+	0xC34098 I32Const 0
+	0xC3409A Call 29902
+	0xC3409E End
+	0xC3409F End
+	0xC340A0 Br 2
+	0xC340A2 End
+	0xC340A3 LocalGet 0
+	0xC340A5 I32Const 3
+	0xC340A7 I32Const 0
+	0xC340A9 Call 29902
+	0xC340AD Br 1
+	0xC340AF End
+	0xC340B0 LocalGet 0
+	0xC340B2 I32Const 1
+	0xC340B4 I32Const 0
+	0xC340B6 Call 29902
+	0xC340BA End
+	0xC340BB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b31
+	5 Nop
+	6 Move v5 @ S0_v62, [2CF21C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v62
+	8 Nop
+	9 Move v7 @ S1_v25, 1
+	10 Move [457361], v7 @ S1_v25
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Globals>), typeof(Globals)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Globals>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b35, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v57 (Il2CppClass<Globals>), typeof(Globals)
+	21 Nop
+	22 CheckEqual v20 @ S0_v59 (System.Boolean), [v18 @ S0_v57 (Il2CppClass<Globals>)+74], 0
+	23 Not v21 @ TEMP_v17 (System.Boolean), v20 @ S0_v59 (System.Boolean)
+	24 ConditionalJump @b35, v21 @ TEMP_v17 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Globals)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call MysteryBox.GetAvailableCharacterTokens, v26 @ S0_v11 (System.Collections.Generic.List`1<SYBO.Subway.Info.Characters+CharacterId>)
+	31 Nop
+	32 Nop
+	33 Move v29 @ S0_v13 (Il2CppClass<SocialManager>), typeof(SocialManager)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 And v33 @ S0_v15, [v29 @ S0_v13 (Il2CppClass<SocialManager>)+BA], 512
+	38 CheckEqual v34 @ TEMP_v4 (System.Boolean), v33 @ S0_v15, 0
+	39 ConditionalJump @b32, v34 @ TEMP_v4 (System.Boolean)
+	40 Move v35 @ S0_v53 (Il2CppClass<SocialManager>), typeof(SocialManager)
+	41 Nop
+	42 CheckEqual v37 @ S0_v55 (System.Boolean), [v35 @ S0_v53 (Il2CppClass<SocialManager>)+74], 0
+	43 Not v38 @ TEMP_v16 (System.Boolean), v37 @ S0_v55 (System.Boolean)
+	44 ConditionalJump @b32, v38 @ TEMP_v16 (System.Boolean)
+	45 Nop
+	46 CallVoid 11A99, typeof(SocialManager)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call SocialManager.get_facebookDialogsSupported, v43 @ S0_v18 (System.Boolean)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Or v48 @ S1_v5, v26 @ S0_v11 (System.Collections.Generic.List`1<SYBO.Subway.Info.Characters+CharacterId>), 2
+	56 Nop
+	57 CheckEqual v50 @ S1_v6 (System.Boolean), v48 @ S1_v5, 3
+	58 And v51 @ S0_v20, [v43 @ S0_v18 (System.Boolean)+70], v50 @ S1_v6 (System.Boolean)
+	59 CheckEqual v52 @ TEMP_v6 (System.Boolean), v51 @ S0_v20, 0
+	60 ConditionalJump @b15, v52 @ TEMP_v6 (System.Boolean)
+	61 Nop
+	62 Nop
+	63 ShiftRight v55 @ S0_v50, [v43 @ S0_v18 (System.Boolean)+70], 1
+	64 Nop
+	65 Nop
+	66 Or v58 @ S1_v23, v26 @ S0_v11 (System.Collections.Generic.List`1<SYBO.Subway.Info.Characters+CharacterId>), 1
+	67 Nop
+	68 CheckEqual v60 @ S1_v24 (System.Boolean), v58 @ S1_v23, 3
+	69 And v61 @ S0_v51, v55 @ S0_v50, v60 @ S1_v24 (System.Boolean)
+	70 CheckEqual v62 @ S0_v52 (System.Boolean), v61 @ S0_v51, 0
+	71 ConditionalJump @b29, v62 @ S0_v52 (System.Boolean)
+	72 Jump @b27
+	73 Nop
+	74 Move v64 @ S0_v27 (Il2CppClass<Globals>), typeof(Globals)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 And v68 @ S0_v29, [v64 @ S0_v27 (Il2CppClass<Globals>)+BA], 512
+	79 CheckEqual v69 @ TEMP_v10 (System.Boolean), v68 @ S0_v29, 0
+	80 ConditionalJump @b33, v69 @ TEMP_v10 (System.Boolean)
+	81 Move v86 @ S0_v43 (Il2CppClass<Globals>), typeof(Globals)
+	82 Nop
+	83 CheckEqual v88 @ S0_v45 (System.Boolean), [v86 @ S0_v43 (Il2CppClass<Globals>)+74], 0
+	84 Not v89 @ TEMP_v15 (System.Boolean), v88 @ S0_v45 (System.Boolean)
+	85 ConditionalJump @b33, v89 @ TEMP_v15 (System.Boolean)
+	86 Nop
+	87 CallVoid 11A99, typeof(Globals)
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 ShiftRight v96 @ S0_v32, [v43 @ S0_v18 (System.Boolean)+70], 1
+	96 Nop
+	97 Nop
+	98 Or v99 @ S1_v15, v26 @ S0_v11 (System.Collections.Generic.List`1<SYBO.Subway.Info.Characters+CharacterId>), 1
+	99 Nop
+	100 CheckEqual v100 @ S1_v16 (System.Boolean), v99 @ S1_v15, 3
+	101 And v101 @ S0_v33, v96 @ S0_v32, v100 @ S1_v16 (System.Boolean)
+	102 Nop
+	103 CheckNotEqual v102 @ S0_v34 (System.Boolean), v101 @ S0_v33, 0
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Not v106 @ TEMP_v12 (System.Boolean), v104.DEBUG_USE_DEBUG_LOGIN_STATE (System.Boolean)
+	109 ConditionalJump @b36, v106 @ TEMP_v12 (System.Boolean)
+	110 Nop
+	111 Not v79 @ TEMP_v14 (System.Boolean), v102 @ S0_v34 (System.Boolean)
+	112 ConditionalJump @b21, v79 @ TEMP_v14 (System.Boolean)
+	113 Jump @b27
+	114 Jump @b29
+	115 Nop
+	116 Interrupt
+	117 Nop
+	118 Nop
+	119 Not v123 @ TEMP_v13 (System.Boolean), v102 @ S0_v34 (System.Boolean)
+	120 ConditionalJump @b25, v123 @ TEMP_v13 (System.Boolean)
+	121 Nop
+	122 Nop
+	123 Nop
+	124 CallVoid CollectCoinsScreenManager.ScreenStateChanged, this @ L0 (CollectCoinsScreenManager), 2
+	125 Jump @b26
+	126 Nop
+	127 Nop
+	128 Nop
+	129 CallVoid CollectCoinsScreenManager.ScreenStateChanged, this @ L0 (CollectCoinsScreenManager), 0
+	130 Nop
+	131 Nop
+	132 Jump @b30
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 CallVoid CollectCoinsScreenManager.ScreenStateChanged, this @ L0 (CollectCoinsScreenManager), 3
+	138 Jump @b30
+	139 Nop
+	140 Nop
+	141 Nop
+	142 Nop
+	143 CallVoid CollectCoinsScreenManager.ScreenStateChanged, this @ L0 (CollectCoinsScreenManager), 1
+	144 Nop
+	145 Nop
+	146 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0xC67EDC I32Const 4551930
+	0xC67EE1 I32Load8_S 0, 0
+	0xC67EE4 I32Eqz
+	0xC67EE5 If -64
+	0xC67EE7 I32Const 2940812
+	0xC67EEC I32Load 2, 0
+	0xC67EEF Call 73003
+	0xC67EF3 I32Const 4551930
+	0xC67EF8 I32Const 1
+	0xC67EFA I32Store8 0, 0
+	0xC67EFD End
+	0xC67EFE I32Const 4436412
+	0xC67F03 I32Load 2, 0
+	0xC67F06 Call 72556
+	0xC67F0A LocalTee 0
+	0xC67F0C I32Const 0
+	0xC67F0E Call 73960
+	0xC67F12 I32Const 4436344
+	0xC67F17 I32Load 2, 0
+	0xC67F1A I32Load 2, 92
+	0xC67F1D LocalGet 0
+	0xC67F1F I32Store 2, 0
+	0xC67F22 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v12, [2CDF8C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4574FA], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (UI.Screens.PauseScreenInternal.DailyChallengeRewardHelper), typeof(UI.Screens.RewardManagement.CelebrationReward)
+	15 Nop
+	16 Nop
+	17 CallVoid DailyChallengeRewardHelper.Refresh, v13 @ S0_v7 (UI.Screens.PauseScreenInternal.DailyChallengeRewardHelper)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move v18._currentCelebrationReward (UI.Screens.RewardManagement.CelebrationReward), v13 @ S0_v7 (UI.Screens.PauseScreenInternal.DailyChallengeRewardHelper)
+	23 Nop
+	24 Return
+

@@ -1,0 +1,600 @@
+Type: System.Security.Cryptography.X509Certificates.PublicKey
+
+Method: System.Void .ctor(Mono.Security.X509.X509Certificate certificate)
+
+Disassembly:
+	0x11351DB LocalGet 0
+	0x11351DD I32Const 8
+	0x11351DF I32Add
+	0x11351E0 LocalGet 1
+	0x11351E2 I32Store 2, 0
+	0x11351E5 LocalGet 0
+	0x11351E7 I32Const -1
+	0x11351E9 I32Store 2, 12
+	0x11351EC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Security.Cryptography.X509Certificates.PublicKey), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], certificate @ L1 (Mono.Security.X509.X509Certificate)
+	5 Nop
+	6 Nop
+	7 Move this._keyValue (System.Security.Cryptography.AsnEncodedData), -1
+	8 Nop
+	9 Return
+
+Method: System.Security.Cryptography.AsnEncodedData get_EncodedKeyValue()
+
+Disassembly:
+	0x113530B LocalGet 0
+	0x113530D LocalGet 0
+	0x113530F I32Load 2, 12
+	0x1135312 I32Const 1
+	0x1135314 I32Add
+	0x1135315 LocalTee 1
+	0x1135317 I32Store 2, 12
+	0x113531A LocalGet 1
+	0x113531C LocalGet 0
+	0x113531E I32Load 2, 8
+	0x1135321 I32Const 0
+	0x1135323 Call 49125
+	0x1135327 I32Lt_S
+	0x1135328 If -1
+	0x113532A I32Const 1
+	0x113532C Else
+	0x113532D LocalGet 0
+	0x113532F LocalGet 0
+	0x1135331 I32Load 2, 8
+	0x1135334 I32Const 0
+	0x1135336 Call 49125
+	0x113533A I32Const 1
+	0x113533C I32Sub
+	0x113533D I32Store 2, 12
+	0x1135340 I32Const 0
+	0x1135342 End
+	0x1135343 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v5 @ S1_v3 (System.Security.Cryptography.AsnEncodedData), this._keyValue (System.Security.Cryptography.AsnEncodedData), 1
+	5 Nop
+	6 Move this._keyValue (System.Security.Cryptography.AsnEncodedData), v5 @ S1_v3 (System.Security.Cryptography.AsnEncodedData)
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Call BFE5, v11 @ S1_v6, this._key (System.Security.Cryptography.AsymmetricAlgorithm), 0
+	12 CheckLess v12 @ S0_v3 (System.Boolean), v5 @ S1_v3 (System.Security.Cryptography.AsnEncodedData), v11 @ S1_v6
+	13 Not v13 @ TEMP_v1 (System.Boolean), v12 @ S0_v3 (System.Boolean)
+	14 ConditionalJump @b5, v13 @ TEMP_v1 (System.Boolean)
+	15 Nop
+	16 Jump @b7
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call BFE5, v19 @ S1_v10, this._key (System.Security.Cryptography.AsymmetricAlgorithm), 0
+	22 Nop
+	23 Subtract v23 @ S1_v11 (System.Security.Cryptography.AsnEncodedData), v19 @ S1_v10, 1
+	24 Move this._keyValue (System.Security.Cryptography.AsnEncodedData), v23 @ S1_v11 (System.Security.Cryptography.AsnEncodedData)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Return returnVal1 @ S0_v4 (System.Security.Cryptography.AsnEncodedData)
+
+Method: System.Security.Cryptography.AsnEncodedData get_EncodedParameters()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._keyValue (System.Security.Cryptography.AsnEncodedData)
+
+Method: System.Security.Cryptography.AsymmetricAlgorithm get_Key()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._params (System.Security.Cryptography.AsnEncodedData)
+
+Method: System.Security.Cryptography.Oid get_Oid()
+
+Disassembly:
+	0x11A082C I32Const 4567613
+	0x11A0831 I32Load8_S 0, 0
+	0x11A0834 I32Eqz
+	0x11A0835 If -64
+	0x11A0837 I32Const 2993776
+	0x11A083C I32Load 2, 0
+	0x11A083F Call 73003
+	0x11A0843 I32Const 4567613
+	0x11A0848 I32Const 1
+	0x11A084A I32Store8 0, 0
+	0x11A084D End
+	0x11A084E Block -64
+	0x11A0850 LocalGet 0
+	0x11A0852 I32Load 2, 8
+	0x11A0855 I32Eqz
+	0x11A0856 If -64
+	0x11A0858 LocalGet 0
+	0x11A085A I32Load 2, 20
+	0x11A085D I32Load 2, 8
+	0x11A0860 LocalTee 1
+	0x11A0862 I32Const 4502772
+	0x11A0867 I32Load 2, 0
+	0x11A086A I32Const 0
+	0x11A086C Call 55605
+	0x11A0870 If -64
+	0x11A0872 LocalGet 0
+	0x11A0874 I32Load 2, 12
+	0x11A0877 I32Load 2, 12
+	0x11A087A LocalSet 2
+	0x11A087C I32Const 4432832
+	0x11A0881 I32Load 2, 0
+	0x11A0884 LocalTee 1
+	0x11A0886 I32Load16_S 1, 186
+	0x11A088A I32Const 512
+	0x11A088D I32And
+	0x11A088E If -64
+	0x11A0890 LocalGet 1
+	0x11A0892 I32Load 2, 116
+	0x11A0895 I32Eqz
+	0x11A0896 If -64
+	0x11A0898 LocalGet 1
+	0x11A089A Call 72345
+	0x11A089E End
+	0x11A089F End
+	0x11A08A0 LocalGet 0
+	0x11A08A2 I32Const 8
+	0x11A08A4 I32Add
+	0x11A08A5 LocalGet 2
+	0x11A08A7 I32Const 0
+	0x11A08A9 Call 54232
+	0x11A08AD I32Store 2, 0
+	0x11A08B0 Br 2
+	0x11A08B2 End
+	0x11A08B3 LocalGet 1
+	0x11A08B5 I32Const 4502768
+	0x11A08BA I32Load 2, 0
+	0x11A08BD I32Const 0
+	0x11A08BF Call 55605
+	0x11A08C3 I32Eqz
+	0x11A08C4 If -64
+	0x11A08C6 I32Const 4428060
+	0x11A08CB I32Load 2, 0
+	0x11A08CE I32Const 1
+	0x11A08D0 Call 71670
+	0x11A08D4 LocalTee 1
+	0x11A08D6 LocalGet 0
+	0x11A08D8 I32Load 2, 20
+	0x11A08DB I32Load 2, 8
+	0x11A08DE LocalTee 2
+	0x11A08E0 Call 29652
+	0x11A08E4 LocalGet 1
+	0x11A08E6 I32Const 16
+	0x11A08E8 I32Add
+	0x11A08E9 LocalGet 2
+	0x11A08EB I32Store 2, 0
+	0x11A08EE I32Const 4515472
+	0x11A08F3 I32Load 2, 0
+	0x11A08F6 LocalGet 1
+	0x11A08F8 I32Const 0
+	0x11A08FA Call 42349
+	0x11A08FE LocalSet 1
+	0x11A0900 I32Const 4427868
+	0x11A0905 I32Load 2, 0
+	0x11A0908 Call 72556
+	0x11A090C LocalTee 2
+	0x11A090E LocalGet 1
+	0x11A0910 I32Const 0
+	0x11A0912 Call 54749
+	0x11A0916 LocalGet 2
+	0x11A0918 I32Const 0
+	0x11A091A I32Const 4467400
+	0x11A091F I32Load 2, 0
+	0x11A0922 Call 73899
+	0x11A0926 End
+	0x11A0927 LocalGet 0
+	0x11A0929 I32Load 2, 12
+	0x11A092C I32Load 2, 12
+	0x11A092F LocalSet 2
+	0x11A0931 LocalGet 0
+	0x11A0933 I32Load 2, 16
+	0x11A0936 I32Load 2, 12
+	0x11A0939 LocalSet 3
+	0x11A093B I32Const 4432832
+	0x11A0940 I32Load 2, 0
+	0x11A0943 LocalTee 1
+	0x11A0945 I32Load16_S 1, 186
+	0x11A0949 I32Const 512
+	0x11A094C I32And
+	0x11A094D If -64
+	0x11A094F LocalGet 1
+	0x11A0951 I32Load 2, 116
+	0x11A0954 I32Eqz
+	0x11A0955 If -64
+	0x11A0957 LocalGet 1
+	0x11A0959 Call 72345
+	0x11A095D End
+	0x11A095E End
+	0x11A095F LocalGet 0
+	0x11A0961 I32Const 8
+	0x11A0963 I32Add
+	0x11A0964 LocalGet 2
+	0x11A0966 LocalGet 3
+	0x11A0968 I32Const 0
+	0x11A096A Call 54233
+	0x11A096E I32Store 2, 0
+	0x11A0971 End
+	0x11A0972 End
+	0x11A0973 LocalGet 0
+	0x11A0975 I32Load 2, 8
+	0x11A0978 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b25
+	5 Nop
+	6 Move v5 @ S0_v63, [2DAE70]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v63
+	8 Nop
+	9 Move v7 @ S1_v25, 1
+	10 Move [45B23D], v7 @ S1_v25
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ S0_v7 (System.Boolean), this._key (System.Security.Cryptography.AsymmetricAlgorithm), 0
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	16 ConditionalJump @b27, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Move v17 @ S0_v12 (System.Security.Cryptography.Oid), this._oid (System.Security.Cryptography.Oid)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Call String.op_Inequality, v23 @ S0_v14 (System.Boolean), v17.m_value (System.String), "1.2.840.113549.1.1.1"
+	25 Not v53 @ TEMP_v4 (System.Boolean), v23 @ S0_v14 (System.Boolean)
+	26 ConditionalJump @b12, v53 @ TEMP_v4 (System.Boolean)
+	27 Nop
+	28 Move v55 @ S0_v49 (System.Security.Cryptography.AsnEncodedData), this._keyValue (System.Security.Cryptography.AsnEncodedData)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Move v58 @ S0_v52 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>), typeof(System.Security.Cryptography.X509Certificates.PublicKey)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 And v61 @ S0_v54, [v58 @ S0_v52 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>)+BA], 512
+	37 CheckEqual v62 @ TEMP_v9 (System.Boolean), v61 @ S0_v54, 0
+	38 ConditionalJump @b26, v62 @ TEMP_v9 (System.Boolean)
+	39 Move v68 @ S0_v58 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>), typeof(System.Security.Cryptography.X509Certificates.PublicKey)
+	40 Nop
+	41 CheckEqual v70 @ S0_v60 (System.Boolean), [v68 @ S0_v58 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>)+74], 0
+	42 Not v71 @ TEMP_v11 (System.Boolean), v70 @ S0_v60 (System.Boolean)
+	43 ConditionalJump @b26, v71 @ TEMP_v11 (System.Boolean)
+	44 Nop
+	45 CallVoid 11A99, typeof(System.Security.Cryptography.X509Certificates.PublicKey)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Add v49 @ S0_v57, this @ L0 (System.Security.Cryptography.X509Certificates.PublicKey), 8
+	51 Nop
+	52 Nop
+	53 Call X500DistinguishedName.GetSeparator, v43 @ S1_v24 (System.String), v55._raw (System.Byte[])
+	54 Move [v49 @ S0_v57], v43 @ S1_v24 (System.String)
+	55 Jump @b27
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Call String.op_Inequality, v67 @ S0_v16 (System.Boolean), v17.m_value (System.String), "1.2.840.10040.4.1"
+	62 Not v77 @ S0_v17 (System.Boolean), v67 @ S0_v16 (System.Boolean)
+	63 Not v78 @ TEMP_v5 (System.Boolean), v77 @ S0_v17 (System.Boolean)
+	64 ConditionalJump @b20, v78 @ TEMP_v5 (System.Boolean)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Newobj v82 @ S0_v38 (System.OverflowException), typeof(System.OverflowException)
+	69 Nop
+	70 Nop
+	71 Move v107 @ S1_v14 (System.Security.Cryptography.Oid), this._oid (System.Security.Cryptography.Oid)
+	72 Nop
+	73 Nop
+	74 Throw typeof(System.ArrayTypeMismatchException)
+	75 Nop
+	76 Nop
+	77 Add v121 @ S0_v40, v82 @ S0_v38 (System.OverflowException), 16
+	78 Nop
+	79 Move [v121 @ S0_v40], v107.m_value (System.String)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Call A56D, v127 @ S0_v43 (System.String), "Cannot decode public key from unknown OID '{0}'.", v82 @ S0_v38 (System.OverflowException), 0
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Call 11B6C, v130 @ S0_v46 (System.NullReferenceException), typeof(System.NotSupportedException)
+	89 Nop
+	90 Nop
+	91 Nop
+	92 CallVoid NullReferenceException..ctor, v130 @ S0_v46 (System.NullReferenceException), v127 @ S0_v43 (System.String)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 CallVoid 120AB, v130 @ S0_v46 (System.NullReferenceException), 0, methodof(System.Security.Cryptography.X509Certificates.PublicKey::get_Key)
+	98 Nop
+	99 Nop
+	100 Move v94 @ S0_v20 (System.Security.Cryptography.AsnEncodedData), this._keyValue (System.Security.Cryptography.AsnEncodedData)
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Move v97 @ S0_v23 (System.Security.Cryptography.AsnEncodedData), this._params (System.Security.Cryptography.AsnEncodedData)
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Move v100 @ S0_v26 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>), typeof(System.Security.Cryptography.X509Certificates.PublicKey)
+	109 Nop
+	110 Nop
+	111 Nop
+	112 And v103 @ S0_v28, [v100 @ S0_v26 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>)+BA], 512
+	113 CheckEqual v104 @ TEMP_v6 (System.Boolean), v103 @ S0_v28, 0
+	114 ConditionalJump @b28, v104 @ TEMP_v6 (System.Boolean)
+	115 Move v110 @ S0_v32 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>), typeof(System.Security.Cryptography.X509Certificates.PublicKey)
+	116 Nop
+	117 CheckEqual v112 @ S0_v34 (System.Boolean), [v110 @ S0_v32 (Il2CppClass<System.Security.Cryptography.X509Certificates.PublicKey>)+74], 0
+	118 Not v113 @ TEMP_v8 (System.Boolean), v112 @ S0_v34 (System.Boolean)
+	119 ConditionalJump @b28, v113 @ TEMP_v8 (System.Boolean)
+	120 Nop
+	121 CallVoid 11A99, typeof(System.Security.Cryptography.X509Certificates.PublicKey)
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Nop
+	126 Add v50 @ S0_v31, this @ L0 (System.Security.Cryptography.X509Certificates.PublicKey), 8
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Call X500DistinguishedName.Decode, v44 @ S1_v11 (System.String), v94._raw (System.Byte[]), v97._raw (System.Byte[])
+	131 Move [v50 @ S0_v31], v44 @ S1_v11 (System.String)
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Return this._key (System.Security.Cryptography.AsymmetricAlgorithm)
+
+Method: System.Byte[] GetUnsignedBigInteger(System.Byte[] integer)
+
+Disassembly:
+	0xC1173F LocalGet 0
+	0xC11741 I32Load 2, 20
+	0xC11744 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return integer[4]
+
+Method: System.Security.Cryptography.DSA DecodeDSA(System.Byte[] rawPublicKey, System.Byte[] rawParameters)
+
+Disassembly:
+	0x1089E6B I32Const 25
+	0x1089E6D LocalGet 0
+	0x1089E6F I32Load 2, 8
+	0x1089E72 LocalGet 1
+	0x1089E74 Call 29448
+	0x1089E78 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 7308, returnVal1 @ S0_v2 (System.Security.Cryptography.DSA), 25, [rawPublicKey @ L0 (System.Byte[])+8], rawParameters @ L1 (System.Byte[])
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Security.Cryptography.DSA)
+
+Method: System.Security.Cryptography.RSA DecodeRSA(System.Byte[] rawPublicKey)
+
+Disassembly:
+	0x11A16E6 I32Const 4567615
+	0x11A16EB I32Load8_S 0, 0
+	0x11A16EE I32Eqz
+	0x11A16EF If -64
+	0x11A16F1 I32Const 2993764
+	0x11A16F6 I32Load 2, 0
+	0x11A16F9 Call 73003
+	0x11A16FD I32Const 4567615
+	0x11A1702 I32Const 1
+	0x11A1704 I32Store8 0, 0
+	0x11A1707 End
+	0x11A1708 LocalGet 0
+	0x11A170A I32Const 16
+	0x11A170C I32Add
+	0x11A170D I32Load8_U 0, 0
+	0x11A1710 I32Eqz
+	0x11A1711 If -64
+	0x11A1713 LocalGet 0
+	0x11A1715 I32Const 1
+	0x11A1717 I32Const 4427832
+	0x11A171C I32Load 2, 0
+	0x11A171F LocalGet 0
+	0x11A1721 I32Load 2, 12
+	0x11A1724 I32Const 1
+	0x11A1726 I32Sub
+	0x11A1727 LocalTee 1
+	0x11A1729 Call 71670
+	0x11A172D LocalTee 0
+	0x11A172F I32Const 0
+	0x11A1731 LocalGet 1
+	0x11A1733 I32Const 0
+	0x11A1735 Call 57977
+	0x11A1739 End
+	0x11A173A LocalGet 0
+	0x11A173C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v13, [2DAE64]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45B23F], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, rawPublicKey @ L0 (System.Byte[]), 16
+	15 Nop
+	16 CheckEqual v16 @ S0_v8 (System.Boolean), [v14 @ S0_v6], 0
+	17 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8 (System.Boolean)
+	18 ConditionalJump @b7, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Subtract v25 @ S3_v4 (System.Int32), rawPublicKey.Length, 1
+	27 Nop
+	28 Newobj v27 @ S2_v4 (System.OverflowException), typeof(System.OverflowException)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid Decimal..ctor, rawPublicKey @ L0 (System.Byte[]), 1, v27 @ S2_v4 (System.OverflowException), 0, v25 @ S3_v4 (System.Int32)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Return v31 @ L0_v1 (System.OverflowException)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x108B19B I32Const 4564441
+	0x108B1A0 I32Load8_S 0, 0
+	0x108B1A3 I32Eqz
+	0x108B1A4 If -64
+	0x108B1A6 I32Const 2987352
+	0x108B1AB I32Load 2, 0
+	0x108B1AE Call 73003
+	0x108B1B2 I32Const 4564441
+	0x108B1B7 I32Const 1
+	0x108B1B9 I32Store8 0, 0
+	0x108B1BC End
+	0x108B1BD I32Const 4432376
+	0x108B1C2 I32Load 2, 0
+	0x108B1C5 Call 72556
+	0x108B1C9 LocalTee 0
+	0x108B1CB I32Const 1
+	0x108B1CD I32Store8 0, 8
+	0x108B1D0 I32Const 4432376
+	0x108B1D5 I32Load 2, 0
+	0x108B1D8 I32Load 2, 92
+	0x108B1DB LocalGet 0
+	0x108B1DD I32Store 2, 0
+	0x108B1E0 I32Const 4432376
+	0x108B1E5 I32Load 2, 0
+	0x108B1E8 Call 72556
+	0x108B1EC LocalTee 0
+	0x108B1EE I32Const 0
+	0x108B1F0 I32Store8 0, 8
+	0x108B1F3 I32Const 4432376
+	0x108B1F8 I32Load 2, 0
+	0x108B1FB I32Load 2, 92
+	0x108B1FE I32Const 4
+	0x108B200 I32Add
+	0x108B201 LocalGet 0
+	0x108B203 I32Store 2, 0
+	0x108B206 I32Const 4432376
+	0x108B20B I32Load 2, 0
+	0x108B20E I32Load 2, 92
+	0x108B211 I32Const 8
+	0x108B213 I32Add
+	0x108B214 I32Const 4432376
+	0x108B219 I32Load 2, 0
+	0x108B21C I32Load 2, 92
+	0x108B21F I32Load 2, 4
+	0x108B222 I32Store 2, 0
+	0x108B225 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v23, [2D9558]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v23
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45A5D9], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.ComponentModel.NotifyParentPropertyAttribute), typeof(System.ComponentModel.NotifyParentPropertyAttribute)
+	15 Nop
+	16 Nop
+	17 Move v13.notifyParent (System.Boolean), 1
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move v18.Yes (System.ComponentModel.NotifyParentPropertyAttribute), v13 @ S0_v7 (System.ComponentModel.NotifyParentPropertyAttribute)
+	23 Nop
+	24 Nop
+	25 Call 11B6C, v22 @ S0_v13, typeof(System.ComponentModel.NotifyParentPropertyAttribute)
+	26 Nop
+	27 Nop
+	28 Move [v22 @ S0_v13+8], 0
+	29 Nop
+	30 Move v26 @ S0_v15 (Il2CppClass<System.ComponentModel.NotifyParentPropertyAttribute>), typeof(System.ComponentModel.NotifyParentPropertyAttribute)
+	31 Nop
+	32 Nop
+	33 Add v29 @ S0_v17, [v26 @ S0_v15 (Il2CppClass<System.ComponentModel.NotifyParentPropertyAttribute>)+5C], 4
+	34 Nop
+	35 Move [v29 @ S0_v17], v22 @ S0_v13
+	36 Nop
+	37 Move v32 @ S0_v19 (Il2CppClass<System.ComponentModel.NotifyParentPropertyAttribute>), typeof(System.ComponentModel.NotifyParentPropertyAttribute)
+	38 Nop
+	39 Nop
+	40 Add v35 @ S0_v21, [v32 @ S0_v19 (Il2CppClass<System.ComponentModel.NotifyParentPropertyAttribute>)+5C], 8
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Move [v35 @ S0_v21], v38.No (System.ComponentModel.NotifyParentPropertyAttribute)
+	46 Nop
+	47 Return
+

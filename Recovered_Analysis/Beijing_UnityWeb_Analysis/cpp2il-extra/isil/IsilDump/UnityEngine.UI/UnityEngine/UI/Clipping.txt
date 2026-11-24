@@ -1,0 +1,52 @@
+Type: UnityEngine.UI.Clipping
+
+Method: UnityEngine.Rect FindCullAndClipWorldRect(System.Collections.Generic.List`1<UnityEngine.UI.RectMask2D> rectMaskParents, out System.Boolean validRect)
+
+Disassembly:
+	0x13AA7EE I32Const 3927468
+	0x13AA7F3 I32Load 2, 0
+	0x13AA7F6 LocalTee 3
+	0x13AA7F8 I32Eqz
+	0x13AA7F9 If -64
+	0x13AA7FB I32Const 3927468
+	0x13AA800 I32Const 3517215
+	0x13AA805 Call 73893
+	0x13AA809 LocalTee 3
+	0x13AA80B I32Store 2, 0
+	0x13AA80E End
+	0x13AA80F LocalGet 0
+	0x13AA811 LocalGet 1
+	0x13AA813 LocalGet 2
+	0x13AA815 LocalGet 3
+	0x13AA817 I32Const 16383
+	0x13AA81B I32And
+	0x13AA81C I32Const 97173
+	0x13AA820 I32Add
+	0x13AA821 CallIndirect 9, 0
+	0x13AA824 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BEDAC], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3517215
+	9 Nop
+	10 Move [3BEDAC], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v21 @ S3_v2, v10 @ L3_v2, 16383
+	18 Nop
+	19 Add v23 @ S3_v3, v21 @ S3_v2, 97173
+	20 IndirectCall v23 @ S3_v3, v24 @ SRET_v1, returnVal1 @ L0 (UnityEngine.Rect), rectMaskParents @ L1 (System.Collections.Generic.List`1<UnityEngine.UI.RectMask2D>), validRect @ L2 (System.Boolean&)
+	21 Nop
+	22 Return returnVal1 @ L0 (UnityEngine.Rect)
+

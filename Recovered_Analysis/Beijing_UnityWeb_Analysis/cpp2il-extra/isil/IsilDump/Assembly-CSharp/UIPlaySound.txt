@@ -1,0 +1,835 @@
+Type: UIPlaySound
+
+Method: System.Boolean get_canPlay()
+
+Disassembly:
+	0xEA3005 LocalGet 0
+	0xEA3007 I32Load 2, 24
+	0xEA300A I32Const 2
+	0xEA300C I32Eq
+	0xEA300D If -1
+	0xEA300F I32Const 1
+	0xEA3011 Else
+	0xEA3012 LocalGet 0
+	0xEA3014 I32Load 2, 24
+	0xEA3017 I32Const 1
+	0xEA3019 I32Eq
+	0xEA301A End
+	0xEA301B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v4 @ S0_v3 (System.Boolean), this.pitch (System.Single), 2
+	4 Not v5 @ TEMP_v1 (System.Boolean), v4 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b4, v5 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Jump @b5
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CheckEqual returnVal1 @ S0_v4 (System.Boolean), this.pitch (System.Single), 1
+	12 Nop
+	13 Nop
+	14 Return returnVal1 @ S0_v4 (System.Boolean)
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xEA418A I32Const 4558748
+	0xEA418F I32Load8_S 0, 0
+	0xEA4192 I32Eqz
+	0xEA4193 If -64
+	0xEA4195 I32Const 3020388
+	0xEA419A I32Load 2, 0
+	0xEA419D Call 73003
+	0xEA41A1 I32Const 4558748
+	0xEA41A6 I32Const 1
+	0xEA41A8 I32Store8 0, 0
+	0xEA41AB End
+	0xEA41AC LocalGet 0
+	0xEA41AE I32Const 1
+	0xEA41B0 I32Store 2, 28
+	0xEA41B3 I32Const 4435592
+	0xEA41B8 I32Load 2, 0
+	0xEA41BB Call 72556
+	0xEA41BF LocalTee 1
+	0xEA41C1 I32Const 4484828
+	0xEA41C6 I32Load 2, 0
+	0xEA41C9 Call 29311
+	0xEA41CD LocalGet 0
+	0xEA41CF I32Const 44
+	0xEA41D1 I32Add
+	0xEA41D2 LocalGet 1
+	0xEA41D4 I32Store 2, 0
+	0xEA41D7 LocalGet 0
+	0xEA41D9 I32Const 0
+	0xEA41DB Call 62657
+	0xEA41DF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v13, [2E1664]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [458F9C], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this.mIsOver (System.Boolean), 1
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v8 (System.Collections.Generic.List`1<EventDelegate>), typeof(System.Collections.Generic.List`1<EventDelegate>)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid List`1<EventDelegate>..ctor, v16 @ S0_v8 (System.Collections.Generic.List`1<EventDelegate>)
+	22 Nop
+	23 Nop
+	24 Add v22 @ S0_v10, this @ L0 (UIPlaySound), 44
+	25 Nop
+	26 Move [v22 @ S0_v10], v16 @ S0_v8 (System.Collections.Generic.List`1<EventDelegate>)
+	27 Nop
+	28 Nop
+	29 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (UIPlaySound)
+	30 Nop
+	31 Return
+
+Method: System.Void OnDisable()
+
+Disassembly:
+	0xEA4263 I32Const 4558750
+	0xEA4268 I32Load8_S 0, 0
+	0xEA426B I32Eqz
+	0xEA426C If -64
+	0xEA426E I32Const 3020400
+	0xEA4273 I32Load 2, 0
+	0xEA4276 Call 73003
+	0xEA427A I32Const 4558750
+	0xEA427F I32Const 1
+	0xEA4281 I32Store8 0, 0
+	0xEA4284 End
+	0xEA4285 LocalGet 0
+	0xEA4287 I32Load 2, 16
+	0xEA428A I32Const 6
+	0xEA428C I32Eq
+	0xEA428D If -64
+	0xEA428F LocalGet 0
+	0xEA4291 I32Load 2, 12
+	0xEA4294 LocalGet 0
+	0xEA4296 F32Load 2, 20
+	0xEA4299 LocalGet 0
+	0xEA429B F32Load 2, 24
+	0xEA429E I32Const 4435588
+	0xEA42A3 I32Load 2, 0
+	0xEA42A6 LocalTee 0
+	0xEA42A8 I32Load16_S 1, 186
+	0xEA42AC I32Const 512
+	0xEA42AF I32And
+	0xEA42B0 If -64
+	0xEA42B2 LocalGet 0
+	0xEA42B4 I32Load 2, 116
+	0xEA42B7 I32Eqz
+	0xEA42B8 If -64
+	0xEA42BA LocalGet 0
+	0xEA42BC Call 72345
+	0xEA42C0 End
+	0xEA42C1 End
+	0xEA42C2 I32Const 0
+	0xEA42C4 Call 46958
+	0xEA42C8 Drop
+	0xEA42C9 End
+	0xEA42CA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v13, [2E1670]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [458F9E], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckEqual v15 @ S0_v7 (System.Boolean), this.trigger (UIPlaySound+Trigger), 6
+	16 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v7 (System.Boolean)
+	17 ConditionalJump @b9, v16 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Move v24 @ S3_v3 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v28 @ S3_v5, [v24 @ S3_v3 (Il2CppClass<NGUITools>)+BA], 512
+	30 CheckEqual v29 @ TEMP_v4 (System.Boolean), v28 @ S3_v5, 0
+	31 ConditionalJump @b11, v29 @ TEMP_v4 (System.Boolean)
+	32 Move v43 @ S3_v8 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	33 Nop
+	34 CheckEqual v45 @ S3_v10 (System.Boolean), [v43 @ S3_v8 (Il2CppClass<NGUITools>)+74], 0
+	35 Not v46 @ TEMP_v6 (System.Boolean), v45 @ S3_v10 (System.Boolean)
+	36 ConditionalJump @b11, v46 @ TEMP_v6 (System.Boolean)
+	37 Nop
+	38 CallVoid 11A99, typeof(NGUITools)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call TweenFill.Begin, v42 @ S0_v11 (TweenFill), this.audioClip (UnityEngine.AudioClip), this.volume (System.Single), this.pitch (System.Single)
+	43 Nop
+	44 Nop
+	45 Return
+
+Method: System.Void OnHover(System.Boolean isOver)
+
+Disassembly:
+	0xEA3FCE LocalGet 0
+	0xEA3FD0 LocalGet 1
+	0xEA3FD2 I32Const 1
+	0xEA3FD4 I32Const 0
+	0xEA3FD6 Call 40199
+	0xEA3FDA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid UIPlayTween.CustomHoverListener, this @ L0 (UIPlaySound), isOver @ L1 (System.Boolean), 1
+	5 Nop
+	6 Return
+
+Method: System.Void OnPress(System.Boolean isPressed)
+
+Disassembly:
+	0xEA433C I32Const 4558752
+	0xEA4341 I32Load8_S 0, 0
+	0xEA4344 I32Eqz
+	0xEA4345 If -64
+	0xEA4347 I32Const 3020404
+	0xEA434C I32Load 2, 0
+	0xEA434F Call 73003
+	0xEA4353 I32Const 4558752
+	0xEA4358 I32Const 1
+	0xEA435A I32Store8 0, 0
+	0xEA435D End
+	0xEA435E Block -64
+	0xEA4360 Block -64
+	0xEA4362 LocalGet 0
+	0xEA4364 I32Load 2, 16
+	0xEA4367 I32Const 1
+	0xEA4369 I32Ne
+	0xEA436A BrIf 0
+	0xEA436C LocalGet 0
+	0xEA436E I32Load8_S 0, 28
+	0xEA4371 I32Const 0
+	0xEA4373 I32Ne
+	0xEA4374 LocalGet 1
+	0xEA4376 I32Xor
+	0xEA4377 If -64
+	0xEA4379 LocalGet 0
+	0xEA437B LocalGet 1
+	0xEA437D I32Const 1
+	0xEA437F I32And
+	0xEA4380 I32Store8 0, 28
+	0xEA4383 Br 1
+	0xEA4385 End
+	0xEA4386 Br 1
+	0xEA4388 End
+	0xEA4389 LocalGet 0
+	0xEA438B I32Const 0
+	0xEA438D Call 40214
+	0xEA4391 If -64
+	0xEA4393 LocalGet 0
+	0xEA4395 I32Load 2, 16
+	0xEA4398 LocalSet 2
+	0xEA439A LocalGet 1
+	0xEA439C If -64
+	0xEA439E LocalGet 2
+	0xEA43A0 I32Const 1
+	0xEA43A2 I32Ne
+	0xEA43A3 BrIf 2
+	0xEA43A5 Else
+	0xEA43A6 LocalGet 2
+	0xEA43A8 I32Const 2
+	0xEA43AA I32Ne
+	0xEA43AB BrIf 2
+	0xEA43AD End
+	0xEA43AE LocalGet 0
+	0xEA43B0 I32Load 2, 12
+	0xEA43B3 LocalGet 0
+	0xEA43B5 F32Load 2, 20
+	0xEA43B8 LocalGet 0
+	0xEA43BA F32Load 2, 24
+	0xEA43BD I32Const 4435588
+	0xEA43C2 I32Load 2, 0
+	0xEA43C5 LocalTee 0
+	0xEA43C7 I32Load16_S 1, 186
+	0xEA43CB I32Const 512
+	0xEA43CE I32And
+	0xEA43CF If -64
+	0xEA43D1 LocalGet 0
+	0xEA43D3 I32Load 2, 116
+	0xEA43D6 I32Eqz
+	0xEA43D7 If -64
+	0xEA43D9 LocalGet 0
+	0xEA43DB Call 72345
+	0xEA43DF End
+	0xEA43E0 End
+	0xEA43E1 I32Const 0
+	0xEA43E3 Call 46958
+	0xEA43E7 Drop
+	0xEA43E8 End
+	0xEA43E9 End
+	0xEA43EA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v29, [2E1674]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [458FA0], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckNotEqual v15 @ S0_v7 (System.Boolean), this.trigger (UIPlaySound+Trigger), 1
+	16 ConditionalJump @b8, v15 @ S0_v7 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 CheckNotEqual v19 @ S0_v25 (System.Boolean), this.mIsOver (System.Boolean), 0
+	21 Nop
+	22 Xor v22 @ S0_v26, v19 @ S0_v25 (System.Boolean), isPressed @ L1 (System.Boolean)
+	23 CheckEqual v23 @ TEMP_v9 (System.Boolean), v22 @ S0_v26, 0
+	24 ConditionalJump @b7, v23 @ TEMP_v9 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Move this.mIsOver (System.Boolean), isPressed @ L1 (System.Boolean)
+	30 Jump @b8
+	31 Nop
+	32 Jump @b20
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call UIPopupList.get_ambigiousFont, v34 @ S0_v11 (UnityEngine.Object), this @ L0 (UIPlaySound)
+	37 CheckEqual v36 @ TEMP_v4 (System.Boolean), v34 @ S0_v11 (UnityEngine.Object), 0
+	38 ConditionalJump @b20, v36 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Not v55 @ TEMP_v5 (System.Boolean), isPressed @ L1 (System.Boolean)
+	44 ConditionalJump @b13, v55 @ TEMP_v5 (System.Boolean)
+	45 Nop
+	46 Nop
+	47 CheckNotEqual v58 @ S0_v22 (System.Boolean), this.trigger (UIPlaySound+Trigger), 1
+	48 ConditionalJump @b20, v58 @ S0_v22 (System.Boolean)
+	49 Jump @b14
+	50 Nop
+	51 Nop
+	52 CheckNotEqual v59 @ S0_v20 (System.Boolean), this.trigger (UIPlaySound+Trigger), 2
+	53 ConditionalJump @b20, v59 @ S0_v20 (System.Boolean)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move v73 @ S3_v3 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 And v75 @ S3_v5, [v73 @ S3_v3 (Il2CppClass<NGUITools>)+BA], 512
+	67 CheckEqual v76 @ TEMP_v6 (System.Boolean), v75 @ S3_v5, 0
+	68 ConditionalJump @b21, v76 @ TEMP_v6 (System.Boolean)
+	69 Move v77 @ S3_v8 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	70 Nop
+	71 CheckEqual v79 @ S3_v10 (System.Boolean), [v77 @ S3_v8 (Il2CppClass<NGUITools>)+74], 0
+	72 Not v80 @ TEMP_v8 (System.Boolean), v79 @ S3_v10 (System.Boolean)
+	73 ConditionalJump @b21, v80 @ TEMP_v8 (System.Boolean)
+	74 Nop
+	75 CallVoid 11A99, typeof(NGUITools)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Call TweenFill.Begin, v60 @ S0_v18 (TweenFill), this.audioClip (UnityEngine.AudioClip), this.volume (System.Single), this.pitch (System.Single)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Return
+
+Method: System.Void OnClick()
+
+Disassembly:
+	0xEA42CF I32Const 4558751
+	0xEA42D4 I32Load8_S 0, 0
+	0xEA42D7 I32Eqz
+	0xEA42D8 If -64
+	0xEA42DA I32Const 3020396
+	0xEA42DF I32Load 2, 0
+	0xEA42E2 Call 73003
+	0xEA42E6 I32Const 4558751
+	0xEA42EB I32Const 1
+	0xEA42ED I32Store8 0, 0
+	0xEA42F0 End
+	0xEA42F1 LocalGet 0
+	0xEA42F3 I32Load 2, 16
+	0xEA42F6 I32Const 7
+	0xEA42F8 I32Eq
+	0xEA42F9 If -64
+	0xEA42FB LocalGet 0
+	0xEA42FD I32Load 2, 12
+	0xEA4300 LocalGet 0
+	0xEA4302 F32Load 2, 20
+	0xEA4305 LocalGet 0
+	0xEA4307 F32Load 2, 24
+	0xEA430A I32Const 4435588
+	0xEA430F I32Load 2, 0
+	0xEA4312 LocalTee 0
+	0xEA4314 I32Load16_S 1, 186
+	0xEA4318 I32Const 512
+	0xEA431B I32And
+	0xEA431C If -64
+	0xEA431E LocalGet 0
+	0xEA4320 I32Load 2, 116
+	0xEA4323 I32Eqz
+	0xEA4324 If -64
+	0xEA4326 LocalGet 0
+	0xEA4328 Call 72345
+	0xEA432C End
+	0xEA432D End
+	0xEA432E I32Const 0
+	0xEA4330 Call 46958
+	0xEA4334 Drop
+	0xEA4335 End
+	0xEA4336 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v13, [2E166C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [458F9F], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckEqual v15 @ S0_v7 (System.Boolean), this.trigger (UIPlaySound+Trigger), 7
+	16 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v7 (System.Boolean)
+	17 ConditionalJump @b9, v16 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Move v24 @ S3_v3 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v28 @ S3_v5, [v24 @ S3_v3 (Il2CppClass<NGUITools>)+BA], 512
+	30 CheckEqual v29 @ TEMP_v4 (System.Boolean), v28 @ S3_v5, 0
+	31 ConditionalJump @b11, v29 @ TEMP_v4 (System.Boolean)
+	32 Move v43 @ S3_v8 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	33 Nop
+	34 CheckEqual v45 @ S3_v10 (System.Boolean), [v43 @ S3_v8 (Il2CppClass<NGUITools>)+74], 0
+	35 Not v46 @ TEMP_v6 (System.Boolean), v45 @ S3_v10 (System.Boolean)
+	36 ConditionalJump @b11, v46 @ TEMP_v6 (System.Boolean)
+	37 Nop
+	38 CallVoid 11A99, typeof(NGUITools)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call TweenFill.Begin, v42 @ S0_v11 (TweenFill), this.audioClip (UnityEngine.AudioClip), this.volume (System.Single), this.pitch (System.Single)
+	43 Nop
+	44 Nop
+	45 Return
+
+Method: System.Void OnSelect(System.Boolean isSelected)
+
+Disassembly:
+	0xEA43F0 I32Const 4558753
+	0xEA43F5 I32Load8_S 0, 0
+	0xEA43F8 I32Eqz
+	0xEA43F9 If -64
+	0xEA43FB I32Const 3020408
+	0xEA4400 I32Load 2, 0
+	0xEA4403 Call 73003
+	0xEA4407 I32Const 4558753
+	0xEA440C I32Const 1
+	0xEA440E I32Store8 0, 0
+	0xEA4411 End
+	0xEA4412 Block -64
+	0xEA4414 Block -64
+	0xEA4416 LocalGet 0
+	0xEA4418 I32Load 2, 16
+	0xEA441B I32Const 3
+	0xEA441D I32Ne
+	0xEA441E BrIf 0
+	0xEA4420 LocalGet 0
+	0xEA4422 I32Load8_S 0, 28
+	0xEA4425 I32Const 0
+	0xEA4427 I32Ne
+	0xEA4428 LocalGet 1
+	0xEA442A I32Xor
+	0xEA442B If -64
+	0xEA442D LocalGet 0
+	0xEA442F LocalGet 1
+	0xEA4431 I32Const 1
+	0xEA4433 I32And
+	0xEA4434 I32Store8 0, 28
+	0xEA4437 Br 1
+	0xEA4439 End
+	0xEA443A Br 1
+	0xEA443C End
+	0xEA443D LocalGet 0
+	0xEA443F I32Const 0
+	0xEA4441 Call 40214
+	0xEA4445 If -64
+	0xEA4447 LocalGet 0
+	0xEA4449 I32Load 2, 16
+	0xEA444C LocalSet 2
+	0xEA444E LocalGet 1
+	0xEA4450 If -64
+	0xEA4452 LocalGet 2
+	0xEA4454 I32Const 3
+	0xEA4456 I32Ne
+	0xEA4457 BrIf 2
+	0xEA4459 Else
+	0xEA445A LocalGet 2
+	0xEA445C I32Const 4
+	0xEA445E I32Ne
+	0xEA445F BrIf 2
+	0xEA4461 End
+	0xEA4462 LocalGet 0
+	0xEA4464 I32Load 2, 12
+	0xEA4467 LocalGet 0
+	0xEA4469 F32Load 2, 20
+	0xEA446C LocalGet 0
+	0xEA446E F32Load 2, 24
+	0xEA4471 I32Const 4435588
+	0xEA4476 I32Load 2, 0
+	0xEA4479 LocalTee 0
+	0xEA447B I32Load16_S 1, 186
+	0xEA447F I32Const 512
+	0xEA4482 I32And
+	0xEA4483 If -64
+	0xEA4485 LocalGet 0
+	0xEA4487 I32Load 2, 116
+	0xEA448A I32Eqz
+	0xEA448B If -64
+	0xEA448D LocalGet 0
+	0xEA448F Call 72345
+	0xEA4493 End
+	0xEA4494 End
+	0xEA4495 I32Const 0
+	0xEA4497 Call 46958
+	0xEA449B Drop
+	0xEA449C End
+	0xEA449D End
+	0xEA449E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v29, [2E1678]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [458FA1], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckNotEqual v15 @ S0_v7 (System.Boolean), this.trigger (UIPlaySound+Trigger), 3
+	16 ConditionalJump @b8, v15 @ S0_v7 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 CheckNotEqual v19 @ S0_v25 (System.Boolean), this.mIsOver (System.Boolean), 0
+	21 Nop
+	22 Xor v22 @ S0_v26, v19 @ S0_v25 (System.Boolean), isSelected @ L1 (System.Boolean)
+	23 CheckEqual v23 @ TEMP_v9 (System.Boolean), v22 @ S0_v26, 0
+	24 ConditionalJump @b7, v23 @ TEMP_v9 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Move this.mIsOver (System.Boolean), isSelected @ L1 (System.Boolean)
+	30 Jump @b8
+	31 Nop
+	32 Jump @b20
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call UIPopupList.get_ambigiousFont, v34 @ S0_v11 (UnityEngine.Object), this @ L0 (UIPlaySound)
+	37 CheckEqual v36 @ TEMP_v4 (System.Boolean), v34 @ S0_v11 (UnityEngine.Object), 0
+	38 ConditionalJump @b20, v36 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Not v55 @ TEMP_v5 (System.Boolean), isSelected @ L1 (System.Boolean)
+	44 ConditionalJump @b13, v55 @ TEMP_v5 (System.Boolean)
+	45 Nop
+	46 Nop
+	47 CheckNotEqual v58 @ S0_v22 (System.Boolean), this.trigger (UIPlaySound+Trigger), 3
+	48 ConditionalJump @b20, v58 @ S0_v22 (System.Boolean)
+	49 Jump @b14
+	50 Nop
+	51 Nop
+	52 CheckNotEqual v59 @ S0_v20 (System.Boolean), this.trigger (UIPlaySound+Trigger), 4
+	53 ConditionalJump @b20, v59 @ S0_v20 (System.Boolean)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move v73 @ S3_v3 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	63 Nop
+	64 Nop
+	65 Nop
+	66 And v75 @ S3_v5, [v73 @ S3_v3 (Il2CppClass<NGUITools>)+BA], 512
+	67 CheckEqual v76 @ TEMP_v6 (System.Boolean), v75 @ S3_v5, 0
+	68 ConditionalJump @b21, v76 @ TEMP_v6 (System.Boolean)
+	69 Move v77 @ S3_v8 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	70 Nop
+	71 CheckEqual v79 @ S3_v10 (System.Boolean), [v77 @ S3_v8 (Il2CppClass<NGUITools>)+74], 0
+	72 Not v80 @ TEMP_v8 (System.Boolean), v79 @ S3_v10 (System.Boolean)
+	73 ConditionalJump @b21, v80 @ TEMP_v8 (System.Boolean)
+	74 Nop
+	75 CallVoid 11A99, typeof(NGUITools)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Call TweenFill.Begin, v60 @ S0_v18 (TweenFill), this.audioClip (UnityEngine.AudioClip), this.volume (System.Single), this.pitch (System.Single)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Return
+
+Method: System.Void Play()
+
+Disassembly:
+	0xEA44A3 I32Const 4558754
+	0xEA44A8 I32Load8_S 0, 0
+	0xEA44AB I32Eqz
+	0xEA44AC If -64
+	0xEA44AE I32Const 3020392
+	0xEA44B3 I32Load 2, 0
+	0xEA44B6 Call 73003
+	0xEA44BA I32Const 4558754
+	0xEA44BF I32Const 1
+	0xEA44C1 I32Store8 0, 0
+	0xEA44C4 End
+	0xEA44C5 LocalGet 0
+	0xEA44C7 I32Const 0
+	0xEA44C9 Call 40214
+	0xEA44CD If -64
+	0xEA44CF LocalGet 0
+	0xEA44D1 I32Load 2, 16
+	0xEA44D4 I32Eqz
+	0xEA44D5 If -64
+	0xEA44D7 LocalGet 0
+	0xEA44D9 I32Load 2, 12
+	0xEA44DC LocalGet 0
+	0xEA44DE F32Load 2, 20
+	0xEA44E1 LocalGet 0
+	0xEA44E3 F32Load 2, 24
+	0xEA44E6 I32Const 4435588
+	0xEA44EB I32Load 2, 0
+	0xEA44EE LocalTee 0
+	0xEA44F0 I32Load16_S 1, 186
+	0xEA44F4 I32Const 512
+	0xEA44F7 I32And
+	0xEA44F8 If -64
+	0xEA44FA LocalGet 0
+	0xEA44FC I32Load 2, 116
+	0xEA44FF I32Eqz
+	0xEA4500 If -64
+	0xEA4502 LocalGet 0
+	0xEA4504 Call 72345
+	0xEA4508 End
+	0xEA4509 End
+	0xEA450A I32Const 0
+	0xEA450C Call 46958
+	0xEA4510 Drop
+	0xEA4511 End
+	0xEA4512 End
+	0xEA4513 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v15, [2E1668]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v15
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [458FA2], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call UIPopupList.get_ambigiousFont, v14 @ S0_v6 (UnityEngine.Object), this @ L0 (UIPlaySound)
+	15 CheckEqual v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v6 (UnityEngine.Object), 0
+	16 ConditionalJump @b13, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 CheckEqual v18 @ S0_v10 (System.Boolean), this.trigger (UIPlaySound+Trigger), 0
+	20 Not v19 @ TEMP_v4 (System.Boolean), v18 @ S0_v10 (System.Boolean)
+	21 ConditionalJump @b13, v19 @ TEMP_v4 (System.Boolean)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Move v42 @ S3_v3 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 And v44 @ S3_v5, [v42 @ S3_v3 (Il2CppClass<NGUITools>)+BA], 512
+	34 CheckEqual v45 @ TEMP_v5 (System.Boolean), v44 @ S3_v5, 0
+	35 ConditionalJump @b14, v45 @ TEMP_v5 (System.Boolean)
+	36 Move v46 @ S3_v8 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	37 Nop
+	38 CheckEqual v48 @ S3_v10 (System.Boolean), [v46 @ S3_v8 (Il2CppClass<NGUITools>)+74], 0
+	39 Not v49 @ TEMP_v7 (System.Boolean), v48 @ S3_v10 (System.Boolean)
+	40 ConditionalJump @b14, v49 @ TEMP_v7 (System.Boolean)
+	41 Nop
+	42 CallVoid 11A99, typeof(NGUITools)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Call TweenFill.Begin, v36 @ S0_v13 (TweenFill), this.audioClip (UnityEngine.AudioClip), this.volume (System.Single), this.pitch (System.Single)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xEA458B I32Const 4558756
+	0xEA4590 I32Load8_S 0, 0
+	0xEA4593 I32Eqz
+	0xEA4594 If -64
+	0xEA4596 I32Const 3020416
+	0xEA459B I32Load 2, 0
+	0xEA459E Call 73003
+	0xEA45A2 I32Const 4558756
+	0xEA45A7 I32Const 1
+	0xEA45A9 I32Store8 0, 0
+	0xEA45AC End
+	0xEA45AD LocalGet 0
+	0xEA45AF I32Load 2, 12
+	0xEA45B2 LocalGet 0
+	0xEA45B4 F32Load 2, 20
+	0xEA45B7 LocalGet 0
+	0xEA45B9 F32Load 2, 24
+	0xEA45BC I32Const 4435588
+	0xEA45C1 I32Load 2, 0
+	0xEA45C4 LocalTee 0
+	0xEA45C6 I32Load16_S 1, 186
+	0xEA45CA I32Const 512
+	0xEA45CD I32And
+	0xEA45CE If -64
+	0xEA45D0 LocalGet 0
+	0xEA45D2 I32Load 2, 116
+	0xEA45D5 I32Eqz
+	0xEA45D6 If -64
+	0xEA45D8 LocalGet 0
+	0xEA45DA Call 72345
+	0xEA45DE End
+	0xEA45DF End
+	0xEA45E0 I32Const 0
+	0xEA45E2 Call 46958
+	0xEA45E6 Drop
+	0xEA45E7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v9, [2E1680]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [458FA4], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move v19 @ S3_v2 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v23 @ S3_v4, [v19 @ S3_v2 (Il2CppClass<NGUITools>)+BA], 512
+	24 CheckEqual v24 @ TEMP_v2 (System.Boolean), v23 @ S3_v4, 0
+	25 ConditionalJump @b10, v24 @ TEMP_v2 (System.Boolean)
+	26 Move v25 @ S3_v7 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	27 Nop
+	28 CheckEqual v27 @ S3_v9 (System.Boolean), [v25 @ S3_v7 (Il2CppClass<NGUITools>)+74], 0
+	29 Not v28 @ TEMP_v4 (System.Boolean), v27 @ S3_v9 (System.Boolean)
+	30 ConditionalJump @b10, v28 @ TEMP_v4 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(NGUITools)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call TweenFill.Begin, v33 @ S0_v7 (TweenFill), this.audioClip (UnityEngine.AudioClip), this.volume (System.Single), this.pitch (System.Single)
+	37 Nop
+	38 Return
+

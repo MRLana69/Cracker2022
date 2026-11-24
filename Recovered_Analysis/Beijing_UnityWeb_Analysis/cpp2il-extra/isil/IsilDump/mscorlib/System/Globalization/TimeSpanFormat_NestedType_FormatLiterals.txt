@@ -1,0 +1,187 @@
+Type: System.Globalization.TimeSpanFormat+FormatLiterals
+
+Method: System.String get_Start()
+
+Disassembly:
+	0x1320C07 LocalGet 0
+	0x1320C09 I32Const 3
+	0x1320C0B I32Lt_U
+	0x1320C0C If -1
+	0x1320C0E I32Const 1
+	0x1320C10 Else
+	0x1320C11 LocalGet 0
+	0x1320C13 I32Const -3
+	0x1320C15 I32Add
+	0x1320C16 I32Const 2
+	0x1320C18 I32Lt_U
+	0x1320C19 End
+	0x1320C1A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckLess v3 @ S0_v2 (System.Boolean), this @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals), 3
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b4, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Jump @b5
+	7 Nop
+	8 Nop
+	9 Add v8 @ S0_v5, this @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals), -3
+	10 Nop
+	11 CheckLess v10 @ S0_v6 (System.Boolean), v8 @ S0_v5, 2
+	12 Nop
+	13 Nop
+	14 Return returnVal1 @ S0_v3 (System.String)
+
+Method: System.String get_DayHourSep()
+
+Disassembly:
+	0x1322D49 LocalGet 0
+	0x1322D4B I32Const 8
+	0x1322D4D I32Add
+	0x1322D4E I32Load 2, 24
+	0x1322D51 I32Const 16
+	0x1322D53 I32Add
+	0x1322D54 I32Load 2, 0
+	0x1322D57 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals), 8
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v4, [v3 @ S0_v2+18], 16
+	6 Nop
+	7 Nop
+	8 Return [v6 @ S0_v4]
+
+Method: System.String get_HourMinuteSep()
+
+Disassembly:
+	0x1322D5A LocalGet 0
+	0x1322D5C I32Const 8
+	0x1322D5E I32Add
+	0x1322D5F I32Load 2, 24
+	0x1322D62 I32Const 20
+	0x1322D64 I32Add
+	0x1322D65 I32Load 2, 0
+	0x1322D68 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals), 8
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v4, [v3 @ S0_v2+18], 20
+	6 Nop
+	7 Nop
+	8 Return [v6 @ S0_v4]
+
+Method: System.String get_MinuteSecondSep()
+
+Disassembly:
+	0x1322D6B LocalGet 0
+	0x1322D6D I32Const 8
+	0x1322D6F I32Add
+	0x1322D70 I32Load 2, 24
+	0x1322D73 I32Const 24
+	0x1322D75 I32Add
+	0x1322D76 I32Load 2, 0
+	0x1322D79 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals), 8
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v4, [v3 @ S0_v2+18], 24
+	6 Nop
+	7 Nop
+	8 Return [v6 @ S0_v4]
+
+Method: System.String get_SecondFractionSep()
+
+Disassembly:
+	0x1322D7C LocalGet 0
+	0x1322D7E I32Const 8
+	0x1322D80 I32Add
+	0x1322D81 I32Load 2, 24
+	0x1322D84 I32Const 28
+	0x1322D86 I32Add
+	0x1322D87 I32Load 2, 0
+	0x1322D8A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals), 8
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v4, [v3 @ S0_v2+18], 28
+	6 Nop
+	7 Nop
+	8 Return [v6 @ S0_v4]
+
+Method: System.String get_End()
+
+Disassembly:
+	0x1322D8D LocalGet 0
+	0x1322D8F I32Const 8
+	0x1322D91 I32Add
+	0x1322D92 I32Load 2, 24
+	0x1322D95 I32Const 32
+	0x1322D97 I32Add
+	0x1322D98 I32Load 2, 0
+	0x1322D9B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals), 8
+	3 Nop
+	4 Nop
+	5 Add v6 @ S0_v4, [v3 @ S0_v2+18], 32
+	6 Nop
+	7 Nop
+	8 Return [v6 @ S0_v4]
+
+Method: System.Globalization.TimeSpanFormat+FormatLiterals InitInvariant(System.Boolean isNegative)
+
+Disassembly:
+	0x131F1DF LocalGet 0
+	0x131F1E1 I32Const 0
+	0x131F1E3 Call 61230
+	0x131F1E7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid TextInfo..ctor, returnVal1 @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals)
+	3 Nop
+	4 Return returnVal1 @ L0 (System.Globalization.TimeSpanFormat+FormatLiterals)
+
+Method: System.Void Init(System.String format, System.Boolean useInvariantFieldLengths)
+
+Disassembly:
+	0xE4B9A1 LocalGet 0
+	0xE4B9A3 LocalGet 1
+	0xE4B9A5 I32Store 2, 8
+	0xE4B9A8 LocalGet 0
+	0xE4B9AA LocalGet 2
+	0xE4B9AC I32Store 2, 12
+	0xE4B9AF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.hh (System.Int32), format @ L1 (System.String)
+	3 Nop
+	4 Nop
+	5 Move this.mm (System.Int32), useInvariantFieldLengths @ L2 (System.Boolean)
+	6 Nop
+	7 Return
+

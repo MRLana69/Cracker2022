@@ -1,0 +1,35 @@
+Type: System.Threading.ThreadPoolGlobals
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x10B597F I32Const 0
+	0x10B5981 Call 49951
+	0x10B5985 I32Const 0
+	0x10B5987 Call 49954
+	0x10B598B LocalTee 0
+	0x10B598D I32Load 2, 108
+	0x10B5990 LocalSet 1
+	0x10B5992 LocalGet 0
+	0x10B5994 LocalGet 1
+	0x10B5996 I32Const 1
+	0x10B5998 I32Sub
+	0x10B5999 I32Store 2, 108
+	0x10B599C End
+
+ISIL:
+	0 Nop
+	1 Call Thread.GetDomainID, v1 @ S0_v2 (System.Int32)
+	2 Nop
+	3 Call Thread.get_IsThreadPoolThread, v3 @ S0_v3 (System.Boolean), v1 @ S0_v2 (System.Int32)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Subtract v10 @ S1_v3, [v3 @ S0_v3 (System.Boolean)+6C], 1
+	11 Move [v3 @ S0_v3 (System.Boolean)+6C], v10 @ S1_v3
+	12 Nop
+	13 Return
+

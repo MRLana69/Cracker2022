@@ -1,0 +1,166 @@
+Type: SYBO.Subway.StateSystem.MonobehaviourScheduler
+
+Method: System.Void RegisterUpdateHandler(System.Action handler)
+
+Disassembly:
+	0xD0F9DD I32Const 4553815
+	0xD0F9E2 I32Load8_S 0, 0
+	0xD0F9E5 I32Eqz
+	0xD0F9E6 If -64
+	0xD0F9E8 I32Const 2967348
+	0xD0F9ED I32Load 2, 0
+	0xD0F9F0 Call 73003
+	0xD0F9F4 I32Const 4553815
+	0xD0F9F9 I32Const 1
+	0xD0F9FB I32Store8 0, 0
+	0xD0F9FE End
+	0xD0F9FF LocalGet 0
+	0xD0FA01 I32Const 4496256
+	0xD0FA06 I32Load 2, 0
+	0xD0FA09 Call 33057
+	0xD0FA0D LocalTee 3
+	0xD0FA0F If -64
+	0xD0FA11 I32Const 8
+	0xD0FA13 LocalGet 3
+	0xD0FA15 LocalGet 1
+	0xD0FA17 Call 29437
+	0xD0FA1B End
+	0xD0FA1C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v10, [2D4734]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [457C57], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call StateMachine.TryGetCurrentState, v15 @ S0_v6 (SYBO.Subway.StateSystem.States.InGameState), this @ L0 (SYBO.Subway.StateSystem.MonobehaviourScheduler)
+	16 Nop
+	17 CheckEqual v17 @ TEMP_v2 (System.Boolean), v15 @ S0_v6 (SYBO.Subway.StateSystem.States.InGameState), 0
+	18 ConditionalJump @b7, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid 72FD, 8, v15 @ S0_v6 (SYBO.Subway.StateSystem.States.InGameState), handler @ L1 (System.Action)
+	23 Nop
+	24 Nop
+	25 Return
+
+Method: System.Void RegisterLateUpdateHandler(System.Action handler)
+
+Disassembly:
+	0xD0FAA3 I32Const 4553818
+	0xD0FAA8 I32Load8_S 0, 0
+	0xD0FAAB I32Eqz
+	0xD0FAAC If -64
+	0xD0FAAE I32Const 2983152
+	0xD0FAB3 I32Load 2, 0
+	0xD0FAB6 Call 73003
+	0xD0FABA I32Const 4553818
+	0xD0FABF I32Const 1
+	0xD0FAC1 I32Store8 0, 0
+	0xD0FAC4 End
+	0xD0FAC5 LocalGet 0
+	0xD0FAC7 I32Const 12
+	0xD0FAC9 I32Add
+	0xD0FACA LocalGet 0
+	0xD0FACC I32Load 2, 12
+	0xD0FACF LocalGet 1
+	0xD0FAD1 I32Const 0
+	0xD0FAD3 Call 63552
+	0xD0FAD7 I32Const 4429724
+	0xD0FADC I32Load 2, 0
+	0xD0FADF Call 29321
+	0xD0FAE3 I32Store 2, 0
+	0xD0FAE6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v8, [2D84F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [457C5A], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v14 @ S0_v6, this @ L0 (SYBO.Subway.StateSystem.MonobehaviourScheduler), 12
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.CombineImpl, v20 @ S1_v5 (System.Delegate), this.OnUpdate (System.Action), handler @ L1 (System.Action)
+	20 Nop
+	21 Nop
+	22 Call 7289, v23 @ S1_v6, v20 @ S1_v5 (System.Delegate), typeof(System.Action)
+	23 Move [v14 @ S0_v6], v23 @ S1_v6
+	24 Nop
+	25 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD0FA63 I32Const 4553817
+	0xD0FA68 I32Load8_S 0, 0
+	0xD0FA6B I32Eqz
+	0xD0FA6C If -64
+	0xD0FA6E I32Const 2967340
+	0xD0FA73 I32Load 2, 0
+	0xD0FA76 Call 73003
+	0xD0FA7A I32Const 4553817
+	0xD0FA7F I32Const 1
+	0xD0FA81 I32Store8 0, 0
+	0xD0FA84 End
+	0xD0FA85 LocalGet 0
+	0xD0FA87 I32Const 4496256
+	0xD0FA8C I32Load 2, 0
+	0xD0FA8F Call 33057
+	0xD0FA93 LocalTee 2
+	0xD0FA95 If -64
+	0xD0FA97 I32Const 9
+	0xD0FA99 LocalGet 2
+	0xD0FA9B Call 29286
+	0xD0FA9F End
+	0xD0FAA0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v10, [2D472C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [457C59], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call StateMachine.TryGetCurrentState, v15 @ S0_v6 (SYBO.Subway.StateSystem.States.InGameState), this @ L0 (SYBO.Subway.StateSystem.MonobehaviourScheduler)
+	16 Nop
+	17 CheckEqual v17 @ TEMP_v2 (System.Boolean), v15 @ S0_v6 (SYBO.Subway.StateSystem.States.InGameState), 0
+	18 ConditionalJump @b7, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 CallVoid 7266, 9, v15 @ S0_v6 (SYBO.Subway.StateSystem.States.InGameState)
+	22 Nop
+	23 Nop
+	24 Return
+

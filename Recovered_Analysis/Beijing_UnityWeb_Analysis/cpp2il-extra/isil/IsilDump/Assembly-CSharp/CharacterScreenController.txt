@@ -1,0 +1,179 @@
+Type: CharacterScreenController
+
+Method: System.Void set_Freeze(System.Single value)
+
+Disassembly:
+	0xD9F786 LocalGet 0
+	0xD9F788 I32Load 2, 68
+	0xD9F78B LocalGet 1
+	0xD9F78D I32Const 0
+	0xD9F78F Call 70909
+	0xD9F793 LocalGet 0
+	0xD9F795 I32Load 2, 72
+	0xD9F798 LocalGet 1
+	0xD9F79A I32Const 0
+	0xD9F79C Call 70909
+	0xD9F7A0 LocalGet 1
+	0xD9F7A2 F32Const 1
+	0xD9F7A7 F32Eq
+	0xD9F7A8 If -64
+	0xD9F7AA LocalGet 0
+	0xD9F7AC I32Load 2, 12
+	0xD9F7AF I32Const 0
+	0xD9F7B1 I32Const 0
+	0xD9F7B3 Call 64021
+	0xD9F7B7 LocalGet 0
+	0xD9F7B9 I32Load 2, 16
+	0xD9F7BC I32Const 0
+	0xD9F7BE I32Const 0
+	0xD9F7C0 Call 64021
+	0xD9F7C4 End
+	0xD9F7C5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid AnimationState.set_speed, [this @ L0 (CharacterScreenController)+44], value @ L1 (System.Single)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid AnimationState.set_speed, [this @ L0 (CharacterScreenController)+48], value @ L1 (System.Single)
+	10 Nop
+	11 Nop
+	12 CheckEqual v12 @ S0_v6 (System.Boolean), value @ L1 (System.Single), 1f
+	13 Not v13 @ TEMP_v1 (System.Boolean), v12 @ S0_v6 (System.Boolean)
+	14 ConditionalJump @b7, v13 @ TEMP_v1 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 CallVoid Renderer.set_shadowCastingMode, this._shadowFadeFactor (System.Single), 0
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CallVoid Renderer.set_shadowCastingMode, this._characterFadeFactor (System.Single), 0
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Void Initialize(UnityEngine.AnimationClip idleClip, UnityEngine.Shader characterShader, UnityEngine.Shader outfitShader, System.Single characterFadeFactor, System.Single shadowFadeFactor)
+
+Disassembly:
+	0x1600B09 I32Const 263
+	0x1600B0C Call 1
+	0x1600B0E End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 263
+	2 Nop
+	3 Return
+
+Method: System.Void SetFreeze(System.Single freeze)
+
+Disassembly:
+	0xDA0880 LocalGet 0
+	0xDA0882 LocalGet 1
+	0xDA0884 I32Const 0
+	0xDA0886 Call 35627
+	0xDA088A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid playThruster.<PlayEffects>b__22_0, this @ L0 (CharacterScreenController), freeze @ L1 (System.Single)
+	4 Nop
+	5 Return
+
+Method: System.Void OnDestroy()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (CharacterScreenController)
+	3 Nop
+	4 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xDA088D I32Const 4555534
+	0xDA0892 I32Load8_S 0, 0
+	0xDA0895 I32Eqz
+	0xDA0896 If -64
+	0xDA0898 I32Const 2942956
+	0xDA089D I32Load 2, 0
+	0xDA08A0 Call 73003
+	0xDA08A4 I32Const 4555534
+	0xDA08A9 I32Const 1
+	0xDA08AB I32Store8 0, 0
+	0xDA08AE End
+	0xDA08AF LocalGet 0
+	0xDA08B1 I32Load 2, 48
+	0xDA08B4 I32Const 4433280
+	0xDA08B9 I32Load 2, 0
+	0xDA08BC LocalTee 0
+	0xDA08BE I32Load16_S 1, 186
+	0xDA08C2 I32Const 512
+	0xDA08C5 I32And
+	0xDA08C6 If -64
+	0xDA08C8 LocalGet 0
+	0xDA08CA I32Load 2, 116
+	0xDA08CD I32Eqz
+	0xDA08CE If -64
+	0xDA08D0 LocalGet 0
+	0xDA08D2 Call 72345
+	0xDA08D6 End
+	0xDA08D7 End
+	0xDA08D8 I32Const 0
+	0xDA08DA Call 63684
+	0xDA08DE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v8, [2CE7EC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45830E], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S1_v3 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 And v19 @ S1_v5, [v15 @ S1_v3 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	20 CheckEqual v20 @ TEMP_v2 (System.Boolean), v19 @ S1_v5, 0
+	21 ConditionalJump @b10, v20 @ TEMP_v2 (System.Boolean)
+	22 Move v21 @ S1_v8 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	23 Nop
+	24 CheckEqual v23 @ S1_v10 (System.Boolean), [v21 @ S1_v8 (Il2CppClass<UnityEngine.Object>)+74], 0
+	25 Not v24 @ TEMP_v4 (System.Boolean), v23 @ S1_v10 (System.Boolean)
+	26 ConditionalJump @b10, v24 @ TEMP_v4 (System.Boolean)
+	27 Nop
+	28 CallVoid 11A99, typeof(UnityEngine.Object)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid Object.DestroyImmediate, this._shadowMaterial (UnityEngine.Material)
+	33 Nop
+	34 Return
+

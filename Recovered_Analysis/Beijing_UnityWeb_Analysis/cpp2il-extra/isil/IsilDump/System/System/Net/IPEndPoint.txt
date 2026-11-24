@@ -1,0 +1,1132 @@
+Type: System.Net.IPEndPoint
+
+Method: System.Net.Sockets.AddressFamily get_AddressFamily()
+
+Disassembly:
+	0x109C563 I32Const 4564620
+	0x109C568 I32Load8_S 0, 0
+	0x109C56B I32Eqz
+	0x109C56C If -64
+	0x109C56E I32Const 2970764
+	0x109C573 I32Load 2, 0
+	0x109C576 Call 73003
+	0x109C57A I32Const 4564620
+	0x109C57F I32Const 1
+	0x109C581 I32Store8 0, 0
+	0x109C584 End
+	0x109C585 LocalGet 0
+	0x109C587 I32Load 2, 20
+	0x109C58A I32Const 23
+	0x109C58C I32Ne
+	0x109C58D If -64
+	0x109C58F I32Const 4428900
+	0x109C594 I32Load 2, 0
+	0x109C597 I32Const 8
+	0x109C599 Call 71670
+	0x109C59D LocalTee 1
+	0x109C59F I32Const 26
+	0x109C5A1 I32Add
+	0x109C5A2 I32Const -1
+	0x109C5A4 I32Store16 1, 0
+	0x109C5A7 LocalGet 1
+	0x109C5A9 I32Const 28
+	0x109C5AB I32Add
+	0x109C5AC LocalGet 0
+	0x109C5AE I64Load 3, 8
+	0x109C5B1 I64Const 8
+	0x109C5B3 I64Shr_U
+	0x109C5B4 I64Const 255
+	0x109C5B7 I64And
+	0x109C5B8 LocalGet 0
+	0x109C5BA I64Load 3, 8
+	0x109C5BD I64Const 8
+	0x109C5BF I64Shl
+	0x109C5C0 I64Or
+	0x109C5C1 I64Store16 1, 0
+	0x109C5C4 LocalGet 1
+	0x109C5C6 I32Const 30
+	0x109C5C8 I32Add
+	0x109C5C9 LocalGet 0
+	0x109C5CB I64Load 3, 8
+	0x109C5CE I64Const 8
+	0x109C5D0 I64Shr_U
+	0x109C5D1 I64Const 65280
+	0x109C5D5 I64And
+	0x109C5D6 LocalGet 0
+	0x109C5D8 I64Load 3, 8
+	0x109C5DB I64Const 24
+	0x109C5DD I64Shr_U
+	0x109C5DE I64Const 255
+	0x109C5E1 I64And
+	0x109C5E2 I64Or
+	0x109C5E3 I64Store16 1, 0
+	0x109C5E6 I32Const 4432464
+	0x109C5EB I32Load 2, 0
+	0x109C5EE Call 72556
+	0x109C5F2 LocalTee 0
+	0x109C5F4 LocalGet 1
+	0x109C5F6 I32Const 0
+	0x109C5F8 I32Const 0
+	0x109C5FA Call 49359
+	0x109C5FE End
+	0x109C5FF LocalGet 0
+	0x109C601 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v22, [2D548C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v20, 1
+	10 Move [45A68C], v7 @ S1_v20
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckNotEqual v15 @ S0_v7 (System.Boolean), [v21 @ L0_v1 (System.Net.IPEndPoint)+14], 23
+	16 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v7 (System.Boolean)
+	17 ConditionalJump @b8, v16 @ TEMP_v2 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v20 @ S0_v12 (System.OverflowException), typeof(System.OverflowException)
+	22 Nop
+	23 Nop
+	24 Add v38 @ S0_v13, v20 @ S0_v12 (System.OverflowException), 26
+	25 Nop
+	26 Move [v38 @ S0_v13], -1
+	27 Nop
+	28 Nop
+	29 Add v42 @ S0_v15, v20 @ S0_v12 (System.OverflowException), 28
+	30 Nop
+	31 Nop
+	32 Nop
+	33 ShiftRight v46 @ S1_v10, v21.m_Address (System.Net.IPAddress), 8
+	34 Nop
+	35 And v48 @ S1_v11, v46 @ S1_v10, 255
+	36 Nop
+	37 Nop
+	38 Nop
+	39 ShiftLeft v52 @ S2_v6, v21.m_Address (System.Net.IPAddress), 8
+	40 Or v53 @ S1_v12, v48 @ S1_v11, v52 @ S2_v6
+	41 Move [v42 @ S0_v15], v53 @ S1_v12
+	42 Nop
+	43 Nop
+	44 Add v56 @ S0_v17, v20 @ S0_v12 (System.OverflowException), 30
+	45 Nop
+	46 Nop
+	47 Nop
+	48 ShiftRight v60 @ S1_v16, v21.m_Address (System.Net.IPAddress), 8
+	49 Nop
+	50 And v62 @ S1_v17, v60 @ S1_v16, 65280
+	51 Nop
+	52 Nop
+	53 Nop
+	54 ShiftRight v66 @ S2_v11, v21.m_Address (System.Net.IPAddress), 24
+	55 Nop
+	56 And v68 @ S2_v12, v66 @ S2_v11, 255
+	57 Or v69 @ S1_v18, v62 @ S1_v17, v68 @ S2_v12
+	58 Move [v56 @ S0_v17], v69 @ S1_v18
+	59 Nop
+	60 Nop
+	61 Call 11B6C, v35 @ S0_v20 (System.Net.IPEndPoint), typeof(System.Net.IPAddress)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 CallVoid IPEndPoint..ctor, v35 @ S0_v20 (System.Net.IPEndPoint), v20 @ S0_v12 (System.OverflowException), 0
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Return v35 @ S0_v20 (System.Net.IPEndPoint)
+
+Method: System.Void .ctor(System.Net.IPAddress address, System.Int32 port)
+
+Disassembly:
+	0x10972FD I32Const 4564561
+	0x1097302 I32Load8_S 0, 0
+	0x1097305 I32Eqz
+	0x1097306 If -64
+	0x1097308 I32Const 2970784
+	0x109730D I32Load 2, 0
+	0x1097310 Call 73003
+	0x1097314 I32Const 4564561
+	0x1097319 I32Const 1
+	0x109731B I32Store8 0, 0
+	0x109731E End
+	0x109731F LocalGet 0
+	0x1097321 I32Const 2
+	0x1097323 I32Store 2, 20
+	0x1097326 LocalGet 0
+	0x1097328 I32Const 24
+	0x109732A I32Add
+	0x109732B I32Const 4428900
+	0x1097330 I32Load 2, 0
+	0x1097333 I32Const 8
+	0x1097335 Call 71670
+	0x1097339 I32Store 2, 0
+	0x109733C LocalGet 0
+	0x109733E I32Const 23
+	0x1097340 I32Store 2, 20
+	0x1097343 LocalGet 0
+	0x1097345 I32Const 24
+	0x1097347 I32Add
+	0x1097348 LocalGet 1
+	0x109734A I32Store 2, 0
+	0x109734D LocalGet 0
+	0x109734F LocalGet 2
+	0x1097351 I64Extend_I32_U
+	0x1097352 I64Store 3, 32
+	0x1097355 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v13, [2D54A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [45A651], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move [this @ L0 (System.Net.IPEndPoint)+14], 2
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v7, this @ L0 (System.Net.IPEndPoint), 24
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v20 @ S1_v6 (System.OverflowException), typeof(System.OverflowException)
+	22 Move [v16 @ S0_v7], v20 @ S1_v6 (System.OverflowException)
+	23 Nop
+	24 Nop
+	25 Move [this @ L0 (System.Net.IPEndPoint)+14], 23
+	26 Nop
+	27 Nop
+	28 Add v25 @ S0_v10, this @ L0 (System.Net.IPEndPoint), 24
+	29 Nop
+	30 Move [v25 @ S0_v10], address @ L1 (System.Net.IPAddress)
+	31 Nop
+	32 Nop
+	33 Move [this @ L0 (System.Net.IPEndPoint)+20], port @ L2 (System.Int32)
+	34 Nop
+	35 Return
+
+Method: System.Net.IPAddress get_Address()
+
+Disassembly:
+	0xDEAFEA LocalGet 0
+	0xDEAFEC I32Load 2, 8
+	0xDEAFEF I32Load 2, 20
+	0xDEAFF2 End
+
+ISIL:
+	0 Nop
+	1 Move v2 @ S0_v2 (System.Net.IPAddress), this.m_Address (System.Net.IPAddress)
+	2 Nop
+	3 Nop
+	4 Return v2.m_Family (System.Net.Sockets.AddressFamily)
+
+Method: System.Int32 get_Port()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_Address (System.Net.IPAddress)
+
+Method: System.String ToString()
+
+Disassembly:
+	0xC116B7 LocalGet 0
+	0xC116B9 I32Load 2, 12
+	0xC116BC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.m_Port (System.Int32)
+
+Method: System.Net.SocketAddress Serialize()
+
+Disassembly:
+	0x111E9CE GlobalGet 7
+	0x111E9D0 LocalSet 1
+	0x111E9D2 GlobalGet 7
+	0x111E9D4 I32Const 16
+	0x111E9D6 I32Add
+	0x111E9D7 GlobalSet 7
+	0x111E9D9 I32Const 4566267
+	0x111E9DE I32Load8_S 0, 0
+	0x111E9E1 I32Eqz
+	0x111E9E2 If -64
+	0x111E9E4 I32Const 2970812
+	0x111E9E9 I32Load 2, 0
+	0x111E9EC Call 73003
+	0x111E9F0 I32Const 4566267
+	0x111E9F5 I32Const 1
+	0x111E9F7 I32Store8 0, 0
+	0x111E9FA End
+	0x111E9FB LocalGet 0
+	0x111E9FD I32Load 2, 8
+	0x111EA00 I32Load 2, 20
+	0x111EA03 I32Const 23
+	0x111EA05 I32Eq
+	0x111EA06 I32Const 4514824
+	0x111EA0B I32Load 2, 0
+	0x111EA0E LocalSet 3
+	0x111EA10 I32Const 4514828
+	0x111EA15 I32Load 2, 0
+	0x111EA18 LocalSet 4
+	0x111EA1A I32Const 3
+	0x111EA1C LocalGet 0
+	0x111EA1E I32Load 2, 8
+	0x111EA21 Call 29262
+	0x111EA25 LocalSet 5
+	0x111EA27 LocalGet 1
+	0x111EA29 LocalGet 0
+	0x111EA2B I32Load 2, 12
+	0x111EA2E I32Store 2, 0
+	0x111EA31 If -1
+	0x111EA33 LocalGet 3
+	0x111EA35 Else
+	0x111EA36 LocalGet 4
+	0x111EA38 End
+	0x111EA39 LocalGet 5
+	0x111EA3B LocalGet 1
+	0x111EA3D I32Const 0
+	0x111EA3F Call 61181
+	0x111EA43 I32Const 0
+	0x111EA45 Call 54619
+	0x111EA49 I32Const 0
+	0x111EA4B Call 55726
+	0x111EA4F LocalGet 1
+	0x111EA51 GlobalSet 7
+	0x111EA53 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b11
+	11 Nop
+	12 Move v12 @ S0_v17, [2D54BC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v17
+	14 Nop
+	15 Move v14 @ S1_v13, 1
+	16 Move [45ACFB], v14 @ S1_v13
+	17 Nop
+	18 Nop
+	19 Move v19 @ S0_v9 (System.Net.IPAddress), this.m_Address (System.Net.IPAddress)
+	20 Nop
+	21 Nop
+	22 CheckEqual v22 @ S0_v11 (System.Boolean), v19.m_Family (System.Net.Sockets.AddressFamily), 23
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call 724E, v32 @ S1_v9 (System.String), 3, this.m_Address (System.Net.IPAddress)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Move [v1 @ G7], this.m_Port (System.Int32)
+	38 Not v37 @ TEMP_v2 (System.Boolean), v22 @ S0_v11 (System.Boolean)
+	39 ConditionalJump @b7, v37 @ TEMP_v2 (System.Boolean)
+	40 Nop
+	41 Jump @b12
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Call NumberFormatInfo.get_CurrentInfo, v44 @ S3_v2 (System.Globalization.NumberFormatInfo)
+	48 Nop
+	49 Call D55B, v46 @ S2_v6 (System.Object), v1 @ G7, v44 @ S3_v2 (System.Globalization.NumberFormatInfo), 0
+	50 Nop
+	51 Call String.Format, returnVal1 @ S0_v13 (System.Net.SocketAddress), v40 @ S0_v12 (System.IFormatProvider), v32 @ S1_v9 (System.String), v46 @ S2_v6 (System.Object)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Return returnVal1 @ S0_v13 (System.Net.SocketAddress)
+
+Method: System.Net.EndPoint Create(System.Net.SocketAddress socketAddress)
+
+Disassembly:
+	0x109C4D0 LocalGet 0
+	0x109C4D2 LocalGet 1
+	0x109C4D4 I32Const 1
+	0x109C4D6 I32Const 0
+	0x109C4D8 Call 49431
+	0x109C4DC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call WebHeaderCollection.GetAsString, returnVal1 @ S0_v2 (System.Net.EndPoint), this @ L0 (System.Net.IPEndPoint), socketAddress @ L1 (System.Net.SocketAddress), 1
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Net.EndPoint)
+
+Method: System.Boolean Equals(System.Object comparand)
+
+Disassembly:
+	0x111ECCD GlobalGet 7
+	0x111ECCF LocalSet 2
+	0x111ECD1 GlobalGet 7
+	0x111ECD3 I32Const 16
+	0x111ECD5 I32Add
+	0x111ECD6 GlobalSet 7
+	0x111ECD8 I32Const 4566270
+	0x111ECDD I32Load8_S 0, 0
+	0x111ECE0 I32Eqz
+	0x111ECE1 If -64
+	0x111ECE3 I32Const 2970800
+	0x111ECE8 I32Load 2, 0
+	0x111ECEB Call 73003
+	0x111ECEF I32Const 4566270
+	0x111ECF4 I32Const 1
+	0x111ECF6 I32Store8 0, 0
+	0x111ECF9 End
+	0x111ECFA LocalGet 2
+	0x111ECFC I32Const 0
+	0x111ECFE I32Store 2, 0
+	0x111ED01 LocalGet 1
+	0x111ED03 I32Load 2, 12
+	0x111ED06 I32Const 17
+	0x111ED08 I32Add
+	0x111ED09 I32Load8_U 0, 0
+	0x111ED0C I32Const 8
+	0x111ED0E I32Shl
+	0x111ED0F LocalGet 1
+	0x111ED11 I32Load 2, 12
+	0x111ED14 I32Const 16
+	0x111ED16 I32Add
+	0x111ED17 I32Load8_U 0, 0
+	0x111ED1A I32Or
+	0x111ED1B I32Const 4
+	0x111ED1D LocalGet 0
+	0x111ED1F Call 29262
+	0x111ED23 I32Ne
+	0x111ED24 If -64
+	0x111ED26 I32Const 4428060
+	0x111ED2B I32Load 2, 0
+	0x111ED2E I32Const 3
+	0x111ED30 Call 71670
+	0x111ED34 LocalSet 3
+	0x111ED36 LocalGet 2
+	0x111ED38 LocalGet 1
+	0x111ED3A I32Load 2, 12
+	0x111ED3D I32Const 17
+	0x111ED3F I32Add
+	0x111ED40 I32Load8_U 0, 0
+	0x111ED43 I32Const 8
+	0x111ED45 I32Shl
+	0x111ED46 LocalGet 1
+	0x111ED48 I32Load 2, 12
+	0x111ED4B I32Const 16
+	0x111ED4D I32Add
+	0x111ED4E I32Load8_U 0, 0
+	0x111ED51 I32Or
+	0x111ED52 I32Store 2, 0
+	0x111ED55 I32Const 3
+	0x111ED57 I32Const 4432564
+	0x111ED5C I32Load 2, 0
+	0x111ED5F LocalGet 2
+	0x111ED61 Call 73903
+	0x111ED65 LocalTee 5
+	0x111ED67 Call 29262
+	0x111ED6B LocalSet 4
+	0x111ED6D LocalGet 2
+	0x111ED6F LocalGet 5
+	0x111ED71 Call 29263
+	0x111ED75 I32Load 2, 0
+	0x111ED78 I32Store 2, 0
+	0x111ED7B LocalGet 3
+	0x111ED7D LocalGet 4
+	0x111ED7F Call 29652
+	0x111ED83 LocalGet 3
+	0x111ED85 I32Const 16
+	0x111ED87 I32Add
+	0x111ED88 LocalGet 4
+	0x111ED8A I32Store 2, 0
+	0x111ED8D LocalGet 3
+	0x111ED8F I32Const 25
+	0x111ED91 LocalGet 0
+	0x111ED93 Call 72085
+	0x111ED97 Call 29262
+	0x111ED9B LocalTee 4
+	0x111ED9D Call 29652
+	0x111EDA1 LocalGet 3
+	0x111EDA3 I32Const 20
+	0x111EDA5 I32Add
+	0x111EDA6 LocalGet 4
+	0x111EDA8 I32Store 2, 0
+	0x111EDAB LocalGet 2
+	0x111EDAD I32Const 4
+	0x111EDAF LocalGet 0
+	0x111EDB1 Call 29262
+	0x111EDB5 I32Store 2, 0
+	0x111EDB8 I32Const 3
+	0x111EDBA I32Const 4432564
+	0x111EDBF I32Load 2, 0
+	0x111EDC2 LocalGet 2
+	0x111EDC4 Call 73903
+	0x111EDC8 LocalTee 5
+	0x111EDCA Call 29262
+	0x111EDCE LocalSet 4
+	0x111EDD0 LocalGet 2
+	0x111EDD2 LocalGet 5
+	0x111EDD4 Call 29263
+	0x111EDD8 I32Load 2, 0
+	0x111EDDB I32Store 2, 0
+	0x111EDDE LocalGet 3
+	0x111EDE0 LocalGet 4
+	0x111EDE2 Call 29652
+	0x111EDE6 LocalGet 3
+	0x111EDE8 I32Const 24
+	0x111EDEA I32Add
+	0x111EDEB LocalGet 4
+	0x111EDED I32Store 2, 0
+	0x111EDF0 I32Const 4514832
+	0x111EDF5 I32Load 2, 0
+	0x111EDF8 LocalGet 3
+	0x111EDFA I32Const 0
+	0x111EDFC Call 49046
+	0x111EE00 LocalSet 3
+	0x111EE02 I32Const 4427876
+	0x111EE07 I32Load 2, 0
+	0x111EE0A Call 72556
+	0x111EE0E LocalTee 4
+	0x111EE10 LocalGet 3
+	0x111EE12 I32Const 4514836
+	0x111EE17 I32Load 2, 0
+	0x111EE1A I32Const 0
+	0x111EE1C Call 57600
+	0x111EE20 LocalGet 4
+	0x111EE22 I32Const 0
+	0x111EE24 I32Const 4465304
+	0x111EE29 I32Load 2, 0
+	0x111EE2C Call 73899
+	0x111EE30 End
+	0x111EE31 LocalGet 1
+	0x111EE33 I32Load 2, 8
+	0x111EE36 I32Const 7
+	0x111EE38 I32Gt_S
+	0x111EE39 If -64
+	0x111EE3B LocalGet 1
+	0x111EE3D I32Const 0
+	0x111EE3F Call 52086
+	0x111EE43 LocalGet 2
+	0x111EE45 GlobalSet 7
+	0x111EE47 Return
+	0x111EE48 Else
+	0x111EE49 I32Const 4428060
+	0x111EE4E I32Load 2, 0
+	0x111EE51 I32Const 2
+	0x111EE53 Call 71670
+	0x111EE57 LocalTee 2
+	0x111EE59 I32Const 25
+	0x111EE5B LocalGet 1
+	0x111EE5D Call 72085
+	0x111EE61 Call 29262
+	0x111EE65 LocalTee 1
+	0x111EE67 Call 29652
+	0x111EE6B LocalGet 2
+	0x111EE6D I32Const 16
+	0x111EE6F I32Add
+	0x111EE70 LocalGet 1
+	0x111EE72 I32Store 2, 0
+	0x111EE75 LocalGet 2
+	0x111EE77 I32Const 25
+	0x111EE79 LocalGet 0
+	0x111EE7B Call 72085
+	0x111EE7F Call 29262
+	0x111EE83 LocalTee 0
+	0x111EE85 Call 29652
+	0x111EE89 LocalGet 2
+	0x111EE8B I32Const 20
+	0x111EE8D I32Add
+	0x111EE8E LocalGet 0
+	0x111EE90 I32Store 2, 0
+	0x111EE93 I32Const 4514840
+	0x111EE98 I32Load 2, 0
+	0x111EE9B LocalGet 2
+	0x111EE9D I32Const 0
+	0x111EE9F Call 49046
+	0x111EEA3 LocalSet 0
+	0x111EEA5 I32Const 4427876
+	0x111EEAA I32Load 2, 0
+	0x111EEAD Call 72556
+	0x111EEB1 LocalTee 1
+	0x111EEB3 LocalGet 0
+	0x111EEB5 I32Const 4514836
+	0x111EEBA I32Load 2, 0
+	0x111EEBD I32Const 0
+	0x111EEBF Call 57600
+	0x111EEC3 LocalGet 1
+	0x111EEC5 I32Const 0
+	0x111EEC7 I32Const 4465304
+	0x111EECC I32Load 2, 0
+	0x111EECF Call 73899
+	0x111EED3 End
+	0x111EED4 I32Const 0
+	0x111EED6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b38
+	11 Nop
+	12 Move v12 @ S0_v67, [2D54B0]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v67
+	14 Nop
+	15 Move v14 @ S1_v63, 1
+	16 Move [45ACFE], v14 @ S1_v63
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v23 @ S0_v11, [comparand @ L1 (System.Object)+C], 17
+	25 Nop
+	26 Nop
+	27 ShiftLeft v26 @ S0_v13, [v23 @ S0_v11], 8
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Add v30 @ S1_v8, [comparand @ L1 (System.Object)+C], 16
+	32 Nop
+	33 Or v32 @ S0_v14, v26 @ S0_v13, [v30 @ S1_v8]
+	34 Nop
+	35 Nop
+	36 Call 724E, v36 @ S1_v11, 4, this @ L0 (System.Net.IPEndPoint)
+	37 CheckNotEqual v37 @ S0_v15 (System.Boolean), v32 @ S0_v14, v36 @ S1_v11
+	38 Not v38 @ TEMP_v2 (System.Boolean), v37 @ S0_v15 (System.Boolean)
+	39 ConditionalJump @b23, v38 @ TEMP_v2 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Newobj v42 @ S0_v41 (System.OverflowException), typeof(System.OverflowException)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Add v71 @ S1_v32, [comparand @ L1 (System.Object)+C], 17
+	50 Nop
+	51 Nop
+	52 ShiftLeft v74 @ S1_v34, [v71 @ S1_v32], 8
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Add v78 @ S2_v18, [comparand @ L1 (System.Object)+C], 16
+	57 Nop
+	58 Or v80 @ S1_v35, v74 @ S1_v34, [v78 @ S2_v18]
+	59 Move [v1 @ G7], v80 @ S1_v35
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Call 120AF, v85 @ S1_v38, typeof(System.Net.Sockets.AddressFamily), v1 @ G7
+	65 Nop
+	66 Call 724E, v94 @ S0_v44, 3, v85 @ S1_v38
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Throw typeof(System.NullReferenceException)
+	71 Nop
+	72 Move [v1 @ G7], [v104 @ S1_v40]
+	73 Nop
+	74 Nop
+	75 Throw typeof(System.ArrayTypeMismatchException)
+	76 Nop
+	77 Nop
+	78 Add v126 @ S0_v48, v42 @ S0_v41 (System.OverflowException), 16
+	79 Nop
+	80 Move [v126 @ S0_v48], v94 @ S0_v44
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Call 11995, v131 @ S2_v22, this @ L0 (System.Net.IPEndPoint)
+	85 Call 724E, v140 @ S1_v46, 25, v131 @ S2_v22
+	86 Nop
+	87 Throw typeof(System.ArrayTypeMismatchException)
+	88 Nop
+	89 Nop
+	90 Add v146 @ S0_v51, v42 @ S0_v41 (System.OverflowException), 20
+	91 Nop
+	92 Move [v146 @ S0_v51], v140 @ S1_v46
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Call 724E, v151 @ S1_v50, 4, this @ L0 (System.Net.IPEndPoint)
+	97 Move [v1 @ G7], v151 @ S1_v50
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Call 120AF, v165 @ S1_v53, typeof(System.Net.Sockets.AddressFamily), v1 @ G7
+	103 Nop
+	104 Call 724E, v169 @ S0_v54, 3, v165 @ S1_v53
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Throw typeof(System.NullReferenceException)
+	109 Nop
+	110 Move [v1 @ G7], [v176 @ S1_v55]
+	111 Nop
+	112 Nop
+	113 Throw typeof(System.ArrayTypeMismatchException)
+	114 Nop
+	115 Nop
+	116 Add v184 @ S0_v58, v42 @ S0_v41 (System.OverflowException), 24
+	117 Nop
+	118 Move [v184 @ S0_v58], v169 @ S0_v54
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Call CertHelper.NativeChainToManagedCollection, v190 @ S0_v61 (System.Security.Cryptography.X509Certificates.X509CertificateCollection), "The AddressFamily {0} is not valid for the {1} end point, use {2} instead.", v42 @ S0_v41 (System.OverflowException)
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Call 11B6C, v193 @ S0_v64 (System.ArgumentException), typeof(System.ArgumentException)
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 CallVoid ArgumentException..ctor, v193 @ S0_v64 (System.ArgumentException), v190 @ S0_v61 (System.Security.Cryptography.X509Certificates.X509CertificateCollection), "socketAddress"
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 CallVoid IPEndPoint.Create, v193 @ S0_v64 (System.ArgumentException), 0
+	139 Nop
+	140 Nop
+	141 Nop
+	142 Nop
+	143 CheckGreater v64 @ S0_v19 (System.Boolean), [comparand @ L1 (System.Object)+8], 7
+	144 Not v65 @ TEMP_v3 (System.Boolean), v64 @ S0_v19 (System.Boolean)
+	145 ConditionalJump @b26, v65 @ TEMP_v3 (System.Boolean)
+	146 Nop
+	147 Nop
+	148 Call SocketAddress.GetHashCode, returnVal1 @ S0_v37 (System.Boolean), comparand @ L1 (System.Object)
+	149 Nop
+	150 Nop
+	151 Return returnVal1 @ S0_v37 (System.Boolean)
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Newobj v92 @ S0_v22 (System.OverflowException), typeof(System.OverflowException)
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Call 11995, v100 @ S2_v5, comparand @ L1 (System.Object)
+	160 Call 724E, v119 @ S1_v16, 25, v100 @ S2_v5
+	161 Nop
+	162 Throw typeof(System.ArrayTypeMismatchException)
+	163 Nop
+	164 Nop
+	165 Add v134 @ S0_v24, v92 @ S0_v22 (System.OverflowException), 16
+	166 Nop
+	167 Move [v134 @ S0_v24], v119 @ S1_v16
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Call 11995, v139 @ S2_v7, this @ L0 (System.Net.IPEndPoint)
+	172 Call 724E, v141 @ S1_v20, 25, v139 @ S2_v7
+	173 Nop
+	174 Throw typeof(System.ArrayTypeMismatchException)
+	175 Nop
+	176 Nop
+	177 Add v154 @ S0_v27, v92 @ S0_v22 (System.OverflowException), 20
+	178 Nop
+	179 Move [v154 @ S0_v27], v141 @ S1_v20
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Call CertHelper.NativeChainToManagedCollection, v160 @ S0_v30 (System.Security.Cryptography.X509Certificates.X509CertificateCollection), "The supplied {0} is an invalid size for the {1} end point.", v92 @ S0_v22 (System.OverflowException)
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Call 11B6C, v168 @ S0_v33 (System.ArgumentException), typeof(System.ArgumentException)
+	189 Nop
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Nop
+	194 CallVoid ArgumentException..ctor, v168 @ S0_v33 (System.ArgumentException), v160 @ S0_v30 (System.Security.Cryptography.X509Certificates.X509CertificateCollection), "socketAddress"
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 CallVoid IPEndPoint.Create, v168 @ S0_v33 (System.ArgumentException), 0
+	200 Nop
+	201 Nop
+	202 Nop
+	203 Return 0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x111EA58 I32Const 4566268
+	0x111EA5D I32Load8_S 0, 0
+	0x111EA60 I32Eqz
+	0x111EA61 If -64
+	0x111EA63 I32Const 2970808
+	0x111EA68 I32Load 2, 0
+	0x111EA6B Call 73003
+	0x111EA6F I32Const 4566268
+	0x111EA74 I32Const 1
+	0x111EA76 I32Store8 0, 0
+	0x111EA79 End
+	0x111EA7A LocalGet 0
+	0x111EA7C I32Load 2, 8
+	0x111EA7F LocalSet 1
+	0x111EA81 LocalGet 0
+	0x111EA83 I32Load 2, 12
+	0x111EA86 LocalSet 0
+	0x111EA88 I32Const 4432560
+	0x111EA8D I32Load 2, 0
+	0x111EA90 Call 72556
+	0x111EA94 LocalTee 2
+	0x111EA96 LocalGet 1
+	0x111EA98 LocalGet 0
+	0x111EA9A I32Const 0
+	0x111EA9C Call 52081
+	0x111EAA0 LocalGet 2
+	0x111EAA2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v14, [2D54B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45ACFC], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call 11B6C, v20 @ S0_v11 (System.Net.WebException), typeof(System.Net.SocketAddress)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 CallVoid WebException..ctor, v20 @ S0_v11 (System.Net.WebException), this.m_Address (System.Net.IPAddress), this.m_Port (System.Int32)
+	26 Nop
+	27 Nop
+	28 Return v20 @ S0_v11 (System.Net.WebException)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x109C607 I32Const 4564621
+	0x109C60C I32Load8_S 0, 0
+	0x109C60F I32Eqz
+	0x109C610 If -64
+	0x109C612 I32Const 2970776
+	0x109C617 I32Load 2, 0
+	0x109C61A Call 73003
+	0x109C61E I32Const 4564621
+	0x109C623 I32Const 1
+	0x109C625 I32Store8 0, 0
+	0x109C628 End
+	0x109C629 I32Const 4432464
+	0x109C62E I32Load 2, 0
+	0x109C631 Call 72556
+	0x109C635 LocalTee 0
+	0x109C637 I32Const 0
+	0x109C639 I32Const 0
+	0x109C63B Call 49426
+	0x109C63F I32Const 4432464
+	0x109C644 I32Load 2, 0
+	0x109C647 I32Load 2, 92
+	0x109C64A LocalGet 0
+	0x109C64C I32Store 2, 0
+	0x109C64F I32Const 4432464
+	0x109C654 I32Load 2, 0
+	0x109C657 Call 72556
+	0x109C65B LocalTee 0
+	0x109C65D I32Const 16777343
+	0x109C662 I32Const 0
+	0x109C664 Call 49426
+	0x109C668 I32Const 4432464
+	0x109C66D I32Load 2, 0
+	0x109C670 I32Load 2, 92
+	0x109C673 I32Const 4
+	0x109C675 I32Add
+	0x109C676 LocalGet 0
+	0x109C678 I32Store 2, 0
+	0x109C67B I32Const 4432464
+	0x109C680 I32Load 2, 0
+	0x109C683 Call 72556
+	0x109C687 LocalTee 0
+	0x109C689 I64Const 4294967295
+	0x109C68F I32Const 0
+	0x109C691 Call 49360
+	0x109C695 I32Const 4432464
+	0x109C69A I32Load 2, 0
+	0x109C69D I32Load 2, 92
+	0x109C6A0 I32Const 8
+	0x109C6A2 I32Add
+	0x109C6A3 LocalGet 0
+	0x109C6A5 I32Store 2, 0
+	0x109C6A8 I32Const 4432464
+	0x109C6AD I32Load 2, 0
+	0x109C6B0 I32Load 2, 92
+	0x109C6B3 I32Const 12
+	0x109C6B5 I32Add
+	0x109C6B6 I32Const 4432464
+	0x109C6BB I32Load 2, 0
+	0x109C6BE I32Load 2, 92
+	0x109C6C1 I32Load 2, 8
+	0x109C6C4 I32Store 2, 0
+	0x109C6C7 I32Const 4427832
+	0x109C6CC I32Load 2, 0
+	0x109C6CF I32Const 16
+	0x109C6D1 Call 71670
+	0x109C6D5 LocalSet 0
+	0x109C6D7 I32Const 4432464
+	0x109C6DC I32Load 2, 0
+	0x109C6DF Call 72556
+	0x109C6E3 LocalTee 1
+	0x109C6E5 LocalGet 0
+	0x109C6E7 I64Const 0
+	0x109C6E9 I32Const 0
+	0x109C6EB Call 49425
+	0x109C6EF I32Const 4432464
+	0x109C6F4 I32Load 2, 0
+	0x109C6F7 I32Load 2, 92
+	0x109C6FA I32Const 16
+	0x109C6FC I32Add
+	0x109C6FD LocalGet 1
+	0x109C6FF I32Store 2, 0
+	0x109C702 I32Const 4427832
+	0x109C707 I32Load 2, 0
+	0x109C70A I32Const 16
+	0x109C70C Call 71670
+	0x109C710 LocalTee 0
+	0x109C712 I32Const 31
+	0x109C714 I32Add
+	0x109C715 I32Const 1
+	0x109C717 I32Store8 0, 0
+	0x109C71A I32Const 4432464
+	0x109C71F I32Load 2, 0
+	0x109C722 Call 72556
+	0x109C726 LocalTee 1
+	0x109C728 LocalGet 0
+	0x109C72A I64Const 0
+	0x109C72C I32Const 0
+	0x109C72E Call 49425
+	0x109C732 I32Const 4432464
+	0x109C737 I32Load 2, 0
+	0x109C73A I32Load 2, 92
+	0x109C73D I32Const 20
+	0x109C73F I32Add
+	0x109C740 LocalGet 1
+	0x109C742 I32Store 2, 0
+	0x109C745 I32Const 4427832
+	0x109C74A I32Load 2, 0
+	0x109C74D I32Const 16
+	0x109C74F Call 71670
+	0x109C753 LocalSet 0
+	0x109C755 I32Const 4432464
+	0x109C75A I32Load 2, 0
+	0x109C75D Call 72556
+	0x109C761 LocalTee 1
+	0x109C763 LocalGet 0
+	0x109C765 I64Const 0
+	0x109C767 I32Const 0
+	0x109C769 Call 49425
+	0x109C76D I32Const 4432464
+	0x109C772 I32Load 2, 0
+	0x109C775 I32Load 2, 92
+	0x109C778 I32Const 24
+	0x109C77A I32Add
+	0x109C77B LocalGet 1
+	0x109C77D I32Store 2, 0
+	0x109C780 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b20
+	5 Nop
+	6 Move v5 @ S0_v61, [2D5498]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v61
+	8 Nop
+	9 Move v7 @ S1_v29, 1
+	10 Move [45A68D], v7 @ S1_v29
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Net.IPHostEntry), typeof(System.Net.IPAddress)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid IPHostEntry.set_HostName, v13 @ S0_v7 (System.Net.IPHostEntry), 0
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move v19.Any (System.Net.IPAddress), v13 @ S0_v7 (System.Net.IPHostEntry)
+	24 Nop
+	25 Nop
+	26 Call 11B6C, v23 @ S0_v13 (System.Net.IPHostEntry), typeof(System.Net.IPAddress)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 CallVoid IPHostEntry.set_HostName, v23 @ S0_v13 (System.Net.IPHostEntry), 16777343
+	31 Nop
+	32 Move v28 @ S0_v15 (Il2CppClass<System.Net.IPAddress>), typeof(System.Net.IPAddress)
+	33 Nop
+	34 Nop
+	35 Add v31 @ S0_v17, [v28 @ S0_v15 (Il2CppClass<System.Net.IPAddress>)+5C], 4
+	36 Nop
+	37 Move [v31 @ S0_v17], v23 @ S0_v13 (System.Net.IPHostEntry)
+	38 Nop
+	39 Nop
+	40 Call 11B6C, v35 @ S0_v20 (System.Net.Sockets.NetworkStream), typeof(System.Net.IPAddress)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 CallVoid NetworkStream.set_Position, v35 @ S0_v20 (System.Net.Sockets.NetworkStream), 4294967295
+	45 Nop
+	46 Move v40 @ S0_v22 (Il2CppClass<System.Net.IPAddress>), typeof(System.Net.IPAddress)
+	47 Nop
+	48 Nop
+	49 Add v43 @ S0_v24, [v40 @ S0_v22 (Il2CppClass<System.Net.IPAddress>)+5C], 8
+	50 Nop
+	51 Move [v43 @ S0_v24], v35 @ S0_v20 (System.Net.Sockets.NetworkStream)
+	52 Nop
+	53 Move v46 @ S0_v26 (Il2CppClass<System.Net.IPAddress>), typeof(System.Net.IPAddress)
+	54 Nop
+	55 Nop
+	56 Add v49 @ S0_v28, [v46 @ S0_v26 (Il2CppClass<System.Net.IPAddress>)+5C], 12
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Move [v49 @ S0_v28], v52.Broadcast (System.Net.IPAddress)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Newobj v57 @ S0_v31 (System.OverflowException), typeof(System.OverflowException)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Call 11B6C, v61 @ S0_v34, typeof(System.Net.IPAddress)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 CallVoid C111, v61 @ S0_v34, v57 @ S0_v31 (System.OverflowException), 0, 0
+	75 Nop
+	76 Move v67 @ S0_v36 (Il2CppClass<System.Net.IPAddress>), typeof(System.Net.IPAddress)
+	77 Nop
+	78 Nop
+	79 Add v70 @ S0_v38, [v67 @ S0_v36 (Il2CppClass<System.Net.IPAddress>)+5C], 16
+	80 Nop
+	81 Move [v70 @ S0_v38], v61 @ S0_v34
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Newobj v75 @ S0_v41 (System.OverflowException), typeof(System.OverflowException)
+	86 Nop
+	87 Nop
+	88 Add v78 @ S0_v42, v75 @ S0_v41 (System.OverflowException), 31
+	89 Nop
+	90 Move [v78 @ S0_v42], 1
+	91 Nop
+	92 Nop
+	93 Call 11B6C, v82 @ S0_v45, typeof(System.Net.IPAddress)
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 CallVoid C111, v82 @ S0_v45, v75 @ S0_v41 (System.OverflowException), 0, 0
+	99 Nop
+	100 Move v88 @ S0_v47 (Il2CppClass<System.Net.IPAddress>), typeof(System.Net.IPAddress)
+	101 Nop
+	102 Nop
+	103 Add v91 @ S0_v49, [v88 @ S0_v47 (Il2CppClass<System.Net.IPAddress>)+5C], 20
+	104 Nop
+	105 Move [v91 @ S0_v49], v82 @ S0_v45
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Newobj v96 @ S0_v52 (System.OverflowException), typeof(System.OverflowException)
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Call 11B6C, v100 @ S0_v55, typeof(System.Net.IPAddress)
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 CallVoid C111, v100 @ S0_v55, v96 @ S0_v52 (System.OverflowException), 0, 0
+	119 Nop
+	120 Move v106 @ S0_v57 (Il2CppClass<System.Net.IPAddress>), typeof(System.Net.IPAddress)
+	121 Nop
+	122 Nop
+	123 Add v109 @ S0_v59, [v106 @ S0_v57 (Il2CppClass<System.Net.IPAddress>)+5C], 24
+	124 Nop
+	125 Move [v109 @ S0_v59], v100 @ S0_v55
+	126 Nop
+	127 Return
+

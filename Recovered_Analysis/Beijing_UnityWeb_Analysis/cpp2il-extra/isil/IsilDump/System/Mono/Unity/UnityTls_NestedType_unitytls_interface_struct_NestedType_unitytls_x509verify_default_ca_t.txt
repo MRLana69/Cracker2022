@@ -1,0 +1,237 @@
+Type: Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_x509verify_default_ca_t
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_x509verify_default_ca_t), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: Mono.Unity.UnityTls+unitytls_x509verify_result Invoke(Mono.Unity.UnityTls+unitytls_x509list_ref chain, System.Byte* cn, System.IntPtr cnLen, Mono.Unity.UnityTls+unitytls_x509verify_callback cb, System.Void* userData, Mono.Unity.UnityTls+unitytls_errorstate* errorState)
+
+Disassembly:
+	0x1119F57 GlobalGet 7
+	0x1119F59 LocalSet 7
+	0x1119F5B GlobalGet 7
+	0x1119F5D I32Const 32
+	0x1119F5F I32Add
+	0x1119F60 GlobalSet 7
+	0x1119F62 LocalGet 7
+	0x1119F64 I32Const 20
+	0x1119F66 I32Add
+	0x1119F67 LocalTee 8
+	0x1119F69 LocalGet 3
+	0x1119F6B I32Store 2, 0
+	0x1119F6E I32Const 4566239
+	0x1119F73 I32Load8_S 0, 0
+	0x1119F76 I32Eqz
+	0x1119F77 If -64
+	0x1119F79 I32Const 3029736
+	0x1119F7E I32Load 2, 0
+	0x1119F81 Call 73003
+	0x1119F85 I32Const 4566239
+	0x1119F8A I32Const 1
+	0x1119F8C I32Store8 0, 0
+	0x1119F8F End
+	0x1119F90 LocalGet 7
+	0x1119F92 I32Const 0
+	0x1119F94 I32Store 2, 16
+	0x1119F97 LocalGet 7
+	0x1119F99 LocalGet 1
+	0x1119F9B I32Store 2, 0
+	0x1119F9E LocalGet 7
+	0x1119FA0 LocalGet 2
+	0x1119FA2 I32Store 2, 4
+	0x1119FA5 LocalGet 7
+	0x1119FA7 I32Const 4427848
+	0x1119FAC I32Load 2, 0
+	0x1119FAF LocalGet 8
+	0x1119FB1 Call 73903
+	0x1119FB5 I32Store 2, 8
+	0x1119FB8 LocalGet 7
+	0x1119FBA LocalGet 4
+	0x1119FBC I32Store 2, 12
+	0x1119FBF LocalGet 0
+	0x1119FC1 LocalGet 7
+	0x1119FC3 LocalGet 5
+	0x1119FC5 LocalGet 6
+	0x1119FC7 Call 73891
+	0x1119FCB LocalGet 7
+	0x1119FCD GlobalSet 7
+	0x1119FCF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 20
+	9 Nop
+	10 Nop
+	11 Move [v9 @ S0_v5], cnLen @ L3 (System.IntPtr)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Jump @b7
+	17 Nop
+	18 Move v18 @ S0_v18, [2E3AE8]
+	19 CallVoid "il2cpp_runtime_class_init_actual", v18 @ S0_v18
+	20 Nop
+	21 Move v20 @ S1_v14, 1
+	22 Move [45ACDF], v20 @ S1_v14
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7+10], 0
+	27 Nop
+	28 Nop
+	29 Move [v1 @ G7], chain @ L1 (Mono.Unity.UnityTls+unitytls_x509list_ref)
+	30 Nop
+	31 Nop
+	32 Move [v1 @ G7+4], cn @ L2 (System.Byte*)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 120AF, v35 @ S1_v10, typeof(System.IntPtr), v9 @ S0_v5
+	38 Move [v1 @ G7+8], v35 @ S1_v10
+	39 Nop
+	40 Nop
+	41 Move [v1 @ G7+C], cb @ L4 (Mono.Unity.UnityTls+unitytls_x509verify_callback)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Call 120A3, returnVal1 @ S0_v16 (Mono.Unity.UnityTls+unitytls_x509verify_result), this @ L0 (Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_x509verify_default_ca_t), v1 @ G7, userData @ L5 (System.Void*), errorState @ L6 (unitytls_errorstate*)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return returnVal1 @ S0_v16 (Mono.Unity.UnityTls+unitytls_x509verify_result)
+
+Method: System.IAsyncResult BeginInvoke(Mono.Unity.UnityTls+unitytls_x509list_ref chain, System.Byte* cn, System.IntPtr cnLen, Mono.Unity.UnityTls+unitytls_x509verify_callback cb, System.Void* userData, Mono.Unity.UnityTls+unitytls_errorstate* errorState, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x12416B3 GlobalGet 7
+	0x12416B5 LocalSet 9
+	0x12416B7 GlobalGet 7
+	0x12416B9 I32Const 16
+	0x12416BB I32Add
+	0x12416BC GlobalSet 7
+	0x12416BE I32Const 0
+	0x12416C0 I32Const 0
+	0x12416C2 Call 57442
+	0x12416C6 LocalSet 10
+	0x12416C8 LocalGet 9
+	0x12416CA LocalGet 4
+	0x12416CC I64Load 2, 0
+	0x12416CF I64Store 3, 0
+	0x12416D2 LocalGet 9
+	0x12416D4 I32Const 8
+	0x12416D6 I32Add
+	0x12416D7 LocalTee 4
+	0x12416D9 LocalGet 9
+	0x12416DB I64Load 2, 0
+	0x12416DE I64Store 2, 0
+	0x12416E1 LocalGet 10
+	0x12416E3 LocalGet 0
+	0x12416E5 LocalGet 1
+	0x12416E7 LocalGet 2
+	0x12416E9 LocalGet 3
+	0x12416EB LocalGet 4
+	0x12416ED LocalGet 5
+	0x12416EF LocalGet 6
+	0x12416F1 LocalGet 7
+	0x12416F3 LocalGet 8
+	0x12416F5 I32Const 0
+	0x12416F7 Call 57503
+	0x12416FB LocalGet 9
+	0x12416FD GlobalSet 7
+	0x12416FF LocalGet 10
+	0x1241701 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call TypeInformation.get_FullTypeName, v9 @ S0_v5 (System.String), 0
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Move [v1 @ G7], [cb @ L4 (Mono.Unity.UnityTls+unitytls_x509verify_callback)]
+	14 Nop
+	15 Nop
+	16 Add v17 @ S0_v8 (System.Boolean), v1 @ G7, 8
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move v17.m_value (System.Boolean), [v1 @ G7]
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid DllImportAttribute..ctor, v9 @ S0_v5 (System.String), this @ L0 (Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_x509verify_default_ca_t), chain @ L1 (Mono.Unity.UnityTls+unitytls_x509list_ref), cn @ L2 (System.Byte*), cnLen @ L3 (System.IntPtr), v17 @ S0_v8 (System.Boolean), userData @ L5 (System.Void*), errorState @ L6 (unitytls_errorstate*), callback @ L7 (System.AsyncCallback), object @ L8 (System.Object)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Return v9 @ S0_v5 (System.String)
+
+Method: Mono.Unity.UnityTls+unitytls_x509verify_result EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xD4E960 LocalGet 1
+	0xD4E962 I32Const 0
+	0xD4E964 Call 73892
+	0xD4E968 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Newobj returnVal1 @ S0_v2 (System.InvalidOperationException), typeof(System.InvalidOperationException)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.InvalidOperationException)
+

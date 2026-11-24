@@ -1,0 +1,83 @@
+Type: System.UnhandledExceptionEventArgs
+
+Method: System.Void .ctor(System.Object exception, System.Boolean isTerminating)
+
+Disassembly:
+	0x1007A1E GlobalGet 7
+	0x1007A20 LocalSet 3
+	0x1007A22 GlobalGet 7
+	0x1007A24 I32Const 16
+	0x1007A26 I32Add
+	0x1007A27 GlobalSet 7
+	0x1007A29 LocalGet 3
+	0x1007A2B LocalGet 2
+	0x1007A2D I64Load 2, 0
+	0x1007A30 I64Store 3, 0
+	0x1007A33 LocalGet 3
+	0x1007A35 I32Const 8
+	0x1007A37 I32Add
+	0x1007A38 LocalTee 2
+	0x1007A3A LocalGet 3
+	0x1007A3C I64Load 2, 0
+	0x1007A3F I64Store 2, 0
+	0x1007A42 LocalGet 0
+	0x1007A44 LocalGet 1
+	0x1007A46 LocalGet 2
+	0x1007A48 I32Const 0
+	0x1007A4A Call 55714
+	0x1007A4E LocalGet 3
+	0x1007A50 GlobalSet 7
+	0x1007A52 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], isTerminating.m_value (System.Boolean)
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6 (System.Runtime.Serialization.StreamingContext), v1 @ G7, 8
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v13.m_additionalContext (System.Object), [v1 @ G7]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid TimeoutException..ctor, this @ L0 (System.UnhandledExceptionEventArgs), exception @ L1 (System.Object), v13 @ S0_v6 (System.Runtime.Serialization.StreamingContext)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Return
+
+Method: System.Object get_ExceptionObject()
+
+Disassembly:
+	0x1531901 I32Const 12
+	0x1531903 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 12
+
+Method: System.Boolean get_IsTerminating()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._Exception (System.Object)
+

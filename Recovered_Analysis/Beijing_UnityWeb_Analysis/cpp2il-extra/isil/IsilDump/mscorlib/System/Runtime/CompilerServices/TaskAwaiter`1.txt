@@ -1,0 +1,119 @@
+Type: System.Runtime.CompilerServices.TaskAwaiter`1
+
+Method: System.Void .ctor(System.Threading.Tasks.Task`1<TResult> task)
+
+Disassembly:
+	0x1007016 LocalGet 0
+	0x1007018 LocalGet 1
+	0x100701A I32Const 8
+	0x100701C I32Add
+	0x100701D I64Load 2, 0
+	0x1007020 I64Store 2, 0
+	0x1007023 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v5 @ S1_v2, task @ L1 (System.Threading.Tasks.Task`1<TResult>), 8
+	4 Nop
+	5 Move [this @ L0 (System.Runtime.CompilerServices.TaskAwaiter`1<TResult>)], [v5 @ S1_v2]
+	6 Nop
+	7 Return
+
+Method: System.Void OnCompleted(System.Action continuation)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.TaskAwaiter`1<TResult>), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], continuation @ L1 (System.Action)
+	5 Nop
+	6 Return
+
+Method: System.Void UnsafeOnCompleted(System.Action continuation)
+
+Disassembly:
+	0x10077A0 LocalGet 0
+	0x10077A2 I32Const 8
+	0x10077A4 I32Add
+	0x10077A5 I32Load 2, 0
+	0x10077A8 LocalGet 1
+	0x10077AA I32Const 1
+	0x10077AC I32Const 1
+	0x10077AE I32Const 0
+	0x10077B0 Call 46039
+	0x10077B4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.TaskAwaiter`1<TResult>), 8
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CallVoid Marshal.copy_to_unmanaged, [v3 @ S0_v2], continuation @ L1 (System.Action), 1, 1
+	9 Nop
+	10 Return
+
+Method: TResult GetResult()
+
+Disassembly:
+	0x13ADCDA GlobalGet 7
+	0x13ADCDC LocalSet 2
+	0x13ADCDE GlobalGet 7
+	0x13ADCE0 I32Const 16
+	0x13ADCE2 I32Add
+	0x13ADCE3 GlobalSet 7
+	0x13ADCE5 LocalGet 2
+	0x13ADCE7 I32Const 0
+	0x13ADCE9 I32Store 2, 0
+	0x13ADCEC LocalGet 1
+	0x13ADCEE I32Load 2, 12
+	0x13ADCF1 I32Load 2, 96
+	0x13ADCF4 I32Load 2, 48
+	0x13ADCF7 Drop
+	0x13ADCF8 LocalGet 2
+	0x13ADCFA LocalGet 0
+	0x13ADCFC I32Store 2, 0
+	0x13ADCFF LocalGet 2
+	0x13ADD01 I32Load 2, 0
+	0x13ADD04 LocalGet 2
+	0x13ADD06 GlobalSet 7
+	0x13ADD08 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7], 0
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move [v1 @ G7], this @ L0 (System.Runtime.CompilerServices.TaskAwaiter`1<TResult>)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Return [v1 @ G7]
+

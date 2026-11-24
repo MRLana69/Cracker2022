@@ -1,0 +1,276 @@
+Type: Mono.SafeGPtrArrayHandle
+
+Method: System.Void .ctor(System.IntPtr ptr)
+
+Disassembly:
+	0x12CA11A LocalGet 0
+	0x12CA11C LocalGet 1
+	0x12CA11E Call 71724
+	0x12CA122 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid 1182C, this @ L0 (Mono.SafeGPtrArrayHandle), ptr @ L1 (System.IntPtr)
+	3 Nop
+	4 Return
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x12C9D64 LocalGet 0
+	0x12C9D66 I32Load 2, 0
+	0x12C9D69 I32Const 0
+	0x12C9D6B Call 59958
+	0x12C9D6F LocalGet 0
+	0x12C9D71 I32Const 0
+	0x12C9D73 I32Store 2, 0
+	0x12C9D76 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid RuntimeGPtrArrayHandle.DestroyAndFree, this.handle (Mono.RuntimeGPtrArrayHandle)
+	4 Nop
+	5 Nop
+	6 Move this.handle (Mono.RuntimeGPtrArrayHandle), 0
+	7 Nop
+	8 Return
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x12CA0EE LocalGet 0
+	0x12CA0F0 I32Const -48
+	0x12CA0F2 I32Add
+	0x12CA0F3 I32Const 10
+	0x12CA0F5 I32Lt_U
+	0x12CA0F6 If -1
+	0x12CA0F8 LocalGet 0
+	0x12CA0FA I32Const 48
+	0x12CA0FC I32Sub
+	0x12CA0FD Else
+	0x12CA0FE LocalGet 0
+	0x12CA100 I32Const -97
+	0x12CA103 I32Add
+	0x12CA104 I32Const 6
+	0x12CA106 I32Lt_U
+	0x12CA107 If -1
+	0x12CA109 LocalGet 0
+	0x12CA10B I32Const -87
+	0x12CA10E I32Add
+	0x12CA10F Else
+	0x12CA110 LocalGet 0
+	0x12CA112 I32Const -55
+	0x12CA114 I32Add
+	0x12CA115 End
+	0x12CA116 End
+	0x12CA117 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.SafeGPtrArrayHandle), -48
+	3 Nop
+	4 CheckLess v5 @ S0_v3 (System.Boolean), v3 @ S0_v2, 10
+	5 Not v6 @ TEMP_v1 (System.Boolean), v5 @ S0_v3 (System.Boolean)
+	6 ConditionalJump @b4, v6 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Nop
+	9 Subtract returnVal1 @ S0_v4 (System.Int32), this @ L0 (Mono.SafeGPtrArrayHandle), 48
+	10 Jump @b7
+	11 Nop
+	12 Nop
+	13 Add v12 @ S0_v6, this @ L0 (Mono.SafeGPtrArrayHandle), -97
+	14 Nop
+	15 CheckLess v14 @ S0_v7 (System.Boolean), v12 @ S0_v6, 6
+	16 Not v15 @ TEMP_v3 (System.Boolean), v14 @ S0_v7 (System.Boolean)
+	17 ConditionalJump @b6, v15 @ TEMP_v3 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Add returnVal1 @ S0_v4 (System.Int32), this @ L0 (Mono.SafeGPtrArrayHandle), -87
+	21 Jump @b7
+	22 Nop
+	23 Nop
+	24 Add returnVal1 @ S0_v4 (System.Int32), this @ L0 (Mono.SafeGPtrArrayHandle), -55
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Return returnVal1 @ S0_v4 (System.Int32)
+
+Method: System.IntPtr get_Item(System.Int32 i)
+
+Disassembly:
+	0x12C9FC4 LocalGet 1
+	0x12C9FC6 LocalGet 0
+	0x12C9FC8 I32Load8_S 0, 0
+	0x12C9FCB LocalTee 2
+	0x12C9FCD I32Const 0
+	0x12C9FCF I32Lt_S
+	0x12C9FD0 If -1
+	0x12C9FD2 LocalGet 0
+	0x12C9FD4 I32Const 1
+	0x12C9FD6 I32Add
+	0x12C9FD7 I32Load8_U 0, 0
+	0x12C9FDA LocalSet 1
+	0x12C9FDC LocalGet 2
+	0x12C9FDE I32Const 64
+	0x12C9FE1 I32And
+	0x12C9FE2 If -1
+	0x12C9FE4 LocalGet 0
+	0x12C9FE6 I32Const 3
+	0x12C9FE8 I32Add
+	0x12C9FE9 I32Load8_U 0, 0
+	0x12C9FEC LocalGet 0
+	0x12C9FEE I32Const 2
+	0x12C9FF0 I32Add
+	0x12C9FF1 I32Load8_U 0, 0
+	0x12C9FF4 I32Const 8
+	0x12C9FF6 I32Shl
+	0x12C9FF7 LocalGet 1
+	0x12C9FF9 I32Const 16
+	0x12C9FFB I32Shl
+	0x12C9FFC LocalGet 2
+	0x12C9FFE I32Const 31
+	0x12CA000 I32And
+	0x12CA001 I32Const 24
+	0x12CA003 I32Shl
+	0x12CA004 I32Add
+	0x12CA005 I32Add
+	0x12CA006 I32Add
+	0x12CA007 LocalSet 2
+	0x12CA009 LocalGet 0
+	0x12CA00B I32Const 4
+	0x12CA00D I32Add
+	0x12CA00E Else
+	0x12CA00F LocalGet 1
+	0x12CA011 LocalGet 2
+	0x12CA013 I32Const 63
+	0x12CA015 I32And
+	0x12CA016 I32Const 8
+	0x12CA018 I32Shl
+	0x12CA019 I32Add
+	0x12CA01A LocalSet 2
+	0x12CA01C LocalGet 0
+	0x12CA01E I32Const 2
+	0x12CA020 I32Add
+	0x12CA021 End
+	0x12CA022 Else
+	0x12CA023 LocalGet 2
+	0x12CA025 I32Const 127
+	0x12CA028 I32And
+	0x12CA029 LocalSet 2
+	0x12CA02B LocalGet 0
+	0x12CA02D I32Const 1
+	0x12CA02F I32Add
+	0x12CA030 End
+	0x12CA031 LocalSet 1
+	0x12CA033 GlobalGet 7
+	0x12CA035 LocalSet 0
+	0x12CA037 GlobalGet 7
+	0x12CA039 I32Const 16
+	0x12CA03B I32Add
+	0x12CA03C GlobalSet 7
+	0x12CA03E LocalGet 0
+	0x12CA040 I32Const 0
+	0x12CA042 I32Store 2, 0
+	0x12CA045 LocalGet 0
+	0x12CA047 LocalGet 1
+	0x12CA049 I32Store 2, 0
+	0x12CA04C LocalGet 0
+	0x12CA04E I32Load 2, 0
+	0x12CA051 LocalGet 0
+	0x12CA053 GlobalSet 7
+	0x12CA055 I32Store 2, 0
+	0x12CA058 LocalGet 2
+	0x12CA05A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 CheckLess v7 @ S1_v3 (System.Boolean), this.handle (Mono.RuntimeGPtrArrayHandle), 0
+	6 Not v8 @ TEMP_v1 (System.Boolean), v7 @ S1_v3 (System.Boolean)
+	7 ConditionalJump @b6, v8 @ TEMP_v1 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 Add v11 @ S1_v17, this @ L0 (Mono.SafeGPtrArrayHandle), 1
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 And v16 @ S1_v20, this.handle (Mono.RuntimeGPtrArrayHandle), 64
+	16 CheckEqual v17 @ TEMP_v3 (System.Boolean), v16 @ S1_v20, 0
+	17 ConditionalJump @b5, v17 @ TEMP_v3 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Add v27 @ S1_v27, this @ L0 (Mono.SafeGPtrArrayHandle), 3
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v31 @ S2_v18, this @ L0 (Mono.SafeGPtrArrayHandle), 2
+	25 Nop
+	26 Nop
+	27 ShiftLeft v34 @ S2_v20, [v31 @ S2_v18], 8
+	28 Nop
+	29 Nop
+	30 ShiftLeft v37 @ S3_v8, [v11 @ S1_v17], 16
+	31 Nop
+	32 Nop
+	33 And v40 @ S4_v5, this.handle (Mono.RuntimeGPtrArrayHandle), 31
+	34 Nop
+	35 ShiftLeft v42 @ S4_v6, v40 @ S4_v5, 24
+	36 Add v43 @ S3_v9, v37 @ S3_v8, v42 @ S4_v6
+	37 Add v44 @ S2_v21, v34 @ S2_v20, v43 @ S3_v9
+	38 Add v45 @ S1_v29 (System.IntPtr), [v27 @ S1_v27], v44 @ S2_v21
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Add v76 @ S1_v4, this @ L0 (Mono.SafeGPtrArrayHandle), 4
+	43 Jump @b7
+	44 Nop
+	45 Nop
+	46 Nop
+	47 And v53 @ S2_v13, this.handle (Mono.RuntimeGPtrArrayHandle), 63
+	48 Nop
+	49 ShiftLeft v55 @ S2_v14, v53 @ S2_v13, 8
+	50 Add v56 @ S1_v23 (System.IntPtr), [v11 @ S1_v17], v55 @ S2_v14
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Add v76 @ S1_v4, this @ L0 (Mono.SafeGPtrArrayHandle), 2
+	55 Nop
+	56 Jump @b8
+	57 Nop
+	58 Nop
+	59 And v20 @ S1_v13 (System.IntPtr), this.handle (Mono.RuntimeGPtrArrayHandle), 127
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Add v76 @ S1_v4, this @ L0 (Mono.SafeGPtrArrayHandle), 1
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Move [v80 @ G7], 0
+	75 Nop
+	76 Nop
+	77 Move [v80 @ G7], v76 @ S1_v4
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Move i.m_value (System.Int32), [v80 @ G7]
+	83 Nop
+	84 Nop
+	85 Return v74 @ L2_v2 (System.IntPtr)
+

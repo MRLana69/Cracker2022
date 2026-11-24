@@ -1,0 +1,539 @@
+Type: Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_tlsctx_get_protocol_t
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_tlsctx_get_protocol_t), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: Mono.Unity.UnityTls+unitytls_protocol Invoke(Mono.Unity.UnityTls+unitytls_tlsctx* ctx, Mono.Unity.UnityTls+unitytls_errorstate* errorState)
+
+Disassembly:
+	0xED71ED GlobalGet 7
+	0xED71EF LocalSet 9
+	0xED71F1 GlobalGet 7
+	0xED71F3 I32Const 16
+	0xED71F5 I32Add
+	0xED71F6 GlobalSet 7
+	0xED71F8 LocalGet 9
+	0xED71FA LocalTee 3
+	0xED71FC LocalGet 0
+	0xED71FE I32Store 2, 0
+	0xED7201 LocalGet 0
+	0xED7203 I32Load 2, 52
+	0xED7206 LocalTee 7
+	0xED7208 If -1
+	0xED720A LocalGet 7
+	0xED720C I32Load 2, 12
+	0xED720F LocalSet 10
+	0xED7211 LocalGet 7
+	0xED7213 I32Const 16
+	0xED7215 I32Add
+	0xED7216 Else
+	0xED7217 I32Const 1
+	0xED7219 LocalSet 10
+	0xED721B LocalGet 3
+	0xED721D End
+	0xED721E LocalSet 7
+	0xED7220 I32Const 0
+	0xED7222 LocalSet 3
+	0xED7224 Loop -64
+	0xED7226 LocalGet 8
+	0xED7228 LocalGet 10
+	0xED722A I32Ne
+	0xED722B If -64
+	0xED722D LocalGet 7
+	0xED722F LocalGet 8
+	0xED7231 I32Const 2
+	0xED7233 I32Shl
+	0xED7234 I32Add
+	0xED7235 I32Load 2, 0
+	0xED7238 LocalTee 3
+	0xED723A I32Load 2, 8
+	0xED723D LocalSet 5
+	0xED723F LocalGet 3
+	0xED7241 I32Load 2, 16
+	0xED7244 LocalSet 4
+	0xED7246 LocalGet 3
+	0xED7248 I32Load 2, 20
+	0xED724B LocalTee 3
+	0xED724D I32Load16_S 1, 40
+	0xED7250 I32Const -1
+	0xED7252 I32Eq
+	0xED7253 If -64
+	0xED7255 LocalGet 3
+	0xED7257 Call 72344
+	0xED725B End
+	0xED725C LocalGet 3
+	0xED725E I32Load8_U 0, 42
+	0xED7261 LocalSet 6
+	0xED7263 Block -1
+	0xED7265 LocalGet 3
+	0xED7267 I32Load16_S 1, 36
+	0xED726A I32Const 16
+	0xED726C I32And
+	0xED726D I32Eqz
+	0xED726E I32Const 1
+	0xED7270 I32Xor
+	0xED7271 If -1
+	0xED7273 LocalGet 6
+	0xED7275 I32Const 2
+	0xED7277 I32Eq
+	0xED7278 If -1
+	0xED727A LocalGet 1
+	0xED727C LocalGet 2
+	0xED727E LocalGet 3
+	0xED7280 LocalGet 5
+	0xED7282 I32Const 8191
+	0xED7285 I32And
+	0xED7286 I32Const 22691
+	0xED728A I32Add
+	0xED728B CallIndirect 5, 0
+	0xED728E Else
+	0xED728F LocalGet 4
+	0xED7291 LocalGet 1
+	0xED7293 LocalGet 2
+	0xED7295 LocalGet 3
+	0xED7297 LocalGet 5
+	0xED7299 I32Const 8191
+	0xED729C I32And
+	0xED729D I32Const 30963
+	0xED72A1 I32Add
+	0xED72A2 CallIndirect 15, 0
+	0xED72A5 End
+	0xED72A6 Else
+	0xED72A7 LocalGet 3
+	0xED72A9 I32Load16_S 1, 40
+	0xED72AC I32Const -1
+	0xED72AE I32Ne
+	0xED72AF If -64
+	0xED72B1 LocalGet 4
+	0xED72B3 If -1
+	0xED72B5 LocalGet 4
+	0xED72B7 I32Load 2, 0
+	0xED72BA I32Load 2, 156
+	0xED72BE I32Const 256
+	0xED72C1 I32And
+	0xED72C2 I32Const 0
+	0xED72C4 I32Ne
+	0xED72C5 Else
+	0xED72C6 I32Const 0
+	0xED72C8 End
+	0xED72C9 I32Eqz
+	0xED72CA If -64
+	0xED72CC LocalGet 0
+	0xED72CE I32Load 2, 12
+	0xED72D1 If -64
+	0xED72D3 LocalGet 4
+	0xED72D5 I32Eqz
+	0xED72D6 If -64
+	0xED72D8 LocalGet 1
+	0xED72DA LocalGet 2
+	0xED72DC LocalGet 3
+	0xED72DE LocalGet 5
+	0xED72E0 I32Const 8191
+	0xED72E3 I32And
+	0xED72E4 I32Const 22691
+	0xED72E8 I32Add
+	0xED72E9 CallIndirect 5, 0
+	0xED72EC Br 5
+	0xED72EE End
+	0xED72EF LocalGet 3
+	0xED72F1 I32Load8_S 0, 43
+	0xED72F4 I32Const 3
+	0xED72F6 I32And
+	0xED72F7 I32Const 2
+	0xED72F9 I32Eq
+	0xED72FA LocalGet 3
+	0xED72FC Call 73912
+	0xED7300 LocalSet 5
+	0xED7302 If -64
+	0xED7304 LocalGet 5
+	0xED7306 If -64
+	0xED7308 LocalGet 3
+	0xED730A LocalGet 4
+	0xED730C LocalGet 1
+	0xED730E LocalGet 2
+	0xED7310 Call 39895
+	0xED7314 Br 6
+	0xED7316 Else
+	0xED7317 LocalGet 3
+	0xED7319 LocalGet 4
+	0xED731B LocalGet 1
+	0xED731D LocalGet 2
+	0xED731F Call 39896
+	0xED7323 Br 6
+	0xED7325 End
+	0xED7326 Unreachable
+	0xED7327 Else
+	0xED7328 LocalGet 3
+	0xED732A I32Load16_U 1, 40
+	0xED732D LocalSet 6
+	0xED732F LocalGet 5
+	0xED7331 If -64
+	0xED7333 LocalGet 6
+	0xED7335 LocalGet 3
+	0xED7337 I32Load 2, 12
+	0xED733A LocalGet 4
+	0xED733C LocalGet 1
+	0xED733E LocalGet 2
+	0xED7340 Call 29775
+	0xED7344 Br 6
+	0xED7346 Else
+	0xED7347 LocalGet 6
+	0xED7349 LocalGet 4
+	0xED734B LocalGet 1
+	0xED734D LocalGet 2
+	0xED734F Call 29291
+	0xED7353 Br 6
+	0xED7355 End
+	0xED7356 Unreachable
+	0xED7357 End
+	0xED7358 Unreachable
+	0xED7359 End
+	0xED735A End
+	0xED735B End
+	0xED735C LocalGet 4
+	0xED735E LocalGet 1
+	0xED7360 LocalGet 2
+	0xED7362 LocalGet 3
+	0xED7364 LocalGet 5
+	0xED7366 I32Const 8191
+	0xED7369 I32And
+	0xED736A I32Const 30963
+	0xED736E I32Add
+	0xED736F CallIndirect 15, 0
+	0xED7372 End
+	0xED7373 End
+	0xED7374 LocalSet 3
+	0xED7376 LocalGet 8
+	0xED7378 I32Const 1
+	0xED737A I32Add
+	0xED737B LocalSet 8
+	0xED737D Br 1
+	0xED737F End
+	0xED7380 End
+	0xED7381 LocalGet 9
+	0xED7383 GlobalSet 7
+	0xED7385 LocalGet 3
+	0xED7387 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], this @ L0 (Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_tlsctx_get_protocol_t)
+	10 Nop
+	11 Move v12 @ S0_v6 (System.Delegate[]), this.delegates (System.Delegate[])
+	12 Nop
+	13 CheckEqual v14 @ TEMP_v1 (System.Boolean), this.delegates (System.Delegate[]), 0
+	14 ConditionalJump @b4, v14 @ TEMP_v1 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v26 @ S0_v7, this.delegates (System.Delegate[]), 16
+	21 Jump @b32
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckNotEqual v64 @ S0_v11 (System.Boolean), v61 @ S0_v34, v24 @ L10_v1
+	33 Not v65 @ TEMP_v3 (System.Boolean), v64 @ S0_v11 (System.Boolean)
+	34 ConditionalJump @b31, v65 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 ShiftLeft v69 @ S1_v7, v61 @ S0_v34, 2
+	39 Add v70 @ S0_v15, v26 @ S0_v7, v69 @ S1_v7
+	40 Move v71 @ S0_v16, [v70 @ S0_v15]
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Move v76 @ S0_v19, [v71 @ S0_v16+10]
+	46 Nop
+	47 Nop
+	48 Move v78 @ S0_v21, [v71 @ S0_v16+14]
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CheckEqual v82 @ S0_v23 (System.Boolean), [v78 @ S0_v21+28], -1
+	53 Not v83 @ TEMP_v4 (System.Boolean), v82 @ S0_v23 (System.Boolean)
+	54 ConditionalJump @b7, v83 @ TEMP_v4 (System.Boolean)
+	55 Nop
+	56 CallVoid 11A98, v78 @ S0_v21
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 And v95 @ S0_v29, [v78 @ S0_v21+24], 16
+	65 CheckEqual v96 @ S0_v30 (System.Boolean), v95 @ S0_v29, 0
+	66 Nop
+	67 Xor v98 @ S0_v31, v96 @ S0_v30 (System.Boolean), 1
+	68 CheckEqual v99 @ TEMP_v5 (System.Boolean), v98 @ S0_v31, 0
+	69 ConditionalJump @b11, v99 @ TEMP_v5 (System.Boolean)
+	70 Nop
+	71 Nop
+	72 CheckEqual v102 @ S0_v73 (System.Boolean), [v78 @ S0_v21+2A], 2
+	73 Not v103 @ TEMP_v16 (System.Boolean), v102 @ S0_v73 (System.Boolean)
+	74 ConditionalJump @b10, v103 @ TEMP_v16 (System.Boolean)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 And v116 @ S3_v14, [v71 @ S0_v16+8], 8191
+	81 Nop
+	82 Add v118 @ S3_v15, v116 @ S3_v14, 22691
+	83 IndirectCall v118 @ S3_v15, v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*), v78 @ S0_v21
+	84 Jump @b33
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 And v126 @ S4_v11, [v71 @ S0_v16+8], 8191
+	92 Nop
+	93 Add v36 @ S4_v1 (unitytls_errorstate*), v126 @ S4_v11, 30963
+	94 IndirectCall v36 @ S4_v1 (unitytls_errorstate*), v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), [v71 @ S0_v16+10], ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*), v78 @ S0_v21
+	95 Nop
+	96 Jump @b37
+	97 Nop
+	98 Nop
+	99 Nop
+	100 CheckNotEqual v107 @ S0_v37 (System.Boolean), [v78 @ S0_v21+28], -1
+	101 Not v108 @ TEMP_v7 (System.Boolean), v107 @ S0_v37 (System.Boolean)
+	102 ConditionalJump @b34, v108 @ TEMP_v7 (System.Boolean)
+	103 Nop
+	104 CheckEqual v131 @ TEMP_v9 (System.Boolean), [v71 @ S0_v16+10], 0
+	105 ConditionalJump @b14, v131 @ TEMP_v9 (System.Boolean)
+	106 Nop
+	107 Move v157 @ S0_v68, [v76 @ S0_v19]
+	108 Nop
+	109 Nop
+	110 And v160 @ S0_v70, [v157 @ S0_v68+9C], 256
+	111 Nop
+	112 CheckNotEqual v194 @ S0_v42 (System.Boolean), v160 @ S0_v70, 0
+	113 Jump @b35
+	114 Nop
+	115 Nop
+	116 Not v138 @ S0_v43 (System.Boolean), v194 @ S0_v42 (System.Boolean)
+	117 Not v133 @ TEMP_v10 (System.Boolean), v138 @ S0_v43 (System.Boolean)
+	118 ConditionalJump @b34, v133 @ TEMP_v10 (System.Boolean)
+	119 Nop
+	120 Nop
+	121 CheckEqual v134 @ TEMP_v11 (System.Boolean), this.invoke_impl (System.IntPtr), 0
+	122 ConditionalJump @b34, v134 @ TEMP_v11 (System.Boolean)
+	123 Nop
+	124 CheckEqual v197 @ S0_v47 (System.Boolean), [v71 @ S0_v16+10], 0
+	125 Not v178 @ TEMP_v12 (System.Boolean), v197 @ S0_v47 (System.Boolean)
+	126 ConditionalJump @b18, v178 @ TEMP_v12 (System.Boolean)
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 And v201 @ S3_v9, [v71 @ S0_v16+8], 8191
+	133 Nop
+	134 Add v166 @ S3_v10, v201 @ S3_v9, 22691
+	135 IndirectCall v166 @ S3_v10, v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*), v78 @ S0_v21
+	136 Jump @b37
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Nop
+	141 And v205 @ S0_v50, [v78 @ S0_v21+2B], 3
+	142 Nop
+	143 CheckEqual v207 @ S0_v51 (System.Boolean), v205 @ S0_v50, 2
+	144 Nop
+	145 Call 120B8, v209 @ S1_v20, v78 @ S0_v21
+	146 Nop
+	147 Not v210 @ TEMP_v13 (System.Boolean), v207 @ S0_v51 (System.Boolean)
+	148 ConditionalJump @b38, v210 @ TEMP_v13 (System.Boolean)
+	149 Nop
+	150 CheckEqual v179 @ TEMP_v15 (System.Boolean), v209 @ S1_v20, 0
+	151 ConditionalJump @b23, v179 @ TEMP_v15 (System.Boolean)
+	152 Nop
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Call 9BD7, v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), v78 @ S0_v21, [v71 @ S0_v16+10], ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*)
+	157 Jump @b37
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Call 9BD8, v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), v78 @ S0_v21, [v71 @ S0_v16+10], ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*)
+	163 Jump @b37
+	164 Nop
+	165 Interrupt
+	166 Nop
+	167 Nop
+	168 Nop
+	169 Nop
+	170 CheckEqual v180 @ TEMP_v14 (System.Boolean), v209 @ S1_v20, 0
+	171 ConditionalJump @b28, v180 @ TEMP_v14 (System.Boolean)
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Call 744F, v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), [v78 @ S0_v21+28], [v78 @ S0_v21+C], [v71 @ S0_v16+10], ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*)
+	179 Jump @b37
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Call 726B, v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), [v78 @ S0_v21+28], [v71 @ S0_v16+10], ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*)
+	185 Jump @b37
+	186 Nop
+	187 Interrupt
+	188 Nop
+	189 Interrupt
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Nop
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 And v146 @ S4_v4, [v71 @ S0_v16+8], 8191
+	200 Nop
+	201 Add v36 @ S4_v1 (unitytls_errorstate*), v146 @ S4_v4, 30963
+	202 IndirectCall v36 @ S4_v1 (unitytls_errorstate*), v187 @ S0_v32 (Mono.Unity.UnityTls+unitytls_protocol), [v71 @ S0_v16+10], ctx @ L1 (unitytls_tlsctx*), errorState @ L2 (unitytls_errorstate*), v78 @ S0_v21
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Add v61 @ S0_v34, v30 @ L8_v1, 1
+	209 Nop
+	210 Jump @b41
+	211 Nop
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Return v56 @ L3_v3 (Mono.Unity.UnityTls+unitytls_protocol)
+
+Method: System.IAsyncResult BeginInvoke(Mono.Unity.UnityTls+unitytls_tlsctx* ctx, Mono.Unity.UnityTls+unitytls_errorstate* errorState, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0xC9E82A GlobalGet 7
+	0xC9E82C LocalSet 5
+	0xC9E82E GlobalGet 7
+	0xC9E830 I32Const 16
+	0xC9E832 I32Add
+	0xC9E833 GlobalSet 7
+	0xC9E835 LocalGet 5
+	0xC9E837 I32Const 0
+	0xC9E839 I32Store 2, 8
+	0xC9E83C LocalGet 5
+	0xC9E83E LocalGet 1
+	0xC9E840 I32Store 2, 0
+	0xC9E843 LocalGet 5
+	0xC9E845 LocalGet 2
+	0xC9E847 I32Store 2, 4
+	0xC9E84A LocalGet 0
+	0xC9E84C LocalGet 5
+	0xC9E84E LocalGet 3
+	0xC9E850 LocalGet 4
+	0xC9E852 Call 73891
+	0xC9E856 LocalGet 5
+	0xC9E858 GlobalSet 7
+	0xC9E85A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7+8], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], ctx @ L1 (unitytls_tlsctx*)
+	12 Nop
+	13 Nop
+	14 Move [v1 @ G7+4], errorState @ L2 (unitytls_errorstate*)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call 120A3, returnVal1 @ S0_v8 (System.IAsyncResult), this @ L0 (Mono.Unity.UnityTls+unitytls_interface_struct+unitytls_tlsctx_get_protocol_t), v1 @ G7, callback @ L3 (System.AsyncCallback), object @ L4 (System.Object)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Return returnVal1 @ S0_v8 (System.IAsyncResult)
+
+Method: Mono.Unity.UnityTls+unitytls_protocol EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xED71D8 LocalGet 1
+	0xED71DA I32Const 0
+	0xED71DC Call 73892
+	0xED71E0 Call 29263
+	0xED71E4 I32Load 2, 0
+	0xED71E7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Newobj v3 @ S0_v2 (System.InvalidOperationException), typeof(System.InvalidOperationException)
+	3 Throw typeof(System.NullReferenceException)
+	4 Nop
+	5 Nop
+	6 Return [v4 @ S0_v3]
+

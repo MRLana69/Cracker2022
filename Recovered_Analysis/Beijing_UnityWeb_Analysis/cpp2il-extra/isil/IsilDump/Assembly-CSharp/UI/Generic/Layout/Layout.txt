@@ -1,0 +1,456 @@
+Type: UI.Generic.Layout.Layout
+
+Method: System.Void Start()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (UI.Generic.Layout.Layout)
+	3 Nop
+	4 Return
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xD41317 I32Const 0
+	0xD41319 Call 62540
+	0xD4131D If -64
+	0xD4131F LocalGet 0
+	0xD41321 I32Load 2, 32
+	0xD41324 If -64
+	0xD41326 I32Const 4
+	0xD41328 LocalGet 0
+	0xD4132A Call 29286
+	0xD4132E LocalGet 0
+	0xD41330 I32Load 2, 32
+	0xD41333 Drop
+	0xD41334 End
+	0xD41335 End
+	0xD41336 End
+
+ISIL:
+	0 Nop
+	1 Call Application.get_platform, v1 @ S0_v2 (UnityEngine.RuntimePlatform)
+	2 CheckEqual v2 @ TEMP_v1 (System.Boolean), v1 @ S0_v2 (UnityEngine.RuntimePlatform), 0
+	3 ConditionalJump @b7, v2 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 CheckEqual v6 @ TEMP_v3 (System.Boolean), this.mode (UI.Generic.Layout.Layout+AlignMode), 0
+	7 ConditionalJump @b7, v6 @ TEMP_v3 (System.Boolean)
+	8 Nop
+	9 Nop
+	10 CallVoid 7266, 4, this @ L0 (UI.Generic.Layout.Layout)
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Return
+
+Method: System.Void Update()
+
+Disassembly:
+	0xD41339 I32Const 0
+	0xD4133B Call 62540
+	0xD4133F If -64
+	0xD41341 LocalGet 0
+	0xD41343 I32Load 2, 32
+	0xD41346 I32Const 1
+	0xD41348 I32Eq
+	0xD41349 If -64
+	0xD4134B I32Const 4
+	0xD4134D LocalGet 0
+	0xD4134F Call 29286
+	0xD41353 End
+	0xD41354 End
+	0xD41355 End
+
+ISIL:
+	0 Nop
+	1 Call Application.get_platform, v1 @ S0_v2 (UnityEngine.RuntimePlatform)
+	2 CheckEqual v2 @ TEMP_v1 (System.Boolean), v1 @ S0_v2 (UnityEngine.RuntimePlatform), 0
+	3 ConditionalJump @b7, v2 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CheckEqual v7 @ S0_v6 (System.Boolean), this.mode (UI.Generic.Layout.Layout+AlignMode), 1
+	8 Not v8 @ TEMP_v3 (System.Boolean), v7 @ S0_v6 (System.Boolean)
+	9 ConditionalJump @b7, v8 @ TEMP_v3 (System.Boolean)
+	10 Nop
+	11 Nop
+	12 CallVoid 7266, 4, this @ L0 (UI.Generic.Layout.Layout)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Return
+
+Method: System.Void LateUpdate()
+
+Disassembly:
+	0xD41358 Block -64
+	0xD4135A Block -64
+	0xD4135C I32Const 0
+	0xD4135E Call 62540
+	0xD41362 If -64
+	0xD41364 LocalGet 0
+	0xD41366 I32Load 2, 32
+	0xD41369 I32Const 2
+	0xD4136B I32Eq
+	0xD4136C BrIf 1
+	0xD4136E End
+	0xD4136F Br 1
+	0xD41371 End
+	0xD41372 I32Const 4
+	0xD41374 LocalGet 0
+	0xD41376 Call 29286
+	0xD4137A End
+	0xD4137B LocalGet 0
+	0xD4137D I32Load8_S 0, 40
+	0xD41380 If -64
+	0xD41382 LocalGet 0
+	0xD41384 I32Const 0
+	0xD41386 I32Store8 0, 40
+	0xD41389 I32Const 4
+	0xD4138B LocalGet 0
+	0xD4138D Call 29286
+	0xD41391 End
+	0xD41392 End
+
+ISIL:
+	0 Nop
+	1 Call Application.get_platform, v1 @ S0_v2 (UnityEngine.RuntimePlatform)
+	2 CheckEqual v2 @ TEMP_v1 (System.Boolean), v1 @ S0_v2 (UnityEngine.RuntimePlatform), 0
+	3 ConditionalJump @b5, v2 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CheckEqual v7 @ S0_v12 (System.Boolean), this.mode (UI.Generic.Layout.Layout+AlignMode), 2
+	8 ConditionalJump @b6, v7 @ S0_v12 (System.Boolean)
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid 7266, 4, this @ L0 (UI.Generic.Layout.Layout)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Not v17 @ TEMP_v2 (System.Boolean), this._alignNow (System.Boolean)
+	19 ConditionalJump @b9, v17 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 Move this._alignNow (System.Boolean), 0
+	23 Nop
+	24 Nop
+	25 CallVoid 7266, 4, this @ L0 (UI.Generic.Layout.Layout)
+	26 Nop
+	27 Nop
+	28 Return
+
+Method: System.Void Align(System.Boolean once = False)
+
+Disassembly:
+	0xD41A2A LocalGet 0
+	0xD41A2C LocalGet 1
+	0xD41A2E I32Const 1
+	0xD41A30 I32And
+	0xD41A31 I32Store8 0, 12
+	0xD41A34 LocalGet 0
+	0xD41A36 I32Load 2, 20
+	0xD41A39 If -64
+	0xD41A3B LocalGet 0
+	0xD41A3D I32Load8_S 0, 12
+	0xD41A40 I32Eqz
+	0xD41A41 If -64
+	0xD41A43 LocalGet 0
+	0xD41A45 LocalGet 0
+	0xD41A47 I32Load 2, 20
+	0xD41A4A I32Const 0
+	0xD41A4C Call 63615
+	0xD41A50 LocalGet 0
+	0xD41A52 I32Const 0
+	0xD41A54 I32Store8 0, 24
+	0xD41A57 End
+	0xD41A58 End
+	0xD41A59 LocalGet 0
+	0xD41A5B I32Load8_S 0, 12
+	0xD41A5E If -64
+	0xD41A60 LocalGet 0
+	0xD41A62 I32Const 0
+	0xD41A64 Call 62611
+	0xD41A68 If -64
+	0xD41A6A LocalGet 0
+	0xD41A6C I32Load8_S 0, 24
+	0xD41A6F I32Eqz
+	0xD41A70 If -64
+	0xD41A72 LocalGet 0
+	0xD41A74 I32Const 20
+	0xD41A76 I32Add
+	0xD41A77 LocalGet 0
+	0xD41A79 LocalGet 0
+	0xD41A7B I32Const 0
+	0xD41A7D Call 34012
+	0xD41A81 I32Const 0
+	0xD41A83 Call 63610
+	0xD41A87 I32Store 2, 0
+	0xD41A8A End
+	0xD41A8B End
+	0xD41A8C End
+	0xD41A8D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Move this.autosizeWidget (System.Boolean), once @ L1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 CheckEqual v8 @ TEMP_v1 (System.Boolean), this.autosizeWidgetMinWidth (System.Single), 0
+	8 ConditionalJump @b12, v8 @ TEMP_v1 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Not v11 @ S0_v17 (System.Boolean), this.autosizeWidget (System.Boolean)
+	12 Not v12 @ TEMP_v7 (System.Boolean), v11 @ S0_v17 (System.Boolean)
+	13 ConditionalJump @b12, v12 @ TEMP_v7 (System.Boolean)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid MonoBehaviour.StopCoroutine, this @ L0 (UI.Generic.Layout.Layout), this.autosizeWidgetMinWidth (System.Single)
+	19 Nop
+	20 Nop
+	21 Move this.targetWidget (UIWidget), 0
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Not v22 @ TEMP_v3 (System.Boolean), this.autosizeWidget (System.Boolean)
+	27 ConditionalJump @b16, v22 @ TEMP_v3 (System.Boolean)
+	28 Nop
+	29 Nop
+	30 Call Component.get_transform, v28 @ S0_v9 (UnityEngine.Transform), this @ L0 (UI.Generic.Layout.Layout)
+	31 CheckEqual v33 @ TEMP_v5 (System.Boolean), v28 @ S0_v9 (UnityEngine.Transform), 0
+	32 ConditionalJump @b16, v33 @ TEMP_v5 (System.Boolean)
+	33 Nop
+	34 Nop
+	35 CheckEqual v41 @ S0_v12 (System.Boolean), this.targetWidget (UIWidget), 0
+	36 Not v34 @ TEMP_v6 (System.Boolean), v41 @ S0_v12 (System.Boolean)
+	37 ConditionalJump @b16, v34 @ TEMP_v6 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 Add v40 @ S0_v14, this @ L0 (UI.Generic.Layout.Layout), 20
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Call RewardForVideoButton.get_cachedRewardAmount, v36 @ S2_v5 (System.Int32), this @ L0 (UI.Generic.Layout.Layout)
+	45 Nop
+	46 Call MonoBehaviour.StartCoroutine_Auto, v38 @ S1_v8 (UnityEngine.Coroutine), this @ L0 (UI.Generic.Layout.Layout), v36 @ S2_v5 (System.Int32)
+	47 Move [v40 @ S0_v14], v38 @ S1_v8 (UnityEngine.Coroutine)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Return
+
+Method: System.Void SetToAlignModeForSpecfiedDuration(UI.Generic.Layout.Layout+AlignMode alignMode, System.Single duration)
+
+Disassembly:
+	0xD2096E LocalGet 0
+	0xD20970 I32Const 0
+	0xD20972 Call 62781
+	0xD20976 I32Const 0
+	0xD20978 Call 63024
+	0xD2097C If -64
+	0xD2097E LocalGet 0
+	0xD20980 I32Load 2, 96
+	0xD20983 I32Load 2, 12
+	0xD20986 LocalGet 1
+	0xD20988 I32Eq
+	0xD20989 If -64
+	0xD2098B LocalGet 0
+	0xD2098D I32Load8_S 0, 92
+	0xD20990 I32Eqz
+	0xD20991 If -64
+	0xD20993 I32Const 5
+	0xD20995 LocalGet 0
+	0xD20997 I32Const -64
+	0xD20999 I32Sub
+	0xD2099A I32Load 2, 0
+	0xD2099D I32Const 0
+	0xD2099F Call 29437
+	0xD209A3 I32Const 5
+	0xD209A5 LocalGet 0
+	0xD209A7 I32Load 2, 68
+	0xD209AA I32Const 0
+	0xD209AC Call 29437
+	0xD209B0 LocalGet 0
+	0xD209B2 LocalGet 0
+	0xD209B4 LocalGet 2
+	0xD209B6 LocalGet 0
+	0xD209B8 I32Load 2, 96
+	0xD209BB I32Const 20
+	0xD209BD I32Add
+	0xD209BE I32Load 2, 4
+	0xD209C1 F32Convert_I32_S
+	0xD209C2 F32Mul
+	0xD209C3 I32Const 0
+	0xD209C5 Call 42354
+	0xD209C9 I32Const 0
+	0xD209CB Call 33488
+	0xD209CF I32Const 0
+	0xD209D1 Call 63610
+	0xD209D5 Drop
+	0xD209D6 End
+	0xD209D7 End
+	0xD209D8 End
+	0xD209D9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Component.get_tag, v3 @ S0_v2 (System.String), this @ L0 (UI.Generic.Layout.Layout)
+	3 Nop
+	4 Call GameObject.get_tag, v5 @ S0_v3 (System.String), v3 @ S0_v2 (System.String)
+	5 CheckEqual v6 @ TEMP_v1 (System.Boolean), v5 @ S0_v3 (System.String), 0
+	6 ConditionalJump @b13, v6 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Move v8 @ S0_v6, [this @ L0 (UI.Generic.Layout.Layout)+60]
+	9 Nop
+	10 Nop
+	11 CheckEqual v12 @ S0_v8 (System.Boolean), [v8 @ S0_v6+C], alignMode @ L1 (UI.Generic.Layout.Layout+AlignMode)
+	12 Not v13 @ TEMP_v3 (System.Boolean), v12 @ S0_v8 (System.Boolean)
+	13 ConditionalJump @b13, v13 @ TEMP_v3 (System.Boolean)
+	14 Nop
+	15 Nop
+	16 CheckEqual v29 @ S0_v11 (System.Boolean), [this @ L0 (UI.Generic.Layout.Layout)+5C], 0
+	17 Not v24 @ TEMP_v4 (System.Boolean), v29 @ S0_v11 (System.Boolean)
+	18 ConditionalJump @b13, v24 @ TEMP_v4 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Subtract v35 @ S1_v6, this @ L0 (UI.Generic.Layout.Layout), -64
+	23 Nop
+	24 Nop
+	25 CallVoid 72FD, 5, [v35 @ S1_v6], 0
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 CallVoid 72FD, 5, [this @ L0 (UI.Generic.Layout.Layout)+44], 0
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Add v48 @ S3_v4, [this @ L0 (UI.Generic.Layout.Layout)+60], 20
+	38 Nop
+	39 Multiply v50 @ S2_v6 (System.Single), duration @ L2 (System.Single), [v48 @ S3_v4+4]
+	40 Nop
+	41 Call NumberExtensions.CeilToInt, v52 @ S2_v7 (System.Int32), v50 @ S2_v6 (System.Single)
+	42 Nop
+	43 Call MissionCell.CompleteAnimationInternal, v26 @ S1_v11 (System.Collections.IEnumerator), this @ L0 (UI.Generic.Layout.Layout), v52 @ S2_v7 (System.Int32)
+	44 Nop
+	45 Call MonoBehaviour.StartCoroutine_Auto, v28 @ S0_v15 (UnityEngine.Coroutine), this @ L0 (UI.Generic.Layout.Layout), v26 @ S1_v11 (System.Collections.IEnumerator)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void TurnOff()
+
+Disassembly:
+	0xD41395 I32Const 0
+	0xD41397 Call 62540
+	0xD4139B If -64
+	0xD4139D LocalGet 0
+	0xD4139F I32Load 2, 32
+	0xD413A2 I32Const 3
+	0xD413A4 I32Eq
+	0xD413A5 If -64
+	0xD413A7 I32Const 4
+	0xD413A9 LocalGet 0
+	0xD413AB Call 29286
+	0xD413AF End
+	0xD413B0 End
+	0xD413B1 End
+
+ISIL:
+	0 Nop
+	1 Call Application.get_platform, v1 @ S0_v2 (UnityEngine.RuntimePlatform)
+	2 CheckEqual v2 @ TEMP_v1 (System.Boolean), v1 @ S0_v2 (UnityEngine.RuntimePlatform), 0
+	3 ConditionalJump @b7, v2 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CheckEqual v7 @ S0_v6 (System.Boolean), this.mode (UI.Generic.Layout.Layout+AlignMode), 3
+	8 Not v8 @ TEMP_v3 (System.Boolean), v7 @ S0_v6 (System.Boolean)
+	9 ConditionalJump @b7, v8 @ TEMP_v3 (System.Boolean)
+	10 Nop
+	11 Nop
+	12 CallVoid 7266, 4, this @ L0 (UI.Generic.Layout.Layout)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Return
+
+Method: System.Void Align_Internal()
+
+Disassembly:
+	0xD4141D LocalGet 0
+	0xD4141F I32Const 0
+	0xD41421 I32Store 2, 32
+	0xD41424 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.mode (UI.Generic.Layout.Layout+AlignMode), 0
+	3 Nop
+	4 Return
+
+Method: System.Single get_calculatedHeight()
+
+Disassembly:
+	0xC24C2F LocalGet 0
+	0xC24C31 F32Load 2, 20
+	0xC24C34 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.autosizeWidgetMinWidth (System.Single)
+
+Method: System.Single get_calculateWidth()
+
+Disassembly:
+	0xC154B3 LocalGet 0
+	0xC154B5 F32Load 2, 48
+	0xC154B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._calculatedHeight (System.Single)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

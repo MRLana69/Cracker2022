@@ -1,0 +1,213 @@
+Type: Mono.Unity.UnityTls+unitytls_tlsctx_trace_callback
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_trace_callback), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke(System.Void* userData, Mono.Unity.UnityTls+unitytls_tlsctx* ctx, System.Byte* traceMessage, System.IntPtr traceMessageLen)
+
+Disassembly:
+	0x11F7F98 LocalGet 0
+	0x11F7F9A I32Const 8
+	0x11F7F9C I32Add
+	0x11F7F9D LocalGet 1
+	0x11F7F9F I32Store 2, 0
+	0x11F7FA2 LocalGet 0
+	0x11F7FA4 LocalGet 2
+	0x11F7FA6 I32Store 2, 20
+	0x11F7FA9 LocalGet 0
+	0x11F7FAB LocalGet 2
+	0x11F7FAD I32Store 2, 24
+	0x11F7FB0 LocalGet 0
+	0x11F7FB2 LocalGet 3
+	0x11F7FB4 LocalGet 2
+	0x11F7FB6 I32Add
+	0x11F7FB7 I32Store 2, 28
+	0x11F7FBA LocalGet 0
+	0x11F7FBC LocalGet 1
+	0x11F7FBE I32Load 2, 20
+	0x11F7FC1 I32Store 2, 32
+	0x11F7FC4 LocalGet 0
+	0x11F7FC6 LocalGet 4
+	0x11F7FC8 I32Store 2, 40
+	0x11F7FCB LocalGet 0
+	0x11F7FCD I32Const 0
+	0x11F7FCF I32Store8 0, 36
+	0x11F7FD2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_trace_callback), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], userData @ L1 (System.Void*)
+	5 Nop
+	6 Nop
+	7 Move this.method (System.IntPtr), ctx @ L2 (unitytls_tlsctx*)
+	8 Nop
+	9 Nop
+	10 Move this.delegate_trampoline (System.IntPtr), ctx @ L2 (unitytls_tlsctx*)
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v15 @ S1_v6 (System.IntPtr), traceMessage @ L3 (System.Byte*), ctx @ L2 (unitytls_tlsctx*)
+	15 Move this.extra_arg (System.IntPtr), v15 @ S1_v6 (System.IntPtr)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Move this.method_code (System.IntPtr), [userData @ L1 (System.Void*)+14]
+	20 Nop
+	21 Nop
+	22 Move this.original_method_info (System.Reflection.MethodInfo), traceMessageLen @ L4 (System.IntPtr)
+	23 Nop
+	24 Nop
+	25 Move this.method_info (System.Reflection.MethodInfo), 0
+	26 Nop
+	27 Return
+
+Method: System.IAsyncResult BeginInvoke(System.Void* userData, Mono.Unity.UnityTls+unitytls_tlsctx* ctx, System.Byte* traceMessage, System.IntPtr traceMessageLen, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x111B4B4 GlobalGet 7
+	0x111B4B6 LocalSet 7
+	0x111B4B8 GlobalGet 7
+	0x111B4BA I32Const 32
+	0x111B4BC I32Add
+	0x111B4BD GlobalSet 7
+	0x111B4BF LocalGet 7
+	0x111B4C1 I32Const 20
+	0x111B4C3 I32Add
+	0x111B4C4 LocalTee 8
+	0x111B4C6 LocalGet 3
+	0x111B4C8 I32Store 2, 0
+	0x111B4CB I32Const 4566246
+	0x111B4D0 I32Load8_S 0, 0
+	0x111B4D3 I32Eqz
+	0x111B4D4 If -64
+	0x111B4D6 I32Const 3029700
+	0x111B4DB I32Load 2, 0
+	0x111B4DE Call 73003
+	0x111B4E2 I32Const 4566246
+	0x111B4E7 I32Const 1
+	0x111B4E9 I32Store8 0, 0
+	0x111B4EC End
+	0x111B4ED LocalGet 7
+	0x111B4EF I32Const 0
+	0x111B4F1 I32Store 2, 16
+	0x111B4F4 LocalGet 7
+	0x111B4F6 LocalGet 1
+	0x111B4F8 I32Store 2, 0
+	0x111B4FB LocalGet 7
+	0x111B4FD LocalGet 2
+	0x111B4FF I32Store 2, 4
+	0x111B502 LocalGet 7
+	0x111B504 I32Const 4427848
+	0x111B509 I32Load 2, 0
+	0x111B50C LocalGet 8
+	0x111B50E Call 73903
+	0x111B512 I32Store 2, 8
+	0x111B515 LocalGet 7
+	0x111B517 LocalGet 4
+	0x111B519 I32Store 2, 12
+	0x111B51C LocalGet 0
+	0x111B51E LocalGet 7
+	0x111B520 LocalGet 5
+	0x111B522 LocalGet 6
+	0x111B524 Call 73891
+	0x111B528 LocalGet 7
+	0x111B52A GlobalSet 7
+	0x111B52C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 20
+	9 Nop
+	10 Nop
+	11 Move [v9 @ S0_v5], traceMessage @ L3 (System.Byte*)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Jump @b7
+	17 Nop
+	18 Move v18 @ S0_v18, [2E3AC4]
+	19 CallVoid "il2cpp_runtime_class_init_actual", v18 @ S0_v18
+	20 Nop
+	21 Move v20 @ S1_v14, 1
+	22 Move [45ACE6], v20 @ S1_v14
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7+10], 0
+	27 Nop
+	28 Nop
+	29 Move [v1 @ G7], userData @ L1 (System.Void*)
+	30 Nop
+	31 Nop
+	32 Move [v1 @ G7+4], ctx @ L2 (unitytls_tlsctx*)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 120AF, v35 @ S1_v10, typeof(System.IntPtr), v9 @ S0_v5
+	38 Move [v1 @ G7+8], v35 @ S1_v10
+	39 Nop
+	40 Nop
+	41 Move [v1 @ G7+C], traceMessageLen @ L4 (System.IntPtr)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Call 120A3, returnVal1 @ S0_v16 (System.IAsyncResult), this @ L0 (Mono.Unity.UnityTls+unitytls_tlsctx_trace_callback), v1 @ G7, callback @ L5 (System.AsyncCallback), object @ L6 (System.Object)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return returnVal1 @ S0_v16 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

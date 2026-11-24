@@ -1,0 +1,435 @@
+Type: SYBO.Components.Utilities.ProgressBarUtility
+
+Method: System.Boolean IsAvailable()
+
+Disassembly:
+	0xFFB266 I32Const 4562700
+	0xFFB26B I32Load8_S 0, 0
+	0xFFB26E I32Eqz
+	0xFFB26F If -64
+	0xFFB271 I32Const 2960076
+	0xFFB276 I32Load 2, 0
+	0xFFB279 Call 73003
+	0xFFB27D I32Const 4562700
+	0xFFB282 I32Const 1
+	0xFFB284 I32Store8 0, 0
+	0xFFB287 End
+	0xFFB288 I32Const 4540212
+	0xFFB28D I32Load 2, 0
+	0xFFB290 I32Const 0
+	0xFFB292 Call 45795
+	0xFFB296 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2D2ACC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [459F0C], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call FileUtility.ConvertToPathWithBackSlashes, returnVal1 @ S0_v7 (System.Boolean), "GIT_BRANCH"
+	16 Nop
+	17 Return returnVal1 @ S0_v7 (System.Boolean)
+
+Method: System.Boolean HasProgressBar()
+
+Disassembly:
+	0x75CD0 I32Const 0
+	0x75CD2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 0
+
+Method: System.Void DisplayCancelableProgressBar(System.String title, System.String info, System.Single progress)
+
+Disassembly:
+	0xD4D477 LocalGet 0
+	0xD4D479 LocalGet 0
+	0xD4D47B LocalGet 1
+	0xD4D47D LocalGet 2
+	0xD4D47F I32Const 0
+	0xD4D481 Call 34279
+	0xD4D485 I32Const 0
+	0xD4D487 Call 63610
+	0xD4D48B Drop
+	0xD4D48C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call RouteBuilder.CanDespawnPassedChunk, v8 @ S1_v2 (System.Boolean), title @ L0 (System.String), info @ L1 (System.String), progress @ L2 (System.Single)
+	6 Nop
+	7 Call MonoBehaviour.StartCoroutine_Auto, v10 @ S0_v2 (UnityEngine.Coroutine), title @ L0 (System.String), v8 @ S1_v2 (System.Boolean)
+	8 Nop
+	9 Return
+
+Method: System.Void DisplayProgressBar(System.String title, System.String info, System.Single progress)
+
+Disassembly:
+	0xD49FBE Nop
+	0xD49FBF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void ClearProgressBar()
+
+Disassembly:
+	0xFFECF5 I32Const 4562777
+	0xFFECFA I32Load8_S 0, 0
+	0xFFECFD I32Eqz
+	0xFFECFE If -64
+	0xFFED00 I32Const 2992620
+	0xFFED05 I32Load 2, 0
+	0xFFED08 Call 73003
+	0xFFED0C I32Const 4562777
+	0xFFED11 I32Const 1
+	0xFFED13 I32Store8 0, 0
+	0xFFED16 End
+	0xFFED17 I32Const 4441480
+	0xFFED1C I32Load 2, 0
+	0xFFED1F Call 72556
+	0xFFED23 LocalTee 0
+	0xFFED25 I32Const 0
+	0xFFED27 Call 34337
+	0xFFED2B I32Const 4439900
+	0xFFED30 I32Load 2, 0
+	0xFFED33 I32Load 2, 92
+	0xFFED36 I32Const 4
+	0xFFED38 I32Add
+	0xFFED39 LocalGet 0
+	0xFFED3B I32Store 2, 0
+	0xFFED3E I32Const 4439900
+	0xFFED43 I32Load 2, 0
+	0xFFED46 I32Load 2, 92
+	0xFFED49 I32Const 5
+	0xFFED4B I32Store 2, 16
+	0xFFED4E I32Const 4432420
+	0xFFED53 I32Load 2, 0
+	0xFFED56 Call 72556
+	0xFFED5A LocalSet 0
+	0xFFED5C I32Const 4439900
+	0xFFED61 I32Load 2, 0
+	0xFFED64 I32Load 2, 92
+	0xFFED67 I32Const 32
+	0xFFED69 I32Add
+	0xFFED6A LocalGet 0
+	0xFFED6C I32Store 2, 0
+	0xFFED6F I32Const 4441484
+	0xFFED74 I32Load 2, 0
+	0xFFED77 Call 72556
+	0xFFED7B LocalTee 0
+	0xFFED7D I32Const 0
+	0xFFED7F I32Const 0
+	0xFFED81 I32Const 4483696
+	0xFFED86 I32Load 2, 0
+	0xFFED89 I32Load 2, 12
+	0xFFED8C I32Load 2, 96
+	0xFFED8F I32Load 2, 0
+	0xFFED92 LocalTee 1
+	0xFFED94 LocalGet 1
+	0xFFED96 I32Load 2, 0
+	0xFFED99 I32Const 8191
+	0xFFED9C I32And
+	0xFFED9D I32Const 113696
+	0xFFEDA1 I32Add
+	0xFFEDA2 CallIndirect 8, 0
+	0xFFEDA5 I32Const 4439900
+	0xFFEDAA I32Load 2, 0
+	0xFFEDAD I32Load 2, 92
+	0xFFEDB0 I32Const 36
+	0xFFEDB2 I32Add
+	0xFFEDB3 LocalGet 0
+	0xFFEDB5 I32Store 2, 0
+	0xFFEDB8 I32Const 4441488
+	0xFFEDBD I32Load 2, 0
+	0xFFEDC0 Call 72556
+	0xFFEDC4 LocalTee 0
+	0xFFEDC6 I32Const 0
+	0xFFEDC8 I32Const 0
+	0xFFEDCA I32Const 4481880
+	0xFFEDCF I32Load 2, 0
+	0xFFEDD2 I32Load 2, 12
+	0xFFEDD5 I32Load 2, 96
+	0xFFEDD8 I32Load 2, 0
+	0xFFEDDB LocalTee 1
+	0xFFEDDD LocalGet 1
+	0xFFEDDF I32Load 2, 0
+	0xFFEDE2 I32Const 8191
+	0xFFEDE5 I32And
+	0xFFEDE6 I32Const 113696
+	0xFFEDEA I32Add
+	0xFFEDEB CallIndirect 8, 0
+	0xFFEDEE I32Const 4439900
+	0xFFEDF3 I32Load 2, 0
+	0xFFEDF6 I32Load 2, 92
+	0xFFEDF9 I32Const 40
+	0xFFEDFB I32Add
+	0xFFEDFC LocalGet 0
+	0xFFEDFE I32Store 2, 0
+	0xFFEE01 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v37, [2DA9EC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v37
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [459F59], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (SYBO.Components.Utilities.PreRuntimePoolItem), typeof(SYBO.Components.Utilities.SpawnPoolsDict)
+	15 Nop
+	16 Nop
+	17 CallVoid PreRuntimePoolItem.Start, v13 @ S0_v7 (SYBO.Components.Utilities.PreRuntimePoolItem)
+	18 Nop
+	19 Move v17 @ S0_v9 (Il2CppClass<SYBO.Components.Utilities.PoolManager>), typeof(SYBO.Components.Utilities.PoolManager)
+	20 Nop
+	21 Nop
+	22 Add v20 @ S0_v11, [v17 @ S0_v9 (Il2CppClass<SYBO.Components.Utilities.PoolManager>)+5C], 4
+	23 Nop
+	24 Move [v20 @ S0_v11], v13 @ S0_v7 (SYBO.Components.Utilities.PreRuntimePoolItem)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Move v24.BalancingBudgetMS (System.Int32), 5
+	30 Nop
+	31 Nop
+	32 Call 11B6C, v28 @ S0_v17, typeof(System.Diagnostics.Stopwatch)
+	33 Nop
+	34 Nop
+	35 Move v31 @ S0_v19 (Il2CppClass<SYBO.Components.Utilities.PoolManager>), typeof(SYBO.Components.Utilities.PoolManager)
+	36 Nop
+	37 Nop
+	38 Add v34 @ S0_v21, [v31 @ S0_v19 (Il2CppClass<SYBO.Components.Utilities.PoolManager>)+5C], 32
+	39 Nop
+	40 Move [v34 @ S0_v21], v28 @ S0_v17
+	41 Nop
+	42 Nop
+	43 Call 11B6C, v38 @ S0_v24, typeof(System.Collections.Generic.Dictionary`2<UnityEngine.Transform, SYBO.Components.Utilities.PrefabPool>)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Move v43 @ S3_v2 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<UnityEngine.Transform, SYBO.Components.Utilities.PrefabPool>::.ctor)
+	49 Move v44 @ S3_v3, [v43 @ S3_v2 (Il2CppMethodInfo)+C]
+	50 Move v45 @ S3_v4, [v44 @ S3_v3+60]
+	51 Move v46 @ S3_v5, [v45 @ S3_v4]
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 And v51 @ S4_v3, [v46 @ S3_v5], 8191
+	57 Nop
+	58 Add v53 @ S4_v4, v51 @ S4_v3, 113696
+	59 IndirectCall v53 @ S4_v4, v54 @ SRET_v1, v38 @ S0_v24, 0, 0, v46 @ S3_v5
+	60 Nop
+	61 Move v56 @ S0_v26 (Il2CppClass<SYBO.Components.Utilities.PoolManager>), typeof(SYBO.Components.Utilities.PoolManager)
+	62 Nop
+	63 Nop
+	64 Add v59 @ S0_v28, [v56 @ S0_v26 (Il2CppClass<SYBO.Components.Utilities.PoolManager>)+5C], 36
+	65 Nop
+	66 Move [v59 @ S0_v28], v38 @ S0_v24
+	67 Nop
+	68 Nop
+	69 Call 11B6C, v63 @ S0_v31, typeof(System.Collections.Generic.Dictionary`2<System.Int32, SYBO.Components.Utilities.PooledInstanceData>)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Move v68 @ S3_v7 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.Int32, SYBO.Components.Utilities.PooledInstanceData>::.ctor)
+	75 Move v69 @ S3_v8, [v68 @ S3_v7 (Il2CppMethodInfo)+C]
+	76 Move v70 @ S3_v9, [v69 @ S3_v8+60]
+	77 Move v71 @ S3_v10, [v70 @ S3_v9]
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 And v76 @ S4_v7, [v71 @ S3_v10], 8191
+	83 Nop
+	84 Add v78 @ S4_v8, v76 @ S4_v7, 113696
+	85 IndirectCall v78 @ S4_v8, v79 @ SRET_v2, v63 @ S0_v31, 0, 0, v71 @ S3_v10
+	86 Nop
+	87 Move v81 @ S0_v33 (Il2CppClass<SYBO.Components.Utilities.PoolManager>), typeof(SYBO.Components.Utilities.PoolManager)
+	88 Nop
+	89 Nop
+	90 Add v84 @ S0_v35, [v81 @ S0_v33 (Il2CppClass<SYBO.Components.Utilities.PoolManager>)+5C], 40
+	91 Nop
+	92 Move [v84 @ S0_v35], v63 @ S0_v31
+	93 Nop
+	94 Return
+
+Method: System.Void ClearProgressBarAfterDelay(System.Single delayInSeconds)
+
+Disassembly:
+	0x1039445 I32Const 4563384
+	0x103944A I32Load8_S 0, 0
+	0x103944D I32Eqz
+	0x103944E If -64
+	0x1039450 I32Const 2984296
+	0x1039455 I32Load 2, 0
+	0x1039458 Call 73003
+	0x103945C I32Const 4563384
+	0x1039461 I32Const 1
+	0x1039463 I32Store8 0, 0
+	0x1039466 End
+	0x1039467 I32Const 4435588
+	0x103946C I32Load 2, 0
+	0x103946F LocalTee 1
+	0x1039471 I32Load16_S 1, 186
+	0x1039475 I32Const 512
+	0x1039478 I32And
+	0x1039479 If -64
+	0x103947B LocalGet 1
+	0x103947D I32Load 2, 116
+	0x1039480 I32Eqz
+	0x1039481 If -64
+	0x1039483 LocalGet 1
+	0x1039485 Call 72345
+	0x1039489 I32Const 4435588
+	0x103948E I32Load 2, 0
+	0x1039491 LocalSet 1
+	0x1039493 End
+	0x1039494 End
+	0x1039495 LocalGet 1
+	0x1039497 I32Load 2, 92
+	0x103949A F32Load 2, 12
+	0x103949D LocalGet 0
+	0x103949F F32Ne
+	0x10394A0 If -64
+	0x10394A2 I32Const 4435588
+	0x10394A7 I32Load 2, 0
+	0x10394AA LocalTee 1
+	0x10394AC I32Load16_S 1, 186
+	0x10394B0 I32Const 512
+	0x10394B3 I32And
+	0x10394B4 If -64
+	0x10394B6 LocalGet 1
+	0x10394B8 I32Load 2, 116
+	0x10394BB I32Eqz
+	0x10394BC If -64
+	0x10394BE LocalGet 1
+	0x10394C0 Call 72345
+	0x10394C4 I32Const 4435588
+	0x10394C9 I32Load 2, 0
+	0x10394CC LocalSet 1
+	0x10394CE End
+	0x10394CF End
+	0x10394D0 LocalGet 1
+	0x10394D2 I32Load 2, 92
+	0x10394D5 I32Const 1
+	0x10394D7 I32Store8 0, 8
+	0x10394DA I32Const 4435588
+	0x10394DF I32Load 2, 0
+	0x10394E2 I32Load 2, 92
+	0x10394E5 LocalGet 0
+	0x10394E7 F32Store 2, 12
+	0x10394EA I32Const 4537968
+	0x10394EF I32Load 2, 0
+	0x10394F2 LocalGet 0
+	0x10394F4 I32Const 0
+	0x10394F6 Call 63772
+	0x10394FA End
+	0x10394FB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v40, [2D8968]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v40
+	8 Nop
+	9 Move v7 @ S1_v9, 1
+	10 Move [45A1B8], v7 @ S1_v9
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<NGUITools>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b17, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v33 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	21 Nop
+	22 CheckEqual v20 @ S0_v35 (System.Boolean), [v18 @ S0_v33 (Il2CppClass<NGUITools>)+74], 0
+	23 Not v21 @ TEMP_v9 (System.Boolean), v20 @ S0_v35 (System.Boolean)
+	24 ConditionalJump @b17, v21 @ TEMP_v9 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(NGUITools)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CheckNotEqual v32 @ S0_v13 (System.Boolean), v28.mGlobalVolume (System.Single), delayInSeconds @ L0 (System.Single)
+	37 Not v33 @ TEMP_v4 (System.Boolean), v32 @ S0_v13 (System.Boolean)
+	38 ConditionalJump @b12, v33 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Move v36 @ S0_v16 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 And v40 @ S0_v18, [v36 @ S0_v16 (Il2CppClass<NGUITools>)+BA], 512
+	45 CheckEqual v41 @ TEMP_v6 (System.Boolean), v40 @ S0_v18, 0
+	46 ConditionalJump @b15, v41 @ TEMP_v6 (System.Boolean)
+	47 Move v54 @ S0_v27 (Il2CppClass<NGUITools>), typeof(NGUITools)
+	48 Nop
+	49 CheckEqual v56 @ S0_v29 (System.Boolean), [v54 @ S0_v27 (Il2CppClass<NGUITools>)+74], 0
+	50 Not v57 @ TEMP_v8 (System.Boolean), v56 @ S0_v29 (System.Boolean)
+	51 ConditionalJump @b15, v57 @ TEMP_v8 (System.Boolean)
+	52 Nop
+	53 CallVoid 11A99, typeof(NGUITools)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move v62.mLoaded (System.Boolean), 1
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Move v66.mGlobalVolume (System.Single), delayInSeconds @ L0 (System.Single)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 CallVoid SpaceAttribute..ctor, "Sound", delayInSeconds @ L0 (System.Single)
+	73 Nop
+	74 Nop
+	75 Return
+

@@ -1,0 +1,908 @@
+Type: SYBO.Components.Json.JsonObjectStore
+
+Method: T Get(System.Object key)
+
+Disassembly:
+	0xF9C87B LocalGet 0
+	0xF9C87D I32Const 0
+	0xF9C87F Call 45467
+	0xF9C883 LocalGet 1
+	0xF9C885 LocalGet 0
+	0xF9C887 LocalGet 2
+	0xF9C889 I32Load 2, 24
+	0xF9C88C I32Load 2, 0
+	0xF9C88F LocalTee 1
+	0xF9C891 LocalGet 1
+	0xF9C893 I32Load 2, 0
+	0xF9C896 I32Const 8191
+	0xF9C899 I32And
+	0xF9C89A I32Const 22691
+	0xF9C89E I32Add
+	0xF9C89F CallIndirect 5, 0
+	0xF9C8A2 LocalGet 0
+	0xF9C8A4 I32Const 0
+	0xF9C8A6 Call 45469
+	0xF9C8AA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid JsonContext.EndDeserialize, this @ L0 (SYBO.Components.Json.JsonObjectStore)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Move v8 @ S2_v2, [methodInfo @ L2 (Il2CppMethodInfo)+18]
+	7 Move v9 @ S2_v3, [v8 @ S2_v2]
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 And v14 @ S3_v3, [v9 @ S2_v3], 8191
+	13 Nop
+	14 Add v16 @ S3_v4, v14 @ S3_v3, 22691
+	15 IndirectCall v16 @ S3_v4, returnVal1 @ S0_v3 (T), key @ L1 (System.Object), this @ L0 (SYBO.Components.Json.JsonObjectStore), v9 @ S2_v3
+	16 Nop
+	17 Nop
+	18 CallVoid JsonContext.BeginSerialize, this @ L0 (SYBO.Components.Json.JsonObjectStore)
+	19 Nop
+	20 Return returnVal1 @ S0_v3 (T)
+
+Method: System.Object Get(System.Type type, System.Object key)
+
+Disassembly:
+	0xFF1A1C I32Const 4562537
+	0xFF1A21 I32Load8_S 0, 0
+	0xFF1A24 I32Eqz
+	0xFF1A25 If -64
+	0xFF1A27 I32Const 2974432
+	0xFF1A2C I32Load 2, 0
+	0xFF1A2F Call 73003
+	0xFF1A33 I32Const 4562537
+	0xFF1A38 I32Const 1
+	0xFF1A3A I32Store8 0, 0
+	0xFF1A3D End
+	0xFF1A3E LocalGet 0
+	0xFF1A40 LocalGet 1
+	0xFF1A42 I32Const 4499576
+	0xFF1A47 I32Load 2, 0
+	0xFF1A4A Call 29402
+	0xFF1A4E LocalSet 0
+	0xFF1A50 I32Const 4427772
+	0xFF1A55 I32Load 2, 0
+	0xFF1A58 LocalSet 1
+	0xFF1A5A LocalGet 0
+	0xFF1A5C If -1
+	0xFF1A5E LocalGet 0
+	0xFF1A60 I32Load 2, 0
+	0xFF1A63 LocalGet 1
+	0xFF1A65 I32Eq
+	0xFF1A66 If -1
+	0xFF1A68 LocalGet 0
+	0xFF1A6A Else
+	0xFF1A6B I32Const 0
+	0xFF1A6D End
+	0xFF1A6E Else
+	0xFF1A6F I32Const 0
+	0xFF1A71 End
+	0xFF1A72 LocalTee 0
+	0xFF1A74 If -1
+	0xFF1A76 LocalGet 0
+	0xFF1A78 Else
+	0xFF1A79 LocalGet 2
+	0xFF1A7B End
+	0xFF1A7C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v22, [2D62E0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [459E69], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Call List`1<System.Object>.get_Item, returnVal1 @ S0_v11 (System.Object), this @ L0 (SYBO.Components.Json.JsonObjectStore), type @ L1 (System.Type)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CheckEqual v23 @ TEMP_v2 (System.Boolean), returnVal1 @ S0_v11 (System.Object), 0
+	23 ConditionalJump @b9, v23 @ TEMP_v2 (System.Boolean)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CheckEqual v27 @ S0_v17 (System.Boolean), [returnVal1 @ S0_v11 (System.Object)], typeof(System.String)
+	28 Not v28 @ TEMP_v5 (System.Boolean), v27 @ S0_v17 (System.Boolean)
+	29 ConditionalJump @b8, v28 @ TEMP_v5 (System.Boolean)
+	30 Nop
+	31 Jump @b13
+	32 Nop
+	33 Nop
+	34 Jump @b15
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CheckEqual v37 @ TEMP_v4 (System.Boolean), returnVal1 @ S0_v11 (System.Object), 0
+	39 ConditionalJump @b11, v37 @ TEMP_v4 (System.Boolean)
+	40 Nop
+	41 Jump @b14
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Return returnVal1 @ S0_v11 (System.Object)
+
+Method: System.Void Set(System.Object key, T obj)
+
+Disassembly:
+	0x1168B64 GlobalGet 7
+	0x1168B66 LocalSet 0
+	0x1168B68 GlobalGet 7
+	0x1168B6A I32Const 16
+	0x1168B6C I32Add
+	0x1168B6D GlobalSet 7
+	0x1168B6F I32Const 4567109
+	0x1168B74 I32Load8_S 0, 0
+	0x1168B77 I32Eqz
+	0x1168B78 If -64
+	0x1168B7A I32Const 3003608
+	0x1168B7F I32Load 2, 0
+	0x1168B82 Call 73003
+	0x1168B86 I32Const 4567109
+	0x1168B8B I32Const 1
+	0x1168B8D I32Store8 0, 0
+	0x1168B90 End
+	0x1168B91 LocalGet 0
+	0x1168B93 I32Const 0
+	0x1168B95 I32Store 2, 0
+	0x1168B98 I32Const 5
+	0x1168B9A LocalGet 1
+	0x1168B9C Call 29262
+	0x1168BA0 LocalSet 6
+	0x1168BA2 I32Const 5
+	0x1168BA4 LocalGet 2
+	0x1168BA6 Call 29262
+	0x1168BAA LocalSet 7
+	0x1168BAC I32Const 4428060
+	0x1168BB1 I32Load 2, 0
+	0x1168BB4 I32Const 2
+	0x1168BB6 Call 71670
+	0x1168BBA LocalTee 4
+	0x1168BBC LocalGet 1
+	0x1168BBE Call 29652
+	0x1168BC2 LocalGet 4
+	0x1168BC4 I32Const 16
+	0x1168BC6 I32Add
+	0x1168BC7 LocalGet 1
+	0x1168BC9 I32Store 2, 0
+	0x1168BCC LocalGet 4
+	0x1168BCE LocalGet 2
+	0x1168BD0 Call 29652
+	0x1168BD4 LocalGet 4
+	0x1168BD6 I32Const 20
+	0x1168BD8 I32Add
+	0x1168BD9 LocalGet 2
+	0x1168BDB I32Store 2, 0
+	0x1168BDE I32Const 4440576
+	0x1168BE3 I32Load 2, 0
+	0x1168BE6 LocalTee 5
+	0x1168BE8 I32Load16_S 1, 186
+	0x1168BEC I32Const 512
+	0x1168BEF I32And
+	0x1168BF0 If -64
+	0x1168BF2 LocalGet 5
+	0x1168BF4 I32Load 2, 116
+	0x1168BF7 I32Eqz
+	0x1168BF8 If -64
+	0x1168BFA LocalGet 5
+	0x1168BFC Call 72345
+	0x1168C00 End
+	0x1168C01 End
+	0x1168C02 LocalGet 0
+	0x1168C04 I32Const 4
+	0x1168C06 I32Add
+	0x1168C07 LocalSet 5
+	0x1168C09 I32Const 1
+	0x1168C0B I32Const 4549172
+	0x1168C10 I32Load 2, 0
+	0x1168C13 LocalGet 4
+	0x1168C15 I32Const 0
+	0x1168C17 Call 34227
+	0x1168C1B Block -64
+	0x1168C1D LocalGet 7
+	0x1168C1F If -64
+	0x1168C21 LocalGet 6
+	0x1168C23 I32Eqz
+	0x1168C24 If -64
+	0x1168C26 I32Const 0
+	0x1168C28 Call 34236
+	0x1168C2C LocalGet 1
+	0x1168C2E I32Const 0
+	0x1168C30 Call 34244
+	0x1168C34 Br 2
+	0x1168C36 End
+	0x1168C37 I32Const 4428060
+	0x1168C3C I32Load 2, 0
+	0x1168C3F I32Const 2
+	0x1168C41 Call 71670
+	0x1168C45 LocalSet 4
+	0x1168C47 LocalGet 5
+	0x1168C49 I32Const 1
+	0x1168C4B I32Store8 0, 0
+	0x1168C4E LocalGet 4
+	0x1168C50 I32Const 4428456
+	0x1168C55 I32Load 2, 0
+	0x1168C58 LocalGet 5
+	0x1168C5A Call 73903
+	0x1168C5E LocalTee 5
+	0x1168C60 Call 29652
+	0x1168C64 LocalGet 4
+	0x1168C66 I32Const 16
+	0x1168C68 I32Add
+	0x1168C69 LocalGet 5
+	0x1168C6B I32Store 2, 0
+	0x1168C6E LocalGet 4
+	0x1168C70 LocalGet 2
+	0x1168C72 Call 29652
+	0x1168C76 LocalGet 4
+	0x1168C78 I32Const 20
+	0x1168C7A I32Add
+	0x1168C7B LocalGet 2
+	0x1168C7D I32Store 2, 0
+	0x1168C80 I32Const 4440576
+	0x1168C85 I32Load 2, 0
+	0x1168C88 LocalTee 5
+	0x1168C8A I32Load16_S 1, 186
+	0x1168C8E I32Const 512
+	0x1168C91 I32And
+	0x1168C92 If -64
+	0x1168C94 LocalGet 5
+	0x1168C96 I32Load 2, 116
+	0x1168C99 I32Eqz
+	0x1168C9A If -64
+	0x1168C9C LocalGet 5
+	0x1168C9E Call 72345
+	0x1168CA2 End
+	0x1168CA3 End
+	0x1168CA4 I32Const 1
+	0x1168CA6 I32Const 4549176
+	0x1168CAB I32Load 2, 0
+	0x1168CAE LocalGet 4
+	0x1168CB0 I32Const 0
+	0x1168CB2 Call 34227
+	0x1168CB6 End
+	0x1168CB7 I32Const 0
+	0x1168CB9 Call 34236
+	0x1168CBD LocalGet 2
+	0x1168CBF I32Const 0
+	0x1168CC1 Call 34244
+	0x1168CC5 LocalGet 0
+	0x1168CC7 I32Const 4
+	0x1168CC9 Call 14799
+	0x1168CCC LocalGet 0
+	0x1168CCE I32Load 2, 0
+	0x1168CD1 LocalGet 3
+	0x1168CD3 I32Const 12
+	0x1168CD5 I32Add
+	0x1168CD6 LocalTee 2
+	0x1168CD8 I32Load 2, 0
+	0x1168CDB I32Load 2, 96
+	0x1168CDE I32Load 2, 44
+	0x1168CE1 LocalTee 3
+	0x1168CE3 LocalGet 3
+	0x1168CE5 I32Load 2, 0
+	0x1168CE8 I32Const 16383
+	0x1168CEC I32And
+	0x1168CED I32Const 80504
+	0x1168CF1 I32Add
+	0x1168CF2 CallIndirect 4, 0
+	0x1168CF5 LocalGet 2
+	0x1168CF7 I32Load 2, 0
+	0x1168CFA I32Load 2, 96
+	0x1168CFD LocalTee 3
+	0x1168CFF I32Load 2, 44
+	0x1168D02 I32Load 2, 0
+	0x1168D05 LocalSet 4
+	0x1168D07 LocalGet 1
+	0x1168D09 LocalGet 3
+	0x1168D0B I32Load 2, 8
+	0x1168D0E Call 29253
+	0x1168D12 Call 73902
+	0x1168D16 LocalGet 2
+	0x1168D18 I32Load 2, 0
+	0x1168D1B I32Load 2, 96
+	0x1168D1E I32Load 2, 8
+	0x1168D21 Call 29253
+	0x1168D25 Call 33276
+	0x1168D29 LocalGet 2
+	0x1168D2B I32Load 2, 0
+	0x1168D2E I32Load 2, 96
+	0x1168D31 I32Load 2, 44
+	0x1168D34 LocalGet 4
+	0x1168D36 I32Const 16383
+	0x1168D3A I32And
+	0x1168D3B I32Const 80504
+	0x1168D3F I32Add
+	0x1168D40 CallIndirect 4, 0
+	0x1168D43 End
+	0x1168D44 LocalGet 0
+	0x1168D46 GlobalSet 7
+	0x1168D48 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b34
+	11 Nop
+	12 Move v12 @ S0_v75, [2DD4D8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v75
+	14 Nop
+	15 Move v14 @ S1_v52, 1
+	16 Move [45B045], v14 @ S1_v52
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Nop
+	23 Call 724E, v22 @ S0_v10, 5, key @ L1 (System.Object)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Call 724E, v27 @ S0_v12, 5, obj @ L2 (T)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Newobj v32 @ S0_v15 (System.OverflowException), typeof(System.OverflowException)
+	33 Nop
+	34 Nop
+	35 Throw typeof(System.ArrayTypeMismatchException)
+	36 Nop
+	37 Nop
+	38 Add v37 @ S0_v17, v32 @ S0_v15 (System.OverflowException), 16
+	39 Nop
+	40 Move [v37 @ S0_v17], key @ L1 (System.Object)
+	41 Nop
+	42 Nop
+	43 Throw typeof(System.ArrayTypeMismatchException)
+	44 Nop
+	45 Nop
+	46 Add v43 @ S0_v20, v32 @ S0_v15 (System.OverflowException), 20
+	47 Nop
+	48 Move [v43 @ S0_v20], obj @ L2 (T)
+	49 Nop
+	50 Move v46 @ S0_v22 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>), typeof(SYBO.Components.Utilities.SingletonMonoBehaviour)
+	51 Nop
+	52 Nop
+	53 Nop
+	54 And v50 @ S0_v24, [v46 @ S0_v22 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>)+BA], 512
+	55 CheckEqual v51 @ TEMP_v2 (System.Boolean), v50 @ S0_v24, 0
+	56 ConditionalJump @b35, v51 @ TEMP_v2 (System.Boolean)
+	57 Move v52 @ S0_v70 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>), typeof(SYBO.Components.Utilities.SingletonMonoBehaviour)
+	58 Nop
+	59 CheckEqual v54 @ S0_v72 (System.Boolean), [v52 @ S0_v70 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>)+74], 0
+	60 Not v55 @ TEMP_v11 (System.Boolean), v54 @ S0_v72 (System.Boolean)
+	61 ConditionalJump @b35, v55 @ TEMP_v11 (System.Boolean)
+	62 Nop
+	63 CallVoid 11A99, typeof(SYBO.Components.Utilities.SingletonMonoBehaviour)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Add v61 @ S0_v27, v1 @ G7, 4
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 CallVoid ToStringObject..ctor, 1, "DestroyNewMeOrOldInstance() comparing... New:{0} and Old:{1}", v32 @ S0_v15 (System.OverflowException)
+	76 Nop
+	77 CheckEqual v69 @ TEMP_v4 (System.Boolean), v27 @ S0_v12, 0
+	78 ConditionalJump @b26, v69 @ TEMP_v4 (System.Boolean)
+	79 Nop
+	80 CheckEqual v71 @ S0_v47 (System.Boolean), v22 @ S0_v10, 0
+	81 Not v72 @ TEMP_v7 (System.Boolean), v71 @ S0_v47 (System.Boolean)
+	82 ConditionalJump @b18, v72 @ TEMP_v7 (System.Boolean)
+	83 Nop
+	84 Call Locale.GetISOThreeLetterLanguageCode, v90 @ S0_v69 (System.String)
+	85 Nop
+	86 Nop
+	87 CallVoid SingletonMonoBehaviourManager.DestroySingleton, v90 @ S0_v69 (System.String), key @ L1 (System.Object)
+	88 Jump @b36
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Newobj v94 @ S0_v50 (System.OverflowException), typeof(System.OverflowException)
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Move [v61 @ S0_v27], 1
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Call 120AF, v105 @ S1_v42, typeof(System.Boolean), v61 @ S0_v27
+	103 Nop
+	104 Throw typeof(System.ArrayTypeMismatchException)
+	105 Nop
+	106 Nop
+	107 Add v158 @ S0_v54, v94 @ S0_v50 (System.OverflowException), 16
+	108 Nop
+	109 Move [v158 @ S0_v54], v105 @ S1_v42
+	110 Nop
+	111 Nop
+	112 Throw typeof(System.ArrayTypeMismatchException)
+	113 Nop
+	114 Nop
+	115 Add v165 @ S0_v57, v94 @ S0_v50 (System.OverflowException), 20
+	116 Nop
+	117 Move [v165 @ S0_v57], obj @ L2 (T)
+	118 Nop
+	119 Move v168 @ S0_v59 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>), typeof(SYBO.Components.Utilities.SingletonMonoBehaviour)
+	120 Nop
+	121 Nop
+	122 Nop
+	123 And v171 @ S0_v61, [v168 @ S0_v59 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>)+BA], 512
+	124 CheckEqual v172 @ TEMP_v8 (System.Boolean), v171 @ S0_v61, 0
+	125 ConditionalJump @b37, v172 @ TEMP_v8 (System.Boolean)
+	126 Move v178 @ S0_v64 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>), typeof(SYBO.Components.Utilities.SingletonMonoBehaviour)
+	127 Nop
+	128 CheckEqual v180 @ S0_v66 (System.Boolean), [v178 @ S0_v64 (Il2CppClass<SYBO.Components.Utilities.SingletonMonoBehaviour>)+74], 0
+	129 Not v181 @ TEMP_v10 (System.Boolean), v180 @ S0_v66 (System.Boolean)
+	130 ConditionalJump @b37, v181 @ TEMP_v10 (System.Boolean)
+	131 Nop
+	132 CallVoid 11A99, typeof(SYBO.Components.Utilities.SingletonMonoBehaviour)
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Nop
+	140 CallVoid ToStringObject..ctor, 1, "DestroyNewMeOrOldInstance() Both have IsSavedInHierarchy={0} but we choose to destroy the old={1}", v94 @ S0_v50 (System.OverflowException)
+	141 Nop
+	142 Nop
+	143 Call Locale.GetISOThreeLetterLanguageCode, v88 @ S0_v34 (System.String)
+	144 Nop
+	145 Nop
+	146 CallVoid SingletonMonoBehaviourManager.DestroySingleton, v88 @ S0_v34 (System.String), obj @ L2 (T)
+	147 Nop
+	148 Nop
+	149 CallVoid 39CF, v1 @ G7, 4
+	150 Nop
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Add v114 @ S1_v22, methodInfo @ L3 (Il2CppMethodInfo), 12
+	155 Nop
+	156 Move v116 @ S1_v23, [v114 @ S1_v22]
+	157 Move v117 @ S1_v24, [v116 @ S1_v23+60]
+	158 Move v118 @ S1_v25, [v117 @ S1_v24+2C]
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Nop
+	163 And v123 @ S2_v8, [v118 @ S1_v25], 16383
+	164 Nop
+	165 Add v125 @ S2_v9, v123 @ S2_v8, 80504
+	166 IndirectCall v125 @ S2_v9, v126 @ SRET_v2, [v1 @ G7], v118 @ S1_v25
+	167 Nop
+	168 Move v128 @ S0_v39, [v114 @ S1_v22]
+	169 Move v129 @ S0_v40, [v128 @ S0_v39+60]
+	170 Nop
+	171 Move v131 @ S0_v41, [v129 @ S0_v40+2C]
+	172 Nop
+	173 Nop
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Call 7245, v137 @ S1_v28, [v129 @ S0_v40+8]
+	178 Call 120AE, v162 @ S0_v44, key @ L1 (System.Object), v137 @ S1_v28
+	179 Nop
+	180 Move v174 @ S1_v30, [v114 @ S1_v22]
+	181 Move v175 @ S1_v31, [v174 @ S1_v30+60]
+	182 Nop
+	183 Call 7245, v177 @ S1_v33, [v175 @ S1_v31+8]
+	184 Call 81FC, v153 @ S0_v45, v162 @ S0_v44, v177 @ S1_v33
+	185 Nop
+	186 Move v186 @ S1_v35, [v114 @ S1_v22]
+	187 Move v187 @ S1_v36, [v186 @ S1_v35+60]
+	188 Nop
+	189 Nop
+	190 Nop
+	191 And v190 @ S2_v11, [v131 @ S0_v41], 16383
+	192 Nop
+	193 Add v146 @ S2_v12, v190 @ S2_v11, 80504
+	194 IndirectCall v146 @ S2_v12, v139 @ SRET_v3, v153 @ S0_v45, [v187 @ S1_v36+2C]
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 Return
+
+Method: System.Void Set(System.Type type, System.Object key, System.Object obj)
+
+Disassembly:
+	0xFED3A9 I32Const 4562453
+	0xFED3AE I32Load8_S 0, 0
+	0xFED3B1 I32Eqz
+	0xFED3B2 If -64
+	0xFED3B4 I32Const 2974224
+	0xFED3B9 I32Load 2, 0
+	0xFED3BC Call 73003
+	0xFED3C0 I32Const 4562453
+	0xFED3C5 I32Const 1
+	0xFED3C7 I32Store8 0, 0
+	0xFED3CA End
+	0xFED3CB LocalGet 3
+	0xFED3CD If -64
+	0xFED3CF I32Const 4441240
+	0xFED3D4 I32Load 2, 0
+	0xFED3D7 Call 72556
+	0xFED3DB LocalTee 4
+	0xFED3DD I32Const 8
+	0xFED3DF I32Add
+	0xFED3E0 LocalGet 1
+	0xFED3E2 I32Store 2, 0
+	0xFED3E5 LocalGet 4
+	0xFED3E7 I32Const 12
+	0xFED3E9 I32Add
+	0xFED3EA LocalGet 2
+	0xFED3EC I32Store 2, 0
+	0xFED3EF LocalGet 4
+	0xFED3F1 I32Const 16
+	0xFED3F3 I32Add
+	0xFED3F4 LocalGet 3
+	0xFED3F6 I32Store 2, 0
+	0xFED3F9 LocalGet 4
+	0xFED3FB I32Const 20
+	0xFED3FD I32Add
+	0xFED3FE LocalGet 0
+	0xFED400 I32Load 2, 36
+	0xFED403 I32Store 2, 0
+	0xFED406 LocalGet 0
+	0xFED408 I32Const 36
+	0xFED40A I32Add
+	0xFED40B LocalGet 4
+	0xFED40D I32Store 2, 0
+	0xFED410 End
+	0xFED411 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v20, [2D6210]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [459E15], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), obj @ L3 (System.Object), 0
+	14 ConditionalJump @b8, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v16 @ S0_v9, typeof(SYBO.Components.Json.JsonContext+DeserializeByKeyReferenceData)
+	18 Nop
+	19 Nop
+	20 Add v25 @ S0_v10, v16 @ S0_v9, 8
+	21 Nop
+	22 Move [v25 @ S0_v10], type @ L1 (System.Type)
+	23 Nop
+	24 Nop
+	25 Add v30 @ S0_v12, v16 @ S0_v9, 12
+	26 Nop
+	27 Move [v30 @ S0_v12], key @ L2 (System.Object)
+	28 Nop
+	29 Nop
+	30 Add v35 @ S0_v14, v16 @ S0_v9, 16
+	31 Nop
+	32 Move [v35 @ S0_v14], obj @ L3 (System.Object)
+	33 Nop
+	34 Nop
+	35 Add v39 @ S0_v16, v16 @ S0_v9, 20
+	36 Nop
+	37 Nop
+	38 Move [v39 @ S0_v16], [this @ L0 (SYBO.Components.Json.JsonObjectStore)+24]
+	39 Nop
+	40 Nop
+	41 Add v23 @ S0_v18, this @ L0 (SYBO.Components.Json.JsonObjectStore), 36
+	42 Nop
+	43 Move [v23 @ S0_v18], v16 @ S0_v9
+	44 Nop
+	45 Nop
+	46 Return
+
+Method: System.Boolean HasObject(System.Type type, System.Object key)
+
+Disassembly:
+	0xFEBDA4 GlobalGet 7
+	0xFEBDA6 LocalSet 3
+	0xFEBDA8 GlobalGet 7
+	0xFEBDAA I32Const 16
+	0xFEBDAC I32Add
+	0xFEBDAD GlobalSet 7
+	0xFEBDAF I32Const 4562430
+	0xFEBDB4 I32Load8_S 0, 0
+	0xFEBDB7 I32Eqz
+	0xFEBDB8 If -64
+	0xFEBDBA I32Const 2974488
+	0xFEBDBF I32Load 2, 0
+	0xFEBDC2 Call 73003
+	0xFEBDC6 I32Const 4562430
+	0xFEBDCB I32Const 1
+	0xFEBDCD I32Store8 0, 0
+	0xFEBDD0 End
+	0xFEBDD1 LocalGet 3
+	0xFEBDD3 I32Const 0
+	0xFEBDD5 I32Store 2, 0
+	0xFEBDD8 LocalGet 0
+	0xFEBDDA I32Load 2, 8
+	0xFEBDDD LocalGet 1
+	0xFEBDDF LocalGet 3
+	0xFEBDE1 I32Const 4455220
+	0xFEBDE6 I32Load 2, 0
+	0xFEBDE9 Call 30128
+	0xFEBDED If -64
+	0xFEBDEF LocalGet 3
+	0xFEBDF1 I32Load 2, 0
+	0xFEBDF4 I32Const 3
+	0xFEBDF6 LocalGet 2
+	0xFEBDF8 Call 29262
+	0xFEBDFC I32Const 0
+	0xFEBDFE Call 45481
+	0xFEBE02 LocalGet 3
+	0xFEBE04 GlobalSet 7
+	0xFEBE06 Return
+	0xFEBE07 Else
+	0xFEBE08 I32Const 25
+	0xFEBE0A LocalGet 1
+	0xFEBE0C Call 29262
+	0xFEBE10 LocalSet 0
+	0xFEBE12 I32Const 4539920
+	0xFEBE17 I32Load 2, 0
+	0xFEBE1A LocalGet 0
+	0xFEBE1C I32Const 0
+	0xFEBE1E Call 55610
+	0xFEBE22 LocalSet 0
+	0xFEBE24 I32Const 4441252
+	0xFEBE29 I32Load 2, 0
+	0xFEBE2C Call 72556
+	0xFEBE30 LocalTee 1
+	0xFEBE32 LocalGet 0
+	0xFEBE34 I32Const 0
+	0xFEBE36 Call 45482
+	0xFEBE3A LocalGet 1
+	0xFEBE3C I32Const 0
+	0xFEBE3E I32Const 4465460
+	0xFEBE43 I32Load 2, 0
+	0xFEBE46 Call 73899
+	0xFEBE4A End
+	0xFEBE4B I32Const 0
+	0xFEBE4D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b15
+	11 Nop
+	12 Move v12 @ S0_v27, [2D6318]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v27
+	14 Nop
+	15 Move v14 @ S1_v13, 1
+	16 Move [459DFE], v14 @ S1_v13
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7 (JsonObjectStoreTypeEntry&)], 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Call Dictionary`2<System.Type, SYBO.Components.Json.JsonObjectStore+JsonObjectStoreTypeEntry>.TryGetValue, v27 @ S0_v11 (System.Boolean), this._types (System.Collections.Generic.Dictionary`2<System.Type, SYBO.Components.Json.JsonObjectStore+JsonObjectStoreTypeEntry>), type @ L1 (System.Type), v1 @ G7 (JsonObjectStoreTypeEntry&)
+	28 Not v28 @ TEMP_v2 (System.Boolean), v27 @ S0_v11 (System.Boolean)
+	29 ConditionalJump @b9, v28 @ TEMP_v2 (System.Boolean)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call 724E, v34 @ S1_v10 (System.String), 3, key @ L2 (System.Object)
+	35 Nop
+	36 Call JsonObjectStoreTypeEntry.Contains, returnVal1 @ S0_v24 (System.Boolean), [v1 @ G7 (JsonObjectStoreTypeEntry&)], v34 @ S1_v10 (System.String)
+	37 Nop
+	38 Nop
+	39 Return returnVal1 @ S0_v24 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Call 724E, v37 @ S0_v13 (System.Object[]), 25, type @ L1 (System.Type)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Call String.Format, v45 @ S0_v16 (System.String), "JsonObjectStore doesn't contain any objects of type {0}", v37 @ S0_v13 (System.Object[])
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call 11B6C, v51 @ S0_v19 (SYBO.Components.Json.JsonReflectionException), typeof(SYBO.Components.Json.JsonReferenceException)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 CallVoid JsonReflectionException..ctor, v51 @ S0_v19 (SYBO.Components.Json.JsonReflectionException), v45 @ S0_v16 (System.String)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 CallVoid 120AB, v51 @ S0_v19 (SYBO.Components.Json.JsonReflectionException), 0, methodof(SYBO.Components.Json.JsonObjectStore::Get)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Return 0
+
+Method: SYBO.Components.Json.JsonObjectStore Duplicate()
+
+Disassembly:
+	0xFF1B56 I32Const 4562540
+	0xFF1B5B I32Load8_S 0, 0
+	0xFF1B5E I32Eqz
+	0xFF1B5F If -64
+	0xFF1B61 I32Const 2974452
+	0xFF1B66 I32Load 2, 0
+	0xFF1B69 Call 73003
+	0xFF1B6D I32Const 4562540
+	0xFF1B72 I32Const 1
+	0xFF1B74 I32Store8 0, 0
+	0xFF1B77 End
+	0xFF1B78 I32Const 4427812
+	0xFF1B7D I32Load 2, 0
+	0xFF1B80 I32Const 1
+	0xFF1B82 Call 71670
+	0xFF1B86 LocalTee 2
+	0xFF1B88 I32Const 4539916
+	0xFF1B8D I32Load 2, 0
+	0xFF1B90 Call 29652
+	0xFF1B94 LocalGet 2
+	0xFF1B96 I32Const 16
+	0xFF1B98 I32Add
+	0xFF1B99 I32Const 4539916
+	0xFF1B9E I32Load 2, 0
+	0xFF1BA1 I32Store 2, 0
+	0xFF1BA4 LocalGet 2
+	0xFF1BA6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v12, [2D62F4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [459E6C], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Newobj v14 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Throw typeof(System.ArrayTypeMismatchException)
+	20 Nop
+	21 Nop
+	22 Add v20 @ S0_v9, v14 @ S0_v7 (System.OverflowException), 16
+	23 Nop
+	24 Nop
+	25 Move [v20 @ S0_v9], "SYBO.Components.Json."
+	26 Nop
+	27 Nop
+	28 Return v14 @ S0_v7 (System.OverflowException)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xFEBB10 I32Const 4562440
+	0xFEBB15 I32Load8_S 0, 0
+	0xFEBB18 I32Eqz
+	0xFEBB19 If -64
+	0xFEBB1B I32Const 2974444
+	0xFEBB20 I32Load 2, 0
+	0xFEBB23 Call 73003
+	0xFEBB27 I32Const 4562440
+	0xFEBB2C I32Const 1
+	0xFEBB2E I32Store8 0, 0
+	0xFEBB31 End
+	0xFEBB32 I32Const 4429352
+	0xFEBB37 I32Load 2, 0
+	0xFEBB3A LocalTee 2
+	0xFEBB3C I32Load16_S 1, 186
+	0xFEBB40 I32Const 512
+	0xFEBB43 I32And
+	0xFEBB44 If -64
+	0xFEBB46 LocalGet 2
+	0xFEBB48 I32Load 2, 116
+	0xFEBB4B I32Eqz
+	0xFEBB4C If -64
+	0xFEBB4E LocalGet 2
+	0xFEBB50 Call 72345
+	0xFEBB54 End
+	0xFEBB55 End
+	0xFEBB56 LocalGet 0
+	0xFEBB58 I32Const 4486112
+	0xFEBB5D I32Load 2, 0
+	0xFEBB60 Call 29311
+	0xFEBB64 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v16, [2D62EC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [459E08], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Collections.Generic.List`1<System.Object>>), typeof(System.Collections.Generic.List`1<System.Object>)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Collections.Generic.List`1<System.Object>>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v11 (Il2CppClass<System.Collections.Generic.List`1<System.Object>>), typeof(System.Collections.Generic.List`1<System.Object>)
+	21 Nop
+	22 CheckEqual v20 @ S0_v13 (System.Boolean), [v18 @ S0_v11 (Il2CppClass<System.Collections.Generic.List`1<System.Object>>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Collections.Generic.List`1<System.Object>)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid List`1<System.Object>..ctor, this @ L0 (SYBO.Components.Json.JsonObjectStore)
+	33 Nop
+	34 Return
+

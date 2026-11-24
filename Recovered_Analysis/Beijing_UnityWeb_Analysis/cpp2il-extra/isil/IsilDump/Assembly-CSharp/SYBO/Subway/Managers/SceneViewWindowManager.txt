@@ -1,0 +1,922 @@
+Type: SYBO.Subway.Managers.SceneViewWindowManager
+
+Method: SYBO.Subway.Characters.Character get_Character()
+
+Disassembly:
+	0xE59A35 GlobalGet 7
+	0xE59A37 LocalSet 1
+	0xE59A39 GlobalGet 7
+	0xE59A3B I32Const 112
+	0xE59A3E I32Add
+	0xE59A3F GlobalSet 7
+	0xE59A41 I32Const 4558090
+	0xE59A46 I32Load8_S 0, 0
+	0xE59A49 I32Eqz
+	0xE59A4A If -64
+	0xE59A4C I32Const 2935740
+	0xE59A51 I32Load 2, 0
+	0xE59A54 Call 73003
+	0xE59A58 I32Const 4558090
+	0xE59A5D I32Const 1
+	0xE59A5F I32Store8 0, 0
+	0xE59A62 End
+	0xE59A63 I32Const 4435988
+	0xE59A68 I32Load 2, 0
+	0xE59A6B LocalTee 2
+	0xE59A6D I32Load16_S 1, 186
+	0xE59A71 I32Const 512
+	0xE59A74 I32And
+	0xE59A75 If -64
+	0xE59A77 LocalGet 2
+	0xE59A79 I32Load 2, 116
+	0xE59A7C I32Eqz
+	0xE59A7D If -64
+	0xE59A7F LocalGet 2
+	0xE59A81 Call 72345
+	0xE59A85 End
+	0xE59A86 End
+	0xE59A87 LocalGet 1
+	0xE59A89 I32Const 0
+	0xE59A8B Call 32929
+	0xE59A8F I32Load 2, 32
+	0xE59A92 I32Const 0
+	0xE59A94 Call 33272
+	0xE59A98 LocalGet 1
+	0xE59A9A I32Const 52
+	0xE59A9C I32Add
+	0xE59A9D LocalTee 2
+	0xE59A9F LocalGet 1
+	0xE59AA1 I64Load 2, 0
+	0xE59AA4 I64Store 2, 0
+	0xE59AA7 LocalGet 2
+	0xE59AA9 LocalGet 1
+	0xE59AAB I64Load 2, 8
+	0xE59AAE I64Store 2, 8
+	0xE59AB1 LocalGet 2
+	0xE59AB3 LocalGet 1
+	0xE59AB5 I64Load 2, 16
+	0xE59AB8 I64Store 2, 16
+	0xE59ABB LocalGet 2
+	0xE59ABD LocalGet 1
+	0xE59ABF I64Load 2, 24
+	0xE59AC2 I64Store 2, 24
+	0xE59AC5 LocalGet 2
+	0xE59AC7 LocalGet 1
+	0xE59AC9 I64Load 2, 32
+	0xE59ACC I64Store 2, 32
+	0xE59ACF LocalGet 2
+	0xE59AD1 LocalGet 1
+	0xE59AD3 I64Load 2, 40
+	0xE59AD6 I64Store 2, 40
+	0xE59AD9 LocalGet 2
+	0xE59ADB LocalGet 1
+	0xE59ADD I32Load 2, 48
+	0xE59AE0 I32Store 2, 48
+	0xE59AE3 LocalGet 2
+	0xE59AE5 LocalGet 0
+	0xE59AE7 I32Const 0
+	0xE59AE9 Call 39133
+	0xE59AED LocalGet 1
+	0xE59AEF GlobalSet 7
+	0xE59AF1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b11
+	11 Nop
+	12 Move v12 @ S0_v29, [2CCBBC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v29
+	14 Nop
+	15 Move v14 @ S1_v24, 1
+	16 Move [458D0A], v14 @ S1_v24
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v9 (Il2CppClass<SYBO.Subway.Themes.ThemeManager>), typeof(SYBO.Subway.Themes.ThemeManager)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<SYBO.Subway.Themes.ThemeManager>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	25 ConditionalJump @b12, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S0_v24 (Il2CppClass<SYBO.Subway.Themes.ThemeManager>), typeof(SYBO.Subway.Themes.ThemeManager)
+	27 Nop
+	28 CheckEqual v26 @ S0_v26 (System.Boolean), [v24 @ S0_v24 (Il2CppClass<SYBO.Subway.Themes.ThemeManager>)+74], 0
+	29 Not v27 @ TEMP_v4 (System.Boolean), v26 @ S0_v26 (System.Boolean)
+	30 ConditionalJump @b12, v27 @ TEMP_v4 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(SYBO.Subway.Themes.ThemeManager)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call GameStateMachine.get_Instance, v33 @ S1_v5 (SYBO.Subway.StateSystem.GameStateMachine)
+	38 Nop
+	39 Nop
+	40 CallVoid ThemeManager.add_ThemeChanged, v1 @ G7 (SYBO.Subway.Themes.ThemeManager), [v33 @ S1_v5 (SYBO.Subway.StateSystem.GameStateMachine)+20]
+	41 Nop
+	42 Nop
+	43 Add v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager), v1 @ G7 (SYBO.Subway.Themes.ThemeManager), 52
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move [v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager)], [v1 @ G7 (SYBO.Subway.Themes.ThemeManager)]
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Move [v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager)+8], v1.m_CachedPtr (System.IntPtr)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Move v38.OnQualityTypeChanged (System.EventHandler`1<SYBO.Subway.Managers.QualitySettingsManager+QualityTypeChangedEventArgs>), v1._distortion (UnityEngine.Vector4)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Move [v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager)+18], [v1 @ G7 (SYBO.Subway.Themes.ThemeManager)+18]
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Move [v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager)+20], v1._theme (SYBO.Subway.Themes.Theme)
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Move [v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager)+28], v1._cameraCulling (CameraCulling)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Move [v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager)+30], v1._backgroundToFogBlendStartDistance (System.Single)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call QualitySettingsManager.GetQualityLevelIntFromName, returnVal1 @ S0_v23 (SYBO.Subway.Characters.Character), v38 @ S0_v15 (SYBO.Subway.Managers.QualitySettingsManager), this @ L0 (SYBO.Subway.Managers.SceneViewWindowManager)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Return returnVal1 @ S0_v23 (SYBO.Subway.Characters.Character)
+
+Method: System.Void set_Character(SYBO.Subway.Characters.Character value)
+
+Disassembly:
+	0xE5B425 I32Const 4558096
+	0xE5B42A I32Load8_S 0, 0
+	0xE5B42D I32Eqz
+	0xE5B42E If -64
+	0xE5B430 I32Const 2994004
+	0xE5B435 I32Load 2, 0
+	0xE5B438 Call 73003
+	0xE5B43C I32Const 4558096
+	0xE5B441 I32Const 1
+	0xE5B443 I32Store8 0, 0
+	0xE5B446 End
+	0xE5B447 LocalGet 0
+	0xE5B449 I32Load 2, 16
+	0xE5B44C If -64
+	0xE5B44E LocalGet 0
+	0xE5B450 I32Load 2, 16
+	0xE5B453 LocalGet 0
+	0xE5B455 LocalGet 1
+	0xE5B457 I32Const 4488396
+	0xE5B45C I32Load 2, 0
+	0xE5B45F Call 31348
+	0xE5B463 End
+	0xE5B464 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v11, [2DAF54]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [458D10], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this._character (SYBO.Subway.Characters.Character), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid 7A74, this._character (SYBO.Subway.Characters.Character), this @ L0 (SYBO.Subway.Managers.SceneViewWindowManager), value @ L1 (SYBO.Subway.Characters.Character), methodof(System.EventHandler`1<SYBO.Subway.Managers.QualitySettingsManager+QualityTypeChangedEventArgs>::Invoke)
+	23 Nop
+	24 Nop
+	25 Return
+
+Method: System.Boolean get_IsEnabled()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._character (SYBO.Subway.Characters.Character)
+
+Method: System.Void set_IsEnabled(System.Boolean value)
+
+Disassembly:
+	0xC57CC1 LocalGet 0
+	0xC57CC3 I32Const 16
+	0xC57CC5 I32Add
+	0xC57CC6 LocalGet 1
+	0xC57CC8 I32Store 2, 0
+	0xC57CCB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Subway.Managers.SceneViewWindowManager), 16
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: SYBO.Subway.Managers.SceneViewCameraTargetType get_SceneViewCameraTargetType()
+
+Disassembly:
+	0xC765EA LocalGet 0
+	0xC765EC I32Load8_S 0, 20
+	0xC765EF I32Const 0
+	0xC765F1 I32Ne
+	0xC765F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), this._isEnabled (System.Boolean), 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_SceneViewCameraTargetType(SYBO.Subway.Managers.SceneViewCameraTargetType value)
+
+Disassembly:
+	0xC765F5 LocalGet 0
+	0xC765F7 LocalGet 1
+	0xC765F9 I32Const 1
+	0xC765FB I32And
+	0xC765FC I32Store8 0, 20
+	0xC765FF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.Boolean), value @ L1 (SYBO.Subway.Managers.SceneViewCameraTargetType), 1
+	4 Move this._isEnabled (System.Boolean), v5 @ S1_v2 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: SYBO.Subway.Managers.SceneViewCameraZoomType get_SceneViewCameraZoomType()
+
+Disassembly:
+	0xC5D3C2 LocalGet 0
+	0xC5D3C4 I32Load 2, 24
+	0xC5D3C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.__sceneViewCameraTargetType (SYBO.Subway.Managers.SceneViewCameraTargetType)
+
+Method: System.Void set_SceneViewCameraZoomType(SYBO.Subway.Managers.SceneViewCameraZoomType value)
+
+Disassembly:
+	0xE5B641 LocalGet 0
+	0xE5B643 LocalGet 1
+	0xE5B645 I32Store 2, 24
+	0xE5B648 LocalGet 0
+	0xE5B64A I32Load8_S 0, 20
+	0xE5B64D Drop
+	0xE5B64E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.__sceneViewCameraTargetType (SYBO.Subway.Managers.SceneViewCameraTargetType), value @ L1 (SYBO.Subway.Managers.SceneViewCameraZoomType)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Return
+
+Method: UnityEngine.Vector3 GetSceneViewPivot()
+
+Disassembly:
+	0xE5B65A LocalGet 0
+	0xE5B65C LocalGet 1
+	0xE5B65E I32Store 2, 28
+	0xE5B661 LocalGet 0
+	0xE5B663 I32Load8_S 0, 20
+	0xE5B666 Drop
+	0xE5B667 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [returnVal1 @ L0 (UnityEngine.Vector3)+1C], this @ L1 (SYBO.Subway.Managers.SceneViewWindowManager)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Return returnVal1 @ L0 (UnityEngine.Vector3)
+
+Method: UnityEngine.Quaternion GetSceneViewRotation()
+
+Disassembly:
+	0xE5B678 GlobalGet 7
+	0xE5B67A LocalSet 2
+	0xE5B67C GlobalGet 7
+	0xE5B67E I32Const 32
+	0xE5B680 I32Add
+	0xE5B681 GlobalSet 7
+	0xE5B683 LocalGet 2
+	0xE5B685 I32Const 12
+	0xE5B687 I32Add
+	0xE5B688 LocalTee 3
+	0xE5B68A I64Const 0
+	0xE5B68C I64Store 2, 0
+	0xE5B68F LocalGet 3
+	0xE5B691 I32Const 0
+	0xE5B693 I32Store 2, 8
+	0xE5B696 LocalGet 1
+	0xE5B698 I32Load 2, 24
+	0xE5B69B If -64
+	0xE5B69D LocalGet 3
+	0xE5B69F F32Const 0
+	0xE5B6A4 F32Store 2, 0
+	0xE5B6A7 LocalGet 3
+	0xE5B6A9 F32Const 0
+	0xE5B6AE F32Store 2, 4
+	0xE5B6B1 LocalGet 3
+	0xE5B6B3 F32Const 0
+	0xE5B6B8 F32Store 2, 8
+	0xE5B6BB Else
+	0xE5B6BC LocalGet 2
+	0xE5B6BE LocalGet 1
+	0xE5B6C0 I32Load 2, 16
+	0xE5B6C3 I32Const 248
+	0xE5B6C6 I32Add
+	0xE5B6C7 LocalTee 1
+	0xE5B6C9 I64Load 2, 0
+	0xE5B6CC I64Store 2, 0
+	0xE5B6CF LocalGet 2
+	0xE5B6D1 LocalGet 1
+	0xE5B6D3 I32Load 2, 8
+	0xE5B6D6 I32Store 2, 8
+	0xE5B6D9 LocalGet 3
+	0xE5B6DB LocalGet 2
+	0xE5B6DD I64Load 2, 0
+	0xE5B6E0 I64Store 2, 0
+	0xE5B6E3 LocalGet 3
+	0xE5B6E5 LocalGet 2
+	0xE5B6E7 I32Load 2, 8
+	0xE5B6EA I32Store 2, 8
+	0xE5B6ED End
+	0xE5B6EE LocalGet 0
+	0xE5B6F0 LocalGet 3
+	0xE5B6F2 I64Load 2, 0
+	0xE5B6F5 I64Store 2, 0
+	0xE5B6F8 LocalGet 0
+	0xE5B6FA LocalGet 3
+	0xE5B6FC I32Load 2, 8
+	0xE5B6FF I32Store 2, 8
+	0xE5B702 LocalGet 2
+	0xE5B704 GlobalSet 7
+	0xE5B706 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 12
+	9 Nop
+	10 Nop
+	11 Move [v9 @ S0_v5], 0
+	12 Nop
+	13 Nop
+	14 Move [v9 @ S0_v5+8], 0
+	15 Nop
+	16 Nop
+	17 CheckEqual v17 @ TEMP_v1 (System.Boolean), this.__sceneViewCameraTargetType (SYBO.Subway.Managers.SceneViewCameraTargetType), 0
+	18 ConditionalJump @b4, v17 @ TEMP_v1 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Move [v9 @ S0_v5], 0f
+	22 Nop
+	23 Nop
+	24 Move [v9 @ S0_v5+4], 0f
+	25 Nop
+	26 Nop
+	27 Move [v9 @ S0_v5+8], 0f
+	28 Jump @b5
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Add v28 @ S1_v12, this._character (SYBO.Subway.Characters.Character), 248
+	34 Nop
+	35 Nop
+	36 Move [v1 @ G7], [v28 @ S1_v12]
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move [v1 @ G7+8], [v28 @ S1_v12+8]
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Move [v9 @ S0_v5], [v1 @ G7]
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Move [v9 @ S0_v5+8], [v1 @ G7+8]
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Move returnVal1.x (System.Single), [v9 @ S0_v5]
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Move returnVal1.z (System.Single), [v9 @ S0_v5+8]
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Return returnVal1 @ L0 (UnityEngine.Quaternion)
+
+Method: System.Void SubclassInitialize()
+
+Disassembly:
+	0xE5B60E I32Const 4558103
+	0xE5B613 I32Load8_S 0, 0
+	0xE5B616 I32Eqz
+	0xE5B617 If -64
+	0xE5B619 I32Const 2994020
+	0xE5B61E I32Load 2, 0
+	0xE5B621 Call 73003
+	0xE5B625 I32Const 4558103
+	0xE5B62A I32Const 1
+	0xE5B62C I32Store8 0, 0
+	0xE5B62F End
+	0xE5B630 LocalGet 0
+	0xE5B632 I32Const 4473936
+	0xE5B637 I32Load 2, 0
+	0xE5B63A Call 53440
+	0xE5B63E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v7, [2DAF64]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [458D17], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid Validator`1..ctor, this @ L0 (SYBO.Subway.Managers.SceneViewWindowManager)
+	16 Nop
+	17 Return
+
+Method: System.Void ShowNextSceneViewCameraTargetType()
+
+Disassembly:
+	0xE25B26 LocalGet 0
+	0xE25B28 I32Const 0
+	0xE25B2A Call 62780
+	0xE25B2E I32Const 3
+	0xE25B30 I32Const 0
+	0xE25B32 I32Const 0
+	0xE25B34 Call 37933
+	0xE25B38 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Component.get_gameObject, v3 @ S0_v2 (UnityEngine.GameObject), this @ L0 (SYBO.Subway.Managers.SceneViewWindowManager)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CallVoid HierarchyUtility.ReparentByHierarchyPathType, v3 @ S0_v2 (UnityEngine.GameObject), 3, 0
+	7 Nop
+	8 Return
+
+Method: System.Void ShowNextSceneViewZoomType()
+
+Disassembly:
+	0xE5B798 I32Const 4558104
+	0xE5B79D I32Load8_S 0, 0
+	0xE5B7A0 I32Eqz
+	0xE5B7A1 If -64
+	0xE5B7A3 I32Const 3000784
+	0xE5B7A8 I32Load 2, 0
+	0xE5B7AB Call 73003
+	0xE5B7AF I32Const 4558104
+	0xE5B7B4 I32Const 1
+	0xE5B7B6 I32Store8 0, 0
+	0xE5B7B9 End
+	0xE5B7BA LocalGet 0
+	0xE5B7BC I32Load8_S 0, 20
+	0xE5B7BF If -64
+	0xE5B7C1 LocalGet 0
+	0xE5B7C3 I32Load 2, 32
+	0xE5B7C6 I32Eqz
+	0xE5B7C7 If -64
+	0xE5B7C9 I32Const 4442356
+	0xE5B7CE I32Load 2, 0
+	0xE5B7D1 Call 72556
+	0xE5B7D5 LocalTee 1
+	0xE5B7D7 I32Const 4485620
+	0xE5B7DC I32Load 2, 0
+	0xE5B7DF Call 47993
+	0xE5B7E3 LocalGet 0
+	0xE5B7E5 I32Const 32
+	0xE5B7E7 I32Add
+	0xE5B7E8 LocalGet 1
+	0xE5B7EA I32Store 2, 0
+	0xE5B7ED LocalGet 0
+	0xE5B7EF I32Load 2, 32
+	0xE5B7F2 I32Const 0
+	0xE5B7F4 I32Const 4485624
+	0xE5B7F9 I32Load 2, 0
+	0xE5B7FC Call 29305
+	0xE5B800 LocalGet 0
+	0xE5B802 I32Load 2, 32
+	0xE5B805 I32Const 1
+	0xE5B807 I32Const 4485624
+	0xE5B80C I32Load 2, 0
+	0xE5B80F Call 29305
+	0xE5B813 End
+	0xE5B814 LocalGet 0
+	0xE5B816 LocalGet 0
+	0xE5B818 I32Load 2, 36
+	0xE5B81B I32Const 1
+	0xE5B81D I32Add
+	0xE5B81E I32Store 2, 36
+	0xE5B821 I32Const 4463116
+	0xE5B826 I32Load 2, 0
+	0xE5B829 Drop
+	0xE5B82A LocalGet 0
+	0xE5B82C I32Load 2, 36
+	0xE5B82F LocalGet 0
+	0xE5B831 I32Load 2, 32
+	0xE5B834 I32Load 2, 12
+	0xE5B837 I32Const 1
+	0xE5B839 I32Sub
+	0xE5B83A I32Gt_S
+	0xE5B83B If -64
+	0xE5B83D LocalGet 0
+	0xE5B83F I32Const 0
+	0xE5B841 I32Store 2, 36
+	0xE5B844 End
+	0xE5B845 LocalGet 0
+	0xE5B847 LocalGet 0
+	0xE5B849 I32Load 2, 32
+	0xE5B84C LocalGet 0
+	0xE5B84E I32Load 2, 36
+	0xE5B851 I32Const 4449028
+	0xE5B856 I32Load 2, 0
+	0xE5B859 Call 29293
+	0xE5B85D I32Store 2, 24
+	0xE5B860 LocalGet 0
+	0xE5B862 I32Load8_S 0, 20
+	0xE5B865 Drop
+	0xE5B866 End
+	0xE5B867 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v33, [2DC9D0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v33
+	8 Nop
+	9 Move v7 @ S1_v22, 1
+	10 Move [458D18], v7 @ S1_v22
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Not v14 @ TEMP_v2 (System.Boolean), this._isEnabled (System.Boolean)
+	15 ConditionalJump @b15, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 CheckEqual v17 @ S0_v10 (System.Boolean), this._sceneViewCameraTargetTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>), 0
+	19 Not v18 @ TEMP_v4 (System.Boolean), v17 @ S0_v10 (System.Boolean)
+	20 ConditionalJump @b10, v18 @ TEMP_v4 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Call 11B6C, v36 @ S0_v25, typeof(System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid BB79, v36 @ S0_v25, methodof(System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>::.ctor)
+	28 Nop
+	29 Nop
+	30 Add v72 @ S0_v27, this @ L0 (SYBO.Subway.Managers.SceneViewWindowManager), 32
+	31 Nop
+	32 Move [v72 @ S0_v27], v36 @ S0_v25
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CallVoid List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>.Add, this._sceneViewCameraTargetTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>), 0
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 CallVoid List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>.Add, this._sceneViewCameraTargetTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>), 1
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Add v48 @ S1_v6 (System.Int32), this._sceneViewCameraTargetTypesIndex (System.Int32), 1
+	51 Move this._sceneViewCameraTargetTypesIndex (System.Int32), v48 @ S1_v6 (System.Int32)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Move v54 @ S1_v8 (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>), this._sceneViewCameraTargetTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>)
+	58 Nop
+	59 Nop
+	60 Subtract v57 @ S1_v10, [v54 @ S1_v8 (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>)+C], 1
+	61 CheckGreater v58 @ S0_v17 (System.Boolean), this._sceneViewCameraTargetTypesIndex (System.Int32), v57 @ S1_v10
+	62 Not v31 @ TEMP_v5 (System.Boolean), v58 @ S0_v17 (System.Boolean)
+	63 ConditionalJump @b14, v31 @ TEMP_v5 (System.Boolean)
+	64 Nop
+	65 Nop
+	66 Move this._sceneViewCameraTargetTypesIndex (System.Int32), 0
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>.get_Item, v29 @ S1_v14 (SYBO.Subway.Managers.SceneViewCameraTargetType), this._sceneViewCameraTargetTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraTargetType>), this._sceneViewCameraTargetTypesIndex (System.Int32)
+	76 Move this.__sceneViewCameraTargetType (SYBO.Subway.Managers.SceneViewCameraTargetType), v29 @ S1_v14 (SYBO.Subway.Managers.SceneViewCameraTargetType)
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Return
+
+Method: System.Boolean HasSceneView()
+
+Disassembly:
+	0xC26020 LocalGet 0
+	0xC26022 I32Load 2, 28
+	0xC26025 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.__sceneViewCameraZoomType (SYBO.Subway.Managers.SceneViewCameraZoomType)
+
+Method: System.Object GetSceneView()
+
+Disassembly:
+	0xE5B66A LocalGet 0
+	0xE5B66C I32Load8_S 0, 20
+	0xE5B66F Drop
+	0xE5B670 I32Const 0
+	0xE5B672 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.Void UpdatePropertiesOnSceneView()
+
+Disassembly:
+	0xE5B86B I32Const 4558105
+	0xE5B870 I32Load8_S 0, 0
+	0xE5B873 I32Eqz
+	0xE5B874 If -64
+	0xE5B876 I32Const 3000788
+	0xE5B87B I32Load 2, 0
+	0xE5B87E Call 73003
+	0xE5B882 I32Const 4558105
+	0xE5B887 I32Const 1
+	0xE5B889 I32Store8 0, 0
+	0xE5B88C End
+	0xE5B88D LocalGet 0
+	0xE5B88F I32Load8_S 0, 20
+	0xE5B892 If -64
+	0xE5B894 LocalGet 0
+	0xE5B896 I32Load 2, 40
+	0xE5B899 I32Eqz
+	0xE5B89A If -64
+	0xE5B89C I32Const 4442360
+	0xE5B8A1 I32Load 2, 0
+	0xE5B8A4 Call 72556
+	0xE5B8A8 LocalTee 1
+	0xE5B8AA I32Const 4485628
+	0xE5B8AF I32Load 2, 0
+	0xE5B8B2 Call 47993
+	0xE5B8B6 LocalGet 0
+	0xE5B8B8 I32Const 40
+	0xE5B8BA I32Add
+	0xE5B8BB LocalGet 1
+	0xE5B8BD I32Store 2, 0
+	0xE5B8C0 LocalGet 0
+	0xE5B8C2 I32Load 2, 40
+	0xE5B8C5 I32Const 0
+	0xE5B8C7 I32Const 4485632
+	0xE5B8CC I32Load 2, 0
+	0xE5B8CF Call 29305
+	0xE5B8D3 LocalGet 0
+	0xE5B8D5 I32Load 2, 40
+	0xE5B8D8 I32Const 1
+	0xE5B8DA I32Const 4485632
+	0xE5B8DF I32Load 2, 0
+	0xE5B8E2 Call 29305
+	0xE5B8E6 End
+	0xE5B8E7 LocalGet 0
+	0xE5B8E9 LocalGet 0
+	0xE5B8EB I32Load 2, 44
+	0xE5B8EE I32Const 1
+	0xE5B8F0 I32Add
+	0xE5B8F1 I32Store 2, 44
+	0xE5B8F4 I32Const 4463120
+	0xE5B8F9 I32Load 2, 0
+	0xE5B8FC Drop
+	0xE5B8FD LocalGet 0
+	0xE5B8FF I32Load 2, 44
+	0xE5B902 LocalGet 0
+	0xE5B904 I32Load 2, 40
+	0xE5B907 I32Load 2, 12
+	0xE5B90A I32Const 1
+	0xE5B90C I32Sub
+	0xE5B90D I32Gt_S
+	0xE5B90E If -64
+	0xE5B910 LocalGet 0
+	0xE5B912 I32Const 0
+	0xE5B914 I32Store 2, 44
+	0xE5B917 End
+	0xE5B918 LocalGet 0
+	0xE5B91A LocalGet 0
+	0xE5B91C I32Load 2, 40
+	0xE5B91F LocalGet 0
+	0xE5B921 I32Load 2, 44
+	0xE5B924 I32Const 4449032
+	0xE5B929 I32Load 2, 0
+	0xE5B92C Call 29293
+	0xE5B930 I32Store 2, 28
+	0xE5B933 LocalGet 0
+	0xE5B935 I32Load8_S 0, 20
+	0xE5B938 Drop
+	0xE5B939 End
+	0xE5B93A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v33, [2DC9D4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v33
+	8 Nop
+	9 Move v7 @ S1_v22, 1
+	10 Move [458D19], v7 @ S1_v22
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Not v14 @ TEMP_v2 (System.Boolean), this._isEnabled (System.Boolean)
+	15 ConditionalJump @b15, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 CheckEqual v17 @ S0_v10 (System.Boolean), this._sceneViewCameraZoomTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>), 0
+	19 Not v18 @ TEMP_v4 (System.Boolean), v17 @ S0_v10 (System.Boolean)
+	20 ConditionalJump @b10, v18 @ TEMP_v4 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Call 11B6C, v36 @ S0_v25, typeof(System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 CallVoid BB79, v36 @ S0_v25, methodof(System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>::.ctor)
+	28 Nop
+	29 Nop
+	30 Add v72 @ S0_v27, this @ L0 (SYBO.Subway.Managers.SceneViewWindowManager), 40
+	31 Nop
+	32 Move [v72 @ S0_v27], v36 @ S0_v25
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CallVoid List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>.Add, this._sceneViewCameraZoomTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>), 0
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 CallVoid List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>.Add, this._sceneViewCameraZoomTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>), 1
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Add v48 @ S1_v6 (System.Int32), this._sceneViewCameraZoomTypesIndex (System.Int32), 1
+	51 Move this._sceneViewCameraZoomTypesIndex (System.Int32), v48 @ S1_v6 (System.Int32)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Move v54 @ S1_v8 (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>), this._sceneViewCameraZoomTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>)
+	58 Nop
+	59 Nop
+	60 Subtract v57 @ S1_v10, [v54 @ S1_v8 (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>)+C], 1
+	61 CheckGreater v58 @ S0_v17 (System.Boolean), this._sceneViewCameraZoomTypesIndex (System.Int32), v57 @ S1_v10
+	62 Not v31 @ TEMP_v5 (System.Boolean), v58 @ S0_v17 (System.Boolean)
+	63 ConditionalJump @b14, v31 @ TEMP_v5 (System.Boolean)
+	64 Nop
+	65 Nop
+	66 Move this._sceneViewCameraZoomTypesIndex (System.Int32), 0
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>.get_Item, v29 @ S1_v14 (SYBO.Subway.Managers.SceneViewCameraZoomType), this._sceneViewCameraZoomTypes (System.Collections.Generic.List`1<SYBO.Subway.Managers.SceneViewCameraZoomType>), this._sceneViewCameraZoomTypesIndex (System.Int32)
+	76 Move this.__sceneViewCameraZoomType (SYBO.Subway.Managers.SceneViewCameraZoomType), v29 @ S1_v14 (SYBO.Subway.Managers.SceneViewCameraZoomType)
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Return
+
+Method: System.Void RepaintSceneView()
+
+Disassembly:
+	0xE5B651 LocalGet 0
+	0xE5B653 I32Load8_S 0, 20
+	0xE5B656 Drop
+	0xE5B657 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE5B651 LocalGet 0
+	0xE5B653 I32Load8_S 0, 20
+	0xE5B656 Drop
+	0xE5B657 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return
+

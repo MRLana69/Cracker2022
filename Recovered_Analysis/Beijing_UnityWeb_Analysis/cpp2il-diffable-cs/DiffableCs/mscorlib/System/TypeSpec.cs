@@ -1,0 +1,59 @@
+namespace System;
+
+internal class TypeSpec
+{
+	internal enum DisplayNameFormat
+	{
+		Default = 0,
+		WANT_ASSEMBLY = 1,
+		NO_MODIFIERS = 2,
+	}
+
+	private TypeIdentifier name; //Field offset: 0x8
+	private string assembly_name; //Field offset: 0xC
+	private List<TypeIdentifier> nested; //Field offset: 0x10
+	private List<TypeSpec> generic_params; //Field offset: 0x14
+	private List<ModifierSpec> modifier_spec; //Field offset: 0x18
+	private bool is_byref; //Field offset: 0x1C
+	private string display_fullname; //Field offset: 0x20
+
+	internal string DisplayFullName
+	{
+		 get { } //Length: 9
+	}
+
+	internal bool HasModifiers
+	{
+		 get { } //Length: 71
+	}
+
+	public TypeSpec() { }
+
+	private void AddModifier(ModifierSpec md) { }
+
+	private void AddName(string type_name) { }
+
+	private static void BoundCheck(int idx, string s) { }
+
+	internal string get_DisplayFullName() { }
+
+	internal bool get_HasModifiers() { }
+
+	private string GetDisplayFullName(DisplayNameFormat flags) { }
+
+	private StringBuilder GetModifierString(StringBuilder sb) { }
+
+	internal static TypeSpec Parse(string typeName) { }
+
+	private static TypeSpec Parse(string name, ref int p, bool is_recurse, bool allow_aqn) { }
+
+	private static TypeIdentifier ParsedTypeIdentifier(string displayName) { }
+
+	internal Type Resolve(Func<AssemblyName, Assembly> assemblyResolver, Func<Assembly, string, bool, Type> typeResolver, bool throwOnError, bool ignoreCase) { }
+
+	private static void SkipSpace(string name, ref int pos) { }
+
+	internal static string UnescapeInternalName(string displayName) { }
+
+}
+

@@ -1,0 +1,11 @@
+//Type is in global namespace
+
+public enum LeaderboardCellType
+{
+	Friend = 0,
+	Player = 1,
+	DummyFriend = 2,
+	Space = 3,
+	Header = 4,
+}
+

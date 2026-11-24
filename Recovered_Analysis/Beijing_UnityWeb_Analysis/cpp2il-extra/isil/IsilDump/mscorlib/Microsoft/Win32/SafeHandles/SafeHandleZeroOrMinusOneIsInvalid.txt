@@ -1,0 +1,65 @@
+Type: Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
+
+Method: System.Void .ctor(System.Boolean ownsHandle)
+
+Disassembly:
+	0x110853F LocalGet 0
+	0x1108541 I32Const 1
+	0x1108543 I32Const 0
+	0x1108545 Call 59710
+	0x1108549 LocalGet 0
+	0x110854B LocalGet 1
+	0x110854D I32Store 2, 8
+	0x1108550 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid RuntimeClassHandle..ctor, this @ L0 (Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid), 1
+	4 Nop
+	5 Nop
+	6 Move this.handle (System.IntPtr), ownsHandle @ L1 (System.Boolean)
+	7 Nop
+	8 Return
+
+Method: System.Boolean get_IsInvalid()
+
+Disassembly:
+	0x12BC2D3 LocalGet 0
+	0x12BC2D5 I32Load 2, 8
+	0x12BC2D8 LocalTee 2
+	0x12BC2DA If -64
+	0x12BC2DC LocalGet 2
+	0x12BC2DE LocalGet 2
+	0x12BC2E0 I32Load 2, 0
+	0x12BC2E3 I32Load 2, 4
+	0x12BC2E6 I32Const 32767
+	0x12BC2EA I32And
+	0x12BC2EB I32Const 46824
+	0x12BC2EF I32Add
+	0x12BC2F0 CallIndirect 1, 0
+	0x12BC2F3 End
+	0x12BC2F4 I32Const 1
+	0x12BC2F6 End
+
+ISIL:
+	0 Nop
+	1 Move v2 @ S0_v2 (System.IntPtr), this.handle (System.IntPtr)
+	2 Nop
+	3 CheckEqual v4 @ TEMP_v1 (System.Boolean), this.handle (System.IntPtr), 0
+	4 ConditionalJump @b4, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Move v7 @ S1_v3 (System.Void*), v2.m_value (System.Void*)
+	8 Nop
+	9 Nop
+	10 And v10 @ S1_v5, [v7 @ S1_v3 (System.Void*)+4], 32767
+	11 Nop
+	12 Add v12 @ S1_v6, v10 @ S1_v5, 46824
+	13 IndirectCall v12 @ S1_v6, v13 @ SRET_v2, this.handle (System.IntPtr)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return 1
+

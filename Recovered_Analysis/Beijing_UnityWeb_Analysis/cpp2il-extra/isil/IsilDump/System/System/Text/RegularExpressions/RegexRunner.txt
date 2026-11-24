@@ -1,0 +1,2281 @@
+Type: System.Text.RegularExpressions.RegexRunner
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x126054C LocalGet 0
+	0x126054E LocalGet 0
+	0x1260550 I32Load 2, 32
+	0x1260553 I32Const 1
+	0x1260555 I32Sub
+	0x1260556 I32Store 2, 32
+	0x1260559 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Subtract v5 @ S1_v3 (System.Int32), this.runtrackpos (System.Int32), 1
+	5 Move this.runtrackpos (System.Int32), v5 @ S1_v3 (System.Int32)
+	6 Nop
+	7 Return
+
+Method: System.Text.RegularExpressions.Match Scan(System.Text.RegularExpressions.Regex regex, System.String text, System.Int32 textbeg, System.Int32 textend, System.Int32 textstart, System.Int32 prevlen, System.Boolean quick, System.TimeSpan timeout)
+
+Disassembly:
+	Method threw an exception while analyzing - System.Exception: Failed to find wasm definition for Method: System.Text.RegularExpressions.RegexRunner::Scan
+which has params [Regex regex, string text, int textbeg, int textend, int textstart, int prevlen, bool quick, TimeSpan timeout]
+ ---> System.Exception: Can't get function with signature iiiiiiiiiji, as it's not defined in the binary
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 109
+   --- End of inner exception stack trace ---
+   at Cpp2IL.Core.Utils.WasmUtils.GetWasmDefinition(MethodAnalysisContext context) in /_/Cpp2IL.Core/Utils/WasmUtils.cs:line 120
+   at Cpp2IL.Core.OutputFormats.IsilDumpOutputFormat.<>c__DisplayClass4_1.<DoOutput>b__0(TypeAnalysisContext type) in /_/Cpp2IL.Core/OutputFormats/IsilDumpOutputFormat.cs:line 53
+
+Method: System.Void StartTimeoutWatch()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void CheckTimeout()
+
+Disassembly:
+	0x1263629 LocalGet 0
+	0x126362B I32Load8_S 0, 68
+	0x126362E I32Eqz
+	0x126362F If -64
+	0x1263631 LocalGet 0
+	0x1263633 I32Const 1000
+	0x1263636 I32Store 2, 76
+	0x1263639 Call 72247
+	0x126363D LocalSet 2
+	0x126363F LocalGet 0
+	0x1263641 LocalGet 0
+	0x1263643 I32Const -64
+	0x1263645 I32Sub
+	0x1263646 I32Load 2, 0
+	0x1263649 LocalGet 2
+	0x126364B I32Add
+	0x126364C I32Store 2, 72
+	0x126364F End
+	0x1263650 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Not v3 @ S0_v3 (System.Boolean), this.ignoreTimeout (System.Boolean)
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Move this.timeoutChecksToSkip (System.Int32), 1000
+	8 Call 11A37, v7 @ S0_v6
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Subtract v21 @ S1_v4, this @ L0 (System.Text.RegularExpressions.RegexRunner), -64
+	14 Nop
+	15 Nop
+	16 Add v15 @ S1_v6 (System.Int32), [v21 @ S1_v4], v7 @ S0_v6
+	17 Move this.timeoutOccursAt (System.Int32), v15 @ S1_v6 (System.Int32)
+	18 Nop
+	19 Nop
+	20 Return
+
+Method: System.Void DoCheckTimeout()
+
+Disassembly:
+	0x125C1F8 LocalGet 0
+	0x125C1FA I32Load8_S 0, 68
+	0x125C1FD I32Eqz
+	0x125C1FE If -64
+	0x125C200 LocalGet 0
+	0x125C202 LocalGet 0
+	0x125C204 I32Load 2, 76
+	0x125C207 I32Const 1
+	0x125C209 I32Sub
+	0x125C20A LocalTee 2
+	0x125C20C I32Store 2, 76
+	0x125C20F LocalGet 2
+	0x125C211 I32Eqz
+	0x125C212 If -64
+	0x125C214 LocalGet 0
+	0x125C216 I32Const 1000
+	0x125C219 I32Store 2, 76
+	0x125C21C LocalGet 0
+	0x125C21E I32Const 0
+	0x125C220 Call 58270
+	0x125C224 End
+	0x125C225 End
+	0x125C226 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Not v3 @ S0_v3 (System.Boolean), this.ignoreTimeout (System.Boolean)
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b6, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Subtract v9 @ S1_v4 (System.Int32), this.timeoutChecksToSkip (System.Int32), 1
+	10 Nop
+	11 Move this.timeoutChecksToSkip (System.Int32), v9 @ S1_v4 (System.Int32)
+	12 Nop
+	13 CheckEqual v12 @ S0_v7 (System.Boolean), v9 @ S1_v4 (System.Int32), 0
+	14 Not v13 @ TEMP_v3 (System.Boolean), v12 @ S0_v7 (System.Boolean)
+	15 ConditionalJump @b6, v13 @ TEMP_v3 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Move this.timeoutChecksToSkip (System.Int32), 1000
+	19 Nop
+	20 Nop
+	21 CallVoid RegexRunner.InitMatch, this @ L0 (System.Text.RegularExpressions.RegexRunner)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Return
+
+Method: System.Void Go()
+
+Disassembly:
+	0x16009D1 I32Const 224
+	0x16009D4 Call 1
+	0x16009D6 End
+
+ISIL:
+No ISIL was generated
+Method: System.Boolean FindFirstChar()
+
+Disassembly:
+	0xE5CD05 GlobalGet 7
+	0xE5CD07 LocalSet 5
+	0xE5CD09 GlobalGet 7
+	0xE5CD0B I32Const 32
+	0xE5CD0D I32Add
+	0xE5CD0E GlobalSet 7
+	0xE5CD10 LocalGet 5
+	0xE5CD12 I32Const 12
+	0xE5CD14 I32Add
+	0xE5CD15 LocalTee 6
+	0xE5CD17 LocalGet 1
+	0xE5CD19 F32Store 2, 0
+	0xE5CD1C LocalGet 5
+	0xE5CD1E I32Const 16
+	0xE5CD20 I32Add
+	0xE5CD21 LocalTee 7
+	0xE5CD23 LocalGet 2
+	0xE5CD25 I32Const 1
+	0xE5CD27 I32And
+	0xE5CD28 I32Store8 0, 0
+	0xE5CD2B I32Const 4558128
+	0xE5CD30 I32Load8_S 0, 0
+	0xE5CD33 I32Eqz
+	0xE5CD34 If -64
+	0xE5CD36 I32Const 2989120
+	0xE5CD3B I32Load 2, 0
+	0xE5CD3E Call 73003
+	0xE5CD42 I32Const 4558128
+	0xE5CD47 I32Const 1
+	0xE5CD49 I32Store8 0, 0
+	0xE5CD4C End
+	0xE5CD4D LocalGet 5
+	0xE5CD4F I32Const 0
+	0xE5CD51 I32Store 2, 8
+	0xE5CD54 LocalGet 5
+	0xE5CD56 I32Const 4428680
+	0xE5CD5B I32Load 2, 0
+	0xE5CD5E LocalGet 6
+	0xE5CD60 Call 73903
+	0xE5CD64 I32Store 2, 0
+	0xE5CD67 LocalGet 5
+	0xE5CD69 I32Const 4428456
+	0xE5CD6E I32Load 2, 0
+	0xE5CD71 LocalGet 7
+	0xE5CD73 Call 73903
+	0xE5CD77 I32Store 2, 4
+	0xE5CD7A LocalGet 0
+	0xE5CD7C LocalGet 5
+	0xE5CD7E LocalGet 3
+	0xE5CD80 LocalGet 4
+	0xE5CD82 Call 73891
+	0xE5CD86 LocalGet 5
+	0xE5CD88 GlobalSet 7
+	0xE5CD8A End
+
+ISIL:
+No ISIL was generated
+Method: System.Void InitTrackCount()
+
+Disassembly:
+	0x16009D1 I32Const 224
+	0x16009D4 Call 1
+	0x16009D6 End
+
+ISIL:
+No ISIL was generated
+Method: System.Void InitMatch()
+
+Disassembly:
+	0x125C5CF GlobalGet 7
+	0x125C5D1 LocalSet 1
+	0x125C5D3 GlobalGet 7
+	0x125C5D5 I32Const 16
+	0x125C5D7 I32Add
+	0x125C5D8 GlobalSet 7
+	0x125C5DA I32Const 4569999
+	0x125C5DF I32Load8_S 0, 0
+	0x125C5E2 I32Eqz
+	0x125C5E3 If -64
+	0x125C5E5 I32Const 2996440
+	0x125C5EA I32Load 2, 0
+	0x125C5ED Call 73003
+	0x125C5F1 I32Const 4569999
+	0x125C5F6 I32Const 1
+	0x125C5F8 I32Store8 0, 0
+	0x125C5FB End
+	0x125C5FC LocalGet 1
+	0x125C5FE I32Const 8
+	0x125C600 I32Add
+	0x125C601 LocalSet 3
+	0x125C603 Call 72247
+	0x125C607 LocalTee 2
+	0x125C609 LocalGet 0
+	0x125C60B I32Load 2, 72
+	0x125C60E I32Ge_S
+	0x125C60F If -64
+	0x125C611 LocalGet 2
+	0x125C613 I32Const 1
+	0x125C615 I32Lt_S
+	0x125C616 LocalGet 0
+	0x125C618 I32Load 2, 72
+	0x125C61B I32Const -1
+	0x125C61D I32Gt_S
+	0x125C61E I32Or
+	0x125C61F If -64
+	0x125C621 LocalGet 0
+	0x125C623 I32Load 2, 20
+	0x125C626 LocalSet 2
+	0x125C628 LocalGet 0
+	0x125C62A I32Load 2, 60
+	0x125C62D I32Load 2, 8
+	0x125C630 LocalSet 4
+	0x125C632 LocalGet 0
+	0x125C634 I32Const -64
+	0x125C636 I32Sub
+	0x125C637 I32Load 2, 0
+	0x125C63A I32Const 4428720
+	0x125C63F I32Load 2, 0
+	0x125C642 LocalTee 0
+	0x125C644 I32Load16_S 1, 186
+	0x125C648 I32Const 512
+	0x125C64B I32And
+	0x125C64C If -64
+	0x125C64E LocalGet 0
+	0x125C650 I32Load 2, 116
+	0x125C653 I32Eqz
+	0x125C654 If -64
+	0x125C656 LocalGet 0
+	0x125C658 Call 72345
+	0x125C65C End
+	0x125C65D End
+	0x125C65E F64Convert_I32_S
+	0x125C65F I32Const 0
+	0x125C661 Call 50151
+	0x125C665 LocalSet 6
+	0x125C667 I32Const 4433064
+	0x125C66C I32Load 2, 0
+	0x125C66F Call 72556
+	0x125C673 LocalSet 0
+	0x125C675 LocalGet 1
+	0x125C677 LocalGet 6
+	0x125C679 I64Store 3, 0
+	0x125C67C LocalGet 3
+	0x125C67E LocalGet 1
+	0x125C680 I64Load 3, 0
+	0x125C683 I64Store 3, 0
+	0x125C686 LocalGet 0
+	0x125C688 LocalGet 2
+	0x125C68A LocalGet 4
+	0x125C68C LocalGet 3
+	0x125C68E I32Const 0
+	0x125C690 Call 58271
+	0x125C694 LocalGet 0
+	0x125C696 I32Const 0
+	0x125C698 I32Const 4491616
+	0x125C69D I32Load 2, 0
+	0x125C6A0 Call 73899
+	0x125C6A4 End
+	0x125C6A5 End
+	0x125C6A6 LocalGet 1
+	0x125C6A8 GlobalSet 7
+	0x125C6AA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b15
+	11 Nop
+	12 Move v12 @ S0_v34, [2DB8D8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v34
+	14 Nop
+	15 Move v14 @ S1_v27, 1
+	16 Move [45BB8F], v14 @ S1_v27
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 8
+	21 Nop
+	22 Call 11A37, v21 @ S0_v10
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CheckGreaterOrEqual v26 @ S0_v11 (System.Boolean), v21 @ S0_v10, this.timeoutOccursAt (System.Int32)
+	27 Not v27 @ TEMP_v2 (System.Boolean), v26 @ S0_v11 (System.Boolean)
+	28 ConditionalJump @b16, v27 @ TEMP_v2 (System.Boolean)
+	29 Nop
+	30 Nop
+	31 CheckLess v30 @ S0_v15 (System.Boolean), v21 @ S0_v10, 1
+	32 Nop
+	33 Nop
+	34 Nop
+	35 CheckGreater v34 @ S1_v10 (System.Boolean), this.timeoutOccursAt (System.Int32), -1
+	36 Or v35 @ S0_v16, v30 @ S0_v15 (System.Boolean), v34 @ S1_v10 (System.Boolean)
+	37 CheckEqual v36 @ TEMP_v4 (System.Boolean), v35 @ S0_v16, 0
+	38 ConditionalJump @b16, v36 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move v67 @ S0_v20 (System.Text.RegularExpressions.Regex), this.runregex (System.Text.RegularExpressions.Regex)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Subtract v71 @ S0_v23, this @ L0 (System.Text.RegularExpressions.RegexRunner), -64
+	49 Nop
+	50 Nop
+	51 Move v74 @ S1_v13 (Il2CppClass<System.TimeSpan>), typeof(System.TimeSpan)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 And v78 @ S1_v15, [v74 @ S1_v13 (Il2CppClass<System.TimeSpan>)+BA], 512
+	56 CheckEqual v79 @ TEMP_v5 (System.Boolean), v78 @ S1_v15, 0
+	57 ConditionalJump @b17, v79 @ TEMP_v5 (System.Boolean)
+	58 Move v80 @ S1_v23 (Il2CppClass<System.TimeSpan>), typeof(System.TimeSpan)
+	59 Nop
+	60 CheckEqual v82 @ S1_v25 (System.Boolean), [v80 @ S1_v23 (Il2CppClass<System.TimeSpan>)+74], 0
+	61 Not v83 @ TEMP_v7 (System.Boolean), v82 @ S1_v25 (System.Boolean)
+	62 ConditionalJump @b17, v83 @ TEMP_v7 (System.Boolean)
+	63 Nop
+	64 CallVoid 11A99, typeof(System.TimeSpan)
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Call TimeSpan.FromMinutes, v87 @ S0_v25 (System.TimeSpan), [v71 @ S0_v23]
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Call 11B6C, v90 @ S0_v28, typeof(System.Text.RegularExpressions.RegexMatchTimeoutException)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Move [v1 @ G7], v87 @ S0_v25 (System.TimeSpan)
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Move [v19 @ S0_v9], [v1 @ G7]
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 CallVoid E39F, v90 @ S0_v28, this.runtext (System.String), v67.pattern (System.String), v19 @ S0_v9, 0
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 CallVoid 120AB, v90 @ S0_v28, 0, methodof(System.Text.RegularExpressions.RegexRunner::DoCheckTimeout)
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Return
+
+Method: System.Text.RegularExpressions.Match TidyMatch(System.Boolean quick)
+
+Disassembly:
+	0x1261BC1 LocalGet 0
+	0x1261BC3 I32Load 2, 28
+	0x1261BC6 LocalGet 1
+	0x1261BC8 LocalGet 0
+	0x1261BCA I32Load 2, 32
+	0x1261BCD I32Add
+	0x1261BCE I32Const 0
+	0x1261BD0 Call 55658
+	0x1261BD4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Add v7 @ S1_v2 (System.Char[]), quick @ L1 (System.Boolean), this.runtrackpos (System.Int32)
+	6 Nop
+	7 Call String.Split, returnVal1 @ S0_v3 (System.Text.RegularExpressions.Match), this.runtrack (System.Int32[]), v7 @ S1_v2 (System.Char[])
+	8 Nop
+	9 Return returnVal1 @ S0_v3 (System.Text.RegularExpressions.Match)
+
+Method: System.Void EnsureStorage()
+
+Disassembly:
+	0x1263656 I32Const 4570066
+	0x126365B I32Load8_S 0, 0
+	0x126365E I32Eqz
+	0x126365F If -64
+	0x1263661 I32Const 2996456
+	0x1263666 I32Load 2, 0
+	0x1263669 Call 73003
+	0x126366D I32Const 4570066
+	0x1263672 I32Const 1
+	0x1263674 I32Store8 0, 0
+	0x1263677 End
+	0x1263678 LocalGet 0
+	0x126367A I32Load 2, 56
+	0x126367D If -64
+	0x126367F I32Const 4
+	0x1263681 LocalGet 0
+	0x1263683 I32Load 2, 56
+	0x1263686 LocalGet 0
+	0x1263688 I32Load 2, 60
+	0x126368B LocalGet 0
+	0x126368D I32Load 2, 20
+	0x1263690 LocalGet 0
+	0x1263692 I32Load 2, 8
+	0x1263695 LocalGet 0
+	0x1263697 I32Load 2, 12
+	0x126369A LocalGet 0
+	0x126369C I32Load 2, 16
+	0x126369F Call 35140
+	0x12636A3 Else
+	0x12636A4 LocalGet 0
+	0x12636A6 I32Load 2, 60
+	0x12636A9 LocalSet 1
+	0x12636AB LocalGet 0
+	0x12636AD I32Load 2, 60
+	0x12636B0 LocalSet 2
+	0x12636B2 LocalGet 0
+	0x12636B4 I32Load 2, 60
+	0x12636B7 I32Load 2, 32
+	0x12636BA If -64
+	0x12636BC LocalGet 2
+	0x12636BE I32Load 2, 32
+	0x12636C1 LocalSet 2
+	0x12636C3 LocalGet 0
+	0x12636C5 I32Load 2, 60
+	0x12636C8 I32Load 2, 44
+	0x12636CB LocalSet 3
+	0x12636CD LocalGet 0
+	0x12636CF I32Load 2, 20
+	0x12636D2 LocalSet 4
+	0x12636D4 LocalGet 0
+	0x12636D6 I32Load 2, 8
+	0x12636D9 LocalSet 5
+	0x12636DB LocalGet 0
+	0x12636DD I32Load 2, 12
+	0x12636E0 LocalSet 6
+	0x12636E2 LocalGet 0
+	0x12636E4 I32Load 2, 8
+	0x12636E7 LocalSet 7
+	0x12636E9 LocalGet 0
+	0x12636EB I32Load 2, 16
+	0x12636EE LocalSet 8
+	0x12636F0 I32Const 4433068
+	0x12636F5 I32Load 2, 0
+	0x12636F8 Call 72556
+	0x12636FC LocalTee 9
+	0x12636FE LocalGet 1
+	0x1263700 LocalGet 2
+	0x1263702 LocalGet 3
+	0x1263704 LocalGet 4
+	0x1263706 LocalGet 5
+	0x1263708 LocalGet 6
+	0x126370A LocalGet 7
+	0x126370C I32Sub
+	0x126370D LocalGet 8
+	0x126370F I32Const 0
+	0x1263711 Call 54516
+	0x1263715 LocalGet 0
+	0x1263717 I32Const 56
+	0x1263719 I32Add
+	0x126371A LocalGet 9
+	0x126371C I32Store 2, 0
+	0x126371F Else
+	0x1263720 LocalGet 2
+	0x1263722 I32Load 2, 44
+	0x1263725 LocalSet 2
+	0x1263727 LocalGet 0
+	0x1263729 I32Load 2, 20
+	0x126372C LocalSet 3
+	0x126372E LocalGet 0
+	0x1263730 I32Load 2, 8
+	0x1263733 LocalSet 4
+	0x1263735 LocalGet 0
+	0x1263737 I32Load 2, 12
+	0x126373A LocalSet 5
+	0x126373C LocalGet 0
+	0x126373E I32Load 2, 8
+	0x1263741 LocalSet 6
+	0x1263743 LocalGet 0
+	0x1263745 I32Load 2, 16
+	0x1263748 LocalSet 7
+	0x126374A I32Const 4432968
+	0x126374F I32Load 2, 0
+	0x1263752 Call 72556
+	0x1263756 LocalTee 8
+	0x1263758 LocalGet 1
+	0x126375A LocalGet 2
+	0x126375C LocalGet 3
+	0x126375E LocalGet 4
+	0x1263760 LocalGet 5
+	0x1263762 LocalGet 6
+	0x1263764 I32Sub
+	0x1263765 LocalGet 7
+	0x1263767 I32Const 0
+	0x1263769 Call 54499
+	0x126376D LocalGet 0
+	0x126376F I32Const 56
+	0x1263771 I32Add
+	0x1263772 LocalGet 8
+	0x1263774 I32Store 2, 0
+	0x1263777 End
+	0x1263778 End
+	0x1263779 LocalGet 0
+	0x126377B I32Load 2, 44
+	0x126377E If -64
+	0x1263780 LocalGet 0
+	0x1263782 LocalGet 0
+	0x1263784 I32Load 2, 28
+	0x1263787 I32Load 2, 12
+	0x126378A I32Store 2, 32
+	0x126378D LocalGet 0
+	0x126378F LocalGet 0
+	0x1263791 I32Load 2, 36
+	0x1263794 I32Load 2, 12
+	0x1263797 I32Store 2, 40
+	0x126379A LocalGet 0
+	0x126379C LocalGet 0
+	0x126379E I32Load 2, 44
+	0x12637A1 I32Load 2, 12
+	0x12637A4 I32Store 2, 48
+	0x12637A7 Else
+	0x12637A8 I32Const 6
+	0x12637AA LocalGet 0
+	0x12637AC Call 29286
+	0x12637B0 LocalGet 0
+	0x12637B2 I32Load 2, 52
+	0x12637B5 I32Const 3
+	0x12637B7 I32Shl
+	0x12637B8 LocalSet 2
+	0x12637BA LocalGet 0
+	0x12637BC I32Const 28
+	0x12637BE I32Add
+	0x12637BF I32Const 4427960
+	0x12637C4 I32Load 2, 0
+	0x12637C7 LocalGet 0
+	0x12637C9 I32Load 2, 52
+	0x12637CC I32Const 3
+	0x12637CE I32Shl
+	0x12637CF LocalTee 1
+	0x12637D1 I32Const 32
+	0x12637D3 I32Gt_S
+	0x12637D4 If -1
+	0x12637D6 LocalGet 1
+	0x12637D8 Else
+	0x12637D9 I32Const 32
+	0x12637DB LocalTee 1
+	0x12637DD End
+	0x12637DE Call 71670
+	0x12637E2 I32Store 2, 0
+	0x12637E5 LocalGet 0
+	0x12637E7 LocalGet 1
+	0x12637E9 I32Store 2, 32
+	0x12637EC LocalGet 0
+	0x12637EE I32Const 36
+	0x12637F0 I32Add
+	0x12637F1 I32Const 4427960
+	0x12637F6 I32Load 2, 0
+	0x12637F9 LocalGet 2
+	0x12637FB I32Const 16
+	0x12637FD I32Gt_S
+	0x12637FE If -1
+	0x1263800 LocalGet 2
+	0x1263802 Else
+	0x1263803 I32Const 16
+	0x1263805 LocalTee 2
+	0x1263807 End
+	0x1263808 Call 71670
+	0x126380C I32Store 2, 0
+	0x126380F LocalGet 0
+	0x1263811 LocalGet 2
+	0x1263813 I32Store 2, 40
+	0x1263816 LocalGet 0
+	0x1263818 I32Const 44
+	0x126381A I32Add
+	0x126381B I32Const 4427960
+	0x1263820 I32Load 2, 0
+	0x1263823 I32Const 32
+	0x1263825 Call 71670
+	0x1263829 I32Store 2, 0
+	0x126382C LocalGet 0
+	0x126382E I32Const 32
+	0x1263830 I32Store 2, 48
+	0x1263833 End
+	0x1263834 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b24
+	5 Nop
+	6 Move v5 @ S0_v73, [2DB8E8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v73
+	8 Nop
+	9 Move v7 @ S1_v38, 1
+	10 Move [45BBD2], v7 @ S1_v38
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), this.runmatch (System.Text.RegularExpressions.Match), 0
+	15 ConditionalJump @b7, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CallVoid 8944, 4, this.runmatch (System.Text.RegularExpressions.Match), this.runregex (System.Text.RegularExpressions.Regex), this.runtext (System.String), this.runtextbeg (System.Int32), this.runtextend (System.Int32), this.runtextstart (System.Int32)
+	30 Jump @b25
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Move v32 @ S0_v30 (System.Text.RegularExpressions.Regex), this.runregex (System.Text.RegularExpressions.Regex)
+	36 Nop
+	37 Nop
+	38 Move v35 @ S0_v32 (System.Text.RegularExpressions.Regex), this.runregex (System.Text.RegularExpressions.Regex)
+	39 Nop
+	40 CheckEqual v37 @ TEMP_v8 (System.Boolean), v35.caps (System.Collections.Hashtable), 0
+	41 ConditionalJump @b11, v37 @ TEMP_v8 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Move v42 @ S0_v54 (System.Text.RegularExpressions.Regex), this.runregex (System.Text.RegularExpressions.Regex)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Call 11B6C, v62 @ S0_v68 (System.Text.RegularExpressions.RegexTree), typeof(System.Text.RegularExpressions.MatchSparse)
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Subtract v113 @ S6_v5 (System.String[]), this.runtextend (System.Int32), this.runtextbeg (System.Int32)
+	76 Nop
+	77 Nop
+	78 CallVoid RegexTree..ctor, v62 @ S0_v68 (System.Text.RegularExpressions.RegexTree), this.runregex (System.Text.RegularExpressions.Regex), v32.caps (System.Collections.Hashtable), v42.capsize (System.Int32), this.runtext (System.String), this.runtextbeg (System.Int32), v113 @ S6_v5 (System.String[]), this.runtextstart (System.Int32)
+	79 Nop
+	80 Nop
+	81 Add v132 @ S0_v70, this @ L0 (System.Text.RegularExpressions.RegexRunner), 56
+	82 Nop
+	83 Move [v132 @ S0_v70], v62 @ S0_v68 (System.Text.RegularExpressions.RegexTree)
+	84 Jump @b25
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Call 11B6C, v83 @ S0_v48 (System.Net.Sockets.SafeSocketHandle), typeof(System.Text.RegularExpressions.Match)
+	106 Nop
+	107 Nop
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 Subtract v115 @ S5_v3 (System.Int32), this.runtextend (System.Int32), this.runtextbeg (System.Int32)
+	114 Nop
+	115 Nop
+	116 CallVoid Socket.SetSocketOption_internal, v83 @ S0_v48 (System.Net.Sockets.SafeSocketHandle), this.runregex (System.Text.RegularExpressions.Regex), v32.capsize (System.Int32), this.runtext (System.String), this.runtextbeg (System.Int32), v115 @ S5_v3 (System.Int32), this.runtextstart (System.Int32)
+	117 Nop
+	118 Nop
+	119 Add v131 @ S0_v50, this @ L0 (System.Text.RegularExpressions.RegexRunner), 56
+	120 Nop
+	121 Move [v131 @ S0_v50], v83 @ S0_v48 (System.Net.Sockets.SafeSocketHandle)
+	122 Nop
+	123 Nop
+	124 Nop
+	125 Nop
+	126 CheckEqual v135 @ TEMP_v4 (System.Boolean), this.runcrawl (System.Int32[]), 0
+	127 ConditionalJump @b15, v135 @ TEMP_v4 (System.Boolean)
+	128 Nop
+	129 Nop
+	130 Move v144 @ S1_v22 (System.Int32[]), this.runtrack (System.Int32[])
+	131 Nop
+	132 Move this.runtrackpos (System.Int32), v144.Length
+	133 Nop
+	134 Nop
+	135 Move v148 @ S1_v25 (System.Int32[]), this.runstack (System.Int32[])
+	136 Nop
+	137 Move this.runstackpos (System.Int32), v148.Length
+	138 Nop
+	139 Nop
+	140 Move v152 @ S1_v28 (System.Int32[]), this.runcrawl (System.Int32[])
+	141 Nop
+	142 Move this.runcrawlpos (System.Int32), v152.Length
+	143 Jump @b27
+	144 Nop
+	145 Nop
+	146 CallVoid 7266, 6, this @ L0 (System.Text.RegularExpressions.RegexRunner)
+	147 Nop
+	148 Nop
+	149 Nop
+	150 ShiftLeft v177 @ S0_v14 (System.Int32), this.runtrackcount (System.Int32), 3
+	151 Nop
+	152 Nop
+	153 Nop
+	154 Add v181 @ S0_v16, this @ L0 (System.Text.RegularExpressions.RegexRunner), 28
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 ShiftLeft v187 @ S2_v5 (System.Int32), this.runtrackcount (System.Int32), 3
+	161 Nop
+	162 Nop
+	163 CheckGreater v190 @ S2_v6 (System.Boolean), v187 @ S2_v5 (System.Int32), 32
+	164 Not v191 @ TEMP_v6 (System.Boolean), v190 @ S2_v6 (System.Boolean)
+	165 ConditionalJump @b18, v191 @ TEMP_v6 (System.Boolean)
+	166 Nop
+	167 Jump @b28
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Newobj v196 @ S1_v9 (System.OverflowException), typeof(System.OverflowException)
+	172 Move [v181 @ S0_v16], v196 @ S1_v9 (System.OverflowException)
+	173 Nop
+	174 Nop
+	175 Move this.runtrackpos (System.Int32), v163 @ L1_v4 (System.Int32)
+	176 Nop
+	177 Nop
+	178 Add v201 @ S0_v19, this @ L0 (System.Text.RegularExpressions.RegexRunner), 36
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Nop
+	183 CheckGreater v205 @ S2_v9 (System.Boolean), v177 @ S0_v14 (System.Int32), 16
+	184 Not v171 @ TEMP_v7 (System.Boolean), v205 @ S2_v9 (System.Boolean)
+	185 ConditionalJump @b21, v171 @ TEMP_v7 (System.Boolean)
+	186 Nop
+	187 Jump @b29
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Newobj v210 @ S1_v14 (System.OverflowException), typeof(System.OverflowException)
+	192 Move [v201 @ S0_v19], v210 @ S1_v14 (System.OverflowException)
+	193 Nop
+	194 Nop
+	195 Move this.runstackpos (System.Int32), v161 @ L2_v4 (System.Int32)
+	196 Nop
+	197 Nop
+	198 Add v215 @ S0_v22, this @ L0 (System.Text.RegularExpressions.RegexRunner), 44
+	199 Nop
+	200 Nop
+	201 Nop
+	202 Newobj v218 @ S1_v19 (System.OverflowException), typeof(System.OverflowException)
+	203 Move [v215 @ S0_v22], v218 @ S1_v19 (System.OverflowException)
+	204 Nop
+	205 Nop
+	206 Move this.runcrawlpos (System.Int32), 32
+	207 Nop
+	208 Nop
+	209 Return
+
+Method: System.Boolean IsBoundary(System.Int32 index, System.Int32 startpos, System.Int32 endpos)
+
+Disassembly:
+	0x125D618 I32Const 4570011
+	0x125D61D I32Load8_S 0, 0
+	0x125D620 I32Eqz
+	0x125D621 If -64
+	0x125D623 I32Const 2996200
+	0x125D628 I32Load 2, 0
+	0x125D62B Call 73003
+	0x125D62F I32Const 4570011
+	0x125D634 I32Const 1
+	0x125D636 I32Store8 0, 0
+	0x125D639 End
+	0x125D63A LocalGet 3
+	0x125D63C LocalGet 2
+	0x125D63E I32Or
+	0x125D63F If -64
+	0x125D641 LocalGet 2
+	0x125D643 I32Const 1
+	0x125D645 I32Eq
+	0x125D646 LocalGet 3
+	0x125D648 I32Const 1
+	0x125D64A I32Eq
+	0x125D64B I32And
+	0x125D64C I32Eqz
+	0x125D64D If -64
+	0x125D64F LocalGet 0
+	0x125D651 I32Load 2, 8
+	0x125D654 I32Const 9
+	0x125D656 I32Sub
+	0x125D657 I32Const 3
+	0x125D659 I32Lt_U
+	0x125D65A If -64
+	0x125D65C LocalGet 0
+	0x125D65E LocalGet 1
+	0x125D660 If -1
+	0x125D662 I32Const 6
+	0x125D664 Else
+	0x125D665 I32Const 3
+	0x125D667 End
+	0x125D668 I32Const 9
+	0x125D66A I32Sub
+	0x125D66B LocalGet 0
+	0x125D66D I32Load 2, 8
+	0x125D670 I32Add
+	0x125D671 I32Store 2, 8
+	0x125D674 LocalGet 0
+	0x125D676 LocalGet 2
+	0x125D678 I32Store 2, 24
+	0x125D67B LocalGet 0
+	0x125D67D LocalGet 3
+	0x125D67F I32Store 2, 28
+	0x125D682 Else
+	0x125D683 LocalGet 0
+	0x125D685 I32Load 2, 32
+	0x125D688 LocalSet 6
+	0x125D68A I32Const 4433048
+	0x125D68F I32Load 2, 0
+	0x125D692 Call 72556
+	0x125D696 LocalTee 4
+	0x125D698 LocalTee 5
+	0x125D69A LocalGet 1
+	0x125D69C If -1
+	0x125D69E I32Const 27
+	0x125D6A0 Else
+	0x125D6A1 I32Const 26
+	0x125D6A3 End
+	0x125D6A4 I32Store 2, 8
+	0x125D6A7 LocalGet 5
+	0x125D6A9 LocalGet 6
+	0x125D6AB I32Store 2, 32
+	0x125D6AE LocalGet 5
+	0x125D6B0 LocalGet 2
+	0x125D6B2 I32Store 2, 24
+	0x125D6B5 LocalGet 5
+	0x125D6B7 LocalGet 3
+	0x125D6B9 I32Store 2, 28
+	0x125D6BC LocalGet 4
+	0x125D6BE LocalGet 0
+	0x125D6C0 I32Const 0
+	0x125D6C2 Call 58294
+	0x125D6C6 LocalGet 4
+	0x125D6C8 LocalSet 0
+	0x125D6CA End
+	0x125D6CB End
+	0x125D6CC Else
+	0x125D6CD LocalGet 0
+	0x125D6CF I32Load 2, 32
+	0x125D6D2 LocalSet 1
+	0x125D6D4 I32Const 4433048
+	0x125D6D9 I32Load 2, 0
+	0x125D6DC Call 72556
+	0x125D6E0 LocalTee 0
+	0x125D6E2 LocalTee 2
+	0x125D6E4 I32Const 23
+	0x125D6E6 I32Store 2, 8
+	0x125D6E9 LocalGet 2
+	0x125D6EB LocalGet 1
+	0x125D6ED I32Store 2, 32
+	0x125D6F0 End
+	0x125D6F1 LocalGet 0
+	0x125D6F3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v38, [2DB7E8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v38
+	8 Nop
+	9 Move v7 @ S1_v28, 1
+	10 Move [45BB9B], v7 @ S1_v28
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Or v15 @ S0_v6 (System.Int32), endpos @ L3 (System.Int32), startpos @ L2 (System.Int32)
+	15 CheckEqual v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v6 (System.Int32), 0
+	16 ConditionalJump @b15, v16 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 CheckEqual v19 @ S0_v16 (System.Boolean), startpos @ L2 (System.Int32), 1
+	20 Nop
+	21 Nop
+	22 CheckEqual v22 @ S1_v8 (System.Boolean), endpos @ L3 (System.Int32), 1
+	23 And v23 @ S0_v17, v19 @ S0_v16 (System.Boolean), v22 @ S1_v8 (System.Boolean)
+	24 CheckEqual v24 @ S0_v18 (System.Boolean), v23 @ S0_v17, 0
+	25 Not v25 @ TEMP_v4 (System.Boolean), v24 @ S0_v18 (System.Boolean)
+	26 ConditionalJump @b18, v25 @ TEMP_v4 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Subtract v36 @ S0_v22, v78.runtextbeg (System.Int32), 9
+	31 Nop
+	32 CheckLess v38 @ S0_v23 (System.Boolean), v36 @ S0_v22, 3
+	33 Not v39 @ TEMP_v6 (System.Boolean), v38 @ S0_v23 (System.Boolean)
+	34 ConditionalJump @b10, v39 @ TEMP_v6 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 CheckEqual v59 @ TEMP_v8 (System.Boolean), index @ L1 (System.Int32), 0
+	38 ConditionalJump @b9, v59 @ TEMP_v8 (System.Boolean)
+	39 Nop
+	40 Jump @b19
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Subtract v93 @ S1_v22, v91 @ S1_v21, 9
+	45 Nop
+	46 Nop
+	47 Add v95 @ S1_v23 (System.Int32), v93 @ S1_v22, v78.runtextbeg (System.Int32)
+	48 Move v78.runtextbeg (System.Int32), v95 @ S1_v23 (System.Int32)
+	49 Nop
+	50 Nop
+	51 Move v78.runtextpos (System.Int32), startpos @ L2 (System.Int32)
+	52 Nop
+	53 Nop
+	54 Move v78.runtrack (System.Int32[]), endpos @ L3 (System.Int32)
+	55 Jump @b18
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Call 11B6C, v75 @ S0_v28 (System.Text.RegularExpressions.RegexParser), typeof(System.Text.RegularExpressions.RegexNode)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 CheckEqual v58 @ TEMP_v7 (System.Boolean), index @ L1 (System.Int32), 0
+	66 ConditionalJump @b13, v58 @ TEMP_v7 (System.Boolean)
+	67 Nop
+	68 Jump @b20
+	69 Nop
+	70 Nop
+	71 Move v75._stack (System.Text.RegularExpressions.RegexNode), v100 @ S1_v13 (System.Text.RegularExpressions.RegexNode)
+	72 Nop
+	73 Nop
+	74 Move v75._currentPos (System.Int32), v78.runtrackpos (System.Int32)
+	75 Nop
+	76 Nop
+	77 Move v75._unit (System.Text.RegularExpressions.RegexNode), startpos @ L2 (System.Int32)
+	78 Nop
+	79 Nop
+	80 Move v75._pattern (System.String), endpos @ L3 (System.Int32)
+	81 Nop
+	82 Nop
+	83 Nop
+	84 CallVoid RegexParser..ctor, v75 @ S0_v28 (System.Text.RegularExpressions.RegexParser), v78 @ L0_v1 (System.Text.RegularExpressions.RegexRunner)
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Jump @b21
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Call 11B6C, v32 @ S0_v13 (System.Text.RegularExpressions.RegexRunner), typeof(System.Text.RegularExpressions.RegexNode)
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Move v32.runtextbeg (System.Int32), 23
+	100 Nop
+	101 Nop
+	102 Move v32.runtrackpos (System.Int32), v78.runtrackpos (System.Int32)
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Return v78 @ L0_v1 (System.Text.RegularExpressions.RegexRunner)
+
+Method: System.Boolean IsECMABoundary(System.Int32 index, System.Int32 startpos, System.Int32 endpos)
+
+Disassembly:
+	0x125C370 I32Const 4569997
+	0x125C375 I32Load8_S 0, 0
+	0x125C378 I32Eqz
+	0x125C379 If -64
+	0x125C37B I32Const 2996460
+	0x125C380 I32Load 2, 0
+	0x125C383 Call 73003
+	0x125C387 I32Const 4569997
+	0x125C38C I32Const 1
+	0x125C38E I32Store8 0, 0
+	0x125C391 End
+	0x125C392 LocalGet 1
+	0x125C394 LocalGet 2
+	0x125C396 I32Gt_S
+	0x125C397 If -1
+	0x125C399 LocalGet 0
+	0x125C39B I32Load 2, 20
+	0x125C39E LocalGet 1
+	0x125C3A0 I32Const 1
+	0x125C3A2 I32Sub
+	0x125C3A3 I32Const 0
+	0x125C3A5 Call 55658
+	0x125C3A9 I32Const 4433008
+	0x125C3AE I32Load 2, 0
+	0x125C3B1 LocalTee 2
+	0x125C3B3 I32Load16_S 1, 186
+	0x125C3B7 I32Const 512
+	0x125C3BA I32And
+	0x125C3BB If -64
+	0x125C3BD LocalGet 2
+	0x125C3BF I32Load 2, 116
+	0x125C3C2 I32Eqz
+	0x125C3C3 If -64
+	0x125C3C5 LocalGet 2
+	0x125C3C7 Call 72345
+	0x125C3CB End
+	0x125C3CC End
+	0x125C3CD I32Const 0
+	0x125C3CF Call 54581
+	0x125C3D3 I32Const 1
+	0x125C3D5 I32And
+	0x125C3D6 Else
+	0x125C3D7 I32Const 0
+	0x125C3D9 End
+	0x125C3DA LocalGet 1
+	0x125C3DC LocalGet 3
+	0x125C3DE I32Lt_S
+	0x125C3DF If -1
+	0x125C3E1 LocalGet 0
+	0x125C3E3 I32Load 2, 20
+	0x125C3E6 LocalGet 1
+	0x125C3E8 I32Const 0
+	0x125C3EA Call 55658
+	0x125C3EE I32Const 4433008
+	0x125C3F3 I32Load 2, 0
+	0x125C3F6 LocalTee 0
+	0x125C3F8 I32Load16_S 1, 186
+	0x125C3FC I32Const 512
+	0x125C3FF I32And
+	0x125C400 If -64
+	0x125C402 LocalGet 0
+	0x125C404 I32Load 2, 116
+	0x125C407 I32Eqz
+	0x125C408 If -64
+	0x125C40A LocalGet 0
+	0x125C40C Call 72345
+	0x125C410 End
+	0x125C411 End
+	0x125C412 I32Const 0
+	0x125C414 Call 54581
+	0x125C418 I32Const 1
+	0x125C41A I32And
+	0x125C41B Else
+	0x125C41C I32Const 0
+	0x125C41E End
+	0x125C41F I32Ne
+	0x125C420 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b19
+	5 Nop
+	6 Move v5 @ S0_v16, [2DB8EC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v26, 1
+	10 Move [45BB8D], v7 @ S1_v26
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckGreater v15 @ S0_v6 (System.Boolean), index @ L1 (System.Int32), startpos @ L2 (System.Int32)
+	15 Not v16 @ TEMP_v2 (System.Boolean), v15 @ S0_v6 (System.Boolean)
+	16 ConditionalJump @b11, v16 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Subtract v22 @ S1_v14 (System.Char[]), index @ L1 (System.Int32), 1
+	22 Nop
+	23 Call String.Split, v24 @ S0_v12 (System.String[]), this.runtext (System.String), v22 @ S1_v14 (System.Char[])
+	24 Nop
+	25 Move v27 @ S1_v16 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>), typeof(System.Text.RegularExpressions.RegexCharClass)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v31 @ S1_v18, [v27 @ S1_v16 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>)+BA], 512
+	30 CheckEqual v32 @ TEMP_v9 (System.Boolean), v31 @ S1_v18, 0
+	31 ConditionalJump @b20, v32 @ TEMP_v9 (System.Boolean)
+	32 Move v47 @ S1_v22 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>), typeof(System.Text.RegularExpressions.RegexCharClass)
+	33 Nop
+	34 CheckEqual v49 @ S1_v24 (System.Boolean), [v47 @ S1_v22 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>)+74], 0
+	35 Not v50 @ TEMP_v11 (System.Boolean), v49 @ S1_v24 (System.Boolean)
+	36 ConditionalJump @b20, v50 @ TEMP_v11 (System.Boolean)
+	37 Nop
+	38 CallVoid 11A99, typeof(System.Text.RegularExpressions.RegexCharClass)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call RegexCharClass.NegateCategory, v54 @ S0_v13 (System.String), v24 @ S0_v12 (System.String[])
+	43 Nop
+	44 And v40 @ S0_v7, v54 @ S0_v13 (System.String), 1
+	45 Jump @b21
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 CheckLess v45 @ S1_v5 (System.Boolean), index @ L1 (System.Int32), endpos @ L3 (System.Int32)
+	51 Not v46 @ TEMP_v4 (System.Boolean), v45 @ S1_v5 (System.Boolean)
+	52 ConditionalJump @b18, v46 @ TEMP_v4 (System.Boolean)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Call String.Split, v59 @ S1_v10 (System.String[]), this.runtext (System.String), index @ L1 (System.Int32)
+	58 Nop
+	59 Move v62 @ S2_v6 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>), typeof(System.Text.RegularExpressions.RegexCharClass)
+	60 Nop
+	61 Nop
+	62 Nop
+	63 And v66 @ S2_v8, [v62 @ S2_v6 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>)+BA], 512
+	64 CheckEqual v67 @ TEMP_v6 (System.Boolean), v66 @ S2_v8, 0
+	65 ConditionalJump @b22, v67 @ TEMP_v6 (System.Boolean)
+	66 Move v78 @ S2_v12 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>), typeof(System.Text.RegularExpressions.RegexCharClass)
+	67 Nop
+	68 CheckEqual v80 @ S2_v14 (System.Boolean), [v78 @ S2_v12 (Il2CppClass<System.Text.RegularExpressions.RegexCharClass>)+74], 0
+	69 Not v81 @ TEMP_v8 (System.Boolean), v80 @ S2_v14 (System.Boolean)
+	70 ConditionalJump @b22, v81 @ TEMP_v8 (System.Boolean)
+	71 Nop
+	72 CallVoid 11A99, typeof(System.Text.RegularExpressions.RegexCharClass)
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Call RegexCharClass.NegateCategory, v85 @ S1_v11 (System.String), v59 @ S1_v10 (System.String[])
+	77 Nop
+	78 And v73 @ S1_v6, v85 @ S1_v11 (System.String), 1
+	79 Jump @b23
+	80 Nop
+	81 Nop
+	82 CheckNotEqual returnVal1 @ S0_v8 (System.Boolean), v40 @ S0_v7, v73 @ S1_v6
+	83 Nop
+	84 Return returnVal1 @ S0_v8 (System.Boolean)
+
+Method: System.Void DoubleTrack()
+
+Disassembly:
+	0x1259C11 LocalGet 0
+	0x1259C13 I32Load 2, 40
+	0x1259C16 LocalGet 0
+	0x1259C18 I32Load 2, 52
+	0x1259C1B I32Const 2
+	0x1259C1D I32Shl
+	0x1259C1E I32Lt_S
+	0x1259C1F If -64
+	0x1259C21 LocalGet 0
+	0x1259C23 I32Const 0
+	0x1259C25 Call 58225
+	0x1259C29 End
+	0x1259C2A LocalGet 0
+	0x1259C2C I32Load 2, 32
+	0x1259C2F LocalGet 0
+	0x1259C31 I32Load 2, 52
+	0x1259C34 I32Const 2
+	0x1259C36 I32Shl
+	0x1259C37 I32Lt_S
+	0x1259C38 If -64
+	0x1259C3A LocalGet 0
+	0x1259C3C I32Const 0
+	0x1259C3E Call 58226
+	0x1259C42 End
+	0x1259C43 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 ShiftLeft v6 @ S1_v3 (System.Int32), this.runtrackcount (System.Int32), 2
+	6 CheckLess v7 @ S0_v3 (System.Boolean), this.runstackpos (System.Int32), v6 @ S1_v3 (System.Int32)
+	7 Not v8 @ TEMP_v1 (System.Boolean), v7 @ S0_v3 (System.Boolean)
+	8 ConditionalJump @b4, v8 @ TEMP_v1 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 CallVoid RegexRunner.DoubleCrawl, this @ L0 (System.Text.RegularExpressions.RegexRunner)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 ShiftLeft v18 @ S1_v7 (System.Int32), this.runtrackcount (System.Int32), 2
+	19 CheckLess v19 @ S0_v7 (System.Boolean), this.runtrackpos (System.Int32), v18 @ S1_v7 (System.Int32)
+	20 Not v20 @ TEMP_v2 (System.Boolean), v19 @ S0_v7 (System.Boolean)
+	21 ConditionalJump @b6, v20 @ TEMP_v2 (System.Boolean)
+	22 Nop
+	23 Nop
+	24 CallVoid RegexRunner.DoubleStack, this @ L0 (System.Text.RegularExpressions.RegexRunner)
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Void DoubleStack()
+
+Disassembly:
+	0x1259CC0 I32Const 4569989
+	0x1259CC5 I32Load8_S 0, 0
+	0x1259CC8 I32Eqz
+	0x1259CC9 If -64
+	0x1259CCB I32Const 2996452
+	0x1259CD0 I32Load 2, 0
+	0x1259CD3 Call 73003
+	0x1259CD7 I32Const 4569989
+	0x1259CDC I32Const 1
+	0x1259CDE I32Store8 0, 0
+	0x1259CE1 End
+	0x1259CE2 I32Const 4427960
+	0x1259CE7 I32Load 2, 0
+	0x1259CEA LocalGet 0
+	0x1259CEC I32Load 2, 28
+	0x1259CEF I32Load 2, 12
+	0x1259CF2 I32Const 1
+	0x1259CF4 I32Shl
+	0x1259CF5 Call 71670
+	0x1259CF9 LocalSet 1
+	0x1259CFB LocalGet 0
+	0x1259CFD I32Load 2, 28
+	0x1259D00 I32Const 0
+	0x1259D02 LocalGet 1
+	0x1259D04 LocalGet 0
+	0x1259D06 I32Load 2, 28
+	0x1259D09 I32Load 2, 12
+	0x1259D0C LocalGet 0
+	0x1259D0E I32Load 2, 28
+	0x1259D11 I32Load 2, 12
+	0x1259D14 I32Const 0
+	0x1259D16 Call 57646
+	0x1259D1A LocalGet 0
+	0x1259D1C LocalGet 0
+	0x1259D1E I32Load 2, 28
+	0x1259D21 I32Load 2, 12
+	0x1259D24 LocalGet 0
+	0x1259D26 I32Load 2, 32
+	0x1259D29 I32Add
+	0x1259D2A I32Store 2, 32
+	0x1259D2D LocalGet 0
+	0x1259D2F I32Const 28
+	0x1259D31 I32Add
+	0x1259D32 LocalGet 1
+	0x1259D34 I32Store 2, 0
+	0x1259D37 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v14, [2DB8E4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45BB85], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Newobj v19 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move v26 @ S3_v2 (System.Int32[]), this.runtrack (System.Int32[])
+	27 Nop
+	28 Nop
+	29 Move v29 @ S4_v2 (System.Int32[]), this.runtrack (System.Int32[])
+	30 Nop
+	31 Nop
+	32 CallVoid Array.ConstrainedCopy, this.runtrack (System.Int32[]), 0, v19 @ S0_v7 (System.OverflowException), v26.Length, v29.Length
+	33 Nop
+	34 Nop
+	35 Move v34 @ S1_v8 (System.Int32[]), this.runtrack (System.Int32[])
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Add v38 @ S1_v10 (System.Int32), v34.Length, this.runtrackpos (System.Int32)
+	40 Move this.runtrackpos (System.Int32), v38 @ S1_v10 (System.Int32)
+	41 Nop
+	42 Nop
+	43 Add v41 @ S0_v12, this @ L0 (System.Text.RegularExpressions.RegexRunner), 28
+	44 Nop
+	45 Move [v41 @ S0_v12], v19 @ S0_v7 (System.OverflowException)
+	46 Nop
+	47 Return
+
+Method: System.Void DoubleCrawl()
+
+Disassembly:
+	0x1259C46 I32Const 4569990
+	0x1259C4B I32Load8_S 0, 0
+	0x1259C4E I32Eqz
+	0x1259C4F If -64
+	0x1259C51 I32Const 2996448
+	0x1259C56 I32Load 2, 0
+	0x1259C59 Call 73003
+	0x1259C5D I32Const 4569990
+	0x1259C62 I32Const 1
+	0x1259C64 I32Store8 0, 0
+	0x1259C67 End
+	0x1259C68 I32Const 4427960
+	0x1259C6D I32Load 2, 0
+	0x1259C70 LocalGet 0
+	0x1259C72 I32Load 2, 36
+	0x1259C75 I32Load 2, 12
+	0x1259C78 I32Const 1
+	0x1259C7A I32Shl
+	0x1259C7B Call 71670
+	0x1259C7F LocalSet 1
+	0x1259C81 LocalGet 0
+	0x1259C83 I32Load 2, 36
+	0x1259C86 I32Const 0
+	0x1259C88 LocalGet 1
+	0x1259C8A LocalGet 0
+	0x1259C8C I32Load 2, 36
+	0x1259C8F I32Load 2, 12
+	0x1259C92 LocalGet 0
+	0x1259C94 I32Load 2, 36
+	0x1259C97 I32Load 2, 12
+	0x1259C9A I32Const 0
+	0x1259C9C Call 57646
+	0x1259CA0 LocalGet 0
+	0x1259CA2 LocalGet 0
+	0x1259CA4 I32Load 2, 36
+	0x1259CA7 I32Load 2, 12
+	0x1259CAA LocalGet 0
+	0x1259CAC I32Load 2, 40
+	0x1259CAF I32Add
+	0x1259CB0 I32Store 2, 40
+	0x1259CB3 LocalGet 0
+	0x1259CB5 I32Const 36
+	0x1259CB7 I32Add
+	0x1259CB8 LocalGet 1
+	0x1259CBA I32Store 2, 0
+	0x1259CBD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v14, [2DB8E0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45BB86], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Newobj v19 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move v26 @ S3_v2 (System.Int32[]), this.runstack (System.Int32[])
+	27 Nop
+	28 Nop
+	29 Move v29 @ S4_v2 (System.Int32[]), this.runstack (System.Int32[])
+	30 Nop
+	31 Nop
+	32 CallVoid Array.ConstrainedCopy, this.runstack (System.Int32[]), 0, v19 @ S0_v7 (System.OverflowException), v26.Length, v29.Length
+	33 Nop
+	34 Nop
+	35 Move v34 @ S1_v8 (System.Int32[]), this.runstack (System.Int32[])
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Add v38 @ S1_v10 (System.Int32), v34.Length, this.runstackpos (System.Int32)
+	40 Move this.runstackpos (System.Int32), v38 @ S1_v10 (System.Int32)
+	41 Nop
+	42 Nop
+	43 Add v41 @ S0_v12, this @ L0 (System.Text.RegularExpressions.RegexRunner), 36
+	44 Nop
+	45 Move [v41 @ S0_v12], v19 @ S0_v7 (System.OverflowException)
+	46 Nop
+	47 Return
+
+Method: System.Void Crawl(System.Int32 i)
+
+Disassembly:
+	0x125A040 LocalGet 0
+	0x125A042 LocalGet 1
+	0x125A044 LocalGet 0
+	0x125A046 I32Load 2, 32
+	0x125A049 I32Add
+	0x125A04A I32Store 2, 32
+	0x125A04D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v6 @ S1_v2 (System.Int32), i @ L1 (System.Int32), this.runtrackpos (System.Int32)
+	5 Move this.runtrackpos (System.Int32), v6 @ S1_v2 (System.Int32)
+	6 Nop
+	7 Return
+
+Method: System.Int32 Popcrawl()
+
+Disassembly:
+	0xC2CC05 LocalGet 0
+	0xC2CC07 I32Load 2, 8
+	0xC2CC0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.runtextbeg (System.Int32)
+
+Method: System.Int32 Crawlpos()
+
+Disassembly:
+	0x125C4F7 LocalGet 0
+	0x125C4F9 I32Load 2, 44
+	0x125C4FC LocalGet 0
+	0x125C4FE LocalGet 0
+	0x125C500 I32Load 2, 48
+	0x125C503 LocalTee 0
+	0x125C505 I32Const 1
+	0x125C507 I32Add
+	0x125C508 I32Store 2, 48
+	0x125C50B I32Const 16
+	0x125C50D I32Add
+	0x125C50E LocalGet 0
+	0x125C510 I32Const 2
+	0x125C512 I32Shl
+	0x125C513 I32Add
+	0x125C514 I32Load 2, 0
+	0x125C517 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Add v8 @ S2_v3 (System.Int32), this.runcrawlpos (System.Int32), 1
+	8 Move this.runcrawlpos (System.Int32), v8 @ S2_v3 (System.Int32)
+	9 Nop
+	10 Add v10 @ S0_v3, this.runcrawl (System.Int32[]), 16
+	11 Nop
+	12 Nop
+	13 ShiftLeft v13 @ S1_v4 (System.Int32), this.runcrawlpos (System.Int32), 2
+	14 Add v14 @ S0_v4, v10 @ S0_v3, v13 @ S1_v4 (System.Int32)
+	15 Nop
+	16 Nop
+	17 Return [v14 @ S0_v4]
+
+Method: System.Void Capture(System.Int32 capnum, System.Int32 start, System.Int32 end)
+
+Disassembly:
+	0x12625AE GlobalGet 7
+	0x12625B0 LocalSet 4
+	0x12625B2 GlobalGet 7
+	0x12625B4 I32Const 16
+	0x12625B6 I32Add
+	0x12625B7 GlobalSet 7
+	0x12625B9 I32Const 4570056
+	0x12625BE I32Load8_S 0, 0
+	0x12625C1 I32Eqz
+	0x12625C2 If -64
+	0x12625C4 I32Const 2996436
+	0x12625C9 I32Load 2, 0
+	0x12625CC Call 73003
+	0x12625D0 I32Const 4570056
+	0x12625D5 I32Const 1
+	0x12625D7 I32Store8 0, 0
+	0x12625DA End
+	0x12625DB LocalGet 0
+	0x12625DD I32Const 8
+	0x12625DF I32Add
+	0x12625E0 LocalGet 1
+	0x12625E2 I32Store 2, 0
+	0x12625E5 LocalGet 2
+	0x12625E7 I32Load 2, 8
+	0x12625EA I32Const 25
+	0x12625EC I32Ne
+	0x12625ED If -64
+	0x12625EF I32Const 4517048
+	0x12625F4 I32Load 2, 0
+	0x12625F7 LocalSet 1
+	0x12625F9 I32Const 4427876
+	0x12625FE I32Load 2, 0
+	0x1262601 Call 72556
+	0x1262605 LocalTee 5
+	0x1262607 LocalGet 1
+	0x1262609 I32Const 0
+	0x126260B Call 57610
+	0x126260F LocalGet 5
+	0x1262611 I32Const 0
+	0x1262613 I32Const 4491612
+	0x1262618 I32Load 2, 0
+	0x126261B Call 73899
+	0x126261F End
+	0x1262620 I32Const 4427712
+	0x1262625 I32Load 2, 0
+	0x1262628 Call 72556
+	0x126262C LocalTee 5
+	0x126262E I32Const 0
+	0x1262630 Call 61640
+	0x1262634 I32Const 4427792
+	0x1262639 I32Load 2, 0
+	0x126263C Call 72556
+	0x1262640 LocalTee 6
+	0x1262642 I32Const 4486260
+	0x1262647 I32Load 2, 0
+	0x126264A Call 29311
+	0x126264E I32Const 4431844
+	0x1262653 I32Load 2, 0
+	0x1262656 Call 72556
+	0x126265A LocalTee 7
+	0x126265C I32Const 4486044
+	0x1262661 I32Load 2, 0
+	0x1262664 Call 29311
+	0x1262668 LocalGet 3
+	0x126266A I32Eqz
+	0x126266B LocalSet 9
+	0x126266D Block -64
+	0x126266F Block -64
+	0x1262671 Loop -64
+	0x1262673 LocalGet 8
+	0x1262675 LocalGet 2
+	0x1262677 I32Const 0
+	0x1262679 Call 58213
+	0x126267D I32Lt_S
+	0x126267E If -64
+	0x1262680 Block -64
+	0x1262682 Block -64
+	0x1262684 Block -64
+	0x1262686 Block -64
+	0x1262688 Block -64
+	0x126268A LocalGet 2
+	0x126268C LocalGet 8
+	0x126268E I32Const 0
+	0x1262690 Call 58214
+	0x1262694 LocalTee 1
+	0x1262696 I32Load 2, 8
+	0x1262699 I32Const 9
+	0x126269B I32Sub
+	0x126269C BrTable System.UInt64[], 3
+	0x12626A4 End
+	0x12626A5 LocalGet 5
+	0x12626A7 LocalGet 1
+	0x12626A9 I32Load16_S 1, 20
+	0x12626AC I32Const 0
+	0x12626AE Call 61633
+	0x12626B2 Drop
+	0x12626B3 Br 3
+	0x12626B5 End
+	0x12626B6 LocalGet 5
+	0x12626B8 I32Load 2, 16
+	0x12626BB LocalGet 5
+	0x12626BD I32Load 2, 20
+	0x12626C0 I32Add
+	0x12626C1 I32Const 1
+	0x12626C3 I32Ge_S
+	0x12626C4 If -64
+	0x12626C6 LocalGet 7
+	0x12626C8 I32Const 4463304
+	0x12626CD I32Load 2, 0
+	0x12626D0 Drop
+	0x12626D1 LocalGet 6
+	0x12626D3 I32Load 2, 12
+	0x12626D6 I32Const 4486052
+	0x12626DB I32Load 2, 0
+	0x12626DE Call 29305
+	0x12626E2 LocalGet 6
+	0x12626E4 I32Const 3
+	0x12626E6 LocalGet 5
+	0x12626E8 Call 29262
+	0x12626EC I32Const 4486272
+	0x12626F1 I32Load 2, 0
+	0x12626F4 Call 29305
+	0x12626F8 LocalGet 5
+	0x12626FA I32Const 0
+	0x12626FC I32Const 0
+	0x12626FE Call 61623
+	0x1262702 End
+	0x1262703 LocalGet 9
+	0x1262705 LocalGet 1
+	0x1262707 I32Load 2, 24
+	0x126270A LocalTee 1
+	0x126270C I32Const 0
+	0x126270E I32Lt_S
+	0x126270F I32Or
+	0x1262710 I32Eqz
+	0x1262711 If -64
+	0x1262713 LocalGet 4
+	0x1262715 LocalGet 1
+	0x1262717 I32Store 2, 0
+	0x126271A I32Const 22
+	0x126271C LocalGet 3
+	0x126271E I32Const 4427776
+	0x1262723 I32Load 2, 0
+	0x1262726 LocalGet 4
+	0x1262728 Call 73903
+	0x126272C Call 29448
+	0x1262730 I32Const 4427776
+	0x1262735 I32Load 2, 0
+	0x1262738 Call 30193
+	0x126273C I32Load 2, 0
+	0x126273F LocalSet 1
+	0x1262741 End
+	0x1262742 LocalGet 7
+	0x1262744 I32Const -5
+	0x1262746 LocalGet 1
+	0x1262748 I32Sub
+	0x1262749 I32Const 4486052
+	0x126274E I32Load 2, 0
+	0x1262751 Call 29305
+	0x1262755 Br 2
+	0x1262757 End
+	0x1262758 LocalGet 5
+	0x126275A LocalGet 1
+	0x126275C I32Load 2, 16
+	0x126275F I32Const 0
+	0x1262761 Call 61377
+	0x1262765 Drop
+	0x1262766 Br 1
+	0x1262768 End
+	0x1262769 Br 3
+	0x126276B End
+	0x126276C LocalGet 8
+	0x126276E I32Const 1
+	0x1262770 I32Add
+	0x1262771 LocalSet 8
+	0x1262773 Br 1
+	0x1262775 End
+	0x1262776 End
+	0x1262777 Br 1
+	0x1262779 End
+	0x126277A I32Const 4517048
+	0x126277F I32Load 2, 0
+	0x1262782 LocalSet 1
+	0x1262784 I32Const 4427876
+	0x1262789 I32Load 2, 0
+	0x126278C Call 72556
+	0x1262790 LocalTee 2
+	0x1262792 LocalGet 1
+	0x1262794 I32Const 0
+	0x1262796 Call 57610
+	0x126279A LocalGet 2
+	0x126279C I32Const 0
+	0x126279E I32Const 4491612
+	0x12627A3 I32Load 2, 0
+	0x12627A6 Call 73899
+	0x12627AA End
+	0x12627AB LocalGet 5
+	0x12627AD I32Load 2, 16
+	0x12627B0 LocalGet 5
+	0x12627B2 I32Load 2, 20
+	0x12627B5 I32Add
+	0x12627B6 I32Const 1
+	0x12627B8 I32Ge_S
+	0x12627B9 If -64
+	0x12627BB LocalGet 7
+	0x12627BD I32Const 4463304
+	0x12627C2 I32Load 2, 0
+	0x12627C5 Drop
+	0x12627C6 LocalGet 6
+	0x12627C8 I32Load 2, 12
+	0x12627CB I32Const 4486052
+	0x12627D0 I32Load 2, 0
+	0x12627D3 Call 29305
+	0x12627D7 LocalGet 6
+	0x12627D9 I32Const 3
+	0x12627DB LocalGet 5
+	0x12627DD Call 29262
+	0x12627E1 I32Const 4486272
+	0x12627E6 I32Load 2, 0
+	0x12627E9 Call 29305
+	0x12627ED End
+	0x12627EE LocalGet 0
+	0x12627F0 I32Const 12
+	0x12627F2 I32Add
+	0x12627F3 LocalGet 6
+	0x12627F5 I32Store 2, 0
+	0x12627F8 LocalGet 0
+	0x12627FA I32Const 16
+	0x12627FC I32Add
+	0x12627FD LocalGet 7
+	0x12627FF I32Store 2, 0
+	0x1262802 LocalGet 4
+	0x1262804 GlobalSet 7
+	0x1262806 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b49
+	11 Nop
+	12 Move v12 @ S0_v83, [2DB8D4]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v83
+	14 Nop
+	15 Move v14 @ S1_v63, 1
+	16 Move [45BBC8], v14 @ S1_v63
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v20 @ S0_v9, this @ L0 (System.Text.RegularExpressions.RegexRunner), 8
+	21 Nop
+	22 Move [v20 @ S0_v9], capnum @ L1 (System.Int32)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 CheckNotEqual v27 @ S0_v12 (System.Boolean), [start @ L2 (System.Int32)+8], 25
+	27 Not v28 @ TEMP_v2 (System.Boolean), v27 @ S0_v12 (System.Boolean)
+	28 ConditionalJump @b8, v28 @ TEMP_v2 (System.Boolean)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call 11B6C, v34 @ S0_v80 (System.ArgumentNullException), typeof(System.ArgumentException)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CallVoid ArgumentNullException..ctor, v34 @ S0_v80 (System.ArgumentNullException), "Replacement pattern error."
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 CallVoid 120AB, v34 @ S0_v80 (System.ArgumentNullException), 0, methodof(System.Text.RegularExpressions.RegexReplacement::.ctor)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Call 11B6C, v48 @ S0_v16 (System.Text.StringBuilder), typeof(System.Text.StringBuilder)
+	48 Nop
+	49 Nop
+	50 CallVoid StringBuilderCache.Release, v48 @ S0_v16 (System.Text.StringBuilder)
+	51 Nop
+	52 Nop
+	53 Call 11B6C, v56 @ S0_v19 (System.Collections.Generic.List`1<System.String>), typeof(System.Collections.Generic.List`1<System.String>)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 CallVoid List`1<System.String>..ctor, v56 @ S0_v19 (System.Collections.Generic.List`1<System.String>)
+	58 Nop
+	59 Nop
+	60 Call 11B6C, v62 @ S0_v22 (System.Collections.Generic.List`1<System.Int32>), typeof(System.Collections.Generic.List`1<System.Int32>)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 CallVoid List`1<System.Int32>..ctor, v62 @ S0_v22 (System.Collections.Generic.List`1<System.Int32>)
+	65 Nop
+	66 CheckEqual v68 @ S0_v24 (System.Boolean), end @ L3 (System.Int32), 0
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Call RegexNode.Type, v89 @ S1_v14 (System.Int32), start @ L2 (System.Int32)
+	73 CheckLess v90 @ S0_v27 (System.Boolean), v85 @ S0_v47 (System.Text.RegularExpressions.RegexOptions), v89 @ S1_v14 (System.Int32)
+	74 Not v91 @ TEMP_v4 (System.Boolean), v90 @ S0_v27 (System.Boolean)
+	75 ConditionalJump @b40, v91 @ TEMP_v4 (System.Boolean)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Call RegexParser.Parse, v95 @ S0_v42 (System.Text.RegularExpressions.RegexTree), start @ L2 (System.Int32), v85 @ S0_v47 (System.Text.RegularExpressions.RegexOptions)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Subtract v99 @ S0_v44, v95._root (System.Text.RegularExpressions.RegexNode), 9
+	84 CheckEqual v100 @ TEMP_v7 (System.Boolean), v95._root (System.Text.RegularExpressions.RegexNode), 9
+	85 ConditionalJump @b23, v100 @ TEMP_v7 (System.Boolean)
+	86 CheckEqual v121 @ TEMP_v9 (System.Boolean), v99 @ S0_v44, 1
+	87 ConditionalJump @b38, v121 @ TEMP_v9 (System.Boolean)
+	88 CheckEqual v150 @ TEMP_v11 (System.Boolean), v99 @ S0_v44, 2
+	89 ConditionalJump @b38, v150 @ TEMP_v11 (System.Boolean)
+	90 CheckEqual v154 @ TEMP_v12 (System.Boolean), v99 @ S0_v44, 3
+	91 ConditionalJump @b36, v154 @ TEMP_v12 (System.Boolean)
+	92 CheckEqual v151 @ TEMP_v13 (System.Boolean), v99 @ S0_v44, 4
+	93 ConditionalJump @b25, v151 @ TEMP_v13 (System.Boolean)
+	94 Jump @b38
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Nop
+	100 Call StringBuilder.Append, v126 @ S0_v49 (System.Text.StringBuilder), v48 @ S0_v16 (System.Text.StringBuilder), v95._capnames (System.Collections.Hashtable)
+	101 Jump @b39
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Add v181 @ S0_v60, v48.m_ChunkLength (System.Int32), v48.m_ChunkOffset (System.Int32)
+	108 Nop
+	109 CheckGreaterOrEqual v183 @ S0_v61 (System.Boolean), v181 @ S0_v60, 1
+	110 Not v184 @ TEMP_v14 (System.Boolean), v183 @ S0_v61 (System.Boolean)
+	111 ConditionalJump @b30, v184 @ TEMP_v14 (System.Boolean)
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Nop
+	118 Nop
+	119 CallVoid List`1<System.Int32>.Add, v62 @ S0_v22 (System.Collections.Generic.List`1<System.Int32>), v56._size (System.Int32)
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Call 724E, v210 @ S1_v59 (System.String), 3, v48 @ S0_v16 (System.Text.StringBuilder)
+	124 Nop
+	125 Nop
+	126 CallVoid List`1<System.String>.Add, v56 @ S0_v19 (System.Collections.Generic.List`1<System.String>), v210 @ S1_v59 (System.String)
+	127 Nop
+	128 Nop
+	129 Nop
+	130 CallVoid StringBuilder.AppendHelper, v48 @ S0_v16 (System.Text.StringBuilder), 0
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 CheckLess v204 @ S1_v46 (System.Boolean), v95._capslist (System.String[]), 0
+	138 Or v205 @ S0_v64, v68 @ S0_v24 (System.Boolean), v204 @ S1_v46 (System.Boolean)
+	139 CheckEqual v206 @ S0_v65 (System.Boolean), v205 @ S0_v64, 0
+	140 Not v164 @ TEMP_v15 (System.Boolean), v206 @ S0_v65 (System.Boolean)
+	141 ConditionalJump @b50, v164 @ TEMP_v15 (System.Boolean)
+	142 Nop
+	143 Nop
+	144 Move [v1 @ G7], v95._capslist (System.String[])
+	145 Nop
+	146 Nop
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Call 120AF, v218 @ S2_v26, typeof(System.Int32), v1 @ G7
+	151 Call 7308, v230 @ S0_v70, 22, end @ L3 (System.Int32), v218 @ S2_v26
+	152 Nop
+	153 Nop
+	154 Throw typeof(System.NullReferenceException)
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Subtract v166 @ S1_v49 (System.Int32), -5, v163 @ L1_v8 (System.String[])
+	162 Nop
+	163 Nop
+	164 CallVoid List`1<System.Int32>.Add, v62 @ S0_v22 (System.Collections.Generic.List`1<System.Int32>), v166 @ S1_v49 (System.Int32)
+	165 Jump @b39
+	166 Nop
+	167 Nop
+	168 Nop
+	169 Nop
+	170 Nop
+	171 Call StringBuilder.AppendLine, v170 @ S0_v57 (System.Text.StringBuilder), v48 @ S0_v16 (System.Text.StringBuilder), v95._capnumlist (System.Int32[])
+	172 Jump @b39
+	173 Nop
+	174 Jump @b41
+	175 Nop
+	176 Nop
+	177 Nop
+	178 Add v85 @ S0_v47 (System.Text.RegularExpressions.RegexOptions), v70 @ L8_v1 (System.Text.RegularExpressions.RegexOptions), 1
+	179 Nop
+	180 Jump @b51
+	181 Nop
+	182 Nop
+	183 Jump @b44
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Nop
+	189 Nop
+	190 Call 11B6C, v159 @ S0_v54 (System.ArgumentNullException), typeof(System.ArgumentException)
+	191 Nop
+	192 Nop
+	193 Nop
+	194 CallVoid ArgumentNullException..ctor, v159 @ S0_v54 (System.ArgumentNullException), "Replacement pattern error."
+	195 Nop
+	196 Nop
+	197 Nop
+	198 Nop
+	199 CallVoid 120AB, v159 @ S0_v54 (System.ArgumentNullException), 0, methodof(System.Text.RegularExpressions.RegexReplacement::.ctor)
+	200 Nop
+	201 Nop
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Add v117 @ S0_v31, v48.m_ChunkLength (System.Int32), v48.m_ChunkOffset (System.Int32)
+	206 Nop
+	207 CheckGreaterOrEqual v119 @ S0_v32 (System.Boolean), v117 @ S0_v31, 1
+	208 Not v120 @ TEMP_v6 (System.Boolean), v119 @ S0_v32 (System.Boolean)
+	209 ConditionalJump @b48, v120 @ TEMP_v6 (System.Boolean)
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 CallVoid List`1<System.Int32>.Add, v62 @ S0_v22 (System.Collections.Generic.List`1<System.Int32>), v56._size (System.Int32)
+	218 Nop
+	219 Nop
+	220 Nop
+	221 Call 724E, v137 @ S1_v29 (System.String), 3, v48 @ S0_v16 (System.Text.StringBuilder)
+	222 Nop
+	223 Nop
+	224 CallVoid List`1<System.String>.Add, v56 @ S0_v19 (System.Collections.Generic.List`1<System.String>), v137 @ S1_v29 (System.String)
+	225 Nop
+	226 Nop
+	227 Nop
+	228 Add v142 @ S0_v35, this @ L0 (System.Text.RegularExpressions.RegexRunner), 12
+	229 Nop
+	230 Move [v142 @ S0_v35], v56 @ S0_v19 (System.Collections.Generic.List`1<System.String>)
+	231 Nop
+	232 Nop
+	233 Add v146 @ S0_v37, this @ L0 (System.Text.RegularExpressions.RegexRunner), 16
+	234 Nop
+	235 Move [v146 @ S0_v37], v62 @ S0_v22 (System.Collections.Generic.List`1<System.Int32>)
+	236 Nop
+	237 Nop
+	238 Nop
+	239 Return
+
+Method: System.Void TransferCapture(System.Int32 capnum, System.Int32 uncapnum, System.Int32 start, System.Int32 end)
+
+Disassembly:
+	0x125CB6D LocalGet 0
+	0x125CB6F LocalGet 1
+	0x125CB71 I32Store 2, 8
+	0x125CB74 LocalGet 0
+	0x125CB76 LocalGet 2
+	0x125CB78 I32Store 2, 32
+	0x125CB7B LocalGet 0
+	0x125CB7D LocalGet 3
+	0x125CB7F I32Store 2, 24
+	0x125CB82 LocalGet 0
+	0x125CB84 LocalGet 4
+	0x125CB86 I32Store 2, 28
+	0x125CB89 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.runtextbeg (System.Int32), capnum @ L1 (System.Int32)
+	3 Nop
+	4 Nop
+	5 Move this.runtrackpos (System.Int32), uncapnum @ L2 (System.Int32)
+	6 Nop
+	7 Nop
+	8 Move this.runtextpos (System.Int32), start @ L3 (System.Int32)
+	9 Nop
+	10 Nop
+	11 Move this.runtrack (System.Int32[]), end @ L4 (System.Int32)
+	12 Nop
+	13 Return
+
+Method: System.Void Uncapture()
+
+Disassembly:
+	0x125C550 I32Const 4569998
+	0x125C555 I32Load8_S 0, 0
+	0x125C558 I32Eqz
+	0x125C559 If -64
+	0x125C55B I32Const 2996444
+	0x125C560 I32Load 2, 0
+	0x125C563 Call 73003
+	0x125C567 I32Const 4569998
+	0x125C56C I32Const 1
+	0x125C56E I32Store8 0, 0
+	0x125C571 End
+	0x125C572 I32Const 4427960
+	0x125C577 I32Load 2, 0
+	0x125C57A LocalGet 0
+	0x125C57C I32Load 2, 44
+	0x125C57F I32Load 2, 12
+	0x125C582 I32Const 1
+	0x125C584 I32Shl
+	0x125C585 Call 71670
+	0x125C589 LocalSet 1
+	0x125C58B LocalGet 0
+	0x125C58D I32Load 2, 44
+	0x125C590 I32Const 0
+	0x125C592 LocalGet 1
+	0x125C594 LocalGet 0
+	0x125C596 I32Load 2, 44
+	0x125C599 I32Load 2, 12
+	0x125C59C LocalGet 0
+	0x125C59E I32Load 2, 44
+	0x125C5A1 I32Load 2, 12
+	0x125C5A4 I32Const 0
+	0x125C5A6 Call 57646
+	0x125C5AA LocalGet 0
+	0x125C5AC LocalGet 0
+	0x125C5AE I32Load 2, 44
+	0x125C5B1 I32Load 2, 12
+	0x125C5B4 LocalGet 0
+	0x125C5B6 I32Load 2, 48
+	0x125C5B9 I32Add
+	0x125C5BA I32Store 2, 48
+	0x125C5BD LocalGet 0
+	0x125C5BF I32Const 44
+	0x125C5C1 I32Add
+	0x125C5C2 LocalGet 1
+	0x125C5C4 I32Store 2, 0
+	0x125C5C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v14, [2DB8DC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45BB8E], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Newobj v19 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move v26 @ S3_v2 (System.Int32[]), this.runcrawl (System.Int32[])
+	27 Nop
+	28 Nop
+	29 Move v29 @ S4_v2 (System.Int32[]), this.runcrawl (System.Int32[])
+	30 Nop
+	31 Nop
+	32 CallVoid Array.ConstrainedCopy, this.runcrawl (System.Int32[]), 0, v19 @ S0_v7 (System.OverflowException), v26.Length, v29.Length
+	33 Nop
+	34 Nop
+	35 Move v34 @ S1_v8 (System.Int32[]), this.runcrawl (System.Int32[])
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Add v38 @ S1_v10 (System.Int32), v34.Length, this.runcrawlpos (System.Int32)
+	40 Move this.runcrawlpos (System.Int32), v38 @ S1_v10 (System.Int32)
+	41 Nop
+	42 Nop
+	43 Add v41 @ S0_v12, this @ L0 (System.Text.RegularExpressions.RegexRunner), 44
+	44 Nop
+	45 Move [v41 @ S0_v12], v19 @ S0_v7 (System.OverflowException)
+	46 Nop
+	47 Return
+
+Method: System.Boolean IsMatched(System.Int32 cap)
+
+Disassembly:
+	0x1263837 LocalGet 1
+	0x1263839 If -64
+	0x126383B I32Const 0
+	0x126383D LocalSet 1
+	0x126383F Else
+	0x1263840 LocalGet 0
+	0x1263842 I32Load 2, 56
+	0x1263845 LocalSet 1
+	0x1263847 LocalGet 0
+	0x1263849 I32Const 56
+	0x126384B I32Add
+	0x126384C I32Const 0
+	0x126384E I32Store 2, 0
+	0x1263851 I32Const 13
+	0x1263853 LocalGet 1
+	0x1263855 LocalGet 0
+	0x1263857 I32Load 2, 24
+	0x126385A Call 29437
+	0x126385E End
+	0x126385F LocalGet 1
+	0x1263861 End
+
+ISIL:
+	0 Nop
+	1 CheckEqual v2 @ TEMP_v1 (System.Boolean), cap @ L1 (System.Int32), 0
+	2 ConditionalJump @b4, v2 @ TEMP_v1 (System.Boolean)
+	3 Nop
+	4 Nop
+	5 Jump @b5
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Add v11 @ S0_v7, this @ L0 (System.Text.RegularExpressions.RegexRunner), 56
+	12 Nop
+	13 Move [v11 @ S0_v7], 0
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid 72FD, 13, this.runmatch (System.Text.RegularExpressions.Match), this.runtextpos (System.Int32)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Return v21 @ L1_v1 (System.Boolean)
+
+Method: System.Int32 MatchIndex(System.Int32 cap)
+
+Disassembly:
+	0x125C229 I32Const 10
+	0x125C22B LocalGet 0
+	0x125C22D I32Load 2, 56
+	0x125C230 LocalGet 1
+	0x125C232 Call 29448
+	0x125C236 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 7308, returnVal1 @ S0_v2 (System.Int32), 10, this.runmatch (System.Text.RegularExpressions.Match), cap @ L1 (System.Int32)
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Int32 MatchLength(System.Int32 cap)
+
+Disassembly:
+	0x125C4D7 I32Const 11
+	0x125C4D9 LocalGet 0
+	0x125C4DB I32Load 2, 56
+	0x125C4DE LocalGet 1
+	0x125C4E0 Call 29448
+	0x125C4E4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call 7308, returnVal1 @ S0_v2 (System.Int32), 11, this.runmatch (System.Text.RegularExpressions.Match), cap @ L1 (System.Int32)
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Int32)
+

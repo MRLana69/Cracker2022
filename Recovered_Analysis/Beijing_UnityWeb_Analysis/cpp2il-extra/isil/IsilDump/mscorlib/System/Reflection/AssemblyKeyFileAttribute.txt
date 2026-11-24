@@ -1,0 +1,79 @@
+Type: System.Reflection.AssemblyKeyFileAttribute
+
+Method: System.Void .ctor(System.String keyFile)
+
+Disassembly:
+	0x13D0826 I32Const 4573853
+	0x13D082B I32Load8_S 0, 0
+	0x13D082E I32Eqz
+	0x13D082F If -64
+	0x13D0831 I32Const 2935088
+	0x13D0836 I32Load 2, 0
+	0x13D0839 Call 73003
+	0x13D083D I32Const 4573853
+	0x13D0842 I32Const 1
+	0x13D0844 I32Store8 0, 0
+	0x13D0847 End
+	0x13D0848 LocalGet 1
+	0x13D084A If -64
+	0x13D084C LocalGet 0
+	0x13D084E I32Const 8
+	0x13D0850 I32Add
+	0x13D0851 LocalGet 1
+	0x13D0853 I32Store 2, 0
+	0x13D0856 Else
+	0x13D0857 I32Const 4427864
+	0x13D085C I32Load 2, 0
+	0x13D085F Call 72556
+	0x13D0863 LocalTee 0
+	0x13D0865 I32Const 4508712
+	0x13D086A I32Load 2, 0
+	0x13D086D I32Const 0
+	0x13D086F Call 57599
+	0x13D0873 LocalGet 0
+	0x13D0875 I32Const 0
+	0x13D0877 I32Const 4489988
+	0x13D087C I32Load 2, 0
+	0x13D087F Call 73899
+	0x13D0883 End
+	0x13D0884 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v14, [2CC930]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45CA9D], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ TEMP_v2 (System.Boolean), keyFile @ L1 (System.String), 0
+	14 ConditionalJump @b6, v13 @ TEMP_v2 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Add v17 @ S0_v12, this @ L0 (System.Reflection.AssemblyKeyFileAttribute), 8
+	18 Nop
+	19 Move [v17 @ S0_v12], keyFile @ L1 (System.String)
+	20 Jump @b9
+	21 Nop
+	22 Nop
+	23 Call 11B6C, v21 @ S0_v9 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid ArgumentOutOfRangeException..ctor, v21 @ S0_v9 (System.ArgumentOutOfRangeException), "version"
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid AssemblyFileVersionAttribute..ctor, v21 @ S0_v9 (System.ArgumentOutOfRangeException), 0
+	34 Nop
+	35 Nop
+	36 Return
+

@@ -1,0 +1,154 @@
+Type: System.Tuple
+
+Method: System.Tuple`2<T1, T2> Create(T1 item1, T2 item2)
+
+Disassembly:
+	0x106A5C9 LocalGet 0
+	0x106A5CB I32Const 16
+	0x106A5CD I32Add
+	0x106A5CE LocalGet 1
+	0x106A5D0 I32Const 2
+	0x106A5D2 I32Shl
+	0x106A5D3 I32Add
+	0x106A5D4 I32Load 2, 0
+	0x106A5D7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, item1 @ L0 (T1), 16
+	3 Nop
+	4 Nop
+	5 ShiftLeft v7 @ S1_v3, item2 @ L1 (T2), 2
+	6 Add v8 @ S0_v3, v3 @ S0_v2, v7 @ S1_v3
+	7 Nop
+	8 Nop
+	9 Return [v8 @ S0_v3]
+
+Method: System.Int32 CombineHashCodes(System.Int32 h1, System.Int32 h2)
+
+Disassembly:
+	0x1248A51 Block -1
+	0x1248A53 LocalGet 0
+	0x1248A55 I32Const 0
+	0x1248A57 Call 50350
+	0x1248A5B If -1
+	0x1248A5D I32Const 110
+	0x1248A60 LocalGet 0
+	0x1248A62 LocalGet 1
+	0x1248A64 Call 29448
+	0x1248A68 Else
+	0x1248A69 LocalGet 0
+	0x1248A6B I32Const 0
+	0x1248A6D Call 50351
+	0x1248A71 If -64
+	0x1248A73 LocalGet 1
+	0x1248A75 I32Const 0
+	0x1248A77 Call 50350
+	0x1248A7B I32Const 1
+	0x1248A7D I32Xor
+	0x1248A7E Br 2
+	0x1248A80 End
+	0x1248A81 LocalGet 1
+	0x1248A83 I32Const 0
+	0x1248A85 Call 50351
+	0x1248A89 If -64
+	0x1248A8B LocalGet 0
+	0x1248A8D I32Const 0
+	0x1248A8F Call 50350
+	0x1248A93 I32Const 1
+	0x1248A95 I32Xor
+	0x1248A96 Br 2
+	0x1248A98 End
+	0x1248A99 I32Const 110
+	0x1248A9C LocalGet 0
+	0x1248A9E LocalGet 1
+	0x1248AA0 Call 29448
+	0x1248AA4 If -1
+	0x1248AA6 I32Const 1
+	0x1248AA8 Else
+	0x1248AA9 I32Const 110
+	0x1248AAC LocalGet 1
+	0x1248AAE LocalGet 0
+	0x1248AB0 Call 29448
+	0x1248AB4 End
+	0x1248AB5 End
+	0x1248AB6 End
+	0x1248AB7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call Type.get_IsAbstract, v3 @ S0_v2 (System.Boolean), h1 @ L0 (System.Int32)
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b6, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call 7308, returnVal1 @ S0_v3 (System.Int32), 110, h1 @ L0 (System.Int32), h2 @ L1 (System.Int32)
+	9 Jump @b20
+	10 Nop
+	11 Nop
+	12 Call Type.get_IsValueType, v12 @ S0_v5 (System.Boolean), h1 @ L0 (System.Int32)
+	13 Not v13 @ TEMP_v3 (System.Boolean), v12 @ S0_v5 (System.Boolean)
+	14 ConditionalJump @b10, v13 @ TEMP_v3 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Call Type.get_IsAbstract, v33 @ S0_v17 (System.Boolean), h2 @ L1 (System.Int32)
+	18 Nop
+	19 Xor returnVal1 @ S0_v3 (System.Int32), v33 @ S0_v17 (System.Boolean), 1
+	20 Jump @b20
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Call Type.get_IsValueType, v36 @ S0_v7 (System.Boolean), h2 @ L1 (System.Int32)
+	25 Not v19 @ TEMP_v4 (System.Boolean), v36 @ S0_v7 (System.Boolean)
+	26 ConditionalJump @b14, v19 @ TEMP_v4 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Call Type.get_IsAbstract, v39 @ S0_v14 (System.Boolean), h1 @ L0 (System.Int32)
+	30 Nop
+	31 Xor returnVal1 @ S0_v3 (System.Int32), v39 @ S0_v14 (System.Boolean), 1
+	32 Jump @b20
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 7308, v41 @ S0_v9, 110, h1 @ L0 (System.Int32), h2 @ L1 (System.Int32)
+	38 CheckEqual v20 @ TEMP_v5 (System.Boolean), v41 @ S0_v9, 0
+	39 ConditionalJump @b17, v20 @ TEMP_v5 (System.Boolean)
+	40 Nop
+	41 Jump @b20
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call 7308, returnVal1 @ S0_v3 (System.Int32), 110, h2 @ L1 (System.Int32), h1 @ L0 (System.Int32)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return returnVal1 @ S0_v3 (System.Int32)
+
+Method: System.Int32 CombineHashCodes(System.Int32 h1, System.Int32 h2, System.Int32 h3)
+
+Disassembly:
+	0x124F9E3 LocalGet 0
+	0x124F9E5 I32Const 8
+	0x124F9E7 I32Add
+	0x124F9E8 LocalGet 1
+	0x124F9EA LocalGet 2
+	0x124F9EC I32Const 0
+	0x124F9EE Call 57814
+	0x124F9F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Newobj returnVal1 @ S0_v3 (System.IndexOutOfRangeException), typeof(System.IndexOutOfRangeException)
+	7 Nop
+	8 Return returnVal1 @ S0_v3 (System.IndexOutOfRangeException)
+

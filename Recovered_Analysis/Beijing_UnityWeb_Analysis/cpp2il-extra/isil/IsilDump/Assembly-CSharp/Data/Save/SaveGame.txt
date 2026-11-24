@@ -1,0 +1,831 @@
+Type: Data.Save.SaveGame
+
+Method: Data.Save.Internal.LocalData get_local()
+
+Disassembly:
+	0xE0998C I32Const 4556932
+	0xE09991 I32Load8_S 0, 0
+	0xE09994 I32Eqz
+	0xE09995 If -64
+	0xE09997 I32Const 2991992
+	0xE0999C I32Load 2, 0
+	0xE0999F Call 73003
+	0xE099A3 I32Const 4556932
+	0xE099A8 I32Const 1
+	0xE099AA I32Store8 0, 0
+	0xE099AD End
+	0xE099AE I32Const 4450400
+	0xE099B3 I32Load 2, 0
+	0xE099B6 Call 53270
+	0xE099BA I32Load 2, 148
+	0xE099BE I32Const 16
+	0xE099C0 I32Add
+	0xE099C1 LocalGet 0
+	0xE099C3 I32Const 2
+	0xE099C5 I32Shl
+	0xE099C6 I32Add
+	0xE099C7 I32Load 2, 0
+	0xE099CA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v13, [2DA778]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [458884], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v9, [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+94], 16
+	18 Nop
+	19 Nop
+	20 ShiftLeft v20 @ S1_v4, this @ L0 (Data.Save.SaveGame), 2
+	21 Add v21 @ S0_v10, v16 @ S0_v9, v20 @ S1_v4
+	22 Nop
+	23 Nop
+	24 Return [v21 @ S0_v10]
+
+Method: Data.Save.Internal.CloudData get_cloud()
+
+Disassembly:
+	0xE0A071 I32Const 4556962
+	0xE0A076 I32Load8_S 0, 0
+	0xE0A079 I32Eqz
+	0xE0A07A If -64
+	0xE0A07C I32Const 3000480
+	0xE0A081 I32Load 2, 0
+	0xE0A084 Call 73003
+	0xE0A088 I32Const 4556962
+	0xE0A08D I32Const 1
+	0xE0A08F I32Store8 0, 0
+	0xE0A092 End
+	0xE0A093 I32Const 4495944
+	0xE0A098 I32Load 2, 0
+	0xE0A09B Drop
+	0xE0A09C LocalGet 0
+	0xE0A09E I32Load 2, 8
+	0xE0A0A1 I32Load 2, 12
+	0xE0A0A4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v11, [2DC8A0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4588A2], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S0_v8 (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalData>), this._local (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalData>)
+	16 Nop
+	17 Nop
+	18 Return v15._diskData (Data.Save.Internal.LocalData)
+
+Method: Data.Save.Internal.LocalDebugData get_localDebug()
+
+Disassembly:
+	0xE0A0A7 I32Const 4556963
+	0xE0A0AC I32Load8_S 0, 0
+	0xE0A0AF I32Eqz
+	0xE0A0B0 If -64
+	0xE0A0B2 I32Const 3000468
+	0xE0A0B7 I32Load 2, 0
+	0xE0A0BA Call 73003
+	0xE0A0BE I32Const 4556963
+	0xE0A0C3 I32Const 1
+	0xE0A0C5 I32Store8 0, 0
+	0xE0A0C8 End
+	0xE0A0C9 I32Const 4495940
+	0xE0A0CE I32Load 2, 0
+	0xE0A0D1 Drop
+	0xE0A0D2 LocalGet 0
+	0xE0A0D4 I32Load 2, 12
+	0xE0A0D7 I32Load 2, 12
+	0xE0A0DA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v11, [2DC894]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4588A3], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S0_v8 (Data.Save.Internal.SaveData`1<Data.Save.Internal.CloudData>), this._cloud (Data.Save.Internal.SaveData`1<Data.Save.Internal.CloudData>)
+	16 Nop
+	17 Nop
+	18 Return v15._diskData (Data.Save.Internal.CloudData)
+
+Method: Data.Save.SaveDataStrings get_debug_dataSerialized()
+
+Disassembly:
+	0xE0A0DD I32Const 4556964
+	0xE0A0E2 I32Load8_S 0, 0
+	0xE0A0E5 I32Eqz
+	0xE0A0E6 If -64
+	0xE0A0E8 I32Const 3000476
+	0xE0A0ED I32Load 2, 0
+	0xE0A0F0 Call 73003
+	0xE0A0F4 I32Const 4556964
+	0xE0A0F9 I32Const 1
+	0xE0A0FB I32Store8 0, 0
+	0xE0A0FE End
+	0xE0A0FF I32Const 4495948
+	0xE0A104 I32Load 2, 0
+	0xE0A107 Drop
+	0xE0A108 LocalGet 0
+	0xE0A10A I32Load 2, 16
+	0xE0A10D I32Load 2, 12
+	0xE0A110 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v11, [2DC89C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4588A4], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S0_v8 (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalDebugData>), this._localDebug (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalDebugData>)
+	16 Nop
+	17 Nop
+	18 Return v15._diskData (Data.Save.Internal.LocalDebugData)
+
+Method: System.Void set_debug_dataSerialized(Data.Save.SaveDataStrings value)
+
+Disassembly:
+	0xE09A1A I32Const 4556934
+	0xE09A1F I32Load8_S 0, 0
+	0xE09A22 I32Eqz
+	0xE09A23 If -64
+	0xE09A25 I32Const 2992024
+	0xE09A2A I32Load 2, 0
+	0xE09A2D Call 73003
+	0xE09A31 I32Const 4556934
+	0xE09A36 I32Const 1
+	0xE09A38 I32Store8 0, 0
+	0xE09A3B End
+	0xE09A3C I32Const 4450400
+	0xE09A41 I32Load 2, 0
+	0xE09A44 Call 53270
+	0xE09A48 I32Load 2, 148
+	0xE09A4C I32Const 16
+	0xE09A4E I32Add
+	0xE09A4F LocalGet 0
+	0xE09A51 I32Const 2
+	0xE09A53 I32Shl
+	0xE09A54 I32Add
+	0xE09A55 LocalGet 1
+	0xE09A57 I32Store 2, 0
+	0xE09A5A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v12, [2DA798]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [458886], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call DataManager`1.get_localDebug, v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v9, [v13 @ S0_v7 (Data.Save.Internal.LocalDebugData)+94], 16
+	18 Nop
+	19 Nop
+	20 ShiftLeft v20 @ S1_v4, this @ L0 (Data.Save.SaveGame), 2
+	21 Add v21 @ S0_v10, v16 @ S0_v9, v20 @ S1_v4
+	22 Nop
+	23 Move [v21 @ S0_v10], value @ L1 (Data.Save.SaveDataStrings)
+	24 Nop
+	25 Return
+
+Method: System.Void .ctor(System.String localPath, System.String cloudPath)
+
+Disassembly:
+	0xE04FB0 GlobalGet 7
+	0xE04FB2 LocalSet 3
+	0xE04FB4 GlobalGet 7
+	0xE04FB6 I32Const 16
+	0xE04FB8 I32Add
+	0xE04FB9 GlobalSet 7
+	0xE04FBB LocalGet 3
+	0xE04FBD I32Const 4
+	0xE04FBF I32Add
+	0xE04FC0 LocalTee 4
+	0xE04FC2 LocalGet 0
+	0xE04FC4 I32Store 2, 0
+	0xE04FC7 LocalGet 3
+	0xE04FC9 LocalGet 1
+	0xE04FCB I32Store 2, 0
+	0xE04FCE I32Const 4556812
+	0xE04FD3 I32Load8_S 0, 0
+	0xE04FD6 I32Eqz
+	0xE04FD7 If -64
+	0xE04FD9 I32Const 2973636
+	0xE04FDE I32Load 2, 0
+	0xE04FE1 Call 73003
+	0xE04FE5 I32Const 4556812
+	0xE04FEA I32Const 1
+	0xE04FEC I32Store8 0, 0
+	0xE04FEF End
+	0xE04FF0 I32Const 4427828
+	0xE04FF5 I32Load 2, 0
+	0xE04FF8 Call 72556
+	0xE04FFC LocalTee 0
+	0xE04FFE I32Const 0
+	0xE05000 I32Const 0
+	0xE05002 I32Const 4483076
+	0xE05007 I32Load 2, 0
+	0xE0500A I32Load 2, 12
+	0xE0500D I32Load 2, 96
+	0xE05010 I32Load 2, 0
+	0xE05013 LocalTee 1
+	0xE05015 LocalGet 1
+	0xE05017 I32Load 2, 0
+	0xE0501A I32Const 8191
+	0xE0501D I32And
+	0xE0501E I32Const 113696
+	0xE05022 I32Add
+	0xE05023 CallIndirect 8, 0
+	0xE05026 LocalGet 4
+	0xE05028 I32Const 0
+	0xE0502A Call 54843
+	0xE0502E LocalSet 1
+	0xE05030 LocalGet 0
+	0xE05032 I32Const 4529188
+	0xE05037 I32Load 2, 0
+	0xE0503A LocalGet 1
+	0xE0503C I32Const 2
+	0xE0503E I32Const 4483100
+	0xE05043 I32Load 2, 0
+	0xE05046 I32Load 2, 12
+	0xE05049 I32Load 2, 96
+	0xE0504C I32Load 2, 72
+	0xE0504F LocalTee 1
+	0xE05051 LocalGet 1
+	0xE05053 I32Load 2, 0
+	0xE05056 I32Const 2047
+	0xE05059 I32And
+	0xE0505A I32Const 39195
+	0xE0505E I32Add
+	0xE0505F CallIndirect 23, 0
+	0xE05062 Drop
+	0xE05063 I32Const 3
+	0xE05065 I32Const 4437260
+	0xE0506A I32Load 2, 0
+	0xE0506D LocalGet 3
+	0xE0506F Call 73903
+	0xE05073 LocalTee 1
+	0xE05075 Call 29262
+	0xE05079 LocalSet 4
+	0xE0507B LocalGet 3
+	0xE0507D LocalGet 1
+	0xE0507F Call 29263
+	0xE05083 I32Load 2, 0
+	0xE05086 I32Store 2, 0
+	0xE05089 LocalGet 0
+	0xE0508B I32Const 4529192
+	0xE05090 I32Load 2, 0
+	0xE05093 LocalGet 4
+	0xE05095 I32Const 2
+	0xE05097 I32Const 4483100
+	0xE0509C I32Load 2, 0
+	0xE0509F I32Load 2, 12
+	0xE050A2 I32Load 2, 96
+	0xE050A5 I32Load 2, 72
+	0xE050A8 LocalTee 1
+	0xE050AA LocalGet 1
+	0xE050AC I32Load 2, 0
+	0xE050AF I32Const 2047
+	0xE050B2 I32And
+	0xE050B3 I32Const 39195
+	0xE050B7 I32Add
+	0xE050B8 CallIndirect 23, 0
+	0xE050BB Drop
+	0xE050BC LocalGet 0
+	0xE050BE I32Const 4529196
+	0xE050C3 I32Load 2, 0
+	0xE050C6 LocalGet 2
+	0xE050C8 I32Const 2
+	0xE050CA I32Const 4483100
+	0xE050CF I32Load 2, 0
+	0xE050D2 I32Load 2, 12
+	0xE050D5 I32Load 2, 96
+	0xE050D8 I32Load 2, 72
+	0xE050DB LocalTee 0
+	0xE050DD LocalGet 0
+	0xE050DF I32Load 2, 0
+	0xE050E2 I32Const 2047
+	0xE050E5 I32And
+	0xE050E6 I32Const 39195
+	0xE050EA I32Add
+	0xE050EB CallIndirect 23, 0
+	0xE050EE Drop
+	0xE050EF I32Const 4435540
+	0xE050F4 I32Load 2, 0
+	0xE050F7 LocalTee 0
+	0xE050F9 I32Load16_S 1, 186
+	0xE050FD I32Const 512
+	0xE05100 I32And
+	0xE05101 If -64
+	0xE05103 LocalGet 0
+	0xE05105 I32Load 2, 116
+	0xE05108 I32Eqz
+	0xE05109 If -64
+	0xE0510B LocalGet 0
+	0xE0510D Call 72345
+	0xE05111 End
+	0xE05112 End
+	0xE05113 LocalGet 3
+	0xE05115 GlobalSet 7
+	0xE05117 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 4
+	9 Nop
+	10 Nop
+	11 Move [v9 @ S0_v5], this @ L0 (Data.Save.SaveGame)
+	12 Nop
+	13 Nop
+	14 Move [v1 @ G7], localPath @ L1 (System.String)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Jump @b13
+	20 Nop
+	21 Move v21 @ S0_v36, [2D5FC4]
+	22 CallVoid "il2cpp_runtime_class_init_actual", v21 @ S0_v36
+	23 Nop
+	24 Move v23 @ S1_v21, 1
+	25 Move [45880C], v23 @ S1_v21
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Call 11B6C, v28 @ S0_v13, typeof(System.Collections.Generic.Dictionary`2<System.String, System.String>)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Move v33 @ S3_v2 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.String, System.String>::.ctor)
+	35 Move v34 @ S3_v3, [v33 @ S3_v2 (Il2CppMethodInfo)+C]
+	36 Move v35 @ S3_v4, [v34 @ S3_v3+60]
+	37 Move v36 @ S3_v5, [v35 @ S3_v4]
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 And v41 @ S4_v3, [v36 @ S3_v5], 8191
+	43 Nop
+	44 Add v43 @ S4_v4, v41 @ S4_v3, 113696
+	45 IndirectCall v43 @ S4_v4, v44 @ SRET_v1, v28 @ S0_v13, 0, 0, v36 @ S3_v5
+	46 Nop
+	47 Nop
+	48 Call D63B, v47 @ S0_v15, v9 @ S0_v5, 0
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move v55 @ S4_v6 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.String, System.String>::Add)
+	57 Move v56 @ S4_v7, [v55 @ S4_v6 (Il2CppMethodInfo)+C]
+	58 Move v57 @ S4_v8, [v56 @ S4_v7+60]
+	59 Move v58 @ S4_v9, [v57 @ S4_v8+48]
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 And v63 @ S5_v5, [v58 @ S4_v9], 2047
+	65 Nop
+	66 Add v65 @ S5_v6, v63 @ S5_v5, 39195
+	67 IndirectCall v65 @ S5_v6, v66 @ S0_v17, v28 @ S0_v13, "Amount", v47 @ S0_v15, 2, v58 @ S4_v9
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Call 120AF, v71 @ S1_v12, typeof(InApp.InAppItemModel+ItemType), v1 @ G7
+	73 Nop
+	74 Call 724E, v73 @ S0_v19, 3, v71 @ S1_v12
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Throw typeof(System.NullReferenceException)
+	79 Nop
+	80 Move [v1 @ G7], [v77 @ S1_v14]
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Move v85 @ S4_v11 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.String, System.String>::Add)
+	88 Move v86 @ S4_v12, [v85 @ S4_v11 (Il2CppMethodInfo)+C]
+	89 Move v87 @ S4_v13, [v86 @ S4_v12+60]
+	90 Move v88 @ S4_v14, [v87 @ S4_v13+48]
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Nop
+	95 And v93 @ S5_v9, [v88 @ S4_v14], 2047
+	96 Nop
+	97 Add v95 @ S5_v10, v93 @ S5_v9, 39195
+	98 IndirectCall v95 @ S5_v10, v96 @ S0_v22, v28 @ S0_v13, "currency_id", v73 @ S0_v19, 2, v88 @ S4_v14
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Nop
+	104 Nop
+	105 Move v104 @ S4_v16 (Il2CppMethodInfo), methodof(System.Collections.Generic.Dictionary`2<System.String, System.String>::Add)
+	106 Move v105 @ S4_v17, [v104 @ S4_v16 (Il2CppMethodInfo)+C]
+	107 Move v106 @ S4_v18, [v105 @ S4_v17+60]
+	108 Move v107 @ S4_v19, [v106 @ S4_v18+48]
+	109 Nop
+	110 Nop
+	111 Nop
+	112 Nop
+	113 And v112 @ S5_v13, [v107 @ S4_v19], 2047
+	114 Nop
+	115 Add v114 @ S5_v14, v112 @ S5_v13, 39195
+	116 IndirectCall v114 @ S5_v14, v115 @ S0_v24, v28 @ S0_v13, "source_id", cloudPath @ L2 (System.String), 2, v107 @ S4_v19
+	117 Nop
+	118 Move v117 @ S0_v26 (Il2CppClass<Flurry>), typeof(Flurry)
+	119 Nop
+	120 Nop
+	121 Nop
+	122 And v121 @ S0_v28, [v117 @ S0_v26 (Il2CppClass<Flurry>)+BA], 512
+	123 CheckEqual v122 @ TEMP_v2 (System.Boolean), v121 @ S0_v28, 0
+	124 ConditionalJump @b14, v122 @ TEMP_v2 (System.Boolean)
+	125 Move v123 @ S0_v31 (Il2CppClass<Flurry>), typeof(Flurry)
+	126 Nop
+	127 CheckEqual v125 @ S0_v33 (System.Boolean), [v123 @ S0_v31 (Il2CppClass<Flurry>)+74], 0
+	128 Not v126 @ TEMP_v4 (System.Boolean), v125 @ S0_v33 (System.Boolean)
+	129 ConditionalJump @b14, v126 @ TEMP_v4 (System.Boolean)
+	130 Nop
+	131 CallVoid 11A99, typeof(Flurry)
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Nop
+	136 Nop
+	137 Return
+
+Method: System.Void Save()
+
+Disassembly:
+	0xE0A03E I32Const 4556961
+	0xE0A043 I32Load8_S 0, 0
+	0xE0A046 I32Eqz
+	0xE0A047 If -64
+	0xE0A049 I32Const 2992972
+	0xE0A04E I32Load 2, 0
+	0xE0A051 Call 73003
+	0xE0A055 I32Const 4556961
+	0xE0A05A I32Const 1
+	0xE0A05C I32Store8 0, 0
+	0xE0A05F End
+	0xE0A060 LocalGet 0
+	0xE0A062 I32Const 4470736
+	0xE0A067 I32Load 2, 0
+	0xE0A06A Call 53272
+	0xE0A06E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v7, [2DAB4C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4588A1], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid DataManager`1.OnSaveGameChanged, this @ L0 (Data.Save.SaveGame)
+	16 Nop
+	17 Return
+
+Method: System.Void Load()
+
+Disassembly:
+	0xE01C15 I32Const 4556694
+	0xE01C1A I32Load8_S 0, 0
+	0xE01C1D I32Eqz
+	0xE01C1E If -64
+	0xE01C20 I32Const 3000460
+	0xE01C25 I32Load 2, 0
+	0xE01C28 Call 73003
+	0xE01C2C I32Const 4556694
+	0xE01C31 I32Const 1
+	0xE01C33 I32Store8 0, 0
+	0xE01C36 End
+	0xE01C37 LocalGet 0
+	0xE01C39 I32Load 2, 8
+	0xE01C3C I32Const 4470784
+	0xE01C41 I32Load 2, 0
+	0xE01C44 Call 53279
+	0xE01C48 LocalGet 0
+	0xE01C4A I32Load 2, 12
+	0xE01C4D I32Const 4470768
+	0xE01C52 I32Load 2, 0
+	0xE01C55 Call 37334
+	0xE01C59 I32Const 4435480
+	0xE01C5E I32Load 2, 0
+	0xE01C61 LocalTee 1
+	0xE01C63 I32Load16_S 1, 186
+	0xE01C67 I32Const 512
+	0xE01C6A I32And
+	0xE01C6B If -64
+	0xE01C6D LocalGet 1
+	0xE01C6F I32Load 2, 116
+	0xE01C72 I32Eqz
+	0xE01C73 If -64
+	0xE01C75 LocalGet 1
+	0xE01C77 Call 72345
+	0xE01C7B I32Const 4435480
+	0xE01C80 I32Load 2, 0
+	0xE01C83 LocalSet 1
+	0xE01C85 End
+	0xE01C86 End
+	0xE01C87 LocalGet 1
+	0xE01C89 I32Load 2, 92
+	0xE01C8C I32Load8_S 0, 0
+	0xE01C8F If -64
+	0xE01C91 LocalGet 0
+	0xE01C93 I32Load 2, 16
+	0xE01C96 I32Const 4470800
+	0xE01C9B I32Load 2, 0
+	0xE01C9E Call 53279
+	0xE01CA2 End
+	0xE01CA3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v27, [2DC88C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v27
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [458796], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 CallVoid SaveData`1.SaveIfDirty, this._local (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalData>)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid SaveData`1<Data.Save.Internal.CloudData>.Save, this._cloud (Data.Save.Internal.SaveData`1<Data.Save.Internal.CloudData>)
+	22 Nop
+	23 Move v21 @ S0_v10 (Il2CppClass<Globals>), typeof(Globals)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 And v25 @ S0_v12, [v21 @ S0_v10 (Il2CppClass<Globals>)+BA], 512
+	28 CheckEqual v26 @ TEMP_v2 (System.Boolean), v25 @ S0_v12, 0
+	29 ConditionalJump @b13, v26 @ TEMP_v2 (System.Boolean)
+	30 Move v27 @ S0_v20 (Il2CppClass<Globals>), typeof(Globals)
+	31 Nop
+	32 CheckEqual v29 @ S0_v22 (System.Boolean), [v27 @ S0_v20 (Il2CppClass<Globals>)+74], 0
+	33 Not v30 @ TEMP_v5 (System.Boolean), v29 @ S0_v22 (System.Boolean)
+	34 ConditionalJump @b13, v30 @ TEMP_v5 (System.Boolean)
+	35 Nop
+	36 CallVoid 11A99, typeof(Globals)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Not v39 @ TEMP_v4 (System.Boolean), v37.DEBUG (System.Boolean)
+	46 ConditionalJump @b11, v39 @ TEMP_v4 (System.Boolean)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 CallVoid SaveData`1.SaveIfDirty, this._localDebug (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalDebugData>)
+	52 Nop
+	53 Nop
+	54 Return
+
+Method: System.Void MigrateToCloud(System.String newCloudPath)
+
+Disassembly:
+	0xE02727 I32Const 4556756
+	0xE0272C I32Load8_S 0, 0
+	0xE0272F I32Eqz
+	0xE02730 If -64
+	0xE02732 I32Const 3000484
+	0xE02737 I32Load 2, 0
+	0xE0273A Call 73003
+	0xE0273E I32Const 4556756
+	0xE02743 I32Const 1
+	0xE02745 I32Store8 0, 0
+	0xE02748 End
+	0xE02749 LocalGet 1
+	0xE0274B I32Load 2, 8
+	0xE0274E LocalTee 2
+	0xE02750 If -1
+	0xE02752 LocalGet 2
+	0xE02754 I32Load 2, 8
+	0xE02757 I32Eqz
+	0xE02758 Else
+	0xE02759 I32Const 1
+	0xE0275B End
+	0xE0275C I32Eqz
+	0xE0275D If -64
+	0xE0275F LocalGet 0
+	0xE02761 I32Load 2, 8
+	0xE02764 LocalGet 1
+	0xE02766 I32Load 2, 8
+	0xE02769 I32Const 4470788
+	0xE0276E I32Load 2, 0
+	0xE02771 Call 53276
+	0xE02775 End
+	0xE02776 LocalGet 1
+	0xE02778 I32Load 2, 12
+	0xE0277B LocalTee 2
+	0xE0277D If -1
+	0xE0277F LocalGet 2
+	0xE02781 I32Load 2, 8
+	0xE02784 I32Eqz
+	0xE02785 Else
+	0xE02786 I32Const 1
+	0xE02788 End
+	0xE02789 I32Eqz
+	0xE0278A If -64
+	0xE0278C LocalGet 0
+	0xE0278E I32Load 2, 12
+	0xE02791 LocalGet 1
+	0xE02793 I32Load 2, 12
+	0xE02796 I32Const 4470772
+	0xE0279B I32Load 2, 0
+	0xE0279E Call 53276
+	0xE027A2 End
+	0xE027A3 LocalGet 1
+	0xE027A5 I32Load 2, 16
+	0xE027A8 LocalTee 2
+	0xE027AA If -1
+	0xE027AC LocalGet 2
+	0xE027AE I32Load 2, 8
+	0xE027B1 I32Eqz
+	0xE027B2 Else
+	0xE027B3 I32Const 1
+	0xE027B5 End
+	0xE027B6 I32Eqz
+	0xE027B7 If -64
+	0xE027B9 LocalGet 0
+	0xE027BB I32Load 2, 16
+	0xE027BE LocalGet 1
+	0xE027C0 I32Load 2, 16
+	0xE027C3 I32Const 4470804
+	0xE027C8 I32Load 2, 0
+	0xE027CB Call 53276
+	0xE027CF End
+	0xE027D0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v39, [2DC8A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v39
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [4587D4], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Move v13 @ S0_v6 (System.Int32), newCloudPath.m_stringLength (System.Int32)
+	14 Nop
+	15 CheckEqual v15 @ TEMP_v2 (System.Boolean), newCloudPath.m_stringLength (System.Int32), 0
+	16 ConditionalJump @b6, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 CheckEqual v20 @ S0_v7 (System.Boolean), [v13 @ S0_v6 (System.Int32)+8], 0
+	20 Jump @b18
+	21 Nop
+	22 Nop
+	23 Not v21 @ S0_v8 (System.Boolean), v20 @ S0_v7 (System.Boolean)
+	24 Not v22 @ TEMP_v3 (System.Boolean), v21 @ S0_v8 (System.Boolean)
+	25 ConditionalJump @b8, v22 @ TEMP_v3 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid SaveData`1..ctor, this._local (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalData>), newCloudPath.m_stringLength (System.Int32)
+	33 Nop
+	34 Nop
+	35 Move v35 @ S0_v11 (System.Char), newCloudPath.m_firstChar (System.Char)
+	36 Nop
+	37 CheckEqual v37 @ TEMP_v4 (System.Boolean), newCloudPath.m_firstChar (System.Char), 0
+	38 ConditionalJump @b10, v37 @ TEMP_v4 (System.Boolean)
+	39 Nop
+	40 Nop
+	41 CheckEqual v42 @ S0_v12 (System.Boolean), [v35 @ S0_v11 (System.Char)+8], 0
+	42 Jump @b19
+	43 Nop
+	44 Nop
+	45 Not v43 @ S0_v13 (System.Boolean), v42 @ S0_v12 (System.Boolean)
+	46 Not v44 @ TEMP_v5 (System.Boolean), v43 @ S0_v13 (System.Boolean)
+	47 ConditionalJump @b12, v44 @ TEMP_v5 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CallVoid SaveData`1..ctor, this._cloud (Data.Save.Internal.SaveData`1<Data.Save.Internal.CloudData>), newCloudPath.m_firstChar (System.Char)
+	55 Nop
+	56 Nop
+	57 Move v55 @ S0_v16, [newCloudPath @ L1 (System.String)+10]
+	58 Nop
+	59 CheckEqual v57 @ TEMP_v6 (System.Boolean), [newCloudPath @ L1 (System.String)+10], 0
+	60 ConditionalJump @b14, v57 @ TEMP_v6 (System.Boolean)
+	61 Nop
+	62 Nop
+	63 CheckEqual v62 @ S0_v17 (System.Boolean), [v55 @ S0_v16+8], 0
+	64 Jump @b20
+	65 Nop
+	66 Nop
+	67 Not v63 @ S0_v18 (System.Boolean), v62 @ S0_v17 (System.Boolean)
+	68 Not v64 @ TEMP_v7 (System.Boolean), v63 @ S0_v18 (System.Boolean)
+	69 ConditionalJump @b16, v64 @ TEMP_v7 (System.Boolean)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 CallVoid SaveData`1..ctor, this._localDebug (Data.Save.Internal.SaveData`1<Data.Save.Internal.LocalDebugData>), [newCloudPath @ L1 (System.String)+10]
+	77 Nop
+	78 Nop
+	79 Return
+

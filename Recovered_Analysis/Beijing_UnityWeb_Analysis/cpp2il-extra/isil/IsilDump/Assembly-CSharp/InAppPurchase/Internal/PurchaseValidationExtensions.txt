@@ -1,0 +1,170 @@
+Type: InAppPurchase.Internal.PurchaseValidationExtensions
+
+Method: System.Boolean HasDetectedAnyInvalidPurchases(Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer purchaseValidationServer)
+
+Disassembly:
+	0x7CF6F I32Const 0
+	0x7CF71 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 0
+
+Method: System.Void ValidateTransaction(Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer purchaseValidationServer, System.String productId, System.String transactionReceiptBase64, System.Action`1<Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationResult> completeHandler)
+
+Disassembly:
+	0xD786C3 LocalGet 0
+	0xD786C5 I32Load 2, 20
+	0xD786C8 LocalTee 5
+	0xD786CA If -64
+	0xD786CC LocalGet 5
+	0xD786CE LocalGet 1
+	0xD786D0 LocalGet 2
+	0xD786D2 LocalGet 3
+	0xD786D4 I32Const 0
+	0xD786D6 I32Const 0
+	0xD786D8 Call 35168
+	0xD786DC End
+	0xD786DD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v4 @ TEMP_v1 (System.Boolean), [purchaseValidationServer @ L0 (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer)+14], 0
+	4 ConditionalJump @b4, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 CallVoid 8960, [purchaseValidationServer @ L0 (Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationServer)+14], productId @ L1 (System.String), transactionReceiptBase64 @ L2 (System.String), completeHandler @ L3 (System.Action`1<Kiloo.Common.Backend.PurchaseValidation.IPurchaseValidationResult>), 0, 0
+	12 Nop
+	13 Nop
+	14 Return
+
+Method: System.Void LogError(System.String msg)
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid F4C1, msg @ L0 (System.String), 0
+	3 Nop
+	4 Return
+
+Method: System.Void Log(System.String msg)
+
+Disassembly:
+	0xD791B2 I32Const 4555091
+	0xD791B7 I32Load8_S 0, 0
+	0xD791BA I32Eqz
+	0xD791BB If -64
+	0xD791BD I32Const 2993916
+	0xD791C2 I32Load 2, 0
+	0xD791C5 Call 73003
+	0xD791C9 I32Const 4555091
+	0xD791CE I32Const 1
+	0xD791D0 I32Store8 0, 0
+	0xD791D3 End
+	0xD791D4 I32Const 4532236
+	0xD791D9 I32Load 2, 0
+	0xD791DC LocalGet 0
+	0xD791DE I32Const 0
+	0xD791E0 Call 55680
+	0xD791E4 I32Const 0
+	0xD791E6 I32Const 0
+	0xD791E8 Call 37913
+	0xD791EC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v9, [2DAEFC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [458153], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Call String.ConcatArray, v16 @ S0_v7 (System.String), "[PurchaseValidationExtensions] ", msg @ L0 (System.String)
+	17 Nop
+	18 Nop
+	19 CallVoid SDebug.LogFormat, v16 @ S0_v7 (System.String), 0
+	20 Nop
+	21 Return
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0xD78F0A I32Const 4555088
+	0xD78F0F I32Load8_S 0, 0
+	0xD78F12 I32Eqz
+	0xD78F13 If -64
+	0xD78F15 I32Const 2976472
+	0xD78F1A I32Load 2, 0
+	0xD78F1D Call 73003
+	0xD78F21 I32Const 4555088
+	0xD78F26 I32Const 1
+	0xD78F28 I32Store8 0, 0
+	0xD78F2B End
+	0xD78F2C I32Const 4427880
+	0xD78F31 I32Load 2, 0
+	0xD78F34 I32Const 1
+	0xD78F36 Call 71670
+	0xD78F3A LocalTee 0
+	0xD78F3C I32Const 16
+	0xD78F3E I32Add
+	0xD78F3F I32Const 59
+	0xD78F41 I32Store16 1, 0
+	0xD78F44 I32Const 4438108
+	0xD78F49 I32Load 2, 0
+	0xD78F4C I32Load 2, 92
+	0xD78F4F LocalGet 0
+	0xD78F51 I32Store 2, 0
+	0xD78F54 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v13, [2D6AD8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [458150], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Newobj v14 @ S0_v7 (System.OverflowException), typeof(System.OverflowException)
+	16 Nop
+	17 Nop
+	18 Add v17 @ S0_v8, v14 @ S0_v7 (System.OverflowException), 16
+	19 Nop
+	20 Move [v17 @ S0_v8], 59
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Move v21.SEPARATOR_FOR_STRING_SPLIT (System.Char[]), v14 @ S0_v7 (System.OverflowException)
+	26 Nop
+	27 Return
+

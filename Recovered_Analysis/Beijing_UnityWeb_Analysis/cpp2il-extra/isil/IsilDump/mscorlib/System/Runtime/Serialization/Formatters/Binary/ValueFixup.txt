@@ -1,0 +1,230 @@
+Type: System.Runtime.Serialization.Formatters.Binary.ValueFixup
+
+Method: System.Void .ctor(System.Array arrayObj, System.Int32[] indexMap)
+
+Disassembly:
+	0x123FA98 LocalGet 1
+	0x123FA9A I32Const 0
+	0x123FA9C I32Lt_S
+	0x123FA9D If -64
+	0x123FA9F LocalGet 0
+	0x123FAA1 I32Load 2, 12
+	0x123FAA4 I32Load 2, 12
+	0x123FAA7 I32Const 1
+	0x123FAA9 I32Sub
+	0x123FAAA I32Const 0
+	0x123FAAC LocalGet 1
+	0x123FAAE I32Sub
+	0x123FAAF LocalTee 4
+	0x123FAB1 I32Lt_S
+	0x123FAB2 If -64
+	0x123FAB4 LocalGet 0
+	0x123FAB6 LocalGet 1
+	0x123FAB8 I32Const 0
+	0x123FABA Call 57474
+	0x123FABE End
+	0x123FABF LocalGet 0
+	0x123FAC1 I32Load 2, 12
+	0x123FAC4 I32Const 16
+	0x123FAC6 I32Add
+	0x123FAC7 LocalGet 4
+	0x123FAC9 I32Const 2
+	0x123FACB I32Shl
+	0x123FACC I32Add
+	0x123FACD LocalGet 2
+	0x123FACF I32Store 2, 0
+	0x123FAD2 Else
+	0x123FAD3 LocalGet 0
+	0x123FAD5 I32Load 2, 8
+	0x123FAD8 I32Load 2, 12
+	0x123FADB I32Const 1
+	0x123FADD I32Sub
+	0x123FADE LocalGet 1
+	0x123FAE0 I32Lt_S
+	0x123FAE1 If -64
+	0x123FAE3 LocalGet 0
+	0x123FAE5 LocalGet 1
+	0x123FAE7 I32Const 0
+	0x123FAE9 Call 57474
+	0x123FAED End
+	0x123FAEE LocalGet 0
+	0x123FAF0 I32Load 2, 8
+	0x123FAF3 I32Const 16
+	0x123FAF5 I32Add
+	0x123FAF6 LocalGet 1
+	0x123FAF8 I32Const 2
+	0x123FAFA I32Shl
+	0x123FAFB I32Add
+	0x123FAFC LocalGet 2
+	0x123FAFE I32Store 2, 0
+	0x123FB01 End
+	0x123FB02 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckLess v3 @ S0_v2 (System.Boolean), arrayObj @ L1 (System.Array), 0
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v2 (System.Boolean)
+	4 ConditionalJump @b6, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Move v7 @ S0_v16 (System.Array), this.arrayObj (System.Array)
+	7 Nop
+	8 Nop
+	9 Subtract v10 @ S0_v18, [v7 @ S0_v16 (System.Array)+C], 1
+	10 Nop
+	11 Nop
+	12 Subtract v13 @ S1_v13, 0, arrayObj @ L1 (System.Array)
+	13 Nop
+	14 CheckLess v15 @ S0_v19 (System.Boolean), v10 @ S0_v18, v13 @ S1_v13
+	15 Not v16 @ TEMP_v4 (System.Boolean), v15 @ S0_v19 (System.Boolean)
+	16 ConditionalJump @b5, v16 @ TEMP_v4 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 CallVoid NameCache.SetCachedValue, this @ L0 (System.Runtime.Serialization.Formatters.Binary.ValueFixup), arrayObj @ L1 (System.Array)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Add v34 @ S0_v23, this.arrayObj (System.Array), 16
+	26 Nop
+	27 Nop
+	28 ShiftLeft v37 @ S1_v17, v13 @ S1_v13, 2
+	29 Add v38 @ S0_v24, v34 @ S0_v23, v37 @ S1_v17
+	30 Nop
+	31 Move [v38 @ S0_v24], indexMap @ L2 (System.Int32[])
+	32 Jump @b9
+	33 Nop
+	34 Move v18 @ S0_v5 (System.Runtime.Serialization.Formatters.Binary.ValueFixupEnum), this.valueFixupEnum (System.Runtime.Serialization.Formatters.Binary.ValueFixupEnum)
+	35 Nop
+	36 Nop
+	37 Subtract v21 @ S0_v7, [v18 @ S0_v5 (System.Runtime.Serialization.Formatters.Binary.ValueFixupEnum)+C], 1
+	38 Nop
+	39 CheckLess v23 @ S0_v8 (System.Boolean), v21 @ S0_v7, arrayObj @ L1 (System.Array)
+	40 Not v24 @ TEMP_v3 (System.Boolean), v23 @ S0_v8 (System.Boolean)
+	41 ConditionalJump @b8, v24 @ TEMP_v3 (System.Boolean)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 CallVoid NameCache.SetCachedValue, this @ L0 (System.Runtime.Serialization.Formatters.Binary.ValueFixup), arrayObj @ L1 (System.Array)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Add v51 @ S0_v12, this.valueFixupEnum (System.Runtime.Serialization.Formatters.Binary.ValueFixupEnum), 16
+	51 Nop
+	52 Nop
+	53 ShiftLeft v54 @ S1_v8, arrayObj @ L1 (System.Array), 2
+	54 Add v55 @ S0_v13, v51 @ S0_v12, v54 @ S1_v8
+	55 Nop
+	56 Move [v55 @ S0_v13], indexMap @ L2 (System.Int32[])
+	57 Nop
+	58 Nop
+	59 Return
+
+Method: System.Void .ctor(System.Object memberObject, System.String memberName, System.Runtime.Serialization.Formatters.Binary.ReadObjectInfo objectInfo)
+
+Disassembly:
+	0x12403CE Block -64
+	0x12403D0 Block -64
+	0x12403D2 Loop -64
+	0x12403D4 LocalGet 3
+	0x12403D6 I32Const 1
+	0x12403D8 I32Lt_S
+	0x12403D9 BrIf 2
+	0x12403DB I32Const 24
+	0x12403DD LocalGet 0
+	0x12403DF I32Load 2, 60
+	0x12403E2 LocalGet 1
+	0x12403E4 LocalGet 2
+	0x12403E6 LocalGet 3
+	0x12403E8 Call 29450
+	0x12403EC LocalTee 4
+	0x12403EE I32Eqz
+	0x12403EF BrIf 1
+	0x12403F1 LocalGet 4
+	0x12403F3 LocalGet 2
+	0x12403F5 I32Add
+	0x12403F6 LocalSet 2
+	0x12403F8 LocalGet 3
+	0x12403FA LocalGet 4
+	0x12403FC I32Sub
+	0x12403FD LocalSet 3
+	0x12403FF Br 0
+	0x1240401 End
+	0x1240402 Unreachable
+	0x1240403 End
+	0x1240404 I32Const 0
+	0x1240406 Call 54764
+	0x124040A End
+	0x124040B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckLess v26 @ S0_v3 (System.Boolean), v23 @ S0_v12 (System.Runtime.Serialization.Formatters.Binary.ReadObjectInfo), 1
+	4 ConditionalJump @b7, v26 @ S0_v3 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Call 730A, v32 @ S0_v6, 24, [this @ L0 (System.Runtime.Serialization.Formatters.Binary.ValueFixup)+3C], memberObject @ L1 (System.Object), v43 @ S0_v10 (System.String), v23 @ S0_v12 (System.Runtime.Serialization.Formatters.Binary.ReadObjectInfo)
+	12 Nop
+	13 CheckEqual v40 @ S0_v7 (System.Boolean), v32 @ S0_v6, 0
+	14 ConditionalJump @b8, v40 @ S0_v7 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Add v43 @ S0_v10 (System.String), v32 @ S0_v6, v3 @ L2_v1 (System.String)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Subtract v23 @ S0_v12 (System.Runtime.Serialization.Formatters.Binary.ReadObjectInfo), v0 @ L3_v1 (System.Runtime.Serialization.Formatters.Binary.ReadObjectInfo), v32 @ S0_v6
+	22 Nop
+	23 Jump @b2
+	24 Nop
+	25 Interrupt
+	26 Nop
+	27 Nop
+	28 CallVoid __Error.FileNotOpen
+	29 Nop
+	30 Nop
+	31 Return
+
+Method: System.Void Fixup(System.Runtime.Serialization.Formatters.Binary.ParseRecord record, System.Runtime.Serialization.Formatters.Binary.ParseRecord parent)
+
+Disassembly:
+	0x123DDF6 LocalGet 0
+	0x123DDF8 I32Const 1
+	0x123DDFA I32Store 2, 8
+	0x123DDFD LocalGet 0
+	0x123DDFF I32Const 12
+	0x123DE01 I32Add
+	0x123DE02 LocalGet 1
+	0x123DE04 I32Store 2, 0
+	0x123DE07 LocalGet 0
+	0x123DE09 I32Const 16
+	0x123DE0B I32Add
+	0x123DE0C LocalGet 2
+	0x123DE0E I32Store 2, 0
+	0x123DE11 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.valueFixupEnum (System.Runtime.Serialization.Formatters.Binary.ValueFixupEnum), 1
+	3 Nop
+	4 Nop
+	5 Add v5 @ S0_v3, this @ L0 (System.Runtime.Serialization.Formatters.Binary.ValueFixup), 12
+	6 Nop
+	7 Move [v5 @ S0_v3], record @ L1 (System.Runtime.Serialization.Formatters.Binary.ParseRecord)
+	8 Nop
+	9 Nop
+	10 Add v10 @ S0_v5, this @ L0 (System.Runtime.Serialization.Formatters.Binary.ValueFixup), 16
+	11 Nop
+	12 Move [v10 @ S0_v5], parent @ L2 (System.Runtime.Serialization.Formatters.Binary.ParseRecord)
+	13 Nop
+	14 Return
+

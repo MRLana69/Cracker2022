@@ -1,0 +1,201 @@
+Type: Kiloo.Common.Ads.AdController+CacheList
+
+Method: System.Void .ctor(System.Int32 capacity)
+
+Disassembly:
+	0xD4A125 LocalGet 0
+	0xD4A127 LocalGet 1
+	0xD4A129 I32Store 2, 8
+	0xD4A12C LocalGet 0
+	0xD4A12E I32Const 0
+	0xD4A130 Call 51354
+	0xD4A134 I32Store 2, 16
+	0xD4A137 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.list (System.Collections.Generic.List`1<Kiloo.Common.Ads.AdLocation>), capacity @ L1 (System.Int32)
+	3 Nop
+	4 Nop
+	5 Call Environment.get_HasShutdownStarted, v6 @ S1_v3 (System.Boolean)
+	6 Move this._locationToShowNext (System.Int32), v6 @ S1_v3 (System.Boolean)
+	7 Nop
+	8 Return
+
+Method: System.Int32 get_count()
+
+Disassembly:
+	0xFB0F50 LocalGet 0
+	0xFB0F52 I32Const 0
+	0xFB0F54 Call 43962
+	0xFB0F58 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call <GetAbstractAdProviderSubTypes>d__44.System.Collections.IEnumerable.GetEnumerator, returnVal1 @ S0_v2 (System.Int32), this @ L0 (Kiloo.Common.Ads.AdController+CacheList)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Void Add(Kiloo.Common.Ads.AdLocation location)
+
+Disassembly:
+	0xF72610 I32Const 4560821
+	0xF72615 I32Load8_S 0, 0
+	0xF72618 I32Eqz
+	0xF72619 If -64
+	0xF7261B I32Const 2939800
+	0xF72620 I32Load 2, 0
+	0xF72623 Call 73003
+	0xF72627 I32Const 4560821
+	0xF7262C I32Const 1
+	0xF7262E I32Store8 0, 0
+	0xF72631 End
+	0xF72632 LocalGet 0
+	0xF72634 LocalGet 1
+	0xF72636 I32Store 2, 12
+	0xF72639 I32Const 4438536
+	0xF7263E I32Load 2, 0
+	0xF72641 Call 72556
+	0xF72645 LocalTee 2
+	0xF72647 LocalGet 1
+	0xF72649 I32Const 4485012
+	0xF7264E I32Load 2, 0
+	0xF72651 Call 29757
+	0xF72655 LocalGet 0
+	0xF72657 I32Const 8
+	0xF72659 I32Add
+	0xF7265A LocalGet 2
+	0xF7265C I32Store 2, 0
+	0xF7265F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v12, [2CDB98]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [4597B5], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this.capacity (System.Int32), location @ L1 (Kiloo.Common.Ads.AdLocation)
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v17 @ S0_v8, typeof(System.Collections.Generic.List`1<Kiloo.Common.Ads.AdLocation>)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Throw typeof(System.OverflowException)
+	23 Nop
+	24 Nop
+	25 Add v24 @ S0_v10, this @ L0 (Kiloo.Common.Ads.AdController+CacheList), 8
+	26 Nop
+	27 Move [v24 @ S0_v10], v17 @ S0_v8
+	28 Nop
+	29 Return
+
+Method: Kiloo.Common.Ads.AdLocation GetLocationToShow()
+
+Disassembly:
+	0xF72662 I32Const 4560822
+	0xF72667 I32Load8_S 0, 0
+	0xF7266A I32Eqz
+	0xF7266B If -64
+	0xF7266D I32Const 2939804
+	0xF72672 I32Load 2, 0
+	0xF72675 Call 73003
+	0xF72679 I32Const 4560822
+	0xF7267E I32Const 1
+	0xF72680 I32Store8 0, 0
+	0xF72683 End
+	0xF72684 I32Const 4462948
+	0xF72689 I32Load 2, 0
+	0xF7268C Drop
+	0xF7268D LocalGet 0
+	0xF7268F I32Load 2, 8
+	0xF72692 I32Load 2, 12
+	0xF72695 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b5
+	5 Nop
+	6 Move v5 @ S0_v11, [2CDB9C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v11
+	8 Nop
+	9 Move v7 @ S1_v2, 1
+	10 Move [4597B6], v7 @ S1_v2
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Move v15 @ S0_v8 (System.Collections.Generic.List`1<Kiloo.Common.Ads.AdLocation>), this.list (System.Collections.Generic.List`1<Kiloo.Common.Ads.AdLocation>)
+	16 Nop
+	17 Nop
+	18 Return v15._size (System.Int32)
+
+Method: System.Void AdvanceShowPointer()
+
+Disassembly:
+	0xFB0EA3 I32Const 4561534
+	0xFB0EA8 I32Load8_S 0, 0
+	0xFB0EAB I32Eqz
+	0xFB0EAC If -64
+	0xFB0EAE I32Const 3014256
+	0xFB0EB3 I32Load 2, 0
+	0xFB0EB6 Call 73003
+	0xFB0EBA I32Const 4561534
+	0xFB0EBF I32Const 1
+	0xFB0EC1 I32Store8 0, 0
+	0xFB0EC4 End
+	0xFB0EC5 I32Const 4427868
+	0xFB0ECA I32Load 2, 0
+	0xFB0ECD Call 72556
+	0xFB0ED1 LocalTee 2
+	0xFB0ED3 I32Const 0
+	0xFB0ED5 Call 54998
+	0xFB0ED9 LocalGet 2
+	0xFB0EDB I32Const 0
+	0xFB0EDD I32Const 4471640
+	0xFB0EE2 I32Load 2, 0
+	0xFB0EE5 Call 73899
+	0xFB0EE9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v10, [2DFE70]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v10
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [459A7E], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.NullReferenceException), typeof(System.NotSupportedException)
+	15 Nop
+	16 Nop
+	17 CallVoid NullReferenceException..ctor, v13 @ S0_v7 (System.NullReferenceException)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 CallVoid 120AB, v13 @ S0_v7 (System.NullReferenceException), 0, methodof(Kiloo.Common.Ads.AbstractAdProvider+<GetAbstractAdProviderSubTypes>d__44::System.Collections.IEnumerator.Reset)
+	23 Nop
+	24 Return
+

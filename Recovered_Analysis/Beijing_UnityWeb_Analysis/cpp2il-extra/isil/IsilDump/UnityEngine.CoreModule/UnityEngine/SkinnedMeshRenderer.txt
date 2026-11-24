@@ -1,0 +1,126 @@
+Type: UnityEngine.SkinnedMeshRenderer
+
+Method: UnityEngine.Mesh get_sharedMesh()
+
+Disassembly:
+	0x13741F2 LocalGet 0
+	0x13741F4 I32Const -2
+	0x13741F6 I32And
+	0x13741F7 I32Const 28
+	0x13741F9 I32Eq
+	0x13741FA If -1
+	0x13741FC I32Const 1
+	0x13741FE Else
+	0x13741FF LocalGet 0
+	0x1374201 I32Const 1
+	0x1374203 I32Or
+	0x1374204 I32Const 65
+	0x1374207 I32Eq
+	0x1374208 End
+	0x1374209 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 And v3 @ S0_v2, this @ L0 (UnityEngine.SkinnedMeshRenderer), -2
+	3 Nop
+	4 CheckEqual v5 @ S0_v3 (System.Boolean), v3 @ S0_v2, 28
+	5 Not v6 @ TEMP_v1 (System.Boolean), v5 @ S0_v3 (System.Boolean)
+	6 ConditionalJump @b4, v6 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Jump @b5
+	9 Nop
+	10 Nop
+	11 Or v10 @ S0_v6, this @ L0 (UnityEngine.SkinnedMeshRenderer), 1
+	12 Nop
+	13 CheckEqual v12 @ S0_v7 (System.Boolean), v10 @ S0_v6, 65
+	14 Nop
+	15 Nop
+	16 Return returnVal1 @ S0_v4 (UnityEngine.Mesh)
+
+Method: System.Void set_sharedMesh(UnityEngine.Mesh value)
+
+Disassembly:
+	0x1397AE8 I32Const 3926376
+	0x1397AED I32Load 2, 0
+	0x1397AF0 LocalTee 2
+	0x1397AF2 I32Eqz
+	0x1397AF3 If -64
+	0x1397AF5 I32Const 3926376
+	0x1397AFA I32Const 3499214
+	0x1397AFF Call 73893
+	0x1397B03 LocalTee 2
+	0x1397B05 I32Store 2, 0
+	0x1397B08 End
+	0x1397B09 LocalGet 0
+	0x1397B0B LocalGet 1
+	0x1397B0D LocalGet 2
+	0x1397B0F I32Const 16383
+	0x1397B13 I32And
+	0x1397B14 I32Const 80504
+	0x1397B18 I32Add
+	0x1397B19 CallIndirect 4, 0
+	0x1397B1C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE968], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3499214
+	9 Nop
+	10 Move [3BE968], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (UnityEngine.SkinnedMeshRenderer), value @ L1 (UnityEngine.Mesh)
+	20 Nop
+	21 Return
+
+Method: System.Single GetBlendShapeWeight(System.Int32 index)
+
+Disassembly:
+	0x153F534 LocalGet 2
+	0x153F536 Call 73274
+	0x153F53A F32Const 0
+	0x153F53F End
+
+ISIL:
+	0 Nop
+	1 CallVoid 11E3A, methodInfo @ L2 (Il2CppMethodInfo)
+	2 Nop
+	3 Nop
+	4 Return 0f
+
+Method: System.Void SetBlendShapeWeight(System.Int32 index, System.Single value)
+
+Disassembly:
+	0x137C5A6 LocalGet 0
+	0x137C5A8 LocalGet 1
+	0x137C5AA I32Const 0
+	0x137C5AC Call 64138
+	0x137C5B0 LocalGet 2
+	0x137C5B2 I32Const 0
+	0x137C5B4 Call 63112
+	0x137C5B8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call Material.get_shader, v5 @ S1_v2 (UnityEngine.Shader), index @ L1 (System.Int32)
+	4 Nop
+	5 Nop
+	6 CallVoid Material.SetFloat, this @ L0 (UnityEngine.SkinnedMeshRenderer), v5 @ S1_v2 (UnityEngine.Shader), value @ L2 (System.Single)
+	7 Nop
+	8 Return
+

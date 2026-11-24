@@ -1,0 +1,2271 @@
+Type: Kiloo.Common.Ads.DebugAdGUI
+
+Method: System.String get_adLocationID()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._adProvider (System.String)
+
+Method: System.Void set_adLocationID(System.String value)
+
+Disassembly:
+	0xC57CC1 LocalGet 0
+	0xC57CC3 I32Const 16
+	0xC57CC5 I32Add
+	0xC57CC6 LocalGet 1
+	0xC57CC8 I32Store 2, 0
+	0xC57CCB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 16
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.String)
+	5 Nop
+	6 Return
+
+Method: System.Void add_finishedWatchingVideo(System.Action value)
+
+Disassembly:
+	0xC1F298 LocalGet 0
+	0xC1F29A I32Const 36
+	0xC1F29C I32Add
+	0xC1F29D LocalGet 1
+	0xC1F29F I32Store 2, 0
+	0xC1F2A2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 36
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.Action)
+	5 Nop
+	6 Return
+
+Method: System.Void remove_finishedWatchingVideo(System.Action value)
+
+Disassembly:
+	0xF75084 I32Const 4560861
+	0xF75089 I32Load8_S 0, 0
+	0xF7508C I32Eqz
+	0xF7508D If -64
+	0xF7508F I32Const 2950468
+	0xF75094 I32Load 2, 0
+	0xF75097 Call 73003
+	0xF7509B I32Const 4560861
+	0xF750A0 I32Const 1
+	0xF750A2 I32Store8 0, 0
+	0xF750A5 End
+	0xF750A6 LocalGet 0
+	0xF750A8 I32Load 2, 40
+	0xF750AB LocalSet 2
+	0xF750AD Loop -64
+	0xF750AF LocalGet 2
+	0xF750B1 LocalGet 1
+	0xF750B3 I32Const 0
+	0xF750B5 Call 63552
+	0xF750B9 I32Const 4429724
+	0xF750BE I32Load 2, 0
+	0xF750C1 Call 29321
+	0xF750C5 LocalSet 4
+	0xF750C7 LocalGet 0
+	0xF750C9 I32Const 40
+	0xF750CB I32Add
+	0xF750CC LocalTee 3
+	0xF750CE I32Load 2, 0
+	0xF750D1 LocalGet 3
+	0xF750D3 I32Load 2, 0
+	0xF750D6 LocalGet 2
+	0xF750D8 I32Eq
+	0xF750D9 If -64
+	0xF750DB LocalGet 3
+	0xF750DD LocalGet 4
+	0xF750DF I32Store 2, 0
+	0xF750E2 End
+	0xF750E3 LocalTee 3
+	0xF750E5 LocalGet 2
+	0xF750E7 I32Ne
+	0xF750E8 If -64
+	0xF750EA LocalGet 3
+	0xF750EC LocalSet 2
+	0xF750EE Br 1
+	0xF750F0 End
+	0xF750F1 End
+	0xF750F2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D0544]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4597DD], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.CombineImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Action)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 40
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void add_dismissedAd(System.Action`1<Kiloo.Common.Ads.AdType> value)
+
+Disassembly:
+	0xF750F7 I32Const 4560862
+	0xF750FC I32Load8_S 0, 0
+	0xF750FF I32Eqz
+	0xF75100 If -64
+	0xF75102 I32Const 2950476
+	0xF75107 I32Load 2, 0
+	0xF7510A Call 73003
+	0xF7510E I32Const 4560862
+	0xF75113 I32Const 1
+	0xF75115 I32Store8 0, 0
+	0xF75118 End
+	0xF75119 LocalGet 0
+	0xF7511B I32Load 2, 40
+	0xF7511E LocalSet 2
+	0xF75120 Loop -64
+	0xF75122 LocalGet 2
+	0xF75124 LocalGet 1
+	0xF75126 I32Const 0
+	0xF75128 Call 63555
+	0xF7512C I32Const 4429724
+	0xF75131 I32Load 2, 0
+	0xF75134 Call 29321
+	0xF75138 LocalSet 4
+	0xF7513A LocalGet 0
+	0xF7513C I32Const 40
+	0xF7513E I32Add
+	0xF7513F LocalTee 3
+	0xF75141 I32Load 2, 0
+	0xF75144 LocalGet 3
+	0xF75146 I32Load 2, 0
+	0xF75149 LocalGet 2
+	0xF7514B I32Eq
+	0xF7514C If -64
+	0xF7514E LocalGet 3
+	0xF75150 LocalGet 4
+	0xF75152 I32Store 2, 0
+	0xF75155 End
+	0xF75156 LocalTee 3
+	0xF75158 LocalGet 2
+	0xF7515A I32Ne
+	0xF7515B If -64
+	0xF7515D LocalGet 3
+	0xF7515F LocalSet 2
+	0xF75161 Br 1
+	0xF75163 End
+	0xF75164 End
+	0xF75165 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D054C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4597DE], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.RemoveImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Action`1<Kiloo.Common.Ads.AdType>)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 40
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void remove_dismissedAd(System.Action`1<Kiloo.Common.Ads.AdType> value)
+
+Disassembly:
+	0xF7516A I32Const 4560863
+	0xF7516F I32Load8_S 0, 0
+	0xF75172 I32Eqz
+	0xF75173 If -64
+	0xF75175 I32Const 2950464
+	0xF7517A I32Load 2, 0
+	0xF7517D Call 73003
+	0xF75181 I32Const 4560863
+	0xF75186 I32Const 1
+	0xF75188 I32Store8 0, 0
+	0xF7518B End
+	0xF7518C LocalGet 0
+	0xF7518E I32Load 2, 44
+	0xF75191 LocalSet 2
+	0xF75193 Loop -64
+	0xF75195 LocalGet 2
+	0xF75197 LocalGet 1
+	0xF75199 I32Const 0
+	0xF7519B Call 63552
+	0xF7519F I32Const 4438600
+	0xF751A4 I32Load 2, 0
+	0xF751A7 Call 29321
+	0xF751AB LocalSet 4
+	0xF751AD LocalGet 0
+	0xF751AF I32Const 44
+	0xF751B1 I32Add
+	0xF751B2 LocalTee 3
+	0xF751B4 I32Load 2, 0
+	0xF751B7 LocalGet 3
+	0xF751B9 I32Load 2, 0
+	0xF751BC LocalGet 2
+	0xF751BE I32Eq
+	0xF751BF If -64
+	0xF751C1 LocalGet 3
+	0xF751C3 LocalGet 4
+	0xF751C5 I32Store 2, 0
+	0xF751C8 End
+	0xF751C9 LocalTee 3
+	0xF751CB LocalGet 2
+	0xF751CD I32Ne
+	0xF751CE If -64
+	0xF751D0 LocalGet 3
+	0xF751D2 LocalSet 2
+	0xF751D4 Br 1
+	0xF751D6 End
+	0xF751D7 End
+	0xF751D8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D0540]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4597DF], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.CombineImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), value @ L1 (System.Action`1<Kiloo.Common.Ads.AdType>)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action`1<Kiloo.Common.Ads.AdType>)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 44
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void Awake()
+
+Disassembly:
+	0xF72CE4 GlobalGet 7
+	0xF72CE6 LocalSet 2
+	0xF72CE8 GlobalGet 7
+	0xF72CEA I32Const 16
+	0xF72CEC I32Add
+	0xF72CED GlobalSet 7
+	0xF72CEF I32Const 4560833
+	0xF72CF4 I32Load8_S 0, 0
+	0xF72CF7 I32Eqz
+	0xF72CF8 If -64
+	0xF72CFA I32Const 2924748
+	0xF72CFF I32Load 2, 0
+	0xF72D02 Call 73003
+	0xF72D06 I32Const 4560833
+	0xF72D0B I32Const 1
+	0xF72D0D I32Store8 0, 0
+	0xF72D10 End
+	0xF72D11 I32Const 4435608
+	0xF72D16 I32Load 2, 0
+	0xF72D19 LocalTee 1
+	0xF72D1B I32Load16_S 1, 186
+	0xF72D1F I32Const 512
+	0xF72D22 I32And
+	0xF72D23 If -64
+	0xF72D25 LocalGet 1
+	0xF72D27 I32Load 2, 116
+	0xF72D2A I32Eqz
+	0xF72D2B If -64
+	0xF72D2D LocalGet 1
+	0xF72D2F Call 72345
+	0xF72D33 I32Const 4435608
+	0xF72D38 I32Load 2, 0
+	0xF72D3B LocalSet 1
+	0xF72D3D End
+	0xF72D3E End
+	0xF72D3F LocalGet 1
+	0xF72D41 I32Load 2, 92
+	0xF72D44 I32Load8_S 0, 0
+	0xF72D47 I32Eqz
+	0xF72D48 If -64
+	0xF72D4A I32Const 4428060
+	0xF72D4F I32Load 2, 0
+	0xF72D52 I32Const 4
+	0xF72D54 Call 71670
+	0xF72D58 LocalTee 1
+	0xF72D5A I32Const 4533656
+	0xF72D5F I32Load 2, 0
+	0xF72D62 Call 29652
+	0xF72D66 LocalGet 1
+	0xF72D68 I32Const 16
+	0xF72D6A I32Add
+	0xF72D6B I32Const 4533656
+	0xF72D70 I32Load 2, 0
+	0xF72D73 I32Store 2, 0
+	0xF72D76 LocalGet 2
+	0xF72D78 I32Const 0
+	0xF72D7A Call 64306
+	0xF72D7E I32Store 2, 0
+	0xF72D81 LocalGet 1
+	0xF72D83 I32Const 4427776
+	0xF72D88 I32Load 2, 0
+	0xF72D8B LocalGet 2
+	0xF72D8D Call 73903
+	0xF72D91 LocalTee 3
+	0xF72D93 Call 29652
+	0xF72D97 LocalGet 1
+	0xF72D99 I32Const 20
+	0xF72D9B I32Add
+	0xF72D9C LocalGet 3
+	0xF72D9E I32Store 2, 0
+	0xF72DA1 LocalGet 1
+	0xF72DA3 I32Const 4522672
+	0xF72DA8 I32Load 2, 0
+	0xF72DAB Call 29652
+	0xF72DAF LocalGet 1
+	0xF72DB1 I32Const 24
+	0xF72DB3 I32Add
+	0xF72DB4 I32Const 4522672
+	0xF72DB9 I32Load 2, 0
+	0xF72DBC I32Store 2, 0
+	0xF72DBF LocalGet 1
+	0xF72DC1 LocalGet 0
+	0xF72DC3 Call 29652
+	0xF72DC7 LocalGet 1
+	0xF72DC9 I32Const 28
+	0xF72DCB I32Add
+	0xF72DCC LocalGet 0
+	0xF72DCE I32Store 2, 0
+	0xF72DD1 LocalGet 1
+	0xF72DD3 I32Const 0
+	0xF72DD5 Call 55906
+	0xF72DD9 I32Const 0
+	0xF72DDB I32Const 0
+	0xF72DDD Call 37913
+	0xF72DE1 End
+	0xF72DE2 LocalGet 2
+	0xF72DE4 GlobalSet 7
+	0xF72DE6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b18
+	11 Nop
+	12 Move v12 @ S0_v43, [2CA0CC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v43
+	14 Nop
+	15 Move v14 @ S1_v28, 1
+	16 Move [4597C1], v14 @ S1_v28
+	17 Nop
+	18 Nop
+	19 Move v18 @ S0_v9 (Il2CppClass<Kiloo.Common.Ads.AdSystemLog>), typeof(Kiloo.Common.Ads.AdSystemLog)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v22 @ S0_v11, [v18 @ S0_v9 (Il2CppClass<Kiloo.Common.Ads.AdSystemLog>)+BA], 512
+	24 CheckEqual v23 @ TEMP_v2 (System.Boolean), v22 @ S0_v11, 0
+	25 ConditionalJump @b20, v23 @ TEMP_v2 (System.Boolean)
+	26 Move v24 @ S0_v36 (Il2CppClass<Kiloo.Common.Ads.AdSystemLog>), typeof(Kiloo.Common.Ads.AdSystemLog)
+	27 Nop
+	28 CheckEqual v26 @ S0_v38 (System.Boolean), [v24 @ S0_v36 (Il2CppClass<Kiloo.Common.Ads.AdSystemLog>)+74], 0
+	29 Not v27 @ TEMP_v5 (System.Boolean), v26 @ S0_v38 (System.Boolean)
+	30 ConditionalJump @b20, v27 @ TEMP_v5 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(Kiloo.Common.Ads.AdSystemLog)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Not v36 @ S0_v16 (System.Boolean), v34.isRunningTests (System.Boolean)
+	42 Not v37 @ TEMP_v4 (System.Boolean), v36 @ S0_v16 (System.Boolean)
+	43 ConditionalJump @b17, v37 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Newobj v42 @ S0_v21 (System.OverflowException), typeof(System.OverflowException)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Throw typeof(System.ArrayTypeMismatchException)
+	52 Nop
+	53 Nop
+	54 Add v62 @ S0_v23, v42 @ S0_v21 (System.OverflowException), 16
+	55 Nop
+	56 Nop
+	57 Move [v62 @ S0_v23], "[AdSystem] ["
+	58 Nop
+	59 Nop
+	60 Call Time.get_renderedFrameCount, v67 @ S1_v12 (System.Int32)
+	61 Move [v1 @ G7], v67 @ S1_v12 (System.Int32)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Call 120AF, v72 @ S1_v15, typeof(System.Int32), v1 @ G7
+	67 Nop
+	68 Throw typeof(System.ArrayTypeMismatchException)
+	69 Nop
+	70 Nop
+	71 Add v75 @ S0_v27, v42 @ S0_v21 (System.OverflowException), 20
+	72 Nop
+	73 Move [v75 @ S0_v27], v72 @ S1_v15
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Throw typeof(System.ArrayTypeMismatchException)
+	78 Nop
+	79 Nop
+	80 Add v82 @ S0_v30, v42 @ S0_v21 (System.OverflowException), 24
+	81 Nop
+	82 Nop
+	83 Move [v82 @ S0_v30], "] "
+	84 Nop
+	85 Nop
+	86 Throw typeof(System.ArrayTypeMismatchException)
+	87 Nop
+	88 Nop
+	89 Add v90 @ S0_v33, v42 @ S0_v21 (System.OverflowException), 28
+	90 Nop
+	91 Move [v90 @ S0_v33], this @ L0 (Kiloo.Common.Ads.DebugAdGUI)
+	92 Nop
+	93 Nop
+	94 Call String.Concat, v54 @ S0_v35 (System.String), v42 @ S0_v21 (System.OverflowException)
+	95 Nop
+	96 Nop
+	97 CallVoid SDebug.LogFormat, v54 @ S0_v35 (System.String), 0
+	98 Nop
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Return
+
+Method: System.Void SetupInterstitialGuiStyle(UnityEngine.GUIStyle baseGuiStyle)
+
+Disassembly:
+	0xF751DD I32Const 4560864
+	0xF751E2 I32Load8_S 0, 0
+	0xF751E5 I32Eqz
+	0xF751E6 If -64
+	0xF751E8 I32Const 2950472
+	0xF751ED I32Load 2, 0
+	0xF751F0 Call 73003
+	0xF751F4 I32Const 4560864
+	0xF751F9 I32Const 1
+	0xF751FB I32Store8 0, 0
+	0xF751FE End
+	0xF751FF LocalGet 0
+	0xF75201 I32Load 2, 44
+	0xF75204 LocalSet 2
+	0xF75206 Loop -64
+	0xF75208 LocalGet 2
+	0xF7520A LocalGet 1
+	0xF7520C I32Const 0
+	0xF7520E Call 63555
+	0xF75212 I32Const 4438600
+	0xF75217 I32Load 2, 0
+	0xF7521A Call 29321
+	0xF7521E LocalSet 4
+	0xF75220 LocalGet 0
+	0xF75222 I32Const 44
+	0xF75224 I32Add
+	0xF75225 LocalTee 3
+	0xF75227 I32Load 2, 0
+	0xF7522A LocalGet 3
+	0xF7522C I32Load 2, 0
+	0xF7522F LocalGet 2
+	0xF75231 I32Eq
+	0xF75232 If -64
+	0xF75234 LocalGet 3
+	0xF75236 LocalGet 4
+	0xF75238 I32Store 2, 0
+	0xF7523B End
+	0xF7523C LocalTee 3
+	0xF7523E LocalGet 2
+	0xF75240 I32Ne
+	0xF75241 If -64
+	0xF75243 LocalGet 3
+	0xF75245 LocalSet 2
+	0xF75247 Br 1
+	0xF75249 End
+	0xF7524A End
+	0xF7524B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2D0548]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [4597E0], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call Delegate.RemoveImpl, v36 @ S0_v9 (System.Delegate), v15 @ L2_v2 (System.Delegate), baseGuiStyle @ L1 (UnityEngine.GUIStyle)
+	20 Nop
+	21 Nop
+	22 Call 7289, v39 @ S0_v10, v36 @ S0_v9 (System.Delegate), typeof(System.Action`1<Kiloo.Common.Ads.AdType>)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Add v42 @ S0_v12, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 44
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v48 @ S1_v9 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	33 Not v49 @ TEMP_v3 (System.Boolean), v48 @ S1_v9 (System.Boolean)
+	34 ConditionalJump @b11, v49 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Move [v42 @ S0_v12], v39 @ S0_v10
+	38 Nop
+	39 Nop
+	40 Nop
+	41 CheckNotEqual v53 @ S0_v14 (System.Boolean), [v42 @ S0_v12], v15 @ L2_v2 (System.Delegate)
+	42 Not v29 @ TEMP_v4 (System.Boolean), v53 @ S0_v14 (System.Boolean)
+	43 ConditionalJump @b9, v29 @ TEMP_v4 (System.Boolean)
+	44 Nop
+	45 Nop
+	46 Jump @b12
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+
+Method: System.Void SetupVideoGuiStyle(UnityEngine.GUIStyle baseGuiStyle)
+
+Disassembly:
+	0xF752BB GlobalGet 7
+	0xF752BD LocalSet 2
+	0xF752BF GlobalGet 7
+	0xF752C1 I32Const 48
+	0xF752C3 I32Add
+	0xF752C4 GlobalSet 7
+	0xF752C6 I32Const 4560867
+	0xF752CB I32Load8_S 0, 0
+	0xF752CE I32Eqz
+	0xF752CF If -64
+	0xF752D1 I32Const 2950456
+	0xF752D6 I32Load 2, 0
+	0xF752D9 Call 73003
+	0xF752DD I32Const 4560867
+	0xF752E2 I32Const 1
+	0xF752E4 I32Store8 0, 0
+	0xF752E7 End
+	0xF752E8 I32Const 4433832
+	0xF752ED I32Load 2, 0
+	0xF752F0 Call 72556
+	0xF752F4 LocalTee 3
+	0xF752F6 LocalGet 1
+	0xF752F8 I32Const 0
+	0xF752FA Call 66649
+	0xF752FE LocalGet 0
+	0xF75300 I32Const 28
+	0xF75302 I32Add
+	0xF75303 LocalGet 3
+	0xF75305 I32Store 2, 0
+	0xF75308 LocalGet 0
+	0xF7530A I32Load 2, 28
+	0xF7530D I32Const 0
+	0xF7530F Call 66489
+	0xF75313 LocalGet 2
+	0xF75315 I32Const 16
+	0xF75317 I32Add
+	0xF75318 LocalTee 3
+	0xF7531A I32Const 0
+	0xF7531C Call 62764
+	0xF75320 LocalGet 2
+	0xF75322 I32Const 32
+	0xF75324 I32Add
+	0xF75325 LocalTee 1
+	0xF75327 LocalGet 3
+	0xF75329 I64Load 2, 0
+	0xF7532C I64Store 2, 0
+	0xF7532F LocalGet 1
+	0xF75331 LocalGet 3
+	0xF75333 I64Load 2, 8
+	0xF75336 I64Store 2, 8
+	0xF75339 LocalGet 1
+	0xF7533B I32Const 0
+	0xF7533D Call 66490
+	0xF75341 LocalGet 0
+	0xF75343 I32Load 2, 28
+	0xF75346 I32Const 0
+	0xF75348 Call 66489
+	0xF7534C LocalGet 2
+	0xF7534E I64Const 0
+	0xF75350 I64Store 2, 0
+	0xF75353 LocalGet 2
+	0xF75355 I64Const 0
+	0xF75357 I64Store 2, 8
+	0xF7535A LocalGet 2
+	0xF7535C F32Const 0
+	0xF75361 F32Store 2, 0
+	0xF75364 LocalGet 2
+	0xF75366 F32Const 0
+	0xF7536B F32Store 2, 4
+	0xF7536E LocalGet 2
+	0xF75370 F32Const 0
+	0xF75375 F32Store 2, 8
+	0xF75378 LocalGet 2
+	0xF7537A F32Const 0.88
+	0xF7537F F32Store 2, 12
+	0xF75382 LocalGet 1
+	0xF75384 LocalGet 2
+	0xF75386 I64Load 2, 0
+	0xF75389 I64Store 2, 0
+	0xF7538C LocalGet 1
+	0xF7538E LocalGet 2
+	0xF75390 I64Load 2, 8
+	0xF75393 I64Store 2, 8
+	0xF75396 I32Const 0
+	0xF75398 I32Const 1
+	0xF7539A I32Const 1
+	0xF7539C LocalGet 1
+	0xF7539E I32Const 0
+	0xF753A0 Call 43015
+	0xF753A4 I32Const 0
+	0xF753A6 Call 66664
+	0xF753AA LocalGet 2
+	0xF753AC GlobalSet 7
+	0xF753AE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b13
+	11 Nop
+	12 Move v12 @ S0_v21, [2D0538]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v21
+	14 Nop
+	15 Move v14 @ S1_v24, 1
+	16 Move [4597E3], v14 @ S1_v24
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call 11B6C, v19 @ S0_v10 (UnityEngine.GUIStyle), typeof(UnityEngine.GUIStyle)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CallVoid GUIStyle.set_name, v19 @ S0_v10 (UnityEngine.GUIStyle), baseGuiStyle @ L1 (UnityEngine.GUIStyle)
+	25 Nop
+	26 Nop
+	27 Add v27 @ S0_v12, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 28
+	28 Nop
+	29 Move [v27 @ S0_v12], v19 @ S0_v10 (UnityEngine.GUIStyle)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Call GUIStyle.get_margin, v32 @ S0_v15 (UnityEngine.RectOffset), this._interstitialGuiStyle (UnityEngine.GUIStyle)
+	34 Nop
+	35 Nop
+	36 Add v35 @ S1_v8, v1 @ G7, 16
+	37 Nop
+	38 Nop
+	39 Call Color.get_magenta, v38 @ SRET_v1 (UnityEngine.Color)
+	40 Nop
+	41 Nop
+	42 Add v41 @ S1_v10 (UnityEngine.Color&), v1 @ G7, 32
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Move [v41 @ S1_v10 (UnityEngine.Color&)], [v35 @ S1_v8]
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Move [v41 @ S1_v10 (UnityEngine.Color&)+8], [v35 @ S1_v8+8]
+	51 Nop
+	52 Nop
+	53 CallVoid GUIStyleState.set_textColor_Injected, v32 @ S0_v15 (UnityEngine.RectOffset), v41 @ S1_v10 (UnityEngine.Color&)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Call GUIStyle.get_margin, v53 @ S0_v18 (UnityEngine.RectOffset), this._interstitialGuiStyle (UnityEngine.GUIStyle)
+	58 Nop
+	59 Nop
+	60 Move [v1 @ G7], 0
+	61 Nop
+	62 Nop
+	63 Move [v1 @ G7+8], 0
+	64 Nop
+	65 Nop
+	66 Move [v1 @ G7], 0f
+	67 Nop
+	68 Nop
+	69 Move [v1 @ G7+4], 0f
+	70 Nop
+	71 Nop
+	72 Move [v1 @ G7+8], 0f
+	73 Nop
+	74 Nop
+	75 Move [v1 @ G7+C], 0.88f
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Move [v41 @ S1_v10 (UnityEngine.Color&)], [v1 @ G7]
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Move [v41 @ S1_v10 (UnityEngine.Color&)+8], [v1 @ G7+8]
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Call AbstractListAdapter.GetContainer, v77 @ S1_v23 (Kiloo.Common.UI.Container), 0, 1, 1, v41 @ S1_v10 (UnityEngine.Color&)
+	90 Nop
+	91 CallVoid GUIStyleState.set_textColor, v53 @ S0_v18 (UnityEngine.RectOffset), v77 @ S1_v23 (Kiloo.Common.UI.Container)
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Return
+
+Method: System.Void SetGuiProperties(System.Int32 closeButtonSize, System.Int32 textFontSize)
+
+Disassembly:
+	0xF746FC LocalGet 0
+	0xF746FE I32Load 2, 8
+	0xF74701 If -64
+	0xF74703 LocalGet 1
+	0xF74705 I32Const 39
+	0xF74707 LocalGet 0
+	0xF74709 I32Load 2, 8
+	0xF7470C Call 29262
+	0xF74710 I32Const 0
+	0xF74712 Call 55605
+	0xF74716 If -64
+	0xF74718 LocalGet 2
+	0xF7471A LocalGet 0
+	0xF7471C I32Load 2, 36
+	0xF7471F I32Load 2, 8
+	0xF74722 I32Const 0
+	0xF74724 Call 55817
+	0xF74728 If -64
+	0xF7472A LocalGet 0
+	0xF7472C I32Const 1
+	0xF7472E I32Store8 0, 28
+	0xF74731 End
+	0xF74732 LocalGet 2
+	0xF74734 LocalGet 0
+	0xF74736 I32Load 2, 36
+	0xF74739 I32Load 2, 8
+	0xF7473C I32Const 0
+	0xF7473E Call 55605
+	0xF74742 If -64
+	0xF74744 LocalGet 0
+	0xF74746 I32Load 2, 8
+	0xF74749 LocalGet 0
+	0xF7474B I32Load 2, 36
+	0xF7474E I32Load 2, 12
+	0xF74751 LocalGet 0
+	0xF74753 I32Const 0
+	0xF74755 Call 42984
+	0xF74759 I32Const 0
+	0xF7475B Call 43934
+	0xF7475F I32Eqz
+	0xF74760 If -64
+	0xF74762 LocalGet 0
+	0xF74764 I32Const 0
+	0xF74766 Call 42988
+	0xF7476A End
+	0xF7476B End
+	0xF7476C End
+	0xF7476D End
+	0xF7476E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), this.m_CachedPtr (System.IntPtr), 0
+	3 ConditionalJump @b15, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Call 724E, v9 @ S1_v3 (System.String), 39, this.m_CachedPtr (System.IntPtr)
+	9 Nop
+	10 Call String.op_Inequality, v28 @ S0_v5 (System.Boolean), closeButtonSize @ L1 (System.Int32), v9 @ S1_v3 (System.String)
+	11 Not v24 @ TEMP_v3 (System.Boolean), v28 @ S0_v5 (System.Boolean)
+	12 ConditionalJump @b15, v24 @ TEMP_v3 (System.Boolean)
+	13 Nop
+	14 Nop
+	15 Move v35 @ S1_v5 (System.String), this.<adLocationID>k__BackingField (System.String)
+	16 Nop
+	17 Nop
+	18 Call String.get_Chars, v38 @ S0_v7 (System.Char), textFontSize @ L2 (System.Int32), v35.m_stringLength (System.Int32)
+	19 CheckEqual v39 @ TEMP_v4 (System.Boolean), v38 @ S0_v7 (System.Char), 0
+	20 ConditionalJump @b17, v39 @ TEMP_v4 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Move this._interstitialGuiStyle (UnityEngine.GUIStyle), 1
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move v46 @ S1_v9 (System.String), this.<adLocationID>k__BackingField (System.String)
+	28 Nop
+	29 Nop
+	30 Call String.op_Inequality, v29 @ S0_v10 (System.Boolean), textFontSize @ L2 (System.Int32), v46.m_stringLength (System.Int32)
+	31 Not v25 @ TEMP_v5 (System.Boolean), v29 @ S0_v10 (System.Boolean)
+	32 ConditionalJump @b15, v25 @ TEMP_v5 (System.Boolean)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Move v50 @ S1_v12 (System.String), this.<adLocationID>k__BackingField (System.String)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Call AdLocation.IsCached, v17 @ S2_v8 (System.Boolean), this @ L0 (Kiloo.Common.Ads.DebugAdGUI)
+	41 Nop
+	42 Call DebugAdProvider.CacheInterstitialCoroutine, v53 @ S0_v13 (System.Collections.IEnumerator), this.m_CachedPtr (System.IntPtr), v50.m_firstChar (System.Char), v17 @ S2_v8 (System.Boolean)
+	43 CheckEqual v31 @ S0_v14 (System.Boolean), v53 @ S0_v13 (System.Collections.IEnumerator), 0
+	44 Not v26 @ TEMP_v6 (System.Boolean), v31 @ S0_v14 (System.Boolean)
+	45 ConditionalJump @b15, v26 @ TEMP_v6 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 CallVoid AdProviderConfiguration..ctor, this @ L0 (Kiloo.Common.Ads.DebugAdGUI)
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Return
+
+Method: System.Void ShowInterstitial(System.String location, System.String adProvider)
+
+Disassembly:
+	0xF75505 LocalGet 0
+	0xF75507 LocalGet 1
+	0xF75509 I32Store 2, 24
+	0xF7550C LocalGet 0
+	0xF7550E I32Load 2, 28
+	0xF75511 LocalGet 2
+	0xF75513 I32Const 0
+	0xF75515 Call 66652
+	0xF75519 LocalGet 0
+	0xF7551B I32Load 2, 32
+	0xF7551E LocalGet 2
+	0xF75520 I32Const 0
+	0xF75522 Call 66652
+	0xF75526 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._closeButtonSize (System.Int32), location @ L1 (System.String)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CallVoid GUIStyle.set_Internal_clipOffset, this._interstitialGuiStyle (UnityEngine.GUIStyle), adProvider @ L2 (System.String)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 CallVoid GUIStyle.set_Internal_clipOffset, this._videoGuiStyle (UnityEngine.GUIStyle), adProvider @ L2 (System.String)
+	13 Nop
+	14 Return
+
+Method: System.Void ShowVideo(System.String location, System.String adProvider)
+
+Disassembly:
+	0xF75529 LocalGet 0
+	0xF7552B I32Const 1
+	0xF7552D I32Store8 0, 13
+	0xF75530 LocalGet 0
+	0xF75532 I32Const 0
+	0xF75534 I32Store8 0, 12
+	0xF75537 LocalGet 0
+	0xF75539 I32Const 16
+	0xF7553B I32Add
+	0xF7553C LocalGet 2
+	0xF7553E I32Store 2, 0
+	0xF75541 LocalGet 0
+	0xF75543 I32Const 36
+	0xF75545 I32Add
+	0xF75546 LocalGet 1
+	0xF75548 I32Store 2, 0
+	0xF7554B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._showInterstitial (System.Boolean), 1
+	3 Nop
+	4 Nop
+	5 Move this._showVideo (System.Boolean), 0
+	6 Nop
+	7 Nop
+	8 Add v7 @ S0_v4, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 16
+	9 Nop
+	10 Move [v7 @ S0_v4], adProvider @ L2 (System.String)
+	11 Nop
+	12 Nop
+	13 Add v12 @ S0_v6, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), 36
+	14 Nop
+	15 Move [v12 @ S0_v6], location @ L1 (System.String)
+	16 Nop
+	17 Return
+
+Method: System.Void OnGUI()
+
+Disassembly:
+	0xF75250 I32Const 4560865
+	0xF75255 I32Load8_S 0, 0
+	0xF75258 I32Eqz
+	0xF75259 If -64
+	0xF7525B I32Const 2950440
+	0xF75260 I32Load 2, 0
+	0xF75263 Call 73003
+	0xF75267 I32Const 4560865
+	0xF7526C I32Const 1
+	0xF7526E I32Store8 0, 0
+	0xF75271 End
+	0xF75272 I32Const 4433832
+	0xF75277 I32Load 2, 0
+	0xF7527A Call 72556
+	0xF7527E LocalTee 2
+	0xF75280 I32Const 0
+	0xF75282 Call 66484
+	0xF75286 LocalGet 2
+	0xF75288 I32Const 20
+	0xF7528A I32Const 0
+	0xF7528C Call 66652
+	0xF75290 LocalGet 2
+	0xF75292 I32Const 1
+	0xF75294 I32Const 0
+	0xF75296 Call 66651
+	0xF7529A LocalGet 0
+	0xF7529C I32Const 60
+	0xF7529E I32Store 2, 24
+	0xF752A1 LocalGet 0
+	0xF752A3 LocalGet 2
+	0xF752A5 I32Const 0
+	0xF752A7 Call 43013
+	0xF752AB LocalGet 0
+	0xF752AD LocalGet 2
+	0xF752AF I32Const 0
+	0xF752B1 Call 43014
+	0xF752B5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v14, [2D0528]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [4597E1], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.IntPtr), typeof(UnityEngine.GUIStyle)
+	15 Nop
+	16 Nop
+	17 CallVoid GUIStyle.Internal_Destroy, v13 @ S0_v7 (System.IntPtr)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid GUIStyle.set_Internal_clipOffset, v13 @ S0_v7 (System.IntPtr), 20
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Call GUIStyle.get_contentOffset, v22 @ SRET_v1 (UnityEngine.Vector2), 1
+	26 Nop
+	27 Nop
+	28 Move this._closeButtonSize (System.Int32), 60
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CallVoid DebugAdGUI.SetupVideoGuiStyle, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), v13 @ S0_v7 (System.IntPtr)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CallVoid DebugAdProvider.CheckPlatformSupport, this @ L0 (Kiloo.Common.Ads.DebugAdGUI), v13 @ S0_v7 (System.IntPtr)
+	37 Nop
+	38 Return
+
+Method: UnityEngine.Texture2D MakeTexture(System.Int32 width, System.Int32 height, UnityEngine.Color color)
+
+Disassembly:
+	0xFB2787 I32Const 4561553
+	0xFB278C I32Load8_S 0, 0
+	0xFB278F I32Eqz
+	0xFB2790 If -64
+	0xFB2792 I32Const 2924360
+	0xFB2797 I32Load 2, 0
+	0xFB279A Call 73003
+	0xFB279E I32Const 4561553
+	0xFB27A3 I32Const 1
+	0xFB27A5 I32Store8 0, 0
+	0xFB27A8 End
+	0xFB27A9 I32Const 4438572
+	0xFB27AE I32Load 2, 0
+	0xFB27B1 Call 72556
+	0xFB27B5 LocalTee 4
+	0xFB27B7 I32Const 8
+	0xFB27B9 I32Add
+	0xFB27BA LocalGet 0
+	0xFB27BC I32Store 2, 0
+	0xFB27BF LocalGet 4
+	0xFB27C1 LocalGet 2
+	0xFB27C3 I32Store 2, 12
+	0xFB27C6 LocalGet 4
+	0xFB27C8 I32Const 20
+	0xFB27CA I32Add
+	0xFB27CB LocalGet 1
+	0xFB27CD I32Store 2, 0
+	0xFB27D0 LocalGet 4
+	0xFB27D2 I32Load 2, 20
+	0xFB27D5 LocalSet 0
+	0xFB27D7 LocalGet 4
+	0xFB27D9 I32Load 2, 12
+	0xFB27DC LocalSet 1
+	0xFB27DE I32Const 4438576
+	0xFB27E3 I32Load 2, 0
+	0xFB27E6 Call 72556
+	0xFB27EA LocalTee 2
+	0xFB27EC LocalGet 0
+	0xFB27EE LocalGet 1
+	0xFB27F0 LocalGet 3
+	0xFB27F2 I32Const 0
+	0xFB27F4 Call 43048
+	0xFB27F8 LocalGet 4
+	0xFB27FA I32Const 16
+	0xFB27FC I32Add
+	0xFB27FD LocalGet 2
+	0xFB27FF I32Store 2, 0
+	0xFB2802 LocalGet 4
+	0xFB2804 I32Load 2, 16
+	0xFB2807 I32Const 4429724
+	0xFB280C I32Load 2, 0
+	0xFB280F Call 72556
+	0xFB2813 LocalTee 1
+	0xFB2815 LocalTee 2
+	0xFB2817 I32Const 4471692
+	0xFB281C I32Load 2, 0
+	0xFB281F LocalTee 3
+	0xFB2821 I32Load 2, 0
+	0xFB2824 I32Store 2, 8
+	0xFB2827 LocalGet 2
+	0xFB2829 LocalGet 3
+	0xFB282B I32Store 2, 20
+	0xFB282E LocalGet 2
+	0xFB2830 I32Const 16
+	0xFB2832 I32Add
+	0xFB2833 LocalGet 4
+	0xFB2835 I32Store 2, 0
+	0xFB2838 LocalGet 1
+	0xFB283A I32Const 0
+	0xFB283C Call 43044
+	0xFB2840 LocalGet 4
+	0xFB2842 I32Load 2, 16
+	0xFB2845 I32Const 4429724
+	0xFB284A I32Load 2, 0
+	0xFB284D Call 72556
+	0xFB2851 LocalTee 1
+	0xFB2853 LocalTee 2
+	0xFB2855 I32Const 4471696
+	0xFB285A I32Load 2, 0
+	0xFB285D LocalTee 3
+	0xFB285F I32Load 2, 0
+	0xFB2862 I32Store 2, 8
+	0xFB2865 LocalGet 2
+	0xFB2867 LocalGet 3
+	0xFB2869 I32Store 2, 20
+	0xFB286C LocalGet 2
+	0xFB286E I32Const 16
+	0xFB2870 I32Add
+	0xFB2871 LocalGet 4
+	0xFB2873 I32Store 2, 0
+	0xFB2876 LocalGet 1
+	0xFB2878 I32Const 0
+	0xFB287A Call 43046
+	0xFB287E LocalGet 4
+	0xFB2880 I32Load 2, 16
+	0xFB2883 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v28, [2C9F48]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v7 @ S1_v24, 1
+	10 Move [459A91], v7 @ S1_v24
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7, typeof(Kiloo.Common.Ads.AdController+<>c__DisplayClass46_0)
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v8, v13 @ S0_v7, 8
+	18 Nop
+	19 Move [v16 @ S0_v8], this @ L0 (Kiloo.Common.Ads.DebugAdGUI)
+	20 Nop
+	21 Nop
+	22 Move [v13 @ S0_v7+C], height @ L2 (System.Int32)
+	23 Nop
+	24 Nop
+	25 Add v24 @ S0_v11, v13 @ S0_v7, 20
+	26 Nop
+	27 Move [v24 @ S0_v11], width @ L1 (System.Int32)
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Call 11B6C, v35 @ S0_v18 (Kiloo.Common.JsonUtil.AdSystemEventLogger), typeof(Kiloo.Common.Ads.PriorityList)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 CallVoid AdSystemEventLogger.ShowedAd, v35 @ S0_v18 (Kiloo.Common.JsonUtil.AdSystemEventLogger), [v13 @ S0_v7+14], [v13 @ S0_v7+C], color @ L3 (UnityEngine.Color)
+	43 Nop
+	44 Nop
+	45 Add v44 @ S0_v20, v13 @ S0_v7, 16
+	46 Nop
+	47 Move [v44 @ S0_v20], v35 @ S0_v18 (Kiloo.Common.JsonUtil.AdSystemEventLogger)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call 11B6C, v50 @ S1_v12 (System.Action), typeof(System.Action)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move v54 @ S2_v3 (Il2CppMethodInfo), methodof(Kiloo.Common.Ads.AdController+<>c__DisplayClass46_0::<CreatePriorityListForID>b__0)
+	57 Nop
+	58 Nop
+	59 Move v50.method_ptr (System.IntPtr), [v54 @ S2_v3 (Il2CppMethodInfo)]
+	60 Nop
+	61 Nop
+	62 Move v50.method (System.IntPtr), methodof(Kiloo.Common.Ads.AdController+<>c__DisplayClass46_0::<CreatePriorityListForID>b__0)
+	63 Nop
+	64 Nop
+	65 Add v61 @ S1_v15, v50 @ S1_v12 (System.Action), 16
+	66 Nop
+	67 Move [v61 @ S1_v15], v13 @ S0_v7
+	68 Nop
+	69 Nop
+	70 CallVoid PriorityList.remove_changedProvider, [v13 @ S0_v7+10], v50 @ S1_v12 (System.Action)
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call 11B6C, v69 @ S1_v19 (System.Action), typeof(System.Action)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Move v73 @ S2_v10 (Il2CppMethodInfo), methodof(Kiloo.Common.Ads.AdController+<>c__DisplayClass46_0::<CreatePriorityListForID>b__1)
+	80 Nop
+	81 Nop
+	82 Move v69.method_ptr (System.IntPtr), [v73 @ S2_v10 (Il2CppMethodInfo)]
+	83 Nop
+	84 Nop
+	85 Move v69.method (System.IntPtr), methodof(Kiloo.Common.Ads.AdController+<>c__DisplayClass46_0::<CreatePriorityListForID>b__1)
+	86 Nop
+	87 Nop
+	88 Add v80 @ S1_v22, v69 @ S1_v19 (System.Action), 16
+	89 Nop
+	90 Move [v80 @ S1_v22], v13 @ S0_v7
+	91 Nop
+	92 Nop
+	93 CallVoid PriorityList.remove_resetToTop, [v13 @ S0_v7+10], v69 @ S1_v19 (System.Action)
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Return [v13 @ S0_v7+10]
+
+Method: System.Boolean CloseButton()
+
+Disassembly:
+	0xC1F290 LocalGet 0
+	0xC1F292 I32Load 2, 36
+	0xC1F295 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.<adLocationID>k__BackingField (System.String)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xF75580 GlobalGet 7
+	0xF75582 LocalSet 1
+	0xF75584 GlobalGet 7
+	0xF75586 I32Const 80
+	0xF75589 I32Add
+	0xF7558A GlobalSet 7
+	0xF7558C I32Const 4560869
+	0xF75591 I32Load8_S 0, 0
+	0xF75594 I32Eqz
+	0xF75595 If -64
+	0xF75597 I32Const 2950452
+	0xF7559C I32Load 2, 0
+	0xF7559F Call 73003
+	0xF755A3 I32Const 4560869
+	0xF755A8 I32Const 1
+	0xF755AA I32Store8 0, 0
+	0xF755AD End
+	0xF755AE LocalGet 1
+	0xF755B0 I32Const 40
+	0xF755B2 I32Add
+	0xF755B3 LocalTee 7
+	0xF755B5 I64Const 0
+	0xF755B7 I64Store 2, 0
+	0xF755BA LocalGet 7
+	0xF755BC I64Const 0
+	0xF755BE I64Store 2, 8
+	0xF755C1 I32Const 4433816
+	0xF755C6 I32Load 2, 0
+	0xF755C9 LocalTee 3
+	0xF755CB I32Load16_S 1, 186
+	0xF755CF I32Const 512
+	0xF755D2 I32And
+	0xF755D3 If -64
+	0xF755D5 LocalGet 3
+	0xF755D7 I32Load 2, 116
+	0xF755DA I32Eqz
+	0xF755DB If -64
+	0xF755DD LocalGet 3
+	0xF755DF Call 72345
+	0xF755E3 End
+	0xF755E4 End
+	0xF755E5 LocalGet 1
+	0xF755E7 I32Const 24
+	0xF755E9 I32Add
+	0xF755EA LocalSet 5
+	0xF755EC LocalGet 1
+	0xF755EE I32Const 8
+	0xF755F0 I32Add
+	0xF755F1 LocalSet 4
+	0xF755F3 LocalGet 1
+	0xF755F5 I32Const 56
+	0xF755F7 I32Add
+	0xF755F8 LocalTee 3
+	0xF755FA I32Const 0
+	0xF755FC Call 66229
+	0xF75600 LocalGet 7
+	0xF75602 LocalGet 3
+	0xF75604 I64Load 2, 0
+	0xF75607 I64Store 2, 0
+	0xF7560A LocalGet 7
+	0xF7560C LocalGet 3
+	0xF7560E I64Load 2, 8
+	0xF75611 I64Store 2, 8
+	0xF75614 I32Const 0
+	0xF75616 Call 66244
+	0xF7561A I32Const -2147483648
+	0xF75620 I32Const 0
+	0xF75622 Call 66245
+	0xF75626 LocalGet 0
+	0xF75628 I32Load8_S 0, 13
+	0xF7562B If -64
+	0xF7562D LocalGet 5
+	0xF7562F I32Const 0
+	0xF75631 Call 62764
+	0xF75635 I32Const 4433816
+	0xF7563A I32Load 2, 0
+	0xF7563D LocalTee 2
+	0xF7563F I32Load16_S 1, 186
+	0xF75643 I32Const 512
+	0xF75646 I32And
+	0xF75647 If -64
+	0xF75649 LocalGet 2
+	0xF7564B I32Load 2, 116
+	0xF7564E I32Eqz
+	0xF7564F If -64
+	0xF75651 LocalGet 2
+	0xF75653 Call 72345
+	0xF75657 End
+	0xF75658 End
+	0xF75659 LocalGet 3
+	0xF7565B LocalGet 5
+	0xF7565D I64Load 2, 0
+	0xF75660 I64Store 2, 0
+	0xF75663 LocalGet 3
+	0xF75665 LocalGet 5
+	0xF75667 I64Load 2, 8
+	0xF7566A I64Store 2, 8
+	0xF7566D LocalGet 3
+	0xF7566F I32Const 0
+	0xF75671 Call 66231
+	0xF75675 I32Const 0
+	0xF75677 Call 64119
+	0xF7567B LocalSet 2
+	0xF7567D I32Const 0
+	0xF7567F Call 64120
+	0xF75683 LocalSet 6
+	0xF75685 LocalGet 4
+	0xF75687 I64Const 0
+	0xF75689 I64Store 2, 0
+	0xF7568C LocalGet 4
+	0xF7568E I64Const 0
+	0xF75690 I64Store 2, 8
+	0xF75693 LocalGet 4
+	0xF75695 F32Const 0
+	0xF7569A F32Store 2, 0
+	0xF7569D LocalGet 4
+	0xF7569F F32Const 0
+	0xF756A4 F32Store 2, 4
+	0xF756A7 LocalGet 4
+	0xF756A9 LocalGet 2
+	0xF756AB F32Convert_I32_S
+	0xF756AC F32Store 2, 8
+	0xF756AF LocalGet 4
+	0xF756B1 LocalGet 6
+	0xF756B3 F32Convert_I32_S
+	0xF756B4 F32Store 2, 12
+	0xF756B7 I32Const 4533660
+	0xF756BC I32Load 2, 0
+	0xF756BF LocalGet 0
+	0xF756C1 I32Load 2, 16
+	0xF756C4 I32Const 0
+	0xF756C6 Call 55680
+	0xF756CA LocalSet 2
+	0xF756CC LocalGet 0
+	0xF756CE I32Load 2, 28
+	0xF756D1 LocalSet 6
+	0xF756D3 LocalGet 3
+	0xF756D5 LocalGet 4
+	0xF756D7 I64Load 2, 0
+	0xF756DA I64Store 2, 0
+	0xF756DD LocalGet 3
+	0xF756DF LocalGet 4
+	0xF756E1 I64Load 2, 8
+	0xF756E4 I64Store 2, 8
+	0xF756E7 LocalGet 3
+	0xF756E9 LocalGet 2
+	0xF756EB LocalGet 6
+	0xF756ED I32Const 0
+	0xF756EF Call 66292
+	0xF756F3 LocalGet 0
+	0xF756F5 I32Const 0
+	0xF756F7 Call 43020
+	0xF756FB If -64
+	0xF756FD LocalGet 0
+	0xF756FF I32Const 0
+	0xF75701 I32Store8 0, 13
+	0xF75704 I32Const 4471940
+	0xF75709 I32Load 2, 0
+	0xF7570C LocalSet 2
+	0xF7570E LocalGet 0
+	0xF75710 I32Load 2, 44
+	0xF75713 LocalTee 0
+	0xF75715 If -64
+	0xF75717 LocalGet 0
+	0xF75719 I32Const 0
+	0xF7571B LocalGet 2
+	0xF7571D I32Load 2, 24
+	0xF75720 I32Load 2, 0
+	0xF75723 LocalTee 0
+	0xF75725 LocalGet 0
+	0xF75727 I32Load 2, 0
+	0xF7572A I32Const 16383
+	0xF7572E I32And
+	0xF7572F I32Const 97173
+	0xF75733 I32Add
+	0xF75734 CallIndirect 9, 0
+	0xF75737 End
+	0xF75738 End
+	0xF75739 LocalGet 5
+	0xF7573B LocalGet 7
+	0xF7573D I64Load 2, 0
+	0xF75740 I64Store 2, 0
+	0xF75743 LocalGet 5
+	0xF75745 LocalGet 7
+	0xF75747 I64Load 2, 8
+	0xF7574A I64Store 2, 8
+	0xF7574D I32Const 4433816
+	0xF75752 I32Load 2, 0
+	0xF75755 LocalTee 0
+	0xF75757 I32Load16_S 1, 186
+	0xF7575B I32Const 512
+	0xF7575E I32And
+	0xF7575F If -64
+	0xF75761 LocalGet 0
+	0xF75763 I32Load 2, 116
+	0xF75766 I32Eqz
+	0xF75767 If -64
+	0xF75769 LocalGet 0
+	0xF7576B Call 72345
+	0xF7576F End
+	0xF75770 End
+	0xF75771 LocalGet 3
+	0xF75773 LocalGet 5
+	0xF75775 I64Load 2, 0
+	0xF75778 I64Store 2, 0
+	0xF7577B LocalGet 3
+	0xF7577D LocalGet 5
+	0xF7577F I64Load 2, 8
+	0xF75782 I64Store 2, 8
+	0xF75785 LocalGet 3
+	0xF75787 I32Const 0
+	0xF75789 Call 66231
+	0xF7578D Else
+	0xF7578E LocalGet 0
+	0xF75790 I32Load8_S 0, 12
+	0xF75793 If -64
+	0xF75795 LocalGet 5
+	0xF75797 I32Const 0
+	0xF75799 Call 62760
+	0xF7579D I32Const 4433816
+	0xF757A2 I32Load 2, 0
+	0xF757A5 LocalTee 2
+	0xF757A7 I32Load16_S 1, 186
+	0xF757AB I32Const 512
+	0xF757AE I32And
+	0xF757AF If -64
+	0xF757B1 LocalGet 2
+	0xF757B3 I32Load 2, 116
+	0xF757B6 I32Eqz
+	0xF757B7 If -64
+	0xF757B9 LocalGet 2
+	0xF757BB Call 72345
+	0xF757BF End
+	0xF757C0 End
+	0xF757C1 LocalGet 3
+	0xF757C3 LocalGet 5
+	0xF757C5 I64Load 2, 0
+	0xF757C8 I64Store 2, 0
+	0xF757CB LocalGet 3
+	0xF757CD LocalGet 5
+	0xF757CF I64Load 2, 8
+	0xF757D2 I64Store 2, 8
+	0xF757D5 LocalGet 3
+	0xF757D7 I32Const 0
+	0xF757D9 Call 66231
+	0xF757DD I32Const 0
+	0xF757DF Call 64119
+	0xF757E3 LocalSet 2
+	0xF757E5 I32Const 0
+	0xF757E7 Call 64120
+	0xF757EB LocalSet 6
+	0xF757ED LocalGet 4
+	0xF757EF I64Const 0
+	0xF757F1 I64Store 2, 0
+	0xF757F4 LocalGet 4
+	0xF757F6 I64Const 0
+	0xF757F8 I64Store 2, 8
+	0xF757FB LocalGet 4
+	0xF757FD F32Const 0
+	0xF75802 F32Store 2, 0
+	0xF75805 LocalGet 4
+	0xF75807 F32Const 0
+	0xF7580C F32Store 2, 4
+	0xF7580F LocalGet 4
+	0xF75811 LocalGet 2
+	0xF75813 F32Convert_I32_S
+	0xF75814 F32Store 2, 8
+	0xF75817 LocalGet 4
+	0xF75819 LocalGet 6
+	0xF7581B F32Convert_I32_S
+	0xF7581C F32Store 2, 12
+	0xF7581F I32Const 4428060
+	0xF75824 I32Load 2, 0
+	0xF75827 I32Const 4
+	0xF75829 Call 71670
+	0xF7582D LocalTee 2
+	0xF7582F I32Const 4533664
+	0xF75834 I32Load 2, 0
+	0xF75837 Call 29652
+	0xF7583B LocalGet 2
+	0xF7583D I32Const 16
+	0xF7583F I32Add
+	0xF75840 I32Const 4533664
+	0xF75845 I32Load 2, 0
+	0xF75848 I32Store 2, 0
+	0xF7584B LocalGet 2
+	0xF7584D LocalGet 0
+	0xF7584F I32Load 2, 16
+	0xF75852 LocalTee 6
+	0xF75854 Call 29652
+	0xF75858 LocalGet 2
+	0xF7585A I32Const 20
+	0xF7585C I32Add
+	0xF7585D LocalGet 6
+	0xF7585F I32Store 2, 0
+	0xF75862 LocalGet 2
+	0xF75864 I32Const 4517748
+	0xF75869 I32Load 2, 0
+	0xF7586C Call 29652
+	0xF75870 LocalGet 2
+	0xF75872 I32Const 24
+	0xF75874 I32Add
+	0xF75875 I32Const 4517748
+	0xF7587A I32Load 2, 0
+	0xF7587D I32Store 2, 0
+	0xF75880 LocalGet 1
+	0xF75882 LocalGet 0
+	0xF75884 F32Load 2, 20
+	0xF75887 F32Store 2, 0
+	0xF7588A LocalGet 2
+	0xF7588C I32Const 4428680
+	0xF75891 I32Load 2, 0
+	0xF75894 LocalGet 1
+	0xF75896 Call 73903
+	0xF7589A LocalTee 6
+	0xF7589C Call 29652
+	0xF758A0 LocalGet 2
+	0xF758A2 I32Const 28
+	0xF758A4 I32Add
+	0xF758A5 LocalGet 6
+	0xF758A7 I32Store 2, 0
+	0xF758AA LocalGet 2
+	0xF758AC I32Const 0
+	0xF758AE Call 55906
+	0xF758B2 LocalSet 2
+	0xF758B4 LocalGet 0
+	0xF758B6 I32Load 2, 32
+	0xF758B9 LocalSet 6
+	0xF758BB LocalGet 3
+	0xF758BD LocalGet 4
+	0xF758BF I64Load 2, 0
+	0xF758C2 I64Store 2, 0
+	0xF758C5 LocalGet 3
+	0xF758C7 LocalGet 4
+	0xF758C9 I64Load 2, 8
+	0xF758CC I64Store 2, 8
+	0xF758CF LocalGet 3
+	0xF758D1 LocalGet 2
+	0xF758D3 LocalGet 6
+	0xF758D5 I32Const 0
+	0xF758D7 Call 66292
+	0xF758DB LocalGet 0
+	0xF758DD LocalGet 0
+	0xF758DF F32Load 2, 20
+	0xF758E2 I32Const 0
+	0xF758E4 Call 64302
+	0xF758E8 F32Sub
+	0xF758E9 F32Store 2, 20
+	0xF758EC LocalGet 0
+	0xF758EE F32Load 2, 20
+	0xF758F1 F32Const 0
+	0xF758F6 F32Le
+	0xF758F7 If -64
+	0xF758F9 LocalGet 0
+	0xF758FB I32Const 0
+	0xF758FD I32Store8 0, 12
+	0xF75900 LocalGet 0
+	0xF75902 I32Load 2, 40
+	0xF75905 I32Const 0
+	0xF75907 Call 42191
+	0xF7590B Else
+	0xF7590C LocalGet 0
+	0xF7590E I32Const 0
+	0xF75910 Call 43020
+	0xF75914 If -64
+	0xF75916 LocalGet 0
+	0xF75918 I32Const 0
+	0xF7591A I32Store8 0, 12
+	0xF7591D I32Const 4471940
+	0xF75922 I32Load 2, 0
+	0xF75925 LocalSet 2
+	0xF75927 LocalGet 0
+	0xF75929 I32Load 2, 44
+	0xF7592C LocalTee 0
+	0xF7592E If -64
+	0xF75930 LocalGet 0
+	0xF75932 I32Const 1
+	0xF75934 LocalGet 2
+	0xF75936 I32Load 2, 24
+	0xF75939 I32Load 2, 0
+	0xF7593C LocalTee 0
+	0xF7593E LocalGet 0
+	0xF75940 I32Load 2, 0
+	0xF75943 I32Const 16383
+	0xF75947 I32And
+	0xF75948 I32Const 97173
+	0xF7594C I32Add
+	0xF7594D CallIndirect 9, 0
+	0xF75950 End
+	0xF75951 End
+	0xF75952 End
+	0xF75953 LocalGet 5
+	0xF75955 LocalGet 7
+	0xF75957 I64Load 2, 0
+	0xF7595A I64Store 2, 0
+	0xF7595D LocalGet 5
+	0xF7595F LocalGet 7
+	0xF75961 I64Load 2, 8
+	0xF75964 I64Store 2, 8
+	0xF75967 I32Const 4433816
+	0xF7596C I32Load 2, 0
+	0xF7596F LocalTee 0
+	0xF75971 I32Load16_S 1, 186
+	0xF75975 I32Const 512
+	0xF75978 I32And
+	0xF75979 If -64
+	0xF7597B LocalGet 0
+	0xF7597D I32Load 2, 116
+	0xF75980 I32Eqz
+	0xF75981 If -64
+	0xF75983 LocalGet 0
+	0xF75985 Call 72345
+	0xF75989 End
+	0xF7598A End
+	0xF7598B LocalGet 3
+	0xF7598D LocalGet 5
+	0xF7598F I64Load 2, 0
+	0xF75992 I64Store 2, 0
+	0xF75995 LocalGet 3
+	0xF75997 LocalGet 5
+	0xF75999 I64Load 2, 8
+	0xF7599C I64Store 2, 8
+	0xF7599F LocalGet 3
+	0xF759A1 I32Const 0
+	0xF759A3 Call 66231
+	0xF759A7 End
+	0xF759A8 End
+	0xF759A9 I32Const 4433816
+	0xF759AE I32Load 2, 0
+	0xF759B1 LocalTee 0
+	0xF759B3 I32Load16_S 1, 186
+	0xF759B7 I32Const 512
+	0xF759BA I32And
+	0xF759BB If -64
+	0xF759BD LocalGet 0
+	0xF759BF I32Load 2, 116
+	0xF759C2 I32Eqz
+	0xF759C3 If -64
+	0xF759C5 LocalGet 0
+	0xF759C7 Call 72345
+	0xF759CB End
+	0xF759CC End
+	0xF759CD I32Const 0
+	0xF759CF Call 66245
+	0xF759D3 LocalGet 1
+	0xF759D5 GlobalSet 7
+	0xF759D7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b60
+	11 Nop
+	12 Move v12 @ S0_v32, [2D0534]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v32
+	14 Nop
+	15 Move v14 @ S1_v160, 1
+	16 Move [4597E5], v14 @ S1_v160
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 40
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Move [v19 @ S0_v9+8], 0
+	27 Nop
+	28 Move v25 @ S0_v12 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 And v29 @ S0_v14, [v25 @ S0_v12 (Il2CppClass<UnityEngine.GUI>)+BA], 512
+	33 CheckEqual v30 @ TEMP_v2 (System.Boolean), v29 @ S0_v14, 0
+	34 ConditionalJump @b69, v30 @ TEMP_v2 (System.Boolean)
+	35 Move v31 @ S0_v27 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	36 Nop
+	37 CheckEqual v33 @ S0_v29 (System.Boolean), [v31 @ S0_v27 (Il2CppClass<UnityEngine.GUI>)+74], 0
+	38 Not v34 @ TEMP_v29 (System.Boolean), v33 @ S0_v29 (System.Boolean)
+	39 ConditionalJump @b69, v34 @ TEMP_v29 (System.Boolean)
+	40 Nop
+	41 CallVoid 11A99, typeof(UnityEngine.GUI)
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Add v40 @ S0_v17, v1 @ G7, 24
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Add v44 @ S0_v19, v1 @ G7, 8
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Add v48 @ S0_v21 (UnityEngine.Color), v1 @ G7, 56
+	55 Nop
+	56 Nop
+	57 CallVoid GUI.set_color, v48 @ S0_v21 (UnityEngine.Color)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Move [v19 @ S0_v9], v48.r (System.Single)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Move [v19 @ S0_v9+8], v48.b (System.Single)
+	66 Nop
+	67 Call GUI.get_usePageScrollbars, v58 @ S0_v25 (System.Boolean)
+	68 Nop
+	69 Nop
+	70 CallVoid GUI.GrabMouseControl, -2147483648
+	71 Nop
+	72 Nop
+	73 Not v64 @ TEMP_v4 (System.Boolean), this._showInterstitial (System.Boolean)
+	74 ConditionalJump @b28, v64 @ TEMP_v4 (System.Boolean)
+	75 Nop
+	76 Nop
+	77 Call Color.get_magenta, v67 @ SRET_v7 (UnityEngine.Color)
+	78 Nop
+	79 Move v72 @ S1_v108 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	80 Nop
+	81 Nop
+	82 Nop
+	83 And v76 @ S1_v110, [v72 @ S1_v108 (Il2CppClass<UnityEngine.GUI>)+BA], 512
+	84 CheckEqual v77 @ TEMP_v20 (System.Boolean), v76 @ S1_v110, 0
+	85 ConditionalJump @b61, v77 @ TEMP_v20 (System.Boolean)
+	86 Move v124 @ S1_v156 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	87 Nop
+	88 CheckEqual v126 @ S1_v158 (System.Boolean), [v124 @ S1_v156 (Il2CppClass<UnityEngine.GUI>)+74], 0
+	89 Not v127 @ TEMP_v28 (System.Boolean), v126 @ S1_v158 (System.Boolean)
+	90 ConditionalJump @b61, v127 @ TEMP_v28 (System.Boolean)
+	91 Nop
+	92 CallVoid 11A99, typeof(UnityEngine.GUI)
+	93 Nop
+	94 Nop
+	95 Nop
+	96 Nop
+	97 Nop
+	98 Move v48.r (System.Single), [v40 @ S0_v17]
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Move v48.b (System.Single), [v40 @ S0_v17+8]
+	103 Nop
+	104 Nop
+	105 Call GUI.get_backgroundColor, v139 @ SRET_v8 (UnityEngine.Color)
+	106 Nop
+	107 Call Screen.get_height, v156 @ S1_v116 (System.Int32)
+	108 Nop
+	109 Nop
+	110 Call Screen.get_sleepTimeout, v177 @ S1_v118 (System.Int32)
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Move [v44 @ S0_v19], 0
+	115 Nop
+	116 Nop
+	117 Move [v44 @ S0_v19+8], 0
+	118 Nop
+	119 Nop
+	120 Move [v44 @ S0_v19], 0f
+	121 Nop
+	122 Nop
+	123 Move [v44 @ S0_v19+4], 0f
+	124 Nop
+	125 Nop
+	126 Move [v44 @ S0_v19+8], v156 @ S1_v116 (System.Int32)
+	127 Nop
+	128 Nop
+	129 Move [v44 @ S0_v19+C], v177 @ S1_v118 (System.Int32)
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 Call String.ConcatArray, v198 @ S1_v127 (System.String), "Interstitial from ", this._adProvider (System.String)
+	136 Nop
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Move v48.r (System.Single), [v44 @ S0_v19]
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Move v48.b (System.Single), [v44 @ S0_v19+8]
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Nop
+	152 CallVoid GUI.Box, v48 @ S0_v21 (UnityEngine.Color), v198 @ S1_v127 (System.String), this._interstitialGuiStyle (UnityEngine.GUIStyle)
+	153 Nop
+	154 Nop
+	155 Call DebugAdProvider.get_errorHappened, v234 @ S1_v134 (System.Boolean), this @ L0 (Kiloo.Common.Ads.DebugAdGUI)
+	156 Not v238 @ TEMP_v22 (System.Boolean), v234 @ S1_v134 (System.Boolean)
+	157 ConditionalJump @b62, v238 @ TEMP_v22 (System.Boolean)
+	158 Nop
+	159 Nop
+	160 Move this._showInterstitial (System.Boolean), 0
+	161 Nop
+	162 Nop
+	163 Nop
+	164 Nop
+	165 Nop
+	166 Nop
+	167 CheckEqual v256 @ TEMP_v27 (System.Boolean), this.dismissedAd (System.Action`1<Kiloo.Common.Ads.AdType>), 0
+	168 ConditionalJump @b62, v256 @ TEMP_v27 (System.Boolean)
+	169 Nop
+	170 Nop
+	171 Move v288 @ S3_v13 (Il2CppMethodInfo), methodof(Kiloo.Common.Extensions.MiscExtensions::SafeInvoke)
+	172 Move v289 @ S3_v14, [v288 @ S3_v13 (Il2CppMethodInfo)+18]
+	173 Move v261 @ S3_v15, [v289 @ S3_v14]
+	174 Nop
+	175 Nop
+	176 Nop
+	177 Nop
+	178 And v293 @ S4_v12, [v261 @ S3_v15], 16383
+	179 Nop
+	180 Add v260 @ S4_v13, v293 @ S4_v12, 97173
+	181 IndirectCall v260 @ S4_v13, v263 @ SRET_v11, this.dismissedAd (System.Action`1<Kiloo.Common.Ads.AdType>), 0, v261 @ S3_v15
+	182 Nop
+	183 Nop
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Move [v40 @ S0_v17], [v19 @ S0_v9]
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Move [v40 @ S0_v17+8], [v19 @ S0_v9+8]
+	192 Nop
+	193 Move v276 @ S1_v139 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	194 Nop
+	195 Nop
+	196 Nop
+	197 And v279 @ S1_v141, [v276 @ S1_v139 (Il2CppClass<UnityEngine.GUI>)+BA], 512
+	198 CheckEqual v280 @ TEMP_v24 (System.Boolean), v279 @ S1_v141, 0
+	199 ConditionalJump @b70, v280 @ TEMP_v24 (System.Boolean)
+	200 Move v294 @ S1_v146 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	201 Nop
+	202 CheckEqual v296 @ S1_v148 (System.Boolean), [v294 @ S1_v146 (Il2CppClass<UnityEngine.GUI>)+74], 0
+	203 Not v297 @ TEMP_v26 (System.Boolean), v296 @ S1_v148 (System.Boolean)
+	204 ConditionalJump @b70, v297 @ TEMP_v26 (System.Boolean)
+	205 Nop
+	206 CallVoid 11A99, typeof(UnityEngine.GUI)
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Nop
+	212 Move v48.r (System.Single), [v40 @ S0_v17]
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Move v48.b (System.Single), [v40 @ S0_v17+8]
+	217 Nop
+	218 Nop
+	219 Call GUI.get_backgroundColor, v105 @ SRET_v10 (UnityEngine.Color)
+	220 Jump @b64
+	221 Nop
+	222 Nop
+	223 Not v70 @ TEMP_v9 (System.Boolean), this._showVideo (System.Boolean)
+	224 ConditionalJump @b64, v70 @ TEMP_v9 (System.Boolean)
+	225 Nop
+	226 Nop
+	227 Call Color.get_blue, v80 @ SRET_v2 (UnityEngine.Color)
+	228 Nop
+	229 Move v141 @ S1_v33 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	230 Nop
+	231 Nop
+	232 Nop
+	233 And v145 @ S1_v35, [v141 @ S1_v33 (Il2CppClass<UnityEngine.GUI>)+BA], 512
+	234 CheckEqual v146 @ TEMP_v10 (System.Boolean), v145 @ S1_v35, 0
+	235 ConditionalJump @b65, v146 @ TEMP_v10 (System.Boolean)
+	236 Move v157 @ S1_v102 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	237 Nop
+	238 CheckEqual v159 @ S1_v104 (System.Boolean), [v157 @ S1_v102 (Il2CppClass<UnityEngine.GUI>)+74], 0
+	239 Not v160 @ TEMP_v19 (System.Boolean), v159 @ S1_v104 (System.Boolean)
+	240 ConditionalJump @b65, v160 @ TEMP_v19 (System.Boolean)
+	241 Nop
+	242 CallVoid 11A99, typeof(UnityEngine.GUI)
+	243 Nop
+	244 Nop
+	245 Nop
+	246 Nop
+	247 Nop
+	248 Move v48.r (System.Single), [v40 @ S0_v17]
+	249 Nop
+	250 Nop
+	251 Nop
+	252 Move v48.b (System.Single), [v40 @ S0_v17+8]
+	253 Nop
+	254 Nop
+	255 Call GUI.get_backgroundColor, v172 @ SRET_v3 (UnityEngine.Color)
+	256 Nop
+	257 Call Screen.get_height, v179 @ S1_v41 (System.Int32)
+	258 Nop
+	259 Nop
+	260 Call Screen.get_sleepTimeout, v201 @ S1_v43 (System.Int32)
+	261 Nop
+	262 Nop
+	263 Nop
+	264 Move [v44 @ S0_v19], 0
+	265 Nop
+	266 Nop
+	267 Move [v44 @ S0_v19+8], 0
+	268 Nop
+	269 Nop
+	270 Move [v44 @ S0_v19], 0f
+	271 Nop
+	272 Nop
+	273 Move [v44 @ S0_v19+4], 0f
+	274 Nop
+	275 Nop
+	276 Move [v44 @ S0_v19+8], v179 @ S1_v41 (System.Int32)
+	277 Nop
+	278 Nop
+	279 Move [v44 @ S0_v19+C], v201 @ S1_v43 (System.Int32)
+	280 Nop
+	281 Nop
+	282 Nop
+	283 Newobj v231 @ S1_v52 (System.OverflowException), typeof(System.OverflowException)
+	284 Nop
+	285 Nop
+	286 Nop
+	287 Throw typeof(System.ArrayTypeMismatchException)
+	288 Nop
+	289 Nop
+	290 Add v241 @ S1_v54, v231 @ S1_v52 (System.OverflowException), 16
+	291 Nop
+	292 Nop
+	293 Move [v241 @ S1_v54], "Video from "
+	294 Nop
+	295 Nop
+	296 Nop
+	297 Nop
+	298 Throw typeof(System.ArrayTypeMismatchException)
+	299 Nop
+	300 Nop
+	301 Add v283 @ S1_v57, v231 @ S1_v52 (System.OverflowException), 20
+	302 Nop
+	303 Move [v283 @ S1_v57], this._adProvider (System.String)
+	304 Nop
+	305 Nop
+	306 Nop
+	307 Throw typeof(System.ArrayTypeMismatchException)
+	308 Nop
+	309 Nop
+	310 Add v308 @ S1_v60, v231 @ S1_v52 (System.OverflowException), 24
+	311 Nop
+	312 Nop
+	313 Move [v308 @ S1_v60], "
+"
+	314 Nop
+	315 Nop
+	316 Nop
+	317 Move [v1 @ G7], this._timeLeftForVideo (System.Single)
+	318 Nop
+	319 Nop
+	320 Nop
+	321 Nop
+	322 Call 120AF, v318 @ S2_v36, typeof(System.Single), v1 @ G7
+	323 Nop
+	324 Throw typeof(System.ArrayTypeMismatchException)
+	325 Nop
+	326 Nop
+	327 Add v322 @ S1_v64, v231 @ S1_v52 (System.OverflowException), 28
+	328 Nop
+	329 Move [v322 @ S1_v64], v318 @ S2_v36
+	330 Nop
+	331 Nop
+	332 Call String.Concat, v326 @ S1_v66 (System.String), v231 @ S1_v52 (System.OverflowException)
+	333 Nop
+	334 Nop
+	335 Nop
+	336 Nop
+	337 Nop
+	338 Nop
+	339 Nop
+	340 Move v48.r (System.Single), [v44 @ S0_v19]
+	341 Nop
+	342 Nop
+	343 Nop
+	344 Move v48.b (System.Single), [v44 @ S0_v19+8]
+	345 Nop
+	346 Nop
+	347 Nop
+	348 Nop
+	349 CallVoid GUI.Box, v48 @ S0_v21 (UnityEngine.Color), v326 @ S1_v66 (System.String), this._videoGuiStyle (UnityEngine.GUIStyle)
+	350 Nop
+	351 Nop
+	352 Nop
+	353 Nop
+	354 Call Time.get_fixedDeltaTime, v344 @ S3_v5 (System.Single)
+	355 Subtract v345 @ S2_v47 (System.Single), this._timeLeftForVideo (System.Single), v344 @ S3_v5 (System.Single)
+	356 Move this._timeLeftForVideo (System.Single), v345 @ S2_v47 (System.Single)
+	357 Nop
+	358 Nop
+	359 Nop
+	360 CheckLessOrEqual v349 @ S1_v75 (System.Boolean), this._timeLeftForVideo (System.Single), 0f
+	361 Not v350 @ TEMP_v12 (System.Boolean), v349 @ S1_v75 (System.Boolean)
+	362 ConditionalJump @b48, v350 @ TEMP_v12 (System.Boolean)
+	363 Nop
+	364 Nop
+	365 Move this._showVideo (System.Boolean), 0
+	366 Nop
+	367 Nop
+	368 Nop
+	369 CallVoid TransformExtensions.Reset, this.finishedWatchingVideo (System.Action)
+	370 Jump @b66
+	371 Nop
+	372 Nop
+	373 Call DebugAdProvider.get_errorHappened, v358 @ S1_v92 (System.Boolean), this @ L0 (Kiloo.Common.Ads.DebugAdGUI)
+	374 Not v359 @ TEMP_v17 (System.Boolean), v358 @ S1_v92 (System.Boolean)
+	375 ConditionalJump @b66, v359 @ TEMP_v17 (System.Boolean)
+	376 Nop
+	377 Nop
+	378 Move this._showVideo (System.Boolean), 0
+	379 Nop
+	380 Nop
+	381 Nop
+	382 Nop
+	383 Nop
+	384 Nop
+	385 CheckEqual v373 @ TEMP_v18 (System.Boolean), this.dismissedAd (System.Action`1<Kiloo.Common.Ads.AdType>), 0
+	386 ConditionalJump @b66, v373 @ TEMP_v18 (System.Boolean)
+	387 Nop
+	388 Nop
+	389 Move v405 @ S3_v7 (Il2CppMethodInfo), methodof(Kiloo.Common.Extensions.MiscExtensions::SafeInvoke)
+	390 Move v406 @ S3_v8, [v405 @ S3_v7 (Il2CppMethodInfo)+18]
+	391 Move v365 @ S3_v9, [v406 @ S3_v8]
+	392 Nop
+	393 Nop
+	394 Nop
+	395 Nop
+	396 And v410 @ S4_v6, [v365 @ S3_v9], 16383
+	397 Nop
+	398 Add v364 @ S4_v7, v410 @ S4_v6, 97173
+	399 IndirectCall v364 @ S4_v7, v368 @ SRET_v6, this.dismissedAd (System.Action`1<Kiloo.Common.Ads.AdType>), 1, v365 @ S3_v9
+	400 Nop
+	401 Nop
+	402 Nop
+	403 Nop
+	404 Nop
+	405 Nop
+	406 Move [v40 @ S0_v17], [v19 @ S0_v9]
+	407 Nop
+	408 Nop
+	409 Nop
+	410 Move [v40 @ S0_v17+8], [v19 @ S0_v9+8]
+	411 Nop
+	412 Move v384 @ S1_v80 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	413 Nop
+	414 Nop
+	415 Nop
+	416 And v387 @ S1_v82, [v384 @ S1_v80 (Il2CppClass<UnityEngine.GUI>)+BA], 512
+	417 CheckEqual v388 @ TEMP_v14 (System.Boolean), v387 @ S1_v82, 0
+	418 ConditionalJump @b72, v388 @ TEMP_v14 (System.Boolean)
+	419 Move v393 @ S1_v87 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	420 Nop
+	421 CheckEqual v395 @ S1_v89 (System.Boolean), [v393 @ S1_v87 (Il2CppClass<UnityEngine.GUI>)+74], 0
+	422 Not v396 @ TEMP_v16 (System.Boolean), v395 @ S1_v89 (System.Boolean)
+	423 ConditionalJump @b72, v396 @ TEMP_v16 (System.Boolean)
+	424 Nop
+	425 CallVoid 11A99, typeof(UnityEngine.GUI)
+	426 Nop
+	427 Nop
+	428 Nop
+	429 Nop
+	430 Nop
+	431 Move v48.r (System.Single), [v40 @ S0_v17]
+	432 Nop
+	433 Nop
+	434 Nop
+	435 Move v48.b (System.Single), [v40 @ S0_v17+8]
+	436 Nop
+	437 Nop
+	438 Call GUI.get_backgroundColor, v106 @ SRET_v5 (UnityEngine.Color)
+	439 Nop
+	440 Nop
+	441 Nop
+	442 Move v118 @ S1_v20 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	443 Nop
+	444 Nop
+	445 Nop
+	446 And v122 @ S1_v22, [v118 @ S1_v20 (Il2CppClass<UnityEngine.GUI>)+BA], 512
+	447 CheckEqual v123 @ TEMP_v6 (System.Boolean), v122 @ S1_v22, 0
+	448 ConditionalJump @b71, v123 @ TEMP_v6 (System.Boolean)
+	449 Move v147 @ S1_v25 (Il2CppClass<UnityEngine.GUI>), typeof(UnityEngine.GUI)
+	450 Nop
+	451 CheckEqual v149 @ S1_v27 (System.Boolean), [v147 @ S1_v25 (Il2CppClass<UnityEngine.GUI>)+74], 0
+	452 Not v150 @ TEMP_v8 (System.Boolean), v149 @ S1_v27 (System.Boolean)
+	453 ConditionalJump @b71, v150 @ TEMP_v8 (System.Boolean)
+	454 Nop
+	455 CallVoid 11A99, typeof(UnityEngine.GUI)
+	456 Nop
+	457 Nop
+	458 Nop
+	459 CallVoid GUI.GrabMouseControl, v58 @ S0_v25 (System.Boolean)
+	460 Nop
+	461 Nop
+	462 Nop
+	463 Return
+

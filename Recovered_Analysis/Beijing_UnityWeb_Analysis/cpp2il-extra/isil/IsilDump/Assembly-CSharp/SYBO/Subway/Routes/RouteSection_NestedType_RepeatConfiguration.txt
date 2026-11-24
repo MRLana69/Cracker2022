@@ -1,0 +1,398 @@
+Type: SYBO.Subway.Routes.RouteSection+RepeatConfiguration
+
+Method: System.Int32 get_RemainingSectionsBetweenRepeat()
+
+Disassembly:
+	0xD0E220 I32Const 4553780
+	0xD0E225 I32Load8_S 0, 0
+	0xD0E228 I32Eqz
+	0xD0E229 If -64
+	0xD0E22B I32Const 2942924
+	0xD0E230 I32Load 2, 0
+	0xD0E233 Call 73003
+	0xD0E237 I32Const 4553780
+	0xD0E23C I32Const 1
+	0xD0E23E I32Store8 0, 0
+	0xD0E241 End
+	0xD0E242 I32Const 4541444
+	0xD0E247 I32Load 2, 0
+	0xD0E24A LocalGet 0
+	0xD0E24C I32Load 2, 8
+	0xD0E24F LocalGet 0
+	0xD0E251 I32Load 2, 12
+	0xD0E254 I32Const 0
+	0xD0E256 Call 55726
+	0xD0E25A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v9, [2CE7CC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [457C34], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call String.Format, returnVal1 @ S0_v7 (System.Int32), "[CharacterRouteTypeChangedEventArgs (FromRouteType={0}, ToRouteType={1})]", this._sectionsBetweenRepeats (System.Int32), this._remainingSectionsBetweenRepeats (System.Int32)
+	20 Nop
+	21 Return returnVal1 @ S0_v7 (System.Int32)
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Boolean CanSpawnAtPositionZ(System.Int32 posZ, System.Int32 routeSpecificDistanceBetweenRepeats)
+
+Disassembly:
+	0xD0E063 GlobalGet 7
+	0xD0E065 LocalSet 0
+	0xD0E067 GlobalGet 7
+	0xD0E069 I32Const 48
+	0xD0E06B I32Add
+	0xD0E06C GlobalSet 7
+	0xD0E06E LocalGet 0
+	0xD0E070 I32Const 24
+	0xD0E072 I32Add
+	0xD0E073 LocalTee 3
+	0xD0E075 I64Const 0
+	0xD0E077 I64Store 2, 0
+	0xD0E07A LocalGet 3
+	0xD0E07C I32Const 0
+	0xD0E07E I32Store 2, 8
+	0xD0E081 LocalGet 0
+	0xD0E083 I32Const 12
+	0xD0E085 I32Add
+	0xD0E086 LocalTee 4
+	0xD0E088 LocalGet 1
+	0xD0E08A I32Const 0
+	0xD0E08C Call 62780
+	0xD0E090 I32Const 0
+	0xD0E092 Call 64334
+	0xD0E096 LocalGet 3
+	0xD0E098 LocalGet 4
+	0xD0E09A I64Load 2, 0
+	0xD0E09D I64Store 2, 0
+	0xD0E0A0 LocalGet 3
+	0xD0E0A2 LocalGet 4
+	0xD0E0A4 I32Load 2, 8
+	0xD0E0A7 I32Store 2, 8
+	0xD0E0AA LocalGet 0
+	0xD0E0AC LocalGet 2
+	0xD0E0AE I32Const 0
+	0xD0E0B0 Call 62780
+	0xD0E0B4 I32Const 0
+	0xD0E0B6 Call 64334
+	0xD0E0BA LocalGet 3
+	0xD0E0BC I32Const 8
+	0xD0E0BE I32Add
+	0xD0E0BF LocalGet 0
+	0xD0E0C1 F32Load 2, 8
+	0xD0E0C4 I32Const 0
+	0xD0E0C6 Call 55756
+	0xD0E0CA LocalGet 0
+	0xD0E0CC GlobalSet 7
+	0xD0E0CE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7 (UnityEngine.Transform), 24
+	9 Nop
+	10 Nop
+	11 Move [v9 @ S0_v5], 0
+	12 Nop
+	13 Nop
+	14 Move [v9 @ S0_v5+8], 0
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v8 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 12
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Component.get_gameObject, v21 @ S1_v7 (UnityEngine.GameObject), posZ @ L1 (System.Int32)
+	22 Nop
+	23 CallVoid Transform.set_position, v16 @ S0_v8 (UnityEngine.Transform), v21 @ S1_v7 (UnityEngine.GameObject)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move [v9 @ S0_v5], [v16 @ S0_v8 (UnityEngine.Transform)]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v9 @ S0_v5+8], v16.m_CachedPtr (System.IntPtr)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Call Component.get_gameObject, v33 @ S1_v13 (UnityEngine.GameObject), routeSpecificDistanceBetweenRepeats @ L2 (System.Int32)
+	36 Nop
+	37 CallVoid Transform.set_position, v1 @ G7 (UnityEngine.Transform), v33 @ S1_v13 (UnityEngine.GameObject)
+	38 Nop
+	39 Nop
+	40 Add v37 @ S0_v13, v9 @ S0_v5, 8
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Call D9CC, returnVal1 @ S0_v14 (System.Boolean), v37 @ S0_v13, v1.m_CachedPtr (System.IntPtr), 0
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Return returnVal1 @ S0_v14 (System.Boolean)
+
+Method: System.Boolean CanSpawnAfter(SYBO.Subway.Routes.RouteSection previousSection)
+
+Disassembly:
+	0xD0E0D1 I32Const 7
+	0xD0E0D3 LocalGet 1
+	0xD0E0D5 Call 29262
+	0xD0E0D9 LocalGet 0
+	0xD0E0DB I32Load 2, 8
+	0xD0E0DE I32Eq
+	0xD0E0DF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call 724E, v3 @ S0_v2, 7, previousSection @ L1 (SYBO.Subway.Routes.RouteSection)
+	3 Nop
+	4 Nop
+	5 CheckEqual returnVal1 @ S0_v3 (System.Boolean), v3 @ S0_v2, this._sectionsBetweenRepeats (System.Int32)
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void NotifySectionSpawn(System.Int32 posZ, System.Int32 maxLength)
+
+Disassembly:
+	0xD0D288 I32Const 4553755
+	0xD0D28D I32Load8_S 0, 0
+	0xD0D290 I32Eqz
+	0xD0D291 If -64
+	0xD0D293 I32Const 2942928
+	0xD0D298 I32Load 2, 0
+	0xD0D29B Call 73003
+	0xD0D29F I32Const 4553755
+	0xD0D2A4 I32Const 1
+	0xD0D2A6 I32Store8 0, 0
+	0xD0D2A9 End
+	0xD0D2AA I32Const 4428424
+	0xD0D2AF I32Load 2, 0
+	0xD0D2B2 LocalTee 3
+	0xD0D2B4 I32Load16_S 1, 186
+	0xD0D2B8 I32Const 512
+	0xD0D2BB I32And
+	0xD0D2BC If -64
+	0xD0D2BE LocalGet 3
+	0xD0D2C0 I32Load 2, 116
+	0xD0D2C3 I32Eqz
+	0xD0D2C4 If -64
+	0xD0D2C6 LocalGet 3
+	0xD0D2C8 Call 72345
+	0xD0D2CC End
+	0xD0D2CD End
+	0xD0D2CE LocalGet 0
+	0xD0D2D0 I32Const 8
+	0xD0D2D2 I32Add
+	0xD0D2D3 LocalGet 1
+	0xD0D2D5 I32Store 2, 0
+	0xD0D2D8 LocalGet 0
+	0xD0D2DA I32Const 12
+	0xD0D2DC I32Add
+	0xD0D2DD LocalGet 2
+	0xD0D2DF I32Store 2, 0
+	0xD0D2E2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v19, [2CE7D0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v19
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [457C1B], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.EventArgs>), typeof(System.EventArgs)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.EventArgs>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b9, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v14 (Il2CppClass<System.EventArgs>), typeof(System.EventArgs)
+	21 Nop
+	22 CheckEqual v20 @ S0_v16 (System.Boolean), [v18 @ S0_v14 (Il2CppClass<System.EventArgs>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v16 (System.Boolean)
+	24 ConditionalJump @b9, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.EventArgs)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Add v28 @ S0_v11, this @ L0 (SYBO.Subway.Routes.RouteSection+RepeatConfiguration), 8
+	32 Nop
+	33 Move [v28 @ S0_v11], posZ @ L1 (System.Int32)
+	34 Nop
+	35 Nop
+	36 Add v33 @ S0_v13, this @ L0 (SYBO.Subway.Routes.RouteSection+RepeatConfiguration), 12
+	37 Nop
+	38 Move [v33 @ S0_v13], maxLength @ L2 (System.Int32)
+	39 Nop
+	40 Return
+
+Method: System.Void UpdateRepeatConfiguration()
+
+Disassembly:
+	0xD0EE68 LocalGet 0
+	0xD0EE6A I32Const 0
+	0xD0EE6C I32Store 2, 12
+	0xD0EE6F LocalGet 0
+	0xD0EE71 I32Const 0
+	0xD0EE73 I32Store 2, 20
+	0xD0EE76 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._remainingSectionsBetweenRepeats (System.Int32), 0
+	3 Nop
+	4 Nop
+	5 Move this._lastSpawnZPosition (System.Int32), 0
+	6 Nop
+	7 Return
+
+Method: System.Void Validate(SYBO.Subway.Routes.RouteSection mySection)
+
+Disassembly:
+	0xD0C0CD I32Const 4553733
+	0xD0C0D2 I32Load8_S 0, 0
+	0xD0C0D5 I32Eqz
+	0xD0C0D6 If -64
+	0xD0C0D8 I32Const 2998544
+	0xD0C0DD I32Load 2, 0
+	0xD0C0E0 Call 73003
+	0xD0C0E4 I32Const 4553733
+	0xD0C0E9 I32Const 1
+	0xD0C0EB I32Store8 0, 0
+	0xD0C0EE End
+	0xD0C0EF I32Const 4428424
+	0xD0C0F4 I32Load 2, 0
+	0xD0C0F7 LocalTee 2
+	0xD0C0F9 I32Load16_S 1, 186
+	0xD0C0FD I32Const 512
+	0xD0C100 I32And
+	0xD0C101 If -64
+	0xD0C103 LocalGet 2
+	0xD0C105 I32Load 2, 116
+	0xD0C108 I32Eqz
+	0xD0C109 If -64
+	0xD0C10B LocalGet 2
+	0xD0C10D Call 72345
+	0xD0C111 End
+	0xD0C112 End
+	0xD0C113 LocalGet 0
+	0xD0C115 I32Const 8
+	0xD0C117 I32Add
+	0xD0C118 LocalGet 1
+	0xD0C11A I32Store 2, 0
+	0xD0C11D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v17, [2DC110]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [457C05], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.EventArgs>), typeof(System.EventArgs)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.EventArgs>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b9, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<System.EventArgs>), typeof(System.EventArgs)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<System.EventArgs>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b9, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.EventArgs)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Add v28 @ S0_v11, this @ L0 (SYBO.Subway.Routes.RouteSection+RepeatConfiguration), 8
+	32 Nop
+	33 Move [v28 @ S0_v11], mySection @ L1 (SYBO.Subway.Routes.RouteSection)
+	34 Nop
+	35 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xD0EF42 LocalGet 0
+	0xD0EF44 I32Load 2, 12
+	0xD0EF47 I32Const 0
+	0xD0EF49 I32Gt_S
+	0xD0EF4A If -64
+	0xD0EF4C LocalGet 0
+	0xD0EF4E LocalGet 0
+	0xD0EF50 I32Load 2, 12
+	0xD0EF53 I32Const 1
+	0xD0EF55 I32Sub
+	0xD0EF56 I32Store 2, 12
+	0xD0EF59 End
+	0xD0EF5A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckGreater v4 @ S0_v3 (System.Boolean), this._remainingSectionsBetweenRepeats (System.Int32), 0
+	4 Not v5 @ TEMP_v1 (System.Boolean), v4 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b4, v5 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Subtract v10 @ S1_v5 (System.Int32), this._remainingSectionsBetweenRepeats (System.Int32), 1
+	11 Move this._remainingSectionsBetweenRepeats (System.Int32), v10 @ S1_v5 (System.Int32)
+	12 Nop
+	13 Nop
+	14 Return
+

@@ -1,0 +1,167 @@
+Type: System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter
+
+Method: System.Void .ctor(System.Threading.Tasks.Task`1<TResult> task, System.Boolean continueOnCapturedContext)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.m_task (System.Threading.Tasks.Task`1<TResult>), continueOnCapturedContext.m_value (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<TResult>+ConfiguredTaskAwaiter<TResult>)+14], continueOnCapturedContext @ L2 (System.Boolean)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<TResult>+ConfiguredTaskAwaiter<TResult>), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], task @ L1 (System.Threading.Tasks.Task`1<TResult>)
+	12 Nop
+	13 Return
+
+Method: System.Boolean get_IsCompleted()
+
+Disassembly:
+	0x13ABDB6 LocalGet 0
+	0x13ABDB8 I32Const 8
+	0x13ABDBA I32Add
+	0x13ABDBB LocalGet 1
+	0x13ABDBD Call 48513
+	0x13ABDC1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Newobj returnVal1 @ S0_v3 (System.OverflowException), typeof(System.OverflowException)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.OverflowException)
+
+Method: System.Void OnCompleted(System.Action continuation)
+
+Disassembly:
+	0x13CCAE2 GlobalGet 7
+	0x13CCAE4 LocalSet 3
+	0x13CCAE6 GlobalGet 7
+	0x13CCAE8 I32Const 16
+	0x13CCAEA I32Add
+	0x13CCAEB GlobalSet 7
+	0x13CCAED LocalGet 3
+	0x13CCAEF LocalGet 1
+	0x13CCAF1 I32Load8_S 0, 0
+	0x13CCAF4 I32Store8 0, 0
+	0x13CCAF7 LocalGet 3
+	0x13CCAF9 I32Const 1
+	0x13CCAFB I32Add
+	0x13CCAFC LocalTee 1
+	0x13CCAFE LocalGet 3
+	0x13CCB00 I32Load8_S 0, 0
+	0x13CCB03 I32Store8 0, 0
+	0x13CCB06 LocalGet 0
+	0x13CCB08 I32Const 8
+	0x13CCB0A I32Add
+	0x13CCB0B LocalGet 1
+	0x13CCB0D LocalGet 2
+	0x13CCB0F Call 65235
+	0x13CCB13 LocalGet 3
+	0x13CCB15 GlobalSet 7
+	0x13CCB17 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Move [v1 @ G7], [continuation @ L1 (System.Action)]
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6, v1 @ G7, 1
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v13 @ S0_v6], [v1 @ G7]
+	17 Nop
+	18 Nop
+	19 Add v20 @ S0_v8, this @ L0 (System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<TResult>+ConfiguredTaskAwaiter<TResult>), 8
+	20 Nop
+	21 Nop
+	22 CallVoid FED3, v20 @ S0_v8, v13 @ S0_v6, methodInfo @ L2 (Il2CppMethodInfo)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Return
+
+Method: System.Void UnsafeOnCompleted(System.Action continuation)
+
+Disassembly:
+	0x13ABD2B LocalGet 0
+	0x13ABD2D I32Const 8
+	0x13ABD2F I32Add
+	0x13ABD30 LocalTee 3
+	0x13ABD32 I32Load 2, 0
+	0x13ABD35 LocalGet 1
+	0x13ABD37 LocalGet 3
+	0x13ABD39 I32Load8_S 0, 4
+	0x13ABD3C I32Const 0
+	0x13ABD3E I32Ne
+	0x13ABD3F I32Const 1
+	0x13ABD41 I32Const 0
+	0x13ABD43 Call 46039
+	0x13ABD47 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<TResult>+ConfiguredTaskAwaiter<TResult>), 8
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CheckNotEqual v11 @ S2_v3 (System.Boolean), [v3 @ S0_v2+4], 0
+	10 Nop
+	11 Nop
+	12 CallVoid Marshal.copy_to_unmanaged, [v3 @ S0_v2], continuation @ L1 (System.Action), v11 @ S2_v3 (System.Boolean), 1
+	13 Nop
+	14 Return
+
+Method: TResult GetResult()
+
+Disassembly:
+	0x1007063 LocalGet 0
+	0x1007065 I32Const 8
+	0x1007067 I32Add
+	0x1007068 I32Const 0
+	0x100706A Call 46036
+	0x100706E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<TResult>+ConfiguredTaskAwaiter<TResult>), 8
+	3 Nop
+	4 Call B3D4, returnVal1 @ S0_v3 (TResult), v3 @ S0_v2, 0
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (TResult)
+

@@ -1,0 +1,416 @@
+Type: Mono.Math.Prime.PrimalityTests
+
+Method: System.Int32 GetSPPRounds(Mono.Math.BigInteger bi, Mono.Math.Prime.ConfidenceFactor confidence)
+
+Disassembly:
+	0xED6B93 LocalGet 1
+	0xED6B95 I32Const 0
+	0xED6B97 Call 73892
+	0xED6B9B Call 29263
+	0xED6B9F I32Load8_S 0, 0
+	0xED6BA2 I32Const 0
+	0xED6BA4 I32Ne
+	0xED6BA5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Newobj v3 @ S0_v2 (System.InvalidOperationException), typeof(System.InvalidOperationException)
+	3 Throw typeof(System.NullReferenceException)
+	4 Nop
+	5 Nop
+	6 CheckNotEqual returnVal1 @ S0_v5 (System.Boolean), [v4 @ S0_v3], 0
+	7 Nop
+	8 Return returnVal1 @ S0_v5 (System.Boolean)
+
+Method: System.Boolean RabinMillerTest(Mono.Math.BigInteger n, Mono.Math.Prime.ConfidenceFactor confidence)
+
+Disassembly:
+	0x142AA60 I32Const 4574870
+	0x142AA65 I32Load8_S 0, 0
+	0x142AA68 I32Eqz
+	0x142AA69 If -64
+	0x142AA6B I32Const 2993056
+	0x142AA70 I32Load 2, 0
+	0x142AA73 Call 73003
+	0x142AA77 I32Const 4574870
+	0x142AA7C I32Const 1
+	0x142AA7E I32Store8 0, 0
+	0x142AA81 End
+	0x142AA82 LocalGet 0
+	0x142AA84 I32Const 0
+	0x142AA86 Call 59889
+	0x142AA8A LocalTee 0
+	0x142AA8C I32Const 100
+	0x142AA8F I32Gt_S
+	0x142AA90 If -64
+	0x142AA92 LocalGet 0
+	0x142AA94 I32Const 150
+	0x142AA97 I32Gt_S
+	0x142AA98 If -64
+	0x142AA9A LocalGet 0
+	0x142AA9C I32Const 200
+	0x142AA9F I32Gt_S
+	0x142AAA0 If -64
+	0x142AAA2 LocalGet 0
+	0x142AAA4 I32Const 250
+	0x142AAA7 I32Gt_S
+	0x142AAA8 If -64
+	0x142AAAA LocalGet 0
+	0x142AAAC I32Const 300
+	0x142AAAF I32Gt_S
+	0x142AAB0 If -64
+	0x142AAB2 LocalGet 0
+	0x142AAB4 I32Const 350
+	0x142AAB7 I32Gt_S
+	0x142AAB8 If -64
+	0x142AABA LocalGet 0
+	0x142AABC I32Const 400
+	0x142AABF I32Gt_S
+	0x142AAC0 If -64
+	0x142AAC2 LocalGet 0
+	0x142AAC4 I32Const 500
+	0x142AAC7 I32Gt_S
+	0x142AAC8 If -64
+	0x142AACA LocalGet 0
+	0x142AACC I32Const 600
+	0x142AACF I32Gt_S
+	0x142AAD0 If -64
+	0x142AAD2 LocalGet 0
+	0x142AAD4 I32Const 800
+	0x142AAD7 I32Gt_S
+	0x142AAD8 LocalGet 0
+	0x142AADA I32Const 1250
+	0x142AADD I32Gt_S
+	0x142AADE If -1
+	0x142AAE0 I32Const 2
+	0x142AAE2 Else
+	0x142AAE3 I32Const 3
+	0x142AAE5 End
+	0x142AAE6 LocalSet 0
+	0x142AAE8 I32Eqz
+	0x142AAE9 If -64
+	0x142AAEB I32Const 4
+	0x142AAED LocalSet 0
+	0x142AAEF End
+	0x142AAF0 Else
+	0x142AAF1 I32Const 5
+	0x142AAF3 LocalSet 0
+	0x142AAF5 End
+	0x142AAF6 Else
+	0x142AAF7 I32Const 6
+	0x142AAF9 LocalSet 0
+	0x142AAFB End
+	0x142AAFC Else
+	0x142AAFD I32Const 7
+	0x142AAFF LocalSet 0
+	0x142AB01 End
+	0x142AB02 Else
+	0x142AB03 I32Const 8
+	0x142AB05 LocalSet 0
+	0x142AB07 End
+	0x142AB08 Else
+	0x142AB09 I32Const 9
+	0x142AB0B LocalSet 0
+	0x142AB0D End
+	0x142AB0E Else
+	0x142AB0F I32Const 12
+	0x142AB11 LocalSet 0
+	0x142AB13 End
+	0x142AB14 Else
+	0x142AB15 I32Const 15
+	0x142AB17 LocalSet 0
+	0x142AB19 End
+	0x142AB1A Else
+	0x142AB1B I32Const 18
+	0x142AB1D LocalSet 0
+	0x142AB1F End
+	0x142AB20 Else
+	0x142AB21 I32Const 27
+	0x142AB23 LocalSet 0
+	0x142AB25 End
+	0x142AB26 Block -64
+	0x142AB28 Block -64
+	0x142AB2A Block -64
+	0x142AB2C Block -64
+	0x142AB2E Block -64
+	0x142AB30 Block -64
+	0x142AB32 Block -64
+	0x142AB34 Block -64
+	0x142AB36 LocalGet 1
+	0x142AB38 BrTable System.UInt64[], 6
+	0x142AB41 End
+	0x142AB42 LocalGet 0
+	0x142AB44 I32Const 2
+	0x142AB46 I32Shr_U
+	0x142AB47 LocalTee 0
+	0x142AB49 If -1
+	0x142AB4B LocalGet 0
+	0x142AB4D Else
+	0x142AB4E I32Const 1
+	0x142AB50 End
+	0x142AB51 Return
+	0x142AB52 End
+	0x142AB53 LocalGet 0
+	0x142AB55 I32Const 1
+	0x142AB57 I32Shr_U
+	0x142AB58 LocalTee 3
+	0x142AB5A I32Eqz
+	0x142AB5B If -64
+	0x142AB5D I32Const 1
+	0x142AB5F LocalSet 3
+	0x142AB61 End
+	0x142AB62 Br 5
+	0x142AB64 End
+	0x142AB65 LocalGet 0
+	0x142AB67 LocalSet 3
+	0x142AB69 Br 4
+	0x142AB6B End
+	0x142AB6C LocalGet 0
+	0x142AB6E I32Const 1
+	0x142AB70 I32Shl
+	0x142AB71 LocalSet 3
+	0x142AB73 Br 3
+	0x142AB75 End
+	0x142AB76 LocalGet 0
+	0x142AB78 I32Const 2
+	0x142AB7A I32Shl
+	0x142AB7B LocalSet 3
+	0x142AB7D Br 2
+	0x142AB7F End
+	0x142AB80 I32Const 4427764
+	0x142AB85 I32Load 2, 0
+	0x142AB88 Call 72556
+	0x142AB8C LocalTee 0
+	0x142AB8E I32Const 4501944
+	0x142AB93 I32Load 2, 0
+	0x142AB96 I32Const 0
+	0x142AB98 Call 51388
+	0x142AB9C LocalGet 0
+	0x142AB9E I32Const 0
+	0x142ABA0 I32Const 4460812
+	0x142ABA5 I32Load 2, 0
+	0x142ABA8 Call 73899
+	0x142ABAC Br 1
+	0x142ABAE End
+	0x142ABAF I32Const 4427992
+	0x142ABB4 I32Load 2, 0
+	0x142ABB7 Call 72556
+	0x142ABBB LocalTee 0
+	0x142ABBD I32Const 4501948
+	0x142ABC2 I32Load 2, 0
+	0x142ABC5 I32Const 0
+	0x142ABC7 Call 57740
+	0x142ABCB LocalGet 0
+	0x142ABCD I32Const 0
+	0x142ABCF I32Const 4460812
+	0x142ABD4 I32Load 2, 0
+	0x142ABD7 Call 73899
+	0x142ABDB End
+	0x142ABDC LocalGet 3
+	0x142ABDE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b49
+	5 Nop
+	6 Move v5 @ S0_v75, [2DABA0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v75
+	8 Nop
+	9 Move v7 @ S1_v39, 1
+	10 Move [45CE96], v7 @ S1_v39
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call BigInteger.LowestSetBit, v14 @ S0_v6 (System.Int32), n @ L0 (Mono.Math.BigInteger)
+	15 Nop
+	16 Nop
+	17 CheckGreater v17 @ S0_v7 (System.Boolean), v14 @ S0_v6 (System.Int32), 100
+	18 Not v18 @ TEMP_v2 (System.Boolean), v17 @ S0_v7 (System.Boolean)
+	19 ConditionalJump @b26, v18 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Nop
+	22 CheckGreater v21 @ S0_v38 (System.Boolean), v14 @ S0_v6 (System.Int32), 150
+	23 Not v22 @ TEMP_v14 (System.Boolean), v21 @ S0_v38 (System.Boolean)
+	24 ConditionalJump @b25, v22 @ TEMP_v14 (System.Boolean)
+	25 Nop
+	26 Nop
+	27 CheckGreater v27 @ S0_v42 (System.Boolean), v14 @ S0_v6 (System.Int32), 200
+	28 Not v28 @ TEMP_v16 (System.Boolean), v27 @ S0_v42 (System.Boolean)
+	29 ConditionalJump @b24, v28 @ TEMP_v16 (System.Boolean)
+	30 Nop
+	31 Nop
+	32 CheckGreater v47 @ S0_v46 (System.Boolean), v14 @ S0_v6 (System.Int32), 250
+	33 Not v48 @ TEMP_v18 (System.Boolean), v47 @ S0_v46 (System.Boolean)
+	34 ConditionalJump @b23, v48 @ TEMP_v18 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 CheckGreater v64 @ S0_v50 (System.Boolean), v14 @ S0_v6 (System.Int32), 300
+	38 Not v65 @ TEMP_v20 (System.Boolean), v64 @ S0_v50 (System.Boolean)
+	39 ConditionalJump @b22, v65 @ TEMP_v20 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 CheckGreater v84 @ S0_v54 (System.Boolean), v14 @ S0_v6 (System.Int32), 350
+	43 Not v85 @ TEMP_v22 (System.Boolean), v84 @ S0_v54 (System.Boolean)
+	44 ConditionalJump @b21, v85 @ TEMP_v22 (System.Boolean)
+	45 Nop
+	46 Nop
+	47 CheckGreater v103 @ S0_v58 (System.Boolean), v14 @ S0_v6 (System.Int32), 400
+	48 Not v104 @ TEMP_v24 (System.Boolean), v103 @ S0_v58 (System.Boolean)
+	49 ConditionalJump @b20, v104 @ TEMP_v24 (System.Boolean)
+	50 Nop
+	51 Nop
+	52 CheckGreater v145 @ S0_v62 (System.Boolean), v14 @ S0_v6 (System.Int32), 500
+	53 Not v146 @ TEMP_v26 (System.Boolean), v145 @ S0_v62 (System.Boolean)
+	54 ConditionalJump @b19, v146 @ TEMP_v26 (System.Boolean)
+	55 Nop
+	56 Nop
+	57 CheckGreater v157 @ S0_v66 (System.Boolean), v14 @ S0_v6 (System.Int32), 600
+	58 Not v158 @ TEMP_v28 (System.Boolean), v157 @ S0_v66 (System.Boolean)
+	59 ConditionalJump @b18, v158 @ TEMP_v28 (System.Boolean)
+	60 Nop
+	61 Nop
+	62 CheckGreater v171 @ S0_v70 (System.Boolean), v14 @ S0_v6 (System.Int32), 800
+	63 Nop
+	64 Nop
+	65 CheckGreater v174 @ S1_v35 (System.Boolean), v14 @ S0_v6 (System.Int32), 1250
+	66 Not v175 @ TEMP_v30 (System.Boolean), v174 @ S1_v35 (System.Boolean)
+	67 ConditionalJump @b16, v175 @ TEMP_v30 (System.Boolean)
+	68 Nop
+	69 Jump @b50
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Not v200 @ S0_v71 (System.Boolean), v171 @ S0_v70 (System.Boolean)
+	74 Not v193 @ TEMP_v31 (System.Boolean), v200 @ S0_v71 (System.Boolean)
+	75 ConditionalJump @b58, v193 @ TEMP_v31 (System.Boolean)
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Jump @b51
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Jump @b59
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Jump @b52
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Jump @b60
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Jump @b53
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Jump @b61
+	100 Nop
+	101 Nop
+	102 Nop
+	103 Jump @b54
+	104 Nop
+	105 Nop
+	106 Nop
+	107 Jump @b62
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Jump @b55
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Nop
+	116 CheckEqual v44 @ TEMP_v4 (System.Boolean), confidence @ L1 (Mono.Math.Prime.ConfidenceFactor), 0
+	117 ConditionalJump @b33, v44 @ TEMP_v4 (System.Boolean)
+	118 CheckEqual v56 @ TEMP_v6 (System.Boolean), confidence @ L1 (Mono.Math.Prime.ConfidenceFactor), 1
+	119 ConditionalJump @b36, v56 @ TEMP_v6 (System.Boolean)
+	120 CheckEqual v73 @ TEMP_v9 (System.Boolean), confidence @ L1 (Mono.Math.Prime.ConfidenceFactor), 2
+	121 ConditionalJump @b38, v73 @ TEMP_v9 (System.Boolean)
+	122 CheckEqual v93 @ TEMP_v10 (System.Boolean), confidence @ L1 (Mono.Math.Prime.ConfidenceFactor), 3
+	123 ConditionalJump @b39, v93 @ TEMP_v10 (System.Boolean)
+	124 CheckEqual v112 @ TEMP_v11 (System.Boolean), confidence @ L1 (Mono.Math.Prime.ConfidenceFactor), 4
+	125 ConditionalJump @b40, v112 @ TEMP_v11 (System.Boolean)
+	126 CheckEqual v131 @ TEMP_v12 (System.Boolean), confidence @ L1 (Mono.Math.Prime.ConfidenceFactor), 5
+	127 ConditionalJump @b41, v131 @ TEMP_v12 (System.Boolean)
+	128 Jump @b45
+	129 Nop
+	130 Nop
+	131 Nop
+	132 ShiftRight returnVal1 @ S0_v12 (System.Boolean), v34 @ L0_v2 (System.Boolean), 2
+	133 Nop
+	134 Not v61 @ TEMP_v5 (System.Boolean), returnVal1 @ S0_v12 (System.Boolean)
+	135 ConditionalJump @b35, v61 @ TEMP_v5 (System.Boolean)
+	136 Nop
+	137 Jump @b56
+	138 Nop
+	139 Nop
+	140 Return returnVal1 @ S0_v12 (System.Boolean)
+	141 Nop
+	142 Nop
+	143 Nop
+	144 ShiftRight v76 @ S0_v18 (System.Boolean), v34 @ L0_v2 (System.Boolean), 1
+	145 Nop
+	146 Not v78 @ S0_v19 (System.Boolean), v76 @ S0_v18 (System.Boolean)
+	147 Not v79 @ TEMP_v8 (System.Boolean), v78 @ S0_v19 (System.Boolean)
+	148 ConditionalJump @b57, v79 @ TEMP_v8 (System.Boolean)
+	149 Nop
+	150 Nop
+	151 Nop
+	152 Jump @b48
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Jump @b48
+	157 Nop
+	158 Nop
+	159 Nop
+	160 ShiftLeft v115 @ S0_v24 (System.Boolean), v34 @ L0_v2 (System.Boolean), 1
+	161 Nop
+	162 Jump @b48
+	163 Nop
+	164 Nop
+	165 Nop
+	166 ShiftLeft v134 @ S0_v26 (System.Boolean), v34 @ L0_v2 (System.Boolean), 2
+	167 Nop
+	168 Jump @b48
+	169 Nop
+	170 Nop
+	171 Nop
+	172 Call 11B6C, v168 @ S0_v29 (System.Exception), typeof(System.Exception)
+	173 Nop
+	174 Nop
+	175 Nop
+	176 Nop
+	177 CallVoid Exception.SetErrorCode, v168 @ S0_v29 (System.Exception), "The Rabin-Miller test can not be executed in a way such that its results are provable"
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Nop
+	182 CallVoid PrimalityTests.GetSPPRounds, v168 @ S0_v29 (System.Exception), 0
+	183 Jump @b48
+	184 Nop
+	185 Nop
+	186 Nop
+	187 Call 11B6C, v185 @ S0_v33 (System.ArithmeticException), typeof(System.ArgumentOutOfRangeException)
+	188 Nop
+	189 Nop
+	190 Nop
+	191 Nop
+	192 CallVoid ArithmeticException..ctor, v185 @ S0_v33 (System.ArithmeticException), "confidence"
+	193 Nop
+	194 Nop
+	195 Nop
+	196 Nop
+	197 CallVoid PrimalityTests.GetSPPRounds, v185 @ S0_v33 (System.ArithmeticException), 0
+	198 Nop
+	199 Nop
+	200 Nop
+	201 Return v117 @ L3_v1 (System.Boolean)
+

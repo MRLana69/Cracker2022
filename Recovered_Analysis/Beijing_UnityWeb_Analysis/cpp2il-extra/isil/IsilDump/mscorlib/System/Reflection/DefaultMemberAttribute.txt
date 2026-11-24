@@ -1,0 +1,119 @@
+Type: System.Reflection.DefaultMemberAttribute
+
+Method: System.Void .ctor(System.String memberName)
+
+Disassembly:
+	0xC5FB8A LocalGet 0
+	0xC5FB8C LocalGet 1
+	0xC5FB8E I32Const 1
+	0xC5FB90 I32And
+	0xC5FB91 I32Store8 0, 8
+	0xC5FB94 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2 (System.String), memberName @ L1 (System.String), 1
+	4 Move this.m_memberName (System.String), v5 @ S1_v2 (System.String)
+	5 Nop
+	6 Return
+
+Method: System.String get_MemberName()
+
+Disassembly:
+	0x1005080 I32Const 4562836
+	0x1005085 I32Load8_S 0, 0
+	0x1005088 I32Eqz
+	0x1005089 If -64
+	0x100508B I32Const 2999240
+	0x1005090 I32Load 2, 0
+	0x1005093 Call 73003
+	0x1005097 I32Const 4562836
+	0x100509C I32Const 1
+	0x100509E I32Store8 0, 0
+	0x10050A1 End
+	0x10050A2 LocalGet 0
+	0x10050A4 I32Load 2, 8
+	0x10050A7 LocalTee 1
+	0x10050A9 If -64
+	0x10050AB LocalGet 0
+	0x10050AD I32Load 2, 20
+	0x10050B0 If -64
+	0x10050B2 I32Const 1
+	0x10050B4 I32Const 4429708
+	0x10050B9 I32Load 2, 0
+	0x10050BC LocalGet 1
+	0x10050BE Call 29547
+	0x10050C2 Return
+	0x10050C3 End
+	0x10050C4 End
+	0x10050C5 I32Const 4509324
+	0x10050CA I32Load 2, 0
+	0x10050CD LocalSet 0
+	0x10050CF I32Const 4427872
+	0x10050D4 I32Load 2, 0
+	0x10050D7 Call 72556
+	0x10050DB LocalTee 1
+	0x10050DD I32Const 0
+	0x10050DF LocalGet 0
+	0x10050E1 I32Const 0
+	0x10050E3 Call 54743
+	0x10050E7 LocalGet 1
+	0x10050E9 I32Const 0
+	0x10050EB I32Const 4460084
+	0x10050F0 I32Load 2, 0
+	0x10050F3 Call 73899
+	0x10050F7 I32Const 0
+	0x10050F9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v21, [2DC3C8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v7, 1
+	10 Move [459F94], v7 @ S1_v7
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CheckEqual v15 @ TEMP_v2 (System.Boolean), this.m_memberName (System.String), 0
+	16 ConditionalJump @b13, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 CheckEqual v18 @ TEMP_v4 (System.Boolean), [this @ L0 (System.Reflection.DefaultMemberAttribute)+14], 0
+	20 ConditionalJump @b13, v18 @ TEMP_v4 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Call 736B, returnVal1 @ S0_v18 (System.String), 1, typeof(System.Resources.IResourceReader), this.m_memberName (System.String)
+	26 Return returnVal1 @ S0_v18 (System.String)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Call 11B6C, v26 @ S0_v12 (System.ObjectDisposedException), typeof(System.ObjectDisposedException)
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 CallVoid ObjectDisposedException..ctor, v26 @ S0_v12 (System.ObjectDisposedException), 0, "Cannot access a closed resource set."
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 CallVoid 120AB, v26 @ S0_v12 (System.ObjectDisposedException), 0, methodof(System.Resources.RuntimeResourceSet::GetEnumeratorHelper)
+	45 Nop
+	46 Nop
+	47 Return 0
+

@@ -1,0 +1,143 @@
+Type: SYBO.Subway.Automation.Steps.StartGameAndWaitStep
+
+Method: System.Void .ctor(System.Single durationSeconds)
+
+Disassembly:
+	0xD51EB8 I32Const 4554644
+	0xD51EBD I32Load8_S 0, 0
+	0xD51EC0 I32Eqz
+	0xD51EC1 If -64
+	0xD51EC3 I32Const 3002752
+	0xD51EC8 I32Load 2, 0
+	0xD51ECB Call 73003
+	0xD51ECF I32Const 4554644
+	0xD51ED4 I32Const 1
+	0xD51ED6 I32Store8 0, 0
+	0xD51ED9 End
+	0xD51EDA I32Const 4436208
+	0xD51EDF I32Load 2, 0
+	0xD51EE2 LocalTee 3
+	0xD51EE4 I32Load16_S 1, 186
+	0xD51EE8 I32Const 512
+	0xD51EEB I32And
+	0xD51EEC If -64
+	0xD51EEE LocalGet 3
+	0xD51EF0 I32Load 2, 116
+	0xD51EF3 I32Eqz
+	0xD51EF4 If -64
+	0xD51EF6 LocalGet 3
+	0xD51EF8 Call 72345
+	0xD51EFC End
+	0xD51EFD End
+	0xD51EFE I32Const 0
+	0xD51F00 Call 40586
+	0xD51F04 I32Load 2, 20
+	0xD51F07 I32Const 0
+	0xD51F09 Call 40586
+	0xD51F0D I32Load 2, 12
+	0xD51F10 LocalGet 0
+	0xD51F12 I32Load8_S 0, 9
+	0xD51F15 I32Const 0
+	0xD51F17 I32Ne
+	0xD51F18 I32Const 1
+	0xD51F1A I32Xor
+	0xD51F1B I32Const 0
+	0xD51F1D Call 71250
+	0xD51F21 I32Const 0
+	0xD51F23 Call 40586
+	0xD51F27 I32Load 2, 20
+	0xD51F2A I32Const 0
+	0xD51F2C Call 40586
+	0xD51F30 I32Load 2, 28
+	0xD51F33 LocalGet 0
+	0xD51F35 I32Load8_S 0, 9
+	0xD51F38 I32Const 0
+	0xD51F3A I32Ne
+	0xD51F3B I32Const 1
+	0xD51F3D I32Xor
+	0xD51F3E I32Const 0
+	0xD51F40 Call 71250
+	0xD51F44 LocalGet 0
+	0xD51F46 I32Const 1
+	0xD51F48 I32Store8 0, 8
+	0xD51F4B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v22, [2DD180]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [457F94], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<Layers>), typeof(Layers)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<Layers>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b15, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v17 (Il2CppClass<Layers>), typeof(Layers)
+	21 Nop
+	22 CheckEqual v20 @ S0_v19 (System.Boolean), [v18 @ S0_v17 (Il2CppClass<Layers>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v19 (System.Boolean)
+	24 ConditionalJump @b15, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(Layers)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call LoadLevelCtrl.get_StartupFinished, v26 @ S0_v11 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Call LoadLevelCtrl.get_StartupFinished, v29 @ S1_v4 (System.Boolean)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CheckNotEqual v35 @ S2_v3 (System.Boolean), [this @ L0 (SYBO.Subway.Automation.Steps.StartGameAndWaitStep)+9], 0
+	39 Nop
+	40 Xor v37 @ S2_v4 (System.String), v35 @ S2_v3 (System.Boolean), 1
+	41 Nop
+	42 CallVoid UnityWebRequest..ctor, [v26 @ S0_v11 (System.Boolean)+14], [v29 @ S1_v4 (System.Boolean)+C], v37 @ S2_v4 (System.String)
+	43 Nop
+	44 Call LoadLevelCtrl.get_StartupFinished, v40 @ S0_v14 (System.Boolean)
+	45 Nop
+	46 Nop
+	47 Call LoadLevelCtrl.get_StartupFinished, v43 @ S1_v7 (System.Boolean)
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 CheckNotEqual v48 @ S2_v7 (System.Boolean), [this @ L0 (SYBO.Subway.Automation.Steps.StartGameAndWaitStep)+9], 0
+	53 Nop
+	54 Xor v50 @ S2_v8 (System.String), v48 @ S2_v7 (System.Boolean), 1
+	55 Nop
+	56 CallVoid UnityWebRequest..ctor, [v40 @ S0_v14 (System.Boolean)+14], [v43 @ S1_v7 (System.Boolean)+1C], v50 @ S2_v8 (System.String)
+	57 Nop
+	58 Nop
+	59 Move this.<IsDone>k__BackingField (System.Boolean), 1
+	60 Nop
+	61 Return
+
+Method: System.Void Update(System.Single unscaledDeltaTime)
+
+Disassembly:
+	0xC11858 LocalGet 0
+	0xC1185A LocalGet 1
+	0xC1185C F32Store 2, 12
+	0xC1185F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._durationSeconds (System.Single), unscaledDeltaTime @ L1 (System.Single)
+	3 Nop
+	4 Return
+

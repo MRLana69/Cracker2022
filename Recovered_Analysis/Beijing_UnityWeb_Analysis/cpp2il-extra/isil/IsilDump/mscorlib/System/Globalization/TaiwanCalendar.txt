@@ -1,0 +1,862 @@
+Type: System.Globalization.TaiwanCalendar
+
+Method: System.Globalization.Calendar GetDefaultInstance()
+
+Disassembly:
+	0x131D772 GlobalGet 7
+	0x131D774 LocalSet 1
+	0x131D776 GlobalGet 7
+	0x131D778 I32Const 16
+	0x131D77A I32Add
+	0x131D77B GlobalSet 7
+	0x131D77D I32Const 4571878
+	0x131D782 I32Load8_S 0, 0
+	0x131D785 I32Eqz
+	0x131D786 If -64
+	0x131D788 I32Const 2987780
+	0x131D78D I32Load 2, 0
+	0x131D790 Call 73003
+	0x131D794 I32Const 4571878
+	0x131D799 I32Const 1
+	0x131D79B I32Store8 0, 0
+	0x131D79E End
+	0x131D79F LocalGet 1
+	0x131D7A1 I32Const 4
+	0x131D7A3 I32Add
+	0x131D7A4 LocalSet 2
+	0x131D7A6 Block -64
+	0x131D7A8 Block -64
+	0x131D7AA I32Const 0
+	0x131D7AC Call 49951
+	0x131D7B0 I32Const 0
+	0x131D7B2 Call 50018
+	0x131D7B6 LocalTee 3
+	0x131D7B8 I32Load8_S 0, 112
+	0x131D7BB BrIf 0
+	0x131D7BD LocalGet 3
+	0x131D7BF I32Load 2, 36
+	0x131D7C2 LocalTee 0
+	0x131D7C4 I32Eqz
+	0x131D7C5 BrIf 0
+	0x131D7C7 Br 1
+	0x131D7C9 End
+	0x131D7CA I32Const 4424560
+	0x131D7CF I32Load 2, 0
+	0x131D7D2 LocalSet 0
+	0x131D7D4 I32Const 4427800
+	0x131D7D9 I32Load 2, 0
+	0x131D7DC LocalTee 4
+	0x131D7DE I32Load16_S 1, 186
+	0x131D7E2 I32Const 512
+	0x131D7E5 I32And
+	0x131D7E6 If -64
+	0x131D7E8 LocalGet 4
+	0x131D7EA I32Load 2, 116
+	0x131D7ED I32Eqz
+	0x131D7EE If -64
+	0x131D7F0 LocalGet 4
+	0x131D7F2 Call 72345
+	0x131D7F6 End
+	0x131D7F7 End
+	0x131D7F8 LocalGet 1
+	0x131D7FA LocalGet 0
+	0x131D7FC I32Store 2, 0
+	0x131D7FF LocalGet 2
+	0x131D801 LocalGet 1
+	0x131D803 I32Load 2, 0
+	0x131D806 I32Store 2, 0
+	0x131D809 I32Const 21
+	0x131D80B LocalGet 3
+	0x131D80D LocalGet 2
+	0x131D80F I32Const 0
+	0x131D811 Call 49925
+	0x131D815 Call 29448
+	0x131D819 I32Const 4428924
+	0x131D81E I32Load 2, 0
+	0x131D821 Call 29321
+	0x131D825 LocalSet 0
+	0x131D827 End
+	0x131D828 LocalGet 1
+	0x131D82A GlobalSet 7
+	0x131D82C LocalGet 0
+	0x131D82E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b16
+	11 Nop
+	12 Move v12 @ S0_v38, [2D9704]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v38
+	14 Nop
+	15 Move v14 @ S1_v13, 1
+	16 Move [45C2E6], v14 @ S1_v13
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9 (System.IntPtr), v1 @ G7, 4
+	21 Nop
+	22 Nop
+	23 Call Thread.GetDomainID, v22 @ S0_v11 (System.Int32)
+	24 Nop
+	25 Call Thread.GetCurrentCultureNoAppX, v24 @ S0_v12 (System.Globalization.CultureInfo), v22 @ S0_v11 (System.Int32)
+	26 Nop
+	27 Nop
+	28 ConditionalJump @b9, v24.m_isInherited (System.Boolean)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckEqual v30 @ S0_v36 (System.Boolean), v24.numInfo (System.Globalization.NumberFormatInfo), 0
+	33 ConditionalJump @b9, v30 @ S0_v36 (System.Boolean)
+	34 Jump @b17
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move v38 @ S0_v21 (Il2CppClass<System.Type>), typeof(System.Type)
+	41 Nop
+	42 Nop
+	43 Nop
+	44 And v42 @ S0_v23, [v38 @ S0_v21 (Il2CppClass<System.Type>)+BA], 512
+	45 CheckEqual v43 @ TEMP_v3 (System.Boolean), v42 @ S0_v23, 0
+	46 ConditionalJump @b18, v43 @ TEMP_v3 (System.Boolean)
+	47 Move v44 @ S0_v30 (Il2CppClass<System.Type>), typeof(System.Type)
+	48 Nop
+	49 CheckEqual v46 @ S0_v32 (System.Boolean), [v44 @ S0_v30 (Il2CppClass<System.Type>)+74], 0
+	50 Not v47 @ TEMP_v5 (System.Boolean), v46 @ S0_v32 (System.Boolean)
+	51 ConditionalJump @b18, v47 @ TEMP_v5 (System.Boolean)
+	52 Nop
+	53 CallVoid 11A99, typeof(System.Type)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Move [v1 @ G7], typeof(System.Globalization.NumberFormatInfo)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Move v19.m_value (System.Void*), [v1 @ G7]
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Call Type.internal_from_handle, v60 @ S2_v3 (System.Type), v19 @ S0_v9 (System.IntPtr)
+	68 Call 7308, v77 @ S0_v28, 21, v24 @ S0_v12 (System.Globalization.CultureInfo), v60 @ S2_v3 (System.Type)
+	69 Nop
+	70 Nop
+	71 Call 7289, v73 @ S0_v29 (System.Globalization.Calendar), v77 @ S0_v28, typeof(System.Globalization.NumberFormatInfo)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Return v67 @ L0_v1 (System.Globalization.Calendar)
+
+Method: System.DateTime get_MinSupportedDateTime()
+
+Disassembly:
+	0x131C69B I32Const 4571865
+	0x131C6A0 I32Load8_S 0, 0
+	0x131C6A3 I32Eqz
+	0x131C6A4 If -64
+	0x131C6A6 I32Const 2974048
+	0x131C6AB I32Load 2, 0
+	0x131C6AE Call 73003
+	0x131C6B2 I32Const 4571865
+	0x131C6B7 I32Const 1
+	0x131C6B9 I32Store8 0, 0
+	0x131C6BC End
+	0x131C6BD I32Const 4428064
+	0x131C6C2 I32Load 2, 0
+	0x131C6C5 LocalTee 0
+	0x131C6C7 I32Load16_S 1, 186
+	0x131C6CB I32Const 512
+	0x131C6CE I32And
+	0x131C6CF If -64
+	0x131C6D1 LocalGet 0
+	0x131C6D3 I32Load 2, 116
+	0x131C6D6 I32Eqz
+	0x131C6D7 If -64
+	0x131C6D9 LocalGet 0
+	0x131C6DB Call 72345
+	0x131C6DF I32Const 4428064
+	0x131C6E4 I32Load 2, 0
+	0x131C6E7 LocalSet 0
+	0x131C6E9 End
+	0x131C6EA End
+	0x131C6EB LocalGet 0
+	0x131C6ED I32Load 2, 92
+	0x131C6F0 I64Load 3, 16
+	0x131C6F3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v20, [2D6160]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45C2D9], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.DateTime>), typeof(System.DateTime)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.DateTime>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v13 (Il2CppClass<System.DateTime>), typeof(System.DateTime)
+	21 Nop
+	22 CheckEqual v20 @ S0_v15 (System.Boolean), [v18 @ S0_v13 (Il2CppClass<System.DateTime>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v15 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.DateTime)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Return v28.MaxValue (System.DateTime)
+
+Method: System.DateTime get_MaxSupportedDateTime()
+
+Disassembly:
+	0x131ED53 I32Const 4571903
+	0x131ED58 I32Load8_S 0, 0
+	0x131ED5B I32Eqz
+	0x131ED5C If -64
+	0x131ED5E I32Const 3008420
+	0x131ED63 I32Load 2, 0
+	0x131ED66 Call 73003
+	0x131ED6A I32Const 4571903
+	0x131ED6F I32Const 1
+	0x131ED71 I32Store8 0, 0
+	0x131ED74 End
+	0x131ED75 I32Const 4428752
+	0x131ED7A I32Load 2, 0
+	0x131ED7D LocalTee 0
+	0x131ED7F I32Load16_S 1, 186
+	0x131ED83 I32Const 512
+	0x131ED86 I32And
+	0x131ED87 If -64
+	0x131ED89 LocalGet 0
+	0x131ED8B I32Load 2, 116
+	0x131ED8E I32Eqz
+	0x131ED8F If -64
+	0x131ED91 LocalGet 0
+	0x131ED93 Call 72345
+	0x131ED97 I32Const 4428752
+	0x131ED9C I32Load 2, 0
+	0x131ED9F LocalSet 0
+	0x131EDA1 End
+	0x131EDA2 End
+	0x131EDA3 LocalGet 0
+	0x131EDA5 I32Load 2, 92
+	0x131EDA8 I64Load 3, 8
+	0x131EDAB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b8
+	5 Nop
+	6 Move v5 @ S0_v20, [2DE7A4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v3, 1
+	10 Move [45C2FF], v7 @ S1_v3
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Globalization.TaiwanCalendar>), typeof(System.Globalization.TaiwanCalendar)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Globalization.TaiwanCalendar>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v13 (Il2CppClass<System.Globalization.TaiwanCalendar>), typeof(System.Globalization.TaiwanCalendar)
+	21 Nop
+	22 CheckEqual v20 @ S0_v15 (System.Boolean), [v18 @ S0_v13 (Il2CppClass<System.Globalization.TaiwanCalendar>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v15 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Globalization.TaiwanCalendar)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Return v28.calendarMinValue (System.DateTime)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x131DA6A I32Const 4571885
+	0x131DA6F I32Load8_S 0, 0
+	0x131DA72 I32Eqz
+	0x131DA73 If -64
+	0x131DA75 I32Const 2987764
+	0x131DA7A I32Load 2, 0
+	0x131DA7D Call 73003
+	0x131DA81 I32Const 4571885
+	0x131DA86 I32Const 1
+	0x131DA88 I32Store8 0, 0
+	0x131DA8B End
+	0x131DA8C LocalGet 0
+	0x131DA8E I32Const 1023
+	0x131DA91 I32Gt_U
+	0x131DA92 If -64
+	0x131DA94 I32Const 4507672
+	0x131DA99 I32Load 2, 0
+	0x131DA9C LocalSet 1
+	0x131DA9E I32Const 4427876
+	0x131DAA3 I32Load 2, 0
+	0x131DAA6 Call 72556
+	0x131DAAA LocalTee 2
+	0x131DAAC LocalGet 1
+	0x131DAAE I32Const 4503828
+	0x131DAB3 I32Load 2, 0
+	0x131DAB6 I32Const 0
+	0x131DAB8 Call 57600
+	0x131DABC LocalGet 2
+	0x131DABE I32Const 0
+	0x131DAC0 I32Const 4488904
+	0x131DAC5 I32Load 2, 0
+	0x131DAC8 Call 73899
+	0x131DACC End
+	0x131DACD LocalGet 0
+	0x131DACF I32Const 512
+	0x131DAD2 I32And
+	0x131DAD3 If -64
+	0x131DAD5 I32Const 4507680
+	0x131DADA I32Load 2, 0
+	0x131DADD LocalSet 0
+	0x131DADF I32Const 4427876
+	0x131DAE4 I32Load 2, 0
+	0x131DAE7 Call 72556
+	0x131DAEB LocalTee 1
+	0x131DAED LocalGet 0
+	0x131DAEF I32Const 0
+	0x131DAF1 Call 57610
+	0x131DAF5 LocalGet 1
+	0x131DAF7 I32Const 0
+	0x131DAF9 I32Const 4488904
+	0x131DAFE I32Load 2, 0
+	0x131DB01 Call 73899
+	0x131DB05 End
+	0x131DB06 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v24, [2D96F4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v24
+	8 Nop
+	9 Move v7 @ S1_v10, 1
+	10 Move [45C2ED], v7 @ S1_v10
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckGreater v14 @ S0_v6 (System.Boolean), this @ L0 (System.Globalization.TaiwanCalendar), 1023
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v6 (System.Boolean)
+	16 ConditionalJump @b8, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Call 11B6C, v21 @ S0_v21 (System.ArgumentException), typeof(System.ArgumentException)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid ArgumentException..ctor, v21 @ S0_v21 (System.ArgumentException), "An undefined NumberStyles value is being used.", "style"
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid 120AB, v21 @ S0_v21 (System.ArgumentException), 0, methodof(System.Globalization.NumberFormatInfo::ValidateParseStyleFloatingPoint)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 And v39 @ S0_v9, this @ L0 (System.Globalization.TaiwanCalendar), 512
+	38 CheckEqual v40 @ TEMP_v3 (System.Boolean), v39 @ S0_v9, 0
+	39 ConditionalJump @b12, v40 @ TEMP_v3 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call 11B6C, v49 @ S0_v15 (System.ArgumentNullException), typeof(System.ArgumentException)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid ArgumentNullException..ctor, v49 @ S0_v15 (System.ArgumentNullException), "The number style AllowHexSpecifier is not supported on floating point data types."
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 CallVoid 120AB, v49 @ S0_v15 (System.ArgumentNullException), 0, methodof(System.Globalization.NumberFormatInfo::ValidateParseStyleFloatingPoint)
+	55 Nop
+	56 Nop
+	57 Return
+
+Method: System.Int32 get_ID()
+
+Disassembly:
+	0x131EA50 LocalGet 0
+	0x131EA52 I32Load 2, 8
+	0x131EA55 I32Const 7
+	0x131EA57 I32Mul
+	0x131EA58 LocalGet 0
+	0x131EA5A I32Const 12
+	0x131EA5C I32Add
+	0x131EA5D LocalTee 2
+	0x131EA5F I32Load16_U 1, 4
+	0x131EA62 I32Const 16
+	0x131EA64 I32Shl
+	0x131EA65 LocalGet 2
+	0x131EA67 I32Load16_U 1, 6
+	0x131EA6A I32Or
+	0x131EA6B LocalGet 2
+	0x131EA6D I32Load 2, 0
+	0x131EA70 I32Xor
+	0x131EA71 LocalGet 2
+	0x131EA73 I32Load8_U 0, 10
+	0x131EA76 I32Const 24
+	0x131EA78 I32Shl
+	0x131EA79 LocalGet 2
+	0x131EA7B I32Load8_U 0, 15
+	0x131EA7E I32Or
+	0x131EA7F I32Xor
+	0x131EA80 I32Or
+	0x131EA81 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Multiply v4 @ S0_v3, this.m_currentEraValue (System.Int32), 7
+	4 Nop
+	5 Nop
+	6 Add v7 @ S1_v3, this @ L0 (System.Globalization.TaiwanCalendar), 12
+	7 Nop
+	8 Nop
+	9 Nop
+	10 ShiftLeft v11 @ S1_v5, [v7 @ S1_v3+4], 16
+	11 Nop
+	12 Nop
+	13 Or v14 @ S1_v6, v11 @ S1_v5, [v7 @ S1_v3+6]
+	14 Nop
+	15 Nop
+	16 Xor v17 @ S1_v7, v14 @ S1_v6, [v7 @ S1_v3]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 ShiftLeft v21 @ S2_v9, [v7 @ S1_v3+A], 24
+	21 Nop
+	22 Nop
+	23 Or v24 @ S2_v10, v21 @ S2_v9, [v7 @ S1_v3+F]
+	24 Xor v25 @ S1_v8, v17 @ S1_v7, v24 @ S2_v10
+	25 Or returnVal1 @ S0_v4 (System.Int32), v4 @ S0_v3, v25 @ S1_v8
+	26 Nop
+	27 Return returnVal1 @ S0_v4 (System.Int32)
+
+Method: System.Int32 GetDaysInMonth(System.Int32 year, System.Int32 month, System.Int32 era)
+
+Disassembly:
+	0x131CC1B LocalGet 0
+	0x131CC1D I32Load 2, 20
+	0x131CC20 LocalGet 1
+	0x131CC22 LocalGet 2
+	0x131CC24 LocalGet 3
+	0x131CC26 I32Const 0
+	0x131CC28 Call 61122
+	0x131CC2C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Call JapaneseCalendar.GetDaysInMonth, returnVal1 @ S0_v3 (System.Int32), this.helper (System.Globalization.GregorianCalendarHelper), year @ L1 (System.Int32), month @ L2 (System.Int32), era @ L3 (System.Int32)
+	7 Nop
+	8 Return returnVal1 @ S0_v3 (System.Int32)
+
+Method: System.Int32 GetDayOfMonth(System.DateTime time)
+
+Disassembly:
+	0x160071B I32Const 147
+	0x160071E Call 1
+	0x1600720 I32Const 0
+	0x1600722 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 147
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.DayOfWeek GetDayOfWeek(System.DateTime time)
+
+Disassembly:
+	0x160071B I32Const 147
+	0x160071E Call 1
+	0x1600720 I32Const 0
+	0x1600722 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 147
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.Int32 GetMonthsInYear(System.Int32 year, System.Int32 era)
+
+Disassembly:
+	0x131D0E6 LocalGet 0
+	0x131D0E8 I32Load 2, 20
+	0x131D0EB LocalGet 1
+	0x131D0ED LocalGet 2
+	0x131D0EF I32Const 0
+	0x131D0F1 Call 61114
+	0x131D0F5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call GregorianCalendarHelper.GetMonthsInYear, returnVal1 @ S0_v3 (System.Int32), this.helper (System.Globalization.GregorianCalendarHelper), year @ L1 (System.Int32), era @ L2 (System.Int32)
+	6 Nop
+	7 Return returnVal1 @ S0_v3 (System.Int32)
+
+Method: System.Int32 GetEra(System.DateTime time)
+
+Disassembly:
+	0x160071B I32Const 147
+	0x160071E Call 1
+	0x1600720 I32Const 0
+	0x1600722 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 147
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.Int32 GetMonth(System.DateTime time)
+
+Disassembly:
+	0x160071B I32Const 147
+	0x160071E Call 1
+	0x1600720 I32Const 0
+	0x1600722 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 147
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.Int32 GetYear(System.DateTime time)
+
+Disassembly:
+	0x160071B I32Const 147
+	0x160071E Call 1
+	0x1600720 I32Const 0
+	0x1600722 End
+
+ISIL:
+	0 Nop
+	1 CallVoid 0001, 147
+	2 Nop
+	3 Nop
+	4 Return 0
+
+Method: System.Boolean IsLeapYear(System.Int32 year, System.Int32 era)
+
+Disassembly:
+	0x131CC9F LocalGet 0
+	0x131CCA1 I32Load 2, 20
+	0x131CCA4 LocalGet 1
+	0x131CCA6 LocalGet 2
+	0x131CCA8 I32Const 0
+	0x131CCAA Call 61126
+	0x131CCAE Drop
+	0x131CCAF I32Const 12
+	0x131CCB1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Call GregorianCalendarHelper.IsLeapYear, v8 @ S0_v3 (System.Boolean), this.helper (System.Globalization.GregorianCalendarHelper), year @ L1 (System.Int32), era @ L2 (System.Int32)
+	6 Nop
+	7 Nop
+	8 Return 12
+
+Method: System.DateTime ToDateTime(System.Int32 year, System.Int32 month, System.Int32 day, System.Int32 hour, System.Int32 minute, System.Int32 second, System.Int32 millisecond, System.Int32 era)
+
+Disassembly:
+	0x131CD6E LocalGet 0
+	0x131CD70 I32Load 2, 20
+	0x131CD73 LocalGet 1
+	0x131CD75 LocalGet 2
+	0x131CD77 LocalGet 3
+	0x131CD79 LocalGet 4
+	0x131CD7B LocalGet 5
+	0x131CD7D LocalGet 6
+	0x131CD7F LocalGet 7
+	0x131CD81 LocalGet 8
+	0x131CD83 I32Const 0
+	0x131CD85 Call 61129
+	0x131CD89 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Call JapaneseCalendar.ToDateTime, returnVal1 @ S0_v3 (System.DateTime), this.helper (System.Globalization.GregorianCalendarHelper), year @ L1 (System.Int32), month @ L2 (System.Int32), day @ L3 (System.Int32), hour @ L4 (System.Int32), minute @ L5 (System.Int32), second @ L6 (System.Int32), millisecond @ L7 (System.Int32), era @ L8 (System.Int32)
+	12 Nop
+	13 Return returnVal1 @ S0_v3 (System.DateTime)
+
+Method: System.Int32[] get_Eras()
+
+Disassembly:
+	0xC761E0 I32Const 4
+	0xC761E2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return 4
+
+Method: System.Int32 get_TwoDigitYearMax()
+
+Disassembly:
+	0x131CEB3 LocalGet 0
+	0x131CEB5 I32Load 2, 20
+	0x131CEB8 I32Const 0
+	0x131CEBA Call 61124
+	0x131CEBE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call HebrewNumber.ToString, returnVal1 @ S0_v3 (System.Int32), this.helper (System.Globalization.GregorianCalendarHelper)
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Int32)
+
+Method: System.Int32 ToFourDigitYear(System.Int32 year)
+
+Disassembly:
+	0x131CD24 GlobalGet 7
+	0x131CD26 LocalSet 2
+	0x131CD28 GlobalGet 7
+	0x131CD2A I32Const 16
+	0x131CD2C I32Add
+	0x131CD2D GlobalSet 7
+	0x131CD2F LocalGet 0
+	0x131CD31 I32Load 2, 20
+	0x131CD34 LocalGet 2
+	0x131CD36 LocalGet 1
+	0x131CD38 I64Load 3, 0
+	0x131CD3B I64Store 3, 0
+	0x131CD3E LocalGet 2
+	0x131CD40 I32Const 8
+	0x131CD42 I32Add
+	0x131CD43 LocalTee 1
+	0x131CD45 LocalGet 2
+	0x131CD47 I64Load 3, 0
+	0x131CD4A I64Store 3, 0
+	0x131CD4D LocalGet 1
+	0x131CD4F I32Const 0
+	0x131CD51 Call 61127
+	0x131CD55 LocalGet 2
+	0x131CD57 GlobalSet 7
+	0x131CD59 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], year.m_value (System.Int32)
+	12 Nop
+	13 Nop
+	14 Add v16 @ S1_v4 (System.Globalization.HebrewNumberParsingContext&), v1 @ G7, 8
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move [v16 @ S1_v4 (System.Globalization.HebrewNumberParsingContext&)], [v1 @ G7]
+	19 Nop
+	20 Nop
+	21 Call HebrewNumber.ParseByChar, returnVal1 @ S0_v6 (System.Int32), this.helper (System.Globalization.GregorianCalendarHelper), v16 @ S1_v4 (System.Globalization.HebrewNumberParsingContext&)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Return returnVal1 @ S0_v6 (System.Int32)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x131D123 GlobalGet 7
+	0x131D125 LocalSet 0
+	0x131D127 GlobalGet 7
+	0x131D129 I32Const 32
+	0x131D12B I32Add
+	0x131D12C GlobalSet 7
+	0x131D12E I32Const 4571873
+	0x131D133 I32Load8_S 0, 0
+	0x131D136 I32Eqz
+	0x131D137 If -64
+	0x131D139 I32Const 2974040
+	0x131D13E I32Load 2, 0
+	0x131D141 Call 73003
+	0x131D145 I32Const 4571873
+	0x131D14A I32Const 1
+	0x131D14C I32Store8 0, 0
+	0x131D14F End
+	0x131D150 LocalGet 0
+	0x131D152 I32Const 8
+	0x131D154 I32Add
+	0x131D155 LocalTee 1
+	0x131D157 I64Const 0
+	0x131D159 I64Store 3, 0
+	0x131D15C LocalGet 1
+	0x131D15E I32Const 1868
+	0x131D161 I32Const 9
+	0x131D163 I32Const 8
+	0x131D165 I32Const 0
+	0x131D167 Call 56451
+	0x131D16B I32Const 4428748
+	0x131D170 I32Load 2, 0
+	0x131D173 I32Load 2, 92
+	0x131D176 LocalGet 0
+	0x131D178 LocalGet 1
+	0x131D17A I64Load 3, 0
+	0x131D17D I64Store 3, 0
+	0x131D180 LocalGet 0
+	0x131D182 I32Const 16
+	0x131D184 I32Add
+	0x131D185 LocalTee 1
+	0x131D187 LocalGet 0
+	0x131D189 I64Load 3, 0
+	0x131D18C I64Store 3, 0
+	0x131D18F LocalGet 1
+	0x131D191 I64Load 3, 0
+	0x131D194 I64Store 3, 0
+	0x131D197 LocalGet 0
+	0x131D199 GlobalSet 7
+	0x131D19B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b6
+	11 Nop
+	12 Move v12 @ S0_v16, [2D6158]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v16
+	14 Nop
+	15 Move v14 @ S1_v11, 1
+	16 Move [45C2E1], v14 @ S1_v11
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 8
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CallVoid DC83, v19 @ S0_v9, 1868, 9, 8, 0
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Move [v1 @ G7], [v19 @ S0_v9]
+	37 Nop
+	38 Nop
+	39 Add v35 @ S1_v8, v1 @ G7, 16
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move [v35 @ S1_v8], [v1 @ G7]
+	44 Nop
+	45 Nop
+	46 Move v29.calendarMinValue (System.DateTime), [v35 @ S1_v8]
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Return
+

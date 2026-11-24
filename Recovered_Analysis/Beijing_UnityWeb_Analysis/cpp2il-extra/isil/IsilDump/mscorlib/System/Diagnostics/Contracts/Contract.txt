@@ -1,0 +1,172 @@
+Type: System.Diagnostics.Contracts.Contract
+
+Method: System.Boolean ForAll(System.Collections.Generic.IEnumerable`1<T> collection, System.Predicate`1<T> predicate)
+
+Disassembly:
+	0x14426E1 I32Const 4575065
+	0x14426E6 I32Load8_S 0, 0
+	0x14426E9 I32Eqz
+	0x14426EA If -64
+	0x14426EC I32Const 2963356
+	0x14426F1 I32Load 2, 0
+	0x14426F4 Call 73003
+	0x14426F8 I32Const 4575065
+	0x14426FD I32Const 1
+	0x14426FF I32Store8 0, 0
+	0x1442702 End
+	0x1442703 I32Const 4427744
+	0x1442708 I32Load 2, 0
+	0x144270B LocalTee 2
+	0x144270D I32Load16_S 1, 186
+	0x1442711 I32Const 512
+	0x1442714 I32And
+	0x1442715 If -64
+	0x1442717 LocalGet 2
+	0x1442719 I32Load 2, 116
+	0x144271C I32Eqz
+	0x144271D If -64
+	0x144271F LocalGet 2
+	0x1442721 Call 72345
+	0x1442725 End
+	0x1442726 End
+	0x1442727 Block -64
+	0x1442729 Block -64
+	0x144272B LocalGet 0
+	0x144272D LocalGet 1
+	0x144272F I32Const 0
+	0x1442731 Call 59156
+	0x1442735 LocalTee 1
+	0x1442737 LocalGet 1
+	0x1442739 I32Load 2, 8
+	0x144273C I32Const 1
+	0x144273E I32Sub
+	0x144273F I32Const 0
+	0x1442741 Call 55658
+	0x1442745 LocalTee 2
+	0x1442747 I32Const 0
+	0x1442749 Call 58882
+	0x144274D BrIf 0
+	0x144274F I32Const 4427744
+	0x1442754 I32Load 2, 0
+	0x1442757 LocalTee 0
+	0x1442759 I32Load16_S 1, 186
+	0x144275D I32Const 512
+	0x1442760 I32And
+	0x1442761 If -64
+	0x1442763 LocalGet 0
+	0x1442765 I32Load 2, 116
+	0x1442768 I32Eqz
+	0x1442769 If -64
+	0x144276B LocalGet 0
+	0x144276D Call 72345
+	0x1442771 I32Const 4427744
+	0x1442776 I32Load 2, 0
+	0x1442779 LocalSet 0
+	0x144277B End
+	0x144277C End
+	0x144277D LocalGet 2
+	0x144277F I32Const 65535
+	0x1442783 I32And
+	0x1442784 LocalGet 0
+	0x1442786 I32Load 2, 92
+	0x1442789 I32Load16_U 1, 16
+	0x144278C I32Eq
+	0x144278D BrIf 0
+	0x144278F Br 1
+	0x1442791 End
+	0x1442792 LocalGet 1
+	0x1442794 I32Const 4507912
+	0x1442799 I32Load 2, 0
+	0x144279C I32Const 0
+	0x144279E Call 55680
+	0x14427A2 LocalSet 1
+	0x14427A4 End
+	0x14427A5 LocalGet 1
+	0x14427A7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b18
+	5 Nop
+	6 Move v5 @ S0_v38, [2D379C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v38
+	8 Nop
+	9 Move v7 @ S1_v17, 1
+	10 Move [45CF59], v7 @ S1_v17
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.IO.Path>), typeof(System.IO.Path)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.IO.Path>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b22, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v33 (Il2CppClass<System.IO.Path>), typeof(System.IO.Path)
+	21 Nop
+	22 CheckEqual v20 @ S0_v35 (System.Boolean), [v18 @ S0_v33 (Il2CppClass<System.IO.Path>)+74], 0
+	23 Not v21 @ TEMP_v9 (System.Boolean), v20 @ S0_v35 (System.Boolean)
+	24 ConditionalJump @b22, v21 @ TEMP_v9 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.IO.Path)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call UnexceptionalStreamReader.CheckEOL, v30 @ S0_v11 (System.Boolean), collection @ L0 (System.Collections.Generic.IEnumerable`1<T>), predicate @ L1 (System.Predicate`1<T>)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Subtract v35 @ S1_v6 (System.Char[]), [v30 @ S0_v11 (System.Boolean)+8], 1
+	38 Nop
+	39 Call String.Split, v37 @ S0_v12 (System.String[]), v30 @ S0_v11 (System.Boolean), v35 @ S1_v6 (System.Char[])
+	40 Nop
+	41 Nop
+	42 Call Path.GetPathRoot, v40 @ S0_v13 (System.String), v37 @ S0_v12 (System.String[])
+	43 ConditionalJump @b16, v40 @ S0_v13 (System.String)
+	44 Nop
+	45 Move v42 @ S0_v20 (Il2CppClass<System.IO.Path>), typeof(System.IO.Path)
+	46 Nop
+	47 Nop
+	48 Nop
+	49 And v46 @ S0_v22, [v42 @ S0_v20 (Il2CppClass<System.IO.Path>)+BA], 512
+	50 CheckEqual v47 @ TEMP_v6 (System.Boolean), v46 @ S0_v22, 0
+	51 ConditionalJump @b19, v47 @ TEMP_v6 (System.Boolean)
+	52 Move v61 @ S0_v27 (Il2CppClass<System.IO.Path>), typeof(System.IO.Path)
+	53 Nop
+	54 CheckEqual v63 @ S0_v29 (System.Boolean), [v61 @ S0_v27 (Il2CppClass<System.IO.Path>)+74], 0
+	55 Not v64 @ TEMP_v8 (System.Boolean), v63 @ S0_v29 (System.Boolean)
+	56 ConditionalJump @b19, v64 @ TEMP_v8 (System.Boolean)
+	57 Nop
+	58 CallVoid 11A99, typeof(System.IO.Path)
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 And v70 @ S0_v25, v37 @ S0_v12 (System.String[]), 65535
+	67 Nop
+	68 Nop
+	69 Nop
+	70 CheckEqual v55 @ S0_v26 (System.Boolean), v70 @ S0_v25, v72.VolumeSeparatorChar (System.Char)
+	71 ConditionalJump @b16, v55 @ S0_v26 (System.Boolean)
+	72 Jump @b21
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Call String.ConcatArray, v60 @ S0_v18 (System.String), v30 @ S0_v11 (System.Boolean), "*"
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Return v77 @ L1_v2 (System.String)
+

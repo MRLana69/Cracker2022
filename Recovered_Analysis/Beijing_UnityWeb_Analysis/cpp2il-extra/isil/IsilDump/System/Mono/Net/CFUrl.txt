@@ -1,0 +1,186 @@
+Type: Mono.Net.CFUrl
+
+Method: System.Void .ctor(System.IntPtr handle, System.Boolean own)
+
+Disassembly:
+	0x11085D2 LocalGet 0
+	0x11085D4 LocalGet 1
+	0x11085D6 LocalGet 2
+	0x11085D8 I32Const 0
+	0x11085DA Call 51693
+	0x11085DE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid CFArray..ctor, this @ L0 (Mono.Net.CFUrl), handle @ L1 (System.IntPtr), own @ L2 (System.Boolean)
+	5 Nop
+	6 Return
+
+Method: System.IntPtr CFURLCreateWithString(System.IntPtr allocator, System.IntPtr str, System.IntPtr baseURL)
+
+Disassembly:
+	0x110B53B GlobalGet 7
+	0x110B53D LocalSet 4
+	0x110B53F GlobalGet 7
+	0x110B541 I32Const 16
+	0x110B543 I32Add
+	0x110B544 GlobalSet 7
+	0x110B546 I32Const 3925408
+	0x110B54B I32Load 2, 0
+	0x110B54E LocalTee 3
+	0x110B550 If -64
+	0x110B552 LocalGet 3
+	0x110B554 LocalSet 5
+	0x110B556 Else
+	0x110B557 I32Const 3925408
+	0x110B55C I32Const 3478879
+	0x110B561 I32Const 3480596
+	0x110B566 I32Const 0
+	0x110B568 I32Const 2
+	0x110B56A I32Const 16
+	0x110B56C I32Const 0
+	0x110B56E Call 51731
+	0x110B572 LocalTee 3
+	0x110B574 I32Store 2, 0
+	0x110B577 LocalGet 3
+	0x110B579 If -64
+	0x110B57B LocalGet 3
+	0x110B57D LocalSet 5
+	0x110B57F Else
+	0x110B580 I32Const 3480618
+	0x110B585 Call 72499
+	0x110B589 I32Const 0
+	0x110B58B I32Const 0
+	0x110B58D Call 73899
+	0x110B591 End
+	0x110B592 End
+	0x110B593 LocalGet 4
+	0x110B595 LocalGet 1
+	0x110B597 I64Load 2, 0
+	0x110B59A I64Store 3, 0
+	0x110B59D LocalGet 4
+	0x110B59F I32Const 8
+	0x110B5A1 I32Add
+	0x110B5A2 LocalTee 1
+	0x110B5A4 LocalGet 4
+	0x110B5A6 I64Load 2, 0
+	0x110B5A9 I64Store 2, 0
+	0x110B5AC LocalGet 0
+	0x110B5AE LocalGet 1
+	0x110B5B0 LocalGet 2
+	0x110B5B2 LocalGet 5
+	0x110B5B4 I32Const 8191
+	0x110B5B7 I32And
+	0x110B5B8 I32Const 22691
+	0x110B5BC I32Add
+	0x110B5BD CallIndirect 5, 0
+	0x110B5C0 LocalGet 4
+	0x110B5C2 GlobalSet 7
+	0x110B5C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CheckEqual v10 @ TEMP_v1 (System.Boolean), [3BE5A0], 0
+	10 ConditionalJump @b4, v10 @ TEMP_v1 (System.Boolean)
+	11 Nop
+	12 Nop
+	13 Jump @b10
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call CA13, v20 @ S1_v11, 3478879, 3480596, 0, 2, 16, 0
+	22 Nop
+	23 Move [3BE5A0], v20 @ S1_v11
+	24 Nop
+	25 CheckEqual v36 @ TEMP_v3 (System.Boolean), v20 @ S1_v11, 0
+	26 ConditionalJump @b7, v36 @ TEMP_v3 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Jump @b10
+	30 Nop
+	31 Newobj v42 @ S0_v15 (System.NotSupportedException), typeof(System.NotSupportedException)
+	32 Nop
+	33 Nop
+	34 CallVoid 120AB, v42 @ S0_v15 (System.NotSupportedException), 0, 0
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Move [v1 @ G7], str.m_value (System.Void*)
+	41 Nop
+	42 Nop
+	43 Add v50 @ S0_v9, v1 @ G7, 8
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Move [v50 @ S0_v9], [v1 @ G7]
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 And v61 @ S3_v3, v32 @ L5_v1, 8191
+	54 Nop
+	55 Add v63 @ S3_v4, v61 @ S3_v3, 22691
+	56 IndirectCall v63 @ S3_v4, returnVal1 @ S0_v11 (System.IntPtr), allocator @ L0 (System.IntPtr), v50 @ S0_v9, baseURL @ L2 (System.IntPtr)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Return returnVal1 @ S0_v11 (System.IntPtr)
+
+Method: Mono.Net.CFUrl Create(System.String absolute)
+
+Disassembly:
+	0x110C3F9 LocalGet 0
+	0x110C3FB I32Load 2, 12
+	0x110C3FE I32Eqz
+	0x110C3FF If -64
+	0x110C401 LocalGet 0
+	0x110C403 I32Const 12
+	0x110C405 I32Add
+	0x110C406 LocalGet 0
+	0x110C408 I32Load 2, 8
+	0x110C40B I32Const 0
+	0x110C40D Call 51770
+	0x110C411 I32Store 2, 0
+	0x110C414 End
+	0x110C415 LocalGet 0
+	0x110C417 I32Load 2, 12
+	0x110C41A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), absolute.m_firstChar (System.Char), 0
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Add v7 @ S0_v8, absolute @ L0 (System.String), 12
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Call CFString.ToString, v11 @ S1_v5 (System.String), absolute.m_stringLength (System.Int32)
+	12 Move [v7 @ S0_v8], v11 @ S1_v5 (System.String)
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Nop
+	17 Return absolute.m_firstChar (System.Char)
+

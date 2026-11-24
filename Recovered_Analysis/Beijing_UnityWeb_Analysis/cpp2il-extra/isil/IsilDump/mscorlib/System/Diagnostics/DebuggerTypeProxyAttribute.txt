@@ -1,0 +1,79 @@
+Type: System.Diagnostics.DebuggerTypeProxyAttribute
+
+Method: System.Void .ctor(System.Type type)
+
+Disassembly:
+	0x1396C78 I32Const 4573254
+	0x1396C7D I32Load8_S 0, 0
+	0x1396C80 I32Eqz
+	0x1396C81 If -64
+	0x1396C83 I32Const 2951224
+	0x1396C88 I32Load 2, 0
+	0x1396C8B Call 73003
+	0x1396C8F I32Const 4573254
+	0x1396C94 I32Const 1
+	0x1396C96 I32Store8 0, 0
+	0x1396C99 End
+	0x1396C9A LocalGet 1
+	0x1396C9C I32Const 3
+	0x1396C9E I32Gt_U
+	0x1396C9F If -64
+	0x1396CA1 I32Const 4427992
+	0x1396CA6 I32Load 2, 0
+	0x1396CA9 Call 72556
+	0x1396CAD LocalTee 3
+	0x1396CAF I32Const 4504140
+	0x1396CB4 I32Load 2, 0
+	0x1396CB7 I32Const 0
+	0x1396CB9 Call 57740
+	0x1396CBD LocalGet 3
+	0x1396CBF I32Const 0
+	0x1396CC1 I32Const 4488276
+	0x1396CC6 I32Load 2, 0
+	0x1396CC9 Call 73899
+	0x1396CCD Else
+	0x1396CCE LocalGet 0
+	0x1396CD0 LocalGet 1
+	0x1396CD2 I32Store 2, 8
+	0x1396CD5 End
+	0x1396CD6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v14, [2D0838]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45C846], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckGreater v14 @ S0_v6 (System.Boolean), type @ L1 (System.Type), 3
+	15 Not v15 @ TEMP_v2 (System.Boolean), v14 @ S0_v6 (System.Boolean)
+	16 ConditionalJump @b9, v15 @ TEMP_v2 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Call 11B6C, v18 @ S0_v11 (System.ArithmeticException), typeof(System.ArgumentOutOfRangeException)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CallVoid ArithmeticException..ctor, v18 @ S0_v11 (System.ArithmeticException), "state"
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 CallVoid DebuggerBrowsableAttribute..ctor, v18 @ S0_v11 (System.ArithmeticException), 0
+	30 Jump @b11
+	31 Nop
+	32 Nop
+	33 Move this.typeName (System.String), type @ L1 (System.Type)
+	34 Nop
+	35 Nop
+	36 Return
+

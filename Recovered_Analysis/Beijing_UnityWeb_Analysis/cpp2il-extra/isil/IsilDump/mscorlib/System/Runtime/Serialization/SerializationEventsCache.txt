@@ -1,0 +1,130 @@
+Type: System.Runtime.Serialization.SerializationEventsCache
+
+Method: System.Runtime.Serialization.SerializationEvents GetSerializationEventsForType(System.Type t)
+
+Disassembly:
+	0x10A3904 LocalGet 0
+	0x10A3906 I32Load 2, 8
+	0x10A3909 If -1
+	0x10A390B I32Const 1
+	0x10A390D Else
+	0x10A390E LocalGet 0
+	0x10A3910 I32Load 2, 12
+	0x10A3913 I32Const 0
+	0x10A3915 I32Ne
+	0x10A3916 End
+	0x10A3917 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), t._impl (System.RuntimeTypeHandle), 0
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Jump @b5
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CheckNotEqual v8 @ S0_v6 (System.Boolean), [t @ L0 (System.Type)+C], 0
+	10 Nop
+	11 Nop
+	12 Return returnVal1 @ S0_v3 (System.Runtime.Serialization.SerializationEvents)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x10A012C GlobalGet 7
+	0x10A012E LocalSet 0
+	0x10A0130 GlobalGet 7
+	0x10A0132 I32Const 16
+	0x10A0134 I32Add
+	0x10A0135 GlobalSet 7
+	0x10A0137 I32Const 4564668
+	0x10A013C I32Load8_S 0, 0
+	0x10A013F I32Eqz
+	0x10A0140 If -64
+	0x10A0142 I32Const 2988524
+	0x10A0147 I32Load 2, 0
+	0x10A014A Call 73003
+	0x10A014E I32Const 4564668
+	0x10A0153 I32Const 1
+	0x10A0155 I32Store8 0, 0
+	0x10A0158 End
+	0x10A0159 I32Const 4427960
+	0x10A015E I32Load 2, 0
+	0x10A0161 I32Const 21
+	0x10A0163 Call 71670
+	0x10A0167 LocalSet 1
+	0x10A0169 LocalGet 0
+	0x10A016B I32Const 4501596
+	0x10A0170 I32Load 2, 0
+	0x10A0173 I32Store 2, 0
+	0x10A0176 LocalGet 0
+	0x10A0178 I32Const 4
+	0x10A017A I32Add
+	0x10A017B LocalTee 2
+	0x10A017D LocalGet 0
+	0x10A017F I32Load 2, 0
+	0x10A0182 I32Store 2, 0
+	0x10A0185 LocalGet 1
+	0x10A0187 LocalGet 2
+	0x10A0189 I32Const 0
+	0x10A018B Call 46053
+	0x10A018F I32Const 4430540
+	0x10A0194 I32Load 2, 0
+	0x10A0197 I32Load 2, 92
+	0x10A019A LocalGet 1
+	0x10A019C I32Store 2, 0
+	0x10A019F LocalGet 0
+	0x10A01A1 GlobalSet 7
+	0x10A01A3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b7
+	11 Nop
+	12 Move v12 @ S0_v20, [2D99EC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v20
+	14 Nop
+	15 Move v14 @ S1_v11, 1
+	16 Move [45A6BC], v14 @ S1_v11
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Newobj v20 @ S0_v10 (System.OverflowException), typeof(System.OverflowException)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Move [v1 @ G7], fieldof(<PrivateImplementationDetails>.0A1ADB22C1D3E1F4B2448EE3F27DF9DE63329C4C)
+	27 Nop
+	28 Nop
+	29 Add v27 @ S0_v13 (System.Runtime.InteropServices.CallingConvention), v1 @ G7, 4
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Move v27.value__ (System.Int32), [v1 @ G7]
+	34 Nop
+	35 Nop
+	36 Nop
+	37 CallVoid UnmanagedFunctionPointerAttribute..ctor, v20 @ S0_v10 (System.OverflowException), v27 @ S0_v13 (System.Runtime.InteropServices.CallingConvention)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Move v36.sizes (System.Int32[]), v20 @ S0_v10 (System.OverflowException)
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Return
+

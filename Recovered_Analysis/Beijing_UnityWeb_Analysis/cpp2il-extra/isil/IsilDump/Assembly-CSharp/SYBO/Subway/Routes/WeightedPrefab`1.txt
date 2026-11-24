@@ -1,0 +1,54 @@
+Type: SYBO.Subway.Routes.WeightedPrefab`1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void .ctor(T prefab, System.Int32 weight)
+
+Disassembly:
+	0x116531B LocalGet 0
+	0x116531D I32Load 2, 8
+	0x1165320 LocalGet 1
+	0x1165322 LocalGet 2
+	0x1165324 LocalGet 3
+	0x1165326 I32Load 2, 12
+	0x1165329 I32Load 2, 96
+	0x116532C I32Load 2, 40
+	0x116532F LocalTee 4
+	0x1165331 LocalGet 4
+	0x1165333 I32Load 2, 0
+	0x1165336 I32Const 8191
+	0x1165339 I32And
+	0x116533A I32Const 113696
+	0x116533E I32Add
+	0x116533F CallIndirect 8, 0
+	0x1165342 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Move v9 @ S3_v2, [methodInfo @ L3 (Il2CppMethodInfo)+C]
+	6 Move v10 @ S3_v3, [v9 @ S3_v2+60]
+	7 Move v11 @ S3_v4, [v10 @ S3_v3+28]
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 And v16 @ S4_v3, [v11 @ S3_v4], 8191
+	13 Nop
+	14 Add v18 @ S4_v4, v16 @ S4_v3, 113696
+	15 IndirectCall v18 @ S4_v4, v19 @ SRET_v1, this._name (System.String), prefab @ L1 (T), weight @ L2 (System.Int32), v11 @ S3_v4
+	16 Nop
+	17 Return
+

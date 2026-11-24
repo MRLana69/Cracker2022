@@ -1,0 +1,2843 @@
+Type: UI.Screens.CharacterScreenInternal.CharacterOverlayHelper
+
+Method: System.Void Init(System.Int32 index, SYBO.Subway.Info.Characters+CharacterId type, UnityEngine.Transform transformToTrack, System.Boolean selected, System.Int32 themeVersion = 0)
+
+Disassembly:
+	0xC72AAC I32Const 4552041
+	0xC72AB1 I32Load8_S 0, 0
+	0xC72AB4 I32Eqz
+	0xC72AB5 If -64
+	0xC72AB7 I32Const 2941936
+	0xC72ABC I32Load 2, 0
+	0xC72ABF Call 73003
+	0xC72AC3 I32Const 4552041
+	0xC72AC8 I32Const 1
+	0xC72ACA I32Store8 0, 0
+	0xC72ACD End
+	0xC72ACE LocalGet 0
+	0xC72AD0 LocalGet 1
+	0xC72AD2 I32Store 2, 12
+	0xC72AD5 LocalGet 0
+	0xC72AD7 LocalGet 2
+	0xC72AD9 I32Store 2, 16
+	0xC72ADC LocalGet 0
+	0xC72ADE LocalGet 3
+	0xC72AE0 I32Store 2, 20
+	0xC72AE3 LocalGet 0
+	0xC72AE5 I32Const 8
+	0xC72AE7 I32Add
+	0xC72AE8 LocalGet 4
+	0xC72AEA I32Store 2, 0
+	0xC72AED LocalGet 0
+	0xC72AEF LocalGet 5
+	0xC72AF1 I32Const 1
+	0xC72AF3 I32And
+	0xC72AF4 I32Store8 0, 24
+	0xC72AF7 LocalGet 0
+	0xC72AF9 I32Const 1
+	0xC72AFB I32Store 2, 28
+	0xC72AFE LocalGet 0
+	0xC72B00 I32Load8_S 0, 24
+	0xC72B03 If -64
+	0xC72B05 LocalGet 0
+	0xC72B07 I32Const 0
+	0xC72B09 Call 30695
+	0xC72B0D Else
+	0xC72B0E I32Const 4435840
+	0xC72B13 I32Load 2, 0
+	0xC72B16 LocalTee 1
+	0xC72B18 I32Load16_S 1, 186
+	0xC72B1C I32Const 512
+	0xC72B1F I32And
+	0xC72B20 If -64
+	0xC72B22 LocalGet 1
+	0xC72B24 I32Load 2, 116
+	0xC72B27 I32Eqz
+	0xC72B28 If -64
+	0xC72B2A LocalGet 1
+	0xC72B2C Call 72345
+	0xC72B30 End
+	0xC72B31 End
+	0xC72B32 I32Const 0
+	0xC72B34 Call 40920
+	0xC72B38 LocalGet 0
+	0xC72B3A I32Load 2, 12
+	0xC72B3D LocalGet 0
+	0xC72B3F I32Load 2, 16
+	0xC72B42 I32Const 4429724
+	0xC72B47 I32Load 2, 0
+	0xC72B4A Call 72556
+	0xC72B4E LocalTee 4
+	0xC72B50 LocalTee 5
+	0xC72B52 I32Const 4493536
+	0xC72B57 I32Load 2, 0
+	0xC72B5A LocalTee 6
+	0xC72B5C I32Load 2, 0
+	0xC72B5F I32Store 2, 8
+	0xC72B62 LocalGet 5
+	0xC72B64 LocalGet 6
+	0xC72B66 I32Store 2, 20
+	0xC72B69 LocalGet 5
+	0xC72B6B I32Const 16
+	0xC72B6D I32Add
+	0xC72B6E LocalGet 0
+	0xC72B70 I32Store 2, 0
+	0xC72B73 LocalGet 4
+	0xC72B75 LocalGet 0
+	0xC72B77 I32Const 0
+	0xC72B79 Call 40930
+	0xC72B7D End
+	0xC72B7E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v28, [2CE3F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [457569], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this._cachedType (SYBO.Subway.Info.Characters+CharacterId), index @ L1 (System.Int32)
+	15 Nop
+	16 Nop
+	17 Move this._placementIndex (System.Int32), type @ L2 (SYBO.Subway.Info.Characters+CharacterId)
+	18 Nop
+	19 Nop
+	20 Move this._3DClipCam (UnityEngine.Camera), transformToTrack @ L3 (UnityEngine.Transform)
+	21 Nop
+	22 Nop
+	23 Add v23 @ S0_v9, this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper), 8
+	24 Nop
+	25 Move [v23 @ S0_v9], selected @ L4 (System.Boolean)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v30 @ S1_v8 (System.Int32), themeVersion @ L5 (System.Int32), 1
+	30 Move this._2DOverlayCam (UnityEngine.Camera), v30 @ S1_v8 (System.Int32)
+	31 Nop
+	32 Nop
+	33 Move this._hasInited (System.Boolean), 1
+	34 Nop
+	35 Nop
+	36 CheckEqual v35 @ TEMP_v2 (System.Boolean), this._2DOverlayCam (UnityEngine.Camera), 0
+	37 ConditionalJump @b7, v35 @ TEMP_v2 (System.Boolean)
+	38 Nop
+	39 Nop
+	40 CallVoid CharacterOverlayHelper.OnEnable, this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	41 Jump @b13
+	42 Nop
+	43 Move v39 @ S0_v16 (Il2CppClass<AssetBundleManager>), typeof(AssetBundleManager)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 And v43 @ S0_v18, [v39 @ S0_v16 (Il2CppClass<AssetBundleManager>)+BA], 512
+	48 CheckEqual v44 @ TEMP_v4 (System.Boolean), v43 @ S0_v18, 0
+	49 ConditionalJump @b15, v44 @ TEMP_v4 (System.Boolean)
+	50 Move v45 @ S0_v22 (Il2CppClass<AssetBundleManager>), typeof(AssetBundleManager)
+	51 Nop
+	52 CheckEqual v47 @ S0_v24 (System.Boolean), [v45 @ S0_v22 (Il2CppClass<AssetBundleManager>)+74], 0
+	53 Not v48 @ TEMP_v6 (System.Boolean), v47 @ S0_v24 (System.Boolean)
+	54 ConditionalJump @b15, v48 @ TEMP_v6 (System.Boolean)
+	55 Nop
+	56 CallVoid 11A99, typeof(AssetBundleManager)
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Call AssetBundleManager.GetAssetBundlesCachePath, v53 @ S0_v21 (System.String)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Call 11B6C, v81 @ S3_v4 (System.Boolean), typeof(System.Action)
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Move v83 @ S4_v3 (Il2CppMethodInfo), methodof(UI.Screens.CharacterScreenInternal.CharacterModelRequest::OnCharacterBundlesLoaded)
+	72 Nop
+	73 Nop
+	74 Move [v81 @ S3_v4 (System.Boolean)+8], [v83 @ S4_v3 (Il2CppMethodInfo)]
+	75 Nop
+	76 Nop
+	77 Move [v81 @ S3_v4 (System.Boolean)+14], methodof(UI.Screens.CharacterScreenInternal.CharacterModelRequest::OnCharacterBundlesLoaded)
+	78 Nop
+	79 Nop
+	80 Add v89 @ S3_v7, v81 @ S3_v4 (System.Boolean), 16
+	81 Nop
+	82 Move [v89 @ S3_v7], this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	83 Nop
+	84 Nop
+	85 Nop
+	86 CallVoid CharacterCustomization.BuildProp, v53 @ S0_v21 (System.String), this._cachedType (SYBO.Subway.Info.Characters+CharacterId), this._placementIndex (System.Int32), v81 @ S3_v4 (System.Boolean), this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	87 Nop
+	88 Nop
+	89 Return
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0xC72BA4 I32Const 4552042
+	0xC72BA9 I32Load8_S 0, 0
+	0xC72BAC I32Eqz
+	0xC72BAD If -64
+	0xC72BAF I32Const 2941932
+	0xC72BB4 I32Load 2, 0
+	0xC72BB7 Call 73003
+	0xC72BBB I32Const 4552042
+	0xC72BC0 I32Const 1
+	0xC72BC2 I32Store8 0, 0
+	0xC72BC5 End
+	0xC72BC6 LocalGet 0
+	0xC72BC8 I32Const 2
+	0xC72BCA I32Store 2, 28
+	0xC72BCD I32Const 4436580
+	0xC72BD2 I32Load 2, 0
+	0xC72BD5 LocalTee 1
+	0xC72BD7 I32Load16_S 1, 186
+	0xC72BDB I32Const 512
+	0xC72BDE I32And
+	0xC72BDF If -64
+	0xC72BE1 LocalGet 1
+	0xC72BE3 I32Load 2, 116
+	0xC72BE6 I32Eqz
+	0xC72BE7 If -64
+	0xC72BE9 LocalGet 1
+	0xC72BEB Call 72345
+	0xC72BEF End
+	0xC72BF0 End
+	0xC72BF1 I32Const 0
+	0xC72BF3 Call 35620
+	0xC72BF7 I32Const 3
+	0xC72BF9 I32Const 4436368
+	0xC72BFE I32Load 2, 0
+	0xC72C01 LocalGet 0
+	0xC72C03 I32Const 12
+	0xC72C05 I32Add
+	0xC72C06 LocalTee 1
+	0xC72C08 Call 73903
+	0xC72C0C LocalTee 2
+	0xC72C0E Call 29262
+	0xC72C12 LocalGet 1
+	0xC72C14 LocalGet 2
+	0xC72C16 Call 29263
+	0xC72C1A I32Load 2, 0
+	0xC72C1D I32Store 2, 0
+	0xC72C20 LocalGet 0
+	0xC72C22 I32Load 2, 16
+	0xC72C25 I32Const 4440476
+	0xC72C2A I32Load 2, 0
+	0xC72C2D Call 72556
+	0xC72C31 LocalTee 2
+	0xC72C33 LocalSet 3
+	0xC72C35 I32Const 4475664
+	0xC72C3A I32Load 2, 0
+	0xC72C3D Drop
+	0xC72C3E LocalGet 3
+	0xC72C40 I32Const 4493532
+	0xC72C45 I32Load 2, 0
+	0xC72C48 LocalTee 6
+	0xC72C4A I32Load 2, 0
+	0xC72C4D I32Store 2, 8
+	0xC72C50 LocalGet 3
+	0xC72C52 LocalGet 6
+	0xC72C54 I32Store 2, 20
+	0xC72C57 LocalGet 3
+	0xC72C59 I32Const 16
+	0xC72C5B I32Add
+	0xC72C5C LocalGet 0
+	0xC72C5E I32Store 2, 0
+	0xC72C61 LocalGet 2
+	0xC72C63 LocalGet 0
+	0xC72C65 I32Load8_S 0, 24
+	0xC72C68 I32Const 0
+	0xC72C6A I32Ne
+	0xC72C6B I32Const 1
+	0xC72C6D I32Xor
+	0xC72C6E I32Const 0
+	0xC72C70 Call 35613
+	0xC72C74 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b14
+	5 Nop
+	6 Move v5 @ S0_v18, [2CE3EC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v18
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45756A], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Move this._hasInited (System.Boolean), 2
+	15 Nop
+	16 Move v15 @ S0_v7 (Il2CppClass<CharacterModelPreviewFactory>), typeof(CharacterModelPreviewFactory)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v19 @ S0_v9, [v15 @ S0_v7 (Il2CppClass<CharacterModelPreviewFactory>)+BA], 512
+	21 CheckEqual v20 @ TEMP_v2 (System.Boolean), v19 @ S0_v9, 0
+	22 ConditionalJump @b15, v20 @ TEMP_v2 (System.Boolean)
+	23 Move v21 @ S0_v13 (Il2CppClass<CharacterModelPreviewFactory>), typeof(CharacterModelPreviewFactory)
+	24 Nop
+	25 CheckEqual v23 @ S0_v15 (System.Boolean), [v21 @ S0_v13 (Il2CppClass<CharacterModelPreviewFactory>)+74], 0
+	26 Not v24 @ TEMP_v4 (System.Boolean), v23 @ S0_v15 (System.Boolean)
+	27 ConditionalJump @b15, v24 @ TEMP_v4 (System.Boolean)
+	28 Nop
+	29 CallVoid 11A99, typeof(CharacterModelPreviewFactory)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Call BoardScreenManager.get_Instance, v29 @ S0_v12 (BoardScreenManager)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Add v35 @ S3_v2, this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper), 12
+	40 Nop
+	41 Call 120AF, v37 @ S2_v3, typeof(SYBO.Subway.Info.Characters+CharacterId), v35 @ S3_v2
+	42 Nop
+	43 Call 724E, v39 @ S1_v5 (System.String), 3, v37 @ S2_v3
+	44 Nop
+	45 Nop
+	46 Throw typeof(System.NullReferenceException)
+	47 Nop
+	48 Move [v35 @ S3_v2], [v42 @ S3_v4]
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Call 11B6C, v48 @ S3_v8 (System.Int32), typeof(System.Action`1<UnityEngine.GameObject>)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Move v55 @ S4_v3 (Il2CppMethodInfo), methodof(UI.Screens.CharacterScreenInternal.CharacterModelRequest::HandleCompletedRequest)
+	61 Nop
+	62 Nop
+	63 Move [v48 @ S3_v8 (System.Int32)+8], [v55 @ S4_v3 (Il2CppMethodInfo)]
+	64 Nop
+	65 Nop
+	66 Move [v48 @ S3_v8 (System.Int32)+14], methodof(UI.Screens.CharacterScreenInternal.CharacterModelRequest::HandleCompletedRequest)
+	67 Nop
+	68 Nop
+	69 Add v62 @ S3_v14, v48 @ S3_v8 (System.Int32), 16
+	70 Nop
+	71 Move [v62 @ S3_v14], this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Nop
+	76 CheckNotEqual v68 @ S4_v10 (System.Boolean), this._2DOverlayCam (UnityEngine.Camera), 0
+	77 Nop
+	78 Xor v70 @ S4_v11 (UnityEngine.Camera), v68 @ S4_v10 (System.Boolean), 1
+	79 Nop
+	80 CallVoid CaptureInGame..ctor, v29 @ S0_v12 (BoardScreenManager), v39 @ S1_v5 (System.String), this._placementIndex (System.Int32), v48 @ S3_v8 (System.Int32), v70 @ S4_v11 (UnityEngine.Camera)
+	81 Nop
+	82 Return
+
+Method: System.Void OnDisable()
+
+Disassembly:
+	0xC77932 GlobalGet 7
+	0xC77934 LocalSet 1
+	0xC77936 GlobalGet 7
+	0xC77938 I32Const 16
+	0xC7793A I32Add
+	0xC7793B GlobalSet 7
+	0xC7793D I32Const 4552106
+	0xC77942 I32Load8_S 0, 0
+	0xC77945 I32Eqz
+	0xC77946 If -64
+	0xC77948 I32Const 2942460
+	0xC7794D I32Load 2, 0
+	0xC77950 Call 73003
+	0xC77954 I32Const 4552106
+	0xC77959 I32Const 1
+	0xC7795B I32Store8 0, 0
+	0xC7795E End
+	0xC7795F LocalGet 1
+	0xC77961 I32Const 0
+	0xC77963 I32Const 0
+	0xC77965 Call 30775
+	0xC77969 LocalGet 1
+	0xC7796B I32Const 8
+	0xC7796D I32Add
+	0xC7796E LocalTee 2
+	0xC77970 LocalGet 1
+	0xC77972 I64Load 2, 0
+	0xC77975 I64Store 2, 0
+	0xC77978 LocalGet 0
+	0xC7797A LocalGet 2
+	0xC7797C I64Load 2, 0
+	0xC7797F I64Store 2, 92
+	0xC77982 I32Const 4429724
+	0xC77987 I32Load 2, 0
+	0xC7798A Call 72556
+	0xC7798E LocalTee 3
+	0xC77990 LocalTee 2
+	0xC77992 I32Const 4493540
+	0xC77997 I32Load 2, 0
+	0xC7799A LocalTee 4
+	0xC7799C I32Load 2, 0
+	0xC7799F I32Store 2, 8
+	0xC779A2 LocalGet 2
+	0xC779A4 LocalGet 4
+	0xC779A6 I32Store 2, 20
+	0xC779A9 LocalGet 2
+	0xC779AB I32Const 16
+	0xC779AD I32Add
+	0xC779AE LocalGet 0
+	0xC779B0 I32Store 2, 0
+	0xC779B3 I32Const 4435868
+	0xC779B8 I32Load 2, 0
+	0xC779BB LocalTee 2
+	0xC779BD I32Load16_S 1, 186
+	0xC779C1 I32Const 512
+	0xC779C4 I32And
+	0xC779C5 If -64
+	0xC779C7 LocalGet 2
+	0xC779C9 I32Load 2, 116
+	0xC779CC I32Eqz
+	0xC779CD If -64
+	0xC779CF LocalGet 2
+	0xC779D1 Call 72345
+	0xC779D5 End
+	0xC779D6 End
+	0xC779D7 LocalGet 3
+	0xC779D9 I32Const 0
+	0xC779DB Call 37922
+	0xC779DF I32Const 4429724
+	0xC779E4 I32Load 2, 0
+	0xC779E7 Call 72556
+	0xC779EB LocalTee 2
+	0xC779ED LocalTee 3
+	0xC779EF I32Const 4493540
+	0xC779F4 I32Load 2, 0
+	0xC779F7 LocalTee 4
+	0xC779F9 I32Load 2, 0
+	0xC779FC I32Store 2, 8
+	0xC779FF LocalGet 3
+	0xC77A01 LocalGet 4
+	0xC77A03 I32Store 2, 20
+	0xC77A06 LocalGet 3
+	0xC77A08 I32Const 16
+	0xC77A0A I32Add
+	0xC77A0B LocalGet 0
+	0xC77A0D I32Store 2, 0
+	0xC77A10 LocalGet 2
+	0xC77A12 I32Const 0
+	0xC77A14 Call 37924
+	0xC77A18 LocalGet 1
+	0xC77A1A GlobalSet 7
+	0xC77A1C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b13
+	11 Nop
+	12 Move v12 @ S0_v37, [2CE5FC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v37
+	14 Nop
+	15 Move v14 @ S1_v24, 1
+	16 Move [4575AA], v14 @ S1_v24
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid CharacterThemeButton.set_themeIndex, v1 @ G7 (UI.Screens.CharacterScreenInternal.CharacterThemeButton), 0
+	22 Nop
+	23 Nop
+	24 Add v22 @ S0_v10, v1 @ G7 (UI.Screens.CharacterScreenInternal.CharacterThemeButton), 8
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Move [v22 @ S0_v10], [v1 @ G7 (UI.Screens.CharacterScreenInternal.CharacterThemeButton)]
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Move this._eventCharType (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>), [v22 @ S0_v10]
+	33 Nop
+	34 Nop
+	35 Call 11B6C, v32 @ S0_v14 (System.Action), typeof(System.Action)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Move v36 @ S1_v10 (Il2CppMethodInfo), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	40 Nop
+	41 Nop
+	42 Move v32.method_ptr (System.IntPtr), [v36 @ S1_v10 (Il2CppMethodInfo)]
+	43 Nop
+	44 Nop
+	45 Move v32.method (System.IntPtr), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	46 Nop
+	47 Nop
+	48 Add v43 @ S0_v17, v32 @ S0_v14 (System.Action), 16
+	49 Nop
+	50 Move [v43 @ S0_v17], this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	51 Nop
+	52 Move v46 @ S0_v19 (Il2CppClass<SSEventsManagerController>), typeof(SSEventsManagerController)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 And v50 @ S0_v21, [v46 @ S0_v19 (Il2CppClass<SSEventsManagerController>)+BA], 512
+	57 CheckEqual v51 @ TEMP_v2 (System.Boolean), v50 @ S0_v21, 0
+	58 ConditionalJump @b14, v51 @ TEMP_v2 (System.Boolean)
+	59 Move v52 @ S0_v32 (Il2CppClass<SSEventsManagerController>), typeof(SSEventsManagerController)
+	60 Nop
+	61 CheckEqual v54 @ S0_v34 (System.Boolean), [v52 @ S0_v32 (Il2CppClass<SSEventsManagerController>)+74], 0
+	62 Not v55 @ TEMP_v4 (System.Boolean), v54 @ S0_v34 (System.Boolean)
+	63 ConditionalJump @b14, v55 @ TEMP_v4 (System.Boolean)
+	64 Nop
+	65 CallVoid 11A99, typeof(SSEventsManagerController)
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Nop
+	70 CallVoid SSEventsManagerController.remove_OnSSEventStartedHandler, v32 @ S0_v14 (System.Action)
+	71 Nop
+	72 Nop
+	73 Call 11B6C, v63 @ S0_v26 (System.Action), typeof(System.Action)
+	74 Nop
+	75 Nop
+	76 Nop
+	77 Move v67 @ S1_v18 (Il2CppMethodInfo), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	78 Nop
+	79 Nop
+	80 Move v63.method_ptr (System.IntPtr), [v67 @ S1_v18 (Il2CppMethodInfo)]
+	81 Nop
+	82 Nop
+	83 Move v63.method (System.IntPtr), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	84 Nop
+	85 Nop
+	86 Add v74 @ S0_v29, v63 @ S0_v26 (System.Action), 16
+	87 Nop
+	88 Move [v74 @ S0_v29], this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	89 Nop
+	90 Nop
+	91 CallVoid SSEventsManagerController.remove_OnSSEventFinishedHandler, v63 @ S0_v26 (System.Action)
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Return
+
+Method: System.Void EnableEventRelatedElements()
+
+Disassembly:
+	0xC77B1C I32Const 4552108
+	0xC77B21 I32Load8_S 0, 0
+	0xC77B24 I32Eqz
+	0xC77B25 If -64
+	0xC77B27 I32Const 2942456
+	0xC77B2C I32Load 2, 0
+	0xC77B2F Call 73003
+	0xC77B33 I32Const 4552108
+	0xC77B38 I32Const 1
+	0xC77B3A I32Store8 0, 0
+	0xC77B3D End
+	0xC77B3E I32Const 4429724
+	0xC77B43 I32Load 2, 0
+	0xC77B46 Call 72556
+	0xC77B4A LocalTee 2
+	0xC77B4C LocalTee 1
+	0xC77B4E I32Const 4493540
+	0xC77B53 I32Load 2, 0
+	0xC77B56 LocalTee 3
+	0xC77B58 I32Load 2, 0
+	0xC77B5B I32Store 2, 8
+	0xC77B5E LocalGet 1
+	0xC77B60 LocalGet 3
+	0xC77B62 I32Store 2, 20
+	0xC77B65 LocalGet 1
+	0xC77B67 I32Const 16
+	0xC77B69 I32Add
+	0xC77B6A LocalGet 0
+	0xC77B6C I32Store 2, 0
+	0xC77B6F I32Const 4435868
+	0xC77B74 I32Load 2, 0
+	0xC77B77 LocalTee 1
+	0xC77B79 I32Load16_S 1, 186
+	0xC77B7D I32Const 512
+	0xC77B80 I32And
+	0xC77B81 If -64
+	0xC77B83 LocalGet 1
+	0xC77B85 I32Load 2, 116
+	0xC77B88 I32Eqz
+	0xC77B89 If -64
+	0xC77B8B LocalGet 1
+	0xC77B8D Call 72345
+	0xC77B91 End
+	0xC77B92 End
+	0xC77B93 LocalGet 2
+	0xC77B95 I32Const 0
+	0xC77B97 Call 37923
+	0xC77B9B I32Const 4429724
+	0xC77BA0 I32Load 2, 0
+	0xC77BA3 Call 72556
+	0xC77BA7 LocalTee 1
+	0xC77BA9 LocalTee 2
+	0xC77BAB I32Const 4493540
+	0xC77BB0 I32Load 2, 0
+	0xC77BB3 LocalTee 3
+	0xC77BB5 I32Load 2, 0
+	0xC77BB8 I32Store 2, 8
+	0xC77BBB LocalGet 2
+	0xC77BBD LocalGet 3
+	0xC77BBF I32Store 2, 20
+	0xC77BC2 LocalGet 2
+	0xC77BC4 I32Const 16
+	0xC77BC6 I32Add
+	0xC77BC7 LocalGet 0
+	0xC77BC9 I32Store 2, 0
+	0xC77BCC LocalGet 1
+	0xC77BCE I32Const 0
+	0xC77BD0 Call 37925
+	0xC77BD4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v29, [2CE5F8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v29
+	8 Nop
+	9 Move v7 @ S1_v17, 1
+	10 Move [4575AC], v7 @ S1_v17
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Action), typeof(System.Action)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move v17 @ S1_v3 (Il2CppMethodInfo), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	19 Nop
+	20 Nop
+	21 Move v13.method_ptr (System.IntPtr), [v17 @ S1_v3 (Il2CppMethodInfo)]
+	22 Nop
+	23 Nop
+	24 Move v13.method (System.IntPtr), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	25 Nop
+	26 Nop
+	27 Add v24 @ S0_v10, v13 @ S0_v7 (System.Action), 16
+	28 Nop
+	29 Move [v24 @ S0_v10], this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	30 Nop
+	31 Move v28 @ S0_v12 (Il2CppClass<SSEventsManagerController>), typeof(SSEventsManagerController)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 And v32 @ S0_v14, [v28 @ S0_v12 (Il2CppClass<SSEventsManagerController>)+BA], 512
+	36 CheckEqual v33 @ TEMP_v2 (System.Boolean), v32 @ S0_v14, 0
+	37 ConditionalJump @b13, v33 @ TEMP_v2 (System.Boolean)
+	38 Move v34 @ S0_v24 (Il2CppClass<SSEventsManagerController>), typeof(SSEventsManagerController)
+	39 Nop
+	40 CheckEqual v36 @ S0_v26 (System.Boolean), [v34 @ S0_v24 (Il2CppClass<SSEventsManagerController>)+74], 0
+	41 Not v37 @ TEMP_v4 (System.Boolean), v36 @ S0_v26 (System.Boolean)
+	42 ConditionalJump @b13, v37 @ TEMP_v4 (System.Boolean)
+	43 Nop
+	44 CallVoid 11A99, typeof(SSEventsManagerController)
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid SSEventsManagerController.add_OnSSEventFinishedHandler, v13 @ S0_v7 (System.Action)
+	50 Nop
+	51 Nop
+	52 Call 11B6C, v45 @ S0_v19 (System.Action), typeof(System.Action)
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Move v49 @ S1_v11 (Il2CppMethodInfo), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	57 Nop
+	58 Nop
+	59 Move v45.method_ptr (System.IntPtr), [v49 @ S1_v11 (Il2CppMethodInfo)]
+	60 Nop
+	61 Nop
+	62 Move v45.method (System.IntPtr), methodof(UI.Screens.CharacterScreenInternal.CharacterOverlayHelper::EnableEventRelatedElements)
+	63 Nop
+	64 Nop
+	65 Add v56 @ S0_v22, v45 @ S0_v19 (System.Action), 16
+	66 Nop
+	67 Move [v56 @ S0_v22], this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	68 Nop
+	69 Nop
+	70 CallVoid SSEventsManagerController.add_OnSSEventChangedHandler, v45 @ S0_v19 (System.Action)
+	71 Nop
+	72 Return
+
+Method: System.Int32 GetIndex()
+
+Disassembly:
+	0xC26020 LocalGet 0
+	0xC26022 I32Load 2, 28
+	0xC26025 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._hasInited (System.Boolean)
+
+Method: System.Void RefreshOverlay()
+
+Disassembly:
+	0xC77BD9 GlobalGet 7
+	0xC77BDB LocalSet 1
+	0xC77BDD GlobalGet 7
+	0xC77BDF I32Const 16
+	0xC77BE1 I32Add
+	0xC77BE2 GlobalSet 7
+	0xC77BE4 LocalGet 1
+	0xC77BE6 I32Const 0
+	0xC77BE8 I32Const 0
+	0xC77BEA Call 30775
+	0xC77BEE LocalGet 1
+	0xC77BF0 I32Const 8
+	0xC77BF2 I32Add
+	0xC77BF3 LocalTee 2
+	0xC77BF5 LocalGet 1
+	0xC77BF7 I64Load 2, 0
+	0xC77BFA I64Store 2, 0
+	0xC77BFD LocalGet 0
+	0xC77BFF LocalGet 2
+	0xC77C01 I64Load 2, 0
+	0xC77C04 I64Store 2, 92
+	0xC77C07 LocalGet 0
+	0xC77C09 I32Const 0
+	0xC77C0B Call 30778
+	0xC77C0F LocalGet 1
+	0xC77C11 GlobalSet 7
+	0xC77C13 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid CharacterThemeButton.set_themeIndex, v1 @ G7 (UI.Screens.CharacterScreenInternal.CharacterThemeButton), 0
+	10 Nop
+	11 Nop
+	12 Add v12 @ S0_v6, v1 @ G7 (UI.Screens.CharacterScreenInternal.CharacterThemeButton), 8
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v12 @ S0_v6], [v1 @ G7 (UI.Screens.CharacterScreenInternal.CharacterThemeButton)]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move this._eventCharType (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>), [v12 @ S0_v6]
+	21 Nop
+	22 Nop
+	23 CallVoid CharacterOverlayHelper.SelectedInMenu, this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Void SelectedInMenu()
+
+Disassembly:
+	0xC77C16 LocalGet 0
+	0xC77C18 I32Const 0
+	0xC77C1A I32Const 0
+	0xC77C1C Call 30773
+	0xC77C20 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call CharacterOverlayHelper.EventCharacter, v4 @ SRET_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>), 0
+	4 Nop
+	5 Return
+
+Method: System.Void RefreshSelection(System.Boolean selected)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: SYBO.Subway.Info.Characters+CharacterId GetCharacterType()
+
+Disassembly:
+	0xC116BF LocalGet 0
+	0xC116C1 I32Load 2, 16
+	0xC116C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._placementIndex (System.Int32)
+
+Method: System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId> EventCharacter()
+
+Disassembly:
+	0xC77583 GlobalGet 7
+	0xC77585 LocalSet 2
+	0xC77587 GlobalGet 7
+	0xC77589 I32Const 16
+	0xC7758B I32Add
+	0xC7758C GlobalSet 7
+	0xC7758E I32Const 4552105
+	0xC77593 I32Load8_S 0, 0
+	0xC77596 I32Eqz
+	0xC77597 If -64
+	0xC77599 I32Const 2942464
+	0xC7759E I32Load 2, 0
+	0xC775A1 Call 73003
+	0xC775A5 I32Const 4552105
+	0xC775AA I32Const 1
+	0xC775AC I32Store8 0, 0
+	0xC775AF End
+	0xC775B0 LocalGet 2
+	0xC775B2 I64Const 0
+	0xC775B4 I64Store 3, 0
+	0xC775B7 LocalGet 0
+	0xC775B9 I32Load 2, 60
+	0xC775BC I32Const 0
+	0xC775BE Call 62781
+	0xC775C2 I32Const 0
+	0xC775C4 I32Const 0
+	0xC775C6 Call 63022
+	0xC775CA LocalGet 0
+	0xC775CC I32Load 2, 68
+	0xC775CF I32Const 0
+	0xC775D1 Call 62781
+	0xC775D5 I32Const 0
+	0xC775D7 I32Const 0
+	0xC775D9 Call 63022
+	0xC775DD LocalGet 0
+	0xC775DF I32Load 2, 56
+	0xC775E2 I32Const 0
+	0xC775E4 Call 62781
+	0xC775E8 I32Const 0
+	0xC775EA I32Const 0
+	0xC775EC Call 63022
+	0xC775F0 LocalGet 0
+	0xC775F2 I32Load 2, 72
+	0xC775F5 I32Const 0
+	0xC775F7 Call 62781
+	0xC775FB I32Const 0
+	0xC775FD I32Const 0
+	0xC775FF Call 63022
+	0xC77603 LocalGet 0
+	0xC77605 I32Load 2, 76
+	0xC77608 I32Const 0
+	0xC7760A Call 62781
+	0xC7760E I32Const 0
+	0xC77610 I32Const 0
+	0xC77612 Call 63022
+	0xC77616 LocalGet 1
+	0xC77618 I32Eqz
+	0xC77619 If -64
+	0xC7761B I32Const 4435572
+	0xC77620 I32Load 2, 0
+	0xC77623 LocalTee 1
+	0xC77625 I32Load16_S 1, 186
+	0xC77629 I32Const 512
+	0xC7762C I32And
+	0xC7762D If -64
+	0xC7762F LocalGet 1
+	0xC77631 I32Load 2, 116
+	0xC77634 I32Eqz
+	0xC77635 If -64
+	0xC77637 LocalGet 1
+	0xC77639 Call 72345
+	0xC7763D I32Const 4435572
+	0xC77642 I32Load 2, 0
+	0xC77645 LocalSet 1
+	0xC77647 End
+	0xC77648 End
+	0xC77649 LocalGet 1
+	0xC7764B I32Load 2, 92
+	0xC7764E I32Load 2, 0
+	0xC77651 LocalGet 0
+	0xC77653 I32Load 2, 12
+	0xC77656 I32Const 4449876
+	0xC7765B I32Load 2, 0
+	0xC7765E Call 30083
+	0xC77662 I32Load 2, 20
+	0xC77665 I32Const 8
+	0xC77667 I32Eq
+	0xC77668 If -1
+	0xC7766A I32Const 4435468
+	0xC7766F I32Load 2, 0
+	0xC77672 LocalTee 1
+	0xC77674 I32Load16_S 1, 186
+	0xC77678 I32Const 512
+	0xC7767B I32And
+	0xC7767C If -64
+	0xC7767E LocalGet 1
+	0xC77680 I32Load 2, 116
+	0xC77683 I32Eqz
+	0xC77684 If -64
+	0xC77686 LocalGet 1
+	0xC77688 Call 72345
+	0xC7768C End
+	0xC7768D End
+	0xC7768E I32Const 0
+	0xC77690 Call 37693
+	0xC77694 If -1
+	0xC77696 LocalGet 0
+	0xC77698 I32Load 2, 12
+	0xC7769B I32Const 0
+	0xC7769D Call 35799
+	0xC776A1 I32Const 1
+	0xC776A3 I32Xor
+	0xC776A4 I32Const 1
+	0xC776A6 I32And
+	0xC776A7 Else
+	0xC776A8 I32Const 0
+	0xC776AA End
+	0xC776AB Else
+	0xC776AC I32Const 0
+	0xC776AE End
+	0xC776AF LocalSet 3
+	0xC776B1 I32Const 4456856
+	0xC776B6 I32Load 2, 0
+	0xC776B9 Drop
+	0xC776BA LocalGet 0
+	0xC776BC I32Const 92
+	0xC776BF I32Add
+	0xC776C0 I32Load8_S 0, 4
+	0xC776C3 If -1
+	0xC776C5 LocalGet 2
+	0xC776C7 LocalGet 0
+	0xC776C9 I64Load 2, 92
+	0xC776CC I64Store 2, 0
+	0xC776CF I32Const 4449612
+	0xC776D4 I32Load 2, 0
+	0xC776D7 Drop
+	0xC776D8 I32Const 4456856
+	0xC776DD I32Load 2, 0
+	0xC776E0 Drop
+	0xC776E1 LocalGet 2
+	0xC776E3 I32Load 2, 0
+	0xC776E6 LocalGet 0
+	0xC776E8 I32Load 2, 12
+	0xC776EB I32Eq
+	0xC776EC LocalGet 2
+	0xC776EE I32Load8_S 0, 4
+	0xC776F1 I32Const 0
+	0xC776F3 I32Ne
+	0xC776F4 I32And
+	0xC776F5 Else
+	0xC776F6 I32Const 0
+	0xC776F8 End
+	0xC776F9 LocalSet 4
+	0xC776FB LocalGet 0
+	0xC776FD I32Load 2, 12
+	0xC77700 I32Const 0
+	0xC77702 Call 35793
+	0xC77706 LocalSet 5
+	0xC77708 I32Const 4435468
+	0xC7770D I32Load 2, 0
+	0xC77710 LocalTee 1
+	0xC77712 I32Load16_S 1, 186
+	0xC77716 I32Const 512
+	0xC77719 I32And
+	0xC7771A If -64
+	0xC7771C LocalGet 1
+	0xC7771E I32Load 2, 116
+	0xC77721 I32Eqz
+	0xC77722 If -64
+	0xC77724 LocalGet 1
+	0xC77726 Call 72345
+	0xC7772A End
+	0xC7772B End
+	0xC7772C Block -1
+	0xC7772E I32Const 0
+	0xC77730 Call 37704
+	0xC77734 If -1
+	0xC77736 I32Const 0
+	0xC77738 Else
+	0xC77739 I32Const 4435572
+	0xC7773E I32Load 2, 0
+	0xC77741 LocalTee 1
+	0xC77743 I32Load16_S 1, 186
+	0xC77747 I32Const 512
+	0xC7774A I32And
+	0xC7774B If -64
+	0xC7774D LocalGet 1
+	0xC7774F I32Load 2, 116
+	0xC77752 I32Eqz
+	0xC77753 If -64
+	0xC77755 LocalGet 1
+	0xC77757 Call 72345
+	0xC7775B I32Const 4435572
+	0xC77760 I32Load 2, 0
+	0xC77763 LocalSet 1
+	0xC77765 End
+	0xC77766 End
+	0xC77767 LocalGet 1
+	0xC77769 I32Load 2, 92
+	0xC7776C I32Load 2, 0
+	0xC7776F LocalGet 0
+	0xC77771 I32Load 2, 12
+	0xC77774 I32Const 4449876
+	0xC77779 I32Load 2, 0
+	0xC7777C Call 30083
+	0xC77780 I32Load8_S 0, 40
+	0xC77783 If -64
+	0xC77785 LocalGet 0
+	0xC77787 I32Load 2, 12
+	0xC7778A I32Const 0
+	0xC7778C Call 35798
+	0xC77790 I32Eqz
+	0xC77791 If -64
+	0xC77793 LocalGet 0
+	0xC77795 I32Load 2, 12
+	0xC77798 LocalSet 6
+	0xC7779A I32Const 4435932
+	0xC7779F I32Load 2, 0
+	0xC777A2 LocalTee 1
+	0xC777A4 I32Load16_S 1, 186
+	0xC777A8 I32Const 512
+	0xC777AB I32And
+	0xC777AC If -64
+	0xC777AE LocalGet 1
+	0xC777B0 I32Load 2, 116
+	0xC777B3 I32Eqz
+	0xC777B4 If -64
+	0xC777B6 LocalGet 1
+	0xC777B8 Call 72345
+	0xC777BC End
+	0xC777BD End
+	0xC777BE I32Const 1
+	0xC777C0 LocalGet 6
+	0xC777C2 I32Const 0
+	0xC777C4 Call 30139
+	0xC777C8 I32Eqz
+	0xC777C9 BrIf 3
+	0xC777CB Drop
+	0xC777CC End
+	0xC777CD End
+	0xC777CE LocalGet 0
+	0xC777D0 I32Load 2, 12
+	0xC777D3 I32Const 0
+	0xC777D5 Call 35794
+	0xC777D9 I32Const 1
+	0xC777DB I32And
+	0xC777DC End
+	0xC777DD End
+	0xC777DE LocalSet 6
+	0xC777E0 I32Const 4435572
+	0xC777E5 I32Load 2, 0
+	0xC777E8 LocalTee 1
+	0xC777EA I32Load16_S 1, 186
+	0xC777EE I32Const 512
+	0xC777F1 I32And
+	0xC777F2 If -64
+	0xC777F4 LocalGet 1
+	0xC777F6 I32Load 2, 116
+	0xC777F9 I32Eqz
+	0xC777FA If -64
+	0xC777FC LocalGet 1
+	0xC777FE Call 72345
+	0xC77802 I32Const 4435572
+	0xC77807 I32Load 2, 0
+	0xC7780A LocalSet 1
+	0xC7780C End
+	0xC7780D End
+	0xC7780E LocalGet 1
+	0xC77810 I32Load 2, 92
+	0xC77813 I32Load 2, 0
+	0xC77816 LocalGet 0
+	0xC77818 I32Load 2, 12
+	0xC7781B I32Const 4449876
+	0xC77820 I32Load 2, 0
+	0xC77823 Call 30083
+	0xC77827 I32Load8_S 0, 41
+	0xC7782A If -1
+	0xC7782C LocalGet 0
+	0xC7782E I32Load 2, 12
+	0xC77831 I32Const 0
+	0xC77833 Call 35799
+	0xC77837 I32Const 1
+	0xC77839 I32Xor
+	0xC7783A I32Const 1
+	0xC7783C I32And
+	0xC7783D Else
+	0xC7783E I32Const 0
+	0xC77840 End
+	0xC77841 LocalSet 8
+	0xC77843 LocalGet 4
+	0xC77845 I32Const 0
+	0xC77847 I32Ne
+	0xC77848 LocalSet 7
+	0xC7784A LocalGet 0
+	0xC7784C I32Load 2, 76
+	0xC7784F I32Const 0
+	0xC77851 Call 62781
+	0xC77855 LocalGet 3
+	0xC77857 I32Const 0
+	0xC77859 I32Ne
+	0xC7785A LocalTee 1
+	0xC7785C I32Const 0
+	0xC7785E Call 63022
+	0xC77862 LocalGet 0
+	0xC77864 I32Load 2, 72
+	0xC77867 I32Const 0
+	0xC77869 Call 62781
+	0xC7786D LocalGet 4
+	0xC7786F LocalGet 3
+	0xC77871 I32Const 1
+	0xC77873 I32Xor
+	0xC77874 I32And
+	0xC77875 I32Const 0
+	0xC77877 I32Ne
+	0xC77878 I32Const 0
+	0xC7787A Call 63022
+	0xC7787E LocalGet 0
+	0xC77880 I32Load 2, 68
+	0xC77883 I32Const 0
+	0xC77885 Call 62781
+	0xC77889 LocalGet 4
+	0xC7788B LocalGet 3
+	0xC7788D I32Or
+	0xC7788E I32Const 1
+	0xC77890 I32Xor
+	0xC77891 LocalGet 5
+	0xC77893 I32Const 1
+	0xC77895 I32And
+	0xC77896 I32And
+	0xC77897 I32Const 0
+	0xC77899 I32Ne
+	0xC7789A I32Const 0
+	0xC7789C Call 63022
+	0xC778A0 LocalGet 0
+	0xC778A2 I32Load 2, 56
+	0xC778A5 I32Const 0
+	0xC778A7 Call 62781
+	0xC778AB LocalGet 1
+	0xC778AD If -1
+	0xC778AF I32Const 0
+	0xC778B1 Else
+	0xC778B2 LocalGet 7
+	0xC778B4 LocalGet 5
+	0xC778B6 I32Or
+	0xC778B7 I32Const 1
+	0xC778B9 I32Xor
+	0xC778BA I32Const 1
+	0xC778BC I32And
+	0xC778BD End
+	0xC778BE LocalGet 6
+	0xC778C0 I32And
+	0xC778C1 I32Const 0
+	0xC778C3 I32Ne
+	0xC778C4 I32Const 0
+	0xC778C6 Call 63022
+	0xC778CA LocalGet 0
+	0xC778CC I32Load 2, 60
+	0xC778CF I32Const 0
+	0xC778D1 Call 62781
+	0xC778D5 LocalSet 0
+	0xC778D7 LocalGet 1
+	0xC778D9 If -1
+	0xC778DB I32Const 0
+	0xC778DD Else
+	0xC778DE LocalGet 7
+	0xC778E0 LocalGet 5
+	0xC778E2 I32Or
+	0xC778E3 LocalTee 4
+	0xC778E5 If -1
+	0xC778E7 LocalGet 0
+	0xC778E9 Else
+	0xC778EA I32Const 0
+	0xC778EC End
+	0xC778ED LocalSet 1
+	0xC778EF LocalGet 6
+	0xC778F1 I32Const 1
+	0xC778F3 I32Xor
+	0xC778F4 LocalSet 3
+	0xC778F6 LocalGet 5
+	0xC778F8 I32Eqz
+	0xC778F9 If -64
+	0xC778FB LocalGet 0
+	0xC778FD LocalSet 1
+	0xC778FF End
+	0xC77900 LocalGet 7
+	0xC77902 I32Eqz
+	0xC77903 If -64
+	0xC77905 LocalGet 1
+	0xC77907 LocalSet 0
+	0xC77909 End
+	0xC7790A LocalGet 4
+	0xC7790C If -1
+	0xC7790E I32Const 0
+	0xC77910 Else
+	0xC77911 LocalGet 3
+	0xC77913 End
+	0xC77914 End
+	0xC77915 LocalSet 1
+	0xC77917 LocalGet 0
+	0xC77919 LocalGet 1
+	0xC7791B LocalGet 8
+	0xC7791D I32And
+	0xC7791E I32Const 0
+	0xC77920 I32Ne
+	0xC77921 I32Const 0
+	0xC77923 Call 63022
+	0xC77927 End
+	0xC77928 LocalGet 2
+	0xC7792A GlobalSet 7
+	0xC7792C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b78
+	11 Nop
+	12 Move v12 @ S0_v197, [2CE600]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v197
+	14 Nop
+	15 Move v14 @ S1_v86, 1
+	16 Move [4575A9], v14 @ S1_v86
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v1 @ G7], 0
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Call Component.get_tag, v23 @ S0_v11 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+3C]
+	25 Nop
+	26 Nop
+	27 CallVoid GameObject.set_tag, v23 @ S0_v11 (System.String), 0
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call Component.get_tag, v29 @ S0_v14 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+44]
+	32 Nop
+	33 Nop
+	34 CallVoid GameObject.set_tag, v29 @ S0_v14 (System.String), 0
+	35 Nop
+	36 Nop
+	37 Nop
+	38 Call Component.get_tag, v35 @ S0_v17 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+38]
+	39 Nop
+	40 Nop
+	41 CallVoid GameObject.set_tag, v35 @ S0_v17 (System.String), 0
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call Component.get_tag, v41 @ S0_v20 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+48]
+	46 Nop
+	47 Nop
+	48 CallVoid GameObject.set_tag, v41 @ S0_v20 (System.String), 0
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call Component.get_tag, v47 @ S0_v23 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+4C]
+	53 Nop
+	54 Nop
+	55 CallVoid GameObject.set_tag, v47 @ S0_v23 (System.String), 0
+	56 Nop
+	57 CheckEqual v52 @ S0_v25 (System.Boolean), this @ L1 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper), 0
+	58 Not v53 @ TEMP_v2 (System.Boolean), v52 @ S0_v25 (System.Boolean)
+	59 ConditionalJump @b77, v53 @ TEMP_v2 (System.Boolean)
+	60 Nop
+	61 Move v55 @ S0_v29 (Il2CppClass<SYBO.Subway.Info.Characters>), typeof(SYBO.Subway.Info.Characters)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 And v59 @ S0_v31, [v55 @ S0_v29 (Il2CppClass<SYBO.Subway.Info.Characters>)+BA], 512
+	66 CheckEqual v60 @ TEMP_v4 (System.Boolean), v59 @ S0_v31, 0
+	67 ConditionalJump @b79, v60 @ TEMP_v4 (System.Boolean)
+	68 Move v96 @ S0_v190 (Il2CppClass<SYBO.Subway.Info.Characters>), typeof(SYBO.Subway.Info.Characters)
+	69 Nop
+	70 CheckEqual v98 @ S0_v192 (System.Boolean), [v96 @ S0_v190 (Il2CppClass<SYBO.Subway.Info.Characters>)+74], 0
+	71 Not v99 @ TEMP_v38 (System.Boolean), v98 @ S0_v192 (System.Boolean)
+	72 ConditionalJump @b79, v99 @ TEMP_v38 (System.Boolean)
+	73 Nop
+	74 CallVoid 11A99, typeof(SYBO.Subway.Info.Characters)
+	75 Nop
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Nop
+	86 Nop
+	87 Call Dictionary`2<SYBO.Subway.Info.Characters+CharacterId, SYBO.Subway.Info.Characters+Model>.get_Item, v112 @ S0_v36 (SYBO.Subway.Info.Characters+Model), v106.characterData (System.Collections.Generic.Dictionary`2<SYBO.Subway.Info.Characters+CharacterId, SYBO.Subway.Info.Characters+Model>), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	88 Nop
+	89 Nop
+	90 CheckEqual v116 @ S0_v38 (System.Boolean), v112.unlockType (Info.PurchaseData+UnlockType), 8
+	91 Not v117 @ TEMP_v6 (System.Boolean), v116 @ S0_v38 (System.Boolean)
+	92 ConditionalJump @b28, v117 @ TEMP_v6 (System.Boolean)
+	93 Nop
+	94 Move v120 @ S0_v173 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	95 Nop
+	96 Nop
+	97 Nop
+	98 And v124 @ S0_v175, [v120 @ S0_v173 (Il2CppClass<Data.Save.UserSave>)+BA], 512
+	99 CheckEqual v125 @ TEMP_v34 (System.Boolean), v124 @ S0_v175, 0
+	100 ConditionalJump @b81, v125 @ TEMP_v34 (System.Boolean)
+	101 Move v127 @ S0_v186 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	102 Nop
+	103 CheckEqual v129 @ S0_v188 (System.Boolean), [v127 @ S0_v186 (Il2CppClass<Data.Save.UserSave>)+74], 0
+	104 Not v130 @ TEMP_v37 (System.Boolean), v129 @ S0_v188 (System.Boolean)
+	105 ConditionalJump @b81, v130 @ TEMP_v37 (System.Boolean)
+	106 Nop
+	107 CallVoid 11A99, typeof(Data.Save.UserSave)
+	108 Nop
+	109 Nop
+	110 Nop
+	111 Call UserSave.get_inAppLegacyPurchaseCount, v135 @ S0_v178 (System.Int32)
+	112 CheckEqual v138 @ TEMP_v36 (System.Boolean), v135 @ S0_v178 (System.Int32), 0
+	113 ConditionalJump @b27, v138 @ TEMP_v36 (System.Boolean)
+	114 Nop
+	115 Nop
+	116 Nop
+	117 Call CoinBoxSizer.get_updateAutomatically, v172 @ S0_v183 (System.Boolean), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	118 Nop
+	119 Xor v183 @ S0_v184, v172 @ S0_v183 (System.Boolean), 1
+	120 Nop
+	121 And v141 @ S0_v39, v183 @ S0_v184, 1
+	122 Jump @b82
+	123 Nop
+	124 Nop
+	125 Jump @b98
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Nop
+	130 Nop
+	131 Nop
+	132 Nop
+	133 Add v148 @ S0_v43, returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>), 92
+	134 Nop
+	135 CheckEqual v150 @ TEMP_v8 (System.Boolean), [v148 @ S0_v43+4], 0
+	136 ConditionalJump @b30, v150 @ TEMP_v8 (System.Boolean)
+	137 Nop
+	138 Nop
+	139 Nop
+	140 Move [v1 @ G7], [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+5C]
+	141 Nop
+	142 Nop
+	143 Nop
+	144 Nop
+	145 Nop
+	146 Nop
+	147 Nop
+	148 Nop
+	149 CheckEqual v162 @ S0_v169 (System.Boolean), [v1 @ G7], [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	150 Nop
+	151 Nop
+	152 Nop
+	153 CheckNotEqual v166 @ S1_v80 (System.Boolean), [v1 @ G7+4], 0
+	154 And v176 @ S0_v45, v162 @ S0_v169 (System.Boolean), v166 @ S1_v80 (System.Boolean)
+	155 Jump @b83
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Call CharacterStickerManager.HasCharacterNewTheme, v181 @ S0_v48 (System.Boolean), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	163 Nop
+	164 Nop
+	165 Move v187 @ S0_v50 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	166 Nop
+	167 Nop
+	168 Nop
+	169 And v191 @ S0_v52, [v187 @ S0_v50 (Il2CppClass<Data.Save.UserSave>)+BA], 512
+	170 CheckEqual v192 @ TEMP_v9 (System.Boolean), v191 @ S0_v52, 0
+	171 ConditionalJump @b84, v192 @ TEMP_v9 (System.Boolean)
+	172 Move v193 @ S0_v157 (Il2CppClass<Data.Save.UserSave>), typeof(Data.Save.UserSave)
+	173 Nop
+	174 CheckEqual v195 @ S0_v159 (System.Boolean), [v193 @ S0_v157 (Il2CppClass<Data.Save.UserSave>)+74], 0
+	175 Not v196 @ TEMP_v33 (System.Boolean), v195 @ S0_v159 (System.Boolean)
+	176 ConditionalJump @b84, v196 @ TEMP_v33 (System.Boolean)
+	177 Nop
+	178 CallVoid 11A99, typeof(Data.Save.UserSave)
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Call UserSave.get_lastPurchasedBundle, v201 @ S0_v55 (InApp.InAppData+BundleTier)
+	183 CheckEqual v202 @ TEMP_v11 (System.Boolean), v201 @ S0_v55 (InApp.InAppData+BundleTier), 0
+	184 ConditionalJump @b37, v202 @ TEMP_v11 (System.Boolean)
+	185 Nop
+	186 Jump @b90
+	187 Nop
+	188 Move v205 @ S0_v120 (Il2CppClass<SYBO.Subway.Info.Characters>), typeof(SYBO.Subway.Info.Characters)
+	189 Nop
+	190 Nop
+	191 Nop
+	192 And v209 @ S0_v122, [v205 @ S0_v120 (Il2CppClass<SYBO.Subway.Info.Characters>)+BA], 512
+	193 CheckEqual v210 @ TEMP_v24 (System.Boolean), v209 @ S0_v122, 0
+	194 ConditionalJump @b86, v210 @ TEMP_v24 (System.Boolean)
+	195 Move v236 @ S0_v150 (Il2CppClass<SYBO.Subway.Info.Characters>), typeof(SYBO.Subway.Info.Characters)
+	196 Nop
+	197 CheckEqual v238 @ S0_v152 (System.Boolean), [v236 @ S0_v150 (Il2CppClass<SYBO.Subway.Info.Characters>)+74], 0
+	198 Not v239 @ TEMP_v32 (System.Boolean), v238 @ S0_v152 (System.Boolean)
+	199 ConditionalJump @b86, v239 @ TEMP_v32 (System.Boolean)
+	200 Nop
+	201 CallVoid 11A99, typeof(SYBO.Subway.Info.Characters)
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Nop
+	209 Nop
+	210 Nop
+	211 Nop
+	212 Nop
+	213 Nop
+	214 Call Dictionary`2<SYBO.Subway.Info.Characters+CharacterId, SYBO.Subway.Info.Characters+Model>.get_Item, v252 @ S0_v127 (SYBO.Subway.Info.Characters+Model), v246.characterData (System.Collections.Generic.Dictionary`2<SYBO.Subway.Info.Characters+CharacterId, SYBO.Subway.Info.Characters+Model>), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	215 Nop
+	216 Not v272 @ TEMP_v26 (System.Boolean), v252.isNewInThisUpdate (System.Boolean)
+	217 ConditionalJump @b88, v272 @ TEMP_v26 (System.Boolean)
+	218 Nop
+	219 Nop
+	220 Nop
+	221 Call CharacterStickerManager.IsCharacterUnlocked, v280 @ S0_v136 (System.Boolean), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	222 Not v284 @ S0_v137 (System.Boolean), v280 @ S0_v136 (System.Boolean)
+	223 Not v281 @ TEMP_v28 (System.Boolean), v284 @ S0_v137 (System.Boolean)
+	224 ConditionalJump @b88, v281 @ TEMP_v28 (System.Boolean)
+	225 Nop
+	226 Nop
+	227 Nop
+	228 Nop
+	229 Move v311 @ S0_v141 (Il2CppClass<Data.Managers.CharacterManager>), typeof(Data.Managers.CharacterManager)
+	230 Nop
+	231 Nop
+	232 Nop
+	233 And v314 @ S0_v143, [v311 @ S0_v141 (Il2CppClass<Data.Managers.CharacterManager>)+BA], 512
+	234 CheckEqual v315 @ TEMP_v29 (System.Boolean), v314 @ S0_v143, 0
+	235 ConditionalJump @b89, v315 @ TEMP_v29 (System.Boolean)
+	236 Move v321 @ S0_v146 (Il2CppClass<Data.Managers.CharacterManager>), typeof(Data.Managers.CharacterManager)
+	237 Nop
+	238 CheckEqual v323 @ S0_v148 (System.Boolean), [v321 @ S0_v146 (Il2CppClass<Data.Managers.CharacterManager>)+74], 0
+	239 Not v324 @ TEMP_v31 (System.Boolean), v323 @ S0_v148 (System.Boolean)
+	240 ConditionalJump @b89, v324 @ TEMP_v31 (System.Boolean)
+	241 Nop
+	242 CallVoid 11A99, typeof(Data.Managers.CharacterManager)
+	243 Nop
+	244 Nop
+	245 Nop
+	246 Nop
+	247 Nop
+	248 Call CharacterManager.IsCollectionComplete, v328 @ S1_v72 (System.Boolean), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	249 Not v224 @ S1_v73 (System.Boolean), v328 @ S1_v72 (System.Boolean)
+	250 ConditionalJump @b90, v224 @ S1_v73 (System.Boolean)
+	251 Nop
+	252 Nop
+	253 Nop
+	254 Nop
+	255 Nop
+	256 Call CharacterStickerManager.HasCharacterBeenSeen, v288 @ S0_v132 (System.Boolean), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	257 Nop
+	258 Nop
+	259 Nop
+	260 Nop
+	261 Nop
+	262 Nop
+	263 Move v230 @ S0_v58 (Il2CppClass<SYBO.Subway.Info.Characters>), typeof(SYBO.Subway.Info.Characters)
+	264 Nop
+	265 Nop
+	266 Nop
+	267 And v234 @ S0_v60, [v230 @ S0_v58 (Il2CppClass<SYBO.Subway.Info.Characters>)+BA], 512
+	268 CheckEqual v235 @ TEMP_v13 (System.Boolean), v234 @ S0_v60, 0
+	269 ConditionalJump @b99, v235 @ TEMP_v13 (System.Boolean)
+	270 Move v253 @ S0_v113 (Il2CppClass<SYBO.Subway.Info.Characters>), typeof(SYBO.Subway.Info.Characters)
+	271 Nop
+	272 CheckEqual v255 @ S0_v115 (System.Boolean), [v253 @ S0_v113 (Il2CppClass<SYBO.Subway.Info.Characters>)+74], 0
+	273 Not v256 @ TEMP_v23 (System.Boolean), v255 @ S0_v115 (System.Boolean)
+	274 ConditionalJump @b99, v256 @ TEMP_v23 (System.Boolean)
+	275 Nop
+	276 CallVoid 11A99, typeof(SYBO.Subway.Info.Characters)
+	277 Nop
+	278 Nop
+	279 Nop
+	280 Nop
+	281 Nop
+	282 Nop
+	283 Nop
+	284 Nop
+	285 Nop
+	286 Nop
+	287 Nop
+	288 Nop
+	289 Call Dictionary`2<SYBO.Subway.Info.Characters+CharacterId, SYBO.Subway.Info.Characters+Model>.get_Item, v269 @ S0_v65 (SYBO.Subway.Info.Characters+Model), v263.characterData (System.Collections.Generic.Dictionary`2<SYBO.Subway.Info.Characters+CharacterId, SYBO.Subway.Info.Characters+Model>), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	290 Nop
+	291 Not v275 @ TEMP_v15 (System.Boolean), v269.hasOnlineSettings (System.Boolean)
+	292 ConditionalJump @b57, v275 @ TEMP_v15 (System.Boolean)
+	293 Nop
+	294 Nop
+	295 Nop
+	296 Call CoinBoxSizer.get_updateAutomatically, v293 @ S0_v110 (System.Boolean), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+C]
+	297 Nop
+	298 Xor v296 @ S0_v111, v293 @ S0_v110 (System.Boolean), 1
+	299 Nop
+	300 And v300 @ S0_v67, v296 @ S0_v111, 1
+	301 Jump @b92
+	302 Nop
+	303 Nop
+	304 Nop
+	305 Nop
+	306 Nop
+	307 CheckNotEqual v303 @ S0_v69 (System.Boolean), v176 @ S0_v45, 0
+	308 Nop
+	309 Nop
+	310 Nop
+	311 Nop
+	312 Call Component.get_tag, v307 @ S0_v72 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+4C]
+	313 Nop
+	314 Nop
+	315 CheckNotEqual v318 @ S1_v32 (System.Boolean), v141 @ S0_v39, 0
+	316 Nop
+	317 Nop
+	318 CallVoid GameObject.set_tag, v307 @ S0_v72 (System.String), v318 @ S1_v32 (System.Boolean)
+	319 Nop
+	320 Nop
+	321 Nop
+	322 Call Component.get_tag, v332 @ S0_v75 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+48]
+	323 Nop
+	324 Nop
+	325 Nop
+	326 Xor v336 @ S2_v16, v141 @ S0_v39, 1
+	327 And v337 @ S1_v35, v176 @ S0_v45, v336 @ S2_v16
+	328 Nop
+	329 CheckNotEqual v339 @ S1_v36 (System.Boolean), v337 @ S1_v35, 0
+	330 Nop
+	331 CallVoid GameObject.set_tag, v332 @ S0_v75 (System.String), v339 @ S1_v36 (System.Boolean)
+	332 Nop
+	333 Nop
+	334 Nop
+	335 Call Component.get_tag, v344 @ S0_v78 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+44]
+	336 Nop
+	337 Nop
+	338 Or v347 @ S1_v39, v176 @ S0_v45, v141 @ S0_v39
+	339 Nop
+	340 Xor v349 @ S1_v40, v347 @ S1_v39, 1
+	341 Nop
+	342 Nop
+	343 Nop
+	344 And v352 @ S1_v41, v349 @ S1_v40, v181 @ S0_v48 (System.Boolean)
+	345 Nop
+	346 CheckNotEqual v354 @ S1_v42 (System.Boolean), v352 @ S1_v41, 0
+	347 Nop
+	348 CallVoid GameObject.set_tag, v344 @ S0_v78 (System.String), v354 @ S1_v42 (System.Boolean)
+	349 Nop
+	350 Nop
+	351 Nop
+	352 Call Component.get_tag, v359 @ S0_v81 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+38]
+	353 Nop
+	354 Not v361 @ TEMP_v16 (System.Boolean), v318 @ S1_v32 (System.Boolean)
+	355 ConditionalJump @b66, v361 @ TEMP_v16 (System.Boolean)
+	356 Nop
+	357 Jump @b93
+	358 Nop
+	359 Nop
+	360 Or v365 @ S1_v56, v303 @ S0_v69 (System.Boolean), v181 @ S0_v48 (System.Boolean)
+	361 Nop
+	362 Xor v367 @ S1_v57, v365 @ S1_v56, 1
+	363 Nop
+	364 And v371 @ S1_v45, v367 @ S1_v57, 1
+	365 Nop
+	366 Nop
+	367 And v373 @ S1_v46, v371 @ S1_v45, v288 @ S0_v132 (System.Boolean)
+	368 Nop
+	369 CheckNotEqual v375 @ S1_v47 (System.Boolean), v373 @ S1_v46, 0
+	370 Nop
+	371 CallVoid GameObject.set_tag, v359 @ S0_v81 (System.String), v375 @ S1_v47 (System.Boolean)
+	372 Nop
+	373 Nop
+	374 Nop
+	375 Call Component.get_tag, v380 @ S0_v84 (System.String), [returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)+3C]
+	376 Nop
+	377 Nop
+	378 Not v383 @ TEMP_v17 (System.Boolean), v318 @ S1_v32 (System.Boolean)
+	379 ConditionalJump @b70, v383 @ TEMP_v17 (System.Boolean)
+	380 Nop
+	381 Jump @b94
+	382 Nop
+	383 Nop
+	384 Or v387 @ S0_v89, v303 @ S0_v69 (System.Boolean), v181 @ S0_v48 (System.Boolean)
+	385 Nop
+	386 CheckEqual v389 @ TEMP_v19 (System.Boolean), v387 @ S0_v89, 0
+	387 ConditionalJump @b72, v389 @ TEMP_v19 (System.Boolean)
+	388 Nop
+	389 Jump @b95
+	390 Nop
+	391 Nop
+	392 Nop
+	393 Nop
+	394 Nop
+	395 Xor v397 @ S0_v86, v288 @ S0_v132 (System.Boolean), 1
+	396 Nop
+	397 Nop
+	398 Not v411 @ S0_v94 (System.Boolean), v181 @ S0_v48 (System.Boolean)
+	399 Not v412 @ TEMP_v20 (System.Boolean), v411 @ S0_v94 (System.Boolean)
+	400 ConditionalJump @b100, v412 @ TEMP_v20 (System.Boolean)
+	401 Nop
+	402 Nop
+	403 Nop
+	404 Nop
+	405 Not v417 @ S0_v97 (System.Boolean), v303 @ S0_v69 (System.Boolean)
+	406 Not v418 @ TEMP_v21 (System.Boolean), v417 @ S0_v97 (System.Boolean)
+	407 ConditionalJump @b96, v418 @ TEMP_v21 (System.Boolean)
+	408 Nop
+	409 Nop
+	410 Nop
+	411 Nop
+	412 CheckEqual v394 @ TEMP_v22 (System.Boolean), v387 @ S0_v89, 0
+	413 ConditionalJump @b94, v394 @ TEMP_v22 (System.Boolean)
+	414 Nop
+	415 Jump @b94
+	416 Nop
+	417 Nop
+	418 Nop
+	419 Nop
+	420 Nop
+	421 Nop
+	422 Nop
+	423 And v402 @ S1_v51, v397 @ S0_v86, v300 @ S0_v67
+	424 Nop
+	425 CheckNotEqual v91 @ S1_v52 (System.Boolean), v402 @ S1_v51, 0
+	426 Nop
+	427 CallVoid GameObject.set_tag, returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>), v91 @ S1_v52 (System.Boolean)
+	428 Nop
+	429 Nop
+	430 Nop
+	431 Nop
+	432 Return returnVal1 @ L0_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>)
+
+Method: System.Void Update()
+
+Disassembly:
+	0xC77C25 I32Const 4552109
+	0xC77C2A I32Load8_S 0, 0
+	0xC77C2D I32Eqz
+	0xC77C2E If -64
+	0xC77C30 I32Const 2942468
+	0xC77C35 I32Load 2, 0
+	0xC77C38 Call 73003
+	0xC77C3C I32Const 4552109
+	0xC77C41 I32Const 1
+	0xC77C43 I32Store8 0, 0
+	0xC77C46 End
+	0xC77C47 LocalGet 0
+	0xC77C49 I32Load 2, 12
+	0xC77C4C I32Const 0
+	0xC77C4E Call 35798
+	0xC77C52 I32Eqz
+	0xC77C53 If -64
+	0xC77C55 LocalGet 0
+	0xC77C57 I32Load 2, 12
+	0xC77C5A I32Const 4435932
+	0xC77C5F I32Load 2, 0
+	0xC77C62 LocalTee 1
+	0xC77C64 I32Load16_S 1, 186
+	0xC77C68 I32Const 512
+	0xC77C6B I32And
+	0xC77C6C If -64
+	0xC77C6E LocalGet 1
+	0xC77C70 I32Load 2, 116
+	0xC77C73 I32Eqz
+	0xC77C74 If -64
+	0xC77C76 LocalGet 1
+	0xC77C78 Call 72345
+	0xC77C7C End
+	0xC77C7D End
+	0xC77C7E I32Const 0
+	0xC77C80 Call 30147
+	0xC77C84 End
+	0xC77C85 LocalGet 0
+	0xC77C87 I32Const 1
+	0xC77C89 I32Const 0
+	0xC77C8B Call 30773
+	0xC77C8F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v14, [2CE604]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v14
+	8 Nop
+	9 Move v7 @ S1_v15, 1
+	10 Move [4575AD], v7 @ S1_v15
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call CharacterStickerManager.IsCharacterUnlocked, v15 @ S0_v7 (System.Boolean), this._cachedType (SYBO.Subway.Info.Characters+CharacterId)
+	16 Not v16 @ S0_v8 (System.Boolean), v15 @ S0_v7 (System.Boolean)
+	17 Not v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8 (System.Boolean)
+	18 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move v21 @ S1_v6 (Il2CppClass<Data.Managers.CharacterManager>), typeof(Data.Managers.CharacterManager)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v25 @ S1_v8, [v21 @ S1_v6 (Il2CppClass<Data.Managers.CharacterManager>)+BA], 512
+	27 CheckEqual v26 @ TEMP_v4 (System.Boolean), v25 @ S1_v8, 0
+	28 ConditionalJump @b13, v26 @ TEMP_v4 (System.Boolean)
+	29 Move v40 @ S1_v11 (Il2CppClass<Data.Managers.CharacterManager>), typeof(Data.Managers.CharacterManager)
+	30 Nop
+	31 CheckEqual v42 @ S1_v13 (System.Boolean), [v40 @ S1_v11 (Il2CppClass<Data.Managers.CharacterManager>)+74], 0
+	32 Not v43 @ TEMP_v6 (System.Boolean), v42 @ S1_v13 (System.Boolean)
+	33 ConditionalJump @b13, v43 @ TEMP_v6 (System.Boolean)
+	34 Nop
+	35 CallVoid 11A99, typeof(Data.Managers.CharacterManager)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 CallVoid SaveGameDebug.set_lastLoadedSave, this._cachedType (SYBO.Subway.Info.Characters+CharacterId)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Call CharacterOverlayHelper.EventCharacter, v39 @ SRET_v1 (System.Nullable`1<SYBO.Subway.Info.Characters+CharacterId>), 1
+	45 Nop
+	46 Return
+
+Method: System.Void UpdateSelection()
+
+Disassembly:
+	0xC77C92 LocalGet 0
+	0xC77C94 I32Const 0
+	0xC77C96 Call 30698
+	0xC77C9A LocalGet 0
+	0xC77C9C I32Load 2, 60
+	0xC77C9F I32Const 0
+	0xC77CA1 Call 62781
+	0xC77CA5 I32Const 0
+	0xC77CA7 Call 63023
+	0xC77CAB If -64
+	0xC77CAD LocalGet 0
+	0xC77CAF I32Load 2, 12
+	0xC77CB2 I32Const 0
+	0xC77CB4 Call 35799
+	0xC77CB8 If -64
+	0xC77CBA LocalGet 0
+	0xC77CBC I32Load 2, 60
+	0xC77CBF I32Const 0
+	0xC77CC1 Call 62781
+	0xC77CC5 I32Const 0
+	0xC77CC7 I32Const 0
+	0xC77CC9 Call 63022
+	0xC77CCD End
+	0xC77CCE End
+	0xC77CCF End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid CharacterOverlayHelper.LateUpdate, this @ L0 (UI.Screens.CharacterScreenInternal.CharacterOverlayHelper)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Call Component.get_tag, v6 @ S0_v4 (System.String), this._limitedBubble (UISprite)
+	7 Nop
+	8 Call GameObject.get_activeInHierarchy, v8 @ S0_v5 (System.Boolean), v6 @ S0_v4 (System.String)
+	9 Not v9 @ TEMP_v1 (System.Boolean), v8 @ S0_v5 (System.Boolean)
+	10 ConditionalJump @b11, v9 @ TEMP_v1 (System.Boolean)
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call CoinBoxSizer.get_updateAutomatically, v13 @ S0_v9 (System.Boolean), this._cachedType (SYBO.Subway.Info.Characters+CharacterId)
+	15 Not v18 @ TEMP_v3 (System.Boolean), v13 @ S0_v9 (System.Boolean)
+	16 ConditionalJump @b11, v18 @ TEMP_v3 (System.Boolean)
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Call Component.get_tag, v22 @ S0_v12 (System.String), this._limitedBubble (UISprite)
+	21 Nop
+	22 Nop
+	23 CallVoid GameObject.set_tag, v22 @ S0_v12 (System.String), 0
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Return
+
+Method: System.Void LateUpdate()
+
+Disassembly:
+	0xC73065 I32Const 0
+	0xC73067 Call 37575
+	0xC7306B LocalGet 0
+	0xC7306D I32Load 2, 12
+	0xC73070 I32Eq
+	0xC73071 LocalSet 1
+	0xC73073 LocalGet 0
+	0xC73075 I32Load 2, 12
+	0xC73078 I32Const 0
+	0xC7307A Call 35799
+	0xC7307E LocalSet 2
+	0xC73080 LocalGet 0
+	0xC73082 I32Load 2, 88
+	0xC73085 I32Const 0
+	0xC73087 Call 62781
+	0xC7308B LocalGet 1
+	0xC7308D I32Const 0
+	0xC7308F Call 63022
+	0xC73093 LocalGet 0
+	0xC73095 I32Load 2, 84
+	0xC73098 I32Const 0
+	0xC7309A Call 62781
+	0xC7309E LocalGet 2
+	0xC730A0 LocalGet 1
+	0xC730A2 I32Const 1
+	0xC730A4 I32Xor
+	0xC730A5 I32And
+	0xC730A6 I32Const 0
+	0xC730A8 Call 63022
+	0xC730AC End
+
+ISIL:
+	0 Nop
+	1 Call PlayerSave.get_currentBoardId, v1 @ S0_v2 (Info.Boards+BoardId)
+	2 Nop
+	3 Nop
+	4 CheckEqual v5 @ S0_v3 (System.Boolean), v1 @ S0_v2 (Info.Boards+BoardId), this._cachedType (SYBO.Subway.Info.Characters+CharacterId)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Call CoinBoxSizer.get_updateAutomatically, v10 @ S0_v6 (System.Boolean), this._cachedType (SYBO.Subway.Info.Characters+CharacterId)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call Component.get_tag, v15 @ S0_v9 (System.String), this._selectedSprite (UISprite)
+	15 Nop
+	16 Nop
+	17 CallVoid GameObject.set_tag, v15 @ S0_v9 (System.String), v5 @ S0_v3 (System.Boolean)
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Call Component.get_tag, v21 @ S0_v12 (System.String), this._ownedSprite (UISprite)
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Xor v25 @ S2_v3, v5 @ S0_v3 (System.Boolean), 1
+	26 And v26 @ S1_v8 (System.String), v10 @ S0_v6 (System.Boolean), v25 @ S2_v3
+	27 Nop
+	28 CallVoid GameObject.set_tag, v21 @ S0_v12 (System.String), v26 @ S1_v8 (System.String)
+	29 Nop
+	30 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC77CD7 GlobalGet 7
+	0xC77CD9 LocalSet 1
+	0xC77CDB GlobalGet 7
+	0xC77CDD I32Const 320
+	0xC77CE0 I32Add
+	0xC77CE1 GlobalSet 7
+	0xC77CE3 LocalGet 1
+	0xC77CE5 I32Const 300
+	0xC77CE8 I32Add
+	0xC77CE9 LocalSet 2
+	0xC77CEB LocalGet 1
+	0xC77CED I32Const 216
+	0xC77CF0 I32Add
+	0xC77CF1 LocalSet 11
+	0xC77CF3 LocalGet 1
+	0xC77CF5 I32Const 204
+	0xC77CF8 I32Add
+	0xC77CF9 LocalSet 20
+	0xC77CFB LocalGet 1
+	0xC77CFD I32Const 192
+	0xC77D00 I32Add
+	0xC77D01 LocalSet 21
+	0xC77D03 LocalGet 1
+	0xC77D05 I32Const 180
+	0xC77D08 I32Add
+	0xC77D09 LocalSet 12
+	0xC77D0B LocalGet 1
+	0xC77D0D I32Const 168
+	0xC77D10 I32Add
+	0xC77D11 LocalSet 13
+	0xC77D13 LocalGet 1
+	0xC77D15 I32Const 156
+	0xC77D18 I32Add
+	0xC77D19 LocalSet 14
+	0xC77D1B LocalGet 1
+	0xC77D1D I32Const 144
+	0xC77D20 I32Add
+	0xC77D21 LocalSet 15
+	0xC77D23 LocalGet 1
+	0xC77D25 I32Const 132
+	0xC77D28 I32Add
+	0xC77D29 LocalSet 16
+	0xC77D2B LocalGet 1
+	0xC77D2D I32Const 120
+	0xC77D30 I32Add
+	0xC77D31 LocalSet 22
+	0xC77D33 LocalGet 1
+	0xC77D35 I32Const 108
+	0xC77D38 I32Add
+	0xC77D39 LocalSet 7
+	0xC77D3B LocalGet 1
+	0xC77D3D I32Const 96
+	0xC77D40 I32Add
+	0xC77D41 LocalSet 23
+	0xC77D43 LocalGet 1
+	0xC77D45 I32Const 84
+	0xC77D48 I32Add
+	0xC77D49 LocalSet 24
+	0xC77D4B LocalGet 1
+	0xC77D4D I32Const 72
+	0xC77D50 I32Add
+	0xC77D51 LocalSet 25
+	0xC77D53 LocalGet 1
+	0xC77D55 I32Const 60
+	0xC77D57 I32Add
+	0xC77D58 LocalSet 17
+	0xC77D5A LocalGet 1
+	0xC77D5C I32Const 48
+	0xC77D5E I32Add
+	0xC77D5F LocalSet 18
+	0xC77D61 LocalGet 1
+	0xC77D63 I32Const 36
+	0xC77D65 I32Add
+	0xC77D66 LocalSet 9
+	0xC77D68 LocalGet 1
+	0xC77D6A I32Const 24
+	0xC77D6C I32Add
+	0xC77D6D LocalSet 19
+	0xC77D6F LocalGet 1
+	0xC77D71 I32Const 12
+	0xC77D73 I32Add
+	0xC77D74 LocalSet 26
+	0xC77D76 LocalGet 1
+	0xC77D78 I32Const 288
+	0xC77D7B I32Add
+	0xC77D7C LocalTee 6
+	0xC77D7E I64Const 0
+	0xC77D80 I64Store 2, 0
+	0xC77D83 LocalGet 6
+	0xC77D85 I32Const 0
+	0xC77D87 I32Store 2, 8
+	0xC77D8A LocalGet 1
+	0xC77D8C I32Const 276
+	0xC77D8F I32Add
+	0xC77D90 LocalTee 5
+	0xC77D92 I64Const 0
+	0xC77D94 I64Store 2, 0
+	0xC77D97 LocalGet 5
+	0xC77D99 I32Const 0
+	0xC77D9B I32Store 2, 8
+	0xC77D9E LocalGet 1
+	0xC77DA0 I32Const 264
+	0xC77DA3 I32Add
+	0xC77DA4 LocalTee 3
+	0xC77DA6 I64Const 0
+	0xC77DA8 I64Store 2, 0
+	0xC77DAB LocalGet 3
+	0xC77DAD I32Const 0
+	0xC77DAF I32Store 2, 8
+	0xC77DB2 LocalGet 1
+	0xC77DB4 I32Const 252
+	0xC77DB7 I32Add
+	0xC77DB8 LocalTee 8
+	0xC77DBA I64Const 0
+	0xC77DBC I64Store 2, 0
+	0xC77DBF LocalGet 8
+	0xC77DC1 I32Const 0
+	0xC77DC3 I32Store 2, 8
+	0xC77DC6 LocalGet 1
+	0xC77DC8 I32Const 240
+	0xC77DCB I32Add
+	0xC77DCC LocalTee 10
+	0xC77DCE I64Const 0
+	0xC77DD0 I64Store 2, 0
+	0xC77DD3 LocalGet 10
+	0xC77DD5 I32Const 0
+	0xC77DD7 I32Store 2, 8
+	0xC77DDA LocalGet 1
+	0xC77DDC I32Const 228
+	0xC77DDF I32Add
+	0xC77DE0 LocalTee 4
+	0xC77DE2 I64Const 0
+	0xC77DE4 I64Store 2, 0
+	0xC77DE7 LocalGet 4
+	0xC77DE9 I32Const 0
+	0xC77DEB I32Store 2, 8
+	0xC77DEE LocalGet 0
+	0xC77DF0 I32Load8_S 0, 28
+	0xC77DF3 If -64
+	0xC77DF5 LocalGet 11
+	0xC77DF7 LocalGet 0
+	0xC77DF9 I32Load 2, 40
+	0xC77DFC I32Const 0
+	0xC77DFE Call 64334
+	0xC77E02 LocalGet 11
+	0xC77E04 F32Load 2, 0
+	0xC77E07 LocalSet 27
+	0xC77E09 LocalGet 20
+	0xC77E0B LocalGet 0
+	0xC77E0D I32Load 2, 36
+	0xC77E10 I32Const 0
+	0xC77E12 Call 64334
+	0xC77E16 LocalGet 20
+	0xC77E18 F32Load 2, 4
+	0xC77E1B LocalSet 28
+	0xC77E1D LocalGet 0
+	0xC77E1F F32Load 2, 52
+	0xC77E22 LocalSet 29
+	0xC77E24 LocalGet 21
+	0xC77E26 LocalGet 0
+	0xC77E28 I32Load 2, 40
+	0xC77E2B I32Const 0
+	0xC77E2D Call 64334
+	0xC77E31 LocalGet 21
+	0xC77E33 F32Load 2, 8
+	0xC77E36 LocalSet 30
+	0xC77E38 LocalGet 6
+	0xC77E3A LocalGet 27
+	0xC77E3C F32Store 2, 0
+	0xC77E3F LocalGet 6
+	0xC77E41 LocalGet 28
+	0xC77E43 LocalGet 29
+	0xC77E45 F32Mul
+	0xC77E46 F32Store 2, 4
+	0xC77E49 LocalGet 6
+	0xC77E4B LocalGet 30
+	0xC77E4D F32Store 2, 8
+	0xC77E50 LocalGet 0
+	0xC77E52 I32Load 2, 20
+	0xC77E55 LocalSet 11
+	0xC77E57 LocalGet 2
+	0xC77E59 LocalGet 6
+	0xC77E5B I64Load 2, 0
+	0xC77E5E I64Store 2, 0
+	0xC77E61 LocalGet 2
+	0xC77E63 LocalGet 6
+	0xC77E65 I32Load 2, 8
+	0xC77E68 I32Store 2, 8
+	0xC77E6B LocalGet 12
+	0xC77E6D LocalGet 11
+	0xC77E6F LocalGet 2
+	0xC77E71 I32Const 0
+	0xC77E73 Call 62716
+	0xC77E77 LocalGet 5
+	0xC77E79 LocalGet 12
+	0xC77E7B I64Load 2, 0
+	0xC77E7E I64Store 2, 0
+	0xC77E81 LocalGet 5
+	0xC77E83 LocalGet 12
+	0xC77E85 I32Load 2, 8
+	0xC77E88 I32Store 2, 8
+	0xC77E8B LocalGet 0
+	0xC77E8D I32Load 2, 24
+	0xC77E90 LocalSet 6
+	0xC77E92 LocalGet 2
+	0xC77E94 LocalGet 5
+	0xC77E96 I64Load 2, 0
+	0xC77E99 I64Store 2, 0
+	0xC77E9C LocalGet 2
+	0xC77E9E LocalGet 5
+	0xC77EA0 I32Load 2, 8
+	0xC77EA3 I32Store 2, 8
+	0xC77EA6 LocalGet 13
+	0xC77EA8 LocalGet 6
+	0xC77EAA LocalGet 2
+	0xC77EAC I32Const 0
+	0xC77EAE Call 62719
+	0xC77EB2 LocalGet 3
+	0xC77EB4 LocalGet 13
+	0xC77EB6 I64Load 2, 0
+	0xC77EB9 I64Store 2, 0
+	0xC77EBC LocalGet 3
+	0xC77EBE LocalGet 13
+	0xC77EC0 I32Load 2, 8
+	0xC77EC3 I32Store 2, 8
+	0xC77EC6 LocalGet 0
+	0xC77EC8 I32Load 2, 32
+	0xC77ECB I32Const 0
+	0xC77ECD Call 63937
+	0xC77ED1 LocalSet 5
+	0xC77ED3 LocalGet 2
+	0xC77ED5 LocalGet 3
+	0xC77ED7 I64Load 2, 0
+	0xC77EDA I64Store 2, 0
+	0xC77EDD LocalGet 2
+	0xC77EDF LocalGet 3
+	0xC77EE1 I32Load 2, 8
+	0xC77EE4 I32Store 2, 8
+	0xC77EE7 LocalGet 14
+	0xC77EE9 LocalGet 5
+	0xC77EEB LocalGet 2
+	0xC77EED I32Const 0
+	0xC77EEF Call 64387
+	0xC77EF3 LocalGet 3
+	0xC77EF5 LocalGet 14
+	0xC77EF7 I64Load 2, 0
+	0xC77EFA I64Store 2, 0
+	0xC77EFD LocalGet 3
+	0xC77EFF LocalGet 14
+	0xC77F01 I32Load 2, 8
+	0xC77F04 I32Store 2, 8
+	0xC77F07 LocalGet 0
+	0xC77F09 I32Load 2, 44
+	0xC77F0C LocalGet 15
+	0xC77F0E LocalGet 3
+	0xC77F10 I64Load 2, 0
+	0xC77F13 I64Store 2, 0
+	0xC77F16 LocalGet 15
+	0xC77F18 LocalGet 3
+	0xC77F1A I32Load 2, 8
+	0xC77F1D I32Store 2, 8
+	0xC77F20 LocalGet 15
+	0xC77F22 F32Load 2, 0
+	0xC77F25 LocalSet 27
+	0xC77F27 LocalGet 16
+	0xC77F29 LocalGet 3
+	0xC77F2B I64Load 2, 0
+	0xC77F2E I64Store 2, 0
+	0xC77F31 LocalGet 16
+	0xC77F33 LocalGet 3
+	0xC77F35 I32Load 2, 8
+	0xC77F38 I32Store 2, 8
+	0xC77F3B LocalGet 16
+	0xC77F3D F32Load 2, 4
+	0xC77F40 LocalSet 28
+	0xC77F42 LocalGet 22
+	0xC77F44 LocalGet 0
+	0xC77F46 I32Load 2, 32
+	0xC77F49 I32Const 0
+	0xC77F4B Call 64338
+	0xC77F4F LocalGet 22
+	0xC77F51 F32Load 2, 8
+	0xC77F54 LocalSet 29
+	0xC77F56 LocalGet 7
+	0xC77F58 I64Const 0
+	0xC77F5A I64Store 2, 0
+	0xC77F5D LocalGet 7
+	0xC77F5F I32Const 0
+	0xC77F61 I32Store 2, 8
+	0xC77F64 LocalGet 7
+	0xC77F66 LocalGet 27
+	0xC77F68 F32Store 2, 0
+	0xC77F6B LocalGet 7
+	0xC77F6D LocalGet 28
+	0xC77F6F F32Store 2, 4
+	0xC77F72 LocalGet 7
+	0xC77F74 LocalGet 29
+	0xC77F76 F32Store 2, 8
+	0xC77F79 LocalGet 2
+	0xC77F7B LocalGet 7
+	0xC77F7D I64Load 2, 0
+	0xC77F80 I64Store 2, 0
+	0xC77F83 LocalGet 2
+	0xC77F85 LocalGet 7
+	0xC77F87 I32Load 2, 8
+	0xC77F8A I32Store 2, 8
+	0xC77F8D LocalGet 2
+	0xC77F8F I32Const 0
+	0xC77F91 Call 64340
+	0xC77F95 LocalGet 23
+	0xC77F97 LocalGet 0
+	0xC77F99 I32Load 2, 40
+	0xC77F9C I32Const 0
+	0xC77F9E Call 64334
+	0xC77FA2 LocalGet 23
+	0xC77FA4 F32Load 2, 0
+	0xC77FA7 LocalSet 27
+	0xC77FA9 LocalGet 0
+	0xC77FAB F32Load 2, 48
+	0xC77FAE LocalSet 28
+	0xC77FB0 LocalGet 24
+	0xC77FB2 LocalGet 0
+	0xC77FB4 I32Load 2, 40
+	0xC77FB7 I32Const 0
+	0xC77FB9 Call 64334
+	0xC77FBD LocalGet 24
+	0xC77FBF F32Load 2, 4
+	0xC77FC2 LocalSet 29
+	0xC77FC4 LocalGet 25
+	0xC77FC6 LocalGet 0
+	0xC77FC8 I32Load 2, 40
+	0xC77FCB I32Const 0
+	0xC77FCD Call 64334
+	0xC77FD1 LocalGet 25
+	0xC77FD3 F32Load 2, 8
+	0xC77FD6 LocalSet 30
+	0xC77FD8 LocalGet 8
+	0xC77FDA LocalGet 27
+	0xC77FDC LocalGet 28
+	0xC77FDE F32Mul
+	0xC77FDF F32Store 2, 0
+	0xC77FE2 LocalGet 8
+	0xC77FE4 LocalGet 29
+	0xC77FE6 F32Store 2, 4
+	0xC77FE9 LocalGet 8
+	0xC77FEB LocalGet 30
+	0xC77FED F32Store 2, 8
+	0xC77FF0 LocalGet 0
+	0xC77FF2 I32Load 2, 20
+	0xC77FF5 LocalSet 3
+	0xC77FF7 LocalGet 2
+	0xC77FF9 LocalGet 8
+	0xC77FFB I64Load 2, 0
+	0xC77FFE I64Store 2, 0
+	0xC78001 LocalGet 2
+	0xC78003 LocalGet 8
+	0xC78005 I32Load 2, 8
+	0xC78008 I32Store 2, 8
+	0xC7800B LocalGet 17
+	0xC7800D LocalGet 3
+	0xC7800F LocalGet 2
+	0xC78011 I32Const 0
+	0xC78013 Call 62716
+	0xC78017 LocalGet 10
+	0xC78019 LocalGet 17
+	0xC7801B I64Load 2, 0
+	0xC7801E I64Store 2, 0
+	0xC78021 LocalGet 10
+	0xC78023 LocalGet 17
+	0xC78025 I32Load 2, 8
+	0xC78028 I32Store 2, 8
+	0xC7802B LocalGet 0
+	0xC7802D I32Load 2, 24
+	0xC78030 LocalSet 3
+	0xC78032 LocalGet 2
+	0xC78034 LocalGet 10
+	0xC78036 I64Load 2, 0
+	0xC78039 I64Store 2, 0
+	0xC7803C LocalGet 2
+	0xC7803E LocalGet 10
+	0xC78040 I32Load 2, 8
+	0xC78043 I32Store 2, 8
+	0xC78046 LocalGet 18
+	0xC78048 LocalGet 3
+	0xC7804A LocalGet 2
+	0xC7804C I32Const 0
+	0xC7804E Call 62719
+	0xC78052 LocalGet 4
+	0xC78054 LocalGet 18
+	0xC78056 I64Load 2, 0
+	0xC78059 I64Store 2, 0
+	0xC7805C LocalGet 4
+	0xC7805E LocalGet 18
+	0xC78060 I32Load 2, 8
+	0xC78063 I32Store 2, 8
+	0xC78066 LocalGet 0
+	0xC78068 I32Load 2, 32
+	0xC7806B I32Const 0
+	0xC7806D Call 63937
+	0xC78071 LocalSet 3
+	0xC78073 LocalGet 2
+	0xC78075 LocalGet 4
+	0xC78077 I64Load 2, 0
+	0xC7807A I64Store 2, 0
+	0xC7807D LocalGet 2
+	0xC7807F LocalGet 4
+	0xC78081 I32Load 2, 8
+	0xC78084 I32Store 2, 8
+	0xC78087 LocalGet 9
+	0xC78089 LocalGet 3
+	0xC7808B LocalGet 2
+	0xC7808D I32Const 0
+	0xC7808F Call 64387
+	0xC78093 LocalGet 4
+	0xC78095 LocalGet 9
+	0xC78097 I64Load 2, 0
+	0xC7809A I64Store 2, 0
+	0xC7809D LocalGet 4
+	0xC7809F LocalGet 9
+	0xC780A1 I32Load 2, 8
+	0xC780A4 I32Store 2, 8
+	0xC780A7 LocalGet 19
+	0xC780A9 LocalGet 9
+	0xC780AB I64Load 2, 0
+	0xC780AE I64Store 2, 0
+	0xC780B1 LocalGet 19
+	0xC780B3 LocalGet 9
+	0xC780B5 I32Load 2, 8
+	0xC780B8 I32Store 2, 8
+	0xC780BB LocalGet 19
+	0xC780BD F32Load 2, 0
+	0xC780C0 LocalSet 27
+	0xC780C2 LocalGet 26
+	0xC780C4 LocalGet 0
+	0xC780C6 I32Load 2, 32
+	0xC780C9 I32Const 0
+	0xC780CB Call 64338
+	0xC780CF LocalGet 26
+	0xC780D1 F32Load 2, 4
+	0xC780D4 LocalSet 28
+	0xC780D6 LocalGet 1
+	0xC780D8 LocalGet 0
+	0xC780DA I32Load 2, 32
+	0xC780DD I32Const 0
+	0xC780DF Call 64338
+	0xC780E3 LocalGet 1
+	0xC780E5 F32Load 2, 8
+	0xC780E8 LocalSet 29
+	0xC780EA LocalGet 4
+	0xC780EC LocalGet 27
+	0xC780EE F32Const 20
+	0xC780F3 F32Add
+	0xC780F4 F32Store 2, 0
+	0xC780F7 LocalGet 4
+	0xC780F9 LocalGet 28
+	0xC780FB F32Const 100
+	0xC78100 F32Add
+	0xC78101 F32Store 2, 4
+	0xC78104 LocalGet 4
+	0xC78106 LocalGet 29
+	0xC78108 F32Store 2, 8
+	0xC7810B LocalGet 0
+	0xC7810D I32Load 2, 80
+	0xC78110 LocalGet 2
+	0xC78112 LocalGet 4
+	0xC78114 I64Load 2, 0
+	0xC78117 I64Store 2, 0
+	0xC7811A LocalGet 2
+	0xC7811C LocalGet 4
+	0xC7811E I32Load 2, 8
+	0xC78121 I32Store 2, 8
+	0xC78124 LocalGet 2
+	0xC78126 I32Const 0
+	0xC78128 Call 64340
+	0xC7812C End
+	0xC7812D LocalGet 1
+	0xC7812F GlobalSet 7
+	0xC78131 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5 (UnityEngine.Vector3), v1 @ G7 (UnityEngine.Transform), 300
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v7 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 216
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Add v17 @ S0_v9 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 204
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v21 @ S0_v11 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 192
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Add v25 @ S0_v13, v1 @ G7 (UnityEngine.Transform), 180
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Add v29 @ S0_v15, v1 @ G7 (UnityEngine.Transform), 168
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Add v33 @ S0_v17 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 156
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Add v37 @ S0_v19, v1 @ G7 (UnityEngine.Transform), 144
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Add v41 @ S0_v21, v1 @ G7 (UnityEngine.Transform), 132
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Add v45 @ S0_v23 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 120
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Add v49 @ S0_v25, v1 @ G7 (UnityEngine.Transform), 108
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Add v53 @ S0_v27 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 96
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Add v57 @ S0_v29 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 84
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Add v61 @ S0_v31 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 72
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Add v65 @ S0_v33, v1 @ G7 (UnityEngine.Transform), 60
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Add v69 @ S0_v35, v1 @ G7 (UnityEngine.Transform), 48
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Add v73 @ S0_v37 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 36
+	73 Nop
+	74 Nop
+	75 Nop
+	76 Add v77 @ S0_v39, v1 @ G7 (UnityEngine.Transform), 24
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Add v81 @ S0_v41 (UnityEngine.Transform), v1 @ G7 (UnityEngine.Transform), 12
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Add v85 @ S0_v43, v1 @ G7 (UnityEngine.Transform), 288
+	85 Nop
+	86 Nop
+	87 Move [v85 @ S0_v43], 0
+	88 Nop
+	89 Nop
+	90 Move [v85 @ S0_v43+8], 0
+	91 Nop
+	92 Nop
+	93 Add v92 @ S0_v46, v1 @ G7 (UnityEngine.Transform), 276
+	94 Nop
+	95 Nop
+	96 Move [v92 @ S0_v46], 0
+	97 Nop
+	98 Nop
+	99 Move [v92 @ S0_v46+8], 0
+	100 Nop
+	101 Nop
+	102 Add v99 @ S0_v49, v1 @ G7 (UnityEngine.Transform), 264
+	103 Nop
+	104 Nop
+	105 Move [v99 @ S0_v49], 0
+	106 Nop
+	107 Nop
+	108 Move [v99 @ S0_v49+8], 0
+	109 Nop
+	110 Nop
+	111 Add v106 @ S0_v52, v1 @ G7 (UnityEngine.Transform), 252
+	112 Nop
+	113 Nop
+	114 Move [v106 @ S0_v52], 0
+	115 Nop
+	116 Nop
+	117 Move [v106 @ S0_v52+8], 0
+	118 Nop
+	119 Nop
+	120 Add v113 @ S0_v55, v1 @ G7 (UnityEngine.Transform), 240
+	121 Nop
+	122 Nop
+	123 Move [v113 @ S0_v55], 0
+	124 Nop
+	125 Nop
+	126 Move [v113 @ S0_v55+8], 0
+	127 Nop
+	128 Nop
+	129 Add v120 @ S0_v58, v1 @ G7 (UnityEngine.Transform), 228
+	130 Nop
+	131 Nop
+	132 Move [v120 @ S0_v58], 0
+	133 Nop
+	134 Nop
+	135 Move [v120 @ S0_v58+8], 0
+	136 Nop
+	137 Nop
+	138 Not v128 @ TEMP_v1 (System.Boolean), this._hasInited (System.Boolean)
+	139 ConditionalJump @b22, v128 @ TEMP_v1 (System.Boolean)
+	140 Nop
+	141 Nop
+	142 Nop
+	143 Nop
+	144 CallVoid Transform.set_position, v13 @ S0_v7 (UnityEngine.Transform), this._chestTransform (UnityEngine.Transform)
+	145 Nop
+	146 Nop
+	147 Nop
+	148 Nop
+	149 Nop
+	150 Nop
+	151 Nop
+	152 CallVoid Transform.set_position, v17 @ S0_v9 (UnityEngine.Transform), this._headTransform (UnityEngine.Transform)
+	153 Nop
+	154 Nop
+	155 Nop
+	156 Nop
+	157 Nop
+	158 Nop
+	159 Nop
+	160 Nop
+	161 Nop
+	162 Nop
+	163 CallVoid Transform.set_position, v21 @ S0_v11 (UnityEngine.Transform), this._chestTransform (UnityEngine.Transform)
+	164 Nop
+	165 Nop
+	166 Nop
+	167 Nop
+	168 Nop
+	169 Move [v85 @ S0_v43], [v13 @ S0_v7 (UnityEngine.Transform)]
+	170 Nop
+	171 Nop
+	172 Nop
+	173 Multiply v193 @ S1_v48 (System.Single), [v17 @ S0_v9 (UnityEngine.Transform)+4], this._yOffset (System.Single)
+	174 Move [v85 @ S0_v43+4], v193 @ S1_v48 (System.Single)
+	175 Nop
+	176 Nop
+	177 Move [v85 @ S0_v43+8], v21.m_CachedPtr (System.IntPtr)
+	178 Nop
+	179 Nop
+	180 Nop
+	181 Nop
+	182 Nop
+	183 Nop
+	184 Move v9.x (System.Single), [v85 @ S0_v43]
+	185 Nop
+	186 Nop
+	187 Nop
+	188 Move v9.z (System.Single), [v85 @ S0_v43+8]
+	189 Nop
+	190 Nop
+	191 Nop
+	192 Nop
+	193 Call Camera.WorldToViewportPoint, v208 @ SRET_v2 (UnityEngine.Vector3), this._3DClipCam (UnityEngine.Camera), v9 @ S0_v5 (UnityEngine.Vector3)
+	194 Nop
+	195 Nop
+	196 Nop
+	197 Move [v92 @ S0_v46], [v25 @ S0_v13]
+	198 Nop
+	199 Nop
+	200 Nop
+	201 Move [v92 @ S0_v46+8], [v25 @ S0_v13+8]
+	202 Nop
+	203 Nop
+	204 Nop
+	205 Nop
+	206 Nop
+	207 Nop
+	208 Move v9.x (System.Single), [v92 @ S0_v46]
+	209 Nop
+	210 Nop
+	211 Nop
+	212 Move v9.z (System.Single), [v92 @ S0_v46+8]
+	213 Nop
+	214 Nop
+	215 Nop
+	216 Nop
+	217 Call Camera.ScreenToViewportPoint, v227 @ SRET_v3 (UnityEngine.Vector3), this._2DOverlayCam (UnityEngine.Camera), v9 @ S0_v5 (UnityEngine.Vector3)
+	218 Nop
+	219 Nop
+	220 Nop
+	221 Move [v99 @ S0_v49], [v29 @ S0_v15]
+	222 Nop
+	223 Nop
+	224 Nop
+	225 Move [v99 @ S0_v49+8], [v29 @ S0_v15+8]
+	226 Nop
+	227 Nop
+	228 Nop
+	229 Call Transform.get_parentInternal, v237 @ S0_v94 (UnityEngine.Transform), this._cachedTransform (UnityEngine.Transform)
+	230 Nop
+	231 Nop
+	232 Nop
+	233 Nop
+	234 Move v9.x (System.Single), [v99 @ S0_v49]
+	235 Nop
+	236 Nop
+	237 Nop
+	238 Move v9.z (System.Single), [v99 @ S0_v49+8]
+	239 Nop
+	240 Nop
+	241 Nop
+	242 Nop
+	243 CallVoid Transform.Internal_LookAt_Injected, v33 @ S0_v17 (UnityEngine.Transform), v237 @ S0_v94 (UnityEngine.Transform), v9 @ S0_v5 (UnityEngine.Vector3)
+	244 Nop
+	245 Nop
+	246 Nop
+	247 Move [v99 @ S0_v49], [v33 @ S0_v17 (UnityEngine.Transform)]
+	248 Nop
+	249 Nop
+	250 Nop
+	251 Move [v99 @ S0_v49+8], v33.m_CachedPtr (System.IntPtr)
+	252 Nop
+	253 Nop
+	254 Nop
+	255 Nop
+	256 Nop
+	257 Move [v37 @ S0_v19], [v99 @ S0_v49]
+	258 Nop
+	259 Nop
+	260 Nop
+	261 Move [v37 @ S0_v19+8], [v99 @ S0_v49+8]
+	262 Nop
+	263 Nop
+	264 Nop
+	265 Nop
+	266 Nop
+	267 Nop
+	268 Move [v41 @ S0_v21], [v99 @ S0_v49]
+	269 Nop
+	270 Nop
+	271 Nop
+	272 Move [v41 @ S0_v21+8], [v99 @ S0_v49+8]
+	273 Nop
+	274 Nop
+	275 Nop
+	276 Nop
+	277 Nop
+	278 Nop
+	279 Nop
+	280 CallVoid Transform.set_localPosition, v45 @ S0_v23 (UnityEngine.Transform), this._cachedTransform (UnityEngine.Transform)
+	281 Nop
+	282 Nop
+	283 Nop
+	284 Nop
+	285 Nop
+	286 Move [v49 @ S0_v25], 0
+	287 Nop
+	288 Nop
+	289 Move [v49 @ S0_v25+8], 0
+	290 Nop
+	291 Nop
+	292 Move [v49 @ S0_v25], [v37 @ S0_v19]
+	293 Nop
+	294 Nop
+	295 Move [v49 @ S0_v25+4], [v41 @ S0_v21+4]
+	296 Nop
+	297 Nop
+	298 Move [v49 @ S0_v25+8], v45.m_CachedPtr (System.IntPtr)
+	299 Nop
+	300 Nop
+	301 Nop
+	302 Move v9.x (System.Single), [v49 @ S0_v25]
+	303 Nop
+	304 Nop
+	305 Nop
+	306 Move v9.z (System.Single), [v49 @ S0_v25+8]
+	307 Nop
+	308 Nop
+	309 Call Transform.get_eulerAngles, v299 @ SRET_v4 (UnityEngine.Vector3), v9 @ S0_v5 (UnityEngine.Vector3)
+	310 Nop
+	311 Nop
+	312 Nop
+	313 Nop
+	314 CallVoid Transform.set_position, v53 @ S0_v27 (UnityEngine.Transform), this._chestTransform (UnityEngine.Transform)
+	315 Nop
+	316 Nop
+	317 Nop
+	318 Nop
+	319 Nop
+	320 Nop
+	321 Nop
+	322 Nop
+	323 Nop
+	324 Nop
+	325 CallVoid Transform.set_position, v57 @ S0_v29 (UnityEngine.Transform), this._chestTransform (UnityEngine.Transform)
+	326 Nop
+	327 Nop
+	328 Nop
+	329 Nop
+	330 Nop
+	331 Nop
+	332 Nop
+	333 CallVoid Transform.set_position, v61 @ S0_v31 (UnityEngine.Transform), this._chestTransform (UnityEngine.Transform)
+	334 Nop
+	335 Nop
+	336 Nop
+	337 Nop
+	338 Nop
+	339 Nop
+	340 Multiply v326 @ S1_v104 (System.Single), [v53 @ S0_v27 (UnityEngine.Transform)], this._xOffset (System.Single)
+	341 Move [v106 @ S0_v52], v326 @ S1_v104 (System.Single)
+	342 Nop
+	343 Nop
+	344 Move [v106 @ S0_v52+4], [v57 @ S0_v29 (UnityEngine.Transform)+4]
+	345 Nop
+	346 Nop
+	347 Move [v106 @ S0_v52+8], v61.m_CachedPtr (System.IntPtr)
+	348 Nop
+	349 Nop
+	350 Nop
+	351 Nop
+	352 Nop
+	353 Nop
+	354 Move v9.x (System.Single), [v106 @ S0_v52]
+	355 Nop
+	356 Nop
+	357 Nop
+	358 Move v9.z (System.Single), [v106 @ S0_v52+8]
+	359 Nop
+	360 Nop
+	361 Nop
+	362 Nop
+	363 Call Camera.WorldToViewportPoint, v344 @ SRET_v5 (UnityEngine.Vector3), this._3DClipCam (UnityEngine.Camera), v9 @ S0_v5 (UnityEngine.Vector3)
+	364 Nop
+	365 Nop
+	366 Nop
+	367 Move [v113 @ S0_v55], [v65 @ S0_v33]
+	368 Nop
+	369 Nop
+	370 Nop
+	371 Move [v113 @ S0_v55+8], [v65 @ S0_v33+8]
+	372 Nop
+	373 Nop
+	374 Nop
+	375 Nop
+	376 Nop
+	377 Nop
+	378 Move v9.x (System.Single), [v113 @ S0_v55]
+	379 Nop
+	380 Nop
+	381 Nop
+	382 Move v9.z (System.Single), [v113 @ S0_v55+8]
+	383 Nop
+	384 Nop
+	385 Nop
+	386 Nop
+	387 Call Camera.ScreenToViewportPoint, v364 @ SRET_v6 (UnityEngine.Vector3), this._2DOverlayCam (UnityEngine.Camera), v9 @ S0_v5 (UnityEngine.Vector3)
+	388 Nop
+	389 Nop
+	390 Nop
+	391 Move [v120 @ S0_v58], [v69 @ S0_v35]
+	392 Nop
+	393 Nop
+	394 Nop
+	395 Move [v120 @ S0_v58+8], [v69 @ S0_v35+8]
+	396 Nop
+	397 Nop
+	398 Nop
+	399 Call Transform.get_parentInternal, v374 @ S0_v132 (UnityEngine.Transform), this._cachedTransform (UnityEngine.Transform)
+	400 Nop
+	401 Nop
+	402 Nop
+	403 Nop
+	404 Move v9.x (System.Single), [v120 @ S0_v58]
+	405 Nop
+	406 Nop
+	407 Nop
+	408 Move v9.z (System.Single), [v120 @ S0_v58+8]
+	409 Nop
+	410 Nop
+	411 Nop
+	412 Nop
+	413 CallVoid Transform.Internal_LookAt_Injected, v73 @ S0_v37 (UnityEngine.Transform), v374 @ S0_v132 (UnityEngine.Transform), v9 @ S0_v5 (UnityEngine.Vector3)
+	414 Nop
+	415 Nop
+	416 Nop
+	417 Move [v120 @ S0_v58], [v73 @ S0_v37 (UnityEngine.Transform)]
+	418 Nop
+	419 Nop
+	420 Nop
+	421 Move [v120 @ S0_v58+8], v73.m_CachedPtr (System.IntPtr)
+	422 Nop
+	423 Nop
+	424 Nop
+	425 Move [v77 @ S0_v39], [v73 @ S0_v37 (UnityEngine.Transform)]
+	426 Nop
+	427 Nop
+	428 Nop
+	429 Move [v77 @ S0_v39+8], v73.m_CachedPtr (System.IntPtr)
+	430 Nop
+	431 Nop
+	432 Nop
+	433 Nop
+	434 Nop
+	435 Nop
+	436 Nop
+	437 CallVoid Transform.set_localPosition, v81 @ S0_v41 (UnityEngine.Transform), this._cachedTransform (UnityEngine.Transform)
+	438 Nop
+	439 Nop
+	440 Nop
+	441 Nop
+	442 Nop
+	443 Nop
+	444 Nop
+	445 CallVoid Transform.set_localPosition, v1 @ G7 (UnityEngine.Transform), this._cachedTransform (UnityEngine.Transform)
+	446 Nop
+	447 Nop
+	448 Nop
+	449 Nop
+	450 Nop
+	451 Nop
+	452 Add v413 @ S1_v144 (System.Single), [v77 @ S0_v39], 20f
+	453 Move [v120 @ S0_v58], v413 @ S1_v144 (System.Single)
+	454 Nop
+	455 Nop
+	456 Nop
+	457 Add v417 @ S1_v146 (System.Single), [v81 @ S0_v41 (UnityEngine.Transform)+4], 100f
+	458 Move [v120 @ S0_v58+4], v417 @ S1_v146 (System.Single)
+	459 Nop
+	460 Nop
+	461 Move [v120 @ S0_v58+8], v1.m_CachedPtr (System.IntPtr)
+	462 Nop
+	463 Nop
+	464 Nop
+	465 Nop
+	466 Nop
+	467 Move v9.x (System.Single), [v120 @ S0_v58]
+	468 Nop
+	469 Nop
+	470 Nop
+	471 Move v9.z (System.Single), [v120 @ S0_v58+8]
+	472 Nop
+	473 Nop
+	474 Call Transform.get_eulerAngles, v134 @ SRET_v7 (UnityEngine.Vector3), v9 @ S0_v5 (UnityEngine.Vector3)
+	475 Nop
+	476 Nop
+	477 Nop
+	478 Nop
+	479 Return
+

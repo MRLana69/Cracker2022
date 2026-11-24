@@ -1,0 +1,665 @@
+Type: System.Threading.SpinLock
+
+Method: System.Void .ctor(System.Boolean enableThreadOwnerTracking)
+
+Disassembly:
+	0x12F2D10 LocalGet 0
+	0x12F2D12 I32Const 8
+	0x12F2D14 I32Add
+	0x12F2D15 LocalGet 1
+	0x12F2D17 I32Const 0
+	0x12F2D19 Call 60520
+	0x12F2D1D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Threading.SpinLock), 8
+	3 Nop
+	4 Nop
+	5 CallVoid EC68, v3 @ S0_v2, enableThreadOwnerTracking @ L1 (System.Boolean), 0
+	6 Nop
+	7 Return
+
+Method: System.Void Enter(ref System.Boolean lockTaken)
+
+Disassembly:
+	0x12F2D58 LocalGet 0
+	0x12F2D5A I32Const 8
+	0x12F2D5C I32Add
+	0x12F2D5D LocalTee 3
+	0x12F2D5F I32Const 0
+	0x12F2D61 I32Store 2, 0
+	0x12F2D64 LocalGet 1
+	0x12F2D66 I32Eqz
+	0x12F2D67 If -64
+	0x12F2D69 LocalGet 3
+	0x12F2D6B LocalGet 3
+	0x12F2D6D I32Load 2, 0
+	0x12F2D70 I32Const -2147483648
+	0x12F2D76 I32Or
+	0x12F2D77 I32Store 2, 0
+	0x12F2D7A End
+	0x12F2D7B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Threading.SpinLock), 8
+	3 Nop
+	4 Nop
+	5 Move [v3 @ S0_v2], 0
+	6 Nop
+	7 CheckEqual v8 @ S0_v4 (System.Boolean), lockTaken @ L1 (System.Boolean&), 0
+	8 Not v9 @ TEMP_v1 (System.Boolean), v8 @ S0_v4 (System.Boolean)
+	9 ConditionalJump @b4, v9 @ TEMP_v1 (System.Boolean)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Or v14 @ S1_v6, [v3 @ S0_v2], -2147483648
+	15 Move [v3 @ S0_v2], v14 @ S1_v6
+	16 Nop
+	17 Nop
+	18 Return
+
+Method: System.Void TryEnter(System.Int32 millisecondsTimeout, ref System.Boolean lockTaken)
+
+Disassembly:
+	0x12EFE6C GlobalGet 7
+	0x12EFE6E LocalSet 3
+	0x12EFE70 GlobalGet 7
+	0x12EFE72 I32Const 16
+	0x12EFE74 I32Add
+	0x12EFE75 GlobalSet 7
+	0x12EFE77 I32Const 4571391
+	0x12EFE7C I32Load8_S 0, 0
+	0x12EFE7F I32Eqz
+	0x12EFE80 If -64
+	0x12EFE82 I32Const 3002300
+	0x12EFE87 I32Load 2, 0
+	0x12EFE8A Call 73003
+	0x12EFE8E I32Const 4571391
+	0x12EFE93 I32Const 1
+	0x12EFE95 I32Store8 0, 0
+	0x12EFE98 End
+	0x12EFE99 LocalGet 1
+	0x12EFE9B I32Const 0
+	0x12EFE9D I32Lt_S
+	0x12EFE9E LocalGet 1
+	0x12EFEA0 LocalGet 2
+	0x12EFEA2 I32Gt_S
+	0x12EFEA3 I32Or
+	0x12EFEA4 If -64
+	0x12EFEA6 LocalGet 3
+	0x12EFEA8 LocalGet 1
+	0x12EFEAA I32Store 2, 0
+	0x12EFEAD I32Const 4427776
+	0x12EFEB2 I32Load 2, 0
+	0x12EFEB5 LocalGet 3
+	0x12EFEB7 Call 73903
+	0x12EFEBB LocalSet 5
+	0x12EFEBD I32Const 4429204
+	0x12EFEC2 I32Load 2, 0
+	0x12EFEC5 LocalTee 4
+	0x12EFEC7 I32Load16_S 1, 186
+	0x12EFECB I32Const 512
+	0x12EFECE I32And
+	0x12EFECF If -64
+	0x12EFED1 LocalGet 4
+	0x12EFED3 I32Load 2, 116
+	0x12EFED6 I32Eqz
+	0x12EFED7 If -64
+	0x12EFED9 LocalGet 4
+	0x12EFEDB Call 72345
+	0x12EFEDF End
+	0x12EFEE0 End
+	0x12EFEE1 I32Const 4512400
+	0x12EFEE6 I32Load 2, 0
+	0x12EFEE9 LocalSet 4
+	0x12EFEEB I32Const 4427992
+	0x12EFEF0 I32Load 2, 0
+	0x12EFEF3 Call 72556
+	0x12EFEF7 LocalTee 6
+	0x12EFEF9 I32Const 4512396
+	0x12EFEFE I32Load 2, 0
+	0x12EFF01 LocalGet 5
+	0x12EFF03 LocalGet 4
+	0x12EFF05 I32Const 0
+	0x12EFF07 Call 57741
+	0x12EFF0B LocalGet 6
+	0x12EFF0D I32Const 0
+	0x12EFF0F I32Const 4491820
+	0x12EFF14 I32Load 2, 0
+	0x12EFF17 Call 73899
+	0x12EFF1B End
+	0x12EFF1C LocalGet 2
+	0x12EFF1E I32Const 1
+	0x12EFF20 I32Ge_S
+	0x12EFF21 If -64
+	0x12EFF23 LocalGet 0
+	0x12EFF25 LocalGet 2
+	0x12EFF27 I32Store 2, 12
+	0x12EFF2A LocalGet 0
+	0x12EFF2C I32Const 20
+	0x12EFF2E I32Add
+	0x12EFF2F I32Const 4427796
+	0x12EFF34 I32Load 2, 0
+	0x12EFF37 Call 72556
+	0x12EFF3B I32Store 2, 0
+	0x12EFF3E LocalGet 0
+	0x12EFF40 LocalGet 1
+	0x12EFF42 I32Store 2, 8
+	0x12EFF45 LocalGet 3
+	0x12EFF47 GlobalSet 7
+	0x12EFF49 Return
+	0x12EFF4A End
+	0x12EFF4B LocalGet 3
+	0x12EFF4D LocalGet 2
+	0x12EFF4F I32Store 2, 0
+	0x12EFF52 I32Const 4427776
+	0x12EFF57 I32Load 2, 0
+	0x12EFF5A LocalGet 3
+	0x12EFF5C Call 73903
+	0x12EFF60 LocalSet 1
+	0x12EFF62 I32Const 4429204
+	0x12EFF67 I32Load 2, 0
+	0x12EFF6A LocalTee 0
+	0x12EFF6C I32Load16_S 1, 186
+	0x12EFF70 I32Const 512
+	0x12EFF73 I32And
+	0x12EFF74 If -64
+	0x12EFF76 LocalGet 0
+	0x12EFF78 I32Load 2, 116
+	0x12EFF7B I32Eqz
+	0x12EFF7C If -64
+	0x12EFF7E LocalGet 0
+	0x12EFF80 Call 72345
+	0x12EFF84 End
+	0x12EFF85 End
+	0x12EFF86 I32Const 4512408
+	0x12EFF8B I32Load 2, 0
+	0x12EFF8E LocalSet 0
+	0x12EFF90 I32Const 4427992
+	0x12EFF95 I32Load 2, 0
+	0x12EFF98 Call 72556
+	0x12EFF9C LocalTee 2
+	0x12EFF9E I32Const 4512404
+	0x12EFFA3 I32Load 2, 0
+	0x12EFFA6 LocalGet 1
+	0x12EFFA8 LocalGet 0
+	0x12EFFAA I32Const 0
+	0x12EFFAC Call 57741
+	0x12EFFB0 LocalGet 2
+	0x12EFFB2 I32Const 0
+	0x12EFFB4 I32Const 4491820
+	0x12EFFB9 I32Load 2, 0
+	0x12EFFBC Call 73899
+	0x12EFFC0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b23
+	11 Nop
+	12 Move v12 @ S0_v59, [2DCFBC]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v59
+	14 Nop
+	15 Move v14 @ S1_v27, 1
+	16 Move [45C0FF], v14 @ S1_v27
+	17 Nop
+	18 Nop
+	19 Nop
+	20 CheckLess v20 @ S0_v9 (System.Boolean), millisecondsTimeout @ L1 (System.Int32), 0
+	21 Nop
+	22 Nop
+	23 CheckGreater v24 @ S1_v5 (System.Boolean), millisecondsTimeout @ L1 (System.Int32), lockTaken @ L2 (System.Boolean&)
+	24 Or v25 @ S0_v10, v20 @ S0_v9 (System.Boolean), v24 @ S1_v5 (System.Boolean)
+	25 CheckEqual v26 @ TEMP_v2 (System.Boolean), v25 @ S0_v10, 0
+	26 ConditionalJump @b12, v26 @ TEMP_v2 (System.Boolean)
+	27 Nop
+	28 Nop
+	29 Move [v1 @ G7], millisecondsTimeout @ L1 (System.Int32)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Call 120AF, v32 @ S0_v42 (System.Int32), typeof(System.Int32), v1 @ G7
+	34 Nop
+	35 Nop
+	36 Move v61 @ S0_v44 (Il2CppClass<System.Threading.SemaphoreSlim>), typeof(System.Threading.SemaphoreSlim)
+	37 Nop
+	38 Nop
+	39 Nop
+	40 And v65 @ S0_v46, [v61 @ S0_v44 (Il2CppClass<System.Threading.SemaphoreSlim>)+BA], 512
+	41 CheckEqual v66 @ TEMP_v9 (System.Boolean), v65 @ S0_v46, 0
+	42 ConditionalJump @b24, v66 @ TEMP_v9 (System.Boolean)
+	43 Move v82 @ S0_v54 (Il2CppClass<System.Threading.SemaphoreSlim>), typeof(System.Threading.SemaphoreSlim)
+	44 Nop
+	45 CheckEqual v84 @ S0_v56 (System.Boolean), [v82 @ S0_v54 (Il2CppClass<System.Threading.SemaphoreSlim>)+74], 0
+	46 Not v85 @ TEMP_v11 (System.Boolean), v84 @ S0_v56 (System.Boolean)
+	47 ConditionalJump @b24, v85 @ TEMP_v11 (System.Boolean)
+	48 Nop
+	49 CallVoid 11A99, typeof(System.Threading.SemaphoreSlim)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Call 11B6C, v92 @ S0_v52 (System.DateTime), typeof(System.ArgumentOutOfRangeException)
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 CallVoid DateTime..ctor, v92 @ S0_v52 (System.DateTime), "initialCount", v32 @ S0_v42 (System.Int32), "The initialCount argument must be non-negative and less than or equal to the maximumCount."
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 CallVoid 120AB, v92 @ S0_v52 (System.DateTime), 0, methodof(System.Threading.SemaphoreSlim::.ctor)
+	70 Nop
+	71 Nop
+	72 Nop
+	73 CheckGreaterOrEqual v58 @ S0_v13 (System.Boolean), lockTaken @ L2 (System.Boolean&), 1
+	74 Not v59 @ TEMP_v4 (System.Boolean), v58 @ S0_v13 (System.Boolean)
+	75 ConditionalJump @b15, v59 @ TEMP_v4 (System.Boolean)
+	76 Nop
+	77 Nop
+	78 Move [this @ L0 (System.Threading.SpinLock)+C], lockTaken @ L2 (System.Boolean&)
+	79 Nop
+	80 Nop
+	81 Add v72 @ S0_v35, this @ L0 (System.Threading.SpinLock), 20
+	82 Nop
+	83 Nop
+	84 Call 11B6C, v75 @ S1_v18, typeof(System.Object)
+	85 Move [v72 @ S0_v35], v75 @ S1_v18
+	86 Nop
+	87 Nop
+	88 Move [this @ L0 (System.Threading.SpinLock)+8], millisecondsTimeout @ L1 (System.Int32)
+	89 Nop
+	90 Nop
+	91 Return
+	92 Nop
+	93 Nop
+	94 Nop
+	95 Move [v1 @ G7], lockTaken @ L2 (System.Boolean&)
+	96 Nop
+	97 Nop
+	98 Nop
+	99 Call 120AF, v81 @ S0_v17 (System.Int32), typeof(System.Int32), v1 @ G7
+	100 Nop
+	101 Nop
+	102 Move v99 @ S0_v19 (Il2CppClass<System.Threading.SemaphoreSlim>), typeof(System.Threading.SemaphoreSlim)
+	103 Nop
+	104 Nop
+	105 Nop
+	106 And v103 @ S0_v21, [v99 @ S0_v19 (Il2CppClass<System.Threading.SemaphoreSlim>)+BA], 512
+	107 CheckEqual v104 @ TEMP_v5 (System.Boolean), v103 @ S0_v21, 0
+	108 ConditionalJump @b25, v104 @ TEMP_v5 (System.Boolean)
+	109 Move v126 @ S0_v29 (Il2CppClass<System.Threading.SemaphoreSlim>), typeof(System.Threading.SemaphoreSlim)
+	110 Nop
+	111 CheckEqual v128 @ S0_v31 (System.Boolean), [v126 @ S0_v29 (Il2CppClass<System.Threading.SemaphoreSlim>)+74], 0
+	112 Not v129 @ TEMP_v7 (System.Boolean), v128 @ S0_v31 (System.Boolean)
+	113 ConditionalJump @b25, v129 @ TEMP_v7 (System.Boolean)
+	114 Nop
+	115 CallVoid 11A99, typeof(System.Threading.SemaphoreSlim)
+	116 Nop
+	117 Nop
+	118 Nop
+	119 Nop
+	120 Nop
+	121 Nop
+	122 Nop
+	123 Call 11B6C, v136 @ S0_v27 (System.DateTime), typeof(System.ArgumentOutOfRangeException)
+	124 Nop
+	125 Nop
+	126 Nop
+	127 Nop
+	128 Nop
+	129 Nop
+	130 CallVoid DateTime..ctor, v136 @ S0_v27 (System.DateTime), "maxCount", v81 @ S0_v17 (System.Int32), "The maximumCount argument must be a positive number. If a maximum is not required, use the constructor without a maxCount parameter."
+	131 Nop
+	132 Nop
+	133 Nop
+	134 Nop
+	135 CallVoid 120AB, v136 @ S0_v27 (System.DateTime), 0, methodof(System.Threading.SemaphoreSlim::.ctor)
+	136 Nop
+	137 Return
+
+Method: System.Void ContinueTryEnter(System.Int32 millisecondsTimeout, ref System.Boolean lockTaken)
+
+Disassembly:
+	0x12F3374 LocalGet 0
+	0x12F3376 I32Const 8
+	0x12F3378 I32Add
+	0x12F3379 LocalGet 1
+	0x12F337B LocalGet 2
+	0x12F337D I32Const 0
+	0x12F337F Call 60529
+	0x12F3383 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Threading.SpinLock), 8
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CallVoid EC71, v3 @ S0_v2, millisecondsTimeout @ L1 (System.Int32), lockTaken @ L2 (System.Boolean&), 0
+	7 Nop
+	8 Return
+
+Method: System.Void DecrementWaiters()
+
+Disassembly:
+	0x12F2CCA LocalGet 0
+	0x12F2CCC I32Const 8
+	0x12F2CCE I32Add
+	0x12F2CCF I32Const 0
+	0x12F2CD1 Call 60508
+	0x12F2CD5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Threading.SpinLock), 8
+	3 Nop
+	4 CallVoid EC5C, v3 @ S0_v2, 0
+	5 Nop
+	6 Return
+
+Method: System.Void ContinueTryEnterWithThreadTracking(System.Int32 millisecondsTimeout, System.UInt32 startTime, ref System.Boolean lockTaken)
+
+Disassembly:
+	0x12EA6C3 LocalGet 0
+	0x12EA6C5 LocalGet 1
+	0x12EA6C7 I32Const 8
+	0x12EA6C9 I32Add
+	0x12EA6CA LocalGet 2
+	0x12EA6CC LocalGet 3
+	0x12EA6CE I32Const 0
+	0x12EA6D0 Call 60315
+	0x12EA6D4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Add v5 @ S1_v2, millisecondsTimeout @ L1 (System.Int32), 8
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CallVoid EB9B, this @ L0 (System.Threading.SpinLock), v5 @ S1_v2, startTime @ L2 (System.UInt32), lockTaken @ L3 (System.Boolean&), 0
+	8 Nop
+	9 Return
+
+Method: System.Void Exit(System.Boolean useMemoryBarrier)
+
+Disassembly:
+	0x12F32EF LocalGet 0
+	0x12F32F1 I32Const 8
+	0x12F32F3 I32Add
+	0x12F32F4 LocalGet 1
+	0x12F32F6 I32Const 0
+	0x12F32F8 Call 60524
+	0x12F32FC End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Threading.SpinLock), 8
+	3 Nop
+	4 Nop
+	5 CallVoid EC6C, v3 @ S0_v2, useMemoryBarrier @ L1 (System.Boolean), 0
+	6 Nop
+	7 Return
+
+Method: System.Void ExitSlowPath(System.Boolean useMemoryBarrier)
+
+Disassembly:
+	0x12F351B LocalGet 0
+	0x12F351D I32Const 8
+	0x12F351F I32Add
+	0x12F3520 LocalGet 1
+	0x12F3522 I32Const 0
+	0x12F3524 Call 60534
+	0x12F3528 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Threading.SpinLock), 8
+	3 Nop
+	4 Nop
+	5 CallVoid EC76, v3 @ S0_v2, useMemoryBarrier @ L1 (System.Boolean), 0
+	6 Nop
+	7 Return
+
+Method: System.Boolean get_IsHeldByCurrentThread()
+
+Disassembly:
+	0xF7916A LocalGet 0
+	0xF7916C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return this @ L0 (System.Threading.SpinLock)
+
+Method: System.Boolean get_IsThreadOwnerTrackingEnabled()
+
+Disassembly:
+	0x12F353B LocalGet 0
+	0x12F353D I32Const 8
+	0x12F353F I32Add
+	0x12F3540 I32Const 0
+	0x12F3542 Call 60536
+	0x12F3546 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (System.Threading.SpinLock), 8
+	3 Nop
+	4 Call EC78, returnVal1 @ S0_v3 (System.Boolean), v3 @ S0_v2, 0
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x12F1774 GlobalGet 7
+	0x12F1776 LocalSet 0
+	0x12F1778 GlobalGet 7
+	0x12F177A I32Const 16
+	0x12F177C I32Add
+	0x12F177D GlobalSet 7
+	0x12F177F I32Const 4571401
+	0x12F1784 I32Load8_S 0, 0
+	0x12F1787 I32Eqz
+	0x12F1788 If -64
+	0x12F178A I32Const 3002296
+	0x12F178F I32Load 2, 0
+	0x12F1792 Call 73003
+	0x12F1796 I32Const 4571401
+	0x12F179B I32Const 1
+	0x12F179D I32Store8 0, 0
+	0x12F17A0 End
+	0x12F17A1 LocalGet 0
+	0x12F17A3 I32Const 4
+	0x12F17A5 I32Add
+	0x12F17A6 LocalTee 1
+	0x12F17A8 I32Const 0
+	0x12F17AA I32Store 2, 0
+	0x12F17AD LocalGet 1
+	0x12F17AF I32Const 4
+	0x12F17B1 Call 14799
+	0x12F17B4 LocalGet 1
+	0x12F17B6 I32Load 2, 0
+	0x12F17B9 LocalSet 2
+	0x12F17BB I32Const 4431432
+	0x12F17C0 I32Load 2, 0
+	0x12F17C3 Call 72556
+	0x12F17C7 LocalSet 1
+	0x12F17C9 LocalGet 0
+	0x12F17CB LocalGet 2
+	0x12F17CD I32Store 2, 0
+	0x12F17D0 I32Const 4491964
+	0x12F17D5 I32Load 2, 0
+	0x12F17D8 LocalSet 2
+	0x12F17DA LocalGet 0
+	0x12F17DC I32Const 8
+	0x12F17DE I32Add
+	0x12F17DF LocalTee 3
+	0x12F17E1 LocalGet 0
+	0x12F17E3 I32Load 2, 0
+	0x12F17E6 I32Store 2, 0
+	0x12F17E9 LocalGet 1
+	0x12F17EB I32Const 0
+	0x12F17ED I32Const 1
+	0x12F17EF I32Const 16384
+	0x12F17F3 LocalGet 3
+	0x12F17F5 LocalGet 2
+	0x12F17F7 Call 60507
+	0x12F17FB I32Const 4429204
+	0x12F1800 I32Load 2, 0
+	0x12F1803 I32Load 2, 92
+	0x12F1806 LocalGet 1
+	0x12F1808 I32Store 2, 0
+	0x12F180B I32Const 4429160
+	0x12F1810 I32Load 2, 0
+	0x12F1813 Call 72556
+	0x12F1817 LocalTee 1
+	0x12F1819 LocalSet 2
+	0x12F181B I32Const 4475568
+	0x12F1820 I32Load 2, 0
+	0x12F1823 Drop
+	0x12F1824 LocalGet 2
+	0x12F1826 I32Const 4491824
+	0x12F182B I32Load 2, 0
+	0x12F182E LocalTee 3
+	0x12F1830 I32Load 2, 0
+	0x12F1833 I32Store 2, 8
+	0x12F1836 LocalGet 2
+	0x12F1838 LocalGet 3
+	0x12F183A I32Store 2, 20
+	0x12F183D LocalGet 2
+	0x12F183F I32Const 16
+	0x12F1841 I32Add
+	0x12F1842 I32Const 0
+	0x12F1844 I32Store 2, 0
+	0x12F1847 I32Const 4429204
+	0x12F184C I32Load 2, 0
+	0x12F184F I32Load 2, 92
+	0x12F1852 I32Const 4
+	0x12F1854 I32Add
+	0x12F1855 LocalGet 1
+	0x12F1857 I32Store 2, 0
+	0x12F185A LocalGet 0
+	0x12F185C GlobalSet 7
+	0x12F185E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b9
+	11 Nop
+	12 Move v12 @ S0_v40, [2DCFB8]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v40
+	14 Nop
+	15 Move v14 @ S1_v20, 1
+	16 Move [45C109], v14 @ S1_v20
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Add v19 @ S0_v9, v1 @ G7, 4
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v9], 0
+	24 Nop
+	25 Nop
+	26 CallVoid 39CF, v19 @ S0_v9, 4
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call 11B6C, v29 @ S0_v15 (System.Threading.Tasks.Task`1<System.Boolean>), typeof(System.Threading.Tasks.Task`1<System.Boolean>)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Move [v1 @ G7], [v19 @ S0_v9]
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Add v38 @ S0_v20 (System.Threading.CancellationToken), v1 @ G7, 8
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Move v38.m_source (System.Threading.CancellationTokenSource), [v1 @ G7]
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Nop
+	53 CallVoid Task`1<System.Boolean>..ctor, v29 @ S0_v15 (System.Threading.Tasks.Task`1<System.Boolean>), 0, 1, 16384, v38 @ S0_v20 (System.Threading.CancellationToken)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 Move v50.s_trueTask (System.Threading.Tasks.Task`1<System.Boolean>), v29 @ S0_v15 (System.Threading.Tasks.Task`1<System.Boolean>)
+	59 Nop
+	60 Nop
+	61 Call 11B6C, v54 @ S0_v27, typeof(System.Action`1<System.Object>)
+	62 Nop
+	63 Nop
+	64 Nop
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Move v61 @ S1_v13 (Il2CppMethodInfo), methodof(System.Threading.SemaphoreSlim::CancellationTokenCanceledEventHandler)
+	69 Nop
+	70 Nop
+	71 Move [v54 @ S0_v27+8], [v61 @ S1_v13 (Il2CppMethodInfo)]
+	72 Nop
+	73 Nop
+	74 Move [v54 @ S0_v27+14], methodof(System.Threading.SemaphoreSlim::CancellationTokenCanceledEventHandler)
+	75 Nop
+	76 Nop
+	77 Add v68 @ S0_v33, v54 @ S0_v27, 16
+	78 Nop
+	79 Move [v68 @ S0_v33], 0
+	80 Nop
+	81 Move v71 @ S0_v35 (Il2CppClass<System.Threading.SemaphoreSlim>), typeof(System.Threading.SemaphoreSlim)
+	82 Nop
+	83 Nop
+	84 Add v74 @ S0_v37, [v71 @ S0_v35 (Il2CppClass<System.Threading.SemaphoreSlim>)+5C], 4
+	85 Nop
+	86 Move [v74 @ S0_v37], v54 @ S0_v27
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Return
+

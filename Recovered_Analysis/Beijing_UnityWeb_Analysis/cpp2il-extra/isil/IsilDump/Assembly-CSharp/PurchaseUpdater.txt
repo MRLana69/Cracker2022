@@ -1,0 +1,93 @@
+Type: PurchaseUpdater
+
+Method: System.Void UpgradePurchased(Info.UpgradeType type)
+
+Disassembly:
+	0xCCC67D I32Const 4553009
+	0xCCC682 I32Load8_S 0, 0
+	0xCCC685 I32Eqz
+	0xCCC686 If -64
+	0xCCC688 I32Const 2993836
+	0xCCC68D I32Load 2, 0
+	0xCCC690 Call 73003
+	0xCCC694 I32Const 4553009
+	0xCCC699 I32Const 1
+	0xCCC69B I32Store8 0, 0
+	0xCCC69E End
+	0xCCC69F I32Const 4436272
+	0xCCC6A4 I32Load 2, 0
+	0xCCC6A7 LocalTee 3
+	0xCCC6A9 I32Load16_S 1, 186
+	0xCCC6AD I32Const 512
+	0xCCC6B0 I32And
+	0xCCC6B1 If -64
+	0xCCC6B3 LocalGet 3
+	0xCCC6B5 I32Load 2, 116
+	0xCCC6B8 I32Eqz
+	0xCCC6B9 If -64
+	0xCCC6BB LocalGet 3
+	0xCCC6BD Call 72345
+	0xCCC6C1 End
+	0xCCC6C2 End
+	0xCCC6C3 I32Const 0
+	0xCCC6C5 Call 41557
+	0xCCC6C9 LocalGet 1
+	0xCCC6CB I32Const 4538680
+	0xCCC6D0 I32Load 2, 0
+	0xCCC6D3 I32Const 6
+	0xCCC6D5 I32Const 0
+	0xCCC6D7 Call 41611
+	0xCCC6DB End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v17, [2DAEAC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v17
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [457931], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<InApp.InAppManager>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b11, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v12 (Il2CppClass<InApp.InAppManager>), typeof(InApp.InAppManager)
+	21 Nop
+	22 CheckEqual v20 @ S0_v14 (System.Boolean), [v18 @ S0_v12 (Il2CppClass<InApp.InAppManager>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v14 (System.Boolean)
+	24 ConditionalJump @b11, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(InApp.InAppManager)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call InAppManager.GetActiveInAppOffers, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>)
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CallVoid InventorySave.LogSpentEvent, v26 @ S0_v11 (System.Collections.Generic.Dictionary`2<System.String, InApp.InAppItemModel>), type @ L1 (Info.UpgradeType), "Keys popup", 6
+	37 Nop
+	38 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

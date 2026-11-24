@@ -1,0 +1,202 @@
+Type: UnityEngine.Networking.NetworkSystem.ReconnectMessage
+
+Method: System.Void Deserialize(UnityEngine.Networking.NetworkReader reader)
+
+Disassembly:
+	0x121605C LocalGet 1
+	0x121605E LocalGet 0
+	0x1216060 I32Load 2, 12
+	0x1216063 I32Const 0
+	0x1216065 Call 56794
+	0x1216069 LocalGet 1
+	0x121606B LocalGet 0
+	0x121606D I32Load 2, 8
+	0x1216070 I32Load 2, 12
+	0x1216073 I32Const 65535
+	0x1216077 I32And
+	0x1216078 I32Const 0
+	0x121607A Call 56789
+	0x121607E Loop -64
+	0x1216080 LocalGet 3
+	0x1216082 LocalGet 0
+	0x1216084 I32Load 2, 8
+	0x1216087 I32Load 2, 12
+	0x121608A I32Lt_S
+	0x121608B If -64
+	0x121608D I32Const 5
+	0x121608F LocalGet 0
+	0x1216091 I32Load 2, 8
+	0x1216094 I32Const 16
+	0x1216096 I32Add
+	0x1216097 LocalGet 3
+	0x1216099 I32Const 2
+	0x121609B I32Shl
+	0x121609C I32Add
+	0x121609D I32Load 2, 0
+	0x12160A0 LocalGet 1
+	0x12160A2 Call 29437
+	0x12160A6 LocalGet 3
+	0x12160A8 I32Const 1
+	0x12160AA I32Add
+	0x12160AB LocalSet 3
+	0x12160AD Br 1
+	0x12160AF End
+	0x12160B0 End
+	0x12160B1 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid NetworkWriter.Write, reader @ L1 (UnityEngine.Networking.NetworkReader), this.playerControllerId (System.Int16)
+	5 Nop
+	6 Nop
+	7 Move v8 @ S1_v4 (System.Int32), this.oldConnectionId (System.Int32)
+	8 Nop
+	9 Nop
+	10 And v11 @ S1_v6, [v8 @ S1_v4 (System.Int32)+C], 65535
+	11 Nop
+	12 CallVoid DDD5, reader @ L1 (UnityEngine.Networking.NetworkReader), v11 @ S1_v6, 0
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v30 @ S1_v9 (System.Int32), this.oldConnectionId (System.Int32)
+	17 Nop
+	18 CheckLess v32 @ S0_v5 (System.Boolean), v27 @ S0_v8, [v30 @ S1_v9 (System.Int32)+C]
+	19 Not v21 @ TEMP_v2 (System.Boolean), v32 @ S0_v5 (System.Boolean)
+	20 ConditionalJump @b7, v21 @ TEMP_v2 (System.Boolean)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Add v37 @ S1_v13, this.oldConnectionId (System.Int32), 16
+	26 Nop
+	27 Nop
+	28 ShiftLeft v39 @ S2_v7, v13 @ L3_v1, 2
+	29 Add v40 @ S1_v14, v37 @ S1_v13, v39 @ S2_v7
+	30 Nop
+	31 Nop
+	32 CallVoid 72FD, 5, [v40 @ S1_v14], reader @ L1 (UnityEngine.Networking.NetworkReader)
+	33 Nop
+	34 Nop
+	35 Add v27 @ S0_v8, v13 @ L3_v1, 1
+	36 Nop
+	37 Jump @b4
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Return
+
+Method: System.Void Serialize(UnityEngine.Networking.NetworkWriter writer)
+
+Disassembly:
+	0x12160B6 GlobalGet 7
+	0x12160B8 LocalSet 2
+	0x12160BA GlobalGet 7
+	0x12160BC I32Const 16
+	0x12160BE I32Add
+	0x12160BF GlobalSet 7
+	0x12160C1 LocalGet 0
+	0x12160C3 LocalGet 1
+	0x12160C5 I32Const 0
+	0x12160C7 Call 54029
+	0x12160CB I32Store 2, 8
+	0x12160CE LocalGet 0
+	0x12160D0 LocalGet 1
+	0x12160D2 I32Const 0
+	0x12160D4 Call 54029
+	0x12160D8 I32Store16 1, 12
+	0x12160DB LocalGet 2
+	0x12160DD LocalGet 1
+	0x12160DF I32Const 0
+	0x12160E1 Call 54158
+	0x12160E5 I32Store 2, 0
+	0x12160E8 LocalGet 2
+	0x12160EA I32Const 4
+	0x12160EC I32Add
+	0x12160ED LocalTee 3
+	0x12160EF LocalGet 2
+	0x12160F1 I32Load 2, 0
+	0x12160F4 I32Store 2, 0
+	0x12160F7 LocalGet 0
+	0x12160F9 LocalGet 3
+	0x12160FB I32Load 2, 0
+	0x12160FE I32Store 2, 16
+	0x1216101 LocalGet 0
+	0x1216103 I32Const 24
+	0x1216105 I32Add
+	0x1216106 LocalGet 1
+	0x1216108 I32Const 0
+	0x121610A Call 54166
+	0x121610E I32Store 2, 0
+	0x1216111 LocalGet 0
+	0x1216113 LocalGet 0
+	0x1216115 I32Load 2, 24
+	0x1216118 I32Load 2, 12
+	0x121611B I32Store 2, 20
+	0x121611E LocalGet 2
+	0x1216120 GlobalSet 7
+	0x1216122 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Call NetworkReader.ReadNetworkId, v12 @ S1_v3 (UnityEngine.Networking.NetworkInstanceId), writer @ L1 (UnityEngine.Networking.NetworkWriter)
+	10 Move this.oldConnectionId (System.Int32), v12 @ S1_v3 (UnityEngine.Networking.NetworkInstanceId)
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call NetworkReader.ReadNetworkId, v16 @ S1_v5 (UnityEngine.Networking.NetworkInstanceId), writer @ L1 (UnityEngine.Networking.NetworkWriter)
+	15 Move this.playerControllerId (System.Int16), v16 @ S1_v5 (UnityEngine.Networking.NetworkInstanceId)
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call D38E, v20 @ S1_v7, writer @ L1 (UnityEngine.Networking.NetworkWriter), 0
+	20 Move [v1 @ G7], v20 @ S1_v7
+	21 Nop
+	22 Nop
+	23 Add v23 @ S0_v8, v1 @ G7, 4
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move [v23 @ S0_v8], [v1 @ G7]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move this.netId (UnityEngine.Networking.NetworkInstanceId), [v23 @ S0_v8]
+	32 Nop
+	33 Nop
+	34 Add v32 @ S0_v11, this @ L0 (UnityEngine.Networking.NetworkSystem.ReconnectMessage), 24
+	35 Nop
+	36 Nop
+	37 Call NetworkReader.ReadTransform, v35 @ S1_v15 (UnityEngine.Transform), writer @ L1 (UnityEngine.Networking.NetworkWriter)
+	38 Move [v32 @ S0_v11], v35 @ S1_v15 (UnityEngine.Transform)
+	39 Nop
+	40 Nop
+	41 Move v38 @ S1_v17 (System.Byte[]), this.msgData (System.Byte[])
+	42 Nop
+	43 Move this.msgSize (System.Int32), v38.Length
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

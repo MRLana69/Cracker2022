@@ -1,0 +1,49 @@
+Type: TopRunCell
+
+Method: System.Void UpdateCell()
+
+Disassembly:
+	0xC3B34B LocalGet 0
+	0xC3B34D I32Const 1
+	0xC3B34F I32Store8 0, 72
+	0xC3B352 LocalGet 0
+	0xC3B354 I32Const 0
+	0xC3B356 Call 73999
+	0xC3B35A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (TopRunCell)+48], 1
+	3 Nop
+	4 Nop
+	5 CallVoid UpgradeScreen.Start, this @ L0 (TopRunCell)
+	6 Nop
+	7 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xDD192E LocalGet 0
+	0xDD1930 I32Load 2, 28
+	0xDD1933 If -64
+	0xDD1935 LocalGet 0
+	0xDD1937 I32Load 2, 28
+	0xDD193A I32Const 0
+	0xDD193C Call 30903
+	0xDD1940 End
+	0xDD1941 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), this.OnUpdateCell (System.Action), 0
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 CallVoid 78B7, this.OnUpdateCell (System.Action), 0
+	8 Nop
+	9 Nop
+	10 Return
+

@@ -1,0 +1,50 @@
+Type: UnityEngine.U2D.SpriteAtlas
+
+Method: System.Boolean CanBindTo(UnityEngine.Sprite sprite)
+
+Disassembly:
+	0x13AABA6 I32Const 3927520
+	0x13AABAB I32Load 2, 0
+	0x13AABAE LocalTee 2
+	0x13AABB0 I32Eqz
+	0x13AABB1 If -64
+	0x13AABB3 I32Const 3927520
+	0x13AABB8 I32Const 3517976
+	0x13AABBD Call 73893
+	0x13AABC1 LocalTee 2
+	0x13AABC3 I32Store 2, 0
+	0x13AABC6 End
+	0x13AABC7 LocalGet 0
+	0x13AABC9 LocalGet 1
+	0x13AABCB LocalGet 2
+	0x13AABCD I32Const 16383
+	0x13AABD1 I32And
+	0x13AABD2 I32Const 6161
+	0x13AABD5 I32Add
+	0x13AABD6 CallIndirect 0, 0
+	0x13AABD9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BEDE0], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3517976
+	9 Nop
+	10 Move [3BEDE0], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 6161
+	19 IndirectCall v21 @ S2_v3, returnVal1 @ S0_v6 (System.Boolean), this @ L0 (UnityEngine.U2D.SpriteAtlas), sprite @ L1 (UnityEngine.Sprite)
+	20 Nop
+	21 Return returnVal1 @ S0_v6 (System.Boolean)
+

@@ -1,0 +1,96 @@
+Type: System.Runtime.CompilerServices.DefaultDependencyAttribute
+
+Method: System.Void .ctor(System.Runtime.CompilerServices.LoadHint loadHintArgument)
+
+Disassembly:
+	0x1007892 I32Const 4562875
+	0x1007897 I32Load8_S 0, 0
+	0x100789A I32Eqz
+	0x100789B If -64
+	0x100789D I32Const 3012596
+	0x10078A2 I32Load 2, 0
+	0x10078A5 Call 73003
+	0x10078A9 I32Const 4562875
+	0x10078AE I32Const 1
+	0x10078B0 I32Store8 0, 0
+	0x10078B3 End
+	0x10078B4 LocalGet 1
+	0x10078B6 LocalTee 3
+	0x10078B8 If -1
+	0x10078BA LocalGet 3
+	0x10078BC I32Load 2, 8
+	0x10078BF I32Eqz
+	0x10078C0 Else
+	0x10078C1 I32Const 1
+	0x10078C3 End
+	0x10078C4 If -64
+	0x10078C6 I32Const 4427864
+	0x10078CB I32Load 2, 0
+	0x10078CE Call 72556
+	0x10078D2 LocalTee 0
+	0x10078D4 I32Const 4509364
+	0x10078D9 I32Load 2, 0
+	0x10078DC I32Const 0
+	0x10078DE Call 57599
+	0x10078E2 LocalGet 0
+	0x10078E4 I32Const 0
+	0x10078E6 I32Const 4490392
+	0x10078EB I32Load 2, 0
+	0x10078EE Call 73899
+	0x10078F2 Else
+	0x10078F3 LocalGet 0
+	0x10078F5 I32Const 8
+	0x10078F7 I32Add
+	0x10078F8 LocalGet 3
+	0x10078FA I32Store 2, 0
+	0x10078FD End
+	0x10078FE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v19, [2DF7F4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v19
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [459FBB], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CheckEqual v14 @ TEMP_v2 (System.Boolean), loadHintArgument @ L1 (System.Runtime.CompilerServices.LoadHint), 0
+	15 ConditionalJump @b6, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 CheckEqual v19 @ S0_v6 (System.Boolean), [loadHintArgument @ L1 (System.Runtime.CompilerServices.LoadHint)+8], 0
+	19 Jump @b13
+	20 Nop
+	21 Nop
+	22 Not v20 @ TEMP_v3 (System.Boolean), v19 @ S0_v6 (System.Boolean)
+	23 ConditionalJump @b11, v20 @ TEMP_v3 (System.Boolean)
+	24 Nop
+	25 Nop
+	26 Call 11B6C, v23 @ S0_v12 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid ArgumentOutOfRangeException..ctor, v23 @ S0_v12 (System.ArgumentOutOfRangeException), "assemblyFullName"
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 CallVoid TypeForwardedFromAttribute..ctor, v23 @ S0_v12 (System.ArgumentOutOfRangeException), 0
+	37 Jump @b14
+	38 Nop
+	39 Nop
+	40 Add v27 @ S0_v9, this @ L0 (System.Runtime.CompilerServices.DefaultDependencyAttribute), 8
+	41 Nop
+	42 Move [v27 @ S0_v9], loadHintArgument @ L1 (System.Runtime.CompilerServices.LoadHint)
+	43 Nop
+	44 Nop
+	45 Return
+

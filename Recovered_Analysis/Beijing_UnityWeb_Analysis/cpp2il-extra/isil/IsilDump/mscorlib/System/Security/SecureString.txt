@@ -1,0 +1,493 @@
+Type: System.Security.SecureString
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void .ctor(System.Char* value, System.Int32 length)
+
+Disassembly:
+	0x11E0894 LocalGet 0
+	0x11E0896 LocalGet 2
+	0x11E0898 I32Load 2, 0
+	0x11E089B I32Const 1
+	0x11E089D I32Add
+	0x11E089E I32Const 0
+	0x11E08A0 Call 55656
+	0x11E08A4 LocalGet 0
+	0x11E08A6 I32Load 2, 8
+	0x11E08A9 LocalGet 2
+	0x11E08AB LocalGet 2
+	0x11E08AD I32Load 2, 0
+	0x11E08B0 LocalTee 2
+	0x11E08B2 I32Const 1
+	0x11E08B4 I32Add
+	0x11E08B5 I32Store 2, 0
+	0x11E08B8 I32Const 16
+	0x11E08BA I32Add
+	0x11E08BB LocalGet 2
+	0x11E08BD I32Add
+	0x11E08BE LocalGet 1
+	0x11E08C0 I32Store8 0, 0
+	0x11E08C3 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Add v6 @ S1_v3 (System.String), length.m_value (System.Int32), 1
+	5 Nop
+	6 CallVoid SecurityElement..ctor, this @ L0 (System.Security.SecureString), v6 @ S1_v3 (System.String)
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Add v15 @ S2_v5 (System.Int32), length.m_value (System.Int32), 1
+	15 Move length.m_value (System.Int32), v15 @ S2_v5 (System.Int32)
+	16 Nop
+	17 Add v17 @ S0_v4, this.length (System.Int32), 16
+	18 Nop
+	19 Add v19 @ S0_v5, v17 @ S0_v4, length.m_value (System.Int32)
+	20 Nop
+	21 Move [v19 @ S0_v5], value @ L1 (System.Char*)
+	22 Nop
+	23 Return
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x11E08C6 LocalGet 0
+	0x11E08C8 I32Const 0
+	0x11E08CA I32Const 1
+	0x11E08CC I32Const 0
+	0x11E08CE Call 55674
+	0x11E08D2 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Call SecurityDocument.InternalGetElement, returnVal1 @ S0_v2 (System.Int32), this @ L0 (System.Security.SecureString), 0, 1
+	5 Nop
+	6 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x11DF47C LocalGet 0
+	0x11DF47E I32Const 8
+	0x11DF480 I32Const 0
+	0x11DF482 I32Const 0
+	0x11DF484 Call 55649
+	0x11DF488 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CallVoid SecurityElement..ctor, this @ L0 (System.Security.SecureString), 8, 0
+	5 Nop
+	6 Return
+
+Method: System.Void Encrypt()
+
+Disassembly:
+	0x11DF740 LocalGet 0
+	0x11DF742 I32Const 1
+	0x11DF744 I32Store8 0, 12
+	0x11DF747 LocalGet 0
+	0x11DF749 I32Load 2, 16
+	0x11DF74C If -64
+	0x11DF74E LocalGet 0
+	0x11DF750 I32Load 2, 16
+	0x11DF753 I32Const 0
+	0x11DF755 LocalGet 0
+	0x11DF757 I32Load 2, 16
+	0x11DF75A I32Load 2, 12
+	0x11DF75D I32Const 0
+	0x11DF75F Call 57762
+	0x11DF763 LocalGet 0
+	0x11DF765 I32Const 16
+	0x11DF767 I32Add
+	0x11DF768 I32Const 0
+	0x11DF76A I32Store 2, 0
+	0x11DF76D End
+	0x11DF76E LocalGet 0
+	0x11DF770 I32Const 0
+	0x11DF772 I32Store 2, 8
+	0x11DF775 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.disposed (System.Boolean), 1
+	3 Nop
+	4 Nop
+	5 CheckEqual v5 @ TEMP_v1 (System.Boolean), this.data (System.Byte[]), 0
+	6 ConditionalJump @b5, v5 @ TEMP_v1 (System.Boolean)
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Move v10 @ S2_v3 (System.Byte[]), this.data (System.Byte[])
+	12 Nop
+	13 Nop
+	14 CallVoid Array.ClearInternal, this.data (System.Byte[]), 0, v10.Length
+	15 Nop
+	16 Nop
+	17 Add v20 @ S0_v9, this @ L0 (System.Security.SecureString), 16
+	18 Nop
+	19 Move [v20 @ S0_v9], 0
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move this.length (System.Int32), 0
+	24 Nop
+	25 Return
+
+Method: System.Void Decrypt()
+
+Disassembly:
+	0x11DF6CB LocalGet 0
+	0x11DF6CD I32Load 2, 16
+	0x11DF6D0 If -64
+	0x11DF6D2 LocalGet 0
+	0x11DF6D4 I32Load 2, 16
+	0x11DF6D7 Drop
+	0x11DF6D8 End
+	0x11DF6D9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ TEMP_v1 (System.Boolean), this.data (System.Byte[]), 0
+	3 ConditionalJump @b4, v3 @ TEMP_v1 (System.Boolean)
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Return
+
+Method: System.Void Alloc(System.Int32 length, System.Boolean realloc)
+
+Disassembly:
+	0x11DF5BD I32Const 4568501
+	0x11DF5C2 I32Load8_S 0, 0
+	0x11DF5C5 I32Eqz
+	0x11DF5C6 If -64
+	0x11DF5C8 I32Const 3001808
+	0x11DF5CD I32Load 2, 0
+	0x11DF5D0 Call 73003
+	0x11DF5D4 I32Const 4568501
+	0x11DF5D9 I32Const 1
+	0x11DF5DB I32Store8 0, 0
+	0x11DF5DE End
+	0x11DF5DF LocalGet 1
+	0x11DF5E1 I32Eqz
+	0x11DF5E2 If -64
+	0x11DF5E4 I32Const 4427864
+	0x11DF5E9 I32Load 2, 0
+	0x11DF5EC Call 72556
+	0x11DF5F0 LocalTee 3
+	0x11DF5F2 I32Const 4501656
+	0x11DF5F7 I32Load 2, 0
+	0x11DF5FA I32Const 0
+	0x11DF5FC Call 57599
+	0x11DF600 LocalGet 3
+	0x11DF602 I32Const 0
+	0x11DF604 I32Const 4491400
+	0x11DF609 I32Load 2, 0
+	0x11DF60C Call 73899
+	0x11DF610 End
+	0x11DF611 LocalGet 2
+	0x11DF613 I32Const 65537
+	0x11DF617 I32Ge_U
+	0x11DF618 If -64
+	0x11DF61A I32Const 4427992
+	0x11DF61F I32Load 2, 0
+	0x11DF622 Call 72556
+	0x11DF626 LocalTee 3
+	0x11DF628 I32Const 4503040
+	0x11DF62D I32Load 2, 0
+	0x11DF630 I32Const 4511696
+	0x11DF635 I32Load 2, 0
+	0x11DF638 I32Const 0
+	0x11DF63A Call 57647
+	0x11DF63E LocalGet 3
+	0x11DF640 I32Const 0
+	0x11DF642 I32Const 4491400
+	0x11DF647 I32Load 2, 0
+	0x11DF64A Call 73899
+	0x11DF64E End
+	0x11DF64F LocalGet 0
+	0x11DF651 LocalGet 2
+	0x11DF653 I32Store 2, 8
+	0x11DF656 LocalGet 0
+	0x11DF658 LocalGet 2
+	0x11DF65A I32Const 0
+	0x11DF65C I32Const 0
+	0x11DF65E Call 55649
+	0x11DF662 I32Const 0
+	0x11DF664 LocalSet 3
+	0x11DF666 Loop -64
+	0x11DF668 LocalGet 4
+	0x11DF66A LocalGet 2
+	0x11DF66C I32Lt_S
+	0x11DF66D If -64
+	0x11DF66F LocalGet 1
+	0x11DF671 I32Const 2
+	0x11DF673 I32Add
+	0x11DF674 LocalGet 0
+	0x11DF676 I32Load 2, 16
+	0x11DF679 I32Const 16
+	0x11DF67B I32Add
+	0x11DF67C LocalGet 3
+	0x11DF67E I32Add
+	0x11DF67F LocalGet 1
+	0x11DF681 I32Load16_S 1, 0
+	0x11DF684 LocalTee 1
+	0x11DF686 I32Const 65535
+	0x11DF68A I32And
+	0x11DF68B I32Const 8
+	0x11DF68D I32Shr_U
+	0x11DF68E I32Store8 0, 0
+	0x11DF691 LocalGet 3
+	0x11DF693 I32Const 1
+	0x11DF695 I32Add
+	0x11DF696 LocalTee 6
+	0x11DF698 I32Const 1
+	0x11DF69A I32Add
+	0x11DF69B LocalSet 3
+	0x11DF69D LocalGet 0
+	0x11DF69F I32Load 2, 16
+	0x11DF6A2 I32Const 16
+	0x11DF6A4 I32Add
+	0x11DF6A5 LocalGet 6
+	0x11DF6A7 I32Add
+	0x11DF6A8 LocalGet 1
+	0x11DF6AA I32Store8 0, 0
+	0x11DF6AD LocalSet 1
+	0x11DF6AF LocalGet 4
+	0x11DF6B1 I32Const 1
+	0x11DF6B3 I32Add
+	0x11DF6B4 LocalSet 4
+	0x11DF6B6 Br 1
+	0x11DF6B8 End
+	0x11DF6B9 End
+	0x11DF6BA LocalGet 0
+	0x11DF6BC I32Load 2, 16
+	0x11DF6BF If -64
+	0x11DF6C1 LocalGet 0
+	0x11DF6C3 I32Load 2, 16
+	0x11DF6C6 Drop
+	0x11DF6C7 End
+	0x11DF6C8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b17
+	5 Nop
+	6 Move v5 @ S0_v35, [2DCDD0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v35
+	8 Nop
+	9 Move v7 @ S1_v28, 1
+	10 Move [45B5B5], v7 @ S1_v28
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), v71 @ L1_v1 (System.Int32), 0
+	14 Not v14 @ TEMP_v2 (System.Boolean), v13 @ S0_v6 (System.Boolean)
+	15 ConditionalJump @b8, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Call 11B6C, v17 @ S0_v32 (System.ArgumentOutOfRangeException), typeof(System.ArgumentNullException)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid ArgumentOutOfRangeException..ctor, v17 @ S0_v32 (System.ArgumentOutOfRangeException), "value"
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v17 @ S0_v32 (System.ArgumentOutOfRangeException), 0, methodof(System.Security.SecureString::.ctor)
+	29 Nop
+	30 Nop
+	31 Nop
+	32 CheckGreaterOrEqual v31 @ S0_v9 (System.Boolean), realloc @ L2 (System.Boolean), 65537
+	33 Not v32 @ TEMP_v3 (System.Boolean), v31 @ S0_v9 (System.Boolean)
+	34 ConditionalJump @b12, v32 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Call 11B6C, v38 @ S0_v28 (System.ArgumentOutOfRangeException), typeof(System.ArgumentOutOfRangeException)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 CallVoid ArgumentOutOfRangeException.GetObjectData, v38 @ S0_v28 (System.ArgumentOutOfRangeException), "length", "< 0 || > 65536"
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 CallVoid 120AB, v38 @ S0_v28 (System.ArgumentOutOfRangeException), 0, methodof(System.Security.SecureString::.ctor)
+	50 Nop
+	51 Nop
+	52 Nop
+	53 Move this.length (System.Int32), realloc @ L2 (System.Boolean)
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Nop
+	58 CallVoid SecurityElement..ctor, this @ L0 (System.Security.SecureString), realloc @ L2 (System.Boolean), 0
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 CheckLess v87 @ S0_v16 (System.Boolean), v84 @ S0_v25, realloc @ L2 (System.Boolean)
+	65 Not v82 @ TEMP_v5 (System.Boolean), v87 @ S0_v16 (System.Boolean)
+	66 ConditionalJump @b15, v82 @ TEMP_v5 (System.Boolean)
+	67 Nop
+	68 Nop
+	69 Nop
+	70 Nop
+	71 Nop
+	72 Nop
+	73 Add v94 @ S1_v12, this.data (System.Byte[]), 16
+	74 Nop
+	75 Add v96 @ S1_v13, v94 @ S1_v12, 0
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Nop
+	80 And v101 @ S2_v9 (System.Int32), v71.m_value (System.Int32), 65535
+	81 Nop
+	82 ShiftRight v102 @ S2_v10 (System.Int32), v101 @ S2_v9 (System.Int32), 8
+	83 Move [v96 @ S1_v13], v102 @ S2_v10 (System.Int32)
+	84 Nop
+	85 Nop
+	86 Add v105 @ S1_v15, 0, 1
+	87 Nop
+	88 Nop
+	89 Nop
+	90 Nop
+	91 Nop
+	92 Nop
+	93 Nop
+	94 Add v111 @ S1_v19, this.data (System.Byte[]), 16
+	95 Nop
+	96 Add v113 @ S1_v20, v111 @ S1_v19, v105 @ S1_v15
+	97 Nop
+	98 Move [v113 @ S1_v20], v71.m_value (System.Int32)
+	99 Nop
+	100 Nop
+	101 Nop
+	102 Add v84 @ S0_v25, v65 @ L4_v1, 1
+	103 Nop
+	104 Jump @b18
+	105 Nop
+	106 Nop
+	107 Nop
+	108 Nop
+	109 CheckEqual v117 @ TEMP_v6 (System.Boolean), this.data (System.Byte[]), 0
+	110 ConditionalJump @b19, v117 @ TEMP_v6 (System.Boolean)
+	111 Nop
+	112 Nop
+	113 Nop
+	114 Nop
+	115 Return
+
+Method: System.Byte[] GetBuffer()
+
+Disassembly:
+	0x11DF6DE I32Const 4568502
+	0x11DF6E3 I32Load8_S 0, 0
+	0x11DF6E6 I32Eqz
+	0x11DF6E7 If -64
+	0x11DF6E9 I32Const 3001812
+	0x11DF6EE I32Load 2, 0
+	0x11DF6F1 Call 73003
+	0x11DF6F5 I32Const 4568502
+	0x11DF6FA I32Const 1
+	0x11DF6FC I32Store8 0, 0
+	0x11DF6FF End
+	0x11DF700 LocalGet 0
+	0x11DF702 I32Load8_S 0, 12
+	0x11DF705 If -64
+	0x11DF707 I32Const 4427872
+	0x11DF70C I32Load 2, 0
+	0x11DF70F Call 72556
+	0x11DF713 LocalTee 2
+	0x11DF715 I32Const 4511700
+	0x11DF71A I32Load 2, 0
+	0x11DF71D I32Const 0
+	0x11DF71F Call 55138
+	0x11DF723 LocalGet 2
+	0x11DF725 I32Const 0
+	0x11DF727 I32Const 4464328
+	0x11DF72C I32Load 2, 0
+	0x11DF72F Call 73899
+	0x11DF733 Else
+	0x11DF734 LocalGet 0
+	0x11DF736 I32Load 2, 8
+	0x11DF739 Return
+	0x11DF73A End
+	0x11DF73B I32Const 0
+	0x11DF73D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v16, [2DCDD4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [45B5B6], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Not v14 @ TEMP_v2 (System.Boolean), this.disposed (System.Boolean)
+	15 ConditionalJump @b9, v14 @ TEMP_v2 (System.Boolean)
+	16 Nop
+	17 Nop
+	18 Call 11B6C, v17 @ S0_v11 (System.ObsoleteAttribute), typeof(System.ObjectDisposedException)
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 CallVoid ObsoleteAttribute..ctor, v17 @ S0_v11 (System.ObsoleteAttribute), "SecureString"
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid 120AB, v17 @ S0_v11 (System.ObsoleteAttribute), 0, methodof(System.Security.SecureString::get_Length)
+	29 Jump @b10
+	30 Nop
+	31 Nop
+	32 Return this.length (System.Int32)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Return 0
+

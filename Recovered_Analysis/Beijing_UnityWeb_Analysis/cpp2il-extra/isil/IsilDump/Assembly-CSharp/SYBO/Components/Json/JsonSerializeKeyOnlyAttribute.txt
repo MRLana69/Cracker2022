@@ -1,0 +1,76 @@
+Type: SYBO.Components.Json.JsonSerializeKeyOnlyAttribute
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xFF1C06 I32Const 4562542
+	0xFF1C0B I32Load8_S 0, 0
+	0xFF1C0E I32Eqz
+	0xFF1C0F If -64
+	0xFF1C11 I32Const 2974856
+	0xFF1C16 I32Load 2, 0
+	0xFF1C19 Call 73003
+	0xFF1C1D I32Const 4562542
+	0xFF1C22 I32Const 1
+	0xFF1C24 I32Store8 0, 0
+	0xFF1C27 End
+	0xFF1C28 I32Const 4427764
+	0xFF1C2D I32Load 2, 0
+	0xFF1C30 LocalTee 2
+	0xFF1C32 I32Load16_S 1, 186
+	0xFF1C36 I32Const 512
+	0xFF1C39 I32And
+	0xFF1C3A If -64
+	0xFF1C3C LocalGet 2
+	0xFF1C3E I32Load 2, 116
+	0xFF1C41 I32Eqz
+	0xFF1C42 If -64
+	0xFF1C44 LocalGet 2
+	0xFF1C46 Call 72345
+	0xFF1C4A End
+	0xFF1C4B End
+	0xFF1C4C LocalGet 0
+	0xFF1C4E I32Const 4539936
+	0xFF1C53 I32Load 2, 0
+	0xFF1C56 I32Const 0
+	0xFF1C58 Call 51388
+	0xFF1C5C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v16, [2D6488]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [459E6E], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.Exception>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v11 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	21 Nop
+	22 CheckEqual v20 @ S0_v13 (System.Boolean), [v18 @ S0_v11 (Il2CppClass<System.Exception>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.Exception)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 CallVoid Exception.SetErrorCode, this @ L0 (SYBO.Components.Json.JsonSerializeKeyOnlyAttribute), "Failed to serialize to JSON."
+	34 Nop
+	35 Return
+

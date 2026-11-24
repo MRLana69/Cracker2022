@@ -1,0 +1,288 @@
+Type: UnityEngine.Random
+
+Method: System.Single Range(System.Single min, System.Single max)
+
+Disassembly:
+	0x137D749 I32Const 4573055
+	0x137D74E I32Load8_S 0, 0
+	0x137D751 I32Eqz
+	0x137D752 If -64
+	0x137D754 I32Const 2980848
+	0x137D759 I32Load 2, 0
+	0x137D75C Call 73003
+	0x137D760 I32Const 4573055
+	0x137D765 I32Const 1
+	0x137D767 I32Store8 0, 0
+	0x137D76A End
+	0x137D76B I32Const 4433348
+	0x137D770 I32Load 2, 0
+	0x137D773 LocalTee 2
+	0x137D775 I32Load16_S 1, 186
+	0x137D779 I32Const 512
+	0x137D77C I32And
+	0x137D77D If -64
+	0x137D77F LocalGet 2
+	0x137D781 I32Load 2, 116
+	0x137D784 I32Eqz
+	0x137D785 If -64
+	0x137D787 LocalGet 2
+	0x137D789 Call 72345
+	0x137D78D End
+	0x137D78E End
+	0x137D78F LocalGet 1
+	0x137D791 LocalGet 0
+	0x137D793 F32Sub
+	0x137D794 F32Const 360
+	0x137D799 I32Const 0
+	0x137D79B Call 63159
+	0x137D79F LocalTee 0
+	0x137D7A1 F32Const 180
+	0x137D7A6 F32Gt
+	0x137D7A7 If -64
+	0x137D7A9 LocalGet 0
+	0x137D7AB F32Const 360
+	0x137D7B0 F32Sub
+	0x137D7B1 LocalSet 0
+	0x137D7B3 End
+	0x137D7B4 LocalGet 0
+	0x137D7B6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v23, [2D7BF0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v23
+	8 Nop
+	9 Move v7 @ S1_v8, 1
+	10 Move [45C77F], v7 @ S1_v8
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b12, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v18 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	21 Nop
+	22 CheckEqual v20 @ S0_v20 (System.Boolean), [v18 @ S0_v18 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	23 Not v21 @ TEMP_v5 (System.Boolean), v20 @ S0_v20 (System.Boolean)
+	24 ConditionalJump @b12, v21 @ TEMP_v5 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Subtract v29 @ S0_v11 (System.Single), max @ L1 (System.Single), min @ L0 (System.Single)
+	32 Nop
+	33 Nop
+	34 Call Mathf.PingPong, v32 @ S0_v12 (System.Single), v29 @ S0_v11 (System.Single), 360f
+	35 Nop
+	36 Nop
+	37 CheckGreater v35 @ S0_v13 (System.Boolean), v32 @ S0_v12 (System.Single), 180f
+	38 Not v36 @ TEMP_v4 (System.Boolean), v35 @ S0_v13 (System.Boolean)
+	39 ConditionalJump @b11, v36 @ TEMP_v4 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Subtract v39 @ S0_v17 (System.Single), v32 @ S0_v12 (System.Single), 360f
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Return v41 @ L0_v2 (System.Single)
+
+Method: System.Int32 Range(System.Int32 min, System.Int32 max)
+
+Disassembly:
+	0x139CCE6 I32Const 3926564
+	0x139CCEB I32Load 2, 0
+	0x139CCEE LocalTee 2
+	0x139CCF0 I32Eqz
+	0x139CCF1 If -64
+	0x139CCF3 I32Const 3926564
+	0x139CCF8 I32Const 3502629
+	0x139CCFD Call 73893
+	0x139CD01 LocalTee 2
+	0x139CD03 I32Store 2, 0
+	0x139CD06 End
+	0x139CD07 LocalGet 0
+	0x139CD09 LocalGet 1
+	0x139CD0B LocalGet 2
+	0x139CD0D I32Const 16383
+	0x139CD11 I32And
+	0x139CD12 I32Const 6161
+	0x139CD15 I32Add
+	0x139CD16 CallIndirect 0, 0
+	0x139CD19 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BEA24], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3502629
+	9 Nop
+	10 Move [3BEA24], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 6161
+	19 IndirectCall v21 @ S2_v3, returnVal1 @ S0_v6 (System.Int32), min @ L0 (System.Int32), max @ L1 (System.Int32)
+	20 Nop
+	21 Return returnVal1 @ S0_v6 (System.Int32)
+
+Method: System.Int32 RandomRangeInt(System.Int32 min, System.Int32 max)
+
+Disassembly:
+	0x139EEE3 LocalGet 0
+	0x139EEE5 LocalGet 1
+	0x139EEE7 I32Const 0
+	0x139EEE9 Call 63842
+	0x139EEED End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call LODParameters.Equals, returnVal1 @ S0_v2 (System.Int32), min @ L0 (System.Int32), max @ L1 (System.Int32)
+	4 Nop
+	5 Return returnVal1 @ S0_v2 (System.Int32)
+
+Method: System.Single get_value()
+
+Disassembly:
+	0x13A56B8 I32Const 3926996
+	0x13A56BD I32Load 2, 0
+	0x13A56C0 LocalTee 0
+	0x13A56C2 I32Eqz
+	0x13A56C3 If -64
+	0x13A56C5 I32Const 3926996
+	0x13A56CA I32Const 3509873
+	0x13A56CF Call 73893
+	0x13A56D3 LocalTee 0
+	0x13A56D5 I32Store 2, 0
+	0x13A56D8 End
+	0x13A56D9 LocalGet 0
+	0x13A56DB I32Const 15
+	0x13A56DD I32And
+	0x13A56DE I32Const 203
+	0x13A56E1 I32Add
+	0x13A56E2 CallIndirect 312, 0
+	0x13A56E6 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BEBD4], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v5, 3509873
+	9 Nop
+	10 Move [3BEBD4], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 And v15 @ S0_v6, v10 @ L0_v2, 15
+	15 Nop
+	16 Add v17 @ S0_v7, v15 @ S0_v6, 203
+	17 IndirectCall v17 @ S0_v7, returnVal1 @ S0_v8 (System.Single)
+	18 Nop
+	19 Return returnVal1 @ S0_v8 (System.Single)
+
+Method: UnityEngine.Vector3 get_insideUnitSphere()
+
+Disassembly:
+	0x13A781B LocalGet 0
+	0x13A781D I32Const 3
+	0x13A781F I32Store 2, 8
+	0x13A7822 LocalGet 0
+	0x13A7824 I32Const 3
+	0x13A7826 I32Store 2, 12
+	0x13A7829 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move returnVal1.z (System.Single), 3
+	3 Nop
+	4 Nop
+	5 Move [returnVal1 @ L0 (UnityEngine.Vector3)+C], 3
+	6 Nop
+	7 Return returnVal1 @ L0 (UnityEngine.Vector3)
+
+Method: System.Void get_insideUnitSphere_Injected(out UnityEngine.Vector3 ret)
+
+Disassembly:
+	0x139EF57 GlobalGet 7
+	0x139EF59 LocalSet 1
+	0x139EF5B GlobalGet 7
+	0x139EF5D I32Const 16
+	0x139EF5F I32Add
+	0x139EF60 GlobalSet 7
+	0x139EF62 LocalGet 1
+	0x139EF64 I64Const 0
+	0x139EF66 I64Store 2, 0
+	0x139EF69 LocalGet 1
+	0x139EF6B I32Const 0
+	0x139EF6D I32Store 2, 8
+	0x139EF70 LocalGet 1
+	0x139EF72 I32Const 0
+	0x139EF74 Call 63845
+	0x139EF78 LocalGet 0
+	0x139EF7A LocalGet 1
+	0x139EF7C I64Load 2, 0
+	0x139EF7F I64Store 2, 0
+	0x139EF82 LocalGet 0
+	0x139EF84 LocalGet 1
+	0x139EF86 I32Load 2, 8
+	0x139EF89 I32Store 2, 8
+	0x139EF8C LocalGet 1
+	0x139EF8E GlobalSet 7
+	0x139EF90 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7 (UnityEngine.Rendering.RenderPipeline)], 0
+	9 Nop
+	10 Nop
+	11 Move v1.<disposed>k__BackingField (System.Boolean), 0
+	12 Nop
+	13 Nop
+	14 CallVoid RenderPipeline.Dispose, v1 @ G7 (UnityEngine.Rendering.RenderPipeline)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Move [ret @ L0 (UnityEngine.Vector3&)], [v1 @ G7 (UnityEngine.Rendering.RenderPipeline)]
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Move [ret @ L0 (UnityEngine.Vector3&)+8], v1.<disposed>k__BackingField (System.Boolean)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Return
+

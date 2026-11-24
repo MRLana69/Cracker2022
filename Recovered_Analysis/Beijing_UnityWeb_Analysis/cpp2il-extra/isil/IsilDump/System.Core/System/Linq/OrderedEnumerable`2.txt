@@ -1,0 +1,136 @@
+Type: System.Linq.OrderedEnumerable`2
+
+Method: System.Void .ctor(System.Collections.Generic.IEnumerable`1<TElement> source, System.Func`2<TElement, TKey> keySelector, System.Collections.Generic.IComparer`1<TKey> comparer, System.Boolean descending)
+
+Disassembly:
+	0x13B8F1A LocalGet 0
+	0x13B8F1C LocalGet 5
+	0x13B8F1E I32Load 2, 12
+	0x13B8F21 I32Load 2, 96
+	0x13B8F24 I32Load 2, 0
+	0x13B8F27 LocalTee 5
+	0x13B8F29 LocalGet 5
+	0x13B8F2B I32Load 2, 0
+	0x13B8F2E I32Const 16383
+	0x13B8F32 I32And
+	0x13B8F33 I32Const 80504
+	0x13B8F37 I32Add
+	0x13B8F38 CallIndirect 4, 0
+	0x13B8F3B LocalGet 0
+	0x13B8F3D I32Const 8
+	0x13B8F3F I32Add
+	0x13B8F40 LocalGet 1
+	0x13B8F42 I32Store 2, 0
+	0x13B8F45 LocalGet 0
+	0x13B8F47 I32Const 12
+	0x13B8F49 I32Add
+	0x13B8F4A LocalGet 2
+	0x13B8F4C I32Store 2, 0
+	0x13B8F4F LocalGet 0
+	0x13B8F51 LocalGet 3
+	0x13B8F53 I32Const 1
+	0x13B8F55 I32And
+	0x13B8F56 I32Store8 0, 16
+	0x13B8F59 LocalGet 0
+	0x13B8F5B I32Const 20
+	0x13B8F5D I32Add
+	0x13B8F5E LocalGet 4
+	0x13B8F60 I32Store 2, 0
+	0x13B8F63 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move v4 @ S1_v2, [methodInfo @ L5 (Il2CppMethodInfo)+C]
+	3 Move v5 @ S1_v3, [v4 @ S1_v2+60]
+	4 Move v6 @ S1_v4, [v5 @ S1_v3]
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 And v11 @ S2_v3, [v6 @ S1_v4], 16383
+	10 Nop
+	11 Add v13 @ S2_v4, v11 @ S2_v3, 80504
+	12 IndirectCall v13 @ S2_v4, v14 @ SRET_v1, this @ L0 (System.Linq.OrderedEnumerable`2<TElement, TKey>), v6 @ S1_v4
+	13 Nop
+	14 Nop
+	15 Add v17 @ S0_v3, this @ L0 (System.Linq.OrderedEnumerable`2<TElement, TKey>), 8
+	16 Nop
+	17 Move [v17 @ S0_v3], source @ L1 (System.Collections.Generic.IEnumerable`1<TElement>)
+	18 Nop
+	19 Nop
+	20 Add v22 @ S0_v5, this @ L0 (System.Linq.OrderedEnumerable`2<TElement, TKey>), 12
+	21 Nop
+	22 Move [v22 @ S0_v5], keySelector @ L2 (System.Func`2<TElement, TKey>)
+	23 Nop
+	24 Nop
+	25 Nop
+	26 And v29 @ S1_v10 (System.Collections.Generic.IComparer`1<TKey>), comparer @ L3 (System.Collections.Generic.IComparer`1<TKey>), 1
+	27 Move this.comparer (System.Collections.Generic.IComparer`1<TKey>), v29 @ S1_v10 (System.Collections.Generic.IComparer`1<TKey>)
+	28 Nop
+	29 Nop
+	30 Add v32 @ S0_v8, this @ L0 (System.Linq.OrderedEnumerable`2<TElement, TKey>), 20
+	31 Nop
+	32 Move [v32 @ S0_v8], descending @ L4 (System.Boolean)
+	33 Nop
+	34 Return
+
+Method: System.Linq.EnumerableSorter`1<TElement> GetEnumerableSorter(System.Linq.EnumerableSorter`1<TElement> next)
+
+Disassembly:
+	0x13B8061 LocalGet 2
+	0x13B8063 I32Const 12
+	0x13B8065 I32Add
+	0x13B8066 LocalTee 2
+	0x13B8068 I32Load 2, 0
+	0x13B806B I32Load 2, 96
+	0x13B806E I32Load 2, 40
+	0x13B8071 Call 29253
+	0x13B8075 Call 72556
+	0x13B8079 LocalTee 3
+	0x13B807B LocalGet 0
+	0x13B807D LocalGet 1
+	0x13B807F LocalGet 2
+	0x13B8081 I32Load 2, 0
+	0x13B8084 I32Load 2, 96
+	0x13B8087 I32Load 2, 44
+	0x13B808A LocalTee 0
+	0x13B808C LocalGet 0
+	0x13B808E I32Load 2, 0
+	0x13B8091 I32Const 8191
+	0x13B8094 I32And
+	0x13B8095 I32Const 113696
+	0x13B8099 I32Add
+	0x13B809A CallIndirect 8, 0
+	0x13B809D LocalGet 3
+	0x13B809F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, methodInfo @ L2 (Il2CppMethodInfo), 12
+	3 Nop
+	4 Move v5 @ S0_v3, [v3 @ S0_v2]
+	5 Move v6 @ S0_v4, [v5 @ S0_v3+60]
+	6 Nop
+	7 Call 7245, v8 @ S0_v6, [v6 @ S0_v4+28]
+	8 Call 11B6C, v9 @ S0_v7 (System.Linq.EnumerableSorter`1<TElement>), v8 @ S0_v6
+	9 Nop
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Move v16 @ S3_v2, [v3 @ S0_v2]
+	14 Move v17 @ S3_v3, [v16 @ S3_v2+60]
+	15 Move v18 @ S3_v4, [v17 @ S3_v3+2C]
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v23 @ S4_v3, [v18 @ S3_v4], 8191
+	21 Nop
+	22 Add v25 @ S4_v4, v23 @ S4_v3, 113696
+	23 IndirectCall v25 @ S4_v4, v26 @ SRET_v1, v9 @ S0_v7 (System.Linq.EnumerableSorter`1<TElement>), this @ L0 (System.Linq.OrderedEnumerable`2<TElement, TKey>), next @ L1 (System.Linq.EnumerableSorter`1<TElement>), v18 @ S3_v4
+	24 Nop
+	25 Nop
+	26 Return v9 @ S0_v7 (System.Linq.EnumerableSorter`1<TElement>)
+

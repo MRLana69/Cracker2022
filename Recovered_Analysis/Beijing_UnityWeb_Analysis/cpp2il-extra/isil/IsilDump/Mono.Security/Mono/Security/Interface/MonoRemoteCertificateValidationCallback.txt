@@ -1,0 +1,272 @@
+Type: Mono.Security.Interface.MonoRemoteCertificateValidationCallback
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x1087988 LocalGet 0
+	0x108798A I32Const 8
+	0x108798C I32Add
+	0x108798D LocalGet 1
+	0x108798F I32Store 2, 0
+	0x1087992 LocalGet 0
+	0x1087994 LocalGet 2
+	0x1087996 I32Const 1
+	0x1087998 I32And
+	0x1087999 I32Store8 0, 12
+	0x108799C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (Mono.Security.Interface.MonoRemoteCertificateValidationCallback), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], object @ L1 (System.Object)
+	5 Nop
+	6 Nop
+	7 Nop
+	8 And v10 @ S1_v4 (System.IntPtr), method @ L2 (System.IntPtr), 1
+	9 Move this.invoke_impl (System.IntPtr), v10 @ S1_v4 (System.IntPtr)
+	10 Nop
+	11 Return
+
+Method: System.Boolean Invoke(System.String targetHost, System.Security.Cryptography.X509Certificates.X509Certificate certificate, System.Security.Cryptography.X509Certificates.X509Chain chain, Mono.Security.Interface.MonoSslPolicyErrors sslPolicyErrors)
+
+Disassembly:
+	0x14320BE I32Const 4574975
+	0x14320C3 I32Load8_S 0, 0
+	0x14320C6 I32Eqz
+	0x14320C7 If -64
+	0x14320C9 I32Const 2989832
+	0x14320CE I32Load 2, 0
+	0x14320D1 Call 73003
+	0x14320D5 I32Const 4574975
+	0x14320DA I32Const 1
+	0x14320DC I32Store8 0, 0
+	0x14320DF End
+	0x14320E0 I32Const 4433188
+	0x14320E5 I32Load 2, 0
+	0x14320E8 Call 72556
+	0x14320EC LocalTee 0
+	0x14320EE I32Const 8
+	0x14320F0 I32Add
+	0x14320F1 I32Const 4502224
+	0x14320F6 I32Load 2, 0
+	0x14320F9 I32Store 2, 0
+	0x14320FC LocalGet 0
+	0x14320FE LocalGet 1
+	0x1432100 I32Const 0
+	0x1432102 Call 67078
+	0x1432106 LocalGet 0
+	0x1432108 LocalGet 2
+	0x143210A I32Const 0
+	0x143210C Call 67079
+	0x1432110 LocalGet 0
+	0x1432112 LocalGet 3
+	0x1432114 I32Store 2, 12
+	0x1432117 I32Const 22
+	0x1432119 I32Const 0
+	0x143211B Call 58699
+	0x143211F I32Const 4428232
+	0x1432124 I32Load 2, 0
+	0x1432127 Call 29968
+	0x143212B LocalTee 1
+	0x143212D LocalGet 0
+	0x143212F I32Const 20
+	0x1432131 I32Const 0
+	0x1432133 Call 67098
+	0x1432137 Call 29437
+	0x143213B LocalGet 1
+	0x143213D LocalGet 4
+	0x143213F I32Const 0
+	0x1432141 LocalGet 4
+	0x1432143 I32Load 2, 12
+	0x1432146 I32Const 0
+	0x1432148 Call 58658
+	0x143214C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b13
+	5 Nop
+	6 Move v5 @ S0_v16, [2D9F08]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [45CEFF], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (Mono.Security.X509.PKCS12+DeriveBytes), typeof(Mono.Security.X509.PKCS12+DeriveBytes)
+	15 Nop
+	16 Nop
+	17 Add v16 @ S0_v8, v13 @ S0_v7 (Mono.Security.X509.PKCS12+DeriveBytes), 8
+	18 Nop
+	19 Nop
+	20 Move [v16 @ S0_v8], "SHA1"
+	21 Nop
+	22 Nop
+	23 Nop
+	24 CallVoid DeriveBytes.set_Salt, v13 @ S0_v7 (Mono.Security.X509.PKCS12+DeriveBytes), targetHost @ L1 (System.String)
+	25 Nop
+	26 Nop
+	27 Nop
+	28 CallVoid X509Crl..ctor, v13 @ S0_v7 (Mono.Security.X509.PKCS12+DeriveBytes), certificate @ L2 (System.Security.Cryptography.X509Certificates.X509Certificate)
+	29 Nop
+	30 Nop
+	31 Move v13._iterations (System.Int32), chain @ L3 (System.Security.Cryptography.X509Certificates.X509Chain)
+	32 Nop
+	33 Nop
+	34 Call KeyedHashAlgorithm.Create, v32 @ S1_v9 (System.Security.Cryptography.KeyedHashAlgorithm)
+	35 Nop
+	36 Nop
+	37 Call 7510, v35 @ S1_v10 (System.Security.Cryptography.HashAlgorithm), v32 @ S1_v9 (System.Security.Cryptography.KeyedHashAlgorithm), typeof(System.Security.Cryptography.HMACSHA1)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Call X509Crl.GetCrlEntry, v40 @ S2_v6 (Mono.Security.X509.X509Crl+X509CrlEntry), v13 @ S0_v7 (Mono.Security.X509.PKCS12+DeriveBytes), 20
+	43 CallVoid 72FD, 22, v35 @ S1_v10 (System.Security.Cryptography.HashAlgorithm), v40 @ S2_v6 (Mono.Security.X509.X509Crl+X509CrlEntry)
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Call HashAlgorithm.TransformFinalBlock, returnVal1 @ S0_v14 (System.Boolean), v35 @ S1_v10 (System.Security.Cryptography.HashAlgorithm), sslPolicyErrors @ L4 (Mono.Security.Interface.MonoSslPolicyErrors), 0, [sslPolicyErrors @ L4 (Mono.Security.Interface.MonoSslPolicyErrors)+C]
+	51 Nop
+	52 Return returnVal1 @ S0_v14 (System.Boolean)
+
+Method: System.IAsyncResult BeginInvoke(System.String targetHost, System.Security.Cryptography.X509Certificates.X509Certificate certificate, System.Security.Cryptography.X509Certificates.X509Chain chain, Mono.Security.Interface.MonoSslPolicyErrors sslPolicyErrors, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x111A116 GlobalGet 7
+	0x111A118 LocalSet 7
+	0x111A11A GlobalGet 7
+	0x111A11C I32Const 16
+	0x111A11E I32Add
+	0x111A11F GlobalSet 7
+	0x111A121 LocalGet 0
+	0x111A123 I32Load 2, 20
+	0x111A126 I32Load 2, 0
+	0x111A129 LocalSet 0
+	0x111A12B LocalGet 4
+	0x111A12D Call 73023
+	0x111A131 LocalSet 4
+	0x111A133 LocalGet 7
+	0x111A135 LocalGet 1
+	0x111A137 I64Load 3, 0
+	0x111A13A I64Store 3, 0
+	0x111A13D LocalGet 7
+	0x111A13F I32Const 8
+	0x111A141 I32Add
+	0x111A142 LocalTee 1
+	0x111A144 LocalGet 7
+	0x111A146 I64Load 3, 0
+	0x111A149 I64Store 3, 0
+	0x111A14C LocalGet 1
+	0x111A14E LocalGet 2
+	0x111A150 LocalGet 3
+	0x111A152 LocalGet 4
+	0x111A154 LocalGet 5
+	0x111A156 LocalGet 6
+	0x111A158 LocalGet 0
+	0x111A15A I32Const 1023
+	0x111A15D I32And
+	0x111A15E I32Const 41275
+	0x111A162 I32Add
+	0x111A163 CallIndirect 20, 0
+	0x111A166 LocalGet 7
+	0x111A168 GlobalSet 7
+	0x111A16A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Move v9 @ S0_v5 (System.IntPtr), this.method (System.IntPtr)
+	8 Nop
+	9 Nop
+	10 Nop
+	11 Call 11D3F, v14 @ S0_v8, sslPolicyErrors @ L4 (Mono.Security.Interface.MonoSslPolicyErrors)
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v1 @ G7], [targetHost @ L1 (System.String)]
+	17 Nop
+	18 Nop
+	19 Add v22 @ S0_v11, v1 @ G7, 8
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move [v22 @ S0_v11], [v1 @ G7]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 And v38 @ S6_v2, v9.m_value (System.Void*), 1023
+	33 Nop
+	34 Add v40 @ S6_v3, v38 @ S6_v2, 41275
+	35 IndirectCall v40 @ S6_v3, returnVal1 @ S0_v13 (System.IAsyncResult), v22 @ S0_v11, certificate @ L2 (System.Security.Cryptography.X509Certificates.X509Certificate), chain @ L3 (System.Security.Cryptography.X509Certificates.X509Chain), v14 @ S0_v8, callback @ L5 (System.AsyncCallback), object @ L6 (System.Object)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Return returnVal1 @ S0_v13 (System.IAsyncResult)
+
+Method: System.Boolean EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x1430BC2 I32Const 4574930
+	0x1430BC7 I32Load8_S 0, 0
+	0x1430BCA I32Eqz
+	0x1430BCB If -64
+	0x1430BCD I32Const 2940872
+	0x1430BD2 I32Load 2, 0
+	0x1430BD5 Call 73003
+	0x1430BD9 I32Const 4574930
+	0x1430BDE I32Const 1
+	0x1430BE0 I32Store8 0, 0
+	0x1430BE3 End
+	0x1430BE4 LocalGet 1
+	0x1430BE6 LocalGet 0
+	0x1430BE8 I32Const 0
+	0x1430BEA Call 51933
+	0x1430BEE I32Const 4432020
+	0x1430BF3 I32Load 2, 0
+	0x1430BF6 Call 33276
+	0x1430BFA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v9, [2CDFC8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v9
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [45CED2], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Call NativeMethods.GetExitCodeProcess, v16 @ S0_v6 (System.Boolean), result @ L1 (System.IAsyncResult), this @ L0 (Mono.Security.Interface.MonoRemoteCertificateValidationCallback)
+	16 Nop
+	17 Nop
+	18 Call 81FC, returnVal1 @ S0_v7 (System.Boolean), v16 @ S0_v6 (System.Boolean), typeof(Mono.Security.Interface.ICertificateValidator2)
+	19 Nop
+	20 Return returnVal1 @ S0_v7 (System.Boolean)
+

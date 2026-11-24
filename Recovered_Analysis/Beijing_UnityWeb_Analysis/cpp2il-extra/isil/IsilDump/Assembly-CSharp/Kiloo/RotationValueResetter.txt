@@ -1,0 +1,325 @@
+Type: Kiloo.RotationValueResetter
+
+Method: System.Void .ctor(Kiloo.SpaceType spaceType)
+
+Disassembly:
+	0xEB1AC0 GlobalGet 7
+	0xEB1AC2 LocalSet 2
+	0xEB1AC4 GlobalGet 7
+	0xEB1AC6 I32Const 32
+	0xEB1AC8 I32Add
+	0xEB1AC9 GlobalSet 7
+	0xEB1ACB LocalGet 2
+	0xEB1ACD LocalGet 0
+	0xEB1ACF I32Const 12
+	0xEB1AD1 I32Add
+	0xEB1AD2 LocalTee 3
+	0xEB1AD4 I64Load 2, 0
+	0xEB1AD7 I64Store 2, 0
+	0xEB1ADA LocalGet 2
+	0xEB1ADC LocalGet 3
+	0xEB1ADE I32Load 2, 8
+	0xEB1AE1 I32Store 2, 8
+	0xEB1AE4 LocalGet 2
+	0xEB1AE6 I32Const 12
+	0xEB1AE8 I32Add
+	0xEB1AE9 LocalTee 0
+	0xEB1AEB LocalGet 2
+	0xEB1AED I64Load 2, 0
+	0xEB1AF0 I64Store 2, 0
+	0xEB1AF3 LocalGet 0
+	0xEB1AF5 LocalGet 2
+	0xEB1AF7 I32Load 2, 8
+	0xEB1AFA I32Store 2, 8
+	0xEB1AFD LocalGet 1
+	0xEB1AFF LocalGet 0
+	0xEB1B01 I32Const 0
+	0xEB1B03 Call 64340
+	0xEB1B07 LocalGet 2
+	0xEB1B09 GlobalSet 7
+	0xEB1B0B End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Add v11 @ S1_v3, this @ L0 (Kiloo.RotationValueResetter), 12
+	10 Nop
+	11 Nop
+	12 Move [v1 @ G7], [v11 @ S1_v3]
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v1 @ G7+8], [v11 @ S1_v3+8]
+	17 Nop
+	18 Nop
+	19 Add v19 @ S0_v7 (UnityEngine.Transform), v1 @ G7, 12
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v7 (UnityEngine.Transform)], [v1 @ G7]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move v19.m_CachedPtr (System.IntPtr), [v1 @ G7+8]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call Transform.get_eulerAngles, v30 @ SRET_v1 (UnityEngine.Vector3), v19 @ S0_v7 (UnityEngine.Transform)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Return
+
+Method: System.Void OnInitWorldSpace(UnityEngine.Transform transform)
+
+Disassembly:
+	0xC12227 LocalGet 0
+	0xC12229 LocalGet 1
+	0xC1222B I32Store 2, 8
+	0xC1222E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._spaceType (Kiloo.SpaceType), transform @ L1 (UnityEngine.Transform)
+	3 Nop
+	4 Return
+
+Method: System.Void OnInitLocalSpace(UnityEngine.Transform transform)
+
+Disassembly:
+	0xEB1CCF GlobalGet 7
+	0xEB1CD1 LocalSet 2
+	0xEB1CD3 GlobalGet 7
+	0xEB1CD5 I32Const 32
+	0xEB1CD7 I32Add
+	0xEB1CD8 GlobalSet 7
+	0xEB1CDA LocalGet 2
+	0xEB1CDC LocalGet 1
+	0xEB1CDE I32Const 0
+	0xEB1CE0 Call 64342
+	0xEB1CE4 LocalGet 2
+	0xEB1CE6 I32Const 12
+	0xEB1CE8 I32Add
+	0xEB1CE9 LocalTee 1
+	0xEB1CEB LocalGet 2
+	0xEB1CED I64Load 2, 0
+	0xEB1CF0 I64Store 2, 0
+	0xEB1CF3 LocalGet 1
+	0xEB1CF5 LocalGet 2
+	0xEB1CF7 I32Load 2, 8
+	0xEB1CFA I32Store 2, 8
+	0xEB1CFD LocalGet 0
+	0xEB1CFF I32Const 12
+	0xEB1D01 I32Add
+	0xEB1D02 LocalTee 3
+	0xEB1D04 LocalGet 1
+	0xEB1D06 I64Load 2, 0
+	0xEB1D09 I64Store 2, 0
+	0xEB1D0C LocalGet 3
+	0xEB1D0E LocalGet 1
+	0xEB1D10 I32Load 2, 8
+	0xEB1D13 I32Store 2, 8
+	0xEB1D16 LocalGet 2
+	0xEB1D18 GlobalSet 7
+	0xEB1D1A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid Transform.set_eulerAngles, v1 @ G7 (UnityEngine.Transform), transform @ L1 (UnityEngine.Transform)
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6, v1 @ G7 (UnityEngine.Transform), 12
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v13 @ S0_v6], [v1 @ G7 (UnityEngine.Transform)]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v13 @ S0_v6+8], v1.m_CachedPtr (System.IntPtr)
+	21 Nop
+	22 Nop
+	23 Add v23 @ S0_v9, this @ L0 (Kiloo.RotationValueResetter), 12
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move [v23 @ S0_v9], [v13 @ S0_v6]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v23 @ S0_v9+8], [v13 @ S0_v6+8]
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Return
+
+Method: System.Void OnResetWorldSpace(UnityEngine.Transform transform)
+
+Disassembly:
+	0xEB1D1F GlobalGet 7
+	0xEB1D21 LocalSet 2
+	0xEB1D23 GlobalGet 7
+	0xEB1D25 I32Const 32
+	0xEB1D27 I32Add
+	0xEB1D28 GlobalSet 7
+	0xEB1D2A LocalGet 2
+	0xEB1D2C LocalGet 1
+	0xEB1D2E I32Const 0
+	0xEB1D30 Call 64348
+	0xEB1D34 LocalGet 2
+	0xEB1D36 I32Const 12
+	0xEB1D38 I32Add
+	0xEB1D39 LocalTee 1
+	0xEB1D3B LocalGet 2
+	0xEB1D3D I64Load 2, 0
+	0xEB1D40 I64Store 2, 0
+	0xEB1D43 LocalGet 1
+	0xEB1D45 LocalGet 2
+	0xEB1D47 I32Load 2, 8
+	0xEB1D4A I32Store 2, 8
+	0xEB1D4D LocalGet 0
+	0xEB1D4F I32Const 12
+	0xEB1D51 I32Add
+	0xEB1D52 LocalTee 3
+	0xEB1D54 LocalGet 1
+	0xEB1D56 I64Load 2, 0
+	0xEB1D59 I64Store 2, 0
+	0xEB1D5C LocalGet 3
+	0xEB1D5E LocalGet 1
+	0xEB1D60 I32Load 2, 8
+	0xEB1D63 I32Store 2, 8
+	0xEB1D66 LocalGet 2
+	0xEB1D68 GlobalSet 7
+	0xEB1D6A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 CallVoid Transform.set_localEulerAngles, v1 @ G7 (UnityEngine.Transform), transform @ L1 (UnityEngine.Transform)
+	10 Nop
+	11 Nop
+	12 Add v13 @ S0_v6, v1 @ G7 (UnityEngine.Transform), 12
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v13 @ S0_v6], [v1 @ G7 (UnityEngine.Transform)]
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Move [v13 @ S0_v6+8], v1.m_CachedPtr (System.IntPtr)
+	21 Nop
+	22 Nop
+	23 Add v23 @ S0_v9, this @ L0 (Kiloo.RotationValueResetter), 12
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move [v23 @ S0_v9], [v13 @ S0_v6]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Move [v23 @ S0_v9+8], [v13 @ S0_v6+8]
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Return
+
+Method: System.Void OnResetLocalSpace(UnityEngine.Transform transform)
+
+Disassembly:
+	0xEB1D6F GlobalGet 7
+	0xEB1D71 LocalSet 2
+	0xEB1D73 GlobalGet 7
+	0xEB1D75 I32Const 32
+	0xEB1D77 I32Add
+	0xEB1D78 GlobalSet 7
+	0xEB1D7A LocalGet 2
+	0xEB1D7C LocalGet 0
+	0xEB1D7E I32Const 12
+	0xEB1D80 I32Add
+	0xEB1D81 LocalTee 3
+	0xEB1D83 I64Load 2, 0
+	0xEB1D86 I64Store 2, 0
+	0xEB1D89 LocalGet 2
+	0xEB1D8B LocalGet 3
+	0xEB1D8D I32Load 2, 8
+	0xEB1D90 I32Store 2, 8
+	0xEB1D93 LocalGet 2
+	0xEB1D95 I32Const 12
+	0xEB1D97 I32Add
+	0xEB1D98 LocalTee 0
+	0xEB1D9A LocalGet 2
+	0xEB1D9C I64Load 2, 0
+	0xEB1D9F I64Store 2, 0
+	0xEB1DA2 LocalGet 0
+	0xEB1DA4 LocalGet 2
+	0xEB1DA6 I32Load 2, 8
+	0xEB1DA9 I32Store 2, 8
+	0xEB1DAC LocalGet 1
+	0xEB1DAE LocalGet 0
+	0xEB1DB0 I32Const 0
+	0xEB1DB2 Call 64345
+	0xEB1DB6 LocalGet 2
+	0xEB1DB8 GlobalSet 7
+	0xEB1DBA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Add v11 @ S1_v3, this @ L0 (Kiloo.RotationValueResetter), 12
+	10 Nop
+	11 Nop
+	12 Move [v1 @ G7], [v11 @ S1_v3]
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move [v1 @ G7+8], [v11 @ S1_v3+8]
+	17 Nop
+	18 Nop
+	19 Add v19 @ S0_v7 (UnityEngine.Transform), v1 @ G7, 12
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Move [v19 @ S0_v7 (UnityEngine.Transform)], [v1 @ G7]
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Move v19.m_CachedPtr (System.IntPtr), [v1 @ G7+8]
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Call Transform.get_localEulerAngles, v30 @ SRET_v1 (UnityEngine.Vector3), v19 @ S0_v7 (UnityEngine.Transform)
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Return
+

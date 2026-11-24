@@ -1,0 +1,165 @@
+Type: SYBO.Subway.Characters.Character+OnReviveDelegate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move this.method_ptr (System.IntPtr), method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move this.method (System.IntPtr), method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (SYBO.Subway.Characters.Character+OnReviveDelegate), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: System.Void Invoke()
+
+Disassembly:
+	0xE66CF0 LocalGet 0
+	0xE66CF2 I32Const 0
+	0xE66CF4 I32Store8 0, 25
+	0xE66CF7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move [this @ L0 (SYBO.Subway.Characters.Character+OnReviveDelegate)+19], 0
+	3 Nop
+	4 Return
+
+Method: System.IAsyncResult BeginInvoke(System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0xE336CA GlobalGet 7
+	0xE336CC LocalSet 0
+	0xE336CE GlobalGet 7
+	0xE336D0 I32Const 16
+	0xE336D2 I32Add
+	0xE336D3 GlobalSet 7
+	0xE336D5 I32Const 4557569
+	0xE336DA I32Load8_S 0, 0
+	0xE336DD I32Eqz
+	0xE336DE If -64
+	0xE336E0 I32Const 3016268
+	0xE336E5 I32Load 2, 0
+	0xE336E8 Call 73003
+	0xE336EC I32Const 4557569
+	0xE336F1 I32Const 1
+	0xE336F3 I32Store8 0, 0
+	0xE336F6 End
+	0xE336F7 LocalGet 0
+	0xE336F9 I32Const 2
+	0xE336FB I32Const 4442384
+	0xE33700 I32Load 2, 0
+	0xE33703 LocalGet 2
+	0xE33705 Call 29547
+	0xE33709 I32Store 2, 0
+	0xE3370C I32Const 2
+	0xE3370E I32Const 4442384
+	0xE33713 I32Load 2, 0
+	0xE33716 LocalGet 1
+	0xE33718 Call 29547
+	0xE3371C LocalSet 1
+	0xE3371E LocalGet 0
+	0xE33720 I32Load 2, 0
+	0xE33723 LocalTee 2
+	0xE33725 LocalGet 1
+	0xE33727 I32Lt_S
+	0xE33728 If -1
+	0xE3372A I32Const -1
+	0xE3372C Else
+	0xE3372D LocalGet 2
+	0xE3372F LocalGet 1
+	0xE33731 I32Gt_S
+	0xE33732 End
+	0xE33733 LocalGet 0
+	0xE33735 GlobalSet 7
+	0xE33737 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Nop
+	9 Nop
+	10 Jump @b9
+	11 Nop
+	12 Move v12 @ S0_v19, [2E064C]
+	13 CallVoid "il2cpp_runtime_class_init_actual", v12 @ S0_v19
+	14 Nop
+	15 Move v14 @ S1_v11, 1
+	16 Move [458B01], v14 @ S1_v11
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Call 736B, v23 @ S1_v4, 2, typeof(SYBO.Subway.Pickups.Pickers.IPicker), object @ L2 (System.Object)
+	24 Move [v1 @ G7], v23 @ S1_v4
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Call 736B, v29 @ S0_v10, 2, typeof(SYBO.Subway.Pickups.Pickers.IPicker), callback @ L1 (System.AsyncCallback)
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 CheckLess v35 @ S0_v13 (System.Boolean), [v1 @ G7], v29 @ S0_v10
+	36 Not v36 @ TEMP_v2 (System.Boolean), v35 @ S0_v13 (System.Boolean)
+	37 ConditionalJump @b8, v36 @ TEMP_v2 (System.Boolean)
+	38 Nop
+	39 Jump @b10
+	40 Nop
+	41 Nop
+	42 CheckGreater v40 @ S0_v16 (System.Boolean), [v1 @ G7], v29 @ S0_v10
+	43 Nop
+	44 Nop
+	45 Nop
+	46 Nop
+	47 Return returnVal1 @ S0_v14 (System.IAsyncResult)
+
+Method: System.Void EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xC7FF09 LocalGet 1
+	0xC7FF0B I32Const 0
+	0xC7FF0D Call 73892
+	0xC7FF11 Drop
+	0xC7FF12 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Throw typeof(System.InvalidOperationException)
+	3 Nop
+	4 Return
+

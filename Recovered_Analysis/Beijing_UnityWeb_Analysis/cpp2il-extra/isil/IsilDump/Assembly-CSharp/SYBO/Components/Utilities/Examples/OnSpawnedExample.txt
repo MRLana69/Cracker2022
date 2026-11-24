@@ -1,0 +1,98 @@
+Type: SYBO.Components.Utilities.Examples.OnSpawnedExample
+
+Method: System.Void OnSpawned(SYBO.Components.Utilities.SpawnPool pool)
+
+Disassembly:
+	0xFFBB29 I32Const 4562712
+	0xFFBB2E I32Load8_S 0, 0
+	0xFFBB31 I32Eqz
+	0xFFBB32 If -64
+	0xFFBB34 I32Const 2972456
+	0xFFBB39 I32Load 2, 0
+	0xFFBB3C Call 73003
+	0xFFBB40 I32Const 4562712
+	0xFFBB45 I32Const 1
+	0xFFBB47 I32Store8 0, 0
+	0xFFBB4A End
+	0xFFBB4B I32Const 4433280
+	0xFFBB50 I32Load 2, 0
+	0xFFBB53 LocalTee 3
+	0xFFBB55 I32Load16_S 1, 186
+	0xFFBB59 I32Const 512
+	0xFFBB5C I32And
+	0xFFBB5D If -64
+	0xFFBB5F LocalGet 3
+	0xFFBB61 I32Load 2, 116
+	0xFFBB64 I32Eqz
+	0xFFBB65 If -64
+	0xFFBB67 LocalGet 3
+	0xFFBB69 Call 72345
+	0xFFBB6D End
+	0xFFBB6E End
+	0xFFBB6F LocalGet 1
+	0xFFBB71 I32Const 0
+	0xFFBB73 Call 63684
+	0xFFBB77 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v16, [2D5B28]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [459F18], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v11 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	21 Nop
+	22 CheckEqual v20 @ S0_v13 (System.Boolean), [v18 @ S0_v11 (Il2CppClass<UnityEngine.Object>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Object)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid Object.DestroyImmediate, pool @ L1 (SYBO.Components.Utilities.SpawnPool)
+	32 Nop
+	33 Return
+
+Method: System.Void OnDespawned(SYBO.Components.Utilities.SpawnPool pool)
+
+Disassembly:
+	0x7CF6B Nop
+	0x7CF6C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (SYBO.Components.Utilities.Examples.OnSpawnedExample)
+	3 Nop
+	4 Return
+

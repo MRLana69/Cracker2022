@@ -1,0 +1,597 @@
+Type: Missions.SupersneakersTimeInRowAward
+
+Method: System.Void .ctor(Missions.AwardStaticData awardData, Missions.PersistentAwardProgress savedProgress, System.Action`1<Missions.Award> handler)
+
+Disassembly:
+	0xF26D02 LocalGet 0
+	0xF26D04 LocalGet 1
+	0xF26D06 LocalGet 2
+	0xF26D08 LocalGet 3
+	0xF26D0A I32Const 0
+	0xF26D0C Call 41935
+	0xF26D10 LocalGet 2
+	0xF26D12 I32Load8_S 0, 40
+	0xF26D15 I32Eqz
+	0xF26D16 If -64
+	0xF26D18 LocalGet 1
+	0xF26D1A I32Load8_S 0, 34
+	0xF26D1D If -64
+	0xF26D1F LocalGet 1
+	0xF26D21 I32Load8_S 0, 33
+	0xF26D24 If -64
+	0xF26D26 LocalGet 0
+	0xF26D28 I32Const 1
+	0xF26D2A I32Store8 0, 44
+	0xF26D2D End
+	0xF26D2E End
+	0xF26D2F End
+	0xF26D30 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Throw typeof(System.OverflowException)
+	6 Nop
+	7 Nop
+	8 Not v11 @ S0_v4 (System.Boolean), savedProgress.hasMigratedToUseStatOffset (System.Boolean)
+	9 Not v12 @ TEMP_v1 (System.Boolean), v11 @ S0_v4 (System.Boolean)
+	10 ConditionalJump @b7, v12 @ TEMP_v1 (System.Boolean)
+	11 Nop
+	12 Nop
+	13 Not v15 @ TEMP_v3 (System.Boolean), awardData.<migrateToUseStatOffset>k__BackingField (System.Boolean)
+	14 ConditionalJump @b7, v15 @ TEMP_v3 (System.Boolean)
+	15 Nop
+	16 Nop
+	17 Not v17 @ TEMP_v4 (System.Boolean), awardData.<useStatOffset>k__BackingField (System.Boolean)
+	18 ConditionalJump @b7, v17 @ TEMP_v4 (System.Boolean)
+	19 Nop
+	20 Nop
+	21 Move [this @ L0 (Missions.SupersneakersTimeInRowAward)+2C], 1
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Return
+
+Method: System.Int32 GetProgressForGoal(Missions.AwardGoal goal)
+
+Disassembly:
+	0xF343EE I32Const 4560161
+	0xF343F3 I32Load8_S 0, 0
+	0xF343F6 I32Eqz
+	0xF343F7 If -64
+	0xF343F9 I32Const 3006364
+	0xF343FE I32Load 2, 0
+	0xF34401 Call 73003
+	0xF34405 I32Const 4560161
+	0xF3440A I32Const 1
+	0xF3440C I32Store8 0, 0
+	0xF3440F End
+	0xF34410 I32Const 4440116
+	0xF34415 I32Load 2, 0
+	0xF34418 Call 72556
+	0xF3441C LocalTee 2
+	0xF3441E I32Const 0
+	0xF34420 I32Store 2, 8
+	0xF34423 LocalGet 2
+	0xF34425 I32Const 16
+	0xF34427 I32Add
+	0xF34428 LocalGet 0
+	0xF3442A I32Store 2, 0
+	0xF3442D LocalGet 2
+	0xF3442F LocalGet 1
+	0xF34431 I32Store 2, 20
+	0xF34434 LocalGet 2
+	0xF34436 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v13, [2DDF9C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [459521], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call 11B6C, v13 @ S0_v7 (System.Int32), typeof(Missions.StayInOneLaneMission+<CountMissionProgressCoroutine>d__14)
+	15 Nop
+	16 Nop
+	17 Move [v13 @ S0_v7 (System.Int32)+8], 0
+	18 Nop
+	19 Nop
+	20 Add v18 @ S0_v9, v13 @ S0_v7 (System.Int32), 16
+	21 Nop
+	22 Move [v18 @ S0_v9], this @ L0 (Missions.SupersneakersTimeInRowAward)
+	23 Nop
+	24 Nop
+	25 Move [v13 @ S0_v7 (System.Int32)+14], goal @ L1 (Missions.AwardGoal)
+	26 Nop
+	27 Nop
+	28 Return v13 @ S0_v7 (System.Int32)
+
+Method: System.Boolean IsGoalAccomplished(Missions.AwardGoal goal)
+
+Disassembly:
+	0xF36E82 I32Const 4560211
+	0xF36E87 I32Load8_S 0, 0
+	0xF36E8A I32Eqz
+	0xF36E8B If -64
+	0xF36E8D I32Const 3007712
+	0xF36E92 I32Load 2, 0
+	0xF36E95 Call 73003
+	0xF36E99 I32Const 4560211
+	0xF36E9E I32Const 1
+	0xF36EA0 I32Store8 0, 0
+	0xF36EA3 End
+	0xF36EA4 I32Const 4436608
+	0xF36EA9 I32Load 2, 0
+	0xF36EAC LocalTee 0
+	0xF36EAE I32Load16_S 1, 186
+	0xF36EB2 I32Const 512
+	0xF36EB5 I32And
+	0xF36EB6 If -64
+	0xF36EB8 LocalGet 0
+	0xF36EBA I32Load 2, 116
+	0xF36EBD I32Eqz
+	0xF36EBE If -64
+	0xF36EC0 LocalGet 0
+	0xF36EC2 Call 72345
+	0xF36EC6 End
+	0xF36EC7 End
+	0xF36EC8 I32Const 0
+	0xF36ECA Call 36255
+	0xF36ECE LocalSet 0
+	0xF36ED0 I32Const 4433280
+	0xF36ED5 I32Load 2, 0
+	0xF36ED8 LocalTee 1
+	0xF36EDA I32Load16_S 1, 186
+	0xF36EDE I32Const 512
+	0xF36EE1 I32And
+	0xF36EE2 If -64
+	0xF36EE4 LocalGet 1
+	0xF36EE6 I32Load 2, 116
+	0xF36EE9 I32Eqz
+	0xF36EEA If -64
+	0xF36EEC LocalGet 1
+	0xF36EEE Call 72345
+	0xF36EF2 End
+	0xF36EF3 End
+	0xF36EF4 LocalGet 0
+	0xF36EF6 I32Const 0
+	0xF36EF8 I32Const 0
+	0xF36EFA Call 63693
+	0xF36EFE If -1
+	0xF36F00 LocalGet 0
+	0xF36F02 F32Load 2, 52
+	0xF36F05 LocalTee 3
+	0xF36F07 LocalGet 3
+	0xF36F09 F32Ne
+	0xF36F0A If -1
+	0xF36F0C I32Const -2147483648
+	0xF36F12 Else
+	0xF36F13 LocalGet 3
+	0xF36F15 F32Const 2.1474836E+09
+	0xF36F1A F32Ge
+	0xF36F1B If -1
+	0xF36F1D I32Const -2147483648
+	0xF36F23 Else
+	0xF36F24 LocalGet 3
+	0xF36F26 F32Const -2.1474836E+09
+	0xF36F2B F32Le
+	0xF36F2C If -1
+	0xF36F2E I32Const -2147483648
+	0xF36F34 Else
+	0xF36F35 LocalGet 3
+	0xF36F37 I32Trunc_F32_S
+	0xF36F38 End
+	0xF36F39 End
+	0xF36F3A End
+	0xF36F3B LocalTee 0
+	0xF36F3D I32Const 60
+	0xF36F3F I32Div_S
+	0xF36F40 Else
+	0xF36F41 I32Const 0
+	0xF36F43 End
+	0xF36F44 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b21
+	5 Nop
+	6 Move v5 @ S0_v43, [2DE4E0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v43
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [459553], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<SuperSneakers>), typeof(SuperSneakers)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<SuperSneakers>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b26, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v38 (Il2CppClass<SuperSneakers>), typeof(SuperSneakers)
+	21 Nop
+	22 CheckEqual v20 @ S0_v40 (System.Boolean), [v18 @ S0_v38 (Il2CppClass<SuperSneakers>)+74], 0
+	23 Not v21 @ TEMP_v13 (System.Boolean), v20 @ S0_v40 (System.Boolean)
+	24 ConditionalJump @b26, v21 @ TEMP_v13 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(SuperSneakers)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Call SaveMeManager.get_WatchedReviveAdInCurrentRun, v26 @ S0_v11 (System.Boolean)
+	31 Nop
+	32 Nop
+	33 Move v29 @ S0_v13 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	34 Nop
+	35 Nop
+	36 Nop
+	37 And v33 @ S0_v15, [v29 @ S0_v13 (Il2CppClass<UnityEngine.Object>)+BA], 512
+	38 CheckEqual v34 @ TEMP_v4 (System.Boolean), v33 @ S0_v15, 0
+	39 ConditionalJump @b22, v34 @ TEMP_v4 (System.Boolean)
+	40 Move v35 @ S0_v34 (Il2CppClass<UnityEngine.Object>), typeof(UnityEngine.Object)
+	41 Nop
+	42 CheckEqual v37 @ S0_v36 (System.Boolean), [v35 @ S0_v34 (Il2CppClass<UnityEngine.Object>)+74], 0
+	43 Not v38 @ TEMP_v12 (System.Boolean), v37 @ S0_v36 (System.Boolean)
+	44 ConditionalJump @b22, v38 @ TEMP_v12 (System.Boolean)
+	45 Nop
+	46 CallVoid 11A99, typeof(UnityEngine.Object)
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Call ComputeShader.FindKernel, v45 @ S0_v18 (System.Int32), v26 @ S0_v11 (System.Boolean), 0
+	53 CheckEqual v46 @ TEMP_v6 (System.Boolean), v45 @ S0_v18 (System.Int32), 0
+	54 ConditionalJump @b20, v46 @ TEMP_v6 (System.Boolean)
+	55 Nop
+	56 Move v72 @ S0_v24, [v26 @ S0_v11 (System.Boolean)+34]
+	57 Nop
+	58 Nop
+	59 CheckNotEqual v51 @ S0_v23 (System.Boolean), [v26 @ S0_v11 (System.Boolean)+34], [v26 @ S0_v11 (System.Boolean)+34]
+	60 Not v52 @ TEMP_v8 (System.Boolean), v51 @ S0_v23 (System.Boolean)
+	61 ConditionalJump @b15, v52 @ TEMP_v8 (System.Boolean)
+	62 Nop
+	63 Jump @b23
+	64 Nop
+	65 Nop
+	66 CheckGreaterOrEqual v57 @ S0_v27 (System.Boolean), [v26 @ S0_v11 (System.Boolean)+34], 2.1474836E+09f
+	67 Not v58 @ TEMP_v10 (System.Boolean), v57 @ S0_v27 (System.Boolean)
+	68 ConditionalJump @b17, v58 @ TEMP_v10 (System.Boolean)
+	69 Nop
+	70 Jump @b23
+	71 Nop
+	72 Nop
+	73 CheckLessOrEqual v77 @ S0_v29 (System.Boolean), [v26 @ S0_v11 (System.Boolean)+34], -2.1474836E+09f
+	74 Not v71 @ TEMP_v11 (System.Boolean), v77 @ S0_v29 (System.Boolean)
+	75 ConditionalJump @b23, v71 @ TEMP_v11 (System.Boolean)
+	76 Nop
+	77 Jump @b23
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Nop
+	82 Nop
+	83 Nop
+	84 Divide returnVal1 @ S0_v19 (System.Boolean), v72 @ S0_v24, 60
+	85 Jump @b27
+	86 Nop
+	87 Nop
+	88 Nop
+	89 Return returnVal1 @ S0_v19 (System.Boolean)
+
+Method: System.Void ActivateCurrentAwardTier()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Void DeactivateCurrentAwardTier()
+
+Disassembly:
+	0xF36FA0 I32Const 4560213
+	0xF36FA5 I32Load8_S 0, 0
+	0xF36FA8 I32Eqz
+	0xF36FA9 If -64
+	0xF36FAB I32Const 3007704
+	0xF36FB0 I32Load 2, 0
+	0xF36FB3 Call 73003
+	0xF36FB7 I32Const 4560213
+	0xF36FBC I32Const 1
+	0xF36FBE I32Store8 0, 0
+	0xF36FC1 End
+	0xF36FC2 I32Const 4436608
+	0xF36FC7 I32Load 2, 0
+	0xF36FCA LocalTee 1
+	0xF36FCC I32Load16_S 1, 186
+	0xF36FD0 I32Const 512
+	0xF36FD3 I32And
+	0xF36FD4 If -64
+	0xF36FD6 LocalGet 1
+	0xF36FD8 I32Load 2, 116
+	0xF36FDB I32Eqz
+	0xF36FDC If -64
+	0xF36FDE LocalGet 1
+	0xF36FE0 Call 72345
+	0xF36FE4 I32Const 4436608
+	0xF36FE9 I32Load 2, 0
+	0xF36FEC LocalSet 1
+	0xF36FEE End
+	0xF36FEF End
+	0xF36FF0 LocalGet 1
+	0xF36FF2 I32Load 2, 92
+	0xF36FF5 I32Load 2, 0
+	0xF36FF8 I32Const 4429724
+	0xF36FFD I32Load 2, 0
+	0xF37000 Call 72556
+	0xF37004 LocalTee 3
+	0xF37006 LocalTee 2
+	0xF37008 I32Const 4472752
+	0xF3700D I32Load 2, 0
+	0xF37010 LocalTee 4
+	0xF37012 I32Load 2, 0
+	0xF37015 I32Store 2, 8
+	0xF37018 LocalGet 2
+	0xF3701A LocalGet 4
+	0xF3701C I32Store 2, 20
+	0xF3701F LocalGet 2
+	0xF37021 I32Const 16
+	0xF37023 I32Add
+	0xF37024 LocalGet 0
+	0xF37026 I32Store 2, 0
+	0xF37029 LocalGet 3
+	0xF3702B I32Const 0
+	0xF3702D Call 63552
+	0xF37031 LocalSet 1
+	0xF37033 I32Const 4436608
+	0xF37038 I32Load 2, 0
+	0xF3703B I32Load 2, 92
+	0xF3703E LocalGet 1
+	0xF37040 I32Const 4429724
+	0xF37045 I32Load 2, 0
+	0xF37048 Call 29321
+	0xF3704C I32Store 2, 0
+	0xF3704F LocalGet 0
+	0xF37051 I32Const 0
+	0xF37053 Call 41950
+	0xF37057 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v25, [2DE4D8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v25
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [459555], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<SuperSneakers>), typeof(SuperSneakers)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<SuperSneakers>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b14, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v18 (Il2CppClass<SuperSneakers>), typeof(SuperSneakers)
+	21 Nop
+	22 CheckEqual v20 @ S0_v20 (System.Boolean), [v18 @ S0_v18 (Il2CppClass<SuperSneakers>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v20 (System.Boolean)
+	24 ConditionalJump @b14, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(SuperSneakers)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 11B6C, v32 @ S1_v5 (System.Delegate), typeof(System.Action)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Move v37 @ S2_v2 (Il2CppMethodInfo), methodof(Missions.SupersneakersTimeInRowAward::OnTimeChanged)
+	42 Nop
+	43 Nop
+	44 Move v32.method_ptr (System.IntPtr), [v37 @ S2_v2 (Il2CppMethodInfo)]
+	45 Nop
+	46 Nop
+	47 Move v32.method (System.IntPtr), methodof(Missions.SupersneakersTimeInRowAward::OnTimeChanged)
+	48 Nop
+	49 Nop
+	50 Add v44 @ S1_v8, v32 @ S1_v5 (System.Delegate), 16
+	51 Nop
+	52 Move [v44 @ S1_v8], this @ L0 (Missions.SupersneakersTimeInRowAward)
+	53 Nop
+	54 Nop
+	55 Call Delegate.CombineImpl, v49 @ S0_v13 (System.Delegate), v28.OnSupersneakersTimeActiveChange (System.Action), v32 @ S1_v5 (System.Delegate)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Call 7289, v58 @ S1_v11 (System.Action), v49 @ S0_v13 (System.Delegate), typeof(System.Action)
+	64 Move v54.OnSupersneakersTimeActiveChange (System.Action), v58 @ S1_v11 (System.Action)
+	65 Nop
+	66 Nop
+	67 CallVoid Award.RewardPayedOut, this @ L0 (Missions.SupersneakersTimeInRowAward)
+	68 Nop
+	69 Return
+
+Method: System.Void RecordNewOffsets()
+
+Disassembly:
+	0xF3705D I32Const 4560214
+	0xF37062 I32Load8_S 0, 0
+	0xF37065 I32Eqz
+	0xF37066 If -64
+	0xF37068 I32Const 3007708
+	0xF3706D I32Load 2, 0
+	0xF37070 Call 73003
+	0xF37074 I32Const 4560214
+	0xF37079 I32Const 1
+	0xF3707B I32Store8 0, 0
+	0xF3707E End
+	0xF3707F I32Const 4436608
+	0xF37084 I32Load 2, 0
+	0xF37087 LocalTee 1
+	0xF37089 I32Load16_S 1, 186
+	0xF3708D I32Const 512
+	0xF37090 I32And
+	0xF37091 If -64
+	0xF37093 LocalGet 1
+	0xF37095 I32Load 2, 116
+	0xF37098 I32Eqz
+	0xF37099 If -64
+	0xF3709B LocalGet 1
+	0xF3709D Call 72345
+	0xF370A1 I32Const 4436608
+	0xF370A6 I32Load 2, 0
+	0xF370A9 LocalSet 1
+	0xF370AB End
+	0xF370AC End
+	0xF370AD LocalGet 1
+	0xF370AF I32Load 2, 92
+	0xF370B2 I32Load 2, 0
+	0xF370B5 I32Const 4429724
+	0xF370BA I32Load 2, 0
+	0xF370BD Call 72556
+	0xF370C1 LocalTee 3
+	0xF370C3 LocalTee 2
+	0xF370C5 I32Const 4472752
+	0xF370CA I32Load 2, 0
+	0xF370CD LocalTee 4
+	0xF370CF I32Load 2, 0
+	0xF370D2 I32Store 2, 8
+	0xF370D5 LocalGet 2
+	0xF370D7 LocalGet 4
+	0xF370D9 I32Store 2, 20
+	0xF370DC LocalGet 2
+	0xF370DE I32Const 16
+	0xF370E0 I32Add
+	0xF370E1 LocalGet 0
+	0xF370E3 I32Store 2, 0
+	0xF370E6 LocalGet 3
+	0xF370E8 I32Const 0
+	0xF370EA Call 63555
+	0xF370EE LocalSet 0
+	0xF370F0 I32Const 4436608
+	0xF370F5 I32Load 2, 0
+	0xF370F8 I32Load 2, 92
+	0xF370FB LocalGet 0
+	0xF370FD I32Const 4429724
+	0xF37102 I32Load 2, 0
+	0xF37105 Call 29321
+	0xF37109 I32Store 2, 0
+	0xF3710C End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v24, [2DE4DC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v24
+	8 Nop
+	9 Move v7 @ S1_v12, 1
+	10 Move [459556], v7 @ S1_v12
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<SuperSneakers>), typeof(SuperSneakers)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<SuperSneakers>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b13, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v17 (Il2CppClass<SuperSneakers>), typeof(SuperSneakers)
+	21 Nop
+	22 CheckEqual v20 @ S0_v19 (System.Boolean), [v18 @ S0_v17 (Il2CppClass<SuperSneakers>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v19 (System.Boolean)
+	24 ConditionalJump @b13, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(SuperSneakers)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Call 11B6C, v32 @ S1_v5 (System.Delegate), typeof(System.Action)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Move v37 @ S2_v2 (Il2CppMethodInfo), methodof(Missions.SupersneakersTimeInRowAward::OnTimeChanged)
+	42 Nop
+	43 Nop
+	44 Move v32.method_ptr (System.IntPtr), [v37 @ S2_v2 (Il2CppMethodInfo)]
+	45 Nop
+	46 Nop
+	47 Move v32.method (System.IntPtr), methodof(Missions.SupersneakersTimeInRowAward::OnTimeChanged)
+	48 Nop
+	49 Nop
+	50 Add v44 @ S1_v8, v32 @ S1_v5 (System.Delegate), 16
+	51 Nop
+	52 Move [v44 @ S1_v8], this @ L0 (Missions.SupersneakersTimeInRowAward)
+	53 Nop
+	54 Nop
+	55 Call Delegate.RemoveImpl, v49 @ S0_v13 (System.Delegate), v28.OnSupersneakersTimeActiveChange (System.Action), v32 @ S1_v5 (System.Delegate)
+	56 Nop
+	57 Nop
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Call 7289, v58 @ S1_v11 (System.Action), v49 @ S0_v13 (System.Delegate), typeof(System.Action)
+	64 Move v54.OnSupersneakersTimeActiveChange (System.Action), v58 @ S1_v11 (System.Action)
+	65 Nop
+	66 Return
+
+Method: System.Void OnTimeChanged()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+

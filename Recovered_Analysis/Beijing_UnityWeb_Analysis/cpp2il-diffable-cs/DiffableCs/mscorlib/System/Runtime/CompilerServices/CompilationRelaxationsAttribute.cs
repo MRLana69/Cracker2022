@@ -1,0 +1,19 @@
+namespace System.Runtime.CompilerServices;
+
+public class CompilationRelaxationsAttribute : Attribute
+{
+	private int m_relaxations; //Field offset: 0x8
+
+	public int CompilationRelaxations
+	{
+		 get { } //Length: 6
+	}
+
+	public CompilationRelaxationsAttribute(int relaxations) { }
+
+	public CompilationRelaxationsAttribute(CompilationRelaxations relaxations) { }
+
+	public int get_CompilationRelaxations() { }
+
+}
+

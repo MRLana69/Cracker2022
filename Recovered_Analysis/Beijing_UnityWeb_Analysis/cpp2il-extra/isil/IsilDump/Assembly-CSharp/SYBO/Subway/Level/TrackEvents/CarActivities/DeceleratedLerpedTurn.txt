@@ -1,0 +1,126 @@
+Type: SYBO.Subway.Level.TrackEvents.CarActivities.DeceleratedLerpedTurn
+
+Method: System.Void Turn()
+
+Disassembly:
+	0xE56EF8 LocalGet 0
+	0xE56EFA F32Const 1
+	0xE56EFF F32Store 2, 12
+	0xE56F02 LocalGet 0
+	0xE56F04 I32Const 0
+	0xE56F06 Call 62657
+	0xE56F0A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._movingCarActivity (SYBO.Subway.Level.TrackEvents.MovingCarActivity), 1f
+	3 Nop
+	4 Nop
+	5 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (SYBO.Subway.Level.TrackEvents.CarActivities.DeceleratedLerpedTurn)
+	6 Nop
+	7 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xE560EE I32Const 4558052
+	0xE560F3 I32Load8_S 0, 0
+	0xE560F6 I32Eqz
+	0xE560F7 If -64
+	0xE560F9 I32Const 2951244
+	0xE560FE I32Load 2, 0
+	0xE56101 Call 73003
+	0xE56105 I32Const 4558052
+	0xE5610A I32Const 1
+	0xE5610C I32Store8 0, 0
+	0xE5610F End
+	0xE56110 LocalGet 0
+	0xE56112 I32Const 0
+	0xE56114 Call 39079
+	0xE56118 LocalGet 0
+	0xE5611A I32Load8_S 0, 16
+	0xE5611D If -64
+	0xE5611F LocalGet 0
+	0xE56121 I32Load 2, 12
+	0xE56124 LocalGet 0
+	0xE56126 F32Load 2, 20
+	0xE56129 LocalSet 2
+	0xE5612B I32Const 4433348
+	0xE56130 I32Load 2, 0
+	0xE56133 LocalTee 0
+	0xE56135 I32Load16_S 1, 186
+	0xE56139 I32Const 512
+	0xE5613C I32And
+	0xE5613D If -64
+	0xE5613F LocalGet 0
+	0xE56141 I32Load 2, 116
+	0xE56144 I32Eqz
+	0xE56145 If -64
+	0xE56147 LocalGet 0
+	0xE56149 Call 72345
+	0xE5614D End
+	0xE5614E End
+	0xE5614F F32Const 1
+	0xE56154 LocalGet 2
+	0xE56156 F32Const 0.5
+	0xE5615B I32Const 0
+	0xE5615D Call 63168
+	0xE56161 F32Sub
+	0xE56162 F32Store 2, 40
+	0xE56165 End
+	0xE56166 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v12, [2D084C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v12
+	8 Nop
+	9 Move v7 @ S1_v17, 1
+	10 Move [458CE4], v7 @ S1_v17
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid LerpedTurn..ctor, this @ L0 (SYBO.Subway.Level.TrackEvents.CarActivities.DeceleratedLerpedTurn)
+	15 Nop
+	16 Nop
+	17 Not v16 @ TEMP_v2 (System.Boolean), this._turning (System.Boolean)
+	18 ConditionalJump @b12, v16 @ TEMP_v2 (System.Boolean)
+	19 Nop
+	20 Move v18 @ S0_v10 (SYBO.Subway.Level.TrackEvents.MovingCarActivity), this._movingCarActivity (SYBO.Subway.Level.TrackEvents.MovingCarActivity)
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Move v23 @ S1_v7 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v27 @ S1_v9, [v23 @ S1_v7 (Il2CppClass<UnityEngine.Mathf>)+BA], 512
+	30 CheckEqual v28 @ TEMP_v4 (System.Boolean), v27 @ S1_v9, 0
+	31 ConditionalJump @b13, v28 @ TEMP_v4 (System.Boolean)
+	32 Move v46 @ S1_v13 (Il2CppClass<UnityEngine.Mathf>), typeof(UnityEngine.Mathf)
+	33 Nop
+	34 CheckEqual v48 @ S1_v15 (System.Boolean), [v46 @ S1_v13 (Il2CppClass<UnityEngine.Mathf>)+74], 0
+	35 Not v49 @ TEMP_v6 (System.Boolean), v48 @ S1_v15 (System.Boolean)
+	36 ConditionalJump @b13, v49 @ TEMP_v6 (System.Boolean)
+	37 Nop
+	38 CallVoid 11A99, typeof(UnityEngine.Mathf)
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 Call Mathf.DeltaAngle, v36 @ S2_v4 (System.Single), this._colliderPassProgress (System.Single), 0.5f
+	46 Subtract v42 @ S1_v12 (System.Single), 1f, v36 @ S2_v4 (System.Single)
+	47 Move v18.<Acceleration>k__BackingField (System.Single), v42 @ S1_v12 (System.Single)
+	48 Nop
+	49 Nop
+	50 Return
+

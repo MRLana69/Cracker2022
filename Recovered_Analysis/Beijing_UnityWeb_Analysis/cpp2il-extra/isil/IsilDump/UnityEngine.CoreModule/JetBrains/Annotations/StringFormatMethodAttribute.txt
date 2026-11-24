@@ -1,0 +1,69 @@
+Type: JetBrains.Annotations.StringFormatMethodAttribute
+
+Method: System.Void .ctor(System.String formatParameterName)
+
+Disassembly:
+	0x136DE75 I32Const 3925548
+	0x136DE7A I32Load 2, 0
+	0x136DE7D LocalTee 2
+	0x136DE7F I32Eqz
+	0x136DE80 If -64
+	0x136DE82 I32Const 3925548
+	0x136DE87 I32Const 3485342
+	0x136DE8C Call 73893
+	0x136DE90 LocalTee 2
+	0x136DE92 I32Store 2, 0
+	0x136DE95 End
+	0x136DE96 LocalGet 0
+	0x136DE98 LocalGet 1
+	0x136DE9A LocalGet 2
+	0x136DE9C I32Const 16383
+	0x136DEA0 I32And
+	0x136DEA1 I32Const 80504
+	0x136DEA5 I32Add
+	0x136DEA6 CallIndirect 4, 0
+	0x136DEA9 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckEqual v3 @ S0_v3 (System.Boolean), [3BE62C], 0
+	4 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	5 ConditionalJump @b5, v4 @ TEMP_v1 (System.Boolean)
+	6 Nop
+	7 Nop
+	8 Call 120A5, v7 @ S1_v4, 3485342
+	9 Nop
+	10 Move [3BE62C], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 And v19 @ S2_v2, v10 @ L2_v2, 16383
+	17 Nop
+	18 Add v21 @ S2_v3, v19 @ S2_v2, 80504
+	19 IndirectCall v21 @ S2_v3, v22 @ SRET_v1, this @ L0 (JetBrains.Annotations.StringFormatMethodAttribute), formatParameterName @ L1 (System.String)
+	20 Nop
+	21 Return
+
+Method: System.Void set_FormatParameterName(System.String value)
+
+Disassembly:
+	0xC57520 LocalGet 0
+	0xC57522 I32Const 8
+	0xC57524 I32Add
+	0xC57525 LocalGet 1
+	0xC57527 I32Store 2, 0
+	0xC5752A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (JetBrains.Annotations.StringFormatMethodAttribute), 8
+	3 Nop
+	4 Move [v3 @ S0_v2], value @ L1 (System.String)
+	5 Nop
+	6 Return
+

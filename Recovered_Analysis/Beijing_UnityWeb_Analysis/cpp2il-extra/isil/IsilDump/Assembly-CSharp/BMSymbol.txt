@@ -1,0 +1,281 @@
+Type: BMSymbol
+
+Method: System.Int32 get_length()
+
+Disassembly:
+	0xC26020 LocalGet 0
+	0xC26022 I32Load 2, 28
+	0xC26025 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.mOffsetX (System.Int32)
+
+Method: System.Int32 get_offsetX()
+
+Disassembly:
+	0xC5D902 LocalGet 0
+	0xC5D904 I32Load 2, 24
+	0xC5D907 I32Eqz
+	0xC5D908 If -64
+	0xC5D90A LocalGet 0
+	0xC5D90C LocalGet 0
+	0xC5D90E I32Load 2, 8
+	0xC5D911 I32Load 2, 8
+	0xC5D914 I32Store 2, 24
+	0xC5D917 End
+	0xC5D918 LocalGet 0
+	0xC5D91A I32Load 2, 24
+	0xC5D91D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CheckEqual v3 @ S0_v3 (System.Boolean), this.mLength (System.Int32), 0
+	3 Not v4 @ TEMP_v1 (System.Boolean), v3 @ S0_v3 (System.Boolean)
+	4 ConditionalJump @b4, v4 @ TEMP_v1 (System.Boolean)
+	5 Nop
+	6 Nop
+	7 Move v7 @ S1_v3 (System.String), this.sequence (System.String)
+	8 Nop
+	9 Move this.mLength (System.Int32), v7.m_stringLength (System.Int32)
+	10 Nop
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Return this.mLength (System.Int32)
+
+Method: System.Int32 get_offsetY()
+
+Disassembly:
+	0xC26020 LocalGet 0
+	0xC26022 I32Load 2, 28
+	0xC26025 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.mOffsetX (System.Int32)
+
+Method: System.Int32 get_width()
+
+Disassembly:
+	0xC26354 LocalGet 0
+	0xC26356 I32Load 2, 32
+	0xC26359 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.mOffsetY (System.Int32)
+
+Method: System.Int32 get_height()
+
+Disassembly:
+	0xC1F290 LocalGet 0
+	0xC1F292 I32Load 2, 36
+	0xC1F295 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.mWidth (System.Int32)
+
+Method: System.Int32 get_advance()
+
+Disassembly:
+	0xC1F2A5 LocalGet 0
+	0xC1F2A7 I32Load 2, 40
+	0xC1F2AA End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this.mHeight (System.Int32)
+
+Method: UnityEngine.Rect get_uvRect()
+
+Disassembly:
+	0xC5D3CA LocalGet 0
+	0xC5D3CC I32Const 24
+	0xC5D3CE I32Add
+	0xC5D3CF LocalGet 1
+	0xC5D3D1 I32Store 2, 0
+	0xC5D3D4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, returnVal1 @ L0 (UnityEngine.Rect), 24
+	3 Nop
+	4 Move [v3 @ S0_v2], this @ L1 (BMSymbol)
+	5 Nop
+	6 Return returnVal1 @ L0 (UnityEngine.Rect)
+
+Method: System.Void MarkAsChanged()
+
+Disassembly:
+	0x75CEF Nop
+	0x75CF0 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Return
+
+Method: System.Boolean Validate(UIAtlas atlas)
+
+Disassembly:
+	0xC5D763 I32Const 4551804
+	0xC5D768 I32Load8_S 0, 0
+	0xC5D76B I32Eqz
+	0xC5D76C If -64
+	0xC5D76E I32Const 2937072
+	0xC5D773 I32Load 2, 0
+	0xC5D776 Call 73003
+	0xC5D77A I32Const 4551804
+	0xC5D77F I32Const 1
+	0xC5D781 I32Store8 0, 0
+	0xC5D784 End
+	0xC5D785 Block -1
+	0xC5D787 LocalGet 1
+	0xC5D789 I32Eqz
+	0xC5D78A LocalGet 0
+	0xC5D78C I32Load 2, 44
+	0xC5D78F I32Eqz
+	0xC5D790 I32Or
+	0xC5D791 If -1
+	0xC5D793 I32Const 0
+	0xC5D795 Else
+	0xC5D796 I32Const 4463228
+	0xC5D79B I32Load 2, 0
+	0xC5D79E Drop
+	0xC5D79F LocalGet 0
+	0xC5D7A1 I32Load 2, 44
+	0xC5D7A4 I32Load 2, 12
+	0xC5D7A7 LocalSet 3
+	0xC5D7A9 I32Const 0
+	0xC5D7AB LocalSet 2
+	0xC5D7AD Loop -64
+	0xC5D7AF I32Const 0
+	0xC5D7B1 LocalGet 2
+	0xC5D7B3 LocalGet 3
+	0xC5D7B5 I32Ge_S
+	0xC5D7B6 BrIf 2
+	0xC5D7B8 Drop
+	0xC5D7B9 LocalGet 0
+	0xC5D7BB I32Load 2, 44
+	0xC5D7BE LocalGet 2
+	0xC5D7C0 I32Const 4449136
+	0xC5D7C5 I32Load 2, 0
+	0xC5D7C8 Call 30321
+	0xC5D7CC LocalGet 1
+	0xC5D7CE I32Ne
+	0xC5D7CF If -64
+	0xC5D7D1 LocalGet 2
+	0xC5D7D3 I32Const 2
+	0xC5D7D5 I32Add
+	0xC5D7D6 LocalSet 2
+	0xC5D7D8 Br 1
+	0xC5D7DA End
+	0xC5D7DB End
+	0xC5D7DC LocalGet 0
+	0xC5D7DE I32Load 2, 44
+	0xC5D7E1 LocalGet 2
+	0xC5D7E3 I32Const 1
+	0xC5D7E5 I32Add
+	0xC5D7E6 I32Const 4449136
+	0xC5D7EB I32Load 2, 0
+	0xC5D7EE Call 30321
+	0xC5D7F2 End
+	0xC5D7F3 End
+	0xC5D7F4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b12
+	5 Nop
+	6 Move v5 @ S0_v28, [2CD0F0]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v28
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [45747C], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 CheckEqual v13 @ S0_v6 (System.Boolean), atlas @ L1 (UIAtlas), 0
+	14 Nop
+	15 Nop
+	16 CheckEqual v17 @ S1_v4 (System.Boolean), this.mAdvance (System.Int32), 0
+	17 Or v18 @ S0_v7, v13 @ S0_v6 (System.Boolean), v17 @ S1_v4 (System.Boolean)
+	18 CheckEqual v19 @ TEMP_v2 (System.Boolean), v18 @ S0_v7, 0
+	19 ConditionalJump @b6, v19 @ TEMP_v2 (System.Boolean)
+	20 Nop
+	21 Jump @b13
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Move v24 @ S0_v12 (System.Int32), this.mAdvance (System.Int32)
+	26 Nop
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Nop
+	33 Nop
+	34 CheckGreaterOrEqual v39 @ S1_v8 (System.Boolean), v34 @ L2_v3 (System.Int32), [v24 @ S0_v12 (System.Int32)+C]
+	35 ConditionalJump @b13, v39 @ S1_v8 (System.Boolean)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Call List`1<System.Int32>.get_Item, v59 @ S0_v19 (System.Int32), this.mAdvance (System.Int32), v34 @ L2_v3 (System.Int32)
+	42 Nop
+	43 CheckNotEqual v61 @ S0_v20 (System.Boolean), v59 @ S0_v19 (System.Int32), atlas @ L1 (UIAtlas)
+	44 Not v43 @ TEMP_v5 (System.Boolean), v61 @ S0_v20 (System.Boolean)
+	45 ConditionalJump @b10, v43 @ TEMP_v5 (System.Boolean)
+	46 Nop
+	47 Nop
+	48 Add v53 @ S0_v25 (System.Int32), v34 @ L2_v3 (System.Int32), 2
+	49 Nop
+	50 Jump @b14
+	51 Nop
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Add v40 @ S1_v12 (System.Int32), v34 @ L2_v3 (System.Int32), 1
+	58 Nop
+	59 Nop
+	60 Call List`1<System.Int32>.get_Item, v46 @ S0_v23 (System.Int32), this.mAdvance (System.Int32), v40 @ S1_v12 (System.Int32)
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Return returnVal1 @ S0_v8 (System.Boolean)
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC5D946 LocalGet 0
+	0xC5D948 I32Const 0
+	0xC5D94A I32Store8 0, 20
+	0xC5D94D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this.mIsValid (System.Boolean), 0
+	3 Nop
+	4 Return
+

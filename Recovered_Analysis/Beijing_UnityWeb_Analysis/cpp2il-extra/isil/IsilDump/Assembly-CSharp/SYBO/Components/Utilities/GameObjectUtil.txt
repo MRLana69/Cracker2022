@@ -1,0 +1,145 @@
+Type: SYBO.Components.Utilities.GameObjectUtil
+
+Method: T GetOrAddComponent(UnityEngine.GameObject target)
+
+Disassembly:
+	0xC1173F LocalGet 0
+	0xC11741 I32Load 2, 20
+	0xC11744 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return [target @ L0 (UnityEngine.GameObject)+14]
+
+Method: T GetOrAddComponent(UnityEngine.GameObject target, System.Boolean willForceHideInInspector)
+
+Disassembly:
+	0x1167C9F LocalGet 1
+	0x1167CA1 I32Load 2, 8
+	0x1167CA4 LocalSet 1
+	0x1167CA6 I32Const 0
+	0x1167CA8 LocalGet 2
+	0x1167CAA I32Load 2, 12
+	0x1167CAD I32Load 2, 96
+	0x1167CB0 I32Load 2, 4
+	0x1167CB3 Call 29253
+	0x1167CB7 LocalGet 0
+	0x1167CB9 I32Const 8
+	0x1167CBB I32Add
+	0x1167CBC I32Load 2, 0
+	0x1167CBF LocalGet 1
+	0x1167CC1 Call 29786
+	0x1167CC5 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Move v7 @ S1_v2, [methodInfo @ L2 (Il2CppMethodInfo)+C]
+	6 Move v8 @ S1_v3, [v7 @ S1_v2+60]
+	7 Nop
+	8 Call 7245, v10 @ S1_v5, [v8 @ S1_v3+4]
+	9 Nop
+	10 Nop
+	11 Add v14 @ S2_v2, target @ L0 (UnityEngine.GameObject), 8
+	12 Nop
+	13 Nop
+	14 Call 745A, returnVal1 @ S0_v4 (T), 0, v10 @ S1_v5, [v14 @ S2_v2], [willForceHideInInspector @ L1 (System.Boolean)+8]
+	15 Nop
+	16 Return returnVal1 @ S0_v4 (T)
+
+Method: UnityEngine.Component GetOrAddComponent(System.Type type, UnityEngine.GameObject target, System.Boolean willForceHideInInspector)
+
+Disassembly:
+	0xFFCF36 I32Const 4562741
+	0xFFCF3B I32Load8_S 0, 0
+	0xFFCF3E I32Eqz
+	0xFFCF3F If -64
+	0xFFCF41 I32Const 2963492
+	0xFFCF46 I32Load 2, 0
+	0xFFCF49 Call 73003
+	0xFFCF4D I32Const 4562741
+	0xFFCF52 I32Const 1
+	0xFFCF54 I32Store8 0, 0
+	0xFFCF57 End
+	0xFFCF58 I32Const 4427744
+	0xFFCF5D I32Load 2, 0
+	0xFFCF60 LocalTee 3
+	0xFFCF62 I32Load16_S 1, 186
+	0xFFCF66 I32Const 512
+	0xFFCF69 I32And
+	0xFFCF6A If -64
+	0xFFCF6C LocalGet 3
+	0xFFCF6E I32Load 2, 116
+	0xFFCF71 I32Eqz
+	0xFFCF72 If -64
+	0xFFCF74 LocalGet 3
+	0xFFCF76 Call 72345
+	0xFFCF7A End
+	0xFFCF7B End
+	0xFFCF7C LocalGet 0
+	0xFFCF7E LocalGet 1
+	0xFFCF80 I32Const 0
+	0xFFCF82 Call 58893
+	0xFFCF86 LocalSet 0
+	0xFFCF88 LocalGet 2
+	0xFFCF8A If -64
+	0xFFCF8C LocalGet 0
+	0xFFCF8E I32Const 0
+	0xFFCF90 Call 45846
+	0xFFCF94 LocalSet 0
+	0xFFCF96 End
+	0xFFCF97 LocalGet 0
+	0xFFCF99 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v22, [2D3824]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v22
+	8 Nop
+	9 Move v7 @ S1_v6, 1
+	10 Move [459F35], v7 @ S1_v6
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<System.IO.Path>), typeof(System.IO.Path)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<System.IO.Path>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b13, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v17 (Il2CppClass<System.IO.Path>), typeof(System.IO.Path)
+	21 Nop
+	22 CheckEqual v20 @ S0_v19 (System.Boolean), [v18 @ S0_v17 (Il2CppClass<System.IO.Path>)+74], 0
+	23 Not v21 @ TEMP_v5 (System.Boolean), v20 @ S0_v19 (System.Boolean)
+	24 ConditionalJump @b13, v21 @ TEMP_v5 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(System.IO.Path)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 Nop
+	32 Call Path.SameRoot, v30 @ S0_v11 (System.Boolean), type @ L0 (System.Type), target @ L1 (UnityEngine.GameObject)
+	33 Nop
+	34 Nop
+	35 Not v34 @ TEMP_v4 (System.Boolean), willForceHideInInspector @ L2 (System.Boolean)
+	36 ConditionalJump @b12, v34 @ TEMP_v4 (System.Boolean)
+	37 Nop
+	38 Nop
+	39 Call NetworkReachabilityMonitor.get_IsNetworkReachable, v37 @ S0_v16 (System.Boolean), v30 @ S0_v11 (System.Boolean)
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Return v38 @ L0_v2 (System.Boolean)
+

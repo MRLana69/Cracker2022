@@ -1,0 +1,276 @@
+Type: SYBO.Components.Utilities.Data.NumericIntToggle
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xFFA19C LocalGet 0
+	0xFFA19E I32Const 0
+	0xFFA1A0 Call 45773
+	0xFFA1A4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid NumericFloatToggle.SoftReset, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle)
+	3 Nop
+	4 Return
+
+Method: System.Void .ctor(System.Int32 value, System.Boolean isEnabled = True, System.String inspectorMessage = (Default))
+
+Disassembly:
+	0xD50F8E LocalGet 0
+	0xD50F90 I32Const 8
+	0xD50F92 I32Add
+	0xD50F93 LocalTee 5
+	0xD50F95 LocalGet 1
+	0xD50F97 I32Store 2, 0
+	0xD50F9A LocalGet 5
+	0xD50F9C LocalGet 2
+	0xD50F9E I32Store 2, 4
+	0xD50FA1 LocalGet 5
+	0xD50FA3 LocalGet 3
+	0xD50FA5 I32Store 2, 8
+	0xD50FA8 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Add v3 @ S0_v2, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle), 8
+	3 Nop
+	4 Nop
+	5 Move [v3 @ S0_v2], value @ L1 (System.Int32)
+	6 Nop
+	7 Nop
+	8 Move [v3 @ S0_v2+4], isEnabled @ L2 (System.Boolean)
+	9 Nop
+	10 Nop
+	11 Move [v3 @ S0_v2+8], inspectorMessage @ L3 (System.String)
+	12 Nop
+	13 Return
+
+Method: System.Void Initialize(System.Int32 value, System.Boolean isEnabled, System.String message)
+
+Disassembly:
+	0xFFA241 LocalGet 0
+	0xFFA243 I32Const 0
+	0xFFA245 Call 45770
+	0xFFA249 LocalGet 0
+	0xFFA24B LocalGet 1
+	0xFFA24D LocalGet 2
+	0xFFA24F LocalGet 3
+	0xFFA251 I32Const 0
+	0xFFA253 Call 45778
+	0xFFA257 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid SetActiveComponent.Awake, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle)
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 CallVoid JsonContext.RegisterDeserializeByKeyReference, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle), value @ L1 (System.Int32), isEnabled @ L2 (System.Boolean), message @ L3 (System.String)
+	9 Nop
+	10 Return
+
+Method: System.Void Reset()
+
+Disassembly:
+	0xFFA1C7 I32Const 4562687
+	0xFFA1CC I32Load8_S 0, 0
+	0xFFA1CF I32Eqz
+	0xFFA1D0 If -64
+	0xFFA1D2 I32Const 2988036
+	0xFFA1D7 I32Load 2, 0
+	0xFFA1DA Call 73003
+	0xFFA1DE I32Const 4562687
+	0xFFA1E3 I32Const 1
+	0xFFA1E5 I32Store8 0, 0
+	0xFFA1E8 End
+	0xFFA1E9 LocalGet 0
+	0xFFA1EB I32Const 0
+	0xFFA1ED Call 45770
+	0xFFA1F1 LocalGet 0
+	0xFFA1F3 I32Const -1
+	0xFFA1F5 I32Const 0
+	0xFFA1F7 I32Const 4540184
+	0xFFA1FC I32Load 2, 0
+	0xFFA1FF I32Const 0
+	0xFFA201 Call 45778
+	0xFFA205 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b7
+	5 Nop
+	6 Move v5 @ S0_v8, [2D9804]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v8
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [459EFF], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 CallVoid SetActiveComponent.Awake, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Nop
+	20 Nop
+	21 CallVoid JsonContext.RegisterDeserializeByKeyReference, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle), -1, 0, "(Default)"
+	22 Nop
+	23 Return
+
+Method: System.Void SoftReset()
+
+Disassembly:
+	0xFFA25A LocalGet 0
+	0xFFA25C LocalGet 0
+	0xFFA25E I32Load 2, 28
+	0xFFA261 LocalGet 0
+	0xFFA263 I32Load8_S 0, 9
+	0xFFA266 I32Const 0
+	0xFFA268 I32Ne
+	0xFFA269 LocalGet 0
+	0xFFA26B I32Load 2, 16
+	0xFFA26E I32Const 0
+	0xFFA270 Call 45778
+	0xFFA274 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 CheckNotEqual v7 @ S2_v3 (System.Boolean), this._isEnabledOriginal (System.Boolean), 0
+	7 Nop
+	8 Nop
+	9 Nop
+	10 CallVoid JsonContext.RegisterDeserializeByKeyReference, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle), this._valueOriginal (System.Int32), v7 @ S2_v3 (System.Boolean), this._inspectorMessageOriginal (System.String)
+	11 Nop
+	12 Return
+
+Method: System.Int32 get_Value()
+
+Disassembly:
+	0xFFA1B9 LocalGet 0
+	0xFFA1BB F32Load 2, 24
+	0xFFA1BE LocalGet 0
+	0xFFA1C0 F32Load 2, 28
+	0xFFA1C3 F32Eq
+	0xFFA1C4 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 CheckEqual returnVal1 @ S0_v3 (System.Boolean), this._value (System.Int32), this._valueOriginal (System.Int32)
+	5 Nop
+	6 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_Value(System.Int32 value)
+
+Disassembly:
+	0xFFCD25 I32Const 4562736
+	0xFFCD2A I32Load8_S 0, 0
+	0xFFCD2D I32Eqz
+	0xFFCD2E If -64
+	0xFFCD30 I32Const 3007768
+	0xFFCD35 I32Load 2, 0
+	0xFFCD38 Call 73003
+	0xFFCD3C I32Const 4562736
+	0xFFCD41 I32Const 1
+	0xFFCD43 I32Store8 0, 0
+	0xFFCD46 End
+	0xFFCD47 I32Const 4540236
+	0xFFCD4C I32Load 2, 0
+	0xFFCD4F LocalGet 1
+	0xFFCD51 I32Const 0
+	0xFFCD53 Call 55610
+	0xFFCD57 LocalSet 2
+	0xFFCD59 I32Const 4427764
+	0xFFCD5E I32Load 2, 0
+	0xFFCD61 LocalTee 1
+	0xFFCD63 I32Load16_S 1, 186
+	0xFFCD67 I32Const 512
+	0xFFCD6A I32And
+	0xFFCD6B If -64
+	0xFFCD6D LocalGet 1
+	0xFFCD6F I32Load 2, 116
+	0xFFCD72 I32Eqz
+	0xFFCD73 If -64
+	0xFFCD75 LocalGet 1
+	0xFFCD77 Call 72345
+	0xFFCD7B End
+	0xFFCD7C End
+	0xFFCD7D LocalGet 0
+	0xFFCD7F LocalGet 2
+	0xFFCD81 I32Const 0
+	0xFFCD83 Call 51388
+	0xFFCD87 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v19, [2DE518]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v19
+	8 Nop
+	9 Move v7 @ S1_v5, 1
+	10 Move [459F30], v7 @ S1_v5
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Call String.Format, v16 @ S0_v7 (System.String), "Add case for '{0}'.", value @ L1 (System.Int32)
+	17 Nop
+	18 Nop
+	19 Move v19 @ S0_v9 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 And v23 @ S0_v11, [v19 @ S0_v9 (Il2CppClass<System.Exception>)+BA], 512
+	24 CheckEqual v24 @ TEMP_v2 (System.Boolean), v23 @ S0_v11, 0
+	25 ConditionalJump @b11, v24 @ TEMP_v2 (System.Boolean)
+	26 Move v25 @ S0_v14 (Il2CppClass<System.Exception>), typeof(System.Exception)
+	27 Nop
+	28 CheckEqual v27 @ S0_v16 (System.Boolean), [v25 @ S0_v14 (Il2CppClass<System.Exception>)+74], 0
+	29 Not v28 @ TEMP_v4 (System.Boolean), v27 @ S0_v16 (System.Boolean)
+	30 ConditionalJump @b11, v28 @ TEMP_v4 (System.Boolean)
+	31 Nop
+	32 CallVoid 11A99, typeof(System.Exception)
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Nop
+	38 CallVoid Exception.SetErrorCode, this @ L0 (SYBO.Components.Utilities.Data.NumericIntToggle), v16 @ S0_v7 (System.String)
+	39 Nop
+	40 Return
+
+Method: System.Boolean IsOriginalValue()
+
+Disassembly:
+	0xC5D3C2 LocalGet 0
+	0xC5D3C4 I32Load 2, 24
+	0xC5D3C7 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._value (System.Int32)
+

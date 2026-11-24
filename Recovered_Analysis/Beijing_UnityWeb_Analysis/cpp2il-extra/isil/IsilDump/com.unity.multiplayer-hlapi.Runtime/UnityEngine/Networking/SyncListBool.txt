@@ -1,0 +1,497 @@
+Type: UnityEngine.Networking.SyncListBool
+
+Method: System.Void SerializeItem(UnityEngine.Networking.NetworkWriter writer, System.Boolean item)
+
+Disassembly:
+	0x1220055 LocalGet 1
+	0x1220057 LocalGet 2
+	0x1220059 I32Const 0
+	0x122005B Call 56794
+	0x122005F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CallVoid NetworkWriter.Write, writer @ L1 (UnityEngine.Networking.NetworkWriter), item @ L2 (System.Boolean)
+	4 Nop
+	5 Return
+
+Method: System.Boolean DeserializeItem(UnityEngine.Networking.NetworkReader reader)
+
+Disassembly:
+	0x1220062 LocalGet 1
+	0x1220064 I32Const 0
+	0x1220066 Call 54029
+	0x122006A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Call NetworkReader.ReadNetworkId, returnVal1 @ S0_v2 (System.Boolean), reader @ L1 (UnityEngine.Networking.NetworkReader)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.Boolean)
+
+Method: UnityEngine.Networking.SyncListBool ReadInstance(UnityEngine.Networking.NetworkReader reader)
+
+Disassembly:
+	0x12204FE I32Const 4569291
+	0x1220503 I32Load8_S 0, 0
+	0x1220506 I32Eqz
+	0x1220507 If -64
+	0x1220509 I32Const 3008172
+	0x122050E I32Load 2, 0
+	0x1220511 Call 73003
+	0x1220515 I32Const 4569291
+	0x122051A I32Const 1
+	0x122051C I32Store8 0, 0
+	0x122051F End
+	0x1220520 LocalGet 0
+	0x1220522 I32Const 0
+	0x1220524 Call 54095
+	0x1220528 I32Const 4435448
+	0x122052D I32Load 2, 0
+	0x1220530 Call 72556
+	0x1220534 LocalTee 1
+	0x1220536 I32Const 0
+	0x1220538 Call 56970
+	0x122053C I32Const 65535
+	0x1220540 I32And
+	0x1220541 LocalSet 4
+	0x1220543 I32Const 0
+	0x1220545 LocalSet 2
+	0x1220547 Loop -64
+	0x1220549 LocalGet 2
+	0x122054B I32Const 65535
+	0x122054F I32And
+	0x1220550 LocalTee 2
+	0x1220552 LocalGet 4
+	0x1220554 I32Lt_U
+	0x1220555 If -64
+	0x1220557 LocalGet 0
+	0x1220559 I32Const 0
+	0x122055B Call 54029
+	0x122055F LocalSet 3
+	0x1220561 LocalGet 1
+	0x1220563 I32Load 2, 8
+	0x1220566 LocalGet 3
+	0x1220568 I32Const 4495372
+	0x122056D I32Load 2, 0
+	0x1220570 I32Load 2, 12
+	0x1220573 I32Load 2, 96
+	0x1220576 I32Load 2, 20
+	0x1220579 LocalTee 3
+	0x122057B LocalGet 3
+	0x122057D I32Load 2, 0
+	0x1220580 I32Const 16383
+	0x1220584 I32And
+	0x1220585 I32Const 97173
+	0x1220589 I32Add
+	0x122058A CallIndirect 9, 0
+	0x122058D LocalGet 2
+	0x122058F I32Const 1
+	0x1220591 I32Add
+	0x1220592 LocalSet 2
+	0x1220594 Br 1
+	0x1220596 End
+	0x1220597 End
+	0x1220598 LocalGet 1
+	0x122059A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b11
+	5 Nop
+	6 Move v5 @ S0_v21, [2DE6AC]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v21
+	8 Nop
+	9 Move v7 @ S1_v13, 1
+	10 Move [45B8CB], v7 @ S1_v13
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call D34F, v14 @ S0_v6, reader @ L0 (UnityEngine.Networking.NetworkReader), 0
+	15 Nop
+	16 Nop
+	17 Call 11B6C, v17 @ S1_v5 (UnityEngine.Networking.SyncListBool), typeof(UnityEngine.Networking.SyncListUInt)
+	18 Nop
+	19 Nop
+	20 CallVoid SyncListBool..ctor, v17 @ S1_v5 (UnityEngine.Networking.SyncListBool)
+	21 Nop
+	22 And v21 @ S0_v7, v14 @ S0_v6, 65535
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 Nop
+	28 Nop
+	29 And v49 @ S0_v11, v37 @ L2_v2, 65535
+	30 Nop
+	31 Nop
+	32 CheckLess v52 @ S0_v12 (System.Boolean), v49 @ S0_v11, v21 @ S0_v7
+	33 Not v44 @ TEMP_v3 (System.Boolean), v52 @ S0_v12 (System.Boolean)
+	34 ConditionalJump @b10, v44 @ TEMP_v3 (System.Boolean)
+	35 Nop
+	36 Nop
+	37 Call NetworkReader.ReadNetworkId, v55 @ S0_v15 (UnityEngine.Networking.NetworkInstanceId), reader @ L0 (UnityEngine.Networking.NetworkReader)
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Nop
+	43 Move v62 @ S2_v4 (Il2CppMethodInfo), methodof(UnityEngine.Networking.SyncList`1<System.UInt32>::AddInternal)
+	44 Move v63 @ S2_v5, [v62 @ S2_v4 (Il2CppMethodInfo)+C]
+	45 Move v64 @ S2_v6, [v63 @ S2_v5+60]
+	46 Move v40 @ S2_v7, [v64 @ S2_v6+14]
+	47 Nop
+	48 Nop
+	49 Nop
+	50 Nop
+	51 And v68 @ S3_v4, [v40 @ S2_v7], 16383
+	52 Nop
+	53 Add v33 @ S3_v5, v68 @ S3_v4, 97173
+	54 IndirectCall v33 @ S3_v5, v27 @ SRET_v2, [v17 @ S1_v5 (UnityEngine.Networking.SyncListBool)+8], v55 @ S0_v15 (UnityEngine.Networking.NetworkInstanceId), v40 @ S2_v7
+	55 Nop
+	56 Nop
+	57 Add v46 @ S0_v19, v49 @ S0_v11, 1
+	58 Nop
+	59 Jump @b12
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Return v17 @ S1_v5 (UnityEngine.Networking.SyncListBool)
+
+Method: System.Void ReadReference(UnityEngine.Networking.NetworkReader reader, UnityEngine.Networking.SyncListBool syncList)
+
+Disassembly:
+	0x122066D I32Const 4569294
+	0x1220672 I32Load8_S 0, 0
+	0x1220675 I32Eqz
+	0x1220676 If -64
+	0x1220678 I32Const 3008180
+	0x122067D I32Load 2, 0
+	0x1220680 Call 73003
+	0x1220684 I32Const 4569294
+	0x1220689 I32Const 1
+	0x122068B I32Store8 0, 0
+	0x122068E End
+	0x122068F LocalGet 0
+	0x1220691 LocalGet 1
+	0x1220693 I32Load 2, 8
+	0x1220696 I32Const 4465012
+	0x122069B I32Load 2, 0
+	0x122069E I32Load 2, 12
+	0x12206A1 I32Load 2, 96
+	0x12206A4 I32Load 2, 0
+	0x12206A7 LocalTee 2
+	0x12206A9 LocalGet 2
+	0x12206AB I32Load 2, 0
+	0x12206AE I32Const 16383
+	0x12206B2 I32And
+	0x12206B3 I32Const 6161
+	0x12206B6 I32Add
+	0x12206B7 CallIndirect 0, 0
+	0x12206BA I32Const 65535
+	0x12206BE I32And
+	0x12206BF I32Const 0
+	0x12206C1 Call 56789
+	0x12206C5 Loop -64
+	0x12206C7 LocalGet 3
+	0x12206C9 LocalGet 1
+	0x12206CB I32Load 2, 8
+	0x12206CE I32Const 4465012
+	0x12206D3 I32Load 2, 0
+	0x12206D6 I32Load 2, 12
+	0x12206D9 I32Load 2, 96
+	0x12206DC I32Load 2, 0
+	0x12206DF LocalTee 2
+	0x12206E1 LocalGet 2
+	0x12206E3 I32Load 2, 0
+	0x12206E6 I32Const 16383
+	0x12206EA I32And
+	0x12206EB I32Const 6161
+	0x12206EE I32Add
+	0x12206EF CallIndirect 0, 0
+	0x12206F2 I32Lt_S
+	0x12206F3 If -64
+	0x12206F5 LocalGet 0
+	0x12206F7 LocalGet 1
+	0x12206F9 I32Load 2, 8
+	0x12206FC LocalGet 3
+	0x12206FE I32Const 4499916
+	0x1220703 I32Load 2, 0
+	0x1220706 I32Load 2, 12
+	0x1220709 I32Load 2, 96
+	0x122070C I32Load 2, 60
+	0x122070F LocalTee 2
+	0x1220711 LocalGet 2
+	0x1220713 I32Load 2, 0
+	0x1220716 I32Const 8191
+	0x1220719 I32And
+	0x122071A I32Const 22691
+	0x122071E I32Add
+	0x122071F CallIndirect 5, 0
+	0x1220722 I32Const 0
+	0x1220724 Call 56794
+	0x1220728 LocalGet 3
+	0x122072A I32Const 1
+	0x122072C I32Add
+	0x122072D LocalSet 3
+	0x122072F Br 1
+	0x1220731 End
+	0x1220732 End
+	0x1220733 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v13, [2DE6B4]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v13
+	8 Nop
+	9 Move v7 @ S1_v14, 1
+	10 Move [45B8CE], v7 @ S1_v14
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 Nop
+	16 Move v17 @ S2_v2 (Il2CppMethodInfo), methodof(UnityEngine.Networking.SyncList`1<System.UInt32>::get_Count)
+	17 Move v18 @ S2_v3, [v17 @ S2_v2 (Il2CppMethodInfo)+C]
+	18 Move v19 @ S2_v4, [v18 @ S2_v3+60]
+	19 Move v20 @ S2_v5, [v19 @ S2_v4]
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Nop
+	24 And v25 @ S3_v3, [v20 @ S2_v5], 16383
+	25 Nop
+	26 Add v27 @ S3_v4, v25 @ S3_v3, 6161
+	27 IndirectCall v27 @ S3_v4, v28 @ S1_v4, [syncList @ L1 (UnityEngine.Networking.SyncListBool)+8], v20 @ S2_v5
+	28 Nop
+	29 And v30 @ S1_v5, v28 @ S1_v4, 65535
+	30 Nop
+	31 CallVoid DDD5, reader @ L0 (UnityEngine.Networking.NetworkReader), v30 @ S1_v5, 0
+	32 Nop
+	33 Nop
+	34 Nop
+	35 Nop
+	36 Nop
+	37 Move v56 @ S2_v10 (Il2CppMethodInfo), methodof(UnityEngine.Networking.SyncList`1<System.UInt32>::get_Count)
+	38 Move v57 @ S2_v11, [v56 @ S2_v10 (Il2CppMethodInfo)+C]
+	39 Move v58 @ S2_v12, [v57 @ S2_v11+60]
+	40 Move v59 @ S2_v13, [v58 @ S2_v12]
+	41 Nop
+	42 Nop
+	43 Nop
+	44 Nop
+	45 And v64 @ S3_v8, [v59 @ S2_v13], 16383
+	46 Nop
+	47 Add v66 @ S3_v9, v64 @ S3_v8, 6161
+	48 IndirectCall v66 @ S3_v9, v67 @ S1_v9, [syncList @ L1 (UnityEngine.Networking.SyncListBool)+8], v59 @ S2_v13
+	49 CheckLess v68 @ S0_v8 (System.Boolean), v51 @ S0_v11, v67 @ S1_v9
+	50 Not v49 @ TEMP_v3 (System.Boolean), v68 @ S0_v8 (System.Boolean)
+	51 ConditionalJump @b8, v49 @ TEMP_v3 (System.Boolean)
+	52 Nop
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Move v74 @ S3_v11 (Il2CppMethodInfo), methodof(UnityEngine.Networking.SyncList`1<System.UInt32>::get_Item)
+	58 Move v75 @ S3_v12, [v74 @ S3_v11 (Il2CppMethodInfo)+C]
+	59 Move v76 @ S3_v13, [v75 @ S3_v12+60]
+	60 Move v41 @ S3_v14, [v76 @ S3_v13+3C]
+	61 Nop
+	62 Nop
+	63 Nop
+	64 Nop
+	65 And v80 @ S4_v8, [v41 @ S3_v14], 8191
+	66 Nop
+	67 Add v39 @ S4_v9, v80 @ S4_v8, 22691
+	68 IndirectCall v39 @ S4_v9, v81 @ S1_v12 (UnityEngine.Networking.NetworkInstanceId), [syncList @ L1 (UnityEngine.Networking.SyncListBool)+8], v32 @ L3_v1, v41 @ S3_v14
+	69 Nop
+	70 CallVoid NetworkWriter.Write, reader @ L0 (UnityEngine.Networking.NetworkReader), v81 @ S1_v12 (UnityEngine.Networking.NetworkInstanceId)
+	71 Nop
+	72 Nop
+	73 Add v51 @ S0_v11, v32 @ L3_v1, 1
+	74 Nop
+	75 Jump @b5
+	76 Nop
+	77 Nop
+	78 Nop
+	79 Return
+
+Method: System.Void WriteInstance(UnityEngine.Networking.NetworkWriter writer, UnityEngine.Networking.SyncListBool items)
+
+Disassembly:
+	0x121FC9E I32Const 4569277
+	0x121FCA3 I32Load8_S 0, 0
+	0x121FCA6 I32Eqz
+	0x121FCA7 If -64
+	0x121FCA9 I32Const 3008092
+	0x121FCAE I32Load 2, 0
+	0x121FCB1 Call 73003
+	0x121FCB5 I32Const 4569277
+	0x121FCBA I32Const 1
+	0x121FCBC I32Store8 0, 0
+	0x121FCBF End
+	0x121FCC0 LocalGet 0
+	0x121FCC2 I32Const 0
+	0x121FCC4 Call 54095
+	0x121FCC8 LocalGet 1
+	0x121FCCA I32Const 4495328
+	0x121FCCF I32Load 2, 0
+	0x121FCD2 Call 64739
+	0x121FCD6 I32Const 65535
+	0x121FCDA I32And
+	0x121FCDB LocalSet 4
+	0x121FCDD I32Const 0
+	0x121FCDF LocalSet 2
+	0x121FCE1 Loop -64
+	0x121FCE3 LocalGet 2
+	0x121FCE5 I32Const 65535
+	0x121FCE9 I32And
+	0x121FCEA LocalTee 2
+	0x121FCEC LocalGet 4
+	0x121FCEE I32Lt_U
+	0x121FCEF If -64
+	0x121FCF1 LocalGet 0
+	0x121FCF3 I32Const 0
+	0x121FCF5 Call 54031
+	0x121FCF9 LocalSet 3
+	0x121FCFB LocalGet 1
+	0x121FCFD I32Load 2, 8
+	0x121FD00 LocalGet 3
+	0x121FD02 I32Const 4495324
+	0x121FD07 I32Load 2, 0
+	0x121FD0A I32Load 2, 12
+	0x121FD0D I32Load 2, 96
+	0x121FD10 I32Load 2, 20
+	0x121FD13 LocalTee 3
+	0x121FD15 LocalGet 3
+	0x121FD17 I32Load 2, 0
+	0x121FD1A I32Const 16383
+	0x121FD1E I32And
+	0x121FD1F I32Const 97173
+	0x121FD23 I32Add
+	0x121FD24 CallIndirect 9, 0
+	0x121FD27 LocalGet 2
+	0x121FD29 I32Const 1
+	0x121FD2B I32Add
+	0x121FD2C LocalSet 2
+	0x121FD2E Br 1
+	0x121FD30 End
+	0x121FD31 End
+	0x121FD32 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b10
+	5 Nop
+	6 Move v5 @ S0_v20, [2DE65C]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v20
+	8 Nop
+	9 Move v7 @ S1_v11, 1
+	10 Move [45B8BD], v7 @ S1_v11
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Call D34F, v14 @ S0_v6, writer @ L0 (UnityEngine.Networking.NetworkWriter), 0
+	15 Nop
+	16 Nop
+	17 Nop
+	18 CallVoid SyncList`1..ctor, items @ L1 (UnityEngine.Networking.SyncListBool)
+	19 Nop
+	20 And v20 @ S0_v7, v14 @ S0_v6, 65535
+	21 Nop
+	22 Nop
+	23 Nop
+	24 Nop
+	25 Nop
+	26 Nop
+	27 And v48 @ S0_v11, v36 @ L2_v2, 65535
+	28 Nop
+	29 Nop
+	30 CheckLess v51 @ S0_v12 (System.Boolean), v48 @ S0_v11, v20 @ S0_v7
+	31 Not v43 @ TEMP_v3 (System.Boolean), v51 @ S0_v12 (System.Boolean)
+	32 ConditionalJump @b9, v43 @ TEMP_v3 (System.Boolean)
+	33 Nop
+	34 Nop
+	35 Call NetworkReader.ReadBytesAndSize, v54 @ S0_v14 (System.Byte[]), writer @ L0 (UnityEngine.Networking.NetworkWriter)
+	36 Nop
+	37 Nop
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Move v60 @ S2_v5 (Il2CppMethodInfo), methodof(UnityEngine.Networking.SyncList`1<System.Boolean>::AddInternal)
+	42 Move v61 @ S2_v6, [v60 @ S2_v5 (Il2CppMethodInfo)+C]
+	43 Move v62 @ S2_v7, [v61 @ S2_v6+60]
+	44 Move v39 @ S2_v8, [v62 @ S2_v7+14]
+	45 Nop
+	46 Nop
+	47 Nop
+	48 Nop
+	49 And v66 @ S3_v4, [v39 @ S2_v8], 16383
+	50 Nop
+	51 Add v32 @ S3_v5, v66 @ S3_v4, 97173
+	52 IndirectCall v32 @ S3_v5, v26 @ SRET_v2, [items @ L1 (UnityEngine.Networking.SyncListBool)+8], v54 @ S0_v14 (System.Byte[]), v39 @ S2_v8
+	53 Nop
+	54 Nop
+	55 Add v45 @ S0_v18, v48 @ S0_v11, 1
+	56 Nop
+	57 Jump @b11
+	58 Nop
+	59 Nop
+	60 Nop
+	61 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x122059D I32Const 4569292
+	0x12205A2 I32Load8_S 0, 0
+	0x12205A5 I32Eqz
+	0x12205A6 If -64
+	0x12205A8 I32Const 3008184
+	0x12205AD I32Load 2, 0
+	0x12205B0 Call 73003
+	0x12205B4 I32Const 4569292
+	0x12205B9 I32Const 1
+	0x12205BB I32Store8 0, 0
+	0x12205BE End
+	0x12205BF LocalGet 0
+	0x12205C1 I32Const 4495368
+	0x12205C6 I32Load 2, 0
+	0x12205C9 Call 64751
+	0x12205CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b6
+	5 Nop
+	6 Move v5 @ S0_v7, [2DE6B8]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v7
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [45B8CC], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Nop
+	14 Nop
+	15 CallVoid DropdownList`1..ctor, this @ L0 (UnityEngine.Networking.SyncListBool)
+	16 Nop
+	17 Return
+

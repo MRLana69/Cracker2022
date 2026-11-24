@@ -1,0 +1,279 @@
+Type: System.Func`5
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0xC7B8B2 LocalGet 0
+	0xC7B8B4 LocalGet 2
+	0xC7B8B6 I32Load 2, 0
+	0xC7B8B9 I32Store 2, 8
+	0xC7B8BC LocalGet 0
+	0xC7B8BE LocalGet 2
+	0xC7B8C0 I32Store 2, 20
+	0xC7B8C3 LocalGet 0
+	0xC7B8C5 I32Const 16
+	0xC7B8C7 I32Add
+	0xC7B8C8 LocalGet 1
+	0xC7B8CA I32Store 2, 0
+	0xC7B8CD End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Move [this @ L0 (System.Func`5<T1, T2, T3, T4, TResult>)+8], method.m_value (System.Void*)
+	4 Nop
+	5 Nop
+	6 Move [this @ L0 (System.Func`5<T1, T2, T3, T4, TResult>)+14], method @ L2 (System.IntPtr)
+	7 Nop
+	8 Nop
+	9 Add v9 @ S0_v4, this @ L0 (System.Func`5<T1, T2, T3, T4, TResult>), 16
+	10 Nop
+	11 Move [v9 @ S0_v4], object @ L1 (System.Object)
+	12 Nop
+	13 Return
+
+Method: TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+
+Disassembly:
+	0xC9E82A GlobalGet 7
+	0xC9E82C LocalSet 5
+	0xC9E82E GlobalGet 7
+	0xC9E830 I32Const 16
+	0xC9E832 I32Add
+	0xC9E833 GlobalSet 7
+	0xC9E835 LocalGet 5
+	0xC9E837 I32Const 0
+	0xC9E839 I32Store 2, 8
+	0xC9E83C LocalGet 5
+	0xC9E83E LocalGet 1
+	0xC9E840 I32Store 2, 0
+	0xC9E843 LocalGet 5
+	0xC9E845 LocalGet 2
+	0xC9E847 I32Store 2, 4
+	0xC9E84A LocalGet 0
+	0xC9E84C LocalGet 5
+	0xC9E84E LocalGet 3
+	0xC9E850 LocalGet 4
+	0xC9E852 Call 73891
+	0xC9E856 LocalGet 5
+	0xC9E858 GlobalSet 7
+	0xC9E85A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Move [v1 @ G7+8], 0
+	9 Nop
+	10 Nop
+	11 Move [v1 @ G7], arg1 @ L1 (T1)
+	12 Nop
+	13 Nop
+	14 Move [v1 @ G7+4], arg2 @ L2 (T2)
+	15 Nop
+	16 Nop
+	17 Nop
+	18 Nop
+	19 Call 120A3, returnVal1 @ S0_v8 (TResult), this @ L0 (System.Func`5<T1, T2, T3, T4, TResult>), v1 @ G7, arg3 @ L3 (T3), arg4 @ L4 (T4)
+	20 Nop
+	21 Nop
+	22 Nop
+	23 Return returnVal1 @ S0_v8 (TResult)
+
+Method: System.IAsyncResult BeginInvoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x13529AD GlobalGet 7
+	0x13529AF LocalSet 7
+	0x13529B1 GlobalGet 7
+	0x13529B3 I32Const 32
+	0x13529B5 I32Add
+	0x13529B6 GlobalSet 7
+	0x13529B8 LocalGet 7
+	0x13529BA I32Const 23
+	0x13529BC I32Add
+	0x13529BD LocalTee 8
+	0x13529BF LocalGet 1
+	0x13529C1 I32Const 1
+	0x13529C3 I32And
+	0x13529C4 I32Store8 0, 0
+	0x13529C7 LocalGet 7
+	0x13529C9 I32Const 22
+	0x13529CB I32Add
+	0x13529CC LocalTee 1
+	0x13529CE LocalGet 2
+	0x13529D0 I32Const 1
+	0x13529D2 I32And
+	0x13529D3 I32Store8 0, 0
+	0x13529D6 LocalGet 7
+	0x13529D8 I32Const 21
+	0x13529DA I32Add
+	0x13529DB LocalTee 2
+	0x13529DD LocalGet 3
+	0x13529DF I32Const 1
+	0x13529E1 I32And
+	0x13529E2 I32Store8 0, 0
+	0x13529E5 LocalGet 7
+	0x13529E7 I32Const 20
+	0x13529E9 I32Add
+	0x13529EA LocalTee 3
+	0x13529EC LocalGet 4
+	0x13529EE I32Const 1
+	0x13529F0 I32And
+	0x13529F1 I32Store8 0, 0
+	0x13529F4 I32Const 4572503
+	0x13529F9 I32Load8_S 0, 0
+	0x13529FC I32Eqz
+	0x13529FD If -64
+	0x13529FF I32Const 2923640
+	0x1352A04 I32Load 2, 0
+	0x1352A07 Call 73003
+	0x1352A0B I32Const 4572503
+	0x1352A10 I32Const 1
+	0x1352A12 I32Store8 0, 0
+	0x1352A15 End
+	0x1352A16 LocalGet 7
+	0x1352A18 I32Const 0
+	0x1352A1A I32Store 2, 16
+	0x1352A1D LocalGet 7
+	0x1352A1F I32Const 4428456
+	0x1352A24 I32Load 2, 0
+	0x1352A27 LocalGet 8
+	0x1352A29 Call 73903
+	0x1352A2D I32Store 2, 0
+	0x1352A30 LocalGet 7
+	0x1352A32 I32Const 4428456
+	0x1352A37 I32Load 2, 0
+	0x1352A3A LocalGet 1
+	0x1352A3C Call 73903
+	0x1352A40 I32Store 2, 4
+	0x1352A43 LocalGet 7
+	0x1352A45 I32Const 4428456
+	0x1352A4A I32Load 2, 0
+	0x1352A4D LocalGet 2
+	0x1352A4F Call 73903
+	0x1352A53 I32Store 2, 8
+	0x1352A56 LocalGet 7
+	0x1352A58 I32Const 4428456
+	0x1352A5D I32Load 2, 0
+	0x1352A60 LocalGet 3
+	0x1352A62 Call 73903
+	0x1352A66 I32Store 2, 12
+	0x1352A69 LocalGet 0
+	0x1352A6B LocalGet 7
+	0x1352A6D LocalGet 5
+	0x1352A6F LocalGet 6
+	0x1352A71 Call 73891
+	0x1352A75 LocalGet 7
+	0x1352A77 GlobalSet 7
+	0x1352A79 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Nop
+	5 Nop
+	6 Nop
+	7 Nop
+	8 Add v9 @ S0_v5, v1 @ G7, 23
+	9 Nop
+	10 Nop
+	11 Nop
+	12 And v14 @ S1_v4, arg1 @ L1 (T1), 1
+	13 Move [v9 @ S0_v5], v14 @ S1_v4
+	14 Nop
+	15 Nop
+	16 Add v17 @ S0_v7, v1 @ G7, 22
+	17 Nop
+	18 Nop
+	19 Nop
+	20 And v22 @ S1_v7, arg2 @ L2 (T2), 1
+	21 Move [v17 @ S0_v7], v22 @ S1_v7
+	22 Nop
+	23 Nop
+	24 Add v25 @ S0_v9, v1 @ G7, 21
+	25 Nop
+	26 Nop
+	27 Nop
+	28 And v30 @ S1_v10, arg3 @ L3 (T3), 1
+	29 Move [v25 @ S0_v9], v30 @ S1_v10
+	30 Nop
+	31 Nop
+	32 Add v33 @ S0_v11, v1 @ G7, 20
+	33 Nop
+	34 Nop
+	35 Nop
+	36 And v38 @ S1_v13, arg4 @ L4 (T4), 1
+	37 Move [v33 @ S0_v11], v38 @ S1_v13
+	38 Nop
+	39 Nop
+	40 Nop
+	41 Nop
+	42 Jump @b10
+	43 Nop
+	44 Move v44 @ S0_v24, [2C9C78]
+	45 CallVoid "il2cpp_runtime_class_init_actual", v44 @ S0_v24
+	46 Nop
+	47 Move v46 @ S1_v30, 1
+	48 Move [45C557], v46 @ S1_v30
+	49 Nop
+	50 Nop
+	51 Nop
+	52 Move [v1 @ G7+10], 0
+	53 Nop
+	54 Nop
+	55 Nop
+	56 Nop
+	57 Call 120AF, v55 @ S1_v18, typeof(System.Boolean), v9 @ S0_v5
+	58 Move [v1 @ G7], v55 @ S1_v18
+	59 Nop
+	60 Nop
+	61 Nop
+	62 Nop
+	63 Call 120AF, v60 @ S1_v21, typeof(System.Boolean), v17 @ S0_v7
+	64 Move [v1 @ G7+4], v60 @ S1_v21
+	65 Nop
+	66 Nop
+	67 Nop
+	68 Nop
+	69 Call 120AF, v65 @ S1_v24, typeof(System.Boolean), v25 @ S0_v9
+	70 Move [v1 @ G7+8], v65 @ S1_v24
+	71 Nop
+	72 Nop
+	73 Nop
+	74 Nop
+	75 Call 120AF, v70 @ S1_v27, typeof(System.Boolean), v33 @ S0_v11
+	76 Move [v1 @ G7+C], v70 @ S1_v27
+	77 Nop
+	78 Nop
+	79 Nop
+	80 Nop
+	81 Call 120A3, returnVal1 @ S0_v22 (System.IAsyncResult), this @ L0 (System.Func`5<T1, T2, T3, T4, TResult>), v1 @ G7, callback @ L5 (System.AsyncCallback), object @ L6 (System.Object)
+	82 Nop
+	83 Nop
+	84 Nop
+	85 Return returnVal1 @ S0_v22 (System.IAsyncResult)
+
+Method: TResult EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0xD4E960 LocalGet 1
+	0xD4E962 I32Const 0
+	0xD4E964 Call 73892
+	0xD4E968 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Newobj returnVal1 @ S0_v2 (System.InvalidOperationException), typeof(System.InvalidOperationException)
+	3 Nop
+	4 Return returnVal1 @ S0_v2 (System.InvalidOperationException)
+

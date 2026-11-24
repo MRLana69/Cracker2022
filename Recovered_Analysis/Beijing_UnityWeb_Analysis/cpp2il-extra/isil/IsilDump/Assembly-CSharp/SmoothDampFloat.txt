@@ -1,0 +1,194 @@
+Type: SmoothDampFloat
+
+Method: System.Single get_Target()
+
+Disassembly:
+	0xC11850 LocalGet 0
+	0xC11852 F32Load 2, 12
+	0xC11855 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._smoothTime (System.Single)
+
+Method: System.Void set_Target(System.Single value)
+
+Disassembly:
+	0xC11858 LocalGet 0
+	0xC1185A LocalGet 1
+	0xC1185C F32Store 2, 12
+	0xC1185F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._smoothTime (System.Single), value @ L1 (System.Single)
+	3 Nop
+	4 Return
+
+Method: System.Single get_SmoothTime()
+
+Disassembly:
+	0xC24A70 LocalGet 0
+	0xC24A72 F32Load 2, 8
+	0xC24A75 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._target (System.Single)
+
+Method: System.Void set_SmoothTime(System.Single value)
+
+Disassembly:
+	0xC24A78 LocalGet 0
+	0xC24A7A LocalGet 1
+	0xC24A7C F32Store 2, 8
+	0xC24A7F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._target (System.Single), value @ L1 (System.Single)
+	3 Nop
+	4 Return
+
+Method: System.Single get_Value()
+
+Disassembly:
+	0xC11850 LocalGet 0
+	0xC11852 F32Load 2, 12
+	0xC11855 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Return this._smoothTime (System.Single)
+
+Method: System.Void set_Value(System.Single value)
+
+Disassembly:
+	0xC11858 LocalGet 0
+	0xC1185A LocalGet 1
+	0xC1185C F32Store 2, 12
+	0xC1185F End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._smoothTime (System.Single), value @ L1 (System.Single)
+	3 Nop
+	4 Return
+
+Method: System.Void .ctor(System.Single value, System.Single smoothTime)
+
+Disassembly:
+	0xCCEA0C LocalGet 0
+	0xCCEA0E LocalGet 2
+	0xCCEA10 F32Store 2, 8
+	0xCCEA13 LocalGet 0
+	0xCCEA15 LocalGet 1
+	0xCCEA17 F32Store 2, 12
+	0xCCEA1A End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Move this._target (System.Single), smoothTime @ L2 (System.Single)
+	3 Nop
+	4 Nop
+	5 Move this._smoothTime (System.Single), value @ L1 (System.Single)
+	6 Nop
+	7 Return
+
+Method: System.Void Update()
+
+Disassembly:
+	0xE1A8A0 I32Const 4557261
+	0xE1A8A5 I32Load8_S 0, 0
+	0xE1A8A8 I32Eqz
+	0xE1A8A9 If -64
+	0xE1A8AB I32Const 2999696
+	0xE1A8B0 I32Load 2, 0
+	0xE1A8B3 Call 73003
+	0xE1A8B7 I32Const 4557261
+	0xE1A8BC I32Const 1
+	0xE1A8BE I32Store8 0, 0
+	0xE1A8C1 End
+	0xE1A8C2 I32Const 4433260
+	0xE1A8C7 I32Load 2, 0
+	0xE1A8CA LocalTee 2
+	0xE1A8CC I32Load16_S 1, 186
+	0xE1A8D0 I32Const 512
+	0xE1A8D3 I32And
+	0xE1A8D4 If -64
+	0xE1A8D6 LocalGet 2
+	0xE1A8D8 I32Load 2, 116
+	0xE1A8DB I32Eqz
+	0xE1A8DC If -64
+	0xE1A8DE LocalGet 2
+	0xE1A8E0 Call 72345
+	0xE1A8E4 End
+	0xE1A8E5 End
+	0xE1A8E6 LocalGet 0
+	0xE1A8E8 I32Const 0
+	0xE1A8EA Call 62569
+	0xE1A8EE End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Nop
+	4 Jump @b9
+	5 Nop
+	6 Move v5 @ S0_v16, [2DC590]
+	7 CallVoid "il2cpp_runtime_class_init_actual", v5 @ S0_v16
+	8 Nop
+	9 Move v7 @ S1_v4, 1
+	10 Move [4589CD], v7 @ S1_v4
+	11 Nop
+	12 Nop
+	13 Move v12 @ S0_v6 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	14 Nop
+	15 Nop
+	16 Nop
+	17 And v16 @ S0_v8, [v12 @ S0_v6 (Il2CppClass<UnityEngine.Debug>)+BA], 512
+	18 CheckEqual v17 @ TEMP_v2 (System.Boolean), v16 @ S0_v8, 0
+	19 ConditionalJump @b10, v17 @ TEMP_v2 (System.Boolean)
+	20 Move v18 @ S0_v11 (Il2CppClass<UnityEngine.Debug>), typeof(UnityEngine.Debug)
+	21 Nop
+	22 CheckEqual v20 @ S0_v13 (System.Boolean), [v18 @ S0_v11 (Il2CppClass<UnityEngine.Debug>)+74], 0
+	23 Not v21 @ TEMP_v4 (System.Boolean), v20 @ S0_v13 (System.Boolean)
+	24 ConditionalJump @b10, v21 @ TEMP_v4 (System.Boolean)
+	25 Nop
+	26 CallVoid 11A99, typeof(UnityEngine.Debug)
+	27 Nop
+	28 Nop
+	29 Nop
+	30 Nop
+	31 CallVoid Debug.LogWarning, this @ L0 (SmoothDampFloat)
+	32 Nop
+	33 Return
+
+Method: System.String ToString()
+
+Disassembly:
+	0xE1A344 LocalGet 0
+	0xE1A346 I32Load 2, 8
+	0xE1A349 I32Const 15500
+	0xE1A34D I32Gt_S
+	0xE1A34E End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckGreater returnVal1 @ S0_v3 (System.Boolean), this._target (System.Single), 15500
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+

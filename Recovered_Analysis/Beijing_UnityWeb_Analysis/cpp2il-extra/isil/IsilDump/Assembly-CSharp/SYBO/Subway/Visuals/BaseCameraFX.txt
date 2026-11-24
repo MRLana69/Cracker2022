@@ -1,0 +1,70 @@
+Type: SYBO.Subway.Visuals.BaseCameraFX
+
+Method: SYBO.Subway.Visuals.CameraFXState get_CameraFXState()
+
+Disassembly:
+	0xE3C77E LocalGet 0
+	0xE3C780 I32Load8_S 0, 21
+	0xE3C783 I32Const 0
+	0xE3C785 I32Ne
+	0xE3C786 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 CheckNotEqual returnVal1 @ S0_v3 (System.Boolean), [this @ L0 (SYBO.Subway.Visuals.BaseCameraFX)+15], 0
+	4 Nop
+	5 Return returnVal1 @ S0_v3 (System.Boolean)
+
+Method: System.Void set_CameraFXState(SYBO.Subway.Visuals.CameraFXState value)
+
+Disassembly:
+	0xE3C789 LocalGet 0
+	0xE3C78B LocalGet 1
+	0xE3C78D I32Const 1
+	0xE3C78F I32And
+	0xE3C790 I32Store8 0, 21
+	0xE3C793 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 And v5 @ S1_v2, value @ L1 (SYBO.Subway.Visuals.CameraFXState), 1
+	4 Move [this @ L0 (SYBO.Subway.Visuals.BaseCameraFX)+15], v5 @ S1_v2
+	5 Nop
+	6 Return
+
+Method: System.Void Start()
+
+Disassembly:
+	0xC11729 LocalGet 0
+	0xC1172B I32Const 0
+	0xC1172D Call 62657
+	0xC11731 End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 CallVoid MonoBehaviour.CancelInvoke, this @ L0 (SYBO.Subway.Visuals.BaseCameraFX)
+	3 Nop
+	4 Return
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0xC11843 LocalGet 0
+	0xC11845 I32Const 1
+	0xC11847 I32Const 0
+	0xC11849 Call 29261
+	0xC1184D End
+
+ISIL:
+	0 Nop
+	1 Nop
+	2 Nop
+	3 Call HuntTokenCollectVFXColorCycle.PickRandomColorGradient, v4 @ SRET_v1 (UnityEngine.ParticleSystem+MinMaxGradient), 1
+	4 Nop
+	5 Return
+
