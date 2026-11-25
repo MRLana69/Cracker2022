@@ -52,7 +52,7 @@ public class CoinScreenSetup : MonoBehaviour
 		UILabel uILabel = NGUITools.AddWidget<UILabel>(base.gameObject);
 		uILabel.cachedTransform.parent = gameObject.transform;
 		uILabel.font = headerFont;
-		uILabel.text = "Coin Shop";
+		uILabel.text = "Earn Coins";
 		uILabel.color = new Color(0f, 0.2901961f, 0.5019608f, 1f);
 		uILabel.MakePixelPerfect();
 		if (DeviceInfo.isHighres)
@@ -60,15 +60,6 @@ public class CoinScreenSetup : MonoBehaviour
 			uILabel.gameObject.transform.localScale = new Vector3(uILabel.gameObject.transform.localScale.x / 2f, uILabel.gameObject.transform.localScale.y / 2f, uILabel.gameObject.transform.localScale.z);
 		}
 		num++;
-		for (int i = 0; i < InAppData.inAppTiersAndInAppTiersDiscount.Length / 2; i++)
-		{
-			go = NGUITools.AddChild(base.gameObject, coinPrefab);
-			go.name = string.Format("{0:000}", num);
-			go.GetComponent<CoinButtonHelper>().Init(i);
-			go.GetComponent<UIDragPanelContents>().draggablePanel = _parentDragPanel;
-			NGUITools.AddWidgetCollider(go);
-			num++;
-		}
 		bool flag = false;
 		for (int j = 1; j < EarnCurrencyInfo.profiles.Length; j++)
 		{

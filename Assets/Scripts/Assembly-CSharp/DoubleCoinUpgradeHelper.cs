@@ -26,6 +26,8 @@ public class DoubleCoinUpgradeHelper : DiscountButton
 	public override void Awake()
 	{
 		base.Awake();
+		inited = false;
+		NGUITools.SetActive(base.gameObject, false);
 	}
 
 	private void ForceEndDiscount()
@@ -38,62 +40,15 @@ public class DoubleCoinUpgradeHelper : DiscountButton
 
 	private unsafe void _Setup(bool forceEndDiscount = false)
 	{
-		if (PlayerInfo.Instance.hasDoubleCoins)
-		{
-			doubleCoinVersion = "com.kiloo.subways.doublecoins";
-			InAppManager instance = InAppManager.Instance;
-			instance.onPurchaseSuccess = (Action)Delegate.Remove(instance.onPurchaseSuccess, new Action(this._SetupNoArgs));
-			ShowNoDiscount(doubleCoinVersion, string.Empty);
-			fillColorSprite.spriteName = "button_check_grey";
-			fillColorSprite.pivot = UIWidget.Pivot.Center;
-			if (DeviceInfo.isHighres)
-			{
-				fillColorSprite.cachedTransform.localScale = new Vector3(fillColorSprite.sprite.inner.width / 2f, fillColorSprite.sprite.inner.height / 2f, 1f);
-			}
-			else
-			{
-				fillColorSprite.cachedTransform.localScale = new Vector3(fillColorSprite.sprite.inner.width, fillColorSprite.sprite.inner.height, 1f);
-			}
-			fillColorSprite.cachedTransform.localPosition = new Vector3(97f, 2f, 0f);
-			price.enabled = false;
-			GetComponent<BoxCollider>().enabled = false;
-		}
-		else if (OnSale && !forceEndDiscount)
-		{
-			doubleCoinVersion = "com.kiloo.subways.doublecoinsdiscount";
-			ShowOnSale("com.kiloo.subways.doublecoinsdiscount", string.Empty);
-			if (base.transform.parent.name != "000")
-			{
-				foreach (Transform item in base.transform.parent)
-				{
-					if (item.name == "000")
-					{
-						base.transform.parent = item;
-						base.transform.localPosition = new Vector3(0f, -75f, 0f);
-					}
-				}
-			}
-		}
-		else
-		{
-			doubleCoinVersion = "com.kiloo.subways.doublecoins";
-			ShowNoDiscount("com.kiloo.subways.doublecoins", string.Empty);
-			if (base.transform.parent.name == "000")
-			{
-				base.transform.parent = base.transform.parent.parent;
-			}
-		}
-		InAppManager instance2 = InAppManager.Instance;
-		instance2.onProductRequestSuccess = (Action)Delegate.Combine(instance2.onProductRequestSuccess, new Action(UpdatePrice));
+		inited = false;
+		NGUITools.SetActive(base.gameObject, false);
 	}
 	private void _SetupNoArgs() { _Setup(); }
 
-	public unsafe void Init()
+	public void Init()
 	{
-		InAppManager instance = InAppManager.Instance;
-		instance.onPurchaseSuccess = (Action)Delegate.Combine(instance.onPurchaseSuccess, new Action(this._SetupNoArgs));
-		inited = true;
-		_Setup();
+		inited = false;
+		NGUITools.SetActive(base.gameObject, false);
 	}
 
 	private void OnEnable()
@@ -111,9 +66,5 @@ public class DoubleCoinUpgradeHelper : DiscountButton
 
 	private void OnClick()
 	{
-		if (!PlayerInfo.Instance.hasDoubleCoins)
-		{
-			InAppManager.Instance.BuyInApp(doubleCoinVersion);
-		}
 	}
 }
